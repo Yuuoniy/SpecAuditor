@@ -1,0 +1,13 @@
+Function: int tty_standard_install ( struct tty_driver * driver , struct tty_struct * tty )
+
+usual tty->ops->install
+
+Parameters
+  struct tty_driver *driver
+    the driver for the tty
+  struct tty_struct *tty
+    the tty
+
+Description
+  If the driver overrides tty->ops->install , it still can call this function
+to perform the standard install operations.

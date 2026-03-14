@@ -1,0 +1,18 @@
+Function: bool dmi_get_date ( int field , int * yearp , int * monthp , int * dayp )
+
+parse a DMI date
+
+Parameters
+  int field
+    data index (see enum dmi_field )
+  int *yearp
+    optional out parameter for the year
+  int *monthp
+    optional out parameter for the month
+  int *dayp
+    optional out parameter for the day
+
+Description
+  The date field is assumed to be in the form resembling
+[mm[/dd]]/yy[yy] and the result is stored in the out
+parameters any or all of which can be omitted.

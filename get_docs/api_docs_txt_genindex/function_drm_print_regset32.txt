@@ -1,0 +1,15 @@
+Function: void drm_print_regset32 ( struct drm_printer * p , struct debugfs_regset32 * regset )
+
+print the contents of registers to a drm_printer stream.
+
+Parameters
+  struct drm_printer *p
+    the drm printer
+  struct debugfs_regset32 *regset
+    the list of registers to print.
+
+Description
+  Often in driver debug, it’s useful to be able to either capture the
+contents of registers in the steady state using debugfs or at
+specific points during operation.  This lets the driver have a
+single list of registers for both.

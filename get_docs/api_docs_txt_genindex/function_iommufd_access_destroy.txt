@@ -1,0 +1,10 @@
+Function: void iommufd_access_destroy ( struct iommufd_access * access )
+
+Destroy an iommufd_access
+
+Parameters
+  struct iommufd_access *access
+    The access to destroy
+
+Description
+  The caller must stop using the access before destroying it.

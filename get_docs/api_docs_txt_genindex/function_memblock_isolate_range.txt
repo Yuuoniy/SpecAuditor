@@ -1,0 +1,22 @@
+Function: int __init_memblock memblock_isolate_range ( struct memblock_type * type , phys_addr_t base , phys_addr_t size , int * start_rgn , int * end_rgn )
+
+isolate given range into disjoint memblocks
+
+Parameters
+  struct memblock_type *type
+    memblock type to isolate range for
+  phys_addr_t base
+    base of range to isolate
+  phys_addr_t size
+    size of range to isolate
+  int *start_rgn
+    out parameter for the start of isolated region
+  int *end_rgn
+    out parameter for the end of isolated region
+
+Description
+  Walk type and ensure that regions don’t cross the boundaries defined by
+[ base , base + size ).  Crossing regions are split at the boundaries,
+which may create at most two more regions.  The index of the first
+region inside the range is returned in *start_rgn and the index of the
+first region after the range is returned in *end_rgn .

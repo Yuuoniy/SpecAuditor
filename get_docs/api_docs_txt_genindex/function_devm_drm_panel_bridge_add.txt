@@ -1,0 +1,13 @@
+Function: struct drm_bridge * devm_drm_panel_bridge_add ( struct device * dev , struct drm_panel * panel )
+
+Creates a managed drm_bridge and drm_connector that just calls the appropriate functions from drm_panel .
+
+Parameters
+  struct device *dev
+    device to tie the bridge lifetime to
+  struct drm_panel *panel
+    The drm_panel being wrapped.  Must be non-NULL.
+
+Description
+  This is the managed version of drm_panel_bridge_add() which automatically
+calls drm_panel_bridge_remove() when dev is unbound.

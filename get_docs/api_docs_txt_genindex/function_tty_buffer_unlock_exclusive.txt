@@ -1,0 +1,10 @@
+Function: void tty_buffer_unlock_exclusive ( struct tty_port * port )
+
+release exclusive access
+
+Parameters
+  struct tty_port *port
+    tty port owning the flip buffer
+
+Description
+  The buffer work is restarted if there is data in the flip buffer.

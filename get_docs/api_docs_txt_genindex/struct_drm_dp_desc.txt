@@ -1,0 +1,9 @@
+Struct: struct drm_dp_desc
+
+DP branch/sink device descriptor
+
+Members
+  ident
+    DP device identification from DPCD 0x400 (sink) or 0x500 (branch).
+  quirks
+    Quirks; use drm_dp_has_quirk() to query for the quirks.

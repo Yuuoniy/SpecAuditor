@@ -1,0 +1,11 @@
+Function: struct iommufd_ctx * iommufd_ctx_from_fd ( int fd )
+
+Acquires a reference to the iommufd context
+
+Parameters
+  int fd
+    File descriptor to obtain the reference from
+
+Description
+  Returns a pointer to the iommufd_ctx, otherwise ERR_PTR. On success
+the caller is responsible to call iommufd_ctx_put() .

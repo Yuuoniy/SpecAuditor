@@ -1,0 +1,13 @@
+Struct: struct ccs_pll_branch_fr
+
+CCS PLL configuration (front)
+
+Members
+  pre_pll_clk_div
+    Pre-PLL clock divisor
+  pll_multiplier
+    PLL multiplier
+  pll_ip_clk_freq_hz
+    PLL input clock frequency
+  pll_op_clk_freq_hz
+    PLL output clock frequency

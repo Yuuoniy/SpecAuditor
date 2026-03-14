@@ -1,0 +1,11 @@
+Function: void rio_release_dev ( struct device * dev )
+
+Frees a RIO device struct
+
+Parameters
+  struct device *dev
+    LDM device associated with a RIO device struct
+
+Description
+  Gets the RIO device struct associated a RIO device struct.
+The RIO device struct is freed.

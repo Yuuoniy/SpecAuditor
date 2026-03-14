@@ -1,0 +1,14 @@
+Function: void acpi_gpiochip_request_interrupts ( struct gpio_chip * chip )
+
+Register isr for gpio chip ACPI events
+
+Parameters
+  struct gpio_chip *chip
+    GPIO chip
+
+Description
+  ACPI5 platforms can use GPIO signaled ACPI events. These GPIO interrupts are
+handled by ACPI event methods which need to be called from the GPIO
+chip’s interrupt handler. acpi_gpiochip_request_interrupts() finds out which
+GPIO pins have ACPI event methods and assigns interrupt handlers that calls
+the ACPI event methods for those pins.

@@ -1,0 +1,15 @@
+Function: int jbd2_journal_flush ( journal_t * journal , unsigned int flags )
+
+Flush journal
+
+Parameters
+  journal_t *journal
+    Journal to act on.
+  unsigned int flags
+    optional operation on the journal blocks after the flush (see below)
+
+Description
+  Flush all data for a given journal to disk and empty the journal.
+Filesystems can use this when remounting readonly to ensure that
+recovery does not need to happen on remount. Optionally, a discard or zeroout
+can be issued on the journal blocks after flushing.

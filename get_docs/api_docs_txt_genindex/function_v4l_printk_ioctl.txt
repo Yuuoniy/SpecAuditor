@@ -1,0 +1,12 @@
+Function: void v4l_printk_ioctl ( const char * prefix , unsigned int cmd )
+
+Ancillary routine that prints the ioctl in a human-readable format.
+
+Parameters
+  const char *prefix
+    prefix to be added at the ioctl prints.
+  unsigned int cmd
+    ioctl name
+
+Description
+  Note

@@ -1,0 +1,13 @@
+Macro: DEFINE_XARRAY
+
+
+
+Parameters
+  name
+    A string that names your XArray.
+
+Description
+  This is intended for file scope definitions of XArrays.  It declares
+and initialises an empty XArray with the chosen name.  It is equivalent
+to calling xa_init() on the array, but it does the initialisation at
+compiletime instead of runtime.

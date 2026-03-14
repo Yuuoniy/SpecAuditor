@@ -1,0 +1,7 @@
+Function: int host1x_syncpt_incr ( struct host1x_syncpt * sp )
+
+increment syncpoint value from CPU, updating cache
+
+Parameters
+  struct host1x_syncpt *sp
+    host1x syncpoint

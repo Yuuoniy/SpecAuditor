@@ -1,0 +1,12 @@
+Function: void wiphy_unregister ( struct wiphy * wiphy )
+
+deregister a wiphy from cfg80211
+
+Parameters
+  struct wiphy *wiphy
+    The wiphy to unregister.
+
+Description
+  After this call, no more requests can be made with this priv
+pointer, but the call may sleep to wait for an outstanding
+request that is being handled.

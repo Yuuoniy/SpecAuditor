@@ -1,0 +1,14 @@
+Function: int drm_panel_dp_aux_backlight ( struct drm_panel * panel , struct drm_dp_aux * aux )
+
+create and use DP AUX backlight
+
+Parameters
+  struct drm_panel *panel
+    DRM panel
+  struct drm_dp_aux *aux
+    The DP AUX channel to use
+
+Description
+  Use this function to create and handle backlight if your panel
+supports backlight control over DP AUX channel using DPCD
+registers as per VESA’s standard backlight control interface.

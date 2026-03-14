@@ -1,0 +1,13 @@
+Struct: struct rkisp1_cif_isp_bls_fixed_val
+
+BLS fixed subtraction values
+
+Members
+  r
+    Fixed (signed!) subtraction value for Bayer pattern R
+  gr
+    Fixed (signed!) subtraction value for Bayer pattern Gr
+  gb
+    Fixed (signed!) subtraction value for Bayer pattern Gb
+  b
+    Fixed (signed!) subtraction value for Bayer pattern B

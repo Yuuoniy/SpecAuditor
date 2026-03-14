@@ -1,0 +1,7 @@
+Function: void media_entity_enum_cleanup ( struct media_entity_enum * ent_enum )
+
+Release resources of an entity enumeration
+
+Parameters
+  struct media_entity_enum *ent_enum
+    Entity enumeration to be released

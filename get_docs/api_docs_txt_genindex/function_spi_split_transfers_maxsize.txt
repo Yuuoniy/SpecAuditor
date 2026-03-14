@@ -1,0 +1,16 @@
+Function: int spi_split_transfers_maxsize ( struct spi_controller * ctlr , struct spi_message * msg , size_t maxsize )
+
+split spi transfers into multiple transfers when an individual transfer exceeds a certain size
+
+Parameters
+  struct spi_controller *ctlr
+    the spi_controller for this transfer
+  struct spi_message *msg
+    the spi_message to transform
+  size_t maxsize
+    the maximum when to apply this
+
+Description
+  This function allocates resources that are automatically freed during the
+spi message unoptimize phase so this function should only be called from
+optimize_message callbacks.

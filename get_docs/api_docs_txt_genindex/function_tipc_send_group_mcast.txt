@@ -1,0 +1,16 @@
+Function: int tipc_send_group_mcast ( struct socket * sock , struct msghdr * m , int dlen , long timeout )
+
+send message to all members with given identity
+
+Parameters
+  struct socket *sock
+    socket structure
+  struct msghdr *m
+    message to send
+  int dlen
+    total length of message data
+  long timeout
+    timeout to wait for wakeup
+
+Description
+  Called from function tipc_sendmsg() , which has done all sanity checks

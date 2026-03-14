@@ -1,0 +1,10 @@
+Function: struct pwrseq_desc * pwrseq_get ( struct device * dev , const char * target )
+
+Get the power sequencer associated with this device.
+
+Parameters
+  struct device *dev
+    Device for which to get the sequencer.
+  const char *target
+    Name of the target exposed by the sequencer this device wants to
+reach.

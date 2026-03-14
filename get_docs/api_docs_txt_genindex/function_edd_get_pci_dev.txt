@@ -1,0 +1,10 @@
+Function: struct pci_dev * edd_get_pci_dev ( struct edd_device * edev )
+
+finds pci_dev that matches edev
+
+Parameters
+  struct edd_device *edev
+    edd_device
+
+Description
+  Returns pci_dev if found, or NULL

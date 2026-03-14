@@ -1,0 +1,15 @@
+Function: int bitmap_pos_to_ord ( const unsigned long * buf , unsigned int pos , unsigned int nbits )
+
+find ordinal of set bit at given position in bitmap
+
+Parameters
+  const unsigned long *buf
+    pointer to a bitmap
+  unsigned int pos
+    a bit position in buf (0 <= pos < nbits )
+  unsigned int nbits
+    number of valid bit positions in buf
+
+Description
+  Map the bit at position pos in buf (of length nbits ) to the
+ordinal of which set bit it is.  If it is not set or if pos is not a valid bit position, map to -1.

@@ -1,0 +1,11 @@
+Function: void ttm_lru_bulk_move_tail ( struct ttm_lru_bulk_move * bulk )
+
+bulk move range of resources to the LRU tail.
+
+Parameters
+  struct ttm_lru_bulk_move *bulk
+    bulk move structure
+
+Description
+  Bulk move BOs to the LRU tail, only valid to use when driver makes sure that
+resource order never changes. Should be called with ttm_device.lru_lock held.

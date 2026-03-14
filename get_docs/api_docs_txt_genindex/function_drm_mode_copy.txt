@@ -1,0 +1,13 @@
+Function: void drm_mode_copy ( struct drm_display_mode * dst , const struct drm_display_mode * src )
+
+copy the mode
+
+Parameters
+  struct drm_display_mode *dst
+    mode to overwrite
+  const struct drm_display_mode *src
+    mode to copy
+
+Description
+  Copy an existing mode into another mode, preserving the
+list head of the destination mode.

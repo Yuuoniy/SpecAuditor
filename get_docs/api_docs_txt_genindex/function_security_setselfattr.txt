@@ -1,0 +1,17 @@
+Function: int security_setselfattr ( unsigned int attr , struct lsm_ctx __user * uctx , u32 size , u32 flags )
+
+Set an LSM attribute on the current process.
+
+Parameters
+  unsigned int attr
+    which attribute to set
+  struct lsm_ctx __user *uctx
+    the user-space source for the information
+  u32 size
+    the size of the data
+  u32 flags
+    reserved for future use, must be 0
+
+Description
+  Set an LSM attribute for the current process. The LSM, attribute
+and new value are included in uctx .

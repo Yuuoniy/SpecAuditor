@@ -1,0 +1,11 @@
+Struct: struct i2c_lock_operations
+
+represent I2C locking operations
+
+Members
+  lock_bus
+    Get exclusive access to an I2C bus segment
+  trylock_bus
+    Try to get exclusive access to an I2C bus segment
+  unlock_bus
+    Release exclusive access to an I2C bus segment

@@ -1,0 +1,13 @@
+Function: void ssam_controller_statelock ( struct ssam_controller * c )
+
+Lock the controller against state transitions.
+
+Parameters
+  struct ssam_controller *c
+    The controller to lock.
+
+Description
+  Lock the controller against state transitions. Holding this lock guarantees
+that the controller will not transition between states, i.e. if the
+controller is in state “started”, when this lock has been acquired, it will
+remain in this state at least until the lock has been released.

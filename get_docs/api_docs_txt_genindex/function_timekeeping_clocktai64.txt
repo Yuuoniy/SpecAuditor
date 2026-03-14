@@ -1,0 +1,6 @@
+Function: struct timespec64 timekeeping_clocktai64 ( void )
+
+These are replaced by ktime_get_raw() / ktime_get_raw_ts64() , ktime_get_clocktai() / ktime_get_clocktai_ts64() as well
+as ktime_get_boottime() / ktime_get_boottime_ts64() .
+However, if the particular choice of clock source is not
+important for the user, consider converting to ktime_get() / ktime_get_ts64() instead for consistency.

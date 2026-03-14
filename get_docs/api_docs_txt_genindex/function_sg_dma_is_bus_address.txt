@@ -1,0 +1,11 @@
+Function: bool sg_dma_is_bus_address ( struct scatterlist * sg )
+
+Return whether a given segment was marked as a bus address
+
+Parameters
+  struct scatterlist *sg
+    SG entry
+
+Description
+  Returns true if sg_dma_mark_bus_address() has been called on
+this segment.

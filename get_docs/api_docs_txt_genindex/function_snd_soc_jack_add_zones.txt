@@ -1,0 +1,15 @@
+Function: int snd_soc_jack_add_zones ( struct snd_soc_jack * jack , int count , struct snd_soc_jack_zone * zones )
+
+Associate voltage zones with jack
+
+Parameters
+  struct snd_soc_jack *jack
+    ASoC jack
+  int count
+    Number of zones
+  struct snd_soc_jack_zone *zones
+    Array of zones
+
+Description
+  After this function has been called the zones specified in the
+array will be associated with the jack.

@@ -1,0 +1,11 @@
+Function: void migrate_vma_pages ( struct migrate_vma * migrate )
+
+migrate meta-data from src page to dst page
+
+Parameters
+  struct migrate_vma *migrate
+    migrate struct containing all migration information
+
+Description
+  This migrates struct page meta-data from source struct page to destination struct page . This effectively finishes the migration from source page to the
+destination page.

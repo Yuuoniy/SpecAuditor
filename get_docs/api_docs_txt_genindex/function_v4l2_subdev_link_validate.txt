@@ -1,0 +1,14 @@
+Function: int v4l2_subdev_link_validate ( struct media_link * link )
+
+validates a media link
+
+Parameters
+  struct media_link *link
+    pointer to struct media_link
+
+Description
+  This function calls the subdev’s link_validate ops to validate
+if a media link is valid for streaming. It also internally
+calls v4l2_subdev_link_validate_default() to ensure that
+width, height and the media bus pixel code are equal on both
+source and sink of the link.

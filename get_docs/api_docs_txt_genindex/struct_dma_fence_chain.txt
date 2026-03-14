@@ -1,0 +1,25 @@
+Struct: struct dma_fence_chain
+
+fence to represent an node of a fence chain
+
+Members
+  base
+    fence base class
+  prev
+    previous fence of the chain
+  prev_seqno
+    original previous seqno before garbage collection
+  fence
+    encapsulated fence
+  {unnamed_union}
+    anonymous
+  cb
+    callback for signaling This is used to add the callback for signaling the
+complection of the fence chain. Never used at the same time
+as the irq work.
+  work
+    irq work item for signaling Irq work structure to allow us to add the callback without
+running into lock inversion. Never used at the same time as
+the callback.
+  lock
+    spinlock for fence handling

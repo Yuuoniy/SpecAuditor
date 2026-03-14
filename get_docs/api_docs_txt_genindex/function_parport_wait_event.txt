@@ -1,0 +1,14 @@
+Function: int parport_wait_event ( struct parport * port , signed long timeout )
+
+wait for an event on a parallel port
+
+Parameters
+  struct parport *port
+    port to wait on
+  signed long timeout
+    time to wait (in jiffies)
+
+Description
+  This function waits for up to timeout jiffies for an
+interrupt to occur on a parallel port.  If the port timeout is
+set to zero, it returns immediately.

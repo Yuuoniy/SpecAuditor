@@ -1,0 +1,12 @@
+Function: void amdgpu_vm_prt_fini ( struct amdgpu_device * adev , struct amdgpu_vm * vm )
+
+finish all prt mappings
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+  struct amdgpu_vm *vm
+    requested vm
+
+Description
+  Register a cleanup callback to disable PRT support after VM dies.

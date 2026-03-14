@@ -1,0 +1,15 @@
+Function: int ata_dev_same_device ( struct ata_device * dev , unsigned int new_class , const u16 * new_id )
+
+Determine whether new ID matches configured device
+
+Parameters
+  struct ata_device *dev
+    device to compare against
+  unsigned int new_class
+    class of the new device
+  const u16 *new_id
+    IDENTIFY page of the new device
+
+Description
+  Compare new_class and new_id against dev and determine
+whether dev is the device indicated by new_class and new_id .

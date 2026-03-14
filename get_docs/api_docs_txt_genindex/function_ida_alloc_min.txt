@@ -1,0 +1,14 @@
+Function: int ida_alloc_min ( struct ida * ida , unsigned int min , gfp_t gfp )
+
+Allocate an unused ID.
+
+Parameters
+  struct ida *ida
+    IDA handle.
+  unsigned int min
+    Lowest ID to allocate.
+  gfp_t gfp
+    Memory allocation flags.
+
+Description
+  Allocate an ID between min and INT_MAX , inclusive.

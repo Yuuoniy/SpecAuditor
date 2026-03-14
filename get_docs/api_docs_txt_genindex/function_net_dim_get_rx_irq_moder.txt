@@ -1,0 +1,9 @@
+Function: struct dim_cq_moder net_dim_get_rx_irq_moder ( struct net_device * dev , struct dim * dim )
+
+get DIM rx results based on profile_ix
+
+Parameters
+  struct net_device *dev
+    target network device
+  struct dim *dim
+    DIM context

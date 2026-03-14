@@ -1,0 +1,12 @@
+Function: bool atomic_sub_and_test ( int i , atomic_t * v )
+
+atomic subtract and test if zero with full ordering
+
+Parameters
+  int i
+    int value to subtract
+  atomic_t *v
+    pointer to atomic_t
+
+Description
+  Atomically updates v to ( v - i ) with full ordering.

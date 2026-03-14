@@ -1,0 +1,7 @@
+Function: int dvb_unregister_adapter ( struct dvb_adapter * adap )
+
+Unregisters a DVB adapter
+
+Parameters
+  struct dvb_adapter *adap
+    pointer to struct dvb_adapter

@@ -1,0 +1,13 @@
+Struct: struct ssam_event_queue
+
+Queue for completing received events.
+
+Members
+  cplt
+    Reference to the completion system on which this queue is active.
+  lock
+    The lock for any operation on the queue.
+  head
+    The list-head of the queue.
+  work
+    The struct work_struct performing completion work for this queue.

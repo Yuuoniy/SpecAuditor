@@ -1,0 +1,19 @@
+Struct: struct tda10071_platform_data
+
+Platform data for the tda10071 driver
+
+Members
+  clk
+    Clock frequency.
+  i2c_wr_max
+    Max bytes I2C adapter can write at once.
+  ts_mode
+    TS mode.
+  spec_inv
+    Input spectrum inversion.
+  pll_multiplier
+    PLL multiplier.
+  tuner_i2c_addr
+    CX24118A tuner I2C address (0x14, 0x54, ...).
+  get_dvb_frontend
+    Get DVB frontend.

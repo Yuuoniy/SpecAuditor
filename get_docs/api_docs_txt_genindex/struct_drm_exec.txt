@@ -1,0 +1,19 @@
+Struct: struct drm_exec
+
+Execution context
+
+Members
+  flags
+    Flags to control locking behavior
+  ticket
+    WW ticket used for acquiring locks
+  num_objects
+    number of objects locked
+  max_objects
+    maximum objects in array
+  objects
+    array of the locked objects
+  contended
+    contended GEM object we backed off for
+  prelocked
+    already locked GEM object due to contention

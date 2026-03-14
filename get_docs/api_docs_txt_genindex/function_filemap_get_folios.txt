@@ -1,0 +1,18 @@
+Function: unsigned filemap_get_folios ( struct address_space * mapping , pgoff_t * start , pgoff_t end , struct folio_batch * fbatch )
+
+Get a batch of folios
+
+Parameters
+  struct address_space *mapping
+    The address_space to search
+  pgoff_t *start
+    The starting page index
+  pgoff_t end
+    The final page index (inclusive)
+  struct folio_batch *fbatch
+    The batch to fill.
+
+Description
+  Search for and return a batch of folios in the mapping starting at
+index start and up to index end (inclusive).  The folios are returned
+in fbatch with an elevated reference count.

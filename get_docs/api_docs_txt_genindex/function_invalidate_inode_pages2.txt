@@ -1,0 +1,11 @@
+Function: int invalidate_inode_pages2 ( struct address_space * mapping )
+
+remove all pages from an address_space
+
+Parameters
+  struct address_space *mapping
+    the address_space
+
+Description
+  Any pages which are found to be mapped into pagetables are unmapped prior to
+invalidation.

@@ -1,0 +1,12 @@
+Function: void snd_ctl_disconnect_layer ( struct snd_ctl_layer_ops * lops )
+
+disconnect control layer
+
+Parameters
+  struct snd_ctl_layer_ops *lops
+    operation structure
+
+Description
+  It is expected that the information about tracked cards
+is freed before this call (the disconnect callback is
+not called here).

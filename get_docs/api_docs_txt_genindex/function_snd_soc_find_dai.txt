@@ -1,0 +1,12 @@
+Function: struct snd_soc_dai * snd_soc_find_dai ( const struct snd_soc_dai_link_component * dlc )
+
+Find a registered DAI
+
+Parameters
+  const struct snd_soc_dai_link_component *dlc
+    name of the DAI or the DAI driver and optional component info to match
+
+Description
+  This function will search all registered components and their DAIs to
+find the DAI of the same name. The component’s of_node and name
+should also match if being specified.

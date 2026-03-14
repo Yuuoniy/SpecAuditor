@@ -1,0 +1,48 @@
+Function: struct i915_sched_engine
+
+scheduler engine
+
+Members
+  ref
+    reference count of schedule engine object
+  lock
+    protects requests in priority lists, requests, hold and
+tasklet while running
+  requests
+    list of requests inflight on this schedule engine
+  hold
+    list of ready requests, but on hold
+  tasklet
+    softirq tasklet for submission
+  default_priolist
+    priority list for I915_PRIORITY_NORMAL
+  queue_priority_hint
+    Highest pending priority. When we add requests into the queue, or adjust the priority of
+executing requests, we compute the maximum priority of those
+pending requests. We can then use this value to determine if
+we need to preempt the executing requests to service the queue.
+However, since the we may have recorded the priority of an inflight
+request we wanted to preempt but since completed, at the time of
+dequeuing the priority hint may no longer may match the highest
+available request priority.
+  queue
+    queue of requests, in priority lists
+  no_priolist
+    priority lists disabled
+  private_data
+    private data of the submission backend
+  destroy
+    destroy schedule engine / cleanup in backend
+  disabled
+    check if backend has disabled submission
+  kick_backend
+    kick backend after a request’s priority has changed
+  bump_inflight_request_prio
+    update priority of an inflight request
+  retire_inflight_request_prio
+    indicate request is retired to
+priority tracking
+  schedule
+    adjust priority of request Call when the priority on a request has changed and it and its
+dependencies may need rescheduling. Note the request itself may
+not be ready to run!

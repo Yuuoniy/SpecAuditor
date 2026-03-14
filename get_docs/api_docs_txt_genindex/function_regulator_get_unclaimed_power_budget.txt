@@ -1,0 +1,7 @@
+Function: int regulator_get_unclaimed_power_budget ( struct regulator * regulator )
+
+get regulator unclaimed power budget
+
+Parameters
+  struct regulator *regulator
+    regulator source

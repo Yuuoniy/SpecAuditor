@@ -1,0 +1,11 @@
+Function: unsigned int atapi_xlat ( struct ata_queued_cmd * qc )
+
+Initialize PACKET taskfile
+
+Parameters
+  struct ata_queued_cmd *qc
+    command structure to be initialized
+
+Description
+  LOCKING:
+spin_lock_irqsave(host lock)

@@ -1,0 +1,11 @@
+Function: void ttm_pool_fini ( struct ttm_pool * pool )
+
+Cleanup a pool
+
+Parameters
+  struct ttm_pool *pool
+    the pool to clean up
+
+Description
+  Free all pages in the pool and unregister the types from the global
+shrinker.

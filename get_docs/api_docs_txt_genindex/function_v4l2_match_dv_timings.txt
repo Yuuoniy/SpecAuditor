@@ -1,0 +1,18 @@
+Function: bool v4l2_match_dv_timings ( const struct v4l2_dv_timings * measured , const struct v4l2_dv_timings * standard , unsigned pclock_delta , bool match_reduced_fps )
+
+do two timings match?
+
+Parameters
+  const struct v4l2_dv_timings *measured
+    the measured timings data.
+  const struct v4l2_dv_timings *standard
+    the timings according to the standard.
+  unsigned pclock_delta
+    maximum delta in Hz between standard->pixelclock and
+the measured timings.
+  bool match_reduced_fps
+    if true, then fail if V4L2_DV_FL_REDUCED_FPS does not
+match.
+
+Description
+  Returns true if the two timings match, returns false otherwise.

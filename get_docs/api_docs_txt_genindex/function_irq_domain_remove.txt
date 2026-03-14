@@ -1,0 +1,12 @@
+Function: void irq_domain_remove ( struct irq_domain * domain )
+
+Remove an irq domain.
+
+Parameters
+  struct irq_domain *domain
+    domain to remove
+
+Description
+  This routine is used to remove an irq domain. The caller must ensure
+that all mappings within the domain have been disposed of prior to
+use, depending on the revmap type.

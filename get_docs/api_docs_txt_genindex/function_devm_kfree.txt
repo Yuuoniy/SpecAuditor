@@ -1,0 +1,12 @@
+Function: void devm_kfree ( struct device * dev , const void * p )
+
+Resource-managed kfree
+
+Parameters
+  struct device *dev
+    Device this memory belongs to
+  const void *p
+    Memory to free
+
+Description
+  Free memory allocated with devm_kmalloc() .

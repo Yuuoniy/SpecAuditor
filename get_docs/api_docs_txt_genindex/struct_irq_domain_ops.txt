@@ -1,0 +1,33 @@
+Struct: struct irq_domain_ops
+
+Methods for irq_domain objects
+
+Members
+  match
+    Match an interrupt controller device node to a domain, returns
+1 on a match
+  select
+    Match an interrupt controller fw specification. It is more generic
+than match as it receives a complete struct irq_fwspec . Therefore, select is preferred if provided. Returns 1 on a match.
+  map
+    Create or update a mapping between a virtual irq number and a hw
+irq number. This is called only once for a given mapping.
+  unmap
+    Dispose of such a mapping
+  xlate
+    Given a device tree node and interrupt specifier, decode
+the hardware irq number and linux irq type value.
+  alloc
+    Allocate nr_irqs interrupts starting from virq .
+  free
+    Free nr_irqs interrupts starting from virq .
+  activate
+    Activate one interrupt in HW ( irqd ). If reserve is set, only
+reserve the vector. If unset, assign the vector (called from request_irq() ).
+  deactivate
+    Disarm one interrupt ( irqd ).
+  translate
+    Given fwspec , decode the hardware irq number ( out_hwirq ) and
+linux irq type value ( out_type ). This is a generalised xlate (over struct irq_fwspec ) and is preferred if provided.
+  debug_show
+    For domains to show specific data for an interrupt in debugfs.

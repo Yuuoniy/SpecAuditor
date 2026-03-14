@@ -1,0 +1,9 @@
+Struct: struct xe_ggtt_pt_ops
+
+GGTT Page table operations Which can vary from platform to platform.
+
+Members
+  pte_encode_flags
+    Encode PTE flags for a given BO
+  ggtt_set_pte
+    Directly write into GGTT’s PTE

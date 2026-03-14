@@ -1,0 +1,10 @@
+Function: void i915_gem_object_make_shrinkable ( struct drm_i915_gem_object * obj )
+
+Move the object to the tail of the shrinkable list. Objects on this list might be swapped out. Used with WILLNEED objects.
+
+Parameters
+  struct drm_i915_gem_object *obj
+    The GEM object.
+
+Description
+  MUST only be called on objects which have backing pages.

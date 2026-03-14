@@ -1,0 +1,12 @@
+Function: const unsigned long * gpiochip_query_valid_mask ( const struct gpio_chip * gc )
+
+return the GPIO validity information
+
+Parameters
+  const struct gpio_chip *gc
+    gpio chip which validity information is queried
+
+Description
+  Some GPIO chips may support configurations where some of the pins aren’t
+available. These chips can have valid_mask set to represent the valid
+GPIOs. This function can be used to retrieve this information.

@@ -1,0 +1,17 @@
+Function: struct clk * devm_v4l2_sensor_clk_get_legacy ( struct device * dev , const char * id , bool fixed_rate , unsigned long clk_rate )
+
+lookup and obtain a reference to a clock producer for a camera sensor.
+
+Parameters
+  struct device *dev
+    device for v4l2 sensor clock “consumer”
+  const char *id
+    clock consumer ID
+  bool fixed_rate
+    interpret the clk_rate as a fixed rate or default rate
+  unsigned long clk_rate
+    the clock rate
+
+Description
+  This function behaves the same way as devm_v4l2_sensor_clk_get() except that
+it extends the behaviour on ACPI platforms to all platforms.

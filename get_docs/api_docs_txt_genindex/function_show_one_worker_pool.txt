@@ -1,0 +1,7 @@
+Function: void show_one_worker_pool ( struct worker_pool * pool )
+
+dump state of specified worker pool
+
+Parameters
+  struct worker_pool *pool
+    worker pool whose state will be printed

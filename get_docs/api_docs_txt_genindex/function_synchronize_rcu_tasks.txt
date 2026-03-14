@@ -1,0 +1,14 @@
+Function: void synchronize_rcu_tasks ( void )
+
+wait until an rcu-tasks grace period has elapsed.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Control will return to the caller some time after a full rcu-tasks
+grace period has elapsed, in other words after all currently
+executing rcu-tasks read-side critical sections have elapsed.  These
+read-side critical sections are delimited by calls to schedule() , cond_resched_tasks_rcu_qs() , idle execution, userspace execution, calls
+to synchronize_rcu_tasks() , and (in theory, anyway) cond_resched() .

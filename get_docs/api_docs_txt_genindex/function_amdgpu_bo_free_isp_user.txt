@@ -1,0 +1,10 @@
+Function: void amdgpu_bo_free_isp_user ( struct amdgpu_bo * bo )
+
+free BO for isp use
+
+Parameters
+  struct amdgpu_bo *bo
+    amdgpu isp user BO to free
+
+Description
+  unpin and unref BO for isp internal use.

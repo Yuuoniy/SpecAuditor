@@ -1,0 +1,16 @@
+Function: void __starget_for_each_device ( struct scsi_target * starget , void * data , void ( * fn ) ( struct scsi_device * , void * ) )
+
+helper to walk all devices of a target (UNLOCKED)
+
+Parameters
+  struct scsi_target *starget
+    target whose devices we want to iterate over.
+  void *data
+    parameter for callback fn()
+  void (*fn)(struct scsi_device *, void *)
+    callback function that is invoked for each device
+
+Description
+  This traverses over each device of starget .  It does _not_
+take a reference on the scsi_device, so the whole loop must be
+protected by shost->host_lock.

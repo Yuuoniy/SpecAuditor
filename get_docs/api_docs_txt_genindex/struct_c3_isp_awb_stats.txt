@@ -1,0 +1,7 @@
+Struct: struct c3_isp_awb_stats
+
+Auto white balance statistics information.
+
+Members
+  stats
+    array of auto white balance statistics

@@ -1,0 +1,9 @@
+Struct: struct v4l2_async_subdev_endpoint
+
+Entry in sub-device’s fwnode list
+
+Members
+  async_subdev_endpoint_entry
+    An entry in async_subdev_endpoint_list of struct v4l2_subdev
+  endpoint
+    Endpoint fwnode agains which to match the sub-device

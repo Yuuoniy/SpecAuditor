@@ -1,0 +1,11 @@
+Function: int pci_bridge_secondary_bus_reset ( struct pci_dev * dev )
+
+Reset the secondary bus on a PCI bridge.
+
+Parameters
+  struct pci_dev *dev
+    Bridge device
+
+Description
+  Use the bridge control register to assert reset on the secondary bus.
+Devices on the secondary bus are left in power-on state.

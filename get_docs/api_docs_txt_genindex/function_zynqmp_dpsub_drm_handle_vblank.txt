@@ -1,0 +1,11 @@
+Function: void zynqmp_dpsub_drm_handle_vblank ( struct zynqmp_dpsub * dpsub )
+
+Handle the vblank event
+
+Parameters
+  struct zynqmp_dpsub *dpsub
+    DisplayPort subsystem
+
+Description
+  This function handles the vblank interrupt, and sends an event to
+CRTC object. This will be called by the DP vblank interrupt handler.

@@ -1,0 +1,15 @@
+Function: int devm_pci_remap_iospace ( struct device * dev , const struct resource * res , phys_addr_t phys_addr )
+
+Managed pci_remap_iospace()
+
+Parameters
+  struct device *dev
+    Generic device to remap IO address for
+  const struct resource *res
+    Resource describing the I/O space
+  phys_addr_t phys_addr
+    physical address of range to be mapped
+
+Description
+  Managed pci_remap_iospace() .  Map is automatically unmapped on driver
+detach.

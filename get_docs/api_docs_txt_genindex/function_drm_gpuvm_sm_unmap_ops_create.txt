@@ -1,0 +1,15 @@
+Function: struct drm_gpuva_ops * drm_gpuvm_sm_unmap_ops_create ( struct drm_gpuvm * gpuvm , u64 req_addr , u64 req_range )
+
+creates the drm_gpuva_ops to split on unmap
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm representing the GPU VA space
+  u64 req_addr
+    the start address of the range to unmap
+  u64 req_range
+    the range of the mappings to unmap
+
+Description
+  This function creates a list of operations to perform unmapping and, if
+required, splitting of the mappings overlapping the unmap range.

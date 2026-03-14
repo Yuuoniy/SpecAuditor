@@ -1,0 +1,45 @@
+Function: struct v4l2_ctrl_handler
+
+The control handler keeps track of all the controls: both the controls owned by the handler and those inherited from other handlers.
+
+Members
+  _lock
+    Default for “lock”.
+  lock
+    Lock to control access to this handler and its controls.
+May be replaced by the user right after init.
+  ctrls
+    The list of controls owned by this handler.
+  ctrl_refs
+    The list of control references.
+  cached
+    The last found control reference. It is common that the same
+control is needed multiple times, so this is a simple
+optimization.
+  buckets
+    Buckets for the hashing. Allows for quick control lookup.
+  notify
+    A notify callback that is called whenever the control changes
+value.
+Note that the handler’s lock is held when the notify function
+is called!
+  notify_priv
+    Passed as argument to the v4l2_ctrl notify callback.
+  nr_of_buckets
+    Total number of buckets in the array.
+  error
+    The error code of the first failed control addition.
+  request_is_queued
+    True if the request was queued.
+  requests
+    List to keep track of open control handler request objects.
+For the parent control handler ( req_obj.ops == NULL) this
+is the list header. When the parent control handler is
+removed, it has to unbind and put all these requests since
+they refer to the parent.
+  requests_queued
+    List of the queued requests. This determines the order
+in which these controls are applied. Once the request is
+completed it is removed from this list.
+  req_obj
+    The struct media_request_object , used to link into a struct media_request . This request object has a refcount.

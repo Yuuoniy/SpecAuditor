@@ -1,0 +1,12 @@
+Function: short console_srcu_read_flags ( const struct console * con )
+
+Locklessly read flags of a possibly registered console
+
+Parameters
+  const struct console *con
+    struct console pointer of console to read flags from
+
+Description
+  Locklessly reading con->flags provides a consistent read value because
+there is at most one CPU modifying con->flags and that CPU is using only
+read-modify-write operations to do so.

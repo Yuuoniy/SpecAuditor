@@ -1,0 +1,2 @@
+Function: int oa_tc6_write_registers ( struct oa_tc6 * tc6 , u32 address , u32 value [ ] , u8 length )
+

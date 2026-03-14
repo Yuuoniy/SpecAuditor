@@ -1,0 +1,21 @@
+Function: int snd_devm_card_new ( struct device * parent , int idx , const char * xid , struct module * module , size_t extra_size , struct snd_card * * card_ret )
+
+managed snd_card object creation
+
+Parameters
+  struct device *parent
+    the parent device object
+  int idx
+    card index (address) [0 ... (SNDRV_CARDS-1)]
+  const char *xid
+    card identification (ASCII string)
+  struct module *module
+    top level module for locking
+  size_t extra_size
+    allocate this extra size after the main soundcard structure
+  struct snd_card **card_ret
+    the pointer to store the created card instance
+
+Description
+  This function works like snd_card_new() but manages the allocated resource
+via devres, i.e. you don’t need to free explicitly.

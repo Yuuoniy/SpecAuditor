@@ -1,0 +1,13 @@
+Function: int mod_timer_pending ( struct timer_list * timer , unsigned long expires )
+
+Modify a pending timer’s timeout
+
+Parameters
+  struct timer_list *timer
+    The pending timer to be modified
+  unsigned long expires
+    New absolute timeout in jiffies
+
+Description
+  mod_timer_pending() is the same for pending timers as mod_timer() , but
+will not activate inactive timers.

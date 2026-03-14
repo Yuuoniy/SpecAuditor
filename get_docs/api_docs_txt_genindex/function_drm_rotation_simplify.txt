@@ -1,0 +1,14 @@
+Function: unsigned int drm_rotation_simplify ( unsigned int rotation , unsigned int supported_rotations )
+
+Try to simplify the rotation
+
+Parameters
+  unsigned int rotation
+    Rotation to be simplified
+  unsigned int supported_rotations
+    Supported rotations
+
+Description
+  Attempt to simplify the rotation to a form that is supported.
+Eg. if the hardware supports everything except DRM_MODE_REFLECT_X
+one could call this function like this:

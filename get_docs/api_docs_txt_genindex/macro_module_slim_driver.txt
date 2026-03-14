@@ -1,0 +1,12 @@
+Macro: module_slim_driver
+
+
+
+Parameters
+  __slim_driver
+    slimbus_driver struct
+
+Description
+  Helper macro for SLIMbus drivers which do not do anything special in module
+init/exit. This eliminates a lot of boilerplate. Each module may only
+use this macro once, and calling it replaces module_init() and module_exit()

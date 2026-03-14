@@ -1,0 +1,15 @@
+Function: void dma_resv_set_deadline ( struct dma_resv * obj , enum dma_resv_usage usage , ktime_t deadline )
+
+Set a deadline on reservation’s objects fences
+
+Parameters
+  struct dma_resv *obj
+    the reservation object
+  enum dma_resv_usage usage
+    controls which fences to include, see enum dma_resv_usage .
+  ktime_t deadline
+    the requested deadline (MONOTONIC)
+
+Description
+  May be called without holding the dma_resv lock.  Sets deadline on
+all fences filtered by usage .

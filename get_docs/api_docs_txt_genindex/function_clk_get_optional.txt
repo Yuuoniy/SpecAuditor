@@ -1,0 +1,13 @@
+Function: struct clk * clk_get_optional ( struct device * dev , const char * id )
+
+lookup and obtain a reference to an optional clock producer.
+
+Parameters
+  struct device *dev
+    device for clock “consumer”
+  const char *id
+    clock consumer ID
+
+Description
+  Behaves the same as clk_get() except where there is no clock producer. In
+this case, instead of returning -ENOENT, the function returns NULL.

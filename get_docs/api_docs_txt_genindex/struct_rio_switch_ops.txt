@@ -1,0 +1,21 @@
+Struct: struct rio_switch_ops
+
+Per-switch operations
+
+Members
+  owner
+    The module owner of this structure
+  add_entry
+    Callback for switch-specific route add function
+  get_entry
+    Callback for switch-specific route get function
+  clr_table
+    Callback for switch-specific clear route table function
+  set_domain
+    Callback for switch-specific domain setting function
+  get_domain
+    Callback for switch-specific domain get function
+  em_init
+    Callback for switch-specific error management init function
+  em_handle
+    Callback for switch-specific error management handler function

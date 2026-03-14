@@ -1,0 +1,13 @@
+Function: int ib_ud_header_pack ( struct ib_ud_header * header , void * buf )
+
+Pack UD header struct into wire format
+
+Parameters
+  struct ib_ud_header *header
+    UD header struct
+  void *buf
+    Buffer to pack into
+
+Description
+  ib_ud_header_pack() packs the UD header structure header into wire
+format in the buffer buf .

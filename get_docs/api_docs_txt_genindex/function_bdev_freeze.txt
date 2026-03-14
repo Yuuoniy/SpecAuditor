@@ -1,0 +1,16 @@
+Function: int bdev_freeze ( struct block_device * bdev )
+
+lock a filesystem and force it into a consistent state
+
+Parameters
+  struct block_device *bdev
+    blockdevice to lock
+
+Description
+  If a superblock is found on this device, we take the s_umount semaphore
+on it to make sure nobody unmounts until the snapshot creation is done.
+The reference counter (bd_fsfreeze_count) guarantees that only the last
+unfreeze process can unfreeze the frozen filesystem actually when multiple
+freeze requests arrive simultaneously. It counts up in bdev_freeze() and
+count down in bdev_thaw() . When it becomes 0, thaw_bdev() will unfreeze
+actually.

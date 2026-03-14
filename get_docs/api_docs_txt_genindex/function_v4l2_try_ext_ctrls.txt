@@ -1,0 +1,16 @@
+Function: int v4l2_try_ext_ctrls ( struct v4l2_ctrl_handler * hdl , struct video_device * vdev , struct media_device * mdev , struct v4l2_ext_controls * c )
+
+Helper function to implement VIDIOC_TRY_EXT_CTRLS ioctl
+
+Parameters
+  struct v4l2_ctrl_handler *hdl
+    pointer to struct v4l2_ctrl_handler
+  struct video_device *vdev
+    pointer to struct video_device
+  struct media_device *mdev
+    pointer to struct media_device
+  struct v4l2_ext_controls *c
+    pointer to struct v4l2_ext_controls
+
+Description
+  If hdl == NULL then they will all return -EINVAL.

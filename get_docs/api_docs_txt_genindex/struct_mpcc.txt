@@ -1,0 +1,17 @@
+Struct: struct mpcc
+
+MPCC connection and blending configuration for a single MPCC instance.
+
+Members
+  mpcc_id
+    MPCC physical instance.
+  dpp_id
+    DPP input to this MPCC
+  mpcc_bot
+    Pointer to bottom layer MPCC. NULL when not connected.
+  blnd_cfg
+    The blending configuration for this MPCC.
+  sm_cfg
+    stereo mix setting for this MPCC
+  shared_bottom
+    If MPCC output to both OPP and DWB endpoints, true. Otherwise, false.

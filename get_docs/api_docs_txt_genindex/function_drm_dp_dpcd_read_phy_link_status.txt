@@ -1,0 +1,16 @@
+Function: int drm_dp_dpcd_read_phy_link_status ( struct drm_dp_aux * aux , enum drm_dp_phy dp_phy , u8 link_status [ DP_LINK_STATUS_SIZE ] )
+
+get the link status information for a DP PHY
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  enum drm_dp_phy dp_phy
+    the DP PHY to get the link status for
+  u8 link_status[DP_LINK_STATUS_SIZE]
+    buffer to return the status in
+
+Description
+  Fetch the AUX DPCD registers for the DPRX or an LTTPR PHY link status. The
+layout of the returned link_status matches the DPCD register layout of the
+DPRX PHY link status.

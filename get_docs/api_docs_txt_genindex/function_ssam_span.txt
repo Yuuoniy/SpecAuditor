@@ -1,0 +1,9 @@
+Function: struct ssam_span
+
+Reference to a buffer region.
+
+Members
+  ptr
+    Pointer to the buffer region.
+  len
+    Length of the buffer region.

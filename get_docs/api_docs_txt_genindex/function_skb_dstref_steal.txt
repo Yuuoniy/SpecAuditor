@@ -1,0 +1,13 @@
+Function: unsigned long skb_dstref_steal ( struct sk_buff * skb )
+
+return current dst_entry value and clear it
+
+Parameters
+  struct sk_buff *skb
+    buffer
+
+Description
+  Resets skb dst_entry without adjusting its reference count. Useful in
+cases where dst_entry needs to be temporarily reset and restored.
+Note that the returned value cannot be used directly because it
+might contain SKB_DST_NOREF bit.

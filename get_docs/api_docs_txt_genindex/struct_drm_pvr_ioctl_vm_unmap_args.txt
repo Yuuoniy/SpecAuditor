@@ -1,0 +1,15 @@
+Struct: struct drm_pvr_ioctl_vm_unmap_args
+
+Arguments for DRM_IOCTL_PVR_VM_UNMAP .
+
+Members
+  vm_context_handle
+    [IN] Handle for VM context that this mapping
+exists in.
+  _padding_4
+    Reserved. This field must be zeroed.
+  device_addr
+    [IN] Device-virtual address at the start of the target
+mapping. This must be non-zero.
+  size
+    Size in bytes of the target mapping. This must be non-zero.

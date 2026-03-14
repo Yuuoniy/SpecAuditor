@@ -1,0 +1,7 @@
+Function: bool pipe_is_full ( const struct pipe_inode_info * pipe )
+
+Return true if the pipe is full
+
+Parameters
+  const struct pipe_inode_info *pipe
+    the pipe

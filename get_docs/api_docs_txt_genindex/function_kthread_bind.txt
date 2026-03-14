@@ -1,0 +1,14 @@
+Function: void kthread_bind ( struct task_struct * p , unsigned int cpu )
+
+bind a just-created kthread to a cpu.
+
+Parameters
+  struct task_struct *p
+    thread created by kthread_create() .
+  unsigned int cpu
+    cpu (might not be online, must be possible) for k to run on.
+
+Description
+  This function is equivalent to set_cpus_allowed() ,
+except that cpu doesn’t need to be online, and the thread must be
+stopped (i.e., just returned from kthread_create() ).

@@ -1,0 +1,9 @@
+Function: bool ssam_cplt_submit ( struct ssam_cplt * cplt , struct work_struct * work )
+
+Submit a work item to the completion system workqueue.
+
+Parameters
+  struct ssam_cplt *cplt
+    The completion system.
+  struct work_struct *work
+    The work item to submit.

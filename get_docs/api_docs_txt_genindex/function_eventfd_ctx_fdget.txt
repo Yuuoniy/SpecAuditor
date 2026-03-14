@@ -1,0 +1,11 @@
+Function: struct eventfd_ctx * eventfd_ctx_fdget ( int fd )
+
+Acquires a reference to the internal eventfd context.
+
+Parameters
+  int fd
+    [in] Eventfd file descriptor.
+
+Description
+  Returns a pointer to the internal eventfd context, otherwise the error
+pointers returned by the following functions:

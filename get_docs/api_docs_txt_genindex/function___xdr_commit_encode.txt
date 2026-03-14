@@ -1,0 +1,12 @@
+Function: void __xdr_commit_encode ( struct xdr_stream * xdr )
+
+Ensure all data is written to buffer
+
+Parameters
+  struct xdr_stream *xdr
+    pointer to xdr_stream
+
+Description
+  We handle encoding across page boundaries by giving the caller a
+temporary location to write to, then later copying the data into
+place; xdr_commit_encode does that copying.

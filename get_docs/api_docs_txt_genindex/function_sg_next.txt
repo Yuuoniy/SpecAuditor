@@ -1,0 +1,12 @@
+Function: struct scatterlist * sg_next ( struct scatterlist * sg )
+
+return the next scatterlist entry in a list
+
+Parameters
+  struct scatterlist *sg
+    The current sg entry
+
+Description
+  Usually the next entry will be sg + 1, but if this sg element is part
+of a chained scatterlist, it could jump to the start of a new
+scatterlist array.

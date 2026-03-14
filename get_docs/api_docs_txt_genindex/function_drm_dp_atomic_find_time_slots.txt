@@ -1,0 +1,20 @@
+Function: int drm_dp_atomic_find_time_slots ( struct drm_atomic_state * state , struct drm_dp_mst_topology_mgr * mgr , struct drm_dp_mst_port * port , int pbn )
+
+Find and add time slots to the state
+
+Parameters
+  struct drm_atomic_state *state
+    global atomic state
+  struct drm_dp_mst_topology_mgr *mgr
+    MST topology manager for the port
+  struct drm_dp_mst_port *port
+    port to find time slots for
+  int pbn
+    bandwidth required for the mode in PBN
+
+Description
+  Allocates time slots to port , replacing any previous time slot allocations it may
+have had. Any atomic drivers which support MST must call this function in
+their drm_encoder_helper_funcs.atomic_check() callback unconditionally to
+change the current time slot allocation for the new state, and ensure the MST
+atomic state is added whenever the state of payloads in the topology changes.

@@ -1,0 +1,19 @@
+Function: ssize_t debug_dump ( debug_info_t * id , struct debug_view * view , char * buf , size_t buf_size , bool reverse )
+
+Get a textual representation of debug info, or as much as fits
+
+Parameters
+  debug_info_t *id
+    Debug information to use
+  struct debug_view *view
+    View with which to dump the debug information
+  char *buf
+    Buffer the textual debug data representation is written to
+  size_t buf_size
+    Size of the buffer, including the trailing ‘0’ byte
+  bool reverse
+    Go backwards from the last written entry
+
+Description
+  This function may be used whenever a textual representation of the debug
+information is required without using an s390dbf file.

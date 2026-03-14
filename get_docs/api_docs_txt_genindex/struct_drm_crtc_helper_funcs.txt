@@ -1,0 +1,200 @@
+Struct: struct drm_crtc_helper_funcs
+
+helper operations for CRTCs
+
+Members
+  dpms
+    Callback to control power levels on the CRTC.  If the mode passed in
+is unsupported, the provider must use the next lowest power level.
+This is used by the legacy CRTC helpers to implement DPMS
+functionality in drm_helper_connector_dpms() . This callback is also used to disable a CRTC by calling it with
+DRM_MODE_DPMS_OFF if the disable hook isn’t used. This callback is used by the legacy CRTC helpers.  Atomic helpers
+also support using this hook for enabling and disabling a CRTC to
+facilitate transitions to atomic, but it is deprecated. Instead atomic_enable and atomic_disable should be used.
+  prepare
+    This callback should prepare the CRTC for a subsequent modeset, which
+in practice means the driver should disable the CRTC if it is
+running. Most drivers ended up implementing this by calling their dpms hook with DRM_MODE_DPMS_OFF. This callback is used by the legacy CRTC helpers.  Atomic helpers
+also support using this hook for disabling a CRTC to facilitate
+transitions to atomic, but it is deprecated. Instead atomic_disable should be used.
+  commit
+    This callback should commit the new mode on the CRTC after a modeset,
+which in practice means the driver should enable the CRTC.  Most
+drivers ended up implementing this by calling their dpms hook with
+DRM_MODE_DPMS_ON. This callback is used by the legacy CRTC helpers.  Atomic helpers
+also support using this hook for enabling a CRTC to facilitate
+transitions to atomic, but it is deprecated. Instead atomic_enable should be used.
+  mode_valid
+    This callback is used to check if a specific mode is valid in this
+crtc. This should be implemented if the crtc has some sort of
+restriction in the modes it can display. For example, a given crtc
+may be responsible to set a clock value. If the clock can not
+produce all the values for the available modes then this callback
+can be used to restrict the number of modes to only the ones that
+can be displayed. This hook is used by the probe helpers to filter the mode list in drm_helper_probe_single_connector_modes() , and it is used by the
+atomic helpers to validate modes supplied by userspace in drm_atomic_helper_check_modeset() . This function is optional. NOTE: Since this function is both called from the check phase of an atomic
+commit, and the mode validation in the probe paths it is not allowed
+to look at anything else but the passed-in mode, and validate it
+against configuration-invariant hardware constraints. Any further
+limits which depend upon the configuration can only be checked in mode_fixup or atomic_check . RETURNS: drm_mode_status Enum
+  mode_fixup
+    This callback is used to validate a mode. The parameter mode is the
+display mode that userspace requested, adjusted_mode is the mode the
+encoders need to be fed with. Note that this is the inverse semantics
+of the meaning for the drm_encoder and drm_bridge_funcs.mode_fixup vfunc. If the CRTC cannot support the requested conversion from mode
+to adjusted_mode it should reject the modeset. See also drm_crtc_state.adjusted_mode for more details. This function is used by both legacy CRTC helpers and atomic helpers.
+With atomic helpers it is optional. NOTE: This function is called in the check phase of atomic modesets, which
+can be aborted for any reason (including on userspace’s request to
+just check whether a configuration would be possible). Atomic drivers
+MUST NOT touch any persistent state (hardware or software) or data
+structures except the passed in adjusted_mode parameter. This is in contrast to the legacy CRTC helpers where this was
+allowed. Atomic drivers which need to inspect and adjust more state should
+instead use the atomic_check callback, but note that they’re not
+perfectly equivalent: mode_valid is called from drm_atomic_helper_check_modeset() , but atomic_check is called from drm_atomic_helper_check_planes() , because originally it was meant for
+plane update checks only. Also beware that userspace can request its own custom modes, neither
+core nor helpers filter modes to the list of probe modes reported by
+the GETCONNECTOR IOCTL and stored in drm_connector.modes . To ensure
+that modes are filtered consistently put any CRTC constraints and
+limits checks into mode_valid . RETURNS: True if an acceptable configuration is possible, false if the modeset
+operation should be rejected.
+  mode_set
+    This callback is used by the legacy CRTC helpers to set a new mode,
+position and framebuffer. Since it ties the primary plane to every
+mode change it is incompatible with universal plane support. And
+since it can’t update other planes it’s incompatible with atomic
+modeset support. This callback is only used by CRTC helpers and deprecated. RETURNS: 0 on success or a negative error code on failure.
+  mode_set_nofb
+    This callback is used to update the display mode of a CRTC without
+changing anything of the primary plane configuration. This fits the
+requirement of atomic and hence is used by the atomic helpers. Note that the display pipe is completely off when this function is
+called. Atomic drivers which need hardware to be running before they
+program the new display mode (e.g. because they implement runtime PM)
+should not use this hook. This is because the helper library calls
+this hook only once per mode change and not every time the display
+pipeline is suspended using either DPMS or the new “ACTIVE” property.
+Which means register values set in this callback might get reset when
+the CRTC is suspended, but not restored.  Such drivers should instead
+move all their CRTC setup into the atomic_enable callback. This callback is optional.
+  mode_set_base
+    This callback is used by the legacy CRTC helpers to set a new
+framebuffer and scanout position. It is optional and used as an
+optimized fast-path instead of a full mode set operation with all the
+resulting flickering. If it is not present drm_crtc_helper_set_config() will fall back to a full modeset, using
+the mode_set callback. Since it can’t update other planes it’s
+incompatible with atomic modeset support. This callback is only used by the CRTC helpers and deprecated. RETURNS: 0 on success or a negative error code on failure.
+  mode_set_base_atomic
+    This callback is used by the fbdev helpers to set a new framebuffer
+and scanout without sleeping, i.e. from an atomic calling context. It
+is only used to implement kgdb support. This callback is optional and only needed for kgdb support in the fbdev
+helpers. RETURNS: 0 on success or a negative error code on failure.
+  disable
+    This callback should be used to disable the CRTC. With the atomic
+drivers it is called after all encoders connected to this CRTC have
+been shut off already using their own drm_encoder_helper_funcs.disable hook. If that sequence is too
+simple drivers can just add their own hooks and call it from this
+CRTC callback here by looping over all encoders connected to it using for_each_encoder_on_crtc() . This hook is used both by legacy CRTC helpers and atomic helpers.
+Atomic drivers don’t need to implement it if there’s no need to
+disable anything at the CRTC level. To ensure that runtime PM
+handling (using either DPMS or the new “ACTIVE” property) works disable must be the inverse of atomic_enable for atomic drivers.
+Atomic drivers should consider to use atomic_disable instead of
+this one. NOTE: With legacy CRTC helpers there’s a big semantic difference between disable and other hooks (like prepare or dpms ) used to shut down a
+CRTC: disable is only called when also logically disabling the
+display pipeline and needs to release any resources acquired in mode_set (like shared PLLs, or again release pinned framebuffers). Therefore disable must be the inverse of mode_set plus commit for
+drivers still using legacy CRTC helpers, which is different from the
+rules under atomic.
+  atomic_check
+    Drivers should check plane-update related CRTC constraints in this
+hook. They can also check mode related limitations but need to be
+aware of the calling order, since this hook is used by drm_atomic_helper_check_planes() whereas the preparations needed to
+check output routing and the display mode is done in drm_atomic_helper_check_modeset() . Therefore drivers that want to
+check output routing and display mode constraints in this callback
+must ensure that drm_atomic_helper_check_modeset() has been called
+beforehand. This is calling order used by the default helper
+implementation in drm_atomic_helper_check() . When using drm_atomic_helper_check_planes() this hook is called
+after the drm_plane_helper_funcs.atomic_check hook for planes, which
+allows drivers to assign shared resources requested by planes in this
+callback here. For more complicated dependencies the driver can call
+the provided check helpers multiple times until the computed state
+has a final configuration and everything has been checked. This function is also allowed to inspect any other object’s state and
+can add more state objects to the atomic commit if needed. Care must
+be taken though to ensure that state check and compute functions for
+these added states are all called, and derived state in other objects
+all updated. Again the recommendation is to just call check helpers
+until a maximal configuration is reached. This callback is used by the atomic modeset helpers, but it is
+optional. NOTE: This function is called in the check phase of an atomic update. The
+driver is not allowed to change anything outside of the free-standing
+state object passed-in. Also beware that userspace can request its own custom modes, neither
+core nor helpers filter modes to the list of probe modes reported by
+the GETCONNECTOR IOCTL and stored in drm_connector.modes . To ensure
+that modes are filtered consistently put any CRTC constraints and
+limits checks into mode_valid . RETURNS: 0 on success, -EINVAL if the state or the transition can’t be
+supported, -ENOMEM on memory allocation failure and -EDEADLK if an
+attempt to obtain another state object ran into a drm_modeset_lock deadlock.
+  atomic_begin
+    Drivers should prepare for an atomic update of multiple planes on
+a CRTC in this hook. Depending upon hardware this might be vblank
+evasion, blocking updates by setting bits or doing preparatory work
+for e.g. manual update display. This hook is called before any plane commit functions are called. Note that the power state of the display pipe when this function is
+called depends upon the exact helpers and calling sequence the driver
+has picked. See drm_atomic_helper_commit_planes() for a discussion of
+the tradeoffs and variants of plane commit helpers. This callback is used by the atomic modeset helpers, but it is
+optional.
+  atomic_flush
+    Drivers should finalize an atomic update of multiple planes on
+a CRTC in this hook. Depending upon hardware this might include
+checking that vblank evasion was successful, unblocking updates by
+setting bits or setting the GO bit to flush out all updates. Simple hardware or hardware with special requirements can commit and
+flush out all updates for all planes from this hook and forgo all the
+other commit hooks for plane updates. This hook is called after any plane commit functions are called. Note that the power state of the display pipe when this function is
+called depends upon the exact helpers and calling sequence the driver
+has picked. See drm_atomic_helper_commit_planes() for a discussion of
+the tradeoffs and variants of plane commit helpers. This callback is used by the atomic modeset helpers, but it is
+optional.
+  atomic_enable
+    This callback should be used to enable the CRTC. With the atomic
+drivers it is called before all encoders connected to this CRTC are
+enabled through the encoder’s own drm_encoder_helper_funcs.enable hook.  If that sequence is too simple drivers can just add their own
+hooks and call it from this CRTC callback here by looping over all
+encoders connected to it using for_each_encoder_on_crtc() . This hook is used only by atomic helpers, for symmetry with atomic_disable . Atomic drivers don’t need to implement it if there’s
+no need to enable anything at the CRTC level. To ensure that runtime
+PM handling (using either DPMS or the new “ACTIVE” property) works atomic_enable must be the inverse of atomic_disable for atomic
+drivers. This function is optional.
+  atomic_disable
+    This callback should be used to disable the CRTC. With the atomic
+drivers it is called after all encoders connected to this CRTC have
+been shut off already using their own drm_encoder_helper_funcs.disable hook. If that sequence is too
+simple drivers can just add their own hooks and call it from this
+CRTC callback here by looping over all encoders connected to it using for_each_encoder_on_crtc() . This hook is used only by atomic helpers. Atomic drivers don’t
+need to implement it if there’s no need to disable anything at the
+CRTC level. This function is optional.
+  get_scanout_position
+    Called by vblank timestamping code. Returns the current display scanout position from a CRTC and an
+optional accurate ktime_get() timestamp of when the position was
+measured. Note that this is a helper callback which is only used
+if a driver uses drm_crtc_vblank_helper_get_vblank_timestamp() for the drm_crtc_funcs.get_vblank_timestamp callback. Parameters: crtc: The CRTC. in_vblank_irq: True when called from drm_crtc_handle_vblank() . Some drivers
+need to apply some workarounds for gpu-specific vblank irq
+quirks if the flag is set. vpos: Target location for current vertical scanout position. hpos: Target location for current horizontal scanout position. stime: Target location for timestamp taken immediately before
+scanout position query. Can be NULL to skip timestamp. etime: Target location for timestamp taken immediately after
+scanout position query. Can be NULL to skip timestamp. mode: Current display timings. Returns vpos as a positive number while in active scanout area.
+Returns vpos as a negative number inside vblank, counting the number
+of scanlines to go until end of vblank, e.g., -1 means “one scanline
+until start of active scanout / end of vblank.” Returns: True on success, false if a reliable scanout position counter could
+not be read out.
+  crtc:
+    The CRTC.
+  in_vblank_irq:
+    True when called from drm_crtc_handle_vblank() . Some drivers
+need to apply some workarounds for gpu-specific vblank irq
+quirks if the flag is set.
+  vpos:
+    Target location for current vertical scanout position.
+  hpos:
+    Target location for current horizontal scanout position.
+  stime:
+    Target location for timestamp taken immediately before
+scanout position query. Can be NULL to skip timestamp.
+  etime:
+    Target location for timestamp taken immediately after
+scanout position query. Can be NULL to skip timestamp.
+  mode:
+    Current display timings.

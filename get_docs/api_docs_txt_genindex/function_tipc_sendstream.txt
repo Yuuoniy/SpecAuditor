@@ -1,0 +1,14 @@
+Function: int tipc_sendstream ( struct socket * sock , struct msghdr * m , size_t dsz )
+
+send stream-oriented data
+
+Parameters
+  struct socket *sock
+    socket structure
+  struct msghdr *m
+    data to send
+  size_t dsz
+    total length of data to be transmitted
+
+Description
+  Used for SOCK_STREAM data.

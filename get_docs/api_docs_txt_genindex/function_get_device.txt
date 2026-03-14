@@ -1,0 +1,12 @@
+Function: struct device * get_device ( struct device * dev )
+
+increment reference count for device.
+
+Parameters
+  struct device *dev
+    device.
+
+Description
+  This simply forwards the call to kobject_get() , though
+we do take care to provide for the case that we get a NULL
+pointer passed in.

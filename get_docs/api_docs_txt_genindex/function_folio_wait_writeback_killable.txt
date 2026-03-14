@@ -1,0 +1,11 @@
+Function: int folio_wait_writeback_killable ( struct folio * folio )
+
+Wait for a folio to finish writeback.
+
+Parameters
+  struct folio *folio
+    The folio to wait for.
+
+Description
+  If the folio is currently being written back to storage, wait for the
+I/O to complete or a fatal signal to arrive.

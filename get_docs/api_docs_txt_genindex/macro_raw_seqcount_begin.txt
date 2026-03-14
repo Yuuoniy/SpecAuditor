@@ -1,0 +1,14 @@
+Macro: raw_seqcount_begin
+
+
+
+Parameters
+  s
+    Pointer to seqcount_t or any of the seqcount_LOCKNAME_t variants
+
+Description
+  raw_seqcount_begin opens a read critical section of the given
+seqcount_t. Unlike read_seqcount_begin() , this function will not wait
+for the count to stabilize. If a writer is active when it begins, it
+will fail the read_seqcount_retry() at the end of the read critical
+section instead of stabilizing at the beginning of it.

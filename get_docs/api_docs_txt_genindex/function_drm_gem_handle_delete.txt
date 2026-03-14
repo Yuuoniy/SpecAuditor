@@ -1,0 +1,13 @@
+Function: int drm_gem_handle_delete ( struct drm_file * filp , u32 handle )
+
+deletes the given file-private handle
+
+Parameters
+  struct drm_file *filp
+    drm file-private structure to use for the handle look up
+  u32 handle
+    userspace handle to delete
+
+Description
+  Removes the GEM handle from the filp lookup table which has been added with drm_gem_handle_create() . If this is the last handle also cleans up linked
+resources like GEM names.

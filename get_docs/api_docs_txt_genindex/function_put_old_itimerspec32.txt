@@ -1,0 +1,9 @@
+Function: int put_old_itimerspec32 ( const struct itimerspec64 * its , struct old_itimerspec32 __user * uits )
+
+convert struct itimerspec64 to struct old_itimerspec32 and copy the latter to userspace
+
+Parameters
+  const struct itimerspec64 *its
+    input struct itimerspec64
+  struct old_itimerspec32 __user *uits
+    user’s struct old_itimerspec32

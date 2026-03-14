@@ -1,0 +1,17 @@
+Function: int security_capable ( const struct cred * cred , struct user_namespace * ns , int cap , unsigned int opts )
+
+Check if a process has the necessary capability
+
+Parameters
+  const struct cred *cred
+    credentials to examine
+  struct user_namespace *ns
+    user namespace
+  int cap
+    capability requested
+  unsigned int opts
+    capability check options
+
+Description
+  Check whether the tsk process has the cap capability in the indicated
+credentials. cap contains the capability <include/linux/capability.h>. opts contains options for the capable check <include/linux/security.h>.

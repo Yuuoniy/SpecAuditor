@@ -1,0 +1,10 @@
+Function: int syscore_suspend ( void )
+
+Execute all the registered system core suspend callbacks.
+
+Parameters
+  void
+    no arguments
+
+Description
+  This function is executed with one CPU on-line and disabled interrupts.

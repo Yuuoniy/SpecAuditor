@@ -1,0 +1,12 @@
+Function: void ata_platform_remove_one ( struct platform_device * pdev )
+
+Platform layer callback for device removal
+
+Parameters
+  struct platform_device *pdev
+    Platform device that was removed
+
+Description
+  Platform layer indicates to libata via this hook that hot-unplug or
+module unload event has occurred.  Detach all ports.  Resource
+release is handled via devres.

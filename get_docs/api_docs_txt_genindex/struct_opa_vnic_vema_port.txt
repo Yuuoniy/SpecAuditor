@@ -1,0 +1,21 @@
+Struct: struct opa_vnic_vema_port
+
+VNIC VEMA port details
+
+Members
+  cport
+    pointer to port
+  mad_agent
+    pointer to mad agent for port
+  class_port_info
+    Class port info information.
+  tid
+    Transaction id
+  port_num
+    OPA port number
+  vports
+    vnic ports
+  event_handler
+    ib event handler
+  lock
+    adapter interface lock

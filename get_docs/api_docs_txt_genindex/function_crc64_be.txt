@@ -1,0 +1,12 @@
+Function: u64 crc64_be ( u64 crc , const void * p , size_t len )
+
+Calculate bitwise big-endian ECMA-182 CRC64
+
+Parameters
+  u64 crc
+    seed value for computation. 0 or (u64)~0 for a new CRC calculation,
+or the previous crc64 value if computing incrementally.
+  const void *p
+    pointer to buffer over which CRC64 is run
+  size_t len
+    length of buffer p

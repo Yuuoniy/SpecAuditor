@@ -1,0 +1,11 @@
+Function: int nvmem_cell_read_variable_le_u64 ( struct device * dev , const char * cell_id , u64 * val )
+
+Read up to 64-bits of data as a little endian number.
+
+Parameters
+  struct device *dev
+    Device that requests the nvmem cell.
+  const char *cell_id
+    Name of nvmem cell to read.
+  u64 *val
+    pointer to output value.

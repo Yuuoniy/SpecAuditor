@@ -1,0 +1,12 @@
+Function: long raw_atomic_long_fetch_and_relaxed ( long i , atomic_long_t * v )
+
+atomic bitwise AND with relaxed ordering
+
+Parameters
+  long i
+    long value
+  atomic_long_t *v
+    pointer to atomic_long_t
+
+Description
+  Atomically updates v to ( v & i ) with relaxed ordering.

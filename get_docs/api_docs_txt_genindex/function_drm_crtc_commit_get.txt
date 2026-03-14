@@ -1,0 +1,10 @@
+Function: struct drm_crtc_commit * drm_crtc_commit_get ( struct drm_crtc_commit * commit )
+
+acquire a reference to the CRTC commit
+
+Parameters
+  struct drm_crtc_commit *commit
+    CRTC commit
+
+Description
+  Increases the reference of commit .

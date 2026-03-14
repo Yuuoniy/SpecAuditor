@@ -1,0 +1,12 @@
+Function: void ttm_tt_unpopulate ( struct ttm_device * bdev , struct ttm_tt * ttm )
+
+free pages from a ttm
+
+Parameters
+  struct ttm_device *bdev
+    the ttm_device this object belongs to
+  struct ttm_tt *ttm
+    Pointer to the ttm_tt structure
+
+Description
+  Calls the driver method to free all pages from a ttm

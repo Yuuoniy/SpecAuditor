@@ -1,0 +1,11 @@
+Function: bool netdev_is_rx_handler_busy ( struct net_device * dev )
+
+check if receive handler is registered
+
+Parameters
+  struct net_device *dev
+    device to check
+
+Description
+  Check if a receive handler is already registered for a given device.
+Return true if there one.

@@ -1,0 +1,7 @@
+Function: unsigned int of_graph_get_port_count ( struct device_node * np )
+
+get the number of port in a device or ports node
+
+Parameters
+  struct device_node *np
+    pointer to the device or ports node

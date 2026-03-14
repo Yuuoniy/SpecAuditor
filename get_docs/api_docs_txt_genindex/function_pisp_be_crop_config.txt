@@ -1,0 +1,13 @@
+Function: struct pisp_be_crop_config
+
+PiSP Back End Crop config
+
+Members
+  offset_x
+    Number of pixels cropped from the left of the tile
+  offset_y
+    Number of pixels cropped from the top of the tile
+  width
+    Width of the cropped tile output
+  height
+    Height of the cropped tile output

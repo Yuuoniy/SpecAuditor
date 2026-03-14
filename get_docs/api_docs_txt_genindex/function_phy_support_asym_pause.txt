@@ -1,0 +1,10 @@
+Function: void phy_support_asym_pause ( struct phy_device * phydev )
+
+Enable support of asym pause
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  Called by the MAC to indicate is supports Asym Pause.

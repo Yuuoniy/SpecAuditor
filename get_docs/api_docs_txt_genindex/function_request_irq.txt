@@ -1,0 +1,21 @@
+Function: int request_irq ( unsigned int irq , irq_handler_t handler , unsigned long flags , const char * name , void * dev )
+
+Add a handler for an interrupt line
+
+Parameters
+  unsigned int irq
+    The interrupt line to allocate
+  irq_handler_t handler
+    Function to be called when the IRQ occurs.
+Primary handler for threaded interrupts
+If NULL, the default primary handler is installed
+  unsigned long flags
+    Handling flags
+  const char *name
+    Name of the device generating this interrupt
+  void *dev
+    A cookie passed to the handler function
+
+Description
+  This call allocates an interrupt and establishes a handler; see
+the documentation for request_threaded_irq() for details.

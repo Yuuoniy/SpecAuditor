@@ -1,0 +1,16 @@
+Function: int ssh_rtl_flush ( struct ssh_rtl * rtl , unsigned long timeout )
+
+Flush the request transport layer.
+
+Parameters
+  struct ssh_rtl *rtl
+    request transport layer
+  unsigned long timeout
+    timeout for the flush operation in jiffies
+
+Description
+  Queue a special flush request and wait for its completion. This request
+will be completed after all other currently queued and pending requests
+have been completed. Instead of a normal data packet, this request submits
+a special flush packet, meaning that upon completion, also the underlying
+packet transport layer has been flushed.

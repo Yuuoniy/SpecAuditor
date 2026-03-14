@@ -1,0 +1,14 @@
+Function: bool poll_state_synchronize_rcu ( unsigned long oldstate )
+
+Has the specified RCU grace period completed?
+
+Parameters
+  unsigned long oldstate
+    value from get_state_synchronize_rcu() or start_poll_synchronize_rcu()
+
+Description
+  If a full RCU grace period has elapsed since the earlier call from
+which oldstate was obtained, return true , otherwise return false .
+If false is returned, it is the caller’s responsibility to invoke this
+function later on until it does return true .  Alternatively, the caller
+can explicitly wait for a grace period, for example, by passing oldstate to either cond_synchronize_rcu() or cond_synchronize_rcu_expedited() on the one hand or by directly invoking either synchronize_rcu() or synchronize_rcu_expedited() on the other.

@@ -1,0 +1,13 @@
+Function: int tipc_skb_dump ( struct sk_buff * skb , bool more , char * buf )
+
+dump TIPC skb data
+
+Parameters
+  struct sk_buff *skb
+    skb to be dumped
+  bool more
+    dump more?
+- false: dump only tipc msg data
+- true: dump kernel-related skb data and tipc cb[] array as well
+  char *buf
+    returned buffer of dump data in format

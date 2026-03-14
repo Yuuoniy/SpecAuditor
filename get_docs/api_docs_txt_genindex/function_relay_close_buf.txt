@@ -1,0 +1,12 @@
+Function: void relay_close_buf ( struct rchan_buf * buf )
+
+close a channel buffer
+
+Parameters
+  struct rchan_buf *buf
+    channel buffer
+
+Description
+  Marks the buffer finalized and restores the default callbacks.
+The channel buffer and channel buffer data structure are then freed
+automatically when the last reference is given up.

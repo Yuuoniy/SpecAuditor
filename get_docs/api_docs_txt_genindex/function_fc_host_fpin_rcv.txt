@@ -1,0 +1,13 @@
+Function: void fc_host_fpin_rcv ( struct Scsi_Host * shost , u32 fpin_len , char * fpin_buf , u8 event_acknowledge )
+
+routine to process a received FPIN.
+
+Parameters
+  struct Scsi_Host *shost
+    host the FPIN was received on
+  u32 fpin_len
+    length of FPIN payload, in bytes
+  char *fpin_buf
+    pointer to FPIN payload
+  u8 event_acknowledge
+    1, if LLDD handles this event.

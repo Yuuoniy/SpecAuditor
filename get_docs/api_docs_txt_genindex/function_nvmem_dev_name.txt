@@ -1,0 +1,7 @@
+Function: const char * nvmem_dev_name ( struct nvmem_device * nvmem )
+
+Get the name of a given nvmem device.
+
+Parameters
+  struct nvmem_device *nvmem
+    nvmem device.

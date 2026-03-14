@@ -1,0 +1,16 @@
+Struct: struct ssh_packet_ops
+
+Callback operations for a SSH packet.
+
+Members
+  release
+    Function called when the packet reference count reaches zero.
+This callback must be relied upon to ensure that the packet has
+left the transport system(s).
+  complete
+    Function called when the packet is completed, either with
+success or failure. In case of failure, the reason for the
+failure is indicated by the value of the provided status code
+argument. This value will be zero in case of success. Note that
+a call to this callback does not guarantee that the packet is
+not in use by the transport system any more.

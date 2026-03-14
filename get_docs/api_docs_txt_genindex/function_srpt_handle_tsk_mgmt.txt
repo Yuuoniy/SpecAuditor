@@ -1,0 +1,14 @@
+Function: void srpt_handle_tsk_mgmt ( struct srpt_rdma_ch * ch , struct srpt_recv_ioctx * recv_ioctx , struct srpt_send_ioctx * send_ioctx )
+
+process a SRP_TSK_MGMT information unit
+
+Parameters
+  struct srpt_rdma_ch *ch
+    SRPT RDMA channel.
+  struct srpt_recv_ioctx *recv_ioctx
+    Receive I/O context.
+  struct srpt_send_ioctx *send_ioctx
+    Send I/O context.
+
+Description
+  Returns 0 if and only if the request will be processed by the target core.

@@ -1,0 +1,11 @@
+Function: void xas_set_order ( struct xa_state * xas , unsigned long index , unsigned int order )
+
+Set up XArray operation state for a multislot entry.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+  unsigned long index
+    Target of the operation.
+  unsigned int order
+    Entry occupies 2^**order** indices.

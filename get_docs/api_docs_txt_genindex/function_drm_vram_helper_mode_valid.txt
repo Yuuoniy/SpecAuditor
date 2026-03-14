@@ -1,0 +1,18 @@
+Function: enum drm_mode_status drm_vram_helper_mode_valid ( struct drm_device * dev , const struct drm_display_mode * mode )
+
+Tests if a display mode’s framebuffer fits into the available video memory.
+
+Parameters
+  struct drm_device *dev
+    the DRM device
+  const struct drm_display_mode *mode
+    the mode to test
+
+Description
+  This function tests if enough video memory is available for using the
+specified display mode. Atomic modesetting requires importing the
+designated framebuffer into video memory before evicting the active
+one. Hence, any framebuffer may consume at most half of the available
+VRAM. Display modes that require a larger framebuffer can not be used,
+even if the CRTC does support them. Each framebuffer is assumed to
+have 32-bit color depth.

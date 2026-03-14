@@ -1,0 +1,14 @@
+Struct: struct landlock_net_port_attr
+
+Network port definition
+
+Members
+  allowed_access
+    Bitmask of allowed network actions for a port
+(cf. Network flags ).
+  port
+    Network port in host endianness. It should be noted that port 0 passed to bind(2) will bind
+to an available port from the ephemeral port range.  This can be
+configured with the /proc/sys/net/ipv4/ip_local_port_range sysctl
+(also used for IPv6). A Landlock rule with port 0 and the LANDLOCK_ACCESS_NET_BIND_TCP right means that requesting to bind on port 0 is allowed and it will
+automatically translate to binding on the related port range.

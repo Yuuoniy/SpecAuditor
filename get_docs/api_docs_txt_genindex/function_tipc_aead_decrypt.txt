@@ -1,0 +1,13 @@
+Function: int tipc_aead_decrypt ( struct net * net , struct tipc_aead * aead , struct sk_buff * skb , struct tipc_bearer * b )
+
+Decrypt an encrypted message
+
+Parameters
+  struct net *net
+    struct net
+  struct tipc_aead *aead
+    TIPC AEAD for the message decryption
+  struct sk_buff *skb
+    the input/output skb
+  struct tipc_bearer *b
+    TIPC bearer where the message has been received

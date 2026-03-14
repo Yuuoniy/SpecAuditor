@@ -1,0 +1,19 @@
+Function: int drm_dp_dual_mode_max_tmds_clock ( const struct drm_device * dev , enum drm_dp_dual_mode_type type , struct i2c_adapter * adapter )
+
+Max TMDS clock for DP dual mode adaptor
+
+Parameters
+  const struct drm_device *dev
+    drm_device to use
+  enum drm_dp_dual_mode_type type
+    DP dual mode adaptor type
+  struct i2c_adapter *adapter
+    I2C adapter for the DDC bus
+
+Description
+  Determine the max TMDS clock the adaptor supports based on the
+type of the dual mode adaptor and the DP_DUAL_MODE_MAX_TMDS_CLOCK
+register (on type2 adaptors). As some type 1 adaptors have
+problems with registers (see comments in drm_dp_dual_mode_detect() )
+we don’t read the register on those, instead we simply assume
+a 165 MHz limit based on the specification.

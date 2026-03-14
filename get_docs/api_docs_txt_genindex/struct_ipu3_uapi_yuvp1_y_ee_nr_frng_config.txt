@@ -1,0 +1,25 @@
+Struct: struct ipu3_uapi_yuvp1_y_ee_nr_frng_config
+
+Luma(Y) edge enhancement noise reduction fringe config
+
+Members
+  gain_exp
+    Common exponent of gains, u4, [0, 8], default 2.
+  reserved0
+    reserved
+  min_edge
+    Threshold for edge and smooth stitching, u13.
+  reserved1
+    reserved
+  lin_seg_param
+    Power of LinSeg, u4.
+  reserved2
+    reserved
+  t1
+    Parameter for enabling/disabling the edge enhancement, u1.0, [0, 1],
+default 1.
+  t2
+    Parameter for enabling/disabling the smoothing, u1.0, [0, 1],
+default 1.
+  reserved3
+    reserved

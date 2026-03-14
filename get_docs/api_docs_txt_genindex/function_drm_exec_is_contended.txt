@@ -1,0 +1,11 @@
+Function: bool drm_exec_is_contended ( struct drm_exec * exec )
+
+check for contention
+
+Parameters
+  struct drm_exec *exec
+    drm_exec object
+
+Description
+  Returns true if the drm_exec object has run into some contention while
+locking a GEM object and needs to clean up.

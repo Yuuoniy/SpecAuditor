@@ -1,0 +1,13 @@
+Struct: struct rio_dbell
+
+RIO doorbell event
+
+Members
+  node
+    Node in list of doorbell events
+  res
+    Doorbell resource
+  dinb
+    Doorbell event callback
+  dev_id
+    Device specific pointer to pass on event

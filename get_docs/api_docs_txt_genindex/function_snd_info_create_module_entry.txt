@@ -1,0 +1,14 @@
+Function: struct snd_info_entry * snd_info_create_module_entry ( struct module * module , const char * name , struct snd_info_entry * parent )
+
+create an info entry for the given module
+
+Parameters
+  struct module * module
+    the module pointer
+  const char *name
+    the file name
+  struct snd_info_entry *parent
+    the parent directory
+
+Description
+  Creates a new info entry and assigns it to the given module.

@@ -1,0 +1,11 @@
+Function: void v4l2_i2c_subdev_init ( struct v4l2_subdev * sd , struct i2c_client * client , const struct v4l2_subdev_ops * ops )
+
+Initializes a struct v4l2_subdev with data from an i2c_client struct.
+
+Parameters
+  struct v4l2_subdev *sd
+    pointer to struct v4l2_subdev
+  struct i2c_client *client
+    pointer to struct i2c_client
+  const struct v4l2_subdev_ops *ops
+    pointer to struct v4l2_subdev_ops

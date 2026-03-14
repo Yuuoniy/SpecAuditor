@@ -1,0 +1,15 @@
+Function: void ssam_nf_refcount_dec_free ( struct ssam_nf * nf , struct ssam_event_registry reg , struct ssam_event_id id )
+
+Decrement reference-/activation-count of the given event and free its entry if the reference count reaches zero.
+
+Parameters
+  struct ssam_nf *nf
+    The notifier system reference.
+  struct ssam_event_registry reg
+    The registry used to enable/disable the event.
+  struct ssam_event_id id
+    The event ID.
+
+Description
+  Decrements the reference-/activation-count of the specified event, freeing
+its entry if it reaches zero.

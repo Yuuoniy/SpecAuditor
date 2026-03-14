@@ -1,0 +1,31 @@
+Struct: struct dpp_color_caps
+
+color pipeline capabilities for display pipe and plane blocks
+
+Members
+  dcn_arch
+    all DCE generations treated the same
+  input_lut_shared
+    shared with DGAM. Input LUT is different than most LUTs,
+just plain 256-entry lookup
+  icsc
+    input color space conversion
+  dgam_ram
+    programmable degamma LUT
+  post_csc
+    post color space conversion, before gamut remap
+  gamma_corr
+    degamma correction
+  hw_3d_lut
+    3D LUT support. It implies a shaper LUT before. It may be shared
+with MPC by setting mpc:shared_3d_lut flag
+  ogam_ram
+    programmable out/blend gamma LUT
+  ocsc
+    output color space conversion
+  dgam_rom_for_yuv
+    pre-defined degamma LUT for YUV planes
+  dgam_rom_caps
+    pre-definied curve caps for degamma 1D LUT
+  ogam_rom_caps
+    pre-definied curve caps for regamma 1D LUT

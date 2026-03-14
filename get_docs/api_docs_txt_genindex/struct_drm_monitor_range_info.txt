@@ -1,0 +1,11 @@
+Struct: struct drm_monitor_range_info
+
+Panel’s Monitor range in EDID for drm_display_info
+
+Members
+  min_vfreq
+    This is the min supported refresh rate in Hz from
+EDID’s detailed monitor range.
+  max_vfreq
+    This is the max supported refresh rate in Hz from
+EDID’s detailed monitor range

@@ -1,0 +1,9 @@
+Function: struct landlock_superblock_security
+
+Superblock security blob
+
+Members
+  inode_refs
+    Number of pending inodes (from this superblock) that
+are being released by release_inode() .
+Cf. struct super_block ->s_fsnotify_inode_refs .

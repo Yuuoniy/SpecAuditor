@@ -1,0 +1,10 @@
+Function: struct rio_dev * rio_dev_get ( struct rio_dev * rdev )
+
+Increments the reference count of the RIO device structure
+
+Parameters
+  struct rio_dev *rdev
+    RIO device being referenced
+
+Description
+  Each live reference to a device should be refcounted.

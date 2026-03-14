@@ -1,0 +1,20 @@
+Function: void * __xa_cmpxchg ( struct xarray * xa , unsigned long index , void * old , void * entry , gfp_t gfp )
+
+Conditionally replace an entry in the XArray.
+
+Parameters
+  struct xarray *xa
+    XArray.
+  unsigned long index
+    Index into array.
+  void *old
+    Old value to test against.
+  void *entry
+    New value to place in array.
+  gfp_t gfp
+    Memory allocation flags.
+
+Description
+  You must already be holding the xa_lock when calling this function.
+It will drop the lock if needed to allocate memory, and then reacquire
+it afterwards.

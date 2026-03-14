@@ -1,0 +1,12 @@
+Function: int dm_hw_fini ( struct amdgpu_ip_block * ip_block )
+
+Teardown DC device
+
+Parameters
+  struct amdgpu_ip_block *ip_block
+    Pointer to the amdgpu_ip_block for this hw instance.
+
+Description
+  Teardown components within struct amdgpu_display_manager that require
+cleanup. This involves cleaning up the DRM device, DC, and any modules that
+were loaded. Also flush IRQ workqueues and disable them.

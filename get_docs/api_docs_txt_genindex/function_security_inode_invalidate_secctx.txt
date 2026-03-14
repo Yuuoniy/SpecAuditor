@@ -1,0 +1,11 @@
+Function: void security_inode_invalidate_secctx ( struct inode * inode )
+
+Invalidate an inode’s security label
+
+Parameters
+  struct inode *inode
+    inode
+
+Description
+  Notify the security module that it must revalidate the security context of
+an inode.

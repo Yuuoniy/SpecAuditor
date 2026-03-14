@@ -1,0 +1,17 @@
+Macro: module_driver
+
+
+
+Parameters
+  __driver
+    driver name
+  __register
+    register function for this driver type
+  __unregister
+    unregister function for this driver type
+  ...
+    Additional arguments to be passed to __register and __unregister.
+
+Description
+  Use this macro to construct bus specific macros for registering
+drivers, and do not use it on its own.

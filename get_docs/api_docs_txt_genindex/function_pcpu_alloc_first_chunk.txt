@@ -1,0 +1,15 @@
+Function: struct pcpu_chunk * pcpu_alloc_first_chunk ( unsigned long tmp_addr , int map_size )
+
+creates chunks that serve the first chunk
+
+Parameters
+  unsigned long tmp_addr
+    the start of the region served
+  int map_size
+    size of the region served
+
+Description
+  This is responsible for creating the chunks that serve the first chunk.  The
+base_addr is page aligned down of tmp_addr while the region end is page
+aligned up.  Offsets are kept track of to determine the region served. All
+this is done to appease the bitmap allocator in avoiding partial blocks.

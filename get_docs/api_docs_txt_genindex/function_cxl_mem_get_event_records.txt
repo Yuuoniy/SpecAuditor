@@ -1,0 +1,13 @@
+Function: void cxl_mem_get_event_records ( struct cxl_memdev_state * mds , u32 status )
+
+Get Event Records from the device
+
+Parameters
+  struct cxl_memdev_state *mds
+    The driver data for the operation
+  u32 status
+    Event Status register value identifying which events are available.
+
+Description
+  Retrieve all event records available on the device, report them as trace
+events, and clear them.

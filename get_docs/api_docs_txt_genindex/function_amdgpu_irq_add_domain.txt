@@ -1,0 +1,11 @@
+Function: int amdgpu_irq_add_domain ( struct amdgpu_device * adev )
+
+create a linear IRQ domain
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device pointer
+
+Description
+  Creates an IRQ domain for GPU interrupt sources
+that may be driven by another driver (e.g., ACP).

@@ -1,0 +1,41 @@
+Struct: struct mipi_dbi_dev
+
+MIPI DBI device
+
+Members
+  drm
+    DRM device
+  pipe
+    Display pipe structure
+  connector
+    Connector
+  mode
+    Fixed display mode
+  pixel_format
+    Native pixel format (DRM_FORMAT_*)
+  tx_buf
+    Buffer used for transfer (copy clip rect area)
+  rotation
+    initial rotation in degrees Counter Clock Wise
+  left_offset
+    Horizontal offset of the display relative to the controller’s driver array
+  Horizontal offset of the display relative to the
+    controller’s driver array
+  top_offset
+    Vertical offset of the display relative to the controller’s driver array
+  Vertical offset of the display relative to the
+    controller’s driver array
+  backlight
+    backlight device (optional)
+  regulator
+    power regulator (Vdd) (optional)
+  io_regulator
+    I/O power regulator (Vddi) (optional)
+  dbi
+    MIPI DBI interface
+  driver_private
+    Driver private data. Necessary for drivers with private data since devm_drm_dev_alloc() can’t allocate structures that embed a structure which then again
+embeds drm_device.
+  Driver private data.
+    Necessary for drivers with private data since devm_drm_dev_alloc() can’t allocate structures that embed a structure which then again
+embeds drm_device.

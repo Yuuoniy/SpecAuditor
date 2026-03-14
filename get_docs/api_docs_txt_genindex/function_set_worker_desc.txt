@@ -1,0 +1,15 @@
+Function: void set_worker_desc ( const char * fmt , ... )
+
+set description for the current work item
+
+Parameters
+  const char *fmt
+    printf-style format string
+  ...
+    arguments for the format string
+
+Description
+  This function can be called by a running work function to describe what
+the work item is about.  If the worker task gets dumped, this
+information will be printed out together to help debugging.  The
+description can be at most WORKER_DESC_LEN including the trailing ‘0’.

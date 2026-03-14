@@ -1,0 +1,16 @@
+Function: void pcpu_chunk_depopulated ( struct pcpu_chunk * chunk , int page_start , int page_end )
+
+post-depopulation bookkeeping
+
+Parameters
+  struct pcpu_chunk *chunk
+    pcpu_chunk which got depopulated
+  int page_start
+    the start page
+  int page_end
+    the end page
+
+Description
+  Pages in [ page_start ,**page_end**) have been depopulated from chunk .
+Update the bookkeeping information accordingly.  Must be called after
+each successful depopulation.

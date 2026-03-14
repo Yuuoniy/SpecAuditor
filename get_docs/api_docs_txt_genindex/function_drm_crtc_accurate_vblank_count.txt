@@ -1,0 +1,12 @@
+Function: u64 drm_crtc_accurate_vblank_count ( struct drm_crtc * crtc )
+
+retrieve the master vblank counter
+
+Parameters
+  struct drm_crtc *crtc
+    which counter to retrieve
+
+Description
+  This function is similar to drm_crtc_vblank_count() but this function
+interpolates to handle a race with vblank interrupts using the high precision
+timestamping support.

@@ -1,0 +1,18 @@
+Function: struct pardevice * parport_register_dev_model ( struct parport * port , const char * name , const struct pardev_cb * par_dev_cb , int id )
+
+register a device on a parallel port
+
+Parameters
+  struct parport *port
+    port to which the device is attached
+  const char *name
+    a name to refer to the device
+  const struct pardev_cb *par_dev_cb
+    struct containing callbacks
+  int id
+    device number to be given to the device
+
+Description
+  This function, called by parallel port device drivers,
+declares that a device is connected to a port, and tells the
+system all it needs to know.

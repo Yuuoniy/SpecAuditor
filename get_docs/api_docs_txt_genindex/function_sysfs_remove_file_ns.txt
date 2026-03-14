@@ -1,0 +1,14 @@
+Function: void sysfs_remove_file_ns ( struct kobject * kobj , const struct attribute * attr , const void * ns )
+
+remove an object attribute with a custom ns tag
+
+Parameters
+  struct kobject *kobj
+    object we’re acting for
+  const struct attribute *attr
+    attribute descriptor
+  const void *ns
+    namespace tag of the file to remove
+
+Description
+  Hash the attribute name and namespace tag and kill the victim.

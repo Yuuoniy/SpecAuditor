@@ -1,0 +1,16 @@
+Function: int security_xfrm_state_alloc_acquire ( struct xfrm_state * x , struct xfrm_sec_ctx * polsec , u32 secid )
+
+Allocate a xfrm state LSM blob
+
+Parameters
+  struct xfrm_state *x
+    xfrm state being added to the SAD
+  struct xfrm_sec_ctx *polsec
+    associated policy’s security context
+  u32 secid
+    secid from the flow
+
+Description
+  Allocate a security structure to the x->security field; the security field
+is initialized to NULL when the xfrm_state is allocated.  Set the context to
+correspond to secid.

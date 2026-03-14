@@ -1,0 +1,15 @@
+Function: int crypto_ahash_setkey ( struct crypto_ahash * tfm , const u8 * key , unsigned int keylen )
+
+set key for cipher handle
+
+Parameters
+  struct crypto_ahash *tfm
+    cipher handle
+  const u8 *key
+    buffer holding the key
+  unsigned int keylen
+    length of the key in bytes
+
+Description
+  The caller provided key is set for the ahash cipher. The cipher
+handle must point to a keyed hash in order for this function to succeed.

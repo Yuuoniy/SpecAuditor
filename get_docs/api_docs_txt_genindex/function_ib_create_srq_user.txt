@@ -1,0 +1,21 @@
+Function: struct ib_srq * ib_create_srq_user ( struct ib_pd * pd , struct ib_srq_init_attr * srq_init_attr , struct ib_usrq_object * uobject , struct ib_udata * udata )
+
+Creates a SRQ associated with the specified protection domain.
+
+Parameters
+  struct ib_pd *pd
+    The protection domain associated with the SRQ.
+  struct ib_srq_init_attr *srq_init_attr
+    A list of initial attributes required to create the
+SRQ.  If SRQ creation succeeds, then the attributes are updated to
+the actual capabilities of the created SRQ.
+  struct ib_usrq_object *uobject
+    uobject pointer if this is not a kernel SRQ
+  struct ib_udata *udata
+    udata pointer if this is not a kernel SRQ
+
+Description
+  srq_attr->max_wr and srq_attr->max_sge are read the determine the
+requested size of the SRQ, and set to the actual values allocated
+on return.  If ib_create_srq() succeeds, then max_wr and max_sge
+will always be at least as large as the requested values.

@@ -1,0 +1,15 @@
+Function: void __mark_inode_dirty ( struct inode * inode , int flags )
+
+internal function to mark an inode dirty
+
+Parameters
+  struct inode *inode
+    inode to mark
+  int flags
+    what kind of dirty, e.g. I_DIRTY_SYNC.  This can be a combination of
+multiple I_DIRTY_* flags, except that I_DIRTY_TIME can’t be combined
+with I_DIRTY_PAGES.
+
+Description
+  Mark an inode as dirty.  We notify the filesystem, then update the inode’s
+dirty flags.  Then, if needed we add the inode to the appropriate dirty list.

@@ -1,0 +1,3 @@
+Enum: enum ethtool_c33_pse_ext_substate_option_detect_ted
+
+option_detect_ted states functions. IEEE 802.3-2022 33.2.4.4 Variables

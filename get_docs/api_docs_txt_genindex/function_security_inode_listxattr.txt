@@ -1,0 +1,10 @@
+Function: int security_inode_listxattr ( struct dentry * dentry )
+
+Check if listing xattrs is allowed
+
+Parameters
+  struct dentry *dentry
+    file
+
+Description
+  Check permission before obtaining the list of extended attribute names for dentry .

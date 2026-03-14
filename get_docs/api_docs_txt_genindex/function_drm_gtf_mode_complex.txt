@@ -1,0 +1,29 @@
+Function: struct drm_display_mode * drm_gtf_mode_complex ( struct drm_device * dev , int hdisplay , int vdisplay , int vrefresh , bool interlaced , int margins , int GTF_M , int GTF_2C , int GTF_K , int GTF_2J )
+
+create the modeline based on the full GTF algorithm
+
+Parameters
+  struct drm_device *dev
+    drm device
+  int hdisplay
+    hdisplay size
+  int vdisplay
+    vdisplay size
+  int vrefresh
+    vrefresh rate.
+  bool interlaced
+    whether to compute an interlaced mode
+  int margins
+    desired margin (borders) size
+  int GTF_M
+    extended GTF formula parameters
+  int GTF_2C
+    extended GTF formula parameters
+  int GTF_K
+    extended GTF formula parameters
+  int GTF_2J
+    extended GTF formula parameters
+
+Description
+  GTF feature blocks specify C and J in multiples of 0.5, so we pass them
+in here multiplied by two.  For a C of 40, pass in 80.

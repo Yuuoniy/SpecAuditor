@@ -1,0 +1,33 @@
+Struct: struct i915_oa_ops
+
+Gen specific implementation of an OA unit stream
+
+Members
+  is_valid_b_counter_reg
+    Validates register’s address for
+programming boolean counters for a particular platform.
+  is_valid_mux_reg
+    Validates register’s address for programming mux
+for a particular platform.
+  is_valid_flex_reg
+    Validates register’s address for programming
+flex EU filtering for a particular platform.
+  enable_metric_set
+    Selects and applies any MUX configuration to set
+up the Boolean and Custom (B/C) counters that are part of the
+counter reports being sampled. May apply system constraints such as
+disabling EU clock gating as required.
+  disable_metric_set
+    Remove system constraints associated with using
+the OA unit.
+  oa_enable
+    Enable periodic sampling
+  oa_disable
+    Disable periodic sampling
+  read
+    Copy data from the circular OA buffer into a given userspace
+buffer.
+  oa_hw_tail_read
+    read the OA tail pointer register In particular this enables us to share all the fiddly code for
+handling the OA unit tail pointer race that affects multiple
+generations.

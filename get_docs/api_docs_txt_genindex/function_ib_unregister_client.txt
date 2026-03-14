@@ -1,0 +1,12 @@
+Function: void ib_unregister_client ( struct ib_client * client )
+
+Unregister an IB client
+
+Parameters
+  struct ib_client *client
+    Client to unregister
+
+Description
+  Upper level users use ib_unregister_client() to remove their client
+registration.  When ib_unregister_client() is called, the client
+will receive a remove callback for each IB device still registered.

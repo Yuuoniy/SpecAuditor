@@ -1,0 +1,18 @@
+Function: int rxrpc_kernel_reject_challenge ( struct sk_buff * challenge , u32 abort_code , int error , enum rxrpc_abort_reason why )
+
+Allow a kernel service to reject a challenge
+
+Parameters
+  struct sk_buff *challenge
+    The challenge to be rejected
+  u32 abort_code
+    The abort code to stick into the ABORT packet
+  int error
+    Local error value
+  enum rxrpc_abort_reason why
+    Indication as to why.
+
+Description
+  Allow a kernel service to reject a challenge by aborting the connection if
+it’s still in an abortable state.  The error is returned so this function
+can be used with a return statement.

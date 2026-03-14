@@ -1,0 +1,7 @@
+Function: struct mem_cgroup * get_mem_cgroup_from_folio ( struct folio * folio )
+
+Obtain a reference on a given folio’s memcg.
+
+Parameters
+  struct folio *folio
+    folio from which memcg should be extracted.

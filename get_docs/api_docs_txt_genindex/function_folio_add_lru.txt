@@ -1,0 +1,12 @@
+Function: void folio_add_lru ( struct folio * folio )
+
+Add a folio to an LRU list.
+
+Parameters
+  struct folio *folio
+    The folio to be added to the LRU.
+
+Description
+  Queue the folio for addition to the LRU. The decision on whether
+to add the page to the [in]active [file|anon] list is deferred until the
+folio_batch is drained. This gives a chance for the caller of folio_add_lru() have the folio added to the active list using folio_mark_accessed() .

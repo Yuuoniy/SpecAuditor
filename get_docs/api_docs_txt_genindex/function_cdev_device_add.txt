@@ -1,0 +1,17 @@
+Function: int cdev_device_add ( struct cdev * cdev , struct device * dev )
+
+add a char device and it’s corresponding struct device , linkink
+
+Parameters
+  struct cdev *cdev
+    the cdev structure
+  struct device *dev
+    the device structure
+
+Description
+  cdev_device_add() adds the char device represented by cdev to the system,
+just as cdev_add does. It then adds dev to the system using device_add
+The dev_t for the char device will be taken from the struct device which
+needs to be initialized first. This helper function correctly takes a
+reference to the parent device so the parent will not get released until
+all references to the cdev are released.

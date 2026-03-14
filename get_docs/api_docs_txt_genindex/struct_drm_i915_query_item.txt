@@ -1,0 +1,22 @@
+Struct: struct drm_i915_query_item
+
+An individual query for the kernel to process.
+
+Members
+  query_id
+    The id for this query.  Currently accepted query IDs are: DRM_I915_QUERY_TOPOLOGY_INFO (see struct drm_i915_query_topology_info ) DRM_I915_QUERY_ENGINE_INFO (see struct drm_i915_engine_info ) DRM_I915_QUERY_PERF_CONFIG (see struct drm_i915_query_perf_config ) DRM_I915_QUERY_MEMORY_REGIONS (see struct drm_i915_query_memory_regions ) DRM_I915_QUERY_HWCONFIG_BLOB (see GuC HWCONFIG blob uAPI ) DRM_I915_QUERY_GEOMETRY_SUBSLICES (see struct drm_i915_query_topology_info ) DRM_I915_QUERY_GUC_SUBMISSION_VERSION (see struct drm_i915_query_guc_submission_version )
+  The id for this query.  Currently accepted query IDs are:
+    DRM_I915_QUERY_TOPOLOGY_INFO (see struct drm_i915_query_topology_info ) DRM_I915_QUERY_ENGINE_INFO (see struct drm_i915_engine_info ) DRM_I915_QUERY_PERF_CONFIG (see struct drm_i915_query_perf_config ) DRM_I915_QUERY_MEMORY_REGIONS (see struct drm_i915_query_memory_regions ) DRM_I915_QUERY_HWCONFIG_BLOB (see GuC HWCONFIG blob uAPI ) DRM_I915_QUERY_GEOMETRY_SUBSLICES (see struct drm_i915_query_topology_info ) DRM_I915_QUERY_GUC_SUBMISSION_VERSION (see struct drm_i915_query_guc_submission_version )
+  length
+    When set to zero by userspace, this is filled with the size of the
+data to be written at the data_ptr pointer. The kernel sets this
+value to a negative value to signal an error on a particular query
+item.
+  flags
+    When query_id == DRM_I915_QUERY_TOPOLOGY_INFO , must be 0. When query_id == DRM_I915_QUERY_PERF_CONFIG , must be one of the
+following: DRM_I915_QUERY_PERF_CONFIG_LIST DRM_I915_QUERY_PERF_CONFIG_DATA_FOR_UUID DRM_I915_QUERY_PERF_CONFIG_FOR_UUID When query_id == DRM_I915_QUERY_GEOMETRY_SUBSLICES must contain
+a struct i915_engine_class_instance that references a render engine.
+  data_ptr
+    Data will be written at the location pointed by data_ptr when the
+value of length matches the length of the data to be written by the
+kernel.

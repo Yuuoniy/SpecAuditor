@@ -1,0 +1,16 @@
+Function: int security_ptrace_access_check ( struct task_struct * child , unsigned int mode )
+
+Check if tracing is allowed
+
+Parameters
+  struct task_struct *child
+    target process
+  unsigned int mode
+    PTRACE_MODE flags
+
+Description
+  Check permission before allowing the current process to trace the child process.  Security modules may also want to perform a process tracing check
+during an execve in the set_security or apply_creds hooks of tracing check
+during an execve in the bprm_set_creds hook of binprm_security_ops if the
+process is being traced and its security attributes would be changed by the
+execve.

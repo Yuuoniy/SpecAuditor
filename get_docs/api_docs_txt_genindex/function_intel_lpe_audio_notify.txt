@@ -1,0 +1,20 @@
+Function: void intel_lpe_audio_notify ( struct intel_display * display , enum transcoder cpu_transcoder , enum port port , const void * eld , int ls_clock , bool dp_output )
+
+notify lpe audio event audio driver and i915
+
+Parameters
+  struct intel_display *display
+    display device
+  enum transcoder cpu_transcoder
+    CPU transcoder
+  enum port port
+    port
+  const void *eld
+    ELD data
+  int ls_clock
+    Link symbol clock in kHz
+  bool dp_output
+    Driving a DP output?
+
+Description
+  Notify lpe audio driver of eld change.

@@ -1,0 +1,12 @@
+Function: int security_kernel_load_data ( enum kernel_load_data_id id , bool contents )
+
+Load data provided by userspace
+
+Parameters
+  enum kernel_load_data_id id
+    data identifier
+  bool contents
+    true if security_kernel_post_load_data() will be called
+
+Description
+  Load data provided by userspace.

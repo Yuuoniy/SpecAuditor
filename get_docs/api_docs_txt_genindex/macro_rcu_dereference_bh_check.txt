@@ -1,0 +1,16 @@
+Macro: rcu_dereference_bh_check
+
+
+
+Parameters
+  p
+    The pointer to read, prior to dereferencing
+  c
+    The conditions under which the dereference will take place
+
+Description
+  This is the RCU-bh counterpart to rcu_dereference_check() .  However,
+please note that starting in v5.0 kernels, vanilla RCU grace periods
+wait for local_bh_disable() regions of code in addition to regions of
+code demarked by rcu_read_lock() and rcu_read_unlock() .  This means
+that synchronize_rcu() , call_rcu, and friends all take not only rcu_read_lock() but also rcu_read_lock_bh() into account.

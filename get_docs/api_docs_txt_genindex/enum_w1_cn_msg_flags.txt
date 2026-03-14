@@ -1,0 +1,3 @@
+Enum: enum w1_cn_msg_flags
+
+bitfield flags for struct cn_msg .flags

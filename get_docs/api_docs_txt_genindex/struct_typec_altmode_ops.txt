@@ -1,0 +1,17 @@
+Struct: struct typec_altmode_ops
+
+Alternate mode specific operations vector
+
+Members
+  enter
+    Operations to be executed with Enter Mode Command
+  exit
+    Operations to be executed with Exit Mode Command
+  attention
+    Callback for Attention Command
+  vdm
+    Callback for SVID specific commands
+  notify
+    Communication channel for platform and the alternate mode
+  activate
+    User callback for Enter/Exit Mode

@@ -1,0 +1,15 @@
+Struct: struct srpt_ioctx
+
+shared SRPT I/O context information
+
+Members
+  cqe
+    Completion queue element.
+  buf
+    Pointer to the buffer.
+  dma
+    DMA address of the buffer.
+  offset
+    Offset of the first byte in buf and dma that is actually used.
+  index
+    Index of the I/O context in its ioctx_ring array.

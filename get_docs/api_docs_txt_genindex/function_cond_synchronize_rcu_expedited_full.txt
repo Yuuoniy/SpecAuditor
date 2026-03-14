@@ -1,0 +1,12 @@
+Function: void cond_synchronize_rcu_expedited_full ( struct rcu_gp_oldstate * rgosp )
+
+Conditionally wait for an expedited RCU grace period
+
+Parameters
+  struct rcu_gp_oldstate *rgosp
+    value from get_state_synchronize_rcu_full() , start_poll_synchronize_rcu_full() , or start_poll_synchronize_rcu_expedited_full()
+
+Description
+  If a full RCU grace period has elapsed since the call to get_state_synchronize_rcu_full() , start_poll_synchronize_rcu_full() ,
+or start_poll_synchronize_rcu_expedited_full() from which rgosp was
+obtained, just return.  Otherwise, invoke synchronize_rcu_expedited() to wait for a full grace period.

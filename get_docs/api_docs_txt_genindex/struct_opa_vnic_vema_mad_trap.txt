@@ -1,0 +1,15 @@
+Struct: struct opa_vnic_vema_mad_trap
+
+Generic VEMA MAD Trap
+
+Members
+  mad_hdr
+    Generic MAD header
+  rmpp_hdr
+    RMPP header for vendor specific MADs
+  reserved
+    reserved bytes
+  oui
+    Unique org identifier
+  notice
+    Notice structure

@@ -1,0 +1,7 @@
+Function: int snd_pcm_start ( struct snd_pcm_substream * substream )
+
+start all linked streams
+
+Parameters
+  struct snd_pcm_substream *substream
+    the PCM substream instance

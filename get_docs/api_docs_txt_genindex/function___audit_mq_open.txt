@@ -1,0 +1,11 @@
+Function: void __audit_mq_open ( int oflag , umode_t mode , struct mq_attr * attr )
+
+record audit data for a POSIX MQ open
+
+Parameters
+  int oflag
+    open flag
+  umode_t mode
+    mode bits
+  struct mq_attr *attr
+    queue attributes

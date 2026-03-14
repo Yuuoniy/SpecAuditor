@@ -1,0 +1,41 @@
+Struct: struct nand_flash_dev
+
+NAND Flash Device ID Structure
+
+Members
+  name
+    a human-readable name of the NAND chip
+  {unnamed_union}
+    anonymous
+  {unnamed_struct}
+    anonymous
+  mfr_id
+    manufacturer ID part of the full chip ID array (refers the same
+memory address as id[0] )
+  dev_id
+    device ID part of the full chip ID array (refers the same memory
+address as id[1] )
+  id
+    full device ID array
+  pagesize
+    size of the NAND page in bytes; if 0, then the real page size (as
+well as the eraseblock size) is determined from the extended NAND
+chip ID array)
+  chipsize
+    total chip size in MiB
+  erasesize
+    eraseblock size in bytes (determined from the extended ID if 0)
+  options
+    stores various chip bit options
+  id_len
+    The valid length of the id .
+  oobsize
+    OOB size
+  ecc
+    ECC correctability and step information from the datasheet.
+  ecc.strength_ds
+    The ECC correctability from the datasheet, same as the ecc_strength_ds in nand_chip{}.
+  ecc.step_ds
+    The ECC step required by the ecc.strength_ds , same as the ecc_step_ds in nand_chip{}, also from the datasheet.
+For example, the “4bit ECC for each 512Byte” can be set with
+NAND_ECC_INFO(4, 512).

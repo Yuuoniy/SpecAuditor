@@ -1,0 +1,18 @@
+Function: umode_t mode_strip_sgid ( struct mnt_idmap * idmap , const struct inode * dir , umode_t mode )
+
+handle the sgid bit for non-directories
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount the inode was created from
+  const struct inode *dir
+    parent directory inode
+  umode_t mode
+    mode of the file to be created in dir
+
+Description
+  If the mode of the new file has both the S_ISGID and S_IXGRP bit
+raised and dir has the S_ISGID bit raised ensure that the caller is
+either in the group of the parent directory or they have CAP_FSETID
+in their user namespace and are privileged over the parent directory.
+In all other cases, strip the S_ISGID bit from mode .

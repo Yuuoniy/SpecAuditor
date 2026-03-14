@@ -1,0 +1,15 @@
+Function: u64 xe_ggtt_encode_pte_flags ( struct xe_ggtt * ggtt , struct xe_bo * bo , u16 pat_index )
+
+Get PTE encoding flags for BO
+
+Parameters
+  struct xe_ggtt *ggtt
+    xe_ggtt
+  struct xe_bo *bo
+    xe_bo
+  u16 pat_index
+    The pat_index for the PTE.
+
+Description
+  This function returns the pte_flags for a given BO, without  address.
+It’s used for DPT to fill a GGTT mapped BO with a linear lookup table.

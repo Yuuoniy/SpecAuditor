@@ -1,0 +1,11 @@
+Function: int sync_mapping_buffers ( struct address_space * mapping )
+
+write out & wait upon a mapping’s “associated” buffers
+
+Parameters
+  struct address_space *mapping
+    the mapping which wants those buffers written
+
+Description
+  Starts I/O against the buffers at mapping->i_private_list, and waits upon
+that I/O.

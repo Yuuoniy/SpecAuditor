@@ -1,0 +1,12 @@
+Function: int init_srcu_struct ( struct srcu_struct * ssp )
+
+initialize a sleep-RCU structure
+
+Parameters
+  struct srcu_struct *ssp
+    structure to initialize.
+
+Description
+  Must invoke this on a given srcu_struct before passing that srcu_struct
+to any other function.  Each srcu_struct represents a separate domain
+of SRCU protection.

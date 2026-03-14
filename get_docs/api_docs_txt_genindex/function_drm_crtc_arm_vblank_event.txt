@@ -1,0 +1,16 @@
+Function: void drm_crtc_arm_vblank_event ( struct drm_crtc * crtc , struct drm_pending_vblank_event * e )
+
+arm vblank event after pageflip
+
+Parameters
+  struct drm_crtc *crtc
+    the source CRTC of the vblank event
+  struct drm_pending_vblank_event *e
+    the event to send
+
+Description
+  A lot of drivers need to generate vblank events for the very next vblank
+interrupt. For example when the page flip interrupt happens when the page
+flip gets armed, but not when it actually executes within the next vblank
+period. This helper function implements exactly the required vblank arming
+behaviour.

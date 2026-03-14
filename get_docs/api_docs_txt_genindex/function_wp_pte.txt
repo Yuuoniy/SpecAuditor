@@ -1,0 +1,17 @@
+Function: int wp_pte ( pte_t * pte , unsigned long addr , unsigned long end , struct mm_walk * walk )
+
+Write-protect a pte
+
+Parameters
+  pte_t *pte
+    Pointer to the pte
+  unsigned long addr
+    The start of protecting virtual address
+  unsigned long end
+    The end of protecting virtual address
+  struct mm_walk *walk
+    pagetable walk callback argument
+
+Description
+  The function write-protects a pte and records the range in
+virtual address space of touched ptes for efficient range TLB flushes.

@@ -1,0 +1,13 @@
+Function: void drm_dp_mst_hpd_irq_send_new_request ( struct drm_dp_mst_topology_mgr * mgr )
+
+MST hotplug IRQ kick off new request
+
+Parameters
+  struct drm_dp_mst_topology_mgr *mgr
+    manager to notify irq for.
+
+Description
+  This should be called from the driver when mst irq event is handled
+and acked. Note that new down request should only be sent when
+previous message transaction is completed. Source is not supposed to generate
+interleaved message transactions.

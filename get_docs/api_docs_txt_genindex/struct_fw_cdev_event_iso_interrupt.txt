@@ -1,0 +1,16 @@
+Struct: struct fw_cdev_event_iso_interrupt
+
+Sent when an iso packet was completed
+
+Members
+  closure
+    See fw_cdev_event_common ;
+set by FW_CDEV_CREATE_ISO_CONTEXT ioctl
+  type
+    See fw_cdev_event_common ; always FW_CDEV_EVENT_ISO_INTERRUPT
+  cycle
+    Cycle counter of the last completed packet
+  header_length
+    Total length of following headers, in bytes
+  header
+    Stripped headers, if any

@@ -1,0 +1,13 @@
+Function: int ww_mutex_trylock ( struct ww_mutex * ww , struct ww_acquire_ctx * ww_ctx )
+
+tries to acquire the w/w mutex with optional acquire context
+
+Parameters
+  struct ww_mutex *ww
+    mutex to lock
+  struct ww_acquire_ctx *ww_ctx
+    optional w/w acquire context
+
+Description
+  Trylocks a mutex with the optional acquire context; no deadlock detection is
+possible. Returns 1 if the mutex has been acquired successfully, 0 otherwise.

@@ -1,0 +1,13 @@
+Function: bool iio_channel_has_info ( const struct iio_chan_spec * chan , enum iio_chan_info_enum type )
+
+Checks whether a channel supports a info attribute
+
+Parameters
+  const struct iio_chan_spec *chan
+    The channel to be queried
+  enum iio_chan_info_enum type
+    Type of the info attribute to be checked
+
+Description
+  Returns true if the channels supports reporting values for the given info
+attribute type, false otherwise.

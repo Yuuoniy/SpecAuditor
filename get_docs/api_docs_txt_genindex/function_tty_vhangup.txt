@@ -1,0 +1,12 @@
+Function: void tty_vhangup ( struct tty_struct * tty )
+
+process vhangup
+
+Parameters
+  struct tty_struct *tty
+    tty to hangup
+
+Description
+  The user has asked via system call for the terminal to be hung up. We do
+this synchronously so that when the syscall returns the process is complete.
+That guarantee is necessary for security reasons.

@@ -1,0 +1,11 @@
+Function: void cpuhp_remove_multi_state ( enum cpuhp_state state )
+
+Remove hotplug multi state callback
+
+Parameters
+  enum cpuhp_state state
+    The state for which the calls are removed
+
+Description
+  Removes the callback functions from a multi state. This is the reverse of cpuhp_setup_state_multi() . All instances should have been removed before
+invoking this function.

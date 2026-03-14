@@ -1,0 +1,7 @@
+Function: struct regmap * regulator_get_regmap ( struct regulator * regulator )
+
+get the regulator’s register map
+
+Parameters
+  struct regulator *regulator
+    regulator source

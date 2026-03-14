@@ -1,0 +1,11 @@
+Struct: struct iser_mem_reg
+
+iSER memory registration info
+
+Members
+  sge
+    memory region sg element
+  rkey
+    memory region remote key
+  desc
+    pointer to fast registration context

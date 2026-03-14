@@ -1,0 +1,7 @@
+Function: struct Scsi_Host * scsi_host_get ( struct Scsi_Host * shost )
+
+inc a Scsi_Host ref count
+
+Parameters
+  struct Scsi_Host *shost
+    Pointer to Scsi_Host to inc.

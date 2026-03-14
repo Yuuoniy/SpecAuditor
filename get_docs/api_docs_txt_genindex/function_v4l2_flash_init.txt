@@ -1,0 +1,21 @@
+Function: struct v4l2_flash * v4l2_flash_init ( struct device * dev , struct fwnode_handle * fwn , struct led_classdev_flash * fled_cdev , const struct v4l2_flash_ops * ops , struct v4l2_flash_config * config )
+
+initialize V4L2 flash led sub-device
+
+Parameters
+  struct device *dev
+    flash device, e.g. an I2C device
+  struct fwnode_handle *fwn
+    fwnode_handle of the LED, may be NULL if the same as device’s
+  struct led_classdev_flash *fled_cdev
+    LED flash class device to wrap
+  const struct v4l2_flash_ops *ops
+    V4L2 Flash device ops
+  struct v4l2_flash_config *config
+    initialization data for V4L2 Flash sub-device
+
+Description
+  Create V4L2 Flash sub-device wrapping given LED subsystem device.
+The ops pointer is stored by the V4L2 flash framework. No
+references are held to config nor its contents once this function
+has returned.

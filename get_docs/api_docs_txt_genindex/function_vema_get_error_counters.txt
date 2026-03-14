@@ -1,0 +1,11 @@
+Function: void vema_get_error_counters ( struct opa_vnic_vema_port * port , struct opa_vnic_vema_mad * recvd_mad , struct opa_vnic_vema_mad * rsp_mad )
+
+Gets summary counters.
+
+Parameters
+  struct opa_vnic_vema_port *port
+    source port on which MAD was received
+  struct opa_vnic_vema_mad *recvd_mad
+    Received mad contains fields to set vnic parameters
+  struct opa_vnic_vema_mad *rsp_mad
+    Response mad to be built

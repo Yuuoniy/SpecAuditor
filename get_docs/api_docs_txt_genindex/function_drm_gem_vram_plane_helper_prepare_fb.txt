@@ -1,0 +1,14 @@
+Function: int drm_gem_vram_plane_helper_prepare_fb ( struct drm_plane * plane , struct drm_plane_state * new_state )
+
+Implements struct drm_plane_helper_funcs .prepare_fb
+
+Parameters
+  struct drm_plane *plane
+    a DRM plane
+  struct drm_plane_state *new_state
+    the plane’s new state
+
+Description
+  During plane updates, this function sets the plane’s fence and
+pins the GEM VRAM objects of the plane’s new framebuffer to VRAM.
+Call drm_gem_vram_plane_helper_cleanup_fb() to unpin them.

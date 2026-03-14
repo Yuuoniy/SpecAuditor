@@ -1,0 +1,16 @@
+Function: struct buffer_head * __bread_gfp ( struct block_device * bdev , sector_t block , unsigned size , gfp_t gfp )
+
+Read a block.
+
+Parameters
+  struct block_device *bdev
+    The block device to read from.
+  sector_t block
+    Block number in units of block size.
+  unsigned size
+    The block size of this device in bytes.
+  gfp_t gfp
+    Not page allocation flags; see below.
+
+Description
+  You are not expected to call this function.  You should use one of sb_bread() , sb_bread_unmovable() or __bread() .

@@ -1,0 +1,12 @@
+Function: phys_addr_t gen_pool_virt_to_phys ( struct gen_pool * pool , unsigned long addr )
+
+return the physical address of memory
+
+Parameters
+  struct gen_pool *pool
+    pool to allocate from
+  unsigned long addr
+    starting address of memory
+
+Description
+  Returns the physical address on success, or -1 on error.

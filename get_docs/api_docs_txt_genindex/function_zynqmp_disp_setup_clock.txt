@@ -1,0 +1,9 @@
+Function: int zynqmp_disp_setup_clock ( struct zynqmp_disp * disp , unsigned long mode_clock )
+
+Configure the display controller pixel clock rate
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller
+  unsigned long mode_clock
+    The pixel clock rate, in Hz

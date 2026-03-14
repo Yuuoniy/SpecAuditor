@@ -1,0 +1,17 @@
+Function: int vfs_path_parent_lookup ( struct filename * filename , unsigned int flags , struct path * parent , struct qstr * last , int * type , const struct path * root )
+
+lookup a parent path relative to a dentry-vfsmount pair
+
+Parameters
+  struct filename *filename
+    filename structure
+  unsigned int flags
+    lookup flags
+  struct path *parent
+    pointer to struct path to fill
+  struct qstr *last
+    last component
+  int *type
+    type of the last component
+  const struct path *root
+    pointer to struct path of the base directory

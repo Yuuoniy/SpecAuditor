@@ -1,0 +1,12 @@
+Function: void drm_sched_entity_set_priority ( struct drm_sched_entity * entity , enum drm_sched_priority priority )
+
+Sets priority of the entity
+
+Parameters
+  struct drm_sched_entity *entity
+    scheduler entity
+  enum drm_sched_priority priority
+    scheduler priority
+
+Description
+  Update the priority of runqueues used for the entity.

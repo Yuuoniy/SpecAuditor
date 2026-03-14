@@ -1,0 +1,25 @@
+Function: struct drm_mode_fb_cmd2
+
+Frame-buffer metadata.
+
+Members
+  fb_id
+    Object ID of the frame-buffer.
+  width
+    Width of the frame-buffer.
+  height
+    Height of the frame-buffer.
+  pixel_format
+    FourCC format code, see DRM_FORMAT_* constants in drm_fourcc.h .
+  flags
+    Frame-buffer flags (see DRM_MODE_FB_INTERLACED and DRM_MODE_FB_MODIFIERS ).
+  handles
+    GEM buffer handle, one per plane. Set to 0 if the plane is
+unused. The same handle can be used for multiple planes.
+  pitches
+    Pitch (aka. stride) in bytes, one per plane.
+  offsets
+    Offset into the buffer in bytes, one per plane.
+  modifier
+    Format modifier, one per plane. See DRM_FORMAT_MOD_* constants in drm_fourcc.h . All planes must use the same
+modifier. Ignored unless DRM_MODE_FB_MODIFIERS is set in flags .

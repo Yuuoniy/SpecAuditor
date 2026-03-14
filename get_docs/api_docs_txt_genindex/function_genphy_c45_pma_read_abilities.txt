@@ -1,0 +1,15 @@
+Function: int genphy_c45_pma_read_abilities ( struct phy_device * phydev )
+
+read supported link modes from PMA
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  Read the supported link modes from the PMA Status 2 (1.8) register. If bit
+1.8.9 is set, the list of supported modes is build using the values in the
+PMA Extended Abilities (1.11) register, indicating 1000BASET an 10G related
+modes. If bit 1.11.14 is set, then the list is also extended with the modes
+in the 2.5G/5G PMA Extended register (1.21), indicating if 2.5GBASET and
+5GBASET are supported.

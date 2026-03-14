@@ -1,0 +1,9 @@
+Function: void eth_addr_add ( u8 * addr , long offset )
+
+Add (or subtract) an offset to/from the given MAC address.
+
+Parameters
+  u8 *addr
+    Pointer to a six-byte array containing Ethernet address to increment.
+  long offset
+    Offset to add.

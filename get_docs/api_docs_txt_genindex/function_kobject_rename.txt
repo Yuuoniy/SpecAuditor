@@ -1,0 +1,15 @@
+Function: int kobject_rename ( struct kobject * kobj , const char * new_name )
+
+Change the name of an object.
+
+Parameters
+  struct kobject *kobj
+    object in question.
+  const char *new_name
+    object’s new name
+
+Description
+  It is the responsibility of the caller to provide mutual
+exclusion between two different calls of kobject_rename
+on the same kobject and to ensure that new_name is valid and
+won’t conflict with other kobjects.

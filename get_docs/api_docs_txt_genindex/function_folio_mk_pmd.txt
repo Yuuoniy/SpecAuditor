@@ -1,0 +1,13 @@
+Function: pmd_t folio_mk_pmd ( const struct folio * folio , pgprot_t pgprot )
+
+Create a PMD for this folio
+
+Parameters
+  const struct folio *folio
+    The folio to create a PMD for
+  pgprot_t pgprot
+    The page protection bits to use
+
+Description
+  Create a page table entry for the first page of this folio.
+This is suitable for passing to set_pmd_at() .

@@ -1,0 +1,18 @@
+Function: void * krealloc_node_align ( const void * p , size_t new_size , unsigned long align , gfp_t flags , int nid )
+
+reallocate memory. The contents will remain unchanged.
+
+Parameters
+  const void *p
+    object to reallocate memory for.
+  size_t new_size
+    how many bytes of memory are required.
+  unsigned long align
+    desired alignment.
+  gfp_t flags
+    the type of memory to allocate.
+  int nid
+    NUMA node or NUMA_NO_NODE
+
+Description
+  If p is NULL , krealloc() behaves exactly like kmalloc() .  If new_size is 0 and p is not a NULL pointer, the object pointed to is freed.

@@ -1,0 +1,10 @@
+Function: struct vidtv_psi_table_pmt * * vidtv_psi_pmt_create_sec_for_each_pat_entry ( struct vidtv_psi_table_pat * pat , u16 pcr_pid )
+
+Create a PMT section for each program found in the PAT
+
+Parameters
+  struct vidtv_psi_table_pat *pat
+    The PAT to look for programs.
+  u16 pcr_pid
+    packet ID for the PCR to be used for the program described in this
+PMT section

@@ -1,0 +1,12 @@
+Function: void jbd2_journal_lock_updates ( journal_t * journal )
+
+establish a transaction barrier.
+
+Parameters
+  journal_t *journal
+    Journal to establish a barrier on.
+
+Description
+  This locks out any further updates from being started, and blocks
+until all existing updates have completed, returning only once the
+journal is in a quiescent state with no updates running.

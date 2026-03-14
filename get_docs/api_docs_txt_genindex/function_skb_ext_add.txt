@@ -1,0 +1,14 @@
+Function: void * skb_ext_add ( struct sk_buff * skb , enum skb_ext_id id )
+
+allocate space for given extension, COW if needed
+
+Parameters
+  struct sk_buff *skb
+    buffer
+  enum skb_ext_id id
+    extension to allocate space for
+
+Description
+  Allocates enough space for the given extension.
+If the extension is already present, a pointer to that extension
+is returned.

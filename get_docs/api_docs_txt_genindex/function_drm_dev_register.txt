@@ -1,0 +1,13 @@
+Function: int drm_dev_register ( struct drm_device * dev , unsigned long flags )
+
+Register DRM device
+
+Parameters
+  struct drm_device *dev
+    Device to register
+  unsigned long flags
+    Flags passed to the driver’s . load() function
+
+Description
+  Register the DRM device dev with the system, advertise device to user-space
+and start normal device operation. dev must be initialized via drm_dev_init() previously.

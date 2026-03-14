@@ -1,0 +1,10 @@
+Function: int mipi_dsi_dcs_exit_sleep_mode ( struct mipi_dsi_device * dsi )
+
+enable all blocks inside the display module
+
+Parameters
+  struct mipi_dsi_device *dsi
+    DSI peripheral device
+
+Description
+  This function is deprecated. Use mipi_dsi_dcs_exit_sleep_mode_multi() instead.

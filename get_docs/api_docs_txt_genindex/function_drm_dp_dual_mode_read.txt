@@ -1,0 +1,17 @@
+Function: ssize_t drm_dp_dual_mode_read ( struct i2c_adapter * adapter , u8 offset , void * buffer , size_t size )
+
+Read from the DP dual mode adaptor register(s)
+
+Parameters
+  struct i2c_adapter *adapter
+    I2C adapter for the DDC bus
+  u8 offset
+    register offset
+  void *buffer
+    buffer for return data
+  size_t size
+    size of the buffer
+
+Description
+  Reads size bytes from the DP dual mode adaptor registers
+starting at offset .

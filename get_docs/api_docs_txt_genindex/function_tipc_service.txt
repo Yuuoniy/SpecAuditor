@@ -1,0 +1,19 @@
+Function: struct tipc_service
+
+container for all published instances of a service type
+
+Members
+  type
+    32 bit ‘type’ value for service
+  publ_cnt
+    increasing counter for publications in this service
+  ranges
+    rb tree containing all service ranges for this service
+  service_list
+    links to adjacent name ranges in hash chain
+  subscriptions
+    list of subscriptions for this service type
+  lock
+    spinlock controlling access to pertaining service ranges/publications
+  rcu
+    RCU callback head used for deferred freeing

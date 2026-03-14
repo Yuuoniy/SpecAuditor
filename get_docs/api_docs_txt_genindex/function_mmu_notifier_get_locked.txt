@@ -1,0 +1,15 @@
+Function: struct mmu_notifier * mmu_notifier_get_locked ( const struct mmu_notifier_ops * ops , struct mm_struct * mm )
+
+Return the single struct mmu_notifier for the mm & ops
+
+Parameters
+  const struct mmu_notifier_ops *ops
+    The operations struct being subscribe with
+  struct mm_struct *mm
+    The mm to attach notifiers too
+
+Description
+  This function either allocates a new mmu_notifier via
+ops-> alloc_notifier() , or returns an already existing notifier on the
+list. The value of the ops pointer is used to determine when two notifiers
+are the same.

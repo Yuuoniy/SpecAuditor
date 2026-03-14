@@ -1,0 +1,98 @@
+Struct: struct drm_dsc_config
+
+Parameters required to configure DSC
+
+Members
+  line_buf_depth
+    Bits per component for previous reconstructed line buffer
+  bits_per_component
+    Bits per component to code (8/10/12)
+  convert_rgb
+    Flag to indicate if RGB - YCoCg conversion is needed
+True if RGB input, False if YCoCg input
+  slice_count
+    Number fo slices per line used by the DSC encoder
+  slice_width
+    Width of each slice in pixels
+  slice_height
+    Slice height in pixels
+  simple_422
+    True if simple 4_2_2 mode is enabled else False
+  pic_width
+    Width of the input display frame in pixels
+  pic_height
+    Vertical height of the input display frame
+  rc_tgt_offset_high
+    Offset to bits/group used by RC to determine QP adjustment
+  rc_tgt_offset_low
+    Offset to bits/group used by RC to determine QP adjustment
+  bits_per_pixel
+    Target bits per pixel with 4 fractional bits, bits_per_pixel << 4
+  rc_edge_factor
+    Factor to determine if an edge is present based on the bits produced
+  rc_quant_incr_limit1
+    Slow down incrementing once the range reaches this value
+  rc_quant_incr_limit0
+    Slow down incrementing once the range reaches this value
+  initial_xmit_delay
+    Number of pixels to delay the initial transmission
+  initial_dec_delay
+    Initial decoder delay, number of pixel times that the decoder
+accumulates data in its rate buffer before starting to decode
+and output pixels.
+  block_pred_enable
+    True if block prediction is used to code any groups within the
+picture. False if BP not used
+  first_line_bpg_offset
+    Number of additional bits allocated for each group on the first
+line of slice.
+  initial_offset
+    Value to use for RC model offset at slice start
+  rc_buf_thresh
+    Thresholds defining each of the buffer ranges
+  rc_range_params
+    Parameters for each of the RC ranges defined in struct drm_dsc_rc_range_parameters
+  rc_model_size
+    Total size of RC model
+  flatness_min_qp
+    Minimum QP where flatness information is sent
+  flatness_max_qp
+    Maximum QP where flatness information is sent
+  initial_scale_value
+    Initial value for the scale factor
+  scale_decrement_interval
+    Specifies number of group times between decrementing the scale factor
+at beginning of a slice.
+  scale_increment_interval
+    Number of group times between incrementing the scale factor value
+used at the beginning of a slice.
+  nfl_bpg_offset
+    Non first line BPG offset to be used
+  slice_bpg_offset
+    BPG offset used to enforce slice bit
+  final_offset
+    Final RC linear transformation offset value
+  vbr_enable
+    True if VBR mode is enabled, false if disabled
+  mux_word_size
+    Mux word size (in bits) for SSM mode
+  slice_chunk_size
+    The (max) size in bytes of the “chunks” that are used in slice
+multiplexing.
+  rc_bits
+    Rate control buffer size in bits
+  dsc_version_minor
+    DSC minor version
+  dsc_version_major
+    DSC major version
+  native_422
+    True if Native 4:2:2 supported, else false
+  native_420
+    True if Native 4:2:0 supported else false.
+  second_line_bpg_offset
+    Additional bits/grp for seconnd line of slice for native 4:2:0
+  nsl_bpg_offset
+    Num of bits deallocated for each grp that is not in second line of
+slice
+  second_line_offset_adj
+    Offset adjustment for second line in Native 4:2:0 mode

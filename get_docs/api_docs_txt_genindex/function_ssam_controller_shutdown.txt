@@ -1,0 +1,13 @@
+Function: void ssam_controller_shutdown ( struct ssam_controller * ctrl )
+
+Shut down the controller.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller.
+
+Description
+  Shuts down the controller by flushing all pending requests and stopping the
+transmitter and receiver threads. All requests submitted after this call
+will fail with -ESHUTDOWN . While it is discouraged to do so, this function
+is safe to use in parallel with ongoing request submission.

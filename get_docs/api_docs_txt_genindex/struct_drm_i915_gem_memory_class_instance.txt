@@ -1,0 +1,9 @@
+Struct: struct drm_i915_gem_memory_class_instance
+
+Identify particular memory region
+
+Members
+  memory_class
+    See enum drm_i915_gem_memory_class
+  memory_instance
+    Which instance

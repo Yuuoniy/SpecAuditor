@@ -1,0 +1,11 @@
+Function: void i915_perf_destroy_locked ( struct i915_perf_stream * stream )
+
+destroy an i915 perf stream
+
+Parameters
+  struct i915_perf_stream *stream
+    An i915 perf stream
+
+Description
+  Frees all resources associated with the given i915 perf stream , disabling
+any associated data capture in the process.

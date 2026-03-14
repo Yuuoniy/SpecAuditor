@@ -1,0 +1,15 @@
+Function: long dvb_generic_ioctl ( struct file * file , unsigned int cmd , unsigned long arg )
+
+Digital TV close function, used by DVB devices
+
+Parameters
+  struct file *file
+    pointer to struct file .
+  unsigned int cmd
+    Ioctl name.
+  unsigned long arg
+    Ioctl argument.
+
+Description
+  Checks if a DVB devnode and struct dvbdev .kernel_ioctl is still valid.
+If so, calls dvb_usercopy() .

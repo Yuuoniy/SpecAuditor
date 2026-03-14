@@ -1,0 +1,9 @@
+Function: void skb_frag_size_sub ( skb_frag_t * frag , int delta )
+
+Decrements the size of a skb fragment by delta
+
+Parameters
+  skb_frag_t *frag
+    skb fragment
+  int delta
+    value to subtract

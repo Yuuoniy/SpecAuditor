@@ -1,0 +1,14 @@
+Function: void call_rcu_hurry ( struct rcu_head * head , rcu_callback_t func )
+
+Queue RCU callback for invocation after grace period, and flush all lazy callbacks (including the new one) to the main ->cblist while doing so.
+
+Parameters
+  struct rcu_head *head
+    structure to be used for queueing the RCU updates.
+  rcu_callback_t func
+    actual callback function to be invoked after the grace period
+
+Description
+  The callback function will be invoked some time after a full grace
+period elapses, in other words after all pre-existing RCU read-side
+critical sections have completed.

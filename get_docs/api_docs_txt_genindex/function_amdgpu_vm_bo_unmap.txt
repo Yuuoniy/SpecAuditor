@@ -1,0 +1,14 @@
+Function: int amdgpu_vm_bo_unmap ( struct amdgpu_device * adev , struct amdgpu_bo_va * bo_va , uint64_t saddr )
+
+remove bo mapping from vm
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+  struct amdgpu_bo_va *bo_va
+    bo_va to remove the address from
+  uint64_t saddr
+    where to the BO is mapped
+
+Description
+  Remove a mapping of the BO at the specefied addr from the VM.

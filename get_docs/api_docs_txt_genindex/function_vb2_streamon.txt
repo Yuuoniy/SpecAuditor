@@ -1,0 +1,13 @@
+Function: int vb2_streamon ( struct vb2_queue * q , enum v4l2_buf_type type )
+
+start streaming
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  enum v4l2_buf_type type
+    type argument passed from userspace to vidioc_streamon handler,
+as defined by enum v4l2_buf_type .
+
+Description
+  Should be called from v4l2_ioctl_ops->vidioc_streamon handler of a driver.

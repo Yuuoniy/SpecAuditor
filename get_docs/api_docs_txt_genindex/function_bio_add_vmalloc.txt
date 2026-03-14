@@ -1,0 +1,14 @@
+Function: bool bio_add_vmalloc ( struct bio * bio , void * vaddr , unsigned int len )
+
+add a vmalloc region to a bio
+
+Parameters
+  struct bio *bio
+    destination bio
+  void *vaddr
+    vmalloc address to add
+  unsigned int len
+    total length in bytes of the data to add
+
+Description
+  Add data starting at vaddr to bio .  Return true on success or false if bio does not have enough space for the payload.

@@ -1,0 +1,17 @@
+Function: void pcpu_next_md_free_region ( struct pcpu_chunk * chunk , int * bit_off , int * bits )
+
+finds the next hint free area
+
+Parameters
+  struct pcpu_chunk *chunk
+    chunk of interest
+  int *bit_off
+    chunk offset
+  int *bits
+    size of free area
+
+Description
+  Helper function for pcpu_for_each_md_free_region.  It checks
+block->contig_hint and performs aggregation across blocks to find the
+next hint.  It modifies bit_off and bits in-place to be consumed in the
+loop.

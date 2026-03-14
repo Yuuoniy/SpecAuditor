@@ -1,0 +1,12 @@
+Function: int ccw_device_set_options_mask ( struct ccw_device * cdev , unsigned long flags )
+
+set some options and unset the rest
+
+Parameters
+  struct ccw_device *cdev
+    device for which the options are to be set
+  unsigned long flags
+    options to be set
+
+Description
+  All flags specified in flags are set, all flags not specified in flags are cleared.

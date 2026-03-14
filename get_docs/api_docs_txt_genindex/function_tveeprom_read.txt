@@ -1,0 +1,13 @@
+Function: int tveeprom_read ( struct i2c_client * c , unsigned char * eedata , int len )
+
+Reads the contents of the eeprom found at the Hauppauge devices.
+
+Parameters
+  struct i2c_client *c
+    I2C client struct
+  unsigned char *eedata
+    Array where the eeprom content will be stored.
+  int len
+    Size of eedata array. If the eeprom content will be latter
+be parsed by tveeprom_hauppauge_analog() , len should be, at
+least, 256.

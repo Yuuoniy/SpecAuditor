@@ -1,0 +1,19 @@
+Struct: struct pisp_be_stitch_config
+
+PiSP Back End Stitch config
+
+Members
+  threshold_lo
+    Low threshold value
+  threshold_diff_power
+    Low and high threshold difference
+  pad
+    Padding bytes
+  exposure_ratio
+    Multiplier to convert long exposure pixels into
+short exposure pixels
+  motion_threshold_256
+    Motion threshold above which short exposure
+pixels are used
+  motion_threshold_recip
+    Reciprocal of motion_threshold_256 value

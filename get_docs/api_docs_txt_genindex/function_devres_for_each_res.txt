@@ -1,0 +1,20 @@
+Function: void devres_for_each_res ( struct device * dev , dr_release_t release , dr_match_t match , void * match_data , void ( * fn ) ( struct device * , void * , void * ) , void * data )
+
+Resource iterator
+
+Parameters
+  struct device *dev
+    Device to iterate resource from
+  dr_release_t release
+    Look for resources associated with this release function
+  dr_match_t match
+    Match function (optional)
+  void *match_data
+    Data for the match function
+  void (*fn)(struct device *, void *, void *)
+    Function to be called for each matched resource.
+  void *data
+    Data for fn , the 3rd parameter of fn
+
+Description
+  Call fn for each devres of dev which is associated with release and for which match returns 1.

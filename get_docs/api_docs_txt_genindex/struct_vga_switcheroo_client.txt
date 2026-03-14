@@ -1,0 +1,28 @@
+Struct: struct vga_switcheroo_client
+
+registered client
+
+Members
+  pdev
+    client pci device
+  fb_info
+    framebuffer to which console is remapped on switching
+  pwr_state
+    current power state if manual power control is used.
+For driver power control, call vga_switcheroo_pwr_state() .
+  ops
+    client callbacks
+  id
+    client identifier. Determining the id requires the handler,
+so gpus are initially assigned VGA_SWITCHEROO_UNKNOWN_ID
+and later given their true id in vga_switcheroo_enable()
+  active
+    whether the outputs are currently switched to this client
+  driver_power_control
+    whether power state is controlled by the driver’s
+runtime pm. If true, writing ON and OFF to the vga_switcheroo debugfs
+interface is a no-op so as not to interfere with runtime pm
+  list
+    client list
+  vga_dev
+    pci device, indicate which GPU is bound to current audio client

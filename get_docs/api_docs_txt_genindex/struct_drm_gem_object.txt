@@ -1,0 +1,67 @@
+Struct: struct drm_gem_object
+
+GEM buffer object
+
+Members
+  refcount
+    Reference count of this object Please use drm_gem_object_get() to acquire and drm_gem_object_put_locked() or drm_gem_object_put() to release a reference to a GEM
+buffer object.
+  handle_count
+    This is the GEM file_priv handle count of this object. Each handle also holds a reference. Note that when the handle_count
+drops to 0 any global names (e.g. the id in the flink namespace) will
+be cleared. Protected by drm_device.object_name_lock .
+  dev
+    DRM dev this object belongs to.
+  filp
+    SHMEM file node used as backing storage for swappable buffer objects.
+GEM also supports driver private objects with driver-specific backing
+storage (contiguous DMA memory, special reserved blocks). In this
+case filp is NULL.
+  vma_node
+    Mapping info for this object to support mmap. Drivers are supposed to
+allocate the mmap offset using drm_gem_create_mmap_offset() . The
+offset itself can be retrieved using drm_vma_node_offset_addr() . Memory mapping itself is handled by drm_gem_mmap() , which also checks
+that userspace is allowed to access the object.
+  size
+    Size of the object, in bytes.  Immutable over the object’s
+lifetime.
+  name
+    Global name for this object, starts at 1. 0 means unnamed.
+Access is covered by drm_device.object_name_lock . This is used by
+the GEM_FLINK and GEM_OPEN ioctls.
+  dma_buf
+    dma-buf associated with this GEM object. Pointer to the dma-buf associated with this gem object (either
+through importing or exporting). We break the resulting reference
+loop when the last gem handle for this object is released. Protected by drm_device.object_name_lock .
+  import_attach
+    dma-buf attachment backing this object. Any foreign dma_buf imported as a gem object has this set to the
+attachment point for the device. This is invariant over the lifetime
+of a gem object. The drm_gem_object_funcs.free callback is responsible for
+cleaning up the dma_buf attachment and references acquired at import
+time. Note that the drm gem/prime core does not depend upon drivers setting
+this field any more. So for drivers where this doesn’t make sense
+(e.g. virtual devices or a displaylink behind an usb bus) they can
+simply leave it as NULL.
+  resv
+    Pointer to reservation object associated with the this GEM object. Normally ( resv == &**_resv**) except for imported GEM objects.
+  _resv
+    A reservation object for this GEM object. This is unused for imported GEM objects.
+  gpuva
+    Fields used by GPUVM to manage mappings pointing to this GEM object. When DRM_GPUVM_IMMEDIATE_MODE is set, this list is protected by the
+mutex. Otherwise, the list is protected by the GEMs dma_resv lock. Note that all entries in this list must agree on whether
+DRM_GPUVM_IMMEDIATE_MODE is set.
+  gpuva.list
+    list of GPUVM mappings attached to this GEM object. Drivers should lock list accesses with either the GEMs dma_resv lock ( drm_gem_object.resv ) or the drm_gem_object.gpuva .lock mutex.
+  gpuva.lock
+    lock protecting access to drm_gem_object.gpuva .list
+when DRM_GPUVM_IMMEDIATE_MODE is used. Only used when DRM_GPUVM_IMMEDIATE_MODE is set. It should be
+safe to take this mutex during the fence signalling path, so
+do not allocate memory while holding this lock. Otherwise,
+the dma_resv lock should be used.
+  funcs
+    Optional GEM object functions. If this is set, it will be used instead of the
+corresponding drm_driver GEM callbacks. New drivers should use this.
+  lru_node
+    List node in a drm_gem_lru .
+  lru
+    The current LRU list that the GEM object is on.

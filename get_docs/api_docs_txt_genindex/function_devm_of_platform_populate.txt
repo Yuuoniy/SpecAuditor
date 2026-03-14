@@ -1,0 +1,10 @@
+Function: int devm_of_platform_populate ( struct device * dev )
+
+Populate platform_devices from device tree data
+
+Parameters
+  struct device *dev
+    device that requested to populate from device tree data
+
+Description
+  Similar to of_platform_populate() , but will automatically call of_platform_depopulate() when the device is unbound from the bus.

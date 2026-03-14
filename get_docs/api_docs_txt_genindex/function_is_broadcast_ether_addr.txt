@@ -1,0 +1,10 @@
+Function: bool is_broadcast_ether_addr ( const u8 * addr )
+
+Determine if the Ethernet address is broadcast
+
+Parameters
+  const u8 *addr
+    Pointer to a six-byte array containing the Ethernet address
+
+Description
+  Please note: addr must be aligned to u16.

@@ -1,0 +1,18 @@
+Function: int bus_for_each_dev ( const struct bus_type * bus , struct device * start , void * data , device_iter_t fn )
+
+device iterator.
+
+Parameters
+  const struct bus_type *bus
+    bus type.
+  struct device *start
+    device to start iterating from.
+  void *data
+    data for the callback.
+  device_iter_t fn
+    function to be called for each device.
+
+Description
+  Iterate over bus ’s list of devices, and call fn for each,
+passing it data . If start is not NULL, we use that device to
+begin iterating from.

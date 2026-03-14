@@ -1,0 +1,15 @@
+Function: unsigned long airq_iv_scan ( struct airq_iv * iv , unsigned long start , unsigned long end )
+
+scan interrupt vector for non-zero bits
+
+Parameters
+  struct airq_iv *iv
+    pointer to interrupt vector structure
+  unsigned long start
+    bit number to start the search
+  unsigned long end
+    bit number to end the search
+
+Description
+  Returns the bit number of the next non-zero interrupt bit, or
+-1UL if the scan completed without finding any more any non-zero bits.

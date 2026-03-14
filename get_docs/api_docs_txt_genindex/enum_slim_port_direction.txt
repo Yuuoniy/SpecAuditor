@@ -1,0 +1,3 @@
+Enum: enum slim_port_direction
+
+SLIMbus port direction

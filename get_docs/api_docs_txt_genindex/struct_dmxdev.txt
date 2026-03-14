@@ -1,0 +1,33 @@
+Struct: struct dmxdev
+
+Describes a digital TV demux device.
+
+Members
+  dvbdev
+    pointer to struct dvb_device associated with
+the demux device node.
+  dvr_dvbdev
+    pointer to struct dvb_device associated with
+the dvr device node.
+  filter
+    pointer to struct dmxdev_filter .
+  demux
+    pointer to struct dmx_demux .
+  filternum
+    number of filters.
+  capabilities
+    demux capabilities as defined by enum dmx_demux_caps .
+  may_do_mmap
+    flag used to indicate if the device may do mmap.
+  exit
+    flag to indicate that the demux is being released.
+  dvr_orig_fe
+    pointer to struct dmx_frontend .
+  dvr_buffer
+    embedded struct dvb_ringbuffer for DVB output.
+  dvr_vb2_ctx
+    control struct for VB2 handler
+  mutex
+    protects the usage of this structure.
+  lock
+    protects access to dmxdev->filter ->data.

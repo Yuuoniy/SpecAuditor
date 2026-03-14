@@ -1,0 +1,11 @@
+Function: void pci_free_irq_vectors ( struct pci_dev * dev )
+
+Free previously allocated IRQs for a device
+
+Parameters
+  struct pci_dev *dev
+    the PCI device to operate on
+
+Description
+  Undo the interrupt vector allocations and possible device MSI/MSI-X
+enablement earlier done through pci_alloc_irq_vectors_affinity() or pci_alloc_irq_vectors() .

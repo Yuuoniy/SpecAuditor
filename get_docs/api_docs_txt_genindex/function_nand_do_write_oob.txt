@@ -1,0 +1,14 @@
+Function: int nand_do_write_oob ( struct nand_chip * chip , loff_t to , struct mtd_oob_ops * ops )
+
+[MTD Interface] NAND write out-of-band
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+  loff_t to
+    offset to write to
+  struct mtd_oob_ops *ops
+    oob operation description structure
+
+Description
+  NAND write out-of-band.

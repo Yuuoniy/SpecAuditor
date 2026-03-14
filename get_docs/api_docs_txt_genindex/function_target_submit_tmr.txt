@@ -1,0 +1,26 @@
+Function: int target_submit_tmr ( struct se_cmd * se_cmd , struct se_session * se_sess , unsigned char * sense , u64 unpacked_lun , void * fabric_tmr_ptr , unsigned char tm_type , gfp_t gfp , u64 tag , int flags )
+
+lookup unpacked lun and submit uninitialized se_cmd for TMR CDBs
+
+Parameters
+  struct se_cmd *se_cmd
+    command descriptor to submit
+  struct se_session *se_sess
+    associated se_sess for endpoint
+  unsigned char *sense
+    pointer to SCSI sense buffer
+  u64 unpacked_lun
+    unpacked LUN to reference for struct se_lun
+  void *fabric_tmr_ptr
+    fabric context for TMR req
+  unsigned char tm_type
+    Type of TM request
+  gfp_t gfp
+    gfp type for caller
+  u64 tag
+    referenced task tag for TMR_ABORT_TASK
+  int flags
+    submit cmd flags
+
+Description
+  Callable from all contexts.

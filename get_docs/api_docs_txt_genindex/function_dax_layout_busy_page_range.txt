@@ -1,0 +1,18 @@
+Function: struct page * dax_layout_busy_page_range ( struct address_space * mapping , loff_t start , loff_t end )
+
+find first pinned page in mapping
+
+Parameters
+  struct address_space *mapping
+    address space to scan for a page with ref count > 1
+  loff_t start
+    Starting offset. Page containing ‘start’ is included.
+  loff_t end
+    End offset. Page containing ‘end’ is included. If ‘end’ is LLONG_MAX,
+pages from ‘start’ till the end of file are included.
+
+Description
+  DAX requires ZONE_DEVICE mapped pages. These pages are never
+‘onlined’ to the page allocator so they are considered idle when
+page->count == 1. A filesystem uses this interface to determine if
+any page in the mapping is busy, i.e. for DMA, or other get_user_pages() usages.

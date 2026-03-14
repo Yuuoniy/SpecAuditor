@@ -1,0 +1,7 @@
+Function: unsigned long __roundup_pow_of_two ( unsigned long n )
+
+round up to nearest power of two
+
+Parameters
+  unsigned long n
+    value to round up

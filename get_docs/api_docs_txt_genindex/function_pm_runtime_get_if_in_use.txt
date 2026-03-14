@@ -1,0 +1,2 @@
+Function: int pm_runtime_get_if_in_use ( struct device * dev ) ;
+

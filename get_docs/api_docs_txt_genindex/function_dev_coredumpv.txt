@@ -1,0 +1,17 @@
+Function: void dev_coredumpv ( struct device * dev , void * data , size_t datalen , gfp_t gfp )
+
+create device coredump with vmalloc data
+
+Parameters
+  struct device *dev
+    the struct device for the crashed device
+  void *data
+    vmalloc data containing the device coredump
+  size_t datalen
+    length of the data
+  gfp_t gfp
+    allocation flags
+
+Description
+  This function takes ownership of the vmalloc’ed data and will free
+it when it is no longer used. See dev_coredumpm() for more information.

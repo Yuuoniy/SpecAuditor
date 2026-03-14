@@ -1,0 +1,14 @@
+Function: struct drm_dp_mst_topology_state * drm_atomic_get_old_mst_topology_state ( struct drm_atomic_state * state , struct drm_dp_mst_topology_mgr * mgr )
+
+get old MST topology state in atomic state, if any
+
+Parameters
+  struct drm_atomic_state *state
+    global atomic state
+  struct drm_dp_mst_topology_mgr *mgr
+    MST topology manager, also the private object in this case
+
+Description
+  This function wraps drm_atomic_get_old_private_obj_state() passing in the MST atomic
+state vtable so that the private object state returned is that of a MST
+topology object.

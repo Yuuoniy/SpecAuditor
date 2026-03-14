@@ -1,0 +1,13 @@
+Function: struct dma_buf * drm_gem_prime_export ( struct drm_gem_object * obj , int flags )
+
+helper library implementation of the export callback
+
+Parameters
+  struct drm_gem_object *obj
+    GEM object to export
+  int flags
+    flags like DRM_CLOEXEC and DRM_RDWR
+
+Description
+  This is the implementation of the drm_gem_object_funcs.export functions for GEM drivers
+using the PRIME helpers. It is used as the default in drm_gem_prime_handle_to_fd() .

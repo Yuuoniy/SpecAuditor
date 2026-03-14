@@ -1,0 +1,14 @@
+Macro: kthread_run_worker
+
+
+
+Parameters
+  flags
+    flags modifying the default behavior of the worker
+  namefmt
+    printf-style name for the thread.
+  ...
+    variable arguments
+
+Description
+  Convenient wrapper for kthread_create_worker() followed by wake_up_process() .  Returns the kthread_worker or ERR_PTR(-ENOMEM).

@@ -1,0 +1,15 @@
+Function: struct ata_link * ata_link_next ( struct ata_link * link , struct ata_port * ap , enum ata_link_iter_mode mode )
+
+link iteration helper
+
+Parameters
+  struct ata_link *link
+    the previous link, NULL to start
+  struct ata_port *ap
+    ATA port containing links to iterate
+  enum ata_link_iter_mode mode
+    iteration mode, one of ATA_LITER_*
+
+Description
+  LOCKING:
+Host lock or EH context.

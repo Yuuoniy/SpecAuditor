@@ -1,0 +1,12 @@
+Function: void scsi_eh_restore_cmnd ( struct scsi_cmnd * scmd , struct scsi_eh_save * ses )
+
+Restore a scsi command info as part of error recovery
+
+Parameters
+  struct scsi_cmnd* scmd
+    SCSI command structure to restore
+  struct scsi_eh_save *ses
+    saved information from a coresponding call to scsi_eh_prep_cmnd
+
+Description
+  Undo any damage done by above scsi_eh_prep_cmnd() .

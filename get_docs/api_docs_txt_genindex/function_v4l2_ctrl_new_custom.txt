@@ -1,0 +1,15 @@
+Function: struct v4l2_ctrl * v4l2_ctrl_new_custom ( struct v4l2_ctrl_handler * hdl , const struct v4l2_ctrl_config * cfg , void * priv )
+
+Allocate and initialize a new custom V4L2 control.
+
+Parameters
+  struct v4l2_ctrl_handler *hdl
+    The control handler.
+  const struct v4l2_ctrl_config *cfg
+    The control’s configuration data.
+  void *priv
+    The control’s driver-specific private data.
+
+Description
+  If the v4l2_ctrl struct could not be allocated then NULL is returned
+and hdl->error is set to the error code (if it wasn’t set already).

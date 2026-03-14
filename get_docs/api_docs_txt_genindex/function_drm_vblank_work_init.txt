@@ -1,0 +1,14 @@
+Function: void drm_vblank_work_init ( struct drm_vblank_work * work , struct drm_crtc * crtc , void ( * func ) ( struct kthread_work * work ) )
+
+initialize a vblank work item
+
+Parameters
+  struct drm_vblank_work *work
+    vblank work item
+  struct drm_crtc *crtc
+    CRTC whose vblank will trigger the work execution
+  void (*func)(struct kthread_work *work)
+    work function to be executed
+
+Description
+  Initialize a vblank work item for a specific crtc.

@@ -1,0 +1,12 @@
+Function: void blk_mq_delay_run_hw_queue ( struct blk_mq_hw_ctx * hctx , unsigned long msecs )
+
+Run a hardware queue asynchronously.
+
+Parameters
+  struct blk_mq_hw_ctx *hctx
+    Pointer to the hardware queue to run.
+  unsigned long msecs
+    Milliseconds of delay to wait before running the queue.
+
+Description
+  Run a hardware queue asynchronously with a delay of msecs .

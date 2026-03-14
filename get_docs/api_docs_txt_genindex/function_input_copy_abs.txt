@@ -1,0 +1,20 @@
+Function: void input_copy_abs ( struct input_dev * dst , unsigned int dst_axis , const struct input_dev * src , unsigned int src_axis )
+
+Copy absinfo from one input_dev to another
+
+Parameters
+  struct input_dev *dst
+    Destination input device to copy the abs settings to
+  unsigned int dst_axis
+    ABS_* value selecting the destination axis
+  const struct input_dev *src
+    Source input device to copy the abs settings from
+  unsigned int src_axis
+    ABS_* value selecting the source axis
+
+Description
+  Set absinfo for the selected destination axis by copying it from
+the specified source input device’s source axis.
+This is useful to e.g. setup a pen/stylus input-device for combined
+touchscreen/pen hardware where the pen uses the same coordinates as
+the touchscreen.

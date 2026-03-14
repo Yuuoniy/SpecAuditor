@@ -1,0 +1,9 @@
+Function: int ib_destroy_wq_user ( struct ib_wq * wq , struct ib_udata * udata )
+
+Destroys the specified user WQ.
+
+Parameters
+  struct ib_wq *wq
+    The WQ to destroy.
+  struct ib_udata *udata
+    Valid user data

@@ -1,0 +1,15 @@
+Function: void mas_pause ( struct ma_state * mas )
+
+Pause a mas_find/mas_for_each to drop the lock.
+
+Parameters
+  struct ma_state *mas
+    The maple state to pause
+
+Description
+  Some users need to pause a walk and drop the lock they’re holding in
+order to yield to a higher priority thread or carry out an operation
+on an entry.  Those users should call this function before they drop
+the lock.  It resets the mas to be suitable for the next iteration
+of the loop after the user has reacquired the lock.  If most entries
+found during a walk require you to call mas_pause() , the mt_for_each() iterator may be more appropriate.

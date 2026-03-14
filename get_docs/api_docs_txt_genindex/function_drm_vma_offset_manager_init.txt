@@ -1,0 +1,16 @@
+Function: void drm_vma_offset_manager_init ( struct drm_vma_offset_manager * mgr , unsigned long page_offset , unsigned long size )
+
+Initialize new offset-manager
+
+Parameters
+  struct drm_vma_offset_manager *mgr
+    Manager object
+  unsigned long page_offset
+    Offset of available memory area (page-based)
+  unsigned long size
+    Size of available address space range (page-based)
+
+Description
+  Initialize a new offset-manager. The offset and area size available for the
+manager are given as page_offset and size . Both are interpreted as
+page-numbers, not bytes.

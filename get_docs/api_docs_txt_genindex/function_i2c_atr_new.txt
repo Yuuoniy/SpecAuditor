@@ -1,0 +1,19 @@
+Function: struct i2c_atr * i2c_atr_new ( struct i2c_adapter * parent , struct device * dev , const struct i2c_atr_ops * ops , int max_adapters , u32 flags )
+
+Allocate and initialize an I2C ATR helper.
+
+Parameters
+  struct i2c_adapter *parent
+    The parent (upstream) adapter
+  struct device *dev
+    The device acting as an ATR
+  const struct i2c_atr_ops *ops
+    Driver-specific callbacks
+  int max_adapters
+    Maximum number of child adapters
+  u32 flags
+    Flags for ATR
+
+Description
+  The new ATR helper is connected to the parent adapter but has no child
+adapters. Call i2c_atr_add_adapter() to add some.

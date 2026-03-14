@@ -1,0 +1,18 @@
+Function: struct iscsi_endpoint * iscsi_iser_ep_connect ( struct Scsi_Host * shost , struct sockaddr * dst_addr , int non_blocking )
+
+Initiate iSER connection establishment
+
+Parameters
+  struct Scsi_Host *shost
+    scsi_host
+  struct sockaddr *dst_addr
+    destination address
+  int non_blocking
+    indicate if routine can block
+
+Description
+  Allocate an iscsi endpoint, an iser_conn structure and bind them.
+After that start RDMA connection establishment via rdma_cm. We
+don’t allocate iser_conn embedded in iscsi_endpoint since in teardown
+the endpoint will be destroyed at ep_disconnect while iser_conn will
+cleanup its resources asynchronuously.

@@ -1,0 +1,10 @@
+Function: struct dma_fence * dma_resv_iter_next ( struct dma_resv_iter * cursor )
+
+next fence from a locked dma_resv object
+
+Parameters
+  struct dma_resv_iter *cursor
+    cursor to record the current position
+
+Description
+  Return the next fences from the dma_resv object while holding the dma_resv.lock .

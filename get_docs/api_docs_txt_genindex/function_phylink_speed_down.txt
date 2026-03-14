@@ -1,0 +1,14 @@
+Function: int phylink_speed_down ( struct phylink * pl , bool sync )
+
+set the non-SFP PHY to lowest speed supported by both link partners
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+  bool sync
+    perform action synchronously
+
+Description
+  If we have a PHY that is not part of a SFP module, then set the speed
+as described in the phy_speed_down() function. Please see this function
+for a description of the sync parameter.

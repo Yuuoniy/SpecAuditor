@@ -1,0 +1,10 @@
+Function: int pci_num_vf ( struct pci_dev * dev )
+
+return number of VFs associated with a PF device_release_driver
+
+Parameters
+  struct pci_dev *dev
+    the PCI device
+
+Description
+  Returns number of VFs, or 0 if SR-IOV is not enabled.

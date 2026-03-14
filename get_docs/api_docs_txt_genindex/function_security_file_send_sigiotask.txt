@@ -1,0 +1,18 @@
+Function: int security_file_send_sigiotask ( struct task_struct * tsk , struct fown_struct * fown , int sig )
+
+Check if sending SIGIO/SIGURG is allowed
+
+Parameters
+  struct task_struct *tsk
+    target task
+  struct fown_struct *fown
+    signal sender
+  int sig
+    signal to be sent, SIGIO is sent if 0
+
+Description
+  Check permission for the file owner fown to send SIGIO or SIGURG to the
+process tsk .  Note that this hook is sometimes called from interrupt.  Note
+that the fown_struct, fown , is never outside the context of a struct file ,
+so the file structure (and associated security information) can always be
+obtained: container_of(fown, struct file , f_owner).

@@ -1,0 +1,16 @@
+Function: int usb_register_dev ( struct usb_interface * intf , struct usb_class_driver * class_driver )
+
+register a USB device, and ask for a minor number
+
+Parameters
+  struct usb_interface *intf
+    pointer to the usb_interface that is being registered
+  struct usb_class_driver *class_driver
+    pointer to the usb_class_driver for this device
+
+Description
+  This should be called by all USB drivers that use the USB major number.
+If CONFIG_USB_DYNAMIC_MINORS is enabled, the minor number will be
+dynamically allocated out of the list of available ones.  If it is not
+enabled, the minor number will be based on the next available free minor,
+starting at the class_driver->minor_base.

@@ -1,0 +1,13 @@
+Function: int ib_find_pkey ( struct ib_device * device , u32 port_num , u16 pkey , u16 * index )
+
+Returns the PKey table index where a specified PKey value occurs.
+
+Parameters
+  struct ib_device *device
+    The device to query.
+  u32 port_num
+    The port number of the device to search for the PKey.
+  u16 pkey
+    The PKey value to search for.
+  u16 *index
+    The index into the PKey table where the PKey was found.

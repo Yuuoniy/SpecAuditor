@@ -1,0 +1,10 @@
+Function: void drm_warn_on_modeset_not_all_locked ( struct drm_device * dev )
+
+check that all modeset locks are locked
+
+Parameters
+  struct drm_device *dev
+    device
+
+Description
+  Useful as a debug assert.

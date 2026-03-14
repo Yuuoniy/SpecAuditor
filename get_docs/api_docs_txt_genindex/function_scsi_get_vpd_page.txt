@@ -1,0 +1,19 @@
+Function: int scsi_get_vpd_page ( struct scsi_device * sdev , u8 page , unsigned char * buf , int buf_len )
+
+Get Vital Product Data from a SCSI device
+
+Parameters
+  struct scsi_device *sdev
+    The device to ask
+  u8 page
+    Which Vital Product Data to return
+  unsigned char *buf
+    where to store the VPD
+  int buf_len
+    number of bytes in the VPD buffer area
+
+Description
+  SCSI devices may optionally supply Vital Product Data.  Each ‘page’
+of VPD is defined in the appropriate SCSI document (eg SPC, SBC).
+If the device supports this VPD page, this routine fills buf with the data from that page and return 0. If the VPD page is not
+supported or its content cannot be retrieved, -EINVAL is returned.

@@ -1,0 +1,15 @@
+Function: void drm_rect_init ( struct drm_rect * r , int x , int y , int width , int height )
+
+initialize the rectangle from x/y/w/h
+
+Parameters
+  struct drm_rect *r
+    rectangle
+  int x
+    x coordinate
+  int y
+    y coordinate
+  int width
+    width
+  int height
+    height

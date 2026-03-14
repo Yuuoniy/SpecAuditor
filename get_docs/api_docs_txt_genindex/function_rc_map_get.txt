@@ -1,0 +1,7 @@
+Function: struct rc_map * rc_map_get ( const char * name )
+
+gets an RC map from its name
+
+Parameters
+  const char *name
+    name of the RC scancode map

@@ -1,0 +1,14 @@
+Function: bool xas_retry ( struct xa_state * xas , const void * entry )
+
+Retry the operation if appropriate.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+  const void *entry
+    Entry from xarray.
+
+Description
+  The advanced functions may sometimes return an internal entry, such as
+a retry entry or a zero entry.  This function sets up the xas to restart
+the walk from the head of the array if needed.

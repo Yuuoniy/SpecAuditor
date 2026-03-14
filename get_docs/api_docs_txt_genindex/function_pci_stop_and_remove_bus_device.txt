@@ -1,0 +1,12 @@
+Function: void pci_stop_and_remove_bus_device ( struct pci_dev * dev )
+
+remove a PCI device and any children
+
+Parameters
+  struct pci_dev *dev
+    the device to remove
+
+Description
+  Remove a PCI device from the device lists, informing the drivers
+that the device has been removed.  We also remove any subordinate
+buses and children in a depth-first manner.

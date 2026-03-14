@@ -1,0 +1,15 @@
+Function: bool folio_mark_dirty ( struct folio * folio )
+
+Mark a folio as being modified.
+
+Parameters
+  struct folio *folio
+    The folio.
+
+Description
+  The folio may not be truncated while this function is running.
+Holding the folio lock is sufficient to prevent truncation, but some
+callers cannot acquire a sleeping lock.  These callers instead hold
+the page table lock for a page table which contains at least one page
+in this folio.  Truncation will block on the page table lock as it
+unmaps pages before removing the folio from its mapping.

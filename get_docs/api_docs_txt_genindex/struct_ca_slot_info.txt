@@ -1,0 +1,11 @@
+Struct: struct ca_slot_info
+
+CA slot interface types and info.
+
+Members
+  num
+    slot number.
+  type
+    slot type.
+  flags
+    flags applicable to the slot.

@@ -1,0 +1,27 @@
+Struct: struct ccw_driver
+
+device driver for channel attached devices
+
+Members
+  ids
+    ids supported by this driver
+  probe
+    function called on probe
+  remove
+    function called on remove
+  set_online
+    called when setting device online
+  set_offline
+    called when setting device offline
+  notify
+    notify driver of device state changes
+  path_event
+    notify driver of channel path events
+  shutdown
+    called at device shutdown
+  uc_handler
+    callback for unit check handler
+  driver
+    embedded device driver structure
+  int_class
+    interruption class to use for accounting interrupts

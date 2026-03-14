@@ -1,0 +1,13 @@
+Macro: wrapping_assign_add
+
+
+
+Parameters
+  var
+    variable to be incremented
+  offset
+    amount to add
+
+Description
+  Increments var by offset with wrap-around. Returns the resulting
+value of var . Will not trip any wrap-around sanitizers.

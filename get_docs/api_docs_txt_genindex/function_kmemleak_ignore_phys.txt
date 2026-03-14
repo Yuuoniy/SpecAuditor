@@ -1,0 +1,7 @@
+Function: void __ref kmemleak_ignore_phys ( phys_addr_t phys )
+
+similar to kmemleak_ignore but taking a physical address argument
+
+Parameters
+  phys_addr_t phys
+    physical address of the object

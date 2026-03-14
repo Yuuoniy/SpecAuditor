@@ -1,0 +1,17 @@
+Struct: struct tb_service_id
+
+Thunderbolt service identifiers
+
+Members
+  match_flags
+    Flags used to match the structure
+  protocol_key
+    Protocol key the service supports
+  protocol_id
+    Protocol id the service supports
+  protocol_version
+    Version of the protocol
+  protocol_revision
+    Revision of the protocol software
+  driver_data
+    Driver specific data

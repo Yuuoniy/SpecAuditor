@@ -1,0 +1,7 @@
+Function: void of_root_kunit_skip ( struct kunit * test )
+
+Skip test if the root node isn’t populated
+
+Parameters
+  struct kunit *test
+    test to skip if the root node isn’t populated

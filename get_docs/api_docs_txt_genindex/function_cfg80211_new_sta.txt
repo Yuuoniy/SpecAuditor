@@ -1,0 +1,13 @@
+Function: void cfg80211_new_sta ( struct net_device * dev , const u8 * mac_addr , struct station_info * sinfo , gfp_t gfp )
+
+notify userspace about station
+
+Parameters
+  struct net_device *dev
+    the netdev
+  const u8 *mac_addr
+    the station’s address
+  struct station_info *sinfo
+    the station information
+  gfp_t gfp
+    allocation flags

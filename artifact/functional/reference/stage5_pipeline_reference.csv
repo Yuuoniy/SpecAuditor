@@ -1,0 +1,6 @@
+hexsha,target_function,spec_target,spec_predicate,weggli_query,total_matches,violation_function_name,has_violation,analysis,confidence
+c158cf914713,of_slim_get_device,A call to of_slim_get_device(),The returned slim_device reference must be released with the corresponding put function when no longer needed,"'of_slim_get_device(_, _);'",3,qcom_slim_ngd_notify_slaves,True,"1. Decision: YES
+
+2. Detailed reasoning: The function `qcom_slim_ngd_notify_slaves` calls `of_slim_get_device`, which is expected to return a reference to a `slim_device`. However, there is no corresponding call to release this reference using the appropriate `put` function after it is no longer needed. The code iterates over child nodes and retrieves a `slim_device` reference for each node, but it does not release these references, leading to a memory leak. Since the function does not handle the release of the `sbdev` pointer, it violates the security rule that states the returned slim_device reference must be released when no longer needed.
+
+3. Confidence: HIGH",HIGH

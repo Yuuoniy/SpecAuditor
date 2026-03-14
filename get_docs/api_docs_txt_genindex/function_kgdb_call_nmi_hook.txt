@@ -1,0 +1,10 @@
+Function: void kgdb_call_nmi_hook ( void * ignored )
+
+Call kgdb_nmicallback() on the current CPU
+
+Parameters
+  void *ignored
+    This parameter is only here to match the prototype.
+
+Description
+  If you’re using the default implementation of kgdb_roundup_cpus() this function will be called per CPU.  If you don’t implement kgdb_call_nmi_hook() a default will be used.

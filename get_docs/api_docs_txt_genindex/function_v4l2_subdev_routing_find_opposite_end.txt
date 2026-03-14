@@ -1,0 +1,19 @@
+Function: int v4l2_subdev_routing_find_opposite_end ( const struct v4l2_subdev_krouting * routing , u32 pad , u32 stream , u32 * other_pad , u32 * other_stream )
+
+Find the opposite stream
+
+Parameters
+  const struct v4l2_subdev_krouting *routing
+    routing used to find the opposite side
+  u32 pad
+    pad id
+  u32 stream
+    stream id
+  u32 *other_pad
+    pointer used to return the opposite pad
+  u32 *other_stream
+    pointer used to return the opposite stream
+
+Description
+  This function uses the routing table to find the pad + stream which is
+opposite the given pad + stream.

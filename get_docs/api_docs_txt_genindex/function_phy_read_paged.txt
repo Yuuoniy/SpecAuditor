@@ -1,0 +1,14 @@
+Function: int phy_read_paged ( struct phy_device * phydev , int page , u32 regnum )
+
+Convenience function for reading a paged register
+
+Parameters
+  struct phy_device *phydev
+    a pointer to a struct phy_device
+  int page
+    the page for the phy
+  u32 regnum
+    register number
+
+Description
+  Same rules as for phy_read() .

@@ -1,0 +1,13 @@
+Function: void audit_reset_context ( struct audit_context * ctx )
+
+reset a audit_context structure
+
+Parameters
+  struct audit_context *ctx
+    the audit_context to reset
+
+Description
+  All fields in the audit_context will be reset to an initial state, all
+references held by fields will be dropped, and private memory will be
+released.  When this function returns the audit_context will be suitable
+for reuse, so long as the passed context is not NULL or a dummy context.

@@ -1,0 +1,12 @@
+Function: int drm_atomic_helper_connector_hdmi_clear_audio_infoframe ( struct drm_connector * connector )
+
+Stop sending the Audio Infoframe
+
+Parameters
+  struct drm_connector *connector
+    A pointer to the HDMI connector
+
+Description
+  This function is meant for HDMI connector drivers to stop sending their
+audio infoframe. It will typically be used in one of the ALSA hooks
+(most likely shutdown).

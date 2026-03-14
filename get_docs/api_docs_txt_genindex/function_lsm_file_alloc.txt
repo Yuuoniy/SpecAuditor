@@ -1,0 +1,10 @@
+Function: int lsm_file_alloc ( struct file * file )
+
+allocate a composite file blob
+
+Parameters
+  struct file *file
+    the file that needs a blob
+
+Description
+  Allocate the file blob for all the modules

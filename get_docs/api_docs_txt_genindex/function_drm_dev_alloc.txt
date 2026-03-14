@@ -1,0 +1,14 @@
+Function: struct drm_device * drm_dev_alloc ( const struct drm_driver * driver , struct device * parent )
+
+Allocate new DRM device
+
+Parameters
+  const struct drm_driver *driver
+    DRM driver to allocate device for
+  struct device *parent
+    Parent device object
+
+Description
+  This is the deprecated version of devm_drm_dev_alloc() , which does not support
+subclassing through embedding the struct drm_device in a driver private
+structure, and which does not support automatic cleanup through devres.

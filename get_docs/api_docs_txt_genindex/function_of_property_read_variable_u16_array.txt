@@ -1,0 +1,21 @@
+Function: int of_property_read_variable_u16_array ( const struct device_node * np , const char * propname , u16 * out_values , size_t sz_min , size_t sz_max )
+
+Find and read an array of u16 from a property, with bounds on the minimum and maximum array size.
+
+Parameters
+  const struct device_node *np
+    device node from which the property value is to be read.
+  const char *propname
+    name of the property to be searched.
+  u16 *out_values
+    pointer to found values.
+  size_t sz_min
+    minimum number of array elements to read
+  size_t sz_max
+    maximum number of array elements to read, if zero there is no
+upper limit on the number of elements in the dts entry but only
+sz_min will be read.
+
+Description
+  Search for a property in a device node and read 16-bit value(s) from
+it.

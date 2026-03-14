@@ -1,0 +1,16 @@
+Function: int crypto_ecdh_decode_key ( const char * buf , unsigned int len , struct ecdh * p )
+
+decode a private key
+
+Parameters
+  const char *buf
+    Buffer holding a packet key that should be decoded
+  unsigned int len
+    Length of the packet private key buffer
+  struct ecdh *p
+    Buffer allocated by the caller that is filled with the
+unpacked ECDH private key.
+
+Description
+  The unpacking obtains the private key by pointing p to the correct location
+in buf . Thus, both pointers refer to the same memory.

@@ -1,0 +1,12 @@
+Macro: C3_ISP_PARAMS_MAX_SIZE
+
+
+
+Members
+  version
+    The C3 ISP parameters buffer version
+  data_size
+    The C3 ISP configuration data effective size, excluding this
+header
+  data
+    The C3 ISP configuration blocks data

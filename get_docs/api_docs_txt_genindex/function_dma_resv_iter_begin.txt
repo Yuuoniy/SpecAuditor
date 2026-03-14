@@ -1,0 +1,11 @@
+Function: void dma_resv_iter_begin ( struct dma_resv_iter * cursor , struct dma_resv * obj , enum dma_resv_usage usage )
+
+initialize a dma_resv_iter object
+
+Parameters
+  struct dma_resv_iter *cursor
+    The dma_resv_iter object to initialize
+  struct dma_resv *obj
+    The dma_resv object which we want to iterate over
+  enum dma_resv_usage usage
+    controls which fences to include, see enum dma_resv_usage .

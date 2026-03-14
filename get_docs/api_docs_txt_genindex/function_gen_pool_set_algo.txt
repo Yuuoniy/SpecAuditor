@@ -1,0 +1,16 @@
+Function: void gen_pool_set_algo ( struct gen_pool * pool , genpool_algo_t algo , void * data )
+
+set the allocation algorithm
+
+Parameters
+  struct gen_pool *pool
+    pool to change allocation algorithm
+  genpool_algo_t algo
+    custom algorithm function
+  void *data
+    additional data used by algo
+
+Description
+  Call algo for each memory allocation in the pool.
+If algo is NULL use gen_pool_first_fit as default
+memory allocation function.

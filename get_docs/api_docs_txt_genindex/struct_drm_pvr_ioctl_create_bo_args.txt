@@ -1,0 +1,17 @@
+Struct: struct drm_pvr_ioctl_create_bo_args
+
+Arguments for DRM_IOCTL_PVR_CREATE_BO
+
+Members
+  size
+    [IN] Size of buffer object to create. This must be page size
+aligned.
+  handle
+    [OUT] GEM handle of the new buffer object for use in
+userspace.
+  _padding_c
+    Reserved. This field must be zeroed.
+  flags
+    [IN] Options which will affect the behaviour of this
+creation operation and future mapping operations on the created
+object. This field must be a valid combination of DRM_PVR_BO_* values, with all bits marked as reserved set to zero.

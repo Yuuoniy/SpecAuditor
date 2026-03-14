@@ -1,0 +1,11 @@
+Function: bool drm_mm_initialized ( const struct drm_mm * mm )
+
+checks whether an allocator is initialized
+
+Parameters
+  const struct drm_mm *mm
+    drm_mm to check
+
+Description
+  Drivers should clear the struct drm_mm prior to initialisation if they
+want to use this function.

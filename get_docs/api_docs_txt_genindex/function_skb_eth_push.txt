@@ -1,0 +1,14 @@
+Function: int skb_eth_push ( struct sk_buff * skb , const unsigned char * dst , const unsigned char * src )
+
+Add a new Ethernet header at the head of a packet
+
+Parameters
+  struct sk_buff *skb
+    Socket buffer to modify
+  const unsigned char *dst
+    Destination MAC address of the new header
+  const unsigned char *src
+    Source MAC address of the new header
+
+Description
+  Prepend skb with a new Ethernet header.

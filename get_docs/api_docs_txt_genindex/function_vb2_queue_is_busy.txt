@@ -1,0 +1,12 @@
+Function: bool vb2_queue_is_busy ( struct vb2_queue * q , struct file * file )
+
+check if the queue is busy
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  struct file *file
+    file through which the vb2 queue access is performed
+
+Description
+  The queue is considered busy if it has an owner and the owner is not the file .

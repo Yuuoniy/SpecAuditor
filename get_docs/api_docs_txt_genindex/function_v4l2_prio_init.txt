@@ -1,0 +1,7 @@
+Function: void v4l2_prio_init ( struct v4l2_prio_state * global )
+
+initializes a struct v4l2_prio_state
+
+Parameters
+  struct v4l2_prio_state *global
+    pointer to struct v4l2_prio_state

@@ -1,0 +1,12 @@
+Function: unsigned int ata_dev_classify ( const struct ata_taskfile * tf )
+
+determine device type based on ATA-spec signature
+
+Parameters
+  const struct ata_taskfile *tf
+    ATA taskfile register set for device to be identified
+
+Description
+  Determine from taskfile register contents whether a device is
+ATA or ATAPI, as per “Signature and persistence” section
+of ATA/PI spec (volume 1, sect 5.14).

@@ -1,0 +1,11 @@
+Function: bool drm_edid_valid ( const struct drm_edid * drm_edid )
+
+sanity check EDID data
+
+Parameters
+  const struct drm_edid *drm_edid
+    EDID data
+
+Description
+  Sanity check an EDID. Cross check block count against allocated size and
+checksum the blocks.

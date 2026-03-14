@@ -1,0 +1,10 @@
+Function: int security_uring_cmd ( struct io_uring_cmd * ioucmd )
+
+Check if a io_uring passthrough command is allowed
+
+Parameters
+  struct io_uring_cmd *ioucmd
+    command
+
+Description
+  Check whether the file_operations uring_cmd is allowed to run.

@@ -1,0 +1,11 @@
+Function: int rio_bus_init ( void )
+
+Register the RapidIO bus with the device model
+
+Parameters
+  void
+    no arguments
+
+Description
+  Registers the RIO mport device class and RIO bus type with the Linux
+device model.

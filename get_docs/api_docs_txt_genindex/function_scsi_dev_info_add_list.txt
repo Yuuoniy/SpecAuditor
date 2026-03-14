@@ -1,0 +1,13 @@
+Function: int scsi_dev_info_add_list ( enum scsi_devinfo_key key , const char * name )
+
+add a new devinfo list
+
+Parameters
+  enum scsi_devinfo_key key
+    key of the list to add
+  const char *name
+    Name of the list to add (for /proc/scsi/device_info)
+
+Description
+  Adds the requested list, returns zero on success, -EEXIST if the
+key is already registered to a list, or other error on failure.

@@ -1,0 +1,10 @@
+Function: int iscsi_iser_task_init ( struct iscsi_task * task )
+
+Initialize iscsi-iser task
+
+Parameters
+  struct iscsi_task *task
+    iscsi task
+
+Description
+  Initialize the task for the scsi command or mgmt command.

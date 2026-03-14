@@ -1,0 +1,10 @@
+Function: int clk_prepare ( struct clk * clk )
+
+prepare a clock source
+
+Parameters
+  struct clk *clk
+    clock source
+
+Description
+  This prepares the clock source for use.

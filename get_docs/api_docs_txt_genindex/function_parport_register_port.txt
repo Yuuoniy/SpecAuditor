@@ -1,0 +1,23 @@
+Function: struct parport * parport_register_port ( unsigned long base , int irq , int dma , struct parport_operations * ops )
+
+register a parallel port
+
+Parameters
+  unsigned long base
+    base I/O address
+  int irq
+    IRQ line
+  int dma
+    DMA channel
+  struct parport_operations *ops
+    pointer to the port driver’s port operations structure
+
+Description
+  When a parallel port (lowlevel) driver finds a port that
+should be made available to parallel port device drivers, it
+should call parport_register_port() .  The base , irq , and dma parameters are for the convenience of port drivers, and
+for ports where they aren’t meaningful needn’t be set to
+anything special.  They can be altered afterwards by adjusting
+the relevant members of the parport structure that is returned
+and represents the port.  They should not be tampered with
+after calling parport_announce_port, however.

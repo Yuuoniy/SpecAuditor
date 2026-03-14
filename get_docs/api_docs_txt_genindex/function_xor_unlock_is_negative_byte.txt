@@ -1,0 +1,16 @@
+Function: bool xor_unlock_is_negative_byte ( unsigned long mask , volatile unsigned long * addr )
+
+XOR a single byte in memory and test if it is negative, for unlock.
+
+Parameters
+  unsigned long mask
+    Change the bits which are set in this mask.
+  volatile unsigned long *addr
+    The address of the word containing the byte to change.
+
+Description
+  Changes some of bits 0-6 in the word pointed to by addr .
+This operation is atomic and provides release barrier semantics.
+Used to optimise some folio operations which are commonly paired
+with an unlock or end of writeback.  Bit 7 is used as PG_waiters to
+indicate whether anybody is waiting for the unlock.

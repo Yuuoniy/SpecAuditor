@@ -1,0 +1,14 @@
+Function: u32 rvt_restart_sge ( struct rvt_sge_state * ss , struct rvt_swqe * wqe , u32 len )
+
+rewind the sge state for a wqe
+
+Parameters
+  struct rvt_sge_state *ss
+    the sge state pointer
+  struct rvt_swqe *wqe
+    the wqe to rewind
+  u32 len
+    the data length from the start of the wqe in bytes
+
+Description
+  Returns the remaining data length.

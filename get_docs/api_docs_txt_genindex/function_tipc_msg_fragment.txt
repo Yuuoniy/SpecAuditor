@@ -1,0 +1,13 @@
+Function: int tipc_msg_fragment ( struct sk_buff * skb , const struct tipc_msg * hdr , int pktmax , struct sk_buff_head * frags )
+
+build a fragment skb list for TIPC message
+
+Parameters
+  struct sk_buff *skb
+    TIPC message skb
+  const struct tipc_msg *hdr
+    internal msg header to be put on the top of the fragments
+  int pktmax
+    max size of a fragment incl. the header
+  struct sk_buff_head *frags
+    returned fragment skb list

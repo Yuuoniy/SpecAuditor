@@ -1,0 +1,16 @@
+Function: int v4l2_fwnode_parse_link ( struct fwnode_handle * fwnode , struct v4l2_fwnode_link * link )
+
+parse a link between two endpoints
+
+Parameters
+  struct fwnode_handle *fwnode
+    pointer to the endpoint’s fwnode at the local end of the link
+  struct v4l2_fwnode_link *link
+    pointer to the V4L2 fwnode link data structure
+
+Description
+  Fill the link structure with the local and remote nodes and port numbers.
+The local_node and remote_node fields are set to point to the local and
+remote port’s parent nodes respectively (the port parent node being the
+parent node of the port node if that node isn’t a ‘ports’ node, or the
+grand-parent node of the port node otherwise).

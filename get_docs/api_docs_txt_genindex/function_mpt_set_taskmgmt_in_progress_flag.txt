@@ -1,0 +1,10 @@
+Function: int mpt_set_taskmgmt_in_progress_flag ( MPT_ADAPTER * ioc )
+
+set flags associated with task management
+
+Parameters
+  MPT_ADAPTER *ioc
+    Pointer to MPT_ADAPTER structure
+
+Description
+  Returns 0 for SUCCESS or -1 if FAILED.

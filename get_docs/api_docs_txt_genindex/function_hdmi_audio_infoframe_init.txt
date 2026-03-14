@@ -1,0 +1,10 @@
+Function: int hdmi_audio_infoframe_init ( struct hdmi_audio_infoframe * frame )
+
+initialize an HDMI audio infoframe
+
+Parameters
+  struct hdmi_audio_infoframe *frame
+    HDMI audio infoframe
+
+Description
+  Returns 0 on success or a negative error code on failure.

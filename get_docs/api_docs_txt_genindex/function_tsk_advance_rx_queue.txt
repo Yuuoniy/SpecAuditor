@@ -1,0 +1,10 @@
+Function: void tsk_advance_rx_queue ( struct sock * sk )
+
+discard first buffer in socket receive queue
+
+Parameters
+  struct sock *sk
+    network socket
+
+Description
+  Caller must hold socket lock

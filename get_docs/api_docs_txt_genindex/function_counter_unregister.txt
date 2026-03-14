@@ -1,0 +1,10 @@
+Function: void counter_unregister ( struct counter_device * const counter )
+
+unregister Counter from the system
+
+Parameters
+  struct counter_device *const counter
+    pointer to Counter to unregister
+
+Description
+  The Counter is unregistered from the system.

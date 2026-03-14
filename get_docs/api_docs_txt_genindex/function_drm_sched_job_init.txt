@@ -1,0 +1,21 @@
+Function: int drm_sched_job_init ( struct drm_sched_job * job , struct drm_sched_entity * entity , u32 credits , void * owner , uint64_t drm_client_id )
+
+init a scheduler job
+
+Parameters
+  struct drm_sched_job *job
+    scheduler job to init
+  struct drm_sched_entity *entity
+    scheduler entity to use
+  u32 credits
+    the number of credits this job contributes to the schedulers
+credit limit
+  void *owner
+    job owner for debugging
+  uint64_t drm_client_id
+    struct drm_file .client_id of the owner (used by trace
+events)
+
+Description
+  Refer to drm_sched_entity_push_job() documentation
+for locking considerations.

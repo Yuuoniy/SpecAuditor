@@ -1,0 +1,35 @@
+Struct: struct phylink_pcs_ops
+
+MAC PCS operations structure.
+
+Members
+  pcs_validate
+    validate the link configuration.
+  pcs_inband_caps
+    query inband support for interface mode.
+  pcs_enable
+    enable the PCS.
+  pcs_disable
+    disable the PCS.
+  pcs_pre_config
+    pre-mac_config method (for errata)
+  pcs_post_config
+    post-mac_config method (for arrata)
+  pcs_get_state
+    read the current MAC PCS link state from the hardware.
+  pcs_config
+    configure the MAC PCS for the selected mode and state.
+  pcs_an_restart
+    restart 802.3z BaseX autonegotiation.
+  pcs_link_up
+    program the PCS for the resolved link configuration
+(where necessary).
+  pcs_disable_eee
+    optional notification to PCS that EEE has been disabled
+at the MAC.
+  pcs_enable_eee
+    optional notification to PCS that EEE will be enabled at
+the MAC.
+  pcs_pre_init
+    configure PCS components necessary for MAC hardware
+initialization e.g. RX clock for stmmac.

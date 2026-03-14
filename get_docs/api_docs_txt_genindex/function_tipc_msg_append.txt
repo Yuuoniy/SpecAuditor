@@ -1,0 +1,15 @@
+Function: int tipc_msg_append ( struct tipc_msg * _hdr , struct msghdr * m , int dlen , int mss , struct sk_buff_head * txq )
+
+Append data to tail of an existing buffer queue
+
+Parameters
+  struct tipc_msg *_hdr
+    header to be used
+  struct msghdr *m
+    the data to be appended
+  int dlen
+    size of data to be appended
+  int mss
+    max allowable size of buffer
+  struct sk_buff_head *txq
+    queue to append to

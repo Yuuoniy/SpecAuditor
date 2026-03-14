@@ -1,0 +1,9 @@
+Function: struct dim_cq_moder net_dim_get_rx_moderation ( u8 cq_period_mode , int ix )
+
+provide a CQ moderation object for the given RX profile
+
+Parameters
+  u8 cq_period_mode
+    CQ period mode
+  int ix
+    Profile index

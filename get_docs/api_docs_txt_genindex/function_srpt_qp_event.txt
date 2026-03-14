@@ -1,0 +1,9 @@
+Function: void srpt_qp_event ( struct ib_event * event , void * ptr )
+
+QP event callback function
+
+Parameters
+  struct ib_event *event
+    Description of the event that occurred.
+  void *ptr
+    SRPT RDMA channel.

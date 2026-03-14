@@ -1,0 +1,12 @@
+Macro: ilog2
+
+
+
+Parameters
+  n
+    parameter
+
+Description
+  constant-capable log of base 2 calculation
+- this can be used to initialise global variables from constant data, hence
+the massive ternary operator construction

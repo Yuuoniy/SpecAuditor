@@ -1,0 +1,7 @@
+Function: void edac_mc_free ( struct mem_ctl_info * mci )
+
+Frees a previously allocated mci structure
+
+Parameters
+  struct mem_ctl_info *mci
+    pointer to a struct mem_ctl_info structure

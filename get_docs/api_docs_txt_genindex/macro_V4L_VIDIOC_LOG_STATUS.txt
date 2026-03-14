@@ -1,0 +1,2 @@
+Macro: VIDIOC_LOG_STATUS
+

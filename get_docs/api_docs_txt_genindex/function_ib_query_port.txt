@@ -1,0 +1,14 @@
+Function: int ib_query_port ( struct ib_device * device , u32 port_num , struct ib_port_attr * port_attr )
+
+Query IB port attributes
+
+Parameters
+  struct ib_device *device
+    Device to query
+  u32 port_num
+    Port number to query
+  struct ib_port_attr *port_attr
+    Port attributes
+
+Description
+  ib_query_port() returns the attributes of a port through the port_attr pointer.

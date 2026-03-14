@@ -1,0 +1,14 @@
+Function: void spi_dv_device ( struct scsi_device * sdev )
+
+Do Domain Validation on the device
+
+Parameters
+  struct scsi_device *sdev
+    scsi device to validate
+
+Description
+  Performs the domain validation on the given device in the
+current execution thread.  Since DV operations may sleep,
+the current thread must have user context.  Also no SCSI
+related locks that would deadlock I/O issued by the DV may
+be held.

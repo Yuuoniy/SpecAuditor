@@ -1,0 +1,16 @@
+Macro: KUNIT_FAIL
+
+
+
+Parameters
+  test
+    The test context object.
+  fmt
+    an informational message to be printed when the assertion is made.
+  ...
+    string format arguments.
+
+Description
+  The opposite of KUNIT_SUCCEED() , it is an expectation that always fails. In
+other words, it always results in a failed expectation, and consequently
+always causes the test case to fail when evaluated. See KUNIT_EXPECT_TRUE() for more information.

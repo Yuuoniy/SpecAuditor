@@ -1,0 +1,13 @@
+Struct: struct ca_caps
+
+CA slot interface capabilities.
+
+Members
+  slot_num
+    total number of CA card and module slots.
+  slot_type
+    bitmap with all supported types as defined at struct ca_slot_info (e. g. CA_CI , CA_CI_LINK , etc).
+  descr_num
+    total number of descrambler slots (keys)
+  descr_type
+    bitmap with all supported types as defined at struct ca_descr_info (e. g. CA_ECD , CA_NDS , etc).

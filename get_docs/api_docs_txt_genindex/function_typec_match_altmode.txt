@@ -1,0 +1,17 @@
+Function: struct typec_altmode * typec_match_altmode ( struct typec_altmode * * altmodes , size_t n , u16 svid , u8 mode )
+
+Match SVID and mode to an array of alternate modes
+
+Parameters
+  struct typec_altmode **altmodes
+    Array of alternate modes
+  size_t n
+    Number of elements in the array, or -1 for NULL terminated arrays
+  u16 svid
+    Standard or Vendor ID to match with
+  u8 mode
+    Mode to match with
+
+Description
+  Return pointer to an alternate mode with SVID matching svid , or NULL when no
+match is found.

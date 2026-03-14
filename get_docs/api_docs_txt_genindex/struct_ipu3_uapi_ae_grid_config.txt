@@ -1,0 +1,31 @@
+Struct: struct ipu3_uapi_ae_grid_config
+
+AE weight grid
+
+Members
+  width
+    Grid horizontal dimensions. Value: [16, 32], default 16.
+  height
+    Grid vertical dimensions. Value: [16, 24], default 16.
+  block_width_log2
+    Log2 of the width of the grid cell, value: [3, 7].
+  block_height_log2
+    Log2 of the height of the grid cell, value: [3, 7].
+default is 3 (cell size 8x8), 4 cell per grid.
+  reserved0
+    reserved
+  ae_en
+    0: does not write to ipu3_uapi_ae_raw_buffer_aligned array,
+1: write normally.
+  rst_hist_array
+    write 1 to trigger histogram array reset.
+  done_rst_hist_array
+    flag for histogram array reset done.
+  x_start
+    X value of top left corner of ROI, default 0.
+  y_start
+    Y value of top left corner of ROI, default 0.
+  x_end
+    X value of bottom right corner of ROI
+  y_end
+    Y value of bottom right corner of ROI

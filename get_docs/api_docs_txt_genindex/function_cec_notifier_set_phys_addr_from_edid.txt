@@ -1,0 +1,13 @@
+Function: void cec_notifier_set_phys_addr_from_edid ( struct cec_notifier * n , const struct edid * edid )
+
+set parse the PA from the EDID.
+
+Parameters
+  struct cec_notifier *n
+    the CEC notifier
+  const struct edid *edid
+    the struct edid pointer
+
+Description
+  Parses the EDID to obtain the new CEC physical address and set it.
+Does nothing if n == NULL.

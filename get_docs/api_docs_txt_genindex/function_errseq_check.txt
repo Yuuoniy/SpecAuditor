@@ -1,0 +1,13 @@
+Function: int errseq_check ( errseq_t * eseq , errseq_t since )
+
+Has an error occurred since a particular sample point?
+
+Parameters
+  errseq_t *eseq
+    Pointer to errseq_t value to be checked.
+  errseq_t since
+    Previously-sampled errseq_t from which to check.
+
+Description
+  Grab the value that eseq points to, and see if it has changed since the given value was sampled. The since value is not advanced, so there
+is no need to mark the value as seen.

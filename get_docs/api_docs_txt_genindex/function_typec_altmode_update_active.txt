@@ -1,0 +1,13 @@
+Function: void typec_altmode_update_active ( struct typec_altmode * adev , bool active )
+
+Report Enter/Exit mode
+
+Parameters
+  struct typec_altmode *adev
+    Handle to the alternate mode
+  bool active
+    True when the mode has been entered
+
+Description
+  If a partner or cable plug executes Enter/Exit Mode command successfully, the
+drivers use this routine to report the updated state of the mode.

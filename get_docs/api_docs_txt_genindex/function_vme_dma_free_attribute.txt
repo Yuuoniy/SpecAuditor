@@ -1,0 +1,11 @@
+Function: void vme_dma_free_attribute ( struct vme_dma_attr * attributes )
+
+Free DMA list attribute.
+
+Parameters
+  struct vme_dma_attr *attributes
+    Pointer to DMA list attribute.
+
+Description
+  Free VME DMA list attribute. VME DMA list attributes can be safely freed
+once vme_dma_list_add() has returned.

@@ -1,0 +1,7 @@
+Function: int ssh_ptl_tx_stop ( struct ssh_ptl * ptl )
+
+Stop packet transmitter thread.
+
+Parameters
+  struct ssh_ptl *ptl
+    The packet transport layer.

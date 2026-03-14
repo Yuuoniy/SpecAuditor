@@ -1,0 +1,14 @@
+Function: bool rvt_cq_enter ( struct rvt_cq * cq , struct ib_wc * entry , bool solicited )
+
+add a new entry to the completion queue
+
+Parameters
+  struct rvt_cq *cq
+    completion queue
+  struct ib_wc *entry
+    work completion entry to add
+  bool solicited
+    true if entry is solicited
+
+Description
+  This may be called with qp->s_lock held.

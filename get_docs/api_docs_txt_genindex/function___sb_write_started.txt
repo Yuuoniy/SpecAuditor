@@ -1,0 +1,12 @@
+Function: int __sb_write_started ( const struct super_block * sb , int level )
+
+check if sb freeze level is held
+
+Parameters
+  const struct super_block *sb
+    the super we write to
+  int level
+    the freeze level
+
+Description
+  > 0 - sb freeze level is held

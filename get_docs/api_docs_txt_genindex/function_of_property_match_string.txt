@@ -1,0 +1,15 @@
+Function: int of_property_match_string ( const struct device_node * np , const char * propname , const char * string )
+
+Find string in a list and return index
+
+Parameters
+  const struct device_node *np
+    pointer to the node containing the string list property
+  const char *propname
+    string list property name
+  const char *string
+    pointer to the string to search for in the string list
+
+Description
+  Search for an exact match of string in a device node property which is a
+string of lists.

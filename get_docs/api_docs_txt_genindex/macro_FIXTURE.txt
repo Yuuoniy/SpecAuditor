@@ -1,0 +1,11 @@
+Macro: FIXTURE
+
+
+
+Parameters
+  fixture_name
+    fixture name
+
+Description
+  Defines the data provided to TEST_F() -defined tests as self .  It should be
+populated and cleaned up using FIXTURE_SETUP() and FIXTURE_TEARDOWN() .

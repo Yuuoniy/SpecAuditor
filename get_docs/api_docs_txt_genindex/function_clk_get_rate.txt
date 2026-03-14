@@ -1,0 +1,7 @@
+Function: unsigned long clk_get_rate ( struct clk * clk )
+
+obtain the current clock rate (in Hz) for a clock source. This is only valid once the clock source has been enabled.
+
+Parameters
+  struct clk *clk
+    clock source

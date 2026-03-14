@@ -1,0 +1,12 @@
+Function: void sshp_buf_free ( struct sshp_buf * buf )
+
+Free a SSH parser buffer.
+
+Parameters
+  struct sshp_buf *buf
+    The buffer to free.
+
+Description
+  Frees a SSH parser buffer by freeing the memory backing it and then
+resetting its pointer to NULL and length and capacity to zero. Intended to
+free a buffer previously allocated with sshp_buf_alloc() .

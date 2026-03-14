@@ -1,0 +1,11 @@
+Function: struct xbc_node * xbc_node_get_subkey ( struct xbc_node * node )
+
+Return the first subkey node if exists
+
+Parameters
+  struct xbc_node *node
+    Parent node
+
+Description
+  Return the first subkey node of the node . If the node has no child
+or only value node, this will return NULL.

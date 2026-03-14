@@ -1,0 +1,17 @@
+Macro: for_each_sg_page
+
+
+
+Parameters
+  sglist
+    sglist to iterate over
+  piter
+    page iterator to hold current page, sg, sg_pgoffset
+  nents
+    maximum number of sg entries to iterate over
+  pgoffset
+    starting page offset (in pages)
+
+Description
+  Callers may use sg_page_iter_page() to get each page pointer.
+In each loop it operates on PAGE_SIZE unit.

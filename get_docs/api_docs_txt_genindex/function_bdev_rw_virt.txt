@@ -1,0 +1,19 @@
+Function: int bdev_rw_virt ( struct block_device * bdev , sector_t sector , void * data , size_t len , enum req_op op )
+
+synchronously read into / write from kernel mapping
+
+Parameters
+  struct block_device *bdev
+    block device to access
+  sector_t sector
+    sector to access
+  void *data
+    data to read/write
+  size_t len
+    length in byte to read/write
+  enum req_op op
+    operation (e.g. REQ_OP_READ/REQ_OP_WRITE)
+
+Description
+  Performs synchronous I/O to bdev for data / len . data must be in
+the kernel direct mapping and not a vmalloc address.

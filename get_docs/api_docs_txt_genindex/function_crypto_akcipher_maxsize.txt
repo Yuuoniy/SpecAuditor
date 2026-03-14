@@ -1,0 +1,13 @@
+Function: unsigned int crypto_akcipher_maxsize ( struct crypto_akcipher * tfm )
+
+Get len for output buffer
+
+Parameters
+  struct crypto_akcipher *tfm
+    AKCIPHER tfm handle allocated with crypto_alloc_akcipher()
+
+Description
+  Function returns the dest buffer size required for a given key.
+Function assumes that the key is already set in the transformation. If this
+function is called without a setkey or with a failed setkey, you will end up
+in a NULL dereference.

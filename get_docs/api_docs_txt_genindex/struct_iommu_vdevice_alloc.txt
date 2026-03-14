@@ -1,0 +1,16 @@
+Struct: struct iommu_vdevice_alloc
+
+ioctl(IOMMU_VDEVICE_ALLOC)
+
+Members
+  size
+    sizeof( struct iommu_vdevice_alloc )
+  viommu_id
+    vIOMMU ID to associate with the virtual device
+  dev_id
+    The physical device to allocate a virtual instance on the vIOMMU
+  out_vdevice_id
+    Object handle for the vDevice. Pass to IOMMU_DESTORY
+  virt_id
+    Virtual device ID per vIOMMU, e.g. vSID of ARM SMMUv3, vDeviceID
+of AMD IOMMU, and vRID of Intel VT-d

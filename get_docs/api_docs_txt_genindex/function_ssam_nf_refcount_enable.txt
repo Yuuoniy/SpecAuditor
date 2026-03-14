@@ -1,0 +1,18 @@
+Function: int ssam_nf_refcount_enable ( struct ssam_controller * ctrl , struct ssam_nf_refcount_entry * entry , u8 flags )
+
+Enable event for reference count entry if it has not already been enabled.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller to enable the event on.
+  struct ssam_nf_refcount_entry *entry
+    The reference count entry for the event to be enabled.
+  u8 flags
+    The flags used for enabling the event on the EC.
+
+Description
+  Enable the event associated with the given reference count entry if the
+reference count equals one, i.e. the event has not previously been enabled.
+If the event has already been enabled (i.e. reference count not equal to
+one), check that the flags used for enabling match and warn about this if
+they do not.

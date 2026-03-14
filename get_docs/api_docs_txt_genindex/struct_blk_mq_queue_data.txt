@@ -1,0 +1,9 @@
+Struct: struct blk_mq_queue_data
+
+Data about a request inserted in a queue
+
+Members
+  rq
+    Request pointer.
+  last
+    If it is the last request in the queue.

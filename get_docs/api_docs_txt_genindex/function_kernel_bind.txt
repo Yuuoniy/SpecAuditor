@@ -1,0 +1,14 @@
+Function: int kernel_bind ( struct socket * sock , struct sockaddr * addr , int addrlen )
+
+bind an address to a socket (kernel space)
+
+Parameters
+  struct socket *sock
+    socket
+  struct sockaddr *addr
+    address
+  int addrlen
+    length of address
+
+Description
+  Returns 0 or an error.

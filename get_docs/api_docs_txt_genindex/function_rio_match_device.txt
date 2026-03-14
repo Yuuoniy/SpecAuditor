@@ -1,0 +1,14 @@
+Function: const struct rio_device_id * rio_match_device ( const struct rio_device_id * id , const struct rio_dev * rdev )
+
+Tell if a RIO device has a matching RIO device id structure
+
+Parameters
+  const struct rio_device_id *id
+    the RIO device id structure to match against
+  const struct rio_dev *rdev
+    the RIO device structure to match against
+
+Description
+  Used from driver probe and bus matching to check whether a RIO device
+matches a device id structure provided by a RIO driver. Returns the
+matching struct rio_device_id or NULL if there is no match.

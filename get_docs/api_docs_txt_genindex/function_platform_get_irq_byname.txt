@@ -1,0 +1,12 @@
+Function: int platform_get_irq_byname ( struct platform_device * dev , const char * name )
+
+get an IRQ for a device by name
+
+Parameters
+  struct platform_device *dev
+    platform device
+  const char *name
+    IRQ name
+
+Description
+  Get an IRQ like platform_get_irq() , but then by name rather then by index.

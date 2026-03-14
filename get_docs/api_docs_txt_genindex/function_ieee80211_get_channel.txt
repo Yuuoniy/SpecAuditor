@@ -1,0 +1,9 @@
+Function: struct ieee80211_channel * ieee80211_get_channel ( struct wiphy * wiphy , int freq )
+
+get channel struct from wiphy for specified frequency
+
+Parameters
+  struct wiphy *wiphy
+    the struct wiphy to get the channel for
+  int freq
+    the center frequency (in MHz) of the channel

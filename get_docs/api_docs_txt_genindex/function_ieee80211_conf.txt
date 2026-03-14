@@ -1,0 +1,37 @@
+Function: struct ieee80211_conf
+
+configuration of the device
+
+Members
+  flags
+    configuration flags defined above
+  power_level
+    requested transmit power (in dBm), backward compatibility
+value only that is set to the minimum of all interfaces
+  dynamic_ps_timeout
+    The dynamic powersave timeout (in ms), see the
+powersave documentation below. This variable is valid only when
+the CONF_PS flag is set.
+  listen_interval
+    listen interval in units of beacon interval
+  ps_dtim_period
+    The DTIM period of the AP we’re connected to, for use
+in power saving. Power saving will not be enabled until a beacon
+has been received and the DTIM period is known.
+  long_frame_max_tx_count
+    Maximum number of transmissions for a “long” frame
+(a frame not RTS protected), called “dot11LongRetryLimit” in 802.11,
+but actually means the number of transmissions not the number of retries
+  short_frame_max_tx_count
+    Maximum number of transmissions for a “short”
+frame, called “dot11ShortRetryLimit” in 802.11, but actually means the
+number of transmissions not the number of retries
+  chandef
+    the channel definition to tune to
+  radar_enabled
+    whether radar detection is enabled
+  smps_mode
+    spatial multiplexing powersave mode; note that IEEE80211_SMPS_STATIC is used when the device is not
+configured for an HT channel.
+Note that this is only valid if channel contexts are not used,
+otherwise each channel context has the number of chains listed.

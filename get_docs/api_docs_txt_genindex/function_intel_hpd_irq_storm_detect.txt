@@ -1,0 +1,16 @@
+Function: bool intel_hpd_irq_storm_detect ( struct intel_display * display , enum hpd_pin pin , bool long_hpd )
+
+gather stats and detect HPD IRQ storm on a pin
+
+Parameters
+  struct intel_display *display
+    display device
+  enum hpd_pin pin
+    the pin to gather stats on
+  bool long_hpd
+    whether the HPD IRQ was long or short
+
+Description
+  Gather stats about HPD IRQs from the specified pin , and detect IRQ
+storms. Only the pin specific stats and state are changed, the caller is
+responsible for further action.

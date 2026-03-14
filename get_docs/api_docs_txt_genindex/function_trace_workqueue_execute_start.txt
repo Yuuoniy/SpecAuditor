@@ -1,0 +1,10 @@
+Function: void trace_workqueue_execute_start ( struct work_struct * work )
+
+called immediately before the workqueue callback
+
+Parameters
+  struct work_struct *work
+    pointer to struct work_struct
+
+Description
+  Allows to track workqueue execution.

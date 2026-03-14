@@ -1,0 +1,13 @@
+Function: int ieee80211_sta_ps_transition ( struct ieee80211_sta * sta , bool start )
+
+PS transition for connected sta
+
+Parameters
+  struct ieee80211_sta *sta
+    currently connected sta
+  bool start
+    start or stop PS
+
+Description
+  When operating in AP mode with the IEEE80211_HW_AP_LINK_PS flag set, use this function to inform mac80211 about a connected station
+entering/leaving PS mode.

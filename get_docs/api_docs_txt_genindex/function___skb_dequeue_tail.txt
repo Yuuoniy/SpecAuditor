@@ -1,0 +1,12 @@
+Function: struct sk_buff * __skb_dequeue_tail ( struct sk_buff_head * list )
+
+remove from the tail of the queue
+
+Parameters
+  struct sk_buff_head *list
+    list to dequeue from
+
+Description
+  Remove the tail of the list. This function does not take any locks
+so must be used with appropriate locks held only. The tail item is
+returned or NULL if the list is empty.

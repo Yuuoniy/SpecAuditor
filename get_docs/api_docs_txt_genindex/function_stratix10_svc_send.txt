@@ -1,0 +1,14 @@
+Function: int stratix10_svc_send ( struct stratix10_svc_chan * chan , void * msg )
+
+send a message data to the remote
+
+Parameters
+  struct stratix10_svc_chan *chan
+    service channel assigned to the client
+  void *msg
+    message data to be sent, in the format of
+“ struct stratix10_svc_client_msg ”
+
+Description
+  This function is used by service client to add a message to the service
+layer driver’s queue for being sent to the secure world.

@@ -1,0 +1,3 @@
+Enum: enum snd_compr_state
+
+task state

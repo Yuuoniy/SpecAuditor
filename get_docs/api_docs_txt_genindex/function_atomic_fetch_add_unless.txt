@@ -1,0 +1,15 @@
+Function: int atomic_fetch_add_unless ( atomic_t * v , int a , int u )
+
+atomic add unless value with full ordering
+
+Parameters
+  atomic_t *v
+    pointer to atomic_t
+  int a
+    int value to add
+  int u
+    int value to compare with
+
+Description
+  If ( v != u ), atomically updates v to ( v + a ) with full ordering.
+Otherwise, v is not modified and relaxed ordering is provided.

@@ -1,0 +1,30 @@
+Struct: struct drm_pvr_ioctl_vm_map_args
+
+Arguments for DRM_IOCTL_PVR_VM_MAP .
+
+Members
+  vm_context_handle
+    [IN] Handle for VM context for this mapping to
+exist in.
+  flags
+    [IN] Flags which affect this mapping. Currently always 0.
+  device_addr
+    [IN] Requested device-virtual address for the mapping.
+This must be non-zero and aligned to the device page size for the
+heap containing the requested address. It is an error to specify an
+address which is not contained within one of the heaps returned by DRM_PVR_DEV_QUERY_HEAP_INFO_GET .
+  handle
+    [IN] Handle of the target buffer object. This must be a
+valid handle returned by DRM_IOCTL_PVR_CREATE_BO .
+  _padding_14
+    Reserved. This field must be zeroed.
+  offset
+    [IN] Offset into the target bo from which to begin the
+mapping.
+  size
+    [IN] Size of the requested mapping. Must be aligned to
+the device page size for the heap containing the requested address,
+as well as the host page size. When added to device_addr , the
+result must not overflow the heap which contains device_addr (i.e.
+the range specified by device_addr and size must be completely
+contained within a single heap specified by DRM_PVR_DEV_QUERY_HEAP_INFO_GET ).

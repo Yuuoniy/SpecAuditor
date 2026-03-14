@@ -1,0 +1,3 @@
+Enum: enum slim_ch_data_fmt
+
+SLIMbus channel data Type identifiers according to Table 60 of SLIMbus Spec 1.01.01

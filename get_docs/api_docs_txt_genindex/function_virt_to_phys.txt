@@ -1,0 +1,12 @@
+Function: phys_addr_t virt_to_phys ( volatile void * address )
+
+map virtual addresses to physical
+
+Parameters
+  volatile void *address
+    address to remap
+
+Description
+  The returned physical address is the physical (CPU) mapping for
+the memory address given. It is only valid to use this function on
+addresses directly mapped or allocated via kmalloc.

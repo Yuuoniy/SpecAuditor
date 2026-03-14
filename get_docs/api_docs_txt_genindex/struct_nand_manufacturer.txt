@@ -1,0 +1,9 @@
+Struct: struct nand_manufacturer
+
+NAND manufacturer structure
+
+Members
+  desc
+    The manufacturer description
+  priv
+    Private information for the manufacturer driver

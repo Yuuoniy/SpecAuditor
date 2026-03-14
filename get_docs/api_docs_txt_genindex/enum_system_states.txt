@@ -1,0 +1,3 @@
+Enum: enum system_states
+
+Values used for system_state.

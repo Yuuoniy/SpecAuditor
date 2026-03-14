@@ -1,0 +1,13 @@
+Function: int iio_read_mount_matrix ( struct device * dev , struct iio_mount_matrix * matrix )
+
+retrieve iio device mounting matrix from device “mount-matrix” property
+
+Parameters
+  struct device *dev
+    device the mounting matrix property is assigned to
+  struct iio_mount_matrix *matrix
+    where to store retrieved matrix
+
+Description
+  If device is assigned no mounting matrix property, a default 3x3 identity
+matrix will be filled in.

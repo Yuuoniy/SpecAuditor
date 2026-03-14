@@ -1,0 +1,14 @@
+Function: int snd_pcm_lib_mmap_iomem ( struct snd_pcm_substream * substream , struct vm_area_struct * area )
+
+Default PCM data mmap function for I/O mem
+
+Parameters
+  struct snd_pcm_substream *substream
+    PCM substream
+  struct vm_area_struct *area
+    VMA
+
+Description
+  When your hardware uses the iomapped pages as the hardware buffer and
+wants to mmap it, pass this function as mmap pcm_ops.  Note that this
+is supposed to work only on limited architectures.

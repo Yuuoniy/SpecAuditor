@@ -1,0 +1,13 @@
+Function: int phy_eee_rx_clock_stop ( struct phy_device * phydev , bool clk_stop_enable )
+
+configure PHY receive clock in LPI
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+  bool clk_stop_enable
+    flag to indicate whether the clock can be stopped
+
+Description
+  Configure whether the PHY can disable its receive clock during LPI mode,
+See IEEE 802.3 sections 22.2.2.2, 35.2.2.10, and 45.2.3.1.4.

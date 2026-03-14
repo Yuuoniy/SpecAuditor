@@ -1,0 +1,10 @@
+Function: int of_overlay_remove_all ( void )
+
+Reverts and frees all overlay changesets
+
+Parameters
+  void
+    no arguments
+
+Description
+  Removes all overlays from the system in the correct order.

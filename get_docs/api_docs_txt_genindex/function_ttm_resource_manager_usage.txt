@@ -1,0 +1,10 @@
+Function: uint64_t ttm_resource_manager_usage ( struct ttm_resource_manager * man )
+
+
+
+Parameters
+  struct ttm_resource_manager *man
+    A memory manager object.
+
+Description
+  Return how many resources are currently used.

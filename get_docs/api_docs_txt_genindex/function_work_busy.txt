@@ -1,0 +1,12 @@
+Function: unsigned int work_busy ( struct work_struct * work )
+
+test whether a work is currently pending or running
+
+Parameters
+  struct work_struct *work
+    the work to be tested
+
+Description
+  Test whether work is currently pending or running.  There is no
+synchronization around this function and the test result is
+unreliable and only useful as advisory hints or for debugging.

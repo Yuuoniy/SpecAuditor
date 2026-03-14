@@ -1,0 +1,23 @@
+Function: int ib_sg_to_pages ( struct ib_mr * mr , struct scatterlist * sgl , int sg_nents , unsigned int * sg_offset_p , int ( * set_page ) ( struct ib_mr * , u64 ) )
+
+Convert the largest prefix of a sg list to a page vector
+
+Parameters
+  struct ib_mr *mr
+    memory region
+  struct scatterlist *sgl
+    dma mapped scatterlist
+  int sg_nents
+    number of entries in sg
+  unsigned int *sg_offset_p
+    IN start offset in bytes into sg OUT offset in bytes for element n of the sg of the first
+byte that has not been processed where n is the return
+value of this function.
+  int (*set_page)(struct ib_mr *, u64)
+    driver page assignment function pointer
+
+Description
+  Core service helper for drivers to convert the largest
+prefix of given sg list to a page vector. The sg list
+prefix converted is the prefix that meet the requirements
+of ib_map_mr_sg.

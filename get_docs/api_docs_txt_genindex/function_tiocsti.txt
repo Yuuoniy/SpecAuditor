@@ -1,0 +1,12 @@
+Function: int tiocsti ( struct tty_struct * tty , u8 __user * p )
+
+fake input character
+
+Parameters
+  struct tty_struct *tty
+    tty to fake input into
+  u8 __user *p
+    pointer to character
+
+Description
+  Fake input to a tty device. Does the necessary locking and input management.

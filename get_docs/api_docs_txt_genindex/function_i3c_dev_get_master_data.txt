@@ -1,0 +1,7 @@
+Function: void * i3c_dev_get_master_data ( const struct i3c_dev_desc * dev )
+
+get master private data attached to an I3C device descriptor
+
+Parameters
+  const struct i3c_dev_desc *dev
+    the I3C device descriptor to get private data from

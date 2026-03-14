@@ -1,0 +1,14 @@
+Function: void kthread_associate_blkcg ( struct cgroup_subsys_state * css )
+
+associate blkcg to current kthread
+
+Parameters
+  struct cgroup_subsys_state *css
+    the cgroup info
+
+Description
+  Current thread must be a kthread. The thread is running jobs on behalf of
+other threads. In some cases, we expect the jobs attach cgroup info of
+original threads instead of that of current thread. This function stores
+original thread’s cgroup info in current kthread context for later
+retrieval.

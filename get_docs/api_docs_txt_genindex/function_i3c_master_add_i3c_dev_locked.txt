@@ -1,0 +1,14 @@
+Function: int i3c_master_add_i3c_dev_locked ( struct i3c_master_controller * master , u8 addr )
+
+add an I3C slave to the bus
+
+Parameters
+  struct i3c_master_controller *master
+    master used to send frames on the bus
+  u8 addr
+    I3C slave dynamic address assigned to the device
+
+Description
+  This function is instantiating an I3C device object and adding it to the
+I3C device list. All device information are automatically retrieved using
+standard CCC commands.

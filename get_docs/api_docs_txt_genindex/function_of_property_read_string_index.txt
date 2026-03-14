@@ -1,0 +1,19 @@
+Function: int of_property_read_string_index ( const struct device_node * np , const char * propname , int index , const char * * output )
+
+Find and read a string from a multiple strings property.
+
+Parameters
+  const struct device_node *np
+    device node from which the property value is to be read.
+  const char *propname
+    name of the property to be searched.
+  int index
+    index of the string in the list of strings
+  const char **output
+    pointer to null terminated return string, modified only if
+return value is 0.
+
+Description
+  Search for a property in a device tree node and retrieve a null
+terminated string value (pointer to data, not a copy) in the list of strings
+contained in that property.

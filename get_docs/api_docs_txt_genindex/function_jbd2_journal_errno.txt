@@ -1,0 +1,12 @@
+Function: int jbd2_journal_errno ( journal_t * journal )
+
+returns the journal’s error state.
+
+Parameters
+  journal_t *journal
+    journal to examine.
+
+Description
+  This is the errno number set with jbd2_journal_abort() , the last
+time the journal was mounted - if the journal was stopped
+without calling abort this will be 0.

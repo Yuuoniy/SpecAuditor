@@ -1,0 +1,10 @@
+Function: int raw_atomic_dec_return ( atomic_t * v )
+
+atomic decrement with full ordering
+
+Parameters
+  atomic_t *v
+    pointer to atomic_t
+
+Description
+  Atomically updates v to ( v - 1) with full ordering.

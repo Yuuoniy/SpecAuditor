@@ -1,0 +1,24 @@
+Function: int mipi_dbi_dev_init_with_formats ( struct mipi_dbi_dev * dbidev , const struct drm_simple_display_pipe_funcs * funcs , const uint32_t * formats , unsigned int format_count , const struct drm_display_mode * mode , unsigned int rotation , size_t tx_buf_size )
+
+MIPI DBI device initialization with custom formats
+
+Parameters
+  struct mipi_dbi_dev *dbidev
+    MIPI DBI device structure to initialize
+  const struct drm_simple_display_pipe_funcs *funcs
+    Display pipe functions
+  const uint32_t *formats
+    Array of supported formats (DRM_FORMAT_*).
+  unsigned int format_count
+    Number of elements in formats
+  const struct drm_display_mode *mode
+    Display mode
+  unsigned int rotation
+    Initial rotation in degrees Counter Clock Wise
+  size_t tx_buf_size
+    Allocate a transmit buffer of this size.
+
+Description
+  This function sets up a drm_simple_display_pipe with a drm_connector that
+has one fixed drm_display_mode which is rotated according to rotation .
+This mode is used to set the mode config min/max width/height properties.

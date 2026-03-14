@@ -1,0 +1,13 @@
+Function: void tty_unregister_device ( struct tty_driver * driver , unsigned index )
+
+unregister a tty device
+
+Parameters
+  struct tty_driver *driver
+    the tty driver that describes the tty device
+  unsigned index
+    the index in the tty driver for this tty device
+
+Description
+  If a tty device is registered with a call to tty_register_device() then
+this function must be called when the tty device is gone.

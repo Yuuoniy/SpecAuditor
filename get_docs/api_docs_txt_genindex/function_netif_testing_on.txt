@@ -1,0 +1,10 @@
+Function: void netif_testing_on ( struct net_device * dev )
+
+mark device as under test.
+
+Parameters
+  struct net_device *dev
+    network device
+
+Description
+  Mark device as under test (as per RFC2863).

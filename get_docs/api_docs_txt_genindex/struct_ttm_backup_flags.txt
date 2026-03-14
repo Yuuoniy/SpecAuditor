@@ -1,0 +1,10 @@
+Struct: struct ttm_backup_flags
+
+Flags to govern backup behaviour.
+
+Members
+  purge
+    Free pages without backing up. Bypass pools.
+  writeback
+    Attempt to copy contents directly to swap space, even
+if that means blocking on writes to external memory.

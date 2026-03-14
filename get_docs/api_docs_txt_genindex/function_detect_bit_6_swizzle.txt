@@ -1,0 +1,11 @@
+Function: void detect_bit_6_swizzle ( struct i915_ggtt * ggtt )
+
+detect bit 6 swizzling pattern
+
+Parameters
+  struct i915_ggtt *ggtt
+    Global GGTT
+
+Description
+  Detects bit 6 swizzling of address lookup between IGD access and CPU
+access through main memory.

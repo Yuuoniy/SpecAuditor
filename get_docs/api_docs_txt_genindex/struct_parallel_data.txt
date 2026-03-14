@@ -1,0 +1,21 @@
+Struct: struct parallel_data
+
+Internal control structure, covers everything that depends on the cpumask in use.
+
+Members
+  ps
+    padata_shell object.
+  reorder_list
+    percpu reorder lists
+  squeue
+    percpu padata queues used for serialuzation.
+  refcnt
+    Number of objects holding a reference on this parallel_data.
+  seq_nr
+    Sequence number of the parallelized data object.
+  processed
+    Number of already processed objects.
+  cpu
+    Next CPU to be processed.
+  cpumask
+    The cpumasks in use for parallel and serial workers.

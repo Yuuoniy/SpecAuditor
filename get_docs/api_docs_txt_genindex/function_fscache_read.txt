@@ -1,0 +1,21 @@
+Function: int fscache_read ( struct netfs_cache_resources * cres , loff_t start_pos , struct iov_iter * iter , enum netfs_read_from_hole read_hole , netfs_io_terminated_t term_func , void * term_func_priv )
+
+Start a read from the cache.
+
+Parameters
+  struct netfs_cache_resources *cres
+    The cache resources to use
+  loff_t start_pos
+    The beginning file offset in the cache file
+  struct iov_iter *iter
+    The buffer to fill - and also the length
+  enum netfs_read_from_hole read_hole
+    How to handle a hole in the data.
+  netfs_io_terminated_t term_func
+    The function to call upon completion
+  void *term_func_priv
+    The private data for term_func
+
+Description
+  Start a read from the cache. cres indicates the cache object to read from
+and must be obtained by a call to fscache_begin_operation() beforehand.

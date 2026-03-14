@@ -1,0 +1,17 @@
+Function: long cxl_pci_get_latency ( struct pci_dev * pdev )
+
+calculate the link latency for the PCIe link
+
+Parameters
+  struct pci_dev *pdev
+    PCI device
+
+Description
+  CXL Memory Device SW Guide v1.0 2.11.4 Link latency calculation
+Link latency = LinkPropagationLatency + FlitLatency + RetimerLatency
+LinkProgationLatency is negligible, so 0 will be used
+RetimerLatency is assumed to be negligible and 0 will be used
+FlitLatency = FlitSize / LinkBandwidth
+FlitSize is defined by spec. CXL rev3.0 4.2.1.
+68B flit is used up to 32GT/s. >32GT/s, 256B flit size is used.
+The FlitLatency is converted to picoseconds.

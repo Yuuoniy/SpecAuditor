@@ -1,0 +1,15 @@
+Function: struct dentry * lookup_one_positive_unlocked ( struct mnt_idmap * idmap , struct qstr * name , struct dentry * base )
+
+lookup single pathname component
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount the lookup is performed from
+  struct qstr *name
+    qstr holding pathname component to lookup
+  struct dentry *base
+    base directory to lookup from
+
+Description
+  This helper will yield ERR_PTR(-ENOENT) on negatives. The helper returns
+known positive or ERR_PTR() . This is what most of the users want.

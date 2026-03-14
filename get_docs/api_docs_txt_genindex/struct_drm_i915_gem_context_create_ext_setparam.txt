@@ -1,0 +1,10 @@
+Struct: struct drm_i915_gem_context_create_ext_setparam
+
+Context parameter to set or query during context creation.
+
+Members
+  base
+    Extension link. See struct i915_user_extension .
+  param
+    Context parameter to set or query.
+See struct drm_i915_gem_context_param .

@@ -1,0 +1,7 @@
+Function: int dvb_ringbuffer_empty ( struct dvb_ringbuffer * rbuf )
+
+test whether buffer is empty
+
+Parameters
+  struct dvb_ringbuffer *rbuf
+    pointer to struct dvb_ringbuffer

@@ -1,0 +1,45 @@
+Struct: struct i2c_bus_recovery_info
+
+I2C bus recovery information
+
+Members
+  recover_bus
+    Recover routine. Either pass driver’s recover_bus() routine, or i2c_generic_scl_recovery() .
+  get_scl
+    This gets current value of SCL line. Mandatory for generic SCL
+recovery. Populated internally for generic GPIO recovery.
+  set_scl
+    This sets/clears the SCL line. Mandatory for generic SCL recovery.
+Populated internally for generic GPIO recovery.
+  get_sda
+    This gets current value of SDA line. This or set_sda() is mandatory
+for generic SCL recovery. Populated internally, if sda_gpio is a valid
+GPIO, for generic GPIO recovery.
+  set_sda
+    This sets/clears the SDA line. This or get_sda() is mandatory for
+generic SCL recovery. Populated internally, if sda_gpio is a valid GPIO,
+for generic GPIO recovery.
+  get_bus_free
+    Returns the bus free state as seen from the IP core in case it
+has a more complex internal logic than just reading SDA. Optional.
+  prepare_recovery
+    This will be called before starting recovery. Platform may
+configure padmux here for SDA/SCL line or something else they want.
+  unprepare_recovery
+    This will be called after completing recovery. Platform
+may configure padmux here for SDA/SCL line or something else they want.
+  scl_gpiod
+    gpiod of the SCL line. Only required for GPIO recovery.
+  sda_gpiod
+    gpiod of the SDA line. Only required for GPIO recovery.
+  pinctrl
+    pinctrl used by GPIO recovery to change the state of the I2C pins.
+Optional.
+  pins_default
+    default pinctrl state of SCL/SDA lines, when they are assigned
+to the I2C bus. Optional. Populated internally for GPIO recovery, if
+state with the name PINCTRL_STATE_DEFAULT is found and pinctrl is valid.
+  pins_gpio
+    recovery pinctrl state of SCL/SDA lines, when they are used as
+GPIOs. Optional. Populated internally for GPIO recovery, if this state
+is called “gpio” or “recovery” and pinctrl is valid.

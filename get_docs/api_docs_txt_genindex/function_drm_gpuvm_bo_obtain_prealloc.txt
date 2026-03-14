@@ -1,0 +1,13 @@
+Function: struct drm_gpuvm_bo * drm_gpuvm_bo_obtain_prealloc ( struct drm_gpuvm_bo * __vm_bo )
+
+obtains an instance of the drm_gpuvm_bo for the given drm_gpuvm and drm_gem_object
+
+Parameters
+  struct drm_gpuvm_bo *__vm_bo
+    A pre-allocated struct drm_gpuvm_bo .
+
+Description
+  Find the drm_gpuvm_bo representing the combination of the given drm_gpuvm and drm_gem_object . If found, increases the reference
+count of the found drm_gpuvm_bo accordingly, while the __vm_bo reference
+count is decreased. If not found __vm_bo is returned without further
+increase of the reference count.

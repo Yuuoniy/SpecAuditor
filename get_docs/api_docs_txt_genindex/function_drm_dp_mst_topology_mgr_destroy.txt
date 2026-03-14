@@ -1,0 +1,7 @@
+Function: void drm_dp_mst_topology_mgr_destroy ( struct drm_dp_mst_topology_mgr * mgr )
+
+destroy topology manager.
+
+Parameters
+  struct drm_dp_mst_topology_mgr *mgr
+    manager to destroy

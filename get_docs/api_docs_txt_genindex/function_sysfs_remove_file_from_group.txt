@@ -1,0 +1,11 @@
+Function: void sysfs_remove_file_from_group ( struct kobject * kobj , const struct attribute * attr , const char * group )
+
+remove an attribute file from a group.
+
+Parameters
+  struct kobject *kobj
+    object we’re acting for.
+  const struct attribute *attr
+    attribute descriptor.
+  const char *group
+    group name.

@@ -1,0 +1,12 @@
+Function: void drm_syncobj_replace_fence ( struct drm_syncobj * syncobj , struct dma_fence * fence )
+
+replace fence in a sync object.
+
+Parameters
+  struct drm_syncobj *syncobj
+    Sync object to replace fence in
+  struct dma_fence *fence
+    fence to install in sync file.
+
+Description
+  This replaces the fence on a sync object.

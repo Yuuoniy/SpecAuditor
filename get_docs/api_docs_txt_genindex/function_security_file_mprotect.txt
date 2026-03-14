@@ -1,0 +1,14 @@
+Function: int security_file_mprotect ( struct vm_area_struct * vma , unsigned long reqprot , unsigned long prot )
+
+Check if changing memory protections is allowed
+
+Parameters
+  struct vm_area_struct *vma
+    memory region
+  unsigned long reqprot
+    application requested protection
+  unsigned long prot
+    protection applied by the kernel
+
+Description
+  Check permissions before changing memory access permissions.

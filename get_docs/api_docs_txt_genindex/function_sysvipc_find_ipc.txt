@@ -1,0 +1,17 @@
+Function: struct kern_ipc_perm * sysvipc_find_ipc ( struct ipc_ids * ids , loff_t * pos )
+
+Find and lock the ipc structure based on seq pos
+
+Parameters
+  struct ipc_ids *ids
+    ipc identifier set
+  loff_t *pos
+    expected position
+
+Description
+  The function finds an ipc structure, based on the sequence file
+position pos . If there is no ipc structure at position pos , then
+the successor is selected.
+If a structure is found, then it is locked (both rcu_read_lock() and ipc_lock_object() ) and pos is set to the position needed to locate
+the found ipc structure.
+If nothing is found (i.e. EOF), pos is not modified.

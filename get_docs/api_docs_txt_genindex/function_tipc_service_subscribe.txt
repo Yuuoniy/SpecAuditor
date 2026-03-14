@@ -1,0 +1,9 @@
+Function: void tipc_service_subscribe ( struct tipc_service * service , struct tipc_subscription * sub )
+
+attach a subscription, and optionally issue the prescribed number of events if there is any service range overlapping with the requested range
+
+Parameters
+  struct tipc_service *service
+    the tipc_service to attach the sub to
+  struct tipc_subscription *sub
+    the subscription to attach

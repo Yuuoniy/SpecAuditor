@@ -1,0 +1,17 @@
+Struct: struct vidtv_s302m_ctx
+
+s302m encoder context.
+
+Members
+  enc
+    A pointer to the containing encoder structure.
+  frame_index
+    The current frame in a block
+  au_count
+    The total number of access units encoded up to now
+  last_duration
+    Duration of the tone currently being played
+  note_offset
+    Position at the music tone array
+  last_tone
+    Tone currently being played

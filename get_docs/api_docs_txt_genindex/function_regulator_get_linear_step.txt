@@ -1,0 +1,7 @@
+Function: unsigned int regulator_get_linear_step ( struct regulator * regulator )
+
+return the voltage step size between VSEL values
+
+Parameters
+  struct regulator *regulator
+    regulator source

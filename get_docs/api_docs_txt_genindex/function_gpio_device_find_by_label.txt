@@ -1,0 +1,7 @@
+Function: struct gpio_device * gpio_device_find_by_label ( const char * label )
+
+wrapper around gpio_device_find() finding the GPIO device by its backing chip’s label
+
+Parameters
+  const char *label
+    Label to lookup

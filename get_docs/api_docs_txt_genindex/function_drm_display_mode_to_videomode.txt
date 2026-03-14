@@ -1,0 +1,12 @@
+Function: void drm_display_mode_to_videomode ( const struct drm_display_mode * dmode , struct videomode * vm )
+
+fill in vm using dmode ,
+
+Parameters
+  const struct drm_display_mode *dmode
+    drm_display_mode structure to use as source
+  struct videomode *vm
+    videomode structure to use as destination
+
+Description
+  Fills out vm using the display mode specified in dmode .

@@ -1,0 +1,11 @@
+Function: void hdmi_infoframe_log ( const char * level , struct device * dev , const union hdmi_infoframe * frame )
+
+log info of HDMI infoframe
+
+Parameters
+  const char *level
+    logging level
+  struct device *dev
+    device
+  const union hdmi_infoframe *frame
+    HDMI infoframe

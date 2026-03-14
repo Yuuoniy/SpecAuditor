@@ -1,0 +1,12 @@
+Function: void drm_prime_gem_destroy ( struct drm_gem_object * obj , struct sg_table * sg )
+
+helper to clean up a PRIME-imported GEM object
+
+Parameters
+  struct drm_gem_object *obj
+    GEM object which was created from a dma-buf
+  struct sg_table *sg
+    the sg-table which was pinned at import time
+
+Description
+  This is the cleanup functions which GEM drivers need to call when they use drm_gem_prime_import() or drm_gem_prime_import_dev() to import dma-bufs.

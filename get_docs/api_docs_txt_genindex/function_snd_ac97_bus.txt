@@ -1,0 +1,19 @@
+Function: int snd_ac97_bus ( struct snd_card * card , int num , const struct snd_ac97_bus_ops * ops , void * private_data , struct snd_ac97_bus * * rbus )
+
+create an AC97 bus component
+
+Parameters
+  struct snd_card *card
+    the card instance
+  int num
+    the bus number
+  const struct snd_ac97_bus_ops *ops
+    the bus callbacks table
+  void *private_data
+    private data pointer for the new instance
+  struct snd_ac97_bus **rbus
+    the pointer to store the new AC97 bus instance.
+
+Description
+  Creates an AC97 bus component.  An struct snd_ac97_bus instance is newly
+allocated and initialized.

@@ -1,0 +1,16 @@
+Function: int fcntl_setlease ( unsigned int fd , struct file * filp , int arg )
+
+sets a lease on an open file
+
+Parameters
+  unsigned int fd
+    open file descriptor
+  struct file *filp
+    file pointer
+  int arg
+    type of lease to obtain
+
+Description
+  Call this fcntl to establish a lease on the file.
+Note that you also need to call F_SETSIG to
+receive a signal when the lease is broken.

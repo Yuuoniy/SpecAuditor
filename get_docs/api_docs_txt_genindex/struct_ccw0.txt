@@ -1,0 +1,15 @@
+Struct: struct ccw0
+
+channel command word
+
+Members
+  cmd_code
+    command code
+  cda
+    data address
+  flags
+    flags, like IDA addressing, etc.
+  reserved
+    will be ignored
+  count
+    byte count

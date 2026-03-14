@@ -1,0 +1,10 @@
+Function: void tty_ldisc_flush ( struct tty_struct * tty )
+
+flush line discipline queue
+
+Parameters
+  struct tty_struct *tty
+    tty to flush ldisc for
+
+Description
+  Flush the line discipline queue (if any) and the tty flip buffers for this tty .

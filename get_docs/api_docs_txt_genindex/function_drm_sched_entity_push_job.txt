@@ -1,0 +1,7 @@
+Function: void drm_sched_entity_push_job ( struct drm_sched_job * sched_job )
+
+Submit a job to the entity’s job queue
+
+Parameters
+  struct drm_sched_job *sched_job
+    job to submit

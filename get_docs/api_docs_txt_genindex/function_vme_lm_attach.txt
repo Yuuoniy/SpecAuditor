@@ -1,0 +1,18 @@
+Function: int vme_lm_attach ( struct vme_resource * resource , int monitor , void ( * callback ) ( void * ) , void * data )
+
+Provide callback for location monitor address
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME location monitor resource.
+  int monitor
+    Offset to which callback should be attached.
+  void (*callback)(void *)
+    Pointer to callback function called when triggered.
+  void *data
+    Generic pointer that will be passed to the callback function.
+
+Description
+  Attach a callback to the specified offset into the location monitors
+monitored addresses. A generic pointer is provided to allow data to be
+passed to the callback when called.

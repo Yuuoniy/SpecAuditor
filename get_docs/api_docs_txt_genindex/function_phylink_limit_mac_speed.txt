@@ -1,0 +1,13 @@
+Function: void phylink_limit_mac_speed ( struct phylink_config * config , u32 max_speed )
+
+limit the phylink_config to a maximum speed
+
+Parameters
+  struct phylink_config *config
+    pointer to a struct phylink_config
+  u32 max_speed
+    maximum speed
+
+Description
+  Mask off MAC capabilities for speeds higher than the max_speed parameter.
+Any further motifications of config.mac_capabilities will override this.

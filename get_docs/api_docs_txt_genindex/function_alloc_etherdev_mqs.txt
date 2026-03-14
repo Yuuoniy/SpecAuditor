@@ -1,0 +1,16 @@
+Function: struct net_device * alloc_etherdev_mqs ( int sizeof_priv , unsigned int txqs , unsigned int rxqs )
+
+Allocates and sets up an Ethernet device
+
+Parameters
+  int sizeof_priv
+    Size of additional driver-private structure to be allocated
+for this Ethernet device
+  unsigned int txqs
+    The number of TX queues this device has.
+  unsigned int rxqs
+    The number of RX queues this device has.
+
+Description
+  Fill in the fields of the device structure with Ethernet-generic
+values. Basically does everything except registering the device.

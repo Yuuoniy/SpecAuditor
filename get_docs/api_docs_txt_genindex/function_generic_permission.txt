@@ -1,0 +1,17 @@
+Function: int generic_permission ( struct mnt_idmap * idmap , struct inode * inode , int mask )
+
+check for access rights on a Posix-like filesystem
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount the inode was found from
+  struct inode *inode
+    inode to check access rights for
+  int mask
+    right to check for ( MAY_READ , MAY_WRITE , MAY_EXEC , MAY_NOT_BLOCK ...)
+
+Description
+  Used to check for read/write/execute permissions on a file.
+We use “fsuid” for this, letting us set arbitrary permissions
+for filesystem access without changing the “normal” uids which
+are used for other things.

@@ -1,0 +1,11 @@
+Function: int security_file_truncate ( struct file * file )
+
+Check if truncating a file is allowed
+
+Parameters
+  struct file *file
+    file
+
+Description
+  Check permission before truncating a file, i.e. using ftruncate.  Note that
+truncation permission may also be checked based on the path, using the path_truncate hook.

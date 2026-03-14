@@ -1,0 +1,11 @@
+Function: enum pcie_link_width pcie_get_width_cap ( struct pci_dev * dev )
+
+query for the PCI device’s link width capability
+
+Parameters
+  struct pci_dev *dev
+    PCI device to query
+
+Description
+  Query the PCI device width capability.  Return the maximum link width
+supported by the device.

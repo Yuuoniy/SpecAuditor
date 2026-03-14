@@ -1,0 +1,9 @@
+Function: u8 w1_touch_bit ( struct w1_master * dev , int bit )
+
+Generates a write-0 or write-1 cycle and samples the level.
+
+Parameters
+  struct w1_master *dev
+    the master device
+  int bit
+    0 - write a 0, 1 - write a 0 read the level

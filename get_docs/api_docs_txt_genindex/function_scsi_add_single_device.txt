@@ -1,0 +1,16 @@
+Function: int scsi_add_single_device ( uint host , uint channel , uint id , uint lun )
+
+Respond to user request to probe for/add device
+
+Parameters
+  uint host
+    user-supplied decimal integer
+  uint channel
+    user-supplied decimal integer
+  uint id
+    user-supplied decimal integer
+  uint lun
+    user-supplied decimal integer
+
+Description
+  called by writing “scsi add-single-device” to /proc/scsi/scsi.

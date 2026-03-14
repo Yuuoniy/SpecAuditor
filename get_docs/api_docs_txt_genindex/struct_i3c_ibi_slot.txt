@@ -1,0 +1,14 @@
+Struct: struct i3c_ibi_slot
+
+I3C IBI (In-Band Interrupt) slot
+
+Members
+  work
+    work associated to this slot. The IBI handler will be called from
+there
+  dev
+    the I3C device that has generated this IBI
+  len
+    length of the payload associated to this IBI
+  data
+    payload buffer

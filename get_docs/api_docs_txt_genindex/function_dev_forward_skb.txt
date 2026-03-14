@@ -1,0 +1,13 @@
+Function: int dev_forward_skb ( struct net_device * dev , struct sk_buff * skb )
+
+loopback an skb to another netif
+
+Parameters
+  struct net_device *dev
+    destination network device
+  struct sk_buff *skb
+    buffer to forward
+
+Description
+  NET_RX_SUCCESS  (no congestion)
+NET_RX_DROP     (packet was dropped, but freed)

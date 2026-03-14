@@ -1,0 +1,14 @@
+Macro: module_exit
+
+
+
+Parameters
+  x
+    function to be run when driver is removed
+
+Description
+  module_exit() will wrap the driver clean-up code
+with cleanup_module() when used with rmmod when
+the driver is a module.  If the driver is statically
+compiled into the kernel, module_exit() has no effect.
+There can only be one per module.

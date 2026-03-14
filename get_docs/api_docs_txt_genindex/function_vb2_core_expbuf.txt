@@ -1,0 +1,25 @@
+Function: int vb2_core_expbuf ( struct vb2_queue * q , int * fd , unsigned int type , struct vb2_buffer * vb , unsigned int plane , unsigned int flags )
+
+Export a buffer as a file descriptor.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  int *fd
+    pointer to the file descriptor associated with DMABUF
+(set by driver).
+  unsigned int type
+    buffer type.
+  struct vb2_buffer *vb
+    pointer to struct vb2_buffer .
+  unsigned int plane
+    index of the plane to be exported, 0 for single plane queues
+  unsigned int flags
+    file flags for newly created file, as defined at
+include/uapi/asm-generic/fcntl.h.
+Currently, the only used flag is O_CLOEXEC .
+is supported, refer to manual of open syscall for more details.
+
+Description
+  Videobuf2 core helper to implement VIDIOC_EXPBUF() operation. It is called
+internally by VB2 by an API-specific handler, like videobuf2-v4l2.h .

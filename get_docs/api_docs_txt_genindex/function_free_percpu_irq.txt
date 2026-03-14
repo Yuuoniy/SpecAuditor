@@ -1,0 +1,15 @@
+Function: void free_percpu_irq ( unsigned int irq , void __percpu * dev_id )
+
+free an interrupt allocated with request_percpu_irq
+
+Parameters
+  unsigned int irq
+    Interrupt line to free
+  void __percpu *dev_id
+    Device identity to free
+
+Description
+  Remove a percpu interrupt handler. The handler is removed, but the
+interrupt line is not disabled. This must be done on each CPU before
+calling this function. The function does not return until any executing
+interrupts for this IRQ have completed.

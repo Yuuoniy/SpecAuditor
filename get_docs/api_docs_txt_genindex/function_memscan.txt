@@ -1,0 +1,15 @@
+Function: void * memscan ( void * addr , int c , size_t size )
+
+Find a character in an area of memory.
+
+Parameters
+  void *addr
+    The memory area
+  int c
+    The byte to search for
+  size_t size
+    The size of the area.
+
+Description
+  returns the address of the first occurrence of c , or 1 byte past
+the area if c is not found

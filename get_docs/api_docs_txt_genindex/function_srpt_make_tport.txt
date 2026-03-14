@@ -1,0 +1,11 @@
+Function: struct se_wwn * srpt_make_tport ( struct target_fabric_configfs * tf , struct config_group * group , const char * name )
+
+configfs callback invoked for mkdir /sys/kernel/config/target/$driver/$port
+
+Parameters
+  struct target_fabric_configfs *tf
+    Not used.
+  struct config_group *group
+    Not used.
+  const char *name
+    $port.

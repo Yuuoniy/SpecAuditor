@@ -1,0 +1,12 @@
+Function: void intel_cleanup_plane_fb ( struct drm_plane * plane , struct drm_plane_state * _old_plane_state )
+
+Cleans up an fb after plane use
+
+Parameters
+  struct drm_plane *plane
+    drm plane to clean up for
+  struct drm_plane_state *_old_plane_state
+    the state from the previous modeset
+
+Description
+  Cleans up a framebuffer that has just been removed from a plane.

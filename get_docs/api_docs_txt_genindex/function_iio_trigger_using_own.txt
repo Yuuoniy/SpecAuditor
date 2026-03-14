@@ -1,0 +1,7 @@
+Function: bool iio_trigger_using_own ( struct iio_dev * indio_dev )
+
+tells us if we use our own HW trigger ourselves
+
+Parameters
+  struct iio_dev *indio_dev
+    device to check

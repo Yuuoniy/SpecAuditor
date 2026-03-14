@@ -1,0 +1,11 @@
+Function: void INIT_LIST_HEAD ( struct list_head * list )
+
+Initialize a list_head structure
+
+Parameters
+  struct list_head *list
+    list_head structure to be initialized.
+
+Description
+  Initializes the list_head to point to itself.  If it is a list header,
+the result is an empty list.

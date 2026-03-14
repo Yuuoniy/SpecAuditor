@@ -1,0 +1,3 @@
+Function: enum drm_debug_category
+
+The DRM debug categories

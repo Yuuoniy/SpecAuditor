@@ -1,0 +1,11 @@
+Function: void ctucan_give_txtb_cmd ( struct ctucan_priv * priv , enum ctucan_txtb_command cmd , u8 buf )
+
+Applies command on TXT buffer
+
+Parameters
+  struct ctucan_priv *priv
+    Pointer to private data
+  enum ctucan_txtb_command cmd
+    Command to give
+  u8 buf
+    Buffer index (0-based)

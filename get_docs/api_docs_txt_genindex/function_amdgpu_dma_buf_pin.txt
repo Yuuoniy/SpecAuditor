@@ -1,0 +1,10 @@
+Function: int amdgpu_dma_buf_pin ( struct dma_buf_attachment * attach )
+
+dma_buf_ops.pin implementation
+
+Parameters
+  struct dma_buf_attachment *attach
+    attachment to pin down
+
+Description
+  Pin the BO which is backing the DMA-buf so that it can’t move any more.

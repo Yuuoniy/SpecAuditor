@@ -1,0 +1,11 @@
+Function: int gpiochip_generic_config ( struct gpio_chip * gc , unsigned int offset , unsigned long config )
+
+apply configuration for a pin
+
+Parameters
+  struct gpio_chip *gc
+    the gpiochip owning the GPIO
+  unsigned int offset
+    the offset of the GPIO to apply the configuration
+  unsigned long config
+    the configuration to be applied

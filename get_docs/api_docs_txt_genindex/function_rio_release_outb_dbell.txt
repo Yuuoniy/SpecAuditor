@@ -1,0 +1,13 @@
+Function: int rio_release_outb_dbell ( struct rio_dev * rdev , struct resource * res )
+
+release outbound doorbell message range
+
+Parameters
+  struct rio_dev *rdev
+    RIO device from which to release the doorbell resource
+  struct resource *res
+    Doorbell resource to be freed
+
+Description
+  Releases ownership of a doorbell message range. Returns 0 if the
+request has been satisfied.

@@ -1,0 +1,15 @@
+Function: int snd_pcm_hw_params_choose ( struct snd_pcm_substream * pcm , struct snd_pcm_hw_params * params )
+
+choose a configuration defined by params
+
+Parameters
+  struct snd_pcm_substream *pcm
+    PCM instance
+  struct snd_pcm_hw_params *params
+    the hw_params instance
+
+Description
+  Choose one configuration from configuration space defined by params .
+The configuration chosen is that obtained fixing in this order:
+first access, first format, first subformat, min channels,
+min rate, min period time, max buffer size, min tick time

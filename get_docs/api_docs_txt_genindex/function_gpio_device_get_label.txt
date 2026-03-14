@@ -1,0 +1,7 @@
+Function: const char * gpio_device_get_label ( struct gpio_device * gdev )
+
+Get the label of this GPIO device
+
+Parameters
+  struct gpio_device *gdev
+    GPIO device

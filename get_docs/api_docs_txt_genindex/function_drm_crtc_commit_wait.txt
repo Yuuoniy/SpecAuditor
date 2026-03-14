@@ -1,0 +1,11 @@
+Function: int drm_crtc_commit_wait ( struct drm_crtc_commit * commit )
+
+Waits for a commit to complete
+
+Parameters
+  struct drm_crtc_commit *commit
+    drm_crtc_commit to wait for
+
+Description
+  Waits for a given drm_crtc_commit to be programmed into the
+hardware and flipped to.

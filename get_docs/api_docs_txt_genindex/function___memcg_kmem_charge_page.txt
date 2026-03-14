@@ -1,0 +1,14 @@
+Function: int __memcg_kmem_charge_page ( struct page * page , gfp_t gfp , int order )
+
+charge a kmem page to the current memory cgroup
+
+Parameters
+  struct page *page
+    page to charge
+  gfp_t gfp
+    reclaim mode
+  int order
+    allocation order
+
+Description
+  Returns 0 on success, an error code on failure.

@@ -1,0 +1,16 @@
+Function: int drm_dp_read_lttpr_phy_caps ( struct drm_dp_aux * aux , const u8 dpcd [ DP_RECEIVER_CAP_SIZE ] , enum drm_dp_phy dp_phy , u8 caps [ DP_LTTPR_PHY_CAP_SIZE ] )
+
+read the capabilities for a given LTTPR PHY
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  const u8 dpcd[DP_RECEIVER_CAP_SIZE]
+    DisplayPort configuration data
+  enum drm_dp_phy dp_phy
+    LTTPR PHY to read the capabilities for
+  u8 caps[DP_LTTPR_PHY_CAP_SIZE]
+    buffer to return the capability info in
+
+Description
+  Read the capabilities for the given LTTPR PHY.

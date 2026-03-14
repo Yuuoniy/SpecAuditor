@@ -1,0 +1,14 @@
+Function: void page_pool_free_va ( struct page_pool * pool , void * va , bool allow_direct )
+
+free a va into the page_pool
+
+Parameters
+  struct page_pool *pool
+    pool from which va was allocated
+  void *va
+    va to be freed
+  bool allow_direct
+    freed by the consumer, allow lockless caching
+
+Description
+  Free a va allocated from page_pool_allo_va() .

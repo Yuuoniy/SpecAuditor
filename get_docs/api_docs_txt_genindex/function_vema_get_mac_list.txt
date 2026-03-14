@@ -1,0 +1,13 @@
+Function: void vema_get_mac_list ( struct opa_vnic_vema_port * port , struct opa_vnic_vema_mad * recvd_mad , struct opa_vnic_vema_mad * rsp_mad , u16 attr_id )
+
+Get the unicast/multicast macs.
+
+Parameters
+  struct opa_vnic_vema_port *port
+    source port on which MAD was received
+  struct opa_vnic_vema_mad *recvd_mad
+    Received mad contains fields to set vnic parameters
+  struct opa_vnic_vema_mad *rsp_mad
+    Response mad to be built
+  u16 attr_id
+    Attribute ID indicating multicast or unicast mac list

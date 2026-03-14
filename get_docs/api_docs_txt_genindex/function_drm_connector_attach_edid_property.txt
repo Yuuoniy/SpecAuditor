@@ -1,0 +1,12 @@
+Function: void drm_connector_attach_edid_property ( struct drm_connector * connector )
+
+attach edid property.
+
+Parameters
+  struct drm_connector *connector
+    the connector
+
+Description
+  Some connector types like DRM_MODE_CONNECTOR_VIRTUAL do not get a
+edid property attached by default.  This function can be used to
+explicitly enable the edid property in these cases.

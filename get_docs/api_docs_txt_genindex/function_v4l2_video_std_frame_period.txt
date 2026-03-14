@@ -1,0 +1,9 @@
+Function: void v4l2_video_std_frame_period ( int id , struct v4l2_fract * frameperiod )
+
+Ancillary routine that fills a struct v4l2_fract pointer with the default framerate fraction.
+
+Parameters
+  int id
+    analog TV standard ID.
+  struct v4l2_fract *frameperiod
+    struct v4l2_fract pointer to be filled

@@ -1,0 +1,11 @@
+Struct: struct rkisp1_ext_params_block_header
+
+RkISP1 extensible parameters block header
+
+Members
+  type
+    The parameters block type, see rkisp1_ext_params_block_type
+  flags
+    A bitmask of block flags
+  size
+    Size (in bytes) of the parameters block, including this header

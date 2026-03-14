@@ -1,0 +1,12 @@
+Function: int v4l2_fh_release ( struct file * filp )
+
+Ancillary routine that can be used as the release() op of v4l2_file_operations.
+
+Parameters
+  struct file *filp
+    pointer to struct file
+
+Description
+  It deletes and exits the v4l2_fh associated with the file pointer and
+frees it. It will do nothing if filp->private_data (the pointer to the
+v4l2_fh struct) is NULL .

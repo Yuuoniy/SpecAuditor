@@ -1,0 +1,9 @@
+Struct: struct nand_id
+
+NAND id structure
+
+Members
+  data
+    buffer containing the id bytes.
+  len
+    ID length.

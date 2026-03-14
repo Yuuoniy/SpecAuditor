@@ -1,0 +1,14 @@
+Function: int nand_erase_nand ( struct nand_chip * chip , struct erase_info * instr , int allowbbt )
+
+[INTERN] erase block(s)
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+  struct erase_info *instr
+    erase instruction
+  int allowbbt
+    allow erasing the bbt area
+
+Description
+  Erase one ore more blocks.

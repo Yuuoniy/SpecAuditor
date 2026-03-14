@@ -1,0 +1,27 @@
+Function: unsigned long clean_record_shared_mapping_range ( struct address_space * mapping , pgoff_t first_index , pgoff_t nr , pgoff_t bitmap_pgoff , unsigned long * bitmap , pgoff_t * start , pgoff_t * end )
+
+Clean and record all ptes in an address space range
+
+Parameters
+  struct address_space *mapping
+    The address_space we want to clean
+  pgoff_t first_index
+    The first page offset in the range
+  pgoff_t nr
+    Number of incremental page offsets to cover
+  pgoff_t bitmap_pgoff
+    The page offset of the first bit in bitmap
+  unsigned long *bitmap
+    Pointer to a bitmap of at least nr bits. The bitmap needs to
+cover the whole range first_index ..**first_index** + nr .
+  pgoff_t *start
+    Pointer to number of the first set bit in bitmap .
+is modified as new bits are set by the function.
+  pgoff_t *end
+    Pointer to the number of the last set bit in bitmap .
+none set. The value is modified as new bits are set by the function.
+
+Description
+  When this function returns there is no guarantee that a CPU has
+not already dirtied new ptes. However it will not clean any ptes not
+reported in the bitmap. The guarantees are as follows:

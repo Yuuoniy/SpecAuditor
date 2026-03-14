@@ -1,0 +1,23 @@
+Struct: struct padata_instance
+
+The overall control structure.
+
+Members
+  cpu_online_node
+    Linkage for CPU online callback.
+  cpu_dead_node
+    Linkage for CPU offline callback.
+  parallel_wq
+    The workqueue used for parallel work.
+  serial_wq
+    The workqueue used for serial work.
+  pslist
+    List of padata_shell objects attached to this instance.
+  cpumask
+    User supplied cpumasks for parallel and serial works.
+  kobj
+    padata instance kernel object.
+  lock
+    padata instance lock.
+  flags
+    padata flags.

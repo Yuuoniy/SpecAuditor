@@ -1,0 +1,13 @@
+Function: int drm_dp_dpcd_poll_act_handled ( struct drm_dp_aux * aux , int timeout_ms )
+
+Poll for ACT handled status
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  int timeout_ms
+    Timeout in ms
+
+Description
+  Try waiting for the sink to finish updating its payload table by polling for
+the ACT handled bit of DP_PAYLOAD_TABLE_UPDATE_STATUS for up to timeout_ms milliseconds, defaulting to 3000 ms if 0.

@@ -1,0 +1,14 @@
+Function: int cci_write ( struct regmap * map , u32 reg , u64 val , int * err )
+
+Write a value to a single CCI register
+
+Parameters
+  struct regmap *map
+    Register map to write to
+  u32 reg
+    Register address to write, use CCI_REG#() macros to encode reg width
+  u64 val
+    Value to be written
+  int *err
+    Optional pointer to store errors, if a previous error is set
+then the write will be skipped

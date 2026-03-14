@@ -1,0 +1,7 @@
+Function: void zynqmp_disp_enable ( struct zynqmp_disp * disp )
+
+Enable the display controller
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller

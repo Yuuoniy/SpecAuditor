@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Working with the kernel development community &#8212; The Linux Kernel  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="HOWTO do Linux kernel development" href="howto.html" />
+    <link rel="prev" title="Modifying Patches" href="../maintainer/modifying-patches.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../index.html">The Linux Kernel</a></h1>
+
+
+
+<p class="blurb">6.18.0-rc1</p>
+
+
+
+
+
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+<p>
+<h3 class="kernel-toc-contents">Contents</h3>
+<input type="checkbox" class="kernel-toc-toggle" id = "kernel-toc-toggle" checked>
+<label class="kernel-toc-title" for="kernel-toc-toggle"></label>
+
+<div class="kerneltoc" id="kerneltoc">
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="development-process.html">Development process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submitting-patches.html">Submitting patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-of-conduct.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Maintainer handbook</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">All development-process docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#an-introduction-to-how-kernel-development-works">An introduction to how kernel development works</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="howto.html">HOWTO do Linux kernel development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="development-process.html">A guide to the Kernel Development Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="submitting-patches.html">Submitting patches: the essential guide to getting your code into the kernel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="submit-checklist.html">Linux Kernel patch submission checklist</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tools-and-technical-guides-for-kernel-developers">Tools and technical guides for kernel developers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changes.html">Minimal requirements to compile the Kernel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="programming-language.html">Programming Language</a></li>
+<li class="toctree-l3"><a class="reference internal" href="coding-style.html">Linux kernel coding style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="maintainer-pgp-guide.html">Kernel Maintainer PGP guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="email-clients.html">Email clients info for Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="applying-patches.html">Applying Patches To The Linux Kernel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backporting.html">Backporting and conflict resolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adding-syscalls.html">Adding a New System Call</a></li>
+<li class="toctree-l3"><a class="reference internal" href="volatile-considered-harmful.html">Why the “volatile” type class should not be used</a></li>
+<li class="toctree-l3"><a class="reference internal" href="botching-up-ioctls.html">(How to avoid) Botching up ioctls</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#policy-guides-and-developer-statements">Policy guides and developer statements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="license-rules.html">Linux kernel licensing rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code-of-conduct.html">Contributor Covenant Code of Conduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code-of-conduct-interpretation.html">Linux Kernel Contributor Covenant Code of Conduct Interpretation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contribution-maturity-model.html">Linux Kernel Contribution Maturity Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kernel-enforcement-statement.html">Linux Kernel Enforcement Statement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kernel-driver-statement.html">Kernel Driver Statement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stable-api-nonsense.html">The Linux Kernel Driver Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stable-kernel-rules.html">Everything you ever wanted to know about Linux -stable releases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="management-style.html">Linux kernel management style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="researcher-guidelines.html">Researcher Guidelines</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#dealing-with-bugs">Dealing with bugs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="debugging/index.html">Debugging advice for Linux Kernel developers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="handling-regressions.html">Handling regressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="security-bugs.html">Security bugs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cve.html">CVEs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="embargoed-hardware-issues.html">Embargoed hardware issues</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#maintainer-information">Maintainer information</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="maintainer-handbooks.html">Subsystem and maintainer tree specific development process notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="maintainers.html">List of maintainers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#other-material">Other material</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kernel-docs.html">Index of Further Kernel Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="deprecated.html">Deprecated Interfaces, Language Features, Attributes, and Conventions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core-api/index.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver-api/index.html">Driver APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subsystem-apis.html">Subsystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../locking/index.html">Locking</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license-rules.html">Licensing rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-guide/index.html">Writing documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-tools/index.html">Development tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-tools/testing-overview.html">Testing guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kernel-hacking/index.html">Hacking guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trace/index.html">Tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fault-injection/index.html">Fault injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../livepatch/index.html">Livepatching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">Rust</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kbuild/index.html">Build system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/reporting-issues.html">Reporting issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Userspace tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userspace-api/index.html">Userspace API</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../firmware-guide/index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devicetree/index.html">Firmware and Devicetree</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../arch/index.html">CPU architectures</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging/index.html">Unsorted documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../translations/index.html">Translations</a></li>
+</ul>
+
+</div>
+
+<script type="text/javascript"> <!--
+  var sbar = document.getElementsByClassName("sphinxsidebar")[0];
+  let currents = document.getElementsByClassName("current")
+  if (currents.length) {
+    sbar.scrollTop = currents[currents.length - 1].offsetTop;
+  }
+  --> </script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/process/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+
+
+
+
+<div class="language-selection">
+English
+
+<ul>
+
+<li><a href="../translations/zh_CN/process/index.html">Chinese (Simplified)</a></li>
+
+<li><a href="../translations/zh_TW/process/index.html">Chinese (Traditional)</a></li>
+
+<li><a href="../translations/it_IT/process/index.html">Italian</a></li>
+
+<li><a href="../translations/sp_SP/process/index.html">Spanish</a></li>
+
+</ul>
+</div>
+<section id="working-with-the-kernel-development-community">
+<span id="process-index"></span><h1>Working with the kernel development community<a class="headerlink" href="#working-with-the-kernel-development-community" title="Permalink to this heading">¶</a></h1>
+<p>So you want to be a Linux kernel developer?  Welcome!  While there is a lot
+to be learned about the kernel in a technical sense, it is also important
+to learn about how our community works.  Reading these documents will make
+it much easier for you to get your changes merged with a minimum of
+trouble.</p>
+<section id="an-introduction-to-how-kernel-development-works">
+<h2>An introduction to how kernel development works<a class="headerlink" href="#an-introduction-to-how-kernel-development-works" title="Permalink to this heading">¶</a></h2>
+<p>Read these documents first: an understanding of the material here will ease
+your entry into the kernel community.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto.html">HOWTO do Linux kernel development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development-process.html">A guide to the Kernel Development Process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submitting-patches.html">Submitting patches: the essential guide to getting your code into the kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submit-checklist.html">Linux Kernel patch submission checklist</a></li>
+</ul>
+</div>
+</section>
+<section id="tools-and-technical-guides-for-kernel-developers">
+<h2>Tools and technical guides for kernel developers<a class="headerlink" href="#tools-and-technical-guides-for-kernel-developers" title="Permalink to this heading">¶</a></h2>
+<p>This is a collection of material that kernel developers should be familiar
+with.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">Minimal requirements to compile the Kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programming-language.html">Programming Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coding-style.html">Linux kernel coding style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maintainer-pgp-guide.html">Kernel Maintainer PGP guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email-clients.html">Email clients info for Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applying-patches.html">Applying Patches To The Linux Kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backporting.html">Backporting and conflict resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding-syscalls.html">Adding a New System Call</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volatile-considered-harmful.html">Why the “volatile” type class should not be used</a></li>
+<li class="toctree-l1"><a class="reference internal" href="botching-up-ioctls.html">(How to avoid) Botching up ioctls</a></li>
+</ul>
+</div>
+</section>
+<section id="policy-guides-and-developer-statements">
+<h2>Policy guides and developer statements<a class="headerlink" href="#policy-guides-and-developer-statements" title="Permalink to this heading">¶</a></h2>
+<p>These are the rules that we try to live by in the kernel community (and
+beyond).</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license-rules.html">Linux kernel licensing rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-of-conduct.html">Contributor Covenant Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-of-conduct-interpretation.html">Linux Kernel Contributor Covenant Code of Conduct Interpretation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution-maturity-model.html">Linux Kernel Contribution Maturity Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel-enforcement-statement.html">Linux Kernel Enforcement Statement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel-driver-statement.html">Kernel Driver Statement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stable-api-nonsense.html">The Linux Kernel Driver Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stable-kernel-rules.html">Everything you ever wanted to know about Linux -stable releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="management-style.html">Linux kernel management style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="researcher-guidelines.html">Researcher Guidelines</a></li>
+</ul>
+</div>
+</section>
+<section id="dealing-with-bugs">
+<h2>Dealing with bugs<a class="headerlink" href="#dealing-with-bugs" title="Permalink to this heading">¶</a></h2>
+<p>Bugs are a fact of life; it is important that we handle them properly. The
+documents below provide general advice about debugging and describe our
+policies around the handling of a couple of special classes of bugs:
+regressions and security problems.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="debugging/index.html">Debugging advice for Linux Kernel developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handling-regressions.html">Handling regressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security-bugs.html">Security bugs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cve.html">CVEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embargoed-hardware-issues.html">Embargoed hardware issues</a></li>
+</ul>
+</div>
+</section>
+<section id="maintainer-information">
+<h2>Maintainer information<a class="headerlink" href="#maintainer-information" title="Permalink to this heading">¶</a></h2>
+<p>How to find the people who will accept your patches.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="maintainer-handbooks.html">Subsystem and maintainer tree specific development process notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maintainers.html">List of maintainers</a></li>
+</ul>
+</div>
+</section>
+<section id="other-material">
+<h2>Other material<a class="headerlink" href="#other-material" title="Permalink to this heading">¶</a></h2>
+<p>Here are some other guides to the community that are of interest to most
+developers:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="kernel-docs.html">Index of Further Kernel Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deprecated.html">Deprecated Interfaces, Language Features, Attributes, and Conventions</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;The kernel development community.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/process/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

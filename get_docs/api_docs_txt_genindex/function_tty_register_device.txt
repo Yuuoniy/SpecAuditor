@@ -1,0 +1,18 @@
+Function: struct device * tty_register_device ( struct tty_driver * driver , unsigned index , struct device * device )
+
+register a tty device
+
+Parameters
+  struct tty_driver *driver
+    the tty driver that describes the tty device
+  unsigned index
+    the index in the tty driver for this tty device
+  struct device *device
+    a struct device that is associated with this tty device.
+This field is optional, if there is no known struct device for this tty device it can be set to NULL safely.
+
+Description
+  This call is required to be made to register an individual tty device
+if the tty driver’s flags have the TTY_DRIVER_DYNAMIC_DEV bit set.  If
+that bit is not set, this function should not be called by a tty
+driver.

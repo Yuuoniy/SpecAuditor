@@ -1,0 +1,10 @@
+Function: void security_bpf_map_free ( struct bpf_map * map )
+
+Free a bpf map’s LSM blob
+
+Parameters
+  struct bpf_map *map
+    bpf map
+
+Description
+  Clean up the security information stored inside bpf map.

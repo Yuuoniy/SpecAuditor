@@ -1,0 +1,15 @@
+Function: int security_inode_remove_acl ( struct mnt_idmap * idmap , struct dentry * dentry , const char * acl_name )
+
+Check if removing a posix acl is allowed
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount
+  struct dentry *dentry
+    file
+  const char *acl_name
+    acl name
+
+Description
+  Check permission before removing posix acls, the posix acls are identified
+by acl_name .

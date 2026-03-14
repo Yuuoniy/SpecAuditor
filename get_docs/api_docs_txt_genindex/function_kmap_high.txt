@@ -1,0 +1,10 @@
+Function: void * kmap_high ( struct page * page )
+
+map a highmem page into memory
+
+Parameters
+  struct page *page
+    struct page to map
+
+Description
+  Returns the page’s virtual memory address.

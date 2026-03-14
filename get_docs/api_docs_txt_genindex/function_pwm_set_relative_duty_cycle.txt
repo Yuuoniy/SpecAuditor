@@ -1,0 +1,15 @@
+Function: int pwm_set_relative_duty_cycle ( struct pwm_state * state , unsigned int duty_cycle , unsigned int scale )
+
+Set a relative duty cycle value
+
+Parameters
+  struct pwm_state *state
+    PWM state to fill
+  unsigned int duty_cycle
+    relative duty cycle value
+  unsigned int scale
+    scale in which duty_cycle is expressed
+
+Description
+  This functions converts a relative into an absolute duty cycle (expressed
+in nanoseconds), and puts the result in state->duty_cycle.

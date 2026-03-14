@@ -1,0 +1,18 @@
+Function: int drm_dp_dual_mode_set_tmds_output ( const struct drm_device * dev , enum drm_dp_dual_mode_type type , struct i2c_adapter * adapter , bool enable )
+
+Enable/disable TMDS output buffers in the DP dual mode adaptor
+
+Parameters
+  const struct drm_device *dev
+    drm_device to use
+  enum drm_dp_dual_mode_type type
+    DP dual mode adaptor type
+  struct i2c_adapter *adapter
+    I2C adapter for the DDC bus
+  bool enable
+    enable (as opposed to disable) the TMDS output buffers
+
+Description
+  Set the state of the TMDS output buffers in the adaptor. For
+type2 this is set via the DP_DUAL_MODE_TMDS_OEN register.
+Type1 adaptors do not support any register writes.

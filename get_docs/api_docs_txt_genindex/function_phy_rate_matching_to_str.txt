@@ -1,0 +1,7 @@
+Function: const char * phy_rate_matching_to_str ( int rate_matching )
+
+Return a string describing the rate matching
+
+Parameters
+  int rate_matching
+    Type of rate matching to describe

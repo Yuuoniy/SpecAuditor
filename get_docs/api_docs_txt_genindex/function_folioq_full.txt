@@ -1,0 +1,11 @@
+Function: bool folioq_full ( struct folio_queue * folioq )
+
+Query if a folio queue segment is full
+
+Parameters
+  struct folio_queue *folioq
+    The segment to query
+
+Description
+  Query if a folio queue segment is fully occupied.  Note that this does not
+change if folios are removed from a segment.

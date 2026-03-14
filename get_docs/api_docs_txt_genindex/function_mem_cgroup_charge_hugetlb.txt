@@ -1,0 +1,14 @@
+Function: int mem_cgroup_charge_hugetlb ( struct folio * folio , gfp_t gfp )
+
+charge the memcg for a hugetlb folio
+
+Parameters
+  struct folio *folio
+    folio being charged
+  gfp_t gfp
+    reclaim mode
+
+Description
+  This function is called when allocating a huge page folio, after the page has
+already been obtained and charged to the appropriate hugetlb cgroup
+controller (if it is enabled).

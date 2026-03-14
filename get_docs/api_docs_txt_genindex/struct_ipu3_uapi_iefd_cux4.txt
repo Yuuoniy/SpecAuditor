@@ -1,0 +1,33 @@
+Struct: struct ipu3_uapi_iefd_cux4
+
+Calculate power of non-directed sharpening element.
+
+Members
+  x0
+    X0 point of Config Unit, u9.0, default 0.
+  x1
+    X1 point of Config Unit, u9.0, default 0.
+  x2
+    X2 point of Config Unit, u9.0, default 0.
+  reserved0
+    reserved
+  x3
+    X3 point of Config Unit, u9.0, default 0.
+  a01
+    Slope A0 of Config Unit, s4.4, default 0.
+  a12
+    Slope A1 of Config Unit, s4.4, default 0.
+  reserved1
+    reserved
+  a23
+    Slope A2 of Config Unit, s4.4, default 0.
+  b01
+    Offset B0 of Config Unit, s7.0, default 0.
+  b12
+    Offset B1 of Config Unit, s7.0, default 0.
+  reserved2
+    reserved
+  b23
+    Offset B2 of Config Unit, s7.0, default 0.
+  reserved3
+    reserved

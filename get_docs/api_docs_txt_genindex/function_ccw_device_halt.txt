@@ -1,0 +1,14 @@
+Function: int ccw_device_halt ( struct ccw_device * cdev , unsigned long intparm )
+
+halt I/O request processing
+
+Parameters
+  struct ccw_device *cdev
+    target ccw device
+  unsigned long intparm
+    interruption parameter to be returned upon conclusion of hsch
+
+Description
+  ccw_device_halt() calls hsch on cdev ’s subchannel.
+The interruption handler will echo back the intparm specified here, unless
+another interruption parameter is specified by a subsequent invocation of ccw_device_clear() .

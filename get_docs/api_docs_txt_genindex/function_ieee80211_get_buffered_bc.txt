@@ -1,0 +1,16 @@
+Function: struct sk_buff * ieee80211_get_buffered_bc ( struct ieee80211_hw * hw , struct ieee80211_vif * vif )
+
+accessing buffered broadcast and multicast frames
+
+Parameters
+  struct ieee80211_hw *hw
+    pointer as obtained from ieee80211_alloc_hw() .
+  struct ieee80211_vif *vif
+    struct ieee80211_vif pointer from the add_interface callback.
+
+Description
+  Function for accessing buffered broadcast and multicast frames. If
+hardware/firmware does not implement buffering of broadcast/multicast
+frames when power saving is used, 802.11 code buffers them in the host
+memory. The low-level driver uses this function to fetch next buffered
+frame. In most cases, this is used when generating beacon frame.

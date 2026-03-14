@@ -1,0 +1,14 @@
+Function: void kpp_request_set_output ( struct kpp_request * req , struct scatterlist * output , unsigned int output_len )
+
+Sets output buffer
+
+Parameters
+  struct kpp_request *req
+    kpp request
+  struct scatterlist *output
+    ptr to output scatter list
+  unsigned int output_len
+    size of the output scatter list
+
+Description
+  Sets parameters required by kpp operation

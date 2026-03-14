@@ -1,0 +1,23 @@
+Macro: v4l2_find_nearest_size
+
+
+
+Parameters
+  array
+    a driver specific array of image sizes
+  array_size
+    the length of the driver specific array of image sizes
+  width_field
+    the name of the width field in the driver specific struct
+  height_field
+    the name of the height field in the driver specific struct
+  width
+    desired width
+  height
+    desired height
+
+Description
+  Finds the closest resolution to minimize the width and height differences
+between what requested and the supported resolutions. The size of the width
+and height fields in the driver specific must equal to that of u32, i.e. four
+bytes.

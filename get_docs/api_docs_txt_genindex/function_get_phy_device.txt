@@ -1,0 +1,14 @@
+Function: struct phy_device * get_phy_device ( struct mii_bus * bus , int addr , bool is_c45 )
+
+reads the specified PHY device and returns its phy_device struct
+
+Parameters
+  struct mii_bus *bus
+    the target MII bus
+  int addr
+    PHY address on the MII bus
+  bool is_c45
+    If true the PHY uses the 802.3 clause 45 protocol
+
+Description
+  Probe for a PHY at addr on bus .

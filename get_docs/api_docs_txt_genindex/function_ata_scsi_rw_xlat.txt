@@ -1,0 +1,13 @@
+Function: unsigned int ata_scsi_rw_xlat ( struct ata_queued_cmd * qc )
+
+Translate SCSI r/w command into an ATA one
+
+Parameters
+  struct ata_queued_cmd *qc
+    Storage for translated ATA taskfile
+
+Description
+  Converts any of six SCSI read/write commands into the
+ATA counterpart, including starting sector (LBA),
+sector count, and taking into account the device’s LBA48
+support.

@@ -1,0 +1,7 @@
+Function: void * wdev_priv ( struct wireless_dev * wdev )
+
+return wiphy priv from wireless_dev
+
+Parameters
+  struct wireless_dev *wdev
+    The wireless device whose wiphy’s priv pointer to return

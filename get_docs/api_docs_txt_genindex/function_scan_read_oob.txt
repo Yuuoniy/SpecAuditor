@@ -1,0 +1,18 @@
+Function: int scan_read_oob ( struct nand_chip * this , uint8_t * buf , loff_t offs , size_t len )
+
+[GENERIC] Scan data+OOB region to buffer
+
+Parameters
+  struct nand_chip *this
+    NAND chip object
+  uint8_t *buf
+    temporary buffer
+  loff_t offs
+    offset at which to scan
+  size_t len
+    length of data region to read
+
+Description
+  Scan read data from data+OOB. May traverse multiple pages, interleaving
+page,OOB,page,OOB,... in buf. Completes transfer and returns the “strongest”
+ECC condition (error or bitflip). May quit on the first (non-ECC) error.

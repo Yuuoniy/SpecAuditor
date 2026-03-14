@@ -1,0 +1,12 @@
+Function: int v4l2_query_ext_ctrl ( struct v4l2_ctrl_handler * hdl , struct v4l2_query_ext_ctrl * qc )
+
+Helper function to implement VIDIOC_QUERY_EXT_CTRL ioctl
+
+Parameters
+  struct v4l2_ctrl_handler *hdl
+    pointer to struct v4l2_ctrl_handler
+  struct v4l2_query_ext_ctrl *qc
+    pointer to struct v4l2_query_ext_ctrl
+
+Description
+  If hdl == NULL then they will all return -EINVAL.

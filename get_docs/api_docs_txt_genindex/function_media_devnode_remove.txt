@@ -1,0 +1,11 @@
+Function: void media_devnode_remove ( struct media_intf_devnode * devnode )
+
+removes a device node interface
+
+Parameters
+  struct media_intf_devnode *devnode
+    pointer to media_intf_devnode to be freed.
+
+Description
+  When a device node interface is removed, all links to it are automatically
+removed.

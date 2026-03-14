@@ -1,0 +1,22 @@
+Struct: struct iommu_hwpt_get_dirty_bitmap
+
+ioctl(IOMMU_HWPT_GET_DIRTY_BITMAP)
+
+Members
+  size
+    sizeof( struct iommu_hwpt_get_dirty_bitmap )
+  hwpt_id
+    HW pagetable ID that represents the IOMMU domain
+  flags
+    Combination of enum iommufd_hwpt_get_dirty_bitmap_flags
+  __reserved
+    Must be 0
+  iova
+    base IOVA of the bitmap first bit
+  length
+    IOVA range size
+  page_size
+    page size granularity of each bit in the bitmap
+  data
+    bitmap where to set the dirty bits. The bitmap bits each
+represent a page_size which you deviate from an arbitrary iova.

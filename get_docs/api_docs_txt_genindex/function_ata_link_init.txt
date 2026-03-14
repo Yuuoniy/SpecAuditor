@@ -1,0 +1,14 @@
+Function: void ata_link_init ( struct ata_port * ap , struct ata_link * link , int pmp )
+
+Initialize an ata_link structure
+
+Parameters
+  struct ata_port *ap
+    ATA port link is attached to
+  struct ata_link *link
+    Link structure to initialize
+  int pmp
+    Port multiplier port number
+
+Description
+  Initialize link .

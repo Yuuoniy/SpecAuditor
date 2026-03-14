@@ -1,0 +1,22 @@
+Function: int em_dev_register_perf_domain ( struct device * dev , unsigned int nr_states , const struct em_data_callback * cb , const cpumask_t * cpus , bool microwatts )
+
+Register the Energy Model (EM) for a device
+
+Parameters
+  struct device *dev
+    Device for which the EM is to register
+  unsigned int nr_states
+    Number of performance states to register
+  const struct em_data_callback *cb
+    Callback functions providing the data of the Energy Model
+  const cpumask_t *cpus
+    Pointer to cpumask_t, which in case of a CPU device is
+obligatory. It can be taken from i.e. ‘policy->cpus’. For other
+type of devices this should be set to NULL.
+  bool microwatts
+    Flag indicating that the power values are in micro-Watts or
+in some other scale. It must be set properly.
+
+Description
+  Create Energy Model tables for a performance domain using the callbacks
+defined in cb.

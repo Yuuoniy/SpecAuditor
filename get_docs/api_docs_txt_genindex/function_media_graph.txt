@@ -1,0 +1,17 @@
+Function: struct media_graph
+
+Media graph traversal state
+
+Members
+  stack
+    Graph traversal stack; the stack contains information
+on the path the media entities to be walked and the
+links through which they were reached.
+  stack.entity
+    pointer to struct media_entity at the graph.
+  stack.link
+    pointer to struct list_head .
+  ent_enum
+    Visited entities
+  top
+    The top of the stack

@@ -1,0 +1,16 @@
+Function: void * drmm_kmalloc ( struct drm_device * dev , size_t size , gfp_t gfp )
+
+drm_device managed kmalloc()
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  size_t size
+    size of the memory allocation
+  gfp_t gfp
+    GFP allocation flags
+
+Description
+  This is a drm_device managed version of kmalloc() . The allocated memory is
+automatically freed on the final drm_dev_put() . Memory can also be freed
+before the final drm_dev_put() by calling drmm_kfree() .

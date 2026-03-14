@@ -1,0 +1,14 @@
+Function: void intel_psr_trigger_frame_change_event ( struct intel_dsb * dsb , struct intel_atomic_state * state , struct intel_crtc * crtc )
+
+Trigger “Frame Change” event
+
+Parameters
+  struct intel_dsb *dsb
+    DSB context
+  struct intel_atomic_state *state
+    the atomic state
+  struct intel_crtc *crtc
+    the CRTC
+
+Description
+  Generate PSR “Frame Change” event.

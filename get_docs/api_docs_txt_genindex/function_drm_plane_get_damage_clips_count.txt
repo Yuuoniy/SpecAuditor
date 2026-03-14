@@ -1,0 +1,11 @@
+Function: unsigned int drm_plane_get_damage_clips_count ( const struct drm_plane_state * state )
+
+Returns damage clips count.
+
+Parameters
+  const struct drm_plane_state *state
+    Plane state.
+
+Description
+  Simple helper to get the number of drm_mode_rect clips set by user-space
+during plane update.

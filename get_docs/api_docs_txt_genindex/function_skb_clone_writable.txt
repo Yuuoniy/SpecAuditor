@@ -1,0 +1,13 @@
+Function: int skb_clone_writable ( const struct sk_buff * skb , unsigned int len )
+
+is the header of a clone writable
+
+Parameters
+  const struct sk_buff *skb
+    buffer to check
+  unsigned int len
+    length up to which to write
+
+Description
+  Returns true if modifying the header part of the cloned buffer
+does not requires the data to be copied.

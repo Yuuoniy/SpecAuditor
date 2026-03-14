@@ -1,0 +1,13 @@
+Struct: struct drm_dp_aux_cec
+
+DisplayPort CEC-Tunneling-over-AUX
+
+Members
+  lock
+    mutex protecting this struct
+  adap
+    the CEC adapter for CEC-Tunneling-over-AUX support.
+  connector
+    the connector this CEC adapter is associated with
+  unregister_work
+    unregister the CEC adapter

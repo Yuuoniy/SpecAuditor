@@ -1,0 +1,10 @@
+Function: u32 iwpm_get_registration ( u8 nl_client )
+
+Get the client registration
+
+Parameters
+  u8 nl_client
+    The index of the netlink client
+
+Description
+  Returns the client registration type

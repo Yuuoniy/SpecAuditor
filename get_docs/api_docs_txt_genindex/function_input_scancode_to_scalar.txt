@@ -1,0 +1,14 @@
+Function: int input_scancode_to_scalar ( const struct input_keymap_entry * ke , unsigned int * scancode )
+
+converts scancode in struct input_keymap_entry
+
+Parameters
+  const struct input_keymap_entry *ke
+    keymap entry containing scancode to be converted.
+  unsigned int *scancode
+    pointer to the location where converted scancode should
+be stored.
+
+Description
+  This function is used to convert scancode stored in struct keymap_entry into scalar form understood by legacy keymap handling methods. These
+methods expect scancodes to be represented as ‘unsigned int’.

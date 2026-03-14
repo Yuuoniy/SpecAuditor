@@ -1,0 +1,10 @@
+Function: struct usb_device * usb_get_dev ( struct usb_device * dev )
+
+increments the reference count of the usb device structure
+
+Parameters
+  struct usb_device *dev
+    the device being referenced
+
+Description
+  Each live reference to a device should be refcounted.

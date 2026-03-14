@@ -1,0 +1,9 @@
+Function: void futex_do_wait ( struct futex_q * q , struct hrtimer_sleeper * timeout )
+
+wait for wakeup, timeout, or signal
+
+Parameters
+  struct futex_q *q
+    the futex_q to queue up on
+  struct hrtimer_sleeper *timeout
+    the prepared hrtimer_sleeper, or null for no timeout

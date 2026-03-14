@@ -1,0 +1,11 @@
+Function: void v4l2_subdev_cleanup ( struct v4l2_subdev * sd )
+
+Releases the resources allocated by the subdevice
+
+Parameters
+  struct v4l2_subdev *sd
+    The subdevice
+
+Description
+  Clean up a V4L2 async sub-device. Must be called for a sub-device as part of
+its release if resources have been associated with it using v4l2_async_subdev_endpoint_add() or v4l2_subdev_init_finalize() .

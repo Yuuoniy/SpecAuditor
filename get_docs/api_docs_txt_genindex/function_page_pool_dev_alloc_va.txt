@@ -1,0 +1,13 @@
+Function: void * page_pool_dev_alloc_va ( struct page_pool * pool , unsigned int * size )
+
+allocate a page or a page fragment and return its va.
+
+Parameters
+  struct page_pool *pool
+    pool from which to allocate
+  unsigned int *size
+    in as the requested size, out as the allocated size
+
+Description
+  This is just a thin wrapper around the page_pool_alloc() API, and
+it returns va of the allocated page or page fragment.

@@ -1,0 +1,13 @@
+Function: int vb2_expbuf ( struct vb2_queue * q , struct v4l2_exportbuffer * eb )
+
+Export a buffer as a file descriptor
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  struct v4l2_exportbuffer *eb
+    export buffer structure passed from userspace to v4l2_ioctl_ops->vidioc_expbuf handler in driver
+
+Description
+  The return values from this function are intended to be directly returned
+from v4l2_ioctl_ops->vidioc_expbuf handler in driver.

@@ -1,0 +1,12 @@
+Function: void ata_force_xfermask ( struct ata_device * dev )
+
+force xfermask according to libata.force
+
+Parameters
+  struct ata_device *dev
+    ATA device of interest
+
+Description
+  Force xfer_mask according to libata.force and whine about it.
+For consistency with link selection, device number 15 selects
+the first device connected to the host link.

@@ -1,0 +1,14 @@
+Function: int __v4l2_ctrl_modify_dimensions ( struct v4l2_ctrl * ctrl , u32 dims [ V4L2_CTRL_MAX_DIMS ] )
+
+Unlocked variant of v4l2_ctrl_modify_dimensions()
+
+Parameters
+  struct v4l2_ctrl *ctrl
+    The control to update.
+  u32 dims[V4L2_CTRL_MAX_DIMS]
+    The control’s new dimensions.
+
+Description
+  Update the dimensions of an array control on the fly. The elements of the
+array are reset to their default value, even if the dimensions are
+unchanged.

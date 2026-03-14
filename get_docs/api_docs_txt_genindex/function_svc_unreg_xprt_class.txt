@@ -1,0 +1,7 @@
+Function: void svc_unreg_xprt_class ( struct svc_xprt_class * xcl )
+
+Unregister a server-side RPC transport class
+
+Parameters
+  struct svc_xprt_class *xcl
+    Transport class to be unregistered

@@ -1,0 +1,13 @@
+Function: void iscsi_iser_ep_disconnect ( struct iscsi_endpoint * ep )
+
+Initiate connection teardown process
+
+Parameters
+  struct iscsi_endpoint *ep
+    iscsi endpoint handle
+
+Description
+  This routine is not blocked by iser and RDMA termination process
+completion as we queue a deffered work for iser/RDMA destruction
+and cleanup or actually call it immediately in case we didn’t pass
+iscsi conn bind/start stage, thus it is safe.

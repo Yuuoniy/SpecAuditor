@@ -1,0 +1,14 @@
+Function: int i3c_device_request_ibi ( struct i3c_device * dev , const struct i3c_ibi_setup * req )
+
+Request an IBI
+
+Parameters
+  struct i3c_device *dev
+    device for which we should enable IBIs
+  const struct i3c_ibi_setup *req
+    setup requested for this IBI
+
+Description
+  This function is responsible for pre-allocating all resources needed to
+process IBIs coming from dev . When this function returns, the IBI is not
+enabled until i3c_device_enable_ibi() is called.

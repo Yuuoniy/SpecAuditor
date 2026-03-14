@@ -1,0 +1,19 @@
+Function: int mac_find_mode ( struct fb_var_screeninfo * var , struct fb_info * info , const char * mode_option , unsigned int default_bpp )
+
+find a video mode
+
+Parameters
+  struct fb_var_screeninfo *var
+    frame buffer user defined part of display
+  struct fb_info *info
+    frame buffer info structure
+  const char *mode_option
+    video mode name (see mac_modedb[])
+  unsigned int default_bpp
+    default color depth in bits per pixel
+
+Description
+  Finds a suitable video mode.  Tries to set mode specified
+by mode_option .  If the name of the wanted mode begins with
+‘mac’, the Mac video mode database will be used, otherwise it
+will fall back to the standard video mode database.

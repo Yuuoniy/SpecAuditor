@@ -1,0 +1,7 @@
+Function: struct dvb_device * dvb_device_get ( struct dvb_device * dvbdev )
+
+Increase dvb_device reference
+
+Parameters
+  struct dvb_device *dvbdev
+    pointer to struct dvb_device

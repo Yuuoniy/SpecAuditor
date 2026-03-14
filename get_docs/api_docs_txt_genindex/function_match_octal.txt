@@ -1,0 +1,12 @@
+Function: int match_octal ( substring_t * s , int * result )
+
+scan an octal representation of an integer from a substring_t
+
+Parameters
+  substring_t *s
+    substring_t to be scanned
+  int *result
+    resulting integer on success
+
+Description
+  Attempts to parse the substring_t s as an octal integer.

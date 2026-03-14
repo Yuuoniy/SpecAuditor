@@ -1,0 +1,16 @@
+Function: int scsi_add_device ( struct Scsi_Host * host , uint channel , uint target , u64 lun )
+
+creates a new SCSI (LU) instance
+
+Parameters
+  struct Scsi_Host *host
+    the Scsi_Host instance where the device is located
+  uint channel
+    target channel number (rarely other than 0 )
+  uint target
+    target id number
+  u64 lun
+    LUN of target device
+
+Description
+  Probe for a specific LUN and add it if found.

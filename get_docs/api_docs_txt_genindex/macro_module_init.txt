@@ -1,0 +1,12 @@
+Macro: module_init
+
+
+
+Parameters
+  x
+    function to be run at kernel boot time or module insertion
+
+Description
+  module_init() will either be called during do_initcalls() (if
+builtin) or at module insertion time (if a module).  There can only
+be one per module.

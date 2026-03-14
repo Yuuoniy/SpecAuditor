@@ -1,0 +1,10 @@
+Function: int phy_probe ( struct device * dev )
+
+probe and init a PHY device
+
+Parameters
+  struct device *dev
+    device to probe and init
+
+Description
+  Take care of setting up the phy_device structure, set the state to READY.

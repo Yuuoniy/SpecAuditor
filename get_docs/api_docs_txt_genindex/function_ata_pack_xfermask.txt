@@ -1,0 +1,15 @@
+Function: unsigned int ata_pack_xfermask ( unsigned int pio_mask , unsigned int mwdma_mask , unsigned int udma_mask )
+
+Pack pio, mwdma and udma masks into xfer_mask
+
+Parameters
+  unsigned int pio_mask
+    pio_mask
+  unsigned int mwdma_mask
+    mwdma_mask
+  unsigned int udma_mask
+    udma_mask
+
+Description
+  Pack pio_mask , mwdma_mask and udma_mask into a single
+unsigned int xfer_mask.

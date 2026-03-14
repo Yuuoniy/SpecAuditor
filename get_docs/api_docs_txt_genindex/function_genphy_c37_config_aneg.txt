@@ -1,0 +1,12 @@
+Function: int genphy_c37_config_aneg ( struct phy_device * phydev )
+
+restart auto-negotiation or write BMCR
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  advertising, and then restart auto-negotiation.  If it is not
+enabled, then we write the BMCR. This function is intended
+for use with Clause 37 1000Base-X mode.

@@ -1,0 +1,14 @@
+Function: void bdev_mark_dead ( struct block_device * bdev , bool surprise )
+
+mark a block device as dead
+
+Parameters
+  struct block_device *bdev
+    block device to operate on
+  bool surprise
+    indicate a surprise removal
+
+Description
+  Tell the file system that this devices or media is dead.  If surprise is set
+to true the device or media is already gone, if not we are preparing for an
+orderly removal.

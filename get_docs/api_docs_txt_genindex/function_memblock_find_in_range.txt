@@ -1,0 +1,16 @@
+Function: phys_addr_t __init_memblock memblock_find_in_range ( phys_addr_t start , phys_addr_t end , phys_addr_t size , phys_addr_t align )
+
+find free area in given range
+
+Parameters
+  phys_addr_t start
+    start of candidate range
+  phys_addr_t end
+    end of candidate range, can be MEMBLOCK_ALLOC_ANYWHERE or MEMBLOCK_ALLOC_ACCESSIBLE
+  phys_addr_t size
+    size of free area to find
+  phys_addr_t align
+    alignment of free area to find
+
+Description
+  Find size free area aligned to align in the specified range.

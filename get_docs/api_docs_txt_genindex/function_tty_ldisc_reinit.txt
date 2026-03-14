@@ -1,0 +1,14 @@
+Function: int tty_ldisc_reinit ( struct tty_struct * tty , int disc )
+
+reinitialise the tty ldisc
+
+Parameters
+  struct tty_struct *tty
+    tty to reinit
+  int disc
+    line discipline to reinitialize
+
+Description
+  Completely reinitialize the line discipline state, by closing the current
+instance, if there is one, and opening a new instance. If an error occurs
+opening the new non- N_TTY instance, the instance is dropped and tty->ldisc reset to NULL . The caller can then retry with N_TTY instead.

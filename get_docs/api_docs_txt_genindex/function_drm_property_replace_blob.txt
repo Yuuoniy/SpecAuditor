@@ -1,0 +1,9 @@
+Function: bool drm_property_replace_blob ( struct drm_property_blob * * blob , struct drm_property_blob * new_blob )
+
+replace a blob property
+
+Parameters
+  struct drm_property_blob **blob
+    a pointer to the member blob to be replaced
+  struct drm_property_blob *new_blob
+    the new blob to replace with

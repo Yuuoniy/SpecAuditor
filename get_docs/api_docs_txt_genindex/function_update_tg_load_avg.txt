@@ -1,0 +1,12 @@
+Function: void update_tg_load_avg ( struct cfs_rq * cfs_rq )
+
+update the tg’s load avg
+
+Parameters
+  struct cfs_rq *cfs_rq
+    the cfs_rq whose avg changed
+
+Description
+  This function ‘ensures’: tg->load_avg := Sum tg->cfs_rq[]->avg.load.
+However, because tg->load_avg is a global value there are performance
+considerations.

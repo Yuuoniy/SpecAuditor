@@ -1,0 +1,19 @@
+Struct: struct tty_port_operations
+
+operations on tty_port
+
+Members
+  carrier_raised
+    return true if the carrier is raised on port
+  dtr_rts
+    raise the DTR line if active is true, otherwise lower DTR
+  shutdown
+    called when the last close completes or a hangup finishes IFF the
+port was initialized. Do not use to free resources. Turn off the device
+only. Called under the port mutex to serialize against activate and shutdown .
+  activate
+    called under the port mutex from tty_port_open() , serialized using
+the port mutex. Supposed to turn on the device.
+  destruct
+    called on the final put of a port. Free resources, possibly incl.
+the port itself.

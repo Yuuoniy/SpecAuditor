@@ -1,0 +1,12 @@
+Macro: vb2_thread_fnc
+
+Typedef : callback function for use with vb2_thread.
+
+Parameters
+  struct vb2_buffer *vb
+    pointer to struct vb2_buffer .
+  void *priv
+    pointer to a private data.
+
+Description
+  This is called whenever a buffer is dequeued in the thread.

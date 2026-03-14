@@ -1,0 +1,11 @@
+Function: void amdgpu_dm_hpd_fini ( struct amdgpu_device * adev )
+
+hpd tear down callback.
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+
+Description
+  Tear down the hpd pins used by the card (evergreen+).
+Disable the hpd interrupts.

@@ -1,0 +1,14 @@
+Macro: put_user
+
+
+
+Parameters
+  x
+    Value to copy to user space.
+  ptr
+    Destination address, in user space.
+
+Description
+  This macro copies a single simple value from kernel space to user
+space.  It supports simple types like char and int, but not larger
+data types like structures or arrays.

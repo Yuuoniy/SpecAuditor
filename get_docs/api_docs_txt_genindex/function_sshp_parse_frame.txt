@@ -1,0 +1,21 @@
+Function: int sshp_parse_frame ( const struct device * dev , const struct ssam_span * source , struct ssh_frame * * frame , struct ssam_span * payload , size_t maxlen )
+
+Parse SSH frame.
+
+Parameters
+  const struct device *dev
+    The device used for logging.
+  const struct ssam_span *source
+    The source to parse from.
+  struct ssh_frame **frame
+    The parsed frame (output).
+  struct ssam_span *payload
+    The parsed payload (output).
+  size_t maxlen
+    The maximum supported message length.
+
+Description
+  Parses and validates a SSH frame, including its payload, from the given
+source. Sets the provided frame pointer to the start of the frame and
+writes the limits of the frame payload to the provided payload span
+pointer.

@@ -1,0 +1,12 @@
+Function: int match_uint ( substring_t * s , unsigned int * result )
+
+scan a decimal representation of an integer from a substring_t
+
+Parameters
+  substring_t *s
+    substring_t to be scanned
+  unsigned int *result
+    resulting integer on success
+
+Description
+  Attempts to parse the substring_t s as a decimal integer.

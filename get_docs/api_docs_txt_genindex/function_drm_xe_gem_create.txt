@@ -1,0 +1,35 @@
+Function: struct drm_xe_gem_create
+
+Input of DRM_IOCTL_XE_GEM_CREATE - A structure for gem creation
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  size
+    Size of the object to be created, must match region
+(system or vram) minimum alignment ( min_page_size ).
+  placement
+    A mask of memory instances of where BO can be placed.
+Each index in this mask refers directly to the struct drm_xe_query_mem_regions ’ instance, no assumptions should
+be made about order. The type of each region is described
+by struct drm_xe_query_mem_regions ’ mem_class.
+  flags
+    Flags, currently a mask of memory instances of where BO can
+be placed
+  vm_id
+    Attached VM, if any If a VM is specified, this BO must: Only ever be bound to that VM. Cannot be exported as a PRIME fd.
+  handle
+    Returned handle for the object. Object handles are nonzero.
+  cpu_caching
+    The CPU caching mode to select for this object. If
+mmaping the object the mode selected here will also be used. The
+exception is when mapping system memory (including data evicted
+to system) on discrete GPUs. The caching mode selected will
+then be overridden to DRM_XE_GEM_CPU_CACHING_WB, and coherency
+between GPU- and CPU is guaranteed. The caching mode of
+existing CPU-mappings will be updated transparently to
+user-space clients.
+  pad
+    MBZ
+  reserved
+    Reserved

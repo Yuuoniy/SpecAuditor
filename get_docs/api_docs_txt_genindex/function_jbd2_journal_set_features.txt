@@ -1,0 +1,17 @@
+Function: int jbd2_journal_set_features ( journal_t * journal , unsigned long compat , unsigned long ro , unsigned long incompat )
+
+Mark a given journal feature in the superblock
+
+Parameters
+  journal_t *journal
+    Journal to act on.
+  unsigned long compat
+    bitmask of compatible features
+  unsigned long ro
+    bitmask of features that force read-only mount
+  unsigned long incompat
+    bitmask of incompatible features
+
+Description
+  Mark a given journal feature as present on the
+superblock.  Returns true if the requested features could be set.

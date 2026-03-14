@@ -1,0 +1,9 @@
+Function: void zynqmp_disp_layer_set_format ( struct zynqmp_disp_layer * layer , const struct drm_format_info * info )
+
+Set the layer format
+
+Parameters
+  struct zynqmp_disp_layer *layer
+    The layer
+  const struct drm_format_info *info
+    The format info

@@ -1,0 +1,15 @@
+Function: bool xa_get_mark ( struct xarray * xa , unsigned long index , xa_mark_t mark )
+
+Inquire whether this mark is set on this entry.
+
+Parameters
+  struct xarray *xa
+    XArray.
+  unsigned long index
+    Index of entry.
+  xa_mark_t mark
+    Mark number.
+
+Description
+  This function uses the RCU read lock, so the result may be out of date
+by the time it returns.  If you need the result to be stable, use a lock.

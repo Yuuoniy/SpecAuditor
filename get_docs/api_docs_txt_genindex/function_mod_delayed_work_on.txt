@@ -1,0 +1,19 @@
+Function: bool mod_delayed_work_on ( int cpu , struct workqueue_struct * wq , struct delayed_work * dwork , unsigned long delay )
+
+modify delay of or queue a delayed work on specific CPU
+
+Parameters
+  int cpu
+    CPU number to execute work on
+  struct workqueue_struct *wq
+    workqueue to use
+  struct delayed_work *dwork
+    work to queue
+  unsigned long delay
+    number of jiffies to wait before queueing
+
+Description
+  If dwork is idle, equivalent to queue_delayed_work_on() ; otherwise,
+modify dwork ’s timer so that it expires after delay .  If delay is
+zero, work is guaranteed to be scheduled immediately regardless of its
+current state.

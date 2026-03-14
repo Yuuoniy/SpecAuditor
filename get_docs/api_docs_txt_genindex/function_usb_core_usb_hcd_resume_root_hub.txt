@@ -1,0 +1,13 @@
+Function: void usb_hcd_resume_root_hub ( struct usb_hcd * hcd )
+
+called by HCD to resume its root hub
+
+Parameters
+  struct usb_hcd *hcd
+    host controller for this root hub
+
+Description
+  The USB host controller calls this function when its root hub is
+suspended (with the remote wakeup feature enabled) and a remote
+wakeup request is received.  The routine submits a workqueue request
+to resume the root hub (that is, manage its downstream ports again).

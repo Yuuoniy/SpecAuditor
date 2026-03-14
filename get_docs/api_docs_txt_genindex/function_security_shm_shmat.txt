@@ -1,0 +1,16 @@
+Function: int security_shm_shmat ( struct kern_ipc_perm * shp , char __user * shmaddr , int shmflg )
+
+Check if a sysv shm attach operation is allowed
+
+Parameters
+  struct kern_ipc_perm *shp
+    sysv ipc permission structure
+  char __user *shmaddr
+    address of memory region to attach
+  int shmflg
+    operation flags
+
+Description
+  Check permissions prior to allowing the shmat system call to attach the
+shared memory segment with permissions shp to the data segment of the
+calling process. The attaching address is specified by shmaddr .

@@ -1,0 +1,11 @@
+Function: int ccw_device_get_chid ( struct ccw_device * cdev , int chp_idx , u16 * chid )
+
+obtain Channel ID associated with specified CHPID
+
+Parameters
+  struct ccw_device *cdev
+    device to obtain the Channel ID for
+  int chp_idx
+    Index of the channel path
+  u16 *chid
+    The resulting Channel ID

@@ -1,0 +1,20 @@
+Struct: struct em_perf_domain
+
+Performance domain
+
+Members
+  em_table
+    Pointer to the runtime modifiable em_perf_table
+  nr_perf_states
+    Number of performance states
+  min_perf_state
+    Minimum allowed Performance State index
+  max_perf_state
+    Maximum allowed Performance State index
+  flags
+    See “em_perf_domain flags”
+  cpus
+    Cpumask covering the CPUs of the domain. It’s here
+for performance reasons to avoid potential cache
+misses during energy calculations in the scheduler
+and simplifies allocating/freeing that memory region.

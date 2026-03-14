@@ -1,0 +1,11 @@
+Function: bool device_is_bound ( struct device * dev )
+
+Check if device is bound to a driver
+
+Parameters
+  struct device *dev
+    device to check
+
+Description
+  Returns true if passed device has already finished probing successfully
+against a driver.

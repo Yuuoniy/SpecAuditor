@@ -1,0 +1,8 @@
+Function: void rvt_stop_rc_timers ( struct rvt_qp * qp )
+
+stop all timers
+
+Parameters
+  struct rvt_qp *qp
+    the QP
+stop any pending timers

@@ -1,0 +1,17 @@
+Function: int vme_lm_set ( struct vme_resource * resource , unsigned long long lm_base , u32 aspace , u32 cycle )
+
+Configure location monitor
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME location monitor resource.
+  unsigned long long lm_base
+    Base address to monitor.
+  u32 aspace
+    VME address space to monitor.
+  u32 cycle
+    VME bus cycle type to monitor.
+
+Description
+  Set the base address, address space and cycle type of accesses to be
+monitored by the location monitor.

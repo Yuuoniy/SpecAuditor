@@ -1,0 +1,13 @@
+Struct: struct drm_xe_engine_class_instance
+
+instance of an engine class
+
+Members
+  engine_class
+    engine class id
+  engine_instance
+    engine instance id
+  gt_id
+    Unique ID of this GT within the PCI Device
+  pad
+    MBZ

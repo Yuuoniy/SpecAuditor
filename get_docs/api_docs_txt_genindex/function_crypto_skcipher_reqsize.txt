@@ -1,0 +1,7 @@
+Function: unsigned int crypto_skcipher_reqsize ( struct crypto_skcipher * tfm )
+
+obtain size of the request data structure
+
+Parameters
+  struct crypto_skcipher *tfm
+    cipher handle

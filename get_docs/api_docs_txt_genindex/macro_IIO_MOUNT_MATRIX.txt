@@ -1,0 +1,9 @@
+Macro: IIO_MOUNT_MATRIX
+
+
+
+Parameters
+  _shared
+    Whether the attribute is shared between all channels
+  _get
+    Pointer to an iio_get_mount_matrix_t accessor

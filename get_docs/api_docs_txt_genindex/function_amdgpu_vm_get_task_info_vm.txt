@@ -1,0 +1,11 @@
+Function: struct amdgpu_task_info * amdgpu_vm_get_task_info_vm ( struct amdgpu_vm * vm )
+
+Extracts task info for a vm.
+
+Parameters
+  struct amdgpu_vm *vm
+    VM to get info from
+
+Description
+  Returns the reference counted task_info structure, which must be
+referenced down with amdgpu_vm_put_task_info.

@@ -1,0 +1,11 @@
+Struct: struct klp_state
+
+state of the system modified by the livepatch
+
+Members
+  id
+    system state identifier (non-zero)
+  version
+    version of the change
+  data
+    custom data

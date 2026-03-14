@@ -1,0 +1,13 @@
+Struct: struct v4l2_subdev_pad_config
+
+Used for storing subdev pad information.
+
+Members
+  format
+    struct v4l2_mbus_framefmt
+  crop
+    struct v4l2_rect to be used for crop
+  compose
+    struct v4l2_rect to be used for compose
+  interval
+    frame interval

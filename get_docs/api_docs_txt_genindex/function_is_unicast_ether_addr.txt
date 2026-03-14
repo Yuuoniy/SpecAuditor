@@ -1,0 +1,7 @@
+Function: bool is_unicast_ether_addr ( const u8 * addr )
+
+Determine if the Ethernet address is unicast
+
+Parameters
+  const u8 *addr
+    Pointer to a six-byte array containing the Ethernet address

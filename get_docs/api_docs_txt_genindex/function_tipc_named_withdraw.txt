@@ -1,0 +1,9 @@
+Function: struct sk_buff * tipc_named_withdraw ( struct net * net , struct publication * p )
+
+tell other nodes about a withdrawn publication by this node
+
+Parameters
+  struct net *net
+    the associated network namespace
+  struct publication *p
+    the withdrawn publication

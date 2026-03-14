@@ -1,0 +1,10 @@
+Function: void sas_rphy_unlink ( struct sas_rphy * rphy )
+
+unlink SAS remote PHY
+
+Parameters
+  struct sas_rphy *rphy
+    SAS remote phy to unlink from its parent port
+
+Description
+  Removes port reference to an rphy

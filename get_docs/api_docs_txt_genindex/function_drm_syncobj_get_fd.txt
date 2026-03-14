@@ -1,0 +1,12 @@
+Function: int drm_syncobj_get_fd ( struct drm_syncobj * syncobj , int * p_fd )
+
+get a file descriptor from a syncobj
+
+Parameters
+  struct drm_syncobj *syncobj
+    Sync object to export
+  int *p_fd
+    out parameter with the new file descriptor
+
+Description
+  Exports a sync object created with drm_syncobj_create() as a file descriptor.

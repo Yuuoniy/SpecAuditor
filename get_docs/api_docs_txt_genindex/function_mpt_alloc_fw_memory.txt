@@ -1,0 +1,13 @@
+Function: int mpt_alloc_fw_memory ( MPT_ADAPTER * ioc , int size )
+
+allocate firmware memory
+
+Parameters
+  MPT_ADAPTER *ioc
+    Pointer to MPT_ADAPTER structure
+  int size
+    total FW bytes
+
+Description
+  If memory has already been allocated, the same (cached) value
+is returned.

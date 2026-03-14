@@ -1,0 +1,13 @@
+Function: int drm_atomic_helper_check_planes ( struct drm_device * dev , struct drm_atomic_state * state )
+
+validate state object for planes changes
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_atomic_state *state
+    the driver state object
+
+Description
+  Check the state object to see if the requested state is physically possible.
+This does all the plane update related checks using by calling into the drm_crtc_helper_funcs.atomic_check and drm_plane_helper_funcs.atomic_check hooks provided by the driver.

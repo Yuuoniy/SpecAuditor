@@ -1,0 +1,12 @@
+Function: int __netif_rx ( struct sk_buff * skb )
+
+Slightly optimized version of netif_rx
+
+Parameters
+  struct sk_buff *skb
+    buffer to post
+
+Description
+  This behaves as netif_rx except that it does not disable bottom halves.
+As a result this function may only be invoked from the interrupt context
+(either hard or soft interrupt).

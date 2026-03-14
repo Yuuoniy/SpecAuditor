@@ -1,0 +1,15 @@
+Function: struct host1x_syncpt * host1x_syncpt_request ( struct host1x_client * client , unsigned long flags )
+
+request a syncpoint
+
+Parameters
+  struct host1x_client *client
+    client requesting the syncpoint
+  unsigned long flags
+    flags
+
+Description
+  host1x client drivers can use this function to allocate a syncpoint for
+subsequent use. A syncpoint returned by this function will be reserved for
+use by the client exclusively. When no longer using a syncpoint, a host1x
+client driver needs to release it using host1x_syncpt_put() .

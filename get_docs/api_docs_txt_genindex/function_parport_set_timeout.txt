@@ -1,0 +1,15 @@
+Function: long parport_set_timeout ( struct pardevice * dev , long inactivity )
+
+set the inactivity timeout for a device
+
+Parameters
+  struct pardevice *dev
+    device on a port
+  long inactivity
+    inactivity timeout (in jiffies)
+
+Description
+  This sets the inactivity timeout for a particular device on a
+port.  This affects functions like parport_wait_peripheral() .
+The special value 0 means not to call schedule() while dealing
+with this device.

@@ -1,0 +1,14 @@
+Function: int vfs_remove_acl ( struct mnt_idmap * idmap , struct dentry * dentry , const char * acl_name )
+
+remove posix acls
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount
+  struct dentry *dentry
+    the dentry based on which to retrieve the posix acls
+  const char *acl_name
+    the name of the posix acl
+
+Description
+  This function removes posix acls.

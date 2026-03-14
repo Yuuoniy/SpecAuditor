@@ -1,0 +1,9 @@
+Function: void tipc_crypto_msg_rcv ( struct net * net , struct sk_buff * skb )
+
+Common ‘MSG_CRYPTO’ processing point
+
+Parameters
+  struct net *net
+    the struct net
+  struct sk_buff *skb
+    the receiving message buffer

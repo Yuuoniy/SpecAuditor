@@ -1,0 +1,13 @@
+Function: bool napi_schedule_prep ( struct napi_struct * n )
+
+check if napi can be scheduled
+
+Parameters
+  struct napi_struct *n
+    napi context
+
+Description
+  Test if NAPI routine is already running, and if not mark
+it as running.  This is used as a condition variable to
+insure only one NAPI poll instance runs.  We also make
+sure there is no pending NAPI disable.

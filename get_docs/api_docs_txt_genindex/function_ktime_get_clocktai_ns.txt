@@ -1,0 +1,5 @@
+Function: u64 ktime_get_clocktai_ns ( void )
+
+Same as the plain ktime_get functions, but returning a u64 number
+of nanoseconds in the respective time reference, which may be
+more convenient for some callers.

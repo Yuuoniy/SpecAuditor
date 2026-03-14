@@ -1,0 +1,21 @@
+Struct: struct drm_i915_gem_vm_unbind
+
+VA to object mapping to unbind.
+
+Members
+  vm_id
+    VM (address space) id to bind
+  rsvd
+    Reserved, MBZ
+  start
+    Virtual Address start to unbind
+  length
+    Length of mapping to unbind
+  flags
+    Currently reserved, MBZ. Note that fence carries its own flags.
+  fence
+    Timeline fence for unbind completion signaling. Timeline fence is of format struct drm_i915_gem_timeline_fence . It is an out fence, hence using I915_TIMELINE_FENCE_WAIT flag
+is invalid, and an error will be returned. If I915_TIMELINE_FENCE_SIGNAL flag is not set, then out fence
+is not requested and unbinding is completed synchronously.
+  extensions
+    Zero-terminated chain of extensions. For future extensions. See struct i915_user_extension .

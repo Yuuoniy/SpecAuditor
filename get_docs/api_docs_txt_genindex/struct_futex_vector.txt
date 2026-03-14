@@ -1,0 +1,9 @@
+Struct: struct futex_vector
+
+Auxiliary struct for futex_waitv()
+
+Members
+  w
+    Userspace provided data
+  q
+    Kernel side data

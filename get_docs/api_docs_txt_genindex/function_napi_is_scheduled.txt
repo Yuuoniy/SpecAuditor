@@ -1,0 +1,12 @@
+Function: bool napi_is_scheduled ( struct napi_struct * n )
+
+test if NAPI is scheduled
+
+Parameters
+  struct napi_struct *n
+    NAPI context
+
+Description
+  This check is “best-effort”. With no locking implemented,
+a NAPI can be scheduled or terminate right after this check
+and produce not precise results.

@@ -1,0 +1,13 @@
+Struct: struct v4l2_kevent
+
+Internal kernel event struct.
+
+Members
+  list
+    List node for the v4l2_fh->available list.
+  sev
+    Pointer to parent v4l2_subscribed_event.
+  event
+    The event itself.
+  ts
+    The timestamp of the event.

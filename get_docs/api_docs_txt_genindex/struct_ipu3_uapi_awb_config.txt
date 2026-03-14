@@ -1,0 +1,7 @@
+Struct: struct ipu3_uapi_awb_config
+
+AWB config wrapper
+
+Members
+  config
+    config for auto white balance as defined by ipu3_uapi_awb_config_s

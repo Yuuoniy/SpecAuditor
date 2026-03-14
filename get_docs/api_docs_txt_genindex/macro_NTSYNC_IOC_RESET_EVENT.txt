@@ -1,0 +1,4 @@
+Macro: NTSYNC_IOC_RESET_EVENT
+
+Designal an event object. Takes a pointer to a 32-bit integer, which
+on output contains the previous state of the event.

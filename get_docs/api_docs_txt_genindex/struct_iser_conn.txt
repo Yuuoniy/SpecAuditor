@@ -1,0 +1,45 @@
+Struct: struct iser_conn
+
+iSER connection context
+
+Members
+  ib_conn
+    connection RDMA resources
+  iscsi_conn
+    link to matching iscsi connection
+  ep
+    transport handle
+  state
+    connection logical state
+  qp_max_recv_dtos
+    maximum number of data outs, corresponds
+to max number of post recvs
+  max_cmds
+    maximum cmds allowed for this connection
+  name
+    connection peer portal
+  release_work
+    deferred work for release job
+  state_mutex
+    protects iser onnection state
+  stop_completion
+    conn_stop completion
+  ib_completion
+    RDMA cleanup completion
+  up_completion
+    connection establishment completed
+(state is ISER_CONN_UP)
+  conn_list
+    entry in ig conn list
+  login_desc
+    login descriptor
+  rx_descs
+    rx buffers array (cyclic buffer)
+  num_rx_descs
+    number of rx descriptors
+  scsi_sg_tablesize
+    scsi host sg_tablesize
+  pages_per_mr
+    maximum pages available for registration
+  snd_w_inv
+    connection uses remote invalidation

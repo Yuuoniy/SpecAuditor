@@ -1,0 +1,14 @@
+Function: unsigned int memalloc_noio_save ( void )
+
+Marks implicit GFP_NOIO allocation scope.
+
+Parameters
+  void
+    no arguments
+
+Description
+  This functions marks the beginning of the GFP_NOIO allocation scope.
+All further allocations will implicitly drop __GFP_IO flag and so
+they are safe for the IO critical section from the allocation recursion
+point of view. Use memalloc_noio_restore to end the scope with flags
+returned by this function.

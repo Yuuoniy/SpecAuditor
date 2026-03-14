@@ -1,0 +1,59 @@
+Struct: struct media_device
+
+Media device
+
+Members
+  dev
+    Parent device
+  devnode
+    Media device node
+  model
+    Device model name
+  driver_name
+    Optional device driver name. If not set, calls to MEDIA_IOC_DEVICE_INFO will return dev->driver->name .
+This is needed for USB drivers for example, as otherwise
+they’ll all appear as if the driver name was “usb”.
+  serial
+    Device serial number (optional)
+  bus_info
+    Unique and stable device location identifier
+  hw_revision
+    Hardware device revision
+  topology_version
+    Monotonic counter for storing the version of the graph
+topology. Should be incremented each time the topology changes.
+  id
+    Unique ID used on the last registered graph object
+  entity_internal_idx
+    Unique internal entity ID used by the graph traversal
+algorithms
+  entity_internal_idx_max
+    Allocated internal entity indices
+  entities
+    List of registered entities
+  interfaces
+    List of registered interfaces
+  pads
+    List of registered pads
+  links
+    List of registered links
+  entity_notify
+    List of registered entity_notify callbacks
+  graph_mutex
+    Protects access to struct media_device data
+  pm_count_walk
+    Graph walk for power state walk. Access serialised using
+graph_mutex.
+  source_priv
+    Driver Private data for enable/disable source handlers
+  enable_source
+    Enable Source Handler function pointer
+  disable_source
+    Disable Source Handler function pointer
+  ops
+    Operation handler callbacks
+  req_queue_mutex
+    Serialise the MEDIA_REQUEST_IOC_QUEUE ioctl w.r.t.
+other operations that stop or start streaming.
+  request_id
+    Used to generate unique request IDs

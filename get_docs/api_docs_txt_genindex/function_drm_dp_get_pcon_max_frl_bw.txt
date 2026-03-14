@@ -1,0 +1,13 @@
+Function: int drm_dp_get_pcon_max_frl_bw ( const u8 dpcd [ DP_RECEIVER_CAP_SIZE ] , const u8 port_cap [ 4 ] )
+
+maximum frl supported by PCON
+
+Parameters
+  const u8 dpcd[DP_RECEIVER_CAP_SIZE]
+    DisplayPort configuration data
+  const u8 port_cap[4]
+    port capabilities
+
+Description
+  Returns maximum frl bandwidth supported by PCON in GBPS,
+returns 0 if not supported.

@@ -1,0 +1,10 @@
+Function: void amdgpu_vm_assert_locked ( struct amdgpu_vm * vm )
+
+check if VM is correctly locked
+
+Parameters
+  struct amdgpu_vm *vm
+    the VM which schould be tested
+
+Description
+  Asserts that the VM root PD is locked.

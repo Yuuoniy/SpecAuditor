@@ -1,0 +1,9 @@
+Function: void dvb_ringbuffer_pkt_dispose ( struct dvb_ringbuffer * rbuf , size_t idx )
+
+Dispose of a packet in the ring buffer.
+
+Parameters
+  struct dvb_ringbuffer *rbuf
+    Ring buffer concerned.
+  size_t idx
+    Packet index as returned by dvb_ringbuffer_pkt_next() .

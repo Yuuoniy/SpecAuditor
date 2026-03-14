@@ -1,0 +1,14 @@
+Function: int skb_pad ( struct sk_buff * skb , int pad )
+
+zero pad the tail of an skb
+
+Parameters
+  struct sk_buff *skb
+    buffer to pad
+  int pad
+    space to pad
+
+Description
+  Ensure that a buffer is followed by a padding area that is zero
+filled. Used by network drivers which may DMA or transfer data
+beyond the buffer end onto the wire.

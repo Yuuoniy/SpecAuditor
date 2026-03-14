@@ -1,0 +1,10 @@
+Function: void ttm_lru_bulk_move_init ( struct ttm_lru_bulk_move * bulk )
+
+initialize a bulk move structure
+
+Parameters
+  struct ttm_lru_bulk_move *bulk
+    the structure to init
+
+Description
+  For now just memset the structure to zero.

@@ -1,0 +1,11 @@
+Function: void intel_set_cdclk_pre_plane_update ( struct intel_atomic_state * state )
+
+Push the CDCLK state to the hardware
+
+Parameters
+  struct intel_atomic_state *state
+    intel atomic state
+
+Description
+  Program the hardware before updating the HW plane state based on the
+new CDCLK state, if necessary.

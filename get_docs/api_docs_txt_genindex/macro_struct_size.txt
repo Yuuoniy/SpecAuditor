@@ -1,0 +1,15 @@
+Macro: struct_size
+
+
+
+Parameters
+  p
+    Pointer to the structure.
+  member
+    Name of the array member.
+  count
+    Number of elements in the array.
+
+Description
+  Calculates size of memory needed for structure of p followed by an
+array of count number of member elements.

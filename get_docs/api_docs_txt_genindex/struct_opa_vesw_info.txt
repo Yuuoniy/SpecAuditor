@@ -1,0 +1,31 @@
+Struct: struct opa_vesw_info
+
+OPA vnic switch information
+
+Members
+  fabric_id
+    10-bit fabric id
+  vesw_id
+    12-bit virtual ethernet switch id
+  rsvd0
+    reserved bytes
+  def_port_mask
+    bitmask of default ports
+  rsvd1
+    reserved bytes
+  pkey
+    partition key
+  rsvd2
+    reserved bytes
+  u_mcast_dlid
+    unknown multicast dlid
+  u_ucast_dlid
+    array of unknown unicast dlids
+  rc
+    routing control
+  rsvd3
+    reserved bytes
+  eth_mtu
+    Ethernet MTU
+  rsvd4
+    reserved bytes

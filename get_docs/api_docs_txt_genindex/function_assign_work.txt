@@ -1,0 +1,15 @@
+Function: bool assign_work ( struct work_struct * work , struct worker * worker , struct work_struct * * nextp )
+
+assign a work item and its linked work items to a worker
+
+Parameters
+  struct work_struct *work
+    work to assign
+  struct worker *worker
+    worker to assign to
+  struct work_struct **nextp
+    out parameter for nested worklist walking
+
+Description
+  Assign work and its linked work items to worker . If work is already being
+executed by another worker in the same pool, it’ll be punted there.

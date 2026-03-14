@@ -1,0 +1,12 @@
+Function: int extcon_get_state ( struct extcon_dev * edev , const unsigned int id )
+
+Get the state of an external connector.
+
+Parameters
+  struct extcon_dev *edev
+    the extcon device
+  const unsigned int id
+    the unique id indicating an external connector
+
+Description
+  Returns 0 if success or error number if fail.

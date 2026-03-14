@@ -1,0 +1,11 @@
+Function: void ata_eh_analyze_serror ( struct ata_link * link )
+
+analyze SError for a failed port
+
+Parameters
+  struct ata_link *link
+    ATA link to analyze SError for
+
+Description
+  Analyze SError if available and further determine cause of
+failure.

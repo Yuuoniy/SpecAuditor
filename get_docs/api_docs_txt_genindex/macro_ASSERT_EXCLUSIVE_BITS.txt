@@ -1,0 +1,12 @@
+Macro: ASSERT_EXCLUSIVE_BITS
+
+
+
+Parameters
+  var
+    variable to assert on
+  mask
+    only check for modifications to bits set in mask
+
+Description
+  Bit-granular variant of ASSERT_EXCLUSIVE_WRITER() .

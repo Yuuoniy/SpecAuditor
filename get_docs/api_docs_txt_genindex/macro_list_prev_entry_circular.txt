@@ -1,0 +1,15 @@
+Macro: list_prev_entry_circular
+
+
+
+Parameters
+  pos
+    the type * to cursor.
+  head
+    the list head to take the element from.
+  member
+    the name of the list_head within the struct.
+
+Description
+  Wraparound if pos is the first element (return the last element).
+Note, that list is expected to be not empty.

@@ -1,0 +1,7 @@
+Function: void write_seqcount_latch ( seqcount_latch_t * s )
+
+redirect latch readers to even copy
+
+Parameters
+  seqcount_latch_t *s
+    Pointer to seqcount_latch_t

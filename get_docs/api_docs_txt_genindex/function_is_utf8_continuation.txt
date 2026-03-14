@@ -1,0 +1,7 @@
+Function: int is_utf8_continuation ( u8 c )
+
+utf8 multibyte check
+
+Parameters
+  u8 c
+    byte to check

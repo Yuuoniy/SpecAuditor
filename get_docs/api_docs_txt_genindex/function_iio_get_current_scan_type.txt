@@ -1,0 +1,15 @@
+Function: const struct iio_scan_type * iio_get_current_scan_type ( const struct iio_dev * indio_dev , const struct iio_chan_spec * chan )
+
+Get the current scan type for a channel
+
+Parameters
+  const struct iio_dev *indio_dev
+    the IIO device to get the scan type for
+  const struct iio_chan_spec *chan
+    the channel to get the scan type for
+
+Description
+  Most devices only have one scan type per channel and can just access it
+directly without calling this function. Core IIO code and drivers that
+implement ext_scan_type in the channel spec should use this function to
+get the current scan type for a channel.

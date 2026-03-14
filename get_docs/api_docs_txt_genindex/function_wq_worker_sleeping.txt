@@ -1,0 +1,11 @@
+Function: void wq_worker_sleeping ( struct task_struct * task )
+
+a worker is going to sleep
+
+Parameters
+  struct task_struct *task
+    task going to sleep
+
+Description
+  This function is called from schedule() when a busy worker is
+going to sleep.

@@ -1,0 +1,13 @@
+Function: int drm_edid_connector_update ( struct drm_connector * connector , const struct drm_edid * drm_edid )
+
+Update connector information from EDID
+
+Parameters
+  struct drm_connector *connector
+    Connector
+  const struct drm_edid *drm_edid
+    EDID
+
+Description
+  Update the connector display info, ELD, HDR metadata, relevant properties,
+etc. from the passed in EDID.

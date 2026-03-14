@@ -1,0 +1,11 @@
+Function: void intel_dpll_swap_state ( struct intel_atomic_state * state )
+
+make atomic DPLL configuration effective
+
+Parameters
+  struct intel_atomic_state *state
+    atomic state
+
+Description
+  This is the dpll version of drm_atomic_helper_swap_state() since the
+helper does not handle driver-specific global state.

@@ -1,0 +1,16 @@
+Function: int vb2_mmap ( struct vb2_queue * q , struct vm_area_struct * vma )
+
+map video buffers into application address space.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  struct vm_area_struct *vma
+    pointer to struct vm_area_struct with the vma passed
+to the mmap file operation handler in the driver.
+
+Description
+  Should be called from mmap file operation handler of a driver.
+This function maps one plane of one of the available video buffers to
+userspace. To map whole video memory allocated on reqbufs, this function
+has to be called once per each plane per each buffer previously allocated.

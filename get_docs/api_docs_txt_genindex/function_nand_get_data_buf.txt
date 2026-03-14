@@ -1,0 +1,13 @@
+Function: void * nand_get_data_buf ( struct nand_chip * chip )
+
+Get the internal page buffer
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+
+Description
+  Returns the pre-allocated page buffer after invalidating the cache. This
+function should be used by drivers that do not want to allocate their own
+bounce buffer and still need such a buffer for specific operations (most
+commonly when reading OOB data only).

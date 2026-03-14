@@ -1,0 +1,18 @@
+Function: void xe_devcoredump ( struct xe_exec_queue * q , struct xe_sched_job * job , const char * fmt , ... )
+
+Take the required snapshots and initialize coredump device.
+
+Parameters
+  struct xe_exec_queue *q
+    The faulty xe_exec_queue, where the issue was detected.
+  struct xe_sched_job *job
+    The faulty xe_sched_job, where the issue was detected.
+  const char *fmt
+    Printf format + args to describe the reason for the core dump
+  ...
+    variable arguments
+
+Description
+  This function should be called at the crash time within the serialized
+gt_reset. It is skipped if we still have the core dump device available
+with the information of the ‘first’ snapshot.

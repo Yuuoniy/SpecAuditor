@@ -1,0 +1,152 @@
+Struct: struct amdgpu_display_manager
+
+Central amdgpu display manager device
+
+Members
+  dc
+    Display Core control structure
+  dmub_srv
+    DMUB service, used for controlling the DMUB on hardware
+that supports it. The pointer to the dmub_srv will be
+NULL on hardware that does not support it.
+  dmub_notify
+    Notification from DMUB.
+  dmub_callback
+    Callback functions to handle notification from DMUB.
+  dmub_thread_offload
+    Flag to indicate if callback is offload.
+  dmub_fb_info
+    Framebuffer regions for the DMUB.
+  dmub_fw
+    DMUB firmware, required on hardware that has DMUB support.
+  dmub_bo
+    Buffer object for the DMUB.
+  dmub_bo_gpu_addr
+    GPU virtual address for the DMUB buffer object.
+  dmub_bo_cpu_addr
+    CPU address for the DMUB buffer object.
+  dmcub_fw_version
+    DMCUB firmware version.
+  cgs_device
+    The Common Graphics Services device. It provides an interface for
+accessing registers.
+  adev
+    AMDGPU base driver structure
+  ddev
+    DRM base driver structure
+  display_indexes_num
+    Max number of display streams supported
+  atomic_obj
+    In combination with dm_atomic_state it helps manage
+global atomic state that doesn’t map cleanly into existing
+drm resources, like dc_context .
+  dc_lock
+    Guards access to DC functions that can issue register write
+sequences.
+  audio_lock
+    Guards access to audio instance changes.
+  audio_component
+    Used to notify ELD changes to sound driver.
+  audio_registered
+    True if the audio component has been registered
+successfully, false otherwise.
+  irq_handler_list_low_tab
+    Low priority IRQ handler table. It is a n*m table consisting of n IRQ sources, and m handlers per IRQ
+source. Low priority IRQ handlers are deferred to a workqueue to be
+processed. Hence, they can sleep. Note that handlers are called in the same order as they were
+registered (FIFO).
+  irq_handler_list_high_tab
+    High priority IRQ handler table. It is a n*m table, same as irq_handler_list_low_tab . However,
+handlers in this table are not deferred and are called immediately.
+  pflip_params
+    Page flip IRQ parameters, passed to registered handlers when
+triggered.
+  vblank_params
+    Vertical blanking IRQ parameters, passed to registered handlers when
+triggered.
+  vline0_params
+    OTG vertical interrupt0 IRQ parameters, passed to registered
+handlers when triggered.
+  vupdate_params
+    Vertical update IRQ parameters, passed to registered handlers when
+triggered.
+  dmub_trace_params
+    DMUB trace event IRQ parameters, passed to registered handlers when
+triggered.
+  dmub_outbox_params
+    DMUB Outbox parameters
+  irq_handler_list_table_lock
+    Synchronizes access to IRQ tables
+  backlight_dev
+    Backlight control device
+  backlight_link
+    Link on which to control backlight
+  num_of_edps
+    number of backlight eDPs
+  backlight_caps
+    Capabilities of the backlight device
+  freesync_module
+    Module handling freesync calculations
+  hdcp_workqueue
+    AMDGPU content protection queue
+  vblank_control_workqueue
+    Deferred work for vblank control events.
+  idle_workqueue
+    Periodic work for idle events.
+  cached_state
+    Caches device atomic state for suspend/resume
+  cached_dc_state
+    Cached state of content streams
+  compressor
+    Frame buffer compression buffer. See struct dm_compressor_info
+  fw_dmcu
+    Reference to DMCU firmware
+  dmcu_fw_version
+    Version of the DMCU firmware
+  soc_bounding_box
+    gpu_info FW provided soc bounding box struct or 0 if not
+available in FW
+  active_vblank_irq_count
+    number of currently active vblank irqs
+  secure_display_ctx
+    Store secure display relevant info. e.g. the ROI information
+, the work_struct to command dmub, etc.
+  hpd_rx_offload_wq
+    Work queue to offload works of hpd_rx_irq
+  mst_encoders
+    fake encoders used for DP MST.
+  force_timing_sync
+    set via debugfs. When set, indicates that all connected
+displays will be forced to synchronize.
+  disable_hpd_irq
+    disables all HPD and HPD RX interrupt handling in the
+driver when true
+  dmcub_trace_event_en
+    enable dmcub trace events
+  da_list
+    DAL fb memory allocation list, for communication with SMU.
+  dmub_aux_transfer_done
+    struct completion used to indicate when DMUB
+transfers are done
+  delayed_hpd_wq
+    work queue used to delay DMUB HPD work
+  brightness
+    cached backlight values.
+  actual_brightness
+    last successfully applied backlight values.
+  restore_backlight
+    Flag to indicate whether to restore backlight after modeset.
+  aux_hpd_discon_quirk
+    quirk for hpd discon while aux is on-going.
+occurred on certain intel platform
+  edp0_on_dp1_quirk
+    quirk for platforms that put edp0 on DP1.
+  dpia_aux_lock
+    Guards access to DPIA AUX
+  bb_from_dmub
+    Bounding box data read from dmub during early initialization for DCN4+
+Data is stored as a byte array that should be casted to the appropriate bb struct
+  oem_i2c
+    OEM i2c bus
+  fused_io
+    dmub fused io interface

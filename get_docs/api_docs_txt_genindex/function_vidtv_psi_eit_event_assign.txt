@@ -1,0 +1,14 @@
+Function: void vidtv_psi_eit_event_assign ( struct vidtv_psi_table_eit * eit , struct vidtv_psi_table_eit_event * e )
+
+Assigns the event loop to the EIT.
+
+Parameters
+  struct vidtv_psi_table_eit *eit
+    The EIT to assign to.
+  struct vidtv_psi_table_eit_event *e
+    The event loop
+
+Description
+  This will free the previous event loop in the table.
+This will assign ownership of the stream loop to the table, i.e. the table
+will free this stream loop when a call to its destroy function is made.

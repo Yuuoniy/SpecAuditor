@@ -1,0 +1,12 @@
+Function: const struct ssam_device_id * ssam_device_get_match ( const struct ssam_device * dev )
+
+Find and return the ID matching the device in the ID table of the bound driver.
+
+Parameters
+  const struct ssam_device *dev
+    The device for which to get the matching ID table entry.
+
+Description
+  Find the fist match for the UID of the device in the ID table of the
+currently bound driver and return it. Returns NULL if the device does not
+have a driver bound to it, the driver does not have match_table (i.e. it is NULL ), or there is no match in the driver’s match_table.

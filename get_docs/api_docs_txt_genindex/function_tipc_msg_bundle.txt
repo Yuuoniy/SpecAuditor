@@ -1,0 +1,11 @@
+Function: bool tipc_msg_bundle ( struct sk_buff * bskb , struct tipc_msg * msg , u32 max )
+
+Append contents of a buffer to tail of an existing one
+
+Parameters
+  struct sk_buff *bskb
+    the bundle buffer to append to
+  struct tipc_msg *msg
+    message to be appended
+  u32 max
+    max allowable size for the bundle buffer

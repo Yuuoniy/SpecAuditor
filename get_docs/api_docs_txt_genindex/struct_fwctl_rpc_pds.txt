@@ -1,0 +1,27 @@
+Struct: struct fwctl_rpc_pds
+
+
+
+Members
+  in
+    rpc in parameters
+  in.op
+    requested operation code
+  in.ep
+    firmware endpoint to operate on
+  in.rsvd
+    reserved
+  in.len
+    length of payload data
+  in.payload
+    address of payload buffer
+  out
+    rpc out parameters
+  out.retval
+    operation result value
+  out.rsvd
+    reserved
+  out.len
+    length of result data buffer
+  out.payload
+    address of payload data buffer

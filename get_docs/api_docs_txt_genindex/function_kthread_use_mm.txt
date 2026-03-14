@@ -1,0 +1,7 @@
+Function: void kthread_use_mm ( struct mm_struct * mm )
+
+make the calling kthread operate on an address space
+
+Parameters
+  struct mm_struct *mm
+    address space to operate on

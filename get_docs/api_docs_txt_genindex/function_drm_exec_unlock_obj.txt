@@ -1,0 +1,14 @@
+Function: void drm_exec_unlock_obj ( struct drm_exec * exec , struct drm_gem_object * obj )
+
+unlock a GEM object in this exec context
+
+Parameters
+  struct drm_exec *exec
+    the drm_exec object with the state
+  struct drm_gem_object *obj
+    the GEM object to unlock
+
+Description
+  Unlock the GEM object and remove it from the collection of locked objects.
+Should only be used to unlock the most recently locked objects. It’s not time
+efficient to unlock objects locked long ago.

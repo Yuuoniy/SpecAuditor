@@ -1,0 +1,16 @@
+Function: int irq_set_affinity_notifier ( unsigned int irq , struct irq_affinity_notify * notify )
+
+control notification of IRQ affinity changes
+
+Parameters
+  unsigned int irq
+    Interrupt for which to enable/disable notification
+  struct irq_affinity_notify *notify
+    Context for notification, or NULL to disable
+notification.  Function pointers must be initialised;
+the other fields will be initialised by this function.
+
+Description
+  Must be called in process context.  Notification may only be enabled
+after the IRQ is allocated and must be disabled before the IRQ is freed
+using free_irq() .

@@ -1,0 +1,14 @@
+Function: void panic_nand_wait ( struct nand_chip * chip , unsigned long timeo )
+
+[GENERIC] wait until the command is done
+
+Parameters
+  struct nand_chip *chip
+    NAND chip structure
+  unsigned long timeo
+    timeout
+
+Description
+  Wait for command done. This is a helper function for nand_wait used when
+we are in interrupt context. May happen when in panic and trying to write
+an oops through mtdoops.

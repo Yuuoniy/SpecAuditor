@@ -1,0 +1,7 @@
+Function: bool pwm_might_sleep ( struct pwm_device * pwm )
+
+is pwm_apply_atomic() supported?
+
+Parameters
+  struct pwm_device *pwm
+    PWM device

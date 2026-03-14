@@ -1,0 +1,7 @@
+Function: void phy_state_machine ( struct work_struct * work )
+
+Handle the state machine
+
+Parameters
+  struct work_struct *work
+    work_struct that describes the work to be done

@@ -1,0 +1,9 @@
+Struct: struct sync_set_deadline
+
+SYNC_IOC_SET_DEADLINE - set a deadline hint on a fence
+
+Members
+  deadline_ns
+    absolute time of the deadline
+  pad
+    must be zero

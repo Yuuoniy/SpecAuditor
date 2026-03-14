@@ -1,0 +1,7 @@
+Function: int snd_ctl_request_layer ( const char * module_name )
+
+request to use the layer
+
+Parameters
+  const char *module_name
+    Name of the kernel module (NULL == build-in)

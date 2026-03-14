@@ -1,0 +1,36 @@
+Struct: struct usb_composite_driver
+
+groups configurations into a gadget
+
+Members
+  name
+    For diagnostics, identifies the driver.
+  dev
+    Template descriptor for the device, including default device
+identifiers.
+  strings
+    tables of strings, keyed by identifiers assigned during bind and language IDs provided in control requests. Note: The first entries
+are predefined. The first entry that may be used is
+USB_GADGET_FIRST_AVAIL_IDX
+  max_speed
+    Highest speed the driver supports.
+  needs_serial
+    set to 1 if the gadget needs userspace to provide
+a serial number.  If one is not provided, warning will be printed.
+  bind
+    (REQUIRED) Used to allocate resources that are shared across the
+whole device, such as string IDs, and add its configurations using usb_add_config() . This may fail by returning a negative errno
+value; it should return zero on successful initialization.
+  unbind
+    Reverses bind ; called as a side effect of unregistering
+this driver.
+  disconnect
+    optional driver disconnect method
+  suspend
+    Notifies when the host stops sending USB traffic,
+after function notifications
+  resume
+    Notifies configuration when the host restarts USB traffic,
+before function notifications
+  gadget_driver
+    Gadget driver controlling this driver

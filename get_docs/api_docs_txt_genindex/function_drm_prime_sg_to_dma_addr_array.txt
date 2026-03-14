@@ -1,0 +1,14 @@
+Function: int drm_prime_sg_to_dma_addr_array ( struct sg_table * sgt , dma_addr_t * addrs , int max_entries )
+
+convert an sg table into a dma addr array
+
+Parameters
+  struct sg_table *sgt
+    scatter-gather table to convert
+  dma_addr_t *addrs
+    array to store the dma bus address of each page
+  int max_entries
+    size of both the passed-in arrays
+
+Description
+  Exports an sg table into an array of addresses.

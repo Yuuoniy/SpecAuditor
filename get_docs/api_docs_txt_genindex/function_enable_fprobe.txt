@@ -1,0 +1,10 @@
+Function: void enable_fprobe ( struct fprobe * fp )
+
+Enable fprobe
+
+Parameters
+  struct fprobe *fp
+    The fprobe to be enabled.
+
+Description
+  This will soft-enable fp .

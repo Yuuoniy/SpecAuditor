@@ -1,0 +1,7 @@
+Function: void rvt_del_timers_sync ( struct rvt_qp * qp )
+
+wait for any timeout routines to exit
+
+Parameters
+  struct rvt_qp *qp
+    the QP

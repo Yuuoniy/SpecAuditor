@@ -1,0 +1,17 @@
+Function: bool cxl_payload_from_user_allowed ( u16 opcode , void * payload_in )
+
+Check contents of in_payload.
+
+Parameters
+  u16 opcode
+    The mailbox command opcode.
+  void *payload_in
+    Pointer to the input payload passed in from user space.
+
+Description
+  The driver may inspect payload contents before sending a mailbox
+command from user space to the device. The intent is to reject
+commands with input payloads that are known to be unsafe. This
+check is not intended to replace the users careful selection of
+mailbox command parameters and makes no guarantee that the user
+command will succeed, nor that it is appropriate.

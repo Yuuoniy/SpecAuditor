@@ -1,0 +1,13 @@
+Function: bool kfence_free ( void * addr )
+
+try to release an arbitrary heap object to KFENCE pool
+
+Parameters
+  void *addr
+    object to be freed
+
+Description
+  Release a KFENCE object and mark it as freed. May be called on any object,
+even non-KFENCE objects, to simplify integration of the hooks into the
+allocator’s free codepath. The allocator must check the return value to
+determine if it was a KFENCE object or not.

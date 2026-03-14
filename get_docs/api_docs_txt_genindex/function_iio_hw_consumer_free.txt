@@ -1,0 +1,7 @@
+Function: void iio_hw_consumer_free ( struct iio_hw_consumer * hwc )
+
+Free IIO hardware consumer
+
+Parameters
+  struct iio_hw_consumer *hwc
+    hw consumer to free.

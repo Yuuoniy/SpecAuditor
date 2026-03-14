@@ -1,0 +1,13 @@
+Function: void free_netdev ( struct net_device * dev )
+
+free network device
+
+Parameters
+  struct net_device *dev
+    device
+
+Description
+  This function does the last stage of destroying an allocated device
+interface. The reference to the device object is released. If this
+is the last reference then it will be freed.Must be called in process
+context.

@@ -1,0 +1,10 @@
+Function: int pnp_register_protocol ( struct pnp_protocol * protocol )
+
+adds a pnp protocol to the pnp layer
+
+Parameters
+  struct pnp_protocol *protocol
+    pointer to the corresponding pnp_protocol structure
+
+Description
+  Ex protocols: ISAPNP, PNPBIOS, etc

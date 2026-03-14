@@ -1,0 +1,14 @@
+Function: struct drm_gem_shmem_object * drm_gem_shmem_create_with_mnt ( struct drm_device * dev , size_t size , struct vfsmount * gemfs )
+
+Allocate an object with the given size in a given mountpoint
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  size_t size
+    Size of the object to allocate
+  struct vfsmount *gemfs
+    tmpfs mount where the GEM object will be created
+
+Description
+  This function creates a shmem GEM object in a given tmpfs mountpoint.

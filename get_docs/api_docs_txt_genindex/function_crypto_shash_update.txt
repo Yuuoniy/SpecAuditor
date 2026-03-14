@@ -1,0 +1,14 @@
+Function: int crypto_shash_update ( struct shash_desc * desc , const u8 * data , unsigned int len )
+
+add data to message digest for processing
+
+Parameters
+  struct shash_desc *desc
+    operational state handle that is already initialized
+  const u8 *data
+    input data to be added to the message digest
+  unsigned int len
+    length of the input data
+
+Description
+  Updates the message digest state of the operational state handle.

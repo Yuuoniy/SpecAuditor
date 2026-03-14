@@ -1,0 +1,14 @@
+Function: void * kmap_local_folio ( const struct folio * folio , size_t offset )
+
+Map a page in this folio for temporary usage
+
+Parameters
+  const struct folio *folio
+    The folio containing the page.
+  size_t offset
+    The byte offset within the folio which identifies the page.
+
+Description
+  Requires careful handling when nesting multiple mappings because the map
+management is stack based. The unmap has to be in the reverse order of
+the map operation:

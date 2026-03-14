@@ -1,0 +1,13 @@
+Function: int security_kernel_act_as ( struct cred * new , u32 secid )
+
+Set the kernel credentials to act as secid
+
+Parameters
+  struct cred *new
+    credentials
+  u32 secid
+    secid
+
+Description
+  Set the credentials for a kernel service to act as (subjective context).
+The current task must be the one that nominated secid .

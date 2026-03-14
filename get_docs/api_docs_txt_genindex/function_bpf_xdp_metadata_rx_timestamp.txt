@@ -1,0 +1,9 @@
+Function: __bpf_kfunc int bpf_xdp_metadata_rx_timestamp ( const struct xdp_md * ctx , u64 * timestamp )
+
+Read XDP frame RX timestamp.
+
+Parameters
+  const struct xdp_md *ctx
+    XDP context pointer.
+  u64 *timestamp
+    Return value pointer.

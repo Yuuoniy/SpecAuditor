@@ -1,0 +1,11 @@
+Struct: struct drm_panthor_vm_bind
+
+Arguments passed to DRM_IOCTL_PANTHOR_VM_BIND
+
+Members
+  vm_id
+    VM targeted by the bind request.
+  flags
+    Combination of drm_panthor_vm_bind_flags flags.
+  ops
+    Array of struct drm_panthor_vm_bind_op bind operations.

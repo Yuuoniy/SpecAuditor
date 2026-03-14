@@ -1,0 +1,21 @@
+Function: int rvt_lkey_ok ( struct rvt_lkey_table * rkt , struct rvt_pd * pd , struct rvt_sge * isge , struct rvt_sge * last_sge , struct ib_sge * sge , int acc )
+
+check IB SGE for validity and initialize
+
+Parameters
+  struct rvt_lkey_table *rkt
+    table containing lkey to check SGE against
+  struct rvt_pd *pd
+    protection domain
+  struct rvt_sge *isge
+    outgoing internal SGE
+  struct rvt_sge *last_sge
+    last outgoing SGE written
+  struct ib_sge *sge
+    SGE to check
+  int acc
+    access flags
+
+Description
+  Check the IB SGE for validity and initialize our internal version
+of it.

@@ -1,0 +1,12 @@
+Function: int futex_match ( union futex_key * key1 , union futex_key * key2 )
+
+Check whether two futex keys are equal
+
+Parameters
+  union futex_key *key1
+    Pointer to key1
+  union futex_key *key2
+    Pointer to key2
+
+Description
+  Return 1 if two futex_keys are equal, 0 otherwise.

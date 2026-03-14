@@ -1,0 +1,11 @@
+Function: void srpt_queue_response ( struct se_cmd * cmd )
+
+transmit the response to a SCSI command
+
+Parameters
+  struct se_cmd *cmd
+    SCSI target command.
+
+Description
+  Callback function called by the TCM core. Must not block since it can be
+invoked on the context of the IB completion handler.

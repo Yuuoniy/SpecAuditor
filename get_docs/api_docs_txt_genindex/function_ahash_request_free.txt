@@ -1,0 +1,7 @@
+Function: void ahash_request_free ( struct ahash_request * req )
+
+zeroize and free the request data structure
+
+Parameters
+  struct ahash_request *req
+    request data structure cipher handle to be freed

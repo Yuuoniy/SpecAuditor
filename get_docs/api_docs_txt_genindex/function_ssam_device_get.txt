@@ -1,0 +1,11 @@
+Function: struct ssam_device * ssam_device_get ( struct ssam_device * sdev )
+
+Increment reference count of SSAM client device.
+
+Parameters
+  struct ssam_device *sdev
+    The device to increment the reference count of.
+
+Description
+  Increments the reference count of the given SSAM client device by
+incrementing the reference count of the enclosed struct device via get_device() .

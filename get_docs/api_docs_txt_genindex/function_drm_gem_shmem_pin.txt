@@ -1,0 +1,11 @@
+Function: int drm_gem_shmem_pin ( struct drm_gem_shmem_object * shmem )
+
+Pin backing pages for a shmem GEM object
+
+Parameters
+  struct drm_gem_shmem_object *shmem
+    shmem GEM object
+
+Description
+  This function makes sure the backing pages are pinned in memory while the
+buffer is exported.

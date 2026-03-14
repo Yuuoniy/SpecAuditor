@@ -1,0 +1,11 @@
+Function: void folio_mark_lazyfree ( struct folio * folio )
+
+make an anon folio lazyfree
+
+Parameters
+  struct folio *folio
+    folio to deactivate
+
+Description
+  folio_mark_lazyfree() moves folio to the inactive file list.
+This is done to accelerate the reclaim of folio .

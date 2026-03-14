@@ -1,0 +1,7 @@
+Function: void hsi_release_port ( struct hsi_client * cl )
+
+Release the HSI client’s port
+
+Parameters
+  struct hsi_client *cl
+    HSI client which previously claimed its port

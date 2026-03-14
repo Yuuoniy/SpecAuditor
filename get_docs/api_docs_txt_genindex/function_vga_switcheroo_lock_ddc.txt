@@ -1,0 +1,13 @@
+Function: int vga_switcheroo_lock_ddc ( struct pci_dev * pdev )
+
+temporarily switch DDC lines to a given client
+
+Parameters
+  struct pci_dev *pdev
+    client pci device
+
+Description
+  Temporarily switch DDC lines to the client identified by pdev (but leave the outputs otherwise switched to where they are).
+This allows the inactive client to probe EDID. The DDC lines must
+afterwards be switched back by calling vga_switcheroo_unlock_ddc() ,
+even if this function returns an error.

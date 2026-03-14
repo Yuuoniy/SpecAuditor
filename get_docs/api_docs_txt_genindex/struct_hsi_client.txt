@@ -1,0 +1,11 @@
+Struct: struct hsi_client
+
+HSI client attached to an HSI port
+
+Members
+  device
+    Driver model representation of the device
+  tx_cfg
+    HSI TX configuration
+  rx_cfg
+    HSI RX configuration

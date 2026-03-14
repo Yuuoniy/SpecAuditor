@@ -1,0 +1,11 @@
+Function: void sas_phy_delete ( struct sas_phy * phy )
+
+remove SAS PHY
+
+Parameters
+  struct sas_phy *phy
+    SAS PHY to remove
+
+Description
+  Removes the specified SAS PHY.  If the SAS PHY has an
+associated remote PHY it is removed before.

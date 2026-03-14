@@ -1,0 +1,24 @@
+Function: struct v4l2_ctrl * v4l2_ctrl_new_std ( struct v4l2_ctrl_handler * hdl , const struct v4l2_ctrl_ops * ops , u32 id , s64 min , s64 max , u64 step , s64 def )
+
+Allocate and initialize a new standard V4L2 non-menu control.
+
+Parameters
+  struct v4l2_ctrl_handler *hdl
+    The control handler.
+  const struct v4l2_ctrl_ops *ops
+    The control ops.
+  u32 id
+    The control ID.
+  s64 min
+    The control’s minimum value.
+  s64 max
+    The control’s maximum value.
+  u64 step
+    The control’s step value
+  s64 def
+    The control’s default value.
+
+Description
+  If the v4l2_ctrl struct could not be allocated, or the control
+ID is not known, then NULL is returned and hdl->error is set to the
+appropriate error code (if it wasn’t set already).

@@ -1,0 +1,12 @@
+Struct: struct drm_i915_gem_set_domain
+
+Adjust the objects write or read domain, in preparation for accessing the pages via some CPU domain.
+
+Members
+  handle
+    Handle for the object.
+  read_domains
+    New read domains.
+  write_domain
+    New write domain. Note that having something in the write domain implies it’s in the
+read domain, and only that read domain.

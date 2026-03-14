@@ -1,0 +1,13 @@
+Function: ssize_t mei_cldev_send_vtag ( struct mei_cl_device * cldev , const u8 * buf , size_t length , u8 vtag )
+
+me device send with vtag (write)
+
+Parameters
+  struct mei_cl_device *cldev
+    me client device
+  const u8 *buf
+    buffer to send
+  size_t length
+    buffer length
+  u8 vtag
+    virtual tag

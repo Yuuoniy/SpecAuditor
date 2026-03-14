@@ -1,0 +1,14 @@
+Function: int check_short_pattern ( uint8_t * buf , struct nand_bbt_descr * td )
+
+[GENERIC] check if a pattern is in the buffer
+
+Parameters
+  uint8_t *buf
+    the buffer to search
+  struct nand_bbt_descr *td
+    search pattern descriptor
+
+Description
+  Check for a pattern at the given place. Used to search bad block tables and
+good / bad block identifiers. Same as check_pattern, but no optional empty
+check.

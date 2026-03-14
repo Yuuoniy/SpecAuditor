@@ -1,0 +1,11 @@
+Function: int strncmp ( const char * cs , const char * ct , size_t count )
+
+Compare two length-limited strings
+
+Parameters
+  const char *cs
+    One string
+  const char *ct
+    Another string
+  size_t count
+    The maximum number of bytes to compare

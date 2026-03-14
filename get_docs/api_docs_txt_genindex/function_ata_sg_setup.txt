@@ -1,0 +1,10 @@
+Function: int ata_sg_setup ( struct ata_queued_cmd * qc )
+
+DMA-map the scatter-gather table associated with a command.
+
+Parameters
+  struct ata_queued_cmd *qc
+    Command with scatter-gather table to be mapped.
+
+Description
+  DMA-map the scatter-gather table associated with queued_cmd qc .

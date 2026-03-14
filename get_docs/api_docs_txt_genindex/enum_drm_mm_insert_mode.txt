@@ -1,0 +1,3 @@
+Enum: enum drm_mm_insert_mode
+
+control search and allocation behaviour

@@ -1,0 +1,2 @@
+Type: type v4l2_hevc_pred_weight_table
+

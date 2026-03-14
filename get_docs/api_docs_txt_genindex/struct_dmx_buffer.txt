@@ -1,0 +1,21 @@
+Struct: struct dmx_buffer
+
+dmx buffer info
+
+Members
+  index
+    id number of the buffer
+  bytesused
+    number of bytes occupied by data in the buffer (payload);
+  offset
+    for buffers with memory == DMX_MEMORY_MMAP;
+offset from the start of the device memory for this plane,
+(or a “cookie” that should be passed to mmap() as offset)
+  length
+    size in bytes of the buffer
+  flags
+    bit array of buffer flags as defined by enum dmx_buffer_flags .
+Filled only at DMX_DQBUF .
+  count
+    monotonic counter for filled buffers. Helps to identify
+data stream loses. Filled only at DMX_DQBUF .

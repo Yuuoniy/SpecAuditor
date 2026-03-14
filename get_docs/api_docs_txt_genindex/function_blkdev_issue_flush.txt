@@ -1,0 +1,10 @@
+Function: int blkdev_issue_flush ( struct block_device * bdev )
+
+queue a flush
+
+Parameters
+  struct block_device *bdev
+    blockdev to issue flush for
+
+Description
+  Issue a flush for the block device in question.

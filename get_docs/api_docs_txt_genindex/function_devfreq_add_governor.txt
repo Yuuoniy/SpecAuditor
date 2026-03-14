@@ -1,0 +1,7 @@
+Function: int devfreq_add_governor ( struct devfreq_governor * governor )
+
+Add devfreq governor
+
+Parameters
+  struct devfreq_governor *governor
+    the devfreq governor to be added

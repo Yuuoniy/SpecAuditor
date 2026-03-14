@@ -1,0 +1,13 @@
+Function: bool is_etherdev_addr ( const struct net_device * dev , const u8 addr [ 6 + 2 ] )
+
+Tell if given Ethernet address belongs to the device.
+
+Parameters
+  const struct net_device *dev
+    Pointer to a device structure
+  const u8 addr[6 + 2]
+    Pointer to a six-byte array containing the Ethernet address
+
+Description
+  Compare passed address with all addresses of the device. Return true if the
+address if one of the device addresses.

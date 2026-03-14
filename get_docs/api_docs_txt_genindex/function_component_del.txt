@@ -1,0 +1,14 @@
+Function: void component_del ( struct device * dev , const struct component_ops * ops )
+
+unregister a component
+
+Parameters
+  struct device *dev
+    component device
+  const struct component_ops *ops
+    component callbacks
+
+Description
+  Unregister a component added with component_add() . If the component is bound
+into an aggregate driver, this will force the entire aggregate driver, including
+all its components, to be unbound.

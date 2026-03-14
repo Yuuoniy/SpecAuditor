@@ -1,0 +1,7 @@
+Function: struct drm_connector * drm_connector_list_iter_next ( struct drm_connector_list_iter * iter )
+
+return next connector
+
+Parameters
+  struct drm_connector_list_iter *iter
+    connector_list iterator

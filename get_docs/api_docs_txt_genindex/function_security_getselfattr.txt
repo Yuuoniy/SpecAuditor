@@ -1,0 +1,19 @@
+Function: int security_getselfattr ( unsigned int attr , struct lsm_ctx __user * uctx , u32 __user * size , u32 flags )
+
+Read an LSM attribute of the current process.
+
+Parameters
+  unsigned int attr
+    which attribute to return
+  struct lsm_ctx __user *uctx
+    the user-space destination for the information, or NULL
+  u32 __user *size
+    pointer to the size of space available to receive the data
+  u32 flags
+    special handling options. LSM_FLAG_SINGLE indicates that only
+attributes associated with the LSM identified in the passed ctx be
+reported.
+
+Description
+  A NULL value for uctx can be used to get both the number of attributes
+and the size of the data.

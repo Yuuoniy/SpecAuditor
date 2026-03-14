@@ -1,0 +1,17 @@
+Function: int drm_dp_dsc_sink_supported_input_bpcs ( const u8 dsc_dpcd [ DP_DSC_RECEIVER_CAP_SIZE ] , u8 dsc_bpc [ 3 ] )
+
+Get all the input bits per component values supported by the DSC sink.
+
+Parameters
+  const u8 dsc_dpcd[DP_DSC_RECEIVER_CAP_SIZE]
+    DSC capabilities from DPCD
+  u8 dsc_bpc[3]
+    An array to be filled by this helper with supported
+input bpcs.
+
+Description
+  Read the DSC DPCD from the sink device to parse the supported bits per
+component values. This is used to populate the DSC parameters
+in the struct drm_dsc_config by the driver.
+Driver creates an infoframe using these parameters to populate struct drm_dsc_pps_infoframe . These are sent to the sink using DSC
+infoframe using the helper function drm_dsc_pps_infoframe_pack()

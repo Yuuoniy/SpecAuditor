@@ -1,0 +1,12 @@
+Function: int atomic_xchg_acquire ( atomic_t * v , int new )
+
+atomic exchange with acquire ordering
+
+Parameters
+  atomic_t *v
+    pointer to atomic_t
+  int new
+    int value to assign
+
+Description
+  Atomically updates v to new with acquire ordering.

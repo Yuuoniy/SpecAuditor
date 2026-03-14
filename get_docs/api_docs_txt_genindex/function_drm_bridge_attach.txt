@@ -1,0 +1,19 @@
+Function: int drm_bridge_attach ( struct drm_encoder * encoder , struct drm_bridge * bridge , struct drm_bridge * previous , enum drm_bridge_attach_flags flags )
+
+attach the bridge to an encoder’s chain
+
+Parameters
+  struct drm_encoder *encoder
+    DRM encoder
+  struct drm_bridge *bridge
+    bridge to attach
+  struct drm_bridge *previous
+    previous bridge in the chain (optional)
+  enum drm_bridge_attach_flags flags
+    DRM_BRIDGE_ATTACH_* flags
+
+Description
+  Called by a kms driver to link the bridge to an encoder’s chain. The previous
+argument specifies the previous bridge in the chain. If NULL, the bridge is
+linked directly at the encoder’s output. Otherwise it is linked at the
+previous bridge’s output.

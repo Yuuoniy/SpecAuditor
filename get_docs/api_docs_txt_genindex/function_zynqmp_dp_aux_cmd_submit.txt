@@ -1,0 +1,26 @@
+Function: int zynqmp_dp_aux_cmd_submit ( struct zynqmp_dp * dp , u32 cmd , u16 addr , u8 * buf , u8 bytes , u8 * reply )
+
+Submit aux command
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure
+  u32 cmd
+    aux command
+  u16 addr
+    aux address
+  u8 *buf
+    buffer for command data
+  u8 bytes
+    number of bytes for buf
+  u8 *reply
+    reply code to be returned
+
+Description
+  Submit an aux command. All aux related commands, native or i2c aux
+read/write, are submitted through this function. The function is mapped to
+the transfer function of struct drm_dp_aux . This function involves in
+multiple register reads/writes, thus synchronization is needed, and it is
+done by drm_dp_helper using hw_mutex . The calling thread goes into sleep
+if there’s no immediate reply to the command submission. The reply code is
+returned at reply if reply != NULL.

@@ -1,0 +1,15 @@
+Function: bool kthread_mod_delayed_work ( struct kthread_worker * worker , struct kthread_delayed_work * dwork , unsigned long delay )
+
+modify delay of or queue a kthread delayed work
+
+Parameters
+  struct kthread_worker *worker
+    kthread worker to use
+  struct kthread_delayed_work *dwork
+    kthread delayed work to queue
+  unsigned long delay
+    number of jiffies to wait before queuing
+
+Description
+  If dwork is idle, equivalent to kthread_queue_delayed_work() . Otherwise,
+modify dwork ’s timer so that it expires after delay . If delay is zero, work is guaranteed to be queued immediately.

@@ -1,0 +1,12 @@
+Function: struct vb2_buffer * vb2_find_buffer ( struct vb2_queue * q , u64 timestamp )
+
+Find a buffer with given timestamp
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  u64 timestamp
+    the timestamp to find.
+
+Description
+  Returns the buffer with the given timestamp , or NULL if not found.

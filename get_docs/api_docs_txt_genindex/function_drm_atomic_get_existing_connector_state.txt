@@ -1,0 +1,13 @@
+Function: struct drm_connector_state * drm_atomic_get_existing_connector_state ( const struct drm_atomic_state * state , struct drm_connector * connector )
+
+get connector state, if it exists
+
+Parameters
+  const struct drm_atomic_state *state
+    global atomic state object
+  struct drm_connector *connector
+    connector to grab
+
+Description
+  This function returns the connector state for the given connector,
+or NULL if the connector is not part of the global atomic state.

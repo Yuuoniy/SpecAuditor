@@ -1,0 +1,10 @@
+Function: void gpiochip_free_own_desc ( struct gpio_desc * desc )
+
+Free GPIO requested by the chip driver
+
+Parameters
+  struct gpio_desc *desc
+    GPIO descriptor to free
+
+Description
+  Function frees the given GPIO requested previously with gpiochip_request_own_desc() .

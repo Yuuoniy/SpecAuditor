@@ -1,0 +1,7 @@
+Function: const char * scsi_device_type ( unsigned type )
+
+Return 17-char string indicating device type.
+
+Parameters
+  unsigned type
+    type number to look up

@@ -1,0 +1,9 @@
+Struct: struct ipu3_uapi_yuvp1_iefd_vssnlm_cfg
+
+IEFd Vssnlm Lookup table
+
+Members
+  vss_lut_x
+    vss lookup table. See ipu3_uapi_vss_lut_x description
+  vss_lut_y
+    vss lookup table. See ipu3_uapi_vss_lut_y description

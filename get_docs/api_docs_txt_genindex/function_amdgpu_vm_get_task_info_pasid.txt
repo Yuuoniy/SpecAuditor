@@ -1,0 +1,13 @@
+Function: struct amdgpu_task_info * amdgpu_vm_get_task_info_pasid ( struct amdgpu_device * adev , u32 pasid )
+
+Extracts task info for a PASID.
+
+Parameters
+  struct amdgpu_device *adev
+    drm device pointer
+  u32 pasid
+    PASID identifier for VM
+
+Description
+  Returns the reference counted task_info structure, which must be
+referenced down with amdgpu_vm_put_task_info.

@@ -1,0 +1,17 @@
+Function: int usb_interface_id ( struct usb_configuration * config , struct usb_function * function )
+
+allocate an unused interface ID
+
+Parameters
+  struct usb_configuration *config
+    configuration associated with the interface
+  struct usb_function *function
+    function handling the interface
+
+Description
+  usb_interface_id() is called from usb_function. bind() callbacks to
+allocate new interface IDs.  The function driver will then store that
+ID in interface, association, CDC union, and other descriptors.  It
+will also handle any control requests targeted at that interface,
+particularly changing its altsetting via set_alt() .  There may
+also be class-specific or vendor-specific requests to handle.

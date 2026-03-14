@@ -1,0 +1,14 @@
+Function: int v4l2_subdev_routing_validate ( struct v4l2_subdev * sd , const struct v4l2_subdev_krouting * routing , enum v4l2_subdev_routing_restriction disallow )
+
+Verify that routes comply with driver constraints
+
+Parameters
+  struct v4l2_subdev *sd
+    The subdevice
+  const struct v4l2_subdev_krouting *routing
+    Routing to verify
+  enum v4l2_subdev_routing_restriction disallow
+    Restrictions on routes
+
+Description
+  This verifies that the given routing complies with the disallow constraints.

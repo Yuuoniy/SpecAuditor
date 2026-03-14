@@ -1,0 +1,14 @@
+Function: void * idr_find ( const struct idr * idr , unsigned long id )
+
+Return pointer for given ID.
+
+Parameters
+  const struct idr *idr
+    IDR handle.
+  unsigned long id
+    Pointer ID.
+
+Description
+  Looks up the pointer associated with this ID.  A NULL pointer may
+indicate that id is not allocated or that the NULL pointer was
+associated with this ID.

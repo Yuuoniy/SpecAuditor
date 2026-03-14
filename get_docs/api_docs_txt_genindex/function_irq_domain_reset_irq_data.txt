@@ -1,0 +1,7 @@
+Function: void irq_domain_reset_irq_data ( struct irq_data * irq_data )
+
+Clear hwirq, chip and chip_data in irq_data
+
+Parameters
+  struct irq_data *irq_data
+    The pointer to irq_data

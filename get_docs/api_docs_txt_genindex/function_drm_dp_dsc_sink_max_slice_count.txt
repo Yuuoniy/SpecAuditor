@@ -1,0 +1,16 @@
+Function: u8 drm_dp_dsc_sink_max_slice_count ( const u8 dsc_dpcd [ DP_DSC_RECEIVER_CAP_SIZE ] , bool is_edp )
+
+Get the max slice count supported by the DSC sink.
+
+Parameters
+  const u8 dsc_dpcd[DP_DSC_RECEIVER_CAP_SIZE]
+    DSC capabilities from DPCD
+  bool is_edp
+    true if its eDP, false for DP
+
+Description
+  Read the slice capabilities DPCD register from DSC sink to get
+the maximum slice count supported. This is used to populate
+the DSC parameters in the struct drm_dsc_config by the driver.
+Driver creates an infoframe using these parameters to populate struct drm_dsc_pps_infoframe . These are sent to the sink using DSC
+infoframe using the helper function drm_dsc_pps_infoframe_pack()

@@ -1,0 +1,10 @@
+Function: bool schedule_work ( struct work_struct * work )
+
+put work task in global workqueue
+
+Parameters
+  struct work_struct *work
+    job to be done
+
+Description
+  Returns false if work was already on the kernel-global workqueue and true otherwise.

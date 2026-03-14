@@ -1,0 +1,9 @@
+Struct: struct drm_asahi_get_time
+
+Arguments passed to DRM_IOCTL_ASAHI_GET_TIME
+
+Members
+  flags
+    MBZ.
+  gpu_timestamp
+    On return, the GPU timestamp in nanoseconds.

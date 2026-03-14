@@ -1,0 +1,9 @@
+Function: void zynqmp_disp_blend_layer_disable ( struct zynqmp_disp * disp , struct zynqmp_disp_layer * layer )
+
+Disable a layer
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller
+  struct zynqmp_disp_layer *layer
+    The layer

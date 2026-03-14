@@ -1,0 +1,18 @@
+Function: int blk_rq_map_kern ( struct request * rq , void * kbuf , unsigned int len , gfp_t gfp_mask )
+
+map kernel data to a request, for passthrough requests
+
+Parameters
+  struct request *rq
+    request to fill
+  void *kbuf
+    the kernel buffer
+  unsigned int len
+    length of user data
+  gfp_t gfp_mask
+    memory allocation flags
+
+Description
+  Data will be mapped directly if possible. Otherwise a bounce
+buffer is used. Can be called multiple times to append multiple
+buffers.

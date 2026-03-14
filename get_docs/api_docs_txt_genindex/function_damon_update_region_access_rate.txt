@@ -1,0 +1,15 @@
+Function: void damon_update_region_access_rate ( struct damon_region * r , bool accessed , struct damon_attrs * attrs )
+
+Update the access rate of a region.
+
+Parameters
+  struct damon_region *r
+    The DAMON region to update for its access check result.
+  bool accessed
+    Whether the region has accessed during last sampling interval.
+  struct damon_attrs *attrs
+    The damon_attrs of the DAMON context.
+
+Description
+  Update the access rate of a region with the region’s last sampling interval
+access check result.

@@ -1,0 +1,15 @@
+Function: int security_inode_copy_up ( struct dentry * src , struct cred * * new )
+
+Create new creds for an overlayfs copy-up op
+
+Parameters
+  struct dentry *src
+    union dentry of copy-up file
+  struct cred **new
+    newly created creds
+
+Description
+  A file is about to be copied up from lower layer to upper layer of overlay
+filesystem. Security module can prepare a set of new creds and modify as
+need be and return new creds. Caller will switch to new creds temporarily to
+create new file and release newly allocated creds.

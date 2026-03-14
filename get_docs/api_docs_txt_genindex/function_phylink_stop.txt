@@ -1,0 +1,13 @@
+Function: void phylink_stop ( struct phylink * pl )
+
+stop a phylink instance
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+
+Description
+  Stop the phylink instance specified by pl . This should be called from the
+network device driver’s struct net_device_ops ndo_stop() method.  The
+network device’s carrier state should not be changed prior to calling this
+function.

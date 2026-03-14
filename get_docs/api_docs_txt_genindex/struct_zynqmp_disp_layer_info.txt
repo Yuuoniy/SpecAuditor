@@ -1,0 +1,11 @@
+Struct: struct zynqmp_disp_layer_info
+
+Static layer information
+
+Members
+  formats
+    Array of supported formats
+  num_formats
+    Number of formats in formats array
+  num_channels
+    Number of DMA channels

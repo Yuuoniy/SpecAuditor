@@ -1,0 +1,18 @@
+Function: int write_bbt ( struct nand_chip * this , uint8_t * buf , struct nand_bbt_descr * td , struct nand_bbt_descr * md , int chipsel )
+
+[GENERIC] (Re)write the bad block table
+
+Parameters
+  struct nand_chip *this
+    NAND chip object
+  uint8_t *buf
+    temporary buffer
+  struct nand_bbt_descr *td
+    descriptor for the bad block table
+  struct nand_bbt_descr *md
+    descriptor for the bad block table mirror
+  int chipsel
+    selector for a specific chip, -1 for all
+
+Description
+  (Re)write the bad block table.

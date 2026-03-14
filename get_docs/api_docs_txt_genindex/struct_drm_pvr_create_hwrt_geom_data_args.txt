@@ -1,0 +1,15 @@
+Struct: struct drm_pvr_create_hwrt_geom_data_args
+
+Geometry data arguments used for struct drm_pvr_ioctl_create_hwrt_dataset_args .geom_data_args.
+
+Members
+  tpc_dev_addr
+    [IN] Tail pointer cache GPU virtual address.
+  tpc_size
+    [IN] Size of TPC, in bytes.
+  tpc_stride
+    [IN] Stride between layers in TPC, in pages
+  vheap_table_dev_addr
+    [IN] VHEAP table GPU virtual address.
+  rtc_dev_addr
+    [IN] Render Target Cache virtual address.

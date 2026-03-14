@@ -1,0 +1,11 @@
+Function: void dvb_frontend_detach ( struct dvb_frontend * fe )
+
+Detaches and frees frontend specific data
+
+Parameters
+  struct dvb_frontend *fe
+    pointer to struct dvb_frontend
+
+Description
+  This function should be called after dvb_unregister_frontend() . It
+calls the SEC, tuner and demod release functions: dvb_frontend_ops.release_sec , dvb_frontend_ops.tuner_ops .release, dvb_frontend_ops.analog_ops .release and dvb_frontend_ops.release .

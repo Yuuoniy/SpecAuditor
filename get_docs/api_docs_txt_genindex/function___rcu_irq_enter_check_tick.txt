@@ -1,0 +1,16 @@
+Function: void __rcu_irq_enter_check_tick ( void )
+
+Enable scheduler tick on CPU if RCU needs it.
+
+Parameters
+  void
+    no arguments
+
+Description
+  The scheduler tick is not normally enabled when CPUs enter the kernel
+from nohz_full userspace execution.  After all, nohz_full userspace
+execution is an RCU quiescent state and the time executing in the kernel
+is quite short.  Except of course when it isn’t.  And it is not hard to
+cause a large system to spend tens of seconds or even minutes looping
+in the kernel, which can cause a number of problems, include RCU CPU
+stall warnings.

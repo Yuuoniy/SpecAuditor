@@ -1,0 +1,7 @@
+Function: const char * snd_pcm_format_name ( snd_pcm_format_t format )
+
+Return a name string for the given PCM format
+
+Parameters
+  snd_pcm_format_t format
+    PCM format

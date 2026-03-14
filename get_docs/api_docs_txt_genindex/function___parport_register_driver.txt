@@ -1,0 +1,16 @@
+Function: int __parport_register_driver ( struct parport_driver * drv , struct module * owner , const char * mod_name )
+
+register a parallel port device driver
+
+Parameters
+  struct parport_driver *drv
+    structure describing the driver
+  struct module *owner
+    owner module of drv
+  const char *mod_name
+    module name string
+
+Description
+  This can be called by a parallel port device driver in order
+to receive notifications about ports being found in the
+system, as well as ports no longer available.

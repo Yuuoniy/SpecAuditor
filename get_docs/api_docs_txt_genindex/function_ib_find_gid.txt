@@ -1,0 +1,14 @@
+Function: int ib_find_gid ( struct ib_device * device , union ib_gid * gid , u32 * port_num , u16 * index )
+
+Returns the port number and GID table index where a specified GID value occurs. Its searches only for IB link layer.
+
+Parameters
+  struct ib_device *device
+    The device to query.
+  union ib_gid *gid
+    The GID value to search for.
+  u32 *port_num
+    The port number of the device where the GID value was found.
+  u16 *index
+    The index into the GID table where the GID was found.  This
+parameter may be NULL.

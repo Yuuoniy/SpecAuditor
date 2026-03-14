@@ -1,0 +1,15 @@
+Function: int amdgpu_dm_check_crtc_color_mgmt ( struct dm_crtc_state * crtc , bool check_only )
+
+Check if DRM color props are programmable by DC.
+
+Parameters
+  struct dm_crtc_state *crtc
+    amdgpu_dm crtc state
+  bool check_only
+    only check color state without update dc stream
+
+Description
+  This function just verifies CRTC LUT sizes, if there is enough space for
+output transfer function and if its parameters can be calculated by AMD
+color module. It also adjusts some settings for programming CRTC degamma at
+plane stage, using plane DGM block.

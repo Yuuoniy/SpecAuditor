@@ -1,0 +1,15 @@
+Macro: gpiochip_add_data
+
+
+
+Parameters
+  gc
+    the chip to register, with gc->base initialized
+  data
+    driver-private data associated with this chip
+
+Description
+  When gpiochip_add_data() is called very early during boot, so that GPIOs
+can be freely used, the gc->parent device must be registered before
+the gpio framework’s arch_initcall() .  Otherwise sysfs initialization
+for GPIOs will fail rudely.

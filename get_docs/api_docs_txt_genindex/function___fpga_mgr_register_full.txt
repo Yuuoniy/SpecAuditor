@@ -1,0 +1,15 @@
+Function: struct fpga_manager * __fpga_mgr_register_full ( struct device * parent , const struct fpga_manager_info * info , struct module * owner )
+
+create and register an FPGA Manager device
+
+Parameters
+  struct device *parent
+    fpga manager device from pdev
+  const struct fpga_manager_info *info
+    parameters for fpga manager
+  struct module *owner
+    owner module containing the ops
+
+Description
+  The caller of this function is responsible for calling fpga_mgr_unregister() .
+Using devm_fpga_mgr_register_full() instead is recommended.

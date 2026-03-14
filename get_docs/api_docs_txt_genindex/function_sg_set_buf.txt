@@ -1,0 +1,11 @@
+Function: void sg_set_buf ( struct scatterlist * sg , const void * buf , unsigned int buflen )
+
+Set sg entry to point at given data
+
+Parameters
+  struct scatterlist *sg
+    SG entry
+  const void *buf
+    Data
+  unsigned int buflen
+    Data length

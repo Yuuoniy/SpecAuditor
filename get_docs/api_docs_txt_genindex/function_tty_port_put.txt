@@ -1,0 +1,10 @@
+Function: void tty_port_put ( struct tty_port * port )
+
+drop a reference to tty_port
+
+Parameters
+  struct tty_port *port
+    port to drop a reference of (can be NULL)
+
+Description
+  The final put will destroy and free up the port using port->ops-> destruct() hook, or using kfree() if not provided.

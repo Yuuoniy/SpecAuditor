@@ -1,0 +1,12 @@
+Function: void security_inode_post_removexattr ( struct dentry * dentry , const char * name )
+
+Update the inode after a removexattr op
+
+Parameters
+  struct dentry *dentry
+    file
+  const char *name
+    xattr name
+
+Description
+  Update the inode after a successful removexattr operation.

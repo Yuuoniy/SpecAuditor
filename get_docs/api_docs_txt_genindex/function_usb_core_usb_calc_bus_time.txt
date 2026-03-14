@@ -1,0 +1,13 @@
+Function: long usb_calc_bus_time ( int speed , int is_input , int isoc , int bytecount )
+
+approximate periodic transaction time in nanoseconds
+
+Parameters
+  int speed
+    from dev->speed; USB_SPEED_{LOW,FULL,HIGH}
+  int is_input
+    true iff the transaction sends data to the host
+  int isoc
+    true for isochronous transactions, false for interrupt ones
+  int bytecount
+    how many bytes in the transaction.

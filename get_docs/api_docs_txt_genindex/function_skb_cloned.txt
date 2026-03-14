@@ -1,0 +1,12 @@
+Function: int skb_cloned ( const struct sk_buff * skb )
+
+is the buffer a clone
+
+Parameters
+  const struct sk_buff *skb
+    buffer to check
+
+Description
+  Returns true if the buffer was generated with skb_clone() and is
+one of multiple shared copies of the buffer. Cloned buffers are
+shared data so must not be written to under normal circumstances.

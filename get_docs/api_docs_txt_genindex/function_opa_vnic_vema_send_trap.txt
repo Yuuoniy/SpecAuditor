@@ -1,0 +1,21 @@
+Function: void opa_vnic_vema_send_trap ( struct opa_vnic_adapter * adapter , struct __opa_veswport_trap * data , u32 lid )
+
+This function sends a trap to the EM
+
+Parameters
+  struct opa_vnic_adapter *adapter
+    pointer to vnic adapter
+  struct __opa_veswport_trap *data
+    pointer to trap data filled by calling function
+  u32 lid
+    issuers lid (encap_slid from vesw_port_info)
+
+Description
+  This function is called from the VNIC driver to send a trap if there
+is somethng the EM should be notified about. These events currently
+are
+1) UNICAST INTERFACE MACADDRESS changes
+2) MULTICAST INTERFACE MACADDRESS changes
+3) ETHERNET LINK STATUS changes
+While allocating the send mad the remote site qpn used is 1
+as this is the well known QP.

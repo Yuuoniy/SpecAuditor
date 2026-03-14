@@ -1,0 +1,14 @@
+Macro: for_each_pwq
+
+
+
+Parameters
+  pwq
+    iteration cursor
+  wq
+    the target workqueue
+
+Description
+  This must be called either with wq->mutex held or RCU read locked.
+If the pwq needs to be used beyond the locking in effect, the caller is
+responsible for guaranteeing that the pwq stays online.

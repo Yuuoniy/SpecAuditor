@@ -1,0 +1,11 @@
+Function: int pcie_flr ( struct pci_dev * dev )
+
+initiate a PCIe function level reset
+
+Parameters
+  struct pci_dev *dev
+    device to reset
+
+Description
+  Initiate a function level reset unconditionally on dev without
+checking any flags and DEVCAP

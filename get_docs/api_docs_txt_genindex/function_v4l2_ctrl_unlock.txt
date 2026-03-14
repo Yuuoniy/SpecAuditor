@@ -1,0 +1,7 @@
+Function: void v4l2_ctrl_unlock ( struct v4l2_ctrl * ctrl )
+
+Helper function to unlock the handler associated with the control.
+
+Parameters
+  struct v4l2_ctrl *ctrl
+    The control to unlock.

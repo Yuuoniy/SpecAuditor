@@ -1,0 +1,9 @@
+Function: int memblock_clear_kho_scratch ( phys_addr_t base , phys_addr_t size )
+
+Clear MEMBLOCK_KHO_SCRATCH flag for a specified region.
+
+Parameters
+  phys_addr_t base
+    the base phys addr of the region
+  phys_addr_t size
+    the size of the region

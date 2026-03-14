@@ -1,0 +1,10 @@
+Function: void trace_block_dirty_buffer ( struct buffer_head * bh )
+
+mark a buffer dirty
+
+Parameters
+  struct buffer_head *bh
+    buffer_head being dirtied
+
+Description
+  Called from mark_buffer_dirty() .

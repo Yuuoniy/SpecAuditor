@@ -1,0 +1,11 @@
+Function: void * netdev_lower_get_first_private_rcu ( struct net_device * dev )
+
+Get the first ->private from the lower neighbour list, RCU variant
+
+Parameters
+  struct net_device *dev
+    device
+
+Description
+  Gets the first netdev_adjacent->private from the dev’s lower neighbour
+list. The caller must hold RCU read lock.

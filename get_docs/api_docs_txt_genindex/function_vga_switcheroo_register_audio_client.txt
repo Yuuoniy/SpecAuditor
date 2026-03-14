@@ -1,0 +1,15 @@
+Function: int vga_switcheroo_register_audio_client ( struct pci_dev * pdev , const struct vga_switcheroo_client_ops * ops , struct pci_dev * vga_dev )
+
+register audio client
+
+Parameters
+  struct pci_dev *pdev
+    client pci device
+  const struct vga_switcheroo_client_ops *ops
+    client callbacks
+  struct pci_dev *vga_dev
+    pci device which is bound to current audio client
+
+Description
+  Register audio client (audio device on a GPU). The client is assumed
+to use runtime PM. Beforehand, vga_switcheroo_client_probe_defer() shall be called to ensure that all prerequisites are met.

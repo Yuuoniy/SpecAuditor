@@ -1,0 +1,13 @@
+Function: void hrtimer_start ( struct hrtimer * timer , ktime_t tim , const enum hrtimer_mode mode )
+
+(re)start an hrtimer
+
+Parameters
+  struct hrtimer *timer
+    the timer to be added
+  ktime_t tim
+    expiry time
+  const enum hrtimer_mode mode
+    timer mode: absolute (HRTIMER_MODE_ABS) or
+relative (HRTIMER_MODE_REL), and pinned (HRTIMER_MODE_PINNED);
+softirq based mode is considered for debug purpose only!

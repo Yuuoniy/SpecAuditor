@@ -1,0 +1,7 @@
+Function: int drm_dsc_compute_rc_parameters ( struct drm_dsc_config * vdsc_cfg )
+
+Write rate control parameters to the dsc configuration defined in struct drm_dsc_config in accordance with the DSC 1.2 specification. Some configuration fields must be present beforehand.
+
+Parameters
+  struct drm_dsc_config *vdsc_cfg
+    DSC Configuration data partially filled by driver

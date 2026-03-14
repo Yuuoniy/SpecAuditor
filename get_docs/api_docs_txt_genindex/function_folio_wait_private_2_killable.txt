@@ -1,0 +1,11 @@
+Function: int folio_wait_private_2_killable ( struct folio * folio )
+
+Wait for PG_private_2 to be cleared on a folio.
+
+Parameters
+  struct folio *folio
+    The folio to wait on.
+
+Description
+  Wait for PG_private_2 to be cleared on a folio or until a fatal signal is
+received by the calling task.

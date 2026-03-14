@@ -1,0 +1,13 @@
+Function: int i2c_add_numbered_adapter ( struct i2c_adapter * adap )
+
+declare i2c adapter, use static bus number
+
+Parameters
+  struct i2c_adapter *adap
+    the adapter to register (with adap->nr initialized)
+
+Description
+  This routine is used to declare an I2C adapter when its bus number
+matters.  For example, use it for I2C adapters from system-on-chip CPUs,
+or otherwise built in to the system’s mainboard, and where i2c_board_info
+is used to properly configure I2C devices.

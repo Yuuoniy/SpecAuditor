@@ -1,0 +1,10 @@
+Macro: genradix_init
+
+
+
+Parameters
+  _radix
+    genradix to initialize
+
+Description
+  Does not fail

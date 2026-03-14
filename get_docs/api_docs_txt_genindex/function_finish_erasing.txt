@@ -1,0 +1,7 @@
+Function: void finish_erasing ( struct n_tty_data * ldata )
+
+complete erase
+
+Parameters
+  struct n_tty_data *ldata
+    n_tty data

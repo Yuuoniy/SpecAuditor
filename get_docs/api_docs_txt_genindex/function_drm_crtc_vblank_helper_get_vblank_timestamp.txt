@@ -1,0 +1,22 @@
+Function: bool drm_crtc_vblank_helper_get_vblank_timestamp ( struct drm_crtc * crtc , int * max_error , ktime_t * vblank_time , bool in_vblank_irq )
+
+precise vblank timestamp helper
+
+Parameters
+  struct drm_crtc *crtc
+    CRTC whose vblank timestamp to retrieve
+  int *max_error
+    Desired maximum allowable error in timestamps (nanosecs)
+On return contains true maximum error of timestamp
+  ktime_t *vblank_time
+    Pointer to time which should receive the timestamp
+  bool in_vblank_irq
+    True when called from drm_crtc_handle_vblank() .  Some drivers
+need to apply some workarounds for gpu-specific vblank irq quirks
+if flag is set.
+
+Description
+  Implements calculation of exact vblank timestamps from given drm_display_mode
+timings and current video scanout position of a CRTC. This can be directly
+used as the drm_crtc_funcs.get_vblank_timestamp implementation of a kms
+driver if drm_crtc_helper_funcs.get_scanout_position is implemented.

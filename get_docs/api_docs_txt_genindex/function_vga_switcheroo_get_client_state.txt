@@ -1,0 +1,11 @@
+Function: enum vga_switcheroo_state vga_switcheroo_get_client_state ( struct pci_dev * pdev )
+
+obtain power state of a given client
+
+Parameters
+  struct pci_dev *pdev
+    client pci device
+
+Description
+  Obtain power state of a given client as seen from vga_switcheroo.
+The function is only called from hda_intel.c.

@@ -1,0 +1,11 @@
+Function: void sg_mark_end ( struct scatterlist * sg )
+
+Mark the end of the scatterlist
+
+Parameters
+  struct scatterlist *sg
+    SG entryScatterlist
+
+Description
+  Marks the passed in sg entry as the termination point for the sg
+table. A call to sg_next() on this entry will return NULL.

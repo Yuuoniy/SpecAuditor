@@ -1,0 +1,11 @@
+Function: int drm_plane_create_alpha_property ( struct drm_plane * plane )
+
+create a new alpha property
+
+Parameters
+  struct drm_plane *plane
+    drm plane
+
+Description
+  This function creates a generic, mutable, alpha property and enables support
+for it in the DRM core. It is attached to plane .

@@ -1,0 +1,7 @@
+Function: void wiphy_rfkill_stop_polling ( struct wiphy * wiphy )
+
+stop polling rfkill
+
+Parameters
+  struct wiphy *wiphy
+    the wiphy

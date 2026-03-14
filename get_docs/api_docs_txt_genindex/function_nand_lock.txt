@@ -1,0 +1,11 @@
+Function: int nand_lock ( struct mtd_info * mtd , loff_t ofs , uint64_t len )
+
+[MTD Interface] Lock the NAND flash
+
+Parameters
+  struct mtd_info *mtd
+    MTD device structure
+  loff_t ofs
+    offset byte address
+  uint64_t len
+    number of bytes to lock (must be a multiple of block/page size)

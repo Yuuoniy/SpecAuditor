@@ -1,0 +1,11 @@
+Function: void bitmap_to_arr64 ( u64 * buf , const unsigned long * bitmap , unsigned int nbits )
+
+copy the contents of bitmap to a u64 array of bits
+
+Parameters
+  u64 *buf
+    array of u64 (in host byte order), the dest bitmap
+  const unsigned long *bitmap
+    array of unsigned longs, the source bitmap
+  unsigned int nbits
+    number of bits in bitmap

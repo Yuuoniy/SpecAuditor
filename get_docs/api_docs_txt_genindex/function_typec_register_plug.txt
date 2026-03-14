@@ -1,0 +1,14 @@
+Function: struct typec_plug * typec_register_plug ( struct typec_cable * cable , struct typec_plug_desc * desc )
+
+Register a USB Type-C Cable Plug
+
+Parameters
+  struct typec_cable *cable
+    USB Type-C Cable with the plug
+  struct typec_plug_desc *desc
+    Description of the cable plug
+
+Description
+  Registers a device for USB Type-C Cable Plug described in desc . A USB Type-C
+Cable Plug represents a plug with electronics in it that can response to USB
+Power Delivery SOP Prime or SOP Double Prime packages.

@@ -1,0 +1,10 @@
+Function: void tty_reset_termios ( struct tty_struct * tty )
+
+reset terminal state
+
+Parameters
+  struct tty_struct *tty
+    tty to reset
+
+Description
+  Restore a terminal to the driver default state.

@@ -1,0 +1,10 @@
+Function: int pci_try_reset_function ( struct pci_dev * dev )
+
+quiesce and reset a PCI device function
+
+Parameters
+  struct pci_dev *dev
+    PCI device to reset
+
+Description
+  Same as above, except return -EAGAIN if unable to lock device.

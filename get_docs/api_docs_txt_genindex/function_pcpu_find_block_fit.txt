@@ -1,0 +1,22 @@
+Function: int pcpu_find_block_fit ( struct pcpu_chunk * chunk , int alloc_bits , size_t align , bool pop_only )
+
+finds the block index to start searching
+
+Parameters
+  struct pcpu_chunk *chunk
+    chunk of interest
+  int alloc_bits
+    size of request in allocation units
+  size_t align
+    alignment of area (max PAGE_SIZE bytes)
+  bool pop_only
+    use populated regions only
+
+Description
+  Given a chunk and an allocation spec, find the offset to begin searching
+for a free region.  This iterates over the bitmap metadata blocks to
+find an offset that will be guaranteed to fit the requirements.  It is
+not quite first fit as if the allocation does not fit in the contig hint
+of a block or chunk, it is skipped.  This errs on the side of caution
+to prevent excess iteration.  Poor alignment can cause the allocator to
+skip over blocks and chunks that have valid free areas.

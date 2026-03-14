@@ -1,0 +1,9 @@
+Function: int mipi_dsi_dcs_get_power_mode ( struct mipi_dsi_device * dsi , u8 * mode )
+
+query the display module’s current power mode
+
+Parameters
+  struct mipi_dsi_device *dsi
+    DSI peripheral device
+  u8 *mode
+    return location for the current power mode

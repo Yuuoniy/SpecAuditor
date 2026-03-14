@@ -1,0 +1,3 @@
+Enum: enum phy_interface_t
+
+Interface Mode definitions

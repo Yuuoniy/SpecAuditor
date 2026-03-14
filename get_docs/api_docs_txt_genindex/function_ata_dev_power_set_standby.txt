@@ -1,0 +1,11 @@
+Function: void ata_dev_power_set_standby ( struct ata_device * dev )
+
+Set a device power mode to standby
+
+Parameters
+  struct ata_device *dev
+    target device
+
+Description
+  Issue a STANDBY IMMEDIATE command to set a device power mode to standby.
+For an HDD device, this spins down the disks.

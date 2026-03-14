@@ -1,0 +1,9 @@
+Function: void debug_set_level ( debug_info_t * id , int new_level )
+
+Sets new actual debug level if new_level is valid.
+
+Parameters
+  debug_info_t *id
+    handle for debug log
+  int new_level
+    new debug level

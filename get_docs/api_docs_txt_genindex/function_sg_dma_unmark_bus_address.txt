@@ -1,0 +1,10 @@
+Function: void sg_dma_unmark_bus_address ( struct scatterlist * sg )
+
+Unmark the scatterlist entry as a bus address
+
+Parameters
+  struct scatterlist *sg
+    SG entry
+
+Description
+  Clears the bus address mark.

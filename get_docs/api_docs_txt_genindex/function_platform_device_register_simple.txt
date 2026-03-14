@@ -1,0 +1,20 @@
+Function: struct platform_device * platform_device_register_simple ( const char * name , int id , const struct resource * res , unsigned int num )
+
+add a platform-level device and its resources
+
+Parameters
+  const char *name
+    base name of the device we’re adding
+  int id
+    instance id
+  const struct resource *res
+    set of resources that needs to be allocated for the device
+  unsigned int num
+    number of resources
+
+Description
+  This function creates a simple platform device that requires minimal
+resource and memory management. Canned release function freeing memory
+allocated for the device allows drivers using such devices to be
+unloaded without waiting for the last reference to the device to be
+dropped.

@@ -1,0 +1,18 @@
+Function: struct rs_control * init_rs_non_canonical ( int symsize , int ( * gffunc ) ( int ) , int fcr , int prim , int nroots )
+
+Allocate rs control struct for fields with non-canonical representation
+
+Parameters
+  int symsize
+    the symbol size (number of bits)
+  int (*gffunc)(int)
+    pointer to function to generate the next field element,
+or the multiplicative identity element if given 0.  Used
+instead of gfpoly if gfpoly is 0
+  int fcr
+    the first consecutive root of the rs code generator polynomial
+in index form
+  int prim
+    primitive element to generate polynomial roots
+  int nroots
+    RS code generator polynomial degree (number of roots)

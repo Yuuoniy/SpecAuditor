@@ -1,0 +1,14 @@
+Function: void * mas_next_range ( struct ma_state * mas , unsigned long max )
+
+Advance the maple state to the next range
+
+Parameters
+  struct ma_state *mas
+    The maple state
+  unsigned long max
+    The maximum index to check.
+
+Description
+  Sets mas->index and mas->last to the range.
+Must hold rcu_read_lock or the write lock.
+Can return the zero entry.

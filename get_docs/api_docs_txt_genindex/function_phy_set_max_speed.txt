@@ -1,0 +1,14 @@
+Function: void phy_set_max_speed ( struct phy_device * phydev , u32 max_speed )
+
+Set the maximum speed the PHY should support
+
+Parameters
+  struct phy_device *phydev
+    The phy_device struct
+  u32 max_speed
+    Maximum speed
+
+Description
+  The PHY might be more capable than the MAC. For example a Fast Ethernet
+is connected to a 1G PHY. This function allows the MAC to indicate its
+maximum speed, and so limit what the PHY will advertise.

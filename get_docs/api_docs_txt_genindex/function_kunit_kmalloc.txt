@@ -1,0 +1,14 @@
+Function: void * kunit_kmalloc ( struct kunit * test , size_t size , gfp_t gfp )
+
+Like kmalloc() except the allocation is test managed .
+
+Parameters
+  struct kunit *test
+    The test context object.
+  size_t size
+    The size in bytes of the desired memory.
+  gfp_t gfp
+    flags passed to underlying kmalloc() .
+
+Description
+  See kmalloc() and kunit_kmalloc_array() for more information.

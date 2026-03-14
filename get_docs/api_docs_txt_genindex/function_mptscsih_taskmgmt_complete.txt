@@ -1,0 +1,17 @@
+Function: int mptscsih_taskmgmt_complete ( MPT_ADAPTER * ioc , MPT_FRAME_HDR * mf , MPT_FRAME_HDR * mr )
+
+Registered with Fusion MPT base driver
+
+Parameters
+  MPT_ADAPTER *ioc
+    Pointer to MPT_ADAPTER structure
+  MPT_FRAME_HDR *mf
+    Pointer to SCSI task mgmt request frame
+  MPT_FRAME_HDR *mr
+    Pointer to SCSI task mgmt reply frame
+
+Description
+  This routine is called from mptbase.c:: mpt_interrupt() at the completion
+of any SCSI task management request.
+This routine is registered with the MPT (base) driver at driver
+load/init time via the mpt_register() API call.

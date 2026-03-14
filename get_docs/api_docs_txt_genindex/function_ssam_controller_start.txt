@@ -1,0 +1,7 @@
+Function: int ssam_controller_start ( struct ssam_controller * ctrl )
+
+Start the receiver and transmitter threads of the controller.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller.

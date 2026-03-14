@@ -1,0 +1,16 @@
+Macro: DEVICE_ATTR
+
+
+
+Parameters
+  _name
+    Attribute name.
+  _mode
+    File mode.
+  _show
+    Show handler. Optional, but mandatory if attribute is readable.
+  _store
+    Store handler. Optional, but mandatory if attribute is writable.
+
+Description
+  Convenience macro for defining a struct device_attribute .

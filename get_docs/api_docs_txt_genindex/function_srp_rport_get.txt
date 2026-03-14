@@ -1,0 +1,7 @@
+Function: void srp_rport_get ( struct srp_rport * rport )
+
+increment rport reference count
+
+Parameters
+  struct srp_rport *rport
+    SRP target port.

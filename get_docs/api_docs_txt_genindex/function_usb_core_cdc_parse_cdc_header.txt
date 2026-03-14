@@ -1,0 +1,18 @@
+Function: int cdc_parse_cdc_header ( struct usb_cdc_parsed_header * hdr , struct usb_interface * intf , u8 * buffer , int buflen )
+
+parse the extra headers present in CDC devices
+
+Parameters
+  struct usb_cdc_parsed_header *hdr
+    the place to put the results of the parsing
+  struct usb_interface *intf
+    the interface for which parsing is requested
+  u8 *buffer
+    pointer to the extra headers to be parsed
+  int buflen
+    length of the extra headers
+
+Description
+  This evaluates the extra headers present in CDC devices which
+bind the interfaces for data and control and provide details
+about the capabilities of the device.

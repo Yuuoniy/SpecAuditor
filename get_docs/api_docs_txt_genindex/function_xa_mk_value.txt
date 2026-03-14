@@ -1,0 +1,7 @@
+Function: void * xa_mk_value ( unsigned long v )
+
+Create an XArray entry from an integer.
+
+Parameters
+  unsigned long v
+    Value to store in XArray.

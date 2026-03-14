@@ -1,0 +1,11 @@
+Function: dma_addr_t sg_phys ( struct scatterlist * sg )
+
+Return physical address of an sg entry
+
+Parameters
+  struct scatterlist *sg
+    SG entry
+
+Description
+  This calls page_to_phys() on the page in this sg entry, and adds the
+sg offset. The caller must know that it is legal to call page_to_phys() on the sg page.

@@ -1,0 +1,11 @@
+Function: void clk_restore_context ( void )
+
+restore clock context after poweroff
+
+Parameters
+  void
+    no arguments
+
+Description
+  This occurs with all clocks enabled. Occurs deep within the resume code
+so locking is not necessary.

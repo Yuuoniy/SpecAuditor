@@ -1,0 +1,13 @@
+Function: int drm_vblank_init ( struct drm_device * dev , unsigned int num_crtcs )
+
+initialize vblank support
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  unsigned int num_crtcs
+    number of CRTCs supported by dev
+
+Description
+  This function initializes vblank support for num_crtcs display pipelines.
+Cleanup is handled automatically through a cleanup function added with drmm_add_action_or_reset() .

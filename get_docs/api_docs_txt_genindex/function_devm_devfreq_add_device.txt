@@ -1,0 +1,18 @@
+Function: struct devfreq * devm_devfreq_add_device ( struct device * dev , struct devfreq_dev_profile * profile , const char * governor_name , void * data )
+
+Resource-managed devfreq_add_device()
+
+Parameters
+  struct device *dev
+    the device to add devfreq feature.
+  struct devfreq_dev_profile *profile
+    device-specific profile to run devfreq.
+  const char *governor_name
+    name of the policy to choose frequency.
+  void *data
+    devfreq driver pass to governors, governor should not change it.
+
+Description
+  This function manages automatically the memory of devfreq device using device
+resource management and simplify the free operation for memory of devfreq
+device.

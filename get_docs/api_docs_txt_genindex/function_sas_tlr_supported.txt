@@ -1,0 +1,11 @@
+Function: unsigned int sas_tlr_supported ( struct scsi_device * sdev )
+
+checking TLR bit in vpd 0x90
+
+Parameters
+  struct scsi_device *sdev
+    scsi device struct
+
+Description
+  Check Transport Layer Retries are supported or not.
+If vpd page 0x90 is present, TRL is supported.

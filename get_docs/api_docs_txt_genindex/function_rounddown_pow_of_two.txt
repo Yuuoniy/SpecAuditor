@@ -1,0 +1,12 @@
+Function: rounddown_pow_of_two
+
+
+
+Parameters
+  n
+    parameter
+
+Description
+  round the given value down to the nearest power of two
+- the result is undefined when n == 0
+- this can be used to initialise global variables from constant data

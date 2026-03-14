@@ -1,0 +1,23 @@
+Function: struct drm_panthor_tiler_heap_create
+
+Arguments passed to DRM_IOCTL_PANTHOR_TILER_HEAP_CREATE
+
+Members
+  vm_id
+    VM ID the tiler heap should be mapped to
+  initial_chunk_count
+    Initial number of chunks to allocate. Must be at least one.
+  chunk_size
+    Chunk size. Must be page-aligned and lie in the [128k:8M] range.
+  max_chunks
+    Maximum number of chunks that can be allocated. Must be at least initial_chunk_count .
+  target_in_flight
+    Maximum number of in-flight render passes. If the heap has more than tiler jobs in-flight, the FW will wait for render
+passes to finish before queuing new tiler jobs.
+  handle
+    Returned heap handle. Passed back to DESTROY_TILER_HEAP.
+  tiler_heap_ctx_gpu_va
+    Returned heap GPU virtual address returned
+  first_heap_chunk_gpu_va
+    First heap chunk. The tiler heap is formed of heap chunks forming a single-link list. This
+is the first element in the list.

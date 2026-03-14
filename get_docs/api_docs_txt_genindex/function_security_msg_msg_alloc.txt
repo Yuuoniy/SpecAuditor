@@ -1,0 +1,11 @@
+Function: int security_msg_msg_alloc ( struct msg_msg * msg )
+
+Allocate a sysv ipc message LSM blob
+
+Parameters
+  struct msg_msg *msg
+    message structure
+
+Description
+  Allocate and attach a security structure to the msg->security field.  The
+security field is initialized to NULL when the structure is first created.

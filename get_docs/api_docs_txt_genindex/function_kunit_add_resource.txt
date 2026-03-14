@@ -1,0 +1,17 @@
+Function: int kunit_add_resource ( struct kunit * test , kunit_resource_init_t init , kunit_resource_free_t free , struct kunit_resource * res , void * data )
+
+Add a test managed resource .
+
+Parameters
+  struct kunit *test
+    The test context object.
+  kunit_resource_init_t init
+    a user-supplied function to initialize the result (if needed).  If
+none is supplied, the resource data value is simply set to data .
+If an init function is supplied, data is passed to it instead.
+  kunit_resource_free_t free
+    a user-supplied function to free the resource (if needed).
+  struct kunit_resource *res
+    The resource.
+  void *data
+    value to pass to init function or set in resource data field.

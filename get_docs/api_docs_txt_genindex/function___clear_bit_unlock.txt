@@ -1,0 +1,14 @@
+Function: void __clear_bit_unlock ( long nr , volatile unsigned long * addr )
+
+Clears a bit in memory
+
+Parameters
+  long nr
+    Bit to clear
+  volatile unsigned long *addr
+    Address to start counting from
+
+Description
+  This is a non-atomic operation but implies a release barrier before the
+memory operation. It can be used for an unlock if no other CPUs can
+concurrently modify other bits in the word.

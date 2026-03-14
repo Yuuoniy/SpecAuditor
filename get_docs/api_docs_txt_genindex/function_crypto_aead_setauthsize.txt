@@ -1,0 +1,13 @@
+Function: int crypto_aead_setauthsize ( struct crypto_aead * tfm , unsigned int authsize )
+
+set authentication data size
+
+Parameters
+  struct crypto_aead *tfm
+    cipher handle
+  unsigned int authsize
+    size of the authentication data / tag in bytes
+
+Description
+  Set the authentication data size / tag size. AEAD requires an authentication
+tag (or MAC) in addition to the associated data.

@@ -1,0 +1,7 @@
+Function: struct i2c_adapter * zd1301_demod_get_i2c_adapter ( struct platform_device * pdev )
+
+Get pointer to I2C adapter
+
+Parameters
+  struct platform_device *pdev
+    Pointer to platform device

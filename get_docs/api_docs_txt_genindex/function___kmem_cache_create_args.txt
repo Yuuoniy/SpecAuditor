@@ -1,0 +1,18 @@
+Function: struct kmem_cache * __kmem_cache_create_args ( const char * name , unsigned int object_size , struct kmem_cache_args * args , slab_flags_t flags )
+
+Create a kmem cache.
+
+Parameters
+  const char *name
+    A string which is used in /proc/slabinfo to identify this cache.
+  unsigned int object_size
+    The size of objects to be created in this cache.
+  struct kmem_cache_args *args
+    Additional arguments for the cache creation (see struct kmem_cache_args ).
+  slab_flags_t flags
+    See the desriptions of individual flags. The common ones are listed
+in the description below.
+
+Description
+  Not to be called directly, use the kmem_cache_create() wrapper with the same
+parameters.

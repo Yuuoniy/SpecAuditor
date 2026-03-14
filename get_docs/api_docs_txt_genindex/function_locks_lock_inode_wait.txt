@@ -1,0 +1,12 @@
+Function: int locks_lock_inode_wait ( struct inode * inode , struct file_lock * fl )
+
+Apply a lock to an inode
+
+Parameters
+  struct inode *inode
+    inode of the file to apply to
+  struct file_lock *fl
+    The lock to be applied
+
+Description
+  Apply a POSIX or FLOCK style lock request to an inode.

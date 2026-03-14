@@ -1,0 +1,12 @@
+Function: void rio_unregister_driver ( struct rio_driver * rdrv )
+
+unregister a RIO driver
+
+Parameters
+  struct rio_driver *rdrv
+    the RIO driver structure to unregister
+
+Description
+  Deletes the struct rio_driver from the list of registered RIO
+drivers, gives it a chance to clean up by calling its remove() function for each device it was responsible for, and marks those
+devices as driverless.

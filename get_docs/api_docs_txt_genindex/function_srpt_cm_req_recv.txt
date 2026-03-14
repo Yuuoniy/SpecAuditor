@@ -1,0 +1,24 @@
+Function: int srpt_cm_req_recv ( struct srpt_device * const sdev , struct ib_cm_id * ib_cm_id , struct rdma_cm_id * rdma_cm_id , u8 port_num , __be16 pkey , const struct srp_login_req * req , const char * src_addr )
+
+process the event IB_CM_REQ_RECEIVED
+
+Parameters
+  struct srpt_device *const sdev
+    HCA through which the login request was received.
+  struct ib_cm_id *ib_cm_id
+    IB/CM connection identifier in case of IB/CM.
+  struct rdma_cm_id *rdma_cm_id
+    RDMA/CM connection identifier in case of RDMA/CM.
+  u8 port_num
+    Port through which the REQ message was received.
+  __be16 pkey
+    P_Key of the incoming connection.
+  const struct srp_login_req *req
+    SRP login request.
+  const char *src_addr
+    GID (IB/CM) or IP address (RDMA/CM) of the port that submitted
+the login request.
+
+Description
+  Ownership of the cm_id is transferred to the target session if this
+function returns zero. Otherwise the caller remains the owner of cm_id.

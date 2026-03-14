@@ -1,0 +1,13 @@
+Struct: struct vupdate_offload_work
+
+Work data for offloading task from vupdate handler
+
+Members
+  work
+    Kernel work data for the work event
+  adev
+    amdgpu_device back pointer
+  stream
+    DC stream associated with the crtc
+  adjust
+    DC CRTC timing adjust to be applied to the crtc

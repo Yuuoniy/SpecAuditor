@@ -1,0 +1,26 @@
+Struct: struct slim_msg_txn
+
+Message to be sent by the controller. This structure has packet header, payload and buffer to be filled (if any)
+
+Members
+  rl
+    Header field. remaining length.
+  mt
+    Header field. Message type.
+  mc
+    Header field. LSB is message code for type mt.
+  dt
+    Header field. Destination type.
+  ec
+    Element code. Used for elemental access APIs.
+  tid
+    Transaction ID. Used for messages expecting response.
+(relevant for message-codes involving read operation)
+  la
+    Logical address of the device this message is going to.
+(Not used when destination type is broadcast.)
+  msg
+    Elemental access message to be read/written
+  comp
+    completion if read/write is synchronous, used internally
+for tid based transactions.

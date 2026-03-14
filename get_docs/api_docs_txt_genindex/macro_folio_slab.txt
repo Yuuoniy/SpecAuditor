@@ -1,0 +1,10 @@
+Macro: folio_slab
+
+
+
+Parameters
+  folio
+    The folio.
+
+Description
+  Currently struct slab is a different representation of a folio where folio_test_slab() is true.

@@ -1,0 +1,12 @@
+Function: int mptbase_sas_persist_operation ( MPT_ADAPTER * ioc , u8 persist_opcode )
+
+Perform operation on SAS Persistent Table
+
+Parameters
+  MPT_ADAPTER *ioc
+    Pointer to MPT_ADAPTER structure
+  u8 persist_opcode
+    see below
+
+Description
+  MPI_SAS_OP_CLEAR_NOT_PRESENT

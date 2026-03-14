@@ -1,0 +1,13 @@
+Function: char * strchr ( const char * s , int c )
+
+Find the first occurrence of a character in a string
+
+Parameters
+  const char *s
+    The string to be searched
+  int c
+    The character to search for
+
+Description
+  Note that the NUL-terminator is considered part of the string, and can
+be searched for.

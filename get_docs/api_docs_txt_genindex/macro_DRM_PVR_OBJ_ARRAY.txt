@@ -1,0 +1,9 @@
+Macro: DRM_PVR_OBJ_ARRAY
+
+
+
+Parameters
+  cnt
+    Number of elements pointed to py ptr .
+  ptr
+    Pointer to start of a C array.

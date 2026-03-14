@@ -1,0 +1,14 @@
+Function: void swap_buf_le16 ( u16 * buf , unsigned int buf_words )
+
+swap halves of 16-bit words in place
+
+Parameters
+  u16 *buf
+    Buffer to swap
+  unsigned int buf_words
+    Number of 16-bit words in buffer.
+
+Description
+  Swap halves of 16-bit words if needed to convert from
+little-endian byte order to native cpu byte order, or
+vice-versa.

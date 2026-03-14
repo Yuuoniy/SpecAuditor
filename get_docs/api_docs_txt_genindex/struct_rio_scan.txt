@@ -1,0 +1,11 @@
+Struct: struct rio_scan
+
+RIO enumeration and discovery operations
+
+Members
+  owner
+    The module owner of this structure
+  enumerate
+    Callback to perform RapidIO fabric enumeration.
+  discover
+    Callback to perform RapidIO fabric discovery.

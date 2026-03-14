@@ -1,0 +1,12 @@
+Function: void release_one_tty ( struct work_struct * work )
+
+release tty structure memory
+
+Parameters
+  struct work_struct *work
+    work of tty we are obliterating
+
+Description
+  Releases memory associated with a tty structure, and clears out the
+driver table slots. This function is called when a device is no longer
+in use. It also gets called when setup of a device fails.

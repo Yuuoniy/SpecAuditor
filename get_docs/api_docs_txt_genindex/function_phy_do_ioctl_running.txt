@@ -1,0 +1,15 @@
+Function: int phy_do_ioctl_running ( struct net_device * dev , struct ifreq * ifr , int cmd )
+
+generic ndo_eth_ioctl implementation but test first
+
+Parameters
+  struct net_device *dev
+    the net_device struct
+  struct ifreq *ifr
+    struct ifreq for socket ioctl’s
+  int cmd
+    ioctl cmd to execute
+
+Description
+  Same as phy_do_ioctl, but ensures that net_device is running before
+handling the ioctl.

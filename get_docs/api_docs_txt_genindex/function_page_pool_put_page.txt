@@ -1,0 +1,20 @@
+Function: void page_pool_put_page ( struct page_pool * pool , struct page * page , unsigned int dma_sync_size , bool allow_direct )
+
+release a reference to a page pool page
+
+Parameters
+  struct page_pool *pool
+    pool from which page was allocated
+  struct page *page
+    page to release a reference on
+  unsigned int dma_sync_size
+    how much of the page may have been touched by the device
+  bool allow_direct
+    released by the consumer, allow lockless caching
+
+Description
+  The outcome of this depends on the page refcnt. If the driver bumps
+the refcnt > 1 this will unmap the page. If the page refcnt is 1
+the allocator owns the page and will try to recycle it in one of the pool
+caches. If PP_FLAG_DMA_SYNC_DEV is set, the page will be synced for_device
+using dma_sync_single_range_for_device() .

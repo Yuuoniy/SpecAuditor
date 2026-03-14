@@ -1,0 +1,15 @@
+Function: int netif_set_real_num_queues ( struct net_device * dev , unsigned int txq , unsigned int rxq )
+
+set actual number of RX and TX queues used
+
+Parameters
+  struct net_device *dev
+    Network device
+  unsigned int txq
+    Actual number of TX queues
+  unsigned int rxq
+    Actual number of RX queues
+
+Description
+  Set the real number of both TX and RX queues.
+Does nothing if the number of queues is already correct.

@@ -1,0 +1,11 @@
+Function: struct ssam_event_item * ssam_event_queue_pop ( struct ssam_event_queue * q )
+
+Pop the next event item from the event queue.
+
+Parameters
+  struct ssam_event_queue *q
+    The event queue.
+
+Description
+  Returns and removes the next event item from the queue. Returns NULL If
+there is no event item left.

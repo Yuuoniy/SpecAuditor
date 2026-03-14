@@ -1,0 +1,11 @@
+Function: void n_tty_write_wakeup ( struct tty_struct * tty )
+
+asynchronous I/O notifier
+
+Parameters
+  struct tty_struct *tty
+    tty device
+
+Description
+  Required for the ptys, serial driver etc. since processes that attach
+themselves to the master and rely on ASYNC IO must be woken up.

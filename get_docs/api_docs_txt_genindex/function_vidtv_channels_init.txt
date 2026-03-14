@@ -1,0 +1,7 @@
+Function: int vidtv_channels_init ( struct vidtv_mux * m )
+
+Init hardcoded, fake ‘channels’.
+
+Parameters
+  struct vidtv_mux *m
+    The mux to store the channels into.

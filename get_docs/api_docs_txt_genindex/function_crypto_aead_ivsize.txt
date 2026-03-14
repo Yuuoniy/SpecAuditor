@@ -1,0 +1,11 @@
+Function: unsigned int crypto_aead_ivsize ( struct crypto_aead * tfm )
+
+obtain IV size
+
+Parameters
+  struct crypto_aead *tfm
+    cipher handle
+
+Description
+  The size of the IV for the aead referenced by the cipher handle is
+returned. This IV size may be zero if the cipher does not need an IV.

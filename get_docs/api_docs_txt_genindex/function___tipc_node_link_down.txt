@@ -1,0 +1,13 @@
+Function: void __tipc_node_link_down ( struct tipc_node * n , int * bearer_id , struct sk_buff_head * xmitq , struct tipc_media_addr * * maddr )
+
+handle loss of link
+
+Parameters
+  struct tipc_node *n
+    target tipc_node
+  int *bearer_id
+    id of the bearer
+  struct sk_buff_head *xmitq
+    queue for messages to be xmited on
+  struct tipc_media_addr **maddr
+    output media address of the bearer

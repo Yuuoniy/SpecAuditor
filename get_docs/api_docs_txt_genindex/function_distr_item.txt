@@ -1,0 +1,15 @@
+Function: struct distr_item
+
+publication info distributed to other nodes
+
+Members
+  type
+    name sequence type
+  lower
+    name sequence lower bound
+  upper
+    name sequence upper bound
+  port
+    publishing port reference
+  key
+    publication key

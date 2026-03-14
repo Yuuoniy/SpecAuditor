@@ -1,0 +1,11 @@
+Function: int tipc_parse_udp_addr ( struct nlattr * nla , struct udp_media_addr * addr , u32 * scope_id )
+
+build udp media address from netlink data
+
+Parameters
+  struct nlattr *nla
+    netlink attribute containing sockaddr storage aligned address
+  struct udp_media_addr *addr
+    tipc media address to fill with address, port and protocol type
+  u32 *scope_id
+    IPv6 scope id pointer, not NULL indicates it’s required

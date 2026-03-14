@@ -1,0 +1,12 @@
+Function: int drm_mode_create_tv_margin_properties ( struct drm_device * dev )
+
+create TV connector margin properties
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  Called by a driver’s HDMI connector initialization routine, this function
+creates the TV margin properties for a given device. No need to call this
+function for an SDTV connector, it’s already called from drm_mode_create_tv_properties_legacy() .

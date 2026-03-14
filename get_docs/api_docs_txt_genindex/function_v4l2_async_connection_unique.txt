@@ -1,0 +1,11 @@
+Function: struct v4l2_async_connection * v4l2_async_connection_unique ( struct v4l2_subdev * sd )
+
+return a unique struct v4l2_async_connection for a sub-device
+
+Parameters
+  struct v4l2_subdev *sd
+    the sub-device
+
+Description
+  Return an async connection for a sub-device, when there is a single
+one only.

@@ -1,0 +1,12 @@
+Function: int drm_panel_bridge_set_orientation ( struct drm_connector * connector , struct drm_bridge * bridge )
+
+Set the connector’s panel orientation from the bridge that can be transformed to panel bridge.
+
+Parameters
+  struct drm_connector *connector
+    The connector to be set panel orientation.
+  struct drm_bridge *bridge
+    The drm_bridge to be transformed to panel bridge.
+
+Description
+  Returns 0 on success, negative errno on failure.

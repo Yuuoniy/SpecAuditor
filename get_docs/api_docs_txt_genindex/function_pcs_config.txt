@@ -1,0 +1,20 @@
+Function: int pcs_config ( struct phylink_pcs * pcs , unsigned int neg_mode , phy_interface_t interface , const unsigned long * advertising , bool permit_pause_to_mac )
+
+Configure the PCS mode and advertisement
+
+Parameters
+  struct phylink_pcs *pcs
+    a pointer to a struct phylink_pcs .
+  unsigned int neg_mode
+    link negotiation mode (see below)
+  phy_interface_t interface
+    interface mode to be used
+  const unsigned long *advertising
+    adertisement ethtool link mode mask
+  bool permit_pause_to_mac
+    permit forwarding pause resolution to MAC
+
+Description
+  Configure the PCS for the operating mode, the interface mode, and set
+the advertisement mask. permit_pause_to_mac indicates whether the
+hardware may forward the pause mode resolution to the MAC.

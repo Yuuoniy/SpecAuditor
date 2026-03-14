@@ -1,0 +1,16 @@
+Function: int drm_plane_create_zpos_immutable_property ( struct drm_plane * plane , unsigned int zpos )
+
+create immuttable zpos property
+
+Parameters
+  struct drm_plane *plane
+    drm plane
+  unsigned int zpos
+    value of zpos property
+
+Description
+  This function initializes generic immutable zpos property and enables
+support for it in drm core. Using this property driver lets userspace
+to get the arrangement of the planes for blending operation and notifies
+it that the hardware (or driver) doesn’t support changing of the planes’
+order. For mutable zpos see drm_plane_create_zpos_property() .

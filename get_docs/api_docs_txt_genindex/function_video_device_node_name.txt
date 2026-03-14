@@ -1,0 +1,10 @@
+Function: const char * video_device_node_name ( struct video_device * vdev )
+
+returns the video device name
+
+Parameters
+  struct video_device *vdev
+    pointer to struct video_device
+
+Description
+  Returns the device name string

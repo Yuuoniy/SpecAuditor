@@ -1,0 +1,9 @@
+Function: unsigned int drm_format_info_block_height ( const struct drm_format_info * info , int plane )
+
+height in pixels of a block
+
+Parameters
+  const struct drm_format_info *info
+    pixel format info
+  int plane
+    plane index

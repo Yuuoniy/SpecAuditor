@@ -1,0 +1,7 @@
+Function: int intel_lpe_audio_init ( struct intel_display * display )
+
+detect and setup the bridge between HDMI LPE Audio driver and i915
+
+Parameters
+  struct intel_display *display
+    display device

@@ -1,0 +1,13 @@
+Function: struct devfreq_stats
+
+Statistics of devfreq device behavior
+
+Members
+  total_trans
+    Number of devfreq transitions.
+  trans_table
+    Statistics of devfreq transitions.
+  time_in_state
+    Statistics of devfreq states.
+  last_update
+    The last time stats were updated.

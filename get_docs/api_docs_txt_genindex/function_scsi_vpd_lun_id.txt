@@ -1,0 +1,16 @@
+Function: int scsi_vpd_lun_id ( struct scsi_device * sdev , char * id , size_t id_len )
+
+return a unique device identification
+
+Parameters
+  struct scsi_device *sdev
+    SCSI device
+  char *id
+    buffer for the identification
+  size_t id_len
+    length of the buffer
+
+Description
+  Copies a unique device identification into id based
+on the information in the VPD page 0x83 of the device.
+The string will be formatted as a SCSI name string.

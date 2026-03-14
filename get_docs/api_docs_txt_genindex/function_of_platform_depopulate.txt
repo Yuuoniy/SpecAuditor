@@ -1,0 +1,13 @@
+Function: void of_platform_depopulate ( struct device * parent )
+
+Remove devices populated from device tree
+
+Parameters
+  struct device *parent
+    device which children will be removed
+
+Description
+  Complementary to of_platform_populate() , this function removes children
+of the given device (and, recursively, their children) that have been
+created from their respective device tree nodes (and only those,
+leaving others - eg. manually created - unharmed).

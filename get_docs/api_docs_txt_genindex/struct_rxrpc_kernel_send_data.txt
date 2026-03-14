@@ -1,0 +1,21 @@
+Struct: int rxrpc_kernel_send_data ( struct socket * sock , struct rxrpc_call * call , struct msghdr * msg , size_t len , rxrpc_notify_end_tx_t notify_end_tx )
+
+Allow a kernel service to send data on a call
+
+Parameters
+  struct socket *sock
+    The socket the call is on
+  struct rxrpc_call *call
+    The call to send data through
+  struct msghdr *msg
+    The data to send
+  size_t len
+    The amount of data to send
+  rxrpc_notify_end_tx_t notify_end_tx
+    Notification that the last packet is queued.
+
+Description
+  Allow a kernel service to send data on a call.  The call must be in an state
+appropriate to sending data.  No control data should be supplied in msg ,
+nor should an address be supplied.  MSG_MORE should be flagged if there’s
+more data to come, otherwise this data will end the transmission phase.

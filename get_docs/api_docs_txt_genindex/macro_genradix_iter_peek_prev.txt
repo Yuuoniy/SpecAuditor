@@ -1,0 +1,12 @@
+Macro: genradix_iter_peek_prev
+
+
+
+Parameters
+  _iter
+    a genradix_iter
+  _radix
+    genradix being iterated over
+
+Description
+  If no more entries exist at or below _iter ’s current position, returns NULL

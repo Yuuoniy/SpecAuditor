@@ -1,0 +1,13 @@
+Function: void amdgpu_vm_fini ( struct amdgpu_device * adev , struct amdgpu_vm * vm )
+
+tear down a vm instance
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+  struct amdgpu_vm *vm
+    requested vm
+
+Description
+  Tear down vm .
+Unbind the VM and remove all bos from the vm bo list

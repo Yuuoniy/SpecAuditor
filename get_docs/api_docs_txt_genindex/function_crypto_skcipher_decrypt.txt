@@ -1,0 +1,13 @@
+Function: int crypto_skcipher_decrypt ( struct skcipher_request * req )
+
+decrypt ciphertext
+
+Parameters
+  struct skcipher_request *req
+    reference to the skcipher_request handle that holds all information
+needed to perform the cipher operation
+
+Description
+  Decrypt ciphertext data using the skcipher_request handle. That data
+structure and how it is filled with data is discussed with the
+skcipher_request_* functions.

@@ -1,0 +1,11 @@
+Function: int iscsi_add_conn ( struct iscsi_cls_conn * conn )
+
+add iscsi class connection
+
+Parameters
+  struct iscsi_cls_conn *conn
+    iscsi cls connection
+
+Description
+  This will expose iscsi_cls_conn to sysfs so make sure the related
+resources for sysfs attributes are initialized before calling this.

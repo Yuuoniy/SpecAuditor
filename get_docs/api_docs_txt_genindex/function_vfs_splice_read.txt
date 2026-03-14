@@ -1,0 +1,20 @@
+Function: ssize_t vfs_splice_read ( struct file * in , loff_t * ppos , struct pipe_inode_info * pipe , size_t len , unsigned int flags )
+
+Read data from a file and splice it into a pipe
+
+Parameters
+  struct file *in
+    File to splice from
+  loff_t *ppos
+    Input file offset
+  struct pipe_inode_info *pipe
+    Pipe to splice to
+  size_t len
+    Number of bytes to splice
+  unsigned int flags
+    Splice modifier flags (SPLICE_F_*)
+
+Description
+  Splice the requested amount of data from the input file to the pipe.  This
+is synchronous as the caller must hold the pipe lock across the entire
+operation.

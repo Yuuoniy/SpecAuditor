@@ -1,0 +1,15 @@
+Macro: mipi_dbi_command
+
+
+
+Parameters
+  dbi
+    MIPI DBI structure
+  cmd
+    Command
+  seq...
+    Optional parameter(s)
+
+Description
+  Send MIPI DCS command to the controller. Use mipi_dbi_command_read() for
+get/read.

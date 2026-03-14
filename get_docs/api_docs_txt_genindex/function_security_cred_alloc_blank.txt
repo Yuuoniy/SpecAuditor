@@ -1,0 +1,12 @@
+Function: int security_cred_alloc_blank ( struct cred * cred , gfp_t gfp )
+
+Allocate the min memory to allow cred_transfer
+
+Parameters
+  struct cred *cred
+    credentials
+  gfp_t gfp
+    gfp flags
+
+Description
+  Only allocate sufficient memory and attach to cred such that cred_transfer() will not get ENOMEM.

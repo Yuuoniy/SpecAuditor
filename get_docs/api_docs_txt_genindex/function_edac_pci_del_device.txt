@@ -1,0 +1,12 @@
+Function: struct edac_pci_ctl_info * edac_pci_del_device ( struct device * dev )
+
+
+
+Parameters
+  struct device *dev
+    Pointer to ‘ struct device ’ representing edac_pci structure
+to remove
+
+Description
+  Remove sysfs entries for specified edac_pci structure and
+then remove edac_pci structure from global list

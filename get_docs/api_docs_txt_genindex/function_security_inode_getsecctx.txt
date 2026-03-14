@@ -1,0 +1,13 @@
+Function: int security_inode_getsecctx ( struct inode * inode , struct lsm_context * cp )
+
+Get the security label of an inode
+
+Parameters
+  struct inode *inode
+    inode
+  struct lsm_context *cp
+    security context
+
+Description
+  On success, returns 0 and fills out cp with the security context
+for the given inode .

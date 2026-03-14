@@ -1,0 +1,12 @@
+Function: int drm_client_modeset_commit_locked ( struct drm_client_dev * client )
+
+Force commit CRTC configuration
+
+Parameters
+  struct drm_client_dev *client
+    DRM client
+
+Description
+  Commit modeset configuration to crtcs without checking if there is a DRM
+master. The assumption is that the caller already holds an internal DRM
+master reference acquired with drm_master_internal_acquire() .

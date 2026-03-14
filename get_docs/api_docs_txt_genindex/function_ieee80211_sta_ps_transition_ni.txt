@@ -1,0 +1,14 @@
+Function: int ieee80211_sta_ps_transition_ni ( struct ieee80211_sta * sta , bool start )
+
+PS transition for connected sta (in process context)
+
+Parameters
+  struct ieee80211_sta *sta
+    currently connected sta
+  bool start
+    start or stop PS
+
+Description
+  Like ieee80211_sta_ps_transition() but can be called in process context
+(internally disables bottom halves). Concurrent call restriction still
+applies.

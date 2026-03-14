@@ -1,0 +1,18 @@
+Function: int sysfs_rename_link_ns ( struct kobject * kobj , struct kobject * targ , const char * old , const char * new , const void * new_ns )
+
+rename symlink in object’s directory.
+
+Parameters
+  struct kobject *kobj
+    object we’re acting for.
+  struct kobject *targ
+    object we’re pointing to.
+  const char *old
+    previous name of the symlink.
+  const char *new
+    new name of the symlink.
+  const void *new_ns
+    new namespace of the symlink.
+
+Description
+  A helper function for the common rename symlink idiom.

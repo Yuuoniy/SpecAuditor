@@ -1,0 +1,12 @@
+Function: void vb2_queue_error ( struct vb2_queue * q )
+
+signal a fatal error on the queue
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+
+Description
+  Flag that a fatal unrecoverable error has occurred and wake up all processes
+waiting on the queue. Polling will now set EPOLLERR and queuing and dequeuing
+buffers will return -EIO .

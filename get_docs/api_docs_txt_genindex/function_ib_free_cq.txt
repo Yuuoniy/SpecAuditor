@@ -1,0 +1,7 @@
+Function: void ib_free_cq ( struct ib_cq * cq )
+
+free a completion queue
+
+Parameters
+  struct ib_cq *cq
+    completion queue to free.

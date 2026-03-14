@@ -1,0 +1,14 @@
+Function: int migrate_movable_ops_page ( struct page * dst , struct page * src , enum migrate_mode mode )
+
+migrate an isolated movable_ops page
+
+Parameters
+  struct page *dst
+    The destination page.
+  struct page *src
+    The source page.
+  enum migrate_mode mode
+    The migration mode.
+
+Description
+  Migrate an isolated movable_ops page.

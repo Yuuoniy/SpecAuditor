@@ -1,0 +1,7 @@
+Function: unsigned int tty_write_room ( struct tty_struct * tty )
+
+write queue space
+
+Parameters
+  struct tty_struct *tty
+    terminal

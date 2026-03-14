@@ -1,0 +1,11 @@
+Function: int dwc3_gadget_get_link_state ( struct dwc3 * dwc )
+
+gets current state of usb link
+
+Parameters
+  struct dwc3 *dwc
+    pointer to our context structure
+
+Description
+  Caller should take care of locking. This function will
+return the link state on success (>= 0) or -ETIMEDOUT.

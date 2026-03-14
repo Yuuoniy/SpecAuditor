@@ -1,0 +1,26 @@
+Struct: struct movable_operations
+
+Driver page migration
+
+Members
+  isolate_page
+    The VM calls this function to prepare the page to be moved.  The page
+is locked and the driver should not unlock it.  The driver should
+return true if the page is movable and false if it is not
+currently movable.  After this function returns, the VM uses the
+page->lru field, so the driver must preserve any information which
+is usually stored here.
+  migrate_page
+    After isolation, the VM calls this function with the isolated src page.  The driver should copy the contents of the src page to the dst page and set up the fields of dst page.
+Both pages are locked.
+If page migration is successful, the driver should return 0.
+If the driver cannot migrate the page at the moment, it can return
+-EAGAIN.  The VM interprets this as a temporary migration failure and
+will retry it later.  Any other error value is a permanent migration
+failure and migration will not be retried.
+The driver shouldn’t touch the src->lru field while in the migrate_page() function.  It may write to dst->lru .
+  putback_page
+    If migration fails on the isolated page, the VM informs the driver
+that the page is no longer a candidate for migration by calling
+this function.  The driver should put the isolated page back into
+its own data structure.

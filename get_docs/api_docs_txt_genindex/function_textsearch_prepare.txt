@@ -1,0 +1,19 @@
+Function: struct ts_config * textsearch_prepare ( const char * algo , const void * pattern , unsigned int len , gfp_t gfp_mask , int flags )
+
+Prepare a search
+
+Parameters
+  const char *algo
+    name of search algorithm
+  const void *pattern
+    pattern data
+  unsigned int len
+    length of pattern
+  gfp_t gfp_mask
+    allocation mask
+  int flags
+    search flags
+
+Description
+  Looks up the search algorithm module and creates a new textsearch
+configuration for the specified pattern.

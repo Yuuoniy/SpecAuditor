@@ -1,0 +1,19 @@
+Function: int pcpu_embed_first_chunk ( size_t reserved_size , size_t dyn_size , size_t atom_size , pcpu_fc_cpu_distance_fn_t cpu_distance_fn , pcpu_fc_cpu_to_node_fn_t cpu_to_nd_fn )
+
+embed the first percpu chunk into bootmem
+
+Parameters
+  size_t reserved_size
+    the size of reserved percpu area in bytes
+  size_t dyn_size
+    minimum free size for dynamic allocation in bytes
+  size_t atom_size
+    allocation atom size
+  pcpu_fc_cpu_distance_fn_t cpu_distance_fn
+    callback to determine distance between cpus, optional
+  pcpu_fc_cpu_to_node_fn_t cpu_to_nd_fn
+    callback to convert cpu to it’s node, optional
+
+Description
+  This is a helper to ease setting up embedded first percpu chunk and
+can be called where pcpu_setup_first_chunk() is expected.

@@ -1,0 +1,15 @@
+Function: unsigned long __round_jiffies_up_relative ( unsigned long j , int cpu )
+
+function to round jiffies up to a full second
+
+Parameters
+  unsigned long j
+    the time in (relative) jiffies that should be rounded
+  int cpu
+    the processor number on which the timeout will happen
+
+Description
+  This is the same as __round_jiffies_relative() except that it will never
+round down.  This is useful for timeouts for which the exact time
+of firing does not matter too much, as long as they don’t fire too
+early.

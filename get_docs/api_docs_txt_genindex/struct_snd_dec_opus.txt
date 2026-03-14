@@ -1,0 +1,31 @@
+Struct: struct snd_dec_opus
+
+Opus decoder parameters (raw opus packets)
+
+Members
+  version
+    Usually should be ‘1’ but can be split into major (4 upper bits)
+and minor (4 lower bits) sub-fields.
+  num_channels
+    Number of output channels.
+  pre_skip
+    Number of samples to discard at 48 kHz.
+  sample_rate
+    Sample rate of original input.
+  output_gain
+    Gain to apply when decoding (in Q7.8 format).
+  mapping_family
+    Order and meaning of output channels. Only values 0 and 1
+are expected; values 2..255 are not recommended for playback.
+  chan_map
+    Optional channel mapping table. Describes mapping of opus streams
+to decoded channels. Fields:
+  chan_map.stream_count
+    Number of streams encoded in each Ogg packet.
+  chan_map.coupled_count
+    Number of streams whose decoders are used
+for two channels.
+  chan_map.channel_map
+    Which decoded channel to be used for each one.
+Supports only mapping families 0 and 1,
+max number of channels is 8.

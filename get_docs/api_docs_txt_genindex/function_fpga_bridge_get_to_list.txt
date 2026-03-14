@@ -1,0 +1,14 @@
+Function: int fpga_bridge_get_to_list ( struct device * dev , struct fpga_image_info * info , struct list_head * bridge_list )
+
+given device, get a bridge, add it to a list
+
+Parameters
+  struct device *dev
+    FPGA bridge device
+  struct fpga_image_info *info
+    fpga image specific information
+  struct list_head *bridge_list
+    list of FPGA bridges
+
+Description
+  Get an exclusive reference to the bridge and it to the list.

@@ -1,0 +1,9 @@
+Function: void link_prepare_wakeup ( struct tipc_link * l )
+
+prepare users for wakeup after congestion
+
+Parameters
+  struct tipc_link *l
+    congested link
+Wake up a number of waiting users, as permitted by available space
+in the send queue

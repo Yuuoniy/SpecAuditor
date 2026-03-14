@@ -1,0 +1,12 @@
+Function: bool oa_buffer_check_unlocked ( struct i915_perf_stream * stream )
+
+check for data and update tail ptr state
+
+Parameters
+  struct i915_perf_stream *stream
+    i915 stream instance
+
+Description
+  This is either called via fops (for blocking reads in user ctx) or the poll
+check hrtimer (atomic ctx) to check the OA buffer tail pointer and check
+if there is data available for userspace to read.

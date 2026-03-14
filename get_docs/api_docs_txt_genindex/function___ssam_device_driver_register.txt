@@ -1,0 +1,13 @@
+Function: int __ssam_device_driver_register ( struct ssam_device_driver * sdrv , struct module * owner )
+
+Register a SSAM client device driver.
+
+Parameters
+  struct ssam_device_driver *sdrv
+    The driver to register.
+  struct module *owner
+    The module owning the provided driver.
+
+Description
+  Please refer to the ssam_device_driver_register() macro for the normal way
+to register a driver from inside its owning module.

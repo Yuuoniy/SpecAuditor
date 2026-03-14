@@ -1,0 +1,3 @@
+Enum: enum drm_link_status
+
+connector’s link_status property value

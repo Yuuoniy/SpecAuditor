@@ -1,0 +1,17 @@
+Function: int kunit_add_action ( struct kunit * test , kunit_action_t * action , void * ctx )
+
+Call a function when the test ends.
+
+Parameters
+  struct kunit *test
+    Test case to associate the action with.
+  kunit_action_t *action
+    The function to run on test exit
+  void *ctx
+    Data passed into func
+
+Description
+  Defer the execution of a function until the test exits, either normally or
+due to a failure. ctx is passed as additional context. All functions
+registered with kunit_add_action() will execute in the opposite order to that
+they were registered in.

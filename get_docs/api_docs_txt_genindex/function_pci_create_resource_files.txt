@@ -1,0 +1,10 @@
+Function: int pci_create_resource_files ( struct pci_dev * pdev )
+
+create resource files in sysfs for dev
+
+Parameters
+  struct pci_dev *pdev
+    dev in question
+
+Description
+  Walk the resources in pdev creating files for each resource available.

@@ -1,0 +1,14 @@
+Function: int snd_interval_refine ( struct snd_interval * i , const struct snd_interval * v )
+
+refine the interval value of configurator
+
+Parameters
+  struct snd_interval *i
+    the interval value to refine
+  const struct snd_interval *v
+    the interval value to refer to
+
+Description
+  Refines the interval value with the reference value.
+The interval is changed to the range satisfying both intervals.
+The interval status (min, max, integer, etc.) are evaluated.

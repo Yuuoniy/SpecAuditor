@@ -1,0 +1,11 @@
+Function: bool enable_work ( struct work_struct * work )
+
+Enable a work item
+
+Parameters
+  struct work_struct *work
+    work item to enable
+
+Description
+  Undo disable_work[_sync]() by decrementing work ’s disable count. work can
+only be queued if its disable count is 0.

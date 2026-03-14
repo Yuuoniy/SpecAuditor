@@ -1,0 +1,11 @@
+Function: int hsi_unregister_port_event ( struct hsi_client * cl )
+
+Stop receiving port events for a client
+
+Parameters
+  struct hsi_client *cl
+    HSI client that wants to stop receiving port events
+
+Description
+  Clients should call this function before releasing their associated
+port.

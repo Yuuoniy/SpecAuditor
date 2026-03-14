@@ -1,0 +1,10 @@
+Function: void snd_pcm_set_sync ( struct snd_pcm_substream * substream )
+
+set the PCM sync id
+
+Parameters
+  struct snd_pcm_substream *substream
+    the pcm substream
+
+Description
+  Use the default PCM sync identifier for the specific card.

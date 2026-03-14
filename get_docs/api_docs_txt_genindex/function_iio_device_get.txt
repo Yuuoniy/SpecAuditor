@@ -1,0 +1,7 @@
+Function: struct iio_dev * iio_device_get ( struct iio_dev * indio_dev )
+
+increment reference count for the device
+
+Parameters
+  struct iio_dev *indio_dev
+    IIO device structure

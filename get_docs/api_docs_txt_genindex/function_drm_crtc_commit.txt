@@ -1,0 +1,41 @@
+Function: struct drm_crtc_commit
+
+track modeset commits on a CRTC
+
+Members
+  crtc
+    DRM CRTC for this commit.
+  ref
+    Reference count for this structure. Needed to allow blocking on
+completions without the risk of the completion disappearing
+meanwhile.
+  flip_done
+    Will be signaled when the hardware has flipped to the new set of
+buffers. Signals at the same time as when the drm event for this
+commit is sent to userspace, or when an out-fence is singalled. Note
+that for most hardware, in most cases this happens after hw_done is
+signalled. Completion of this stage is signalled implicitly by calling drm_crtc_send_vblank_event() on drm_crtc_state.event .
+  hw_done
+    Will be signalled when all hw register changes for this commit have
+been written out. Especially when disabling a pipe this can be much
+later than flip_done , since that can signal already when the
+screen goes black, whereas to fully shut down a pipe more register
+I/O is required. Note that this does not need to include separately reference-counted
+resources like backing storage buffer pinning, or runtime pm
+management. Drivers should call drm_atomic_helper_commit_hw_done() to signal
+completion of this stage.
+  cleanup_done
+    Will be signalled after old buffers have been cleaned up by calling drm_atomic_helper_cleanup_planes() . Since this can only happen after
+a vblank wait completed it might be a bit later. This completion is
+useful to throttle updates and avoid hardware updates getting ahead
+of the buffer cleanup too much. Drivers should call drm_atomic_helper_commit_cleanup_done() to signal
+completion of this stage.
+  commit_entry
+    Entry on the per-CRTC drm_crtc.commit_list . Protected by
+$drm_crtc.commit_lock.
+  event
+    drm_pending_vblank_event pointer to clean up private events.
+  abort_completion
+    A flag that’s set after drm_atomic_helper_setup_commit() takes a
+second reference for the completion of $drm_crtc_state.event. It’s
+used by the free code to remove the second reference if commit fails.

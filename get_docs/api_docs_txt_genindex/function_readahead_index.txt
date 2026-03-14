@@ -1,0 +1,7 @@
+Function: pgoff_t readahead_index ( const struct readahead_control * rac )
+
+The index of the first page in this readahead request.
+
+Parameters
+  const struct readahead_control *rac
+    The readahead request.

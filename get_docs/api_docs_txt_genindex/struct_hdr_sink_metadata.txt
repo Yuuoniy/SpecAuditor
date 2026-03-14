@@ -1,0 +1,11 @@
+Struct: struct hdr_sink_metadata
+
+HDR sink metadata
+
+Members
+  metadata_type
+    Static_Metadata_Descriptor_ID.
+  {unnamed_union}
+    anonymous
+  hdmi_type1
+    HDR Metadata Infoframe.

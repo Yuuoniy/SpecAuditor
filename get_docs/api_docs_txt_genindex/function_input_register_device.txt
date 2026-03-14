@@ -1,0 +1,16 @@
+Function: int input_register_device ( struct input_dev * dev )
+
+register device with input core
+
+Parameters
+  struct input_dev *dev
+    device to be registered
+
+Description
+  This function registers device with input core. The device must be
+allocated with input_allocate_device() and all it’s capabilities
+set up before registering.
+If function fails the device must be freed with input_free_device() .
+Once device has been successfully registered it can be unregistered
+with input_unregister_device() ; input_free_device() should not be
+called in this case.

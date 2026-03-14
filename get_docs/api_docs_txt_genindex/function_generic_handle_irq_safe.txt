@@ -1,0 +1,12 @@
+Function: int generic_handle_irq_safe ( unsigned int irq )
+
+Invoke the handler for a particular irq from any context.
+
+Parameters
+  unsigned int irq
+    The irq number to handle
+
+Description
+  This function can be called from any context (IRQ or process context). It
+will report an error if not invoked from IRQ context and the irq has been
+marked to enforce IRQ-context only.

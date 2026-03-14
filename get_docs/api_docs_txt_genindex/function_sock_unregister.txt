@@ -1,0 +1,12 @@
+Function: void sock_unregister ( int family )
+
+remove a protocol handler
+
+Parameters
+  int family
+    protocol family to remove
+
+Description
+  This function is called by a protocol handler that wants to
+remove its address family, and have it unlinked from the
+new socket creation.

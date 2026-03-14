@@ -1,0 +1,18 @@
+Function: void trace_block_rq_complete ( struct request * rq , blk_status_t error , unsigned int nr_bytes )
+
+block IO operation completed by device driver
+
+Parameters
+  struct request *rq
+    block operations request
+  blk_status_t error
+    status code
+  unsigned int nr_bytes
+    number of completed bytes
+
+Description
+  The block_rq_complete tracepoint event indicates that some portion
+of operation request has been completed by the device driver.  If
+the rq->bio is NULL , then there is absolutely no additional work to
+do for the request. If rq->bio is non-NULL then there is
+additional work required to complete the request.

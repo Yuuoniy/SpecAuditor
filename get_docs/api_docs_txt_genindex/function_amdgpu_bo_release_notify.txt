@@ -1,0 +1,11 @@
+Function: void amdgpu_bo_release_notify ( struct ttm_buffer_object * bo )
+
+notification about a BO being released
+
+Parameters
+  struct ttm_buffer_object *bo
+    pointer to a buffer object
+
+Description
+  Wipes VRAM buffers whose contents should not be leaked before the
+memory is released.

@@ -1,0 +1,12 @@
+Function: void read_seqlock_excl ( seqlock_t * sl )
+
+begin a seqlock_t locking reader section
+
+Parameters
+  seqlock_t *sl
+    Pointer to seqlock_t
+
+Description
+  read_seqlock_excl opens a seqlock_t locking reader critical section.  A
+locking reader exclusively locks out both other writers and other
+locking readers, but it does not update the embedded sequence number.

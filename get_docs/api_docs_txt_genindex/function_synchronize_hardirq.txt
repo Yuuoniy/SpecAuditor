@@ -1,0 +1,13 @@
+Function: bool synchronize_hardirq ( unsigned int irq )
+
+wait for pending hard IRQ handlers (on other CPUs)
+
+Parameters
+  unsigned int irq
+    interrupt number to wait for
+
+Description
+  This function waits for any pending hard IRQ handlers for this interrupt
+to complete before returning. If you use this function while holding a
+resource the IRQ handler may need you will deadlock. It does not take
+associated threaded handlers into account.

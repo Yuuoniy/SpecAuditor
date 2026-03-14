@@ -1,0 +1,17 @@
+Function: void mem_cgroup_scan_tasks ( struct mem_cgroup * memcg , int ( * fn ) ( struct task_struct * , void * ) , void * arg )
+
+iterate over tasks of a memory cgroup hierarchy
+
+Parameters
+  struct mem_cgroup *memcg
+    hierarchy root
+  int (*fn)(struct task_struct *, void *)
+    function to call for each task
+  void *arg
+    argument passed to fn
+
+Description
+  This function iterates over tasks attached to memcg or to any of its
+descendants and calls fn for each task. If fn returns a non-zero
+value, the function breaks the iteration loop. Otherwise, it will iterate
+over all tasks and return 0.

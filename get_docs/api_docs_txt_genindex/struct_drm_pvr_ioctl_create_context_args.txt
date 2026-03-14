@@ -1,0 +1,23 @@
+Struct: struct drm_pvr_ioctl_create_context_args
+
+Arguments for DRM_IOCTL_PVR_CREATE_CONTEXT
+
+Members
+  type
+    [IN] Type of context to create. This must be one of the values defined by enum drm_pvr_ctx_type .
+  flags
+    [IN] Flags for context.
+  priority
+    [IN] Priority of new context. This must be one of the values defined by enum drm_pvr_ctx_priority .
+  handle
+    [OUT] Handle for new context.
+  static_context_state
+    [IN] Pointer to static context state stream.
+  static_context_state_len
+    [IN] Length of static context state, in bytes.
+  vm_context_handle
+    [IN] Handle for VM context that this context is
+associated with.
+  callstack_addr
+    [IN] Address for initial call stack pointer. Only valid
+if type is DRM_PVR_CTX_TYPE_RENDER , otherwise must be 0.

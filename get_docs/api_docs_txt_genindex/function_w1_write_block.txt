@@ -1,0 +1,11 @@
+Function: void w1_write_block ( struct w1_master * dev , const u8 * buf , int len )
+
+Writes a series of bytes.
+
+Parameters
+  struct w1_master *dev
+    the master device
+  const u8 *buf
+    pointer to the data to write
+  int len
+    the number of bytes to write

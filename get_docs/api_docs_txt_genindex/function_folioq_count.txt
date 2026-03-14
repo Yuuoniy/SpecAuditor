@@ -1,0 +1,11 @@
+Function: unsigned int folioq_count ( struct folio_queue * folioq )
+
+Query the occupancy of a folio queue segment
+
+Parameters
+  struct folio_queue *folioq
+    The segment to query
+
+Description
+  Query the number of folios that have been added to a folio queue segment.
+Note that this is not decreased as folios are removed from a segment.

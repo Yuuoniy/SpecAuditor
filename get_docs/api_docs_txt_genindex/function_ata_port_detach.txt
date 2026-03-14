@@ -1,0 +1,12 @@
+Function: void ata_port_detach ( struct ata_port * ap )
+
+Detach ATA port in preparation of device removal
+
+Parameters
+  struct ata_port *ap
+    ATA port to be detached
+
+Description
+  Detach all ATA devices and the associated SCSI devices of ap ;
+then, remove the associated SCSI host. ap is guaranteed to
+be quiescent on return from this function.

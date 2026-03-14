@@ -1,0 +1,18 @@
+Function: void list_cut_position ( struct list_head * list , struct list_head * head , struct list_head * entry )
+
+cut a list into two
+
+Parameters
+  struct list_head *list
+    a new list to add all removed entries
+  struct list_head *head
+    a list with entries
+  struct list_head *entry
+    an entry within head, could be the head itself
+and if so we won’t cut the list
+
+Description
+  This helper moves the initial part of head , up to and
+including entry , from head to list . You should
+pass on entry an element you know is on head . list should be an empty list or a list you do not care about
+losing its data.

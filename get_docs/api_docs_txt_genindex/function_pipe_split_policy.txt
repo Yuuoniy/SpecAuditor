@@ -1,0 +1,3 @@
+Function: enum pipe_split_policy
+
+Pipe split strategy supported by DCN

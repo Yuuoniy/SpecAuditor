@@ -1,0 +1,7 @@
+Function: void media_entity_enum_zero ( struct media_entity_enum * ent_enum )
+
+Clear the entire enum
+
+Parameters
+  struct media_entity_enum *ent_enum
+    Entity enumeration to be cleared

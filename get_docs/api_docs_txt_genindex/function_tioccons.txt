@@ -1,0 +1,10 @@
+Function: int tioccons ( struct file * file )
+
+allow admin to move logical console
+
+Parameters
+  struct file *file
+    the file to become console
+
+Description
+  Allow the administrator to move the redirected console device.

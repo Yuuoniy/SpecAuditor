@@ -1,0 +1,33 @@
+Struct: struct fw_cdev_event_request3
+
+Sent on incoming request to an address region
+
+Members
+  closure
+    See fw_cdev_event_common ; set by FW_CDEV_IOC_ALLOCATE ioctl
+  type
+    See fw_cdev_event_common ; always FW_CDEV_EVENT_REQUEST2
+  tcode
+    Transaction code of the incoming request
+  offset
+    The offset into the 48-bit per-node address space
+  source_node_id
+    Sender node ID
+  destination_node_id
+    Destination node ID
+  card
+    The index of the card from which the request came
+  generation
+    Bus generation in which the request is valid
+  handle
+    Reference to the kernel-side pending request
+  length
+    Data length, i.e. the request’s payload size in bytes
+  tstamp
+    The time stamp of isochronous cycle at which the request arrived.
+  padding
+    Padding to keep the size of structure as multiples of 8 in various architectures
+since 4 byte alignment is used for 8 byte of object type in System V ABI for i386
+architecture.
+  data
+    Incoming data, if any

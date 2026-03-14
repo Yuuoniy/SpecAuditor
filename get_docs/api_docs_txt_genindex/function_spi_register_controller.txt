@@ -1,0 +1,12 @@
+Function: int spi_register_controller ( struct spi_controller * ctlr )
+
+register SPI host or target controller
+
+Parameters
+  struct spi_controller *ctlr
+    initialized controller, originally from spi_alloc_host() or spi_alloc_target()
+
+Description
+  SPI controllers connect to their drivers using some non-SPI bus,
+such as the platform bus.  The final stage of probe() in that code
+includes calling spi_register_controller() to hook up to this SPI bus glue.

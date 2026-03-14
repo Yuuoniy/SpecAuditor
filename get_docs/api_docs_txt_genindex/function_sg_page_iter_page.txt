@@ -1,0 +1,7 @@
+Function: struct page * sg_page_iter_page ( struct sg_page_iter * piter )
+
+get the current page held by the page iterator
+
+Parameters
+  struct sg_page_iter *piter
+    page iterator holding the page

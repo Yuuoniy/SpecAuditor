@@ -1,0 +1,9 @@
+Function: bool tipc_sk_overlimit1 ( struct sock * sk , struct sk_buff * skb )
+
+check if socket rx queue is about to be overloaded, both the rcv and backlog queues are considered
+
+Parameters
+  struct sock *sk
+    tipc sk to be checked
+  struct sk_buff *skb
+    tipc msg to be checked

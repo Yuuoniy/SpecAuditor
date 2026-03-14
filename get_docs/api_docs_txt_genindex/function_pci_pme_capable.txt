@@ -1,0 +1,9 @@
+Function: bool pci_pme_capable ( struct pci_dev * dev , pci_power_t state )
+
+check the capability of PCI device to generate PME#
+
+Parameters
+  struct pci_dev *dev
+    PCI device to handle.
+  pci_power_t state
+    PCI state from which device will issue PME#.

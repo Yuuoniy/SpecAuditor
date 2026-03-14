@@ -1,0 +1,13 @@
+Function: void tipc_nametbl_withdraw ( struct net * net , struct tipc_uaddr * ua , struct tipc_socket_addr * sk , u32 key )
+
+withdraw a service binding
+
+Parameters
+  struct net *net
+    network namespace
+  struct tipc_uaddr *ua
+    service address/range being unbound
+  struct tipc_socket_addr *sk
+    address of the socket being unbound from
+  u32 key
+    target publication key

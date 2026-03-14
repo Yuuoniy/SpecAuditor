@@ -1,0 +1,9 @@
+Function: int gpiod_set_consumer_name ( struct gpio_desc * desc , const char * name )
+
+set the consumer name for the descriptor
+
+Parameters
+  struct gpio_desc *desc
+    gpio to set the consumer name on
+  const char *name
+    the new consumer name

@@ -1,0 +1,12 @@
+Function: struct resource * request_resource_conflict ( struct resource * root , struct resource * new )
+
+request and reserve an I/O or memory resource
+
+Parameters
+  struct resource *root
+    root resource descriptor
+  struct resource *new
+    resource descriptor desired by caller
+
+Description
+  Returns 0 for success, conflict resource on error.

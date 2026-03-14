@@ -1,0 +1,17 @@
+Function: int ccw_device_tm_start ( struct ccw_device * cdev , struct tcw * tcw , unsigned long intparm , u8 lpm )
+
+perform start function
+
+Parameters
+  struct ccw_device *cdev
+    ccw device on which to perform the start function
+  struct tcw *tcw
+    transport-command word to be started
+  unsigned long intparm
+    user defined parameter to be passed to the interrupt handler
+  u8 lpm
+    mask of paths to use
+
+Description
+  Start the tcw on the given ccw device. Return zero on success, non-zero
+otherwise.

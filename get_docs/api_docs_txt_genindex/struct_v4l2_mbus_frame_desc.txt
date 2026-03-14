@@ -1,0 +1,11 @@
+Struct: struct v4l2_mbus_frame_desc
+
+media bus data frame description
+
+Members
+  type
+    type of the bus ( enum v4l2_mbus_frame_desc_type )
+  entry
+    frame descriptors array
+  num_entries
+    number of entries in entry array

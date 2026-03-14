@@ -1,0 +1,13 @@
+Function: void drm_connector_list_iter_begin ( struct drm_device * dev , struct drm_connector_list_iter * iter )
+
+initialize a connector_list iterator
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_connector_list_iter *iter
+    connector_list iterator
+
+Description
+  Sets iter up to walk the drm_mode_config.connector_list of dev . iter must always be cleaned up again by calling drm_connector_list_iter_end() .
+Iteration itself happens using drm_connector_list_iter_next() or drm_for_each_connector_iter() .

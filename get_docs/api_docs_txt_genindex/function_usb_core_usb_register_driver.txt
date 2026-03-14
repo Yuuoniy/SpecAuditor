@@ -1,0 +1,16 @@
+Function: int usb_register_driver ( struct usb_driver * new_driver , struct module * owner , const char * mod_name )
+
+register a USB interface driver
+
+Parameters
+  struct usb_driver *new_driver
+    USB operations for the interface driver
+  struct module *owner
+    module owner of this driver.
+  const char *mod_name
+    module name string
+
+Description
+  Registers a USB interface driver with the USB core.  The list of
+unattached interfaces will be rescanned whenever a new driver is
+added, allowing the new driver to attach to any recognized interfaces.

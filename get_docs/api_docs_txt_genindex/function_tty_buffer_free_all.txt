@@ -1,0 +1,11 @@
+Function: void tty_buffer_free_all ( struct tty_port * port )
+
+free buffers used by a tty
+
+Parameters
+  struct tty_port *port
+    tty port to free from
+
+Description
+  Remove all the buffers pending on a tty whether queued with data or in the
+free ring. Must be called when the tty is no longer in use.

@@ -1,0 +1,16 @@
+Function: void drm_atomic_helper_fake_vblank ( struct drm_atomic_state * state )
+
+fake VBLANK events if needed
+
+Parameters
+  struct drm_atomic_state *state
+    atomic state object being committed
+
+Description
+  This function walks all CRTCs and fakes VBLANK events on those with drm_crtc_state.no_vblank set to true and drm_crtc_state.event != NULL.
+The primary use of this function is writeback connectors working in oneshot
+mode and faking VBLANK events. In this case they only fake the VBLANK event
+when a job is queued, and any change to the pipeline that does not touch the
+connector is leading to timeouts when calling drm_atomic_helper_wait_for_vblanks() or drm_atomic_helper_wait_for_flip_done() . In addition to writeback
+connectors, this function can also fake VBLANK events for CRTCs without
+VBLANK interrupt.

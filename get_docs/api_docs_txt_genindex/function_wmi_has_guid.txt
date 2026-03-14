@@ -1,0 +1,10 @@
+Function: bool wmi_has_guid ( const char * guid_string )
+
+Check if a GUID is available
+
+Parameters
+  const char *guid_string
+    36 char string of the form fa50ff2b-f2e8-45de-83fa-65417f2f49ba
+
+Description
+  Check if a given GUID is defined by _WDG.

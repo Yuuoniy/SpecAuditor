@@ -1,0 +1,12 @@
+Function: void freeze_workqueues_begin ( void )
+
+begin freezing workqueues
+
+Parameters
+  void
+    no arguments
+
+Description
+  Start freezing workqueues.  After this function returns, all freezable
+workqueues will queue new works to their inactive_works list instead of
+pool->worklist.

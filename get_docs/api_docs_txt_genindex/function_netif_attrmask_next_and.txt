@@ -1,0 +1,13 @@
+Function: int netif_attrmask_next_and ( int n , const unsigned long * src1p , const unsigned long * src2p , unsigned int nr_bits )
+
+get the next CPU/Rx queue in *src1p & *src2p
+
+Parameters
+  int n
+    CPU/Rx queue index
+  const unsigned long *src1p
+    the first CPUs/Rx queues mask pointer
+  const unsigned long *src2p
+    the second CPUs/Rx queues mask pointer
+  unsigned int nr_bits
+    number of bits in the bitmask

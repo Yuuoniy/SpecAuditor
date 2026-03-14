@@ -1,0 +1,7 @@
+Function: void uio_event_notify ( struct uio_info * info )
+
+trigger an interrupt event
+
+Parameters
+  struct uio_info *info
+    UIO device capabilities

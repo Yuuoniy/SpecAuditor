@@ -1,0 +1,13 @@
+Function: int i2c_add_adapter ( struct i2c_adapter * adapter )
+
+declare i2c adapter, use dynamic bus number
+
+Parameters
+  struct i2c_adapter *adapter
+    the adapter to add
+
+Description
+  This routine is used to declare an I2C adapter when its bus number
+doesn’t matter or when its bus number is specified by an dt alias.
+Examples of bases when the bus number doesn’t matter: I2C adapters
+dynamically added by USB links or PCI plugin cards.

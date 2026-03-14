@@ -1,0 +1,10 @@
+Function: void rvt_dealloc_device ( struct rvt_dev_info * rdi )
+
+deallocate rdi
+
+Parameters
+  struct rvt_dev_info *rdi
+    structure to free
+
+Description
+  Free a structure allocated with rvt_alloc_device()

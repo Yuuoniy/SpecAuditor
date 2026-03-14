@@ -1,0 +1,7 @@
+Function: int sk_wmem_alloc_get ( const struct sock * sk )
+
+returns write allocations
+
+Parameters
+  const struct sock *sk
+    socket

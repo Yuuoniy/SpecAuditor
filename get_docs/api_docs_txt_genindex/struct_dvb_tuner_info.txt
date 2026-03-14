@@ -1,0 +1,19 @@
+Struct: struct dvb_tuner_info
+
+Frontend name and min/max ranges/bandwidths
+
+Members
+  name
+    name of the Frontend
+  frequency_min_hz
+    minimal frequency supported in Hz
+  frequency_max_hz
+    maximum frequency supported in Hz
+  frequency_step_hz
+    frequency step in Hz
+  bandwidth_min
+    minimal frontend bandwidth supported
+  bandwidth_max
+    maximum frontend bandwidth supported
+  bandwidth_step
+    frontend bandwidth step

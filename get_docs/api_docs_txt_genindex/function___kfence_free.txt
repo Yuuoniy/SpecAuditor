@@ -1,0 +1,10 @@
+Function: void __kfence_free ( void * addr )
+
+release a KFENCE heap object to KFENCE pool
+
+Parameters
+  void *addr
+    object to be freed
+
+Description
+  Requires: is_kfence_address(addr)

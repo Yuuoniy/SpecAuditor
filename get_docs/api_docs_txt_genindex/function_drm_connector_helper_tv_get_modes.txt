@@ -1,0 +1,11 @@
+Function: int drm_connector_helper_tv_get_modes ( struct drm_connector * connector )
+
+Fills the modes availables to a TV connector
+
+Parameters
+  struct drm_connector *connector
+    The connector
+
+Description
+  Fills the available modes for a TV connector based on the supported
+TV modes, and the default mode expressed by the kernel command line.

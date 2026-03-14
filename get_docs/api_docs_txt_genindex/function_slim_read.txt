@@ -1,0 +1,13 @@
+Function: int slim_read ( struct slim_device * sdev , u32 addr , size_t count , u8 * val )
+
+Read SLIMbus value element
+
+Parameters
+  struct slim_device *sdev
+    client handle.
+  u32 addr
+    address of value element to read.
+  size_t count
+    number of bytes to read. Maximum bytes allowed are 16.
+  u8 *val
+    will return what the value element value was

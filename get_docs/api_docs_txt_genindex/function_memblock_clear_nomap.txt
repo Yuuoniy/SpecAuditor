@@ -1,0 +1,9 @@
+Function: int __init_memblock memblock_clear_nomap ( phys_addr_t base , phys_addr_t size )
+
+Clear flag MEMBLOCK_NOMAP for a specified region.
+
+Parameters
+  phys_addr_t base
+    the base phys addr of the region
+  phys_addr_t size
+    the size of the region

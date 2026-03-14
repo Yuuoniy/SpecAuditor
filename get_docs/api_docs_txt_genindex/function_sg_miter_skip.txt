@@ -1,0 +1,14 @@
+Function: bool sg_miter_skip ( struct sg_mapping_iter * miter , off_t offset )
+
+reposition mapping iterator
+
+Parameters
+  struct sg_mapping_iter *miter
+    sg mapping iter to be skipped
+  off_t offset
+    number of bytes to plus the current location
+
+Description
+  Sets the offset of miter to its current location plus offset bytes.
+If mapping iterator miter has been proceeded by sg_miter_next() , this
+stops miter .

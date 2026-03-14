@@ -1,0 +1,13 @@
+Function: void v4l2_disable_ioctl ( struct video_device * vdev , unsigned int cmd )
+
+mark that a given command isn’t implemented. shouldn’t use core locking
+
+Parameters
+  struct video_device *vdev
+    pointer to struct video_device
+  unsigned int cmd
+    ioctl command
+
+Description
+  This function allows drivers to provide just one v4l2_ioctl_ops struct, but
+disable ioctls based on the specific card that is actually found.

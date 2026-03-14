@@ -1,0 +1,10 @@
+Function: void console_force_preferred_locked ( struct console * con )
+
+force a registered console preferred
+
+Parameters
+  struct console *con
+    The registered console to force preferred.
+
+Description
+  Must be called under console_list_lock() .

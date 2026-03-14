@@ -1,0 +1,7 @@
+Function: void pnp_unregister_card_driver ( struct pnp_card_driver * drv )
+
+unregisters a PnP card driver from the PnP Layer
+
+Parameters
+  struct pnp_card_driver *drv
+    pointer to the driver to unregister

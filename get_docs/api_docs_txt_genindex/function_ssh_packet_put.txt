@@ -1,0 +1,12 @@
+Function: void ssh_packet_put ( struct ssh_packet * packet )
+
+Decrement reference count of packet.
+
+Parameters
+  struct ssh_packet *packet
+    The packet to decrement the reference count of.
+
+Description
+  If the reference count reaches zero, the release callback specified in
+the packet’s struct ssh_packet_ops , i.e. packet->ops->release , will be
+called.

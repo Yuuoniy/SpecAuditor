@@ -1,0 +1,10 @@
+Function: void gpiod_put ( struct gpio_desc * desc )
+
+dispose of a GPIO descriptor
+
+Parameters
+  struct gpio_desc *desc
+    GPIO descriptor to dispose of
+
+Description
+  No descriptor can be used after gpiod_put() has been called on it.

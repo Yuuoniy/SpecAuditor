@@ -1,0 +1,14 @@
+Function: struct reset_control * devm_reset_control_get_exclusive_by_index ( struct device * dev , int index )
+
+resource managed reset_control_get_exclusive()
+
+Parameters
+  struct device *dev
+    device to be reset by the controller
+  int index
+    index of the reset controller
+
+Description
+  Managed reset_control_get_exclusive() . For reset controllers returned from
+this function, reset_control_put() is called automatically on driver
+detach.

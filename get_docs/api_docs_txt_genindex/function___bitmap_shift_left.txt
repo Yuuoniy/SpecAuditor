@@ -1,0 +1,18 @@
+Function: void __bitmap_shift_left ( unsigned long * dst , const unsigned long * src , unsigned int shift , unsigned int nbits )
+
+logical left shift of the bits in a bitmap
+
+Parameters
+  unsigned long *dst
+    destination bitmap
+  const unsigned long *src
+    source bitmap
+  unsigned int shift
+    shift by this many bits
+  unsigned int nbits
+    bitmap size, in bits
+
+Description
+  Shifting left (multiplying) means moving bits in the LS -> MS
+direction.  Zeros are fed into the vacated LS bit positions
+and those MS bits shifted off the top are lost.

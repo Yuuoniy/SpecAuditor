@@ -1,0 +1,7 @@
+Function: bool tipc_nametbl_subscribe ( struct tipc_subscription * sub )
+
+add a subscription object to the name table
+
+Parameters
+  struct tipc_subscription *sub
+    subscription to add

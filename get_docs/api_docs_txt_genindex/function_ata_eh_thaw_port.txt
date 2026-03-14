@@ -1,0 +1,10 @@
+Function: void ata_eh_thaw_port ( struct ata_port * ap )
+
+EH helper to thaw port
+
+Parameters
+  struct ata_port *ap
+    ATA port to thaw
+
+Description
+  Thaw frozen port ap .

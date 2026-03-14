@@ -1,0 +1,13 @@
+Function: void kmem_cache_free ( struct kmem_cache * s , void * x )
+
+Deallocate an object
+
+Parameters
+  struct kmem_cache *s
+    The cache the allocation was from.
+  void *x
+    The previously allocated object.
+
+Description
+  Free an object which was previously allocated from this
+cache.

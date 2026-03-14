@@ -1,0 +1,15 @@
+Function: void bitmap_release_region ( unsigned long * bitmap , unsigned int pos , int order )
+
+release allocated bitmap region
+
+Parameters
+  unsigned long *bitmap
+    array of unsigned longs corresponding to the bitmap
+  unsigned int pos
+    beginning of bit region to release
+  int order
+    region size (log base 2 of number of bits) to release
+
+Description
+  This is the complement to __bitmap_find_free_region() and releases
+the found region (by clearing it in the bitmap).

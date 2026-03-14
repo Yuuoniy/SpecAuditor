@@ -1,0 +1,7 @@
+Function: void ssam_nfblk_remove ( struct ssam_notifier_block * nb )
+
+Remove a notifier block from its notifier list.
+
+Parameters
+  struct ssam_notifier_block *nb
+    The notifier block to be removed.

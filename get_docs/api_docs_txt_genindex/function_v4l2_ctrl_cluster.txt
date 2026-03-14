@@ -1,0 +1,9 @@
+Function: void v4l2_ctrl_cluster ( unsigned int ncontrols , struct v4l2_ctrl * * controls )
+
+Mark all controls in the cluster as belonging to that cluster.
+
+Parameters
+  unsigned int ncontrols
+    The number of controls in this cluster.
+  struct v4l2_ctrl **controls
+    The cluster control array of size ncontrols .

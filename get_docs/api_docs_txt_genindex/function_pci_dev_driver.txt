@@ -1,0 +1,11 @@
+Function: struct pci_driver * pci_dev_driver ( const struct pci_dev * dev )
+
+get the pci_driver of a device
+
+Parameters
+  const struct pci_dev *dev
+    the device to query
+
+Description
+  Returns the appropriate pci_driver structure or NULL if there is no
+registered driver for the device.

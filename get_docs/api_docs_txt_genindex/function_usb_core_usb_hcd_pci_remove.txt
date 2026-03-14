@@ -1,0 +1,12 @@
+Function: void usb_hcd_pci_remove ( struct pci_dev * dev )
+
+shutdown processing for PCI-based HCDs
+
+Parameters
+  struct pci_dev *dev
+    USB Host Controller being removed
+
+Description
+  Reverses the effect of usb_hcd_pci_probe() , first invoking
+the HCD’s stop() method.  It is always called from a thread
+context, normally “rmmod”, “apmd”, or something similar.

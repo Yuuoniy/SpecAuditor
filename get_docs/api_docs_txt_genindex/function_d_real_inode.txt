@@ -1,0 +1,11 @@
+Function: struct inode * d_real_inode ( const struct dentry * dentry )
+
+Return the real inode hosting the data
+
+Parameters
+  const struct dentry *dentry
+    The dentry to query
+
+Description
+  If dentry is on a union/overlay, then return the underlying, real inode.
+Otherwise return d_inode() .

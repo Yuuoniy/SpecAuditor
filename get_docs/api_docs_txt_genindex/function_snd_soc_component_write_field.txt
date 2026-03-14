@@ -1,0 +1,13 @@
+Function: int snd_soc_component_write_field ( struct snd_soc_component * component , unsigned int reg , unsigned int mask , unsigned int val )
+
+write to register field
+
+Parameters
+  struct snd_soc_component *component
+    Component to write to
+  unsigned int reg
+    Register to write
+  unsigned int mask
+    mask of the register field to update
+  unsigned int val
+    value of the field to write

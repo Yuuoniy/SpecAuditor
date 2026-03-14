@@ -1,0 +1,21 @@
+Function: ssize_t copy_splice_read ( struct file * in , loff_t * ppos , struct pipe_inode_info * pipe , size_t len , unsigned int flags )
+
+Copy data from a file and splice the copy into a pipe
+
+Parameters
+  struct file *in
+    The file to read from
+  loff_t *ppos
+    Pointer to the file position to read from
+  struct pipe_inode_info *pipe
+    The pipe to splice into
+  size_t len
+    The amount to splice
+  unsigned int flags
+    The SPLICE_F_* flags
+
+Description
+  This function allocates a bunch of pages sufficient to hold the requested
+amount of data (but limited by the remaining pipe capacity), passes it to
+the file’s -> read_iter() to read into and then splices the used pages into
+the pipe.

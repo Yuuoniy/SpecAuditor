@@ -1,0 +1,14 @@
+Function: void input_enable_softrepeat ( struct input_dev * dev , int delay , int period )
+
+enable software autorepeat
+
+Parameters
+  struct input_dev *dev
+    input device
+  int delay
+    repeat delay
+  int period
+    repeat period
+
+Description
+  Enable software autorepeat on the input device.

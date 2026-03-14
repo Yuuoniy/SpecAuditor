@@ -1,0 +1,13 @@
+Macro: xe_tile_assert
+
+
+
+Parameters
+  tile
+    the struct xe_tile pointer to which condition applies
+  condition
+    condition to check
+
+Description
+  xe_tile_assert() uses drm_WARN to emit a warning and print additional
+information that could be read from the tile pointer if provided condition is false.

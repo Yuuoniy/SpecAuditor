@@ -1,0 +1,11 @@
+Function: void i915_gem_object_make_unshrinkable ( struct drm_i915_gem_object * obj )
+
+Hide the object from the shrinker. By default all object types that support shrinking(see IS_SHRINKABLE), will also make the object visible to the shrinker after allocating the system memory pages.
+
+Parameters
+  struct drm_i915_gem_object *obj
+    The GEM object.
+
+Description
+  This is typically used for special kernel internal objects that can’t be
+easily processed by the shrinker, like if they are perma-pinned.

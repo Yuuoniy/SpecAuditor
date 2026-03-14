@@ -1,0 +1,10 @@
+Function: void pcpu_mem_free ( void * ptr )
+
+free memory
+
+Parameters
+  void *ptr
+    memory to free
+
+Description
+  Free ptr . ptr should have been allocated using pcpu_mem_zalloc() .

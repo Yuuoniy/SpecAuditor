@@ -1,0 +1,11 @@
+Function: int phy_get_mac_termination ( struct phy_device * phydev , struct device * dev , u32 * val )
+
+stores MAC termination in val
+
+Parameters
+  struct phy_device *phydev
+    phy_device struct
+  struct device *dev
+    pointer to the devices device struct
+  u32 *val
+    MAC termination

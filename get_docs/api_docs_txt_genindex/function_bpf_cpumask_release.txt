@@ -1,0 +1,12 @@
+Function: __bpf_kfunc void bpf_cpumask_release ( struct bpf_cpumask * cpumask )
+
+Release a previously acquired BPF cpumask.
+
+Parameters
+  struct bpf_cpumask *cpumask
+    The cpumask being released.
+
+Description
+  Releases a previously acquired reference to a BPF cpumask. When the final
+reference of the BPF cpumask has been released, it is subsequently freed in
+an RCU callback in the BPF memory allocator.

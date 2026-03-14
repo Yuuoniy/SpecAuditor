@@ -1,0 +1,12 @@
+Function: void try_to_writeback_inodes_sb ( struct super_block * sb , enum wb_reason reason )
+
+try to start writeback if none underway
+
+Parameters
+  struct super_block *sb
+    the superblock
+  enum wb_reason reason
+    reason why some writeback work was initiated
+
+Description
+  Invoke __writeback_inodes_sb_nr if no writeback is currently underway.

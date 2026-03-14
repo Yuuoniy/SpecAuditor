@@ -1,0 +1,16 @@
+Function: void __iomem * pcim_iomap_range ( struct pci_dev * pdev , int bar , unsigned long offset , unsigned long len )
+
+Create a ranged __iomap mapping within a PCI BAR
+
+Parameters
+  struct pci_dev *pdev
+    PCI device to map IO resources for
+  int bar
+    Index of the BAR
+  unsigned long offset
+    Offset from the begin of the BAR
+  unsigned long len
+    Length in bytes for the mapping
+
+Description
+  Creates a new IO-Mapping within the specified bar , ranging from offset to offset + len .

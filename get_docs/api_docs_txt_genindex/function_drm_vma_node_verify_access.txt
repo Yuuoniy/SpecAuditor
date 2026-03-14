@@ -1,0 +1,12 @@
+Function: int drm_vma_node_verify_access ( struct drm_vma_offset_node * node , struct drm_file * tag )
+
+Access verification helper for TTM
+
+Parameters
+  struct drm_vma_offset_node *node
+    Offset node
+  struct drm_file *tag
+    Tag of file to check
+
+Description
+  This checks whether tag is granted access to node . It is the same as drm_vma_node_is_allowed() but suitable as drop-in helper for TTM verify_access() callbacks.

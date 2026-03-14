@@ -1,0 +1,12 @@
+Function: int usb_reset_device ( struct usb_device * udev )
+
+warn interface drivers and perform a USB port reset
+
+Parameters
+  struct usb_device *udev
+    device to reset (not in NOTATTACHED state)
+
+Description
+  Warns all drivers bound to registered interfaces (using their pre_reset
+method), performs the port reset, and then lets the drivers know that
+the reset is over (using their post_reset method).

@@ -1,0 +1,10 @@
+Function: void free_workqueue_attrs ( struct workqueue_attrs * attrs )
+
+free a workqueue_attrs
+
+Parameters
+  struct workqueue_attrs *attrs
+    workqueue_attrs to free
+
+Description
+  Undo alloc_workqueue_attrs() .

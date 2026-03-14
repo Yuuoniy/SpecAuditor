@@ -1,0 +1,3 @@
+Enum: enum mpath_info_flags
+
+mesh path information flags

@@ -1,0 +1,13 @@
+Function: void drm_connector_set_vrr_capable_property ( struct drm_connector * connector , bool capable )
+
+sets the variable refresh rate capable property for a connector
+
+Parameters
+  struct drm_connector *connector
+    drm connector
+  bool capable
+    True if the connector is variable refresh rate capable
+
+Description
+  Should be used by atomic drivers to update the indicated support for
+variable refresh rate over a connector.

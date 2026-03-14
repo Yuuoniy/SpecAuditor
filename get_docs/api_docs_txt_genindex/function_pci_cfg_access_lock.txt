@@ -1,0 +1,12 @@
+Function: void pci_cfg_access_lock ( struct pci_dev * dev )
+
+Lock PCI config reads/writes
+
+Parameters
+  struct pci_dev *dev
+    pci device struct
+
+Description
+  When access is locked, any userspace reads or writes to config
+space and concurrent lock requests will sleep until access is
+allowed via pci_cfg_access_unlock() again.

@@ -1,0 +1,16 @@
+Function: DEVICE_ATTR_PREALLOC
+
+
+
+Parameters
+  _name
+    Attribute name.
+  _mode
+    File mode.
+  _show
+    Show handler. Optional, but mandatory if attribute is readable.
+  _store
+    Store handler. Optional, but mandatory if attribute is writable.
+
+Description
+  Like DEVICE_ATTR() , but SYSFS_PREALLOC is set on _mode .

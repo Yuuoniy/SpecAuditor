@@ -1,0 +1,10 @@
+Function: u32 add_marker_len ( struct nand_bbt_descr * td )
+
+compute the length of the marker in data area
+
+Parameters
+  struct nand_bbt_descr *td
+    BBT descriptor used for computation
+
+Description
+  The length will be 0 if the marker is located in OOB area.

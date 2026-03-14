@@ -1,0 +1,3 @@
+Enum: enum dmx_ts_pes
+
+type of the PES filter.

@@ -1,0 +1,27 @@
+Struct: struct drm_tv_connector_state
+
+TV connector related states
+
+Members
+  select_subconnector
+    selected subconnector
+  subconnector
+    detected subconnector
+  margins
+    TV margins
+  legacy_mode
+    Legacy TV mode, driver specific value
+  mode
+    TV mode
+  brightness
+    brightness in percent
+  contrast
+    contrast in percent
+  flicker_reduction
+    flicker reduction in percent
+  overscan
+    overscan in percent
+  saturation
+    saturation in percent
+  hue
+    hue in percent

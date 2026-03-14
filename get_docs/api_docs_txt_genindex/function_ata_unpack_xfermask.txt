@@ -1,0 +1,17 @@
+Function: void ata_unpack_xfermask ( unsigned int xfer_mask , unsigned int * pio_mask , unsigned int * mwdma_mask , unsigned int * udma_mask )
+
+Unpack xfer_mask into pio, mwdma and udma masks
+
+Parameters
+  unsigned int xfer_mask
+    xfer_mask to unpack
+  unsigned int *pio_mask
+    resulting pio_mask
+  unsigned int *mwdma_mask
+    resulting mwdma_mask
+  unsigned int *udma_mask
+    resulting udma_mask
+
+Description
+  Unpack xfer_mask into pio_mask , mwdma_mask and udma_mask .
+Any NULL destination masks will be ignored.

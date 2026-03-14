@@ -1,0 +1,15 @@
+Function: int crypto_rng_get_bytes ( struct crypto_rng * tfm , u8 * rdata , unsigned int dlen )
+
+get random number
+
+Parameters
+  struct crypto_rng *tfm
+    cipher handle
+  u8 *rdata
+    output buffer holding the random numbers
+  unsigned int dlen
+    length of the output buffer
+
+Description
+  This function fills the caller-allocated buffer with random numbers using the
+random number generator referenced by the cipher handle.

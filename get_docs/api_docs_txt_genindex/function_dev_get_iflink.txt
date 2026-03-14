@@ -1,0 +1,11 @@
+Function: int dev_get_iflink ( const struct net_device * dev )
+
+get ‘iflink’ value of a interface
+
+Parameters
+  const struct net_device *dev
+    targeted interface
+
+Description
+  Indicates the ifindex the interface is linked to.
+Physical interfaces have the same ‘ifindex’ and ‘iflink’ values.

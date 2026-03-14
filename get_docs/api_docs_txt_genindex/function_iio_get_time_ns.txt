@@ -1,0 +1,7 @@
+Function: s64 iio_get_time_ns ( const struct iio_dev * indio_dev )
+
+utility function to get a time stamp for events etc
+
+Parameters
+  const struct iio_dev *indio_dev
+    device

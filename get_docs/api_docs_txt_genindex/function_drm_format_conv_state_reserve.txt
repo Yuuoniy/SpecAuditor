@@ -1,0 +1,17 @@
+Function: void * drm_format_conv_state_reserve ( struct drm_format_conv_state * state , size_t new_size , gfp_t flags )
+
+Allocates storage for format conversion
+
+Parameters
+  struct drm_format_conv_state *state
+    The format-conversion state
+  size_t new_size
+    The minimum allocation size
+  gfp_t flags
+    Flags for kmalloc()
+
+Description
+  Allocates at least new_size bytes and returns a pointer to the memory
+range. After calling this function, previously returned memory blocks
+are invalid. It’s best to collect all memory requirements of a format
+conversion and call this function once to allocate the range.

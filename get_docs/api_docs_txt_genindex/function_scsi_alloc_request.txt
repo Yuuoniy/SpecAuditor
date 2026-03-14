@@ -1,0 +1,11 @@
+Function: struct request * scsi_alloc_request ( struct request_queue * q , blk_opf_t opf , blk_mq_req_flags_t flags )
+
+allocate a block request and partially initialize its scsi_cmnd
+
+Parameters
+  struct request_queue *q
+    the device’s request queue
+  blk_opf_t opf
+    the request operation code
+  blk_mq_req_flags_t flags
+    block layer allocation flags

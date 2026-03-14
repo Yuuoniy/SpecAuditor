@@ -1,0 +1,12 @@
+Function: int security_sb_eat_lsm_opts ( char * options , void * * mnt_opts )
+
+Consume LSM mount options
+
+Parameters
+  char *options
+    mount options
+  void **mnt_opts
+    LSM processed mount options
+
+Description
+  Eat (scan options ) and save them in mnt_opts .

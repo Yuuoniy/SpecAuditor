@@ -1,0 +1,10 @@
+Struct: struct ttm_lru_bulk_move
+
+
+
+Members
+  pos
+    first/last lru entry for resources in the each domain/priority
+  cursor_list
+    The list of cursors currently traversing any of
+the sublists of pos . Protected by the ttm device’s lru_lock.

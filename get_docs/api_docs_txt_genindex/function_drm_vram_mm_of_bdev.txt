@@ -1,0 +1,7 @@
+Function: struct drm_vram_mm * drm_vram_mm_of_bdev ( struct ttm_device * bdev )
+
+Returns the container of type struct ttm_device for field bdev.
+
+Parameters
+  struct ttm_device *bdev
+    the TTM BO device

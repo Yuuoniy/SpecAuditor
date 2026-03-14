@@ -1,0 +1,13 @@
+Function: bool drm_property_type_is ( struct drm_property * property , uint32_t type )
+
+check the type of a property
+
+Parameters
+  struct drm_property *property
+    property to check
+  uint32_t type
+    property type to compare with
+
+Description
+  This is a helper function becauase the uapi encoding of property types is
+a bit special for historical reasons.

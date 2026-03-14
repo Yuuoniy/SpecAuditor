@@ -1,0 +1,9 @@
+Struct: struct rkisp1_ext_params_cproc_config
+
+RkISP1 extensible params CPROC config
+
+Members
+  header
+    The RkISP1 extensible parameters header, see rkisp1_ext_params_block_header
+  config
+    Color processing configuration, see rkisp1_cif_isp_cproc_config

@@ -1,0 +1,10 @@
+Function: bool is_idmapped_mnt ( const struct vfsmount * mnt )
+
+check whether a mount is mapped
+
+Parameters
+  const struct vfsmount *mnt
+    the mount to check
+
+Description
+  If mnt has an non nop_mnt_idmap attached to it then mnt is mapped.

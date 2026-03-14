@@ -1,0 +1,12 @@
+Function: void atomic_long_set ( atomic_long_t * v , long i )
+
+atomic set with relaxed ordering
+
+Parameters
+  atomic_long_t *v
+    pointer to atomic_long_t
+  long i
+    long value to assign
+
+Description
+  Atomically sets v to i with relaxed ordering.

@@ -1,0 +1,14 @@
+Function: struct media_link * media_create_intf_link ( struct media_entity * entity , struct media_interface * intf , u32 flags )
+
+creates a link between an entity and an interface
+
+Parameters
+  struct media_entity *entity
+    pointer to media_entity
+  struct media_interface *intf
+    pointer to media_interface
+  u32 flags
+    Link flags, as defined in include/uapi/linux/media.h ( seek for MEDIA_LNK_FL_* )
+
+Description
+  Valid values for flags:

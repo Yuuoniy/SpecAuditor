@@ -1,0 +1,13 @@
+Function: struct device * device_find_child_by_name ( struct device * parent , const char * name )
+
+device iterator for locating a child device.
+
+Parameters
+  struct device *parent
+    parent struct device
+  const char *name
+    name of the child device
+
+Description
+  This is similar to the device_find_child() function above, but it
+returns a reference to a device that has the name name .

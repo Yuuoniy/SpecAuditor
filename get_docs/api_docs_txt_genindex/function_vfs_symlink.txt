@@ -1,0 +1,16 @@
+Function: int vfs_symlink ( struct mnt_idmap * idmap , struct inode * dir , struct dentry * dentry , const char * oldname )
+
+create symlink
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount the inode was found from
+  struct inode *dir
+    inode of the parent directory
+  struct dentry *dentry
+    dentry of the child symlink file
+  const char *oldname
+    name of the file to link to
+
+Description
+  Create a symlink.

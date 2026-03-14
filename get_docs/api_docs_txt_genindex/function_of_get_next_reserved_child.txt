@@ -1,0 +1,13 @@
+Function: struct device_node * of_get_next_reserved_child ( const struct device_node * node , struct device_node * prev )
+
+Find the next reserved child node
+
+Parameters
+  const struct device_node *node
+    parent node
+  struct device_node *prev
+    previous child of the parent node, or NULL to get first
+
+Description
+  This function is like of_get_next_child() , except that it
+automatically skips any disabled nodes (i.e. status = “disabled”).

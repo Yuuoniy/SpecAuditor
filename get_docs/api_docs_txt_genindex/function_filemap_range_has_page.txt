@@ -1,0 +1,15 @@
+Function: bool filemap_range_has_page ( struct address_space * mapping , loff_t start_byte , loff_t end_byte )
+
+check if a page exists in range.
+
+Parameters
+  struct address_space *mapping
+    address space within which to check
+  loff_t start_byte
+    offset in bytes where the range starts
+  loff_t end_byte
+    offset in bytes where the range ends (inclusive)
+
+Description
+  Find at least one page in the range supplied, usually used to check if
+direct writing in this range will trigger a writeback.

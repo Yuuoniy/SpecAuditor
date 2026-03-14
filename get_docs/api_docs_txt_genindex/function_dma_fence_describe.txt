@@ -1,0 +1,12 @@
+Function: void dma_fence_describe ( struct dma_fence * fence , struct seq_file * seq )
+
+Dump fence description into seq_file
+
+Parameters
+  struct dma_fence *fence
+    the fence to describe
+  struct seq_file *seq
+    the seq_file to put the textual description into
+
+Description
+  Dump a textual description of the fence and it’s state into the seq_file.

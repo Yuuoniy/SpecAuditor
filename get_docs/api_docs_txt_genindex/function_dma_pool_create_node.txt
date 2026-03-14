@@ -1,0 +1,23 @@
+Function: struct dma_pool * dma_pool_create_node ( const char * name , struct device * dev , size_t size , size_t align , size_t boundary , int node )
+
+Creates a pool of coherent DMA memory blocks.
+
+Parameters
+  const char *name
+    name of pool, for diagnostics
+  struct device *dev
+    device that will be doing the DMA
+  size_t size
+    size of the blocks in this pool.
+  size_t align
+    alignment requirement for blocks; must be a power of two
+  size_t boundary
+    returned blocks won’t cross this power of two boundary
+  int node
+    optional NUMA node to allocate structs ‘dma_pool’ and ‘dma_page’ on
+
+Description
+  Given one of these pools, dma_pool_alloc() may be used to allocate memory.  Such memory will all have coherent
+DMA mappings, accessible by the device and its driver without using
+cache flushing primitives.  The actual size of blocks allocated may be
+larger than requested because of alignment.

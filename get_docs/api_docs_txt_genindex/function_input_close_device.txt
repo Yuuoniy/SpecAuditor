@@ -1,0 +1,11 @@
+Function: void input_close_device ( struct input_handle * handle )
+
+close input device
+
+Parameters
+  struct input_handle *handle
+    handle through which device is being accessed
+
+Description
+  This function should be called by input handlers when they
+want to stop receive events from given input device.

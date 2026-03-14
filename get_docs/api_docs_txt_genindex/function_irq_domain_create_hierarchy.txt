@@ -1,0 +1,20 @@
+Function: struct irq_domain * irq_domain_create_hierarchy ( struct irq_domain * parent , unsigned int flags , unsigned int size , struct fwnode_handle * fwnode , const struct irq_domain_ops * ops , void * host_data )
+
+Add a irqdomain into the hierarchy
+
+Parameters
+  struct irq_domain *parent
+    Parent irq domain to associate with the new domain
+  unsigned int flags
+    Irq domain flags associated to the domain
+  unsigned int size
+    Size of the domain. See below
+  struct fwnode_handle *fwnode
+    Optional fwnode of the interrupt controller
+  const struct irq_domain_ops *ops
+    Pointer to the interrupt domain callbacks
+  void *host_data
+    Controller private data pointer
+
+Description
+  If size is 0 a tree domain is created, otherwise a linear domain.

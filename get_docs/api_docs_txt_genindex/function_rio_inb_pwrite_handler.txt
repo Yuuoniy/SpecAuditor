@@ -1,0 +1,13 @@
+Function: int rio_inb_pwrite_handler ( struct rio_mport * mport , union rio_pw_msg * pw_msg )
+
+inbound port-write message handler
+
+Parameters
+  struct rio_mport *mport
+    mport device associated with port-write
+  union rio_pw_msg *pw_msg
+    pointer to inbound port-write message
+
+Description
+  Processes an inbound port-write message. Returns 0 if the request
+has been satisfied.

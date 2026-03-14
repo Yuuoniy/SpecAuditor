@@ -1,0 +1,7 @@
+Function: void tipc_nametbl_unsubscribe ( struct tipc_subscription * sub )
+
+remove a subscription object from name table
+
+Parameters
+  struct tipc_subscription *sub
+    subscription to remove

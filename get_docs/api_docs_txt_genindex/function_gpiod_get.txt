@@ -1,0 +1,11 @@
+Function: struct gpio_desc * gpiod_get ( struct device * dev , const char * con_id , enum gpiod_flags flags )
+
+obtain a GPIO for a given GPIO function
+
+Parameters
+  struct device *dev
+    GPIO consumer, can be NULL for system-global GPIOs
+  const char *con_id
+    function within the GPIO consumer
+  enum gpiod_flags flags
+    optional GPIO initialization flags

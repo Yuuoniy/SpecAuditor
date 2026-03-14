@@ -1,0 +1,15 @@
+Macro: srcu_dereference
+
+
+
+Parameters
+  p
+    the pointer to fetch and protect for later dereferencing
+  ssp
+    pointer to the srcu_struct, which is used to check that we
+really are in an SRCU read-side critical section.
+
+Description
+  Makes rcu_dereference_check() do the dirty work.  If PROVE_RCU
+is enabled, invoking this outside of an RCU read-side critical
+section will result in an RCU-lockdep splat.

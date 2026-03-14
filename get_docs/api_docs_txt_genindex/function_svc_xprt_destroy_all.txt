@@ -1,0 +1,15 @@
+Function: void svc_xprt_destroy_all ( struct svc_serv * serv , struct net * net , bool unregister )
+
+Destroy transports associated with serv
+
+Parameters
+  struct svc_serv *serv
+    RPC service to be shut down
+  struct net *net
+    target network namespace
+  bool unregister
+    true if it is OK to unregister the destroyed xprts
+
+Description
+  Server threads may still be running (especially in the case where the
+service is still running in other network namespaces).

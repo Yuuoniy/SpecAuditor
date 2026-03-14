@@ -1,0 +1,11 @@
+Macro: media_device_register
+
+
+
+Parameters
+  mdev
+    pointer to struct media_device
+
+Description
+  This macro calls __media_device_register() passing THIS_MODULE as
+the __media_device_register() second argument ( owner ).

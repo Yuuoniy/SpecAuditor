@@ -1,0 +1,19 @@
+Struct: struct ssam_event_notifier
+
+Notifier block for SSAM events.
+
+Members
+  base
+    The base notifier block with callback function and priority.
+  event
+    The event for which this block will receive notifications.
+  event.reg
+    Registry via which the event will be enabled/disabled.
+  event.id
+    ID specifying the event.
+  event.mask
+    Flags determining how events are matched to the notifier.
+  event.flags
+    Flags used for enabling the event.
+  flags
+    Notifier flags (see enum ssam_event_notifier_flags ).

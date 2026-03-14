@@ -1,0 +1,7 @@
+Struct: struct fw_cdev_initiate_bus_reset
+
+Initiate a bus reset
+
+Members
+  type
+    FW_CDEV_SHORT_RESET or FW_CDEV_LONG_RESET

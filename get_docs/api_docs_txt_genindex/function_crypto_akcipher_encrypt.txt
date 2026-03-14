@@ -1,0 +1,11 @@
+Function: int crypto_akcipher_encrypt ( struct akcipher_request * req )
+
+Invoke public key encrypt operation
+
+Parameters
+  struct akcipher_request *req
+    asymmetric key request
+
+Description
+  Function invokes the specific public key encrypt operation for a given
+public key algorithm

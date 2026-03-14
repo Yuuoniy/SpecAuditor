@@ -1,0 +1,10 @@
+Macro: XE_RTP_RULE_MEDIA_VERSION
+
+
+
+Parameters
+  ver__
+    Media IP version to match
+
+Description
+  Refer to XE_RTP_RULES() for expected usage.

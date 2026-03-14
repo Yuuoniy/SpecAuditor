@@ -1,0 +1,7 @@
+Function: unsigned int iio_get_masklength ( const struct iio_dev * indio_dev )
+
+Get length of the channels mask
+
+Parameters
+  const struct iio_dev *indio_dev
+    the IIO device to get the masklength for

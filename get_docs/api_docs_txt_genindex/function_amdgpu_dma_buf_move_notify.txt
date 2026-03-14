@@ -1,0 +1,11 @@
+Function: void amdgpu_dma_buf_move_notify ( struct dma_buf_attachment * attach )
+
+attach.move_notify implementation
+
+Parameters
+  struct dma_buf_attachment *attach
+    the DMA-buf attachment
+
+Description
+  Invalidate the DMA-buf attachment, making sure that the we re-create the
+mapping before the next use.

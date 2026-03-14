@@ -1,0 +1,11 @@
+Function: int i915_cmd_parser_get_version ( struct drm_i915_private * dev_priv )
+
+get the cmd parser version number
+
+Parameters
+  struct drm_i915_private *dev_priv
+    i915 device private
+
+Description
+  The cmd parser maintains a simple increasing integer version number suitable
+for passing to userspace clients to determine what operations are permitted.

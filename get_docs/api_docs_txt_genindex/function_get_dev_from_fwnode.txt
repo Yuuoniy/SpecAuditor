@@ -1,0 +1,11 @@
+Function: struct device * get_dev_from_fwnode ( struct fwnode_handle * fwnode )
+
+Obtain a reference count of the struct device the struct fwnode_handle is associated with.
+
+Parameters
+  struct fwnode_handle *fwnode
+    The pointer to the struct fwnode_handle to obtain the struct device reference count of.
+
+Description
+  This function obtains a reference count of the device the device pointer
+embedded in the struct fwnode_handle points to.

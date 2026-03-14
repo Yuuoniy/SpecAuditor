@@ -1,0 +1,13 @@
+Function: void maple_getcond_callback ( struct maple_device * dev , void ( * callback ) ( struct mapleq * mq ) , unsigned long interval , unsigned long function )
+
+setup handling MAPLE_COMMAND_GETCOND
+
+Parameters
+  struct maple_device *dev
+    device responding
+  void (*callback) (struct mapleq *mq)
+    handler callback
+  unsigned long interval
+    interval in jiffies between callbacks
+  unsigned long function
+    the function code for the device

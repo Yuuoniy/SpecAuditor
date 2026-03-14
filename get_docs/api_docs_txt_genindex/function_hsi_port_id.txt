@@ -1,0 +1,10 @@
+Function: unsigned int hsi_port_id ( struct hsi_client * cl )
+
+Gets the port number a client is attached to
+
+Parameters
+  struct hsi_client *cl
+    Pointer to HSI client
+
+Description
+  Return the port number associated to the client

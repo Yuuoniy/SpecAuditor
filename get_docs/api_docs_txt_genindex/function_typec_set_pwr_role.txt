@@ -1,0 +1,12 @@
+Function: void typec_set_pwr_role ( struct typec_port * port , enum typec_role role )
+
+Report power role change
+
+Parameters
+  struct typec_port *port
+    The USB Type-C Port where the role was changed
+  enum typec_role role
+    The new data role
+
+Description
+  This routine is used by the port drivers to report power role changes.

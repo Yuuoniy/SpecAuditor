@@ -1,0 +1,9 @@
+Function: void * mas_insert ( struct ma_state * mas , void * entry )
+
+Internal call to insert a value
+
+Parameters
+  struct ma_state *mas
+    The maple state
+  void *entry
+    The entry to store

@@ -1,0 +1,12 @@
+Function: void reset_control_release ( struct reset_control * rstc )
+
+releases exclusive access to a reset control
+
+Parameters
+  struct reset_control *rstc
+    reset control
+
+Description
+  Releases exclusive access right to a reset control previously obtained by a
+call to reset_control_acquire() . Until a consumer calls this function, no
+other consumers will be granted exclusive access.

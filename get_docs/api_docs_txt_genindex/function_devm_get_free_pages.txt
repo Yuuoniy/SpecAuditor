@@ -1,0 +1,15 @@
+Function: unsigned long devm_get_free_pages ( struct device * dev , gfp_t gfp_mask , unsigned int order )
+
+Resource-managed __get_free_pages
+
+Parameters
+  struct device *dev
+    Device to allocate memory for
+  gfp_t gfp_mask
+    Allocation gfp flags
+  unsigned int order
+    Allocation size is (1 << order) pages
+
+Description
+  Managed get_free_pages.  Memory allocated with this function is
+automatically freed on driver detach.

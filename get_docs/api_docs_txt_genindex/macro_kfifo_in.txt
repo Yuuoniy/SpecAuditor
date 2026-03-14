@@ -1,0 +1,15 @@
+Macro: kfifo_in
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used
+  buf
+    the data to be added
+  n
+    number of elements to be added
+
+Description
+  This macro copies the given buffer into the fifo and returns the
+number of copied elements.

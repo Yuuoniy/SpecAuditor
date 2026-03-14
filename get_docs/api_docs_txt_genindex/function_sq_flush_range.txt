@@ -1,0 +1,13 @@
+Function: void sq_flush_range ( unsigned long start , unsigned int len )
+
+Flush (prefetch) a specific SQ range
+
+Parameters
+  unsigned long start
+    the store queue address to start flushing from
+  unsigned int len
+    the length to flush
+
+Description
+  Flushes the store queue cache from start to start + len in a
+linear fashion.

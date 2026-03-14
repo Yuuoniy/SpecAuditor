@@ -1,0 +1,11 @@
+Struct: struct pwl_float_data
+
+Fixed point RGB color
+
+Members
+  r
+    Component Red.
+  g
+    Component Green.
+  b
+    Component Blue.

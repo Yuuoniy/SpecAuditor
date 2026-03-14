@@ -1,0 +1,14 @@
+Function: int security_ib_endport_manage_subnet ( void * sec , const char * dev_name , u8 port_num )
+
+Check if SMPs traffic is allowed
+
+Parameters
+  void *sec
+    LSM blob
+  const char *dev_name
+    IB device name
+  u8 port_num
+    port number
+
+Description
+  Check permissions to send and receive SMPs on a end port.

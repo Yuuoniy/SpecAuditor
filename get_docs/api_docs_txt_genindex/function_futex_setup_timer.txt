@@ -1,0 +1,13 @@
+Function: struct hrtimer_sleeper * futex_setup_timer ( ktime_t * time , struct hrtimer_sleeper * timeout , int flags , u64 range_ns )
+
+set up the sleeping hrtimer.
+
+Parameters
+  ktime_t *time
+    ptr to the given timeout value
+  struct hrtimer_sleeper *timeout
+    the hrtimer_sleeper structure to be set up
+  int flags
+    futex flags
+  u64 range_ns
+    optional range in ns

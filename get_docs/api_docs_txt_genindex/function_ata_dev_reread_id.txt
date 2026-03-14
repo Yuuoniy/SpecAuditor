@@ -1,0 +1,13 @@
+Function: int ata_dev_reread_id ( struct ata_device * dev , unsigned int readid_flags )
+
+Re-read IDENTIFY data
+
+Parameters
+  struct ata_device *dev
+    target ATA device
+  unsigned int readid_flags
+    read ID flags
+
+Description
+  Re-read IDENTIFY page and make sure dev is still attached to
+the port.

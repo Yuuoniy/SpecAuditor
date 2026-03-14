@@ -1,0 +1,11 @@
+Function: bool phy_uses_state_machine ( struct phy_device * phydev )
+
+test whether consumer driver uses PAL state machine
+
+Parameters
+  struct phy_device *phydev
+    the target PHY device structure
+
+Description
+  Ultimately, this aims to indirectly determine whether the PHY is attached
+to a consumer which uses the state machine by calling phy_start() and phy_stop() .

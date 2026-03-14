@@ -1,0 +1,24 @@
+Function: int vb2_core_create_bufs ( struct vb2_queue * q , enum vb2_memory memory , unsigned int flags , unsigned int * count , unsigned int requested_planes , const unsigned int requested_sizes [ ] , unsigned int * first_index )
+
+Allocate buffers and any required auxiliary structs
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  enum vb2_memory memory
+    memory type, as defined by enum vb2_memory .
+  unsigned int flags
+    auxiliary queue/buffer management flags.
+  unsigned int *count
+    requested buffer count.
+  unsigned int requested_planes
+    number of planes requested.
+  const unsigned int requested_sizes[]
+    array with the size of the planes.
+  unsigned int *first_index
+    index of the first created buffer, all allocated buffers have
+indices in the range [first_index..first_index+count-1]
+
+Description
+  Videobuf2 core helper to implement VIDIOC_CREATE_BUFS() operation. It is
+called internally by VB2 by an API-specific handler, like videobuf2-v4l2.h .

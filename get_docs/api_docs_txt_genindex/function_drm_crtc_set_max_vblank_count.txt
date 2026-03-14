@@ -1,0 +1,14 @@
+Function: void drm_crtc_set_max_vblank_count ( struct drm_crtc * crtc , u32 max_vblank_count )
+
+configure the hw max vblank counter value
+
+Parameters
+  struct drm_crtc *crtc
+    CRTC in question
+  u32 max_vblank_count
+    max hardware vblank counter value
+
+Description
+  Update the maximum hardware vblank counter value for crtc at runtime. Useful for hardware where the operation of the
+hardware vblank counter depends on the currently active
+display configuration.

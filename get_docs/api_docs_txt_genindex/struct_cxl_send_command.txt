@@ -1,0 +1,41 @@
+Struct: struct cxl_send_command
+
+Send a command to a memory device.
+
+Members
+  id
+    The command to send to the memory device. This must be one of the
+commands returned by the query command.
+  flags
+    Flags for the command (input).
+  {unnamed_union}
+    anonymous
+  raw
+    Special fields for raw commands
+  raw.opcode
+    Opcode passed to hardware when using the RAW command.
+  raw.rsvd
+    Must be zero.
+  rsvd
+    Must be zero.
+  retval
+    Return value from the memory device (output).
+  in
+    Parameters associated with input payload.
+  in.size
+    Size of the payload to provide to the device (input).
+  in.rsvd
+    Must be zero.
+  in.payload
+    Pointer to memory for payload input, payload is little endian.
+  out
+    Parameters associated with output payload.
+  out.size
+    Size of the payload received from the device (input/output). This
+field is filled in by userspace to let the driver know how much
+space was allocated for output. It is populated by the driver to
+let userspace know how large the output payload actually was.
+  out.rsvd
+    Must be zero.
+  out.payload
+    Pointer to memory for payload output, payload is little endian.

@@ -1,0 +1,17 @@
+Function: void __bio_add_page ( struct bio * bio , struct page * page , unsigned int len , unsigned int off )
+
+add page(s) to a bio in a new segment
+
+Parameters
+  struct bio *bio
+    destination bio
+  struct page *page
+    start page to add
+  unsigned int len
+    length of the data to add, may cross pages
+  unsigned int off
+    offset of the data relative to page , may cross pages
+
+Description
+  Add the data at page + off to bio as a new bvec.  The caller must ensure
+that bio has space for another bvec.

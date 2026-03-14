@@ -1,0 +1,15 @@
+Function: int phy_loopback ( struct phy_device * phydev , bool enable , int speed )
+
+Configure loopback mode of PHY
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+  bool enable
+    enable or disable loopback mode
+  int speed
+    enable loopback mode with speed
+
+Description
+  Configure loopback mode of PHY and signal link down and link up if speed is
+changing.

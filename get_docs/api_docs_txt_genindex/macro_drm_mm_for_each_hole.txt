@@ -1,0 +1,19 @@
+Macro: drm_mm_for_each_hole
+
+
+
+Parameters
+  pos
+    drm_mm_node used internally to track progress
+  mm
+    drm_mm allocator to walk
+  hole_start
+    ulong variable to assign the hole start to on each iteration
+  hole_end
+    ulong variable to assign the hole end to on each iteration
+
+Description
+  This iterator walks over all holes in the range allocator. It is implemented
+with list_for_each() , so not save against removal of elements. entry is used
+internally and will not reflect a real drm_mm_node for the very first hole.
+Hence users of this iterator may not access it.

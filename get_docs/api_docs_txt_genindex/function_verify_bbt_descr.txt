@@ -1,0 +1,13 @@
+Function: void verify_bbt_descr ( struct nand_chip * this , struct nand_bbt_descr * bd )
+
+verify the bad block description
+
+Parameters
+  struct nand_chip *this
+    the NAND device
+  struct nand_bbt_descr *bd
+    the table to verify
+
+Description
+  This functions performs a few sanity checks on the bad block description
+table.

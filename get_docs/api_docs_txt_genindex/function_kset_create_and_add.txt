@@ -1,0 +1,16 @@
+Function: struct kset * kset_create_and_add ( const char * name , const struct kset_uevent_ops * uevent_ops , struct kobject * parent_kobj )
+
+Create a struct kset dynamically and add it to sysfs.
+
+Parameters
+  const char *name
+    the name for the kset
+  const struct kset_uevent_ops *uevent_ops
+    a struct kset_uevent_ops for the kset
+  struct kobject *parent_kobj
+    the parent kobject of this kset, if any.
+
+Description
+  This function creates a kset structure dynamically and registers it
+with sysfs.  When you are finished with this structure, call kset_unregister() and the structure will be dynamically freed when it
+is no longer being used.

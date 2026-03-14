@@ -1,0 +1,23 @@
+Function: int ctucan_probe_common ( struct device * dev , void __iomem * addr , int irq , unsigned int ntxbufs , unsigned long can_clk_rate , int pm_enable_call , void ( * set_drvdata_fnc ) ( struct device * dev , struct net_device * ndev ) )
+
+Device type independent registration call
+
+Parameters
+  struct device *dev
+    Handle to the generic device structure
+  void __iomem *addr
+    Base address of CTU CAN FD core address
+  int irq
+    Interrupt number
+  unsigned int ntxbufs
+    Number of implemented Tx buffers
+  unsigned long can_clk_rate
+    Clock rate, if 0 then clock are taken from device node
+  int pm_enable_call
+    Whether pm_runtime_enable should be called
+  void (*set_drvdata_fnc)(struct device *dev, struct net_device *ndev)
+    Function to set network driver data for physical device
+
+Description
+  This function does all the memory allocation and registration for the CAN
+device.

@@ -1,0 +1,15 @@
+Struct: struct srpt_nexus
+
+I_T nexus
+
+Members
+  rcu
+    RCU head for this data structure.
+  entry
+    srpt_port.nexus_list list node.
+  ch_list
+    struct srpt_rdma_ch list. Protected by srpt_port.mutex.
+  i_port_id
+    128-bit initiator port identifier copied from SRP_LOGIN_REQ.
+  t_port_id
+    128-bit target port identifier copied from SRP_LOGIN_REQ.

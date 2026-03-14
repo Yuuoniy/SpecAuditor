@@ -1,0 +1,16 @@
+Function: int usb_unlink_urb ( struct urb * urb )
+
+abort/cancel a transfer request for an endpoint
+
+Parameters
+  struct urb *urb
+    pointer to urb describing a previously submitted request,
+may be NULL
+
+Description
+  This routine cancels an in-progress request.  URBs complete only once
+per submission, and may be canceled only once per submission.
+Successful cancellation means termination of urb will be expedited
+and the completion handler will be called with a status code
+indicating that the request has been canceled (rather than any other
+code).

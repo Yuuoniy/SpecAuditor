@@ -1,0 +1,15 @@
+Function: int ps2_sliced_command ( struct ps2dev * ps2dev , u8 command )
+
+sends an extended PS/2 command to a mouse
+
+Parameters
+  struct ps2dev *ps2dev
+    the PS/2 device that should execute the command
+  u8 command
+    command byte
+
+Description
+  The command is sent using “sliced” syntax understood by advanced devices,
+such as Logitech or Synaptics touchpads. The command is encoded as:
+0xE6 0xE8 rr 0xE8 ss 0xE8 tt 0xE8 uu where (rr*64)+(ss*16)+(tt*4)+uu
+is the command.

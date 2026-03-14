@@ -1,0 +1,12 @@
+Function: int snd_soc_dapm_disable_pin ( struct snd_soc_dapm_context * dapm , const char * pin )
+
+disable pin.
+
+Parameters
+  struct snd_soc_dapm_context *dapm
+    DAPM context
+  const char *pin
+    pin name
+
+Description
+  Disables input/output pin and its parents or children widgets.

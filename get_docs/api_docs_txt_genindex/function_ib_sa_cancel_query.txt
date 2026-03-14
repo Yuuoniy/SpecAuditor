@@ -1,0 +1,14 @@
+Function: void ib_sa_cancel_query ( int id , struct ib_sa_query * query )
+
+try to cancel an SA query
+
+Parameters
+  int id
+    ID of query to cancel
+  struct ib_sa_query *query
+    query pointer to cancel
+
+Description
+  Try to cancel an SA query.  If the id and query don’t match up or
+the query has already completed, nothing is done.  Otherwise the
+query is canceled and will complete with a status of -EINTR.

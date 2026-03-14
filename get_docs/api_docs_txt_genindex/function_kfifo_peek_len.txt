@@ -1,0 +1,10 @@
+Function: kfifo_peek_len
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used
+
+Description
+  This function returns the size of the next fifo record in number of bytes.

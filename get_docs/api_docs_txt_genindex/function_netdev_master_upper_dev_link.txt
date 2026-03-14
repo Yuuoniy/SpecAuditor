@@ -1,0 +1,22 @@
+Function: int netdev_master_upper_dev_link ( struct net_device * dev , struct net_device * upper_dev , void * upper_priv , void * upper_info , struct netlink_ext_ack * extack )
+
+Add a master link to the upper device
+
+Parameters
+  struct net_device *dev
+    device
+  struct net_device *upper_dev
+    new upper device
+  void *upper_priv
+    upper device private
+  void *upper_info
+    upper info to be passed down via notifier
+  struct netlink_ext_ack *extack
+    netlink extended ack
+
+Description
+  Adds a link to device which is upper to this one. In this case, only
+one master upper device can be linked, although other non-master devices
+might be linked as well. The caller must hold the RTNL lock.
+On a failure a negative errno code is returned. On success the reference
+counts are adjusted and the function returns zero.

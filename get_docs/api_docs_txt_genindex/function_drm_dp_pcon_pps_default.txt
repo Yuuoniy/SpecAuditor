@@ -1,0 +1,10 @@
+Function: int drm_dp_pcon_pps_default ( struct drm_dp_aux * aux )
+
+Let PCON fill the default pps parameters for DSC1.2 between PCON & HDMI2.1 sink
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+
+Description
+  Returns 0 on success, else returns negative error code.

@@ -1,0 +1,10 @@
+Function: void zynqmp_disp_avbuf_enable_channels ( struct zynqmp_disp * disp )
+
+Enable buffer channels
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller
+
+Description
+  Enable all (video and audio) buffer channels.

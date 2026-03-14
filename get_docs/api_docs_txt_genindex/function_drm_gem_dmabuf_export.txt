@@ -1,0 +1,13 @@
+Function: struct dma_buf * drm_gem_dmabuf_export ( struct drm_device * dev , struct dma_buf_export_info * exp_info )
+
+dma_buf export implementation for GEM
+
+Parameters
+  struct drm_device *dev
+    parent device for the exported dmabuf
+  struct dma_buf_export_info *exp_info
+    the export information used by dma_buf_export()
+
+Description
+  This wraps dma_buf_export() for use by generic GEM drivers that are using drm_gem_dmabuf_release() . In addition to calling dma_buf_export() , we take
+a reference to the drm_device and the exported drm_gem_object (stored in dma_buf_export_info.priv ) which is released by drm_gem_dmabuf_release() .

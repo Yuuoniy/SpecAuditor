@@ -1,0 +1,15 @@
+Struct: struct iser_global
+
+iSER global context
+
+Members
+  device_list_mutex
+    protects device_list
+  device_list
+    iser devices global list
+  connlist_mutex
+    protects connlist
+  connlist
+    iser connections global list
+  desc_cache
+    kmem cache for tx dataout

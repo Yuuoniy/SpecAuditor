@@ -1,0 +1,7 @@
+Function: void of_mm_gpiochip_remove ( struct of_mm_gpio_chip * mm_gc )
+
+Remove memory mapped GPIO chip (bank)
+
+Parameters
+  struct of_mm_gpio_chip *mm_gc
+    pointer to the of_mm_gpio_chip allocated structure

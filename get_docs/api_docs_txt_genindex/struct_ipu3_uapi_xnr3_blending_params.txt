@@ -1,0 +1,8 @@
+Struct: struct ipu3_uapi_xnr3_blending_params
+
+Blending factor
+
+Members
+  strength
+    The factor for blending output with input. This is tuning
+parameterHigher values lead to more aggressive XNR operation.

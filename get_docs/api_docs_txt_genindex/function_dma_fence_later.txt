@@ -1,0 +1,14 @@
+Function: struct dma_fence * dma_fence_later ( struct dma_fence * f1 , struct dma_fence * f2 )
+
+return the chronologically later fence
+
+Parameters
+  struct dma_fence *f1
+    the first fence from the same context
+  struct dma_fence *f2
+    the second fence from the same context
+
+Description
+  Returns NULL if both fences are signaled, otherwise the fence that would be
+signaled last. Both fences must be from the same context, since a seqno is
+not re-used across contexts.

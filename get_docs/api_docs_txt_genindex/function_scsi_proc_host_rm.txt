@@ -1,0 +1,7 @@
+Function: void scsi_proc_host_rm ( struct Scsi_Host * shost )
+
+remove this host’s entry from /proc
+
+Parameters
+  struct Scsi_Host *shost
+    which host

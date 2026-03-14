@@ -1,0 +1,13 @@
+Function: int phylink_set_fixed_link ( struct phylink * pl , const struct phylink_link_state * state )
+
+set the fixed link
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+  const struct phylink_link_state *state
+    a pointer to a struct phylink_link_state .
+
+Description
+  This function is used when the link parameters are known and do not change,
+making it suitable for certain types of network connections.

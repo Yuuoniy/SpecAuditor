@@ -1,0 +1,12 @@
+Function: int set_sgttyb ( struct tty_struct * tty , struct sgttyb __user * sgttyb )
+
+set legacy terminal values
+
+Parameters
+  struct tty_struct *tty
+    tty structure
+  struct sgttyb __user *sgttyb
+    pointer to old style terminal structure
+
+Description
+  Updates a terminal from the legacy BSD style terminal information structure.

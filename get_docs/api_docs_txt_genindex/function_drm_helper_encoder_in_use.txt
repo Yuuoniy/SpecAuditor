@@ -1,0 +1,12 @@
+Function: bool drm_helper_encoder_in_use ( struct drm_encoder * encoder )
+
+check if a given encoder is in use
+
+Parameters
+  struct drm_encoder *encoder
+    encoder to check
+
+Description
+  Checks whether encoder is with the current mode setting output configuration
+in use by any connector. This doesn’t mean that it is actually enabled since
+the DPMS state is tracked separately.

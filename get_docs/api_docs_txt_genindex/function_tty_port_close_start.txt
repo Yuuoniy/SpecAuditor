@@ -1,0 +1,17 @@
+Function: int tty_port_close_start ( struct tty_port * port , struct tty_struct * tty , struct file * filp )
+
+helper for tty->ops->close, part 1/2
+
+Parameters
+  struct tty_port *port
+    tty_port of the device
+  struct tty_struct *tty
+    tty being closed
+  struct file *filp
+    passed file pointer
+
+Description
+  Decrements and checks open count. Flushes the port if this is the last
+close. That means, dropping the data from the outpu buffer on the device and
+waiting for sending logic to finish. The rest of close handling is performed
+in tty_port_close_end() .

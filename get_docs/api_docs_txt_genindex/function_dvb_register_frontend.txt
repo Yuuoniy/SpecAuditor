@@ -1,0 +1,15 @@
+Function: int dvb_register_frontend ( struct dvb_adapter * dvb , struct dvb_frontend * fe )
+
+Registers a DVB frontend at the adapter
+
+Parameters
+  struct dvb_adapter *dvb
+    pointer to struct dvb_adapter
+  struct dvb_frontend *fe
+    pointer to struct dvb_frontend
+
+Description
+  Allocate and initialize the private data needed by the frontend core to
+manage the frontend and calls dvb_register_device() to register a new
+frontend. It also cleans the property cache that stores the frontend
+parameters and selects the first available delivery system.

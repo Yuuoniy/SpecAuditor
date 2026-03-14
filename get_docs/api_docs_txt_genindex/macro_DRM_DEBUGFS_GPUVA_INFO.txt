@@ -1,0 +1,13 @@
+Macro: DRM_DEBUGFS_GPUVA_INFO
+
+
+
+Parameters
+  show
+    the drm_info_list ’s show callback
+  data
+    driver private data
+
+Description
+  Drivers should use this macro to define a drm_info_list entry to provide a
+debugfs file for dumping the GPU VA space regions and mappings.

@@ -1,0 +1,16 @@
+Function: int snd_ctl_replace ( struct snd_card * card , struct snd_kcontrol * kcontrol , bool add_on_replace )
+
+replace the control instance of the card
+
+Parameters
+  struct snd_card *card
+    the card instance
+  struct snd_kcontrol *kcontrol
+    the control instance to replace
+  bool add_on_replace
+    add the control if not already added
+
+Description
+  Replaces the given control.  If the given control does not exist
+and the add_on_replace flag is set, the control is added.  If the
+control exists, it is destroyed first.

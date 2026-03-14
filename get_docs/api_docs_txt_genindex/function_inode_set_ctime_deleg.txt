@@ -1,0 +1,12 @@
+Function: struct timespec64 inode_set_ctime_deleg ( struct inode * inode , struct timespec64 update )
+
+try to update the ctime on a delegated inode
+
+Parameters
+  struct inode *inode
+    inode to update
+  struct timespec64 update
+    timespec64 to set the ctime
+
+Description
+  Attempt to atomically update the ctime on behalf of a delegation holder.

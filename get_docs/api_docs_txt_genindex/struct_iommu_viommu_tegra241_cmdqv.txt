@@ -1,0 +1,9 @@
+Struct: struct iommu_viommu_tegra241_cmdqv
+
+NVIDIA Tegra241 CMDQV Virtual Interface (IOMMU_VIOMMU_TYPE_TEGRA241_CMDQV)
+
+Members
+  out_vintf_mmap_offset
+    mmap offset argument for VINTF’s page0
+  out_vintf_mmap_length
+    mmap length argument for VINTF’s page0

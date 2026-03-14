@@ -1,0 +1,7 @@
+Function: struct vb2_v4l2_buffer * v4l2_m2m_next_dst_buf ( struct v4l2_m2m_ctx * m2m_ctx )
+
+return next destination buffer from the list of ready buffers
+
+Parameters
+  struct v4l2_m2m_ctx *m2m_ctx
+    m2m context assigned to the instance given by struct v4l2_m2m_ctx

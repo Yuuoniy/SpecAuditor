@@ -1,0 +1,20 @@
+Function: ssize_t pci_write_rom ( struct file * filp , struct kobject * kobj , const struct bin_attribute * bin_attr , char * buf , loff_t off , size_t count )
+
+used to enable access to the PCI ROM display
+
+Parameters
+  struct file *filp
+    sysfs file
+  struct kobject *kobj
+    kernel object handle
+  const struct bin_attribute *bin_attr
+    struct bin_attribute for this file
+  char *buf
+    user input
+  loff_t off
+    file offset
+  size_t count
+    number of byte in input
+
+Description
+  writing anything except 0 enables it

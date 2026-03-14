@@ -1,0 +1,18 @@
+Function: int regulator_register_supply_alias ( struct device * dev , const char * id , struct device * alias_dev , const char * alias_id )
+
+Provide device alias for supply lookup
+
+Parameters
+  struct device *dev
+    device that will be given as the regulator “consumer”
+  const char *id
+    Supply name or regulator ID
+  struct device *alias_dev
+    device that should be used to lookup the supply
+  const char *alias_id
+    Supply name or regulator ID that should be used to lookup the
+supply
+
+Description
+  All lookups for id on dev will instead be conducted for alias_id on
+alias_dev.

@@ -1,0 +1,11 @@
+Function: void srpt_handle_cmd ( struct srpt_rdma_ch * ch , struct srpt_recv_ioctx * recv_ioctx , struct srpt_send_ioctx * send_ioctx )
+
+process a SRP_CMD information unit
+
+Parameters
+  struct srpt_rdma_ch *ch
+    SRPT RDMA channel.
+  struct srpt_recv_ioctx *recv_ioctx
+    Receive I/O context.
+  struct srpt_send_ioctx *send_ioctx
+    Send I/O context.

@@ -1,0 +1,10 @@
+Function: void worker_leave_idle ( struct worker * worker )
+
+leave idle state
+
+Parameters
+  struct worker *worker
+    worker which is leaving idle state
+
+Description
+  worker is leaving idle state.  Update stats.

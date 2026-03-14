@@ -1,0 +1,3 @@
+Enum: enum ieee80211_rate_flags
+
+rate flags

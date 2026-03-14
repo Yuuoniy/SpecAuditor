@@ -1,0 +1,17 @@
+Macro: rcu_dereference_check
+
+
+
+Parameters
+  p
+    The pointer to read, prior to dereferencing
+  c
+    The conditions under which the dereference will take place
+
+Description
+  Do an rcu_dereference() , but check that the conditions under which the
+dereference will take place are correct.  Typically the conditions
+indicate the various locking conditions that should be held at that
+point.  The check should return true if the conditions are satisfied.
+An implicit check for being in an RCU read-side critical section
+( rcu_read_lock() ) is included.

@@ -1,0 +1,10 @@
+Function: int v4l2_fh_open ( struct file * filp )
+
+Ancillary routine that can be used as the open() op of v4l2_file_operations.
+
+Parameters
+  struct file *filp
+    pointer to struct file
+
+Description
+  It allocates a v4l2_fh and inits and adds it to the struct video_device associated with the file pointer.

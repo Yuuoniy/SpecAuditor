@@ -1,0 +1,2 @@
+hexsha,generalized_target,generalized_predicate
+c158cf914713,Function that acquires a reference to a firmware node,The acquired reference must be released with the corresponding put function when no longer needed.

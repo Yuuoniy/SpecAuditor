@@ -1,0 +1,12 @@
+Macro: pr_warn
+
+
+
+Parameters
+  fmt
+    format string
+  ...
+    arguments for the format string
+
+Description
+  This macro expands to a printk with KERN_WARNING loglevel. It uses pr_fmt() to generate the format string.

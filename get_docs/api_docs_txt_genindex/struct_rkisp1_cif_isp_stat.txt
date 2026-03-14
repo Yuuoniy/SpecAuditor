@@ -1,0 +1,13 @@
+Struct: struct rkisp1_cif_isp_stat
+
+Rockchip ISP1 Statistics Data
+
+Members
+  awb
+    statistics data for automatic white balance
+  ae
+    statistics data for auto exposure
+  af
+    statistics data for auto focus
+  hist
+    statistics histogram data

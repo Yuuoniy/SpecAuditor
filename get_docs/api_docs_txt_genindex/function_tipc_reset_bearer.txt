@@ -1,0 +1,9 @@
+Function: int tipc_reset_bearer ( struct net * net , struct tipc_bearer * b )
+
+Reset all links established over this bearer
+
+Parameters
+  struct net *net
+    the applicable net namespace
+  struct tipc_bearer *b
+    the target bearer

@@ -1,0 +1,14 @@
+Function: void drm_sysfs_connector_property_event ( struct drm_connector * connector , struct drm_property * property )
+
+generate a DRM uevent for connector property change
+
+Parameters
+  struct drm_connector *connector
+    connector on which property changed
+  struct drm_property *property
+    connector property which has changed.
+
+Description
+  Send a uevent for the specified DRM connector and property.  Currently we
+set HOTPLUG=1 and connector id along with the attached property id
+related to the change.

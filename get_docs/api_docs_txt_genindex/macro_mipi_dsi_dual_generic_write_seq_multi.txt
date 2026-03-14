@@ -1,0 +1,18 @@
+Macro: mipi_dsi_dual_generic_write_seq_multi
+
+
+
+Parameters
+  _ctx
+    Context for multiple DSI transactions
+  _dsi1
+    First DSI interface to act as recipient of packet
+  _dsi2
+    Second DSI interface to act as recipient of packet
+  _seq...
+    buffer containing the payload
+
+Description
+  This macro will send the specified generic packet twice, once per each of
+the two interfaces supplied. This is useful for reducing duplication of code
+in panel drivers which use two parallel serial interfaces.

@@ -1,0 +1,12 @@
+Function: void rio_destid_free ( struct rio_net * net , u16 destid )
+
+free a previously allocated destID
+
+Parameters
+  struct rio_net *net
+    RIO network
+  u16 destid
+    destID to free
+
+Description
+  Makes the specified destID available for use.

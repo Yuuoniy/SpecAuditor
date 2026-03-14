@@ -1,0 +1,10 @@
+Function: void console_srcu_read_unlock ( int cookie )
+
+Unregister an old reader from the SRCU-protected console list
+
+Parameters
+  int cookie
+    cookie returned from console_srcu_read_lock()
+
+Description
+  Counterpart to console_srcu_read_lock()

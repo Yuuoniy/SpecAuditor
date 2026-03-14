@@ -1,0 +1,15 @@
+Struct: union dwc3_event
+
+representation of Event Buffer contents
+
+Members
+  raw
+    raw 32-bit event
+  type
+    the type of the event
+  depevt
+    Device Endpoint Event
+  devt
+    Device Event
+  gevt
+    Global Event

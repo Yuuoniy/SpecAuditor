@@ -1,0 +1,2 @@
+Macro: MEDIA_IOC_DEVICE_INFO
+

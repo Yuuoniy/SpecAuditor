@@ -1,0 +1,15 @@
+Function: int __dev_mc_sync ( struct net_device * dev , int ( * sync ) ( struct net_device * , const unsigned char * ) , int ( * unsync ) ( struct net_device * , const unsigned char * ) )
+
+Synchronize device’s multicast list
+
+Parameters
+  struct net_device *dev
+    device to sync
+  int (*sync)(struct net_device *, const unsigned char *)
+    function to call if address should be added
+  int (*unsync)(struct net_device *, const unsigned char *)
+    function to call if address should be removed
+
+Description
+  Add newly added addresses to the interface, and release
+addresses that have been deleted.

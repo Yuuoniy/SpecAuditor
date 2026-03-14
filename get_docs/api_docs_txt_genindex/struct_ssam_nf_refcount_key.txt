@@ -1,0 +1,9 @@
+Struct: struct ssam_nf_refcount_key
+
+Key used for event activation reference counting.
+
+Members
+  reg
+    The registry via which the event is enabled/disabled.
+  id
+    The ID uniquely describing the event.

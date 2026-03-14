@@ -1,0 +1,11 @@
+Function: struct klp_state * klp_get_prev_state ( unsigned long id )
+
+get information about system state modified by the already installed livepatches
+
+Parameters
+  unsigned long id
+    custom identifier of the modified system state
+
+Description
+  Checks whether already installed livepatches modify the given
+system state.

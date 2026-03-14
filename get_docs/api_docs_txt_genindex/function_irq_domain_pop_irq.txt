@@ -1,0 +1,13 @@
+Function: int irq_domain_pop_irq ( struct irq_domain * domain , int virq )
+
+Remove a domain from the top of a hierarchy.
+
+Parameters
+  struct irq_domain *domain
+    Domain to remove.
+  int virq
+    Irq to remove the domain from.
+
+Description
+  Undo the effects of a call to irq_domain_push_irq() .  Must be
+called either before request_irq() or after free_irq() .

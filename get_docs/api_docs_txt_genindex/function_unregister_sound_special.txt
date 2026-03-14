@@ -1,0 +1,11 @@
+Function: void unregister_sound_special ( int unit )
+
+unregister a special sound device
+
+Parameters
+  int unit
+    unit number to allocate
+
+Description
+  Release a sound device that was allocated with register_sound_special() . The unit passed is the return value from
+the register function.

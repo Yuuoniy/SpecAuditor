@@ -1,0 +1,17 @@
+Struct: struct rkisp1_cif_isp_awb_meas
+
+AWB measured values
+
+Members
+  cnt
+    White pixel count, number of “white pixels” found during last
+measurement
+  mean_y_or_g
+    Mean value of Y within window and frames,
+Green if RGB is selected.
+  mean_cb_or_b
+    Mean value of Cb within window and frames,
+Blue if RGB is selected.
+  mean_cr_or_r
+    Mean value of Cr within window and frames,
+Red if RGB is selected.

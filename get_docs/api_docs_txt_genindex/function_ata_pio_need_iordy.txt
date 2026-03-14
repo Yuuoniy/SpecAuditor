@@ -1,0 +1,11 @@
+Function: unsigned int ata_pio_need_iordy ( const struct ata_device * adev )
+
+check if iordy needed
+
+Parameters
+  const struct ata_device *adev
+    ATA device
+
+Description
+  Check if the current speed of the device requires IORDY. Used
+by various controllers for chip configuration.

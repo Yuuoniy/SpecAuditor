@@ -1,0 +1,26 @@
+Struct: struct sk_buff * __skb_try_recv_datagram ( struct sock * sk , struct sk_buff_head * queue , unsigned int flags , int * off , int * err , struct sk_buff * * last )
+
+Receive a datagram skbuff
+
+Parameters
+  struct sock *sk
+    socket
+  struct sk_buff_head *queue
+    socket queue from which to receive
+  unsigned int flags
+    MSG_ flags
+  int *off
+    an offset in bytes to peek skb from. Returns an offset
+within an skb where data actually starts
+  int *err
+    error code returned
+  struct sk_buff **last
+    set to last peeked message to inform the wait function
+what to look for when peeking
+
+Description
+  Get a datagram skbuff, understands the peeking, nonblocking wakeups
+and possible races. This replaces identical code in packet, raw and
+udp, as well as the IPX AX.25 and Appletalk. It also finally fixes
+the long standing peek and read race for datagram sockets. If you
+alter this routine remember it must be re-entrant.

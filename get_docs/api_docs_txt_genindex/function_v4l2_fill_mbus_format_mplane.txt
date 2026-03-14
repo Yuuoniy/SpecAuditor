@@ -1,0 +1,9 @@
+Function: void v4l2_fill_mbus_format_mplane ( struct v4l2_mbus_framefmt * mbus_fmt , const struct v4l2_pix_format_mplane * pix_mp_fmt )
+
+Ancillary routine that fills a struct v4l2_mbus_framefmt from a struct v4l2_pix_format_mplane .
+
+Parameters
+  struct v4l2_mbus_framefmt *mbus_fmt
+    pointer to struct v4l2_mbus_framefmt to be filled
+  const struct v4l2_pix_format_mplane *pix_mp_fmt
+    pointer to struct v4l2_pix_format_mplane to be used as model

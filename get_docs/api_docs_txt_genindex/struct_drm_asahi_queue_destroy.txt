@@ -1,0 +1,9 @@
+Struct: struct drm_asahi_queue_destroy
+
+Arguments passed to DRM_IOCTL_ASAHI_QUEUE_DESTROY
+
+Members
+  queue_id
+    The queue ID to be destroyed
+  pad
+    MBZ

@@ -1,0 +1,12 @@
+Function: void trace_block_plug ( struct request_queue * q )
+
+keep operations requests in request queue
+
+Parameters
+  struct request_queue *q
+    request queue to plug
+
+Description
+  Plug the request queue q .  Do not allow block operation requests
+to be sent to the device driver. Instead, accumulate requests in
+the queue to improve throughput performance of the block device.

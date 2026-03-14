@@ -1,0 +1,15 @@
+Function: void * xas_next_marked ( struct xa_state * xas , unsigned long max , xa_mark_t mark )
+
+Advance iterator to next marked entry.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+  unsigned long max
+    Highest index to return.
+  xa_mark_t mark
+    Mark to search for.
+
+Description
+  xas_next_marked() is an inline function to optimise xarray traversal for
+speed.  It is equivalent to calling xas_find_marked() , and will call xas_find_marked() for all the hard cases.

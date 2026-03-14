@@ -1,0 +1,91 @@
+Struct: struct cfg80211_connect_params
+
+Connection parameters
+
+Members
+  channel
+    The channel to use or NULL if not specified (auto-select based
+on scan results)
+  channel_hint
+    The channel of the recommended BSS for initial connection or NULL if not specified
+  bssid
+    The AP BSSID or NULL if not specified (auto-select based on scan
+results)
+  bssid_hint
+    The recommended AP BSSID for initial connection to the BSS or NULL if not specified. Unlike the bssid parameter, the driver is
+allowed to ignore this bssid_hint if it has knowledge of a better BSS
+to use.
+  ssid
+    SSID
+  ssid_len
+    Length of ssid in octets
+  auth_type
+    Authentication type (algorithm)
+  ie
+    IEs for association request
+  ie_len
+    Length of assoc_ie in octets
+  privacy
+    indicates whether privacy-enabled APs should be used
+  mfp
+    indicate whether management frame protection is used
+  crypto
+    crypto settings
+  key
+    WEP key for shared key authentication
+  key_len
+    length of WEP key for shared key authentication
+  key_idx
+    index of WEP key for shared key authentication
+  flags
+    See enum cfg80211_assoc_req_flags
+  bg_scan_period
+    Background scan period in seconds
+or -1 to indicate that default value is to be used.
+  ht_capa
+    HT Capabilities over-rides.  Values set in ht_capa_mask
+will be used in ht_capa.  Un-supported values will be ignored.
+  ht_capa_mask
+    The bits of ht_capa which are to be used.
+  vht_capa
+    VHT Capability overrides
+  vht_capa_mask
+    The bits of vht_capa which are to be used.
+  pbss
+    if set, connect to a PCP instead of AP. Valid for DMG
+networks.
+  bss_select
+    criteria to be used for BSS selection.
+  prev_bssid
+    previous BSSID, if not NULL use reassociate frame. This is used
+to indicate a request to reassociate within the ESS instead of a request
+do the initial association with the ESS. When included, this is set to
+the BSSID of the current association, i.e., to the value that is
+included in the Current AP address field of the Reassociation Request
+frame.
+  fils_erp_username
+    EAP re-authentication protocol (ERP) username part of the
+NAI or NULL if not specified. This is used to construct FILS wrapped
+data IE.
+  fils_erp_username_len
+    Length of fils_erp_username in octets.
+  fils_erp_realm
+    EAP re-authentication protocol (ERP) realm part of NAI or NULL if not specified. This specifies the domain name of ER server and
+is used to construct FILS wrapped data IE.
+  fils_erp_realm_len
+    Length of fils_erp_realm in octets.
+  fils_erp_next_seq_num
+    The next sequence number to use in the FILS ERP
+messages. This is also used to construct FILS wrapped data IE.
+  fils_erp_rrk
+    ERP re-authentication Root Key (rRK) used to derive additional
+keys in FILS or NULL if not specified.
+  fils_erp_rrk_len
+    Length of fils_erp_rrk in octets.
+  want_1x
+    indicates user-space supports and wants to use 802.1X driver
+offload of 4-way handshake.
+  edmg
+    define the EDMG channels.
+This may specify multiple channels and bonding options for the driver
+to choose from, based on BSS configuration.

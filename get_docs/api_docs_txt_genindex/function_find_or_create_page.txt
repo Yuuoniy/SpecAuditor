@@ -1,0 +1,16 @@
+Function: struct page * find_or_create_page ( struct address_space * mapping , pgoff_t index , gfp_t gfp_mask )
+
+locate or add a pagecache page
+
+Parameters
+  struct address_space *mapping
+    the page’s address_space
+  pgoff_t index
+    the page’s index into the mapping
+  gfp_t gfp_mask
+    page allocation mode
+
+Description
+  Looks up the page cache slot at mapping & offset .  If there is a
+page cache page, it is returned locked and with an increased
+refcount.

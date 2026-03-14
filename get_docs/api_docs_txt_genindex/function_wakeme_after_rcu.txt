@@ -1,0 +1,10 @@
+Function: void wakeme_after_rcu ( struct rcu_head * head )
+
+Callback function to awaken a task after grace period
+
+Parameters
+  struct rcu_head *head
+    Pointer to rcu_head member within rcu_synchronize structure
+
+Description
+  Awaken the corresponding task now that a grace period has elapsed.

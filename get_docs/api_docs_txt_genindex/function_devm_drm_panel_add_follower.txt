@@ -1,0 +1,12 @@
+Function: int devm_drm_panel_add_follower ( struct device * follower_dev , struct drm_panel_follower * follower )
+
+devm version of drm_panel_add_follower()
+
+Parameters
+  struct device *follower_dev
+    The ‘ struct device ’ for the follower.
+  struct drm_panel_follower *follower
+    The panel follower descriptor for the follower.
+
+Description
+  Handles calling drm_panel_remove_follower() using devm on the follower_dev.

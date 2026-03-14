@@ -1,0 +1,9 @@
+Function: int snd_pcm_hw_rule_noresample ( struct snd_pcm_runtime * runtime , unsigned int base_rate )
+
+add a rule to allow disabling hw resampling
+
+Parameters
+  struct snd_pcm_runtime *runtime
+    PCM runtime instance
+  unsigned int base_rate
+    the rate at which the hardware does not resample

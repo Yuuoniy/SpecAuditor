@@ -1,0 +1,12 @@
+Function: void snd_card_free ( struct snd_card * card )
+
+frees given soundcard structure
+
+Parameters
+  struct snd_card *card
+    soundcard structure
+
+Description
+  This function releases the soundcard structure and the all assigned
+devices automatically.  That is, you don’t have to release the devices
+by yourself.

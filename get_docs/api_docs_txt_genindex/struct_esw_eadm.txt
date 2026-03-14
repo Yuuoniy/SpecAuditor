@@ -1,0 +1,9 @@
+Struct: struct esw_eadm
+
+EADM Subchannel Extended Status Word (ESW)
+
+Members
+  sublog
+    subchannel logout
+  erw
+    extended report word

@@ -1,0 +1,7 @@
+Function: int drm_eld_mnl ( const u8 * eld )
+
+Get ELD monitor name length in bytes.
+
+Parameters
+  const u8 *eld
+    pointer to an eld memory structure with mnl set

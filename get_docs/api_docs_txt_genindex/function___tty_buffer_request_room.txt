@@ -1,0 +1,14 @@
+Function: int __tty_buffer_request_room ( struct tty_port * port , size_t size , bool flags )
+
+grow tty buffer if needed
+
+Parameters
+  struct tty_port *port
+    tty port
+  size_t size
+    size desired
+  bool flags
+    buffer has to store flags along character data
+
+Description
+  Make at least size bytes of linear space available for the tty buffer.

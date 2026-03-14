@@ -1,0 +1,20 @@
+Macro: list_for_each_entry_continue_rcu
+
+
+
+Parameters
+  pos
+    the type * to use as a loop cursor.
+  head
+    the head for your list.
+  member
+    the name of the list_head within the struct.
+
+Description
+  Continue to iterate over list of given type, continuing after
+the current position which must have been in the list when the RCU read
+lock was taken.
+This would typically require either that you obtained the node from a
+previous walk of the list in the same RCU read-side critical section, or
+that you held some sort of non-RCU reference (such as a reference count)
+to keep the node alive and in the list.

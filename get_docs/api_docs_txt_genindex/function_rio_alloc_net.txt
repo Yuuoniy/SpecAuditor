@@ -1,0 +1,13 @@
+Function: struct rio_net * rio_alloc_net ( struct rio_mport * mport )
+
+Allocate and initialize a new RIO network data structure
+
+Parameters
+  struct rio_mport *mport
+    Master port associated with the RIO network
+
+Description
+  Allocates a RIO network structure, initializes per-network
+list heads, and adds the associated master port to the
+network list of associated master ports. Returns a
+RIO network pointer on success or NULL on failure.

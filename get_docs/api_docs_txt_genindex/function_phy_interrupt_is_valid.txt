@@ -1,0 +1,7 @@
+Function: bool phy_interrupt_is_valid ( struct phy_device * phydev )
+
+Convenience function for testing a given PHY irq
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct

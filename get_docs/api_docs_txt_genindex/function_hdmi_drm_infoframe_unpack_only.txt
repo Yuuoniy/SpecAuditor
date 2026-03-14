@@ -1,0 +1,15 @@
+Function: int hdmi_drm_infoframe_unpack_only ( struct hdmi_drm_infoframe * frame , const void * buffer , size_t size )
+
+unpack binary buffer of CTA-861-G DRM infoframe DataBytes to a HDMI DRM infoframe
+
+Parameters
+  struct hdmi_drm_infoframe *frame
+    HDMI DRM infoframe
+  const void *buffer
+    source buffer
+  size_t size
+    size of buffer
+
+Description
+  Unpacks CTA-861-G DRM infoframe DataBytes contained in the binary buffer into a structured frame of the HDMI Dynamic Range and Mastering (DRM)
+infoframe.

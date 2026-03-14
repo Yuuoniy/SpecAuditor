@@ -1,0 +1,7 @@
+Struct: struct pisp_be_input_buffer_config
+
+PiSP Back End input buffer
+
+Members
+  addr
+    Input buffer address

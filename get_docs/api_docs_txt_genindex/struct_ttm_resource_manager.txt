@@ -1,0 +1,26 @@
+Struct: struct ttm_resource_manager
+
+
+
+Members
+  use_type
+    The memory type is enabled.
+  use_tt
+    If a TT object should be used for the backing store.
+  bdev
+    ttm device this manager belongs to
+  size
+    Size of the managed region.
+  func
+    structure pointer implementing the range manager. See above
+  move_lock
+    lock for move fence
+  move
+    The fence of the last pipelined move operation.
+  lru
+    The lru list for this memory type.
+  usage
+    How much of the resources are used, protected by the
+bdev->lru_lock.
+  cg
+    dmem_cgroup_region used for memory accounting, if not NULL.

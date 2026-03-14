@@ -1,0 +1,17 @@
+Function: int rpc_switch_client_transport ( struct rpc_clnt * clnt , struct xprt_create * args , const struct rpc_timeout * timeout )
+
+switch the RPC transport on the fly
+
+Parameters
+  struct rpc_clnt *clnt
+    pointer to a struct rpc_clnt
+  struct xprt_create *args
+    pointer to the new transport arguments
+  const struct rpc_timeout *timeout
+    pointer to the new timeout parameters
+
+Description
+  This function allows the caller to switch the RPC transport for the
+rpc_clnt structure ‘clnt’ to allow it to connect to a mirrored NFS
+server, for instance.  It assumes that the caller has ensured that
+there are no active RPC tasks by using some form of locking.

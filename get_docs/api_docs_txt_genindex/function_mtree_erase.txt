@@ -1,0 +1,13 @@
+Function: void * mtree_erase ( struct maple_tree * mt , unsigned long index )
+
+Find an index and erase the entire range.
+
+Parameters
+  struct maple_tree *mt
+    The maple tree
+  unsigned long index
+    The index to erase
+
+Description
+  Erasing is the same as a walk to an entry then a store of a NULL to that
+ENTIRE range.  In fact, it is implemented as such using the advanced API.

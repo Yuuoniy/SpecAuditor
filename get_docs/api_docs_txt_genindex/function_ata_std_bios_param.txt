@@ -1,0 +1,19 @@
+Function: int ata_std_bios_param ( struct scsi_device * sdev , struct gendisk * unused , sector_t capacity , int geom [ ] )
+
+generic bios head/sector/cylinder calculator used by sd.
+
+Parameters
+  struct scsi_device *sdev
+    SCSI device for which BIOS geometry is to be determined
+  struct gendisk *unused
+    gendisk associated with sdev
+  sector_t capacity
+    capacity of SCSI device
+  int geom[]
+    location to which geometry will be output
+
+Description
+  Generic bios head/sector/cylinder calculator
+used by sd. Most BIOSes nowadays expect a XXX/255/16  (CHS)
+mapping. Some situations may arise where the disk is not
+bootable if this is not used.

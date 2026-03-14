@@ -1,0 +1,14 @@
+Macro: list_last_entry
+
+
+
+Parameters
+  ptr
+    the list head to take the element from.
+  type
+    the type of the struct this is embedded in.
+  member
+    the name of the list_head within the struct.
+
+Description
+  Note, that list is expected to be not empty.

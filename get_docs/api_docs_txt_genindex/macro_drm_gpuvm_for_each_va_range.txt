@@ -1,0 +1,21 @@
+Macro: drm_gpuvm_for_each_va_range
+
+
+
+Parameters
+  va__
+    drm_gpuva structure to assign to in each iteration step
+  gpuvm__
+    drm_gpuvm to walk over
+  start__
+    starting offset, the first gpuva will overlap this
+  end__
+    ending offset, the last gpuva will start before this (but may
+overlap)
+
+Description
+  This iterator walks over all drm_gpuvas in the drm_gpuvm that lie
+between start__ and end__ . It is implemented similarly to list_for_each() ,
+but is using the drm_gpuvm ’s internal interval tree to accelerate
+the search for the starting drm_gpuva , and hence isn’t safe against removal
+of elements. It assumes that end__ is within (or is the upper limit of) the drm_gpuvm . This iterator does not skip over the drm_gpuvm ’s kernel_alloc_node .

@@ -1,0 +1,13 @@
+Function: int pfn_valid ( unsigned long pfn )
+
+check if there is a valid memory map entry for a PFN
+
+Parameters
+  unsigned long pfn
+    the page frame number to check
+
+Description
+  Check if there is a valid memory map entry aka struct page for the pfn .
+Note, that availability of the memory map entry does not imply that
+there is actual usable memory at that pfn . The struct page may
+represent a hole or an unusable page frame.

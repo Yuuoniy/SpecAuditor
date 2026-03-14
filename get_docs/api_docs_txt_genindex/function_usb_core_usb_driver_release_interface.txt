@@ -1,0 +1,14 @@
+Function: void usb_driver_release_interface ( struct usb_driver * driver , struct usb_interface * iface )
+
+unbind a driver from an interface
+
+Parameters
+  struct usb_driver *driver
+    the driver to be unbound
+  struct usb_interface *iface
+    the interface from which it will be unbound
+
+Description
+  This can be used by drivers to release an interface without waiting
+for their disconnect() methods to be called.  In typical cases this
+also causes the driver disconnect() method to be called.

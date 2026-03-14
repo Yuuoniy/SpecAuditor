@@ -1,0 +1,14 @@
+Function: struct pardevice * parport_open ( int devnum , const char * name )
+
+find a device by canonical device number
+
+Parameters
+  int devnum
+    canonical device number
+  const char *name
+    name to associate with the device
+
+Description
+  This function is similar to parport_register_device() , except
+that it locates a device by its number rather than by the port
+it is attached to.

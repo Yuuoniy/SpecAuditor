@@ -1,0 +1,16 @@
+Function: int firmware_request_platform ( const struct firmware * * firmware , const char * name , struct device * device )
+
+request firmware with platform-fw fallback
+
+Parameters
+  const struct firmware **firmware
+    pointer to firmware image
+  const char *name
+    name of firmware file
+  struct device *device
+    device for which firmware is being loaded
+
+Description
+  This function is similar in behaviour to request_firmware, except that if
+direct filesystem lookup fails, it will fallback to looking for a copy of the
+requested firmware embedded in the platform’s main (e.g. UEFI) firmware.

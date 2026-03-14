@@ -1,0 +1,10 @@
+Function: int console_srcu_read_lock ( void )
+
+Register a new reader for the SRCU-protected console list
+
+Parameters
+  void
+    no arguments
+
+Description
+  Use for_each_console_srcu() to iterate the console list

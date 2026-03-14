@@ -1,0 +1,15 @@
+Function: void skb_complete_tx_timestamp ( struct sk_buff * skb , struct skb_shared_hwtstamps * hwtstamps )
+
+deliver cloned skb with tx timestamps
+
+Parameters
+  struct sk_buff *skb
+    clone of the original outgoing packet
+  struct skb_shared_hwtstamps *hwtstamps
+    hardware time stamps
+
+Description
+  PHY drivers may accept clones of transmitted packets for
+timestamping via their phy_driver.txtstamp method. These drivers
+must call this function to return the skb back to the stack with a
+timestamp.

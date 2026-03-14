@@ -1,0 +1,11 @@
+Function: void kfree_sensitive ( const void * p )
+
+Clear sensitive information in memory before freeing
+
+Parameters
+  const void *p
+    object to free memory of
+
+Description
+  The memory of the object p points to is zeroed before freed.
+If p is NULL , kfree_sensitive() does nothing.

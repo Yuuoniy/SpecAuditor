@@ -1,0 +1,10 @@
+Function: void crypto_free_sig ( struct crypto_sig * tfm )
+
+free signature tfm handle
+
+Parameters
+  struct crypto_sig *tfm
+    signature tfm handle allocated with crypto_alloc_sig()
+
+Description
+  If tfm is a NULL or error pointer, this function does nothing.

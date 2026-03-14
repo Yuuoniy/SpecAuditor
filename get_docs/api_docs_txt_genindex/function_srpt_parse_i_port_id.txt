@@ -1,0 +1,9 @@
+Function: int srpt_parse_i_port_id ( u8 i_port_id [ 16 ] , const char * name )
+
+parse an initiator port ID
+
+Parameters
+  u8 i_port_id[16]
+    Binary 128-bit port ID.
+  const char *name
+    ASCII representation of a 128-bit initiator port ID.

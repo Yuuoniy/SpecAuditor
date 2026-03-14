@@ -1,0 +1,13 @@
+Function: irqreturn_t vring_interrupt ( int irq , void * _vq )
+
+notify a virtqueue on an interrupt
+
+Parameters
+  int irq
+    the IRQ number (ignored)
+  void *_vq
+    the struct virtqueue to notify
+
+Description
+  Calls the callback function of _vq to process the virtqueue
+notification.

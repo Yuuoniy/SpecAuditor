@@ -1,0 +1,14 @@
+Function: int cci_read ( struct regmap * map , u32 reg , u64 * val , int * err )
+
+Read a value from a single CCI register
+
+Parameters
+  struct regmap *map
+    Register map to read from
+  u32 reg
+    Register address to read, use CCI_REG#() macros to encode reg width
+  u64 *val
+    Pointer to store read value
+  int *err
+    Optional pointer to store errors, if a previous error is set
+then the read will be skipped

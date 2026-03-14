@@ -1,0 +1,13 @@
+Function: int snd_soc_info_enum_double ( struct snd_kcontrol * kcontrol , struct snd_ctl_elem_info * uinfo )
+
+enumerated double mixer info callback
+
+Parameters
+  struct snd_kcontrol *kcontrol
+    mixer control
+  struct snd_ctl_elem_info *uinfo
+    control element information
+
+Description
+  Callback to provide information about a double enumerated
+mixer control.

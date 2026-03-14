@@ -1,0 +1,19 @@
+Struct: struct mipi_dsi_msg
+
+read/write DSI buffer
+
+Members
+  channel
+    virtual channel id
+  type
+    payload data type
+  flags
+    flags controlling this message transmission
+  tx_len
+    length of tx_buf
+  tx_buf
+    data to be written
+  rx_len
+    length of rx_buf
+  rx_buf
+    data to be read, or NULL

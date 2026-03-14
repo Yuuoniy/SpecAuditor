@@ -1,0 +1,12 @@
+Function: bool kthread_queue_work ( struct kthread_worker * worker , struct kthread_work * work )
+
+queue a kthread_work
+
+Parameters
+  struct kthread_worker *worker
+    target kthread_worker
+  struct kthread_work *work
+    kthread_work to queue
+
+Description
+  Queue work to work processor task for async execution. task must have been created with kthread_create_worker() .  Returns true if work was successfully queued, false if it was already pending.

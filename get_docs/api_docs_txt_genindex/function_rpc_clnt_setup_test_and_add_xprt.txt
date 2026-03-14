@@ -1,0 +1,20 @@
+Function: int rpc_clnt_setup_test_and_add_xprt ( struct rpc_clnt * clnt , struct rpc_xprt_switch * xps , struct rpc_xprt * xprt , void * data )
+
+
+
+Parameters
+  struct rpc_clnt *clnt
+    struct rpc_clnt to get the new transport
+  struct rpc_xprt_switch *xps
+    the rpc_xprt_switch to hold the new transport
+  struct rpc_xprt *xprt
+    the rpc_xprt to test
+  void *data
+    a struct rpc_add_xprt_test pointer that holds the test function
+and test function call data
+
+Description
+  1) caller of the test function must dereference the rpc_xprt_switch
+and the rpc_xprt.
+2) test function must call rpc_xprt_switch_add_xprt, usually in
+the rpc_call_done routine.

@@ -1,0 +1,12 @@
+Function: int drm_gem_ttm_mmap ( struct drm_gem_object * gem , struct vm_area_struct * vma )
+
+mmap ttm_buffer_object
+
+Parameters
+  struct drm_gem_object *gem
+    GEM object.
+  struct vm_area_struct *vma
+    vm area.
+
+Description
+  This function can be used as drm_gem_object_funcs.mmap callback.

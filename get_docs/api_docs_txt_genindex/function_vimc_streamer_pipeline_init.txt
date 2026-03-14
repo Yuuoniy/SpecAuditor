@@ -1,0 +1,15 @@
+Function: int vimc_streamer_pipeline_init ( struct vimc_stream * stream , struct vimc_ent_device * ved )
+
+Initializes the stream structure
+
+Parameters
+  struct vimc_stream *stream
+    the pointer to the stream structure to be initialized
+  struct vimc_ent_device *ved
+    the pointer to the vimc entity initializing the stream
+
+Description
+  Initializes the stream structure. Walks through the entity graph to
+construct the pipeline used later on the streamer thread.
+Calls vimc_streamer_s_stream() to enable stream in all entities of
+the pipeline.

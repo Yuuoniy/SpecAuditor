@@ -1,0 +1,13 @@
+Function: unsigned long __clear_user ( void __user * to , unsigned long n )
+
+Zero a block of memory in user space, with less checking.
+
+Parameters
+  void __user *to
+    Destination address, in user space.
+  unsigned long n
+    Number of bytes to zero.
+
+Description
+  Zero a block of memory in user space.  Caller must check
+the specified block with access_ok() before calling this function.

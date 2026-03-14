@@ -1,0 +1,13 @@
+Function: void xas_create_range ( struct xa_state * xas )
+
+Ensure that stores to this range will succeed
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+
+Description
+  Creates all of the slots in the range covered by xas .  Sets xas to
+create single-index entries and positions it at the beginning of the
+range.  This is for the benefit of users which have not yet been
+converted to use multi-index entries.

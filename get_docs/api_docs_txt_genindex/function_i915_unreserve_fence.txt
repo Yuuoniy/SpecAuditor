@@ -1,0 +1,10 @@
+Function: void i915_unreserve_fence ( struct i915_fence_reg * fence )
+
+Reclaim a reserved fence
+
+Parameters
+  struct i915_fence_reg *fence
+    the fence reg
+
+Description
+  This function add a reserved fence register from vGPU to the fence_list.

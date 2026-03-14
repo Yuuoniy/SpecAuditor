@@ -1,0 +1,11 @@
+Macro: SOCK_CONNECT_BIND
+
+
+
+Parameters
+  struct sock *sk
+    socket
+
+Description
+  This version should be used for very small section, where process won’t block
+return false if fast path is taken:

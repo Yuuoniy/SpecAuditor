@@ -1,0 +1,11 @@
+Function: void clk_unprepare ( struct clk * clk )
+
+undo preparation of a clock source
+
+Parameters
+  struct clk *clk
+    clock source
+
+Description
+  This undoes a previously prepared clock.  The caller must balance
+the number of prepare and unprepare calls.

@@ -1,0 +1,11 @@
+Function: void intel_plane_destroy ( struct drm_plane * plane )
+
+destroy a plane
+
+Parameters
+  struct drm_plane *plane
+    plane to destroy
+
+Description
+  Common destruction function for all types of planes (primary, cursor,
+sprite).

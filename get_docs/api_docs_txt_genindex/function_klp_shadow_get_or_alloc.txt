@@ -1,0 +1,22 @@
+Function: void * klp_shadow_get_or_alloc ( void * obj , unsigned long id , size_t size , gfp_t gfp_flags , klp_shadow_ctor_t ctor , void * ctor_data )
+
+get existing or allocate a new shadow variable
+
+Parameters
+  void *obj
+    pointer to parent object
+  unsigned long id
+    data identifier
+  size_t size
+    size of attached data
+  gfp_t gfp_flags
+    GFP mask for allocation
+  klp_shadow_ctor_t ctor
+    custom constructor to initialize the shadow data (optional)
+  void *ctor_data
+    pointer to any data needed by ctor (optional)
+
+Description
+  Returns a pointer to existing shadow data if an <obj, id> shadow
+variable is already present.  Otherwise, it creates a new shadow
+variable like klp_shadow_alloc() .

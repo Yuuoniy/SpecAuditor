@@ -1,0 +1,13 @@
+Function: struct net_device * netdev_upper_get_next_dev_rcu ( struct net_device * dev , struct list_head * * iter )
+
+Get the next dev from upper list
+
+Parameters
+  struct net_device *dev
+    device
+  struct list_head **iter
+    list_head ** of the current position
+
+Description
+  Gets the next device from the dev’s upper list, starting from iter
+position. The caller must hold RCU read lock.

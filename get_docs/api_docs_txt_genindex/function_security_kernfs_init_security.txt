@@ -1,0 +1,13 @@
+Function: int security_kernfs_init_security ( struct kernfs_node * kn_dir , struct kernfs_node * kn )
+
+Init LSM context for a kernfs node
+
+Parameters
+  struct kernfs_node *kn_dir
+    parent kernfs node
+  struct kernfs_node *kn
+    the kernfs node to initialize
+
+Description
+  Initialize the security context of a newly created kernfs node based on its
+own and its parent’s attributes.

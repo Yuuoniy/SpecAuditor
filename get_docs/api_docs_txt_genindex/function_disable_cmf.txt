@@ -1,0 +1,7 @@
+Function: int disable_cmf ( struct ccw_device * cdev )
+
+switch off the channel measurement for a specific device
+
+Parameters
+  struct ccw_device *cdev
+    The ccw device to be disabled

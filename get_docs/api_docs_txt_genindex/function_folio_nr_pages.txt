@@ -1,0 +1,7 @@
+Function: unsigned long folio_nr_pages ( const struct folio * folio )
+
+The number of pages in the folio.
+
+Parameters
+  const struct folio *folio
+    The folio.

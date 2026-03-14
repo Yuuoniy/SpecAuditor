@@ -1,0 +1,22 @@
+Struct: struct ipu3_uapi_awb_set_item
+
+Memory layout for each cell in AWB
+
+Members
+  Gr_avg
+    Green average for red lines in the cell.
+  R_avg
+    Red average in the cell.
+  B_avg
+    Blue average in the cell.
+  Gb_avg
+    Green average for blue lines in the cell.
+  sat_ratio
+    Percentage of pixels over the thresholds specified in
+ipu3_uapi_awb_config_s, coded from 0 to 255.
+  padding0
+    Unused byte for padding.
+  padding1
+    Unused byte for padding.
+  padding2
+    Unused byte for padding.

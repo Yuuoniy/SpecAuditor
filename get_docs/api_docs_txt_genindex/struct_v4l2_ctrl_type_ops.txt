@@ -1,0 +1,18 @@
+Struct: struct v4l2_ctrl_type_ops
+
+The control type operations that the driver has to provide.
+
+Members
+  equal
+    return true if all ctrl->elems array elements are equal.
+  init
+    initialize the value for array elements from from_idx to ctrl->elems.
+  minimum
+    set the value to the minimum value of the control.
+  maximum
+    set the value to the maximum value of the control.
+  log
+    log the value.
+  validate
+    validate the value for ctrl->new_elems array elements.
+Return 0 on success and a negative value otherwise.

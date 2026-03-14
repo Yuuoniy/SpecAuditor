@@ -1,0 +1,13 @@
+Function: void drm_framebuffer_assign ( struct drm_framebuffer * * p , struct drm_framebuffer * fb )
+
+store a reference to the fb
+
+Parameters
+  struct drm_framebuffer **p
+    location to store framebuffer
+  struct drm_framebuffer *fb
+    new framebuffer (maybe NULL)
+
+Description
+  This functions sets the location to store a reference to the framebuffer,
+unreferencing the framebuffer that was previously stored in that location.

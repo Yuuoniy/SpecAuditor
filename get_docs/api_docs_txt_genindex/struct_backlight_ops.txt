@@ -1,0 +1,22 @@
+Struct: struct backlight_ops
+
+backlight operations
+
+Members
+  options
+    Configure how operations are called from the core. The options parameter is used to adjust the behaviour of the core.
+Set BL_CORE_SUSPENDRESUME to get the update_status() operation called
+upon suspend and resume.
+  update_status
+    Operation called when properties have changed. Notify the backlight driver some property has changed.
+The update_status operation is protected by the update_lock. The backlight driver is expected to use backlight_is_blank() to check if the display is blanked and set brightness accordingly. update_status() is called when any of the properties has changed. RETURNS: 0 on success, negative error code if any failure occurred.
+  get_brightness
+    Return the current backlight brightness. The driver may implement this as a readback from the HW.
+This operation is optional and if not present then the current
+brightness property value is used. RETURNS: A brightness value which is 0 or a positive number.
+On failure a negative error code is returned.
+  controls_device
+    Check against the display device Check if the backlight controls the given display device. This
+operation is optional and if not implemented it is assumed that
+the display is always the one controlled by the backlight. RETURNS: If display_dev is NULL or display_dev matches the device controlled by
+the backlight, return true. Otherwise return false.

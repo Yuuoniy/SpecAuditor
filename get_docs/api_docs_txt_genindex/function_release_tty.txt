@@ -1,0 +1,13 @@
+Function: void release_tty ( struct tty_struct * tty , int idx )
+
+release tty structure memory
+
+Parameters
+  struct tty_struct *tty
+    tty device release
+  int idx
+    index of the tty device release
+
+Description
+  Release both tty and a possible linked partner (think pty pair),
+and decrement the refcount of the backing module.

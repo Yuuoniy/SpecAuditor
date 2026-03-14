@@ -1,0 +1,14 @@
+Function: int reset_control_reset ( struct reset_control * rstc )
+
+reset the controlled device
+
+Parameters
+  struct reset_control *rstc
+    reset controller
+
+Description
+  On a shared reset line the actual reset pulse is only triggered once for the
+lifetime of the reset_control instance: for all but the first caller this is
+a no-op.
+Consumers must not use reset_control_(de)assert on shared reset lines when
+reset_control_reset has been used.

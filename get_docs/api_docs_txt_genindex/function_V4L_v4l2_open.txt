@@ -1,0 +1,3 @@
+Function: int v4l2_open ( const char * file , int oflag , ... )
+
+operates like the open() function.

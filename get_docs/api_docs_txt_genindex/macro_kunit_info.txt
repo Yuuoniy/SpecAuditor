@@ -1,0 +1,15 @@
+Macro: kunit_info
+
+
+
+Parameters
+  test
+    The test context object.
+  fmt
+    A printk() style format string.
+  ...
+    variable arguments
+
+Description
+  Prints an info level message associated with the test suite being run.
+Takes a variable number of format parameters just like printk() .

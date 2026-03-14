@@ -1,0 +1,12 @@
+Function: void get_completed_synchronize_rcu_full ( struct rcu_gp_oldstate * rgosp )
+
+Return a full pre-completed polled state cookie
+
+Parameters
+  struct rcu_gp_oldstate *rgosp
+    Place to put state cookie
+
+Description
+  Stores into rgosp a value that will always be treated by functions
+like poll_state_synchronize_rcu_full() as a cookie whose grace period
+has already completed.

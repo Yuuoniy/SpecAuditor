@@ -1,0 +1,51 @@
+Struct: struct drm_framebuffer
+
+frame buffer object
+
+Members
+  dev
+    DRM device this framebuffer belongs to
+  head
+    Place on the drm_mode_config.fb_list , access protected by drm_mode_config.fb_lock .
+  base
+    base modeset object structure, contains the reference count.
+  comm
+    Name of the process allocating the fb, used for fb dumping.
+  format
+    framebuffer format information
+  funcs
+    framebuffer vfunc table
+  pitches
+    Line stride per buffer. For userspace created object this
+is copied from drm_mode_fb_cmd2.
+  offsets
+    Offset from buffer start to the actual pixel data in bytes,
+per buffer. For userspace created object this is copied from
+drm_mode_fb_cmd2. Note that this is a linear offset and does not take into account
+tiling or buffer layout per modifier . It is meant to be used when
+the actual pixel data for this framebuffer plane starts at an offset,
+e.g. when multiple planes are allocated within the same backing
+storage buffer object. For tiled layouts this generally means its offsets must at least be tile-size aligned, but hardware often has
+stricter requirements. This should not be used to specifiy x/y pixel offsets into the buffer
+data (even for linear buffers). Specifying an x/y pixel offset is
+instead done through the source rectangle in struct drm_plane_state .
+  modifier
+    Data layout modifier. This is used to describe
+tiling, or also special layouts (like compression) of auxiliary
+buffers. For userspace created object this is copied from
+drm_mode_fb_cmd2.
+  width
+    Logical width of the visible area of the framebuffer, in
+pixels.
+  height
+    Logical height of the visible area of the framebuffer, in
+pixels.
+  flags
+    Framebuffer flags like DRM_MODE_FB_INTERLACED or
+DRM_MODE_FB_MODIFIERS.
+  internal_flags
+    Framebuffer flags like DRM_FRAMEBUFFER_HAS_HANDLE_REF.
+  filp_head
+    Placed on drm_file.fbs , protected by drm_file.fbs_lock .
+  obj
+    GEM objects backing the framebuffer, one per plane (optional). This is used by the GEM framebuffer helpers, see e.g. drm_gem_fb_create() .

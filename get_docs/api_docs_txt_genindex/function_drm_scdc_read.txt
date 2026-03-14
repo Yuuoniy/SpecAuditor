@@ -1,0 +1,16 @@
+Function: ssize_t drm_scdc_read ( struct i2c_adapter * adapter , u8 offset , void * buffer , size_t size )
+
+read a block of data from SCDC
+
+Parameters
+  struct i2c_adapter *adapter
+    I2C controller
+  u8 offset
+    start offset of block to read
+  void *buffer
+    return location for the block to read
+  size_t size
+    size of the block to read
+
+Description
+  Reads a block of data from SCDC, starting at a given offset.

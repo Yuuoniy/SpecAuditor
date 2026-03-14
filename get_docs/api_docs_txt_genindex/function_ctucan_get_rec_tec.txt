@@ -1,0 +1,9 @@
+Function: void ctucan_get_rec_tec ( struct ctucan_priv * priv , struct can_berr_counter * bec )
+
+Reads REC/TEC counter values from controller
+
+Parameters
+  struct ctucan_priv *priv
+    Pointer to private data
+  struct can_berr_counter *bec
+    Pointer to Error counter structure

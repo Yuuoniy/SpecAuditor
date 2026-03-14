@@ -1,0 +1,11 @@
+Function: void amdgpu_vm_bo_evicted_user ( struct amdgpu_vm_bo_base * vm_bo )
+
+vm_bo is evicted
+
+Parameters
+  struct amdgpu_vm_bo_base *vm_bo
+    vm_bo which is evicted
+
+Description
+  State for BOs used by user mode queues which are not at the location they
+should be.

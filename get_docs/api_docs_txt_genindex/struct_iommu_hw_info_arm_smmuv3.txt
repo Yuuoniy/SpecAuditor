@@ -1,0 +1,16 @@
+Struct: struct iommu_hw_info_arm_smmuv3
+
+ARM SMMUv3 hardware information (IOMMU_HW_INFO_TYPE_ARM_SMMUV3)
+
+Members
+  flags
+    Must be set to 0
+  __reserved
+    Must be 0
+  idr
+    Implemented features for ARM SMMU Non-secure programming interface
+  iidr
+    Information about the implementation and implementer of ARM SMMU,
+and architecture version supported
+  aidr
+    ARM SMMU architecture version

@@ -1,0 +1,10 @@
+Function: void crypto_free_rng ( struct crypto_rng * tfm )
+
+zeroize and free RNG handle
+
+Parameters
+  struct crypto_rng *tfm
+    cipher handle to be freed
+
+Description
+  If tfm is a NULL or error pointer, this function does nothing.

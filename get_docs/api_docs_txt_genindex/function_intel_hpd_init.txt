@@ -1,0 +1,13 @@
+Function: void intel_hpd_init ( struct intel_display * display )
+
+initializes and enables hpd support
+
+Parameters
+  struct intel_display *display
+    display device instance
+
+Description
+  This function enables the hotplug support. It requires that interrupts have
+already been enabled with intel_irq_init_hw() . From this point on hotplug and
+poll request can run concurrently to other code, so locking rules must be
+obeyed.

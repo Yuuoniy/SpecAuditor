@@ -1,0 +1,15 @@
+Function: void __iomem * pcim_iomap ( struct pci_dev * pdev , int bar , unsigned long maxlen )
+
+Managed pcim_iomap()
+
+Parameters
+  struct pci_dev *pdev
+    PCI device to iomap for
+  int bar
+    BAR to iomap
+  unsigned long maxlen
+    Maximum length of iomap
+
+Description
+  Managed pci_iomap() . Map is automatically unmapped on driver detach. If
+desired, unmap manually only with pcim_iounmap() .

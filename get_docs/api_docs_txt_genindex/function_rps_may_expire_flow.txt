@@ -1,0 +1,18 @@
+Function: bool rps_may_expire_flow ( struct net_device * dev , u16 rxq_index , u32 flow_id , u16 filter_id )
+
+check whether an RFS hardware filter may be removed
+
+Parameters
+  struct net_device *dev
+    Device on which the filter was set
+  u16 rxq_index
+    RX queue index
+  u32 flow_id
+    Flow ID passed to ndo_rx_flow_steer()
+  u16 filter_id
+    Filter ID returned by ndo_rx_flow_steer()
+
+Description
+  Drivers that implement ndo_rx_flow_steer() should periodically call
+this function for each installed filter and remove the filters for
+which it returns true .

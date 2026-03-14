@@ -1,0 +1,7 @@
+Function: unsigned int refcount_read ( const refcount_t * r )
+
+get a refcount’s value
+
+Parameters
+  const refcount_t *r
+    the refcount

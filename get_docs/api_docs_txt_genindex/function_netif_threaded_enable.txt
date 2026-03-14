@@ -1,0 +1,13 @@
+Function: void netif_threaded_enable ( struct net_device * dev )
+
+enable threaded NAPIs
+
+Parameters
+  struct net_device *dev
+    net_device instance
+
+Description
+  Enable threaded mode for the NAPI instances of the device. This may be useful
+for devices where multiple NAPI instances get scheduled by a single
+interrupt. Threaded NAPI allows moving the NAPI processing to cores other
+than the core where IRQ is mapped.

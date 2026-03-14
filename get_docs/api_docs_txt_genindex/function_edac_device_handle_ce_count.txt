@@ -1,0 +1,15 @@
+Function: void edac_device_handle_ce_count ( struct edac_device_ctl_info * edac_dev , unsigned int count , int inst_nr , int block_nr , const char * msg )
+
+Log correctable errors.
+
+Parameters
+  struct edac_device_ctl_info *edac_dev
+    pointer to struct edac_device_ctl_info
+  unsigned int count
+    Number of errors to log.
+  int inst_nr
+    number of the instance where the CE error happened
+  int block_nr
+    number of the block where the CE error happened
+  const char *msg
+    message to be printed

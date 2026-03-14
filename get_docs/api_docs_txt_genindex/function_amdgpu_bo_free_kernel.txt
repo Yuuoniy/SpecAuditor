@@ -1,0 +1,14 @@
+Function: void amdgpu_bo_free_kernel ( struct amdgpu_bo * * bo , u64 * gpu_addr , void * * cpu_addr )
+
+free BO for kernel use
+
+Parameters
+  struct amdgpu_bo **bo
+    amdgpu BO to free
+  u64 *gpu_addr
+    pointer to where the BO’s GPU memory space address was stored
+  void **cpu_addr
+    pointer to where the BO’s CPU memory space address was stored
+
+Description
+  unmaps and unpin a BO for kernel internal use.

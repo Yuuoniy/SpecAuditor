@@ -1,0 +1,16 @@
+Function: void dma_fence_set_error ( struct dma_fence * fence , int error )
+
+flag an error condition on the fence
+
+Parameters
+  struct dma_fence *fence
+    the dma_fence
+  int error
+    the error to store
+
+Description
+  Drivers can supply an optional error status condition before they signal
+the fence, to indicate that the fence was completed due to an error
+rather than success. This must be set before signaling (so that the value
+is visible before any waiters on the signal callback are woken). This
+helper exists to help catching erroneous setting of #dma_fence.error.

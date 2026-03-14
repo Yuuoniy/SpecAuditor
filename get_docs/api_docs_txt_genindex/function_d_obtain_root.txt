@@ -1,0 +1,10 @@
+Function: struct dentry * d_obtain_root ( struct inode * inode )
+
+find or allocate a dentry for a given inode
+
+Parameters
+  struct inode *inode
+    inode to allocate the dentry for
+
+Description
+  Obtain an IS_ROOT dentry for the root of a filesystem.

@@ -1,0 +1,12 @@
+Function: int __video_device_pipeline_start ( struct video_device * vdev , struct media_pipeline * pipe )
+
+Mark a pipeline as streaming
+
+Parameters
+  struct video_device *vdev
+    Starting video device
+  struct media_pipeline *pipe
+    Media pipeline to be assigned to all entities in the pipeline.
+
+Description
+  ..note:: This is the non-locking version of video_device_pipeline_start()

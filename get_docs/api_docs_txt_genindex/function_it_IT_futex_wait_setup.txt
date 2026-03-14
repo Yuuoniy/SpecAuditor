@@ -1,0 +1,22 @@
+Function: int futex_wait_setup ( u32 __user * uaddr , u32 val , unsigned int flags , struct futex_q * q , union futex_key * key2 , struct task_struct * task )
+
+Prepare to wait on a futex
+
+Parameters
+  u32 __user *uaddr
+    the futex userspace address
+  u32 val
+    the expected value
+  unsigned int flags
+    futex flags (FLAGS_SHARED, etc.)
+  struct futex_q *q
+    the associated futex_q
+  union futex_key *key2
+    the second futex_key if used for requeue PI
+  struct task_struct *task
+    Task queueing this futex
+
+Description
+  Setup the futex_q and locate the hash_bucket.  Get the futex value and
+compare it with the expected value.  Handle atomic faults internally.
+Return with the hb lock held on success, and unlocked on failure.

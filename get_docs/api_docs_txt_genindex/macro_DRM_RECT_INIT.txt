@@ -1,0 +1,13 @@
+Macro: DRM_RECT_INIT
+
+
+
+Parameters
+  x
+    x coordinate
+  y
+    y coordinate
+  w
+    width
+  h
+    height

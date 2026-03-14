@@ -1,0 +1,19 @@
+Function: int devm_platform_get_irqs_affinity ( struct platform_device * dev , struct irq_affinity * affd , unsigned int minvec , unsigned int maxvec , int * * irqs )
+
+devm method to get a set of IRQs for a device using an interrupt affinity descriptor
+
+Parameters
+  struct platform_device *dev
+    platform device pointer
+  struct irq_affinity *affd
+    affinity descriptor
+  unsigned int minvec
+    minimum count of interrupt vectors
+  unsigned int maxvec
+    maximum count of interrupt vectors
+  int **irqs
+    pointer holder for IRQ numbers
+
+Description
+  Gets a set of IRQs for a platform device, and updates IRQ afffinty according
+to the passed affinity descriptor

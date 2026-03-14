@@ -1,0 +1,13 @@
+Function: struct drm_bridge_state * drm_atomic_get_new_bridge_state ( const struct drm_atomic_state * state , struct drm_bridge * bridge )
+
+get new bridge state, if it exists
+
+Parameters
+  const struct drm_atomic_state *state
+    global atomic state object
+  struct drm_bridge *bridge
+    bridge to grab
+
+Description
+  This function returns the new bridge state for the given bridge, or NULL if
+the bridge is not part of the global atomic state.

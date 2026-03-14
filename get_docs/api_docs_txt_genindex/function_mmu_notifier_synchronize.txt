@@ -1,0 +1,11 @@
+Function: void mmu_notifier_synchronize ( void )
+
+Ensure all mmu_notifiers are freed
+
+Parameters
+  void
+    no arguments
+
+Description
+  This function ensures that all outstanding async SRU work from mmu_notifier_put() is completed. After it returns any mmu_notifier_ops
+associated with an unused mmu_notifier will no longer be called.

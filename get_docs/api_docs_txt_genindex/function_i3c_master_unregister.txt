@@ -1,0 +1,10 @@
+Function: void i3c_master_unregister ( struct i3c_master_controller * master )
+
+unregister an I3C master
+
+Parameters
+  struct i3c_master_controller *master
+    master used to send frames on the bus
+
+Description
+  Basically undo everything done in i3c_master_register() .

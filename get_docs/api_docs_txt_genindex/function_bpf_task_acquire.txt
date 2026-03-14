@@ -1,0 +1,7 @@
+Function: __bpf_kfunc struct task_struct * bpf_task_acquire ( struct task_struct * p )
+
+Acquire a reference to a task. A task acquired by this kfunc which is not stored in a map as a kptr, must be released by calling bpf_task_release() .
+
+Parameters
+  struct task_struct *p
+    The task on which a reference is being acquired.

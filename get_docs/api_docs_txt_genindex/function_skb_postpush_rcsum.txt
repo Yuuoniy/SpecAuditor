@@ -1,0 +1,15 @@
+Function: void skb_postpush_rcsum ( struct sk_buff * skb , const void * start , unsigned int len )
+
+update checksum for received skb after push
+
+Parameters
+  struct sk_buff *skb
+    buffer to update
+  const void *start
+    start of data after push
+  unsigned int len
+    length of data pushed
+
+Description
+  After doing a push on a received packet, you need to call this to
+update the CHECKSUM_COMPLETE checksum.

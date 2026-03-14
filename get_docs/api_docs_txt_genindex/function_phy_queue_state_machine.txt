@@ -1,0 +1,9 @@
+Function: void phy_queue_state_machine ( struct phy_device * phydev , unsigned long jiffies )
+
+Trigger the state machine to run soon
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+  unsigned long jiffies
+    Run the state machine after these jiffies

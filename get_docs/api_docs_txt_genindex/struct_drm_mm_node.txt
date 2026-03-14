@@ -1,0 +1,11 @@
+Struct: struct drm_mm_node
+
+allocated block in the DRM allocator
+
+Members
+  color
+    Opaque driver-private tag.
+  start
+    Start address of the allocated block.
+  size
+    Size of the allocated block.

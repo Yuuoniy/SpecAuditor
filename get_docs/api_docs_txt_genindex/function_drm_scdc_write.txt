@@ -1,0 +1,16 @@
+Function: ssize_t drm_scdc_write ( struct i2c_adapter * adapter , u8 offset , const void * buffer , size_t size )
+
+write a block of data to SCDC
+
+Parameters
+  struct i2c_adapter *adapter
+    I2C controller
+  u8 offset
+    start offset of block to write
+  const void *buffer
+    block of data to write
+  size_t size
+    size of the block to write
+
+Description
+  Writes a block of data to SCDC, starting at a given offset.

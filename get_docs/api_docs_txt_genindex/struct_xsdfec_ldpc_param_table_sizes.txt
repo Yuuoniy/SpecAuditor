@@ -1,0 +1,11 @@
+Struct: struct xsdfec_ldpc_param_table_sizes
+
+Used to store sizes of SD-FEC table entries for an individual LPDC code parameter.
+
+Members
+  sc_size
+    Size of SC table used
+  la_size
+    Size of LA table used
+  qc_size
+    Size of QC table used

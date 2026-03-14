@@ -1,0 +1,14 @@
+Function: int vfs_rmdir ( struct mnt_idmap * idmap , struct inode * dir , struct dentry * dentry )
+
+remove directory
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount the inode was found from
+  struct inode *dir
+    inode of the parent directory
+  struct dentry *dentry
+    dentry of the child directory
+
+Description
+  Remove a directory.

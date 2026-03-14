@@ -1,0 +1,15 @@
+Function: int drm_dp_mst_root_conn_atomic_check ( struct drm_connector_state * new_conn_state , struct drm_dp_mst_topology_mgr * mgr )
+
+Serialize CRTC commits on MST-capable connectors operating in SST mode
+
+Parameters
+  struct drm_connector_state *new_conn_state
+    The new connector state of the drm_connector
+  struct drm_dp_mst_topology_mgr *mgr
+    The MST topology manager for the drm_connector
+
+Description
+  Since MST uses fake drm_encoder structs, the generic atomic modesetting code isn’t able to
+serialize non-blocking commits happening on the real DP connector of an MST topology switching
+into/away from MST mode - as the CRTC on the real DP connector and the CRTCs on the connector’s
+MST topology will never share the same drm_encoder .

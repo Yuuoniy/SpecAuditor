@@ -1,0 +1,29 @@
+Struct: struct snd_compr_stream
+
+compressed stream
+
+Members
+  name
+    device name
+  ops
+    pointer to DSP callbacks
+  runtime
+    pointer to runtime structure
+  device
+    device pointer
+  error_work
+    delayed work used when closing the stream due to an error
+  direction
+    stream direction, playback/recording
+  metadata_set
+    metadata set flag, true when set
+  next_track
+    has userspace signal next track transition, true when set
+  partial_drain
+    undergoing partial_drain for stream, true when set
+  pause_in_draining
+    paused during draining state, true when set
+  private_data
+    pointer to DSP private data
+  dma_buffer
+    allocated buffer if any

@@ -1,0 +1,9 @@
+Function: __poll_t v4l2_ctrl_poll ( struct file * file , struct poll_table_struct * wait )
+
+function to be used as a callback to the poll() That just polls for control events.
+
+Parameters
+  struct file *file
+    pointer to struct file
+  struct poll_table_struct *wait
+    pointer to struct poll_table_struct

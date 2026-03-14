@@ -1,0 +1,9 @@
+Function: int generic_ci_d_hash ( const struct dentry * dentry , struct qstr * str )
+
+generic d_hash implementation for casefolding filesystems
+
+Parameters
+  const struct dentry *dentry
+    dentry of the parent directory
+  struct qstr *str
+    qstr of name whose hash we should fill in

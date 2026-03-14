@@ -1,0 +1,15 @@
+Function: struct net_device * dev_getbyhwaddr ( struct net * net , unsigned short type , const char * ha )
+
+find a device by its hardware address
+
+Parameters
+  struct net *net
+    the applicable net namespace
+  unsigned short type
+    media type of device
+  const char *ha
+    hardware address
+
+Description
+  Similar to dev_getbyhwaddr_rcu() , but the owner needs to hold
+rtnl_lock.

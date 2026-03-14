@@ -1,0 +1,16 @@
+Function: __be32 * xdr_encode_opaque_fixed ( __be32 * p , const void * ptr , unsigned int nbytes )
+
+Encode fixed length opaque data
+
+Parameters
+  __be32 *p
+    pointer to current position in XDR buffer.
+  const void *ptr
+    pointer to data to encode (or NULL)
+  unsigned int nbytes
+    size of data.
+
+Description
+  Copy the array of data of length nbytes at ptr to the XDR buffer
+at position p, then align to the next 32-bit boundary by padding
+with zero bytes (see RFC1832).

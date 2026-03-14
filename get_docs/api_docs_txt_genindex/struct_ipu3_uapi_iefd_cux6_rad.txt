@@ -1,0 +1,45 @@
+Struct: struct ipu3_uapi_iefd_cux6_rad
+
+Radial Config Unit (CU)
+
+Members
+  x0
+    x0 points of Config Unit radial, u8.0
+  x1
+    x1 points of Config Unit radial, u8.0
+  x2
+    x2 points of Config Unit radial, u8.0
+  x3
+    x3 points of Config Unit radial, u8.0
+  x4
+    x4 points of Config Unit radial, u8.0
+  x5
+    x5 points of Config Unit radial, u8.0
+  reserved1
+    reserved
+  a01
+    Slope A of Config Unit radial, s7.8
+  a12
+    Slope A of Config Unit radial, s7.8
+  a23
+    Slope A of Config Unit radial, s7.8
+  a34
+    Slope A of Config Unit radial, s7.8
+  a45
+    Slope A of Config Unit radial, s7.8
+  reserved2
+    reserved
+  b01
+    Slope B of Config Unit radial, s9.0
+  b12
+    Slope B of Config Unit radial, s9.0
+  b23
+    Slope B of Config Unit radial, s9.0
+  reserved4
+    reserved
+  b34
+    Slope B of Config Unit radial, s9.0
+  b45
+    Slope B of Config Unit radial, s9.0
+  reserved5
+    reserved

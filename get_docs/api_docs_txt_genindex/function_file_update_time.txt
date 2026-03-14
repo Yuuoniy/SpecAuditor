@@ -1,0 +1,16 @@
+Function: int file_update_time ( struct file * file )
+
+update mtime and ctime time
+
+Parameters
+  struct file *file
+    file accessed
+
+Description
+  Update the mtime and ctime members of an inode and mark the inode for
+writeback. Note that this function is meant exclusively for usage in
+the file write path of filesystems, and filesystems may choose to
+explicitly ignore updates via this function with the _NOCMTIME inode
+flag, e.g. for network filesystem where these imestamps are handled
+by the server. This can return an error for file systems who need to
+allocate space in order to update an inode.

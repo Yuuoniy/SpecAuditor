@@ -1,0 +1,14 @@
+Function: int riscv_set_icache_flush_ctx ( unsigned long ctx , unsigned long scope )
+
+Enable/disable icache flushing instructions in userspace.
+
+Parameters
+  unsigned long ctx
+    Set the type of icache flushing instructions permitted/prohibited in
+userspace. Supported values described below.
+  unsigned long scope
+    Set scope of where icache flushing instructions are allowed to be
+emitted. Supported values described below.
+
+Description
+  Supported values for ctx:

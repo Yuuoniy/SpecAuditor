@@ -1,0 +1,15 @@
+Function: bool shmem_recalc_inode ( struct inode * inode , long alloced , long swapped )
+
+recalculate the block usage of an inode
+
+Parameters
+  struct inode *inode
+    inode to recalc
+  long alloced
+    the change in number of pages allocated to inode
+  long swapped
+    the change in number of pages swapped from inode
+
+Description
+  We have to calculate the free blocks since the mm can drop
+undirtied hole pages behind our back.

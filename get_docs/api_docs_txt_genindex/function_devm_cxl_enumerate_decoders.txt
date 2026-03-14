@@ -1,0 +1,9 @@
+Function: int devm_cxl_enumerate_decoders ( struct cxl_hdm * cxlhdm , struct cxl_endpoint_dvsec_info * info )
+
+add decoder objects per HDM register set
+
+Parameters
+  struct cxl_hdm *cxlhdm
+    Structure to populate with HDM capabilities
+  struct cxl_endpoint_dvsec_info *info
+    cached DVSEC range register info

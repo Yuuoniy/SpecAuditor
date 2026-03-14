@@ -1,0 +1,7 @@
+Function: int tipc_aead_key_generate ( struct tipc_aead_key * skey )
+
+Generate new session key
+
+Parameters
+  struct tipc_aead_key *skey
+    input/output key with new content

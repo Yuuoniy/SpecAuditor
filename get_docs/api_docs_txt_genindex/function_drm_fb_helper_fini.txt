@@ -1,0 +1,10 @@
+Function: void drm_fb_helper_fini ( struct drm_fb_helper * fb_helper )
+
+finialize a struct drm_fb_helper
+
+Parameters
+  struct drm_fb_helper *fb_helper
+    driver-allocated fbdev helper, can be NULL
+
+Description
+  This cleans up all remaining resources associated with fb_helper .

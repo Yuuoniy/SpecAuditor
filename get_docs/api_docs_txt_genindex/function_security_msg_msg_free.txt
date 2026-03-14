@@ -1,0 +1,10 @@
+Function: void security_msg_msg_free ( struct msg_msg * msg )
+
+Free a sysv ipc message LSM blob
+
+Parameters
+  struct msg_msg *msg
+    message structure
+
+Description
+  Deallocate the security structure for this message.

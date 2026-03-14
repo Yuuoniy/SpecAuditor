@@ -1,0 +1,14 @@
+Function: ssize_t process_output_block ( struct tty_struct * tty , const u8 * buf , unsigned int nr )
+
+block post processor
+
+Parameters
+  struct tty_struct *tty
+    terminal device
+  const u8 *buf
+    character buffer
+  unsigned int nr
+    number of bytes to output
+
+Description
+  Output a block of characters with OPOST processing.

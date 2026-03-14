@@ -1,0 +1,9 @@
+Function: bool ctucan_is_txt_buf_writable ( struct ctucan_priv * priv , u8 buf )
+
+Checks if frame can be inserted to TXT Buffer
+
+Parameters
+  struct ctucan_priv *priv
+    Pointer to private data
+  u8 buf
+    Buffer index (0-based)

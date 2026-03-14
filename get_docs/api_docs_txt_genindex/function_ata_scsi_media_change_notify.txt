@@ -1,0 +1,11 @@
+Function: void ata_scsi_media_change_notify ( struct ata_device * dev )
+
+send media change event
+
+Parameters
+  struct ata_device *dev
+    Pointer to the disk device with media change event
+
+Description
+  Tell the block layer to send a media change notification
+event.

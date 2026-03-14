@@ -1,0 +1,19 @@
+Function: ssize_t simple_write_to_buffer ( void * to , size_t available , loff_t * ppos , const void __user * from , size_t count )
+
+copy data from user space to the buffer
+
+Parameters
+  void *to
+    the buffer to write to
+  size_t available
+    the size of the buffer
+  loff_t *ppos
+    the current position in the buffer
+  const void __user *from
+    the user space buffer to read from
+  size_t count
+    the maximum number of bytes to read
+
+Description
+  The simple_write_to_buffer() function reads up to count bytes from the user
+space address starting at from into the buffer to at offset ppos .

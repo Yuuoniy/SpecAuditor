@@ -1,0 +1,15 @@
+Function: int nand_scan_ident ( struct nand_chip * chip , unsigned int maxchips , struct nand_flash_dev * table )
+
+Scan for the NAND device
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+  unsigned int maxchips
+    number of chips to scan for
+  struct nand_flash_dev *table
+    alternative NAND ID table
+
+Description
+  This is the first phase of the normal nand_scan() function. It reads the
+flash ID and sets up MTD fields accordingly.

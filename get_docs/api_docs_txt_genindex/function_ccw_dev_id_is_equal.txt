@@ -1,0 +1,9 @@
+Function: int ccw_dev_id_is_equal ( struct ccw_dev_id * dev_id1 , struct ccw_dev_id * dev_id2 )
+
+compare two ccw_dev_ids
+
+Parameters
+  struct ccw_dev_id *dev_id1
+    a ccw_dev_id
+  struct ccw_dev_id *dev_id2
+    another ccw_dev_id

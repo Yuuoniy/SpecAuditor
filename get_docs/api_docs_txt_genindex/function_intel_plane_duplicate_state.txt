@@ -1,0 +1,11 @@
+Function: struct drm_plane_state * intel_plane_duplicate_state ( struct drm_plane * plane )
+
+duplicate plane state
+
+Parameters
+  struct drm_plane *plane
+    drm plane
+
+Description
+  Allocates and returns a copy of the plane state (both common and
+Intel-specific) for the specified plane.

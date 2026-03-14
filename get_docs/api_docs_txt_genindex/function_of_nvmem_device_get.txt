@@ -1,0 +1,9 @@
+Function: struct nvmem_device * of_nvmem_device_get ( struct device_node * np , const char * id )
+
+Get nvmem device from a given id
+
+Parameters
+  struct device_node *np
+    Device tree node that uses the nvmem device.
+  const char *id
+    nvmem name from nvmem-names property.

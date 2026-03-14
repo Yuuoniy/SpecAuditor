@@ -1,0 +1,21 @@
+Function: int vfs_setlease ( struct file * filp , int arg , struct file_lease * * lease , void * * priv )
+
+sets a lease on an open file
+
+Parameters
+  struct file *filp
+    file pointer
+  int arg
+    type of lease to obtain
+  struct file_lease **lease
+    file_lock to use when adding a lease
+  void **priv
+    private info for lm_setup when adding a lease (may be
+NULL if lm_setup doesn’t require it)
+
+Description
+  Call this to establish a lease on the file. The “lease” argument is not
+used for F_UNLCK requests and may be NULL. For commands that set or alter
+an existing lease, the (*lease)->fl_lmops->lm_break operation must be
+set; if not, this function will return -ENOLCK (and generate a scary-looking
+stack trace).

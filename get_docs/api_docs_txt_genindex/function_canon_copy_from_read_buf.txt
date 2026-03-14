@@ -1,0 +1,16 @@
+Function: bool canon_copy_from_read_buf ( const struct tty_struct * tty , u8 * * kbp , size_t * nr )
+
+copy read data in canonical mode
+
+Parameters
+  const struct tty_struct *tty
+    terminal device
+  u8 **kbp
+    data
+  size_t *nr
+    size of data
+
+Description
+  Helper function for n_tty_read() . It is only called when ICANON is on; it
+copies one line of input up to and including the line-delimiting character
+into the result buffer.

@@ -1,0 +1,11 @@
+Function: int generic_handle_irq ( unsigned int irq )
+
+Invoke the handler for a particular irq
+
+Parameters
+  unsigned int irq
+    The irq number to handle
+
+Description
+  This function must be called from an IRQ context with irq regs
+initialized.

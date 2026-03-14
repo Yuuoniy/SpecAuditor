@@ -1,0 +1,12 @@
+Function: void __noreturn kthread_complete_and_exit ( struct completion * comp , long code )
+
+Exit the current kthread.
+
+Parameters
+  struct completion *comp
+    Completion to complete
+  long code
+    The integer value to return to kthread_stop() .
+
+Description
+  If present, complete comp and then return code to kthread_stop() .

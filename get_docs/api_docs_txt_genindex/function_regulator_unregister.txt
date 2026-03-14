@@ -1,0 +1,10 @@
+Function: void regulator_unregister ( struct regulator_dev * rdev )
+
+unregister regulator
+
+Parameters
+  struct regulator_dev *rdev
+    regulator to unregister
+
+Description
+  Called by regulator drivers to unregister a regulator.

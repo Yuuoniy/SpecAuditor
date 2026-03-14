@@ -1,0 +1,7 @@
+Function: void drop_reasons_unregister_subsys ( enum skb_drop_reason_subsys subsys )
+
+unregister a drop reason subsystem
+
+Parameters
+  enum skb_drop_reason_subsys subsys
+    the subsystem to remove, must not be the core

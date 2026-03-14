@@ -1,0 +1,13 @@
+Function: int mtree_store ( struct maple_tree * mt , unsigned long index , void * entry , gfp_t gfp )
+
+Store an entry at a given index.
+
+Parameters
+  struct maple_tree *mt
+    The maple tree
+  unsigned long index
+    The index to store the value
+  void *entry
+    The entry to store
+  gfp_t gfp
+    The GFP_FLAGS to use for allocations

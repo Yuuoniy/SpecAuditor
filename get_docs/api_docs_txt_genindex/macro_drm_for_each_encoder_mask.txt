@@ -1,0 +1,14 @@
+Macro: drm_for_each_encoder_mask
+
+
+
+Parameters
+  encoder
+    the loop cursor
+  dev
+    the DRM device
+  encoder_mask
+    bitmask of encoder indices
+
+Description
+  Iterate over all encoders specified by bitmask.

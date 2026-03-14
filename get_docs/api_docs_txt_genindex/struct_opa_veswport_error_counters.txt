@@ -1,0 +1,55 @@
+Struct: struct opa_veswport_error_counters
+
+error counters
+
+Members
+  vp_instance
+    vport instance on the OPA port
+  vesw_id
+    virtual ethernet switch id
+  veswport_num
+    virtual ethernet switch port number
+  tx_errors
+    transmit errors
+  rx_errors
+    receive errors
+  rsvd0
+    reserved bytes
+  tx_smac_filt
+    smac filter errors
+  rsvd1
+    reserved bytes
+  rsvd2
+    reserved bytes
+  rsvd3
+    reserved bytes
+  tx_dlid_zero
+    transmit packets with invalid dlid
+  rsvd4
+    reserved bytes
+  tx_logic
+    other transmit errors
+  rsvd5
+    reserved bytes
+  tx_drop_state
+    packet tansmission in non-forward port state
+  rx_bad_veswid
+    received packet with invalid vesw id
+  rsvd6
+    reserved bytes
+  rx_runt
+    received ethernet packet with length < 64 bytes
+  rx_oversize
+    received ethernet packet with length > MTU size
+  rsvd7
+    reserved bytes
+  rx_eth_down
+    received packets when interface is down
+  rx_drop_state
+    received packets in non-forwarding port state
+  rx_logic
+    other receive errors
+  rsvd8
+    reserved bytes
+  rsvd9
+    reserved bytes

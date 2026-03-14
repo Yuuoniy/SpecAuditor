@@ -1,0 +1,10 @@
+Function: struct page * __dev_alloc_page ( gfp_t gfp_mask )
+
+allocate a page for network Rx
+
+Parameters
+  gfp_t gfp_mask
+    allocation priority. Set __GFP_NOMEMALLOC if not for network Rx
+
+Description
+  Allocate a new page.

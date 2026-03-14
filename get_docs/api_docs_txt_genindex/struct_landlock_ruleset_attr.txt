@@ -1,0 +1,15 @@
+Struct: struct landlock_ruleset_attr
+
+Ruleset definition.
+
+Members
+  handled_access_fs
+    Bitmask of handled filesystem actions
+(cf. Filesystem flags ).
+  handled_access_net
+    Bitmask of handled network actions (cf. Network
+flags ).
+  scoped
+    Bitmask of scopes (cf. Scope flags )
+restricting a Landlock domain from accessing outside
+resources (e.g. IPCs).

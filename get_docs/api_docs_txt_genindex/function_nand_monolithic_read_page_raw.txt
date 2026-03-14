@@ -1,0 +1,22 @@
+Function: int nand_monolithic_read_page_raw ( struct nand_chip * chip , u8 * buf , int oob_required , int page )
+
+Monolithic page read in raw mode
+
+Parameters
+  struct nand_chip *chip
+    NAND chip info structure
+  u8 *buf
+    buffer to store read data
+  int oob_required
+    caller requires OOB data read to chip->oob_poi
+  int page
+    page number to read
+
+Description
+  This is a raw page read, ie. without any error detection/correction.
+Monolithic means we are requesting all the relevant data (main plus
+eventually OOB) to be loaded in the NAND cache and sent over the
+bus (from the NAND chip to the NAND controller) in a single
+operation. This is an alternative to nand_read_page_raw() , which
+first reads the main data, and if the OOB data is requested too,
+then reads more data on the bus.

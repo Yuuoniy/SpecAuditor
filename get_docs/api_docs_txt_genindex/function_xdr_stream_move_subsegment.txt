@@ -1,0 +1,17 @@
+Function: unsigned int xdr_stream_move_subsegment ( struct xdr_stream * xdr , unsigned int offset , unsigned int target , unsigned int length )
+
+Move part of a stream to another position
+
+Parameters
+  struct xdr_stream *xdr
+    the source xdr_stream
+  unsigned int offset
+    the source offset of the segment
+  unsigned int target
+    the target offset of the segment
+  unsigned int length
+    the number of bytes to move
+
+Description
+  Moves length bytes from offset to target in the xdr_stream, overwriting
+anything in its space. Returns the number of bytes in the segment.

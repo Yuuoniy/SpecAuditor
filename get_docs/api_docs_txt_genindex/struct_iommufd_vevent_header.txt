@@ -1,0 +1,10 @@
+Struct: struct iommufd_vevent_header
+
+Virtual Event Header for a vEVENTQ Status
+
+Members
+  flags
+    Combination of enum iommu_veventq_flag
+  sequence
+    The sequence index of a vEVENT in the vEVENTQ, with a range of
+[0, INT_MAX] where the following index of INT_MAX is 0

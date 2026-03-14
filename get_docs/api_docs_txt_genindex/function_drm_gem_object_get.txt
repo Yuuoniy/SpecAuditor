@@ -1,0 +1,11 @@
+Function: void drm_gem_object_get ( struct drm_gem_object * obj )
+
+acquire a GEM buffer object reference
+
+Parameters
+  struct drm_gem_object *obj
+    GEM buffer object
+
+Description
+  This function acquires an additional reference to obj . It is illegal to
+call this without already holding a reference. No locks required.

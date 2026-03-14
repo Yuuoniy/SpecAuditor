@@ -1,0 +1,10 @@
+Function: int zynqmp_dp_aux_init ( struct zynqmp_dp * dp )
+
+Initialize and register the DP AUX
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure
+
+Description
+  Program the AUX clock divider and filter and register the DP AUX adapter.

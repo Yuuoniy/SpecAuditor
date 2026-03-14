@@ -1,0 +1,12 @@
+Function: bool pci_check_and_unmask_intx ( struct pci_dev * dev )
+
+unmask INTx if no interrupt is pending
+
+Parameters
+  struct pci_dev *dev
+    the PCI device to operate on
+
+Description
+  Check if the device dev has its INTx line asserted, unmask it if not and
+return true. False is returned and the mask remains active if there was
+still an interrupt pending.

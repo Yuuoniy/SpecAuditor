@@ -1,0 +1,13 @@
+Function: void v4l2_subdev_notify ( struct v4l2_subdev * sd , unsigned int notification , void * arg )
+
+Sends a notification to v4l2_device.
+
+Parameters
+  struct v4l2_subdev *sd
+    pointer to struct v4l2_subdev
+  unsigned int notification
+    type of notification. Please notice that the notification
+type is driver-specific.
+  void *arg
+    arguments for the notification. Those are specific to each
+notification type.

@@ -1,0 +1,11 @@
+Function: void ata_scsi_remove_dev ( struct ata_device * dev )
+
+remove attached SCSI device
+
+Parameters
+  struct ata_device *dev
+    ATA device to remove attached SCSI device for
+
+Description
+  This function is called from ata_eh_scsi_hotplug() and
+responsible for removing the SCSI device attached to dev .

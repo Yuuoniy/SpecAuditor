@@ -1,0 +1,38 @@
+Function: int amdgpu_vm_update_range ( struct amdgpu_device * adev , struct amdgpu_vm * vm , bool immediate , bool unlocked , bool flush_tlb , bool allow_override , struct amdgpu_sync * sync , uint64_t start , uint64_t last , uint64_t flags , uint64_t offset , uint64_t vram_base , struct ttm_resource * res , dma_addr_t * pages_addr , struct dma_fence * * fence )
+
+update a range in the vm page table
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer to use for commands
+  struct amdgpu_vm *vm
+    the VM to update the range
+  bool immediate
+    immediate submission in a page fault
+  bool unlocked
+    unlocked invalidation during MM callback
+  bool flush_tlb
+    trigger tlb invalidation after update completed
+  bool allow_override
+    change MTYPE for local NUMA nodes
+  struct amdgpu_sync *sync
+    fences we need to sync to
+  uint64_t start
+    start of mapped range
+  uint64_t last
+    last mapped entry
+  uint64_t flags
+    flags for the entries
+  uint64_t offset
+    offset into nodes and pages_addr
+  uint64_t vram_base
+    base for vram mappings
+  struct ttm_resource *res
+    ttm_resource to map
+  dma_addr_t *pages_addr
+    DMA addresses to use for mapping
+  struct dma_fence **fence
+    optional resulting fence
+
+Description
+  Fill in the page table entries between start and last .

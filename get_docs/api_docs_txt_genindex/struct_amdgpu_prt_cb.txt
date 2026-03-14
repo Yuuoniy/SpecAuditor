@@ -1,0 +1,9 @@
+Struct: struct amdgpu_prt_cb
+
+Helper to disable partial resident texture feature from a fence callback
+
+Members
+  adev
+    amdgpu device
+  cb
+    callback

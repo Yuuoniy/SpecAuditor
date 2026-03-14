@@ -1,0 +1,12 @@
+Function: void pci_d3cold_disable ( struct pci_dev * dev )
+
+Disable D3cold for device
+
+Parameters
+  struct pci_dev *dev
+    PCI device to handle
+
+Description
+  This function can be used in drivers to disable D3cold from the device
+they handle.  It also updates upstream PCI bridge PM capabilities
+accordingly.

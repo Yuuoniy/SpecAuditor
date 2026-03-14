@@ -1,0 +1,11 @@
+Function: unsigned long wp_shared_mapping_range ( struct address_space * mapping , pgoff_t first_index , pgoff_t nr )
+
+Write-protect all ptes in an address space range
+
+Parameters
+  struct address_space *mapping
+    The address_space we want to write protect
+  pgoff_t first_index
+    The first page offset in the range
+  pgoff_t nr
+    Number of incremental page offsets to cover

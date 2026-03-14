@@ -1,0 +1,13 @@
+Function: void input_mt_report_finger_count ( struct input_dev * dev , int count )
+
+report contact count
+
+Parameters
+  struct input_dev *dev
+    input device with allocated MT slots
+  int count
+    the number of contacts
+
+Description
+  Reports the contact count via BTN_TOOL_FINGER, BTN_TOOL_DOUBLETAP,
+BTN_TOOL_TRIPLETAP and BTN_TOOL_QUADTAP.

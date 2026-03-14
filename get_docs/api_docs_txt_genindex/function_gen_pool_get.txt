@@ -1,0 +1,12 @@
+Function: struct gen_pool * gen_pool_get ( struct device * dev , const char * name )
+
+Obtain the gen_pool (if any) for a device
+
+Parameters
+  struct device *dev
+    device to retrieve the gen_pool from
+  const char *name
+    name of a gen_pool or NULL, identifies a particular gen_pool on device
+
+Description
+  Returns the gen_pool for the device if one is present, or NULL.

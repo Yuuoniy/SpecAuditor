@@ -1,0 +1,9 @@
+Function: bool queue_rcu_work ( struct workqueue_struct * wq , struct rcu_work * rwork )
+
+queue work after a RCU grace period
+
+Parameters
+  struct workqueue_struct *wq
+    workqueue to use
+  struct rcu_work *rwork
+    work to queue

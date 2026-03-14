@@ -1,0 +1,16 @@
+Function: int drm_gem_lock_reservations ( struct drm_gem_object * * objs , int count , struct ww_acquire_ctx * acquire_ctx )
+
+Sets up the ww context and acquires the lock on an array of GEM objects.
+
+Parameters
+  struct drm_gem_object **objs
+    drm_gem_objects to lock
+  int count
+    Number of objects in objs
+  struct ww_acquire_ctx *acquire_ctx
+    struct ww_acquire_ctx that will be initialized as
+part of tracking this set of locked reservations.
+
+Description
+  Once you’ve locked your reservations, you’ll want to set up space
+for your shared fences (if applicable), submit your job, then drm_gem_unlock_reservations() .

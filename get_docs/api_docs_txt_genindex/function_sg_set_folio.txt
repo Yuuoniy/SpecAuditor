@@ -1,0 +1,19 @@
+Function: void sg_set_folio ( struct scatterlist * sg , struct folio * folio , size_t len , size_t offset )
+
+Set sg entry to point at given folio
+
+Parameters
+  struct scatterlist *sg
+    SG entry
+  struct folio *folio
+    The folio
+  size_t len
+    Length of data
+  size_t offset
+    Offset into folio
+
+Description
+  Use this function to set an sg entry pointing at a folio, never assign
+the folio directly. We encode sg table information in the lower bits
+of the folio pointer. See sg_page() for looking up the page belonging
+to an sg entry.

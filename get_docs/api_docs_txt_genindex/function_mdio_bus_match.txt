@@ -1,0 +1,14 @@
+Function: int mdio_bus_match ( struct device * dev , const struct device_driver * drv )
+
+determine if given MDIO driver supports the given MDIO device
+
+Parameters
+  struct device *dev
+    target MDIO device
+  const struct device_driver *drv
+    given MDIO driver
+
+Description
+  the driver supports the device.  Otherwise, return 0. This may
+require calling the devices own match function, since different classes
+of MDIO devices have different match criteria.

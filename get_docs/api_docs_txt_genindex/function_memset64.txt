@@ -1,0 +1,16 @@
+Function: void * memset64 ( uint64_t * s , uint64_t v , size_t count )
+
+Fill a memory area with a uint64_t
+
+Parameters
+  uint64_t *s
+    Pointer to the start of the area.
+  uint64_t v
+    The value to fill the area with
+  size_t count
+    The number of values to store
+
+Description
+  Differs from memset() in that it fills with a uint64_t instead
+of a byte.  Remember that count is the number of uint64_ts to
+store, not the number of bytes.

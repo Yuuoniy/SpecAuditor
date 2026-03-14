@@ -1,0 +1,15 @@
+Struct: struct tsm_measurement_register
+
+describes an architectural measurement register (MR)
+
+Members
+  mr_name
+    name of the MR
+  mr_value
+    buffer containing the current value of the MR
+  mr_size
+    size of the MR - typically the digest size of mr_hash
+  mr_flags
+    bitwise OR of one or more flags, detailed below
+  mr_hash
+    optional hash identifier defined in include/uapi/linux/hash_info.h.

@@ -1,0 +1,13 @@
+Function: int __dwc3_gadget_ep_enable ( struct dwc3_ep * dep , unsigned int action )
+
+initializes a hw endpoint
+
+Parameters
+  struct dwc3_ep *dep
+    endpoint to be initialized
+  unsigned int action
+    one of INIT, MODIFY or RESTORE
+
+Description
+  Caller should take care of locking. Execute all necessary commands to
+initialize a HW endpoint so it can be used by a gadget driver.

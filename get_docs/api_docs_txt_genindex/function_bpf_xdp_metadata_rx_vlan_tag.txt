@@ -1,0 +1,16 @@
+Function: __bpf_kfunc int bpf_xdp_metadata_rx_vlan_tag ( const struct xdp_md * ctx , __be16 * vlan_proto , u16 * vlan_tci )
+
+Get XDP packet outermost VLAN tag
+
+Parameters
+  const struct xdp_md *ctx
+    XDP context pointer.
+  __be16 *vlan_proto
+    Destination pointer for VLAN Tag protocol identifier (TPID).
+  u16 *vlan_tci
+    Destination pointer for VLAN TCI (VID + DEI + PCP)
+
+Description
+  In case of success, vlan_proto contains Tag protocol identifier (TPID) ,
+usually ETH_P_8021Q or ETH_P_8021AD , but some networks can use
+custom TPIDs. vlan_proto is stored in network byte order (BE) and should be used as follows: if (vlan_proto == bpf_htons(ETH_P_8021Q)) do_something();

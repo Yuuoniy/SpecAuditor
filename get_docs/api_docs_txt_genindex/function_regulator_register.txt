@@ -1,0 +1,14 @@
+Function: struct regulator_dev * regulator_register ( struct device * dev , const struct regulator_desc * regulator_desc , const struct regulator_config * cfg )
+
+register regulator
+
+Parameters
+  struct device *dev
+    the device that drive the regulator
+  const struct regulator_desc *regulator_desc
+    regulator to register
+  const struct regulator_config *cfg
+    runtime configuration for regulator
+
+Description
+  Called by regulator drivers to register a regulator.

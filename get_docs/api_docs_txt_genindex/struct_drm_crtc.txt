@@ -1,0 +1,110 @@
+Struct: struct drm_crtc
+
+central CRTC control structure
+
+Members
+  dev
+    parent DRM device
+  port
+    OF node used by drm_of_find_possible_crtcs() .
+  head
+    List of all CRTCs on dev , linked from drm_mode_config.crtc_list .
+Invariant over the lifetime of dev and therefore does not need
+locking.
+  name
+    human readable name, can be overwritten by the driver
+  mutex
+    This provides a read lock for the overall CRTC state (mode, dpms
+state, ...) and a write lock for everything which can be update
+without a full modeset (fb, cursor data, CRTC properties ...). A full
+modeset also need to grab drm_mode_config.connection_mutex . For atomic drivers specifically this protects state .
+  base
+    base KMS object for ID tracking etc.
+  primary
+    Primary plane for this CRTC. Note that this is only
+relevant for legacy IOCTL, it specifies the plane implicitly used by
+the SETCRTC and PAGE_FLIP IOCTLs. It does not have any significance
+beyond that.
+  cursor
+    Cursor plane for this CRTC. Note that this is only relevant for
+legacy IOCTL, it specifies the plane implicitly used by the SETCURSOR
+and SETCURSOR2 IOCTLs. It does not have any significance
+beyond that.
+  index
+    Position inside the mode_config.list, can be used as an array
+index. It is invariant over the lifetime of the CRTC.
+  cursor_x
+    Current x position of the cursor, used for universal
+cursor planes because the SETCURSOR IOCTL only can update the
+framebuffer without supplying the coordinates. Drivers should not use
+this directly, atomic drivers should look at drm_plane_state.crtc_x of the cursor plane instead.
+  cursor_y
+    Current y position of the cursor, used for universal
+cursor planes because the SETCURSOR IOCTL only can update the
+framebuffer without supplying the coordinates. Drivers should not use
+this directly, atomic drivers should look at drm_plane_state.crtc_y of the cursor plane instead.
+  enabled
+    Is this CRTC enabled? Should only be used by legacy drivers, atomic
+drivers should instead consult drm_crtc_state.enable and drm_crtc_state.active . Atomic drivers can update this by calling drm_atomic_helper_update_legacy_modeset_state() .
+  mode
+    Current mode timings. Should only be used by legacy drivers, atomic
+drivers should instead consult drm_crtc_state.mode . Atomic drivers
+can update this by calling drm_atomic_helper_update_legacy_modeset_state() .
+  hwmode
+    Programmed mode in hw, after adjustments for encoders, crtc, panel
+scaling etc. Should only be used by legacy drivers, for high
+precision vblank timestamps in drm_crtc_vblank_helper_get_vblank_timestamp() . Note that atomic drivers should not use this, but instead use drm_crtc_state.adjusted_mode . And for high-precision timestamps drm_crtc_vblank_helper_get_vblank_timestamp() used drm_vblank_crtc.hwmode ,
+which is filled out by calling drm_calc_timestamping_constants() .
+  x
+    x position on screen. Should only be used by legacy drivers, atomic
+drivers should look at drm_plane_state.crtc_x of the primary plane
+instead. Updated by calling drm_atomic_helper_update_legacy_modeset_state() .
+  y
+    y position on screen. Should only be used by legacy drivers, atomic
+drivers should look at drm_plane_state.crtc_y of the primary plane
+instead. Updated by calling drm_atomic_helper_update_legacy_modeset_state() .
+  funcs
+    CRTC control functions
+  gamma_size
+    Size of legacy gamma ramp reported to userspace. Set up
+by calling drm_mode_crtc_set_gamma_size() . Note that atomic drivers need to instead use drm_crtc_state.gamma_lut . See drm_crtc_enable_color_mgmt() .
+  gamma_store
+    Gamma ramp values used by the legacy SETGAMMA and
+GETGAMMA IOCTls. Set up by calling drm_mode_crtc_set_gamma_size() . Note that atomic drivers need to instead use drm_crtc_state.gamma_lut . See drm_crtc_enable_color_mgmt() .
+  helper_private
+    mid-layer private data
+  properties
+    property tracking for this CRTC
+  scaling_filter_property
+    property to apply a particular filter while
+scaling.
+  state
+    Current atomic state for this CRTC. This is protected by mutex . Note that nonblocking atomic commits
+access the current CRTC state without taking locks. Either by going
+through the struct drm_atomic_state pointers, see for_each_oldnew_crtc_in_state() , for_each_old_crtc_in_state() and for_each_new_crtc_in_state() . Or through careful ordering of atomic
+commit operations as implemented in the atomic helpers, see struct drm_crtc_commit .
+  commit_list
+    List of drm_crtc_commit structures tracking pending commits.
+Protected by commit_lock . This list holds its own full reference,
+as does the ongoing commit. “Note that the commit for a state change is also tracked in drm_crtc_state.commit . For accessing the immediately preceding
+commit in an atomic update it is recommended to just use that
+pointer in the old CRTC state, since accessing that doesn’t need
+any locking or list-walking. commit_list should only be used to
+stall for framebuffer cleanup that’s signalled through drm_crtc_commit.cleanup_done .”
+  commit_lock
+    Spinlock to protect commit_list .
+  debugfs_entry
+    Debugfs directory for this CRTC.
+  crc
+    Configuration settings of CRC capture.
+  fence_context
+    timeline context used for fence operations.
+  fence_lock
+    spinlock to protect the fences in the fence_context.
+  fence_seqno
+    Seqno variable used as monotonic counter for the fences
+created on the CRTC’s timeline.
+  timeline_name
+    The name of the CRTC’s fence timeline.
+  self_refresh_data
+    Holds the state for the self refresh helpers Initialized via drm_self_refresh_helper_init() .

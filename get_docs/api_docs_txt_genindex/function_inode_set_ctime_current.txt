@@ -1,0 +1,12 @@
+Function: struct timespec64 inode_set_ctime_current ( struct inode * inode )
+
+set the ctime to current_time
+
+Parameters
+  struct inode *inode
+    inode
+
+Description
+  Set the inode’s ctime to the current value for the inode. Returns the
+current value that was assigned. If this is not a multigrain inode, then we
+set it to the later of the coarse time and floor value.

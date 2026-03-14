@@ -1,0 +1,11 @@
+Function: int ata_cable_ignore ( struct ata_port * ap )
+
+return ignored PATA cable.
+
+Parameters
+  struct ata_port *ap
+    port
+
+Description
+  Helper method for drivers which don’t use cable type to limit
+transfer mode.

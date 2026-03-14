@@ -1,0 +1,12 @@
+Function: bool ata_scsi_offline_dev ( struct ata_device * dev )
+
+offline attached SCSI device
+
+Parameters
+  struct ata_device *dev
+    ATA device to offline attached SCSI device for
+
+Description
+  This function is called from ata_eh_detach_dev() and is responsible for
+taking the SCSI device attached to dev offline.  This function is
+called with host lock which protects dev->sdev against clearing.

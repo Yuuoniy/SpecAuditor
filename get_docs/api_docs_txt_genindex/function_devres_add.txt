@@ -1,0 +1,14 @@
+Function: void devres_add ( struct device * dev , void * res )
+
+Register device resource
+
+Parameters
+  struct device *dev
+    Device to add resource to
+  void *res
+    Resource to register
+
+Description
+  Register devres res to dev . res should have been allocated
+using devres_alloc() .  On driver detach, the associated release
+function will be invoked and devres will be freed automatically.

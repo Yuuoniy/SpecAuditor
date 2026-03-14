@@ -1,0 +1,9 @@
+Function: int device_create_bin_file ( struct device * dev , const struct bin_attribute * attr )
+
+create sysfs binary attribute file for device.
+
+Parameters
+  struct device *dev
+    device.
+  const struct bin_attribute *attr
+    device binary attribute descriptor.

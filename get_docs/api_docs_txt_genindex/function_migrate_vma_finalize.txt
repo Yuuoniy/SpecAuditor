@@ -1,0 +1,12 @@
+Function: void migrate_vma_finalize ( struct migrate_vma * migrate )
+
+restore CPU page table entry
+
+Parameters
+  struct migrate_vma *migrate
+    migrate struct containing all migration information
+
+Description
+  This replaces the special migration pte entry with either a mapping to the
+new page if migration was successful for that page, or to the original page
+otherwise.

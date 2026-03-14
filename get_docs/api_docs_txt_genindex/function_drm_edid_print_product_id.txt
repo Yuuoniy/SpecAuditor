@@ -1,0 +1,14 @@
+Function: void drm_edid_print_product_id ( struct drm_printer * p , const struct drm_edid_product_id * id , bool raw )
+
+Print decoded product id to printer
+
+Parameters
+  struct drm_printer *p
+    drm printer
+  const struct drm_edid_product_id *id
+    EDID product id
+  bool raw
+    If true, also print the raw hex
+
+Description
+  See VESA E-EDID 1.4 section 3.4.

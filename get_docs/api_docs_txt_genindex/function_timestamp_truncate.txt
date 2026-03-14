@@ -1,0 +1,14 @@
+Function: struct timespec64 timestamp_truncate ( struct timespec64 t , struct inode * inode )
+
+Truncate timespec to a granularity
+
+Parameters
+  struct timespec64 t
+    Timespec
+  struct inode *inode
+    inode being updated
+
+Description
+  Truncate a timespec to the granularity supported by the fs
+containing the inode. Always rounds down. gran must
+not be 0 nor greater than a second (NSEC_PER_SEC, or 10^9 ns).

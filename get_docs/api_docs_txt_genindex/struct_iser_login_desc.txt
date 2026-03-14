@@ -1,0 +1,17 @@
+Struct: struct iser_login_desc
+
+iSER login descriptor
+
+Members
+  req
+    pointer to login request buffer
+  rsp
+    pointer to login response buffer
+  req_dma
+    DMA address of login request buffer
+  rsp_dma
+    DMA address of login response buffer
+  sge
+    IB sge for login post recv
+  cqe
+    completion handler

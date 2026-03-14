@@ -1,0 +1,11 @@
+Function: void snd_ctl_free_one ( struct snd_kcontrol * kcontrol )
+
+release the control instance
+
+Parameters
+  struct snd_kcontrol *kcontrol
+    the control instance
+
+Description
+  Releases the control instance created via snd_ctl_new() or snd_ctl_new1() .
+Don’t call this after the control was added to the card.

@@ -1,0 +1,17 @@
+Function: int ata_eh_link_set_lpm ( struct ata_link * link , enum ata_lpm_policy policy , struct ata_device * * r_failed_dev )
+
+configure SATA interface power management
+
+Parameters
+  struct ata_link *link
+    link to configure
+  enum ata_lpm_policy policy
+    the link power management policy
+  struct ata_device **r_failed_dev
+    out parameter for failed device
+
+Description
+  Enable SATA Interface power management.  This will enable
+Device Interface Power Management (DIPM) for min_power and
+medium_power_with_dipm policies, and then call driver specific
+callbacks for enabling Host Initiated Power management.

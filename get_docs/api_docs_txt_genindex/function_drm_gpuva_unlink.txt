@@ -1,0 +1,11 @@
+Function: void drm_gpuva_unlink ( struct drm_gpuva * va )
+
+unlink a drm_gpuva
+
+Parameters
+  struct drm_gpuva *va
+    the drm_gpuva to unlink
+
+Description
+  This removes the given va from the GPU VA list of the drm_gem_object it is
+associated with.

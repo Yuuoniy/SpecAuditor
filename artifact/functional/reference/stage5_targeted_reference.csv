@@ -1,0 +1,26 @@
+hexsha,target_function,violation_function_name,spec_target,spec_predicate,has_violation,confidence,analysis,check_mode
+c158cf914713,of_slim_get_device,qcom_slim_ngd_notify_slaves,A call to of_slim_get_device() that returns a non-null slim_device pointer,The returned slim_device reference must be released with slim_device_put() or equivalent put function when no longer needed,True,HIGH,"1. Decision: YES
+
+2. Detailed reasoning:
+This code contains a definite violation of the security rule. Let me analyze the flow:
+
+- `of_slim_get_device(&ctrl->ctrl, node)` is called and returns a slim_device reference
+- The returned `sbdev` pointer is stored in a local variable
+- The code checks if `sbdev` is NULL and continues if so
+- If `sbdev` is not NULL, it calls `slim_get_logical_addr(sbdev)` 
+- After the `slim_get_logical_addr()` call, the function continues to the next iteration of the loop
+- **Critical issue**: There is no corresponding `slim_device_put(sbdev)` call before the next iteration or before the function exits
+
+This is a clear memory leak pattern. The `of_slim_get_device()` function increments the reference count of the slim_device, and this reference must be released when no longer needed. In this case:
+
+- The `sbdev` pointer is only used locally within each loop iteration
+- There's no assignment to external variables that would maintain the reference
+- The pointer is not returned to a caller
+- There's no error handling that releases the reference
+- The reference goes out of scope at the end of each loop iteration without being properly released
+
+This violates the security rule because each call to `of_slim_get_device()` leaks a reference, leading to memory leaks and potential resource exhaustion.
+
+3. Confidence: HIGH
+
+The violation is clear and unambiguous - there's a missing `slim_device_put(sbdev)` call that should occur before continuing to the next loop iteration or before the function returns.",targeted_function_fallback

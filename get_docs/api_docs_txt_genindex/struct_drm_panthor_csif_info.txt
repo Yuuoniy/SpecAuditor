@@ -1,0 +1,20 @@
+Struct: struct drm_panthor_csif_info
+
+Command stream interface information
+
+Members
+  csg_slot_count
+    Number of command stream group slots exposed by the firmware.
+  cs_slot_count
+    Number of command stream slots per group.
+  cs_reg_count
+    Number of command stream registers.
+  scoreboard_slot_count
+    Number of scoreboard slots.
+  unpreserved_cs_reg_count
+    Number of command stream registers reserved by
+the kernel driver to call a userspace command stream. All registers can be used by a userspace command stream, but the
+[cs_slot_count - unpreserved_cs_reg_count .. cs_slot_count] registers are
+used by the kernel when DRM_PANTHOR_IOCTL_GROUP_SUBMIT is called.
+  pad
+    Padding field, set to zero.

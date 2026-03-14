@@ -1,0 +1,11 @@
+Function: int drm_mode_create_scaling_mode_property ( struct drm_device * dev )
+
+create scaling mode property
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  Called by a driver the first time it’s needed, must be attached to desired
+connectors.

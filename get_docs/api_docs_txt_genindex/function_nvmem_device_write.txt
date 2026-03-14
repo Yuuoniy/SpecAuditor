@@ -1,0 +1,13 @@
+Function: int nvmem_device_write ( struct nvmem_device * nvmem , unsigned int offset , size_t bytes , void * buf )
+
+Write cell to a given nvmem device
+
+Parameters
+  struct nvmem_device *nvmem
+    nvmem device to be written to.
+  unsigned int offset
+    offset in nvmem device.
+  size_t bytes
+    number of bytes to write.
+  void *buf
+    buffer to be written.

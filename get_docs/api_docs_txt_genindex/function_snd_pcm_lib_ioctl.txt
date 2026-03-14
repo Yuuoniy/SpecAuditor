@@ -1,0 +1,15 @@
+Function: int snd_pcm_lib_ioctl ( struct snd_pcm_substream * substream , unsigned int cmd , void * arg )
+
+a generic PCM ioctl callback
+
+Parameters
+  struct snd_pcm_substream *substream
+    the pcm substream instance
+  unsigned int cmd
+    ioctl command
+  void *arg
+    ioctl argument
+
+Description
+  Processes the generic ioctl commands for PCM.
+Can be passed as the ioctl callback for PCM ops.

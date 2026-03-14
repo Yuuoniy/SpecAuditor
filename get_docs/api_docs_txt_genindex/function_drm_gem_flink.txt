@@ -1,0 +1,9 @@
+Function: struct drm_gem_flink
+
+Argument for DRM_IOCTL_GEM_FLINK ioctl.
+
+Members
+  handle
+    Handle for the object being named.
+  name
+    Returned global name.

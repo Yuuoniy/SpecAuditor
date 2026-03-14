@@ -1,0 +1,11 @@
+Function: int skb_header_cloned ( const struct sk_buff * skb )
+
+is the header a clone
+
+Parameters
+  const struct sk_buff *skb
+    buffer to check
+
+Description
+  Returns true if modifying the header part of the buffer requires
+the data to be copied.

@@ -1,0 +1,21 @@
+Function: void pcs_link_up ( struct phylink_pcs * pcs , unsigned int neg_mode , phy_interface_t interface , int speed , int duplex )
+
+program the PCS for the resolved link configuration
+
+Parameters
+  struct phylink_pcs *pcs
+    a pointer to a struct phylink_pcs .
+  unsigned int neg_mode
+    link negotiation mode (see below)
+  phy_interface_t interface
+    link typedef phy_interface_t mode
+  int speed
+    link speed
+  int duplex
+    link duplex
+
+Description
+  This call will be made just before mac_link_up() to inform the PCS of
+the resolved link parameters. For example, a PCS operating in SGMII
+mode without in-band AN needs to be manually configured for the link
+and duplex setting. Otherwise, this should be a no-op.

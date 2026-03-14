@@ -1,0 +1,15 @@
+Function: bool drm_atomic_helper_damage_merged ( const struct drm_plane_state * old_state , const struct drm_plane_state * state , struct drm_rect * rect )
+
+Merged plane damage
+
+Parameters
+  const struct drm_plane_state *old_state
+    Old plane state for validation.
+  const struct drm_plane_state *state
+    Plane state from which to iterate the damage clips.
+  struct drm_rect *rect
+    Returns the merged damage rectangle
+
+Description
+  This function merges any valid plane damage clips into one rectangle and
+returns it in rect .

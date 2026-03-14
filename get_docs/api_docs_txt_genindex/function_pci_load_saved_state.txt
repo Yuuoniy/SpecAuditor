@@ -1,0 +1,9 @@
+Function: int pci_load_saved_state ( struct pci_dev * dev , struct pci_saved_state * state )
+
+Reload the provided save state into struct pci_dev .
+
+Parameters
+  struct pci_dev *dev
+    PCI device that we’re dealing with
+  struct pci_saved_state *state
+    Saved state returned from pci_store_saved_state()

@@ -1,0 +1,15 @@
+Macro: RIO_LOP_WRITE
+
+
+
+Parameters
+  size
+    Size of configuration space write (8, 16, 32 bits)
+  type
+    C type of value argument
+  len
+    Length of configuration space write (1, 2, 4 bytes)
+
+Description
+  Generates rio_local_write_config_* functions used to access
+configuration space registers on the local device.

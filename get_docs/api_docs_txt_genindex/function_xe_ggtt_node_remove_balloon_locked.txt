@@ -1,0 +1,11 @@
+Function: void xe_ggtt_node_remove_balloon_locked ( struct xe_ggtt_node * node )
+
+release a reserved GGTT region
+
+Parameters
+  struct xe_ggtt_node *node
+    the xe_ggtt_node with reserved GGTT region
+
+Description
+  To be used in cases where ggtt->lock is already taken.
+See xe_ggtt_node_insert_balloon_locked() for details.

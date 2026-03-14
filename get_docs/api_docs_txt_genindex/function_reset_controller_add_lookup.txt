@@ -1,0 +1,9 @@
+Function: void reset_controller_add_lookup ( struct reset_control_lookup * lookup , unsigned int num_entries )
+
+register a set of lookup entries
+
+Parameters
+  struct reset_control_lookup *lookup
+    array of reset lookup entries
+  unsigned int num_entries
+    number of entries in the lookup array

@@ -1,0 +1,13 @@
+Struct: struct rkisp1_cif_isp_awb_gain_config
+
+Configuration used by auto white balance gain
+
+Members
+  gain_red
+    gain value for red component.
+  gain_green_r
+    gain value for green component in red line.
+  gain_blue
+    gain value for blue component.
+  gain_green_b
+    gain value for green component in blue line.

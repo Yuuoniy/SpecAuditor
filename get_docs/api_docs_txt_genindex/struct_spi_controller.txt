@@ -1,0 +1,221 @@
+Struct: struct spi_controller
+
+interface to SPI host or target controller
+
+Members
+  dev
+    device interface to this driver
+  list
+    link with the global spi_controller list
+  bus_num
+    board-specific (and often SOC-specific) identifier for a
+given SPI controller.
+  num_chipselect
+    chipselects are used to distinguish individual
+SPI targets, and are numbered from zero to num_chipselects.
+each target has a chipselect signal, but it’s common that not
+every chipselect is connected to a target.
+  dma_alignment
+    SPI controller constraint on DMA buffers alignment.
+  mode_bits
+    flags understood by this controller driver
+  buswidth_override_bits
+    flags to override for this controller driver
+  bits_per_word_mask
+    A mask indicating which values of bits_per_word are
+supported by the driver. Bit n indicates that a bits_per_word n+1 is
+supported. If set, the SPI core will reject any transfer with an
+unsupported bits_per_word. If not set, this value is simply ignored,
+and it’s up to the individual driver to perform any validation.
+  min_speed_hz
+    Lowest supported transfer speed
+  max_speed_hz
+    Highest supported transfer speed
+  flags
+    other constraints relevant to this driver
+  devm_allocated
+    whether the allocation of this struct is devres-managed
+  {unnamed_union}
+    anonymous
+  slave
+    indicates that this is an SPI slave controller
+  target
+    indicates that this is an SPI target controller
+  max_transfer_size
+    function that returns the max transfer size for
+a spi_device ; may be NULL , so the default SIZE_MAX will be used.
+  max_message_size
+    function that returns the max message size for
+a spi_device ; may be NULL , so the default SIZE_MAX will be used.
+  io_mutex
+    mutex for physical bus access
+  add_lock
+    mutex to avoid adding devices to the same chipselect
+  bus_lock_spinlock
+    spinlock for SPI bus locking
+  bus_lock_mutex
+    mutex for exclusion of multiple callers
+  bus_lock_flag
+    indicates that the SPI bus is locked for exclusive use
+  setup
+    updates the device mode and clocking records used by a
+device’s SPI controller; protocol code may call this.  This
+must fail if an unrecognized or unsupported mode is requested.
+It’s always safe to call this unless transfers are pending on
+the device whose settings are being modified.
+  set_cs_timing
+    optional hook for SPI devices to request SPI
+controller for configuring specific CS setup time, hold time and inactive
+delay in terms of clock counts
+  transfer
+    adds a message to the controller’s transfer queue.
+  cleanup
+    frees controller-specific state
+  can_dma
+    determine whether this controller supports DMA
+  dma_map_dev
+    device which can be used for DMA mapping
+  cur_rx_dma_dev
+    device which is currently used for RX DMA mapping
+  cur_tx_dma_dev
+    device which is currently used for TX DMA mapping
+  queued
+    whether this controller is providing an internal message queue
+  kworker
+    pointer to thread struct for message pump
+  pump_messages
+    work struct for scheduling work to the message pump
+  queue_lock
+    spinlock to synchronise access to message queue
+  queue
+    message queue
+  cur_msg
+    the currently in-flight message
+  cur_msg_completion
+    a completion for the current in-flight message
+  cur_msg_incomplete
+    Flag used internally to opportunistically skip
+the cur_msg_completion . This flag is used to check if the driver has
+already called spi_finalize_current_message() .
+  cur_msg_need_completion
+    Flag used internally to opportunistically skip
+the cur_msg_completion . This flag is used to signal the context that
+is running spi_finalize_current_message() that it needs to complete()
+  busy
+    message pump is busy
+  running
+    message pump is running
+  rt
+    whether this queue is set to run as a realtime task
+  auto_runtime_pm
+    the core should ensure a runtime PM reference is held
+while the hardware is prepared, using the parent
+device for the spidev
+  fallback
+    fallback to PIO if DMA transfer return failure with
+SPI_TRANS_FAIL_NO_START.
+  last_cs_mode_high
+    was (mode & SPI_CS_HIGH) true on the last call to set_cs.
+  last_cs
+    the last chip_select that is recorded by set_cs, -1 on non chip
+selected
+  last_cs_index_mask
+    bit mask the last chip selects that were used
+  xfer_completion
+    used by core transfer_one_message()
+  max_dma_len
+    Maximum length of a DMA transfer for the device.
+  optimize_message
+    optimize the message for reuse
+  unoptimize_message
+    release resources allocated by optimize_message
+  prepare_transfer_hardware
+    a message will soon arrive from the queue
+so the subsystem requests the driver to prepare the transfer hardware
+by issuing this call
+  transfer_one_message
+    the subsystem calls the driver to transfer a single
+message while queuing transfers that arrive in the meantime. When the
+driver is finished with this message, it must call spi_finalize_current_message() so the subsystem can issue the next
+message
+  unprepare_transfer_hardware
+    there are currently no more messages on the
+queue so the subsystem notifies the driver that it may relax the
+hardware by issuing this call
+  prepare_message
+    set up the controller to transfer a single message,
+for example doing DMA mapping.  Called from threaded
+context.
+  unprepare_message
+    undo any work done by prepare_message() .
+  target_abort
+    abort the ongoing transfer request on an SPI target controller
+  set_cs
+    set the logic level of the chip select line.  May be called
+from interrupt context.
+  transfer_one
+    transfer a single spi_transfer.
+  handle_err
+    the subsystem calls the driver to handle an error that occurs
+in the generic implementation of transfer_one_message() .
+  mem_ops
+    optimized/dedicated operations for interactions with SPI memory.
+This field is optional and should only be implemented if the
+controller has native support for memory like operations.
+  mem_caps
+    controller capabilities for the handling of memory operations.
+  dtr_caps
+    true if controller has dtr(single/dual transfer rate) capability.
+QSPI based controller should fill this based on controller’s capability.
+  get_offload
+    callback for controllers with offload support to get matching
+offload instance. Implementations should return -ENODEV if no match is
+found.
+  put_offload
+    release the offload instance acquired by get_offload .
+  cs_gpiods
+    Array of GPIO descriptors to use as chip select lines; one per CS
+number. Any individual value may be NULL for CS lines that
+are not GPIOs (driven by the SPI controller itself).
+  use_gpio_descriptors
+    Turns on the code in the SPI core to parse and grab
+GPIO descriptors. This will fill in cs_gpiods and SPI devices will have
+the cs_gpiod assigned if a GPIO line is found for the chipselect.
+  unused_native_cs
+    When cs_gpiods is used, spi_register_controller() will
+fill in this field with the first unused native CS, to be used by SPI
+controller drivers that need to drive a native CS when using GPIO CS.
+  max_native_cs
+    When cs_gpiods is used, and this field is filled in, spi_register_controller() will validate all native CS (including the
+unused native CS) against this value.
+  pcpu_statistics
+    statistics for the spi_controller
+  dma_tx
+    DMA transmit channel
+  dma_rx
+    DMA receive channel
+  dummy_rx
+    dummy receive buffer for full-duplex devices
+  dummy_tx
+    dummy transmit buffer for full-duplex devices
+  fw_translate_cs
+    If the boot firmware uses different numbering scheme
+what Linux expects, this optional hook can be used to translate
+between the two.
+  ptp_sts_supported
+    If the driver sets this to true, it must provide a
+time snapshot in spi_transfer->ptp_sts as close as possible to the
+moment in time when spi_transfer->ptp_sts_word_pre and spi_transfer->ptp_sts_word_post were transmitted.
+If the driver does not set this, the SPI core takes the snapshot as
+close to the driver hand-over as possible.
+  irq_flags
+    Interrupt enable state during PTP system timestamping
+  queue_empty
+    signal green light for opportunistically skipping the queue
+for spi_sync transfers.
+  must_async
+    disable all fast paths in the core
+  defer_optimize_message
+    set to true if controller cannot pre-optimize messages
+and needs to defer the optimization step until the message is actually
+being transferred

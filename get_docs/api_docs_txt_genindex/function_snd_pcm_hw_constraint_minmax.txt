@@ -1,0 +1,16 @@
+Function: int snd_pcm_hw_constraint_minmax ( struct snd_pcm_runtime * runtime , snd_pcm_hw_param_t var , unsigned int min , unsigned int max )
+
+apply a min/max range constraint to an interval
+
+Parameters
+  struct snd_pcm_runtime *runtime
+    PCM runtime instance
+  snd_pcm_hw_param_t var
+    hw_params variable to apply the range
+  unsigned int min
+    the minimal value
+  unsigned int max
+    the maximal value
+
+Description
+  Apply the min/max range constraint to an interval parameter.

@@ -1,0 +1,12 @@
+Function: void srpt_close_session ( struct se_session * se_sess )
+
+forcibly close a session
+
+Parameters
+  struct se_session *se_sess
+    SCSI target session.
+
+Description
+  Callback function invoked by the TCM core to clean up sessions associated
+with a node ACL when the user invokes
+rmdir /sys/kernel/config/target/$driver/$port/$tpg/acls/$i_port_id

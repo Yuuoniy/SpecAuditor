@@ -1,0 +1,10 @@
+Function: int ata_port_abort ( struct ata_port * ap )
+
+abort all qc’s on the port
+
+Parameters
+  struct ata_port *ap
+    ATA port to abort qc’s for
+
+Description
+  Abort all active qc’s of ap and schedule EH.

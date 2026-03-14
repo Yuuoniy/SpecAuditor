@@ -1,0 +1,2 @@
+Function: struct coresight_device * coresight_register ( struct coresight_desc * desc ) ;
+

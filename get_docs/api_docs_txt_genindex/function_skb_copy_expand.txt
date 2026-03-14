@@ -1,0 +1,17 @@
+Function: struct sk_buff * skb_copy_expand ( const struct sk_buff * skb , int newheadroom , int newtailroom , gfp_t gfp_mask )
+
+copy and expand sk_buff
+
+Parameters
+  const struct sk_buff *skb
+    buffer to copy
+  int newheadroom
+    new free bytes at head
+  int newtailroom
+    new free bytes at tail
+  gfp_t gfp_mask
+    allocation priority
+
+Description
+  Make a copy of both an sk_buff and its data and while doing so
+allocate additional space.

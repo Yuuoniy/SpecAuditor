@@ -1,0 +1,14 @@
+Function: bool is_kfence_address ( const void * addr )
+
+check if an address belongs to KFENCE pool
+
+Parameters
+  const void *addr
+    address to check
+
+Description
+  KFENCE objects live in a separate page range and are not to be intermixed
+with regular heap objects (e.g. KFENCE objects must never be added to the
+allocator freelists). Failing to do so may and will result in heap
+corruptions, therefore is_kfence_address() must be used to check whether
+an object requires specific handling.

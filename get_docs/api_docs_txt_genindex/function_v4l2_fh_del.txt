@@ -1,0 +1,12 @@
+Function: void v4l2_fh_del ( struct v4l2_fh * fh , struct file * filp )
+
+Remove file handle from the list of file handles.
+
+Parameters
+  struct v4l2_fh *fh
+    pointer to struct v4l2_fh
+  struct file *filp
+    pointer to struct file associated with fh
+
+Description
+  The function resets filp->private_data to NULL.

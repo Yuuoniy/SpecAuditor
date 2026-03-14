@@ -1,0 +1,13 @@
+Struct: struct gpioline_info_changed
+
+Information about a change in status of a GPIO line
+
+Members
+  info
+    updated line information
+  timestamp
+    estimate of time of status change occurrence, in nanoseconds
+  event_type
+    one of GPIOLINE_CHANGED_REQUESTED , GPIOLINE_CHANGED_RELEASED and GPIOLINE_CHANGED_CONFIG
+  padding
+    reserved for future use

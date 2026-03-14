@@ -1,0 +1,7 @@
+Function: int of_detach_node ( struct device_node * np )
+
+“Unplug” a node from the device tree.
+
+Parameters
+  struct device_node *np
+    Pointer to the caller’s Device Node

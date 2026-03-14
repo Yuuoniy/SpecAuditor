@@ -1,0 +1,13 @@
+Struct: struct typec_altmode_driver
+
+USB Type-C alternate mode device driver
+
+Members
+  id_table
+    Null terminated array of SVIDs
+  probe
+    Callback for device binding
+  remove
+    Callback for device unbinding
+  driver
+    Device driver model driver

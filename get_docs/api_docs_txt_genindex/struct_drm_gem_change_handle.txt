@@ -1,0 +1,9 @@
+Struct: struct drm_gem_change_handle
+
+Argument for DRM_IOCTL_GEM_CHANGE_HANDLE ioctl.
+
+Members
+  handle
+    The handle of a gem object.
+  new_handle
+    An available gem handle.

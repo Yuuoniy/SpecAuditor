@@ -1,0 +1,13 @@
+Function: long sgx_ioc_enclave_provision ( struct sgx_encl * encl , void __user * arg )
+
+handler for SGX_IOC_ENCLAVE_PROVISION
+
+Parameters
+  struct sgx_encl *encl
+    an enclave pointer
+  void __user *arg
+    userspace pointer to a struct sgx_enclave_provision instance
+
+Description
+  Allow ATTRIBUTE.PROVISION_KEY for an enclave by providing a file handle to
+/dev/sgx_provision.

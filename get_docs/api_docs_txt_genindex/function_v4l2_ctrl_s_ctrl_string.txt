@@ -1,0 +1,14 @@
+Function: int v4l2_ctrl_s_ctrl_string ( struct v4l2_ctrl * ctrl , const char * s )
+
+Helper function to set a control’s string value from within a driver.
+
+Parameters
+  struct v4l2_ctrl *ctrl
+    The control.
+  const char *s
+    The new string.
+
+Description
+  This sets the control’s new string safely by going through the control
+framework. This function will lock the control’s handler, so it cannot be
+used from within the v4l2_ctrl_ops functions.

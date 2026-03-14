@@ -1,0 +1,14 @@
+Function: struct page * page_pool_dev_alloc_frag ( struct page_pool * pool , unsigned int * offset , unsigned int size )
+
+allocate a page fragment.
+
+Parameters
+  struct page_pool *pool
+    pool from which to allocate
+  unsigned int *offset
+    offset to the allocated page
+  unsigned int size
+    requested size
+
+Description
+  Get a page fragment from the page allocator or page_pool caches.

@@ -1,0 +1,9 @@
+Function: void dvb_ca_en50221_frda_irq ( struct dvb_ca_en50221 * ca , int slot )
+
+An FR or a DA IRQ has occurred.
+
+Parameters
+  struct dvb_ca_en50221 *ca
+    CA instance.
+  int slot
+    Slot concerned.

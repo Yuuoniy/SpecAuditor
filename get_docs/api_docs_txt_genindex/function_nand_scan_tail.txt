@@ -1,0 +1,12 @@
+Function: int nand_scan_tail ( struct nand_chip * chip )
+
+Scan for the NAND device
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+
+Description
+  This is the second phase of the normal nand_scan() function. It fills out
+all the uninitialized function pointers with the defaults and scans for a
+bad block table if appropriate.

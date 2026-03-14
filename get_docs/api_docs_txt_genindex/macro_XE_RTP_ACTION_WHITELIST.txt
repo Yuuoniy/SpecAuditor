@@ -1,0 +1,15 @@
+Macro: XE_RTP_ACTION_WHITELIST
+
+
+
+Parameters
+  reg_
+    Register
+  val_
+    Whitelist-specific flags to set
+  ...
+    Additional fields to override in the struct xe_rtp_action entry
+
+Description
+  Add a register to the whitelist, allowing userspace to modify the ster with
+regular user privileges.

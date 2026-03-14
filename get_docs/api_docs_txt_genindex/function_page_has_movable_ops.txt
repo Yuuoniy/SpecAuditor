@@ -1,0 +1,11 @@
+Function: bool page_has_movable_ops ( const struct page * page )
+
+test for a movable_ops page
+
+Parameters
+  const struct page *page
+    The page to test.
+
+Description
+  Test whether this is a movable_ops page. Such pages will stay that
+way until freed.

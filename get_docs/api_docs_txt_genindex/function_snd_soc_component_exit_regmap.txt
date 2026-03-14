@@ -1,0 +1,11 @@
+Function: void snd_soc_component_exit_regmap ( struct snd_soc_component * component )
+
+De-initialize regmap instance for the component
+
+Parameters
+  struct snd_soc_component *component
+    The component for which to de-initialize the regmap instance
+
+Description
+  Calls regmap_exit() on the regmap instance associated to the component and
+removes the regmap instance from the component.

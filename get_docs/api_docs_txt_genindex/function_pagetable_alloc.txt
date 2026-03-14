@@ -1,0 +1,13 @@
+Function: struct ptdesc * pagetable_alloc ( gfp_t gfp , unsigned int order )
+
+Allocate pagetables
+
+Parameters
+  gfp_t gfp
+    GFP flags
+  unsigned int order
+    desired pagetable order
+
+Description
+  pagetable_alloc allocates memory for page tables as well as a page table
+descriptor to describe that memory.

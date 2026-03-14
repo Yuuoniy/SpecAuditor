@@ -1,0 +1,13 @@
+Function: void devm_gpiod_put ( struct device * dev , struct gpio_desc * desc )
+
+Resource-managed gpiod_put()
+
+Parameters
+  struct device *dev
+    GPIO consumer
+  struct gpio_desc *desc
+    GPIO descriptor to dispose of
+
+Description
+  Dispose of a GPIO descriptor obtained with devm_gpiod_get() or devm_gpiod_get_index() . Normally this function will not be called as the GPIO
+will be disposed of by the resource management code.

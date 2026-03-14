@@ -1,0 +1,15 @@
+Function: const char * snd_info_get_str ( char * dest , const char * src , int len )
+
+parse a string token
+
+Parameters
+  char *dest
+    the buffer to store the string token
+  const char *src
+    the original string
+  int len
+    the max. length of token - 1
+
+Description
+  Parses the original string and copy a token to the given
+string buffer.

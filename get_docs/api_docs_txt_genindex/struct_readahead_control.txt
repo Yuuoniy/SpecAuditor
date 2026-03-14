@@ -1,0 +1,12 @@
+Struct: struct readahead_control
+
+Describes a readahead request.
+
+Members
+  file
+    The file, used primarily by network filesystems for authentication.
+May be NULL if invoked internally by the filesystem.
+  mapping
+    Readahead this filesystem object.
+  ra
+    File readahead state.  May be NULL.

@@ -1,0 +1,7 @@
+Function: int media_devnode_is_registered ( struct media_devnode * devnode )
+
+returns true if media_devnode is registered; false otherwise.
+
+Parameters
+  struct media_devnode *devnode
+    pointer to struct media_devnode .

@@ -1,0 +1,46 @@
+Struct: struct landlock_ruleset
+
+Landlock ruleset
+
+Members
+  root_inode
+    Root of a red-black tree containing struct landlock_rule nodes with inode object.  Once a ruleset is tied to a
+process (i.e. as a domain), this tree is immutable until usage reaches zero.
+  root_net_port
+    Root of a red-black tree containing struct landlock_rule nodes with network port. Once a ruleset is tied to a
+process (i.e. as a domain), this tree is immutable until usage reaches zero.
+  hierarchy
+    Enables hierarchy identification even when a parent
+domain vanishes.  This is needed for the ptrace protection.
+  {unnamed_union}
+    anonymous
+  work_free
+    Enables to free a ruleset within a lockless
+section.  This is only used by landlock_put_ruleset_deferred() when usage reaches zero.
+The fields lock , usage , num_rules , num_layers and access_masks are then unused.
+  {unnamed_struct}
+    anonymous
+  lock
+    Protects against concurrent modifications of root , if usage is greater than zero.
+  usage
+    Number of processes (i.e. domains) or file
+descriptors referencing this ruleset.
+  num_rules
+    Number of non-overlapping (i.e. not for
+the same object) rules in this ruleset.
+  num_layers
+    Number of layers that are used in this
+ruleset.  This enables to check that all the layers
+allow an access request.  A value of 0 identifies a
+non-merged ruleset (i.e. not a domain).
+  access_masks
+    Contains the subset of filesystem and
+network actions that are restricted by a ruleset.
+A domain saves all layers of merged rulesets in a
+stack (FAM), starting from the first layer to the
+last one.  These layers are used when merging
+rulesets, for user space backward compatibility
+(i.e. future-proof), and to properly handle merged
+rulesets without overlapping access rights.  These
+layers are set once and never changed for the
+lifetime of the ruleset.

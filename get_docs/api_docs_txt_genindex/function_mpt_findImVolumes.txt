@@ -1,0 +1,7 @@
+Function: int mpt_findImVolumes ( MPT_ADAPTER * ioc )
+
+Identify IDs of hidden disks and RAID Volumes
+
+Parameters
+  MPT_ADAPTER *ioc
+    Pointer to a Adapter Strucutre

@@ -1,0 +1,15 @@
+Function: int kunit_platform_device_prepare_wait_for_probe ( struct kunit * test , struct platform_device * pdev , struct completion * x )
+
+Prepare a completion variable to wait for a platform device to probe
+
+Parameters
+  struct kunit *test
+    test context
+  struct platform_device *pdev
+    platform device to prepare to wait for probe of
+  struct completion *x
+    completion variable completed when dev has probed
+
+Description
+  Prepare a completion variable x to wait for pdev to probe. Waiting on the
+completion forces a preemption, allowing the platform driver to probe.

@@ -1,0 +1,11 @@
+Function: debug_entry_t * debug_text_event ( debug_info_t * id , int level , const char * txt )
+
+writes string debug entry in ascii format to active debug area (if level <= actual debug level)
+
+Parameters
+  debug_info_t *id
+    handle for debug log
+  int level
+    debug level
+  const char *txt
+    string for debug entry

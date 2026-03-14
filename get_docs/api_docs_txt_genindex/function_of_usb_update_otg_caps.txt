@@ -1,0 +1,12 @@
+Function: int of_usb_update_otg_caps ( struct device_node * np , struct usb_otg_caps * otg_caps )
+
+to update usb otg capabilities according to the passed properties in DT.
+
+Parameters
+  struct device_node *np
+    Pointer to the given device_node
+  struct usb_otg_caps *otg_caps
+    Pointer to the target usb_otg_caps to be set
+
+Description
+  The function updates the otg capabilities

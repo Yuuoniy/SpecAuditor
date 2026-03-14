@@ -1,0 +1,29 @@
+Struct: struct gpio_v2_line_request
+
+Information about a request for GPIO lines
+
+Members
+  offsets
+    an array of desired lines, specified by offset index for the
+associated GPIO chip
+  consumer
+    a desired consumer label for the selected GPIO lines such as
+“my-bitbanged-relay”
+  config
+    requested configuration for the lines
+  num_lines
+    number of lines requested in this request, i.e. the number
+of valid fields in the GPIO_V2_LINES_MAX sized arrays, set to 1 to
+request a single line
+  event_buffer_size
+    a suggested minimum number of line events that the
+kernel should buffer.  This is only relevant if edge detection is
+enabled in the configuration. Note that this is only a suggested value
+and the kernel may allocate a larger buffer or cap the size of the
+buffer. If this field is zero then the buffer size defaults to a minimum
+of num_lines * 16.
+  padding
+    reserved for future use and must be zero filled
+  fd
+    after a successful GPIO_V2_GET_LINE_IOCTL operation, contains
+a valid anonymous file descriptor representing the request

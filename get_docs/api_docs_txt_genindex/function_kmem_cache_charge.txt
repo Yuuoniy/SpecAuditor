@@ -1,0 +1,14 @@
+Function: bool kmem_cache_charge ( void * objp , gfp_t gfpflags )
+
+memcg charge an already allocated slab memory
+
+Parameters
+  void *objp
+    address of the slab object to memcg charge
+  gfp_t gfpflags
+    describe the allocation context
+
+Description
+  kmem_cache_charge allows charging a slab object to the current memcg,
+primarily in cases where charging at allocation time might not be possible
+because the target memcg is not known (i.e. softirq context)

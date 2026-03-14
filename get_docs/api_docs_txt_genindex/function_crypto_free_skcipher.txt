@@ -1,0 +1,10 @@
+Function: void crypto_free_skcipher ( struct crypto_skcipher * tfm )
+
+zeroize and free cipher handle
+
+Parameters
+  struct crypto_skcipher *tfm
+    cipher handle to be freed
+
+Description
+  If tfm is a NULL or error pointer, this function does nothing.

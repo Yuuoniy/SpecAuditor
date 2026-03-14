@@ -1,0 +1,13 @@
+Function: void devm_devfreq_event_remove_edev ( struct device * dev , struct devfreq_event_dev * edev )
+
+Resource-managed devfreq_event_remove_edev()
+
+Parameters
+  struct device *dev
+    the device owning the devfreq-event device being created
+  struct devfreq_event_dev *edev
+    the devfreq-event device
+
+Description
+  Note that this function manages automatically the memory of devfreq-event
+device using device resource management.

@@ -1,0 +1,13 @@
+Function: struct clk * devm_clk_get ( struct device * dev , const char * id )
+
+lookup and obtain a managed reference to a clock producer.
+
+Parameters
+  struct device *dev
+    device for clock “consumer”
+  const char *id
+    clock consumer ID
+
+Description
+  Drivers must assume that the clock source is neither prepared nor
+enabled.

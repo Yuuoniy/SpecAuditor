@@ -1,0 +1,14 @@
+Function: int v4l2_event_subdev_unsubscribe ( struct v4l2_subdev * sd , struct v4l2_fh * fh , struct v4l2_event_subscription * sub )
+
+Subdev variant of v4l2_event_unsubscribe()
+
+Parameters
+  struct v4l2_subdev *sd
+    pointer to struct v4l2_subdev
+  struct v4l2_fh *fh
+    pointer to struct v4l2_fh
+  struct v4l2_event_subscription *sub
+    pointer to struct v4l2_event_subscription
+
+Description
+  Note

@@ -1,0 +1,7 @@
+Struct: struct pisp_be_output_buffer_config
+
+PiSP Back End Output buffer
+
+Members
+  addr
+    Output buffer address

@@ -1,0 +1,11 @@
+Function: void follow_pfnmap_end ( struct follow_pfnmap_args * args )
+
+End a follow_pfnmap_start() process
+
+Parameters
+  struct follow_pfnmap_args *args
+    Pointer to struct follow_pfnmap_args
+
+Description
+  Must be used in pair of follow_pfnmap_start() .  See the start() function
+above for more information.

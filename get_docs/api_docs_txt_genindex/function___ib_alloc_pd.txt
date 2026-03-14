@@ -1,0 +1,15 @@
+Function: struct ib_pd * __ib_alloc_pd ( struct ib_device * device , unsigned int flags , const char * caller )
+
+Allocates an unused protection domain.
+
+Parameters
+  struct ib_device *device
+    The device on which to allocate the protection domain.
+  unsigned int flags
+    protection domain flags
+  const char *caller
+    caller’s build-time module name
+
+Description
+  A protection domain object provides an association between QPs, shared
+receive queues, address handles, memory regions, and memory windows.

@@ -1,0 +1,7 @@
+Function: void memblock_set_current_limit ( phys_addr_t limit )
+
+Set the current allocation limit to allow limiting allocations to what is currently accessible during boot
+
+Parameters
+  phys_addr_t limit
+    New limit value (physical address)

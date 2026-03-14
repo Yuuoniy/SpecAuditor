@@ -1,0 +1,10 @@
+Function: bool cancel_delayed_work_sync ( struct delayed_work * dwork )
+
+cancel a delayed work and wait for it to finish
+
+Parameters
+  struct delayed_work *dwork
+    the delayed work cancel
+
+Description
+  This is cancel_work_sync() for delayed works.

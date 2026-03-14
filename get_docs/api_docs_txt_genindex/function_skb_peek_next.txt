@@ -1,0 +1,14 @@
+Function: struct sk_buff * skb_peek_next ( struct sk_buff * skb , const struct sk_buff_head * list_ )
+
+peek skb following the given one from a queue
+
+Parameters
+  struct sk_buff *skb
+    skb to start from
+  const struct sk_buff_head *list_
+    list to peek at
+
+Description
+  Returns NULL when the end of the list is met or a pointer to the
+next element. The reference count is not incremented and the
+reference is therefore volatile. Use with caution.

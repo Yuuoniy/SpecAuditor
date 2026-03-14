@@ -1,0 +1,16 @@
+Function: int reset_control_bulk_get_optional_exclusive ( struct device * dev , int num_rstcs , struct reset_control_bulk_data * rstcs )
+
+optional reset_control_bulk_get_exclusive()
+
+Parameters
+  struct device *dev
+    device to be reset by the controller
+  int num_rstcs
+    number of entries in rstcs array
+  struct reset_control_bulk_data *rstcs
+    array of struct reset_control_bulk_data with reset line names set
+
+Description
+  Optional variant of reset_control_bulk_get_exclusive() . If any of the
+requested resets are not specified in the device tree, this function sets
+them to NULL instead of returning an error.

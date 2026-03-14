@@ -1,0 +1,24 @@
+Struct: struct irq_data
+
+per irq chip data passed down to chip functions
+
+Members
+  mask
+    precomputed bitmask for accessing the chip registers
+  irq
+    interrupt number
+  hwirq
+    hardware interrupt number, local to the interrupt domain
+  common
+    point to data shared by all irqchips
+  chip
+    low level interrupt hardware access
+  domain
+    Interrupt translation domain; responsible for mapping
+between hwirq number and linux irq number.
+  parent_data
+    pointer to parent struct irq_data to support hierarchy
+irq_domain
+  chip_data
+    platform-specific per-chip private data for the chip
+methods, to allow shared chip implementations

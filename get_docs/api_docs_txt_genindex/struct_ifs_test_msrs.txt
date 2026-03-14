@@ -1,0 +1,15 @@
+Struct: struct ifs_test_msrs
+
+MSRs used in IFS tests
+
+Members
+  copy_hashes
+    Copy test hash data
+  copy_hashes_status
+    Status of copied test hash data
+  copy_chunks
+    Copy chunks of the test data
+  copy_chunks_status
+    Status of the copied test data chunks
+  test_ctrl
+    Control the test attributes

@@ -1,0 +1,11 @@
+Function: int vsscanf ( const char * buf , const char * fmt , va_list args )
+
+Unformat a buffer into a list of arguments
+
+Parameters
+  const char *buf
+    input buffer
+  const char *fmt
+    format of buffer
+  va_list args
+    arguments

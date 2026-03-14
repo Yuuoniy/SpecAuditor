@@ -1,0 +1,13 @@
+Function: void truncate_inode_pages ( struct address_space * mapping , loff_t lstart )
+
+truncate all the pages from an offset
+
+Parameters
+  struct address_space *mapping
+    mapping to truncate
+  loff_t lstart
+    offset from which to truncate
+
+Description
+  Called under (and serialised by) inode->i_rwsem and
+mapping->invalidate_lock.

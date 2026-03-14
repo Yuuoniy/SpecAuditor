@@ -1,0 +1,13 @@
+Function: unsigned int crypto_kpp_maxsize ( struct crypto_kpp * tfm )
+
+Get len for output buffer
+
+Parameters
+  struct crypto_kpp *tfm
+    KPP tfm handle allocated with crypto_alloc_kpp()
+
+Description
+  Function returns the output buffer size required for a given key.
+Function assumes that the key is already set in the transformation. If this
+function is called without a setkey or with a failed setkey, you will end up
+in a NULL dereference.

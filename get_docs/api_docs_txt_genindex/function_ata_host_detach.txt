@@ -1,0 +1,10 @@
+Function: void ata_host_detach ( struct ata_host * host )
+
+Detach all ports of an ATA host
+
+Parameters
+  struct ata_host *host
+    Host to detach
+
+Description
+  Detach all ports of host .

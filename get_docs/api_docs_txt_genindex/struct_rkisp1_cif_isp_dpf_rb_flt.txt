@@ -1,0 +1,14 @@
+Struct: struct rkisp1_cif_isp_dpf_rb_flt
+
+Red blue filter config
+
+Members
+  fltsize
+    The filter size for the red and blue pixels
+(from enum rkisp1_cif_isp_dpf_rb_filtersize )
+  spatial_coeff
+    Spatial weights
+  r_enable
+    enable filter processing for red pixels
+  b_enable
+    enable filter processing for blue pixels

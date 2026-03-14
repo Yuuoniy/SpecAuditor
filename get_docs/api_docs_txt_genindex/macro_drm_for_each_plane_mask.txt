@@ -1,0 +1,14 @@
+Macro: drm_for_each_plane_mask
+
+
+
+Parameters
+  plane
+    the loop cursor
+  dev
+    the DRM device
+  plane_mask
+    bitmask of plane indices
+
+Description
+  Iterate over all planes specified by bitmask.

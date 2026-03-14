@@ -1,0 +1,13 @@
+Function: struct drm_tile_group * drm_mode_create_tile_group ( struct drm_device * dev , const char topology [ 8 ] )
+
+create a tile group from a displayid description
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  const char topology[8]
+    8-bytes unique per monitor.
+
+Description
+  Create a tile group for the unique monitor, and get a unique
+identifier for the tile group.

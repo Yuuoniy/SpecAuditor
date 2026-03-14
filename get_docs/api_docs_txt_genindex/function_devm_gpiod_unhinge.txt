@@ -1,0 +1,14 @@
+Function: void devm_gpiod_unhinge ( struct device * dev , struct gpio_desc * desc )
+
+Remove resource management from a gpio descriptor
+
+Parameters
+  struct device *dev
+    GPIO consumer
+  struct gpio_desc *desc
+    GPIO descriptor to remove resource management from
+
+Description
+  DEPRECATED This function should not be used. It’s been provided as a workaround for
+resource ownership issues in the regulator framework and should be replaced
+with a better solution.

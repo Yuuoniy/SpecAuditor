@@ -1,0 +1,12 @@
+Function: int drm_edid_to_sad ( const struct edid * edid , struct cea_sad * * sads )
+
+extracts SADs from EDID
+
+Parameters
+  const struct edid *edid
+    EDID to parse
+  struct cea_sad **sads
+    pointer that will be set to the extracted SADs
+
+Description
+  Looks for CEA EDID block and extracts SADs (Short Audio Descriptors) from it.

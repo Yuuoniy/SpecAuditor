@@ -1,0 +1,13 @@
+Struct: struct iommu_hwpt_set_dirty_tracking
+
+ioctl(IOMMU_HWPT_SET_DIRTY_TRACKING)
+
+Members
+  size
+    sizeof( struct iommu_hwpt_set_dirty_tracking )
+  flags
+    Combination of enum iommufd_hwpt_set_dirty_tracking_flags
+  hwpt_id
+    HW pagetable ID that represents the IOMMU domain
+  __reserved
+    Must be 0

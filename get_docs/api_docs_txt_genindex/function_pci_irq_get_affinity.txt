@@ -1,0 +1,13 @@
+Function: const struct cpumask * pci_irq_get_affinity ( struct pci_dev * dev , int nr )
+
+Get a device interrupt vector affinity
+
+Parameters
+  struct pci_dev *dev
+    the PCI device to operate on
+  int nr
+    device-relative interrupt vector index (0-based); has different
+meanings, depending on interrupt mode:
+
+Description
+  MSI-X     the index in the MSI-X vector table

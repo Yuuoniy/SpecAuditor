@@ -1,0 +1,7 @@
+Struct: struct pisp_be_tdn_output_buffer_config
+
+PiSP Back End TDN output buffer
+
+Members
+  addr
+    TDN output buffer address

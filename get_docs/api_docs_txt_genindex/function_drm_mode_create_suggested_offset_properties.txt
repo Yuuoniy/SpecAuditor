@@ -1,0 +1,10 @@
+Function: int drm_mode_create_suggested_offset_properties ( struct drm_device * dev )
+
+create suggests offset properties
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  Create the suggested x/y offset property for connectors.

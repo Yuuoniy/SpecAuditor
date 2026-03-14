@@ -1,0 +1,11 @@
+Function: bool ssh_ptl_should_corrupt_rx_syn ( void )
+
+Error injection hook to simulate invalid data being sent by the EC.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Hook to simulate invalid SYN bytes, i.e. an invalid start of messages and
+test handling thereof in the driver.

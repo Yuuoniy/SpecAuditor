@@ -1,0 +1,12 @@
+Function: int drm_dp_check_act_status ( struct drm_dp_mst_topology_mgr * mgr )
+
+Polls for ACT handled status.
+
+Parameters
+  struct drm_dp_mst_topology_mgr *mgr
+    manager to use
+
+Description
+  Tries waiting for the MST hub to finish updating it’s payload table by
+polling for the ACT handled bit for up to 3 seconds (yes-some hubs really
+take that long).

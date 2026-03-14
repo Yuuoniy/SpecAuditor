@@ -1,0 +1,12 @@
+Function: int set_selection_user ( const struct tiocl_selection __user * sel , struct tty_struct * tty )
+
+set the current selection.
+
+Parameters
+  const struct tiocl_selection __user *sel
+    user selection info
+  struct tty_struct *tty
+    the console tty
+
+Description
+  Invoked by the ioctl handle for the vt layer.

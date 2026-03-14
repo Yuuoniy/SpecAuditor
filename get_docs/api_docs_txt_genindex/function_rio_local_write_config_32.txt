@@ -1,0 +1,15 @@
+Function: int rio_local_write_config_32 ( struct rio_mport * port , u32 offset , u32 data )
+
+Write 32 bits to local configuration space
+
+Parameters
+  struct rio_mport *port
+    Master port
+  u32 offset
+    Offset into local configuration space
+  u32 data
+    Data to be written
+
+Description
+  Writes 32 bits of data to the specified offset within the local
+device’s configuration space.

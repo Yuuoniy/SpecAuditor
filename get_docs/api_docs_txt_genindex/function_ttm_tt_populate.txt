@@ -1,0 +1,14 @@
+Function: int ttm_tt_populate ( struct ttm_device * bdev , struct ttm_tt * ttm , struct ttm_operation_ctx * ctx )
+
+allocate pages for a ttm
+
+Parameters
+  struct ttm_device *bdev
+    the ttm_device this object belongs to
+  struct ttm_tt *ttm
+    Pointer to the ttm_tt structure
+  struct ttm_operation_ctx *ctx
+    operation context for populating the tt object.
+
+Description
+  Calls the driver method to allocate pages for a ttm

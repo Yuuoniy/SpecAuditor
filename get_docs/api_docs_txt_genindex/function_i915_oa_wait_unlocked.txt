@@ -1,0 +1,12 @@
+Function: int i915_oa_wait_unlocked ( struct i915_perf_stream * stream )
+
+handles blocking IO until OA data available
+
+Parameters
+  struct i915_perf_stream *stream
+    An i915-perf stream opened for OA metrics
+
+Description
+  Called when userspace tries to read() from a blocking stream FD opened
+for OA metrics. It waits until the hrtimer callback finds a non-empty
+OA buffer and wakes us.

@@ -1,0 +1,15 @@
+Macro: USB_DEVICE_INFO
+
+
+
+Parameters
+  cl
+    bDeviceClass value
+  sc
+    bDeviceSubClass value
+  pr
+    bDeviceProtocol value
+
+Description
+  This macro is used to create a struct usb_device_id that matches a
+specific class of devices.

@@ -1,0 +1,29 @@
+Function: struct ssam_controller
+
+SSAM controller device.
+
+Members
+  kref
+    Reference count of the controller.
+  lock
+    Main lock for the controller, used to guard state changes.
+  state
+    Controller state.
+  rtl
+    Request transport layer for SSH I/O.
+  cplt
+    Completion system for SSH/SSAM events and asynchronous requests.
+  counter
+    Safe SSH message ID counters.
+  counter.seq
+    Sequence ID counter.
+  counter.rqid
+    Request ID counter.
+  irq
+    Wakeup IRQ resources.
+  irq.num
+    The wakeup IRQ number.
+  irq.wakeup_enabled
+    Whether wakeup by IRQ is enabled during suspend.
+  caps
+    The controller device capabilities.

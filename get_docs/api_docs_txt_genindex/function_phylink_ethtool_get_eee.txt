@@ -1,0 +1,9 @@
+Function: int phylink_ethtool_get_eee ( struct phylink * pl , struct ethtool_keee * eee )
+
+read the energy efficient ethernet parameters
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+  struct ethtool_keee *eee
+    a pointer to a struct ethtool_keee for the read parameters

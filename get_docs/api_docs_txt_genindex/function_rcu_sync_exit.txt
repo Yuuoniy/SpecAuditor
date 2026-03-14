@@ -1,0 +1,14 @@
+Function: void rcu_sync_exit ( struct rcu_sync * rsp )
+
+Allow readers back onto fast path after grace period
+
+Parameters
+  struct rcu_sync *rsp
+    Pointer to rcu_sync structure to use for synchronization
+
+Description
+  This function is used by updaters who have completed, and can therefore
+now allow readers to make use of their fastpaths after a grace period
+has elapsed.  After this grace period has completed, all subsequent
+calls to rcu_sync_is_idle() will return true, which tells readers that
+they can once again use their fastpaths.

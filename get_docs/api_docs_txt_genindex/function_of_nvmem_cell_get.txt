@@ -1,0 +1,11 @@
+Function: struct nvmem_cell * of_nvmem_cell_get ( struct device_node * np , const char * id )
+
+Get a nvmem cell from given device node and cell id
+
+Parameters
+  struct device_node *np
+    Device tree node that uses the nvmem cell.
+  const char *id
+    nvmem cell name from nvmem-cell-names property, or NULL
+for the cell at index 0 (the lone cell with no accompanying
+nvmem-cell-names property).

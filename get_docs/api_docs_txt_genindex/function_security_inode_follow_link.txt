@@ -1,0 +1,14 @@
+Function: int security_inode_follow_link ( struct dentry * dentry , struct inode * inode , bool rcu )
+
+Check if following a symbolic link is allowed
+
+Parameters
+  struct dentry *dentry
+    link dentry
+  struct inode *inode
+    link inode
+  bool rcu
+    true if in RCU-walk mode
+
+Description
+  Check permission to follow a symbolic link when looking up a pathname.  If rcu is true, inode is not stable.

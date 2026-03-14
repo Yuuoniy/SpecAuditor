@@ -1,0 +1,10 @@
+Function: void vme_unregister_driver ( struct vme_driver * drv )
+
+Unregister a VME driver
+
+Parameters
+  struct vme_driver *drv
+    Pointer to VME driver structure to unregister.
+
+Description
+  Unregister a VME device driver from the VME subsystem.

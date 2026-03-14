@@ -1,0 +1,18 @@
+Function: int snd_interval_list ( struct snd_interval * i , unsigned int count , const unsigned int * list , unsigned int mask )
+
+refine the interval value from the list
+
+Parameters
+  struct snd_interval *i
+    the interval value to refine
+  unsigned int count
+    the number of elements in the list
+  const unsigned int *list
+    the value list
+  unsigned int mask
+    the bit-mask to evaluate
+
+Description
+  Refines the interval value from the list.
+When mask is non-zero, only the elements corresponding to bit 1 are
+evaluated.

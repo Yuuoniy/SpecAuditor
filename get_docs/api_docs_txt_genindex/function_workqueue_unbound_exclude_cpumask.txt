@@ -1,0 +1,11 @@
+Function: int workqueue_unbound_exclude_cpumask ( cpumask_var_t exclude_cpumask )
+
+Exclude given CPUs from unbound cpumask
+
+Parameters
+  cpumask_var_t exclude_cpumask
+    the cpumask to be excluded from wq_unbound_cpumask
+
+Description
+  This function can be called from cpuset code to provide a set of isolated
+CPUs that should be excluded from wq_unbound_cpumask.

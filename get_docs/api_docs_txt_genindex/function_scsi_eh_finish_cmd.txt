@@ -1,0 +1,9 @@
+Function: void scsi_eh_finish_cmd ( struct scsi_cmnd * scmd , struct list_head * done_q )
+
+Handle a cmd that eh is finished with.
+
+Parameters
+  struct scsi_cmnd *scmd
+    Original SCSI cmd that eh has finished.
+  struct list_head *done_q
+    Queue for processed commands.

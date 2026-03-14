@@ -1,0 +1,11 @@
+Struct: struct sdtx_base_info
+
+Describes if and what type of base is connected.
+
+Members
+  state
+    The state of the connection. Valid values are SDTX_BASE_DETACHED , SDTX_BASE_ATTACHED , and SDTX_DETACH_NOT_FEASIBLE (in case a base
+is attached but low clipboard battery prevents detachment). Other
+values are currently reserved.
+  base_id
+    The type of base connected. Zero if no base is connected.

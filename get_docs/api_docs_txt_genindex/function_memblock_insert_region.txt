@@ -1,0 +1,20 @@
+Function: void __init_memblock memblock_insert_region ( struct memblock_type * type , int idx , phys_addr_t base , phys_addr_t size , int nid , enum memblock_flags flags )
+
+insert new memblock region
+
+Parameters
+  struct memblock_type *type
+    memblock type to insert into
+  int idx
+    index for the insertion point
+  phys_addr_t base
+    base address of the new region
+  phys_addr_t size
+    size of the new region
+  int nid
+    node id of the new region
+  enum memblock_flags flags
+    flags of the new region
+
+Description
+  Insert new memblock region [ base , base + size ) into type at idx . type must already have extra room to accommodate the new region.

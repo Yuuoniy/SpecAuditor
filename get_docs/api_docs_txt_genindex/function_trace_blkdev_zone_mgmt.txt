@@ -1,0 +1,14 @@
+Function: void trace_blkdev_zone_mgmt ( struct bio * bio , sector_t nr_sectors )
+
+Execute a zone management operation on a range of zones
+
+Parameters
+  struct bio *bio
+    The block IO operation sent down to the device
+  sector_t nr_sectors
+    The number of sectors affected by this operation
+
+Description
+  Execute a zone management operation on a specified range of zones. This
+range is encoded in nr_sectors , which has to be a multiple of the zone
+size.

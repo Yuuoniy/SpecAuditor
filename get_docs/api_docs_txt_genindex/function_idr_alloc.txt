@@ -1,0 +1,19 @@
+Function: int idr_alloc ( struct idr * idr , void * ptr , int start , int end , gfp_t gfp )
+
+Allocate an ID.
+
+Parameters
+  struct idr *idr
+    IDR handle.
+  void *ptr
+    Pointer to be associated with the new ID.
+  int start
+    The minimum ID (inclusive).
+  int end
+    The maximum ID (exclusive).
+  gfp_t gfp
+    Memory allocation flags.
+
+Description
+  Allocates an unused ID in the range specified by start and end .  If end is <= 0, it is treated as one larger than INT_MAX .  This allows
+callers to use start + N as end as long as N is within integer range.

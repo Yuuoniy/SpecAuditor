@@ -1,0 +1,7 @@
+Macro: to_video_device
+
+
+
+Parameters
+  cd
+    pointer to struct device

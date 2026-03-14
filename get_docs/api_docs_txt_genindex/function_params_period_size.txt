@@ -1,0 +1,7 @@
+Function: unsigned int params_period_size ( const struct snd_pcm_hw_params * p )
+
+Get the period size (in frames) from the hw params
+
+Parameters
+  const struct snd_pcm_hw_params *p
+    hw params

@@ -1,0 +1,12 @@
+Function: long atomic_long_sub_return_acquire ( long i , atomic_long_t * v )
+
+atomic subtract with acquire ordering
+
+Parameters
+  long i
+    long value to subtract
+  atomic_long_t *v
+    pointer to atomic_long_t
+
+Description
+  Atomically updates v to ( v - i ) with acquire ordering.

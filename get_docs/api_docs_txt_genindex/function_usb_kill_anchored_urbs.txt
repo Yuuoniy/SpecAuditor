@@ -1,0 +1,12 @@
+Function: void usb_kill_anchored_urbs ( struct usb_anchor * anchor )
+
+kill all URBs associated with an anchor
+
+Parameters
+  struct usb_anchor *anchor
+    anchor the requests are bound to
+
+Description
+  This kills all outstanding URBs starting from the back of the queue,
+with guarantee that no completer callbacks will take place from the
+anchor after this function returns.

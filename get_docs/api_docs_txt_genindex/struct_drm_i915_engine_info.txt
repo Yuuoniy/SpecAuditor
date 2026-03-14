@@ -1,0 +1,19 @@
+Struct: struct drm_i915_engine_info
+
+
+
+Members
+  engine
+    Engine class and instance.
+  rsvd0
+    Reserved field.
+  flags
+    Engine flags.
+  capabilities
+    Capabilities of this engine.
+  logical_instance
+    Logical instance of engine
+  rsvd1
+    Reserved fields.
+  rsvd2
+    Reserved fields.

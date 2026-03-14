@@ -1,0 +1,13 @@
+Function: struct super_block * sget_dev ( struct fs_context * fc , dev_t dev )
+
+Find or create a superblock by device number
+
+Parameters
+  struct fs_context *fc
+    Filesystem context.
+  dev_t dev
+    device number
+
+Description
+  Find or create a superblock using the provided device number that
+will be stored in fc->sget_key.

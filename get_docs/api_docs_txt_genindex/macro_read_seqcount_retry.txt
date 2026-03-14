@@ -1,0 +1,14 @@
+Macro: read_seqcount_retry
+
+
+
+Parameters
+  s
+    Pointer to seqcount_t or any of the seqcount_LOCKNAME_t variants
+  start
+    count, from read_seqcount_begin()
+
+Description
+  read_seqcount_retry closes the read critical section of given
+seqcount_t.  If the critical section was invalid, it must be ignored
+(and typically retried).

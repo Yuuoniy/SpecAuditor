@@ -1,0 +1,15 @@
+Function: void phylink_validate_mask_caps ( unsigned long * supported , struct phylink_link_state * state , unsigned long mac_capabilities )
+
+Restrict link modes based on caps
+
+Parameters
+  unsigned long *supported
+    ethtool bitmask for supported link modes.
+  struct phylink_link_state *state
+    pointer to a struct phylink_link_state .
+  unsigned long mac_capabilities
+    bitmask of MAC capabilities
+
+Description
+  Calculate the supported link modes based on mac_capabilities , and restrict supported and state based on that. Use this function if your capabiliies
+aren’t constant, such as if they vary depending on the interface.

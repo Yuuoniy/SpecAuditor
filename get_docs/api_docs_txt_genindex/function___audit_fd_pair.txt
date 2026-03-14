@@ -1,0 +1,9 @@
+Function: void __audit_fd_pair ( int fd1 , int fd2 )
+
+record audit data for pipe and socketpair
+
+Parameters
+  int fd1
+    the first file descriptor
+  int fd2
+    the second file descriptor

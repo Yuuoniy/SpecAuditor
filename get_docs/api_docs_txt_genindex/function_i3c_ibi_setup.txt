@@ -1,0 +1,19 @@
+Function: struct i3c_ibi_setup
+
+IBI setup object
+
+Members
+  max_payload_len
+    maximum length of the payload associated to an IBI. If one
+IBI appears to have a payload that is bigger than this
+number, the IBI will be rejected.
+  num_slots
+    number of pre-allocated IBI slots. This should be chosen so that
+the system never runs out of IBI slots, otherwise you’ll lose
+IBIs.
+  handler
+    IBI handler, every time an IBI is received. This handler is called
+in a workqueue context. It is allowed to sleep and send new
+messages on the bus, though it’s recommended to keep the
+processing done there as fast as possible to avoid delaying
+processing of other queued on the same workqueue.

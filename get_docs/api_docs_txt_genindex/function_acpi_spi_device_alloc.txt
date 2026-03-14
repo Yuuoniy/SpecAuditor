@@ -1,0 +1,15 @@
+Function: struct spi_device * acpi_spi_device_alloc ( struct spi_controller * ctlr , struct acpi_device * adev , int index )
+
+Allocate a spi device, and fill it in with ACPI information
+
+Parameters
+  struct spi_controller *ctlr
+    controller to which the spi device belongs
+  struct acpi_device *adev
+    ACPI Device for the spi device
+  int index
+    Index of the spi resource inside the ACPI Node
+
+Description
+  This should be used to allocate a new SPI device from and ACPI Device node.
+The caller is responsible for calling spi_add_device to register the SPI device.

@@ -1,0 +1,17 @@
+Function: int __phy_modify_changed ( struct phy_device * phydev , u32 regnum , u16 mask , u16 set )
+
+Convenience function for modifying a PHY register
+
+Parameters
+  struct phy_device *phydev
+    a pointer to a struct phy_device
+  u32 regnum
+    register number
+  u16 mask
+    bit mask of bits to clear
+  u16 set
+    bit mask of bits to set
+
+Description
+  Unlocked helper function which allows a PHY register to be modified as
+new register value = (old register value & ~mask) | set

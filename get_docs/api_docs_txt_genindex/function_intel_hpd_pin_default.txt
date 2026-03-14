@@ -1,0 +1,10 @@
+Function: enum hpd_pin intel_hpd_pin_default ( enum port port )
+
+return default pin associated with certain port.
+
+Parameters
+  enum port port
+    the hpd port to get associated pin
+
+Description
+  It is only valid and used by digital port encoder.

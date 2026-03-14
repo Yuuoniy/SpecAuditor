@@ -1,0 +1,13 @@
+Function: struct drm_gpuva_ops * drm_gpuvm_madvise_ops_create ( struct drm_gpuvm * gpuvm , const struct drm_gpuvm_map_req * req )
+
+creates the drm_gpuva_ops to split
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm representing the GPU VA space
+  const struct drm_gpuvm_map_req *req
+    map request arguments
+
+Description
+  This function creates a list of operations to perform splitting
+of existent mapping(s) at start or end, based on the request map.

@@ -1,0 +1,7 @@
+Function: bool tipc_link_too_silent ( struct tipc_link * l )
+
+check if link is “too silent”
+
+Parameters
+  struct tipc_link *l
+    tipc link to be checked

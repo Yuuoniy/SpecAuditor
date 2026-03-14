@@ -1,0 +1,14 @@
+Function: int snd_soc_dapm_force_enable_pin ( struct snd_soc_dapm_context * dapm , const char * pin )
+
+force a pin to be enabled
+
+Parameters
+  struct snd_soc_dapm_context *dapm
+    DAPM context
+  const char *pin
+    pin name
+
+Description
+  Enables input/output pin regardless of any other state.  This is
+intended for use with microphone bias supplies used in microphone
+jack detection.

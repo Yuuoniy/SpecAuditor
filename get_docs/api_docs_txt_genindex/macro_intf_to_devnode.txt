@@ -1,0 +1,7 @@
+Macro: intf_to_devnode
+
+
+
+Parameters
+  intf
+    Pointer to struct media_intf_devnode

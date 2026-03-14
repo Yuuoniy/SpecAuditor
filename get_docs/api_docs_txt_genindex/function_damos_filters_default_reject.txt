@@ -1,0 +1,7 @@
+Function: bool damos_filters_default_reject ( struct list_head * filters )
+
+decide whether to reject memory that didn’t match with any given filter.
+
+Parameters
+  struct list_head *filters
+    Given DAMOS filters of a group.

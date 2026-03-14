@@ -1,0 +1,14 @@
+Function: void intel_cpu_fifo_underrun_irq_handler ( struct intel_display * display , enum pipe pipe )
+
+handle CPU fifo underrun interrupt
+
+Parameters
+  struct intel_display *display
+    display device instance
+  enum pipe pipe
+    (CPU) pipe to set state for
+
+Description
+  This handles a CPU fifo underrun interrupt, generating an underrun warning
+into dmesg if underrun reporting is enabled and then disables the underrun
+interrupt to avoid an irq storm.

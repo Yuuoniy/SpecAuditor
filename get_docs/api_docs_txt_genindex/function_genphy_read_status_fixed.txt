@@ -1,0 +1,11 @@
+Function: int genphy_read_status_fixed ( struct phy_device * phydev )
+
+read the link parameters for !aneg mode
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  Read the current duplex and speed state for a PHY operating with
+autonegotiation disabled.

@@ -1,0 +1,11 @@
+Function: void * rdev_get_drvdata ( struct regulator_dev * rdev )
+
+get rdev regulator driver data
+
+Parameters
+  struct regulator_dev *rdev
+    regulator
+
+Description
+  Get rdev regulator driver private data. This call can be used in the
+regulator driver context.

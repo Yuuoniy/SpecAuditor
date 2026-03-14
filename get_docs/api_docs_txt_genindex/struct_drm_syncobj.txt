@@ -1,0 +1,17 @@
+Struct: struct drm_syncobj
+
+sync object.
+
+Members
+  refcount
+    Reference count of this object.
+  fence
+    NULL or a pointer to the fence bound to this object. This field should not be used directly. Use drm_syncobj_fence_get() and drm_syncobj_replace_fence() instead.
+  cb_list
+    List of callbacks to call when the fence gets replaced.
+  ev_fd_list
+    List of registered eventfd.
+  lock
+    Protects cb_list and ev_fd_list , and write-locks fence .
+  file
+    A file backing for this syncobj.

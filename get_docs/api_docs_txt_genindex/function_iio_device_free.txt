@@ -1,0 +1,7 @@
+Function: void iio_device_free ( struct iio_dev * dev )
+
+free an iio_dev from a driver
+
+Parameters
+  struct iio_dev *dev
+    the iio_dev associated with the device

@@ -1,0 +1,11 @@
+Function: void trace_softirq_raise ( unsigned int vec_nr )
+
+called immediately when a softirq is raised
+
+Parameters
+  unsigned int vec_nr
+    softirq vector number
+
+Description
+  When used in combination with the softirq_entry tracepoint
+we can determine the softirq raise to run latency.

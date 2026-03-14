@@ -1,0 +1,10 @@
+Function: int intel_gvt_init ( struct drm_i915_private * dev_priv )
+
+initialize GVT components
+
+Parameters
+  struct drm_i915_private *dev_priv
+    drm i915 private data
+
+Description
+  This function is called at the initialization stage to create a GVT device.

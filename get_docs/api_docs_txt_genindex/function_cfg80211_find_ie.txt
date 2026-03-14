@@ -1,0 +1,11 @@
+Function: const u8 * cfg80211_find_ie ( u8 eid , const u8 * ies , int len )
+
+find information element in data
+
+Parameters
+  u8 eid
+    element ID
+  const u8 *ies
+    data consisting of IEs
+  int len
+    length of data

@@ -1,0 +1,14 @@
+Function: void sysfs_unbreak_active_protection ( struct kernfs_node * kn )
+
+restore “active” protection
+
+Parameters
+  struct kernfs_node *kn
+    Pointer returned by sysfs_break_active_protection() .
+
+Description
+  Undo the effects of sysfs_break_active_protection() . Since this function
+calls kernfs_put() on the kernfs node that corresponds to the ‘attr’
+argument passed to sysfs_break_active_protection() that attribute may have
+been removed between the sysfs_break_active_protection() and sysfs_unbreak_active_protection() calls, it is not safe to access kn after
+this function has returned.

@@ -1,0 +1,11 @@
+Function: void xprt_wait_for_reply_request_rtt ( struct rpc_task * task )
+
+wait for reply using RTT estimator
+
+Parameters
+  struct rpc_task *task
+    pointer to rpc_task
+
+Description
+  Set a request’s retransmit timeout using the RTT estimator,
+and put the task to sleep on the pending queue.

@@ -1,0 +1,13 @@
+Function: bool rcu_read_lock_held_common ( bool * ret )
+
+might we be in RCU-sched read-side critical section?
+
+Parameters
+  bool *ret
+    Best guess answer if lockdep cannot be relied on
+
+Description
+  Returns true if lockdep must be ignored, in which case *ret contains
+the best guess described below.  Otherwise returns false, in which
+case *ret tells the caller nothing and the caller should instead
+consult lockdep.

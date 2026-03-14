@@ -1,0 +1,3 @@
+Macro: enum mac80211_rx_encoding_flags
+
+MCS & bandwidth flags

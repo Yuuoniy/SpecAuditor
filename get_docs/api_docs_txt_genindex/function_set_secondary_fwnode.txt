@@ -1,0 +1,13 @@
+Function: void set_secondary_fwnode ( struct device * dev , struct fwnode_handle * fwnode )
+
+Change the secondary firmware node of a given device.
+
+Parameters
+  struct device *dev
+    Device to handle.
+  struct fwnode_handle *fwnode
+    New secondary firmware node of the device.
+
+Description
+  If a primary firmware node of the device is present, set its secondary
+pointer to fwnode .  Otherwise, set the device’s firmware node pointer to fwnode .

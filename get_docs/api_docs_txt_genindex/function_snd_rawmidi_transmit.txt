@@ -1,0 +1,14 @@
+Function: int snd_rawmidi_transmit ( struct snd_rawmidi_substream * substream , unsigned char * buffer , int count )
+
+copy from the buffer to the device
+
+Parameters
+  struct snd_rawmidi_substream *substream
+    the rawmidi substream
+  unsigned char *buffer
+    the buffer pointer
+  int count
+    the data size to transfer
+
+Description
+  Copies data from the buffer to the device and advances the pointer.

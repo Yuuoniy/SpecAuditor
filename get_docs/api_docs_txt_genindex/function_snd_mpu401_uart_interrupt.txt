@@ -1,0 +1,12 @@
+Function: irqreturn_t snd_mpu401_uart_interrupt ( int irq , void * dev_id )
+
+generic MPU401-UART interrupt handler
+
+Parameters
+  int irq
+    the irq number
+  void *dev_id
+    mpu401 instance
+
+Description
+  Processes the interrupt for MPU401-UART i/o.

@@ -1,0 +1,7 @@
+Function: int tty_hung_up_p ( struct file * filp )
+
+was tty hung up
+
+Parameters
+  struct file *filp
+    file pointer of tty

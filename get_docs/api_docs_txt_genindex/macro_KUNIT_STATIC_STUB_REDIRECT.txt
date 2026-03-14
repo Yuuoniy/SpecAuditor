@@ -1,0 +1,16 @@
+Macro: KUNIT_STATIC_STUB_REDIRECT
+
+
+
+Parameters
+  real_fn_name
+    The name of this function (as an identifier, not a string)
+  args...
+    All of the arguments passed to this function
+
+Description
+  This is a function prologue which is used to allow calls to the current
+function to be redirected by a KUnit test. KUnit tests can call kunit_activate_static_stub() to pass a replacement function in. The
+replacement function will be called by KUNIT_STATIC_STUB_REDIRECT() , which
+will then return from the function. If the caller is not in a KUnit context,
+the function will continue execution as normal.

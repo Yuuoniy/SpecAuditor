@@ -1,0 +1,9 @@
+Function: struct i915_engine_class_instance
+
+Engine class/instance identifier
+
+Members
+  engine_class
+    Engine class from enum drm_i915_gem_engine_class
+  engine_instance
+    Engine instance.

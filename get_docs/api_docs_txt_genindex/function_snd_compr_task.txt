@@ -1,0 +1,19 @@
+Function: struct snd_compr_task
+
+task primitive for non-realtime operation
+
+Members
+  seqno
+    sequence number (task identifier)
+  origin_seqno
+    previous sequence number (task identifier) - for reuse
+  input_fd
+    data input file descriptor (dma-buf)
+  output_fd
+    data output file descriptor (dma-buf)
+  input_size
+    filled data in bytes (from caller, must not exceed fragment size)
+  flags
+    see SND_COMPRESS_TFLG_* defines
+  reserved
+    reserved for future extension

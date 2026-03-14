@@ -1,0 +1,10 @@
+Function: int devm_cxl_setup_features ( struct cxl_dev_state * cxlds )
+
+Allocate and initialize features context
+
+Parameters
+  struct cxl_dev_state *cxlds
+    CXL device context
+
+Description
+  Return 0 on success or -errno on failure.

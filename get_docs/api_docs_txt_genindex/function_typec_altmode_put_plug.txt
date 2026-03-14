@@ -1,0 +1,7 @@
+Function: void typec_altmode_put_plug ( struct typec_altmode * plug )
+
+Decrement cable plug alternate mode reference count
+
+Parameters
+  struct typec_altmode *plug
+    Handle to the cable plug alternate mode

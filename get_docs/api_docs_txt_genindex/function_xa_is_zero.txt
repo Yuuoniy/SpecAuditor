@@ -1,0 +1,11 @@
+Function: bool xa_is_zero ( const void * entry )
+
+Is the entry a zero entry?
+
+Parameters
+  const void *entry
+    Entry retrieved from the XArray
+
+Description
+  The normal API will return NULL as the contents of a slot containing
+a zero entry.  You can only see zero entries by using the advanced API.

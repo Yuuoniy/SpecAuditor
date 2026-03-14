@@ -1,0 +1,13 @@
+Function: int phylink_mii_c22_pcs_encode_advertisement ( phy_interface_t interface , const unsigned long * advertising )
+
+configure the clause 37 PCS advertisement
+
+Parameters
+  phy_interface_t interface
+    the PHY interface mode being configured
+  const unsigned long *advertising
+    the ethtool advertisement mask
+
+Description
+  Helper for MAC PCS supporting the 802.3 clause 22 register set for
+clause 37 negotiation and/or SGMII control.

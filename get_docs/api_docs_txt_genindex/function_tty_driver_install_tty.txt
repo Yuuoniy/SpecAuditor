@@ -1,0 +1,14 @@
+Function: int tty_driver_install_tty ( struct tty_driver * driver , struct tty_struct * tty )
+
+install a tty entry in the driver
+
+Parameters
+  struct tty_driver *driver
+    the driver for the tty
+  struct tty_struct *tty
+    the tty
+
+Description
+  Install a tty object into the driver tables. The tty->index field will be
+set by the time this is called. This method is responsible for ensuring any
+need additional structures are allocated and configured.

@@ -1,0 +1,18 @@
+Function: struct vme_dma_attr * vme_dma_vme_attribute ( unsigned long long address , u32 aspace , u32 cycle , u32 dwidth )
+
+Create “VME” type VME DMA list attribute.
+
+Parameters
+  unsigned long long address
+    VME base address for DMA transfer.
+  u32 aspace
+    VME address space to use for DMA transfer.
+  u32 cycle
+    VME bus cycle to use for DMA transfer.
+  u32 dwidth
+    VME data width to use for DMA transfer.
+
+Description
+  Create VME DMA list attribute pointing to a location on the VME bus for DMA
+transfers. It is the responsibility of the user to free used attributes
+using vme_dma_free_attribute() .

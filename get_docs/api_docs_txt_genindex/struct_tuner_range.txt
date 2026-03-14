@@ -1,0 +1,13 @@
+Struct: struct tuner_range
+
+define the frequencies supported by the tuner
+
+Members
+  limit
+    Max frequency supported by that range, in 62.5 kHz
+(TV) or 62.5 Hz (Radio), as defined by
+V4L2_TUNER_CAP_LOW.
+  config
+    Value of the band switch byte (BB) to setup this mode.
+  cb
+    Value of the CB byte to setup this mode.

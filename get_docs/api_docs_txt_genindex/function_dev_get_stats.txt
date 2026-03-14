@@ -1,0 +1,15 @@
+Function: struct rtnl_link_stats64 * dev_get_stats ( struct net_device * dev , struct rtnl_link_stats64 * storage )
+
+get network device statistics
+
+Parameters
+  struct net_device *dev
+    device to get statistics from
+  struct rtnl_link_stats64 *storage
+    place to store stats
+
+Description
+  Get network statistics from device. Return storage .
+The device driver may provide its own method by setting
+dev->netdev_ops->get_stats64 or dev->netdev_ops->get_stats;
+otherwise the internal statistics structure is used.

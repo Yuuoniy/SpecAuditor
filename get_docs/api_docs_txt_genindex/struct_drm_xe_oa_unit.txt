@@ -1,0 +1,21 @@
+Struct: struct drm_xe_oa_unit
+
+describe OA unit
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  oa_unit_id
+    OA unit ID
+  oa_unit_type
+    OA unit type of drm_xe_oa_unit_type
+  capabilities
+    OA capabilities bit-mask
+  oa_timestamp_freq
+    OA timestamp freq
+  reserved
+    MBZ
+  num_engines
+    number of engines in eci array
+  eci
+    engines attached to this OA unit

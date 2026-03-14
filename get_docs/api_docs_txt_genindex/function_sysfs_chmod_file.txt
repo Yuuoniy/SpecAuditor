@@ -1,0 +1,11 @@
+Function: int sysfs_chmod_file ( struct kobject * kobj , const struct attribute * attr , umode_t mode )
+
+update the modified mode value on an object attribute.
+
+Parameters
+  struct kobject *kobj
+    object we’re acting for.
+  const struct attribute *attr
+    attribute descriptor.
+  umode_t mode
+    file permissions.

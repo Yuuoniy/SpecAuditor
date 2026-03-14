@@ -1,0 +1,18 @@
+Function: long sys_landlock_add_rule ( const int ruleset_fd , const enum landlock_rule_type rule_type , const void __user * const rule_attr , const __u32 flags )
+
+Add a new rule to a ruleset
+
+Parameters
+  const int ruleset_fd
+    File descriptor tied to the ruleset that should be extended
+with the new rule.
+  const enum landlock_rule_type rule_type
+    Identify the structure type pointed to by rule_attr : LANDLOCK_RULE_PATH_BENEATH or LANDLOCK_RULE_NET_PORT .
+  const void __user *const rule_attr
+    Pointer to a rule (matching the rule_type ).
+  const __u32 flags
+    Must be 0.
+
+Description
+  This system call enables to define a new rule and add it to an existing
+ruleset.

@@ -1,0 +1,13 @@
+Macro: unsigned int bio_add_max_vecs ( void * kaddr , unsigned int len )
+
+number of bio_vecs needed to add data to a bio
+
+Parameters
+  void *kaddr
+    kernel virtual address to add
+  unsigned int len
+    length in bytes to add
+
+Description
+  Calculate how many bio_vecs need to be allocated to add the kernel virtual
+address range in [ kaddr : len ] in the worse case.

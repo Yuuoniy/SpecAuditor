@@ -1,0 +1,20 @@
+Struct: struct slim_driver
+
+SLIMbus ‘generic device’ (slave) device driver (similar to ‘spi_device’ on SPI)
+
+Members
+  probe
+    Binds this driver to a SLIMbus device.
+  remove
+    Unbinds this driver from the SLIMbus device.
+  shutdown
+    Standard shutdown callback used during powerdown/halt.
+  device_status
+    This callback is called when
+- The device reports present and gets a laddr assigned
+- The device reports absent, or the bus goes down.
+  driver
+    SLIMbus device drivers should initialize name and owner field of
+this structure
+  id_table
+    List of SLIMbus devices supported by this driver

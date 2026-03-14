@@ -1,0 +1,14 @@
+Function: bool dma_fence_remove_callback ( struct dma_fence * fence , struct dma_fence_cb * cb )
+
+remove a callback from the signaling list
+
+Parameters
+  struct dma_fence *fence
+    the fence to wait on
+  struct dma_fence_cb *cb
+    the callback to remove
+
+Description
+  Remove a previously queued callback from the fence. This function returns
+true if the callback is successfully removed, or false if the fence has
+already been signaled.

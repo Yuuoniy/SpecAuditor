@@ -1,0 +1,22 @@
+Struct: struct drm_privacy_screen
+
+central privacy-screen structure
+
+Members
+  dev
+    device used to register the privacy-screen in sysfs.
+  lock
+    mutex protection all fields in this struct.
+  list
+    privacy-screen devices list list-entry.
+  notifier_head
+    privacy-screen notifier head.
+  ops
+    struct drm_privacy_screen_ops for this privacy-screen.
+This is NULL if the driver has unregistered the privacy-screen.
+  sw_state
+    The privacy-screen’s software state, see Standard Connector Properties for more info.
+  hw_state
+    The privacy-screen’s hardware state, see Standard Connector Properties for more info.
+  drvdata
+    Private data owned by the privacy screen provider

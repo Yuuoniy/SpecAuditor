@@ -1,0 +1,16 @@
+Function: void iosubmit_cmds512 ( void __iomem * dst , const void * src , size_t count )
+
+copy data to single MMIO location, in 512-bit units
+
+Parameters
+  void __iomem *dst
+    destination, in MMIO space (must be 512-bit aligned)
+  const void *src
+    source
+  size_t count
+    number of 512 bits quantities to submit
+
+Description
+  Submit data from kernel space to MMIO space, in units of 512 bits at a
+time.  Order of access is not guaranteed, nor is a memory barrier
+performed afterwards.

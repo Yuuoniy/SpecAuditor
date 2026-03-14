@@ -1,0 +1,19 @@
+Function: int fsl_local_config_read ( struct rio_mport * mport , int index , u32 offset , int len , u32 * data )
+
+Generate a MPC85xx local config space read
+
+Parameters
+  struct rio_mport *mport
+    RapidIO master port info
+  int index
+    ID of RapdiIO interface
+  u32 offset
+    Offset into configuration space
+  int len
+    Length (in bytes) of the maintenance transaction
+  u32 *data
+    Value to be read into
+
+Description
+  Generates a MPC85xx local configuration space read. Returns 0 on
+success or -EINVAL on failure.

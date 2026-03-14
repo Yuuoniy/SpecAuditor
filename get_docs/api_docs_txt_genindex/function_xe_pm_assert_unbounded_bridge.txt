@@ -1,0 +1,7 @@
+Function: void xe_pm_assert_unbounded_bridge ( struct xe_device * xe )
+
+Disable PM on unbounded pcie parent bridge
+
+Parameters
+  struct xe_device *xe
+    xe device instance

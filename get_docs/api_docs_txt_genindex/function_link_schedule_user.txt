@@ -1,0 +1,10 @@
+Function: int link_schedule_user ( struct tipc_link * l , struct tipc_msg * hdr )
+
+schedule a message sender for wakeup after congestion
+
+Parameters
+  struct tipc_link *l
+    congested link
+  struct tipc_msg *hdr
+    header of message that is being sent
+Create pseudo msg to send back to user when congestion abates

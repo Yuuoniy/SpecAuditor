@@ -1,0 +1,11 @@
+Function: int cxl_dev_state_identify ( struct cxl_memdev_state * mds )
+
+Send the IDENTIFY command to the device.
+
+Parameters
+  struct cxl_memdev_state *mds
+    The driver data for the operation
+
+Description
+  This will dispatch the identify command to the device and on success populate
+structures to be exported to sysfs.

@@ -1,0 +1,15 @@
+Function: struct drm_mode_create_lease
+
+Create lease
+
+Members
+  object_ids
+    Pointer to array of object ids (__u32)
+  object_count
+    Number of object ids
+  flags
+    flags for new FD (O_CLOEXEC, etc)
+  lessee_id
+    Return: unique identifier for lessee.
+  fd
+    Return: file descriptor to new drm_master file

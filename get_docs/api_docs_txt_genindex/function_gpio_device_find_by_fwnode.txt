@@ -1,0 +1,7 @@
+Function: struct gpio_device * gpio_device_find_by_fwnode ( const struct fwnode_handle * fwnode )
+
+wrapper around gpio_device_find() finding the GPIO device by its fwnode
+
+Parameters
+  const struct fwnode_handle *fwnode
+    Firmware node to lookup

@@ -1,0 +1,7 @@
+Function: void sgl_free ( struct scatterlist * sgl )
+
+free a scatterlist and its pages
+
+Parameters
+  struct scatterlist *sgl
+    Scatterlist with one or more elements

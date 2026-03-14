@@ -1,0 +1,11 @@
+Function: void irq_chip_shutdown_parent ( struct irq_data * data )
+
+Shutdown the parent interrupt
+
+Parameters
+  struct irq_data *data
+    Pointer to interrupt specific data
+
+Description
+  Invokes the irq_shutdown() callback of the parent if available or falls
+back to irq_chip_disable_parent() .

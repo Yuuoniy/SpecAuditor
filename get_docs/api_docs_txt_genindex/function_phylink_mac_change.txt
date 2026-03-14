@@ -1,0 +1,13 @@
+Function: void phylink_mac_change ( struct phylink * pl , bool up )
+
+notify phylink of a change in MAC state
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+  bool up
+    indicates whether the link is currently up.
+
+Description
+  The MAC driver should call this driver when the state of its link
+changes (eg, link failure, new negotiation results, etc.)

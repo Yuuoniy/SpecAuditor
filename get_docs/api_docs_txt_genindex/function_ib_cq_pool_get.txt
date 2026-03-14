@@ -1,0 +1,21 @@
+Function: struct ib_cq * ib_cq_pool_get ( struct ib_device * dev , unsigned int nr_cqe , int comp_vector_hint , enum ib_poll_context poll_ctx )
+
+Find the least used completion queue that matches a given cpu hint (or least used for wild card affinity) and fits nr_cqe.
+
+Parameters
+  struct ib_device *dev
+    rdma device
+  unsigned int nr_cqe
+    number of needed cqe entries
+  int comp_vector_hint
+    completion vector hint (-1) for the driver to assign
+a comp vector based on internal counter
+  enum ib_poll_context poll_ctx
+    cq polling context
+
+Description
+  Finds a cq that satisfies comp_vector_hint and nr_cqe requirements and
+claim entries in it for us.  In case there is no available cq, allocate
+a new cq with the requirements and add it to the device pool.
+IB_POLL_DIRECT cannot be used for shared cqs so it is not a valid value
+for poll_ctx .

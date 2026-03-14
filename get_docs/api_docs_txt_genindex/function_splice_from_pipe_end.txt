@@ -1,0 +1,13 @@
+Function: void splice_from_pipe_end ( struct pipe_inode_info * pipe , struct splice_desc * sd )
+
+finish splicing from pipe
+
+Parameters
+  struct pipe_inode_info *pipe
+    pipe to splice from
+  struct splice_desc *sd
+    information about the splice operation
+
+Description
+  This function will wake up pipe writers if necessary.  It should
+be called after a loop containing splice_from_pipe_next() and splice_from_pipe_feed() .

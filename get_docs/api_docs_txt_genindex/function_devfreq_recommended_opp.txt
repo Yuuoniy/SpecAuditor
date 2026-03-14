@@ -1,0 +1,15 @@
+Function: struct dev_pm_opp * devfreq_recommended_opp ( struct device * dev , unsigned long * freq , u32 flags )
+
+Helper function to get proper OPP for the freq value given to target callback.
+
+Parameters
+  struct device *dev
+    The devfreq user device. (parent of devfreq)
+  unsigned long *freq
+    The frequency given to target function
+  u32 flags
+    Flags handed from devfreq framework.
+
+Description
+  The callers are required to call dev_pm_opp_put() for the returned OPP after
+use.

@@ -1,0 +1,9 @@
+Function: int tipc_link_fsm_evt ( struct tipc_link * l , int evt )
+
+link finite state machine
+
+Parameters
+  struct tipc_link *l
+    pointer to link
+  int evt
+    state machine event to be processed

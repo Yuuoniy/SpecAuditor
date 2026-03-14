@@ -1,0 +1,14 @@
+Function: bool fsuidgid_has_mapping ( struct super_block * sb , struct mnt_idmap * idmap )
+
+check whether caller’s fsuid/fsgid is mapped
+
+Parameters
+  struct super_block *sb
+    the superblock we want a mapping in
+  struct mnt_idmap *idmap
+    idmap of the relevant mount
+
+Description
+  Check whether the caller’s fsuid and fsgid have a valid mapping in the
+s_user_ns of the superblock sb . If the caller is on an idmapped mount map
+the caller’s fsuid and fsgid according to the idmap first.

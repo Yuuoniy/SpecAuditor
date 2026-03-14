@@ -1,0 +1,12 @@
+Function: bool queue_work ( struct workqueue_struct * wq , struct work_struct * work )
+
+queue work on a workqueue
+
+Parameters
+  struct workqueue_struct *wq
+    workqueue to use
+  struct work_struct *work
+    work to queue
+
+Description
+  Returns false if work was already on a queue, true otherwise.

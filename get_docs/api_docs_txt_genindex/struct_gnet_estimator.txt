@@ -1,0 +1,9 @@
+Struct: struct gnet_estimator
+
+rate estimator configuration
+
+Members
+  interval
+    sampling period
+  ewma_log
+    the log of measurement window weight

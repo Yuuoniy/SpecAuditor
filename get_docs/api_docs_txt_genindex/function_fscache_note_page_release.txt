@@ -1,0 +1,11 @@
+Function: void fscache_note_page_release ( struct fscache_cookie * cookie )
+
+Note that a netfs page got released
+
+Parameters
+  struct fscache_cookie *cookie
+    The cookie corresponding to the file
+
+Description
+  Note that a page that has been copied to the cache has been released.  This
+means that future reads will need to look in the cache to see if it’s there.

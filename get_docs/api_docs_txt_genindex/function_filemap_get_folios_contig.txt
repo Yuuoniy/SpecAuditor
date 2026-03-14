@@ -1,0 +1,18 @@
+Function: unsigned filemap_get_folios_contig ( struct address_space * mapping , pgoff_t * start , pgoff_t end , struct folio_batch * fbatch )
+
+Get a batch of contiguous folios
+
+Parameters
+  struct address_space *mapping
+    The address_space to search
+  pgoff_t *start
+    The starting page index
+  pgoff_t end
+    The final page index (inclusive)
+  struct folio_batch *fbatch
+    The batch to fill
+
+Description
+  filemap_get_folios_contig() works exactly like filemap_get_folios() ,
+except the returned folios are guaranteed to be contiguous. This may
+not return all contiguous folios if the batch gets filled up.

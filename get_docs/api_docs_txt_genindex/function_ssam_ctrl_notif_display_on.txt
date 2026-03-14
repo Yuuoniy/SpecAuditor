@@ -1,0 +1,13 @@
+Function: int ssam_ctrl_notif_display_on ( struct ssam_controller * ctrl )
+
+Notify EC that the display has been turned on.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller.
+
+Description
+  Notify the EC that the display has been turned back on and the driver has
+exited its lower-power state. This notification is the counterpart to the
+display-off notification sent via ssam_ctrl_notif_display_off() and will
+reverse its effects, including resetting events to their default behavior.

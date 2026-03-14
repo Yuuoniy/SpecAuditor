@@ -1,0 +1,13 @@
+Function: int xa_err ( void * entry )
+
+Turn an XArray result into an errno.
+
+Parameters
+  void *entry
+    Result from calling an XArray function.
+
+Description
+  If an XArray operation cannot complete an operation, it will return
+a special pointer value which encodes an errno.  This function extracts
+the errno from the pointer value, or returns 0 if the pointer does not
+represent an errno.

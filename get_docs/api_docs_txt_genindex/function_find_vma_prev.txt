@@ -1,0 +1,15 @@
+Function: struct vm_area_struct * find_vma_prev ( struct mm_struct * mm , unsigned long addr , struct vm_area_struct * * pprev )
+
+Find the VMA for a given address, or the next vma and set pprev to the previous VMA, if any.
+
+Parameters
+  struct mm_struct *mm
+    The mm_struct to check
+  unsigned long addr
+    The address
+  struct vm_area_struct **pprev
+    The pointer to set to the previous VMA
+
+Description
+  Note that RCU lock is missing here since the external mmap_lock() is used
+instead.

@@ -1,0 +1,18 @@
+Function: int phy_modify_paged ( struct phy_device * phydev , int page , u32 regnum , u16 mask , u16 set )
+
+Convenience function for modifying a paged register
+
+Parameters
+  struct phy_device *phydev
+    a pointer to a struct phy_device
+  int page
+    the page for the phy
+  u32 regnum
+    register number
+  u16 mask
+    bit mask of bits to clear
+  u16 set
+    bit mask of bits to set
+
+Description
+  Same rules as for phy_read() and phy_write() .

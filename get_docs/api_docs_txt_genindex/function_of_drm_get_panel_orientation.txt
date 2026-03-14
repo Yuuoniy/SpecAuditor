@@ -1,0 +1,14 @@
+Function: int of_drm_get_panel_orientation ( const struct device_node * np , enum drm_panel_orientation * orientation )
+
+look up the orientation of the panel through the “rotation” binding from a device tree node
+
+Parameters
+  const struct device_node *np
+    device tree node of the panel
+  enum drm_panel_orientation *orientation
+    orientation enum to be filled in
+
+Description
+  Looks up the rotation of a panel in the device tree. The orientation of the
+panel is expressed as a property name “rotation” in the device tree. The
+rotation in the device tree is counter clockwise.

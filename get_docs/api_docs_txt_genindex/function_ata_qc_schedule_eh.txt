@@ -1,0 +1,11 @@
+Function: void ata_qc_schedule_eh ( struct ata_queued_cmd * qc )
+
+schedule qc for error handling
+
+Parameters
+  struct ata_queued_cmd *qc
+    command to schedule error handling for
+
+Description
+  Schedule error handling for qc .  EH will kick in as soon as
+other commands are drained.

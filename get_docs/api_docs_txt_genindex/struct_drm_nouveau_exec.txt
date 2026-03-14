@@ -1,0 +1,19 @@
+Struct: struct drm_nouveau_exec
+
+structure for DRM_IOCTL_NOUVEAU_EXEC
+
+Members
+  channel
+    the channel to execute the push buffer in
+  push_count
+    the number of drm_nouveau_exec_push ops
+  wait_count
+    the number of wait drm_nouveau_syncs
+  sig_count
+    the number of drm_nouveau_syncs to signal when finished
+  wait_ptr
+    pointer to drm_nouveau_syncs to wait for
+  sig_ptr
+    pointer to drm_nouveau_syncs to signal when finished
+  push_ptr
+    pointer to drm_nouveau_exec_push ops

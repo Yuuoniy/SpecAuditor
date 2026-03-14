@@ -1,0 +1,9 @@
+Struct: struct drm_gem_close
+
+Argument for DRM_IOCTL_GEM_CLOSE ioctl.
+
+Members
+  handle
+    Handle of the object to be closed.
+  pad
+    Padding.

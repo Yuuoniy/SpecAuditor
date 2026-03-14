@@ -1,0 +1,14 @@
+Function: int rio_add_mport_pw_handler ( struct rio_mport * mport , void * context , int ( * pwcback ) ( struct rio_mport * mport , void * context , union rio_pw_msg * msg , int step ) )
+
+add port-write message handler into the list of mport specific pw handlers
+
+Parameters
+  struct rio_mport *mport
+    RIO master port to bind the portwrite callback
+  void *context
+    Handler specific context to pass on event
+  int (*pwcback)(struct rio_mport *mport, void *context, union rio_pw_msg *msg, int step)
+    Callback to execute when portwrite is received
+
+Description
+  Returns 0 if the request has been satisfied.

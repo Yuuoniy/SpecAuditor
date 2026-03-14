@@ -1,0 +1,9 @@
+Function: const char * usb_speed_string ( enum usb_device_speed speed )
+
+Returns human readable-name of the speed.
+
+Parameters
+  enum usb_device_speed speed
+    The speed to return human-readable name for.  If it’s not
+any of the speeds defined in usb_device_speed enum, string for
+USB_SPEED_UNKNOWN will be returned.

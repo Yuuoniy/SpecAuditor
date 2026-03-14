@@ -1,0 +1,15 @@
+Function: int try_to_grab_pending ( struct work_struct * work , u32 cflags , unsigned long * irq_flags )
+
+steal work item from worklist and disable irq
+
+Parameters
+  struct work_struct *work
+    work item to steal
+  u32 cflags
+    WORK_CANCEL_ flags
+  unsigned long *irq_flags
+    place to store irq state
+
+Description
+  Try to grab PENDING bit of work .  This function can handle work in any
+stable state - idle, on timer or on worklist.

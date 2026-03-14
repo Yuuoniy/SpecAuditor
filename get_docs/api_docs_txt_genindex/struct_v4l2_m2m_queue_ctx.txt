@@ -1,0 +1,15 @@
+Struct: struct v4l2_m2m_queue_ctx
+
+represents a queue for buffers ready to be processed
+
+Members
+  q
+    pointer to struct vb2_queue
+  rdy_queue
+    List of V4L2 mem-to-mem queues
+  rdy_spinlock
+    spin lock to protect the struct usage
+  num_rdy
+    number of buffers ready to be processed
+  buffered
+    is the queue buffered?

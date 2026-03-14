@@ -1,0 +1,20 @@
+Struct: struct device_physical_location
+
+Device data related to physical location of the device connection point.
+
+Members
+  panel
+    Panel surface of the system’s housing that the device connection
+point resides on.
+  vertical_position
+    Vertical position of the device connection point within
+the panel.
+  horizontal_position
+    Horizontal position of the device connection point
+within the panel.
+  dock
+    Set if the device connection point resides in a docking station or
+port replicator.
+  lid
+    Set if this device connection point resides on the lid of laptop
+system.

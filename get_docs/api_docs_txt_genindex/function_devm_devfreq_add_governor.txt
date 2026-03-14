@@ -1,0 +1,12 @@
+Function: int devm_devfreq_add_governor ( struct device * dev , struct devfreq_governor * governor )
+
+Add devfreq governor
+
+Parameters
+  struct device *dev
+    device which adds devfreq governor
+  struct devfreq_governor *governor
+    the devfreq governor to be added
+
+Description
+  This is a resource-managed variant of devfreq_add_governor() .

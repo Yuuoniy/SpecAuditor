@@ -1,0 +1,11 @@
+Function: void vimc_streamer_pipeline_terminate ( struct vimc_stream * stream )
+
+Disable stream in all ved in stream
+
+Parameters
+  struct vimc_stream *stream
+    the pointer to the stream structure with the pipeline to be
+disabled.
+
+Description
+  Calls s_stream to disable the stream in each entity of the pipeline

@@ -1,0 +1,11 @@
+Function: void write_seqcount_latch_end ( seqcount_latch_t * s )
+
+end a seqcount_latch_t write section
+
+Parameters
+  seqcount_latch_t *s
+    Pointer to seqcount_latch_t
+
+Description
+  Marks the end of a seqcount_latch_t writer section, after all copies of the
+latch-protected data have been updated.

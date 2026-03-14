@@ -1,0 +1,17 @@
+Function: int tipc_enable_bearer ( struct net * net , const char * name , u32 disc_domain , u32 prio , struct nlattr * attr [ ] , struct netlink_ext_ack * extack )
+
+enable bearer with the given name
+
+Parameters
+  struct net *net
+    the applicable net namespace
+  const char *name
+    bearer name to enable
+  u32 disc_domain
+    bearer domain
+  u32 prio
+    bearer priority
+  struct nlattr *attr[]
+    nlattr array
+  struct netlink_ext_ack *extack
+    netlink extended ack

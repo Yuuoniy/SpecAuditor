@@ -1,0 +1,11 @@
+Function: struct drm_connector_state * drm_atomic_helper_connector_duplicate_state ( struct drm_connector * connector )
+
+default state duplicate hook
+
+Parameters
+  struct drm_connector *connector
+    drm connector
+
+Description
+  Default connector state duplicate hook for drivers which don’t have their own
+subclassed connector state structure.

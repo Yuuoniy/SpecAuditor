@@ -1,0 +1,11 @@
+Function: struct drm_property_blob * drm_property_blob_get ( struct drm_property_blob * blob )
+
+acquire blob property reference
+
+Parameters
+  struct drm_property_blob *blob
+    DRM blob property
+
+Description
+  Acquires a reference to an existing blob property. Returns blob , which
+allows this to be used as a shorthand in assignments.

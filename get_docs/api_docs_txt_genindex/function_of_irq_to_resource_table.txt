@@ -1,0 +1,11 @@
+Function: int of_irq_to_resource_table ( struct device_node * dev , struct resource * res , int nr_irqs )
+
+Fill in resource table with node’s IRQ info
+
+Parameters
+  struct device_node *dev
+    pointer to device tree node
+  struct resource *res
+    array of resources to fill in
+  int nr_irqs
+    the number of IRQs (and upper bound for num of res elements)

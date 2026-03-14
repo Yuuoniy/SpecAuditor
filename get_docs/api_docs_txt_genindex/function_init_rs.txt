@@ -1,0 +1,21 @@
+Function: struct rs_control * init_rs ( int symsize , int gfpoly , int fcr , int prim , int nroots )
+
+Create a RS control struct and initialize it
+
+Parameters
+  int symsize
+    the symbol size (number of bits)
+  int gfpoly
+    the extended Galois field generator polynomial coefficients,
+with the 0th coefficient in the low order bit. The polynomial
+must be primitive;
+  int fcr
+    the first consecutive root of the rs code generator polynomial
+in index form
+  int prim
+    primitive element to generate polynomial roots
+  int nroots
+    RS code generator polynomial degree (number of roots)
+
+Description
+  Allocations use GFP_KERNEL.

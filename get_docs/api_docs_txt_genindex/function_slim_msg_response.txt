@@ -1,0 +1,19 @@
+Function: void slim_msg_response ( struct slim_controller * ctrl , u8 * reply , u8 tid , u8 len )
+
+Deliver Message response received from a device to the framework.
+
+Parameters
+  struct slim_controller *ctrl
+    Controller handle
+  u8 *reply
+    Reply received from the device
+  u8 tid
+    Transaction ID received with which framework can associate reply.
+  u8 len
+    Length of the reply
+
+Description
+  Called by controller to inform framework about the response received.
+This helps in making the API asynchronous, and controller-driver doesn’t need
+to manage 1 more table other than the one managed by framework mapping TID
+with buffers

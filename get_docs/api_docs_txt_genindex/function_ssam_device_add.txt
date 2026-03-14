@@ -1,0 +1,13 @@
+Function: int ssam_device_add ( struct ssam_device * sdev )
+
+Add a SSAM client device.
+
+Parameters
+  struct ssam_device *sdev
+    The SSAM client device to be added.
+
+Description
+  Added client devices must be guaranteed to always have a valid and active
+controller. Thus, this function will fail with -ENODEV if the controller
+of the device has not been initialized yet, has been suspended, or has been
+shut down.

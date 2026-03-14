@@ -1,0 +1,26 @@
+Function: int futex_requeue ( u32 __user * uaddr1 , unsigned int flags1 , u32 __user * uaddr2 , unsigned int flags2 , int nr_wake , int nr_requeue , u32 * cmpval , int requeue_pi )
+
+Requeue waiters from uaddr1 to uaddr2
+
+Parameters
+  u32 __user *uaddr1
+    source futex user address
+  unsigned int flags1
+    futex flags (FLAGS_SHARED, etc.)
+  u32 __user *uaddr2
+    target futex user address
+  unsigned int flags2
+    futex flags (FLAGS_SHARED, etc.)
+  int nr_wake
+    number of waiters to wake (must be 1 for requeue_pi)
+  int nr_requeue
+    number of waiters to requeue (0-INT_MAX)
+  u32 *cmpval
+    uaddr1 expected value (or NULL )
+  int requeue_pi
+    if we are attempting to requeue from a non-pi futex to a
+pi futex (pi to pi requeue is not supported)
+
+Description
+  Requeue waiters on uaddr1 to uaddr2. In the requeue_pi case, try to acquire
+uaddr2 atomically on behalf of the top waiter.

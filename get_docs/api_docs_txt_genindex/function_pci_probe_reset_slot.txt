@@ -1,0 +1,10 @@
+Function: int pci_probe_reset_slot ( struct pci_slot * slot )
+
+probe whether a PCI slot can be reset
+
+Parameters
+  struct pci_slot *slot
+    PCI slot to probe
+
+Description
+  Return 0 if slot can be reset, negative if a slot reset is not supported.

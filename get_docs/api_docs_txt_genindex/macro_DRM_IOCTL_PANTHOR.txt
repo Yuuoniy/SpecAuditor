@@ -1,0 +1,15 @@
+Macro: DRM_IOCTL_PANTHOR
+
+
+
+Parameters
+  __access
+    Access type. Must be R, W or RW.
+  __id
+    One of the DRM_PANTHOR_xxx id.
+  __type
+    Suffix of the type being passed to the IOCTL.
+
+Description
+  Don’t use this macro directly, use the DRM_IOCTL_PANTHOR_xxx
+values instead.

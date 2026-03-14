@@ -1,0 +1,14 @@
+Function: int drm_crtc_helper_atomic_check ( struct drm_crtc * crtc , struct drm_atomic_state * state )
+
+Helper to check CRTC atomic-state
+
+Parameters
+  struct drm_crtc *crtc
+    CRTC to check
+  struct drm_atomic_state *state
+    atomic state object
+
+Description
+  Provides a default CRTC-state check handler for CRTCs that only have
+one primary plane attached to it. This is often the case for the CRTC
+of simple framebuffers.

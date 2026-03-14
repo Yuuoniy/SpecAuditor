@@ -1,0 +1,17 @@
+Function: int skb_copy_bits ( const struct sk_buff * skb , int offset , void * to , int len )
+
+copy bits from skb to kernel buffer
+
+Parameters
+  const struct sk_buff *skb
+    source skb
+  int offset
+    offset in source
+  void *to
+    destination buffer
+  int len
+    number of bytes to copy
+
+Description
+  Copy the specified number of bytes from the source skb to the
+destination buffer.

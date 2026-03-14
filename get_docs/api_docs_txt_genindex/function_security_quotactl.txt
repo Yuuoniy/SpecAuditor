@@ -1,0 +1,16 @@
+Function: int security_quotactl ( int cmds , int type , int id , const struct super_block * sb )
+
+Check if a quotactl() syscall is allowed for this fs
+
+Parameters
+  int cmds
+    commands
+  int type
+    type
+  int id
+    id
+  const struct super_block *sb
+    filesystem
+
+Description
+  Check whether the quotactl syscall is allowed for this sb .

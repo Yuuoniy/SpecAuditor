@@ -1,0 +1,14 @@
+Function: int drm_color_lut_check ( const struct drm_property_blob * lut , u32 tests )
+
+check validity of lookup table
+
+Parameters
+  const struct drm_property_blob *lut
+    property blob containing LUT to check
+  u32 tests
+    bitmask of tests to run
+
+Description
+  Helper to check whether a userspace-provided lookup table is valid and
+satisfies hardware requirements.  Drivers pass a bitmask indicating which of
+the tests in drm_color_lut_tests should be performed.

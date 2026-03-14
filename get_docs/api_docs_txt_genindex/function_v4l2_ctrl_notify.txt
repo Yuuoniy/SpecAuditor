@@ -1,0 +1,16 @@
+Function: void v4l2_ctrl_notify ( struct v4l2_ctrl * ctrl , v4l2_ctrl_notify_fnc notify , void * priv )
+
+Function to set a notify callback for a control.
+
+Parameters
+  struct v4l2_ctrl *ctrl
+    The control.
+  v4l2_ctrl_notify_fnc notify
+    The callback function.
+  void *priv
+    The callback private handle, passed as argument to the callback.
+
+Description
+  This function sets a callback function for the control. If ctrl is NULL,
+then it will do nothing. If notify is NULL, then the notify callback will
+be removed.

@@ -1,0 +1,11 @@
+Function: void * xa_untag_pointer ( void * entry )
+
+Turn an XArray entry into a plain pointer.
+
+Parameters
+  void *entry
+    XArray entry.
+
+Description
+  If you have stored a tagged pointer in the XArray, call this function
+to get the untagged version of the pointer.

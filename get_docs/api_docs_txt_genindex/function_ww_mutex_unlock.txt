@@ -1,0 +1,12 @@
+Function: void ww_mutex_unlock ( struct ww_mutex * lock )
+
+release the w/w mutex
+
+Parameters
+  struct ww_mutex *lock
+    the mutex to be released
+
+Description
+  Unlock a mutex that has been locked by this task previously with any of the
+ww_mutex_lock* functions (with or without an acquire context). It is
+forbidden to release the locks after releasing the acquire context.

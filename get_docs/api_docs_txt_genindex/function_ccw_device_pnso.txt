@@ -1,0 +1,18 @@
+Function: int ccw_device_pnso ( struct ccw_device * cdev , struct chsc_pnso_area * pnso_area , u8 oc , struct chsc_pnso_resume_token resume_token , int cnc )
+
+Perform Network-Subchannel Operation
+
+Parameters
+  struct ccw_device *cdev
+    device on which PNSO is performed
+  struct chsc_pnso_area *pnso_area
+    request and response block for the operation
+  u8 oc
+    Operation Code
+  struct chsc_pnso_resume_token resume_token
+    resume token for multiblock response
+  int cnc
+    Boolean change-notification control
+
+Description
+  pnso_area must be allocated by the caller with get_zeroed_page(GFP_KERNEL)

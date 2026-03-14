@@ -1,0 +1,9 @@
+Function: void seq_pad ( struct seq_file * m , char c )
+
+write padding spaces to buffer
+
+Parameters
+  struct seq_file *m
+    seq_file identifying the buffer to which data should be written
+  char c
+    the byte to append after padding if non-zero

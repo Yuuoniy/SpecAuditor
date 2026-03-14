@@ -1,0 +1,14 @@
+Function: int amdgpu_vm_handle_moved ( struct amdgpu_device * adev , struct amdgpu_vm * vm , struct ww_acquire_ctx * ticket )
+
+handle moved BOs in the PT
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+  struct amdgpu_vm *vm
+    requested vm
+  struct ww_acquire_ctx *ticket
+    optional reservation ticket used to reserve the VM
+
+Description
+  Make sure all BOs which are moved are updated in the PTs.

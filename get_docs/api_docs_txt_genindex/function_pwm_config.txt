@@ -1,0 +1,11 @@
+Function: int pwm_config ( struct pwm_device * pwm , int duty_ns , int period_ns )
+
+change a PWM device configuration
+
+Parameters
+  struct pwm_device *pwm
+    PWM device
+  int duty_ns
+    “on” time (in nanoseconds)
+  int period_ns
+    duration (in nanoseconds) of one cycle

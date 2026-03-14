@@ -1,0 +1,11 @@
+Function: void linkwatch_sync_dev ( struct net_device * dev )
+
+sync linkwatch for the given device
+
+Parameters
+  struct net_device *dev
+    network device to sync linkwatch for
+
+Description
+  Sync linkwatch for the given device, removing it from the
+pending work list (if queued).

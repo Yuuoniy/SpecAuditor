@@ -1,0 +1,10 @@
+Function: void __iomem * devm_platform_ioremap_resource_byname ( struct platform_device * pdev , const char * name )
+
+call devm_ioremap_resource for a platform device, retrieve the resource by name
+
+Parameters
+  struct platform_device *pdev
+    platform device to use both for memory resource lookup as well as
+resource management
+  const char *name
+    name of the resource

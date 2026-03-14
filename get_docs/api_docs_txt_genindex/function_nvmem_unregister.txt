@@ -1,0 +1,7 @@
+Function: void nvmem_unregister ( struct nvmem_device * nvmem )
+
+Unregister previously registered nvmem device
+
+Parameters
+  struct nvmem_device *nvmem
+    Pointer to previously registered nvmem device.

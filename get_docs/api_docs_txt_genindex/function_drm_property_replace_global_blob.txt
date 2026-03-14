@@ -1,0 +1,21 @@
+Function: int drm_property_replace_global_blob ( struct drm_device * dev , struct drm_property_blob * * replace , size_t length , const void * data , struct drm_mode_object * obj_holds_id , struct drm_property * prop_holds_id )
+
+replace existing blob property
+
+Parameters
+  struct drm_device *dev
+    drm device
+  struct drm_property_blob **replace
+    location of blob property pointer to be replaced
+  size_t length
+    length of data for new blob, or 0 for no data
+  const void *data
+    content for new blob, or NULL for no data
+  struct drm_mode_object *obj_holds_id
+    optional object for property holding blob ID
+  struct drm_property *prop_holds_id
+    optional property holding blob ID return 0 on success or error on failure
+
+Description
+  This function will replace a global property in the blob list, optionally
+updating a property which holds the ID of that property.

@@ -1,0 +1,10 @@
+Function: void media_gobj_destroy ( struct media_gobj * gobj )
+
+Stop using a graph object on a media device
+
+Parameters
+  struct media_gobj *gobj
+    Pointer to the struct media_gobj graph object
+
+Description
+  This should be called by all routines like media_device_unregister() that remove/destroy media graph objects.

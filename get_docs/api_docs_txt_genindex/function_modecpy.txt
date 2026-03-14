@@ -1,0 +1,17 @@
+Function: void modecpy ( u8 * dest , const u8 * src , int n , bool changeable )
+
+Prepare response for MODE SENSE
+
+Parameters
+  u8 *dest
+    output buffer
+  const u8 *src
+    data being copied
+  int n
+    length of mode page
+  bool changeable
+    whether changeable parameters are requested
+
+Description
+  Generate a generic MODE SENSE page for either current or changeable
+parameters.

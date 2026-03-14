@@ -1,0 +1,14 @@
+Function: int drm_of_get_data_lanes_count ( const struct device_node * endpoint , const unsigned int min , const unsigned int max )
+
+Get DSI/(e)DP data lane count
+
+Parameters
+  const struct device_node *endpoint
+    DT endpoint node of the DSI/(e)DP source or sink
+  const unsigned int min
+    minimum supported number of data lanes
+  const unsigned int max
+    maximum supported number of data lanes
+
+Description
+  Count DT “data-lanes” property elements and check for validity.

@@ -1,0 +1,19 @@
+Function: int em_dev_register_pd_no_update ( struct device * dev , unsigned int nr_states , const struct em_data_callback * cb , const cpumask_t * cpus , bool microwatts )
+
+Register a perf domain for a device
+
+Parameters
+  struct device *dev
+    Device to register the PD for
+  unsigned int nr_states
+    Number of performance states in the new PD
+  const struct em_data_callback *cb
+    Callback functions for populating the energy model
+  const cpumask_t *cpus
+    CPUs to include in the new PD (mandatory if dev is a CPU device)
+  bool microwatts
+    Whether or not the power values in the EM will be in uW
+
+Description
+  Like em_dev_register_perf_domain() , but does not trigger a CPU capacity
+update after registering the PD, even if dev is a CPU device.

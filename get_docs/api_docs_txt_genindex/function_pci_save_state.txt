@@ -1,0 +1,7 @@
+Function: int pci_save_state ( struct pci_dev * dev )
+
+save the PCI configuration space of a device before suspending
+
+Parameters
+  struct pci_dev *dev
+    PCI device that we’re dealing with

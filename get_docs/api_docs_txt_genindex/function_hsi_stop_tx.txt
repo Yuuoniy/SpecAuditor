@@ -1,0 +1,10 @@
+Function: int hsi_stop_tx ( struct hsi_client * cl )
+
+Signal the port that the client no longer wants to transmit
+
+Parameters
+  struct hsi_client *cl
+    Pointer to the HSI client
+
+Description
+  Return -errno on failure, 0 on success

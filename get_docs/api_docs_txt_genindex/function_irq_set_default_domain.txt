@@ -1,0 +1,13 @@
+Function: void irq_set_default_domain ( struct irq_domain * domain )
+
+Set a “default” irq domain
+
+Parameters
+  struct irq_domain *domain
+    default domain pointer
+
+Description
+  For convenience, it’s possible to set a “default” domain that will be used
+whenever NULL is passed to irq_create_mapping() . It makes life easier for
+platforms that want to manipulate a few hard coded interrupt numbers that
+aren’t properly represented in the device-tree.

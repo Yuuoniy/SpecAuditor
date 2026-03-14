@@ -1,0 +1,13 @@
+Function: void xas_set ( struct xa_state * xas , unsigned long index )
+
+Set up XArray operation state for a different index.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+  unsigned long index
+    New index into the XArray.
+
+Description
+  Move the operation state to refer to a different index.  This will
+have the effect of starting a walk from the top; see xas_next() to move to an adjacent index.

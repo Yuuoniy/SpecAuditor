@@ -1,0 +1,15 @@
+Struct: struct sync_merge_data
+
+SYNC_IOC_MERGE: merge two fences
+
+Members
+  name
+    name of new fence
+  fd2
+    file descriptor of second fence
+  fence
+    returns the fd of the new fence to userspace
+  flags
+    merge_data flags
+  pad
+    padding for 64-bit alignment, should always be zero

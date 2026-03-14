@@ -1,0 +1,17 @@
+Function: struct ssam_cplt
+
+SSAM event/async request completion system.
+
+Members
+  dev
+    The device with which this system is associated. Only used
+for logging.
+  wq
+    The struct workqueue_struct on which all completion work
+items are queued.
+  event
+    Event completion management.
+  event.target
+    Array of struct ssam_event_target , one for each target.
+  event.notif
+    Notifier callbacks and event activation reference counting.

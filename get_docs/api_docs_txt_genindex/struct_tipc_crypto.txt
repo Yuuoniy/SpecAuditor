@@ -1,0 +1,55 @@
+Struct: struct tipc_crypto
+
+TIPC TX/RX crypto structure
+
+Members
+  net
+    struct net
+  node
+    TIPC node (RX)
+  aead
+    array of pointers to AEAD keys for encryption/decryption
+  peer_rx_active
+    replicated peer RX active key index
+  key_gen
+    TX/RX key generation
+  key
+    the key states
+  skey_mode
+    session key’s mode
+  skey
+    received session key
+  wq
+    common workqueue on TX crypto
+  work
+    delayed work sched for TX/RX
+  key_distr
+    key distributing state
+  rekeying_intv
+    rekeying interval (in minutes)
+  stats
+    the crypto statistics
+  name
+    the crypto name
+  sndnxt
+    the per-peer sndnxt (TX)
+  timer1
+    general timer 1 (jiffies)
+  timer2
+    general timer 2 (jiffies)
+  {unnamed_union}
+    anonymous
+  {unnamed_struct}
+    anonymous
+  working
+    the crypto is working or not
+  key_master
+    flag indicates if master key exists
+  legacy_user
+    flag indicates if a peer joins w/o master key (for bwd comp.)
+  nokey
+    no key indication
+  flags
+    combined flags field
+  lock
+    tipc_key lock

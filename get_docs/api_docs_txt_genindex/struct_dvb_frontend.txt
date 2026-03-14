@@ -1,0 +1,32 @@
+Struct: struct dvb_frontend
+
+Frontend structure to be used on drivers.
+
+Members
+  refcount
+    refcount to keep track of struct dvb_frontend references
+  ops
+    embedded struct dvb_frontend_ops
+  dvb
+    pointer to struct dvb_adapter
+  demodulator_priv
+    demod private data
+  tuner_priv
+    tuner private data
+  frontend_priv
+    frontend private data
+  sec_priv
+    SEC private data
+  analog_demod_priv
+    Analog demod private data
+  dtv_property_cache
+    embedded struct dtv_frontend_properties
+  callback
+    callback function used on some drivers to call
+either the tuner or the demodulator.
+  id
+    Frontend ID
+  exit
+    Used to inform the DVB core that the frontend
+thread should exit (usually, means that the hardware
+got disconnected.

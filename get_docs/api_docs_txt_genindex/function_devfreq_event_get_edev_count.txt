@@ -1,0 +1,12 @@
+Function: int devfreq_event_get_edev_count ( struct device * dev , const char * phandle_name )
+
+Get the count of devfreq-event dev
+
+Parameters
+  struct device *dev
+    the pointer to the given device
+  const char *phandle_name
+    name of property holding a phandle value
+
+Description
+  Note that this function return the count of devfreq-event devices.

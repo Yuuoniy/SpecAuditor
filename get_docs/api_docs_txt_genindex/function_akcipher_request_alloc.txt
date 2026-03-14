@@ -1,0 +1,9 @@
+Function: struct akcipher_request * akcipher_request_alloc ( struct crypto_akcipher * tfm , gfp_t gfp )
+
+allocates public key request
+
+Parameters
+  struct crypto_akcipher *tfm
+    AKCIPHER tfm handle allocated with crypto_alloc_akcipher()
+  gfp_t gfp
+    allocation flags

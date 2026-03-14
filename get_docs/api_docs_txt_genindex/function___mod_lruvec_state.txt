@@ -1,0 +1,16 @@
+Function: void __mod_lruvec_state ( struct lruvec * lruvec , enum node_stat_item idx , int val )
+
+update lruvec memory statistics
+
+Parameters
+  struct lruvec *lruvec
+    the lruvec
+  enum node_stat_item idx
+    the stat item
+  int val
+    delta to add to the counter, can be negative
+
+Description
+  The lruvec is the intersection of the NUMA node and a cgroup. This
+function updates the all three counters that are affected by a
+change of state at this level: per-node, per-cgroup, per-lruvec.

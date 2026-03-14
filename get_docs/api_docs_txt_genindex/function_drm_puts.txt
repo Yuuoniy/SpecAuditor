@@ -1,0 +1,13 @@
+Function: void drm_puts ( struct drm_printer * p , const char * str )
+
+print a const string to a drm_printer stream
+
+Parameters
+  struct drm_printer *p
+    the drm printer
+  const char *str
+    const string
+
+Description
+  Allow drm_printer types that have a constant string
+option to use it.

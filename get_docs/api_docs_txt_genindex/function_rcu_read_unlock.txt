@@ -1,0 +1,14 @@
+Function: void rcu_read_unlock ( void )
+
+marks the end of an RCU read-side critical section.
+
+Parameters
+  void
+    no arguments
+
+Description
+  In almost all situations, rcu_read_unlock() is immune from deadlock.
+This deadlock immunity also extends to the scheduler’s runqueue
+and priority-inheritance spinlocks, courtesy of the quiescent-state
+deferral that is carried out when rcu_read_unlock() is invoked with
+interrupts disabled.

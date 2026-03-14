@@ -1,0 +1,13 @@
+Function: drm_panic_trylock
+
+
+
+Parameters
+  dev
+    struct drm_device
+  flags
+    unsigned long irq flags you need to pass to the unlock() counterpart
+
+Description
+  This function must be called by any panic printing code. The panic printing
+attempt must be aborted if the trylock fails.

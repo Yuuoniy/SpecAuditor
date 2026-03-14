@@ -1,0 +1,11 @@
+Function: int regulator_is_supported_voltage ( struct regulator * regulator , int min_uV , int max_uV )
+
+check if a voltage range can be supported
+
+Parameters
+  struct regulator *regulator
+    Regulator to check.
+  int min_uV
+    Minimum required voltage in uV.
+  int max_uV
+    Maximum required voltage in uV.

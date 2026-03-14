@@ -1,0 +1,11 @@
+Function: bool flush_work ( struct work_struct * work )
+
+wait for a work to finish executing the last queueing instance
+
+Parameters
+  struct work_struct *work
+    the work to flush
+
+Description
+  Wait until work has finished execution. work is guaranteed to be idle
+on return if it hasn’t been requeued since flush started.

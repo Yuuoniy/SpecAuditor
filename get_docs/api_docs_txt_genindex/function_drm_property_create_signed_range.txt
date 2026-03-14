@@ -1,0 +1,21 @@
+Function: struct drm_property * drm_property_create_signed_range ( struct drm_device * dev , u32 flags , const char * name , int64_t min , int64_t max )
+
+create a new signed ranged property type
+
+Parameters
+  struct drm_device *dev
+    drm device
+  u32 flags
+    flags specifying the property type
+  const char *name
+    name of the property
+  int64_t min
+    minimum value of the property
+  int64_t max
+    maximum value of the property
+
+Description
+  This creates a new generic drm property which can then be attached to a drm
+object with drm_object_attach_property() . The returned property object must
+be freed with drm_property_destroy() , which is done automatically when
+calling drm_mode_config_cleanup() .

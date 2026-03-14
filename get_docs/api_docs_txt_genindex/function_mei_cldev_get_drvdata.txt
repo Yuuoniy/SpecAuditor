@@ -1,0 +1,7 @@
+Function: void * mei_cldev_get_drvdata ( const struct mei_cl_device * cldev )
+
+driver data getter
+
+Parameters
+  const struct mei_cl_device *cldev
+    mei client device

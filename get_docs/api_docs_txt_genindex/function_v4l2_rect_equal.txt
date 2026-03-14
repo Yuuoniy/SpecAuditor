@@ -1,0 +1,12 @@
+Function: bool v4l2_rect_equal ( const struct v4l2_rect * r1 , const struct v4l2_rect * r2 )
+
+return true if r1 equals r2
+
+Parameters
+  const struct v4l2_rect *r1
+    rectangle.
+  const struct v4l2_rect *r2
+    rectangle.
+
+Description
+  Return true if both rectangles have the same size and position.

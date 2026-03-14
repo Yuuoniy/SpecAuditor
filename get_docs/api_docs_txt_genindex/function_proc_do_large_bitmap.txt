@@ -1,0 +1,19 @@
+Function: int proc_do_large_bitmap ( const struct ctl_table * table , int write , void * buffer , size_t * lenp , loff_t * ppos )
+
+read/write from/to a large bitmap
+
+Parameters
+  const struct ctl_table *table
+    the sysctl table
+  int write
+    TRUE if this is a write to the sysctl file
+  void *buffer
+    the user buffer
+  size_t *lenp
+    the size of the user buffer
+  loff_t *ppos
+    file position
+
+Description
+  The bitmap is stored at table->data and the bitmap length (in bits)
+in table->maxlen.

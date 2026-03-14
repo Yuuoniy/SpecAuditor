@@ -1,0 +1,7 @@
+Function: int kset_register ( struct kset * k )
+
+Initialize and add a kset.
+
+Parameters
+  struct kset *k
+    kset.

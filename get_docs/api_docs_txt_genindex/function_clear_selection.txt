@@ -1,0 +1,11 @@
+Function: void clear_selection ( void )
+
+remove current selection
+
+Parameters
+  void
+    no arguments
+
+Description
+  Remove the current selection highlight, if any from the console holding the
+selection.

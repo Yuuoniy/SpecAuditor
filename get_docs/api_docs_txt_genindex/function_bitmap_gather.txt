@@ -1,0 +1,16 @@
+Function: void bitmap_gather ( unsigned long * dst , const unsigned long * src , const unsigned long * mask , unsigned int nbits )
+
+Gather a bitmap according to given mask
+
+Parameters
+  unsigned long *dst
+    gathered bitmap
+  const unsigned long *src
+    scattered bitmap
+  const unsigned long *mask
+    mask representing bits to extract from in the scattered bitmap
+  unsigned int nbits
+    number of bits in each of these bitmaps
+
+Description
+  Gathers bitmap with sparse bits according to the given mask .

@@ -1,0 +1,17 @@
+Function: int drm_simple_encoder_init ( struct drm_device * dev , struct drm_encoder * encoder , int encoder_type )
+
+Initialize a preallocated encoder with basic functionality.
+
+Parameters
+  struct drm_device *dev
+    drm device
+  struct drm_encoder *encoder
+    the encoder to initialize
+  int encoder_type
+    user visible type of the encoder
+
+Description
+  Initialises a preallocated encoder that has no further functionality.
+Settings for possible CRTC and clones are left to their initial values.
+The encoder will be cleaned up automatically as part of the mode-setting
+cleanup.

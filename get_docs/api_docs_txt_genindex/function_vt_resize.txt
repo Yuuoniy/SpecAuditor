@@ -1,0 +1,13 @@
+Function: int vt_resize ( struct tty_struct * tty , struct winsize * ws )
+
+resize a VT
+
+Parameters
+  struct tty_struct *tty
+    tty to resize
+  struct winsize *ws
+    winsize attributes
+
+Description
+  Resize a virtual terminal. This is called by the tty layer as we register
+our own handler for resizing. The mutual helper does all the actual work.

@@ -1,0 +1,14 @@
+Function: int snd_devm_request_dma ( struct device * dev , int dma , const char * name )
+
+the managed version of request_dma()
+
+Parameters
+  struct device *dev
+    the device pointer
+  int dma
+    the dma number
+  const char *name
+    the name string of the requester
+
+Description
+  The requested DMA will be automatically released at unbinding via devres.

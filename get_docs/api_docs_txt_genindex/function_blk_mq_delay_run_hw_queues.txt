@@ -1,0 +1,9 @@
+Function: void blk_mq_delay_run_hw_queues ( struct request_queue * q , unsigned long msecs )
+
+Run all hardware queues asynchronously.
+
+Parameters
+  struct request_queue *q
+    Pointer to the request queue to run.
+  unsigned long msecs
+    Milliseconds of delay to wait before running the queues.

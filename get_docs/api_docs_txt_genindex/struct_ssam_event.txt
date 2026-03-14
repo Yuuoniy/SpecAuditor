@@ -1,0 +1,17 @@
+Struct: struct ssam_event
+
+SAM event sent from the EC to the host.
+
+Members
+  target_category
+    Target category of the event source. See enum ssam_ssh_tc .
+  target_id
+    Target ID of the event source.
+  command_id
+    Command ID of the event.
+  instance_id
+    Instance ID of the event source.
+  length
+    Length of the event payload in bytes.
+  data
+    Event payload data.

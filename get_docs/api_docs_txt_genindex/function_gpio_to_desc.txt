@@ -1,0 +1,7 @@
+Function: struct gpio_desc * gpio_to_desc ( unsigned gpio )
+
+Convert a GPIO number to its descriptor
+
+Parameters
+  unsigned gpio
+    global GPIO number

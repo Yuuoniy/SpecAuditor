@@ -1,0 +1,11 @@
+Function: void drm_edid_get_monitor_name ( const struct edid * edid , char * name , int bufsize )
+
+fetch the monitor name from the edid
+
+Parameters
+  const struct edid *edid
+    monitor EDID information
+  char *name
+    pointer to a character array to hold the name of the monitor
+  int bufsize
+    The size of the name buffer (should be at least 14 chars.)

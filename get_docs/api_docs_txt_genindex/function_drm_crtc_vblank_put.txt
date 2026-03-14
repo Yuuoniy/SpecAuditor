@@ -1,0 +1,11 @@
+Function: void drm_crtc_vblank_put ( struct drm_crtc * crtc )
+
+give up ownership of vblank events
+
+Parameters
+  struct drm_crtc *crtc
+    which counter to give up
+
+Description
+  Release ownership of a given vblank counter, turning off interrupts
+if possible. Disable interrupts after drm_vblank_crtc_config.offdelay_ms milliseconds.

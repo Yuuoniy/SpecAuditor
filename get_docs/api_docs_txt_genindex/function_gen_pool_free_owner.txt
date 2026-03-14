@@ -1,0 +1,18 @@
+Function: void gen_pool_free_owner ( struct gen_pool * pool , unsigned long addr , size_t size , void * * owner )
+
+free allocated special memory back to the pool
+
+Parameters
+  struct gen_pool *pool
+    pool to free to
+  unsigned long addr
+    starting address of memory to free back to pool
+  size_t size
+    size in bytes of memory to free
+  void **owner
+    private data stashed at gen_pool_add() time
+
+Description
+  Free previously allocated special memory back to the specified
+pool.  Can not be used in NMI handler on architectures without
+NMI-safe cmpxchg implementation.

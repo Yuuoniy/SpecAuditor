@@ -1,0 +1,9 @@
+Function: struct device * driver_find_device_by_of_node ( const struct device_driver * drv , const struct device_node * np )
+
+device iterator for locating a particular device by of_node pointer.
+
+Parameters
+  const struct device_driver *drv
+    the driver we’re iterating
+  const struct device_node *np
+    of_node pointer to match.

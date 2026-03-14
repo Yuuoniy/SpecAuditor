@@ -1,0 +1,12 @@
+Function: void netif_carrier_event ( struct net_device * dev )
+
+report carrier state event
+
+Parameters
+  struct net_device *dev
+    network device
+
+Description
+  Device has detected a carrier event but the carrier state wasn’t changed.
+Use in drivers when querying carrier state asynchronously, to avoid missing
+events (link flaps) if link recovers before it’s queried.

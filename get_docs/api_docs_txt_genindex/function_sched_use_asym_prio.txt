@@ -1,0 +1,14 @@
+Function: bool sched_use_asym_prio ( struct sched_domain * sd , int cpu )
+
+Check whether asym_packing priority must be used
+
+Parameters
+  struct sched_domain *sd
+    The scheduling domain of the load balancing
+  int cpu
+    A CPU
+
+Description
+  Always use CPU priority when balancing load between SMT siblings. When
+balancing load between cores, it is not sufficient that cpu is idle. Only
+use CPU priority if the whole core is idle.

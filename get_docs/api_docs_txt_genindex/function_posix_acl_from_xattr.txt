@@ -1,0 +1,16 @@
+Function: struct posix_acl * posix_acl_from_xattr ( struct user_namespace * userns , const void * value , size_t size )
+
+convert POSIX ACLs from backing store to VFS format
+
+Parameters
+  struct user_namespace *userns
+    the filesystem’s idmapping
+  const void *value
+    the uapi representation of POSIX ACLs
+  size_t size
+    the size of void
+
+Description
+  Filesystems that store POSIX ACLs in the unaltered uapi format should use posix_acl_from_xattr() when reading them from the backing store and
+converting them into the struct posix_acl VFS format. The helper is
+specifically intended to be called from the acl inode operation.

@@ -1,0 +1,7 @@
+Struct: struct nand_op_waitrdy_instr
+
+Definition of a wait ready instruction
+
+Members
+  timeout_ms
+    maximum delay while waiting for the ready/busy pin in ms

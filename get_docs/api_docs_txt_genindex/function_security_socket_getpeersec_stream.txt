@@ -1,0 +1,19 @@
+Function: int security_socket_getpeersec_stream ( struct socket * sock , sockptr_t optval , sockptr_t optlen , unsigned int len )
+
+Get the remote peer label
+
+Parameters
+  struct socket *sock
+    socket
+  sockptr_t optval
+    destination buffer
+  sockptr_t optlen
+    size of peer label copied into the buffer
+  unsigned int len
+    maximum size of the destination buffer
+
+Description
+  This hook allows the security module to provide peer socket security state
+for unix or connected tcp sockets to userspace via getsockopt SO_GETPEERSEC.
+For tcp sockets this can be meaningful if the socket is associated with an
+ipsec SA.

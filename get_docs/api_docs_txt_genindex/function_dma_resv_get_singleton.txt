@@ -1,0 +1,15 @@
+Function: int dma_resv_get_singleton ( struct dma_resv * obj , enum dma_resv_usage usage , struct dma_fence * * fence )
+
+Get a single fence for all the fences
+
+Parameters
+  struct dma_resv *obj
+    the reservation object
+  enum dma_resv_usage usage
+    controls which fences to include, see enum dma_resv_usage .
+  struct dma_fence **fence
+    the resulting fence
+
+Description
+  Get a single fence representing all the fences inside the resv object.
+Returns either 0 for success or -ENOMEM.

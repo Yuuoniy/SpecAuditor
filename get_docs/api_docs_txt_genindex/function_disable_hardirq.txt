@@ -1,0 +1,10 @@
+Function: bool disable_hardirq ( unsigned int irq )
+
+disables an irq and waits for hardirq completion
+
+Parameters
+  unsigned int irq
+    Interrupt to disable
+
+Description
+  Disable the selected interrupt line.  Enables and Disables are nested.

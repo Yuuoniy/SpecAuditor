@@ -1,0 +1,20 @@
+Function: int cci_update_bits ( struct regmap * map , u32 reg , u64 mask , u64 val , int * err )
+
+Perform a read/modify/write cycle on a single CCI register
+
+Parameters
+  struct regmap *map
+    Register map to update
+  u32 reg
+    Register address to update, use CCI_REG#() macros to encode reg width
+  u64 mask
+    Bitmask to change
+  u64 val
+    New value for bitmask
+  int *err
+    Optional pointer to store errors, if a previous error is set
+then the update will be skipped
+
+Description
+  Note this uses read-modify-write to update the bits, atomicity with regards
+to other cci_*() register access functions is NOT guaranteed.

@@ -1,0 +1,7 @@
+Function: void sas_release_transport ( struct scsi_transport_template * t )
+
+release SAS transport template instance
+
+Parameters
+  struct scsi_transport_template *t
+    transport template instance

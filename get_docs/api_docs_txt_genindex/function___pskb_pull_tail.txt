@@ -1,0 +1,14 @@
+Function: void * __pskb_pull_tail ( struct sk_buff * skb , int delta )
+
+advance tail of skb header
+
+Parameters
+  struct sk_buff *skb
+    buffer to reallocate
+  int delta
+    number of bytes to advance tail
+
+Description
+  The function makes a sense only on a fragmented sk_buff ,
+it expands header moving its tail forward and copying necessary
+data from fragmented part.

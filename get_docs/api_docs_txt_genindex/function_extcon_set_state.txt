@@ -1,0 +1,17 @@
+Function: int extcon_set_state ( struct extcon_dev * edev , unsigned int id , bool state )
+
+Set the state of an external connector.
+
+Parameters
+  struct extcon_dev *edev
+    the extcon device
+  unsigned int id
+    the unique id indicating an external connector
+  bool state
+    the new state of an external connector.
+the default semantics is true: attached / false: detached.
+
+Description
+  Note that this function set the state of an external connector without
+a notification. To synchronize the state of an external connector,
+have to use extcon_set_state_sync() and extcon_sync() .

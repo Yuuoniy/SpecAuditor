@@ -1,0 +1,13 @@
+Function: int drm_client_buffer_vmap ( struct drm_client_buffer * buffer , struct iosys_map * map_copy )
+
+Map DRM client buffer into address space
+
+Parameters
+  struct drm_client_buffer *buffer
+    DRM client buffer
+  struct iosys_map *map_copy
+    Returns the mapped memory’s address
+
+Description
+  This function maps a client buffer into kernel address space. If the
+buffer is already mapped, it returns the existing mapping’s address.

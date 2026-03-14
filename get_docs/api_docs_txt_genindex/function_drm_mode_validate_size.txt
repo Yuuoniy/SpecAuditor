@@ -1,0 +1,17 @@
+Function: enum drm_mode_status drm_mode_validate_size ( const struct drm_display_mode * mode , int maxX , int maxY )
+
+make sure modes adhere to size constraints
+
+Parameters
+  const struct drm_display_mode *mode
+    mode to check
+  int maxX
+    maximum width
+  int maxY
+    maximum height
+
+Description
+  This function is a helper which can be used to validate modes against size
+limitations of the DRM device/connector. If a mode is too big its status
+member is updated with the appropriate validation failure code. The list
+itself is not changed.

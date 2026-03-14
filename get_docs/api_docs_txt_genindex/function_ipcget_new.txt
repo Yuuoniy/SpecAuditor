@@ -1,0 +1,16 @@
+Function: int ipcget_new ( struct ipc_namespace * ns , struct ipc_ids * ids , const struct ipc_ops * ops , struct ipc_params * params )
+
+create a new ipc object
+
+Parameters
+  struct ipc_namespace *ns
+    ipc namespace
+  struct ipc_ids *ids
+    ipc identifier set
+  const struct ipc_ops *ops
+    the actual creation routine to call
+  struct ipc_params *params
+    its parameters
+
+Description
+  This routine is called by sys_msgget, sys_semget() and sys_shmget() when the key is IPC_PRIVATE.

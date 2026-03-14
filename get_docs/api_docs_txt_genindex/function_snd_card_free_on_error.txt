@@ -1,0 +1,14 @@
+Function: int snd_card_free_on_error ( struct device * dev , int ret )
+
+a small helper for handling devm probe errors
+
+Parameters
+  struct device *dev
+    the managed device object
+  int ret
+    the return code from the probe callback
+
+Description
+  This function handles the explicit snd_card_free() call at the error from
+the probe callback.  It’s just a small helper for simplifying the error
+handling with the managed devices.

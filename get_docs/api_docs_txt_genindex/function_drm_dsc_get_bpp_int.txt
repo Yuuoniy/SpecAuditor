@@ -1,0 +1,7 @@
+Function: u32 drm_dsc_get_bpp_int ( const struct drm_dsc_config * vdsc_cfg )
+
+Get integer bits per pixel value for the given DRM DSC config
+
+Parameters
+  const struct drm_dsc_config *vdsc_cfg
+    Pointer to DRM DSC config struct

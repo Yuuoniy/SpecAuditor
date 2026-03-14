@@ -1,0 +1,10 @@
+Function: bool eth_proto_is_802_3 ( __be16 proto )
+
+Determine if a given Ethertype/length is a protocol
+
+Parameters
+  __be16 proto
+    Ethertype/length value to be tested
+
+Description
+  Check that the value from the Ethertype/length field is a valid Ethertype.

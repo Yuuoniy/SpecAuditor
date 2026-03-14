@@ -1,0 +1,43 @@
+Struct: struct cxl_port
+
+logical collection of upstream port devices and downstream port devices to construct a CXL memory decode hierarchy.
+
+Members
+  dev
+    this port’s device
+  uport_dev
+    PCI or platform device implementing the upstream port capability
+  host_bridge
+    Shortcut to the platform attach point for this port
+  id
+    id for port device-name
+  dports
+    cxl_dport instances referenced by decoders
+  endpoints
+    cxl_ep instances, endpoints that are a descendant of this port
+  regions
+    cxl_region_ref instances, regions mapped by this port
+  parent_dport
+    dport that points to this port in the parent
+  decoder_ida
+    allocator for decoder ids
+  reg_map
+    component and ras register mapping parameters
+  nr_dports
+    number of entries in dports
+  hdm_end
+    track last allocated HDM decoder instance for allocation ordering
+  commit_end
+    cursor to track highest committed decoder for commit ordering
+  dead
+    last ep has been removed, force port re-creation
+  depth
+    How deep this port is relative to the root. depth 0 is the root.
+  cdat
+    Cached CDAT data
+  cdat_available
+    Should a CDAT attribute be available in sysfs
+  pci_latency
+    Upstream latency in picoseconds
+  component_reg_phys
+    Physical address of component register

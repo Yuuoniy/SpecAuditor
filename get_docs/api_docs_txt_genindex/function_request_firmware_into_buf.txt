@@ -1,0 +1,20 @@
+Function: int request_firmware_into_buf ( const struct firmware * * firmware_p , const char * name , struct device * device , void * buf , size_t size )
+
+load firmware into a previously allocated buffer
+
+Parameters
+  const struct firmware **firmware_p
+    pointer to firmware image
+  const char *name
+    name of firmware file
+  struct device *device
+    device for which firmware is being loaded and DMA region allocated
+  void *buf
+    address of buffer to load firmware into
+  size_t size
+    size of buffer
+
+Description
+  This function works pretty much like request_firmware() , but it doesn’t
+allocate a buffer to hold the firmware data. Instead, the firmware
+is loaded directly into the buffer pointed to by buf and the firmware_p data member is pointed at buf .

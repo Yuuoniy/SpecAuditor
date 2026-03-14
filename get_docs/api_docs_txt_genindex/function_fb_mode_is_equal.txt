@@ -1,0 +1,9 @@
+Function: int fb_mode_is_equal ( const struct fb_videomode * mode1 , const struct fb_videomode * mode2 )
+
+compare 2 videomodes
+
+Parameters
+  const struct fb_videomode *mode1
+    first videomode
+  const struct fb_videomode *mode2
+    second videomode

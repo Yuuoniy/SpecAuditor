@@ -1,0 +1,10 @@
+Function: void echo_move_back_col ( struct n_tty_data * ldata )
+
+add operation to move back a column
+
+Parameters
+  struct n_tty_data *ldata
+    n_tty data
+
+Description
+  Add an operation to the echo buffer to move back one column.

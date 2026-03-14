@@ -1,0 +1,17 @@
+Function: int security_file_fcntl ( struct file * file , unsigned int cmd , unsigned long arg )
+
+Check if fcntl() op is allowed
+
+Parameters
+  struct file *file
+    file
+  unsigned int cmd
+    fcntl command
+  unsigned long arg
+    command argument
+
+Description
+  Check permission before allowing the file operation specified by cmd from
+being performed on the file file .  Note that arg sometimes represents a
+user space pointer; in other cases, it may be a simple integer value.  When arg represents a user space pointer, it should never be used by the
+security module.

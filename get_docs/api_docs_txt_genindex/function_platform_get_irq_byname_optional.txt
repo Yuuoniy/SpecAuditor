@@ -1,0 +1,13 @@
+Function: int platform_get_irq_byname_optional ( struct platform_device * dev , const char * name )
+
+get an optional IRQ for a device by name
+
+Parameters
+  struct platform_device *dev
+    platform device
+  const char *name
+    IRQ name
+
+Description
+  Get an optional IRQ by name like platform_get_irq_byname() . Except that it
+does not print an error message if an IRQ can not be obtained.

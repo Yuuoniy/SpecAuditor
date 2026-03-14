@@ -1,0 +1,14 @@
+Function: int amdgpu_vm_bo_update ( struct amdgpu_device * adev , struct amdgpu_bo_va * bo_va , bool clear )
+
+update all BO mappings in the vm page table
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+  struct amdgpu_bo_va *bo_va
+    requested BO and VM object
+  bool clear
+    if true clear the entries
+
+Description
+  Fill in the page table entries for bo_va .

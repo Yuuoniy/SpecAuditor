@@ -1,0 +1,10 @@
+Function: int hrtimer_try_to_cancel ( struct hrtimer * timer )
+
+try to deactivate a timer
+
+Parameters
+  struct hrtimer *timer
+    hrtimer to stop
+
+Description
+  0 when the timer was not active

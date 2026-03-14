@@ -1,0 +1,7 @@
+Function: void irq_chip_eoi_parent ( struct irq_data * data )
+
+Invoke EOI on the parent interrupt
+
+Parameters
+  struct irq_data *data
+    Pointer to interrupt specific data

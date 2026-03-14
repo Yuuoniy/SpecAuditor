@@ -1,0 +1,7 @@
+Function: bool xe_ggtt_node_allocated ( const struct xe_ggtt_node * node )
+
+Check if node is allocated in GGTT
+
+Parameters
+  const struct xe_ggtt_node *node
+    the xe_ggtt_node to be inspected

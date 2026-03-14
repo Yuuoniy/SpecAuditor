@@ -1,0 +1,12 @@
+Function: void __drm_atomic_helper_connector_destroy_state ( struct drm_connector_state * state )
+
+release connector state
+
+Parameters
+  struct drm_connector_state *state
+    connector state object to release
+
+Description
+  Releases all resources stored in the connector state without actually
+freeing the memory of the connector state. This is useful for drivers that
+subclass the connector state.

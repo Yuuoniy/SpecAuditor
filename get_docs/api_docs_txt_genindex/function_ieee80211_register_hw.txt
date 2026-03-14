@@ -1,0 +1,12 @@
+Function: int ieee80211_register_hw ( struct ieee80211_hw * hw )
+
+Register hardware device
+
+Parameters
+  struct ieee80211_hw *hw
+    the device to register as returned by ieee80211_alloc_hw()
+
+Description
+  You must call this function before any other functions in
+mac80211. Note that before a hardware can be registered, you
+need to fill the contained wiphy’s information.

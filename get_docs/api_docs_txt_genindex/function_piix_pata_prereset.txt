@@ -1,0 +1,13 @@
+Function: int piix_pata_prereset ( struct ata_link * link , unsigned long deadline )
+
+prereset for PATA host controller
+
+Parameters
+  struct ata_link *link
+    Target link
+  unsigned long deadline
+    deadline jiffies for the operation
+
+Description
+  LOCKING:
+None (inherited from caller).

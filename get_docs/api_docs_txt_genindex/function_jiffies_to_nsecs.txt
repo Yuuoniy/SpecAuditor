@@ -1,0 +1,7 @@
+Function: u64 jiffies_to_nsecs ( const unsigned long j )
+
+Convert jiffies to nanoseconds
+
+Parameters
+  const unsigned long j
+    jiffies value

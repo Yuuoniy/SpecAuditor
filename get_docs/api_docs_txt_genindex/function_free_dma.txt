@@ -1,0 +1,7 @@
+Function: void free_dma ( unsigned int dmanr )
+
+free a reserved system DMA channel
+
+Parameters
+  unsigned int dmanr
+    DMA channel number

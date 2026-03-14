@@ -1,0 +1,15 @@
+Function: int drm_connector_set_path_property ( struct drm_connector * connector , const char * path )
+
+set tile property on connector
+
+Parameters
+  struct drm_connector *connector
+    connector to set property on.
+  const char *path
+    path to use for property; must not be NULL.
+
+Description
+  This creates a property to expose to userspace to specify a
+connector path. This is mainly used for DisplayPort MST where
+connectors have a topology and we want to allow userspace to give
+them more meaningful names.

@@ -1,0 +1,15 @@
+Macro: overflows_type
+
+
+
+Parameters
+  n
+    source constant value or variable to be checked
+  T
+    destination variable or data type proposed to store x
+
+Description
+  Compares the x expression for whether or not it can safely fit in
+the storage of the type in T . x and T can have different types.
+If x is a constant expression, this will also resolve to a constant
+expression.

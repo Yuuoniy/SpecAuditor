@@ -1,0 +1,9 @@
+Struct: struct opa_veswport_info
+
+OPA vnic port information
+
+Members
+  vesw
+    OPA vnic switch information
+  vport
+    OPA vnic per port information

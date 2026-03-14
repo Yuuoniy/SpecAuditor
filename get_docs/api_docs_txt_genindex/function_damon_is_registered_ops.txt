@@ -1,0 +1,7 @@
+Function: bool damon_is_registered_ops ( enum damon_ops_id id )
+
+Check if a given damon_operations is registered.
+
+Parameters
+  enum damon_ops_id id
+    Id of the damon_operations to check if registered.

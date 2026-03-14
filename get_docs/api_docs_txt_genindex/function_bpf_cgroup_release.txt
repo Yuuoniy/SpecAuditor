@@ -1,0 +1,7 @@
+Function: __bpf_kfunc void bpf_cgroup_release ( struct cgroup * cgrp )
+
+Release the reference acquired on a cgroup. If this kfunc is invoked in an RCU read region, the cgroup is guaranteed to not be freed until the current grace period has ended, even if its refcount drops to 0.
+
+Parameters
+  struct cgroup *cgrp
+    The cgroup on which a reference is being released.

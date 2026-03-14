@@ -1,0 +1,21 @@
+Function: int __irq_alloc_domain_generic_chips ( struct irq_domain * d , int irqs_per_chip , int num_ct , const char * name , irq_flow_handler_t handler , unsigned int clr , unsigned int set , enum irq_gc_flags gcflags )
+
+Allocate generic chips for an irq domain
+
+Parameters
+  struct irq_domain *d
+    irq domain for which to allocate chips
+  int irqs_per_chip
+    Number of interrupts each chip handles (max 32)
+  int num_ct
+    Number of irq_chip_type instances associated with this
+  const char *name
+    Name of the irq chip
+  irq_flow_handler_t handler
+    Default flow handler associated with these chips
+  unsigned int clr
+    IRQ_* bits to clear in the mapping function
+  unsigned int set
+    IRQ_* bits to set in the mapping function
+  enum irq_gc_flags gcflags
+    Generic chip specific setup flags

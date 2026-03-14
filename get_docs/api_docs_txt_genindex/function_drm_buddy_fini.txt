@@ -1,0 +1,10 @@
+Function: void drm_buddy_fini ( struct drm_buddy * mm )
+
+tear down the memory manager
+
+Parameters
+  struct drm_buddy *mm
+    DRM buddy manager to free
+
+Description
+  Cleanup memory manager resources and the freelist

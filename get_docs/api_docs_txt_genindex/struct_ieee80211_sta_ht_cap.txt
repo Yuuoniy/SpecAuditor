@@ -1,0 +1,15 @@
+Struct: struct ieee80211_sta_ht_cap
+
+STA’s HT capabilities
+
+Members
+  cap
+    HT capabilities map as described in 802.11n spec
+  ht_supported
+    is HT supported by the STA
+  ampdu_factor
+    Maximum A-MPDU length factor
+  ampdu_density
+    Minimum A-MPDU spacing
+  mcs
+    Supported MCS rates

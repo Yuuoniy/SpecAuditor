@@ -1,0 +1,16 @@
+Function: const __be32 * of_translate_dma_region ( struct device_node * dev , const __be32 * prop , phys_addr_t * start , size_t * length )
+
+Translate device tree address and size tuple
+
+Parameters
+  struct device_node *dev
+    device tree node for which to translate
+  const __be32 *prop
+    pointer into array of cells
+  phys_addr_t *start
+    return value for the start of the DMA range
+  size_t *length
+    return value for the length of the DMA range
+
+Description
+  Returns a pointer to the cell immediately following the translated DMA region.

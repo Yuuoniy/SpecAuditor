@@ -1,0 +1,10 @@
+Function: bool dma_fence_is_array ( struct dma_fence * fence )
+
+check if a fence is from the array subclass
+
+Parameters
+  struct dma_fence *fence
+    the fence to test
+
+Description
+  Return true if it is a dma_fence_array and false otherwise.

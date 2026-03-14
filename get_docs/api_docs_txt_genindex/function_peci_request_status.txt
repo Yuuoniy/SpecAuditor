@@ -1,0 +1,11 @@
+Function: int peci_request_status ( struct peci_request * req )
+
+return -errno based on PECI completion code
+
+Parameters
+  struct peci_request *req
+    the PECI request that contains response data with completion code
+
+Description
+  It can’t be used for Ping() , GetDIB() and GetTemp() - for those commands we
+don’t expect completion code in the response.

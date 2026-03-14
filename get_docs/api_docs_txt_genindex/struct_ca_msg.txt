@@ -1,0 +1,13 @@
+Struct: struct ca_msg
+
+a message to/from a CI-CAM
+
+Members
+  index
+    unused
+  type
+    unused
+  length
+    length of the message
+  msg
+    message

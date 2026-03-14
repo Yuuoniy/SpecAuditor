@@ -1,0 +1,116 @@
+Struct: struct drm_connector_funcs
+
+control connectors on a given device
+
+Members
+  dpms
+    Legacy entry point to set the per-connector DPMS state. Legacy DPMS
+is exposed as a standard property on the connector, but diverted to
+this callback in the drm core. Note that atomic drivers don’t
+implement the 4 level DPMS support on the connector any more, but
+instead only have an on/off “ACTIVE” property on the CRTC object. This hook is not used by atomic drivers, remapping of the legacy DPMS
+property is entirely handled in the DRM core. RETURNS: 0 on success or a negative error code on failure.
+  reset
+    Reset connector hardware and software state to off. This function isn’t
+called by the core directly, only through drm_mode_config_reset() .
+It’s not a helper hook only for historical reasons. Atomic drivers can use drm_atomic_helper_connector_reset() to reset
+atomic state using this hook.
+  detect
+    Check to see if anything is attached to the connector. The parameter
+force is set to false whilst polling, true when checking the
+connector due to a user request. force can be used by the driver to
+avoid expensive, destructive operations during automated probing. This callback is optional, if not implemented the connector will be
+considered as always being attached. FIXME: Note that this hook is only called by the probe helper. It’s not in
+the helper library vtable purely for historical reasons. The only DRM
+core entry point to probe connector state is fill_modes . Note that the helper library will already hold drm_mode_config.connection_mutex . Drivers which need to grab additional
+locks to avoid races with concurrent modeset changes need to use drm_connector_helper_funcs.detect_ctx instead. Also note that this callback can be called no matter the
+state the connector is in. Drivers that need the underlying
+device to be powered to perform the detection will first need
+to make sure it’s been properly enabled. RETURNS: drm_connector_status indicating the connector’s status.
+  force
+    This function is called to update internal encoder state when the
+connector is forced to a certain state by userspace, either through
+the sysfs interfaces or on the kernel cmdline. In that case the detect callback isn’t called. FIXME: Note that this hook is only called by the probe helper. It’s not in
+the helper library vtable purely for historical reasons. The only DRM
+core entry point to probe connector state is fill_modes .
+  fill_modes
+    Entry point for output detection and basic mode validation. The
+driver should reprobe the output if needed (e.g. when hotplug
+handling is unreliable), add all detected modes to drm_connector.modes and filter out any the device can’t support in any configuration. It
+also needs to filter out any modes wider or higher than the
+parameters max_width and max_height indicate. The drivers must also prune any modes no longer valid from drm_connector.modes . Furthermore it must update drm_connector.status and drm_connector.edid .  If no EDID has been
+received for this output connector->edid must be NULL. Drivers using the probe helpers should use drm_helper_probe_single_connector_modes() to implement this
+function. RETURNS: The number of modes detected and filled into drm_connector.modes .
+  set_property
+    This is the legacy entry point to update a property attached to the
+connector. This callback is optional if the driver does not support any legacy
+driver-private properties. For atomic drivers it is not used because
+property handling is done entirely in the DRM core. RETURNS: 0 on success or a negative error code on failure.
+  late_register
+    This optional hook can be used to register additional userspace
+interfaces attached to the connector, light backlight control, i2c,
+DP aux or similar interfaces. It is called late in the driver load
+sequence from drm_connector_register() when registering all the
+core drm connector interfaces. Everything added from this callback
+should be unregistered in the early_unregister callback. This is called while holding drm_connector.mutex . Returns: 0 on success, or a negative error code on failure.
+  early_unregister
+    This optional hook should be used to unregister the additional
+userspace interfaces attached to the connector from late_register() . It is called from drm_connector_unregister() ,
+early in the driver unload sequence to disable userspace access
+before data structures are torndown. This is called while holding drm_connector.mutex .
+  destroy
+    Clean up connector resources. This is called at driver unload time
+through drm_mode_config_cleanup() . It can also be called at runtime
+when a connector is being hot-unplugged for drivers that support
+connector hotplugging (e.g. DisplayPort MST).
+  atomic_duplicate_state
+    Duplicate the current atomic state for this connector and return it.
+The core and helpers guarantee that any atomic state duplicated with
+this hook and still owned by the caller (i.e. not transferred to the
+driver by calling drm_mode_config_funcs.atomic_commit ) will be
+cleaned up by calling the atomic_destroy_state hook in this
+structure. This callback is mandatory for atomic drivers. Atomic drivers which don’t subclass struct drm_connector_state should use drm_atomic_helper_connector_duplicate_state() . Drivers that subclass the
+state structure to extend it with driver-private state should use __drm_atomic_helper_connector_duplicate_state() to make sure shared state is
+duplicated in a consistent fashion across drivers. It is an error to call this hook before drm_connector.state has been
+initialized correctly. NOTE: If the duplicate state references refcounted resources this hook must
+acquire a reference for each of them. The driver must release these
+references again in atomic_destroy_state . RETURNS: Duplicated atomic state or NULL when the allocation failed.
+  atomic_destroy_state
+    Destroy a state duplicated with atomic_duplicate_state and release
+or unreference all resources it references This callback is mandatory for atomic drivers.
+  atomic_set_property
+    Decode a driver-private property value and store the decoded value
+into the passed-in state structure. Since the atomic core decodes all
+standardized properties (even for extensions beyond the core set of
+properties which might not be implemented by all drivers) this
+requires drivers to subclass the state structure. Such driver-private properties should really only be implemented for
+truly hardware/vendor specific state. Instead it is preferred to
+standardize atomic extension and decode the properties used to expose
+such an extension in the core. Do not call this function directly, use drm_atomic_connector_set_property() instead. This callback is optional if the driver does not support any
+driver-private atomic properties. NOTE: This function is called in the state assembly phase of atomic
+modesets, which can be aborted for any reason (including on
+userspace’s request to just check whether a configuration would be
+possible). Drivers MUST NOT touch any persistent state (hardware or
+software) or data structures except the passed in state parameter. Also since userspace controls in which order properties are set this
+function must not do any input validation (since the state update is
+incomplete and hence likely inconsistent). Instead any such input
+validation must be done in the various atomic_check callbacks. RETURNS: 0 if the property has been found, -EINVAL if the property isn’t
+implemented by the driver (which shouldn’t ever happen, the core only
+asks for properties attached to this connector). No other validation
+is allowed by the driver. The core already checks that the property
+value is within the range (integer, valid enum value , ...) the driver
+set when registering the property.
+  atomic_get_property
+    Reads out the decoded driver-private property. This is used to
+implement the GETCONNECTOR IOCTL. Do not call this function directly, use drm_atomic_connector_get_property() instead. This callback is optional if the driver does not support any
+driver-private atomic properties. RETURNS: 0 on success, -EINVAL if the property isn’t implemented by the
+driver (which shouldn’t ever happen, the core only asks for
+properties attached to this connector).
+  atomic_print_state
+    If driver subclasses struct drm_connector_state , it should implement
+this optional hook for printing additional driver specific state. Do not call this directly, use drm_atomic_connector_print_state() instead.
+  oob_hotplug_event
+    This will get called when a hotplug-event for a drm-connector
+has been received from a source outside the display driver / device.
+  debugfs_init
+    Allows connectors to create connector-specific debugfs files.

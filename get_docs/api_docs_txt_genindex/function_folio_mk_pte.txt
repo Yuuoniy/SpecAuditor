@@ -1,0 +1,13 @@
+Function: pte_t folio_mk_pte ( const struct folio * folio , pgprot_t pgprot )
+
+Create a PTE for this folio
+
+Parameters
+  const struct folio *folio
+    The folio to create a PTE for
+  pgprot_t pgprot
+    The page protection bits to use
+
+Description
+  Create a page table entry for the first page of this folio.
+This is suitable for passing to set_ptes() .

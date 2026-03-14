@@ -1,0 +1,10 @@
+Function: void zynqmp_disp_avbuf_disable ( struct zynqmp_disp * disp )
+
+Disable the video pipe
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller
+
+Description
+  Assert the video pipe reset.

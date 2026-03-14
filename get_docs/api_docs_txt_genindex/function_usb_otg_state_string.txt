@@ -1,0 +1,9 @@
+Function: const char * usb_otg_state_string ( enum usb_otg_state state )
+
+returns human readable name of OTG state.
+
+Parameters
+  enum usb_otg_state state
+    the OTG state to return the human readable name of. If it’s not
+any of the states defined in usb_otg_state enum, ‘UNDEFINED’ will be
+returned.

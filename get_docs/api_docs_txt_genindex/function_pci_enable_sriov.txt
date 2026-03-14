@@ -1,0 +1,12 @@
+Function: int pci_enable_sriov ( struct pci_dev * dev , int nr_virtfn )
+
+enable the SR-IOV capability
+
+Parameters
+  struct pci_dev *dev
+    the PCI device
+  int nr_virtfn
+    number of virtual functions to enable
+
+Description
+  Returns 0 on success, or negative on failure.

@@ -1,0 +1,16 @@
+Struct: struct rank_info
+
+contains the information for one DIMM rank
+
+Members
+  chan_idx
+    channel number where the rank is (typically, 0 or 1)
+  csrow
+    A pointer to the chip select row structure (the parent
+structure). The location of the rank is given by
+the (csrow->csrow_idx, chan_idx) vector.
+  dimm
+    A pointer to the DIMM structure, where the DIMM label
+information is stored.
+  ce_count
+    number of correctable errors for this rank

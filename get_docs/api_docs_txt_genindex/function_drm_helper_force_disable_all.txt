@@ -1,0 +1,11 @@
+Function: int drm_helper_force_disable_all ( struct drm_device * dev )
+
+Forcibly turn off all enabled CRTCs
+
+Parameters
+  struct drm_device *dev
+    DRM device whose CRTCs to turn off
+
+Description
+  Drivers may want to call this on unload to ensure that all displays are
+unlit and the GPU is in a consistent, low power state. Takes modeset locks.

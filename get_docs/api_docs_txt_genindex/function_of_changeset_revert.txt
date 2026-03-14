@@ -1,0 +1,13 @@
+Function: int of_changeset_revert ( struct of_changeset * ocs )
+
+Reverts an applied changeset
+
+Parameters
+  struct of_changeset *ocs
+    changeset pointer
+
+Description
+  Reverts a changeset returning the state of the tree to what it
+was before the application.
+Any side-effects like creation/destruction of devices and
+removal of sysfs properties and directories are applied.

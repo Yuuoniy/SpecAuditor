@@ -1,0 +1,14 @@
+Function: struct clk * devm_clk_get_optional_enabled_with_rate ( struct device * dev , const char * id , unsigned long rate )
+
+devm_clk_get_optional() + clk_set_rate() + clk_prepare_enable()
+
+Parameters
+  struct device *dev
+    device for clock “consumer”
+  const char *id
+    clock consumer ID
+  unsigned long rate
+    new clock rate
+
+Description
+  The returned clk (if valid) is prepared and enabled and rate was set.

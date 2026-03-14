@@ -1,0 +1,10 @@
+Function: void * amdgpu_bo_kptr ( struct amdgpu_bo * bo )
+
+returns a kernel virtual address of the buffer object
+
+Parameters
+  struct amdgpu_bo *bo
+    amdgpu_bo buffer object
+
+Description
+  Calls ttm_kmap_obj_virtual() to get the kernel virtual address

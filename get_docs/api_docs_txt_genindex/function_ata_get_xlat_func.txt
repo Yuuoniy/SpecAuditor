@@ -1,0 +1,13 @@
+Function: ata_xlat_func_t ata_get_xlat_func ( struct ata_device * dev , u8 cmd )
+
+check if SCSI to ATA translation is possible
+
+Parameters
+  struct ata_device *dev
+    ATA device
+  u8 cmd
+    SCSI command opcode to consider
+
+Description
+  Look up the SCSI command given, and determine whether the
+SCSI command is to be translated or simulated.

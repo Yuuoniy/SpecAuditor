@@ -1,0 +1,14 @@
+Function: bool workqueue_congested ( int cpu , struct workqueue_struct * wq )
+
+test whether a workqueue is congested
+
+Parameters
+  int cpu
+    CPU in question
+  struct workqueue_struct *wq
+    target workqueue
+
+Description
+  Test whether wq ’s cpu workqueue for cpu is congested.  There is
+no synchronization around this function and the test result is
+unreliable and only useful as advisory hints or for debugging.

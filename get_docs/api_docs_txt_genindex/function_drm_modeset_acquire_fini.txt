@@ -1,0 +1,7 @@
+Function: void drm_modeset_acquire_fini ( struct drm_modeset_acquire_ctx * ctx )
+
+cleanup acquire context
+
+Parameters
+  struct drm_modeset_acquire_ctx *ctx
+    the acquire context

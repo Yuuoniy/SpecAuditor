@@ -1,0 +1,15 @@
+Struct: struct ipu3_uapi_yuvp2_tcc_static_config
+
+Total color correction static
+
+Members
+  gen_control
+    general config for Total Color Correction
+  macc_table
+    config for multi axis color correction
+  inv_y_lut
+    lookup table for inverse y estimation
+  gain_pcwl
+    lookup table for gain PCWL
+  r_sqr_lut
+    lookup table for r square root estimation.

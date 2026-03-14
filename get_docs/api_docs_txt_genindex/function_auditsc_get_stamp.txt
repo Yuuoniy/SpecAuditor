@@ -1,0 +1,12 @@
+Function: int auditsc_get_stamp ( struct audit_context * ctx , struct audit_stamp * stamp )
+
+get local copies of audit_context values
+
+Parameters
+  struct audit_context *ctx
+    audit_context for the task
+  struct audit_stamp *stamp
+    timestamp to record
+
+Description
+  Also sets the context as auditable.

@@ -1,0 +1,14 @@
+Function: void drm_send_event ( struct drm_device * dev , struct drm_pending_event * e )
+
+send DRM event to file descriptor
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_pending_event *e
+    DRM event to deliver
+
+Description
+  This function sends the event e , initialized with drm_event_reserve_init() ,
+to its associated userspace DRM file. This function acquires drm_device.event_lock , see drm_send_event_locked() for callers which already
+hold this lock.

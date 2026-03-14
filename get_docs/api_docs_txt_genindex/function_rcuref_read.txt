@@ -1,0 +1,7 @@
+Function: unsigned int rcuref_read ( rcuref_t * ref )
+
+Read the number of held reference counts of a rcuref
+
+Parameters
+  rcuref_t *ref
+    Pointer to the reference count

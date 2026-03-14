@@ -1,0 +1,30 @@
+Struct: struct i3c_device_ibi_info
+
+IBI information attached to a specific device
+
+Members
+  all_ibis_handled
+    used to be informed when no more IBIs are waiting to be
+processed. Used by i3c_device_disable_ibi() to wait for
+all IBIs to be dequeued
+  pending_ibis
+    count the number of pending IBIs. Each pending IBI has its
+work element queued to the controller workqueue
+  max_payload_len
+    maximum payload length for an IBI coming from this device.
+this value is specified when calling i3c_device_request_ibi() and should not change at run
+time. All messages IBIs exceeding this limit should be
+rejected by the master
+  num_slots
+    number of IBI slots reserved for this device
+  enabled
+    reflect the IBI status
+  wq
+    workqueue used to execute IBI handlers.
+  handler
+    IBI handler specified at i3c_device_request_ibi() call time. This
+handler will be called from the controller workqueue, and as such
+is allowed to sleep (though it is recommended to process the IBI
+as fast as possible to not stall processing of other IBIs queued
+on the same workqueue).
+New I3C messages can be sent from the IBI handler

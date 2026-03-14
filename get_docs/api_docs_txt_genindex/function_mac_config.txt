@@ -1,0 +1,16 @@
+Function: void mac_config ( struct phylink_config * config , unsigned int mode , const struct phylink_link_state * state )
+
+configure the MAC for the selected mode and state
+
+Parameters
+  struct phylink_config *config
+    a pointer to a struct phylink_config .
+  unsigned int mode
+    one of MLO_AN_FIXED , MLO_AN_PHY , MLO_AN_INBAND .
+  const struct phylink_link_state *state
+    a pointer to a struct phylink_link_state .
+
+Description
+  Note - not all members of state are valid.  In particular, state->lp_advertising , state->link , state->an_complete are never
+guaranteed to be correct, and so any mac_config() implementation must
+never reference these fields.

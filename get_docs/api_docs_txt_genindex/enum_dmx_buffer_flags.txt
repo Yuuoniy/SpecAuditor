@@ -1,0 +1,3 @@
+Enum: enum dmx_buffer_flags
+
+DMX memory-mapped buffer flags

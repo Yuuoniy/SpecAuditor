@@ -1,0 +1,10 @@
+Function: dvb_detach
+
+
+
+Parameters
+  FUNC
+    attach function
+
+Description
+  Decrements usage count for a function previously called via dvb_attach() .

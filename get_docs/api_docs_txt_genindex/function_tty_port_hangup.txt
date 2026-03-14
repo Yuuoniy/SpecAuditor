@@ -1,0 +1,11 @@
+Function: void tty_port_hangup ( struct tty_port * port )
+
+hangup helper
+
+Parameters
+  struct tty_port *port
+    tty port
+
+Description
+  Perform port level tty hangup flag and count changes. Drop the tty
+reference.

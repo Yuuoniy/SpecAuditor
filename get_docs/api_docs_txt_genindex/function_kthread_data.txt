@@ -1,0 +1,12 @@
+Function: void * kthread_data ( struct task_struct * task )
+
+return data value specified on kthread creation
+
+Parameters
+  struct task_struct *task
+    kthread task in question
+
+Description
+  Return the data value specified when kthread task was created.
+The caller is responsible for ensuring the validity of task when
+calling this function.

@@ -1,0 +1,3 @@
+Function: int v4l2_read ( int fd , void * buffer , size_t n )
+
+operates like the read() function.

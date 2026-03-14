@@ -1,0 +1,9 @@
+Struct: struct komeda_component_output
+
+
+
+Members
+  component
+    indicate which component the data comes from
+  output_port
+    the output port of the komeda_component_output.component

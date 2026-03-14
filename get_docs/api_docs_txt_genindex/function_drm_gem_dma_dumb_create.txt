@@ -1,0 +1,17 @@
+Function: int drm_gem_dma_dumb_create ( struct drm_file * file_priv , struct drm_device * drm , struct drm_mode_create_dumb * args )
+
+create a dumb buffer object
+
+Parameters
+  struct drm_file *file_priv
+    DRM file-private structure to create the dumb buffer for
+  struct drm_device *drm
+    DRM device
+  struct drm_mode_create_dumb *args
+    IOCTL data
+
+Description
+  This function computes the pitch of the dumb buffer and rounds it up to an
+integer number of bytes per pixel. Drivers for hardware that doesn’t have
+any additional restrictions on the pitch can directly use this function as
+their drm_driver.dumb_create callback.

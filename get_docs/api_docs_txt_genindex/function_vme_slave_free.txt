@@ -1,0 +1,10 @@
+Function: void vme_slave_free ( struct vme_resource * resource )
+
+Free VME slave window
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME slave resource.
+
+Description
+  Free the provided slave resource so that it may be reallocated.

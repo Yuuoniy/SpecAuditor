@@ -1,0 +1,12 @@
+Macro: for_each_media_entity_data_link
+
+
+
+Parameters
+  entity
+    pointer to the media_entity
+  link
+    pointer to a media_link to hold the iterated values
+
+Description
+  Iterate over a media_entity ’s data links

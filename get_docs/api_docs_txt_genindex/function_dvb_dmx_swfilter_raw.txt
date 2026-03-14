@@ -1,0 +1,17 @@
+Function: void dvb_dmx_swfilter_raw ( struct dvb_demux * demux , const u8 * buf , size_t count )
+
+make the raw data available to userspace without filtering
+
+Parameters
+  struct dvb_demux *demux
+    pointer to struct dvb_demux
+  const u8 *buf
+    buffer with data
+  size_t count
+    number of packets to be passed. The actual size of each packet
+depends on the dvb_demux->feed ->cb.ts logic.
+
+Description
+  Use it if the driver needs to deliver the raw payload to userspace without
+passing through the kernel demux. That is meant to support some
+delivery systems that aren’t based on MPEG-TS.

@@ -1,0 +1,12 @@
+Function: void uart_unregister_driver ( struct uart_driver * drv )
+
+remove a driver from the uart core layer
+
+Parameters
+  struct uart_driver *drv
+    low level driver structure
+
+Description
+  Remove all references to a driver from the core driver. The low level
+driver must have removed all its ports via the uart_remove_one_port() if it
+registered them with uart_add_one_port() . (I.e. drv->port is NULL .)

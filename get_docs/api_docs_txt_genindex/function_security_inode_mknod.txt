@@ -1,0 +1,19 @@
+Function: int security_inode_mknod ( struct inode * dir , struct dentry * dentry , umode_t mode , dev_t dev )
+
+Check if creating a special file is allowed
+
+Parameters
+  struct inode *dir
+    parent directory
+  struct dentry *dentry
+    new file
+  umode_t mode
+    new file mode
+  dev_t dev
+    device number
+
+Description
+  Check permissions when creating a special file (or a socket or a fifo file
+created via the mknod system call).  Note that if mknod operation is being
+done for a regular file, then the create hook will be called and not this
+hook.

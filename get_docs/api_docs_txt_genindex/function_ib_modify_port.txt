@@ -1,0 +1,17 @@
+Function: int ib_modify_port ( struct ib_device * device , u32 port_num , int port_modify_mask , struct ib_port_modify * port_modify )
+
+Modifies the attributes for the specified port.
+
+Parameters
+  struct ib_device *device
+    The device to modify.
+  u32 port_num
+    The number of the port to modify.
+  int port_modify_mask
+    Mask used to specify which attributes of the port
+to change.
+  struct ib_port_modify *port_modify
+    New attribute values for the port.
+
+Description
+  ib_modify_port() changes a port’s attributes as specified by the port_modify_mask and port_modify structure.

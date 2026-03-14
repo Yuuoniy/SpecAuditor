@@ -1,0 +1,10 @@
+Function: int i2c_trylock_bus ( struct i2c_adapter * adapter , unsigned int flags )
+
+Try to get exclusive access to an I2C bus segment
+
+Parameters
+  struct i2c_adapter *adapter
+    Target I2C bus segment
+  unsigned int flags
+    I2C_LOCK_ROOT_ADAPTER tries to locks the root i2c adapter,
+I2C_LOCK_SEGMENT tries to lock only this branch in the adapter tree

@@ -1,0 +1,13 @@
+Function: void put_unbound_pool ( struct worker_pool * pool )
+
+put a worker_pool
+
+Parameters
+  struct worker_pool *pool
+    worker_pool to put
+
+Description
+  Put pool .  If its refcnt reaches zero, it gets destroyed in RCU
+safe manner. get_unbound_pool() calls this function on its failure path
+and this function should be able to release pools which went through,
+successfully or not, init_worker_pool() .

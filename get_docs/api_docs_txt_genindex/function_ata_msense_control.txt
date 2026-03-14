@@ -1,0 +1,16 @@
+Function: unsigned int ata_msense_control ( struct ata_device * dev , u8 * buf , u8 spg , bool changeable )
+
+Simulate MODE SENSE control mode page
+
+Parameters
+  struct ata_device *dev
+    ATA device of interest
+  u8 *buf
+    output buffer
+  u8 spg
+    sub-page code
+  bool changeable
+    whether changeable parameters are requested
+
+Description
+  Generate a generic MODE SENSE control mode page.

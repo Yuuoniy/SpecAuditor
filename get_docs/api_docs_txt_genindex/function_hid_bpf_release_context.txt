@@ -1,0 +1,7 @@
+Function: __bpf_kfunc void hid_bpf_release_context ( struct hid_bpf_ctx * ctx )
+
+Release the previously allocated context ctx
+
+Parameters
+  struct hid_bpf_ctx *ctx
+    the HID-BPF context to release

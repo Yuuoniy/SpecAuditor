@@ -1,0 +1,15 @@
+Function: bool sshp_validate_crc ( const struct ssam_span * src , const u8 * crc )
+
+Validate a CRC in raw message data.
+
+Parameters
+  const struct ssam_span *src
+    The span of data over which the CRC should be computed.
+  const u8 *crc
+    The pointer to the expected u16 CRC value.
+
+Description
+  Computes the CRC of the provided data span ( src ), compares it to the CRC
+stored at the given address ( crc ), and returns the result of this
+comparison, i.e. true if equal. This function is intended to run on raw
+input/message data.

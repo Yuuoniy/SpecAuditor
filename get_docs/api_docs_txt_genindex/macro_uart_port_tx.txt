@@ -1,0 +1,16 @@
+Macro: uart_port_tx
+
+
+
+Parameters
+  port
+    uart port
+  ch
+    variable to store a character to be written to the HW
+  tx_ready
+    can HW accept more data function
+  put_char
+    function to write a character
+
+Description
+  See uart_port_tx_limited() for more details.

@@ -1,0 +1,15 @@
+Function: bool tipc_crypto_key_try_align ( struct tipc_crypto * rx , u8 new_pending )
+
+Align RX keys if possible
+
+Parameters
+  struct tipc_crypto *rx
+    RX crypto handle
+  u8 new_pending
+    new pending slot if aligned (= TX key from peer)
+
+Description
+  Peer has used an unknown key slot, this only happens when peer has left and
+rejoned, or we are newcomer.
+That means, there must be no active key but a pending key at unaligned slot.
+If so, we try to move the pending key to the new slot.

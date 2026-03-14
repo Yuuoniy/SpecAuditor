@@ -1,0 +1,7 @@
+Function: int srpt_release_sport ( struct srpt_port * sport )
+
+disable login and wait for associated channels
+
+Parameters
+  struct srpt_port *sport
+    SRPT HCA port.

@@ -1,0 +1,10 @@
+Function: void snd_ac97_suspend ( struct snd_ac97 * ac97 )
+
+General suspend function for AC97 codec
+
+Parameters
+  struct snd_ac97 *ac97
+    the ac97 instance
+
+Description
+  Suspends the codec, power down the chip.

@@ -1,0 +1,7 @@
+Function: bool drm_gpuvm_immediate_mode ( struct drm_gpuvm * gpuvm )
+
+indicates whether DRM_GPUVM_IMMEDIATE_MODE is set
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm

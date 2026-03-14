@@ -1,0 +1,14 @@
+Function: unsigned read_seqretry ( const seqlock_t * sl , unsigned start )
+
+end a seqlock_t read side section
+
+Parameters
+  const seqlock_t *sl
+    Pointer to seqlock_t
+  unsigned start
+    count, from read_seqbegin()
+
+Description
+  read_seqretry closes the read side critical section of given seqlock_t.
+If the critical section was invalid, it must be ignored (and typically
+retried).

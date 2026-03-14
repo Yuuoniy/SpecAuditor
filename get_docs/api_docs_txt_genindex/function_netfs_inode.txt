@@ -1,0 +1,11 @@
+Function: struct netfs_inode * netfs_inode ( struct inode * inode )
+
+Get the netfs inode context from the inode
+
+Parameters
+  struct inode *inode
+    The inode to query
+
+Description
+  Get the netfs lib inode context from the network filesystem’s inode.  The
+context struct is expected to directly follow on from the VFS inode struct.

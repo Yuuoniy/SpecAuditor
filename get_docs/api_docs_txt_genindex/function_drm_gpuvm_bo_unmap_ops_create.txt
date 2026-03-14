@@ -1,0 +1,11 @@
+Function: struct drm_gpuva_ops * drm_gpuvm_bo_unmap_ops_create ( struct drm_gpuvm_bo * vm_bo )
+
+creates the drm_gpuva_ops to unmap a GEM
+
+Parameters
+  struct drm_gpuvm_bo *vm_bo
+    the drm_gpuvm_bo abstraction
+
+Description
+  This function creates a list of operations to perform unmapping for every
+GPUVA attached to a GEM.

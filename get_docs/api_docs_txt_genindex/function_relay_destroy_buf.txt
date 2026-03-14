@@ -1,0 +1,7 @@
+Function: void relay_destroy_buf ( struct rchan_buf * buf )
+
+destroy an rchan_buf struct and associated buffer
+
+Parameters
+  struct rchan_buf *buf
+    the buffer struct

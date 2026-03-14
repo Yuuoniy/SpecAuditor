@@ -1,0 +1,13 @@
+Struct: struct wp_walk
+
+Private struct for pagetable walk callbacks
+
+Members
+  range
+    Range for mmu notifiers
+  tlbflush_start
+    Address of first modified pte
+  tlbflush_end
+    Address of last modified pte + 1
+  total
+    Total number of modified ptes

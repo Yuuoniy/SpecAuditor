@@ -1,0 +1,17 @@
+Function: struct drm_framebuffer * drm_gem_fb_create ( struct drm_device * dev , struct drm_file * file , const struct drm_format_info * info , const struct drm_mode_fb_cmd2 * mode_cmd )
+
+Helper function for the drm_mode_config_funcs.fb_create callback
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_file *file
+    DRM file that holds the GEM handle(s) backing the framebuffer
+  const struct drm_format_info *info
+    pixel format information
+  const struct drm_mode_fb_cmd2 *mode_cmd
+    Metadata from the userspace framebuffer creation request
+
+Description
+  This function creates a new framebuffer object described by drm_mode_fb_cmd2 . This description includes handles for the buffer(s)
+backing the framebuffer.

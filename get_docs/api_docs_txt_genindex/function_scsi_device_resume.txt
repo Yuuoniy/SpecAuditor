@@ -1,0 +1,11 @@
+Function: void scsi_device_resume ( struct scsi_device * sdev )
+
+Restart user issued commands to a quiesced device.
+
+Parameters
+  struct scsi_device *sdev
+    scsi device to resume.
+
+Description
+  Moves the device from quiesced back to running and restarts the
+queues.

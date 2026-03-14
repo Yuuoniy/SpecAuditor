@@ -1,0 +1,11 @@
+Function: void snd_request_card ( int card )
+
+try to load the card module
+
+Parameters
+  int card
+    the card number
+
+Description
+  Tries to load the module “snd-card-X” for the given card number
+via request_module.  Returns immediately if already loaded.

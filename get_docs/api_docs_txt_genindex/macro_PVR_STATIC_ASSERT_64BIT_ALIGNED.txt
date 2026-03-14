@@ -1,0 +1,11 @@
+Macro: PVR_STATIC_ASSERT_64BIT_ALIGNED
+
+
+
+Parameters
+  static_expr_
+    Target expression to evaluate.
+
+Description
+  If static_expr_ does not evaluate to a constant integer which would be a
+64-bit aligned address (i.e. a multiple of 8), compilation will fail.

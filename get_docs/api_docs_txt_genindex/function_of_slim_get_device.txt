@@ -1,0 +1,9 @@
+Function: struct slim_device * of_slim_get_device ( struct slim_controller * ctrl , struct device_node * np )
+
+get handle to a device using dt node.
+
+Parameters
+  struct slim_controller *ctrl
+    Controller on which this device will be added/queried
+  struct device_node *np
+    node pointer to device

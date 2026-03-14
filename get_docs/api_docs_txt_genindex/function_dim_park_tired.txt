@@ -1,0 +1,11 @@
+Function: void dim_park_tired ( struct dim * dim )
+
+enter a tired parking state
+
+Parameters
+  struct dim *dim
+    DIM context
+
+Description
+  Enter parking state.
+Clear all movement history and cause DIM checks frequency to reduce.

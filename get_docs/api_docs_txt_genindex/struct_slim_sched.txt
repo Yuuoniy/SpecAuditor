@@ -1,0 +1,16 @@
+Struct: struct slim_sched
+
+Framework uses this structure internally for scheduling.
+
+Members
+  clk_state
+    Controller’s clock state from enum slim_clk_state
+  pause_comp
+    Signals completion of clock pause sequence. This is useful when
+client tries to call SLIMbus transaction when controller is entering
+clock pause.
+  m_reconf
+    This mutex is held until current reconfiguration (data channel
+scheduling, message bandwidth reservation) is done. Message APIs can
+use the bus concurrently when this mutex is held since elemental access
+messages can be sent on the bus when reconfiguration is in progress.

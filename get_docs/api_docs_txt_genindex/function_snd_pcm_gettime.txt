@@ -1,0 +1,9 @@
+Function: void snd_pcm_gettime ( struct snd_pcm_runtime * runtime , struct timespec64 * tv )
+
+Fill the timespec64 depending on the timestamp mode
+
+Parameters
+  struct snd_pcm_runtime *runtime
+    PCM runtime instance
+  struct timespec64 *tv
+    timespec64 to fill

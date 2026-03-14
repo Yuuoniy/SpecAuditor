@@ -1,0 +1,25 @@
+Struct: struct psi_write_args
+
+Arguments for the PSI packetizer.
+
+Members
+  dest_buf
+    The buffer to write into.
+  from
+    PSI data to be copied.
+  len
+    How much to write.
+  dest_offset
+    where to start writing in the dest_buffer.
+  pid
+    TS packet ID.
+  new_psi_section
+    Set when starting a table section.
+  continuity_counter
+    Incremented on every new packet.
+  is_crc
+    Set when writing the CRC at the end.
+  dest_buf_sz
+    The size of the dest_buffer
+  crc
+    a pointer to store the crc for this chunk

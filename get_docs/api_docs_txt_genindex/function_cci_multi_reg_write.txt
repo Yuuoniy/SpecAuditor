@@ -1,0 +1,19 @@
+Function: int cci_multi_reg_write ( struct regmap * map , const struct cci_reg_sequence * regs , unsigned int num_regs , int * err )
+
+Write multiple registers to the device
+
+Parameters
+  struct regmap *map
+    Register map to write to
+  const struct cci_reg_sequence *regs
+    Array of structures containing register-address, -value pairs to be
+written, register-addresses use CCI_REG#() macros to encode reg width
+  unsigned int num_regs
+    Number of registers to write
+  int *err
+    Optional pointer to store errors, if a previous error is set
+then the write will be skipped
+
+Description
+  Write multiple registers to the device where the set of register, value
+pairs are supplied in any order, possibly not all in a single range.

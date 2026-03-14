@@ -1,0 +1,13 @@
+Function: int pwrseq_power_off ( struct pwrseq_desc * desc )
+
+Issue a power-off request on behalf of the consumer device.
+
+Parameters
+  struct pwrseq_desc *desc
+    Descriptor referencing the power sequencer.
+
+Description
+  This undoes the effects of pwrseq_power_on() . It issues a power-off request
+on behalf of the consumer and when the last remaining user does so, the
+power-down sequence will be started. If one is in progress, the function
+will block until it’s complete and then return.

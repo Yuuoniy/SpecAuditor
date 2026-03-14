@@ -1,0 +1,113 @@
+Struct: struct sta_info
+
+STA information
+
+Members
+  list
+    global linked list entry
+  free_list
+    list entry for keeping track of stations to free
+  rcu_head
+    RCU head used for freeing this station struct
+  hash_node
+    hash node for rhashtable
+  addr
+    station’s MAC address - duplicated from public part to
+let the hash table work with just a single cacheline
+  local
+    pointer to the global information
+  sdata
+    virtual interface this station belongs to
+  ptk
+    peer keys negotiated with this station, if any
+  ptk_idx
+    last installed peer key index
+  rate_ctrl
+    rate control algorithm reference
+  rate_ctrl_priv
+    rate control private per-STA pointer
+  rate_ctrl_lock
+    spinlock used to protect rate control data
+(data inside the algorithm, so serializes calls there)
+  lock
+    used for locking all fields that require locking, see comments
+in the header file.
+  fast_tx
+    TX fastpath information
+  fast_rx
+    RX fastpath information
+  mesh
+    mesh STA information
+  drv_deliver_wk
+    used for delivering frames after driver PS unblocking
+  listen_interval
+    listen interval of this station, when we’re acting as AP
+  dead
+    set to true when sta is unlinked
+  removed
+    set to true when sta is being removed from sta_list
+  uploaded
+    set to true when sta is uploaded to the driver
+  sta_state
+    duplicates information about station state (for debug)
+  _flags
+    STA flags, see enum ieee80211_sta_info_flags , do not use directly
+  ps_lock
+    used for powersave (when mac80211 is the AP) related locking
+  ps_tx_buf
+    buffers (per AC) of frames to transmit to this station
+when it leaves power saving state or polls
+  tx_filtered
+    buffers (per AC) of frames we already tried to
+transmit but were filtered by hardware due to STA having
+entered power saving state, these are also delivered to
+the station when it leaves powersave or polls for frames
+  driver_buffered_tids
+    bitmap of TIDs the driver has data buffered on
+  txq_buffered_tids
+    bitmap of TIDs that mac80211 has txq data buffered on
+  assoc_at
+    clock boottime (in ns) of last association
+  last_connected
+    time (in seconds) when a station got connected
+  last_seq_ctrl
+    last received seq/frag number from this STA (per TID
+plus one for non-QoS frames)
+  tid_seq
+    per-TID sequence numbers for sending to this STA
+  airtime
+    per-AC struct airtime_info describing airtime statistics for this
+station
+  airtime_weight
+    station weight for airtime fairness calculation purposes
+  ampdu_mlme
+    A-MPDU state machine state
+  debugfs_dir
+    debug filesystem directory dentry
+  reserved_tid
+    reserved TID (if any, otherwise IEEE80211_TID_UNRESERVED)
+  amsdu_mesh_control
+    track the mesh A-MSDU format used by the peer:
+  tdls_chandef
+    a TDLS peer can have a wider chandef that is compatible to
+the BSS one.
+  frags
+    fragment cache
+  cur
+    storage for aggregation data struct ieee80211_sta points either here or to deflink.agg.
+  deflink
+    This is the default link STA information, for non MLO STA all link
+specific STA information is accessed through deflink or through
+link[0] which points to address of deflink . For MLO Link STA
+the first added link STA will point to deflink.
+  link
+    reference to Link Sta entries. For Non MLO STA, except 1st link,
+i.e link[0] all links would be assigned to NULL by default and
+would access link information via deflink or link[0]. For MLO
+STA, first link STA being added will point its link pointer to deflink address and remaining would be allocated and the address
+would be assigned to link[link_id] where link_id is the id assigned
+by the AP.
+  rem_link_stats
+    accumulated removed link stats
+  sta
+    station information we share with the driver

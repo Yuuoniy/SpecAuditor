@@ -1,0 +1,10 @@
+Function: void media_request_get ( struct media_request * req )
+
+Get the media request
+
+Parameters
+  struct media_request *req
+    The media request
+
+Description
+  Get the media request.

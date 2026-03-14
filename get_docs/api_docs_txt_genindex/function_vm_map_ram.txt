@@ -1,0 +1,18 @@
+Function: void * vm_map_ram ( struct page * * pages , unsigned int count , int node )
+
+map pages linearly into kernel virtual address (vmalloc space)
+
+Parameters
+  struct page **pages
+    an array of pointers to the pages to be mapped
+  unsigned int count
+    number of pages
+  int node
+    prefer to allocate data structures on this node
+
+Description
+  If you use this function for less than VMAP_MAX_ALLOC pages, it could be
+faster than vmap so it’s good.  But if you mix long-life and short-life
+objects with vm_map_ram() , it could consume lots of address space through
+fragmentation (especially on a 32bit machine).  You could see failures in
+the end.  Please use this function for short-lived objects.

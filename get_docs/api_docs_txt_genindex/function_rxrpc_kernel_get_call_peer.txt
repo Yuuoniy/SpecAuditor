@@ -1,0 +1,12 @@
+Function: struct rxrpc_peer * rxrpc_kernel_get_call_peer ( struct socket * sock , struct rxrpc_call * call )
+
+Get the peer address of a call
+
+Parameters
+  struct socket *sock
+    The socket on which the call is in progress.
+  struct rxrpc_call *call
+    The call to query
+
+Description
+  Get a record for the remote peer in a call.

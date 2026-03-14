@@ -1,0 +1,12 @@
+Function: __bpf_kfunc struct bpf_cpumask * bpf_cpumask_create ( void )
+
+Create a mutable BPF cpumask.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Allocates a cpumask that can be queried, mutated, acquired, and released by
+a BPF program. The cpumask returned by this function must either be embedded
+in a map as a kptr, or freed with bpf_cpumask_release() .

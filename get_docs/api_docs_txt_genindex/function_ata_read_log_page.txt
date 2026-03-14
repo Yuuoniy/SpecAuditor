@@ -1,0 +1,18 @@
+Function: unsigned int ata_read_log_page ( struct ata_device * dev , u8 log , u8 page , void * buf , unsigned int sectors )
+
+read a specific log page
+
+Parameters
+  struct ata_device *dev
+    target device
+  u8 log
+    log to read
+  u8 page
+    page to read
+  void *buf
+    buffer to store read page
+  unsigned int sectors
+    number of sectors to read
+
+Description
+  Read log page using READ_LOG_EXT command.

@@ -1,0 +1,15 @@
+Macro: read_seqlock_excl_irqsave
+
+
+
+Parameters
+  lock
+    Pointer to seqlock_t
+  flags
+    Stack-allocated storage for saving caller’s local interrupt
+state, to be passed to read_sequnlock_excl_irqrestore() .
+
+Description
+  _irqsave variant of read_seqlock_excl() . Use this only if the seqlock_t
+write side section, or other read sections , can be invoked from a
+hardirq context.

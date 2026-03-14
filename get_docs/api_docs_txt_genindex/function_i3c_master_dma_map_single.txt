@@ -1,0 +1,19 @@
+Function: struct i3c_dma * i3c_master_dma_map_single ( struct device * dev , void * buf , size_t len , bool force_bounce , enum dma_data_direction dir )
+
+Map buffer for single DMA transfer
+
+Parameters
+  struct device *dev
+    device object of a device doing DMA
+  void *buf
+    destination/source buffer for DMA
+  size_t len
+    length of transfer
+  bool force_bounce
+    true, force to use a bounce buffer,
+false, function will auto check is a bounce buffer required
+  enum dma_data_direction dir
+    DMA direction
+
+Description
+  Map buffer for a DMA transfer and allocate a bounce buffer if required.

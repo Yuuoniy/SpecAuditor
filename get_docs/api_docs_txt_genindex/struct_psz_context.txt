@@ -1,0 +1,41 @@
+Struct: struct psz_context
+
+all about running state of pstore/zone
+
+Members
+  kpszs
+    kmsg dump storage zones
+  ppsz
+    pmsg storage zone
+  cpsz
+    console storage zone
+  fpszs
+    ftrace storage zones
+  kmsg_max_cnt
+    max count of kpszs
+  kmsg_read_cnt
+    counter of total read kmsg dumps
+  kmsg_write_cnt
+    counter of total kmsg dump writes
+  pmsg_read_cnt
+    counter of total read pmsg zone
+  console_read_cnt
+    counter of total read console zone
+  ftrace_max_cnt
+    max count of fpszs
+  ftrace_read_cnt
+    counter of max read ftrace zone
+  oops_counter
+    counter of oops dumps
+  panic_counter
+    counter of panic dumps
+  recovered
+    whether finished recovering data from storage
+  on_panic
+    whether panic is happening
+  pstore_zone_info_lock
+    lock to pstore_zone_info
+  pstore_zone_info
+    information from backend
+  pstore
+    structure for pstore

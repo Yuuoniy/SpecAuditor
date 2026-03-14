@@ -1,0 +1,11 @@
+Function: int drm_dp_mst_atomic_setup_commit ( struct drm_atomic_state * state )
+
+setup_commit hook for MST helpers
+
+Parameters
+  struct drm_atomic_state *state
+    global atomic state
+
+Description
+  This function saves all of the drm_crtc_commit structs in an atomic state that touch any CRTCs
+currently assigned to an MST topology. Drivers must call this hook from their drm_mode_config_helper_funcs.atomic_commit_setup hook.

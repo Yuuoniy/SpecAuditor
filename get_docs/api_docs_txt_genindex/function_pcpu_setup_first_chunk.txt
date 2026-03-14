@@ -1,0 +1,14 @@
+Function: void pcpu_setup_first_chunk ( const struct pcpu_alloc_info * ai , void * base_addr )
+
+initialize the first percpu chunk
+
+Parameters
+  const struct pcpu_alloc_info *ai
+    pcpu_alloc_info describing how to percpu area is shaped
+  void *base_addr
+    mapped address
+
+Description
+  Initialize the first percpu chunk which contains the kernel static
+percpu area.  This function is to be called from arch percpu area
+setup path.

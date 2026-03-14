@@ -1,0 +1,12 @@
+Function: int filemap_fdatawait_keep_errors ( struct address_space * mapping )
+
+wait for writeback without clearing errors
+
+Parameters
+  struct address_space *mapping
+    address space structure to wait for
+
+Description
+  Walk the list of under-writeback pages of the given address space
+and wait for all of them.  Unlike filemap_fdatawait() , this function
+does not clear error status of the address space.

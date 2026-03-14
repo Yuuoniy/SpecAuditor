@@ -1,0 +1,7 @@
+Function: void gpio_device_put ( struct gpio_device * gdev )
+
+Decrease the reference count of this GPIO device and possibly free all resources associated with it.
+
+Parameters
+  struct gpio_device *gdev
+    GPIO device to decrease the reference count for

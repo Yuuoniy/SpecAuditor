@@ -1,0 +1,13 @@
+Function: int security_sb_remount ( struct super_block * sb , void * mnt_opts )
+
+Verify no incompatible mount changes during remount
+
+Parameters
+  struct super_block *sb
+    filesystem superblock
+  void *mnt_opts
+    (re)mount options
+
+Description
+  Extracts security system specific mount options and verifies no changes are
+being made to those options.

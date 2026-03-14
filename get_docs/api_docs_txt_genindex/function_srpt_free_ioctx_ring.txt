@@ -1,0 +1,15 @@
+Function: void srpt_free_ioctx_ring ( struct srpt_ioctx * * ioctx_ring , struct srpt_device * sdev , int ring_size , struct kmem_cache * buf_cache , enum dma_data_direction dir )
+
+free the ring of SRPT I/O context structures
+
+Parameters
+  struct srpt_ioctx **ioctx_ring
+    I/O context ring to be freed.
+  struct srpt_device *sdev
+    SRPT HCA pointer.
+  int ring_size
+    Number of ring elements.
+  struct kmem_cache *buf_cache
+    I/O buffer cache.
+  enum dma_data_direction dir
+    DMA data direction.

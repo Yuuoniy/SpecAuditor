@@ -1,0 +1,7 @@
+Function: u16 ssam_trace_get_packet_seq ( const struct ssh_packet * p )
+
+Read the packet’s sequence ID.
+
+Parameters
+  const struct ssh_packet *p
+    The packet.

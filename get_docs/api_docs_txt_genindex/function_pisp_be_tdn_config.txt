@@ -1,0 +1,19 @@
+Function: struct pisp_be_tdn_config
+
+PiSP Back End TDN config
+
+Members
+  black_level
+    Black level value subtracted from pixels
+  ratio
+    Multiplier for the LTA input frame
+  noise_constant
+    Constant offset value used in noise estimation
+  noise_slope
+    Noise estimation multiplier
+  threshold
+    Threshold for TDN operations
+  reset
+    Disable TDN operations
+  pad
+    Padding byte

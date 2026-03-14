@@ -1,0 +1,19 @@
+Macro: drmm_plain_encoder_alloc
+
+
+
+Parameters
+  dev
+    drm device
+  funcs
+    callbacks for this encoder (optional)
+  encoder_type
+    user visible type of the encoder
+  name
+    printf style format string for the encoder name, or NULL for default name
+  ...
+    variable arguments
+
+Description
+  This is a simplified version of drmm_encoder_alloc() , which only allocates
+and returns a struct drm_encoder instance, with no subclassing.

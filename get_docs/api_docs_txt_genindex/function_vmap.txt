@@ -1,0 +1,19 @@
+Function: void * vmap ( struct page * * pages , unsigned int count , unsigned long flags , pgprot_t prot )
+
+map an array of pages into virtually contiguous space
+
+Parameters
+  struct page **pages
+    array of page pointers
+  unsigned int count
+    number of pages to map
+  unsigned long flags
+    vm_area->flags
+  pgprot_t prot
+    page protection for the mapping
+
+Description
+  Maps count pages from pages into contiguous kernel virtual space.
+If flags contains VM_MAP_PUT_PAGES the ownership of the pages array itself
+(which must be kmalloc or vmalloc memory) and one reference per pages in it
+are transferred from the caller to vmap() , and will be freed / dropped when vfree() is called on the return value.

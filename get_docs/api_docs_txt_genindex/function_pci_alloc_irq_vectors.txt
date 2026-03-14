@@ -1,0 +1,16 @@
+Function: int pci_alloc_irq_vectors ( struct pci_dev * dev , unsigned int min_vecs , unsigned int max_vecs , unsigned int flags )
+
+Allocate multiple device interrupt vectors
+
+Parameters
+  struct pci_dev *dev
+    the PCI device to operate on
+  unsigned int min_vecs
+    minimum required number of vectors (must be >= 1)
+  unsigned int max_vecs
+    maximum desired number of vectors
+  unsigned int flags
+    One or more of:
+
+Description
+  PCI_IRQ_MSIX Allow trying MSI-X vector allocations

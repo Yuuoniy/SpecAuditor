@@ -1,0 +1,17 @@
+Function: void __list_splice_init_rcu ( struct list_head * list , struct list_head * prev , struct list_head * next , void ( * sync ) ( void ) )
+
+join an RCU-protected list into an existing list.
+
+Parameters
+  struct list_head *list
+    the RCU-protected list to splice
+  struct list_head *prev
+    points to the last element of the existing list
+  struct list_head *next
+    points to the first element of the existing list
+  void (*sync)(void)
+    synchronize_rcu, synchronize_rcu_expedited, ...
+
+Description
+  The list pointed to by prev and next can be RCU-read traversed
+concurrently with this function.

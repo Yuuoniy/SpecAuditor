@@ -1,0 +1,16 @@
+Function: int string_unescape ( char * src , char * dst , size_t size , unsigned int flags )
+
+unquote characters in the given string
+
+Parameters
+  char *src
+    source buffer (escaped)
+  char *dst
+    destination buffer (unescaped)
+  size_t size
+    size of the destination buffer (0 to unlimit)
+  unsigned int flags
+    combination of the flags.
+
+Description
+  The function unquotes characters in the given string.

@@ -1,0 +1,11 @@
+Function: void * rio_get_drvdata ( struct rio_dev * rdev )
+
+Get RIO driver specific data
+
+Parameters
+  struct rio_dev *rdev
+    RIO device
+
+Description
+  Get RIO driver specific data. Returns a pointer to the
+driver specific data.

@@ -1,0 +1,12 @@
+Function: bool devfreq_event_is_enabled ( struct devfreq_event_dev * edev )
+
+Check whether devfreq-event dev is enabled or not.
+
+Parameters
+  struct devfreq_event_dev *edev
+    the devfreq-event device
+
+Description
+  Note that this function check whether devfreq-event dev is enabled or not.
+If return true, the devfreq-event dev is enabeld. If return false, the
+devfreq-event dev is disabled.

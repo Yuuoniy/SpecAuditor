@@ -1,0 +1,17 @@
+Function: int gen_pool_add ( struct gen_pool * pool , unsigned long addr , size_t size , int nid )
+
+add a new chunk of special memory to the pool
+
+Parameters
+  struct gen_pool *pool
+    pool to add new memory chunk to
+  unsigned long addr
+    starting address of memory chunk to add to pool
+  size_t size
+    size in bytes of the memory chunk to add to pool
+  int nid
+    node id of the node the chunk structure and bitmap should be
+allocated on, or -1
+
+Description
+  Add a new chunk of special memory to the specified pool.

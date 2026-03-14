@@ -1,0 +1,11 @@
+Function: void * kmemdup ( const void * src , size_t len , gfp_t gfp )
+
+duplicate region of memory
+
+Parameters
+  const void *src
+    memory region to duplicate
+  size_t len
+    memory region length
+  gfp_t gfp
+    GFP mask to use

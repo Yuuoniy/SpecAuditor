@@ -1,0 +1,7 @@
+Function: void tipc_write_space ( struct sock * sk )
+
+wake up thread if port congestion is released
+
+Parameters
+  struct sock *sk
+    socket

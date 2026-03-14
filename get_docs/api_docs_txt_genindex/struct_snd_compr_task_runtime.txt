@@ -1,0 +1,23 @@
+Struct: struct snd_compr_task_runtime
+
+task runtime description
+
+Members
+  list
+    list of all managed tasks
+  input
+    input DMA buffer
+  output
+    output DMA buffer
+  seqno
+    sequence number
+  input_size
+    really used data in the input buffer
+  output_size
+    really used data in the output buffer
+  flags
+    see SND_COMPRESS_TFLG_*
+  state
+    actual task state
+  private_value
+    used by the lowlevel driver (opaque)

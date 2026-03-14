@@ -1,0 +1,13 @@
+Function: void mas_set ( struct ma_state * mas , unsigned long index )
+
+Set up Maple Tree operation state for a different index.
+
+Parameters
+  struct ma_state *mas
+    Maple Tree operation state.
+  unsigned long index
+    New index into the Maple Tree.
+
+Description
+  Move the operation state to refer to a different index.  This will
+have the effect of starting a walk from the top; see mas_next() to move to an adjacent index.

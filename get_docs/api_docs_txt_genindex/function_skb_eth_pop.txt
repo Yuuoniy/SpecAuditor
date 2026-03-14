@@ -1,0 +1,10 @@
+Function: int skb_eth_pop ( struct sk_buff * skb )
+
+Drop the Ethernet header at the head of a packet
+
+Parameters
+  struct sk_buff *skb
+    Socket buffer to modify
+
+Description
+  Drop the Ethernet header of skb .

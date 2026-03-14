@@ -1,0 +1,15 @@
+Function: int ipcperms ( struct ipc_namespace * ns , struct kern_ipc_perm * ipcp , short flag )
+
+check ipc permissions
+
+Parameters
+  struct ipc_namespace *ns
+    ipc namespace
+  struct kern_ipc_perm *ipcp
+    ipc permission set
+  short flag
+    desired permission set
+
+Description
+  Check user, group, other permissions for access
+to ipc resources. return 0 if allowed

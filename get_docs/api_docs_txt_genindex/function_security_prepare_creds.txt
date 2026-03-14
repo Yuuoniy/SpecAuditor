@@ -1,0 +1,14 @@
+Function: int security_prepare_creds ( struct cred * new , const struct cred * old , gfp_t gfp )
+
+Prepare a new set of credentials
+
+Parameters
+  struct cred *new
+    new credentials
+  const struct cred *old
+    original credentials
+  gfp_t gfp
+    gfp flags
+
+Description
+  Prepare a new set of credentials by copying the data from the old set.

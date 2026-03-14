@@ -1,0 +1,13 @@
+Function: errseq_t errseq_sample ( errseq_t * eseq )
+
+Grab current errseq_t value.
+
+Parameters
+  errseq_t *eseq
+    Pointer to errseq_t to be sampled.
+
+Description
+  This function allows callers to initialise their errseq_t variable.
+If the error has been “seen”, new callers will not see an old error.
+If there is an unseen error in eseq , the caller of this function will
+see it the next time it checks for an error.

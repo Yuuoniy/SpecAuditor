@@ -1,0 +1,7 @@
+Function: void d_invalidate ( struct dentry * dentry )
+
+detach submounts, prune dcache, and drop
+
+Parameters
+  struct dentry *dentry
+    dentry to invalidate (aka detach, prune and drop)

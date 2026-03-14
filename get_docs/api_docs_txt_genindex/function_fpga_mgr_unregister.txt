@@ -1,0 +1,10 @@
+Function: void fpga_mgr_unregister ( struct fpga_manager * mgr )
+
+unregister an FPGA manager
+
+Parameters
+  struct fpga_manager *mgr
+    fpga manager struct
+
+Description
+  This function is intended for use in an FPGA manager driver’s remove function.

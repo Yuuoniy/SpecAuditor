@@ -1,0 +1,22 @@
+Struct: struct nbcon_state
+
+console state for nbcon consoles
+
+Members
+  {unnamed_union}
+    anonymous
+  atom
+    Compound of the state fields for atomic operations
+  {unnamed_struct}
+    anonymous
+  prio
+    The priority of the current owner
+  req_prio
+    The priority of a handover request
+  unsafe
+    Console is busy in a non takeover region
+  unsafe_takeover
+    A hostile takeover in an unsafe state happened in the
+past. The console cannot be safe until re-initialized.
+  cpu
+    The CPU on which the owner runs

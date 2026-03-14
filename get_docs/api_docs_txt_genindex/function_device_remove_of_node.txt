@@ -1,0 +1,7 @@
+Function: void device_remove_of_node ( struct device * dev )
+
+Remove an of_node from a device
+
+Parameters
+  struct device *dev
+    device whose device tree node is being removed

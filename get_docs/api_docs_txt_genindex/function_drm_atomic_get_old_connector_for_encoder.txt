@@ -1,0 +1,12 @@
+Function: struct drm_connector * drm_atomic_get_old_connector_for_encoder ( const struct drm_atomic_state * state , struct drm_encoder * encoder )
+
+Get old connector for an encoder
+
+Parameters
+  const struct drm_atomic_state *state
+    Atomic state
+  struct drm_encoder *encoder
+    The encoder to fetch the connector state for
+
+Description
+  This function finds and returns the connector that was connected to encoder as specified by the state .

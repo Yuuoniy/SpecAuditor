@@ -1,0 +1,15 @@
+Function: void __free_pages ( struct page * page , unsigned int order )
+
+Free pages allocated with alloc_pages() .
+
+Parameters
+  struct page *page
+    The page pointer returned from alloc_pages() .
+  unsigned int order
+    The order of the allocation.
+
+Description
+  This function can free multi-page allocations that are not compound
+pages.  It does not check that the order passed in matches that of
+the allocation, so it is easy to leak memory.  Freeing more memory
+than was allocated will probably emit a warning.

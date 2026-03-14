@@ -1,0 +1,13 @@
+Function: void snd_device_disconnect ( struct snd_card * card , void * device_data )
+
+disconnect the device
+
+Parameters
+  struct snd_card *card
+    the card instance
+  void *device_data
+    the data pointer to disconnect
+
+Description
+  Turns the device into the disconnection state, invoking
+dev_disconnect callback, if the device was already registered.

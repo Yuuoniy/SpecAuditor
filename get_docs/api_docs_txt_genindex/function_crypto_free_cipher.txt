@@ -1,0 +1,7 @@
+Function: void crypto_free_cipher ( struct crypto_cipher * tfm )
+
+zeroize and free the single block cipher handle
+
+Parameters
+  struct crypto_cipher *tfm
+    cipher handle to be freed

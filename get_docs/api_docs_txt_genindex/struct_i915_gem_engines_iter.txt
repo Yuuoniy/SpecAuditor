@@ -1,0 +1,9 @@
+Struct: struct i915_gem_engines_iter
+
+Iterator for an i915_gem_engines set
+
+Members
+  idx
+    Index into i915_gem_engines::engines
+  engines
+    Engine set being iterated

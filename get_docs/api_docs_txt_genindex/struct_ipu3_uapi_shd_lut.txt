@@ -1,0 +1,23 @@
+Struct: struct ipu3_uapi_shd_lut
+
+Shading gain factor lookup table.
+
+Members
+  sets
+    array
+  sets.r_and_gr
+    Red and GreenR Lookup table.
+  sets.r_and_gr.r
+    Red shading factor.
+  sets.r_and_gr.gr
+    GreenR shading factor.
+  sets.reserved1
+    reserved
+  sets.gb_and_b
+    GreenB and Blue Lookup table.
+  sets.gb_and_b.gb
+    GreenB shading factor.
+  sets.gb_and_b.b
+    Blue shading factor.
+  sets.reserved2
+    reserved

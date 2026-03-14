@@ -1,0 +1,14 @@
+Function: void amdgpu_vm_bo_insert_map ( struct amdgpu_device * adev , struct amdgpu_bo_va * bo_va , struct amdgpu_bo_va_mapping * mapping )
+
+insert a new mapping
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+  struct amdgpu_bo_va *bo_va
+    bo_va to store the address
+  struct amdgpu_bo_va_mapping *mapping
+    the mapping to insert
+
+Description
+  Insert a new mapping into all structures.

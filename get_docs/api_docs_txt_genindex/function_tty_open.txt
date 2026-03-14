@@ -1,0 +1,14 @@
+Function: int tty_open ( struct inode * inode , struct file * filp )
+
+open a tty device
+
+Parameters
+  struct inode *inode
+    inode of device file
+  struct file *filp
+    file pointer to tty
+
+Description
+  tty_open() and tty_release() keep up the tty count that contains the number
+of opens done on a tty. We cannot use the inode-count, as different inodes
+might point to the same tty.

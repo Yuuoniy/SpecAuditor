@@ -1,0 +1,10 @@
+Function: void media_request_object_get ( struct media_request_object * obj )
+
+Get a media request object
+
+Parameters
+  struct media_request_object *obj
+    The object
+
+Description
+  Get a media request object.

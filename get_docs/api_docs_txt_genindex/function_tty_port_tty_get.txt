@@ -1,0 +1,11 @@
+Function: struct tty_struct * tty_port_tty_get ( struct tty_port * port )
+
+get a tty reference
+
+Parameters
+  struct tty_port *port
+    tty port
+
+Description
+  Return a refcount protected tty instance or NULL if the port is not
+associated with a tty (eg due to close or hangup).

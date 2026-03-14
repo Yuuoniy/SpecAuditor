@@ -1,0 +1,17 @@
+Function: int nand_write_subpage_hwecc ( struct nand_chip * chip , uint32_t offset , uint32_t data_len , const uint8_t * buf , int oob_required , int page )
+
+[REPLACEABLE] hardware ECC based subpage write
+
+Parameters
+  struct nand_chip *chip
+    nand chip info structure
+  uint32_t offset
+    column address of subpage within the page
+  uint32_t data_len
+    data length
+  const uint8_t *buf
+    data buffer
+  int oob_required
+    must write chip->oob_poi to OOB
+  int page
+    page number to write

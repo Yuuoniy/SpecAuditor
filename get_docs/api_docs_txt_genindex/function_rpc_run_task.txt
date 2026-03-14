@@ -1,0 +1,7 @@
+Function: struct rpc_task * rpc_run_task ( const struct rpc_task_setup * task_setup_data )
+
+Allocate a new RPC task, then run rpc_execute against it
+
+Parameters
+  const struct rpc_task_setup *task_setup_data
+    pointer to task initialisation data

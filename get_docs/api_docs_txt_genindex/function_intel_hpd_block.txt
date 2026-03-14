@@ -1,0 +1,10 @@
+Function: void intel_hpd_block ( struct intel_encoder * encoder )
+
+Block handling of HPD IRQs on an HPD pin
+
+Parameters
+  struct intel_encoder *encoder
+    Encoder to block the HPD handling for
+
+Description
+  Blocks the handling of HPD IRQs on the HPD pin of encoder .

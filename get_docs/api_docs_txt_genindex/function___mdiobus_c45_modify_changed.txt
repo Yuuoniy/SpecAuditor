@@ -1,0 +1,21 @@
+Function: int __mdiobus_c45_modify_changed ( struct mii_bus * bus , int addr , int devad , u32 regnum , u16 mask , u16 set )
+
+Unlocked version of the mdiobus_modify function
+
+Parameters
+  struct mii_bus *bus
+    the mii_bus struct
+  int addr
+    the phy address
+  int devad
+    device address to read
+  u32 regnum
+    register number to modify
+  u16 mask
+    bit mask of bits to clear
+  u16 set
+    bit mask of bits to set
+
+Description
+  Read, modify, and if any change, write the register value back to the
+device. Any error returns a negative number.

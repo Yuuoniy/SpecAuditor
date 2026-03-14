@@ -1,0 +1,14 @@
+Function: void klp_shadow_free_all ( unsigned long id , klp_shadow_dtor_t dtor )
+
+detach and free all <_, id> shadow variables
+
+Parameters
+  unsigned long id
+    data identifier
+  klp_shadow_dtor_t dtor
+    custom callback that can be used to unregister the variable
+and/or free data that the shadow variable points to (optional)
+
+Description
+  This function releases the memory for all <_, id> shadow variable
+instances, callers should stop referencing them accordingly.

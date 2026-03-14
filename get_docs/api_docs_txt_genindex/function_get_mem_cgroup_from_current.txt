@@ -1,0 +1,7 @@
+Function: struct mem_cgroup * get_mem_cgroup_from_current ( void )
+
+Obtain a reference on current task’s memcg.
+
+Parameters
+  void
+    no arguments

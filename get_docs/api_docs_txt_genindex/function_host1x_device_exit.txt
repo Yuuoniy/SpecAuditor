@@ -1,0 +1,13 @@
+Function: int host1x_device_exit ( struct host1x_device * device )
+
+uninitialize host1x logical device
+
+Parameters
+  struct host1x_device *device
+    host1x logical device
+
+Description
+  When the driver for a host1x logical device is unloaded, it can call this
+function to tear down each of its clients. Typically this is done after a
+subsystem-specific data structure is removed and the functionality can no
+longer be used.

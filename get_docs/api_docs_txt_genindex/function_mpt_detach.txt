@@ -1,0 +1,7 @@
+Function: void mpt_detach ( struct pci_dev * pdev )
+
+Remove a PCI intelligent MPT adapter.
+
+Parameters
+  struct pci_dev *pdev
+    Pointer to pci_dev structure

@@ -1,0 +1,10 @@
+Function: int i915_perf_init ( struct drm_i915_private * i915 )
+
+initialize i915-perf state on module bind
+
+Parameters
+  struct drm_i915_private *i915
+    i915 device instance
+
+Description
+  Initializes i915-perf state without exposing anything to userspace.

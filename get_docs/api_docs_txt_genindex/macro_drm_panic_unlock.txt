@@ -1,0 +1,12 @@
+Macro: drm_panic_unlock
+
+
+
+Parameters
+  dev
+    struct drm_device
+  flags
+    irq flags that were returned when acquiring the lock
+
+Description
+  Unlocks the raw spinlock acquired by either drm_panic_lock() or drm_panic_trylock() .

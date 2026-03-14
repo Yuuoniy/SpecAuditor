@@ -1,0 +1,68 @@
+Struct: struct vb2_mem_ops
+
+memory handling/memory allocator operations.
+
+Members
+  alloc
+    allocate video memory and, optionally, allocator private data,
+return ERR_PTR() on failure or a pointer to allocator private,
+per-buffer data on success; the returned private structure
+will then be passed as buf_priv argument to other ops in this
+structure. The size argument to this function shall be page aligned .
+  put
+    inform the allocator that the buffer will no longer be used;
+usually will result in the allocator freeing the buffer (if
+no other users of this buffer are present); the buf_priv argument is the allocator private per-buffer structure
+previously returned from the alloc callback.
+  get_dmabuf
+    acquire userspace memory for a hardware operation; used for
+DMABUF memory types.
+  get_userptr
+    acquire userspace memory for a hardware operation; used for
+USERPTR memory types; vaddr is the address passed to the
+videobuf2 layer when queuing a video buffer of USERPTR type;
+should return an allocator private per-buffer structure
+associated with the buffer on success, ERR_PTR() on failure;
+the returned private structure will then be passed as buf_priv argument to other ops in this structure.
+  put_userptr
+    inform the allocator that a USERPTR buffer will no longer
+be used.
+  prepare
+    called every time the buffer is passed from userspace to the
+driver, useful for cache synchronisation, optional.
+  finish
+    called every time the buffer is passed back from the driver
+to the userspace, also optional.
+  attach_dmabuf
+    attach a shared struct dma_buf for a hardware operation;
+used for DMABUF memory types; dev is the alloc device
+dbuf is the shared dma_buf; returns ERR_PTR() on failure;
+allocator private per-buffer structure on success;
+this needs to be used for further accesses to the buffer.
+  detach_dmabuf
+    inform the exporter of the buffer that the current DMABUF
+buffer is no longer used; the buf_priv argument is the
+allocator private per-buffer structure previously returned
+from the attach_dmabuf callback.
+  map_dmabuf
+    request for access to the dmabuf from allocator; the allocator
+of dmabuf is informed that this driver is going to use the
+dmabuf.
+  unmap_dmabuf
+    releases access control to the dmabuf - allocator is notified
+that this driver is done using the dmabuf for now.
+  vaddr
+    return a kernel virtual address to a given memory buffer
+associated with the passed private structure or NULL if no
+such mapping exists.
+  cookie
+    return allocator specific cookie for a given memory buffer
+associated with the passed private structure or NULL if not
+available.
+  num_users
+    return the current number of users of a memory buffer;
+return 1 if the videobuf2 layer (or actually the driver using
+it) is the only user.
+  mmap
+    setup a userspace mapping for a given memory buffer under
+the provided virtual memory region.

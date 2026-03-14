@@ -1,0 +1,12 @@
+Function: void relay_reset ( struct rchan * chan )
+
+reset the channel
+
+Parameters
+  struct rchan *chan
+    the channel
+
+Description
+  This has the effect of erasing all data from all channel buffers
+and restarting the channel in its initial state.  The buffers
+are not freed, so any mappings are still in effect.

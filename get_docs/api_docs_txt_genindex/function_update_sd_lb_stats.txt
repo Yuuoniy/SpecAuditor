@@ -1,0 +1,9 @@
+Function: void update_sd_lb_stats ( struct lb_env * env , struct sd_lb_stats * sds )
+
+Update sched_domain’s statistics for load balancing.
+
+Parameters
+  struct lb_env *env
+    The load balancing environment.
+  struct sd_lb_stats *sds
+    variable to hold the statistics for this sched_domain.

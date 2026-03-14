@@ -1,0 +1,7 @@
+Function: unsigned long phylink_caps_to_link_caps ( unsigned long caps )
+
+Convert a set of MAC capabilities LINK caps
+
+Parameters
+  unsigned long caps
+    A set of MAC capabilities

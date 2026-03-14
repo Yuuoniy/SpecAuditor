@@ -1,0 +1,44 @@
+Function: struct ipu3_uapi_dm_config
+
+De-mosaic parameters
+
+Members
+  dm_en
+    de-mosaic enable.
+  ch_ar_en
+    Checker artifacts removal enable flag. Default 0.
+  fcc_en
+    False color correction (FCC) enable flag. Default 0.
+  reserved0
+    reserved
+  frame_width
+    do not care
+  gamma_sc
+    Sharpening coefficient (coefficient of 2-d derivation of
+complementary color in Hamilton-Adams interpolation).
+u5, range [0, 31], default 8.
+  reserved1
+    reserved
+  lc_ctrl
+    Parameter that controls weights of Chroma Homogeneity metric
+in calculation of final homogeneity metric.
+u5, range [0, 31], default 7.
+  reserved2
+    reserved
+  cr_param1
+    First parameter that defines Checker artifact removal
+feature gain. Precision u5, range [0, 31], default 8.
+  reserved3
+    reserved
+  cr_param2
+    Second parameter that defines Checker artifact removal
+feature gain. Precision u5, range [0, 31], default 8.
+  reserved4
+    reserved
+  coring_param
+    Defines power of false color correction operation.
+low for preserving edge colors, high for preserving gray
+edge artifacts.
+Precision u1.4, range [0, 1.9375], default 4 (0.25).
+  reserved5
+    reserved

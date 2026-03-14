@@ -1,0 +1,60 @@
+Struct: struct dma_buf
+
+shared buffer object
+
+Members
+  size
+    Size of the buffer; invariant over the lifetime of the buffer.
+  file
+    File pointer used for sharing buffers across, and for refcounting.
+See dma_buf_get() and dma_buf_put() .
+  attachments
+    List of dma_buf_attachment that denotes all devices attached,
+protected by dma_resv lock resv .
+  ops
+    dma_buf_ops associated with this buffer object.
+  vmapping_counter
+    Used internally to refcnt the vmaps returned by dma_buf_vmap() .
+Protected by lock .
+  vmap_ptr
+    The current vmap ptr if vmapping_counter > 0. Protected by lock .
+  exp_name
+    Name of the exporter; useful for debugging. Must not be NULL
+  name
+    Userspace-provided name. Default value is NULL. If not NULL,
+length cannot be longer than DMA_BUF_NAME_LEN, including NIL
+char. Useful for accounting and debugging. Read/Write accesses
+are protected by name_lock See the IOCTLs DMA_BUF_SET_NAME or DMA_BUF_SET_NAME_A/B
+  name_lock
+    Spinlock to protect name access for read access.
+  owner
+    Pointer to exporter module; used for refcounting when exporter is a
+kernel module.
+  list_node
+    node for dma_buf accounting and debugging.
+  priv
+    exporter specific private data for this buffer object.
+  resv
+    Reservation object linked to this dma-buf. IMPLICIT SYNCHRONIZATION RULES: Drivers which support implicit synchronization of buffer access as
+e.g. exposed in Implicit Fence Poll Support must follow the
+below rules. Drivers must add a read fence through dma_resv_add_fence() with the
+DMA_RESV_USAGE_READ flag for anything the userspace API considers a
+read access. This highly depends upon the API and window system. Similarly drivers must add a write fence through dma_resv_add_fence() with the DMA_RESV_USAGE_WRITE flag for
+anything the userspace API considers write access. Drivers may just always add a write fence, since that only
+causes unnecessary synchronization, but no correctness issues. Some drivers only expose a synchronous userspace API with no
+pipelining across drivers. These do not set any fences for their
+access. An example here is v4l. Driver should use dma_resv_usage_rw() when retrieving fences as
+dependency for implicit synchronization. DYNAMIC IMPORTER RULES: Dynamic importers, see dma_buf_attachment_is_dynamic() , have
+additional constraints on how they set up fences: Dynamic importers must obey the write fences and wait for them to
+signal before allowing access to the buffer’s underlying storage
+through the device. Dynamic importers should set fences for any access that they can’t
+disable immediately from their dma_buf_attach_ops.move_notify callback. IMPORTANT: All drivers and memory management related functions must obey the struct dma_resv rules, specifically the rules for updating and
+obeying fences. See enum dma_resv_usage for further descriptions.
+  poll
+    for userspace poll support
+  cb_in
+    for userspace poll support
+  cb_out
+    for userspace poll support
+  sysfs_entry
+    For exposing information about this buffer in sysfs. See also DMA-BUF statistics for the uapi this enables.

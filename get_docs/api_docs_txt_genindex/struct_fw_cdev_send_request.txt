@@ -1,0 +1,17 @@
+Struct: struct fw_cdev_send_request
+
+Send an asynchronous request packet
+
+Members
+  tcode
+    Transaction code of the request
+  length
+    Length of outgoing payload, in bytes
+  offset
+    48-bit offset at destination node
+  closure
+    Passed back to userspace in the response event
+  data
+    Userspace pointer to payload
+  generation
+    The bus generation where packet is valid

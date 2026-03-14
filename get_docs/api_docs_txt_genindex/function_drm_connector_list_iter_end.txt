@@ -1,0 +1,13 @@
+Function: void drm_connector_list_iter_end ( struct drm_connector_list_iter * iter )
+
+tear down a connector_list iterator
+
+Parameters
+  struct drm_connector_list_iter *iter
+    connector_list iterator
+
+Description
+  Tears down iter and releases any resources (like drm_connector references)
+acquired while walking the list. This must always be called, both when the
+iteration completes fully or when it was aborted without walking the entire
+list.

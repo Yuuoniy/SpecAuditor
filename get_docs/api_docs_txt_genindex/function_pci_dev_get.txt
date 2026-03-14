@@ -1,0 +1,10 @@
+Function: struct pci_dev * pci_dev_get ( struct pci_dev * dev )
+
+increments the reference count of the pci device structure
+
+Parameters
+  struct pci_dev *dev
+    the device being referenced
+
+Description
+  Each live reference to a device should be refcounted.

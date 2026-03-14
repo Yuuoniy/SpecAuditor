@@ -1,0 +1,13 @@
+Function: void * idr_remove ( struct idr * idr , unsigned long id )
+
+Remove an ID from the IDR.
+
+Parameters
+  struct idr *idr
+    IDR handle.
+  unsigned long id
+    Pointer ID.
+
+Description
+  Removes this ID from the IDR.  If the ID was not previously in the IDR,
+this function returns NULL .

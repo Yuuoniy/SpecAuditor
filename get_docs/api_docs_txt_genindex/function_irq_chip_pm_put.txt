@@ -1,0 +1,12 @@
+Function: int irq_chip_pm_put ( struct irq_data * data )
+
+Disable power for an IRQ chip
+
+Parameters
+  struct irq_data *data
+    Pointer to interrupt specific data
+
+Description
+  Disable the power to the IRQ chip referenced by the interrupt data
+structure, belongs. Note that power will only be disabled, once this
+function has been called for all IRQs that have called irq_chip_pm_get() .

@@ -1,0 +1,11 @@
+Function: void drm_sched_entity_destroy ( struct drm_sched_entity * entity )
+
+Destroy a context entity
+
+Parameters
+  struct drm_sched_entity *entity
+    scheduler entity
+
+Description
+  Calls drm_sched_entity_flush() and drm_sched_entity_fini() as a
+convenience wrapper.

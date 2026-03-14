@@ -1,0 +1,11 @@
+Function: int snd_pcm_hw_constraint_pow2 ( struct snd_pcm_runtime * runtime , unsigned int cond , snd_pcm_hw_param_t var )
+
+add a hw constraint power-of-2 rule
+
+Parameters
+  struct snd_pcm_runtime *runtime
+    PCM runtime instance
+  unsigned int cond
+    condition bits
+  snd_pcm_hw_param_t var
+    hw_params variable to apply the power-of-2 constraint

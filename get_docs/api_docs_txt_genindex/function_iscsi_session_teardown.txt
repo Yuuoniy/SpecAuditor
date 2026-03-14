@@ -1,0 +1,7 @@
+Function: void iscsi_session_teardown ( struct iscsi_cls_session * cls_session )
+
+destroy session and cls_session
+
+Parameters
+  struct iscsi_cls_session *cls_session
+    iscsi session

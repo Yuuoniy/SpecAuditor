@@ -1,0 +1,29 @@
+Struct: struct rate_info
+
+bitrate information
+
+Members
+  flags
+    bitflag of flags from enum rate_info_flags
+  legacy
+    bitrate in 100kbit/s for 802.11abg
+  mcs
+    mcs index if struct describes an HT/VHT/HE/EHT/S1G rate
+  nss
+    number of streams (VHT & HE only)
+  bw
+    bandwidth (from enum rate_info_bw )
+  he_gi
+    HE guard interval (from enum nl80211_he_gi )
+  he_dcm
+    HE DCM value
+  he_ru_alloc
+    HE RU allocation (from enum nl80211_he_ru_alloc ,
+only valid if bw is RATE_INFO_BW_HE_RU )
+  n_bonded_ch
+    In case of EDMG the number of bonded channels (1-4)
+  eht_gi
+    EHT guard interval (from enum nl80211_eht_gi )
+  eht_ru_alloc
+    EHT RU allocation (from enum nl80211_eht_ru_alloc ,
+only valid if bw is RATE_INFO_BW_EHT_RU )

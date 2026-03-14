@@ -1,0 +1,7 @@
+Function: const u8 * drm_eld_sad ( const u8 * eld )
+
+Get ELD SAD structures.
+
+Parameters
+  const u8 *eld
+    pointer to an eld memory structure with sad_count set

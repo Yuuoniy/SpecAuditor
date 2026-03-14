@@ -1,0 +1,55 @@
+Struct: struct zynqmp_dp
+
+Xilinx DisplayPort core
+
+Members
+  aux
+    aux channel
+  bridge
+    DRM bridge for the DP encoder
+  hpd_work
+    hot plug detection worker
+  hpd_irq_work
+    hot plug detection IRQ worker
+  aux_done
+    Completed when we get an AUX reply or timeout
+  lock
+    Mutex protecting this struct and register access (but not AUX)
+  next_bridge
+    The downstream bridge
+  dev
+    device structure
+  dpsub
+    Display subsystem
+  iomem
+    device I/O memory for register access
+  reset
+    reset controller
+  phy
+    PHY handles for DP lanes
+  status
+    connection status
+  irq
+    irq
+  enabled
+    flag to indicate if the device is enabled
+  ignore_aux_errors
+    If set, AUX errors are suppressed
+  ignore_hpd
+    If set, HPD events and IRQs are ignored
+  debugfs_train_set
+    Debugfs private data for train_set
+  mode
+    current mode between IP core and sink device
+  link_config
+    common link configuration between IP core and sink device
+  test
+    Configuration for test mode
+  config
+    IP core configuration from DTS
+  dpcd
+    DP configuration data from currently connected sink device
+  train_set
+    set of training data
+  num_lanes
+    number of enabled phy lanes

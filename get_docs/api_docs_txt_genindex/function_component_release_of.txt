@@ -1,0 +1,12 @@
+Function: void component_release_of ( struct device * dev , void * data )
+
+A common component release function for of_node
+
+Parameters
+  struct device *dev
+    component device
+  void *data
+    compare_data from component_match_add_release()
+
+Description
+  About the example, Please see component_compare_of() .

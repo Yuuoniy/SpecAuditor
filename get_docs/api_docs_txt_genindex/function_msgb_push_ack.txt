@@ -1,0 +1,9 @@
+Function: void msgb_push_ack ( struct msgbuf * msgb , u8 seq )
+
+Push a SSH ACK frame to the buffer.
+
+Parameters
+  struct msgbuf *msgb
+    The message buffer
+  u8 seq
+    The sequence ID of the frame/packet to be ACKed.

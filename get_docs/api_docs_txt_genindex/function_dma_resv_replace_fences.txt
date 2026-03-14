@@ -1,0 +1,18 @@
+Function: void dma_resv_replace_fences ( struct dma_resv * obj , uint64_t context , struct dma_fence * replacement , enum dma_resv_usage usage )
+
+replace fences in the dma_resv obj
+
+Parameters
+  struct dma_resv *obj
+    the reservation object
+  uint64_t context
+    the context of the fences to replace
+  struct dma_fence *replacement
+    the new fence to use instead
+  enum dma_resv_usage usage
+    how the new fence is used, see enum dma_resv_usage
+
+Description
+  Replace fences with a specified context with a new fence. Only valid if the
+operation represented by the original fence has no longer access to the
+resources represented by the dma_resv object when the new fence completes.

@@ -1,0 +1,13 @@
+Function: int snd_soc_dapm_get_component_pin_switch ( struct snd_kcontrol * kcontrol , struct snd_ctl_elem_value * ucontrol )
+
+Get information for a pin switch
+
+Parameters
+  struct snd_kcontrol *kcontrol
+    mixer control
+  struct snd_ctl_elem_value *ucontrol
+    Value
+
+Description
+  Callback to provide information for a pin switch added at the component
+level.

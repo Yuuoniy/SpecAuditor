@@ -1,0 +1,10 @@
+Function: void blk_rq_unprep_clone ( struct request * rq )
+
+Helper function to free all bios in a cloned request
+
+Parameters
+  struct request *rq
+    the clone request to be cleaned up
+
+Description
+  Free all bios in rq for a cloned request.

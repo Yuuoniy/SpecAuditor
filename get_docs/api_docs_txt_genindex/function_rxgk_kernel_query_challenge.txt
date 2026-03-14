@@ -1,0 +1,7 @@
+Function: u32 rxgk_kernel_query_challenge ( struct sk_buff * challenge )
+
+Query RxGK-specific challenge parameters
+
+Parameters
+  struct sk_buff *challenge
+    The challenge packet to query

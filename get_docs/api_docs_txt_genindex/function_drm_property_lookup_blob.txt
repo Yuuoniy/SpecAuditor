@@ -1,0 +1,14 @@
+Function: struct drm_property_blob * drm_property_lookup_blob ( struct drm_device * dev , uint32_t id )
+
+look up a blob property and take a reference
+
+Parameters
+  struct drm_device *dev
+    drm device
+  uint32_t id
+    id of the blob property
+
+Description
+  If successful, this takes an additional reference to the blob property.
+callers need to make sure to eventually unreferenced the returned property
+again, using drm_property_blob_put() .

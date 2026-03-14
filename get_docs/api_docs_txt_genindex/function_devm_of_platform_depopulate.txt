@@ -1,0 +1,13 @@
+Function: void devm_of_platform_depopulate ( struct device * dev )
+
+Remove devices populated from device tree
+
+Parameters
+  struct device *dev
+    device that requested to depopulate from device tree data
+
+Description
+  Complementary to devm_of_platform_populate() , this function removes children
+of the given device (and, recursively, their children) that have been
+created from their respective device tree nodes (and only those,
+leaving others - eg. manually created - unharmed).

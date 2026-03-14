@@ -1,0 +1,20 @@
+Function: int ib_register_device ( struct ib_device * device , const char * name , struct device * dma_device )
+
+Register an IB device with IB core
+
+Parameters
+  struct ib_device *device
+    Device to register
+  const char *name
+    unique string device name. This may include a ‘%’ which will
+cause a unique index to be added to the passed device name.
+  struct device *dma_device
+    pointer to a DMA-capable device. If NULL , then the IB
+device will be used. In this case the caller should fully
+setup the ibdev for DMA. This usually means using dma_virt_ops.
+
+Description
+  Low-level drivers use ib_register_device() to register their
+devices with the IB core.  All registered clients will receive a
+callback for each device that is added. device must be allocated
+with ib_alloc_device() .

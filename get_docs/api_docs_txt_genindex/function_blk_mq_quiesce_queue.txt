@@ -1,0 +1,7 @@
+Function: void blk_mq_quiesce_queue ( struct request_queue * q )
+
+wait until all ongoing dispatches have finished
+
+Parameters
+  struct request_queue *q
+    request queue.

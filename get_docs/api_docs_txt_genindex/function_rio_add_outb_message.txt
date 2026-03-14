@@ -1,0 +1,19 @@
+Function: int rio_add_outb_message ( struct rio_mport * mport , struct rio_dev * rdev , int mbox , void * buffer , size_t len )
+
+Add RIO message to an outbound mailbox queue
+
+Parameters
+  struct rio_mport *mport
+    RIO master port containing the outbound queue
+  struct rio_dev *rdev
+    RIO device the message is be sent to
+  int mbox
+    The outbound mailbox queue
+  void *buffer
+    Pointer to the message buffer
+  size_t len
+    Length of the message buffer
+
+Description
+  Adds a RIO message buffer to an outbound mailbox queue for
+transmission. Returns 0 on success.

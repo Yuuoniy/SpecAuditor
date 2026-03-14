@@ -1,0 +1,12 @@
+Function: int drm_dp_max_dprx_data_rate ( int max_link_rate , int max_lanes )
+
+Get the max data bandwidth of a DPRX sink
+
+Parameters
+  int max_link_rate
+    max DPRX link rate in 10kbps units
+  int max_lanes
+    max DPRX lane count
+
+Description
+  Given a link rate and lanes, get the data bandwidth.

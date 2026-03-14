@@ -1,0 +1,12 @@
+Function: unsigned long drm_vma_node_size ( struct drm_vma_offset_node * node )
+
+Return size (page-based)
+
+Parameters
+  struct drm_vma_offset_node *node
+    Node to inspect
+
+Description
+  Return the size as number of pages for the given node. This is the same size
+that was passed to drm_vma_offset_add() . If no offset is allocated for the
+node, this is 0.

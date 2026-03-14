@@ -1,0 +1,12 @@
+Function: void zynqmp_disp_blend_set_output_format ( struct zynqmp_disp * disp , enum zynqmp_dpsub_format format )
+
+Set the output format of the blender
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller
+  enum zynqmp_dpsub_format format
+    Output format
+
+Description
+  Set the output format of the blender to format .

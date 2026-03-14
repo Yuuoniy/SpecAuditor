@@ -1,0 +1,7 @@
+Function: int usb_interface_claimed ( struct usb_interface * iface )
+
+returns true iff an interface is claimed
+
+Parameters
+  struct usb_interface *iface
+    the interface being checked

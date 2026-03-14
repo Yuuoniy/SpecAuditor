@@ -1,0 +1,21 @@
+Function: int allocate_resource ( struct resource * root , struct resource * new , resource_size_t size , resource_size_t min , resource_size_t max , resource_size_t align , resource_alignf alignf , void * alignf_data )
+
+allocate empty slot in the resource tree given range & alignment. The resource will be reallocated with a new size if it was already allocated
+
+Parameters
+  struct resource *root
+    root resource descriptor
+  struct resource *new
+    resource descriptor desired by caller
+  resource_size_t size
+    requested resource region size
+  resource_size_t min
+    minimum boundary to allocate
+  resource_size_t max
+    maximum boundary to allocate
+  resource_size_t align
+    alignment requested, in bytes
+  resource_alignf alignf
+    alignment function, optional, called if not NULL
+  void *alignf_data
+    arbitrary data to pass to the alignf function

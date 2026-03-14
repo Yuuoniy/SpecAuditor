@@ -1,0 +1,12 @@
+Function: int genphy_c45_read_link ( struct phy_device * phydev )
+
+read the overall link status from the MMDs
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  Read the link status from the specified MMDs, and if they all indicate
+that the link is up, set phydev->link to 1.  If an error is encountered,
+a negative errno will be returned, otherwise zero.

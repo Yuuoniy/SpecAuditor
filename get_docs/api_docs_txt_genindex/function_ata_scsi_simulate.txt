@@ -1,0 +1,13 @@
+Function: void ata_scsi_simulate ( struct ata_device * dev , struct scsi_cmnd * cmd )
+
+simulate SCSI command on ATA device
+
+Parameters
+  struct ata_device *dev
+    the target device
+  struct scsi_cmnd *cmd
+    SCSI command being sent to device.
+
+Description
+  Interprets and directly executes a select list of SCSI commands
+that can be handled internally.

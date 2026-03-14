@@ -1,0 +1,9 @@
+Function: bool acpi_gpio_get_io_resource ( struct acpi_resource * ares , struct acpi_resource_gpio * * agpio )
+
+Fetch details of an ACPI resource if it is a GPIO I/O resource or return False if not.
+
+Parameters
+  struct acpi_resource *ares
+    Pointer to the ACPI resource to fetch
+  struct acpi_resource_gpio **agpio
+    Pointer to a struct acpi_resource_gpio to store the output pointer

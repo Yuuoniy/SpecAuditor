@@ -1,0 +1,14 @@
+Function: int usb_string_ids_n ( struct usb_composite_dev * c , unsigned n )
+
+allocate unused string IDs in batch
+
+Parameters
+  struct usb_composite_dev *c
+    the device whose string descriptor IDs are being allocated
+  unsigned n
+    number of string IDs to allocate
+
+Description
+  Returns the first requested ID.  This ID and next n -1 IDs are now
+valid IDs.  At least provided that n is non-zero because if it
+is, returns last requested ID which is now very useful information.

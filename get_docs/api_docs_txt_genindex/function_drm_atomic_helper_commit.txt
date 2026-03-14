@@ -1,0 +1,16 @@
+Function: int drm_atomic_helper_commit ( struct drm_device * dev , struct drm_atomic_state * state , bool nonblock )
+
+commit validated state object
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_atomic_state *state
+    the driver state object
+  bool nonblock
+    whether nonblocking behavior is requested.
+
+Description
+  This function commits a with drm_atomic_helper_check() pre-validated state
+object. This can still fail when e.g. the framebuffer reservation fails. This
+function implements nonblocking commits, using drm_atomic_helper_setup_commit() and related functions.

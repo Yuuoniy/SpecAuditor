@@ -1,0 +1,27 @@
+Function: void spi_take_timestamp_pre ( struct spi_controller * ctlr , struct spi_transfer * xfer , size_t progress , bool irqs_off )
+
+helper to collect the beginning of the TX timestamp
+
+Parameters
+  struct spi_controller *ctlr
+    Pointer to the spi_controller structure of the driver
+  struct spi_transfer *xfer
+    Pointer to the transfer being timestamped
+  size_t progress
+    How many words (not bytes) have been transferred so far
+  bool irqs_off
+    If true, will disable IRQs and preemption for the duration of the
+transfer, for less jitter in time measurement. Only compatible
+with PIO drivers. If true, must follow up with
+spi_take_timestamp_post or otherwise system will crash.
+WARNING: for fully predictable results, the CPU frequency must
+also be under control (governor).
+
+Description
+  This is a helper for drivers to collect the beginning of the TX timestamp
+for the requested byte from the SPI transfer. The frequency with which this
+function must be called (once per word, once for the whole transfer, once
+per batch of words etc) is arbitrary as long as the tx buffer offset is
+greater than or equal to the requested byte at the time of the call. The
+timestamp is only taken once, at the first such call. It is assumed that
+the driver advances its tx buffer pointer monotonically.

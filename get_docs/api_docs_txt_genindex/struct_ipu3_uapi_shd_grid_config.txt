@@ -1,0 +1,28 @@
+Struct: struct ipu3_uapi_shd_grid_config
+
+Bayer shading(darkening) correction
+
+Members
+  width
+    Grid horizontal dimensions, u8, [8, 128], default 73
+  height
+    Grid vertical dimensions, u8, [8, 128], default 56
+  block_width_log2
+    Log2 of the width of the grid cell in pixel count
+u4, [0, 15], default value 5.
+  reserved0
+    reserved
+  block_height_log2
+    Log2 of the height of the grid cell in pixel count
+u4, [0, 15], default value 6.
+  reserved1
+    reserved
+  grid_height_per_slice
+    SHD_MAX_CELLS_PER_SET/width.
+(with SHD_MAX_CELLS_PER_SET = 146).
+  x_start
+    X value of top left corner of sensor relative to ROI
+s13, [-4096, 0], default 0, only negative values.
+  y_start
+    Y value of top left corner of sensor relative to ROI
+s13, [-4096, 0], default 0, only negative values.

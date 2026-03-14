@@ -1,0 +1,17 @@
+Function: int rio_lock_device ( struct rio_mport * port , u16 destid , u8 hopcount , int wait_ms )
+
+Acquires host device lock for specified device
+
+Parameters
+  struct rio_mport *port
+    Master port to send transaction
+  u16 destid
+    Destination ID for device/switch
+  u8 hopcount
+    Hopcount to reach switch
+  int wait_ms
+    Max wait time in msec (0 = no timeout)
+
+Description
+  Attepts to acquire host device lock for specified device
+Returns 0 if device lock acquired or EINVAL if timeout expires.

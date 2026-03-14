@@ -1,0 +1,17 @@
+Function: void cfg80211_connect_done ( struct net_device * dev , struct cfg80211_connect_resp_params * params , gfp_t gfp )
+
+notify cfg80211 of connection result
+
+Parameters
+  struct net_device *dev
+    network device
+  struct cfg80211_connect_resp_params *params
+    connection response parameters
+  gfp_t gfp
+    allocation flags
+
+Description
+  It should be called by the underlying driver once execution of the connection
+request from connect() has been completed. This is similar to cfg80211_connect_bss() , but takes a structure pointer for connection response
+parameters. Only one of the functions among cfg80211_connect_bss() , cfg80211_connect_result() , cfg80211_connect_timeout() ,
+and cfg80211_connect_done() should be called.

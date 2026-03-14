@@ -1,0 +1,11 @@
+Macro: kunmap_local
+
+
+
+Parameters
+  __addr
+    An address within the page mapped
+
+Description
+  __addr can be any address within the mapped page.  Commonly it is the
+address return from kmap_local_page() , but it can also include offsets.

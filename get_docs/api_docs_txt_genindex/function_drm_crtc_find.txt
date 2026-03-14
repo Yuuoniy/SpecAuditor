@@ -1,0 +1,16 @@
+Function: struct drm_crtc * drm_crtc_find ( struct drm_device * dev , struct drm_file * file_priv , uint32_t id )
+
+look up a CRTC object from its ID
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_file *file_priv
+    drm file to check for lease against.
+  uint32_t id
+    drm_mode_object ID
+
+Description
+  This can be used to look up a CRTC from its userspace ID. Only used by
+drivers for legacy IOCTLs and interface, nowadays extensions to the KMS
+userspace interface should be done using drm_property .

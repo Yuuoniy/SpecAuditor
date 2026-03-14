@@ -1,0 +1,19 @@
+Function: struct ib_cq * __ib_alloc_cq_any ( struct ib_device * dev , void * private , int nr_cqe , enum ib_poll_context poll_ctx , const char * caller )
+
+allocate a completion queue
+
+Parameters
+  struct ib_device *dev
+    device to allocate the CQ for
+  void *private
+    driver private data, accessible from cq->cq_context
+  int nr_cqe
+    number of CQEs to allocate
+  enum ib_poll_context poll_ctx
+    context to poll the CQ from
+  const char *caller
+    module owner name
+
+Description
+  Attempt to spread ULP Completion Queues over each device’s interrupt
+vectors. A simple best-effort mechanism is used.

@@ -1,0 +1,13 @@
+Function: struct device_node * of_graph_get_next_port ( const struct device_node * parent , struct device_node * prev )
+
+get next port node.
+
+Parameters
+  const struct device_node *parent
+    pointer to the parent device node, or parent ports node
+  struct device_node *prev
+    previous port node, or NULL to get first
+
+Description
+  Parent device node can be used as parent whether device node has ports node
+or not. It will work same as ports**0** node.

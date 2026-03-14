@@ -1,0 +1,19 @@
+Function: void sg_set_page ( struct scatterlist * sg , struct page * page , unsigned int len , unsigned int offset )
+
+Set sg entry to point at given page
+
+Parameters
+  struct scatterlist *sg
+    SG entry
+  struct page *page
+    The page
+  unsigned int len
+    Length of data
+  unsigned int offset
+    Offset into page
+
+Description
+  Use this function to set an sg entry pointing at a page, never assign
+the page directly. We encode sg table information in the lower bits
+of the page pointer. See sg_page() for looking up the page belonging
+to an sg entry.

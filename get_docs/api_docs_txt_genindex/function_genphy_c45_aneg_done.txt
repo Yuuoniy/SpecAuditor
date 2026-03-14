@@ -1,0 +1,10 @@
+Function: int genphy_c45_aneg_done ( struct phy_device * phydev )
+
+return auto-negotiation complete status
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  This assumes that the auto-negotiation MMD is present.

@@ -1,0 +1,24 @@
+Function: struct lirc_fh
+
+represents an open lirc file
+
+Members
+  list
+    list of open file handles
+  rc
+    rcdev for this lirc chardev
+  rawir
+    queue for incoming raw IR
+  scancodes
+    queue for incoming decoded scancodes
+  wait_poll
+    poll struct for lirc device
+  carrier_low
+    when setting the carrier range, first the low end must be
+set with an ioctl and then the high end with another ioctl
+  send_mode
+    lirc mode for sending, either LIRC_MODE_SCANCODE or
+LIRC_MODE_PULSE
+  rec_mode
+    lirc mode for receiving, either LIRC_MODE_SCANCODE or
+LIRC_MODE_MODE2

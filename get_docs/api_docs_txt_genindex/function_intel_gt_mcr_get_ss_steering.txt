@@ -1,0 +1,17 @@
+Function: void intel_gt_mcr_get_ss_steering ( struct intel_gt * gt , unsigned int dss , unsigned int * group , unsigned int * instance )
+
+returns the group/instance steering for a SS
+
+Parameters
+  struct intel_gt *gt
+    GT structure
+  unsigned int dss
+    DSS ID to obtain steering for
+  unsigned int *group
+    pointer to storage for steering group ID
+  unsigned int *instance
+    pointer to storage for steering instance ID
+
+Description
+  Returns the steering IDs (via the group and instance parameters) that
+correspond to a specific subslice/DSS ID.

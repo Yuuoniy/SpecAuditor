@@ -1,0 +1,10 @@
+Function: void amdgpu_bo_unref ( struct amdgpu_bo * * bo )
+
+unreference an amdgpu_bo buffer object
+
+Parameters
+  struct amdgpu_bo **bo
+    amdgpu_bo buffer object
+
+Description
+  Unreferences the contained ttm_buffer_object and clear the pointer

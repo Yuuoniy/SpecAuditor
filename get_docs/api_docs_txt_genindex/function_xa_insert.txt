@@ -1,0 +1,18 @@
+Function: int xa_insert ( struct xarray * xa , unsigned long index , void * entry , gfp_t gfp )
+
+Store this entry in the XArray unless another entry is already present.
+
+Parameters
+  struct xarray *xa
+    XArray.
+  unsigned long index
+    Index into array.
+  void *entry
+    New entry.
+  gfp_t gfp
+    Memory allocation flags.
+
+Description
+  Inserting a NULL entry will store a reserved entry (like xa_reserve() )
+if no entry is present.  Inserting will fail if a reserved entry is
+present, even though loading from this index will return NULL.

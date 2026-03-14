@@ -1,0 +1,19 @@
+Function: int dvb_register_device ( struct dvb_adapter * adap , struct dvb_device * * pdvbdev , const struct dvb_device * template , void * priv , enum dvb_device_type type , int demux_sink_pads )
+
+Registers a new DVB device
+
+Parameters
+  struct dvb_adapter *adap
+    pointer to struct dvb_adapter
+  struct dvb_device **pdvbdev
+    pointer to the place where the new struct dvb_device will be
+stored
+  const struct dvb_device *template
+    Template used to create pdvbdev ;
+  void *priv
+    private data
+  enum dvb_device_type type
+    type of the device, as defined by enum dvb_device_type .
+  int demux_sink_pads
+    Number of demux outputs, to be used to create the TS
+outputs via the Media Controller.

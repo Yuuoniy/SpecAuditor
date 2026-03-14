@@ -1,0 +1,16 @@
+Function: struct kthread_worker * kthread_create_worker_on_cpu ( int cpu , unsigned int flags , const char namefmt [ ] )
+
+create a kthread worker and bind it to a given CPU and the associated NUMA node.
+
+Parameters
+  int cpu
+    CPU number
+  unsigned int flags
+    flags modifying the default behavior of the worker
+  const char namefmt[]
+    printf-style name for the thread. Format is restricted
+to “name.*``u``”. Code fills in cpu number.
+
+Description
+  Use a valid CPU number if you want to bind the kthread worker
+to the given CPU and the associated NUMA node.

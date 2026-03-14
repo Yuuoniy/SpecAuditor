@@ -1,0 +1,18 @@
+Function: int crypto_shash_digest ( struct shash_desc * desc , const u8 * data , unsigned int len , u8 * out )
+
+calculate message digest for buffer
+
+Parameters
+  struct shash_desc *desc
+    see crypto_shash_final()
+  const u8 *data
+    see crypto_shash_update()
+  unsigned int len
+    see crypto_shash_update()
+  u8 *out
+    see crypto_shash_final()
+
+Description
+  This function is a “short-hand” for the function calls of crypto_shash_init,
+crypto_shash_update and crypto_shash_final. The parameters have the same
+meaning as discussed for those separate three functions.

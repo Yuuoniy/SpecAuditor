@@ -1,0 +1,21 @@
+Function: int uart_set_options ( struct uart_port * port , struct console * co , int baud , int parity , int bits , int flow )
+
+setup the serial console parameters
+
+Parameters
+  struct uart_port *port
+    pointer to the serial ports uart_port structure
+  struct console *co
+    console pointer
+  int baud
+    baud rate
+  int parity
+    parity character - ‘n’ (none), ‘o’ (odd), ‘e’ (even)
+  int bits
+    number of data bits
+  int flow
+    flow control character - ‘r’ (rts)
+
+Description
+  Locking: Caller must hold console_list_lock in order to serialize
+early initialization of the serial-console lock.

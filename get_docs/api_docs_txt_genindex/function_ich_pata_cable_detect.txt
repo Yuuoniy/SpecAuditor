@@ -1,0 +1,11 @@
+Function: int ich_pata_cable_detect ( struct ata_port * ap )
+
+Probe host controller cable detect info
+
+Parameters
+  struct ata_port *ap
+    Port for which cable detect info is desired
+
+Description
+  Read 80c cable indicator from ATA PCI device’s PCI config
+register.  This register is normally set by firmware (BIOS).

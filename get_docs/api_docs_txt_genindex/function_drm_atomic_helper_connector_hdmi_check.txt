@@ -1,0 +1,14 @@
+Function: int drm_atomic_helper_connector_hdmi_check ( struct drm_connector * connector , struct drm_atomic_state * state )
+
+Helper to check HDMI connector atomic state
+
+Parameters
+  struct drm_connector *connector
+    DRM Connector
+  struct drm_atomic_state *state
+    the DRM State object
+
+Description
+  Provides a default connector state check handler for HDMI connectors.
+Checks that a desired connector update is valid, and updates various
+fields of derived state.

@@ -1,0 +1,14 @@
+Function: int device_add_disk ( struct device * parent , struct gendisk * disk , const struct attribute_group * * groups )
+
+add disk information to kernel list
+
+Parameters
+  struct device *parent
+    parent device for the disk
+  struct gendisk *disk
+    per-device partitioning information
+  const struct attribute_group **groups
+    Additional per-device sysfs groups
+
+Description
+  This function registers the partitioning information in disk with the kernel.

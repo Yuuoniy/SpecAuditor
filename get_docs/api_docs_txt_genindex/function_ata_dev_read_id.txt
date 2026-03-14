@@ -1,0 +1,19 @@
+Function: int ata_dev_read_id ( struct ata_device * dev , unsigned int * p_class , unsigned int flags , u16 * id )
+
+Read ID data from the specified device
+
+Parameters
+  struct ata_device *dev
+    target device
+  unsigned int *p_class
+    pointer to class of the target device (may be changed)
+  unsigned int flags
+    ATA_READID_* flags
+  u16 *id
+    buffer to read IDENTIFY data into
+
+Description
+  Read ID data from the specified device.  ATA_CMD_ID_ATA is
+performed on ATA devices and ATA_CMD_ID_ATAPI on ATAPI
+devices.  This function also issues ATA_CMD_INIT_DEV_PARAMS
+for pre-ATA4 drives.

@@ -1,0 +1,30 @@
+Struct: struct drm_pending_event
+
+Event queued up for userspace to read
+
+Members
+  completion
+    Optional pointer to a kernel internal completion signalled when drm_send_event() is called, useful to internally synchronize with
+nonblocking operations.
+  completion_release
+    Optional callback currently only used by the atomic modeset helpers
+to clean up the reference count for the structure completion is
+stored in.
+  event
+    Pointer to the actual event that should be sent to userspace to be
+read using drm_read() . Can be optional, since nowadays events are
+also used to signal kernel internal threads with completion or DMA
+transactions using fence .
+  fence
+    Optional DMA fence to unblock other hardware transactions which
+depend upon the nonblocking DRM operation this event represents.
+  file_priv
+    struct drm_file where event should be delivered to. Only set when event is set.
+  link
+    Double-linked list to keep track of this event. Can be used by the
+driver up to the point when it calls drm_send_event() , after that
+this list entry is owned by the core for its own book-keeping.
+  pending_link
+    Entry on drm_file.pending_event_list , to keep track of all pending
+events for file_priv , to allow correct unwinding of them when
+userspace closes the file before the event is delivered.

@@ -1,0 +1,16 @@
+Function: void drm_gem_private_object_init ( struct drm_device * dev , struct drm_gem_object * obj , size_t size )
+
+initialize an allocated private GEM object
+
+Parameters
+  struct drm_device *dev
+    drm_device the object should be initialized for
+  struct drm_gem_object *obj
+    drm_gem_object to initialize
+  size_t size
+    object size
+
+Description
+  Initialize an already allocated GEM object of the specified size with
+no GEM provided backing store. Instead the caller is responsible for
+backing the object and handling it.

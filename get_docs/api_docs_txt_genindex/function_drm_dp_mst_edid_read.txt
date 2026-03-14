@@ -1,0 +1,16 @@
+Function: const struct drm_edid * drm_dp_mst_edid_read ( struct drm_connector * connector , struct drm_dp_mst_topology_mgr * mgr , struct drm_dp_mst_port * port )
+
+get EDID for an MST port
+
+Parameters
+  struct drm_connector *connector
+    toplevel connector to get EDID for
+  struct drm_dp_mst_topology_mgr *mgr
+    manager for this port
+  struct drm_dp_mst_port *port
+    unverified pointer to a port.
+
+Description
+  This returns an EDID for the port connected to a connector,
+It validates the pointer still exists so the caller doesn’t require a
+reference.

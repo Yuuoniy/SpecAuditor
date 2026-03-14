@@ -1,0 +1,13 @@
+Macro: drm_for_each_bridge_in_chain
+
+
+
+Parameters
+  encoder
+    the encoder to iterate bridges on
+  bridge
+    a bridge pointer updated to point to the current bridge at each
+iteration
+
+Description
+  Iterate over all bridges present in the bridge chain attached to encoder .

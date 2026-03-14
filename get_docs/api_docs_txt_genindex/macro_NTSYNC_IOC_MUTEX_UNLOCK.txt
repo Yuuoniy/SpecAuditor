@@ -1,0 +1,6 @@
+Macro: NTSYNC_IOC_MUTEX_UNLOCK
+
+Release a mutex object. Takes a pointer to struct ntsync_mutex_args , which is used as follows: owner Specifies the owner trying to release this mutex. count On output, contains the previous recursion count. If owner is zero, the ioctl fails with EINVAL . If owner is not the current owner of the mutex, the ioctl fails with EPERM . The mutex’s count will be decremented by one. If decrementing the
+mutex’s count causes it to become zero, the mutex is marked as
+unowned and signaled, and eligible threads waiting on it will be
+woken as appropriate.

@@ -1,0 +1,14 @@
+Function: int of_changeset_add_prop_bool ( struct of_changeset * ocs , struct device_node * np , const char * prop_name )
+
+Add a boolean property (i.e. a property without any values) to a changeset.
+
+Parameters
+  struct of_changeset *ocs
+    changeset pointer
+  struct device_node *np
+    device node pointer
+  const char *prop_name
+    name of the property to be added
+
+Description
+  Create a boolean property and add it to a changeset.

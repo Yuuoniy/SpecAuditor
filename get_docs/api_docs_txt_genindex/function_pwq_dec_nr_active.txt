@@ -1,0 +1,11 @@
+Function: void pwq_dec_nr_active ( struct pool_workqueue * pwq )
+
+Retire an active count
+
+Parameters
+  struct pool_workqueue *pwq
+    pool_workqueue of interest
+
+Description
+  Decrement pwq ’s nr_active and try to activate the first inactive work item.
+For unbound workqueues, this function may temporarily drop pwq->pool->lock .

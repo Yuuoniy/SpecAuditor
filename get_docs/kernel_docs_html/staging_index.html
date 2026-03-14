@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Unsorted Documentation &#8212; The Linux Kernel  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Brief tutorial on CRC computation" href="crc32.html" />
+    <link rel="prev" title="Feature status on xtensa architecture" href="../arch/xtensa/features.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../index.html">The Linux Kernel</a></h1>
+
+
+
+<p class="blurb">6.18.0-rc1</p>
+
+
+
+
+
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+<p>
+<h3 class="kernel-toc-contents">Contents</h3>
+<input type="checkbox" class="kernel-toc-toggle" id = "kernel-toc-toggle" checked>
+<label class="kernel-toc-title" for="kernel-toc-toggle"></label>
+
+<div class="kerneltoc" id="kerneltoc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../process/development-process.html">Development process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/submitting-patches.html">Submitting patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/code-of-conduct.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Maintainer handbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/index.html">All development-process docs</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core-api/index.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver-api/index.html">Driver APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subsystem-apis.html">Subsystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../locking/index.html">Locking</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../process/license-rules.html">Licensing rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-guide/index.html">Writing documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-tools/index.html">Development tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-tools/testing-overview.html">Testing guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kernel-hacking/index.html">Hacking guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trace/index.html">Tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fault-injection/index.html">Fault injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../livepatch/index.html">Livepatching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">Rust</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kbuild/index.html">Build system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/reporting-issues.html">Reporting issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Userspace tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userspace-api/index.html">Userspace API</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../firmware-guide/index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devicetree/index.html">Firmware and Devicetree</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../arch/index.html">CPU architectures</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Unsorted documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="crc32.html">Brief tutorial on CRC computation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lzo.html">LZO stream format as understood by Linux’s LZO decompressor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="magic-number.html">Linux magic numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remoteproc.html">Remote Processor Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rpmsg.html">Remote Processor Messaging (rpmsg) Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="speculation.html">Speculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static-keys.html">Static Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xz.html">XZ data compression in Linux</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../translations/index.html">Translations</a></li>
+</ul>
+
+</div>
+
+<script type="text/javascript"> <!--
+  var sbar = document.getElementsByClassName("sphinxsidebar")[0];
+  let currents = document.getElementsByClassName("current")
+  if (currents.length) {
+    sbar.scrollTop = currents[currents.length - 1].offsetTop;
+  }
+  --> </script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/staging/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+
+
+
+
+<div class="language-selection">
+English
+
+<ul>
+
+<li><a href="../translations/zh_CN/staging/index.html">Chinese (Simplified)</a></li>
+
+<li><a href="../translations/it_IT/staging/index.html">Italian</a></li>
+
+</ul>
+</div>
+<section id="unsorted-documentation">
+<h1>Unsorted Documentation<a class="headerlink" href="#unsorted-documentation" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="crc32.html">Brief tutorial on CRC computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lzo.html">LZO stream format as understood by Linux’s LZO decompressor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lzo.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lzo.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lzo.html#byte-sequences">Byte sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lzo.html#authors">Authors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="magic-number.html">Linux magic numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remoteproc.html">Remote Processor Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="remoteproc.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remoteproc.html#user-api">User API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remoteproc.html#typical-usage">Typical usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remoteproc.html#api-for-implementers">API for implementers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remoteproc.html#implementation-callbacks">Implementation callbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remoteproc.html#binary-firmware-structure">Binary Firmware Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remoteproc.html#virtio-and-remoteproc">Virtio and remoteproc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rpmsg.html">Remote Processor Messaging (rpmsg) Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rpmsg.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rpmsg.html#user-api">User API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rpmsg.html#typical-usage">Typical usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rpmsg.html#allocations-of-rpmsg-channels">Allocations of rpmsg channels</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="speculation.html">Speculation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="speculation.html#mitigating-speculation-side-channels">Mitigating speculation side-channels</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="static-keys.html">Static Keys</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="static-keys.html#abstract">Abstract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static-keys.html#motivation">Motivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static-keys.html#solution">Solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static-keys.html#static-key-label-api-usage-and-examples">Static key label API, usage and examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="xz.html">XZ data compression in Linux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="xz.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xz.html#xz-related-components-in-the-kernel">XZ related components in the kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xz.html#notes-on-compression-options">Notes on compression options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xz.html#xz-dec-api">xz_dec API</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;The kernel development community.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/staging/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

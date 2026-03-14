@@ -1,0 +1,21 @@
+Function: struct fpga_manager * __fpga_mgr_register ( struct device * parent , const char * name , const struct fpga_manager_ops * mops , void * priv , struct module * owner )
+
+create and register an FPGA Manager device
+
+Parameters
+  struct device *parent
+    fpga manager device from pdev
+  const char *name
+    fpga manager name
+  const struct fpga_manager_ops *mops
+    pointer to structure of fpga manager ops
+  void *priv
+    fpga manager private data
+  struct module *owner
+    owner module containing the ops
+
+Description
+  The caller of this function is responsible for calling fpga_mgr_unregister() .
+Using devm_fpga_mgr_register() instead is recommended. This simple
+version of the register function should be sufficient for most users. The fpga_mgr_register_full() function is available for users that need to pass
+additional, optional parameters.

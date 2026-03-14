@@ -1,0 +1,14 @@
+Function: struct folio * vma_alloc_zeroed_movable_folio ( struct vm_area_struct * vma , unsigned long vaddr )
+
+Allocate a zeroed page for a VMA.
+
+Parameters
+  struct vm_area_struct *vma
+    The VMA the page is to be allocated for.
+  unsigned long vaddr
+    The virtual address the page will be inserted into.
+
+Description
+  This function will allocate a page suitable for inserting into this
+VMA at this virtual address.  It may be allocated from highmem or
+the movable zone.  An architecture may provide its own implementation.

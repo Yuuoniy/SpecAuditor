@@ -1,0 +1,9 @@
+Struct: struct dtv_fe_stats
+
+store Digital TV frontend statistics
+
+Members
+  len
+    length of the statistics - if zero, stats is disabled.
+  stat
+    array with digital TV statistics.

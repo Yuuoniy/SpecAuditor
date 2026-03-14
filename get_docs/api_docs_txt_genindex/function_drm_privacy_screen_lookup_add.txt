@@ -1,0 +1,11 @@
+Function: void drm_privacy_screen_lookup_add ( struct drm_privacy_screen_lookup * lookup )
+
+add an entry to the static privacy-screen lookup list
+
+Parameters
+  struct drm_privacy_screen_lookup *lookup
+    lookup list entry to add
+
+Description
+  Add an entry to the static privacy-screen lookup list. Note the struct list_head which is part of the struct drm_privacy_screen_lookup gets added to a list owned by the privacy-screen core. So the passed in struct drm_privacy_screen_lookup must not be free-ed until it is removed
+from the lookup list by calling drm_privacy_screen_lookup_remove() .

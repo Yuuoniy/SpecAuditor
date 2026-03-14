@@ -1,0 +1,13 @@
+Function: int regulator_set_mode ( struct regulator * regulator , unsigned int mode )
+
+set regulator operating mode
+
+Parameters
+  struct regulator *regulator
+    regulator source
+  unsigned int mode
+    operating mode - one of the REGULATOR_MODE constants
+
+Description
+  Set regulator operating mode to increase regulator efficiency or improve
+regulation performance.

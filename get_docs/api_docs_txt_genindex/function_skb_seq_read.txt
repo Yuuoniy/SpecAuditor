@@ -1,0 +1,18 @@
+Function: unsigned int skb_seq_read ( unsigned int consumed , const u8 * * data , struct skb_seq_state * st )
+
+Sequentially read skb data
+
+Parameters
+  unsigned int consumed
+    number of bytes consumed by the caller so far
+  const u8 **data
+    destination pointer for data to be returned
+  struct skb_seq_state *st
+    state variable
+
+Description
+  Reads a block of skb data at consumed relative to the
+lower offset specified to skb_prepare_seq_read() . Assigns
+the head of the data block to data and returns the length
+of the block or 0 if the end of the skb data or the upper
+offset has been reached.

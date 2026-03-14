@@ -1,0 +1,11 @@
+Function: int genphy_setup_forced ( struct phy_device * phydev )
+
+configures/forces speed/duplex from phydev
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  to the values in phydev. Assumes that the values are valid.
+Please see phy_sanitize_settings() .

@@ -1,0 +1,19 @@
+Struct: struct edac_ecs_ops
+
+ECS device operations (all elements optional)
+
+Members
+  get_log_entry_type
+    read the log entry type value.
+  set_log_entry_type
+    set the log entry type value.
+  get_mode
+    read the mode value.
+  set_mode
+    set the mode value.
+  reset
+    reset the ECS counter.
+  get_threshold
+    read the threshold count per gigabits of memory cells.
+  set_threshold
+    set the threshold count per gigabits of memory cells.

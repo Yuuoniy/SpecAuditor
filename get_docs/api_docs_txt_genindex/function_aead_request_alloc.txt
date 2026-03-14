@@ -1,0 +1,14 @@
+Function: struct aead_request * aead_request_alloc ( struct crypto_aead * tfm , gfp_t gfp )
+
+allocate request data structure
+
+Parameters
+  struct crypto_aead *tfm
+    cipher handle to be registered with the request
+  gfp_t gfp
+    memory allocation flag that is handed to kmalloc by the API call.
+
+Description
+  Allocate the request data structure that must be used with the AEAD
+encrypt and decrypt API calls. During the allocation, the provided aead
+handle is registered in the request data structure.

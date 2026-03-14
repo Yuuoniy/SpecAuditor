@@ -1,0 +1,11 @@
+Function: void unregister_node ( struct node * node )
+
+unregister a node device
+
+Parameters
+  struct node *node
+    node going away
+
+Description
+  Unregisters a node device node .  All the devices on the node must be
+unregistered before calling this function.

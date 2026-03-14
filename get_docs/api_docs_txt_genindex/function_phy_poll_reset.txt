@@ -1,0 +1,11 @@
+Function: int phy_poll_reset ( struct phy_device * phydev )
+
+Safely wait until a PHY reset has properly completed
+
+Parameters
+  struct phy_device *phydev
+    The PHY device to poll
+
+Description
+  published in 2008, a PHY reset may take up to 0.5 seconds.  The MII BMCR
+register must be polled until the BMCR_RESET bit clears.

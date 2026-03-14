@@ -1,0 +1,14 @@
+Function: int clk_bulk_get_all ( struct device * dev , struct clk_bulk_data * * clks )
+
+lookup and obtain all available references to clock producer.
+
+Parameters
+  struct device *dev
+    device for clock “consumer”
+  struct clk_bulk_data **clks
+    pointer to the clk_bulk_data table of consumer
+
+Description
+  This helper function allows drivers to get all clk consumers in one
+operation. If any of the clk cannot be acquired then any clks
+that were obtained will be freed before returning to the caller.

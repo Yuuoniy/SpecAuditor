@@ -1,0 +1,10 @@
+Macro: ASSERT_FALSE
+
+
+
+Parameters
+  seen
+    measured value
+
+Description
+  ASSERT_FALSE(measured): measured == 0

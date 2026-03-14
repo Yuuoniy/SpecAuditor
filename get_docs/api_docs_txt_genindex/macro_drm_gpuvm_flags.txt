@@ -1,0 +1,3 @@
+Macro: enum drm_gpuvm_flags
+
+flags for struct drm_gpuvm

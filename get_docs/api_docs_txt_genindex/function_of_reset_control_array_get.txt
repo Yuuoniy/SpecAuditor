@@ -1,0 +1,12 @@
+Function: struct reset_control * of_reset_control_array_get ( struct device_node * np , enum reset_control_flags flags )
+
+Get a list of reset controls using device node.
+
+Parameters
+  struct device_node *np
+    device node for the device that requests the reset controls array
+  enum reset_control_flags flags
+    whether reset controls are shared, optional, acquired
+
+Description
+  Returns pointer to allocated reset_control on success or error on failure

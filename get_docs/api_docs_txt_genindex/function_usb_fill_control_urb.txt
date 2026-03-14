@@ -1,0 +1,27 @@
+Function: void usb_fill_control_urb ( struct urb * urb , struct usb_device * dev , unsigned int pipe , unsigned char * setup_packet , void * transfer_buffer , int buffer_length , usb_complete_t complete_fn , void * context )
+
+initializes a control urb
+
+Parameters
+  struct urb *urb
+    pointer to the urb to initialize.
+  struct usb_device *dev
+    pointer to the struct usb_device for this urb.
+  unsigned int pipe
+    the endpoint pipe
+  unsigned char *setup_packet
+    pointer to the setup_packet buffer. The buffer must be
+suitable for DMA.
+  void *transfer_buffer
+    pointer to the transfer buffer. The buffer must be
+suitable for DMA.
+  int buffer_length
+    length of the transfer buffer
+  usb_complete_t complete_fn
+    pointer to the usb_complete_t function
+  void *context
+    what to set the urb context to.
+
+Description
+  Initializes a control urb with the proper information needed to submit
+it to a device.

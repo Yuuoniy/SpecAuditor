@@ -1,0 +1,16 @@
+Function: struct drm_printer drm_line_printer ( struct drm_printer * p , const char * prefix , unsigned int series )
+
+construct a drm_printer that prefixes outputs with line numbers
+
+Parameters
+  struct drm_printer *p
+    the struct drm_printer which actually generates the output
+  const char *prefix
+    optional output prefix, or NULL for no prefix
+  unsigned int series
+    optional unique series identifier, or 0 to omit identifier in the output
+
+Description
+  This printer can be used to increase the robustness of the captured output
+to make sure we didn’t lost any intermediate lines of the output. Helpful
+while capturing some crash data.

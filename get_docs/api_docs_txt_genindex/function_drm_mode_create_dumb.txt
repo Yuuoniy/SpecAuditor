@@ -1,0 +1,19 @@
+Function: struct drm_mode_create_dumb
+
+Create a KMS dumb buffer for scanout.
+
+Members
+  height
+    buffer height in pixels
+  width
+    buffer width in pixels
+  bpp
+    bits per pixel
+  flags
+    must be zero
+  handle
+    buffer object handle
+  pitch
+    number of bytes between two consecutive lines
+  size
+    size of the whole buffer in bytes

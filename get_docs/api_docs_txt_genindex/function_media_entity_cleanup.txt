@@ -1,0 +1,11 @@
+Function: void media_entity_cleanup ( struct media_entity * entity )
+
+free resources associated with an entity
+
+Parameters
+  struct media_entity *entity
+    entity where the pads belong
+
+Description
+  This function must be called during the cleanup phase after unregistering
+the entity (currently, it does nothing).

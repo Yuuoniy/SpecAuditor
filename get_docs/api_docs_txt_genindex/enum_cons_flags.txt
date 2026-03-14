@@ -1,0 +1,3 @@
+Enum: enum cons_flags
+
+General console flags

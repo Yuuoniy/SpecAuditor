@@ -1,0 +1,9 @@
+Function: int target_get_sess_cmd ( struct se_cmd * se_cmd , bool ack_kref )
+
+Verify the session is accepting cmds and take ref
+
+Parameters
+  struct se_cmd *se_cmd
+    command descriptor to add
+  bool ack_kref
+    Signal that fabric will perform an ack target_put_sess_cmd()

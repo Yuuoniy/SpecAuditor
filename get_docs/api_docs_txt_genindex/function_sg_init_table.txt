@@ -1,0 +1,9 @@
+Function: void sg_init_table ( struct scatterlist * sgl , unsigned int nents )
+
+Initialize SG table
+
+Parameters
+  struct scatterlist *sgl
+    The SG table
+  unsigned int nents
+    Number of entries in table

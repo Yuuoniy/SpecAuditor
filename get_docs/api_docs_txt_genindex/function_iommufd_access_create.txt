@@ -1,0 +1,17 @@
+Function: struct iommufd_access * iommufd_access_create ( struct iommufd_ctx * ictx , const struct iommufd_access_ops * ops , void * data , u32 * id )
+
+Create an iommufd_access
+
+Parameters
+  struct iommufd_ctx *ictx
+    iommufd file descriptor
+  const struct iommufd_access_ops *ops
+    Driver’s ops to associate with the access
+  void *data
+    Opaque data to pass into ops functions
+  u32 *id
+    Output ID number to return to userspace for this access
+
+Description
+  An iommufd_access allows a driver to read/write to the IOAS without using
+DMA. The underlying CPU memory can be accessed using the iommufd_access_pin_pages() or iommufd_access_rw() functions.

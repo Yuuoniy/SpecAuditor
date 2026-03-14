@@ -1,0 +1,273 @@
+Struct: struct v4l2_ioctl_ops
+
+describe operations for each V4L2 ioctl
+
+Members
+  vidioc_querycap
+    pointer to the function that implements VIDIOC_QUERYCAP ioctl
+  vidioc_enum_fmt_vid_cap
+    pointer to the function that implements VIDIOC_ENUM_FMT ioctl logic
+for video capture in single and multi plane mode
+  vidioc_enum_fmt_vid_overlay
+    pointer to the function that implements VIDIOC_ENUM_FMT ioctl logic
+for video overlay
+  vidioc_enum_fmt_vid_out
+    pointer to the function that implements VIDIOC_ENUM_FMT ioctl logic
+for video output in single and multi plane mode
+  vidioc_enum_fmt_sdr_cap
+    pointer to the function that implements VIDIOC_ENUM_FMT ioctl logic
+for Software Defined Radio capture
+  vidioc_enum_fmt_sdr_out
+    pointer to the function that implements VIDIOC_ENUM_FMT ioctl logic
+for Software Defined Radio output
+  vidioc_enum_fmt_meta_cap
+    pointer to the function that implements VIDIOC_ENUM_FMT ioctl logic
+for metadata capture
+  vidioc_enum_fmt_meta_out
+    pointer to the function that implements VIDIOC_ENUM_FMT ioctl logic
+for metadata output
+  vidioc_g_fmt_vid_cap
+    pointer to the function that implements VIDIOC_G_FMT ioctl logic for video capture
+in single plane mode
+  vidioc_g_fmt_vid_overlay
+    pointer to the function that implements VIDIOC_G_FMT ioctl logic for video overlay
+  vidioc_g_fmt_vid_out
+    pointer to the function that implements VIDIOC_G_FMT ioctl logic for video out
+in single plane mode
+  vidioc_g_fmt_vid_out_overlay
+    pointer to the function that implements VIDIOC_G_FMT ioctl logic for video overlay output
+  vidioc_g_fmt_vbi_cap
+    pointer to the function that implements VIDIOC_G_FMT ioctl logic for raw VBI capture
+  vidioc_g_fmt_vbi_out
+    pointer to the function that implements VIDIOC_G_FMT ioctl logic for raw VBI output
+  vidioc_g_fmt_sliced_vbi_cap
+    pointer to the function that implements VIDIOC_G_FMT ioctl logic for sliced VBI capture
+  vidioc_g_fmt_sliced_vbi_out
+    pointer to the function that implements VIDIOC_G_FMT ioctl logic for sliced VBI output
+  vidioc_g_fmt_vid_cap_mplane
+    pointer to the function that implements VIDIOC_G_FMT ioctl logic for video capture
+in multiple plane mode
+  vidioc_g_fmt_vid_out_mplane
+    pointer to the function that implements VIDIOC_G_FMT ioctl logic for video out
+in multiplane plane mode
+  vidioc_g_fmt_sdr_cap
+    pointer to the function that implements VIDIOC_G_FMT ioctl logic for Software Defined
+Radio capture
+  vidioc_g_fmt_sdr_out
+    pointer to the function that implements VIDIOC_G_FMT ioctl logic for Software Defined
+Radio output
+  vidioc_g_fmt_meta_cap
+    pointer to the function that implements VIDIOC_G_FMT ioctl logic for metadata capture
+  vidioc_g_fmt_meta_out
+    pointer to the function that implements VIDIOC_G_FMT ioctl logic for metadata output
+  vidioc_s_fmt_vid_cap
+    pointer to the function that implements VIDIOC_S_FMT ioctl logic for video capture
+in single plane mode
+  vidioc_s_fmt_vid_overlay
+    pointer to the function that implements VIDIOC_S_FMT ioctl logic for video overlay
+  vidioc_s_fmt_vid_out
+    pointer to the function that implements VIDIOC_S_FMT ioctl logic for video out
+in single plane mode
+  vidioc_s_fmt_vid_out_overlay
+    pointer to the function that implements VIDIOC_S_FMT ioctl logic for video overlay output
+  vidioc_s_fmt_vbi_cap
+    pointer to the function that implements VIDIOC_S_FMT ioctl logic for raw VBI capture
+  vidioc_s_fmt_vbi_out
+    pointer to the function that implements VIDIOC_S_FMT ioctl logic for raw VBI output
+  vidioc_s_fmt_sliced_vbi_cap
+    pointer to the function that implements VIDIOC_S_FMT ioctl logic for sliced VBI capture
+  vidioc_s_fmt_sliced_vbi_out
+    pointer to the function that implements VIDIOC_S_FMT ioctl logic for sliced VBI output
+  vidioc_s_fmt_vid_cap_mplane
+    pointer to the function that implements VIDIOC_S_FMT ioctl logic for video capture
+in multiple plane mode
+  vidioc_s_fmt_vid_out_mplane
+    pointer to the function that implements VIDIOC_S_FMT ioctl logic for video out
+in multiplane plane mode
+  vidioc_s_fmt_sdr_cap
+    pointer to the function that implements VIDIOC_S_FMT ioctl logic for Software Defined
+Radio capture
+  vidioc_s_fmt_sdr_out
+    pointer to the function that implements VIDIOC_S_FMT ioctl logic for Software Defined
+Radio output
+  vidioc_s_fmt_meta_cap
+    pointer to the function that implements VIDIOC_S_FMT ioctl logic for metadata capture
+  vidioc_s_fmt_meta_out
+    pointer to the function that implements VIDIOC_S_FMT ioctl logic for metadata output
+  vidioc_try_fmt_vid_cap
+    pointer to the function that implements VIDIOC_TRY_FMT ioctl logic for video capture
+in single plane mode
+  vidioc_try_fmt_vid_overlay
+    pointer to the function that implements VIDIOC_TRY_FMT ioctl logic for video overlay
+  vidioc_try_fmt_vid_out
+    pointer to the function that implements VIDIOC_TRY_FMT ioctl logic for video out
+in single plane mode
+  vidioc_try_fmt_vid_out_overlay
+    pointer to the function that implements VIDIOC_TRY_FMT ioctl logic for video overlay
+output
+  vidioc_try_fmt_vbi_cap
+    pointer to the function that implements VIDIOC_TRY_FMT ioctl logic for raw VBI capture
+  vidioc_try_fmt_vbi_out
+    pointer to the function that implements VIDIOC_TRY_FMT ioctl logic for raw VBI output
+  vidioc_try_fmt_sliced_vbi_cap
+    pointer to the function that implements VIDIOC_TRY_FMT ioctl logic for sliced VBI
+capture
+  vidioc_try_fmt_sliced_vbi_out
+    pointer to the function that implements VIDIOC_TRY_FMT ioctl logic for sliced VBI output
+  vidioc_try_fmt_vid_cap_mplane
+    pointer to the function that implements VIDIOC_TRY_FMT ioctl logic for video capture
+in multiple plane mode
+  vidioc_try_fmt_vid_out_mplane
+    pointer to the function that implements VIDIOC_TRY_FMT ioctl logic for video out
+in multiplane plane mode
+  vidioc_try_fmt_sdr_cap
+    pointer to the function that implements VIDIOC_TRY_FMT ioctl logic for Software Defined
+Radio capture
+  vidioc_try_fmt_sdr_out
+    pointer to the function that implements VIDIOC_TRY_FMT ioctl logic for Software Defined
+Radio output
+  vidioc_try_fmt_meta_cap
+    pointer to the function that implements VIDIOC_TRY_FMT ioctl logic for metadata capture
+  vidioc_try_fmt_meta_out
+    pointer to the function that implements VIDIOC_TRY_FMT ioctl logic for metadata output
+  vidioc_reqbufs
+    pointer to the function that implements VIDIOC_REQBUFS ioctl
+  vidioc_querybuf
+    pointer to the function that implements VIDIOC_QUERYBUF ioctl
+  vidioc_qbuf
+    pointer to the function that implements VIDIOC_QBUF ioctl
+  vidioc_expbuf
+    pointer to the function that implements VIDIOC_EXPBUF ioctl
+  vidioc_dqbuf
+    pointer to the function that implements VIDIOC_DQBUF ioctl
+  vidioc_create_bufs
+    pointer to the function that implements VIDIOC_CREATE_BUFS ioctl
+  vidioc_prepare_buf
+    pointer to the function that implements VIDIOC_PREPARE_BUF ioctl
+  vidioc_remove_bufs
+    pointer to the function that implements VIDIOC_REMOVE_BUFS ioctl
+  vidioc_overlay
+    pointer to the function that implements VIDIOC_OVERLAY ioctl
+  vidioc_g_fbuf
+    pointer to the function that implements VIDIOC_G_FBUF ioctl
+  vidioc_s_fbuf
+    pointer to the function that implements VIDIOC_S_FBUF ioctl
+  vidioc_streamon
+    pointer to the function that implements VIDIOC_STREAMON ioctl
+  vidioc_streamoff
+    pointer to the function that implements VIDIOC_STREAMOFF ioctl
+  vidioc_g_std
+    pointer to the function that implements VIDIOC_G_STD ioctl
+  vidioc_s_std
+    pointer to the function that implements VIDIOC_S_STD ioctl
+  vidioc_querystd
+    pointer to the function that implements VIDIOC_QUERYSTD ioctl
+  vidioc_enum_input
+    pointer to the function that implements VIDIOC_ENUM_INPUT ioctl
+  vidioc_g_input
+    pointer to the function that implements VIDIOC_G_INPUT ioctl
+  vidioc_s_input
+    pointer to the function that implements VIDIOC_S_INPUT ioctl
+  vidioc_enum_output
+    pointer to the function that implements VIDIOC_ENUM_OUTPUT ioctl
+  vidioc_g_output
+    pointer to the function that implements VIDIOC_G_OUTPUT ioctl
+  vidioc_s_output
+    pointer to the function that implements VIDIOC_S_OUTPUT ioctl
+  vidioc_query_ext_ctrl
+    pointer to the function that implements VIDIOC_QUERY_EXT_CTRL ioctl
+  vidioc_g_ext_ctrls
+    pointer to the function that implements VIDIOC_G_EXT_CTRLS ioctl
+  vidioc_s_ext_ctrls
+    pointer to the function that implements VIDIOC_S_EXT_CTRLS ioctl
+  vidioc_try_ext_ctrls
+    pointer to the function that implements VIDIOC_TRY_EXT_CTRLS ioctl
+  vidioc_querymenu
+    pointer to the function that implements VIDIOC_QUERYMENU ioctl
+  vidioc_enumaudio
+    pointer to the function that implements VIDIOC_ENUMAUDIO ioctl
+  vidioc_g_audio
+    pointer to the function that implements VIDIOC_G_AUDIO ioctl
+  vidioc_s_audio
+    pointer to the function that implements VIDIOC_S_AUDIO ioctl
+  vidioc_enumaudout
+    pointer to the function that implements VIDIOC_ENUMAUDOUT ioctl
+  vidioc_g_audout
+    pointer to the function that implements VIDIOC_G_AUDOUT ioctl
+  vidioc_s_audout
+    pointer to the function that implements VIDIOC_S_AUDOUT ioctl
+  vidioc_g_modulator
+    pointer to the function that implements VIDIOC_G_MODULATOR ioctl
+  vidioc_s_modulator
+    pointer to the function that implements VIDIOC_S_MODULATOR ioctl
+  vidioc_g_pixelaspect
+    pointer to the function that implements
+the pixelaspect part of the VIDIOC_CROPCAP ioctl
+  vidioc_g_selection
+    pointer to the function that implements VIDIOC_G_SELECTION ioctl
+  vidioc_s_selection
+    pointer to the function that implements VIDIOC_S_SELECTION ioctl
+  vidioc_g_jpegcomp
+    pointer to the function that implements VIDIOC_G_JPEGCOMP ioctl
+  vidioc_s_jpegcomp
+    pointer to the function that implements VIDIOC_S_JPEGCOMP ioctl
+  vidioc_g_enc_index
+    pointer to the function that implements VIDIOC_G_ENC_INDEX ioctl
+  vidioc_encoder_cmd
+    pointer to the function that implements VIDIOC_ENCODER_CMD ioctl
+  vidioc_try_encoder_cmd
+    pointer to the function that implements VIDIOC_TRY_ENCODER_CMD ioctl
+  vidioc_decoder_cmd
+    pointer to the function that implements VIDIOC_DECODER_CMD ioctl
+  vidioc_try_decoder_cmd
+    pointer to the function that implements VIDIOC_TRY_DECODER_CMD ioctl
+  vidioc_g_parm
+    pointer to the function that implements VIDIOC_G_PARM ioctl
+  vidioc_s_parm
+    pointer to the function that implements VIDIOC_S_PARM ioctl
+  vidioc_g_tuner
+    pointer to the function that implements VIDIOC_G_TUNER ioctl
+  vidioc_s_tuner
+    pointer to the function that implements VIDIOC_S_TUNER ioctl
+  vidioc_g_frequency
+    pointer to the function that implements VIDIOC_G_FREQUENCY ioctl
+  vidioc_s_frequency
+    pointer to the function that implements VIDIOC_S_FREQUENCY ioctl
+  vidioc_enum_freq_bands
+    pointer to the function that implements VIDIOC_ENUM_FREQ_BANDS ioctl
+  vidioc_g_sliced_vbi_cap
+    pointer to the function that implements VIDIOC_G_SLICED_VBI_CAP ioctl
+  vidioc_log_status
+    pointer to the function that implements VIDIOC_LOG_STATUS ioctl
+  vidioc_s_hw_freq_seek
+    pointer to the function that implements VIDIOC_S_HW_FREQ_SEEK ioctl
+  vidioc_g_register
+    pointer to the function that implements VIDIOC_DBG_G_REGISTER ioctl
+  vidioc_s_register
+    pointer to the function that implements VIDIOC_DBG_S_REGISTER ioctl
+  vidioc_g_chip_info
+    pointer to the function that implements VIDIOC_DBG_G_CHIP_INFO ioctl
+  vidioc_enum_framesizes
+    pointer to the function that implements VIDIOC_ENUM_FRAMESIZES ioctl
+  vidioc_enum_frameintervals
+    pointer to the function that implements VIDIOC_ENUM_FRAMEINTERVALS ioctl
+  vidioc_s_dv_timings
+    pointer to the function that implements VIDIOC_S_DV_TIMINGS ioctl
+  vidioc_g_dv_timings
+    pointer to the function that implements VIDIOC_G_DV_TIMINGS ioctl
+  vidioc_query_dv_timings
+    pointer to the function that implements VIDIOC_QUERY_DV_TIMINGS ioctl
+  vidioc_enum_dv_timings
+    pointer to the function that implements VIDIOC_ENUM_DV_TIMINGS ioctl
+  vidioc_dv_timings_cap
+    pointer to the function that implements VIDIOC_DV_TIMINGS_CAP ioctl
+  vidioc_g_edid
+    pointer to the function that implements VIDIOC_G_EDID ioctl
+  vidioc_s_edid
+    pointer to the function that implements VIDIOC_S_EDID ioctl
+  vidioc_subscribe_event
+    pointer to the function that implements VIDIOC_SUBSCRIBE_EVENT ioctl
+  vidioc_unsubscribe_event
+    pointer to the function that implements VIDIOC_UNSUBSCRIBE_EVENT ioctl
+  vidioc_default
+    pointed used to allow other ioctls

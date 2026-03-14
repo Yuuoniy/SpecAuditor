@@ -1,0 +1,13 @@
+Function: int drm_helper_connector_dpms ( struct drm_connector * connector , int mode )
+
+connector dpms helper implementation
+
+Parameters
+  struct drm_connector *connector
+    affected connector
+  int mode
+    DPMS mode
+
+Description
+  The drm_helper_connector_dpms() helper function implements the drm_connector_funcs.dpms callback for drivers using the legacy CRTC
+helpers.

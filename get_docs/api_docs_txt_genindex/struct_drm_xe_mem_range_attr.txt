@@ -1,0 +1,19 @@
+Struct: struct drm_xe_mem_range_attr
+
+Output of DRM_IOCTL_XE_VM_QUERY_MEM_RANGES_ATTRS
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  start
+    start of the memory range
+  end
+    end of the memory range
+  preferred_mem_loc
+    preferred memory location
+  atomic
+    Atomic access policy
+  pat_index
+    Page attribute table index
+  reserved
+    Reserved

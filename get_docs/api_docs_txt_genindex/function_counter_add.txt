@@ -1,0 +1,10 @@
+Function: int counter_add ( struct counter_device * counter )
+
+complete registration of a counter
+
+Parameters
+  struct counter_device *counter
+    the counter to add
+
+Description
+  This is part two of counter registration.

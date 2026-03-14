@@ -1,0 +1,17 @@
+Function: int of_property_read_u32_array ( const struct device_node * np , const char * propname , u32 * out_values , size_t sz )
+
+Find and read an array of 32 bit integers from a property.
+
+Parameters
+  const struct device_node *np
+    device node from which the property value is to be read.
+  const char *propname
+    name of the property to be searched.
+  u32 *out_values
+    pointer to return value, modified only if return value is 0.
+  size_t sz
+    number of array elements to read
+
+Description
+  Search for a property in a device node and read 32-bit value(s) from
+it.

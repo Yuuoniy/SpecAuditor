@@ -1,0 +1,9 @@
+Function: bool drm_rect_equals ( const struct drm_rect * r1 , const struct drm_rect * r2 )
+
+determine if two rectangles are equal
+
+Parameters
+  const struct drm_rect *r1
+    first rectangle
+  const struct drm_rect *r2
+    second rectangle

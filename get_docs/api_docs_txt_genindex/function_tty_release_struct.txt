@@ -1,0 +1,13 @@
+Function: void tty_release_struct ( struct tty_struct * tty , int idx )
+
+release a tty struct
+
+Parameters
+  struct tty_struct *tty
+    tty device
+  int idx
+    index of the tty
+
+Description
+  Performs the final steps to release and free a tty device. It is roughly the
+reverse of tty_init_dev() .

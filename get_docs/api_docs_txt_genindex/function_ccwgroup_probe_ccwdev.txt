@@ -1,0 +1,11 @@
+Function: int ccwgroup_probe_ccwdev ( struct ccw_device * cdev )
+
+probe function for slave devices
+
+Parameters
+  struct ccw_device *cdev
+    ccw device to be probed
+
+Description
+  This is a dummy probe function for ccw devices that are slave devices in
+a ccw group device.

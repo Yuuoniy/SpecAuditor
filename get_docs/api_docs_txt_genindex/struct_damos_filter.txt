@@ -1,0 +1,24 @@
+Struct: struct damos_filter
+
+DAMOS action target memory filter.
+
+Members
+  type
+    Type of the target memory.
+  matching
+    Whether this is for type -matching memory.
+  allow
+    Whether to include or exclude the matching memory.
+  {unnamed_union}
+    anonymous
+  memcg_id
+    Memcg id of the question if type is DAMOS_FILTER_MEMCG.
+  addr_range
+    Address range if type is DAMOS_FILTER_TYPE_ADDR.
+  target_idx
+    Index of the struct damon_target of damon_ctx->adaptive_targets if type is
+DAMOS_FILTER_TYPE_TARGET.
+  sz_range
+    Size range if type is DAMOS_FILTER_TYPE_HUGEPAGE_SIZE.
+  list
+    List head for siblings.

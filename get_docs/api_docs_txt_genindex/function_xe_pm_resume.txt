@@ -1,0 +1,7 @@
+Function: int xe_pm_resume ( struct xe_device * xe )
+
+Helper for System resume S3->S0 / S2idle->S0
+
+Parameters
+  struct xe_device *xe
+    xe device instance

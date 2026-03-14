@@ -1,0 +1,15 @@
+Function: int tipc_udp_enable ( struct net * net , struct tipc_bearer * b , struct nlattr * attrs [ ] )
+
+callback to create a new udp bearer instance
+
+Parameters
+  struct net *net
+    network namespace
+  struct tipc_bearer *b
+    pointer to generic tipc_bearer
+  struct nlattr *attrs[]
+    netlink bearer configuration
+
+Description
+  validate the bearer parameters and initialize the udp bearer
+rtnl_lock should be held

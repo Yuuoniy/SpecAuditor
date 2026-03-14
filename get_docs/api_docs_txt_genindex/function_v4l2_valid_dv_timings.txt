@@ -1,0 +1,18 @@
+Function: bool v4l2_valid_dv_timings ( const struct v4l2_dv_timings * t , const struct v4l2_dv_timings_cap * cap , v4l2_check_dv_timings_fnc fnc , void * fnc_handle )
+
+are these timings valid?
+
+Parameters
+  const struct v4l2_dv_timings *t
+    the v4l2_dv_timings struct.
+  const struct v4l2_dv_timings_cap *cap
+    the v4l2_dv_timings_cap capabilities.
+  v4l2_check_dv_timings_fnc fnc
+    callback to check if this timing is OK. May be NULL.
+  void *fnc_handle
+    a handle that is passed on to fnc .
+
+Description
+  Returns true if the given dv_timings struct is supported by the
+hardware capabilities and the callback function (if non-NULL), returns
+false otherwise.

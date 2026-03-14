@@ -1,0 +1,11 @@
+Function: int security_msg_queue_alloc ( struct kern_ipc_perm * msq )
+
+Allocate a sysv ipc msg queue LSM blob
+
+Parameters
+  struct kern_ipc_perm *msq
+    sysv ipc permission structure
+
+Description
+  Allocate and attach a security structure to msg . The security field is
+initialized to NULL when the structure is first created.

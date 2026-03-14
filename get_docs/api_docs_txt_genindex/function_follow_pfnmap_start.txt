@@ -1,0 +1,12 @@
+Function: int follow_pfnmap_start ( struct follow_pfnmap_args * args )
+
+Look up a pfn mapping at a user virtual address
+
+Parameters
+  struct follow_pfnmap_args *args
+    Pointer to struct follow_pfnmap_args
+
+Description
+  The caller needs to setup args->vma and args->address to point to the
+virtual address as the target of such lookup.  On a successful return,
+the results will be put into other output fields.

@@ -1,0 +1,19 @@
+Struct: struct ipu3_uapi_yuvp1_y_ee_nr_lpf_config
+
+Luma(Y) edge enhancement low-pass filter coefficients
+
+Members
+  a_diag
+    Smoothing diagonal coefficient, u5.0.
+  reserved0
+    reserved
+  a_periph
+    Image smoothing perpherial, u5.0.
+  reserved1
+    reserved
+  a_cent
+    Image Smoothing center coefficient, u5.0.
+  reserved2
+    reserved
+  enable
+    0: Y_EE_NR disabled, output = input; 1: Y_EE_NR enabled.

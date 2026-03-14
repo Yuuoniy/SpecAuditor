@@ -1,0 +1,13 @@
+Struct: struct dvbdevfops_node
+
+fops nodes registered in dvbdevfops_list
+
+Members
+  fops
+    Dynamically allocated fops for ->owner registration
+  type
+    type of dvb_device
+  template
+    dvb_device used for registration
+  list_head
+    list_head for dvbdevfops_list

@@ -1,0 +1,16 @@
+Function: int amdgpu_vm_flush_compute_tlb ( struct amdgpu_device * adev , struct amdgpu_vm * vm , uint32_t flush_type , uint32_t xcc_mask )
+
+Flush TLB on compute VM
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+  struct amdgpu_vm *vm
+    requested vm
+  uint32_t flush_type
+    flush type
+  uint32_t xcc_mask
+    mask of XCCs that belong to the compute partition in need of a TLB flush.
+
+Description
+  Flush TLB if needed for a compute VM.

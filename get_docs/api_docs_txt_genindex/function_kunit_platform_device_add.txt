@@ -1,0 +1,13 @@
+Function: int kunit_platform_device_add ( struct kunit * test , struct platform_device * pdev )
+
+Register a KUnit test managed platform device
+
+Parameters
+  struct kunit *test
+    test context
+  struct platform_device *pdev
+    platform device to add
+
+Description
+  Register a test managed platform device. The device is unregistered when the
+test completes.

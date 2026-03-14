@@ -1,0 +1,16 @@
+Macro: drm_ioctl_compat_t
+
+Typedef : compatibility DRM ioctl function type.
+
+Parameters
+  struct file *filp
+    file pointer
+  unsigned int cmd
+    ioctl command code
+  unsigned long arg
+    DRM file this ioctl was made on
+
+Description
+  Just a typedef to make declaring an array of compatibility handlers easier.
+New drivers shouldn’t screw up the structure layout for their ioctl
+structures and hence never need this.

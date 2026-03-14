@@ -1,0 +1,7 @@
+Function: __bpf_kfunc void bpf_cpumask_setall ( struct bpf_cpumask * cpumask )
+
+Set all of the bits in a BPF cpumask.
+
+Parameters
+  struct bpf_cpumask *cpumask
+    The BPF cpumask having all of its bits set.

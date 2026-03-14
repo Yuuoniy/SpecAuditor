@@ -1,0 +1,12 @@
+Function: void mctrl_gpio_set ( struct mctrl_gpios * gpios , unsigned int mctrl )
+
+set gpios according to mctrl state
+
+Parameters
+  struct mctrl_gpios *gpios
+    gpios to set
+  unsigned int mctrl
+    state to set
+
+Description
+  Set the gpios according to the mctrl state.

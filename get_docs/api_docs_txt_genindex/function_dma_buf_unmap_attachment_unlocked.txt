@@ -1,0 +1,14 @@
+Function: void dma_buf_unmap_attachment_unlocked ( struct dma_buf_attachment * attach , struct sg_table * sg_table , enum dma_data_direction direction )
+
+unmaps and decreases usecount of the buffer;might deallocate the scatterlist associated. Is a wrapper for unmap_dma_buf() of dma_buf_ops.
+
+Parameters
+  struct dma_buf_attachment *attach
+    [in]    attachment to unmap buffer from
+  struct sg_table *sg_table
+    [in]    scatterlist info of the buffer to unmap
+  enum dma_data_direction direction
+    [in]    direction of DMA transfer
+
+Description
+  Unlocked variant of dma_buf_unmap_attachment() .

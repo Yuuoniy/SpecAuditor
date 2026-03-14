@@ -1,0 +1,7 @@
+Macro: pcm_for_each_format
+
+
+
+Parameters
+  f
+    the iterator variable in snd_pcm_format_t type

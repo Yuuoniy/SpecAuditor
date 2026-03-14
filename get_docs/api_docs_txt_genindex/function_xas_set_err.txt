@@ -1,0 +1,14 @@
+Function: void xas_set_err ( struct xa_state * xas , long err )
+
+Note an error in the xa_state.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+  long err
+    Negative error number.
+
+Description
+  Only call this function with a negative err ; zero or positive errors
+will probably not behave the way you think they should.  If you want
+to clear the error from an xa_state, use xas_reset() .

@@ -1,0 +1,13 @@
+Function: void drm_atomic_helper_plane_destroy_state ( struct drm_plane * plane , struct drm_plane_state * state )
+
+default state destroy hook
+
+Parameters
+  struct drm_plane *plane
+    drm plane
+  struct drm_plane_state *state
+    plane state object to release
+
+Description
+  Default plane state destroy hook for drivers which don’t have their own
+subclassed plane state structure.

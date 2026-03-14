@@ -1,0 +1,13 @@
+Function: int tty_tiocmget ( struct tty_struct * tty , int __user * p )
+
+get modem status
+
+Parameters
+  struct tty_struct *tty
+    tty device
+  int __user *p
+    pointer to result
+
+Description
+  Obtain the modem status bits from the tty driver if the feature is
+supported. Return - ENOTTY if it is not available.

@@ -1,0 +1,12 @@
+Function: int aica_rtc_settimeofday ( struct device * dev , struct rtc_time * tm )
+
+Set the AICA RTC to the current time
+
+Parameters
+  struct device *dev
+    the RTC device (ignored)
+  struct rtc_time *tm
+    pointer to new RTC time structure
+
+Description
+  Adjusts the given tv to the AICA Epoch and sets the RTC seconds counter.

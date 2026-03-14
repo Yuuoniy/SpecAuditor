@@ -1,0 +1,10 @@
+Function: void pci_cfg_access_unlock ( struct pci_dev * dev )
+
+Unlock PCI config reads/writes
+
+Parameters
+  struct pci_dev *dev
+    pci device struct
+
+Description
+  This function allows PCI config accesses to resume.

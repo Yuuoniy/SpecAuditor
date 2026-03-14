@@ -1,0 +1,10 @@
+Function: int snd_power_wait ( struct snd_card * card )
+
+wait until the card gets powered up (old form)
+
+Parameters
+  struct snd_card *card
+    soundcard structure
+
+Description
+  Wait until the card gets powered up to SNDRV_CTL_POWER_D0 state.

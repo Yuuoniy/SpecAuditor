@@ -1,0 +1,25 @@
+Struct: struct padata_mt_job
+
+represents one multithreaded job
+
+Members
+  thread_fn
+    Called for each chunk of work that a padata thread does.
+  fn_arg
+    The thread function argument.
+  start
+    The start of the job (units are job-specific).
+  size
+    size of this node’s work (units are job-specific).
+  align
+    Ranges passed to the thread function fall on this boundary, with the
+possible exceptions of the beginning and end of the job.
+  min_chunk
+    The minimum chunk size in job-specific units.  This allows
+the client to communicate the minimum amount of work that’s
+appropriate for one worker thread to do at once.
+  max_threads
+    Max threads to use for the job, actual number may be less
+depending on task size and minimum chunk size.
+  numa_aware
+    Distribute jobs to different nodes with CPU in a round robin fashion.

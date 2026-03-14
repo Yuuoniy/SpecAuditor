@@ -1,0 +1,17 @@
+Function: ssize_t drm_dp_dual_mode_write ( struct i2c_adapter * adapter , u8 offset , const void * buffer , size_t size )
+
+Write to the DP dual mode adaptor register(s)
+
+Parameters
+  struct i2c_adapter *adapter
+    I2C adapter for the DDC bus
+  u8 offset
+    register offset
+  const void *buffer
+    buffer for write data
+  size_t size
+    size of the buffer
+
+Description
+  Writes size bytes to the DP dual mode adaptor registers
+starting at offset .

@@ -1,0 +1,13 @@
+Macro: KUNIT_EXPECT_FALSE
+
+
+
+Parameters
+  test
+    The test context object.
+  condition
+    an arbitrary boolean expression. The test fails when this does
+not evaluate to false.
+
+Description
+  Sets an expectation that condition evaluates to false. See KUNIT_EXPECT_TRUE() for more information.

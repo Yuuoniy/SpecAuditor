@@ -1,0 +1,8 @@
+Struct: struct v4l2_fwnode_connector_analog
+
+analog connector data structure
+
+Members
+  sdtv_stds
+    sdtv standards this connector supports, set to V4L2_STD_ALL
+if no restrictions are specified.

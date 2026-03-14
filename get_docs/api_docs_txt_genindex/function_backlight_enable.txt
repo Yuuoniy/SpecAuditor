@@ -1,0 +1,7 @@
+Function: int backlight_enable ( struct backlight_device * bd )
+
+Enable backlight
+
+Parameters
+  struct backlight_device *bd
+    the backlight device to enable

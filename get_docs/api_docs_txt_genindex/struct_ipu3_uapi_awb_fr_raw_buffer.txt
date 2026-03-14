@@ -1,0 +1,7 @@
+Struct: struct ipu3_uapi_awb_fr_raw_buffer
+
+AWB filter response meta data
+
+Members
+  meta_data
+    Statistics output on the grid after convolving with 1D filter.

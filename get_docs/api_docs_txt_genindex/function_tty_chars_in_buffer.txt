@@ -1,0 +1,7 @@
+Function: unsigned int tty_chars_in_buffer ( struct tty_struct * tty )
+
+characters pending
+
+Parameters
+  struct tty_struct *tty
+    terminal

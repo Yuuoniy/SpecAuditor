@@ -1,0 +1,12 @@
+Function: void drm_sysfs_hotplug_event ( struct drm_device * dev )
+
+generate a DRM uevent
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  Send a uevent for the DRM device specified by dev .  Currently we only
+set HOTPLUG=1 in the uevent environment, but this could be expanded to
+deal with other types of events.

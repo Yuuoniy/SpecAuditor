@@ -1,0 +1,7 @@
+Function: void iser_conn_release ( struct iser_conn * iser_conn )
+
+Frees all conn objects and deallocs conn descriptor
+
+Parameters
+  struct iser_conn *iser_conn
+    iSER connection context

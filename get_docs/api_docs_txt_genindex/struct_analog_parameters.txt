@@ -1,0 +1,15 @@
+Struct: struct analog_parameters
+
+Parameters to tune into an analog/radio channel
+
+Members
+  frequency
+    Frequency used by analog TV tuner (either in 62.5 kHz step,
+for TV, or 62.5 Hz for radio)
+  mode
+    Tuner mode, as defined on enum v4l2_tuner_type
+  audmode
+    Audio mode as defined for the rxsubchans field at videodev2.h,
+e. g. V4L2_TUNER_MODE_*
+  std
+    TV standard bitmap as defined at videodev2.h, e. g. V4L2_STD_*

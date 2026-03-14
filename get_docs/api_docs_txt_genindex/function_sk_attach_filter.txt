@@ -1,0 +1,15 @@
+Function: int sk_attach_filter ( struct sock_fprog * fprog , struct sock * sk )
+
+attach a socket filter
+
+Parameters
+  struct sock_fprog *fprog
+    the filter program
+  struct sock *sk
+    the socket to use
+
+Description
+  Attach the user’s filter code. We first run some sanity checks on
+it to make sure it does not explode on us later. If an error
+occurs or there is insufficient memory for the filter a negative
+errno code is returned. On success the return is zero.

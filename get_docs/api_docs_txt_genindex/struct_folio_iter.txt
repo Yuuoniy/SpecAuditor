@@ -1,0 +1,12 @@
+Struct: struct folio_iter
+
+State for iterating all folios in a bio.
+
+Members
+  folio
+    The current folio we’re iterating.  NULL after the last folio.
+  offset
+    The byte offset within the current folio.
+  length
+    The number of bytes in this iteration (will not cross folio
+boundary).

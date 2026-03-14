@@ -1,0 +1,13 @@
+Struct: struct ipu3_uapi_bnr_static_config_opt_center_config
+
+Optical center config
+
+Members
+  x_reset
+    Reset value of X (col start - X center). Precision s12.0.
+  reserved0
+    reserved
+  y_reset
+    Reset value of Y (row start - Y center). Precision s12.0.
+  reserved2
+    reserved

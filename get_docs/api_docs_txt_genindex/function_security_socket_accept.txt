@@ -1,0 +1,14 @@
+Function: int security_socket_accept ( struct socket * sock , struct socket * newsock )
+
+Check if a socket is allowed to accept connections
+
+Parameters
+  struct socket *sock
+    listening socket
+  struct socket *newsock
+    newly creation connection socket
+
+Description
+  Check permission before accepting a new connection.  Note that the new
+socket, newsock , has been created and some information copied to it, but
+the accept operation has not actually been performed.

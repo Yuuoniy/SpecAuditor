@@ -1,0 +1,9 @@
+Struct: struct iommu_destroy
+
+ioctl(IOMMU_DESTROY)
+
+Members
+  size
+    sizeof( struct iommu_destroy )
+  id
+    iommufd object ID to destroy. Can be any destroyable object type.

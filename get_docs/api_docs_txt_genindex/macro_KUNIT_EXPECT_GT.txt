@@ -1,0 +1,17 @@
+Macro: KUNIT_EXPECT_GT
+
+
+
+Parameters
+  test
+    The test context object.
+  left
+    an arbitrary expression that evaluates to a primitive C type.
+  right
+    an arbitrary expression that evaluates to a primitive C type.
+
+Description
+  Sets an expectation that the value that left evaluates to is greater than
+the value that right evaluates to. This is semantically equivalent to
+KUNIT_EXPECT_TRUE( test , ( left ) > ( right )). See KUNIT_EXPECT_TRUE() for
+more information.

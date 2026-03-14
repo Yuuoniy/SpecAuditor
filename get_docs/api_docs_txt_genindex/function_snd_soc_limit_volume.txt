@@ -1,0 +1,14 @@
+Function: int snd_soc_limit_volume ( struct snd_soc_card * card , const char * name , int max )
+
+Set new limit to an existing volume control.
+
+Parameters
+  struct snd_soc_card *card
+    where to look for the control
+  const char *name
+    Name of the control
+  int max
+    new maximum limit
+
+Description
+  Return 0 for success, else error.

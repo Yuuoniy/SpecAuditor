@@ -1,0 +1,18 @@
+Function: struct mem_ctl_info * edac_mc_alloc ( unsigned int mc_num , unsigned int n_layers , struct edac_mc_layer * layers , unsigned int sz_pvt )
+
+Allocate and partially fill a struct mem_ctl_info .
+
+Parameters
+  unsigned int mc_num
+    Memory controller number
+  unsigned int n_layers
+    Number of MC hierarchy layers
+  struct edac_mc_layer *layers
+    Describes each layer as seen by the Memory Controller
+  unsigned int sz_pvt
+    size of private storage needed
+
+Description
+  Everything is kmalloc’ed as one big chunk - more efficient.
+Only can be used if all structures have the same lifetime - otherwise
+you have to allocate and initialize your own structures.

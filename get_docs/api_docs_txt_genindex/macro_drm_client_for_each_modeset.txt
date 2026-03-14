@@ -1,0 +1,9 @@
+Macro: drm_client_for_each_modeset
+
+
+
+Parameters
+  modeset
+    drm_mode_set loop cursor
+  client
+    DRM client

@@ -1,0 +1,17 @@
+Function: struct hpd_rx_irq_offload_work_queue
+
+Work queue to handle hpd_rx_irq offload work
+
+Members
+  wq
+    workqueue structure to queue offload work.
+  offload_lock
+    To protect fields of offload work queue.
+  is_handling_link_loss
+    Used to prevent inserting link loss event when
+we’re handling link loss
+  is_handling_mst_msg_rdy_event
+    Used to prevent inserting mst message
+ready event when we’re already handling mst message ready event
+  aconnector
+    The aconnector that this work queue is attached to

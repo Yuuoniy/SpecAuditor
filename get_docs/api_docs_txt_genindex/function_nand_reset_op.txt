@@ -1,0 +1,12 @@
+Function: int nand_reset_op ( struct nand_chip * chip )
+
+Do a reset operation
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+
+Description
+  This function sends a RESET command and waits for the NAND to be ready
+before returning.
+This function does not select/unselect the CS line.

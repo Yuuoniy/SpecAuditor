@@ -1,0 +1,9 @@
+Function: void set_pageblock_migratetype ( struct page * page , enum migratetype migratetype )
+
+Set the migratetype of a pageblock
+
+Parameters
+  struct page *page
+    The page within the block of interest
+  enum migratetype migratetype
+    migratetype to set

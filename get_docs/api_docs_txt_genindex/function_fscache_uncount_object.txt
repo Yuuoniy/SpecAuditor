@@ -1,0 +1,11 @@
+Function: void fscache_uncount_object ( struct fscache_cache * cache )
+
+Tell fscache that an object has been removed
+
+Parameters
+  struct fscache_cache *cache
+    The cache to account to
+
+Description
+  Tell fscache that an object has been removed from the cache and will no
+longer be accessed.  After this point, the cache cookie may be destroyed.

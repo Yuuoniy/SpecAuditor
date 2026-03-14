@@ -1,0 +1,13 @@
+Function: void intel_uncore_forcewake_put__locked ( struct intel_uncore * uncore , enum forcewake_domains fw_domains )
+
+release forcewake domain references
+
+Parameters
+  struct intel_uncore *uncore
+    the intel_uncore structure
+  enum forcewake_domains fw_domains
+    forcewake domains to put references
+
+Description
+  See intel_uncore_forcewake_put() . This variant places the onus
+on the caller to explicitly handle the dev_priv->uncore.lock spinlock.

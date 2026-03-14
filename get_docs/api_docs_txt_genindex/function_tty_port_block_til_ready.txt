@@ -1,0 +1,15 @@
+Function: int tty_port_block_til_ready ( struct tty_port * port , struct tty_struct * tty , struct file * filp )
+
+Waiting logic for tty open
+
+Parameters
+  struct tty_port *port
+    the tty port being opened
+  struct tty_struct *tty
+    the tty device being bound
+  struct file *filp
+    the file pointer of the opener or NULL
+
+Description
+  Implement the core POSIX/SuS tty behaviour when opening a tty device.
+Handles:

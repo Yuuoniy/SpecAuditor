@@ -1,0 +1,14 @@
+Function: void drm_gem_fb_end_cpu_access ( struct drm_framebuffer * fb , enum dma_data_direction dir )
+
+signals end of CPU access to GEM buffer objects
+
+Parameters
+  struct drm_framebuffer *fb
+    the framebuffer
+  enum dma_data_direction dir
+    access mode
+
+Description
+  Signals the end of CPU access to the given framebuffer’s GEM buffer objects. This
+function must be paired with a corresponding call to drm_gem_fb_begin_cpu_access() .
+For imported BOs, the function calls dma_buf_end_cpu_access() .

@@ -1,0 +1,8 @@
+Function: u32 ssam_notifier_from_errno ( int err )
+
+Convert standard error value to notifier return code.
+
+Parameters
+  int err
+    The error code to convert, must be negative (in case of failure) or
+zero (in case of success).

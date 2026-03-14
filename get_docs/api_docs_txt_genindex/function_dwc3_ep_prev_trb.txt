@@ -1,0 +1,14 @@
+Function: struct dwc3_trb * dwc3_ep_prev_trb ( struct dwc3_ep * dep , u8 index )
+
+returns the previous TRB in the ring
+
+Parameters
+  struct dwc3_ep *dep
+    The endpoint with the TRB ring
+  u8 index
+    The index of the current TRB in the ring
+
+Description
+  Returns the TRB prior to the one pointed to by the index. If the
+index is 0, we will wrap backwards, skip the link TRB, and return
+the one just before that.

@@ -1,0 +1,12 @@
+Function: void platform_device_del ( struct platform_device * pdev )
+
+remove a platform-level device
+
+Parameters
+  struct platform_device *pdev
+    platform device we’re removing
+
+Description
+  Note that this function will also release all memory- and port-based
+resources owned by the device ( dev->resource ).  This function must
+_only_ be externally called in error cases.  All other usage is a bug.

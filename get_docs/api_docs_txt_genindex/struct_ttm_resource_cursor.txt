@@ -1,0 +1,23 @@
+Struct: struct ttm_resource_cursor
+
+
+
+Members
+  man
+    The resource manager currently being iterated over
+  hitch
+    A hitch list node inserted before the next resource
+to iterate over.
+  bulk_link
+    A list link for the list of cursors traversing the
+bulk sublist of bulk . Protected by the ttm device’s lru_lock.
+  bulk
+    Pointer to struct ttm_lru_bulk_move whose subrange hitch is
+inserted to. NULL if none. Never dereference this pointer since
+the struct ttm_lru_bulk_move object pointed to might have been
+freed. The pointer is only for comparison.
+  mem_type
+    The memory type of the LRU list being traversed.
+This field is valid iff bulk != NULL.
+  priority
+    the current priority

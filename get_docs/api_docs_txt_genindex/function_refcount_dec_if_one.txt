@@ -1,0 +1,11 @@
+Function: bool refcount_dec_if_one ( refcount_t * r )
+
+decrement a refcount if it is 1
+
+Parameters
+  refcount_t *r
+    the refcount
+
+Description
+  No atomic_t counterpart, it attempts a 1 -> 0 transition and returns the
+success thereof.

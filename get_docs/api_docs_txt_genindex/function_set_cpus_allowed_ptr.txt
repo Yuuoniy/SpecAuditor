@@ -1,0 +1,9 @@
+Function: int set_cpus_allowed_ptr ( struct task_struct * p , const struct cpumask * new_mask )
+
+set CPU affinity mask of a task
+
+Parameters
+  struct task_struct *p
+    the task
+  const struct cpumask *new_mask
+    CPU affinity mask

@@ -1,0 +1,14 @@
+Function: bool phy_validate_pause ( struct phy_device * phydev , struct ethtool_pauseparam * pp )
+
+Test if the PHY/MAC support the pause configuration
+
+Parameters
+  struct phy_device *phydev
+    phy_device struct
+  struct ethtool_pauseparam *pp
+    requested pause configuration
+
+Description
+  Test if the PHY/MAC combination supports the Pause
+configuration the user is requesting. Returns True if it is
+supported, false otherwise.

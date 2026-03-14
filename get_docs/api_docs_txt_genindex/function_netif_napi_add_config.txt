@@ -1,0 +1,13 @@
+Function: void netif_napi_add_config ( struct net_device * dev , struct napi_struct * napi , int ( * poll ) ( struct napi_struct * , int ) , int index )
+
+initialize a NAPI context with persistent config
+
+Parameters
+  struct net_device *dev
+    network device
+  struct napi_struct *napi
+    NAPI context
+  int (*poll)(struct napi_struct *, int)
+    polling function
+  int index
+    the NAPI index

@@ -1,0 +1,13 @@
+Function: int media_entity_setup_link ( struct media_link * link , u32 flags )
+
+changes the link flags properties in runtime
+
+Parameters
+  struct media_link *link
+    pointer to media_link
+  u32 flags
+    the requested new link flags
+
+Description
+  The only configurable property is the MEDIA_LNK_FL_ENABLED link flag
+to enable/disable a link. Links marked with the MEDIA_LNK_FL_IMMUTABLE link flag can not be enabled or disabled.

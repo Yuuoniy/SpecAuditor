@@ -1,0 +1,12 @@
+Function: int security_task_setpgid ( struct task_struct * p , pid_t pgid )
+
+Check if setting the pgid is allowed
+
+Parameters
+  struct task_struct *p
+    task being modified
+  pid_t pgid
+    new pgid
+
+Description
+  Check permission before setting the process group identifier of the process p to pgid .

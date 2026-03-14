@@ -1,0 +1,16 @@
+Function: int rvt_fast_reg_mr ( struct rvt_qp * qp , struct ib_mr * ibmr , u32 key , int access )
+
+fast register physical MR
+
+Parameters
+  struct rvt_qp *qp
+    the queue pair where the work request comes from
+  struct ib_mr *ibmr
+    the memory region to be registered
+  u32 key
+    updated key for this memory region
+  int access
+    access flags for this memory region
+
+Description
+  Returns 0 on success.

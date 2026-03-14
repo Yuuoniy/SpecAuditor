@@ -1,0 +1,17 @@
+Function: int check_create ( struct nand_chip * this , uint8_t * buf , struct nand_bbt_descr * bd )
+
+[GENERIC] create and write bbt(s) if necessary
+
+Parameters
+  struct nand_chip *this
+    the NAND device
+  uint8_t *buf
+    temporary buffer
+  struct nand_bbt_descr *bd
+    descriptor for the good/bad block search pattern
+
+Description
+  The function checks the results of the previous call to read_bbt and creates
+/ updates the bbt(s) if necessary. Creation is necessary if no bbt was found
+for the chip/device. Update is necessary if one of the tables is missing or
+the version nr. of one table is less than the other.

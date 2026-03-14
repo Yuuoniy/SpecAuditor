@@ -1,0 +1,12 @@
+Function: int drm_modeset_backoff ( struct drm_modeset_acquire_ctx * ctx )
+
+deadlock avoidance backoff
+
+Parameters
+  struct drm_modeset_acquire_ctx *ctx
+    the acquire context
+
+Description
+  If deadlock is detected (ie. drm_modeset_lock() returns -EDEADLK),
+you must call this function to drop all currently held locks and
+block until the contended lock becomes available.

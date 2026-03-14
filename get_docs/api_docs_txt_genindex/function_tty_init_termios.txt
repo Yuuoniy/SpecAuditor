@@ -1,0 +1,10 @@
+Function: void tty_init_termios ( struct tty_struct * tty )
+
+helper for termios setup
+
+Parameters
+  struct tty_struct *tty
+    the tty to set up
+
+Description
+  Initialise the termios structure for this tty. This runs under the tty_mutex currently so we can be relaxed about ordering.

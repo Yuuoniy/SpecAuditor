@@ -1,0 +1,23 @@
+Struct: struct tipc_topsrv
+
+TIPC server structure
+
+Members
+  conn_idr
+    identifier set of connection
+  idr_lock
+    protect the connection identifier set
+  idr_in_use
+    amount of allocated identifier entry
+  net
+    network namespace instance
+  awork
+    accept work item
+  rcv_wq
+    receive workqueue
+  send_wq
+    send workqueue
+  listener
+    topsrv listener socket
+  name
+    server name

@@ -1,0 +1,9 @@
+Function: void drm_buddy_print ( struct drm_buddy * mm , struct drm_printer * p )
+
+print allocator state
+
+Parameters
+  struct drm_buddy *mm
+    DRM buddy manager
+  struct drm_printer *p
+    DRM printer to use

@@ -1,0 +1,12 @@
+Function: bool ssh_ptl_should_drop_dsq_packet ( void )
+
+Error injection hook to drop sequenced data packet.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Useful to test re-transmit timeout of the driver. If the data packet has not
+been ACKed after a certain time, the driver should re-transmit the packet up
+to limited number of times defined in SSH_PTL_MAX_PACKET_TRIES.

@@ -1,0 +1,11 @@
+Struct: struct dm_compressor_info
+
+Buffer info used by frame buffer compression
+
+Members
+  cpu_addr
+    MMIO cpu addr
+  bo_ptr
+    Pointer to the buffer object
+  gpu_addr
+    MMIO gpu addr

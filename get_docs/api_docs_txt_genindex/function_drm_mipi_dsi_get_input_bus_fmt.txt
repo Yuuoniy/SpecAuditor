@@ -1,0 +1,11 @@
+Function: u32 drm_mipi_dsi_get_input_bus_fmt ( enum mipi_dsi_pixel_format dsi_format )
+
+Get the required MEDIA_BUS_FMT_* based input pixel format for a given DSI output pixel format
+
+Parameters
+  enum mipi_dsi_pixel_format dsi_format
+    pixel format that a DSI host needs to output
+
+Description
+  Various DSI hosts can use this function during their drm_bridge_funcs.atomic_get_input_bus_fmts operation to ascertain
+the MEDIA_BUS_FMT_* pixel format required as input.

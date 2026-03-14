@@ -1,0 +1,11 @@
+Function: struct xsdfec_stats
+
+Stats retrived by ioctl XSDFEC_GET_STATS. Used to buffer atomic_t variables from struct xsdfec_dev . Counts are accumulated until the user clears them.
+
+Members
+  isr_err_count
+    Count of ISR errors
+  cecc_count
+    Count of Correctable ECC errors (SBE)
+  uecc_count
+    Count of Uncorrectable ECC errors (MBE)

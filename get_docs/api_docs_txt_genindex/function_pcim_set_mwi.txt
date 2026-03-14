@@ -1,0 +1,10 @@
+Function: int pcim_set_mwi ( struct pci_dev * pdev )
+
+a device-managed pci_set_mwi()
+
+Parameters
+  struct pci_dev *pdev
+    the PCI device for which MWI is enabled
+
+Description
+  Managed pci_set_mwi() .

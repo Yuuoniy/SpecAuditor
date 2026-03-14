@@ -1,0 +1,14 @@
+Function: struct ib_device * _ib_alloc_device ( size_t size , struct net * net )
+
+allocate an IB device struct
+
+Parameters
+  size_t size
+    size of structure to allocate
+  struct net *net
+    network namespace device should be located in, namespace
+must stay valid until ib_register_device() is completed.
+
+Description
+  Low-level drivers should use ib_alloc_device() to allocate struct ib_device . size is the size of the structure to be allocated,
+including any private data used by the low-level driver. ib_dealloc_device() must be used to free structures allocated with ib_alloc_device() .

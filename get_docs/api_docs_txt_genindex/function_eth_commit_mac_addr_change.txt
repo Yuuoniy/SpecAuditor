@@ -1,0 +1,9 @@
+Function: void eth_commit_mac_addr_change ( struct net_device * dev , void * p )
+
+commit mac change
+
+Parameters
+  struct net_device *dev
+    network device
+  void *p
+    socket address

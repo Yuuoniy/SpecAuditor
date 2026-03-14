@@ -1,0 +1,9 @@
+Function: int drm_dsc_setup_rc_params ( struct drm_dsc_config * vdsc_cfg , enum drm_dsc_params_type type )
+
+Set parameters and limits for RC model in accordance with the DSC 1.1 or 1.2 specification and DSC C Model Required bits_per_pixel and bits_per_component to be set before calling this function.
+
+Parameters
+  struct drm_dsc_config *vdsc_cfg
+    DSC Configuration data partially filled by driver
+  enum drm_dsc_params_type type
+    operating mode and standard to follow

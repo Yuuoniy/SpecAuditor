@@ -1,0 +1,12 @@
+Function: int v4l2_mc_create_media_graph ( struct media_device * mdev )
+
+create Media Controller links at the graph.
+
+Parameters
+  struct media_device *mdev
+    pointer to the media_device struct.
+
+Description
+  Add links between the entities commonly found on PC customer’s hardware at
+the V4L2 side: camera sensors, audio and video PLL-IF decoders, tuners,
+analog TV decoder and I/O entities (video, VBI and Software Defined Radio).

@@ -1,0 +1,13 @@
+Function: char * strchrnul ( const char * s , int c )
+
+Find and return a character in a string, or end of string
+
+Parameters
+  const char *s
+    The string to be searched
+  int c
+    The character to search for
+
+Description
+  Returns pointer to first occurrence of ‘c’ in s. If c is not found, then
+return a pointer to the null byte at the end of s.

@@ -1,0 +1,14 @@
+Function: int cxl_internal_send_cmd ( struct cxl_mailbox * cxl_mbox , struct cxl_mbox_cmd * mbox_cmd )
+
+Kernel internal interface to send a mailbox command
+
+Parameters
+  struct cxl_mailbox *cxl_mbox
+    CXL mailbox context
+  struct cxl_mbox_cmd *mbox_cmd
+    initialized command to execute
+
+Description
+  Mailbox commands may execute successfully yet the device itself reported an
+error. While this distinction can be useful for commands from userspace, the
+kernel will only be able to use results when both are successful.

@@ -1,0 +1,13 @@
+Struct: struct c3_isp_ae_zone_stats
+
+AE statistics of a zone
+
+Members
+  hist0
+    the global normalized pixel count for bin 0
+  hist1
+    the global normalized pixel count for bin 1
+  hist3
+    the global normalized pixel count for bin 3
+  hist4
+    the global normalized pixel count for bin 4

@@ -1,0 +1,9 @@
+Function: void srpt_srq_event ( struct ib_event * event , void * ctx )
+
+SRQ event callback function
+
+Parameters
+  struct ib_event *event
+    Description of the event that occurred.
+  void *ctx
+    Context pointer specified at SRQ creation time.

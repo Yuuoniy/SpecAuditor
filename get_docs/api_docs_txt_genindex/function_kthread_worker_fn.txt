@@ -1,0 +1,12 @@
+Function: int kthread_worker_fn ( void * worker_ptr )
+
+kthread function to process kthread_worker
+
+Parameters
+  void *worker_ptr
+    pointer to initialized kthread_worker
+
+Description
+  This function implements the main cycle of kthread worker. It processes
+work_list until it is stopped with kthread_stop() . It sleeps when the queue
+is empty.

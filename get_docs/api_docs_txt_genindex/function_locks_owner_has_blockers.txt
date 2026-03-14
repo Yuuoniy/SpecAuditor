@@ -1,0 +1,12 @@
+Function: bool locks_owner_has_blockers ( struct file_lock_context * flctx , fl_owner_t owner )
+
+Check for blocking lock requests
+
+Parameters
+  struct file_lock_context *flctx
+    file lock context
+  fl_owner_t owner
+    lock owner
+
+Description
+  true : owner has at least one blocker false : owner has no blockers

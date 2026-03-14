@@ -1,0 +1,11 @@
+Function: work_func_t wq_worker_last_func ( struct task_struct * task )
+
+retrieve worker’s last work function
+
+Parameters
+  struct task_struct *task
+    Task to retrieve last work function of.
+
+Description
+  Determine the last function a worker executed. This is called from
+the scheduler to get a worker’s last known identity.

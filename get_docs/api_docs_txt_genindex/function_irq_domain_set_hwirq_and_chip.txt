@@ -1,0 +1,15 @@
+Function: int irq_domain_set_hwirq_and_chip ( struct irq_domain * domain , unsigned int virq , irq_hw_number_t hwirq , const struct irq_chip * chip , void * chip_data )
+
+Set hwirq and irqchip of virq at domain
+
+Parameters
+  struct irq_domain *domain
+    Interrupt domain to match
+  unsigned int virq
+    IRQ number
+  irq_hw_number_t hwirq
+    The hwirq number
+  const struct irq_chip *chip
+    The associated interrupt chip
+  void *chip_data
+    The associated chip data

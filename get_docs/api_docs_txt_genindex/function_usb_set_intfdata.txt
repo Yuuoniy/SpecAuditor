@@ -1,0 +1,13 @@
+Function: void usb_set_intfdata ( struct usb_interface * intf , void * data )
+
+associate driver-specific data with an interface
+
+Parameters
+  struct usb_interface *intf
+    USB interface
+  void *data
+    driver data
+
+Description
+  Drivers can use this function in their probe() callbacks to associate
+driver-specific data with an interface.

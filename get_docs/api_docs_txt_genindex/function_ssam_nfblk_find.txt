@@ -1,0 +1,9 @@
+Function: bool ssam_nfblk_find ( struct ssam_nf_head * nh , struct ssam_notifier_block * nb )
+
+Check if a notifier block is registered on the given notifier head. list.
+
+Parameters
+  struct ssam_nf_head *nh
+    The notifier head on which to search.
+  struct ssam_notifier_block *nb
+    The notifier block to search for.

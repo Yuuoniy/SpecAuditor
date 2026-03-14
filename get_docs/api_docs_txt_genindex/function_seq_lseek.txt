@@ -1,0 +1,14 @@
+Function: loff_t seq_lseek ( struct file * file , loff_t offset , int whence )
+
+-> llseek() method for sequential files.
+
+Parameters
+  struct file *file
+    the file in question
+  loff_t offset
+    new position
+  int whence
+    0 for absolute, 1 for relative position
+
+Description
+  Ready-made ->f_op-> llseek()

@@ -1,0 +1,9 @@
+Function: int ieee80211_channel_to_frequency ( int chan , enum nl80211_band band )
+
+convert channel number to frequency
+
+Parameters
+  int chan
+    channel number
+  enum nl80211_band band
+    band, necessary due to channel number overlap

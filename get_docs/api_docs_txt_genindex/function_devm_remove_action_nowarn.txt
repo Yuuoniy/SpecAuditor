@@ -1,0 +1,15 @@
+Function: int devm_remove_action_nowarn ( struct device * dev , void ( * action ) ( void * ) , void * data )
+
+removes previously added custom action
+
+Parameters
+  struct device *dev
+    Device that owns the action
+  void (*action)(void *)
+    Function implementing the action
+  void *data
+    Pointer to data passed to action implementation
+
+Description
+  Removes instance of action previously added by devm_add_action() .
+Both action and data should match one of the existing entries.

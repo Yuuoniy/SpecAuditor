@@ -1,0 +1,18 @@
+Function: struct net_device * netdev_get_by_index ( struct net * net , int ifindex , netdevice_tracker * tracker , gfp_t gfp )
+
+find a device by its ifindex
+
+Parameters
+  struct net *net
+    the applicable net namespace
+  int ifindex
+    index of device
+  netdevice_tracker *tracker
+    tracking object for the acquired reference
+  gfp_t gfp
+    allocation flags for the tracker
+
+Description
+  Search for an interface by index. Returns NULL if the device
+is not found or a pointer to the device. The device returned has
+had a reference added and the pointer is safe until the user calls netdev_put() to indicate they have finished with it.

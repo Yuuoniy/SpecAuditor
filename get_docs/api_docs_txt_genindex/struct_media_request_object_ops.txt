@@ -1,0 +1,15 @@
+Struct: struct media_request_object_ops
+
+Media request object operations
+
+Members
+  prepare
+    Validate and prepare the request object, optional.
+  unprepare
+    Unprepare the request object, optional.
+  queue
+    Queue the request object, optional.
+  unbind
+    Unbind the request object, optional.
+  release
+    Release the request object, required.

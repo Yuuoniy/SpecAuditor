@@ -1,0 +1,3 @@
+Enum: enum i3c_addr_slot_status
+
+I3C address slot status

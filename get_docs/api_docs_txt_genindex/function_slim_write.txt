@@ -1,0 +1,13 @@
+Function: int slim_write ( struct slim_device * sdev , u32 addr , size_t count , u8 * val )
+
+Write SLIMbus value element
+
+Parameters
+  struct slim_device *sdev
+    client handle.
+  u32 addr
+    address in the value element to write.
+  size_t count
+    number of bytes to write. Maximum bytes allowed are 16.
+  u8 *val
+    value to write to value element

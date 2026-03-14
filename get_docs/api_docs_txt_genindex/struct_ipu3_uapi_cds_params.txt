@@ -1,0 +1,32 @@
+Struct: struct ipu3_uapi_cds_params
+
+Chroma down-scaling
+
+Members
+  ds_c00
+    range [0, 3]
+  ds_c01
+    range [0, 3]
+  ds_c02
+    range [0, 3]
+  ds_c03
+    range [0, 3]
+  ds_c10
+    range [0, 3]
+  ds_c11
+    range [0, 3]
+  ds_c12
+    range [0, 3]
+  ds_c13
+    range [0, 3]
+  ds_nf
+    Normalization factor for Chroma output downscaling filter,
+range 0,4, default 2.
+  reserved0
+    reserved
+  csc_en
+    Color space conversion enable
+  uv_bin_output
+    0: output YUV 4.2.0, 1: output YUV 4.2.2(default).
+  reserved1
+    reserved

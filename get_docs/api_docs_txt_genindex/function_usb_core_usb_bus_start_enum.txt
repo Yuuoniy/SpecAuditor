@@ -1,0 +1,15 @@
+Function: int usb_bus_start_enum ( struct usb_bus * bus , unsigned port_num )
+
+start immediate enumeration (for OTG)
+
+Parameters
+  struct usb_bus *bus
+    the bus (must use hcd framework)
+  unsigned port_num
+    1-based number of port; usually bus->otg_port
+
+Description
+  Starts enumeration, with an immediate reset followed later by
+hub_wq identifying and possibly configuring the device.
+This is needed by OTG controller drivers, where it helps meet
+HNP protocol timing requirements for starting a port reset.

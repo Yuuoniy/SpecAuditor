@@ -1,0 +1,10 @@
+Function: void free_percpu ( void __percpu * ptr )
+
+free percpu area
+
+Parameters
+  void __percpu *ptr
+    pointer to area to free
+
+Description
+  Free percpu area ptr .

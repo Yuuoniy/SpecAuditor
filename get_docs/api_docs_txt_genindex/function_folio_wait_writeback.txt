@@ -1,0 +1,11 @@
+Function: void folio_wait_writeback ( struct folio * folio )
+
+Wait for a folio to finish writeback.
+
+Parameters
+  struct folio *folio
+    The folio to wait for.
+
+Description
+  If the folio is currently being written back to storage, wait for the
+I/O to complete.

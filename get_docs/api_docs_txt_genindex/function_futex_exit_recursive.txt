@@ -1,0 +1,13 @@
+Function: void futex_exit_recursive ( struct task_struct * tsk )
+
+Set the tasks futex state to FUTEX_STATE_DEAD
+
+Parameters
+  struct task_struct *tsk
+    task to set the state on
+
+Description
+  Set the futex exit state of the task lockless. The futex waiter code
+observes that state when a task is exiting and loops until the task has
+actually finished the futex cleanup. The worst case for this is that the
+waiter runs through the wait loop until the state becomes visible.

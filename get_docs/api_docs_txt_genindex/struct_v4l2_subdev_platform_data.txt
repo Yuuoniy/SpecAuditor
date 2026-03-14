@@ -1,0 +1,11 @@
+Struct: struct v4l2_subdev_platform_data
+
+regulators config struct
+
+Members
+  regulators
+    Optional regulators used to power on/off the subdevice
+  num_regulators
+    Number of regululators
+  host_priv
+    Per-subdevice data, specific for a certain video host device

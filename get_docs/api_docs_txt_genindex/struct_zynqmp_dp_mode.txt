@@ -1,0 +1,13 @@
+Struct: struct zynqmp_dp_mode
+
+Configured mode of DisplayPort
+
+Members
+  fmt
+    format identifier string
+  pclock
+    pixel clock frequency of current mode
+  bw_code
+    code for bandwidth(link rate)
+  lane_cnt
+    number of lanes

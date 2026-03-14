@@ -1,0 +1,9 @@
+Function: __bpf_kfunc bool bpf_cpumask_test_and_clear_cpu ( u32 cpu , struct bpf_cpumask * cpumask )
+
+Atomically test and clear a CPU in a BPF cpumask.
+
+Parameters
+  u32 cpu
+    The CPU being cleared and queried for.
+  struct bpf_cpumask *cpumask
+    The BPF cpumask being cleared and queried for containing a CPU.

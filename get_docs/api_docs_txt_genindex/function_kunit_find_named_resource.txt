@@ -1,0 +1,9 @@
+Function: struct kunit_resource * kunit_find_named_resource ( struct kunit * test , const char * name )
+
+Find a resource using match name.
+
+Parameters
+  struct kunit *test
+    Test case to which the resource belongs.
+  const char *name
+    match name.

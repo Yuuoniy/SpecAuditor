@@ -1,0 +1,12 @@
+Function: int oa_get_render_ctx_id ( struct i915_perf_stream * stream )
+
+determine and hold ctx hw id
+
+Parameters
+  struct i915_perf_stream *stream
+    An i915-perf stream opened for OA metrics
+
+Description
+  Determine the render context hw id, and ensure it remains fixed for the
+lifetime of the stream. This ensures that we don’t have to worry about
+updating the context ID in OACONTROL on the fly.

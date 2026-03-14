@@ -1,0 +1,11 @@
+Function: const char * dmi_get_system_info ( int field )
+
+return DMI data value
+
+Parameters
+  int field
+    data index (see enum dmi_field )
+
+Description
+  Returns one DMI data value, can be used to perform
+complex DMI data checks.

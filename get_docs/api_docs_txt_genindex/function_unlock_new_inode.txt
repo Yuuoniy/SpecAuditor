@@ -1,0 +1,11 @@
+Function: void unlock_new_inode ( struct inode * inode )
+
+clear the I_NEW state and wake up any waiters
+
+Parameters
+  struct inode *inode
+    new inode to unlock
+
+Description
+  Called when the inode is fully initialised to clear the new state of the
+inode and wake up anyone waiting for the inode to finish initialisation.

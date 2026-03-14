@@ -1,0 +1,14 @@
+Function: uint32_t drm_driver_color_mode_format ( struct drm_device * dev , unsigned int color_mode )
+
+Compute DRM 4CC code from color mode
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  unsigned int color_mode
+    command-line color mode
+
+Description
+  Computes a DRM 4CC pixel format code for the given color mode using drm_driver_color_mode() . The color mode is in the format used and the
+kernel command line. It specifies the number of bits per pixel
+and color depth in a single value.

@@ -1,0 +1,14 @@
+Function: int ssam_register_clients ( struct device * dev , struct ssam_controller * ctrl )
+
+Register all client devices defined under the given parent device.
+
+Parameters
+  struct device *dev
+    The parent device under which clients should be registered.
+  struct ssam_controller *ctrl
+    The controller with which client should be registered.
+
+Description
+  Register all clients that have via firmware nodes been defined as children
+of the given (parent) device. The respective child firmware nodes will be
+associated with the correspondingly created child devices.

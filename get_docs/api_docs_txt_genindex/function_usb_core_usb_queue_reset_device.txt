@@ -1,0 +1,11 @@
+Function: void usb_queue_reset_device ( struct usb_interface * iface )
+
+Reset a USB device from an atomic context
+
+Parameters
+  struct usb_interface *iface
+    USB interface belonging to the device to reset
+
+Description
+  This function can be used to reset a USB device from an atomic
+context, where usb_reset_device() won’t work (as it blocks).

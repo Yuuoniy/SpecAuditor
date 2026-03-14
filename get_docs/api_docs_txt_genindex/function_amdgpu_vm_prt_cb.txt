@@ -1,0 +1,9 @@
+Function: void amdgpu_vm_prt_cb ( struct dma_fence * fence , struct dma_fence_cb * _cb )
+
+callback for updating the PRT status
+
+Parameters
+  struct dma_fence *fence
+    fence for the callback
+  struct dma_fence_cb *_cb
+    the callback function

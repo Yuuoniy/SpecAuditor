@@ -1,0 +1,10 @@
+Function: void security_shm_free ( struct kern_ipc_perm * shp )
+
+Free a sysv shm LSM blob
+
+Parameters
+  struct kern_ipc_perm *shp
+    sysv ipc permission structure
+
+Description
+  Deallocate the security structure perm->security for the memory segment.

@@ -1,0 +1,13 @@
+Struct: struct iommu_ioas_unmap
+
+ioctl(IOMMU_IOAS_UNMAP)
+
+Members
+  size
+    sizeof( struct iommu_ioas_unmap )
+  ioas_id
+    IOAS ID to change the mapping of
+  iova
+    IOVA to start the unmapping at
+  length
+    Number of bytes to unmap, and return back the bytes unmapped

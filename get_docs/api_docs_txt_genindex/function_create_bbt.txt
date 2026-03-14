@@ -1,0 +1,18 @@
+Function: int create_bbt ( struct nand_chip * this , uint8_t * buf , struct nand_bbt_descr * bd , int chip )
+
+[GENERIC] Create a bad block table by scanning the device
+
+Parameters
+  struct nand_chip *this
+    NAND chip object
+  uint8_t *buf
+    temporary buffer
+  struct nand_bbt_descr *bd
+    descriptor for the good/bad block search pattern
+  int chip
+    create the table for a specific chip, -1 read all chips; applies only
+if NAND_BBT_PERCHIP option is set
+
+Description
+  Create a bad block table by scanning the device for the given good/bad block
+identify pattern.

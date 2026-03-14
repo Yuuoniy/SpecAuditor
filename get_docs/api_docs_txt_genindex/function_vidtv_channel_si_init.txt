@@ -1,0 +1,7 @@
+Function: int vidtv_channel_si_init ( struct vidtv_mux * m )
+
+Init the PSI tables from the channels in the mux
+
+Parameters
+  struct vidtv_mux *m
+    The mux containing the channels.

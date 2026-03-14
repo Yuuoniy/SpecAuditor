@@ -1,0 +1,13 @@
+Function: void drm_atomic_helper_crtc_destroy_state ( struct drm_crtc * crtc , struct drm_crtc_state * state )
+
+default state destroy hook
+
+Parameters
+  struct drm_crtc *crtc
+    drm CRTC
+  struct drm_crtc_state *state
+    CRTC state object to release
+
+Description
+  Default CRTC state destroy hook for drivers which don’t have their own
+subclassed CRTC state structure.

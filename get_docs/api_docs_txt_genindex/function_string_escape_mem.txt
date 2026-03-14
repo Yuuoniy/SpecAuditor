@@ -1,0 +1,23 @@
+Function: int string_escape_mem ( const char * src , size_t isz , char * dst , size_t osz , unsigned int flags , const char * only )
+
+quote characters in the given memory buffer
+
+Parameters
+  const char *src
+    source buffer (unescaped)
+  size_t isz
+    source buffer size
+  char *dst
+    destination buffer (escaped)
+  size_t osz
+    destination buffer size
+  unsigned int flags
+    combination of the flags
+  const char *only
+    NULL-terminated string containing characters used to limit
+the selected escape class. If characters are included in only that would not normally be escaped by the classes selected
+in flags , they will be copied to dst unescaped.
+
+Description
+  The process of escaping byte buffer includes several parts. They are applied
+in the following sequence.

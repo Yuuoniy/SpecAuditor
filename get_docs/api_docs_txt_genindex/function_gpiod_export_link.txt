@@ -1,0 +1,15 @@
+Function: int gpiod_export_link ( struct device * dev , const char * name , struct gpio_desc * desc )
+
+create a sysfs link to an exported GPIO node
+
+Parameters
+  struct device *dev
+    device under which to create symlink
+  const char *name
+    name of the symlink
+  struct gpio_desc *desc
+    GPIO to create symlink to, already exported
+
+Description
+  Set up a symlink from /sys/.../dev/name to /sys/class/gpio/gpioN
+node. Caller is responsible for unlinking.

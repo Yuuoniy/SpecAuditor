@@ -1,0 +1,13 @@
+Function: void * kmalloc ( size_t size , gfp_t flags )
+
+allocate kernel memory
+
+Parameters
+  size_t size
+    how many bytes of memory are required.
+  gfp_t flags
+    describe the allocation context
+
+Description
+  kmalloc is the normal method of allocating memory
+for objects smaller than page size in the kernel.

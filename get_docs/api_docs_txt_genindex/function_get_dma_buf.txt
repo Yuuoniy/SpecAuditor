@@ -1,0 +1,13 @@
+Function: void get_dma_buf ( struct dma_buf * dmabuf )
+
+convenience wrapper for get_file.
+
+Parameters
+  struct dma_buf *dmabuf
+    [in]    pointer to dma_buf
+
+Description
+  Increments the reference count on the dma-buf, needed in case of drivers
+that either need to create additional references to the dmabuf on the
+kernel side.  For example, an exporter that needs to keep a dmabuf ptr
+so that subsequent exports don’t create a new dmabuf.

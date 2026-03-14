@@ -1,0 +1,14 @@
+Function: int skb_copy_ubufs ( struct sk_buff * skb , gfp_t gfp_mask )
+
+copy userspace skb frags buffers to kernel
+
+Parameters
+  struct sk_buff *skb
+    the skb to modify
+  gfp_t gfp_mask
+    allocation priority
+
+Description
+  This must be called on skb with SKBFL_ZEROCOPY_ENABLE.
+It will copy all frags into kernel and drop the reference
+to userspace pages.

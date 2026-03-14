@@ -1,0 +1,3 @@
+Enum: enum nbcon_prio
+
+console owner priority for nbcon consoles

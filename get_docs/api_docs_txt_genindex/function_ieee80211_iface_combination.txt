@@ -1,0 +1,30 @@
+Function: struct ieee80211_iface_combination
+
+possible interface combination
+
+Members
+  limits
+    limits for the given interface types
+  num_different_channels
+    can use up to this many different channels
+  max_interfaces
+    maximum number of interfaces in total allowed in this group
+  n_limits
+    number of limitations
+  beacon_int_infra_match
+    In this combination, the beacon intervals between infrastructure
+and AP types must match. This is required only in special cases.
+  radar_detect_widths
+    bitmap of channel widths supported for radar detection
+  radar_detect_regions
+    bitmap of regions supported for radar detection
+  beacon_int_min_gcd
+    This interface combination supports different beacon intervals. = 0 all beacon intervals for different interface must be same. > 0 any beacon interval for the interface part of this combination AND
+GCD of all beacon intervals from beaconing interfaces of this
+combination must be greater or equal to this value.
+  = 0
+    all beacon intervals for different interface must be same.
+  > 0
+    any beacon interval for the interface part of this combination AND
+GCD of all beacon intervals from beaconing interfaces of this
+combination must be greater or equal to this value.

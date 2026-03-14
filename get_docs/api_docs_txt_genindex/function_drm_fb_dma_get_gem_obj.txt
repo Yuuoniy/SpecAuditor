@@ -1,0 +1,12 @@
+Function: struct drm_gem_dma_object * drm_fb_dma_get_gem_obj ( struct drm_framebuffer * fb , unsigned int plane )
+
+Get DMA GEM object for framebuffer
+
+Parameters
+  struct drm_framebuffer *fb
+    The framebuffer
+  unsigned int plane
+    Which plane
+
+Description
+  Return the DMA GEM object for given framebuffer.

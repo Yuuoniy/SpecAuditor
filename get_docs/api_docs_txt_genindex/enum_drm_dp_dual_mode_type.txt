@@ -1,0 +1,3 @@
+Enum: enum drm_dp_dual_mode_type
+
+Type of the DP dual mode adaptor

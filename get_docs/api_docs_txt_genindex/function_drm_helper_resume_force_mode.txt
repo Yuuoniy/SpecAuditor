@@ -1,0 +1,13 @@
+Function: void drm_helper_resume_force_mode ( struct drm_device * dev )
+
+force-restore mode setting configuration
+
+Parameters
+  struct drm_device *dev
+    drm_device which should be restored
+
+Description
+  Drivers which use the mode setting helpers can use this function to
+force-restore the mode setting configuration e.g. on resume or when something
+else might have trampled over the hw state (like some overzealous old BIOSen
+tended to do).

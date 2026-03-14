@@ -1,0 +1,11 @@
+Function: struct device_node * of_graph_get_remote_node ( const struct device_node * node , u32 port , u32 endpoint )
+
+get remote parent device_node for given port/endpoint
+
+Parameters
+  const struct device_node *node
+    pointer to parent device_node containing graph port/endpoint
+  u32 port
+    identifier (value of reg property) of the parent port node
+  u32 endpoint
+    identifier (value of reg property) of the endpoint node

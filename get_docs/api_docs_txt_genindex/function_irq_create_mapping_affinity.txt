@@ -1,0 +1,17 @@
+Function: unsigned int irq_create_mapping_affinity ( struct irq_domain * domain , irq_hw_number_t hwirq , const struct irq_affinity_desc * affinity )
+
+Map a hardware interrupt into linux irq space
+
+Parameters
+  struct irq_domain *domain
+    domain owning this hardware interrupt or NULL for default domain
+  irq_hw_number_t hwirq
+    hardware irq number in that domain space
+  const struct irq_affinity_desc *affinity
+    irq affinity
+
+Description
+  Only one mapping per hardware interrupt is permitted. Returns a linux
+irq number.
+If the sense/trigger is to be specified, set_irq_type() should be called
+on the number returned from that call.

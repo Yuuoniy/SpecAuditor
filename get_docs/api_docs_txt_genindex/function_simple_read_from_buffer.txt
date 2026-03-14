@@ -1,0 +1,19 @@
+Function: ssize_t simple_read_from_buffer ( void __user * to , size_t count , loff_t * ppos , const void * from , size_t available )
+
+copy data from the buffer to user space
+
+Parameters
+  void __user *to
+    the user space buffer to read to
+  size_t count
+    the maximum number of bytes to read
+  loff_t *ppos
+    the current position in the buffer
+  const void *from
+    the buffer to read from
+  size_t available
+    the size of the buffer
+
+Description
+  The simple_read_from_buffer() function reads up to count bytes from the
+buffer from at offset ppos into the user space address starting at to .

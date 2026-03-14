@@ -1,0 +1,15 @@
+Function: __poll_t drm_poll ( struct file * filp , struct poll_table_struct * wait )
+
+poll method for DRM file
+
+Parameters
+  struct file *filp
+    file pointer
+  struct poll_table_struct *wait
+    poll waiter table
+
+Description
+  This function must be used by drivers as their file_operations.read method
+if they use DRM events for asynchronous signalling to userspace.  Since
+events are used by the KMS API for vblank and page flip completion this means
+all modern display drivers must use it.

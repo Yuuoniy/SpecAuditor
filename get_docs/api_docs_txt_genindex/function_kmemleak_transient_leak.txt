@@ -1,0 +1,12 @@
+Function: void __ref kmemleak_transient_leak ( const void * ptr )
+
+mark an allocated object as transient false positive
+
+Parameters
+  const void *ptr
+    pointer to beginning of the object
+
+Description
+  Calling this function on an object will cause the memory block to not be
+reported as a leak temporarily. This may happen, for example, if the object
+is part of a singly linked list and the ->next reference to it is changed.

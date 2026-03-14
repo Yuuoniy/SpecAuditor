@@ -1,0 +1,21 @@
+Function: struct ssh_request
+
+SSH transport request.
+
+Members
+  packet
+    The underlying SSH transport packet.
+  node
+    List node for the request queue and pending set.
+  state
+    State and type flags describing current request state (dynamic)
+and type (static). See enum ssh_request_flags for possible
+options.
+  timestamp
+    Timestamp specifying when we start waiting on the response of
+the request. This is set once the underlying packet has been
+completed and may be KTIME_MAX before that, or when the request
+does not expect a response. Used for the request timeout
+implementation.
+  ops
+    Request Operations.

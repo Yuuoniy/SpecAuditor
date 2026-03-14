@@ -1,0 +1,13 @@
+Function: int drm_gem_mmap ( struct file * filp , struct vm_area_struct * vma )
+
+memory map routine for GEM objects
+
+Parameters
+  struct file *filp
+    DRM file pointer
+  struct vm_area_struct *vma
+    VMA for the area to be mapped
+
+Description
+  If a driver supports GEM object mapping, mmap calls on the DRM file
+descriptor will end up here.

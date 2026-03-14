@@ -1,0 +1,13 @@
+Function: bool writeback_throttling_sane ( struct scan_control * sc )
+
+is the usual dirty throttling mechanism available?
+
+Parameters
+  struct scan_control *sc
+    scan_control in question
+
+Description
+  The normal page dirty throttling mechanism in balance_dirty_pages() is
+completely broken with the legacy memcg and direct stalling in shrink_folio_list() is used for throttling instead, which lacks all the
+niceties such as fairness, adaptive pausing, bandwidth proportional
+allocation and configurability.

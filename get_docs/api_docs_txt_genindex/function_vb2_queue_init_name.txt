@@ -1,0 +1,16 @@
+Function: int vb2_queue_init_name ( struct vb2_queue * q , const char * name )
+
+initialize a videobuf2 queue with a name
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  const char *name
+    the queue name
+
+Description
+  This function initializes the vb2_queue exactly like vb2_queue_init() ,
+and additionally sets the queue name. The queue name is used for logging
+purpose, and should uniquely identify the queue within the context of the
+device it belongs to. This is useful to attribute kernel log messages to the
+right queue for m2m devices or other devices that handle multiple queues.

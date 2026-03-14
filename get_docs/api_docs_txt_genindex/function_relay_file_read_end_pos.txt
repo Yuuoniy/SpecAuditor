@@ -1,0 +1,11 @@
+Function: size_t relay_file_read_end_pos ( struct rchan_buf * buf , size_t read_pos , size_t count )
+
+return the new read position
+
+Parameters
+  struct rchan_buf *buf
+    relay channel buffer
+  size_t read_pos
+    file read position
+  size_t count
+    number of bytes to be read

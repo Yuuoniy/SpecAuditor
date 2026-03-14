@@ -1,0 +1,11 @@
+Function: char * kmemdup_nul ( const char * s , size_t len , gfp_t gfp )
+
+Create a NUL-terminated string from unterminated data
+
+Parameters
+  const char *s
+    The data to stringify
+  size_t len
+    The size of the data
+  gfp_t gfp
+    the GFP mask used in the kmalloc() call when allocating memory

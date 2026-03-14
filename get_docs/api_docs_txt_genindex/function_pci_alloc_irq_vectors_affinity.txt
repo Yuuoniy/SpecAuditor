@@ -1,0 +1,19 @@
+Function: int pci_alloc_irq_vectors_affinity ( struct pci_dev * dev , unsigned int min_vecs , unsigned int max_vecs , unsigned int flags , struct irq_affinity * affd )
+
+Allocate multiple device interrupt vectors with affinity requirements
+
+Parameters
+  struct pci_dev *dev
+    the PCI device to operate on
+  unsigned int min_vecs
+    minimum required number of vectors (must be >= 1)
+  unsigned int max_vecs
+    maximum desired number of vectors
+  unsigned int flags
+    allocation flags, as in pci_alloc_irq_vectors()
+  struct irq_affinity *affd
+    affinity requirements (can be NULL ).
+
+Description
+  Same as pci_alloc_irq_vectors() , but with the extra affd parameter.
+Check that function docs, and struct irq_affinity , for more details.

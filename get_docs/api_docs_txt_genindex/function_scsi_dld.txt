@@ -1,0 +1,11 @@
+Function: int scsi_dld ( const u8 * cdb )
+
+Get duration limit descriptor index
+
+Parameters
+  const u8 *cdb
+    SCSI command to translate
+
+Description
+  Returns the dld bits indicating the index of a command duration limit
+descriptor.

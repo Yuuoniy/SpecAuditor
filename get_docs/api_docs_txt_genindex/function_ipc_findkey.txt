@@ -1,0 +1,13 @@
+Function: struct kern_ipc_perm * ipc_findkey ( struct ipc_ids * ids , key_t key )
+
+find a key in an ipc identifier set
+
+Parameters
+  struct ipc_ids *ids
+    ipc identifier set
+  key_t key
+    key to find
+
+Description
+  Returns the locked pointer to the ipc structure if found or NULL
+otherwise. If key is found ipc points to the owning ipc structure

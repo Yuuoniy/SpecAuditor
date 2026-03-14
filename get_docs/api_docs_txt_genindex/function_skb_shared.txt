@@ -1,0 +1,11 @@
+Function: int skb_shared ( const struct sk_buff * skb )
+
+is the buffer shared
+
+Parameters
+  const struct sk_buff *skb
+    buffer to check
+
+Description
+  Returns true if more than one person has a reference to this
+buffer.

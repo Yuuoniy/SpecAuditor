@@ -1,0 +1,16 @@
+Function: int driver_for_each_device ( struct device_driver * drv , struct device * start , void * data , device_iter_t fn )
+
+Iterator for devices bound to a driver.
+
+Parameters
+  struct device_driver *drv
+    Driver we’re iterating.
+  struct device *start
+    Device to begin with
+  void *data
+    Data to pass to the callback.
+  device_iter_t fn
+    Function to call for each device.
+
+Description
+  Iterate over the drv ’s list of devices calling fn for each one.

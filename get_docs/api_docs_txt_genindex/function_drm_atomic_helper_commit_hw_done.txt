@@ -1,0 +1,13 @@
+Function: void drm_atomic_helper_commit_hw_done ( struct drm_atomic_state * state )
+
+setup possible nonblocking commit
+
+Parameters
+  struct drm_atomic_state *state
+    atomic state object being committed
+
+Description
+  This function is used to signal completion of the hardware commit step. After
+this step the driver is not allowed to read or change any permanent software
+or hardware modeset state. The only exception is state protected by other
+means than drm_modeset_lock locks.

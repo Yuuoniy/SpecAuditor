@@ -1,0 +1,12 @@
+Function: const char * drm_dp_phy_name ( enum drm_dp_phy dp_phy )
+
+Get the name of the given DP PHY
+
+Parameters
+  enum drm_dp_phy dp_phy
+    The DP PHY identifier
+
+Description
+  Given the dp_phy , get a user friendly name of the DP PHY, either “DPRX” or
+“LTTPR <N>”, or “<INVALID DP PHY>” on errors. The returned string is always
+non-NULL and valid.

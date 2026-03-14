@@ -1,0 +1,13 @@
+Function: bool filemap_release_folio ( struct folio * folio , gfp_t gfp )
+
+Release fs-specific metadata on a folio.
+
+Parameters
+  struct folio *folio
+    The folio which the kernel is trying to free.
+  gfp_t gfp
+    Memory allocation flags (and I/O mode).
+
+Description
+  The address_space is trying to release any data attached to a folio
+(presumably at folio->private).

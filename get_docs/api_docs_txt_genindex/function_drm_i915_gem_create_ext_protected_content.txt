@@ -1,0 +1,9 @@
+Function: struct drm_i915_gem_create_ext_protected_content
+
+The I915_OBJECT_PARAM_PROTECTED_CONTENT extension.
+
+Members
+  base
+    Extension link. See struct i915_user_extension .
+  flags
+    reserved for future usage, currently MBZ

@@ -1,0 +1,17 @@
+Struct: struct ssam_request_sync
+
+Synchronous SAM request struct.
+
+Members
+  base
+    Underlying SSH request.
+  comp
+    Completion used to signal full completion of the request. After the
+request has been submitted, this struct may only be modified or
+deallocated after the completion has been signaled.
+request has been submitted,
+  resp
+    Buffer to store the response.
+  status
+    Status of the request, set after the base request has been
+completed or has failed.

@@ -1,0 +1,16 @@
+Function: void amdgpu_bo_move_notify ( struct ttm_buffer_object * bo , bool evict , struct ttm_resource * new_mem )
+
+notification about a memory move
+
+Parameters
+  struct ttm_buffer_object *bo
+    pointer to a buffer object
+  bool evict
+    if this move is evicting the buffer from the graphics address space
+  struct ttm_resource *new_mem
+    new resource for backing the BO
+
+Description
+  Marks the corresponding amdgpu_bo buffer object as invalid, also performs
+bookkeeping.
+TTM driver callback which is called when ttm moves a buffer.

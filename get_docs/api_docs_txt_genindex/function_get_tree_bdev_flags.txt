@@ -1,0 +1,11 @@
+Function: int get_tree_bdev_flags ( struct fs_context * fc , int ( * fill_super ) ( struct super_block * sb , struct fs_context * fc ) , unsigned int flags )
+
+Get a superblock based on a single block device
+
+Parameters
+  struct fs_context *fc
+    The filesystem context holding the parameters
+  int (*fill_super)(struct super_block *sb, struct fs_context *fc)
+    Helper to initialise a new superblock
+  unsigned int flags
+    GET_TREE_BDEV_* flags

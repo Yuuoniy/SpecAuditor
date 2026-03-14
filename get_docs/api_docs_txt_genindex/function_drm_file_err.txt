@@ -1,0 +1,15 @@
+Function: void drm_file_err ( struct drm_file * file_priv , const char * fmt , ... )
+
+log process name, pid and client_name associated with a drm_file
+
+Parameters
+  struct drm_file *file_priv
+    context of interest for process name and pid
+  const char *fmt
+    printf() like format string
+  ...
+    variable arguments
+
+Description
+  Helper function for clients which needs to log process details such
+as name and pid etc along with user logs.

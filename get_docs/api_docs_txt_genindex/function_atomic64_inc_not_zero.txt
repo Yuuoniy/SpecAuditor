@@ -1,0 +1,11 @@
+Function: bool atomic64_inc_not_zero ( atomic64_t * v )
+
+atomic increment unless zero with full ordering
+
+Parameters
+  atomic64_t *v
+    pointer to atomic64_t
+
+Description
+  If ( v != 0), atomically updates v to ( v + 1) with full ordering.
+Otherwise, v is not modified and relaxed ordering is provided.

@@ -1,0 +1,9 @@
+Function: struct drm_asahi_vm_destroy
+
+Arguments passed to DRM_IOCTL_ASAHI_VM_DESTROY
+
+Members
+  vm_id
+    VM ID to be destroyed
+  pad
+    MBZ

@@ -1,0 +1,12 @@
+Function: enum scsi_timeout_action srp_timed_out ( struct scsi_cmnd * scmd )
+
+SRP transport intercept of the SCSI timeout EH
+
+Parameters
+  struct scsi_cmnd *scmd
+    SCSI command.
+
+Description
+  If a timeout occurs while an rport is in the blocked state, ask the SCSI
+EH to continue waiting (SCSI_EH_RESET_TIMER). Otherwise let the SCSI core
+handle the timeout (SCSI_EH_NOT_HANDLED).

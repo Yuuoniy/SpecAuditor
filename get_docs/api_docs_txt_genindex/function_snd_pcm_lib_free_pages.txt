@@ -1,0 +1,10 @@
+Function: int snd_pcm_lib_free_pages ( struct snd_pcm_substream * substream )
+
+release the allocated DMA buffer.
+
+Parameters
+  struct snd_pcm_substream *substream
+    the substream to release the DMA buffer
+
+Description
+  Releases the DMA buffer allocated via snd_pcm_lib_malloc_pages() .

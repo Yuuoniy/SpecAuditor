@@ -1,0 +1,11 @@
+Function: void intel_dmc_init ( struct intel_display * display )
+
+initialize the firmware loading.
+
+Parameters
+  struct intel_display *display
+    display instance
+
+Description
+  This function is called at the time of loading the display driver to read
+firmware from a .bin file and copied into a internal memory.

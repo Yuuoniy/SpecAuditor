@@ -1,0 +1,7 @@
+Struct: struct ipu3_uapi_ae_raw_buffer
+
+AE global weighted histogram
+
+Members
+  vals
+    Sum of IPU3_UAPI_AE_COLORS in cell

@@ -1,0 +1,15 @@
+Function: struct opa_veswport_iface_macs
+
+Msg to set globally administered MAC
+
+Members
+  start_idx
+    position of first entry (0 based)
+  num_macs_in_msg
+    number of MACs in this message
+  tot_macs_in_lst
+    The total number of MACs the agent has
+  gen_count
+    gen_count to indicate change
+  entry
+    The mac list entry

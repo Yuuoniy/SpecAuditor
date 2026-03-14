@@ -1,0 +1,11 @@
+Function: void maple_driver_unregister ( struct maple_driver * drv )
+
+unregister a maple driver.
+
+Parameters
+  struct maple_driver *drv
+    maple driver to unregister.
+
+Description
+  Cleans up after maple_driver_register() . To be invoked in the exit
+path of any module drivers.

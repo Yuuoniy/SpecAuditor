@@ -1,0 +1,13 @@
+Function: int host1x_syncpt_wait ( struct host1x_syncpt * sp , u32 thresh , long timeout , u32 * value )
+
+wait for a syncpoint to reach a given value
+
+Parameters
+  struct host1x_syncpt *sp
+    host1x syncpoint
+  u32 thresh
+    threshold
+  long timeout
+    maximum time to wait for the syncpoint to reach the given value
+  u32 *value
+    return location for the syncpoint value

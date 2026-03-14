@@ -1,0 +1,21 @@
+Function: v4l2_subdev_call_state_active
+
+
+
+Parameters
+  sd
+    pointer to the struct v4l2_subdev
+  o
+    name of the element at struct v4l2_subdev_ops that contains f .
+Each element there groups a set of callbacks functions.
+  f
+    callback function to be called.
+The callback functions are defined in groups, according to
+each element at struct v4l2_subdev_ops .
+  args...
+    arguments for f .
+
+Description
+  This is similar to v4l2_subdev_call() , except that this version can only be
+used for ops that take a subdev state as a parameter. The macro will get the
+active state, lock it before calling the op and unlock it after the call.

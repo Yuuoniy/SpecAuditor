@@ -1,0 +1,14 @@
+Macro: __read_seqcount_retry
+
+
+
+Parameters
+  s
+    Pointer to seqcount_t or any of the seqcount_LOCKNAME_t variants
+  start
+    count, from read_seqcount_begin()
+
+Description
+  __read_seqcount_retry is like read_seqcount_retry, but has no smp_rmb() barrier. Callers should ensure that smp_rmb() or equivalent ordering is
+provided before actually loading any of the variables that are to be
+protected in this critical section.

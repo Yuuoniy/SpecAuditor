@@ -1,0 +1,15 @@
+Function: void blk_start_plug ( struct blk_plug * plug )
+
+initialize blk_plug and track it inside the task_struct
+
+Parameters
+  struct blk_plug *plug
+    The struct blk_plug that needs to be initialized
+
+Description
+  blk_start_plug() indicates to the block layer an intent by the caller
+to submit multiple I/O requests in a batch.  The block layer may use
+this hint to defer submitting I/Os from the caller until blk_finish_plug() is called.  However, the block layer may choose to submit requests
+before a call to blk_finish_plug() if the number of queued I/Os
+exceeds BLK_MAX_REQUEST_COUNT , or if the size of the I/O is larger than BLK_PLUG_FLUSH_SIZE .  The queued I/Os may also be submitted early if
+the task schedules (see below).

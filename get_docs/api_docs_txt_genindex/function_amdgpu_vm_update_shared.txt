@@ -1,0 +1,12 @@
+Function: void amdgpu_vm_update_shared ( struct amdgpu_vm_bo_base * base )
+
+helper to update shared memory stat
+
+Parameters
+  struct amdgpu_vm_bo_base *base
+    base structure for tracking BO usage in a VM
+
+Description
+  Takes the vm status_lock and updates the shared memory stat. If the basic
+stat changed (e.g. buffer was moved) amdgpu_vm_update_stats need to be called
+as well.

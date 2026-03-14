@@ -1,0 +1,19 @@
+Function: journal_t * jbd2_journal_init_dev ( struct block_device * bdev , struct block_device * fs_dev , unsigned long long start , int len , int blocksize )
+
+creates and initialises a journal structure
+
+Parameters
+  struct block_device *bdev
+    Block device on which to create the journal
+  struct block_device *fs_dev
+    Device which hold journalled filesystem for this journal.
+  unsigned long long start
+    Block nr Start of journal.
+  int len
+    Length of the journal in blocks.
+  int blocksize
+    blocksize of journalling device
+
+Description
+  jbd2_journal_init_dev creates a journal which maps a fixed contiguous
+range of blocks on an arbitrary block device.

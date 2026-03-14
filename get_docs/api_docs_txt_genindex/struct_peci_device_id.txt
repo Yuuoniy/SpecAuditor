@@ -1,0 +1,9 @@
+Struct: struct peci_device_id
+
+PECI device data to match
+
+Members
+  data
+    pointer to driver private data specific to device
+  x86_vfm
+    device vendor-family-model

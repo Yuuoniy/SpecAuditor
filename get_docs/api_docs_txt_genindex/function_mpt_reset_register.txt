@@ -1,0 +1,13 @@
+Function: int mpt_reset_register ( u8 cb_idx , MPT_RESETHANDLER reset_func )
+
+Register protocol-specific IOC reset handler.
+
+Parameters
+  u8 cb_idx
+    previously registered (via mpt_register) callback handle
+  MPT_RESETHANDLER reset_func
+    reset function
+
+Description
+  This routine can be called by one or more protocol-specific drivers
+if/when they choose to be notified of IOC resets.

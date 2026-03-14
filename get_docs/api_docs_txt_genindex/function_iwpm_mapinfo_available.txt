@@ -1,0 +1,10 @@
+Function: int iwpm_mapinfo_available ( void )
+
+Check if any mapping info records is available in the hash table
+
+Parameters
+  void
+    no arguments
+
+Description
+  Returns 1 if mapping information is available, otherwise returns 0

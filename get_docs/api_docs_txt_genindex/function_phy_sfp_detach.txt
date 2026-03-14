@@ -1,0 +1,12 @@
+Function: void phy_sfp_detach ( void * upstream , struct sfp_bus * bus )
+
+detach the SFP bus from the PHY upstream network device
+
+Parameters
+  void *upstream
+    pointer to the phy device
+  struct sfp_bus *bus
+    sfp bus representing cage being attached
+
+Description
+  This is used to fill in the sfp_upstream_ops .detach member.

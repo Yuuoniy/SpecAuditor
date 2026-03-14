@@ -1,0 +1,15 @@
+Struct: struct dim_stats
+
+Structure for DIM stats. Used for holding current measured rates.
+
+Members
+  ppms
+    Packets per msec
+  bpms
+    Bytes per msec
+  epms
+    Events per msec
+  cpms
+    Completions per msec
+  cpe_ratio
+    Ratio of completions to events

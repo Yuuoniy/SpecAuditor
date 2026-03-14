@@ -1,0 +1,12 @@
+Struct: struct c3_isp_params_cfg
+
+C3 ISP configuration parameters
+
+Members
+  version
+    The C3 ISP parameters buffer version
+  data_size
+    The C3 ISP configuration data effective size, excluding this
+header
+  data
+    The C3 ISP configuration blocks data

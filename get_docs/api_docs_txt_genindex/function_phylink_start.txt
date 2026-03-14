@@ -1,0 +1,12 @@
+Function: void phylink_start ( struct phylink * pl )
+
+start a phylink instance
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+
+Description
+  Start the phylink instance specified by pl , configuring the MAC for the
+desired link mode(s) and negotiation style. This should be called from the
+network device driver’s struct net_device_ops ndo_open() method.

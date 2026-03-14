@@ -1,0 +1,16 @@
+Function: int of_irq_parse_one ( struct device_node * device , int index , struct of_phandle_args * out_irq )
+
+Resolve an interrupt for a device
+
+Parameters
+  struct device_node *device
+    the device whose interrupt is to be resolved
+  int index
+    index of the interrupt to resolve
+  struct of_phandle_args *out_irq
+    structure of_phandle_args filled by this function
+
+Description
+  This function resolves an interrupt for a node by walking the interrupt tree,
+finding which interrupt controller node it is attached to, and returning the
+interrupt specifier that can be used to retrieve a Linux IRQ number.

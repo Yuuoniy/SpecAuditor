@@ -1,0 +1,56 @@
+Function: struct cfg80211_scan_request
+
+scan request description
+
+Members
+  ssids
+    SSIDs to scan for (active scan only)
+  n_ssids
+    number of SSIDs
+  n_channels
+    total number of channels to scan
+  ie
+    optional information element(s) to add into Probe Request or NULL
+  ie_len
+    length of ie in octets
+  duration
+    how long to listen on each channel, in TUs. If duration_mandatory is not set, this is the maximum dwell time and
+the actual dwell time may be shorter.
+  duration_mandatory
+    if set, the scan duration must be as specified by the duration field.
+  flags
+    control flags from enum nl80211_scan_flags
+  rates
+    bitmap of rates to advertise for each band
+  wdev
+    the wireless device to scan for
+  mac_addr
+    MAC address used with randomisation
+  mac_addr_mask
+    MAC address mask used with randomisation, bits that
+are 0 in the mask should be randomised, bits that are 1 should
+be taken from the mac_addr
+  bssid
+    BSSID to scan for (most commonly, the wildcard BSSID)
+  wiphy
+    the wiphy this was for
+  scan_start
+    time (in jiffies) when the scan started
+  no_cck
+    used to send probe requests at non CCK rate in 2GHz band
+  scan_6ghz
+    relevant for split scan request only,
+true if this is a 6 GHz scan request
+  first_part
+    true if this is the first part of a split scan request or a
+scan that was not split. May be true for a scan_6ghz scan if no other
+channels were requested
+  n_6ghz_params
+    number of 6 GHz params
+  scan_6ghz_params
+    6 GHz params
+  tsf_report_link_id
+    for MLO, indicates the link ID of the BSS that should be
+used for TSF reporting. Can be set to -1 to indicate no preference.
+  channels
+    channels to scan on.

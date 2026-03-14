@@ -1,0 +1,30 @@
+Function: struct kgdb_arch
+
+Describe architecture specific values.
+
+Members
+  gdb_bpt_instr
+    The instruction to trigger a breakpoint.
+  flags
+    Flags for the breakpoint, currently just KGDB_HW_BREAKPOINT .
+  set_breakpoint
+    Allow an architecture to specify how to set a software
+breakpoint.
+  remove_breakpoint
+    Allow an architecture to specify how to remove a
+software breakpoint.
+  set_hw_breakpoint
+    Allow an architecture to specify how to set a hardware
+breakpoint.
+  remove_hw_breakpoint
+    Allow an architecture to specify how to remove a
+hardware breakpoint.
+  disable_hw_break
+    Allow an architecture to specify how to disable
+hardware breakpoints for a single cpu.
+  remove_all_hw_break
+    Allow an architecture to specify how to remove all
+hardware breakpoints.
+  correct_hw_break
+    Allow an architecture to specify how to correct the
+hardware debug registers.

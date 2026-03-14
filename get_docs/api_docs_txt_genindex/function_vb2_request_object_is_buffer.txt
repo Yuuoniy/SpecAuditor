@@ -1,0 +1,7 @@
+Function: bool vb2_request_object_is_buffer ( struct media_request_object * obj )
+
+return true if the object is a buffer
+
+Parameters
+  struct media_request_object *obj
+    the request object.

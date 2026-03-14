@@ -1,0 +1,13 @@
+Function: int vb2_core_queue_init ( struct vb2_queue * q )
+
+initialize a videobuf2 queue
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+This structure should be allocated in driver
+
+Description
+  The vb2_queue structure should be allocated by the driver. The driver is
+responsible of clearing it’s content and setting initial values for some
+required entries before calling this function.

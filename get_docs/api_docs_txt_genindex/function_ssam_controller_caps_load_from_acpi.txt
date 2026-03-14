@@ -1,0 +1,14 @@
+Function: int ssam_controller_caps_load_from_acpi ( acpi_handle handle , struct ssam_controller_caps * caps )
+
+Load controller capabilities from ACPI _DSM.
+
+Parameters
+  acpi_handle handle
+    The handle of the ACPI controller/SSH device.
+  struct ssam_controller_caps *caps
+    Where to store the capabilities in.
+
+Description
+  Initializes the given controller capabilities with default values, then
+checks and, if the respective _DSM functions are available, loads the
+actual capabilities from the _DSM.

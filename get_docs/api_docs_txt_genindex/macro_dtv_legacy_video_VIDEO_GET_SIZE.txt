@@ -1,0 +1,2 @@
+Macro: VIDEO_GET_SIZE
+

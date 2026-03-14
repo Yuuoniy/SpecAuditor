@@ -1,0 +1,7 @@
+Function: struct device_node * of_graph_get_port_parent ( struct device_node * node )
+
+get port’s parent node
+
+Parameters
+  struct device_node *node
+    pointer to a local endpoint device_node

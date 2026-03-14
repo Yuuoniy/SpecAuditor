@@ -1,0 +1,12 @@
+Function: void bio_endio ( struct bio * bio )
+
+end I/O on a bio
+
+Parameters
+  struct bio *bio
+    bio
+
+Description
+  bio_endio() will end I/O on the whole bio. bio_endio() is the preferred
+way to end I/O on a bio. No one should call bi_end_io() directly on a
+bio unless they own it and thus know that it has an end_io function.

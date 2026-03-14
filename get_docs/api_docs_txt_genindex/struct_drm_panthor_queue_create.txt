@@ -1,0 +1,12 @@
+Struct: struct drm_panthor_queue_create
+
+Queue creation arguments.
+
+Members
+  priority
+    Defines the priority of queues inside a group. Goes from 0 to 15,
+15 being the highest priority.
+  pad
+    Padding fields, MBZ.
+  ringbuf_size
+    Size of the ring buffer to allocate to this queue.

@@ -1,0 +1,15 @@
+Function: bool gen_pool_has_addr ( struct gen_pool * pool , unsigned long start , size_t size )
+
+checks if an address falls within the range of a pool
+
+Parameters
+  struct gen_pool *pool
+    the generic memory pool
+  unsigned long start
+    start address
+  size_t size
+    size of the region
+
+Description
+  Check if the range of addresses falls within the specified pool. Returns
+true if the entire range is contained in the pool and false otherwise.

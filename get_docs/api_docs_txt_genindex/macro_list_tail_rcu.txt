@@ -1,0 +1,7 @@
+Macro: list_tail_rcu
+
+
+
+Parameters
+  head
+    the head of the list

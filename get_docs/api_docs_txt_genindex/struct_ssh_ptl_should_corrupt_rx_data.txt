@@ -1,0 +1,11 @@
+Struct: bool ssh_ptl_should_corrupt_rx_data ( void )
+
+Error injection hook to simulate invalid data being sent by the EC.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Hook to simulate invalid data/checksum of the message frame and test handling
+thereof in the driver.

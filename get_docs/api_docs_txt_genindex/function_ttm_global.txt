@@ -1,0 +1,13 @@
+Function: struct ttm_global
+
+Buffer object driver global data.
+
+Members
+  dummy_read_page
+    Pointer to a dummy page used for mapping requests
+of unpopulated pages. Constant after init.
+  device_list
+    List of buffer object devices. Protected by
+ttm_global_mutex.
+  bo_count
+    Number of buffer objects allocated by devices.

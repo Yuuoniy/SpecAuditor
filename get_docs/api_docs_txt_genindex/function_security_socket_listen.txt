@@ -1,0 +1,12 @@
+Function: int security_socket_listen ( struct socket * sock , int backlog )
+
+Check if a socket is allowed to listen
+
+Parameters
+  struct socket *sock
+    socket
+  int backlog
+    connection queue size
+
+Description
+  Check permission before socket protocol layer listen operation.

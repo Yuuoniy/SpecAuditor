@@ -1,0 +1,9 @@
+Function: void snd_dma_buffer_sync ( struct snd_dma_buffer * dmab , enum snd_dma_sync_mode mode )
+
+sync DMA buffer between CPU and device
+
+Parameters
+  struct snd_dma_buffer *dmab
+    buffer allocation information
+  enum snd_dma_sync_mode mode
+    sync mode

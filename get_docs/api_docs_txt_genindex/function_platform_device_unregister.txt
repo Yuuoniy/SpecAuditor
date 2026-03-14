@@ -1,0 +1,12 @@
+Function: void platform_device_unregister ( struct platform_device * pdev )
+
+unregister a platform-level device
+
+Parameters
+  struct platform_device *pdev
+    platform device we’re unregistering
+
+Description
+  Unregistration is done in 2 steps. First we release all resources
+and remove it from the subsystem, then we drop reference count by
+calling platform_device_put() .

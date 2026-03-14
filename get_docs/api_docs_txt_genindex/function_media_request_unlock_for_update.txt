@@ -1,0 +1,10 @@
+Function: void media_request_unlock_for_update ( struct media_request * req )
+
+Unlock a request previously locked for update
+
+Parameters
+  struct media_request *req
+    The media request
+
+Description
+  Unlock a request that has previously been locked using media_request_lock_for_update .

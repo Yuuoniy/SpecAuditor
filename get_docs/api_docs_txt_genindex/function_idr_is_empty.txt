@@ -1,0 +1,7 @@
+Function: bool idr_is_empty ( const struct idr * idr )
+
+Are there any IDs allocated?
+
+Parameters
+  const struct idr *idr
+    IDR handle.

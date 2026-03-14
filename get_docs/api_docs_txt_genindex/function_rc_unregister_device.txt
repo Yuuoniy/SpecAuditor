@@ -1,0 +1,7 @@
+Function: void rc_unregister_device ( struct rc_dev * dev )
+
+Unregisters a RC device
+
+Parameters
+  struct rc_dev *dev
+    pointer to struct rc_dev .

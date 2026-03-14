@@ -1,0 +1,17 @@
+Function: int skb_zerocopy ( struct sk_buff * to , struct sk_buff * from , int len , int hlen )
+
+Zero copy skb to skb
+
+Parameters
+  struct sk_buff *to
+    destination buffer
+  struct sk_buff *from
+    source buffer
+  int len
+    number of bytes to copy from source buffer
+  int hlen
+    size of linear headroom in destination buffer
+
+Description
+  Copies up to len bytes from from to to by creating references
+to the frags in the source buffer.

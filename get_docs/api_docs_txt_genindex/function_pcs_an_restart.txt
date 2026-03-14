@@ -1,0 +1,10 @@
+Function: void pcs_an_restart ( struct phylink_pcs * pcs )
+
+restart 802.3z BaseX autonegotiation
+
+Parameters
+  struct phylink_pcs *pcs
+    a pointer to a struct phylink_pcs .
+
+Description
+  When PCS ops are present, this overrides mac_an_restart() in struct phylink_mac_ops .

@@ -1,0 +1,13 @@
+Function: u64 ata_tf_read_block ( const struct ata_taskfile * tf , struct ata_device * dev )
+
+Read block address from ATA taskfile
+
+Parameters
+  const struct ata_taskfile *tf
+    ATA taskfile of interest
+  struct ata_device *dev
+    ATA device tf belongs to
+
+Description
+  LOCKING:
+None.

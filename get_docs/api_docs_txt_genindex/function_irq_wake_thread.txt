@@ -1,0 +1,9 @@
+Function: void irq_wake_thread ( unsigned int irq , void * dev_id )
+
+wake the irq thread for the action identified by dev_id
+
+Parameters
+  unsigned int irq
+    Interrupt line
+  void *dev_id
+    Device identity for which the thread should be woken

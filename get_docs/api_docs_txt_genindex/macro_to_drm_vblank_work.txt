@@ -1,0 +1,7 @@
+Macro: to_drm_vblank_work
+
+
+
+Parameters
+  _work
+    The kthread_work embedded inside a drm_vblank_work

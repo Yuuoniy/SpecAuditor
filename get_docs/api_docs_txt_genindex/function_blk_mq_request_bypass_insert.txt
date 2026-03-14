@@ -1,0 +1,13 @@
+Function: void blk_mq_request_bypass_insert ( struct request * rq , blk_insert_t flags )
+
+Insert a request at dispatch list.
+
+Parameters
+  struct request *rq
+    Pointer to request to be inserted.
+  blk_insert_t flags
+    BLK_MQ_INSERT_*
+
+Description
+  Should only be used carefully, when the caller knows we want to
+bypass a potential IO scheduler on the target device.

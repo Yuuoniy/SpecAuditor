@@ -1,0 +1,9 @@
+Function: void of_msi_configure ( struct device * dev , const struct device_node * np )
+
+Set the msi_domain field of a device
+
+Parameters
+  struct device *dev
+    device structure to associate with an MSI irq domain
+  const struct device_node *np
+    device node for that device

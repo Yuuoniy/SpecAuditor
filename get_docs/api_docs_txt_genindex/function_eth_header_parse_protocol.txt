@@ -1,0 +1,7 @@
+Function: __be16 eth_header_parse_protocol ( const struct sk_buff * skb )
+
+extract protocol from L2 header
+
+Parameters
+  const struct sk_buff *skb
+    packet to extract protocol from

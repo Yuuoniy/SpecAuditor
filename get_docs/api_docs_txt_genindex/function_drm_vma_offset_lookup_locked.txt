@@ -1,0 +1,17 @@
+Function: struct drm_vma_offset_node * drm_vma_offset_lookup_locked ( struct drm_vma_offset_manager * mgr , unsigned long start , unsigned long pages )
+
+Find node in offset space
+
+Parameters
+  struct drm_vma_offset_manager *mgr
+    Manager object
+  unsigned long start
+    Start address for object (page-based)
+  unsigned long pages
+    Size of object (page-based)
+
+Description
+  Find a node given a start address and object size. This returns the _best_
+match for the given node. That is, start may point somewhere into a valid
+region and the given node will be returned, as long as the node spans the
+whole requested area (given the size in number of pages as pages ).

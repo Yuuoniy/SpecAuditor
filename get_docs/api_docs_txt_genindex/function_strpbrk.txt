@@ -1,0 +1,9 @@
+Function: char * strpbrk ( const char * cs , const char * ct )
+
+Find the first occurrence of a set of characters
+
+Parameters
+  const char *cs
+    The string to be searched
+  const char *ct
+    The characters to search for

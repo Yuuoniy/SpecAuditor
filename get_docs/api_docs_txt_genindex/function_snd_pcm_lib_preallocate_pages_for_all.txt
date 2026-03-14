@@ -1,0 +1,19 @@
+Function: void snd_pcm_lib_preallocate_pages_for_all ( struct snd_pcm * pcm , int type , void * data , size_t size , size_t max )
+
+pre-allocation for continuous memory type (all substreams)
+
+Parameters
+  struct snd_pcm *pcm
+    the pcm instance
+  int type
+    DMA type (SNDRV_DMA_TYPE_*)
+  void *data
+    DMA type dependent data
+  size_t size
+    the requested pre-allocation size in bytes
+  size_t max
+    the max. allowed pre-allocation size
+
+Description
+  Do pre-allocation to all substreams of the given pcm for the
+specified DMA type.

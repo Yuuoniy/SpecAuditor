@@ -1,0 +1,13 @@
+Function: void __audit_log_capset ( const struct cred * new , const struct cred * old )
+
+store information about the arguments to the capset syscall
+
+Parameters
+  const struct cred *new
+    the new credentials
+  const struct cred *old
+    the old (current) credentials
+
+Description
+  Record the arguments userspace sent to sys_capset for later printing by the
+audit system if applicable

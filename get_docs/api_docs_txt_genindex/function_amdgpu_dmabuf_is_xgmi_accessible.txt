@@ -1,0 +1,9 @@
+Function: bool amdgpu_dmabuf_is_xgmi_accessible ( struct amdgpu_device * adev , struct amdgpu_bo * bo )
+
+Check if xgmi available for P2P transfer
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer of the importer
+  struct amdgpu_bo *bo
+    amdgpu buffer object

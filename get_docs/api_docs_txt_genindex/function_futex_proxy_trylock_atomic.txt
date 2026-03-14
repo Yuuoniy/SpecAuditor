@@ -1,0 +1,28 @@
+Function: int futex_proxy_trylock_atomic ( u32 __user * pifutex , struct futex_hash_bucket * hb1 , struct futex_hash_bucket * hb2 , union futex_key * key1 , union futex_key * key2 , struct futex_pi_state * * ps , struct task_struct * * exiting , int set_waiters )
+
+Attempt an atomic lock for the top waiter
+
+Parameters
+  u32 __user *pifutex
+    the user address of the to futex
+  struct futex_hash_bucket *hb1
+    the from futex hash bucket, must be locked by the caller
+  struct futex_hash_bucket *hb2
+    the to futex hash bucket, must be locked by the caller
+  union futex_key *key1
+    the from futex key
+  union futex_key *key2
+    the to futex key
+  struct futex_pi_state **ps
+    address to store the pi_state pointer
+  struct task_struct **exiting
+    Pointer to store the task pointer of the owner task
+which is in the middle of exiting
+  int set_waiters
+    force setting the FUTEX_WAITERS bit (1) or not (0)
+
+Description
+  Try and get the lock on behalf of the top waiter if we can do it atomically.
+Wake the top waiter if we succeed.  If the caller specified set_waiters,
+then direct futex_lock_pi_atomic() to force setting the FUTEX_WAITERS bit.
+hb1 and hb2 must be held by the caller.

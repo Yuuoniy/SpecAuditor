@@ -1,0 +1,16 @@
+Function: int drm_of_component_probe ( struct device * dev , int ( * compare_of ) ( struct device * , void * ) , const struct component_master_ops * m_ops )
+
+Generic probe function for a component based master
+
+Parameters
+  struct device *dev
+    master device containing the OF node
+  int (*compare_of)(struct device *, void *)
+    compare function used for matching components
+  const struct component_master_ops *m_ops
+    component master ops to be used
+
+Description
+  Parse the platform device OF node and bind all the components associated
+with the master. Interface ports are added before the encoders in order to
+satisfy their .bind requirements

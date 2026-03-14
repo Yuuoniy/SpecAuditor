@@ -1,0 +1,14 @@
+Function: int i2c_master_recv_dmasafe ( const struct i2c_client * client , char * buf , int count )
+
+issue a single I2C message in master receive mode using a DMA safe buffer
+
+Parameters
+  const struct i2c_client *client
+    Handle to slave device
+  char *buf
+    Where to store data read from slave, must be safe to use with DMA
+  int count
+    How many bytes to read, must be less than 64k since msg.len is u16
+
+Description
+  Returns negative errno, or else the number of bytes read.

@@ -1,0 +1,9 @@
+Function: void * mtree_load ( struct maple_tree * mt , unsigned long index )
+
+Load a value stored in a maple tree
+
+Parameters
+  struct maple_tree *mt
+    The maple tree
+  unsigned long index
+    The index to load

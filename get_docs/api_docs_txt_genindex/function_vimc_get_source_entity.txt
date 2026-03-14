@@ -1,0 +1,11 @@
+Function: struct media_entity * vimc_get_source_entity ( struct media_entity * ent )
+
+get the entity connected with the first sink pad
+
+Parameters
+  struct media_entity *ent
+    reference media_entity
+
+Description
+  Helper function that returns the media entity containing the source pad
+linked with the first sink pad from the given media entity pad list.

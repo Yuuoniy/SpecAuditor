@@ -1,0 +1,7 @@
+Function: int scsi_is_sas_phy ( const struct device * dev )
+
+check if a struct device represents a SAS PHY
+
+Parameters
+  const struct device *dev
+    device to check

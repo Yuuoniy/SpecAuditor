@@ -1,0 +1,8 @@
+Macro: DRM_PVR_SYNC_OP_FLAG_SIGNAL
+
+Signal operation requested. The out-fence bound to the job will be attached to
+the syncobj whose handle is passed in drm_pvr_sync_op::handle.
+
+Members
+  jobs
+    [IN] Array of jobs to submit.

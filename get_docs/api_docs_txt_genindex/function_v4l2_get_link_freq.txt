@@ -1,0 +1,21 @@
+Function: s64 v4l2_get_link_freq ( const struct media_pad * pad , unsigned int mul , unsigned int div )
+
+Get link rate from transmitter
+
+Parameters
+  const struct media_pad *pad
+    The transmitter’s media pad
+  unsigned int mul
+    The multiplier between pixel rate and link frequency. Bits per pixel on
+D-PHY, samples per clock on parallel. 0 otherwise.
+  unsigned int div
+    The divisor between pixel rate and link frequency. Number of data lanes
+times two on D-PHY, 1 on parallel. 0 otherwise.
+
+Description
+  This function obtains and returns the link frequency from the transmitter
+sub-device’s pad. The link frequency is retrieved using the get_mbus_config
+sub-device pad operation. If this fails, the function falls back to obtaining
+the frequency either directly from the V4L2_CID_LINK_FREQ control if
+implemented by the transmitter, or by calculating it from the pixel rate
+obtained from the V4L2_CID_PIXEL_RATE control.

@@ -1,0 +1,21 @@
+Function: int xbc_init ( const char * data , size_t size , const char * * emsg , int * epos )
+
+Parse given XBC file and build XBC internal tree
+
+Parameters
+  const char *data
+    The boot config text original data
+  size_t size
+    The size of data
+  const char **emsg
+    A pointer of const char * to store the error message
+  int *epos
+    A pointer of int to store the error position
+
+Description
+  This parses the boot config text in data . size must be smaller
+than XBC_DATA_MAX.
+Return the number of stored nodes (>0) if succeeded, or -errno
+if there is any error.
+In error cases, emsg will be updated with an error message and epos will be updated with the error position which is the byte offset
+of buf . If the error is not a parser error, epos will be -1.

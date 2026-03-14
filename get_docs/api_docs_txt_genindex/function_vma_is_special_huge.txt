@@ -1,0 +1,11 @@
+Function: bool vma_is_special_huge ( const struct vm_area_struct * vma )
+
+Are transhuge page-table entries considered special?
+
+Parameters
+  const struct vm_area_struct *vma
+    Pointer to the struct vm_area_struct to consider
+
+Description
+  Whether transhuge page-table entries are considered “special” following
+the definition in vm_normal_page() .

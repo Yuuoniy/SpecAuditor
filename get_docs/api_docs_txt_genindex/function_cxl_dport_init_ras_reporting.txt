@@ -1,0 +1,9 @@
+Function: void cxl_dport_init_ras_reporting ( struct cxl_dport * dport , struct device * host )
+
+Setup CXL RAS report on this dport
+
+Parameters
+  struct cxl_dport *dport
+    the cxl_dport that needs to be initialized
+  struct device *host
+    host device for devm operations

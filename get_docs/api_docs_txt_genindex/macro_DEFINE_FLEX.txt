@@ -1,0 +1,23 @@
+Macro: DEFINE_FLEX
+
+
+
+Parameters
+  TYPE
+    structure type name, including “struct” keyword.
+  NAME
+    Name for a variable to define.
+  MEMBER
+    Name of the array member.
+  COUNTER
+    Name of the __counted_by member.
+  COUNT
+    Number of elements in the array; must be compile-time const.
+
+Description
+  Define a zeroed, on-stack, instance of TYPE structure with a trailing
+flexible array member.
+Use __struct_size( NAME ) to get compile-time size of it afterwards.
+Use __member_size( NAME->member ) to get compile-time size of NAME members.
+Use STACK_FLEX_ARRAY_SIZE( name , member ) to get compile-time number of
+elements in array member .

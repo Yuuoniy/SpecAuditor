@@ -1,0 +1,2 @@
+Macro: CEC_S_MODE
+

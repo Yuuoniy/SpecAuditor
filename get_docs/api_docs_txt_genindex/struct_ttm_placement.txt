@@ -1,0 +1,9 @@
+Struct: struct ttm_placement
+
+
+
+Members
+  num_placement
+    number of preferred placements
+  placement
+    preferred placements

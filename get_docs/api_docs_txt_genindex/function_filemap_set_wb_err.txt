@@ -1,0 +1,15 @@
+Function: void filemap_set_wb_err ( struct address_space * mapping , int err )
+
+set a writeback error on an address_space
+
+Parameters
+  struct address_space *mapping
+    mapping in which to set writeback error
+  int err
+    error to be set in mapping
+
+Description
+  When writeback fails in some way, we must record that error so that
+userspace can be informed when fsync and the like are called.  We endeavor
+to report errors on any file that was open at the time of the error.  Some
+internal callers also need to know when writeback errors have occurred.

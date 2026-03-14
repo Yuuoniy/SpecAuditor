@@ -1,0 +1,3 @@
+Enum: enum ssam_request_flags
+
+Flags for SAM requests.

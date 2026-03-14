@@ -1,0 +1,14 @@
+Function: int security_path_chmod ( const struct path * path , umode_t mode )
+
+Check if changing the file’s mode is allowed
+
+Parameters
+  const struct path *path
+    file
+  umode_t mode
+    new mode
+
+Description
+  Check for permission to change a mode of the file path . The new mode is
+specified in mode which is a bitmask of constants from
+<include/uapi/linux/stat.h>.

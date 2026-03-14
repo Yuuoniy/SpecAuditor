@@ -1,0 +1,10 @@
+Function: int pci_probe_reset_bus ( struct pci_bus * bus )
+
+probe whether a PCI bus can be reset
+
+Parameters
+  struct pci_bus *bus
+    PCI bus to probe
+
+Description
+  Return 0 if bus can be reset, negative if a bus reset is not supported.

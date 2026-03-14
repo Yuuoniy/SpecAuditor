@@ -1,0 +1,14 @@
+Function: struct mem_cgroup * mem_cgroup_iter ( struct mem_cgroup * root , struct mem_cgroup * prev , struct mem_cgroup_reclaim_cookie * reclaim )
+
+iterate over memory cgroup hierarchy
+
+Parameters
+  struct mem_cgroup *root
+    hierarchy root
+  struct mem_cgroup *prev
+    previously returned memcg, NULL on first invocation
+  struct mem_cgroup_reclaim_cookie *reclaim
+    cookie for shared reclaim walks, NULL for full walks
+
+Description
+  Returns references to children of the hierarchy below root , or root itself, or NULL after a full round-trip.

@@ -1,0 +1,10 @@
+Function: void skb_tx_timestamp ( struct sk_buff * skb )
+
+Driver hook for transmit timestamping
+
+Parameters
+  struct sk_buff *skb
+    A socket buffer.
+
+Description
+  Ethernet MAC Drivers should call this function in their hard_xmit() function immediately before giving the sk_buff to the MAC hardware.

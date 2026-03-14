@@ -1,0 +1,12 @@
+Function: int devfreq_resume_device ( struct devfreq * devfreq )
+
+Resume devfreq of a device.
+
+Parameters
+  struct devfreq *devfreq
+    the devfreq instance to be resumed
+
+Description
+  This function is intended to be called by the pm callbacks
+(e.g., runtime_resume, resume) of the device driver that
+holds the devfreq.

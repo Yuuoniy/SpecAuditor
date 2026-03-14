@@ -1,0 +1,15 @@
+Function: void fc_host_post_vendor_event ( struct Scsi_Host * shost , u32 event_number , u32 data_len , char * data_buf , u64 vendor_id )
+
+called to post a vendor unique event on an fc_host
+
+Parameters
+  struct Scsi_Host *shost
+    host the event occurred on
+  u32 event_number
+    fc event number obtained from get_fc_event_number()
+  u32 data_len
+    amount, in bytes, of vendor unique data
+  char * data_buf
+    pointer to vendor unique data
+  u64 vendor_id
+    Vendor id

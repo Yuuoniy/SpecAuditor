@@ -1,0 +1,14 @@
+Struct: struct i2c_dev_desc
+
+I2C device descriptor
+
+Members
+  common
+    common part of the I2C device descriptor
+  dev
+    I2C device object registered to the I2C framework
+  addr
+    I2C device address
+  lvr
+    LVR (Legacy Virtual Register) needed by the I3C core to know about
+the I2C device limitations

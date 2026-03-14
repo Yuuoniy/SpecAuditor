@@ -1,0 +1,14 @@
+Function: int __phy_clear_bits ( struct phy_device * phydev , u32 regnum , u16 val )
+
+Convenience function for clearing bits in a PHY register
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+  u32 regnum
+    register number to write
+  u16 val
+    bits to clear
+
+Description
+  The caller must have taken the MDIO bus lock.

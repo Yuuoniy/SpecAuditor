@@ -1,0 +1,29 @@
+Struct: struct ipu3_uapi_csc_mat_config
+
+Color space conversion matrix config
+
+Members
+  coeff_c11
+    Conversion matrix value, format s0.14, range [-16384, 16383].
+  coeff_c12
+    Conversion matrix value, format s0.14, range [-8192, 8191].
+  coeff_c13
+    Conversion matrix value, format s0.14, range [-16384, 16383].
+  coeff_b1
+    Bias 3x1 coefficient, s13.0 range [-8192, 8191].
+  coeff_c21
+    Conversion matrix value, format s0.14, range [-16384, 16383].
+  coeff_c22
+    Conversion matrix value, format s0.14, range [-8192, 8191].
+  coeff_c23
+    Conversion matrix value, format s0.14, range [-16384, 16383].
+  coeff_b2
+    Bias 3x1 coefficient, s13.0 range [-8192, 8191].
+  coeff_c31
+    Conversion matrix value, format s0.14, range [-16384, 16383].
+  coeff_c32
+    Conversion matrix value, format s0.14, range [-8192, 8191].
+  coeff_c33
+    Conversion matrix value, format s0.14, range [-16384, 16383].
+  coeff_b3
+    Bias 3x1 coefficient, s13.0 range [-8192, 8191].

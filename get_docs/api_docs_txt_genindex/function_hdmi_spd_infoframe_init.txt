@@ -1,0 +1,14 @@
+Function: int hdmi_spd_infoframe_init ( struct hdmi_spd_infoframe * frame , const char * vendor , const char * product )
+
+initialize an HDMI SPD infoframe
+
+Parameters
+  struct hdmi_spd_infoframe *frame
+    HDMI SPD infoframe
+  const char *vendor
+    vendor string
+  const char *product
+    product string
+
+Description
+  Returns 0 on success or a negative error code on failure.

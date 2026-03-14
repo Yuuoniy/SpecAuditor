@@ -1,0 +1,9 @@
+Function: int skb_checksum_setup ( struct sk_buff * skb , bool recalculate )
+
+set up partial checksum offset
+
+Parameters
+  struct sk_buff *skb
+    the skb to set up
+  bool recalculate
+    if true the pseudo-header checksum will be recalculated

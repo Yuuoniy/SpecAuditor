@@ -1,0 +1,12 @@
+Function: bool debug_next_entry ( file_private_info_t * p_info )
+
+Go to the next entry
+
+Parameters
+  file_private_info_t *p_info
+    Private info that is manipulated
+
+Description
+  Sets the current position in p_info to the next entry. If no further entry
+exists the current position is set to one after the end the return value
+indicates that no further entries exist.

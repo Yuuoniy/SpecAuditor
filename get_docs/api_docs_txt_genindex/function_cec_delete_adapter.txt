@@ -1,0 +1,2 @@
+Function: void cec_delete_adapter ( struct cec_adapter * adap ) ;
+

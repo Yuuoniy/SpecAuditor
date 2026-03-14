@@ -1,0 +1,7 @@
+Function: void tsm_mr_free_attribute_group ( const struct attribute_group * attr_grp )
+
+frees the attribute group returned by tsm_mr_create_attribute_group()
+
+Parameters
+  const struct attribute_group *attr_grp
+    attribute group returned by tsm_mr_create_attribute_group()

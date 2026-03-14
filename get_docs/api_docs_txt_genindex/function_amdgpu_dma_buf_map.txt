@@ -1,0 +1,14 @@
+Function: struct sg_table * amdgpu_dma_buf_map ( struct dma_buf_attachment * attach , enum dma_data_direction dir )
+
+dma_buf_ops.map_dma_buf implementation
+
+Parameters
+  struct dma_buf_attachment *attach
+    DMA-buf attachment
+  enum dma_data_direction dir
+    DMA direction
+
+Description
+  Makes sure that the shared DMA buffer can be accessed by the target device.
+For now, simply pins it to the GTT domain, where it should be accessible by
+all DMA devices.

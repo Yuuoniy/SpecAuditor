@@ -1,0 +1,14 @@
+Function: void device_del ( struct device * dev )
+
+delete device from system.
+
+Parameters
+  struct device *dev
+    device.
+
+Description
+  This is the first part of the device unregistration
+sequence. This removes the device from the lists we control
+from here, has it removed from the other driver model
+subsystems it was added to in device_add() , and removes it
+from the kobject hierarchy.

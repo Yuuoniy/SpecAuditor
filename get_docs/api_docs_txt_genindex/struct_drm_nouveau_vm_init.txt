@@ -1,0 +1,11 @@
+Struct: struct drm_nouveau_vm_init
+
+GPU VA space init structure
+
+Members
+  kernel_managed_addr
+    start address of the kernel managed VA space
+region
+  kernel_managed_size
+    size of the kernel managed VA space region in
+bytes

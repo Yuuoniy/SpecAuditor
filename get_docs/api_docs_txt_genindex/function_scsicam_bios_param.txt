@@ -1,0 +1,15 @@
+Function: int scsicam_bios_param ( struct gendisk * disk , sector_t capacity , int * ip )
+
+Determine geometry of a disk in cylinders/heads/sectors.
+
+Parameters
+  struct gendisk *disk
+    which device
+  sector_t capacity
+    size of the disk in sectors
+  int *ip
+    return value: ip[0]=heads, ip[1]=sectors, ip[2]=cylinders
+
+Description
+  SCSI-CAM system, storing the results in ip as required
+by the HDIO_GETGEO ioctl().

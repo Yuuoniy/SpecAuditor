@@ -1,0 +1,11 @@
+Function: int mas_preallocate ( struct ma_state * mas , void * entry , gfp_t gfp )
+
+Preallocate enough nodes for a store operation
+
+Parameters
+  struct ma_state *mas
+    The maple state
+  void *entry
+    The entry that will be stored
+  gfp_t gfp
+    The GFP_FLAGS to use for allocations.

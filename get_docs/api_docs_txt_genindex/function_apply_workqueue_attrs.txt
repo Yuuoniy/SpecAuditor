@@ -1,0 +1,16 @@
+Function: int apply_workqueue_attrs ( struct workqueue_struct * wq , const struct workqueue_attrs * attrs )
+
+apply new workqueue_attrs to an unbound workqueue
+
+Parameters
+  struct workqueue_struct *wq
+    the target workqueue
+  const struct workqueue_attrs *attrs
+    the workqueue_attrs to apply, allocated with alloc_workqueue_attrs()
+
+Description
+  Apply attrs to an unbound workqueue wq . Unless disabled, this function maps
+a separate pwq to each CPU pod with possibles CPUs in attrs->cpumask so that
+work items are affine to the pod it was issued on. Older pwqs are released as
+in-flight work items finish. Note that a work item which repeatedly requeues
+itself back-to-back will stay on its current pwq.

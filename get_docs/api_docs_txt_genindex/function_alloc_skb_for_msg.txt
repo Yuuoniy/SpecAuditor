@@ -1,0 +1,7 @@
+Function: struct sk_buff * alloc_skb_for_msg ( struct sk_buff * first )
+
+allocate sk_buff to wrap frag list forming a msg
+
+Parameters
+  struct sk_buff *first
+    first sk_buff of the msg

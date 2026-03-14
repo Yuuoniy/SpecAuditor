@@ -1,0 +1,16 @@
+Function: int phy_restore_page ( struct phy_device * phydev , int oldpage , int ret )
+
+restore the page register and release the bus lock
+
+Parameters
+  struct phy_device *phydev
+    a pointer to a struct phy_device
+  int oldpage
+    the old page, return value from phy_save_page() or phy_select_page()
+  int ret
+    operation’s return code
+
+Description
+  Release the MDIO bus lock, restoring oldpage if it is a valid page.
+This function propagates the earliest error code from the group of
+operations.

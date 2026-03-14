@@ -1,0 +1,11 @@
+Function: struct sg_table * drm_gem_dma_get_sg_table ( struct drm_gem_dma_object * dma_obj )
+
+provide a scatter/gather table of pinned pages for a DMA GEM object
+
+Parameters
+  struct drm_gem_dma_object *dma_obj
+    DMA GEM object
+
+Description
+  This function exports a scatter/gather table by calling the standard
+DMA mapping API.

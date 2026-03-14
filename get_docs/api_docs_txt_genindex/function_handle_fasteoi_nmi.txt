@@ -1,0 +1,11 @@
+Function: void handle_fasteoi_nmi ( struct irq_desc * desc )
+
+irq handler for NMI interrupt lines
+
+Parameters
+  struct irq_desc *desc
+    the interrupt description structure for this irq
+
+Description
+  A simple NMI-safe handler, considering the restrictions
+from request_nmi.

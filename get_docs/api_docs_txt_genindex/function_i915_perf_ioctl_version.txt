@@ -1,0 +1,10 @@
+Function: int i915_perf_ioctl_version ( struct drm_i915_private * i915 )
+
+Version of the i915-perf subsystem
+
+Parameters
+  struct drm_i915_private *i915
+    The i915 device
+
+Description
+  This version number is used by userspace to detect available features.

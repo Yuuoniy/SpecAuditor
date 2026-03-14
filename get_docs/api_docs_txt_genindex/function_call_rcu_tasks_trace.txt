@@ -1,0 +1,15 @@
+Function: void call_rcu_tasks_trace ( struct rcu_head * rhp , rcu_callback_t func )
+
+Queue a callback trace task-based grace period
+
+Parameters
+  struct rcu_head *rhp
+    structure to be used for queueing the RCU updates.
+  rcu_callback_t func
+    actual callback function to be invoked after the grace period
+
+Description
+  The callback function will be invoked some time after a trace rcu-tasks
+grace period elapses, in other words after all currently executing
+trace rcu-tasks read-side critical sections have completed. These
+read-side critical sections are delimited by calls to rcu_read_lock_trace() and rcu_read_unlock_trace() .

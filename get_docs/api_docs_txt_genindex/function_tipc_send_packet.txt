@@ -1,0 +1,14 @@
+Function: int tipc_send_packet ( struct socket * sock , struct msghdr * m , size_t dsz )
+
+send a connection-oriented message
+
+Parameters
+  struct socket *sock
+    socket structure
+  struct msghdr *m
+    message to send
+  size_t dsz
+    length of data to be transmitted
+
+Description
+  Used for SOCK_SEQPACKET messages.

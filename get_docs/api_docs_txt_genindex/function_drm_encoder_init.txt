@@ -1,0 +1,21 @@
+Function: int drm_encoder_init ( struct drm_device * dev , struct drm_encoder * encoder , const struct drm_encoder_funcs * funcs , int encoder_type , const char * name , ... )
+
+Init a preallocated encoder
+
+Parameters
+  struct drm_device *dev
+    drm device
+  struct drm_encoder *encoder
+    the encoder to init
+  const struct drm_encoder_funcs *funcs
+    callbacks for this encoder
+  int encoder_type
+    user visible type of the encoder
+  const char *name
+    printf style format string for the encoder name, or NULL for default name
+  ...
+    variable arguments
+
+Description
+  Initializes a preallocated encoder. Encoder should be subclassed as part of
+driver encoder objects. At driver unload time the driver’s drm_encoder_funcs.destroy hook should call drm_encoder_cleanup() and kfree() the encoder structure. The encoder structure should not be allocated with devm_kzalloc() .

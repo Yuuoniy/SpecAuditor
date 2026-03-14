@@ -1,0 +1,16 @@
+Function: struct ttm_tt * ttm_agp_tt_create ( struct ttm_buffer_object * bo , struct agp_bridge_data * bridge , uint32_t page_flags )
+
+
+
+Parameters
+  struct ttm_buffer_object *bo
+    Buffer object we allocate the ttm for.
+  struct agp_bridge_data *bridge
+    The agp bridge this device is sitting on.
+  uint32_t page_flags
+    Page flags as identified by TTM_TT_FLAG_XX flags.
+
+Description
+  Create a TTM backend that uses the indicated AGP bridge as an aperture
+for TT memory. This function uses the linux agpgart interface to
+bind and unbind memory backing a ttm_tt.

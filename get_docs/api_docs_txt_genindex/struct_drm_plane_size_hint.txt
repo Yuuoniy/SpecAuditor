@@ -1,0 +1,9 @@
+Struct: struct drm_plane_size_hint
+
+Plane size hints
+
+Members
+  width
+    The width of the plane in pixel
+  height
+    The height of the plane in pixel

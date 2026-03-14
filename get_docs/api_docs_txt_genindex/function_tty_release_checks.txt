@@ -1,0 +1,13 @@
+Function: int tty_release_checks ( struct tty_struct * tty , int idx )
+
+check a tty before real release
+
+Parameters
+  struct tty_struct *tty
+    tty to check
+  int idx
+    index of the tty
+
+Description
+  Performs some paranoid checking before true release of the tty . This is a
+no-op unless TTY_PARANOIA_CHECK is defined.

@@ -1,0 +1,12 @@
+Struct: struct fw_cdev_event_iso_interrupt_mc
+
+An iso buffer chunk was completed
+
+Members
+  closure
+    See fw_cdev_event_common ;
+set by FW_CDEV_CREATE_ISO_CONTEXT ioctl
+  type
+    FW_CDEV_EVENT_ISO_INTERRUPT_MULTICHANNEL
+  completed
+    Offset into the receive buffer; data before this offset is valid

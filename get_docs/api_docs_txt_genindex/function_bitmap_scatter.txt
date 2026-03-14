@@ -1,0 +1,16 @@
+Function: void bitmap_scatter ( unsigned long * dst , const unsigned long * src , const unsigned long * mask , unsigned int nbits )
+
+Scatter a bitmap according to the given mask
+
+Parameters
+  unsigned long *dst
+    scattered bitmap
+  const unsigned long *src
+    gathered bitmap
+  const unsigned long *mask
+    mask representing bits to assign to in the scattered bitmap
+  unsigned int nbits
+    number of bits in each of these bitmaps
+
+Description
+  Scatters bitmap with sequential bits according to the given mask .

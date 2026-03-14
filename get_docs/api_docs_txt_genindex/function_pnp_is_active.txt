@@ -1,0 +1,7 @@
+Function: int pnp_is_active ( struct pnp_dev * dev )
+
+Determines if a device is active based on its current resources
+
+Parameters
+  struct pnp_dev *dev
+    pointer to the desired PnP device

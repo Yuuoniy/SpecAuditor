@@ -1,0 +1,11 @@
+Function: struct dma_fence_chain * to_dma_fence_chain ( struct dma_fence * fence )
+
+cast a fence to a dma_fence_chain
+
+Parameters
+  struct dma_fence *fence
+    fence to cast to a dma_fence_array
+
+Description
+  Returns NULL if the fence is not a dma_fence_chain,
+or the dma_fence_chain otherwise.

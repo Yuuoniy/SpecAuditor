@@ -1,0 +1,12 @@
+Function: void media_device_register_entity_notify ( struct media_device * mdev , struct media_entity_notify * nptr )
+
+Registers a media entity_notify callback
+
+Parameters
+  struct media_device *mdev
+    The media device
+  struct media_entity_notify *nptr
+    The media_entity_notify
+
+Description
+  Note

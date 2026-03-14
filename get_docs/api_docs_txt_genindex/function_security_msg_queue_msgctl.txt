@@ -1,0 +1,13 @@
+Function: int security_msg_queue_msgctl ( struct kern_ipc_perm * msq , int cmd )
+
+Check if a msg queue operation is allowed
+
+Parameters
+  struct kern_ipc_perm *msq
+    sysv ipc permission structure
+  int cmd
+    operation
+
+Description
+  Check permission when a message control operation specified by cmd is to be
+performed on the message queue with permissions.

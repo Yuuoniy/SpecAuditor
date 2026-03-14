@@ -1,0 +1,9 @@
+Function: int pwm_apply_atomic ( struct pwm_device * pwm , const struct pwm_state * state )
+
+apply a new state to a PWM device from atomic context Not all PWM devices support this function, check with pwm_might_sleep() .
+
+Parameters
+  struct pwm_device *pwm
+    PWM device
+  const struct pwm_state *state
+    new state to apply

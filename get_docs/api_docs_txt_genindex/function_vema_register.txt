@@ -1,0 +1,10 @@
+Function: int vema_register ( struct opa_vnic_ctrl_port * cport )
+
+Registers agent
+
+Parameters
+  struct opa_vnic_ctrl_port *cport
+    pointer to control port
+
+Description
+  This function registers the handlers for the VEMA MADs

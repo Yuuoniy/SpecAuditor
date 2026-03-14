@@ -1,0 +1,79 @@
+Struct: struct tty_operations
+
+interface between driver and tty
+
+Members
+  lookup
+    struct tty_struct *()(struct tty_driver *self, struct file *, int idx)
+  install
+    int ()(struct tty_driver *self, struct tty_struct *tty)
+  remove
+    void ()(struct tty_driver *self, struct tty_struct *tty)
+  open
+    int ()(struct tty_struct *tty, struct file *)
+  close
+    void ()(struct tty_struct *tty, struct file *)
+  shutdown
+    void ()(struct tty_struct *tty)
+  cleanup
+    void ()(struct tty_struct *tty)
+  write
+    ssize_t ()(struct tty_struct *tty, const u8 *buf, size_t count)
+  put_char
+    int ()(struct tty_struct *tty, u8 ch)
+  flush_chars
+    void ()(struct tty_struct *tty)
+  write_room
+    unsigned int ()(struct tty_struct *tty)
+  chars_in_buffer
+    unsigned int ()(struct tty_struct *tty)
+  ioctl
+    int ()(struct tty_struct *tty, unsigned int cmd, unsigned long arg)
+  compat_ioctl
+    long ()(struct tty_struct *tty, unsigned int cmd, unsigned long arg)
+  set_termios
+    void ()(struct tty_struct *tty, const struct ktermios *old)
+  throttle
+    void ()(struct tty_struct *tty)
+  unthrottle
+    void ()(struct tty_struct *tty)
+  stop
+    void ()(struct tty_struct *tty)
+  start
+    void ()(struct tty_struct *tty)
+  hangup
+    void ()(struct tty_struct *tty)
+  break_ctl
+    int ()(struct tty_struct *tty, int state)
+  flush_buffer
+    void ()(struct tty_struct *tty)
+  ldisc_ok
+    int ()(struct tty_struct *tty, int ldisc)
+  set_ldisc
+    void ()(struct tty_struct *tty)
+  wait_until_sent
+    void ()(struct tty_struct *tty, int timeout)
+  send_xchar
+    void ()(struct tty_struct *tty, u8 ch)
+  tiocmget
+    int ()(struct tty_struct *tty)
+  tiocmset
+    int ()(struct tty_struct *tty, unsigned int set, unsigned int clear)
+  resize
+    int ()(struct tty_struct *tty, struct winsize *ws)
+  get_icount
+    int ()(struct tty_struct *tty, struct serial_icounter *icount)
+  get_serial
+    int ()(struct tty_struct *tty, struct serial_struct *p)
+  set_serial
+    int ()(struct tty_struct *tty, struct serial_struct *p)
+  show_fdinfo
+    void ()(struct tty_struct *tty, struct seq_file *m)
+  poll_init
+    int ()(struct tty_driver *driver, int line, char *options)
+  poll_get_char
+    int ()(struct tty_driver *driver, int line)
+  poll_put_char
+    void ()(struct tty_driver *driver, int line, char ch)
+  proc_show
+    int ()(struct seq_file *m, void *driver)

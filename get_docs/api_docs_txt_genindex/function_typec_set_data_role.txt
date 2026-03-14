@@ -1,0 +1,12 @@
+Function: void typec_set_data_role ( struct typec_port * port , enum typec_data_role role )
+
+Report data role change
+
+Parameters
+  struct typec_port *port
+    The USB Type-C Port where the role was changed
+  enum typec_data_role role
+    The new data role
+
+Description
+  This routine is used by the port drivers to report data role changes.

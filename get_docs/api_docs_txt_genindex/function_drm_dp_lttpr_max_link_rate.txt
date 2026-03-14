@@ -1,0 +1,10 @@
+Function: int drm_dp_lttpr_max_link_rate ( const u8 caps [ DP_LTTPR_COMMON_CAP_SIZE ] )
+
+get the maximum link rate supported by all LTTPRs
+
+Parameters
+  const u8 caps[DP_LTTPR_COMMON_CAP_SIZE]
+    LTTPR common capabilities
+
+Description
+  Returns the maximum link rate supported by all detected LTTPRs.

@@ -1,0 +1,10 @@
+Function: struct fscache_cookie * netfs_i_cookie ( struct netfs_inode * ctx )
+
+Get the cache cookie from the inode
+
+Parameters
+  struct netfs_inode *ctx
+    The netfs inode to query
+
+Description
+  Get the caching cookie (if enabled) from the network filesystem’s inode.

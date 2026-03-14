@@ -1,0 +1,21 @@
+Struct: struct hsi_config
+
+Configuration for RX/TX HSI modules
+
+Members
+  mode
+    Bit transmission mode (STREAM or FRAME)
+  channels
+    Channel resources used by the client
+  num_channels
+    Number of channel resources
+  num_hw_channels
+    Number of channels the transceiver is configured for [1..16]
+  speed
+    Max bit transmission speed (Kbit/s)
+  {unnamed_union}
+    anonymous
+  flow
+    RX flow type (SYNCHRONIZED or PIPELINE)
+  arb_mode
+    Arbitration mode for TX frame (Round robin, priority)

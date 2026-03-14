@@ -1,0 +1,11 @@
+Macro: NTSYNC_IOC_PULSE_EVENT
+
+Wake threads waiting on an event object while leaving it in an
+unsignaled state. Takes a pointer to a 32-bit integer, which on
+output contains the previous state of the event. A pulse operation can be thought of as a set followed by a reset,
+performed as a single atomic operation. If two threads are waiting on
+an auto-reset event which is pulsed, only one will be woken. If two
+threads are waiting a manual-reset event which is pulsed, both will
+be woken. However, in both cases, the event will be unsignaled
+afterwards, and a simultaneous read operation will always report the
+event as unsignaled.

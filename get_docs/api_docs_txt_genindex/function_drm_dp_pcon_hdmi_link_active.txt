@@ -1,0 +1,10 @@
+Function: bool drm_dp_pcon_hdmi_link_active ( struct drm_dp_aux * aux )
+
+check if the PCON HDMI LINK status is active.
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+
+Description
+  Returns true if link is active else returns false.

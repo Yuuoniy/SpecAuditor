@@ -1,0 +1,17 @@
+Function: struct media_device * media_device_usb_allocate ( struct usb_device * udev , const char * module_name , struct module * owner )
+
+Allocate and return struct media device
+
+Parameters
+  struct usb_device *udev
+    struct usb_device pointer
+  const char *module_name
+    should be filled with KBUILD_MODNAME
+  struct module *owner
+    struct module pointer THIS_MODULE for the driver. THIS_MODULE is null for a built-in driver.
+It is safe even when THIS_MODULE is null.
+
+Description
+  This interface should be called to allocate a Media Device when multiple
+drivers share usb_device and the media device. This interface allocates media_device structure and calls media_device_usb_init() to initialize
+it.

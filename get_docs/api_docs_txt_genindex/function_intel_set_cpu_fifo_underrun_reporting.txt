@@ -1,0 +1,16 @@
+Function: bool intel_set_cpu_fifo_underrun_reporting ( struct intel_display * display , enum pipe pipe , bool enable )
+
+set cpu fifo underrun reporting state
+
+Parameters
+  struct intel_display *display
+    display device instance
+  enum pipe pipe
+    (CPU) pipe to set state for
+  bool enable
+    whether underruns should be reported or not
+
+Description
+  This function sets the fifo underrun state for pipe . It is used in the
+modeset code to avoid false positives since on many platforms underruns are
+expected when disabling or enabling the pipe.

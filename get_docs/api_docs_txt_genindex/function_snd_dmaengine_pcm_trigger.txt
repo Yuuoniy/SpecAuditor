@@ -1,0 +1,13 @@
+Function: int snd_dmaengine_pcm_trigger ( struct snd_pcm_substream * substream , int cmd )
+
+dmaengine based PCM trigger implementation
+
+Parameters
+  struct snd_pcm_substream *substream
+    PCM substream
+  int cmd
+    Trigger command
+
+Description
+  This function can be used as the PCM trigger callback for dmaengine based PCM
+driver implementations.

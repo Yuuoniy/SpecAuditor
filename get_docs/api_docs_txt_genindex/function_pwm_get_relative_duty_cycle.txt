@@ -1,0 +1,13 @@
+Function: unsigned int pwm_get_relative_duty_cycle ( const struct pwm_state * state , unsigned int scale )
+
+Get a relative duty cycle value
+
+Parameters
+  const struct pwm_state *state
+    PWM state to extract the duty cycle from
+  unsigned int scale
+    target scale of the relative duty cycle
+
+Description
+  This functions converts the absolute duty cycle stored in state (expressed
+in nanosecond) into a value relative to the period.

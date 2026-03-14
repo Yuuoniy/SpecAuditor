@@ -1,0 +1,16 @@
+Function: void * skb_pull_rcsum ( struct sk_buff * skb , unsigned int len )
+
+pull skb and update receive checksum
+
+Parameters
+  struct sk_buff *skb
+    buffer to update
+  unsigned int len
+    length of data pulled
+
+Description
+  This function performs an skb_pull on the packet and updates
+the CHECKSUM_COMPLETE checksum.  It should be used on
+receive path processing instead of skb_pull unless you know
+that the checksum difference is zero (e.g., a valid IP header)
+or you are setting ip_summed to CHECKSUM_NONE.

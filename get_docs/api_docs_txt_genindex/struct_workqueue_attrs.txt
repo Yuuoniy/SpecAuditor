@@ -1,0 +1,29 @@
+Struct: struct workqueue_attrs
+
+A struct for workqueue attributes.
+
+Members
+  nice
+    nice level
+  cpumask
+    allowed CPUs Work items in this workqueue are affine to these CPUs and not allowed
+to execute on other CPUs. A pool serving a workqueue must have the
+same cpumask .
+  __pod_cpumask
+    internal attribute used to create per-pod pools Internal use only. Per-pod unbound worker pools are used to improve locality. Always a
+subset of ->cpumask. A workqueue can be associated with multiple
+worker pools with disjoint __pod_cpumask ’s. Whether the enforcement
+of a pool’s __pod_cpumask is strict depends on affn_strict .
+  affn_strict
+    affinity scope is strict If clear, workqueue will make a best-effort attempt at starting the
+worker inside __pod_cpumask but the scheduler is free to migrate it
+outside. If set, workers are only allowed to run inside __pod_cpumask .
+  affn_scope
+    unbound CPU affinity scope CPU pods are used to improve execution locality of unbound work
+items. There are multiple pod types, one for each wq_affn_scope, and
+every CPU in the system belongs to one pod in every pod type. CPUs
+that belong to the same pod share the worker pool. For example,
+selecting WQ_AFFN_NUMA makes the workqueue use a separate worker
+pool for each NUMA node.
+  ordered
+    work items must be executed one by one in queueing order

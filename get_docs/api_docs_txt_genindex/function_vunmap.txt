@@ -1,0 +1,11 @@
+Function: void vunmap ( const void * addr )
+
+release virtual mapping obtained by vmap()
+
+Parameters
+  const void *addr
+    memory base address
+
+Description
+  Free the virtually contiguous memory area starting at addr ,
+which was created from the page array passed to vmap() .

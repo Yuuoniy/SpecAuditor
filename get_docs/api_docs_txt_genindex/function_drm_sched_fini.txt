@@ -1,0 +1,10 @@
+Function: void drm_sched_fini ( struct drm_gpu_scheduler * sched )
+
+Destroy a gpu scheduler
+
+Parameters
+  struct drm_gpu_scheduler *sched
+    scheduler instance
+
+Description
+  Tears down and cleans up the scheduler.

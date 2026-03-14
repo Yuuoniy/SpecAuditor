@@ -1,0 +1,20 @@
+Function: int ssam_ssh_event_enable ( struct ssam_controller * ctrl , struct ssam_event_registry reg , struct ssam_event_id id , u8 flags )
+
+Enable SSH event.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller for which to enable the event.
+  struct ssam_event_registry reg
+    The event registry describing what request to use for enabling and
+disabling the event.
+  struct ssam_event_id id
+    The event identifier.
+  u8 flags
+    The event flags.
+
+Description
+  Enables the specified event on the EC. This function does not manage
+reference counting of enabled events and is basically only a wrapper for
+the raw EC request. If the specified event is already enabled, the EC will
+ignore this request.

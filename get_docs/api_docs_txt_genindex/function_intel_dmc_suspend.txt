@@ -1,0 +1,12 @@
+Function: void intel_dmc_suspend ( struct intel_display * display )
+
+prepare DMC firmware before system suspend
+
+Parameters
+  struct intel_display *display
+    display instance
+
+Description
+  Prepare the DMC firmware before entering system suspend. This includes
+flushing pending work items and releasing any resources acquired during
+init.

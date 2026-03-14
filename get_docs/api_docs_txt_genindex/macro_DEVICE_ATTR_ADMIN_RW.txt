@@ -1,0 +1,10 @@
+Macro: DEVICE_ATTR_ADMIN_RW
+
+
+
+Parameters
+  _name
+    Attribute name.
+
+Description
+  Like DEVICE_ATTR_RW() , but _mode is 0600.

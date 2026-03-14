@@ -1,0 +1,12 @@
+Function: void blk_mq_start_request ( struct request * rq )
+
+Start processing a request
+
+Parameters
+  struct request *rq
+    Pointer to request to be started
+
+Description
+  Function used by device drivers to notify the block layer that a request
+is going to be processed now, so blk layer can do proper initializations
+such as starting the timeout timer.

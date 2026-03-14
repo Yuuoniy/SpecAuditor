@@ -1,0 +1,11 @@
+Struct: struct fw_cdev_send_phy_packet
+
+send a PHY packet
+
+Members
+  closure
+    Passed back to userspace in the PHY-packet-sent event
+  data
+    First and second quadlet of the PHY packet
+  generation
+    The bus generation where packet is valid

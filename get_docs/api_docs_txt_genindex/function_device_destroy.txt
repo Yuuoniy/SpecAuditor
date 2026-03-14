@@ -1,0 +1,13 @@
+Function: void device_destroy ( const struct class * class , dev_t devt )
+
+removes a device that was created with device_create()
+
+Parameters
+  const struct class *class
+    pointer to the struct class that this device was registered with
+  dev_t devt
+    the dev_t of the device that was previously registered
+
+Description
+  This call unregisters and cleans up a device that was created with a
+call to device_create() .

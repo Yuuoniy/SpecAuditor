@@ -1,0 +1,16 @@
+Function: void ata_scsi_cmd_error_handler ( struct Scsi_Host * host , struct ata_port * ap , struct list_head * eh_work_q )
+
+error callback for a list of commands
+
+Parameters
+  struct Scsi_Host *host
+    scsi host containing the port
+  struct ata_port *ap
+    ATA port within the host
+  struct list_head *eh_work_q
+    list of commands to process
+
+Description
+  process the given list of commands and return those finished to the
+ap->eh_done_q.  This function is the first part of the libata error
+handler which processes a given list of failed commands.

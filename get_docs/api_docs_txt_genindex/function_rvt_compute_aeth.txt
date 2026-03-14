@@ -1,0 +1,10 @@
+Function: __be32 rvt_compute_aeth ( struct rvt_qp * qp )
+
+compute the AETH (syndrome + MSN)
+
+Parameters
+  struct rvt_qp *qp
+    the queue pair to compute the AETH for
+
+Description
+  Returns the AETH.

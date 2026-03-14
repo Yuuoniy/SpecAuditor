@@ -1,0 +1,11 @@
+Function: void audit_core_dumps ( long signr )
+
+record information about processes that end abnormally
+
+Parameters
+  long signr
+    signal value
+
+Description
+  If a process ends with a core dump, something fishy is going on and we
+should record the event for investigation.

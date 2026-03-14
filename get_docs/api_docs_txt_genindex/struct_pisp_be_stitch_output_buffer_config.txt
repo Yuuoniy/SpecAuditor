@@ -1,0 +1,7 @@
+Struct: struct pisp_be_stitch_output_buffer_config
+
+PiSP Back End Stitch output
+
+Members
+  addr
+    Stitch input buffer address

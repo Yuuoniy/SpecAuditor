@@ -1,0 +1,12 @@
+Function: void kfence_shutdown_cache ( struct kmem_cache * s )
+
+handle shutdown_cache() for KFENCE objects
+
+Parameters
+  struct kmem_cache *s
+    cache being shut down
+
+Description
+  Before shutting down a cache, one must ensure there are no remaining objects
+allocated from it. Because KFENCE objects are not referenced from the cache
+directly, we need to check them here.

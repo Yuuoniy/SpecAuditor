@@ -1,0 +1,15 @@
+Struct: struct ssam_event_item
+
+Struct for event queuing and completion.
+
+Members
+  node
+    The node in the queue.
+  rqid
+    The request ID of the event.
+  ops
+    Instance specific functions.
+  ops.free
+    Callback for freeing this event item.
+  event
+    Actual event data.

@@ -1,0 +1,11 @@
+Function: void drm_gem_shmem_unpin ( struct drm_gem_shmem_object * shmem )
+
+Unpin backing pages for a shmem GEM object
+
+Parameters
+  struct drm_gem_shmem_object *shmem
+    shmem GEM object
+
+Description
+  This function removes the requirement that the backing pages are pinned in
+memory.

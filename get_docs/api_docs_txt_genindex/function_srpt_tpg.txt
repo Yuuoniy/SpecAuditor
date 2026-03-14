@@ -1,0 +1,11 @@
+Function: struct srpt_tpg
+
+information about a single “target portal group”
+
+Members
+  entry
+    Entry in sport_id->tpg_list .
+  sport_id
+    Port name this TPG is associated with.
+  tpg
+    LIO TPG data structure.

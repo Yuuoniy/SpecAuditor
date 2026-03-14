@@ -1,0 +1,12 @@
+Macro: ASSERT_STRNE
+
+
+
+Parameters
+  expected
+    expected value
+  seen
+    measured value
+
+Description
+  ASSERT_STRNE(expected, measured): strcmp(expected, measured)

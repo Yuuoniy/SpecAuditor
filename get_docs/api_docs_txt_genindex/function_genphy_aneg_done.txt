@@ -1,0 +1,11 @@
+Function: int genphy_aneg_done ( struct phy_device * phydev )
+
+return auto-negotiation status
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  auto-negotiation is incomplete, or if there was an error.
+Returns BMSR_ANEGCOMPLETE if auto-negotiation is done.

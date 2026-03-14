@@ -1,0 +1,13 @@
+Function: void xprt_release_xprt_cong ( struct rpc_xprt * xprt , struct rpc_task * task )
+
+allow other requests to use a transport
+
+Parameters
+  struct rpc_xprt *xprt
+    transport with other tasks potentially waiting
+  struct rpc_task *task
+    task that is releasing access to the transport
+
+Description
+  Note that “task” can be NULL.  Another task is awoken to use the
+transport if the transport’s congestion window allows it.

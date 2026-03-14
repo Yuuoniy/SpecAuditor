@@ -1,0 +1,11 @@
+Macro: DRM_PANTHOR_USER_MMIO_OFFSET
+
+
+
+Members
+  stride
+    Stride of object struct. Used for versioning.
+  count
+    Number of objects in the array.
+  array
+    User pointer to an array of objects.

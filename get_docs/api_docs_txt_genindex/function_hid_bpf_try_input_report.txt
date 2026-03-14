@@ -1,0 +1,17 @@
+Function: __bpf_kfunc int hid_bpf_try_input_report ( struct hid_bpf_ctx * ctx , enum hid_report_type type , u8 * buf , const size_t buf__sz )
+
+Inject a HID report in the kernel from a HID device
+
+Parameters
+  struct hid_bpf_ctx *ctx
+    the HID-BPF context previously allocated in hid_bpf_allocate_context()
+  enum hid_report_type type
+    the type of the report ( HID_INPUT_REPORT , HID_FEATURE_REPORT , HID_OUTPUT_REPORT )
+  u8 *buf
+    a PTR_TO_MEM buffer
+  const size_t buf__sz
+    the size of the data to transfer
+
+Description
+  Returns 0 on success, a negative error code otherwise. This function will immediately
+fail if the device is not available, thus can be safely used in IRQ context.

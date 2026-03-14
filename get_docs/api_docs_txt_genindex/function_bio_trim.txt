@@ -1,0 +1,15 @@
+Function: void bio_trim ( struct bio * bio , sector_t offset , sector_t size )
+
+trim a bio
+
+Parameters
+  struct bio *bio
+    bio to trim
+  sector_t offset
+    number of sectors to trim from the front of bio
+  sector_t size
+    size we want to trim bio to, in sectors
+
+Description
+  This function is typically used for bios that are cloned and submitted
+to the underlying device in parts.

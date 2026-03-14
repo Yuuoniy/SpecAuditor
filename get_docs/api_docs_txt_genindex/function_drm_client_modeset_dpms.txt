@@ -1,0 +1,9 @@
+Function: int drm_client_modeset_dpms ( struct drm_client_dev * client , int mode )
+
+Set DPMS mode
+
+Parameters
+  struct drm_client_dev *client
+    DRM client
+  int mode
+    DPMS mode

@@ -1,0 +1,11 @@
+Function: void intel_vgpu_detect ( struct drm_i915_private * dev_priv )
+
+detect virtual GPU
+
+Parameters
+  struct drm_i915_private *dev_priv
+    i915 device private
+
+Description
+  This function is called at the initialization stage, to detect whether
+running on a vGPU.

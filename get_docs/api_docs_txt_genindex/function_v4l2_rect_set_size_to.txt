@@ -1,0 +1,9 @@
+Function: void v4l2_rect_set_size_to ( struct v4l2_rect * r , const struct v4l2_rect * size )
+
+copy the width/height values.
+
+Parameters
+  struct v4l2_rect *r
+    rect whose width and height fields will be set
+  const struct v4l2_rect *size
+    rect containing the width and height fields you need.

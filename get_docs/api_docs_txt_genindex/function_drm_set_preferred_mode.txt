@@ -1,0 +1,14 @@
+Function: void drm_set_preferred_mode ( struct drm_connector * connector , int hpref , int vpref )
+
+Sets the preferred mode of a connector
+
+Parameters
+  struct drm_connector *connector
+    connector whose mode list should be processed
+  int hpref
+    horizontal resolution of preferred mode
+  int vpref
+    vertical resolution of preferred mode
+
+Description
+  Marks a mode as preferred if it matches the resolution specified by hpref and vpref .

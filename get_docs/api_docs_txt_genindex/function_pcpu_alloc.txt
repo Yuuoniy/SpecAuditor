@@ -1,0 +1,19 @@
+Function: void __percpu * pcpu_alloc ( size_t size , size_t align , bool reserved , gfp_t gfp )
+
+the percpu allocator
+
+Parameters
+  size_t size
+    size of area to allocate in bytes
+  size_t align
+    alignment of area (max PAGE_SIZE)
+  bool reserved
+    allocate from the reserved chunk if available
+  gfp_t gfp
+    allocation flags
+
+Description
+  Allocate percpu area of size bytes aligned at align .  If gfp doesn’t
+contain GFP_KERNEL , the allocation is atomic. If gfp has __GFP_NOWARN
+then no warning will be triggered on invalid or failed allocation
+requests.

@@ -1,0 +1,9 @@
+Function: int iser_send_command ( struct iscsi_conn * conn , struct iscsi_task * task )
+
+send command PDU
+
+Parameters
+  struct iscsi_conn *conn
+    link to matching iscsi connection
+  struct iscsi_task *task
+    SCSI command task

@@ -1,0 +1,11 @@
+Function: struct key * rxrpc_get_null_key ( const char * keyname )
+
+Generate a null RxRPC key
+
+Parameters
+  const char *keyname
+    The name to give the key.
+
+Description
+  Generate a null RxRPC key that can be used to indicate anonymous security is
+required for a particular domain.

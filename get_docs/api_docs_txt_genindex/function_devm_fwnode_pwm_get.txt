@@ -1,0 +1,14 @@
+Function: struct pwm_device * devm_fwnode_pwm_get ( struct device * dev , struct fwnode_handle * fwnode , const char * con_id )
+
+request a resource managed PWM from firmware node
+
+Parameters
+  struct device *dev
+    device for PWM consumer
+  struct fwnode_handle *fwnode
+    firmware node to get the PWM from
+  const char *con_id
+    consumer name
+
+Description
+  Returns the PWM device parsed from the firmware node. See of_pwm_get() and acpi_pwm_get() for a detailed description.

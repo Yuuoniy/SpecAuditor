@@ -1,0 +1,10 @@
+Macro: genradix_free
+
+
+
+Parameters
+  _radix
+    the genradix to free
+
+Description
+  After freeing, _radix will be reinitialized and empty

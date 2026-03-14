@@ -1,0 +1,12 @@
+Function: void security_inode_post_create_tmpfile ( struct mnt_idmap * idmap , struct inode * inode )
+
+Update inode security of new tmpfile
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount
+  struct inode *inode
+    inode of the new tmpfile
+
+Description
+  Update inode security data after a tmpfile has been created.

@@ -1,0 +1,7 @@
+Function: int slim_get_logical_addr ( struct slim_device * sbdev )
+
+get/allocate logical address of a SLIMbus device.
+
+Parameters
+  struct slim_device *sbdev
+    client handle requesting the address.

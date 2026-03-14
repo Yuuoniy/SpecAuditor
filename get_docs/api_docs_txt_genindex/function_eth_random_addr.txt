@@ -1,0 +1,11 @@
+Function: void eth_random_addr ( u8 * addr )
+
+Generate software assigned random Ethernet address
+
+Parameters
+  u8 *addr
+    Pointer to a six-byte array containing the Ethernet address
+
+Description
+  Generate a random Ethernet address (MAC) that is not multicast
+and has the local assigned bit set.

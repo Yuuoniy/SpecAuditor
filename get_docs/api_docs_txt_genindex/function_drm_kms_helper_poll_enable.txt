@@ -1,0 +1,12 @@
+Function: void drm_kms_helper_poll_enable ( struct drm_device * dev )
+
+re-enable output polling.
+
+Parameters
+  struct drm_device *dev
+    drm_device
+
+Description
+  This function re-enables the output polling work, after it has been
+temporarily disabled using drm_kms_helper_poll_disable() , for example over
+suspend/resume.

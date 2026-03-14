@@ -1,0 +1,13 @@
+Function: int regulator_hardware_enable ( struct regulator * regulator , bool enable )
+
+access the HW for enable/disable regulator
+
+Parameters
+  struct regulator *regulator
+    regulator source
+  bool enable
+    true for enable, false for disable
+
+Description
+  Request that the regulator be enabled/disabled with the regulator output at
+the predefined voltage or current value.

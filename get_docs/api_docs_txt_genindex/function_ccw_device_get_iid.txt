@@ -1,0 +1,9 @@
+Function: int ccw_device_get_iid ( struct ccw_device * cdev , u8 * iid )
+
+obtain MIF-image ID
+
+Parameters
+  struct ccw_device *cdev
+    device to obtain the MIF-image ID for
+  u8 *iid
+    The resulting MIF-image ID

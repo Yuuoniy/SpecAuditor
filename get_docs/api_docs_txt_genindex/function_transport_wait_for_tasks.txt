@@ -1,0 +1,7 @@
+Function: bool transport_wait_for_tasks ( struct se_cmd * cmd )
+
+set CMD_T_STOP and wait for t_transport_stop_comp
+
+Parameters
+  struct se_cmd *cmd
+    command to wait on

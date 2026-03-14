@@ -1,0 +1,18 @@
+Function: int typec_altmode_vdm ( struct typec_altmode * adev , const u32 header , const u32 * vdo , int count )
+
+Send Vendor Defined Messages (VDM) to the partner
+
+Parameters
+  struct typec_altmode *adev
+    Alternate mode handle
+  const u32 header
+    VDM Header
+  const u32 *vdo
+    Array of Vendor Defined Data Objects
+  int count
+    Number of Data Objects
+
+Description
+  The alternate mode drivers use this function for SVID specific communication
+with the partner. The port drivers use it to deliver the Structured VDMs
+received from the partners to the alternate mode drivers.

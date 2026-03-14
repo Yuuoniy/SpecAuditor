@@ -1,0 +1,11 @@
+Function: void intel_gvt_resume ( struct drm_i915_private * dev_priv )
+
+GVT resume routine wrapper
+
+Parameters
+  struct drm_i915_private *dev_priv
+    drm i915 private *
+
+Description
+  This function is called at the i915 driver resume stage to restore required
+HW status for GVT so that vGPU can continue running after resumed.

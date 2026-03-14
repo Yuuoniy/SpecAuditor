@@ -1,0 +1,11 @@
+Function: int dvb_unregister_frontend ( struct dvb_frontend * fe )
+
+Unregisters a DVB frontend
+
+Parameters
+  struct dvb_frontend *fe
+    pointer to struct dvb_frontend
+
+Description
+  Stops the frontend kthread, calls dvb_unregister_device() and frees the
+private frontend data allocated by dvb_register_frontend() .

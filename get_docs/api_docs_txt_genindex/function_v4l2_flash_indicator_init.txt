@@ -1,0 +1,19 @@
+Function: struct v4l2_flash * v4l2_flash_indicator_init ( struct device * dev , struct fwnode_handle * fwn , struct led_classdev * iled_cdev , struct v4l2_flash_config * config )
+
+initialize V4L2 indicator sub-device
+
+Parameters
+  struct device *dev
+    flash device, e.g. an I2C device
+  struct fwnode_handle *fwn
+    fwnode_handle of the LED, may be NULL if the same as device’s
+  struct led_classdev *iled_cdev
+    LED flash class device representing the indicator LED
+  struct v4l2_flash_config *config
+    initialization data for V4L2 Flash sub-device
+
+Description
+  Create V4L2 Flash sub-device wrapping given LED subsystem device.
+The ops pointer is stored by the V4L2 flash framework. No
+references are held to config nor its contents once this function
+has returned.

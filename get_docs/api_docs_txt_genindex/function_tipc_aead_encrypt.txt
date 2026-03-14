@@ -1,0 +1,15 @@
+Function: int tipc_aead_encrypt ( struct tipc_aead * aead , struct sk_buff * skb , struct tipc_bearer * b , struct tipc_media_addr * dst , struct tipc_node * __dnode )
+
+Encrypt a message
+
+Parameters
+  struct tipc_aead *aead
+    TIPC AEAD key for the message encryption
+  struct sk_buff *skb
+    the input/output skb
+  struct tipc_bearer *b
+    TIPC bearer where the message will be delivered after the encryption
+  struct tipc_media_addr *dst
+    the destination media address
+  struct tipc_node *__dnode
+    TIPC dest node if “known”

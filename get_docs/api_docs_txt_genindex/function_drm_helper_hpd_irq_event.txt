@@ -1,0 +1,13 @@
+Function: bool drm_helper_hpd_irq_event ( struct drm_device * dev )
+
+hotplug processing
+
+Parameters
+  struct drm_device *dev
+    drm_device
+
+Description
+  Drivers can use this helper function to run a detect cycle on all connectors
+which have the DRM_CONNECTOR_POLL_HPD flag set in their polled member. All
+other connectors are ignored, which is useful to avoid reprobing fixed
+panels.

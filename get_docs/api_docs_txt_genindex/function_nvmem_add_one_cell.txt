@@ -1,0 +1,9 @@
+Function: int nvmem_add_one_cell ( struct nvmem_device * nvmem , const struct nvmem_cell_info * info )
+
+Add one cell information to an nvmem device
+
+Parameters
+  struct nvmem_device *nvmem
+    nvmem device to add cells to.
+  const struct nvmem_cell_info *info
+    nvmem cell info to add to the device

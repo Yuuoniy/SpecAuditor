@@ -1,0 +1,29 @@
+Function: int usb_sg_init ( struct usb_sg_request * io , struct usb_device * dev , unsigned pipe , unsigned period , struct scatterlist * sg , int nents , size_t length , gfp_t mem_flags )
+
+initializes scatterlist-based bulk/interrupt I/O request
+
+Parameters
+  struct usb_sg_request *io
+    request block being initialized.  until usb_sg_wait() returns,
+treat this as a pointer to an opaque block of memory,
+  struct usb_device *dev
+    the usb device that will send or receive the data
+  unsigned pipe
+    endpoint “pipe” used to transfer the data
+  unsigned period
+    polling rate for interrupt endpoints, in frames or
+(for high speed endpoints) microframes; ignored for bulk
+  struct scatterlist *sg
+    scatterlist entries
+  int nents
+    how many entries in the scatterlist
+  size_t length
+    how many bytes to send from the scatterlist, or zero to
+send every byte identified in the list.
+  gfp_t mem_flags
+    SLAB_* flags affecting memory allocations in this call
+
+Description
+  This initializes a scatter/gather request, allocating resources such as
+I/O mappings and urb memory (except maybe memory used by USB controller
+drivers).

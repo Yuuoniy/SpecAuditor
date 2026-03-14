@@ -1,0 +1,13 @@
+Struct: struct dwc3_event_gevt
+
+Other Core Events
+
+Members
+  one_bit
+    indicates this is a non-endpoint event (not used)
+  device_event
+    indicates it’s (0x03) Carkit or (0x04) I2C event.
+  phy_port_number
+    self-explanatory
+  reserved31_12
+    Reserved, not used.

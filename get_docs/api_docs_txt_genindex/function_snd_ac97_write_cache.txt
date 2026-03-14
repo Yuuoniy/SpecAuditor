@@ -1,0 +1,16 @@
+Function: void snd_ac97_write_cache ( struct snd_ac97 * ac97 , unsigned short reg , unsigned short value )
+
+write a value on the given register and update the cache
+
+Parameters
+  struct snd_ac97 *ac97
+    the ac97 instance
+  unsigned short reg
+    the register to change
+  unsigned short value
+    the value to set
+
+Description
+  Writes a value on the given register and updates the register
+cache.  The cached values are used for the cached-read and the
+suspend/resume.

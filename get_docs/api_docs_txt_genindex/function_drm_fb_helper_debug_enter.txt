@@ -1,0 +1,7 @@
+Function: int drm_fb_helper_debug_enter ( struct fb_info * info )
+
+implementation for fb_ops.fb_debug_enter
+
+Parameters
+  struct fb_info *info
+    fbdev registered by the helper

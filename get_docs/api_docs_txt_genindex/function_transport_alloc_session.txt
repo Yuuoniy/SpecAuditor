@@ -1,0 +1,7 @@
+Function: struct se_session * transport_alloc_session ( enum target_prot_op sup_prot_ops )
+
+allocate a session object and initialize it
+
+Parameters
+  enum target_prot_op sup_prot_ops
+    bitmask that defines which T10-PI modes are supported.

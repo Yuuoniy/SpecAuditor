@@ -1,0 +1,11 @@
+Function: struct drm_gpuvm_bo * drm_gpuvm_bo_get ( struct drm_gpuvm_bo * vm_bo )
+
+acquire a struct drm_gpuvm_bo reference
+
+Parameters
+  struct drm_gpuvm_bo *vm_bo
+    the drm_gpuvm_bo to acquire the reference of
+
+Description
+  This function acquires an additional reference to vm_bo . It is illegal to
+call this without already holding a reference. No locks required.

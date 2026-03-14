@@ -1,0 +1,14 @@
+Function: void drm_atomic_helper_disable_planes_on_crtc ( struct drm_crtc_state * old_crtc_state , bool atomic )
+
+helper to disable CRTC’s planes
+
+Parameters
+  struct drm_crtc_state *old_crtc_state
+    atomic state object with the old CRTC state
+  bool atomic
+    if set, synchronize with CRTC’s atomic_begin/flush hooks
+
+Description
+  Disables all planes associated with the given CRTC. This can be
+used for instance in the CRTC helper atomic_disable callback to disable
+all planes.

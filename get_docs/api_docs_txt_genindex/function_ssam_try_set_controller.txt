@@ -1,0 +1,11 @@
+Function: int ssam_try_set_controller ( struct ssam_controller * ctrl )
+
+Try to set the main controller reference.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller to which the reference should point.
+
+Description
+  Set the main controller reference to the given pointer if the reference
+hasn’t been set already.

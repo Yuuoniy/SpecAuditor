@@ -1,0 +1,10 @@
+Function: bool drm_gpuvm_bo_put ( struct drm_gpuvm_bo * vm_bo )
+
+drop a struct drm_gpuvm_bo reference
+
+Parameters
+  struct drm_gpuvm_bo *vm_bo
+    the drm_gpuvm_bo to release the reference of
+
+Description
+  This releases a reference to vm_bo .

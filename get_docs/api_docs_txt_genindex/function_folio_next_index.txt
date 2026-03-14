@@ -1,0 +1,7 @@
+Function: pgoff_t folio_next_index ( const struct folio * folio )
+
+Get the index of the next folio.
+
+Parameters
+  const struct folio *folio
+    The current folio.

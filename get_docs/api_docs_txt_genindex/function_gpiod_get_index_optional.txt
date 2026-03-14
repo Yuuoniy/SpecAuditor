@@ -1,0 +1,18 @@
+Function: struct gpio_desc * gpiod_get_index_optional ( struct device * dev , const char * con_id , unsigned int index , enum gpiod_flags flags )
+
+obtain an optional GPIO from a multi-index GPIO function
+
+Parameters
+  struct device *dev
+    GPIO consumer, can be NULL for system-global GPIOs
+  const char *con_id
+    function within the GPIO consumer
+  unsigned int index
+    index of the GPIO to obtain in the consumer
+  enum gpiod_flags flags
+    optional GPIO initialization flags
+
+Description
+  This is equivalent to gpiod_get_index() , except that when no GPIO with the
+specified index was assigned to the requested function it will return NULL.
+This is convenient for drivers that need to handle optional GPIOs.

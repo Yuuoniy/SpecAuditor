@@ -1,0 +1,19 @@
+Function: int jbd2_journal_invalidate_folio ( journal_t * journal , struct folio * folio , size_t offset , size_t length )
+
+
+
+Parameters
+  journal_t *journal
+    journal to use for flush...
+  struct folio *folio
+    folio to flush
+  size_t offset
+    start of the range to invalidate
+  size_t length
+    length of the range to invalidate
+
+Description
+  Reap page buffers containing data after in the specified range in page.
+Can return -EBUSY if buffers are part of the committing transaction and
+the page is straddling i_size. Caller then has to wait for current commit
+and try again.

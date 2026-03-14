@@ -1,0 +1,15 @@
+Function: void vema_get_class_port_info ( struct opa_vnic_vema_port * port , struct opa_vnic_vema_mad * recvd_mad , struct opa_vnic_vema_mad * rsp_mad )
+
+Get class info for port
+
+Parameters
+  struct opa_vnic_vema_port *port
+    Port on whic MAD was received
+  struct opa_vnic_vema_mad *recvd_mad
+    pointer to the received mad
+  struct opa_vnic_vema_mad *rsp_mad
+    pointer to respose mad
+
+Description
+  This function copies the latest class port info value set for the
+port and stores it for generating traps

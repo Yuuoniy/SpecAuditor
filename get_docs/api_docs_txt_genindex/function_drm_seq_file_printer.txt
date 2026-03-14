@@ -1,0 +1,7 @@
+Function: struct drm_printer drm_seq_file_printer ( struct seq_file * f )
+
+construct a drm_printer that outputs to seq_file
+
+Parameters
+  struct seq_file *f
+    the struct seq_file to output to

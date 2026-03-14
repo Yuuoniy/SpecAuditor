@@ -1,0 +1,15 @@
+Function: struct typec_switch_dev * typec_switch_register ( struct device * parent , const struct typec_switch_desc * desc )
+
+Register USB Type-C orientation switch
+
+Parameters
+  struct device *parent
+    Parent device
+  const struct typec_switch_desc *desc
+    Orientation switch description
+
+Description
+  This function registers a switch that can be used for routing the correct
+data pairs depending on the cable plug orientation from the USB Type-C
+connector to the USB controllers. USB Type-C plugs can be inserted
+right-side-up or upside-down.

@@ -1,0 +1,12 @@
+Function: void drm_sched_resume_timeout ( struct drm_gpu_scheduler * sched , unsigned long remaining )
+
+Resume scheduler job timeout
+
+Parameters
+  struct drm_gpu_scheduler *sched
+    scheduler instance for which to resume the timeout
+  unsigned long remaining
+    remaining timeout
+
+Description
+  Resume the delayed work timeout for the scheduler.

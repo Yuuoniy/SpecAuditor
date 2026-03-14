@@ -1,0 +1,15 @@
+Function: void intel_gt_mcr_lock ( struct intel_gt * gt , unsigned long * flags )
+
+Acquire MCR steering lock
+
+Parameters
+  struct intel_gt *gt
+    GT structure
+  unsigned long *flags
+    storage to save IRQ flags to
+
+Description
+  Performs locking to protect the steering for the duration of an MCR
+operation.  On MTL and beyond, a hardware lock will also be taken to
+serialize access not only for the driver, but also for external hardware and
+firmware agents.

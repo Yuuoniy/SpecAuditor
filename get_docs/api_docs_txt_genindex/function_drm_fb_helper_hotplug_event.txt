@@ -1,0 +1,11 @@
+Function: int drm_fb_helper_hotplug_event ( struct drm_fb_helper * fb_helper )
+
+respond to a hotplug notification by probing all the outputs attached to the fb
+
+Parameters
+  struct drm_fb_helper *fb_helper
+    driver-allocated fbdev helper, can be NULL
+
+Description
+  Scan the connectors attached to the fb_helper and try to put together a
+setup after notification of a change in output configuration.

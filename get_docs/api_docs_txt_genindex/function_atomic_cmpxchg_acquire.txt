@@ -1,0 +1,15 @@
+Function: int atomic_cmpxchg_acquire ( atomic_t * v , int old , int new )
+
+atomic compare and exchange with acquire ordering
+
+Parameters
+  atomic_t *v
+    pointer to atomic_t
+  int old
+    int value to compare with
+  int new
+    int value to assign
+
+Description
+  If ( v == old ), atomically updates v to new with acquire ordering.
+Otherwise, v is not modified and relaxed ordering is provided.

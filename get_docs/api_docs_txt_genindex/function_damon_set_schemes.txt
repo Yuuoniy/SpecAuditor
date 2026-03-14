@@ -1,0 +1,15 @@
+Function: void damon_set_schemes ( struct damon_ctx * ctx , struct damos * * schemes , ssize_t nr_schemes )
+
+Set data access monitoring based operation schemes.
+
+Parameters
+  struct damon_ctx *ctx
+    monitoring context
+  struct damos **schemes
+    array of the schemes
+  ssize_t nr_schemes
+    number of entries in schemes
+
+Description
+  This function should not be called while the kdamond of the context is
+running.

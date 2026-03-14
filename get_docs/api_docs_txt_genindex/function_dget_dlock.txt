@@ -1,0 +1,14 @@
+Function: struct dentry * dget_dlock ( struct dentry * dentry )
+
+get a reference to a dentry
+
+Parameters
+  struct dentry *dentry
+    dentry to get a reference to
+
+Description
+  Given a live dentry, increment the reference count and return the dentry.
+Caller must hold dentry->d_lock .  Making sure that dentry is alive is
+caller’s resonsibility.  There are many conditions sufficient to guarantee
+that; e.g. anything with non-negative refcount is alive, so’s anything
+hashed, anything positive, anyone’s parent, etc.

@@ -1,0 +1,10 @@
+Function: int svc_reg_xprt_class ( struct svc_xprt_class * xcl )
+
+Register a server-side RPC transport class
+
+Parameters
+  struct svc_xprt_class *xcl
+    New transport class to be registered
+
+Description
+  Returns zero on success; otherwise a negative errno is returned.

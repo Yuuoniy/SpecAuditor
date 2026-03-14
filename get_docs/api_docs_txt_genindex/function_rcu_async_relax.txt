@@ -1,0 +1,10 @@
+Function: void rcu_async_relax ( void )
+
+Make future async RCU callbacks lazy.
+
+Parameters
+  void
+    no arguments
+
+Description
+  After a call to this function, future calls to call_rcu() will be processed in a lazy fashion.

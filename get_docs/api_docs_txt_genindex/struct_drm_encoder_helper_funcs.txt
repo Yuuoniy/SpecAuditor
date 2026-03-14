@@ -1,0 +1,152 @@
+Struct: struct drm_encoder_helper_funcs
+
+helper operations for encoders
+
+Members
+  dpms
+    Callback to control power levels on the encoder.  If the mode passed in
+is unsupported, the provider must use the next lowest power level.
+This is used by the legacy encoder helpers to implement DPMS
+functionality in drm_helper_connector_dpms() . This callback is also used to disable an encoder by calling it with
+DRM_MODE_DPMS_OFF if the disable hook isn’t used. This callback is used by the legacy CRTC helpers.  Atomic helpers
+also support using this hook for enabling and disabling an encoder to
+facilitate transitions to atomic, but it is deprecated. Instead enable and disable should be used.
+  mode_valid
+    This callback is used to check if a specific mode is valid in this
+encoder. This should be implemented if the encoder has some sort
+of restriction in the modes it can display. For example, a given
+encoder may be responsible to set a clock value. If the clock can
+not produce all the values for the available modes then this callback
+can be used to restrict the number of modes to only the ones that
+can be displayed. This hook is used by the probe helpers to filter the mode list in drm_helper_probe_single_connector_modes() , and it is used by the
+atomic helpers to validate modes supplied by userspace in drm_atomic_helper_check_modeset() . This function is optional. NOTE: Since this function is both called from the check phase of an atomic
+commit, and the mode validation in the probe paths it is not allowed
+to look at anything else but the passed-in mode, and validate it
+against configuration-invariant hardware constraints. Any further
+limits which depend upon the configuration can only be checked in mode_fixup or atomic_check . RETURNS: drm_mode_status Enum
+  mode_fixup
+    This callback is used to validate and adjust a mode. The parameter
+mode is the display mode that should be fed to the next element in
+the display chain, either the final drm_connector or a drm_bridge .
+The parameter adjusted_mode is the input mode the encoder requires. It
+can be modified by this callback and does not need to match mode. See
+also drm_crtc_state.adjusted_mode for more details. This function is used by both legacy CRTC helpers and atomic helpers.
+This hook is optional. NOTE: This function is called in the check phase of atomic modesets, which
+can be aborted for any reason (including on userspace’s request to
+just check whether a configuration would be possible). Atomic drivers
+MUST NOT touch any persistent state (hardware or software) or data
+structures except the passed in adjusted_mode parameter. This is in contrast to the legacy CRTC helpers where this was
+allowed. Atomic drivers which need to inspect and adjust more state should
+instead use the atomic_check callback. If atomic_check is used,
+this hook isn’t called since atomic_check allows a strict superset
+of the functionality of mode_fixup . Also beware that userspace can request its own custom modes, neither
+core nor helpers filter modes to the list of probe modes reported by
+the GETCONNECTOR IOCTL and stored in drm_connector.modes . To ensure
+that modes are filtered consistently put any encoder constraints and
+limits checks into mode_valid . RETURNS: True if an acceptable configuration is possible, false if the modeset
+operation should be rejected.
+  prepare
+    This callback should prepare the encoder for a subsequent modeset,
+which in practice means the driver should disable the encoder if it
+is running. Most drivers ended up implementing this by calling their dpms hook with DRM_MODE_DPMS_OFF. This callback is used by the legacy CRTC helpers.  Atomic helpers
+also support using this hook for disabling an encoder to facilitate
+transitions to atomic, but it is deprecated. Instead disable should
+be used.
+  commit
+    This callback should commit the new mode on the encoder after a modeset,
+which in practice means the driver should enable the encoder.  Most
+drivers ended up implementing this by calling their dpms hook with
+DRM_MODE_DPMS_ON. This callback is used by the legacy CRTC helpers.  Atomic helpers
+also support using this hook for enabling an encoder to facilitate
+transitions to atomic, but it is deprecated. Instead enable should
+be used.
+  mode_set
+    This callback is used to update the display mode of an encoder. Note that the display pipe is completely off when this function is
+called. Drivers which need hardware to be running before they program
+the new display mode (because they implement runtime PM) should not
+use this hook, because the helper library calls it only once and not
+every time the display pipeline is suspend using either DPMS or the
+new “ACTIVE” property. Such drivers should instead move all their
+encoder setup into the enable callback. This callback is used both by the legacy CRTC helpers and the atomic
+modeset helpers. It is optional in the atomic helpers. NOTE: If the driver uses the atomic modeset helpers and needs to inspect
+the connector state or connector display info during mode setting, atomic_mode_set can be used instead.
+  atomic_mode_set
+    This callback is used to update the display mode of an encoder. Note that the display pipe is completely off when this function is
+called. Drivers which need hardware to be running before they program
+the new display mode (because they implement runtime PM) should not
+use this hook, because the helper library calls it only once and not
+every time the display pipeline is suspended using either DPMS or the
+new “ACTIVE” property. Such drivers should instead move all their
+encoder setup into the enable callback. This callback is used by the atomic modeset helpers in place of the mode_set callback, if set by the driver. It is optional and should
+be used instead of mode_set if the driver needs to inspect the
+connector state or display info, since there is no direct way to
+go from the encoder to the current connector.
+  detect
+    This callback can be used by drivers who want to do detection on the
+encoder object instead of in connector functions. It is not used by any helper and therefore has purely driver-specific
+semantics. New drivers shouldn’t use this and instead just implement
+their own private callbacks. FIXME: This should just be converted into a pile of driver vfuncs.
+Currently radeon, amdgpu and nouveau are using it.
+  atomic_disable
+    This callback should be used to disable the encoder. With the atomic
+drivers it is called before this encoder’s CRTC has been shut off
+using their own drm_crtc_helper_funcs.atomic_disable hook. If that
+sequence is too simple drivers can just add their own driver private
+encoder hooks and call them from CRTC’s callback by looping over all
+encoders connected to it using for_each_encoder_on_crtc() . This callback is a variant of disable that provides the atomic state
+to the driver. If atomic_disable is implemented, disable is not
+called by the helpers. This hook is only used by atomic helpers. Atomic drivers don’t need
+to implement it if there’s no need to disable anything at the encoder
+level. To ensure that runtime PM handling (using either DPMS or the
+new “ACTIVE” property) works atomic_disable must be the inverse of atomic_enable .
+  atomic_enable
+    This callback should be used to enable the encoder. It is called
+after this encoder’s CRTC has been enabled using their own drm_crtc_helper_funcs.atomic_enable hook. If that sequence is
+too simple drivers can just add their own driver private encoder
+hooks and call them from CRTC’s callback by looping over all encoders
+connected to it using for_each_encoder_on_crtc() . This callback is a variant of enable that provides the atomic state
+to the driver. If atomic_enable is implemented, enable is not
+called by the helpers. This hook is only used by atomic helpers, it is the opposite of atomic_disable . Atomic drivers don’t need to implement it if there’s
+no need to enable anything at the encoder level. To ensure that
+runtime PM handling works atomic_enable must be the inverse of atomic_disable .
+  disable
+    This callback should be used to disable the encoder. With the atomic
+drivers it is called before this encoder’s CRTC has been shut off
+using their own drm_crtc_helper_funcs.disable hook.  If that
+sequence is too simple drivers can just add their own driver private
+encoder hooks and call them from CRTC’s callback by looping over all
+encoders connected to it using for_each_encoder_on_crtc() . This hook is used both by legacy CRTC helpers and atomic helpers.
+Atomic drivers don’t need to implement it if there’s no need to
+disable anything at the encoder level. To ensure that runtime PM
+handling (using either DPMS or the new “ACTIVE” property) works disable must be the inverse of enable for atomic drivers. For atomic drivers also consider atomic_disable and save yourself
+from having to read the NOTE below! NOTE: With legacy CRTC helpers there’s a big semantic difference between disable and other hooks (like prepare or dpms ) used to shut down a
+encoder: disable is only called when also logically disabling the
+display pipeline and needs to release any resources acquired in mode_set (like shared PLLs, or again release pinned framebuffers). Therefore disable must be the inverse of mode_set plus commit for
+drivers still using legacy CRTC helpers, which is different from the
+rules under atomic.
+  enable
+    This callback should be used to enable the encoder. With the atomic
+drivers it is called after this encoder’s CRTC has been enabled using
+their own drm_crtc_helper_funcs.enable hook.  If that sequence is
+too simple drivers can just add their own driver private encoder
+hooks and call them from CRTC’s callback by looping over all encoders
+connected to it using for_each_encoder_on_crtc() . This hook is only used by atomic helpers, it is the opposite of disable . Atomic drivers don’t need to implement it if there’s no
+need to enable anything at the encoder level. To ensure that
+runtime PM handling (using either DPMS or the new “ACTIVE” property)
+works enable must be the inverse of disable for atomic drivers.
+  atomic_check
+    This callback is used to validate encoder state for atomic drivers.
+Since the encoder is the object connecting the CRTC and connector it
+gets passed both states, to be able to validate interactions and
+update the CRTC to match what the encoder needs for the requested
+connector. Since this provides a strict superset of the functionality of mode_fixup (the requested and adjusted modes are both available
+through the passed in struct drm_crtc_state ) mode_fixup is not
+called when atomic_check is implemented. This function is used by the atomic helpers, but it is optional. NOTE: This function is called in the check phase of an atomic update. The
+driver is not allowed to change anything outside of the free-standing
+state objects passed-in or assembled in the overall drm_atomic_state update tracking structure. Also beware that userspace can request its own custom modes, neither
+core nor helpers filter modes to the list of probe modes reported by
+the GETCONNECTOR IOCTL and stored in drm_connector.modes . To ensure
+that modes are filtered consistently put any encoder constraints and
+limits checks into mode_valid . RETURNS: 0 on success, -EINVAL if the state or the transition can’t be
+supported, -ENOMEM on memory allocation failure and -EDEADLK if an
+attempt to obtain another state object ran into a drm_modeset_lock deadlock.

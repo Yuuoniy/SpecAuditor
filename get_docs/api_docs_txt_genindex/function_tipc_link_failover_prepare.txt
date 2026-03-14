@@ -1,0 +1,15 @@
+Function: void tipc_link_failover_prepare ( struct tipc_link * l , struct tipc_link * tnl , struct sk_buff_head * xmitq )
+
+prepare tnl for link failover
+
+Parameters
+  struct tipc_link *l
+    failover link
+  struct tipc_link *tnl
+    tunnel link
+  struct sk_buff_head *xmitq
+    queue for messages to be xmited
+
+Description
+  This is a special version of the precursor - tipc_link_tnl_prepare() ,
+see the tipc_node_link_failover() for details

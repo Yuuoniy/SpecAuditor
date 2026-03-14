@@ -1,0 +1,12 @@
+Function: struct drm_display_mode * drm_display_mode_from_cea_vic ( struct drm_device * dev , u8 video_code )
+
+return a mode for CEA VIC
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  u8 video_code
+    CEA VIC of the mode
+
+Description
+  Creates a new mode matching the specified CEA VIC.

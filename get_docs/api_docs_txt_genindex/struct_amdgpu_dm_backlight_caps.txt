@@ -1,0 +1,32 @@
+Struct: struct amdgpu_dm_backlight_caps
+
+Information about backlight
+
+Members
+  ext_caps
+    Keep the data struct with all the information about the
+display support for HDR.
+  aux_min_input_signal
+    Min brightness value supported by the display
+  aux_max_input_signal
+    Max brightness value supported by the display
+in nits.
+  min_input_signal
+    minimum possible input in range 0-255.
+  max_input_signal
+    maximum possible input in range 0-255.
+  caps_valid
+    true if these values are from the ACPI interface.
+  aux_support
+    Describes if the display supports AUX backlight.
+  brightness_mask
+    After deriving brightness, OR it with this mask.
+Workaround for panels with issues with certain brightness values.
+  ac_level
+    the default brightness if booted on AC
+  dc_level
+    the default brightness if booted on DC
+  data_points
+    the number of custom luminance data points
+  luminance_data
+    custom luminance data

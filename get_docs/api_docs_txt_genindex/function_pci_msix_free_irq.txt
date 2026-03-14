@@ -1,0 +1,12 @@
+Function: void pci_msix_free_irq ( struct pci_dev * dev , struct msi_map map )
+
+Free an interrupt on a PCI/MSI-X interrupt domain
+
+Parameters
+  struct pci_dev *dev
+    The PCI device to operate on
+  struct msi_map map
+    A struct msi_map describing the interrupt to free
+
+Description
+  Undo an interrupt vector allocation. Does not disable MSI-X.

@@ -1,0 +1,15 @@
+Function: struct gpio_descs * gpiod_get_array_optional ( struct device * dev , const char * con_id , enum gpiod_flags flags )
+
+obtain multiple GPIOs from a multi-index GPIO function
+
+Parameters
+  struct device *dev
+    GPIO consumer, can be NULL for system-global GPIOs
+  const char *con_id
+    function within the GPIO consumer
+  enum gpiod_flags flags
+    optional GPIO initialization flags
+
+Description
+  This is equivalent to gpiod_get_array() , except that when no GPIO was
+assigned to the requested function it will return NULL.

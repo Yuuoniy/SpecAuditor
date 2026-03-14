@@ -1,0 +1,13 @@
+Function: const struct pci_device_id * pci_match_id ( const struct pci_device_id * ids , struct pci_dev * dev )
+
+See if a PCI device matches a given pci_id table
+
+Parameters
+  const struct pci_device_id *ids
+    array of PCI device ID structures to search in
+  struct pci_dev *dev
+    the PCI device structure to match against.
+
+Description
+  Used by a driver to check whether a PCI device is in its list of
+supported devices.  Returns the matching pci_device_id structure or NULL if there is no match.

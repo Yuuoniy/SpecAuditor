@@ -1,0 +1,15 @@
+Macro: DEFINE_XARRAY_FLAGS
+
+
+
+Parameters
+  name
+    A string that names your XArray.
+  flags
+    XA_FLAG values.
+
+Description
+  This is intended for file scope definitions of XArrays.  It declares
+and initialises an empty XArray with the chosen name and flags.  It is
+equivalent to calling xa_init_flags() on the array, but it does the
+initialisation at compiletime instead of runtime.

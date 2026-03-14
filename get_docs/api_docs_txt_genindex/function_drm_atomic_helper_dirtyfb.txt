@@ -1,0 +1,22 @@
+Function: int drm_atomic_helper_dirtyfb ( struct drm_framebuffer * fb , struct drm_file * file_priv , unsigned int flags , unsigned int color , struct drm_clip_rect * clips , unsigned int num_clips )
+
+Helper for dirtyfb.
+
+Parameters
+  struct drm_framebuffer *fb
+    DRM framebuffer.
+  struct drm_file *file_priv
+    Drm file for the ioctl call.
+  unsigned int flags
+    Dirty fb annotate flags.
+  unsigned int color
+    Color for annotate fill.
+  struct drm_clip_rect *clips
+    Dirty region.
+  unsigned int num_clips
+    Count of clip in clips.
+
+Description
+  A helper to implement drm_framebuffer_funcs.dirty using damage interface
+during plane update. If num_clips is 0 then this helper will do a full plane
+update. This is the same behaviour expected by DIRTFB IOCTL.

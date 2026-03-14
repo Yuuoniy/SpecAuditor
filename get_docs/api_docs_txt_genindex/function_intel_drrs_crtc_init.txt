@@ -1,0 +1,11 @@
+Function: void intel_drrs_crtc_init ( struct intel_crtc * crtc )
+
+Init DRRS for CRTC
+
+Parameters
+  struct intel_crtc *crtc
+    crtc
+
+Description
+  This function is called only once at driver load to initialize basic
+DRRS stuff.

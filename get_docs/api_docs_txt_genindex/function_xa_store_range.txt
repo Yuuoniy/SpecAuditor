@@ -1,0 +1,21 @@
+Function: void * xa_store_range ( struct xarray * xa , unsigned long first , unsigned long last , void * entry , gfp_t gfp )
+
+Store this entry at a range of indices in the XArray.
+
+Parameters
+  struct xarray *xa
+    XArray.
+  unsigned long first
+    First index to affect.
+  unsigned long last
+    Last index to affect.
+  void *entry
+    New entry.
+  gfp_t gfp
+    Memory allocation flags.
+
+Description
+  After this function returns, loads from any index between first and last ,
+inclusive will return entry .
+Storing into an existing multi-index entry updates the entry of every index.
+The marks associated with index are unaffected unless entry is NULL .

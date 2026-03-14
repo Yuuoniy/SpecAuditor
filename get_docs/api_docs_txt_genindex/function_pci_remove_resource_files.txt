@@ -1,0 +1,11 @@
+Function: void pci_remove_resource_files ( struct pci_dev * pdev )
+
+cleanup resource files
+
+Parameters
+  struct pci_dev *pdev
+    dev to cleanup
+
+Description
+  If we created resource files for pdev , remove them from sysfs and
+free their resources.

@@ -1,0 +1,24 @@
+Function: void cfg80211_connect_timeout ( struct net_device * dev , const u8 * bssid , const u8 * req_ie , size_t req_ie_len , gfp_t gfp , enum nl80211_timeout_reason timeout_reason )
+
+notify cfg80211 of connection timeout
+
+Parameters
+  struct net_device *dev
+    network device
+  const u8 *bssid
+    the BSSID of the AP
+  const u8 *req_ie
+    association request IEs (maybe be NULL )
+  size_t req_ie_len
+    association request IEs length
+  gfp_t gfp
+    allocation flags
+  enum nl80211_timeout_reason timeout_reason
+    reason for connection timeout.
+
+Description
+  It should be called by the underlying driver whenever connect() has failed
+in a sequence where no explicit authentication/association rejection was
+received from the AP. This could happen, e.g., due to not being able to send
+out the Authentication or Association Request frame or timing out while
+waiting for the response. Only one of the functions among cfg80211_connect_bss() , cfg80211_connect_result() , cfg80211_connect_timeout() , and cfg80211_connect_done() should be called.

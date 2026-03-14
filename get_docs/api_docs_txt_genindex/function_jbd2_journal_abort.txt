@@ -1,0 +1,15 @@
+Function: void jbd2_journal_abort ( journal_t * journal , int errno )
+
+Shutdown the journal immediately.
+
+Parameters
+  journal_t *journal
+    the journal to shutdown.
+  int errno
+    an error number to record in the journal indicating
+the reason for the shutdown.
+
+Description
+  Perform a complete, immediate shutdown of the ENTIRE
+journal (not of a single transaction).  This operation cannot be
+undone without closing and reopening the journal.

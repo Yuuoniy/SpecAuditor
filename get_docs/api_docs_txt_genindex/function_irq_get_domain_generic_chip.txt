@@ -1,0 +1,9 @@
+Function: struct irq_chip_generic * irq_get_domain_generic_chip ( struct irq_domain * d , unsigned int hw_irq )
+
+Get a pointer to the generic chip of a hw_irq
+
+Parameters
+  struct irq_domain *d
+    irq domain pointer
+  unsigned int hw_irq
+    Hardware interrupt number

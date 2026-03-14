@@ -1,0 +1,33 @@
+Struct: struct damos
+
+Represents a Data Access Monitoring-based Operation Scheme.
+
+Members
+  pattern
+    Access pattern of target regions.
+  action
+    damos_action to be applied to the target regions.
+  apply_interval_us
+    The time between applying the action .
+  quota
+    Control the aggressiveness of this scheme.
+  wmarks
+    Watermarks for automated (in)activation of this scheme.
+  {unnamed_union}
+    anonymous
+  {unnamed_struct}
+    anonymous
+  target_nid
+    Destination node if action is “migrate_{hot,cold}”.
+  migrate_dests
+    Destination nodes if action is “migrate_{hot,cold}”.
+  filters
+    Additional set of struct damos_filter for action .
+  ops_filters
+    ops layer handling struct damos_filter objects list.
+  last_applied
+    Last action applied ops-managing entity.
+  stat
+    Statistics of this scheme.
+  list
+    List head for siblings.

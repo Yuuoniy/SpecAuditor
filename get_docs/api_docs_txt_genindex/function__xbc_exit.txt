@@ -1,0 +1,12 @@
+Function: void _xbc_exit ( bool early )
+
+Clean up all parsed bootconfig
+
+Parameters
+  bool early
+    Set true if this is called before budy system is initialized.
+
+Description
+  This clears all data structures of parsed bootconfig on memory.
+If you need to reuse xbc_init() with new boot config, you can
+use this.

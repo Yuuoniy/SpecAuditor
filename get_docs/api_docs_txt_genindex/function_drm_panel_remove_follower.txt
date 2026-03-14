@@ -1,0 +1,12 @@
+Function: void drm_panel_remove_follower ( struct drm_panel_follower * follower )
+
+Reverse drm_panel_add_follower() .
+
+Parameters
+  struct drm_panel_follower *follower
+    The panel follower descriptor for the follower.
+
+Description
+  Undo drm_panel_add_follower() . This includes calling the follower’s
+unpreparing/disabling function if we’re removed from a panel that’s currently
+prepared/enabled.

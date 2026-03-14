@@ -1,0 +1,10 @@
+Function: void drm_privacy_screen_lookup_remove ( struct drm_privacy_screen_lookup * lookup )
+
+remove an entry to the static privacy-screen lookup list
+
+Parameters
+  struct drm_privacy_screen_lookup *lookup
+    lookup list entry to remove
+
+Description
+  Remove an entry previously added with drm_privacy_screen_lookup_add() from the static privacy-screen lookup list.

@@ -1,0 +1,10 @@
+Function: int timer_shutdown_sync ( struct timer_list * timer )
+
+Shutdown a timer and prevent rearming
+
+Parameters
+  struct timer_list *timer
+    The timer to be shutdown
+
+Description
+  timer is not queued

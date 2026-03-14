@@ -1,0 +1,13 @@
+Function: void * xas_reload ( struct xa_state * xas )
+
+Refetch an entry from the xarray.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+
+Description
+  Use this function to check that a previously loaded entry still has
+the same value.  This is useful for the lockless pagecache lookup where
+we walk the array with only the RCU lock to protect us, lock the page,
+then check that the page hasn’t moved since we looked it up.

@@ -1,0 +1,12 @@
+Macro: sysfs_match_string
+
+
+
+Parameters
+  _a
+    array of strings
+  _s
+    string to match with
+
+Description
+  Helper for __sysfs_match_string() . Calculates the size of a automatically.

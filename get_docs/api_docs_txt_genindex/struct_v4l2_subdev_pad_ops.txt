@@ -1,0 +1,81 @@
+Struct: struct v4l2_subdev_pad_ops
+
+v4l2-subdev pad level operations
+
+Members
+  enum_mbus_code
+    callback for VIDIOC_SUBDEV_ENUM_MBUS_CODE() ioctl handler
+code.
+  enum_frame_size
+    callback for VIDIOC_SUBDEV_ENUM_FRAME_SIZE() ioctl handler
+code.
+  enum_frame_interval
+    callback for VIDIOC_SUBDEV_ENUM_FRAME_INTERVAL() ioctl
+handler code.
+  get_fmt
+    callback for VIDIOC_SUBDEV_G_FMT() ioctl handler code.
+  set_fmt
+    callback for VIDIOC_SUBDEV_S_FMT() ioctl handler code.
+  get_selection
+    callback for VIDIOC_SUBDEV_G_SELECTION() ioctl handler code.
+  set_selection
+    callback for VIDIOC_SUBDEV_S_SELECTION() ioctl handler code.
+  get_frame_interval
+    callback for VIDIOC_SUBDEV_G_FRAME_INTERVAL() ioctl handler code.
+  set_frame_interval
+    callback for VIDIOC_SUBDEV_S_FRAME_INTERVAL() ioctl handler code.
+  get_edid
+    callback for VIDIOC_SUBDEV_G_EDID() ioctl handler code.
+  set_edid
+    callback for VIDIOC_SUBDEV_S_EDID() ioctl handler code.
+  s_dv_timings
+    Set custom dv timings in the sub device. This is used
+when sub device is capable of setting detailed timing information
+in the hardware to generate/detect the video signal.
+  g_dv_timings
+    Get custom dv timings in the sub device.
+  query_dv_timings
+    callback for VIDIOC_QUERY_DV_TIMINGS() ioctl handler code.
+  dv_timings_cap
+    callback for VIDIOC_SUBDEV_DV_TIMINGS_CAP() ioctl handler
+code.
+  enum_dv_timings
+    callback for VIDIOC_SUBDEV_ENUM_DV_TIMINGS() ioctl handler
+code.
+  link_validate
+    used by the media controller code to check if the links
+that belongs to a pipeline can be used for stream.
+  get_frame_desc
+    get the current low level media bus frame parameters.
+  set_frame_desc
+    set the low level media bus frame parameters, fd array
+may be adjusted by the subdev driver to device capabilities.
+  get_mbus_config
+    get the media bus configuration of a remote sub-device.
+The media bus configuration is usually retrieved from the
+firmware interface at sub-device probe time, immediately
+applied to the hardware and eventually adjusted by the
+driver. Remote sub-devices (usually video receivers) shall
+use this operation to query the transmitting end bus
+configuration in order to adjust their own one accordingly.
+Callers should make sure they get the most up-to-date as
+possible configuration from the remote end, likely calling
+this operation as close as possible to stream on time. The
+operation shall fail if the pad index it has been called on
+is not valid or in case of unrecoverable failures. The
+config argument has been memset to 0 just before calling
+the op.
+  set_routing
+    Enable or disable data connection routes described in the
+subdevice routing table. Subdevs that implement this operation
+must set the V4L2_SUBDEV_FL_STREAMS flag.
+  enable_streams
+    Enable the streams defined in streams_mask on the given
+source pad. Subdevs that implement this operation must use the active
+state management provided by the subdev core (enabled through a call to v4l2_subdev_init_finalize() at initialization time). Do not call
+directly, use v4l2_subdev_enable_streams() instead.
+  disable_streams
+    Disable the streams defined in streams_mask on the given
+source pad. Subdevs that implement this operation must use the active
+state management provided by the subdev core (enabled through a call to v4l2_subdev_init_finalize() at initialization time). Do not call
+directly, use v4l2_subdev_disable_streams() instead.

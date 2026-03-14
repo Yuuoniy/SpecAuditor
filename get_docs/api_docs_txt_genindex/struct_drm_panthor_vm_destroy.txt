@@ -1,0 +1,9 @@
+Struct: struct drm_panthor_vm_destroy
+
+Arguments passed to DRM_PANTHOR_IOCTL_VM_DESTROY
+
+Members
+  id
+    ID of the VM to destroy.
+  pad
+    MBZ.

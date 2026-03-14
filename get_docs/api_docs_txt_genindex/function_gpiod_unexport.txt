@@ -1,0 +1,10 @@
+Function: void gpiod_unexport ( struct gpio_desc * desc )
+
+reverse effect of gpiod_export()
+
+Parameters
+  struct gpio_desc *desc
+    GPIO to make unavailable
+
+Description
+  This is implicit on gpiod_free() .

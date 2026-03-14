@@ -1,0 +1,7 @@
+Function: bool xe_rpm_reclaim_safe ( const struct xe_device * xe )
+
+Whether runtime resume can be done from reclaim context
+
+Parameters
+  const struct xe_device *xe
+    The xe device.

@@ -1,0 +1,18 @@
+Function: int usb_gadget_register_driver_owner ( struct usb_gadget_driver * driver , struct module * owner , const char * mod_name )
+
+register a gadget driver
+
+Parameters
+  struct usb_gadget_driver *driver
+    the driver being registered
+  struct module *owner
+    the driver module
+  const char *mod_name
+    the driver module’s build name
+
+Description
+  Call this in your gadget driver’s module initialization function,
+to tell the underlying UDC controller driver about your driver.
+The bind() function will be called to bind it to a gadget before this
+registration call returns.  It’s expected that the bind() function will
+be in init sections.

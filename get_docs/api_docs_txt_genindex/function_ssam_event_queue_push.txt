@@ -1,0 +1,9 @@
+Function: void ssam_event_queue_push ( struct ssam_event_queue * q , struct ssam_event_item * item )
+
+Push an event item to the event queue.
+
+Parameters
+  struct ssam_event_queue *q
+    The event queue.
+  struct ssam_event_item *item
+    The item to add.

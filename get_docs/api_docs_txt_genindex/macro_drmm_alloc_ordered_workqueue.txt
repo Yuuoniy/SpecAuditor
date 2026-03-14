@@ -1,0 +1,17 @@
+Macro: drmm_alloc_ordered_workqueue
+
+
+
+Parameters
+  dev
+    DRM device
+  fmt
+    printf format for the name of the workqueue
+  flags
+    WQ_* flags (only WQ_FREEZABLE and WQ_MEM_RECLAIM are meaningful)
+  args...
+    args for fmt
+
+Description
+  This is a drm_device -managed version of alloc_ordered_workqueue() . The
+allocated workqueue is automatically destroyed on the final drm_dev_put() .

@@ -1,0 +1,17 @@
+Struct: struct ttm_pool_type
+
+Pool for a certain memory type
+
+Members
+  pool
+    the pool we belong to, might be NULL for the global ones
+  order
+    the allocation order our pages have
+  caching
+    the caching type our pages have
+  shrinker_list
+    our place on the global shrinker list
+  lock
+    protection of the page list
+  pages
+    the list of pages in the pool

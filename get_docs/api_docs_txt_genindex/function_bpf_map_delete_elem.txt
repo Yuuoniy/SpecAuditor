@@ -1,0 +1,2 @@
+Function: int bpf_map_delete_elem ( int fd , const void * key ) ;
+

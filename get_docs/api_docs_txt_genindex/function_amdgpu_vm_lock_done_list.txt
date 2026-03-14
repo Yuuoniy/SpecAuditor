@@ -1,0 +1,14 @@
+Function: int amdgpu_vm_lock_done_list ( struct amdgpu_vm * vm , struct drm_exec * exec , unsigned int num_fences )
+
+lock all BOs on the done list
+
+Parameters
+  struct amdgpu_vm *vm
+    vm providing the BOs
+  struct drm_exec *exec
+    drm execution context
+  unsigned int num_fences
+    number of extra fences to reserve
+
+Description
+  Lock the BOs on the done list in the DRM execution context.

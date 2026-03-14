@@ -1,0 +1,11 @@
+Struct: struct rkisp1_cif_isp_aec_config
+
+Configuration for Auto Exposure statistics
+
+Members
+  mode
+    Exposure measure mode (from enum rkisp1_cif_isp_exp_meas_mode )
+  autostop
+    stop mode (from enum rkisp1_cif_isp_exp_ctrl_autostop )
+  meas_window
+    coordinates of the measure window

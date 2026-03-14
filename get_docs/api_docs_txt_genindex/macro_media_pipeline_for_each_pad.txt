@@ -1,0 +1,16 @@
+Macro: media_pipeline_for_each_pad
+
+
+
+Parameters
+  pipe
+    The pipeline
+  iter
+    The iterator ( struct media_pipeline_pad_iter )
+  pad
+    The iterator pad
+
+Description
+  Iterate on all pads in a media pipeline. This is only valid after the
+pipeline has been built with media_pipeline_start() and before it gets
+destroyed with media_pipeline_stop() .

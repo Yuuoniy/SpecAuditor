@@ -1,0 +1,16 @@
+Function: int security_sb_set_mnt_opts ( struct super_block * sb , void * mnt_opts , unsigned long kern_flags , unsigned long * set_kern_flags )
+
+Set the mount options for a filesystem
+
+Parameters
+  struct super_block *sb
+    filesystem superblock
+  void *mnt_opts
+    binary mount options
+  unsigned long kern_flags
+    kernel flags (in)
+  unsigned long *set_kern_flags
+    kernel flags (out)
+
+Description
+  Set the security relevant mount options used for a superblock.

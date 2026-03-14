@@ -1,0 +1,10 @@
+Struct: union landlock_key
+
+Key of a ruleset’s red-black tree
+
+Members
+  object
+    Pointer to identify a kernel object (e.g. an inode).
+  data
+    Raw data to identify an arbitrary 32-bit value
+(e.g. a TCP port).

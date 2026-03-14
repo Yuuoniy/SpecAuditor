@@ -1,0 +1,11 @@
+Function: int security_tun_dev_open ( void * security )
+
+Update TUN device LSM state on open
+
+Parameters
+  void *security
+    TUN device LSM blob
+
+Description
+  This hook can be used by the module to update any security state associated
+with the TUN device’s security structure.

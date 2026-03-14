@@ -1,0 +1,7 @@
+Function: void drm_dp_cec_unregister_connector ( struct drm_dp_aux * aux )
+
+unregister the CEC adapter, if any
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel

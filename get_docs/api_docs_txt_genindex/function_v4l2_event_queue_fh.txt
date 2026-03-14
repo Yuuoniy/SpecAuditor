@@ -1,0 +1,12 @@
+Function: void v4l2_event_queue_fh ( struct v4l2_fh * fh , const struct v4l2_event * ev )
+
+Queue events to video device.
+
+Parameters
+  struct v4l2_fh *fh
+    pointer to struct v4l2_fh
+  const struct v4l2_event *ev
+    pointer to struct v4l2_event
+
+Description
+  The event will be queued only for the specified struct v4l2_fh file handler.

@@ -1,0 +1,7 @@
+Function: const char * phy_speed_to_str ( int speed )
+
+Return a string representing the PHY link speed
+
+Parameters
+  int speed
+    Speed of the link

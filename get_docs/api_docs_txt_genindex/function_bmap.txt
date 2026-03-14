@@ -1,0 +1,16 @@
+Function: int bmap ( struct inode * inode , sector_t * block )
+
+find a block number in a file
+
+Parameters
+  struct inode *inode
+    inode owning the block number being requested
+  sector_t *block
+    pointer containing the block to find
+
+Description
+  Replaces the value in *block with the block number on the device holding
+corresponding to the requested block number in the file.
+That is, asked for block 4 of inode 1 the function will replace the
+4 in *block , with disk block relative to the disk start that holds that
+block of the file.

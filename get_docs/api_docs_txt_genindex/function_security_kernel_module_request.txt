@@ -1,0 +1,11 @@
+Function: int security_kernel_module_request ( char * kmod_name )
+
+Check if loading a module is allowed
+
+Parameters
+  char *kmod_name
+    module name
+
+Description
+  Ability to trigger the kernel to automatically upcall to userspace for
+userspace to load a kernel module with the given name.

@@ -1,0 +1,21 @@
+Function: int drm_dp_link_symbol_cycles ( int lane_count , int pixels , int dsc_slice_count , int bpp_x16 , int symbol_size , bool is_mst )
+
+calculate the link symbol count with/without dsc
+
+Parameters
+  int lane_count
+    DP link lane count
+  int pixels
+    number of pixels in a scanline
+  int dsc_slice_count
+    number of slices for DSC or ‘0’ for non-DSC
+  int bpp_x16
+    bits per pixel in .4 binary fixed format
+  int symbol_size
+    DP symbol size
+  bool is_mst
+    true for MST and false for SST
+
+Description
+  Calculate the link symbol cycles for both DSC ( dsc_slice_count !=0) and
+non-DSC case ( dsc_slice_count == 0) and return the count.

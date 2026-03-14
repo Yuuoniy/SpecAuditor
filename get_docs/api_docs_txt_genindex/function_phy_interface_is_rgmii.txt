@@ -1,0 +1,7 @@
+Function: bool phy_interface_is_rgmii ( struct phy_device * phydev )
+
+Convenience function for testing if a PHY interface is RGMII (all variants)
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct

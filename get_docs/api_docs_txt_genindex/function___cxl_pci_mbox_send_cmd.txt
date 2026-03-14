@@ -1,0 +1,16 @@
+Function: int __cxl_pci_mbox_send_cmd ( struct cxl_mailbox * cxl_mbox , struct cxl_mbox_cmd * mbox_cmd )
+
+Execute a mailbox command
+
+Parameters
+  struct cxl_mailbox *cxl_mbox
+    CXL mailbox context
+  struct cxl_mbox_cmd *mbox_cmd
+    Command to send to the memory device.
+
+Description
+  This is a generic form of the CXL mailbox send command thus only using the
+registers defined by the mailbox capability ID - CXL 2.0 8.2.8.4. Memory
+devices, and perhaps other types of CXL devices may have further information
+available upon error conditions. Driver facilities wishing to send mailbox
+commands should use the wrapper command.

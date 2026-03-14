@@ -1,0 +1,7 @@
+Function: int snd_pcm_stream_linked ( struct snd_pcm_substream * substream )
+
+Check whether the substream is linked with others
+
+Parameters
+  struct snd_pcm_substream *substream
+    substream to check

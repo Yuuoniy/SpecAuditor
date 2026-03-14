@@ -1,0 +1,10 @@
+Function: bool kthread_cancel_delayed_work_sync ( struct kthread_delayed_work * dwork )
+
+cancel a kthread delayed work and wait for it to finish.
+
+Parameters
+  struct kthread_delayed_work *dwork
+    the kthread delayed work to cancel
+
+Description
+  This is kthread_cancel_work_sync() for delayed works.

@@ -1,0 +1,17 @@
+Function: void drm_debugfs_create_files ( const struct drm_info_list * files , int count , struct dentry * root , struct drm_minor * minor )
+
+Initialize a given set of debugfs files for DRM minor
+
+Parameters
+  const struct drm_info_list *files
+    The array of files to create
+  int count
+    The number of files given
+  struct dentry *root
+    DRI debugfs dir entry.
+  struct drm_minor *minor
+    device minor number
+
+Description
+  Create a given set of debugfs files represented by an array of struct drm_info_list in the given root directory. These files will be removed
+automatically on drm_debugfs_dev_fini() .

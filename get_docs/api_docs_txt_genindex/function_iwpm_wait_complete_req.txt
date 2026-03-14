@@ -1,0 +1,11 @@
+Function: int iwpm_wait_complete_req ( struct iwpm_nlmsg_request * nlmsg_request )
+
+Block while servicing the netlink request
+
+Parameters
+  struct iwpm_nlmsg_request *nlmsg_request
+    Netlink message request to service
+
+Description
+  Wakes up, after the request is completed or expired
+Returns 0 if the request is complete without error

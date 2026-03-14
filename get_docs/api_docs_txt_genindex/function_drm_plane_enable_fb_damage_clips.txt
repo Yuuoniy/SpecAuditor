@@ -1,0 +1,10 @@
+Function: void drm_plane_enable_fb_damage_clips ( struct drm_plane * plane )
+
+Enables plane fb damage clips property.
+
+Parameters
+  struct drm_plane *plane
+    Plane on which to enable damage clips property.
+
+Description
+  This function lets driver to enable the damage clips property on a plane.

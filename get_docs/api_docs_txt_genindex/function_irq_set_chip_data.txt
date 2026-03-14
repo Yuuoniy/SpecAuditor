@@ -1,0 +1,12 @@
+Function: int irq_set_chip_data ( unsigned int irq , void * data )
+
+set irq chip data for an irq
+
+Parameters
+  unsigned int irq
+    Interrupt number
+  void *data
+    Pointer to chip specific data
+
+Description
+  Set the hardware irq chip data for an irq

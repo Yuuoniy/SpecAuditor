@@ -1,0 +1,7 @@
+Function: void pci_restore_state ( struct pci_dev * dev )
+
+Restore the saved state of a PCI device
+
+Parameters
+  struct pci_dev *dev
+    PCI device that we’re dealing with

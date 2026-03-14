@@ -1,0 +1,9 @@
+Struct: struct ssh_ptl_ops
+
+Callback operations for packet transport layer.
+
+Members
+  data_received
+    Function called when a data-packet has been received. Both,
+the packet layer on which the packet has been received and
+the packet’s payload data are provided to this function.

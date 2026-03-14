@@ -1,0 +1,13 @@
+Struct: struct regulator_err_state
+
+regulator error/notification status
+
+Members
+  rdev
+    Regulator which status the struct indicates .
+  notifs
+    Events which have occurred on the regulator.
+  errors
+    Errors which are active on the regulator.
+  possible_errs
+    Errors which can be signaled (by given IRQ).

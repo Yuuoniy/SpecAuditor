@@ -1,0 +1,7 @@
+Function: void ssam_nf_head_destroy ( struct ssam_nf_head * nh )
+
+Deinitialize the given notifier head.
+
+Parameters
+  struct ssam_nf_head *nh
+    The notifier head to deinitialize.

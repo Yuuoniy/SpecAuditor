@@ -1,0 +1,13 @@
+Function: int tipc_node_dump ( struct tipc_node * n , bool more , char * buf )
+
+dump TIPC node data
+
+Parameters
+  struct tipc_node *n
+    tipc node to be dumped
+  bool more
+    dump more?
+- false: dump only tipc node data
+- true: dump node link data as well
+  char *buf
+    returned buffer of dump data in format

@@ -1,0 +1,14 @@
+Function: void dmem_cgroup_uncharge ( struct dmem_cgroup_pool_state * pool , u64 size )
+
+Uncharge a pool.
+
+Parameters
+  struct dmem_cgroup_pool_state *pool
+    Pool to uncharge.
+  u64 size
+    Size to uncharge.
+
+Description
+  Undoes the effects of dmem_cgroup_try_charge.
+Must be called with the returned pool as argument,
+and same index and size .

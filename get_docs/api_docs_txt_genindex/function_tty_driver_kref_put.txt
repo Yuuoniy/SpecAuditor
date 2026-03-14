@@ -1,0 +1,10 @@
+Function: void tty_driver_kref_put ( struct tty_driver * driver )
+
+drop a reference to a tty driver
+
+Parameters
+  struct tty_driver *driver
+    driver of which to drop the reference
+
+Description
+  The final put will destroy and free up the driver.

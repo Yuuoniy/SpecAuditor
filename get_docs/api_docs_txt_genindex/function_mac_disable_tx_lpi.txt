@@ -1,0 +1,11 @@
+Function: void mac_disable_tx_lpi ( struct phylink_config * config )
+
+disable LPI generation at the MAC
+
+Parameters
+  struct phylink_config *config
+    a pointer to a struct phylink_config .
+
+Description
+  Disable generation of LPI at the MAC, effectively preventing the MAC
+from indicating that it is idle.

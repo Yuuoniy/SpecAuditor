@@ -1,0 +1,23 @@
+Macro: drmm_encoder_alloc
+
+
+
+Parameters
+  dev
+    drm device
+  type
+    the type of the struct which contains struct drm_encoder
+  member
+    the name of the drm_encoder within type
+  funcs
+    callbacks for this encoder (optional)
+  encoder_type
+    user visible type of the encoder
+  name
+    printf style format string for the encoder name, or NULL for default name
+  ...
+    variable arguments
+
+Description
+  Allocates and initializes an encoder. Encoder should be subclassed as part of
+driver encoder objects. Cleanup is automatically handled through registering drm_encoder_cleanup() with drmm_add_action() .

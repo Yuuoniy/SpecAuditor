@@ -1,0 +1,14 @@
+Function: int amdgpu_vm_update_pdes ( struct amdgpu_device * adev , struct amdgpu_vm * vm , bool immediate )
+
+make sure that all directories are valid
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+  struct amdgpu_vm *vm
+    requested vm
+  bool immediate
+    submit immediately to the paging queue
+
+Description
+  Makes sure all directories are up to date.

@@ -1,0 +1,12 @@
+Function: u64 scsilun_to_int ( struct scsi_lun * scsilun )
+
+convert a scsi_lun to an int
+
+Parameters
+  struct scsi_lun *scsilun
+    struct scsi_lun to be converted.
+
+Description
+  Convert scsilun from a struct scsi_lun to a four-byte host byte-ordered
+integer, and return the result. The caller must check for
+truncation before using this function.

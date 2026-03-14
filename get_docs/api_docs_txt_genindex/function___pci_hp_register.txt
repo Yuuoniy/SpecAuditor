@@ -1,0 +1,22 @@
+Function: int __pci_hp_register ( struct hotplug_slot * slot , struct pci_bus * bus , int devnr , const char * name , struct module * owner , const char * mod_name )
+
+register a hotplug_slot with the PCI hotplug subsystem
+
+Parameters
+  struct hotplug_slot *slot
+    pointer to the struct hotplug_slot to register
+  struct pci_bus *bus
+    bus this slot is on
+  int devnr
+    device number
+  const char *name
+    name registered with kobject core
+  struct module *owner
+    caller module owner
+  const char *mod_name
+    caller module name
+
+Description
+  Prepares a hotplug slot for in-kernel use and immediately publishes it to
+user space in one go.  Drivers may alternatively carry out the two steps
+separately by invoking pci_hp_initialize() and pci_hp_add() .

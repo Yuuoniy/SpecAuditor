@@ -1,0 +1,11 @@
+Function: void vidtv_psi_sdt_table_update_sec_len ( struct vidtv_psi_table_sdt * sdt )
+
+Recompute and update the SDT section length.
+
+Parameters
+  struct vidtv_psi_table_sdt *sdt
+    The SDT whose length is to be updated.
+
+Description
+  This will traverse the table and accumulate the length of its components,
+which is then used to replace the ‘section_length’ field.

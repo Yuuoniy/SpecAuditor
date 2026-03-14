@@ -1,0 +1,15 @@
+Macro: kfifo_out_peek
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used
+  buf
+    pointer to the storage buffer
+  n
+    max. number of elements to get
+
+Description
+  This macro gets the data from the fifo and returns the numbers of elements
+copied. The data is not removed from the fifo.

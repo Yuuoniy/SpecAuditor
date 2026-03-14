@@ -1,0 +1,17 @@
+Function: void generic_fill_statx_atomic_writes ( struct kstat * stat , unsigned int unit_min , unsigned int unit_max , unsigned int unit_max_opt )
+
+Fill in atomic writes statx attributes
+
+Parameters
+  struct kstat *stat
+    Where to fill in the attribute flags
+  unsigned int unit_min
+    Minimum supported atomic write length in bytes
+  unsigned int unit_max
+    Maximum supported atomic write length in bytes
+  unsigned int unit_max_opt
+    Optimised maximum supported atomic write length in bytes
+
+Description
+  Fill in the STATX{_ATTR}_WRITE_ATOMIC flags in the kstat structure from
+atomic write unit_min and unit_max values.

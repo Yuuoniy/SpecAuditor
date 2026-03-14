@@ -1,0 +1,7 @@
+Function: void rcu_sync_init ( struct rcu_sync * rsp )
+
+Initialize an rcu_sync structure
+
+Parameters
+  struct rcu_sync *rsp
+    Pointer to rcu_sync structure to be initialized

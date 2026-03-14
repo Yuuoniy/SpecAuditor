@@ -1,0 +1,12 @@
+Function: struct tipc_service * tipc_service_create ( struct net * net , struct tipc_uaddr * ua )
+
+create a service structure for the specified ‘type’
+
+Parameters
+  struct net *net
+    network namespace
+  struct tipc_uaddr *ua
+    address representing the service to be bound
+
+Description
+  Allocates a single range structure and sets it to all 0’s.

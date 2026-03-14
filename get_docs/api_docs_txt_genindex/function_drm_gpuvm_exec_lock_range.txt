@@ -1,0 +1,14 @@
+Function: int drm_gpuvm_exec_lock_range ( struct drm_gpuvm_exec * vm_exec , u64 addr , u64 range )
+
+prepare all BOs mapped within a given range
+
+Parameters
+  struct drm_gpuvm_exec *vm_exec
+    the drm_gpuvm_exec wrapper
+  u64 addr
+    the start address within the VA space
+  u64 range
+    the range to iterate within the VA space
+
+Description
+  Acquires all dma-resv locks of all drm_gem_objects mapped between addr and addr + range .

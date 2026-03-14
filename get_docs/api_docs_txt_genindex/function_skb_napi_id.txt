@@ -1,0 +1,7 @@
+Function: unsigned int skb_napi_id ( const struct sk_buff * skb )
+
+Returns the skb’s NAPI id
+
+Parameters
+  const struct sk_buff *skb
+    buffer

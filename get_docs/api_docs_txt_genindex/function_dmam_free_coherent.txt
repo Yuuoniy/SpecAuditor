@@ -1,0 +1,16 @@
+Function: void dmam_free_coherent ( struct device * dev , size_t size , void * vaddr , dma_addr_t dma_handle )
+
+Managed dma_free_coherent()
+
+Parameters
+  struct device *dev
+    Device to free coherent memory for
+  size_t size
+    Size of allocation
+  void *vaddr
+    Virtual address of the memory to free
+  dma_addr_t dma_handle
+    DMA handle of the memory to free
+
+Description
+  Managed dma_free_coherent() .

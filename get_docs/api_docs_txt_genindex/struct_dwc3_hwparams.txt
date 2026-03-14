@@ -1,0 +1,25 @@
+Struct: struct dwc3_hwparams
+
+copy of HWPARAMS registers
+
+Members
+  hwparams0
+    GHWPARAMS0
+  hwparams1
+    GHWPARAMS1
+  hwparams2
+    GHWPARAMS2
+  hwparams3
+    GHWPARAMS3
+  hwparams4
+    GHWPARAMS4
+  hwparams5
+    GHWPARAMS5
+  hwparams6
+    GHWPARAMS6
+  hwparams7
+    GHWPARAMS7
+  hwparams8
+    GHWPARAMS8
+  hwparams9
+    GHWPARAMS9

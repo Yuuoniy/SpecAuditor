@@ -1,0 +1,7 @@
+Function: void nand_shutdown ( struct mtd_info * mtd )
+
+[MTD Interface] Finish the current NAND operation and prevent further operations
+
+Parameters
+  struct mtd_info *mtd
+    MTD device structure

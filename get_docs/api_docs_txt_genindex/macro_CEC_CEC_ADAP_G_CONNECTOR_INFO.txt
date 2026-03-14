@@ -1,0 +1,2 @@
+Macro: CEC_ADAP_G_CONNECTOR_INFO
+

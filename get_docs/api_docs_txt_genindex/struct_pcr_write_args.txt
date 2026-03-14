@@ -1,0 +1,17 @@
+Struct: struct pcr_write_args
+
+Arguments for the pcr_write_into function.
+
+Members
+  dest_buf
+    The buffer to write into.
+  dest_offset
+    The byte offset into the buffer.
+  pid
+    The TS PID for the PCR packets.
+  buf_sz
+    The size of the buffer in bytes.
+  continuity_counter
+    The TS continuity_counter.
+  pcr
+    A sample from the system clock.

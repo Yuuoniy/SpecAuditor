@@ -1,0 +1,11 @@
+Function: struct cgroup_subsys_state * mem_cgroup_css_from_folio ( struct folio * folio )
+
+css of the memcg associated with a folio
+
+Parameters
+  struct folio *folio
+    folio of interest
+
+Description
+  If memcg is bound to the default hierarchy, css of the memcg associated
+with folio is returned.  The returned css remains associated with folio until it is released.

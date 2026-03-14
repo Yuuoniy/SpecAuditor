@@ -1,0 +1,3 @@
+Enum: enum dvb_dmx_filter_type
+
+type of demux feed.

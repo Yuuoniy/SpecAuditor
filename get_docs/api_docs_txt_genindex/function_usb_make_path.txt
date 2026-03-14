@@ -1,0 +1,11 @@
+Function: int usb_make_path ( struct usb_device * dev , char * buf , size_t size )
+
+returns stable device path in the usb tree
+
+Parameters
+  struct usb_device *dev
+    the device whose path is being constructed
+  char *buf
+    where to put the string
+  size_t size
+    how big is “buf”?

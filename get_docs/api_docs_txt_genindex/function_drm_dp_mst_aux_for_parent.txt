@@ -1,0 +1,11 @@
+Function: struct drm_dp_aux * drm_dp_mst_aux_for_parent ( struct drm_dp_mst_port * port )
+
+Get the AUX device for an MST port’s parent
+
+Parameters
+  struct drm_dp_mst_port *port
+    MST port whose parent’s AUX device is returned
+
+Description
+  Return the AUX device for port ’s parent or NULL if port’s parent is the
+root port.

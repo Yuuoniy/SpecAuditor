@@ -1,0 +1,12 @@
+Function: int intel_huc_auth ( struct intel_huc * huc , enum intel_huc_authentication_type type )
+
+Authenticate HuC uCode
+
+Parameters
+  struct intel_huc *huc
+    intel_huc structure
+  enum intel_huc_authentication_type type
+    authentication type (via GuC or via GSC)
+
+Description
+  Called after HuC and GuC firmware loading during intel_uc_init_hw() .

@@ -1,0 +1,7 @@
+Struct: struct faux_device
+
+a “faux” device
+
+Members
+  dev
+    internal struct device of the object

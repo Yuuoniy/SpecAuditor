@@ -1,0 +1,11 @@
+Function: void drm_client_register ( struct drm_client_dev * client )
+
+Register client
+
+Parameters
+  struct drm_client_dev *client
+    DRM client
+
+Description
+  Add the client to the drm_device client list to activate its callbacks. client must be initialized by a call to drm_client_init() . After drm_client_register() it is no longer permissible to call drm_client_release() directly (outside the unregister callback), instead cleanup will happen
+automatically on driver unload.

@@ -1,0 +1,11 @@
+Function: bool is_kernel_percpu_address ( unsigned long addr )
+
+test whether address is from static percpu area
+
+Parameters
+  unsigned long addr
+    address to test
+
+Description
+  Test whether addr belongs to in-kernel static percpu area.  Module
+static percpu areas are not considered.  For those, use is_module_percpu_address() .

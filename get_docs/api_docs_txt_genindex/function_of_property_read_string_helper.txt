@@ -1,0 +1,19 @@
+Function: int of_property_read_string_helper ( const struct device_node * np , const char * propname , const char * * out_strs , size_t sz , int skip )
+
+Utility helper for parsing string properties
+
+Parameters
+  const struct device_node *np
+    device node from which the property value is to be read.
+  const char *propname
+    name of the property to be searched.
+  const char **out_strs
+    output array of string pointers.
+  size_t sz
+    number of array elements to read.
+  int skip
+    Number of strings to skip over at beginning of list.
+
+Description
+  Don’t call this function directly. It is a utility helper for the
+of_property_read_string*() family of functions.

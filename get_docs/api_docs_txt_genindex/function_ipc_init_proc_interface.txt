@@ -1,0 +1,13 @@
+Function: void ipc_init_proc_interface ( const char * path , const char * header , int ids , int ( * show ) ( struct seq_file * , void * ) )
+
+create a proc interface for sysipc types using a seq_file interface.
+
+Parameters
+  const char *path
+    Path in procfs
+  const char *header
+    Banner to be printed at the beginning of the file.
+  int ids
+    ipc id table to iterate.
+  int (*show)(struct seq_file *, void *)
+    show routine.

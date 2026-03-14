@@ -1,0 +1,10 @@
+Function: void kfree ( const void * object )
+
+free previously allocated memory
+
+Parameters
+  const void *object
+    pointer returned by kmalloc() or kmem_cache_alloc()
+
+Description
+  If object is NULL, no operation is performed.

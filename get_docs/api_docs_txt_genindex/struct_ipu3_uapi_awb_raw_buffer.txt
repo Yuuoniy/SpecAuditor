@@ -1,0 +1,8 @@
+Struct: struct ipu3_uapi_awb_raw_buffer
+
+AWB raw buffer
+
+Members
+  meta_data
+    buffer to hold auto white balance meta data which is
+the average values for each color channel.

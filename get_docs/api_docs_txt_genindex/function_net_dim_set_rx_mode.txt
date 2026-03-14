@@ -1,0 +1,9 @@
+Function: void net_dim_set_rx_mode ( struct net_device * dev , u8 rx_mode )
+
+set DIM rx cq mode
+
+Parameters
+  struct net_device *dev
+    target network device
+  u8 rx_mode
+    target rx cq mode

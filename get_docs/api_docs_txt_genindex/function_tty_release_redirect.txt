@@ -1,0 +1,11 @@
+Function: struct file * tty_release_redirect ( struct tty_struct * tty )
+
+Release a redirect on a pty if present
+
+Parameters
+  struct tty_struct *tty
+    tty device
+
+Description
+  This is available to the pty code so if the master closes, if the slave is a
+redirect it can release the redirect.

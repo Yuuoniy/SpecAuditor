@@ -1,0 +1,12 @@
+Function: void start_tty ( struct tty_struct * tty )
+
+propagate flow control
+
+Parameters
+  struct tty_struct *tty
+    tty to start
+
+Description
+  Start a tty that has been stopped if at all possible. If tty was previously
+stopped and is now being started, the tty_driver->start() method is invoked
+and the line discipline woken.

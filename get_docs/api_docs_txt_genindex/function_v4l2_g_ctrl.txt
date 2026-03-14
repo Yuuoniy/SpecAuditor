@@ -1,0 +1,12 @@
+Function: int v4l2_g_ctrl ( struct v4l2_ctrl_handler * hdl , struct v4l2_control * ctrl )
+
+Helper function to implement VIDIOC_G_CTRL ioctl
+
+Parameters
+  struct v4l2_ctrl_handler *hdl
+    pointer to struct v4l2_ctrl_handler
+  struct v4l2_control *ctrl
+    pointer to struct v4l2_control
+
+Description
+  If hdl == NULL then they will all return -EINVAL.

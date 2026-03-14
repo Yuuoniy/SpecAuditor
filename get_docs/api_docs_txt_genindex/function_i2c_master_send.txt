@@ -1,0 +1,14 @@
+Function: int i2c_master_send ( const struct i2c_client * client , const char * buf , int count )
+
+issue a single I2C message in master transmit mode
+
+Parameters
+  const struct i2c_client *client
+    Handle to slave device
+  const char *buf
+    Data that will be written to the slave
+  int count
+    How many bytes to write, must be less than 64k since msg.len is u16
+
+Description
+  Returns negative errno, or else the number of bytes written.

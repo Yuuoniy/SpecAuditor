@@ -1,0 +1,7 @@
+Function: bool skb_pfmemalloc ( const struct sk_buff * skb )
+
+Test if the skb was allocated from PFMEMALLOC reserves
+
+Parameters
+  const struct sk_buff *skb
+    buffer

@@ -1,0 +1,17 @@
+Macro: drm_edid_encode_panel_id
+
+
+
+Parameters
+  vend_chr_0
+    First character of the vendor string.
+  vend_chr_1
+    Second character of the vendor string.
+  vend_chr_2
+    Third character of the vendor string.
+  product_id
+    The 16-bit product ID.
+
+Description
+  This is a macro so that it can be calculated at compile time and used
+as an initializer.

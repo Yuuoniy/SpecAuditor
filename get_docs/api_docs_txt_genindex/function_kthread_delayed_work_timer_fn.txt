@@ -1,0 +1,11 @@
+Function: void kthread_delayed_work_timer_fn ( struct timer_list * t )
+
+callback that queues the associated kthread delayed work when the timer expires.
+
+Parameters
+  struct timer_list *t
+    pointer to the expired timer
+
+Description
+  The format of the function is defined by struct timer_list .
+It should have been called from irqsafe timer with irq already off.

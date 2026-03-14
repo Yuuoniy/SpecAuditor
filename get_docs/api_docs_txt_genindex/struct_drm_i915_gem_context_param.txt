@@ -1,0 +1,13 @@
+Struct: struct drm_i915_gem_context_param
+
+Context parameter to set or query.
+
+Members
+  ctx_id
+    Context id
+  size
+    Size of the parameter value
+  param
+    Parameter to set or query
+  value
+    Context parameter value to be set or queried

@@ -1,0 +1,26 @@
+Struct: struct nand_controller_ops
+
+Controller operations
+
+Members
+  attach_chip
+    this method is called after the NAND detection phase after
+flash ID and MTD fields such as erase size, page size and OOB
+size have been set up. ECC requirements are available if
+provided by the NAND chip or device tree. Typically used to
+choose the appropriate ECC configuration and allocate
+associated resources.
+This hook is optional.
+  detach_chip
+    free all resources allocated/claimed in
+nand_controller_ops-> attach_chip() .
+This hook is optional.
+  exec_op
+    controller specific method to execute NAND operations.
+This method replaces chip->legacy. cmdfunc() ,
+chip->legacy.{read,write}_{buf,byte,word}(),
+chip->legacy. dev_ready() and chip->legacy. waitfunc() .
+  setup_interface
+    setup the data interface and timing. If chipnr is set to NAND_DATA_IFACE_CHECK_ONLY this means the configuration
+should not be applied but only checked.
+This hook is optional.

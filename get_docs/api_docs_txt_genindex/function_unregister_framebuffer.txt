@@ -1,0 +1,10 @@
+Function: void unregister_framebuffer ( struct fb_info * fb_info )
+
+releases a frame buffer device
+
+Parameters
+  struct fb_info *fb_info
+    frame buffer info structure
+
+Description
+  Unregisters a frame buffer device fb_info .

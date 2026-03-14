@@ -1,0 +1,10 @@
+Function: int lsm_bpf_prog_alloc ( struct bpf_prog * prog )
+
+allocate a composite bpf_prog blob
+
+Parameters
+  struct bpf_prog *prog
+    the bpf_prog that needs a blob
+
+Description
+  Allocate the bpf_prog blob for all the modules

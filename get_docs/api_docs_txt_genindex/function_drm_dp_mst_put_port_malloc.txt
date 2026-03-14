@@ -1,0 +1,11 @@
+Function: void drm_dp_mst_put_port_malloc ( struct drm_dp_mst_port * port )
+
+Decrement the malloc refcount of an MST port
+
+Parameters
+  struct drm_dp_mst_port *port
+    The struct drm_dp_mst_port to decrement the malloc refcount of
+
+Description
+  Decrements drm_dp_mst_port.malloc_kref . When drm_dp_mst_port.malloc_kref reaches 0, the memory allocation for port will be released and port may
+no longer be used.

@@ -1,0 +1,11 @@
+Function: struct platform_device * of_device_alloc ( struct device_node * np , const char * bus_id , struct device * parent )
+
+Allocate and initialize an of_device
+
+Parameters
+  struct device_node *np
+    device node to assign to device
+  const char *bus_id
+    Name to assign to the device.  May be null to use default name.
+  struct device *parent
+    Parent device.

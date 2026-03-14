@@ -1,0 +1,11 @@
+Function: int jbd2_journal_recover ( journal_t * journal )
+
+recovers a on-disk journal
+
+Parameters
+  journal_t *journal
+    the journal to recover
+
+Description
+  The primary function for recovering the log contents when mounting a
+journaled device.

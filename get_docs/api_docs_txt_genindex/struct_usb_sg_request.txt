@@ -1,0 +1,9 @@
+Struct: struct usb_sg_request
+
+support for scatter/gather I/O
+
+Members
+  status
+    zero indicates success, else negative errno
+  bytes
+    counts bytes transferred.

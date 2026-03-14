@@ -1,0 +1,14 @@
+Struct: struct horus3a_config
+
+the configuration of Horus3A tuner driver
+
+Members
+  i2c_address
+    I2C address of the tuner
+  xtal_freq_mhz
+    Oscillator frequency, MHz
+  set_tuner_priv
+    Callback function private context
+  set_tuner_callback
+    Callback function that notifies the parent driver
+which tuner is active now

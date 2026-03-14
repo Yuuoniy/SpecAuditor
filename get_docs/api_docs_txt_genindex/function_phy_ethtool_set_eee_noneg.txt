@@ -1,0 +1,18 @@
+Function: void phy_ethtool_set_eee_noneg ( struct phy_device * phydev , const struct eee_config * old_cfg )
+
+Adjusts MAC LPI configuration without PHY renegotiation
+
+Parameters
+  struct phy_device *phydev
+    pointer to the target PHY device structure
+  const struct eee_config *old_cfg
+    pointer to the eee_config structure containing the old EEE settings
+
+Description
+  This function updates the Energy Efficient Ethernet (EEE) configuration
+for cases where only the MAC’s Low Power Idle (LPI) configuration changes,
+without triggering PHY renegotiation. It ensures that the MAC is properly
+informed of the new LPI settings by cycling the link down and up, which
+is necessary for the MAC to adopt the new configuration. This adjustment
+is done only if there is a change in the tx_lpi_enabled or tx_lpi_timer
+configuration.

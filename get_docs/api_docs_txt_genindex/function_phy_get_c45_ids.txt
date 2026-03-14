@@ -1,0 +1,11 @@
+Function: int phy_get_c45_ids ( struct phy_device * phydev )
+
+Read 802.3-c45 IDs for phy device.
+
+Parameters
+  struct phy_device *phydev
+    phy_device structure to read 802.3-c45 IDs
+
+Description
+  Returns zero on success, -EIO on bus access error, or -ENODEV if
+the “devices in package” is invalid.

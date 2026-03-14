@@ -1,0 +1,10 @@
+Function: void devm_nvmem_device_put ( struct device * dev , struct nvmem_device * nvmem )
+
+put already got nvmem device
+
+Parameters
+  struct device *dev
+    Device that uses the nvmem device.
+  struct nvmem_device *nvmem
+    pointer to nvmem device allocated by devm_nvmem_cell_get() ,
+that needs to be released.

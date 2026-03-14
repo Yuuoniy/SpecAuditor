@@ -1,0 +1,12 @@
+Macro: EXPECT_NE
+
+
+
+Parameters
+  expected
+    expected value
+  seen
+    measured value
+
+Description
+  EXPECT_NE(expected, measured): expected != measured

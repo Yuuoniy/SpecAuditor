@@ -1,0 +1,15 @@
+Struct: struct fprobe_hlist
+
+hash list nodes for fprobe.
+
+Members
+  hlist
+    The hlist node for existence checking hash table.
+  rcu
+    rcu_head for RCU deferred release.
+  fp
+    The fprobe which owns this fprobe_hlist.
+  size
+    The size of array .
+  array
+    The fprobe_hlist_node for each address to probe.

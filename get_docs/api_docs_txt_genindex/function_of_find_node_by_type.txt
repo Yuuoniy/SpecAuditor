@@ -1,0 +1,13 @@
+Function: struct device_node * of_find_node_by_type ( struct device_node * from , const char * type )
+
+Find a node by its “device_type” property
+
+Parameters
+  struct device_node *from
+    The node to start searching from, or NULL to start searching
+the entire device tree. The node you pass will not be
+searched, only the next one will; typically, you pass
+what the previous call returned. of_node_put() will be
+called on from for you.
+  const char *type
+    The type string to match against

@@ -1,0 +1,15 @@
+Function: int ttm_pool_alloc ( struct ttm_pool * pool , struct ttm_tt * tt , struct ttm_operation_ctx * ctx )
+
+Fill a ttm_tt object
+
+Parameters
+  struct ttm_pool *pool
+    ttm_pool to use
+  struct ttm_tt *tt
+    ttm_tt object to fill
+  struct ttm_operation_ctx *ctx
+    operation context
+
+Description
+  Fill the ttm_tt object with pages and also make sure to DMA map them when
+necessary.

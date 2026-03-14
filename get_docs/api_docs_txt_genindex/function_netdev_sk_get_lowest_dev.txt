@@ -1,0 +1,12 @@
+Function: struct net_device * netdev_sk_get_lowest_dev ( struct net_device * dev , struct sock * sk )
+
+Get the lowest device in chain given device and socket
+
+Parameters
+  struct net_device *dev
+    device
+  struct sock *sk
+    the socket
+
+Description
+  NULL is returned if no lower device is found.

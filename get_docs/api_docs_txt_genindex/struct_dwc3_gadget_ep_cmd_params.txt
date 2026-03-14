@@ -1,0 +1,11 @@
+Struct: struct dwc3_gadget_ep_cmd_params
+
+representation of endpoint command parameters
+
+Members
+  param2
+    third parameter
+  param1
+    second parameter
+  param0
+    first parameter

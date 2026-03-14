@@ -1,0 +1,11 @@
+Function: int v4l2_device_put ( struct v4l2_device * v4l2_dev )
+
+puts a V4L2 device reference
+
+Parameters
+  struct v4l2_device *v4l2_dev
+    pointer to struct v4l2_device
+
+Description
+  This is an ancillary routine meant to decrement the usage for the
+struct v4l2_device pointed by v4l2_dev .

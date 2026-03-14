@@ -1,0 +1,13 @@
+Function: void cec_pin_changed ( struct cec_adapter * adap , bool value )
+
+update pin state from interrupt
+
+Parameters
+  struct cec_adapter *adap
+    pointer to the cec adapter
+  bool value
+    when true the pin is high, otherwise it is low
+
+Description
+  If changes of the CEC voltage are detected via an interrupt, then
+cec_pin_changed is called from the interrupt with the new value.

@@ -1,0 +1,10 @@
+Function: void hsi_free_msg ( struct hsi_msg * msg )
+
+Free an HSI message
+
+Parameters
+  struct hsi_msg *msg
+    Pointer to the HSI message
+
+Description
+  Client is responsible to free the buffers pointed by the scatterlists.

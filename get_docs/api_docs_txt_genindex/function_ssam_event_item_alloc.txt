@@ -1,0 +1,15 @@
+Function: struct ssam_event_item * ssam_event_item_alloc ( size_t len , gfp_t flags )
+
+Allocate an event item with the given payload size.
+
+Parameters
+  size_t len
+    The event payload length.
+  gfp_t flags
+    The flags used for allocation.
+
+Description
+  Allocate an event item with the given payload size, preferring allocation
+from the event item cache if the payload is small enough (i.e. smaller than SSAM_EVENT_ITEM_CACHE_PAYLOAD_LEN ). Sets the item operations and payload
+length values. The item free callback ( ops.free ) should not be
+overwritten after this call.

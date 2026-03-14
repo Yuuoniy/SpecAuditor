@@ -1,0 +1,11 @@
+Function: void amdgpu_bo_unpin ( struct amdgpu_bo * bo )
+
+unpin an amdgpu_bo buffer object
+
+Parameters
+  struct amdgpu_bo *bo
+    amdgpu_bo buffer object to be unpinned
+
+Description
+  Decreases the pin_count, and clears the flags if pin_count reaches 0.
+Changes placement and pin size accordingly.

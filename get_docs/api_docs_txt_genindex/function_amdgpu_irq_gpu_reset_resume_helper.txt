@@ -1,0 +1,11 @@
+Function: void amdgpu_irq_gpu_reset_resume_helper ( struct amdgpu_device * adev )
+
+update interrupt states on all sources
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device pointer
+
+Description
+  Updates state of all types of interrupts on all sources on resume after
+reset.

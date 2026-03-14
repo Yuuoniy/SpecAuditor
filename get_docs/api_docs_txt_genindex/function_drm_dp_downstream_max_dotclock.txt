@@ -1,0 +1,9 @@
+Function: int drm_dp_downstream_max_dotclock ( const u8 dpcd [ DP_RECEIVER_CAP_SIZE ] , const u8 port_cap [ 4 ] )
+
+extract downstream facing port max dot clock
+
+Parameters
+  const u8 dpcd[DP_RECEIVER_CAP_SIZE]
+    DisplayPort configuration data
+  const u8 port_cap[4]
+    port capabilities

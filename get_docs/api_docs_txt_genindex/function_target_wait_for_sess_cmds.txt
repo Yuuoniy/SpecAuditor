@@ -1,0 +1,7 @@
+Function: void target_wait_for_sess_cmds ( struct se_session * se_sess )
+
+Wait for outstanding commands
+
+Parameters
+  struct se_session *se_sess
+    session to wait for active I/O

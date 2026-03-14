@@ -1,0 +1,13 @@
+Function: int dma_resv_lock_slow_interruptible ( struct dma_resv * obj , struct ww_acquire_ctx * ctx )
+
+slowpath lock the reservation object, interruptible
+
+Parameters
+  struct dma_resv *obj
+    the reservation object
+  struct ww_acquire_ctx *ctx
+    the locking context
+
+Description
+  Acquires the reservation object interruptible after a die case. This function
+will sleep until the lock becomes available. See dma_resv_lock_interruptible() as well.

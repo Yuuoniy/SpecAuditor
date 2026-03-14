@@ -1,0 +1,11 @@
+Function: int uart_register_driver ( struct uart_driver * drv )
+
+register a driver with the uart core layer
+
+Parameters
+  struct uart_driver *drv
+    low level driver structure
+
+Description
+  Register a uart driver with the core driver. We in turn register with the
+tty layer, and initialise the core driver per-port state.

@@ -1,0 +1,15 @@
+Function: void ata_eh_done ( struct ata_link * link , struct ata_device * dev , unsigned int action )
+
+EH action complete
+
+Parameters
+  struct ata_link *link
+    ATA link for which EH actions are complete
+  struct ata_device *dev
+    target ATA dev for per-dev action (can be NULL)
+  unsigned int action
+    action just completed
+
+Description
+  Called right after performing EH actions to clear related bits
+in link->eh_context .

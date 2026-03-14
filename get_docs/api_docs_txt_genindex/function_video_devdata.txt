@@ -1,0 +1,7 @@
+Function: struct video_device * video_devdata ( struct file * file )
+
+gets struct video_device from struct file .
+
+Parameters
+  struct file *file
+    pointer to struct file

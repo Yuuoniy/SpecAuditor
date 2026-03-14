@@ -1,0 +1,11 @@
+Function: void ib_device_put ( struct ib_device * device )
+
+Release IB device reference
+
+Parameters
+  struct ib_device *device
+    device whose reference to be released
+
+Description
+  ib_device_put() releases reference to the IB device to allow it to be
+unregistered and eventually free.

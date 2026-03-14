@@ -1,0 +1,12 @@
+Function: void * pci_alloc_p2pmem ( struct pci_dev * pdev , size_t size )
+
+allocate peer-to-peer DMA memory
+
+Parameters
+  struct pci_dev *pdev
+    the device to allocate memory from
+  size_t size
+    number of bytes to allocate
+
+Description
+  Returns the allocated memory or NULL on error.

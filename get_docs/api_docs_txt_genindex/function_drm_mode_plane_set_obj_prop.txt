@@ -1,0 +1,16 @@
+Function: int drm_mode_plane_set_obj_prop ( struct drm_plane * plane , struct drm_property * property , uint64_t value )
+
+set the value of a property
+
+Parameters
+  struct drm_plane *plane
+    drm plane object to set property value for
+  struct drm_property *property
+    property to set
+  uint64_t value
+    value the property should be set to
+
+Description
+  This functions sets a given property on a given plane object. This function
+calls the driver’s ->set_property callback and changes the software state of
+the property if the callback succeeds.

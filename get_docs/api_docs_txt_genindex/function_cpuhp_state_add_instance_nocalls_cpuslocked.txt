@@ -1,0 +1,13 @@
+Function: int cpuhp_state_add_instance_nocalls_cpuslocked ( enum cpuhp_state state , struct hlist_node * node )
+
+Add an instance for a state without invoking the startup callback from a cpus_read_lock() held region.
+
+Parameters
+  enum cpuhp_state state
+    The state for which the instance is installed
+  struct hlist_node *node
+    The node for this individual state.
+
+Description
+  Same as cpuhp_state_add_instance_nocalls() except that it must be
+invoked from within a cpus_read_lock() held region.

@@ -1,0 +1,7 @@
+Function: void aead_request_free ( struct aead_request * req )
+
+zeroize and free request data structure
+
+Parameters
+  struct aead_request *req
+    request data structure cipher handle to be freed

@@ -1,0 +1,17 @@
+Function: int ipcget ( struct ipc_namespace * ns , struct ipc_ids * ids , const struct ipc_ops * ops , struct ipc_params * params )
+
+Common sys_* get() code
+
+Parameters
+  struct ipc_namespace *ns
+    namespace
+  struct ipc_ids *ids
+    ipc identifier set
+  const struct ipc_ops *ops
+    operations to be called on ipc object creation, permission checks
+and further checks
+  struct ipc_params *params
+    the parameters needed by the previous operations.
+
+Description
+  Common routine called by sys_msgget() , sys_semget() and sys_shmget() .

@@ -1,0 +1,11 @@
+Function: unsigned int folio_order ( const struct folio * folio )
+
+The allocation order of a folio.
+
+Parameters
+  const struct folio *folio
+    The folio.
+
+Description
+  A folio is composed of 2^order pages.  See get_order() for the definition
+of order.

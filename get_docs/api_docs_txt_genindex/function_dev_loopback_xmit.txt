@@ -1,0 +1,11 @@
+Function: int dev_loopback_xmit ( struct net * net , struct sock * sk , struct sk_buff * skb )
+
+loop back skb
+
+Parameters
+  struct net *net
+    network namespace this loopback is happening in
+  struct sock *sk
+    sk needed to be a netfilter okfn
+  struct sk_buff *skb
+    buffer to transmit

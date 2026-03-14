@@ -1,0 +1,7 @@
+Function: int vb2_thread_stop ( struct vb2_queue * q )
+
+stop the thread for the given queue.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.

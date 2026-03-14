@@ -1,0 +1,11 @@
+Function: int blk_trace_ioctl ( struct block_device * bdev , unsigned cmd , char __user * arg )
+
+handle the ioctls associated with tracing
+
+Parameters
+  struct block_device *bdev
+    the block device
+  unsigned cmd
+    the ioctl cmd
+  char __user *arg
+    the argument data, if any

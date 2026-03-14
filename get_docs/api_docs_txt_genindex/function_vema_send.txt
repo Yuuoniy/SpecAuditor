@@ -1,0 +1,12 @@
+Function: void vema_send ( struct ib_mad_agent * mad_agent , struct ib_mad_send_wc * mad_wc )
+
+Send handler for VEMA MAD agent
+
+Parameters
+  struct ib_mad_agent *mad_agent
+    pointer to the mad agent
+  struct ib_mad_send_wc *mad_wc
+    pointer to mad send work completion information
+
+Description
+  Free all the data structures associated with the sent MAD

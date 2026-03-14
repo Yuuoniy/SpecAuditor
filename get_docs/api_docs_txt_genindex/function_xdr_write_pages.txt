@@ -1,0 +1,18 @@
+Function: void xdr_write_pages ( struct xdr_stream * xdr , struct page * * pages , unsigned int base , unsigned int len )
+
+Insert a list of pages into an XDR buffer for sending
+
+Parameters
+  struct xdr_stream *xdr
+    pointer to xdr_stream
+  struct page **pages
+    array of pages to insert
+  unsigned int base
+    starting offset of first data byte in pages
+  unsigned int len
+    number of data bytes in pages to insert
+
+Description
+  After the pages are added, the tail iovec is instantiated pointing to
+end of the head buffer, and the stream is set up to encode subsequent
+items into the tail.

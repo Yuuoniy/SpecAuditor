@@ -1,0 +1,13 @@
+Function: int ata_eh_set_mode ( struct ata_link * link , struct ata_device * * r_failed_dev )
+
+Program timings and issue SET FEATURES - XFER
+
+Parameters
+  struct ata_link *link
+    link on which timings will be programmed
+  struct ata_device **r_failed_dev
+    out parameter for failed device
+
+Description
+  Set ATA device disk transfer mode (PIO3, UDMA6, etc.).  If ata_eh_set_mode() fails, pointer to the failing device is
+returned in r_failed_dev .

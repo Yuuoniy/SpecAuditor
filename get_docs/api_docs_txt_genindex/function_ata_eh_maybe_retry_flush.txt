@@ -1,0 +1,15 @@
+Function: int ata_eh_maybe_retry_flush ( struct ata_device * dev )
+
+Retry FLUSH if necessary
+
+Parameters
+  struct ata_device *dev
+    ATA device which may need FLUSH retry
+
+Description
+  If dev failed FLUSH, it needs to be reported upper layer
+immediately as it means that dev failed to remap and already
+lost at least a sector and further FLUSH retrials won’t make
+any difference to the lost sector.  However, if FLUSH failed
+for other reasons, for example transmission error, FLUSH needs
+to be retried.

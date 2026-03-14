@@ -1,0 +1,14 @@
+Function: void drm_gem_lru_move_tail ( struct drm_gem_lru * lru , struct drm_gem_object * obj )
+
+move the object to the tail of the LRU
+
+Parameters
+  struct drm_gem_lru *lru
+    The LRU to move the object into.
+  struct drm_gem_object *obj
+    The GEM object to move into this LRU
+
+Description
+  If the object is already in this LRU it will be moved to the
+tail.  Otherwise it will be removed from whichever other LRU
+it is in (if any) and moved into this LRU.

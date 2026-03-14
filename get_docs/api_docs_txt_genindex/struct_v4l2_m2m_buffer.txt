@@ -1,0 +1,9 @@
+Struct: struct v4l2_m2m_buffer
+
+Memory to memory buffer
+
+Members
+  vb
+    pointer to struct vb2_v4l2_buffer
+  list
+    list of m2m buffers

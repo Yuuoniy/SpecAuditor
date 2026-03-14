@@ -1,0 +1,9 @@
+Function: void set_wiphy_dev ( struct wiphy * wiphy , struct device * dev )
+
+set device pointer for wiphy
+
+Parameters
+  struct wiphy *wiphy
+    The wiphy whose device to bind
+  struct device *dev
+    The device to parent it to

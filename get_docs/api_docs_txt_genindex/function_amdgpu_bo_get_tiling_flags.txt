@@ -1,0 +1,13 @@
+Function: void amdgpu_bo_get_tiling_flags ( struct amdgpu_bo * bo , u64 * tiling_flags )
+
+get tiling flags
+
+Parameters
+  struct amdgpu_bo *bo
+    amdgpu_bo buffer object
+  u64 *tiling_flags
+    returned flags
+
+Description
+  Gets buffer object’s tiling flags. Used by GEM ioctl or kernel driver to
+set the tiling flags on a buffer.

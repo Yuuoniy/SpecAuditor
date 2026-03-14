@@ -1,0 +1,7 @@
+Function: void srpt_drop_tport ( struct se_wwn * wwn )
+
+configfs callback invoked for rmdir /sys/kernel/config/target/$driver/$port
+
+Parameters
+  struct se_wwn *wwn
+    $port.

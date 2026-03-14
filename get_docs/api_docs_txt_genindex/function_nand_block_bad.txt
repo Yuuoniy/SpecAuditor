@@ -1,0 +1,12 @@
+Function: int nand_block_bad ( struct nand_chip * chip , loff_t ofs )
+
+[DEFAULT] Read bad block marker from the chip
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+  loff_t ofs
+    offset from device start
+
+Description
+  Check, if the block is bad.

@@ -1,0 +1,15 @@
+Function: struct sk_buff * skb_copy ( const struct sk_buff * skb , gfp_t gfp_mask )
+
+create private copy of an sk_buff
+
+Parameters
+  const struct sk_buff *skb
+    buffer to copy
+  gfp_t gfp_mask
+    allocation priority
+
+Description
+  Make a copy of both an sk_buff and its data. This is used when the
+caller wishes to modify the data and needs a private copy of the
+data to alter. Returns NULL on failure or the pointer to the buffer
+on success. The returned buffer has a reference count of 1.

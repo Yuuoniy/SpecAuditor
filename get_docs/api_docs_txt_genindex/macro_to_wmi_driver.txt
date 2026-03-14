@@ -1,0 +1,10 @@
+Macro: to_wmi_driver
+
+
+
+Parameters
+  drv
+    driver struct
+
+Description
+  Cast a struct device_driver to a struct wmi_driver .

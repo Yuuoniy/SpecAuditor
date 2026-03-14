@@ -1,0 +1,21 @@
+Function: struct snd_compr_caps
+
+caps descriptor
+
+Members
+  num_codecs
+    number of codecs supported
+  direction
+    direction supported. Of type snd_compr_direction
+  min_fragment_size
+    minimum fragment supported by DSP
+  max_fragment_size
+    maximum fragment supported by DSP
+  min_fragments
+    min fragments supported by DSP
+  max_fragments
+    max fragments supported by DSP
+  codecs
+    pointer to array of codecs
+  reserved
+    reserved field

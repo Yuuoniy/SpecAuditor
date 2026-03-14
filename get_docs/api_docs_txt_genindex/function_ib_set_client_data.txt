@@ -1,0 +1,16 @@
+Function: void ib_set_client_data ( struct ib_device * device , struct ib_client * client , void * data )
+
+Set IB client context
+
+Parameters
+  struct ib_device *device
+    Device to set context for
+  struct ib_client *client
+    Client to set context for
+  void *data
+    Context to set
+
+Description
+  ib_set_client_data() sets client context data that can be retrieved with ib_get_client_data() . This can only be called while the client is
+registered to the device, once the ib_client remove() callback returns this
+cannot be called.

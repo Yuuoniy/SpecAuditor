@@ -1,0 +1,9 @@
+Function: void blk_mq_run_hw_queues ( struct request_queue * q , bool async )
+
+Run all hardware queues in a request queue.
+
+Parameters
+  struct request_queue *q
+    Pointer to the request queue to run.
+  bool async
+    If we want to run the queue asynchronously.

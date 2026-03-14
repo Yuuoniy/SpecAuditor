@@ -1,0 +1,13 @@
+Function: void parport_announce_port ( struct parport * port )
+
+tell device drivers about a parallel port
+
+Parameters
+  struct parport *port
+    parallel port to announce
+
+Description
+  After a port driver has registered a parallel port with
+parport_register_port, and performed any necessary
+initialisation or adjustments, it should call parport_announce_port() in order to notify all device drivers
+that have called parport_register_driver() .  Their attach() functions will be called, with port as the parameter.

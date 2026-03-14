@@ -1,0 +1,10 @@
+Function: int regulator_force_disable ( struct regulator * regulator )
+
+force disable regulator output
+
+Parameters
+  struct regulator *regulator
+    regulator source
+
+Description
+  Forcibly disable the regulator output voltage or current.

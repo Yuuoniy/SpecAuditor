@@ -1,0 +1,65 @@
+Struct: struct tipc_node
+
+TIPC node structure
+
+Members
+  addr
+    network address of node
+  kref
+    reference counter to node object
+  lock
+    rwlock governing access to structure
+  net
+    the applicable net namespace
+  hash
+    links to adjacent nodes in unsorted hash chain
+  active_links
+    bearer ids of active links, used as index into links[] array
+  links
+    array containing references to all links to node
+  bc_entry
+    broadcast link entry
+  action_flags
+    bit mask of different types of node actions
+  list
+    links to adjacent nodes in sorted list of cluster’s nodes
+  state
+    connectivity state vs peer node
+  preliminary
+    a preliminary node or not
+  failover_sent
+    failover sent or not
+  sync_point
+    sequence number where synch/failover is finished
+  link_cnt
+    number of links to node
+  working_links
+    number of working links to node (both active and standby)
+  capabilities
+    bitmap, indicating peer node’s functional capabilities
+  signature
+    node instance identifier
+  link_id
+    local and remote bearer ids of changing link, if any
+  peer_id
+    128-bit ID of peer
+  peer_id_string
+    ID string of peer
+  publ_list
+    list of publications
+  conn_sks
+    list of connections (FIXME)
+  keepalive_intv
+    keepalive interval in milliseconds
+  timer
+    node’s keepalive timer
+  rcu
+    rcu struct for tipc_node
+  delete_at
+    indicates the time for deleting a down node
+  peer_net
+    peer’s net namespace
+  peer_hash_mix
+    hash for this peer (FIXME)
+  crypto_rx
+    RX crypto handler

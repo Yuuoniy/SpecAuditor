@@ -1,0 +1,16 @@
+Function: int security_sb_clone_mnt_opts ( const struct super_block * oldsb , struct super_block * newsb , unsigned long kern_flags , unsigned long * set_kern_flags )
+
+Duplicate superblock mount options
+
+Parameters
+  const struct super_block *oldsb
+    source superblock
+  struct super_block *newsb
+    destination superblock
+  unsigned long kern_flags
+    kernel flags (in)
+  unsigned long *set_kern_flags
+    kernel flags (out)
+
+Description
+  Copy all security options from a given superblock to another.

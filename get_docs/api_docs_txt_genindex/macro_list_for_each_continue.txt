@@ -1,0 +1,12 @@
+Macro: list_for_each_continue
+
+
+
+Parameters
+  pos
+    the struct list_head to use as a loop cursor.
+  head
+    the head for your list.
+
+Description
+  Continue to iterate over a list, continuing after the current position.

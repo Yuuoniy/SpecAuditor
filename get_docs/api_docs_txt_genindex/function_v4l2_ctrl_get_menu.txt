@@ -1,0 +1,11 @@
+Function: const char * const * v4l2_ctrl_get_menu ( u32 id )
+
+Get the menu string array of the control
+
+Parameters
+  u32 id
+    The control ID.
+
+Description
+  This function returns the NULL-terminated menu string array name of the
+given control ID or NULL if it isn’t a known menu control.

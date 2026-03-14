@@ -1,0 +1,3 @@
+Enum: enum xz_ret
+
+Return codes

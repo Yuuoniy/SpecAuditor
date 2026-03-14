@@ -1,0 +1,15 @@
+Function: char * strcpy ( char * const p , const char * const q )
+
+Copy a string into another string buffer
+
+Parameters
+  char * const p
+    pointer to destination of copy
+  const char * const q
+    pointer to NUL-terminated source string to copy
+
+Description
+  Do not use this function. While FORTIFY_SOURCE tries to avoid
+overflows, this is only possible when the sizes of q and p are
+known to the compiler. Prefer strscpy() , though note its different
+return values for detecting truncation.

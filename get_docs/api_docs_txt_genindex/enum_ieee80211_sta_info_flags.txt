@@ -1,0 +1,3 @@
+Enum: enum ieee80211_sta_info_flags
+
+Stations flags

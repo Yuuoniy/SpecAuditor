@@ -1,0 +1,11 @@
+Function: bool drm_drv_uses_atomic_modeset ( struct drm_device * dev )
+
+check if the driver implements atomic_commit()
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  This check is useful if drivers do not have DRIVER_ATOMIC set but
+have atomic modesetting internally implemented.

@@ -1,0 +1,14 @@
+Function: struct hlist_node * seq_hlist_start_percpu ( struct hlist_head __percpu * head , int * cpu , loff_t pos )
+
+start an iteration of a percpu hlist array
+
+Parameters
+  struct hlist_head __percpu *head
+    pointer to percpu array of struct hlist_heads
+  int *cpu
+    pointer to cpu “cursor”
+  loff_t pos
+    start position of sequence
+
+Description
+  Called at seq_file->op-> start() .

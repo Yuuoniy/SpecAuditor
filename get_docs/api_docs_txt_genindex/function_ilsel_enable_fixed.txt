@@ -1,0 +1,14 @@
+Function: int ilsel_enable_fixed ( ilsel_source_t set , unsigned int level )
+
+Enable an ILSEL set at a fixed interrupt level
+
+Parameters
+  ilsel_source_t set
+    ILSEL source (see ilsel_source_t enum in include/asm-sh/ilsel.h).
+  unsigned int level
+    Interrupt level (1 - 15)
+
+Description
+  Enables a given ILSEL source at a fixed interrupt level. Necessary
+both for level reservation as well as for aliased sources that only
+exist on special ILSEL#s.

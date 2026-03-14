@@ -1,0 +1,12 @@
+Function: int __anon_vma_prepare ( struct vm_area_struct * vma )
+
+attach an anon_vma to a memory region
+
+Parameters
+  struct vm_area_struct *vma
+    the memory region in question
+
+Description
+  This makes sure the memory mapping described by ‘vma’ has
+an ‘anon_vma’ attached to it, so that we can associate the
+anonymous pages mapped into it with that anon_vma.

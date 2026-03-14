@@ -1,0 +1,18 @@
+Function: void xprt_adjust_cwnd ( struct rpc_xprt * xprt , struct rpc_task * task , int result )
+
+adjust transport congestion window
+
+Parameters
+  struct rpc_xprt *xprt
+    pointer to xprt
+  struct rpc_task *task
+    recently completed RPC request used to adjust window
+  int result
+    result code of completed RPC request
+
+Description
+  The transport code maintains an estimate on the maximum number of out-
+standing RPC requests, using a smoothed version of the congestion
+avoidance implemented in 44BSD. This is basically the Van Jacobson
+congestion algorithm: If a retransmit occurs, the congestion window is
+halved; otherwise, it is incremented by 1/cwnd when

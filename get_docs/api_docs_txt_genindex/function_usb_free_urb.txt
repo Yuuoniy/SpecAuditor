@@ -1,0 +1,11 @@
+Function: void usb_free_urb ( struct urb * urb )
+
+frees the memory used by a urb when all users of it are finished
+
+Parameters
+  struct urb *urb
+    pointer to the urb to free, may be NULL
+
+Description
+  Must be called when a user of a urb is finished with it.  When the last user
+of the urb calls this function, the memory of the urb is freed.

@@ -1,0 +1,15 @@
+Function: int security_sock_rcv_skb ( struct sock * sk , struct sk_buff * skb )
+
+Check if an incoming network packet is allowed
+
+Parameters
+  struct sock *sk
+    destination sock
+  struct sk_buff *skb
+    incoming packet
+
+Description
+  Check permissions on incoming network packets.  This hook is distinct from
+Netfilter’s IP input hooks since it is the first time that the incoming
+sk_buff skb has been associated with a particular socket, sk .  Must not
+sleep inside this hook because some callers hold spinlocks.

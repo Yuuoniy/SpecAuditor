@@ -1,0 +1,8 @@
+Struct: struct tee_client_device_id
+
+tee based device identifier
+
+Members
+  uuid
+    For TEE based client devices we use the device uuid as
+the identifier.

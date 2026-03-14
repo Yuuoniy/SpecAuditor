@@ -1,0 +1,76 @@
+Struct: struct nand_nvddr_timings
+
+NV-DDR NAND chip timings
+
+Members
+  tBERS_max
+    Block erase time
+  tCCS_min
+    Change column setup time
+  tPROG_max
+    Page program time
+  tR_max
+    Page read time
+  tAC_min
+    Access window of DQ[7:0] from CLK
+  tAC_max
+    Access window of DQ[7:0] from CLK
+  tADL_min
+    ALE to data loading time
+  tCAD_min
+    Command, Address, Data delay
+  tCAH_min
+    Command/Address DQ hold time
+  tCALH_min
+    W/R_n, CLE and ALE hold time
+  tCALS_min
+    W/R_n, CLE and ALE setup time
+  tCAS_min
+    Command/address DQ setup time
+  tCEH_min
+    CE# high hold time
+  tCH_min
+    CE# hold time
+  tCK_min
+    Average clock cycle time
+  tCS_min
+    CE# setup time
+  tDH_min
+    Data hold time
+  tDQSCK_min
+    Start of the access window of DQS from CLK
+  tDQSCK_max
+    End of the access window of DQS from CLK
+  tDQSD_min
+    Min W/R_n low to DQS/DQ driven by device
+  tDQSD_max
+    Max W/R_n low to DQS/DQ driven by device
+  tDQSHZ_max
+    W/R_n high to DQS/DQ tri-state by device
+  tDQSQ_max
+    DQS-DQ skew, DQS to last DQ valid, per access
+  tDS_min
+    Data setup time
+  tDSC_min
+    DQS cycle time
+  tFEAT_max
+    Busy time for Set Features and Get Features
+  tITC_max
+    Interface and Timing Mode Change time
+  tQHS_max
+    Data hold skew factor
+  tRHW_min
+    Data output cycle to command, address, or data input cycle
+  tRR_min
+    Ready to RE# low (data only)
+  tRST_max
+    Device reset time, measured from the falling edge of R/B# to the
+rising edge of R/B#.
+  tWB_max
+    WE# high to SR[6] low
+  tWHR_min
+    WE# high to RE# low
+  tWRCK_min
+    W/R_n low to data output cycle
+  tWW_min
+    WP# transition to WE# low

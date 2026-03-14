@@ -1,0 +1,18 @@
+Struct: struct dmx_section_filter
+
+Structure that describes a section filter
+
+Members
+  filter_value
+    Contains up to 16 bytes (128 bits) of the TS section header
+that will be matched by the section filter
+  filter_mask
+    Contains a 16 bytes (128 bits) filter mask with the bits
+specified by filter_value that will be used on the filter
+match logic.
+  filter_mode
+    Contains a 16 bytes (128 bits) filter mode.
+  parent
+    Back-pointer to struct dmx_section_feed .
+  priv
+    Pointer to private data of the API client.

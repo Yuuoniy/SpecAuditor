@@ -1,0 +1,11 @@
+Function: void rcu_sync_func ( struct rcu_head * rhp )
+
+Callback function managing reader access to fastpath
+
+Parameters
+  struct rcu_head *rhp
+    Pointer to rcu_head in rcu_sync structure to use for synchronization
+
+Description
+  This function is passed to call_rcu() function by rcu_sync_enter() and rcu_sync_exit() , so that it is invoked after a grace period following the
+that invocation of enter/exit.

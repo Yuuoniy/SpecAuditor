@@ -1,0 +1,12 @@
+Function: void folio_wait_stable ( struct folio * folio )
+
+wait for writeback to finish, if necessary.
+
+Parameters
+  struct folio *folio
+    The folio to wait on.
+
+Description
+  This function determines if the given folio is related to a backing
+device that requires folio contents to be held stable during writeback.
+If so, then it will wait for any pending writeback to complete.

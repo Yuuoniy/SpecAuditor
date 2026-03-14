@@ -1,0 +1,10 @@
+Function: resource_size_t resource_alignment ( struct resource * res )
+
+calculate resource’s alignment
+
+Parameters
+  struct resource *res
+    resource pointer
+
+Description
+  Returns alignment on success, 0 (invalid alignment) on failure.

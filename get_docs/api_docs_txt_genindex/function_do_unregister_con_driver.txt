@@ -1,0 +1,13 @@
+Function: int do_unregister_con_driver ( const struct consw * csw )
+
+unregister console driver from console layer
+
+Parameters
+  const struct consw *csw
+    console driver
+
+Description
+  All drivers that registers to the console layer must
+call this function upon exit, or if the console driver is in a state
+where it won’t be able to handle console services, such as the
+framebuffer console without loaded framebuffer drivers.

@@ -1,0 +1,11 @@
+Function: void i915_vma_revoke_fence ( struct i915_vma * vma )
+
+force-remove fence for a VMA
+
+Parameters
+  struct i915_vma *vma
+    vma to map linearly (not through a fence reg)
+
+Description
+  This function force-removes any fence from the given object, which is useful
+if the kernel wants to do untiled GTT access.

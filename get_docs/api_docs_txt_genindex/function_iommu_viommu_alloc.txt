@@ -1,0 +1,23 @@
+Function: struct iommu_viommu_alloc
+
+ioctl(IOMMU_VIOMMU_ALLOC)
+
+Members
+  size
+    sizeof( struct iommu_viommu_alloc )
+  flags
+    Must be 0
+  type
+    Type of the virtual IOMMU. Must be defined in enum iommu_viommu_type
+  dev_id
+    The device’s physical IOMMU will be used to back the virtual IOMMU
+  hwpt_id
+    ID of a nesting parent HWPT to associate to
+  out_viommu_id
+    Output virtual IOMMU ID for the allocated object
+  data_len
+    Length of the type specific data
+  __reserved
+    Must be 0
+  data_uptr
+    User pointer to a driver-specific virtual IOMMU data

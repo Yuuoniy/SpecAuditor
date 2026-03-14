@@ -1,0 +1,9 @@
+Struct: struct clk_bulk_data
+
+Data used for bulk clk operations.
+
+Members
+  id
+    clock consumer ID
+  clk
+    struct clk * to store the associated clock

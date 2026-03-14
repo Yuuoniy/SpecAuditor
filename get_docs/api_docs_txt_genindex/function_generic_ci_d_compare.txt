@@ -1,0 +1,13 @@
+Function: int generic_ci_d_compare ( const struct dentry * dentry , unsigned int len , const char * str , const struct qstr * name )
+
+generic d_compare implementation for casefolding filesystems
+
+Parameters
+  const struct dentry *dentry
+    dentry whose name we are checking against
+  unsigned int len
+    len of name of dentry
+  const char *str
+    str pointer to name of dentry
+  const struct qstr *name
+    Name to compare against

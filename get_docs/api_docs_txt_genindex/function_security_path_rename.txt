@@ -1,0 +1,18 @@
+Function: int security_path_rename ( const struct path * old_dir , struct dentry * old_dentry , const struct path * new_dir , struct dentry * new_dentry , unsigned int flags )
+
+Check if renaming a file is allowed
+
+Parameters
+  const struct path *old_dir
+    parent directory of the old file
+  struct dentry *old_dentry
+    the old file
+  const struct path *new_dir
+    parent directory of the new file
+  struct dentry *new_dentry
+    the new file
+  unsigned int flags
+    flags
+
+Description
+  Check for permission to rename a file or directory.

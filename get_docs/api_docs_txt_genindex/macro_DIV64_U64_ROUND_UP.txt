@@ -1,0 +1,13 @@
+Macro: DIV64_U64_ROUND_UP
+
+
+
+Parameters
+  ll
+    unsigned 64bit dividend
+  d
+    unsigned 64bit divisor
+
+Description
+  Divide unsigned 64bit dividend by unsigned 64bit divisor
+and round up.

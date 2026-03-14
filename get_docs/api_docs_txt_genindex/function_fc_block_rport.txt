@@ -1,0 +1,14 @@
+Function: int fc_block_rport ( struct fc_rport * rport )
+
+Block SCSI eh thread for blocked fc_rport.
+
+Parameters
+  struct fc_rport *rport
+    Remote port that scsi_eh is trying to recover.
+
+Description
+  This routine can be called from a FC LLD scsi_eh callback. It
+blocks the scsi_eh thread until the fc_rport leaves the
+FC_PORTSTATE_BLOCKED, or the fast_io_fail_tmo fires. This is
+necessary to avoid the scsi_eh failing recovery actions for blocked
+rports which would lead to offlined SCSI devices.

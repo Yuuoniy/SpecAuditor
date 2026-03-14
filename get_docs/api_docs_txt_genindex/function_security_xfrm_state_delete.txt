@@ -1,0 +1,10 @@
+Function: int security_xfrm_state_delete ( struct xfrm_state * x )
+
+Check if deleting a xfrm state is allowed
+
+Parameters
+  struct xfrm_state *x
+    xfrm state
+
+Description
+  Authorize deletion of x->security.

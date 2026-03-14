@@ -1,0 +1,34 @@
+Function: void __fw_send_request ( struct fw_card * card , struct fw_transaction * t , int tcode , int destination_id , int generation , int speed , unsigned long long offset , void * payload , size_t length , union fw_transaction_callback callback , bool with_tstamp , void * callback_data )
+
+submit a request packet for transmission to generate callback for response subaction with or without time stamp.
+
+Parameters
+  struct fw_card *card
+    interface to send the request at
+  struct fw_transaction *t
+    transaction instance to which the request belongs
+  int tcode
+    transaction code
+  int destination_id
+    destination node ID, consisting of bus_ID and phy_ID
+  int generation
+    bus generation in which request and response are valid
+  int speed
+    transmission speed
+  unsigned long long offset
+    48bit wide offset into destination’s address space
+  void *payload
+    data payload for the request subaction
+  size_t length
+    length of the payload, in bytes
+  union fw_transaction_callback callback
+    union of two functions whether to receive time stamp or not for response
+subaction.
+  bool with_tstamp
+    Whether to receive time stamp or not for response subaction.
+  void *callback_data
+    data to be passed to the transaction completion callback
+
+Description
+  Submit a request packet into the asynchronous request transmission queue.
+Can be called from atomic context.  If you prefer a blocking API, use fw_run_transaction() in a context that can sleep.

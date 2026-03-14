@@ -1,0 +1,15 @@
+Function: struct file * sock_alloc_file ( struct socket * sock , int flags , const char * dname )
+
+Bind a socket to a file
+
+Parameters
+  struct socket *sock
+    socket
+  int flags
+    file status flags
+  const char *dname
+    protocol name
+
+Description
+  Returns the file bound with sock , implicitly storing it
+in sock->file. If dname is NULL , sets to “”.

@@ -1,0 +1,7 @@
+Macro: seqcount_init
+
+
+
+Parameters
+  s
+    Pointer to the seqcount_t instance

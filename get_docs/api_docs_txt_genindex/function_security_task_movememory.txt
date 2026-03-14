@@ -1,0 +1,10 @@
+Function: int security_task_movememory ( struct task_struct * p )
+
+Check if moving memory is allowed
+
+Parameters
+  struct task_struct *p
+    task
+
+Description
+  Check permission before moving memory owned by process p .

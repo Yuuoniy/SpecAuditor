@@ -1,0 +1,11 @@
+Struct: struct drm_xe_oa_stream_status
+
+OA stream status returned from DRM_XE_OBSERVATION_IOCTL_STATUS observation stream fd ioctl. Userspace can call the ioctl to query stream status in response to EIO errno from observation fd read().
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  oa_status
+    OA stream status (see Bspec 46717/61226)
+  reserved
+    reserved for future use

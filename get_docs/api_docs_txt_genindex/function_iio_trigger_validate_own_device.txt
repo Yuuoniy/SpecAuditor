@@ -1,0 +1,13 @@
+Function: int iio_trigger_validate_own_device ( struct iio_trigger * trig , struct iio_dev * indio_dev )
+
+Check if a trigger and IIO device belong to the same device
+
+Parameters
+  struct iio_trigger *trig
+    The IIO trigger to check
+  struct iio_dev *indio_dev
+    the IIO device to check
+
+Description
+  This function can be used as the validate_device callback for triggers that
+can only be attached to their own device.

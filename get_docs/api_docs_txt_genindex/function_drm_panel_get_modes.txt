@@ -1,0 +1,13 @@
+Function: int drm_panel_get_modes ( struct drm_panel * panel , struct drm_connector * connector )
+
+probe the available display modes of a panel
+
+Parameters
+  struct drm_panel *panel
+    DRM panel
+  struct drm_connector *connector
+    DRM connector
+
+Description
+  The modes probed from the panel are automatically added to the connector
+that the panel is attached to.

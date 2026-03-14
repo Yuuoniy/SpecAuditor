@@ -1,0 +1,3 @@
+Enum: enum vga_switcheroo_handler_flags_t
+
+handler flags bitmask

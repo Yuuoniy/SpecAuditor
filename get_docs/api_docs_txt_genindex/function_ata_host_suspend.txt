@@ -1,0 +1,12 @@
+Function: void ata_host_suspend ( struct ata_host * host , pm_message_t mesg )
+
+suspend host
+
+Parameters
+  struct ata_host *host
+    host to suspend
+  pm_message_t mesg
+    PM message
+
+Description
+  Suspend host .  Actual operation is performed by port suspend.

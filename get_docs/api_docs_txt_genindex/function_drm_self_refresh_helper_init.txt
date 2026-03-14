@@ -1,0 +1,10 @@
+Function: int drm_self_refresh_helper_init ( struct drm_crtc * crtc )
+
+Initializes self refresh helpers for a crtc
+
+Parameters
+  struct drm_crtc *crtc
+    the crtc which supports self refresh supported displays
+
+Description
+  Returns zero if successful or -errno on failure

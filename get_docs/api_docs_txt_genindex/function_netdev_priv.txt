@@ -1,0 +1,10 @@
+Function: void * netdev_priv ( const struct net_device * dev )
+
+access network device private data
+
+Parameters
+  const struct net_device *dev
+    network device
+
+Description
+  Get network device private data

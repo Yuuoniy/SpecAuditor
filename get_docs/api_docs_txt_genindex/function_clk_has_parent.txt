@@ -1,0 +1,13 @@
+Function: bool clk_has_parent ( const struct clk * clk , const struct clk * parent )
+
+check if a clock is a possible parent for another
+
+Parameters
+  const struct clk *clk
+    clock source
+  const struct clk *parent
+    parent clock source
+
+Description
+  This function can be used in drivers that need to check that a clock can be
+the parent of another without actually changing the parent.

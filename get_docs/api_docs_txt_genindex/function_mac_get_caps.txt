@@ -1,0 +1,15 @@
+Function: unsigned long mac_get_caps ( struct phylink_config * config , phy_interface_t interface )
+
+Get MAC capabilities for interface mode.
+
+Parameters
+  struct phylink_config *config
+    a pointer to a struct phylink_config .
+  phy_interface_t interface
+    PHY interface mode.
+
+Description
+  Optional method. When not provided, config->mac_capabilities will be used.
+When implemented, this returns the MAC capabilities for the specified
+interface mode where there is some special handling required by the MAC
+driver (e.g. not supporting half-duplex in certain interface modes.)

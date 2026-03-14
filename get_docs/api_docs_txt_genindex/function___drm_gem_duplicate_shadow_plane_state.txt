@@ -1,0 +1,13 @@
+Function: void __drm_gem_duplicate_shadow_plane_state ( struct drm_plane * plane , struct drm_shadow_plane_state * new_shadow_plane_state )
+
+duplicates shadow-buffered plane state
+
+Parameters
+  struct drm_plane *plane
+    the plane
+  struct drm_shadow_plane_state *new_shadow_plane_state
+    the new shadow-buffered plane state
+
+Description
+  This function duplicates shadow-buffered plane state. This is helpful for drivers
+that subclass struct drm_shadow_plane_state .

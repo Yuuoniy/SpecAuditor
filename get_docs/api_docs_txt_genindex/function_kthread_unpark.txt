@@ -1,0 +1,12 @@
+Function: void kthread_unpark ( struct task_struct * k )
+
+unpark a thread created by kthread_create() .
+
+Parameters
+  struct task_struct *k
+    thread created by kthread_create() .
+
+Description
+  Sets kthread_should_park() for k to return false, wakes it, and
+waits for it to return. If the thread is marked percpu then its
+bound to the cpu again.

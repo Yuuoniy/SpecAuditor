@@ -1,0 +1,21 @@
+Function: int pwm_set_waveform_might_sleep ( struct pwm_device * pwm , const struct pwm_waveform * wf , bool exact )
+
+Apply a new waveform Cannot be used in atomic context.
+
+Parameters
+  struct pwm_device *pwm
+    PWM device
+  const struct pwm_waveform *wf
+    The waveform to apply
+  bool exact
+    If true no rounding is allowed
+
+Description
+  Typically a requested waveform cannot be implemented exactly, e.g. because
+you requested .period_length_ns = 100 ns, but the hardware can only set
+periods that are a multiple of 8.5 ns. With that hardware passing exact =
+true results in pwm_set_waveform_might_sleep() failing and returning -EDOM.
+If exact = false you get a period of 93.5 ns (i.e. the biggest period not
+bigger than the requested value).
+Note that even with exact = true, some rounding by less than 1 ns is
+possible/needed. In the above example requesting .period_length_ns = 94 and exact = true, you get the hardware configured with period = 93.5 ns.

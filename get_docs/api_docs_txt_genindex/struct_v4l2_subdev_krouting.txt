@@ -1,0 +1,11 @@
+Struct: struct v4l2_subdev_krouting
+
+subdev routing table
+
+Members
+  len_routes
+    length of routes array, in routes
+  num_routes
+    number of routes
+  routes
+    struct v4l2_subdev_route

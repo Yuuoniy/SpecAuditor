@@ -1,0 +1,9 @@
+Function: char * strstr ( const char * s1 , const char * s2 )
+
+Find the first substring in a NUL terminated string
+
+Parameters
+  const char *s1
+    The string to be searched
+  const char *s2
+    The string to search for

@@ -1,0 +1,16 @@
+Function: void snd_soc_runtime_action ( struct snd_soc_pcm_runtime * rtd , int stream , int action )
+
+Increment/Decrement active count for PCM runtime components
+
+Parameters
+  struct snd_soc_pcm_runtime *rtd
+    ASoC PCM runtime that is activated
+  int stream
+    Direction of the PCM stream
+  int action
+    Activate stream if 1. Deactivate if -1.
+
+Description
+  Increments/Decrements the active count for all the DAIs and components
+attached to a PCM runtime.
+Should typically be called when a stream is opened.

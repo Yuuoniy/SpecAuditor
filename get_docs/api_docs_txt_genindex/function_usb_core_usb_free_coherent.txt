@@ -1,0 +1,18 @@
+Function: void usb_free_coherent ( struct usb_device * dev , size_t size , void * addr , dma_addr_t dma )
+
+free memory allocated with usb_alloc_coherent()
+
+Parameters
+  struct usb_device *dev
+    device the buffer was used with
+  size_t size
+    requested buffer size
+  void *addr
+    CPU address of buffer
+  dma_addr_t dma
+    DMA address of buffer
+
+Description
+  This reclaims an I/O buffer, letting it be reused.  The memory must have
+been allocated using usb_alloc_coherent() , and the parameters must match
+those provided in that allocation request.

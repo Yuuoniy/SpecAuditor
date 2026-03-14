@@ -1,0 +1,13 @@
+Function: void __drm_atomic_helper_crtc_state_reset ( struct drm_crtc_state * crtc_state , struct drm_crtc * crtc )
+
+reset the CRTC state
+
+Parameters
+  struct drm_crtc_state *crtc_state
+    atomic CRTC state, must not be NULL
+  struct drm_crtc *crtc
+    CRTC object, must not be NULL
+
+Description
+  Initializes the newly allocated crtc_state with default
+values. This is useful for drivers that subclass the CRTC state.

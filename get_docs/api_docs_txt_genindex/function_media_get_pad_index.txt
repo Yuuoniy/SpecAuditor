@@ -1,0 +1,15 @@
+Function: int media_get_pad_index ( struct media_entity * entity , u32 pad_type , enum media_pad_signal_type sig_type )
+
+retrieves a pad index from an entity
+
+Parameters
+  struct media_entity *entity
+    entity where the pads belong
+  u32 pad_type
+    the type of the pad, one of MEDIA_PAD_FL_* pad types
+  enum media_pad_signal_type sig_type
+    type of signal of the pad to be search
+
+Description
+  This helper function finds the first pad index inside an entity that
+satisfies both is_sink and sig_type conditions.

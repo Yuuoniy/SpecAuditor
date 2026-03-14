@@ -1,0 +1,17 @@
+Function: int sysfs_file_change_owner ( struct kobject * kobj , const char * name , kuid_t kuid , kgid_t kgid )
+
+change owner of a sysfs file.
+
+Parameters
+  struct kobject *kobj
+    object.
+  const char *name
+    name of the file to change.
+  kuid_t kuid
+    new owner’s kuid
+  kgid_t kgid
+    new owner’s kgid
+
+Description
+  This function looks up the sysfs entry name under kobj and changes the
+ownership to kuid / kgid .

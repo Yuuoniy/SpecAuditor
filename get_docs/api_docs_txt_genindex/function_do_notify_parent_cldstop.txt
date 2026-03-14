@@ -1,0 +1,15 @@
+Function: void do_notify_parent_cldstop ( struct task_struct * tsk , bool for_ptracer , int why )
+
+notify parent of stopped/continued state change
+
+Parameters
+  struct task_struct *tsk
+    task reporting the state change
+  bool for_ptracer
+    the notification is for ptracer
+  int why
+    CLD_{CONTINUED|STOPPED|TRAPPED} to report
+
+Description
+  Notify tsk ’s parent that the stopped/continued state has changed.  If for_ptracer is false , tsk ’s group leader notifies to its real parent.
+If true , tsk reports to tsk->parent which should be the ptracer.

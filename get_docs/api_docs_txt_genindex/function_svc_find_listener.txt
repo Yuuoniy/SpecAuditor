@@ -1,0 +1,18 @@
+Function: struct svc_xprt * svc_find_listener ( struct svc_serv * serv , const char * xcl_name , struct net * net , const struct sockaddr * sa )
+
+find an RPC transport instance
+
+Parameters
+  struct svc_serv *serv
+    pointer to svc_serv to search
+  const char *xcl_name
+    C string containing transport’s class name
+  struct net *net
+    owner net pointer
+  const struct sockaddr *sa
+    sockaddr containing address
+
+Description
+  Return the transport instance pointer for the endpoint accepting
+connections/peer traffic from the specified transport class,
+and matching sockaddr.

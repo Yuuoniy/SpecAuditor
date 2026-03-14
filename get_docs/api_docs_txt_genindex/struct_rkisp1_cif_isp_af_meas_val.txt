@@ -1,0 +1,9 @@
+Struct: struct rkisp1_cif_isp_af_meas_val
+
+AF measured values
+
+Members
+  sum
+    sharpness value
+  lum
+    luminance value

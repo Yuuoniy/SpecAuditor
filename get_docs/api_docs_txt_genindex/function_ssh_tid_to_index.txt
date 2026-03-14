@@ -1,0 +1,7 @@
+Function: u8 ssh_tid_to_index ( u8 tid )
+
+Convert target ID to its corresponding target index.
+
+Parameters
+  u8 tid
+    The target ID to convert.

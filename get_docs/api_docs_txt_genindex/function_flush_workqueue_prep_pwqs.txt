@@ -1,0 +1,14 @@
+Function: bool flush_workqueue_prep_pwqs ( struct workqueue_struct * wq , int flush_color , int work_color )
+
+prepare pwqs for workqueue flushing
+
+Parameters
+  struct workqueue_struct *wq
+    workqueue being flushed
+  int flush_color
+    new flush color, < 0 for no-op
+  int work_color
+    new work color, < 0 for no-op
+
+Description
+  Prepare pwqs for workqueue flushing.

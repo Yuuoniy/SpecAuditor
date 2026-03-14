@@ -1,0 +1,7 @@
+Function: bool damon_initialized ( void )
+
+Return if DAMON is ready to be used.
+
+Parameters
+  void
+    no arguments

@@ -1,0 +1,12 @@
+Function: void drm_gem_dma_free ( struct drm_gem_dma_object * dma_obj )
+
+free resources associated with a DMA GEM object
+
+Parameters
+  struct drm_gem_dma_object *dma_obj
+    DMA GEM object to free
+
+Description
+  This function frees the backing memory of the DMA GEM object, cleans up the
+GEM object state and frees the memory used to store the object itself.
+If the buffer is imported and the virtual address is set, it is released.

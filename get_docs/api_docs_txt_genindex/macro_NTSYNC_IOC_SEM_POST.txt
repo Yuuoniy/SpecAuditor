@@ -1,0 +1,9 @@
+Macro: NTSYNC_IOC_SEM_POST
+
+Post to a semaphore object. Takes a pointer to a 32-bit integer,
+which on input holds the count to be added to the semaphore, and on
+output contains its previous count. If adding to the semaphore’s current count would raise the latter
+past the semaphore’s maximum count, the ioctl fails with EOVERFLOW and the semaphore is not affected. If raising the
+semaphore’s count causes it to become signaled, eligible threads
+waiting on this semaphore will be woken and the semaphore’s count
+decremented appropriately.

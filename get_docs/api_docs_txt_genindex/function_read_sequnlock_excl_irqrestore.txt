@@ -1,0 +1,9 @@
+Function: void read_sequnlock_excl_irqrestore ( seqlock_t * sl , unsigned long flags )
+
+end non-interruptible seqlock_t locking reader section
+
+Parameters
+  seqlock_t *sl
+    Pointer to seqlock_t
+  unsigned long flags
+    Caller saved interrupt state, from read_seqlock_excl_irqsave()

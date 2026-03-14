@@ -1,0 +1,11 @@
+Function: void * folio_detach_private ( struct folio * folio )
+
+Detach private data from a folio.
+
+Parameters
+  struct folio *folio
+    Folio to detach data from.
+
+Description
+  Removes the data that was previously attached to the folio and decrements
+the refcount on the page.

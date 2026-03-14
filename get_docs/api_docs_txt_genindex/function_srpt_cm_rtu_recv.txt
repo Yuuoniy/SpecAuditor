@@ -1,0 +1,11 @@
+Function: void srpt_cm_rtu_recv ( struct srpt_rdma_ch * ch )
+
+process an IB_CM_RTU_RECEIVED or USER_ESTABLISHED event
+
+Parameters
+  struct srpt_rdma_ch *ch
+    SRPT RDMA channel.
+
+Description
+  An RTU (ready to use) message indicates that the connection has been
+established and that the recipient may begin transmitting.

@@ -1,0 +1,15 @@
+Macro: mipi_dsi_dcs_write_var_seq_multi
+
+
+
+Parameters
+  ctx
+    Context for multiple DSI transactions
+  cmd
+    Command
+  seq...
+    buffer containing data to be transmitted
+
+Description
+  This macro will print errors for you and error handling is optimized for
+callers that call this multiple times in a row.

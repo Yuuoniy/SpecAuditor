@@ -1,0 +1,13 @@
+Function: int audit_alloc ( struct task_struct * tsk )
+
+allocate an audit context block for a task
+
+Parameters
+  struct task_struct *tsk
+    task
+
+Description
+  Filter on the task information and allocate a per-task audit context
+if necessary.  Doing so turns on system call auditing for the
+specified task.  This is called from copy_process, so no lock is
+needed.

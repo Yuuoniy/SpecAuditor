@@ -1,0 +1,7 @@
+Function: bool ttm_tt_is_swapped ( const struct ttm_tt * tt )
+
+Whether the ttm_tt is swapped out or backed up
+
+Parameters
+  const struct ttm_tt *tt
+    The struct ttm_tt .

@@ -1,0 +1,12 @@
+Function: int ctucan_rx_poll ( struct napi_struct * napi , int quota )
+
+Poll routine for rx packets (NAPI)
+
+Parameters
+  struct napi_struct *napi
+    NAPI structure pointer
+  int quota
+    Max number of rx packets to be processed.
+
+Description
+  This is the poll routine for rx part. It will process the packets maximux quota value.

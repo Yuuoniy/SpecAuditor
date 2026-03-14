@@ -1,0 +1,21 @@
+Struct: struct drm_xe_query_eu_stall
+
+Information about EU stall sampling.
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  capabilities
+    EU stall capabilities bit-mask
+  record_size
+    size of each EU stall data record
+  per_xecore_buf_size
+    internal per XeCore buffer size
+  reserved
+    Reserved
+  num_sampling_rates
+    Number of sampling rates in sampling_rates array
+  sampling_rates
+    Flexible array of sampling rates
+sorted in the fastest to slowest order.
+Sampling rates are specified in GPU clock cycles.

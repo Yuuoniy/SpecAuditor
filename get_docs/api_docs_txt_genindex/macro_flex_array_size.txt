@@ -1,0 +1,14 @@
+Macro: flex_array_size
+
+
+
+Parameters
+  p
+    Pointer to the structure.
+  member
+    Name of the flexible array member.
+  count
+    Number of elements in the array.
+
+Description
+  Calculates size of a flexible array of count number of member elements, at the end of structure p .

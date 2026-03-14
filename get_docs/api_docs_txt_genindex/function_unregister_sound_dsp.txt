@@ -1,0 +1,11 @@
+Function: void unregister_sound_dsp ( int unit )
+
+unregister a DSP device
+
+Parameters
+  int unit
+    unit number to allocate
+
+Description
+  Release a sound device that was allocated with register_sound_dsp() .
+The unit passed is the return value from the register function.

@@ -1,0 +1,26 @@
+Struct: struct ipu3_uapi_yuvp1_iefd_cfg_units
+
+IEFd Config Units parameters
+
+Members
+  cu_1
+    calculate weight for blending directed and
+non-directed denoise elements. See ipu3_uapi_iefd_cux2
+  cu_ed
+    calculate power of non-directed sharpening element, see ipu3_uapi_iefd_cux6_ed
+  cu_3
+    calculate weight for blending directed and
+non-directed denoise elements. A ipu3_uapi_iefd_cux2
+  cu_5
+    calculate power of non-directed denoise element apply, use ipu3_uapi_iefd_cux2_1
+  cu_6
+    calculate power of non-directed sharpening element. See ipu3_uapi_iefd_cux4
+  cu_7
+    calculate weight for blending directed and
+non-directed denoise elements. Use ipu3_uapi_iefd_cux2
+  cu_unsharp
+    Config Unit of unsharp ipu3_uapi_iefd_cux4
+  cu_radial
+    Config Unit of radial ipu3_uapi_iefd_cux6_rad
+  cu_vssnlm
+    Config Unit of vssnlm ipu3_uapi_iefd_cux2

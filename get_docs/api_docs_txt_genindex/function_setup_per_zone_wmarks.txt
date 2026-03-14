@@ -1,0 +1,11 @@
+Function: void setup_per_zone_wmarks ( void )
+
+called when min_free_kbytes changes or when memory is hot-{added|removed}
+
+Parameters
+  void
+    no arguments
+
+Description
+  Ensures that the watermark[min,low,high] values for each zone are set
+correctly with respect to min_free_kbytes.

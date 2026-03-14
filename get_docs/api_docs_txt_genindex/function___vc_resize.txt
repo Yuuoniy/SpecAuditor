@@ -1,0 +1,17 @@
+Function: int __vc_resize ( struct vc_data * vc , unsigned int cols , unsigned int rows , bool from_user )
+
+resize a VT
+
+Parameters
+  struct vc_data *vc
+    virtual console
+  unsigned int cols
+    columns
+  unsigned int rows
+    rows
+  bool from_user
+    invoked by a user?
+
+Description
+  Resize a virtual console as seen from the console end of things. We use the
+common vc_do_resize() method to update the structures.

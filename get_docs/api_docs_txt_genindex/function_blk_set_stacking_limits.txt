@@ -1,0 +1,10 @@
+Function: void blk_set_stacking_limits ( struct queue_limits * lim )
+
+set default limits for stacking devices
+
+Parameters
+  struct queue_limits *lim
+    the queue_limits structure to reset
+
+Description
+  Prepare queue limits for applying limits from underlying devices using blk_stack_limits() .

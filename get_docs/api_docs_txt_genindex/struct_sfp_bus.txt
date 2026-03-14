@@ -1,0 +1,7 @@
+Struct: struct sfp_bus
+
+internal representation of a sfp bus
+
+Members
+  struct sfp_eeprom_id ¶
+    raw SFP module identification information

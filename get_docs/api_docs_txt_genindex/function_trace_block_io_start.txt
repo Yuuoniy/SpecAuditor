@@ -1,0 +1,10 @@
+Function: void trace_block_io_start ( struct request * rq )
+
+insert a request for execution
+
+Parameters
+  struct request *rq
+    block IO operation request
+
+Description
+  Called when block operation request rq is queued for execution

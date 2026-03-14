@@ -1,0 +1,7 @@
+Struct: struct ipu3_uapi_ae_raw_buffer_aligned
+
+AE raw buffer
+
+Members
+  buff
+    ipu3_uapi_ae_raw_buffer to hold full frame meta data.

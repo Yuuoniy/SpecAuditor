@@ -1,0 +1,21 @@
+Function: int eth_header ( struct sk_buff * skb , struct net_device * dev , unsigned short type , const void * daddr , const void * saddr , unsigned int len )
+
+create the Ethernet header
+
+Parameters
+  struct sk_buff *skb
+    buffer to alter
+  struct net_device *dev
+    source device
+  unsigned short type
+    Ethernet type field
+  const void *daddr
+    destination address (NULL leave destination address)
+  const void *saddr
+    source address (NULL use device source address)
+  unsigned int len
+    packet length (<= skb->len)
+
+Description
+  Set the protocol type. For a packet of type ETH_P_802_3/2 we put the length
+in here instead.

@@ -1,0 +1,12 @@
+Function: void drm_client_dev_unregister ( struct drm_device * dev )
+
+Unregister clients
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  This function releases all clients by calling each client’s drm_client_funcs.unregister callback. The callback function
+is responsibe for releaseing all resources including the client
+itself.

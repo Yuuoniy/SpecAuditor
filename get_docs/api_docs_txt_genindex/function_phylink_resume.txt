@@ -1,0 +1,11 @@
+Function: void phylink_resume ( struct phylink * pl )
+
+handle a network device resume event
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+
+Description
+  Undo the effects of phylink_suspend() , returning the link to an
+operational state.

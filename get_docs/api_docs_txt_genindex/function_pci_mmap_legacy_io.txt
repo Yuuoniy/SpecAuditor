@@ -1,0 +1,18 @@
+Function: int pci_mmap_legacy_io ( struct file * filp , struct kobject * kobj , const struct bin_attribute * attr , struct vm_area_struct * vma )
+
+map legacy PCI IO into user memory space
+
+Parameters
+  struct file *filp
+    open sysfs file
+  struct kobject *kobj
+    kobject corresponding to device to be mapped
+  const struct bin_attribute *attr
+    struct bin_attribute for this file
+  struct vm_area_struct *vma
+    struct vm_area_struct passed to mmap
+
+Description
+  Uses an arch specific callback, pci_mmap_legacy_io_page_range, to mmap
+legacy IO space (first meg of bus space) into application virtual
+memory space. Returns -ENOSYS if the operation isn’t supported

@@ -1,0 +1,10 @@
+Function: int vga_switcheroo_process_delayed_switch ( void )
+
+helper for delayed switching
+
+Parameters
+  void
+    no arguments
+
+Description
+  Process a delayed switch if one is pending.

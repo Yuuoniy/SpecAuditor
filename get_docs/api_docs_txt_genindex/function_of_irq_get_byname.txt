@@ -1,0 +1,9 @@
+Function: int of_irq_get_byname ( struct device_node * dev , const char * name )
+
+Decode a node’s IRQ and return it as a Linux IRQ number
+
+Parameters
+  struct device_node *dev
+    pointer to device tree node
+  const char *name
+    IRQ name

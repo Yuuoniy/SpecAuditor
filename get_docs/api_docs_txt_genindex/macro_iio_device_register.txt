@@ -1,0 +1,7 @@
+Macro: iio_device_register
+
+
+
+Parameters
+  indio_dev
+    Device structure filled by the device driver

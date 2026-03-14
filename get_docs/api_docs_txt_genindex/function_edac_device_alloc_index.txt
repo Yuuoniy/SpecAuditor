@@ -1,0 +1,7 @@
+Function: int edac_device_alloc_index ( void )
+
+Allocate a unique device index number
+
+Parameters
+  void
+    no arguments

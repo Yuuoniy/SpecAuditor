@@ -1,0 +1,16 @@
+Function: void v4l2_m2m_buf_done_and_job_finish ( struct v4l2_m2m_dev * m2m_dev , struct v4l2_m2m_ctx * m2m_ctx , enum vb2_buffer_state state )
+
+return source/destination buffers with state and inform the framework that a job has been finished and have it clean up
+
+Parameters
+  struct v4l2_m2m_dev *m2m_dev
+    opaque pointer to the internal data to handle M2M context
+  struct v4l2_m2m_ctx *m2m_ctx
+    m2m context assigned to the instance given by struct v4l2_m2m_ctx
+  enum vb2_buffer_state state
+    vb2 buffer state passed to v4l2_m2m_buf_done() .
+
+Description
+  Drivers that set V4L2_BUF_CAP_SUPPORTS_M2M_HOLD_CAPTURE_BUF must use this
+function instead of job_finish() to take held buffers into account. It is
+optional for other drivers.

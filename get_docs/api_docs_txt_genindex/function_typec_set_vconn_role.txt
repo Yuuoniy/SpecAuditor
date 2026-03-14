@@ -1,0 +1,13 @@
+Function: void typec_set_vconn_role ( struct typec_port * port , enum typec_role role )
+
+Report VCONN source change
+
+Parameters
+  struct typec_port *port
+    The USB Type-C Port which VCONN role changed
+  enum typec_role role
+    Source when port is sourcing VCONN, or Sink when it’s not
+
+Description
+  This routine is used by the port drivers to report if the VCONN source is
+changes.

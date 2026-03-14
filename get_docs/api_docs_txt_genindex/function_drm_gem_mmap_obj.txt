@@ -1,0 +1,19 @@
+Function: int drm_gem_mmap_obj ( struct drm_gem_object * obj , unsigned long obj_size , struct vm_area_struct * vma )
+
+memory map a GEM object
+
+Parameters
+  struct drm_gem_object *obj
+    the GEM object to map
+  unsigned long obj_size
+    the object size to be mapped, in bytes
+  struct vm_area_struct *vma
+    VMA for the area to be mapped
+
+Description
+  Set up the VMA to prepare mapping of the GEM object using the GEM object’s
+vm_ops. Depending on their requirements, GEM objects can either
+provide a fault handler in their vm_ops (in which case any accesses to
+the object will be trapped, to perform migration, GTT binding, surface
+register allocation, or performance monitoring), or mmap the buffer memory
+synchronously after calling drm_gem_mmap_obj.

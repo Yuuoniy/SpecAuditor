@@ -1,0 +1,9 @@
+Struct: struct drm_asahi_timestamps
+
+Describe timestamp writes.
+
+Members
+  start
+    Timestamp recorded at the start of the operation
+  end
+    Timestamp recorded at the end of the operation

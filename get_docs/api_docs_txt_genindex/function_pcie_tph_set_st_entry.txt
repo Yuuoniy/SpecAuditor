@@ -1,0 +1,16 @@
+Function: int pcie_tph_set_st_entry ( struct pci_dev * pdev , unsigned int index , u16 tag )
+
+Set Steering Tag in the ST table entry
+
+Parameters
+  struct pci_dev *pdev
+    PCI device
+  unsigned int index
+    ST table entry index
+  u16 tag
+    Steering Tag to be written
+
+Description
+  Figure out the proper location of ST table, either in the MSI-X table or
+in the TPH Extended Capability space, and write the Steering Tag into
+the ST entry pointed by index.

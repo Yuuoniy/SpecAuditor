@@ -1,0 +1,7 @@
+Function: void vb2_clear_last_buffer_dequeued ( struct vb2_queue * q )
+
+clear last buffer dequeued flag of queue.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.

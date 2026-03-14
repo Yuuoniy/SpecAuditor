@@ -1,0 +1,11 @@
+Function: void i2c_atr_delete ( struct i2c_atr * atr )
+
+Delete an I2C ATR helper.
+
+Parameters
+  struct i2c_atr *atr
+    I2C ATR helper to be deleted.
+
+Description
+  Precondition: all the adapters added with i2c_atr_add_adapter() must be
+removed by calling i2c_atr_del_adapter() .

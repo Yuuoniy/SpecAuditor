@@ -1,0 +1,12 @@
+Function: bool intel_bios_is_dsi_present ( struct intel_display * display , enum port * port )
+
+is DSI present in VBT
+
+Parameters
+  struct intel_display *display
+    display device instance
+  enum port *port
+    port for DSI if present
+
+Description
+  Return true if DSI is present, and return the port in port .

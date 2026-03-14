@@ -1,0 +1,18 @@
+Function: void pci_free_irq ( struct pci_dev * dev , unsigned int nr , void * dev_id )
+
+free an interrupt allocated with pci_request_irq
+
+Parameters
+  struct pci_dev *dev
+    PCI device to operate on
+  unsigned int nr
+    device-relative interrupt vector index (0-based).
+  void *dev_id
+    Device identity to free
+
+Description
+  Remove an interrupt handler. The handler is removed and if the interrupt
+line is no longer in use by any driver it is disabled.  The caller must
+ensure the interrupt is disabled on the device before calling this function.
+The function does not return until any executing interrupts for this IRQ
+have completed.

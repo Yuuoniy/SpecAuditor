@@ -1,0 +1,7 @@
+Function: uint32_t amdgpu_vm_get_block_size ( uint64_t vm_size )
+
+calculate VM page table size as power of two
+
+Parameters
+  uint64_t vm_size
+    VM size

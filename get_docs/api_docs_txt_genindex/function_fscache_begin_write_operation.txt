@@ -1,0 +1,13 @@
+Function: int fscache_begin_write_operation ( struct netfs_cache_resources * cres , struct fscache_cookie * cookie )
+
+Begin a write operation for the netfs lib
+
+Parameters
+  struct netfs_cache_resources *cres
+    The cache resources for the write being performed
+  struct fscache_cookie *cookie
+    The cookie representing the cache object
+
+Description
+  Begin a write operation on behalf of the netfs helper library. cres indicates the cache resources to which the operation state should be
+attached; cookie indicates the cache object that will be accessed.

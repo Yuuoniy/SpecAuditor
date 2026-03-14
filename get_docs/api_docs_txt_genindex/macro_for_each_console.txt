@@ -1,0 +1,10 @@
+Macro: for_each_console
+
+
+
+Parameters
+  con
+    struct console pointer used as loop cursor
+
+Description
+  The console list and the console.flags are immutable while iterating.

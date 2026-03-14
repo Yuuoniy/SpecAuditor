@@ -1,0 +1,18 @@
+Function: void blk_add_trace_rq ( struct request * rq , blk_status_t error , unsigned int nr_bytes , u32 what , u64 cgid )
+
+Add a trace for a request oriented action
+
+Parameters
+  struct request *rq
+    the source request
+  blk_status_t error
+    return status to log
+  unsigned int nr_bytes
+    number of completed bytes
+  u32 what
+    the action
+  u64 cgid
+    the cgroup info
+
+Description
+  Records an action against a request. Will log the bio offset + size.

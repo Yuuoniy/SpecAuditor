@@ -1,0 +1,23 @@
+Macro: phy_read_mmd_poll_timeout
+
+
+
+Parameters
+  phydev
+    The phy_device struct
+  devaddr
+    The MMD to read from
+  regnum
+    The register on the MMD to read
+  val
+    Variable to read the register into
+  cond
+    Break condition (usually involving val )
+  sleep_us
+    Maximum time to sleep between reads in us (0 tight-loops). Please
+read usleep_range() function description for details and
+limitations.
+  timeout_us
+    Timeout in us, 0 means never timeout
+  sleep_before_read
+    if it is true, sleep sleep_us before read.

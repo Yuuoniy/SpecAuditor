@@ -1,0 +1,15 @@
+Function: void named_distribute ( struct net * net , struct sk_buff_head * list , u32 dnode , struct list_head * pls , u16 seqno )
+
+prepare name info for bulk distribution to another node
+
+Parameters
+  struct net *net
+    the associated network namespace
+  struct sk_buff_head *list
+    list of messages (buffers) to be returned from this function
+  u32 dnode
+    node to be updated
+  struct list_head *pls
+    linked list of publication items to be packed into buffer chain
+  u16 seqno
+    sequence number for this message

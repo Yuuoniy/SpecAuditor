@@ -1,0 +1,13 @@
+Macro: DRM_PANTHOR_OBJ_ARRAY
+
+
+
+Parameters
+  cnt
+    Number of elements in the array.
+  ptr
+    Pointer to the array to pass to the kernel.
+
+Description
+  Macro initializing a drm_panthor_obj_array based on the object size as known
+by userspace.

@@ -1,0 +1,13 @@
+Function: int rio_send_doorbell ( struct rio_dev * rdev , u16 data )
+
+Send a doorbell message to a device
+
+Parameters
+  struct rio_dev *rdev
+    RIO device
+  u16 data
+    Doorbell message data
+
+Description
+  Send a doorbell message to a RIO device. The doorbell message
+has a 16-bit info field provided by the data argument.

@@ -1,0 +1,10 @@
+Function: void netif_start_queue ( struct net_device * dev )
+
+allow transmit
+
+Parameters
+  struct net_device *dev
+    network device
+
+Description
+  Allow upper layers to call the device hard_start_xmit routine.

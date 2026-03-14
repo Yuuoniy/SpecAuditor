@@ -1,0 +1,17 @@
+Function: int ssh_rtl_init ( struct ssh_rtl * rtl , struct serdev_device * serdev , const struct ssh_rtl_ops * ops )
+
+Initialize request transport layer.
+
+Parameters
+  struct ssh_rtl *rtl
+    The request transport layer to initialize.
+  struct serdev_device *serdev
+    The underlying serial device, i.e. the lower-level transport.
+  const struct ssh_rtl_ops *ops
+    Request transport layer operations.
+
+Description
+  Initializes the given request transport layer and associated packet
+transport layer. Transmitter and receiver threads must be started
+separately via ssh_rtl_start() , after the request-layer has been
+initialized and the lower-level serial device layer has been set up.

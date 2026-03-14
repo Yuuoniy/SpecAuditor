@@ -1,0 +1,14 @@
+Function: void drm_self_refresh_helper_alter_state ( struct drm_atomic_state * state )
+
+Alters the atomic state for SR exit
+
+Parameters
+  struct drm_atomic_state *state
+    the state currently being checked
+
+Description
+  Called at the end of atomic check. This function checks the state for flags
+incompatible with self refresh exit and changes them. This is a bit
+disingenuous since userspace is expecting one thing and we’re giving it
+another. However in order to keep self refresh entirely hidden from
+userspace, this is required.

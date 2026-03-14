@@ -1,0 +1,12 @@
+Function: void read_seqlock_excl_irq ( seqlock_t * sl )
+
+start a non-interruptible seqlock_t locking reader section
+
+Parameters
+  seqlock_t *sl
+    Pointer to seqlock_t
+
+Description
+  _irq variant of read_seqlock_excl() . Use this only if the seqlock_t
+write side section, or other read sections , can be invoked from a
+hardirq context.

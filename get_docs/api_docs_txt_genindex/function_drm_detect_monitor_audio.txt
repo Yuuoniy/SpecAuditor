@@ -1,0 +1,14 @@
+Function: bool drm_detect_monitor_audio ( const struct edid * edid )
+
+check monitor audio capability
+
+Parameters
+  const struct edid *edid
+    EDID block to scan
+
+Description
+  Monitor should have CEA extension block.
+If monitor has ‘basic audio’, but no CEA audio blocks, it’s ‘basic
+audio’ only. If there is any audio extension block and supported
+audio format, assume at least ‘basic audio’ support, even if ‘basic
+audio’ is not defined in EDID.

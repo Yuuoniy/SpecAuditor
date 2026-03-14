@@ -1,0 +1,11 @@
+Function: int dvb_net_init ( struct dvb_adapter * adap , struct dvb_net * dvbnet , struct dmx_demux * dmxdemux )
+
+nitializes a digital TV network device and registers it.
+
+Parameters
+  struct dvb_adapter *adap
+    pointer to struct dvb_adapter .
+  struct dvb_net *dvbnet
+    pointer to struct dvb_net .
+  struct dmx_demux *dmxdemux
+    pointer to struct dmx_demux .

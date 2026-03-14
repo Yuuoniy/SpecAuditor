@@ -1,0 +1,15 @@
+Function: void tipc_rcv ( struct net * net , struct sk_buff * skb , struct tipc_bearer * b )
+
+process TIPC packets/messages arriving from off-node
+
+Parameters
+  struct net *net
+    the applicable net namespace
+  struct sk_buff *skb
+    TIPC packet
+  struct tipc_bearer *b
+    pointer to bearer message arrived on
+
+Description
+  Invoked with no locks held. Bearer pointer must point to a valid bearer
+structure (i.e. cannot be NULL), but bearer can be inactive.

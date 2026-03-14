@@ -1,0 +1,10 @@
+Function: int security_binder_set_context_mgr ( const struct cred * mgr )
+
+Check if becoming binder ctx mgr is ok
+
+Parameters
+  const struct cred *mgr
+    task credentials of current binder process
+
+Description
+  Check whether mgr is allowed to be the binder context manager.

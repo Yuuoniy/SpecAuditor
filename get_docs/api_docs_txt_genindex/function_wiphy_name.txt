@@ -1,0 +1,7 @@
+Function: const char * wiphy_name ( const struct wiphy * wiphy )
+
+get wiphy name
+
+Parameters
+  const struct wiphy *wiphy
+    The wiphy whose name to return

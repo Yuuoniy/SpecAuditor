@@ -1,0 +1,3 @@
+Enum: enum kunit_status
+
+Type of result for a test or test suite

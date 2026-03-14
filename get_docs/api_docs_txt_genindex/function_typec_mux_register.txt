@@ -1,0 +1,15 @@
+Function: struct typec_mux_dev * typec_mux_register ( struct device * parent , const struct typec_mux_desc * desc )
+
+Register Multiplexer routing USB Type-C pins
+
+Parameters
+  struct device *parent
+    Parent device
+  const struct typec_mux_desc *desc
+    Multiplexer description
+
+Description
+  USB Type-C connectors can be used for alternate modes of operation besides
+USB when Accessory/Alternate Modes are supported. With some of those modes,
+the pins on the connector need to be reconfigured. This function registers
+multiplexer switches routing the pins on the connector.

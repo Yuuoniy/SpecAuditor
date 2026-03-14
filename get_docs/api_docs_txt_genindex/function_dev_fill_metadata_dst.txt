@@ -1,0 +1,14 @@
+Function: int dev_fill_metadata_dst ( struct net_device * dev , struct sk_buff * skb )
+
+Retrieve tunnel egress information.
+
+Parameters
+  struct net_device *dev
+    targeted interface
+  struct sk_buff *skb
+    The packet.
+
+Description
+  For better visibility of tunnel traffic OVS needs to retrieve
+egress tunnel information for a packet. Following API allows
+user to get this info.

@@ -1,0 +1,19 @@
+Function: int sparse_keymap_setup ( struct input_dev * dev , const struct key_entry * keymap , int ( * setup ) ( struct input_dev * , struct key_entry * ) )
+
+set up sparse keymap for an input device
+
+Parameters
+  struct input_dev *dev
+    Input device
+  const struct key_entry *keymap
+    Keymap in form of array of key_entry structures ending
+with KE_END type entry
+  int (*setup)(struct input_dev *, struct key_entry *)
+    Function that can be used to adjust keymap entries
+depending on device’s needs, may be NULL
+
+Description
+  The function calculates size and allocates copy of the original
+keymap after which sets up input device event bits appropriately.
+The allocated copy of the keymap is automatically freed when it
+is no longer needed.

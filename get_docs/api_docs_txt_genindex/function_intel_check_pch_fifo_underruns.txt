@@ -1,0 +1,12 @@
+Function: void intel_check_pch_fifo_underruns ( struct intel_display * display )
+
+check for PCH fifo underruns immediately
+
+Parameters
+  struct intel_display *display
+    display device instance
+
+Description
+  Check for PCH fifo underruns immediately. Useful on CPT/PPT where the shared
+error interrupt may have been disabled, and so PCH fifo underruns won’t
+necessarily raise an interrupt.

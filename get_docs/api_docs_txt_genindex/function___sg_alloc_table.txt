@@ -1,0 +1,26 @@
+Function: int __sg_alloc_table ( struct sg_table * table , unsigned int nents , unsigned int max_ents , struct scatterlist * first_chunk , unsigned int nents_first_chunk , gfp_t gfp_mask , sg_alloc_fn * alloc_fn )
+
+Allocate and initialize an sg table with given allocator
+
+Parameters
+  struct sg_table *table
+    The sg table header to use
+  unsigned int nents
+    Number of entries in sg list
+  unsigned int max_ents
+    The maximum number of entries the allocator returns per call
+  struct scatterlist *first_chunk
+    first SGL if preallocated (may be NULL )
+  unsigned int nents_first_chunk
+    Number of entries in the (preallocated) first
+scatterlist chunk, 0 means no such preallocated chunk provided by user
+  gfp_t gfp_mask
+    GFP allocation mask
+  sg_alloc_fn *alloc_fn
+    Allocator to use
+
+Description
+  This function returns a table nents long. The allocator is
+defined to return scatterlist chunks of maximum size max_ents .
+Thus if nents is bigger than max_ents , the scatterlists will be
+chained in units of max_ents .

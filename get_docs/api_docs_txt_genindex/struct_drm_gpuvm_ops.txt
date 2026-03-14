@@ -1,0 +1,43 @@
+Struct: struct drm_gpuvm_ops
+
+callbacks for split/merge steps
+
+Members
+  vm_free
+    called when the last reference of a struct drm_gpuvm is
+dropped This callback is mandatory.
+  op_alloc
+    called when the drm_gpuvm allocates
+a struct drm_gpuva_op Some drivers may want to embed struct drm_gpuva_op into driver
+specific structures. By implementing this callback drivers can
+allocate memory accordingly. This callback is optional.
+  op_free
+    called when the drm_gpuvm frees a struct drm_gpuva_op Some drivers may want to embed struct drm_gpuva_op into driver
+specific structures. By implementing this callback drivers can
+free the previously allocated memory accordingly. This callback is optional.
+  vm_bo_alloc
+    called when the drm_gpuvm allocates
+a struct drm_gpuvm_bo Some drivers may want to embed struct drm_gpuvm_bo into driver
+specific structures. By implementing this callback drivers can
+allocate memory accordingly. This callback is optional.
+  vm_bo_free
+    called when the drm_gpuvm frees a struct drm_gpuvm_bo Some drivers may want to embed struct drm_gpuvm_bo into driver
+specific structures. By implementing this callback drivers can
+free the previously allocated memory accordingly. This callback is optional.
+  vm_bo_validate
+    called from drm_gpuvm_validate() Drivers receive this callback for every evicted drm_gem_object being
+mapped in the corresponding drm_gpuvm . Typically, drivers would call their driver specific variant of ttm_bo_validate() from within this callback.
+  sm_step_map
+    called from drm_gpuvm_sm_map to finally insert the
+mapping once all previous steps were completed The priv pointer matches the one the driver passed to drm_gpuvm_sm_map or drm_gpuvm_sm_unmap , respectively. Can be NULL if drm_gpuvm_sm_map is used.
+  sm_step_remap
+    called from drm_gpuvm_sm_map and drm_gpuvm_sm_unmap to split up an existent mapping This callback is called when existent mapping needs to be split up.
+This is the case when either a newly requested mapping overlaps or
+is enclosed by an existent mapping or a partial unmap of an existent
+mapping is requested. The priv pointer matches the one the driver passed to drm_gpuvm_sm_map or drm_gpuvm_sm_unmap , respectively. Can be NULL if neither drm_gpuvm_sm_map nor drm_gpuvm_sm_unmap is
+used.
+  sm_step_unmap
+    called from drm_gpuvm_sm_map and drm_gpuvm_sm_unmap to unmap an existing mapping This callback is called when existing mapping needs to be unmapped.
+This is the case when either a newly requested mapping encloses an
+existing mapping or an unmap of an existing mapping is requested. The priv pointer matches the one the driver passed to drm_gpuvm_sm_map or drm_gpuvm_sm_unmap , respectively. Can be NULL if neither drm_gpuvm_sm_map nor drm_gpuvm_sm_unmap is
+used.

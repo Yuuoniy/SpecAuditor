@@ -1,0 +1,2 @@
+Enum: enum iommufd_hw_capabilities
+

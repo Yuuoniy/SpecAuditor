@@ -1,0 +1,12 @@
+Function: int serial8250_register_8250_port ( const struct uart_8250_port * up )
+
+register a serial port
+
+Parameters
+  const struct uart_8250_port *up
+    serial port template
+
+Description
+  Configure the serial port specified by the request. If the
+port exists and is in use, it is hung up and unregistered
+first.

@@ -1,0 +1,3 @@
+Enum: enum ieee80211_conf_flags
+
+configuration flags

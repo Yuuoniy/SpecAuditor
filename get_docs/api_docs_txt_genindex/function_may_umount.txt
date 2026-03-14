@@ -1,0 +1,13 @@
+Function: int may_umount ( struct vfsmount * mnt )
+
+check if a mount point is busy
+
+Parameters
+  struct vfsmount *mnt
+    root of mount
+
+Description
+  This is called to check if a mount point has any
+open files, pwds, chroots or sub mounts. If the
+mount has sub mounts this will return busy
+regardless of whether the sub mounts are busy.

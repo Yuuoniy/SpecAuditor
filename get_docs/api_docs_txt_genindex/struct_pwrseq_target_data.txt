@@ -1,0 +1,14 @@
+Struct: struct pwrseq_target_data
+
+Configuration of a power sequencing target.
+
+Members
+  name
+    Name of the target.
+  unit
+    Final unit that this target must reach in order to be considered
+enabled.
+  post_enable
+    Callback run after the target unit has been enabled, after the state lock has been released. It’s useful for implementing
+boot-up delays without blocking other users from powering up
+using the same power sequencer.

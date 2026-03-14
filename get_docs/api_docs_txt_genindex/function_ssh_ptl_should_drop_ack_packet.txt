@@ -1,0 +1,15 @@
+Function: bool ssh_ptl_should_drop_ack_packet ( void )
+
+Error injection hook to drop ACK packets.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Useful to test detection and handling of automated re-transmits by the EC.
+Specifically of packets that the EC considers not-ACKed but the driver
+already considers ACKed (due to dropped ACK). In this case, the EC
+re-transmits the packet-to-be-ACKed and the driver should detect it as
+duplicate/already handled. Note that the driver should still send an ACK
+for the re-transmitted packet.

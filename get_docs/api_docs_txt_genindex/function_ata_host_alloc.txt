@@ -1,0 +1,14 @@
+Function: struct ata_host * ata_host_alloc ( struct device * dev , int n_ports )
+
+allocate and init basic ATA host resources
+
+Parameters
+  struct device *dev
+    generic device this host is associated with
+  int n_ports
+    the number of ATA ports associated with this host
+
+Description
+  Allocate and initialize basic ATA host resources.  LLD calls
+this function to allocate a host, initializes it fully and
+attaches it using ata_host_register() .

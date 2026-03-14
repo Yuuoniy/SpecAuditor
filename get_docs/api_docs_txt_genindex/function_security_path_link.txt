@@ -1,0 +1,14 @@
+Function: int security_path_link ( struct dentry * old_dentry , const struct path * new_dir , struct dentry * new_dentry )
+
+Check if creating a hard link is allowed
+
+Parameters
+  struct dentry *old_dentry
+    existing file
+  const struct path *new_dir
+    new parent directory
+  struct dentry *new_dentry
+    new link
+
+Description
+  Check permission before creating a new hard link to a file.

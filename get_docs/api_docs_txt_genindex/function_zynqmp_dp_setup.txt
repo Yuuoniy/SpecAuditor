@@ -1,0 +1,15 @@
+Function: int zynqmp_dp_setup ( struct zynqmp_dp * dp , u8 bw_code , u8 lane_cnt , bool enhanced , bool downspread )
+
+Set up major link parameters
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure
+  u8 bw_code
+    The link bandwidth as a multiple of 270 MHz
+  u8 lane_cnt
+    The number of lanes to use
+  bool enhanced
+    Use enhanced framing
+  bool downspread
+    Enable spread-spectrum clocking

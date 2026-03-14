@@ -1,0 +1,21 @@
+Function: void aead_request_set_crypt ( struct aead_request * req , struct scatterlist * src , struct scatterlist * dst , unsigned int cryptlen , u8 * iv )
+
+set data buffers
+
+Parameters
+  struct aead_request *req
+    request handle
+  struct scatterlist *src
+    source scatter / gather list
+  struct scatterlist *dst
+    destination scatter / gather list
+  unsigned int cryptlen
+    number of bytes to process from src
+  u8 *iv
+    IV for the cipher operation which must comply with the IV size defined
+by crypto_aead_ivsize()
+
+Description
+  Setting the source data and destination data scatter / gather lists which
+hold the associated data concatenated with the plaintext or ciphertext. See
+below for the authentication tag.

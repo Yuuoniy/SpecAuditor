@@ -1,0 +1,7 @@
+Function: unsigned int irq_get_nr_irqs ( void )
+
+Number of interrupts supported by the system.
+
+Parameters
+  void
+    no arguments

@@ -1,0 +1,10 @@
+Function: int xe_wa_gt_init ( struct xe_gt * gt )
+
+initialize gt with workaround bookkeeping
+
+Parameters
+  struct xe_gt *gt
+    GT instance to initialize
+
+Description
+  Returns 0 for success, negative error code otherwise.

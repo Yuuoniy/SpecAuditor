@@ -1,0 +1,3 @@
+Enum: enum ethtool_c33_pse_ext_substate_power_not_available
+
+power_not_available states functions. IEEE 802.3-2022 33.2.4.4 Variables

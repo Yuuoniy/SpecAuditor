@@ -1,0 +1,4 @@
+Macro: NTSYNC_IOC_READ_SEM
+
+Read the current state of a semaphore object. Takes a pointer to
+struct ntsync_sem_args , which is used as follows: count On output, contains the current count of the semaphore. max On output, contains the maximum count of the semaphore.

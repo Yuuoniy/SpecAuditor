@@ -1,0 +1,10 @@
+Function: int devfreq_update_target ( struct devfreq * devfreq , unsigned long freq )
+
+Reevaluate the device and configure frequency on the final stage.
+
+Parameters
+  struct devfreq *devfreq
+    the devfreq instance.
+  unsigned long freq
+    the new frequency of parent device. This argument
+is only used for devfreq device using passive governor.

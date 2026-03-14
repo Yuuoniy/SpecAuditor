@@ -1,0 +1,12 @@
+Function: notrace bool rcu_is_watching ( void )
+
+RCU read-side critical sections permitted on current CPU?
+
+Parameters
+  void
+    no arguments
+
+Description
+  Return true if RCU is watching the running CPU and false otherwise.
+An true return means that this CPU can safely enter RCU read-side
+critical sections.

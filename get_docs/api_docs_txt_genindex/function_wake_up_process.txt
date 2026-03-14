@@ -1,0 +1,11 @@
+Function: int wake_up_process ( struct task_struct * p )
+
+Wake up a specific process
+
+Parameters
+  struct task_struct *p
+    The process to be woken up.
+
+Description
+  Attempt to wake up the nominated process and move it to the set of runnable
+processes.

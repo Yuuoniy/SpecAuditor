@@ -1,0 +1,12 @@
+Function: void mutex_lock_io ( struct mutex * lock )
+
+Acquire the mutex and mark the process as waiting for I/O
+
+Parameters
+  struct mutex *lock
+    The mutex to be acquired.
+
+Description
+  Lock the mutex like mutex_lock() .  While the task is waiting for this
+mutex, it will be accounted as being in the IO wait state by the
+scheduler.

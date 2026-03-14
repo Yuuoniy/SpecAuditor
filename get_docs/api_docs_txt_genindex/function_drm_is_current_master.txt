@@ -1,0 +1,11 @@
+Function: bool drm_is_current_master ( struct drm_file * fpriv )
+
+checks whether priv is the current master
+
+Parameters
+  struct drm_file *fpriv
+    DRM file private
+
+Description
+  Checks whether fpriv is current master on its device. This decides whether a
+client is allowed to run DRM_MASTER IOCTLs.

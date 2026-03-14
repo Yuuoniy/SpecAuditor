@@ -1,0 +1,8 @@
+Struct: struct phy_plca_status
+
+Status of the PLCA (Physical Layer Collision Avoidance) Reconciliation Sublayer.
+
+Members
+  pst
+    The PLCA status as reported by the PST bit in the PLCA STATUS
+register(31.CA03), indicating BEACON activity.

@@ -1,0 +1,11 @@
+Function: struct device * iscsi_find_flashnode_conn ( struct iscsi_bus_flash_session * fnode_sess )
+
+finds flashnode connection entry
+
+Parameters
+  struct iscsi_bus_flash_session *fnode_sess
+    pointer to parent flashnode session entry
+
+Description
+  Finds the flashnode connection object comparing the data passed using logic
+defined in passed function pointer

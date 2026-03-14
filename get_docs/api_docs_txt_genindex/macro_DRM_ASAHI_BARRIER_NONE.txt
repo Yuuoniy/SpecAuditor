@@ -1,0 +1,27 @@
+Macro: DRM_ASAHI_BARRIER_NONE
+
+
+
+Members
+  cmd_type
+    One of drm_asahi_cmd_type
+  size
+    Size of this command, not including this header. For hardware commands, this enables extensibility of commands without
+requiring extra command types. Passing a command that is shorter
+than expected is explicitly allowed for backwards-compatibility.
+Truncated fields will be zeroed. For the synthetic attachment setting commands, this implicitly
+encodes the number of attachments. These commands take multiple
+fixed-size drm_asahi_attachment structures as their payload, so size
+equals number of attachments * sizeof( struct drm_asahi_attachment ).
+  vdm_barrier
+    VDM (render) command index to wait on. Barriers are indices relative to the beginning of a given submit. A
+barrier of 0 waits on commands submitted to the respective subqueue
+in previous submit ioctls. A barrier of N waits on N previous
+commands on the subqueue within the current submit ioctl. As a
+special case, passing DRM_ASAHI_BARRIER_NONE avoids waiting on any
+commands in the subqueue. Examples: 0: This waits on all previous work. NONE: This does not wait for anything on this subqueue. 1: This waits on the first render command in the submit.
+This is valid only if there are multiple render commands in the
+same submit. Barriers are valid only for hardware commands. Synthetic software
+commands to set attachments must pass NONE here.
+  cdm_barrier
+    CDM (compute) command index to wait on. See vdm_barrier , and replace VDM/render with CDM/compute.

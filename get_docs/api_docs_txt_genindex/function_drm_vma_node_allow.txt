@@ -1,0 +1,13 @@
+Function: int drm_vma_node_allow ( struct drm_vma_offset_node * node , struct drm_file * tag )
+
+Add open-file to list of allowed users
+
+Parameters
+  struct drm_vma_offset_node *node
+    Node to modify
+  struct drm_file *tag
+    Tag of file to remove
+
+Description
+  Add tag to the list of allowed open-files for this node. If tag is
+already on this list, the ref-count is incremented.

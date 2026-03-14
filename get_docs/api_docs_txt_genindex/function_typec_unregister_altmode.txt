@@ -1,0 +1,10 @@
+Function: void typec_unregister_altmode ( struct typec_altmode * adev )
+
+Unregister Alternate Mode
+
+Parameters
+  struct typec_altmode *adev
+    The alternate mode to be unregistered
+
+Description
+  Unregister device created with typec_partner_register_altmode() , typec_plug_register_altmode() or typec_port_register_altmode() .

@@ -1,0 +1,7 @@
+Function: void akcipher_request_free ( struct akcipher_request * req )
+
+zeroize and free public key request
+
+Parameters
+  struct akcipher_request *req
+    request to free

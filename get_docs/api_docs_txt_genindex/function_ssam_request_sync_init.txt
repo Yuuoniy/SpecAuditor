@@ -1,0 +1,14 @@
+Function: int ssam_request_sync_init ( struct ssam_request_sync * rqst , enum ssam_request_flags flags )
+
+Initialize a synchronous request struct.
+
+Parameters
+  struct ssam_request_sync *rqst
+    The request to initialize.
+  enum ssam_request_flags flags
+    The request flags.
+
+Description
+  Initializes the given request struct. Does not initialize the request
+message data. This has to be done explicitly after this call via ssam_request_sync_set_data() and the actual message data has to be written
+via ssam_request_write_data() .

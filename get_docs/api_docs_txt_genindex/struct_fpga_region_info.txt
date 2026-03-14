@@ -1,0 +1,13 @@
+Struct: struct fpga_region_info
+
+collection of parameters an FPGA Region
+
+Members
+  mgr
+    fpga region manager
+  compat_id
+    FPGA region id for compatibility check.
+  priv
+    fpga region private data
+  get_bridges
+    optional function to get bridges to a list

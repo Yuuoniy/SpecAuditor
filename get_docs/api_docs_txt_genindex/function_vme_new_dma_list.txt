@@ -1,0 +1,11 @@
+Function: struct vme_dma_list * vme_new_dma_list ( struct vme_resource * resource )
+
+Create new VME DMA list.
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME DMA resource.
+
+Description
+  Create a new VME DMA list. It is the responsibility of the user to free
+the list once it is no longer required with vme_dma_list_free() .

@@ -1,0 +1,13 @@
+Function: void __ata_port_freeze ( struct ata_port * ap )
+
+freeze port
+
+Parameters
+  struct ata_port *ap
+    ATA port to freeze
+
+Description
+  This function is called when HSM violation or some other
+condition disrupts normal operation of the port.  Frozen port
+is not allowed to perform any operation until the port is
+thawed, which usually follows a successful reset.

@@ -1,0 +1,10 @@
+Function: void iio_trigger_poll ( struct iio_trigger * trig )
+
+Call the IRQ trigger handler of the consumers
+
+Parameters
+  struct iio_trigger *trig
+    trigger which occurred
+
+Description
+  This function should only be called from a hard IRQ context.

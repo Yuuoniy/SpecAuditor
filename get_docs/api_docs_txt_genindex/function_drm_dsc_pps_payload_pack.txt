@@ -1,0 +1,18 @@
+Function: void drm_dsc_pps_payload_pack ( struct drm_dsc_picture_parameter_set * pps_payload , const struct drm_dsc_config * dsc_cfg )
+
+Populates the DSC PPS
+
+Parameters
+  struct drm_dsc_picture_parameter_set *pps_payload
+    Bitwise struct for DSC Picture Parameter Set. This is defined
+by struct drm_dsc_picture_parameter_set
+  const struct drm_dsc_config *dsc_cfg
+    DSC Configuration data filled by driver as defined by struct drm_dsc_config
+
+Description
+  DSC source device sends a picture parameter set (PPS) containing the
+information required by the sink to decode the compressed frame. Driver
+populates the DSC PPS struct using the DSC configuration parameters in
+the order expected by the DSC Display Sink device. For the DSC, the sink
+device expects the PPS payload in big endian format for fields
+that span more than 1 byte.

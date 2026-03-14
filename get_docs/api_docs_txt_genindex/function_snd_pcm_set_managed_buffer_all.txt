@@ -1,0 +1,19 @@
+Function: int snd_pcm_set_managed_buffer_all ( struct snd_pcm * pcm , int type , struct device * data , size_t size , size_t max )
+
+set up buffer management for all substreams for all substreams
+
+Parameters
+  struct snd_pcm *pcm
+    the pcm instance
+  int type
+    DMA type (SNDRV_DMA_TYPE_*)
+  struct device *data
+    DMA type dependent data
+  size_t size
+    the requested pre-allocation size in bytes
+  size_t max
+    the max. allowed pre-allocation size
+
+Description
+  Do pre-allocation to all substreams of the given pcm for the specified DMA
+type and size, and set the managed_buffer_alloc flag to each substream.

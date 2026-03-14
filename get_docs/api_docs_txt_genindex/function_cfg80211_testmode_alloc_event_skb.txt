@@ -1,0 +1,16 @@
+Function: struct sk_buff * cfg80211_testmode_alloc_event_skb ( struct wiphy * wiphy , int approxlen , gfp_t gfp )
+
+allocate testmode event
+
+Parameters
+  struct wiphy *wiphy
+    the wiphy
+  int approxlen
+    an upper bound of the length of the data that will
+be put into the skb
+  gfp_t gfp
+    allocation flags
+
+Description
+  This function allocates and pre-fills an skb for an event on the
+testmode multicast group.

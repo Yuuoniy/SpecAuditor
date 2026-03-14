@@ -1,0 +1,23 @@
+Function: int mptscsih_IssueTaskMgmt ( MPT_SCSI_HOST * hd , u8 type , u8 channel , u8 id , u64 lun , int ctx2abort , ulong timeout )
+
+Generic send Task Management function.
+
+Parameters
+  MPT_SCSI_HOST *hd
+    Pointer to MPT_SCSI_HOST structure
+  u8 type
+    Task Management type
+  u8 channel
+    channel number for task management
+  u8 id
+    Logical Target ID for reset (if appropriate)
+  u64 lun
+    Logical Unit for reset (if appropriate)
+  int ctx2abort
+    Context for the task to be aborted (if appropriate)
+  ulong timeout
+    timeout for task management control
+
+Description
+  Remark: _HardResetHandler can be invoked from an interrupt thread (timer)
+or a non-interrupt thread.  In the former, must not call schedule() .

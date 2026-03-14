@@ -1,0 +1,7 @@
+Function: int snd_pcm_format_cpu_endian ( snd_pcm_format_t format )
+
+Check the PCM format is CPU-endian
+
+Parameters
+  snd_pcm_format_t format
+    the format to check

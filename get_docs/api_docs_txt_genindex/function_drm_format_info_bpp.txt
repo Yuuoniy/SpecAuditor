@@ -1,0 +1,9 @@
+Function: unsigned int drm_format_info_bpp ( const struct drm_format_info * info , int plane )
+
+number of bits per pixel
+
+Parameters
+  const struct drm_format_info *info
+    pixel format info
+  int plane
+    plane index

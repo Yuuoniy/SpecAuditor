@@ -1,0 +1,14 @@
+Function: int cpupri_find_fitness ( struct cpupri * cp , struct task_struct * p , struct cpumask * lowest_mask , bool ( * fitness_fn ) ( struct task_struct * p , int cpu ) )
+
+find the best (lowest-pri) CPU in the system
+
+Parameters
+  struct cpupri *cp
+    The cpupri context
+  struct task_struct *p
+    The task
+  struct cpumask *lowest_mask
+    A mask to fill in with selected CPUs (or NULL)
+  bool (*fitness_fn)(struct task_struct *p, int cpu)
+    A pointer to a function to do custom checks whether the CPU
+fits a specific criteria so that we only return those CPUs.

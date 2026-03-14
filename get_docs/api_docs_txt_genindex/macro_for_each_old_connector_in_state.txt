@@ -1,0 +1,19 @@
+Macro: for_each_old_connector_in_state
+
+
+
+Parameters
+  __state
+    struct drm_atomic_state pointer
+  connector
+    struct drm_connector iteration cursor
+  old_connector_state
+    struct drm_connector_state iteration cursor for the
+old state
+  __i
+    int iteration cursor, for macro-internal use
+
+Description
+  This iterates over all connectors in an atomic update, tracking only the old
+state. This is useful in disable functions, where we need the old state the
+hardware is still in.

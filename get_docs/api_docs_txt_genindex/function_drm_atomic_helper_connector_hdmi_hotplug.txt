@@ -1,0 +1,12 @@
+Function: void drm_atomic_helper_connector_hdmi_hotplug ( struct drm_connector * connector , enum drm_connector_status status )
+
+Handle the hotplug event for the HDMI connector
+
+Parameters
+  struct drm_connector *connector
+    A pointer to the HDMI connector
+  enum drm_connector_status status
+    Connection status
+
+Description
+  This function should be called as a part of the . detect() / . detect_ctx() callbacks for all status changes.

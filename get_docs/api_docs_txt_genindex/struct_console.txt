@@ -1,0 +1,109 @@
+Struct: struct console
+
+The console descriptor structure
+
+Members
+  name
+    The name of the console driver
+  write
+    Legacy write callback to output messages (Optional)
+  read
+    Read callback for console input (Optional)
+  device
+    The underlying TTY device driver (Optional)
+  unblank
+    Callback to unblank the console (Optional)
+  setup
+    Callback for initializing the console (Optional)
+  exit
+    Callback for teardown of the console (Optional)
+  match
+    Callback for matching a console (Optional)
+  flags
+    Console flags. See enum cons_flags
+  index
+    Console index, e.g. port number
+  cflag
+    TTY control mode flags
+  ispeed
+    TTY input speed
+  ospeed
+    TTY output speed
+  seq
+    Sequence number of the next ringbuffer record to print
+  dropped
+    Number of unreported dropped ringbuffer records
+  data
+    Driver private data
+  node
+    hlist node for the console list
+  write_atomic
+    NBCON callback to write out text in any context. (Optional) This callback is called with the console already acquired. However,
+a higher priority context is allowed to take it over by default. The callback must call nbcon_enter_unsafe() and nbcon_exit_unsafe() around any code where the takeover is not safe, for example, when
+manipulating the serial port registers. nbcon_enter_unsafe() will fail if the context has lost the console
+ownership in the meantime. In this case, the callback is no longer
+allowed to go forward. It must back out immediately and carefully.
+The buffer content is also no longer trusted since it no longer
+belongs to the context. The callback should allow the takeover whenever it is safe. It
+increases the chance to see messages when the system is in trouble.
+If the driver must reacquire ownership in order to finalize or
+revert hardware changes, nbcon_reacquire_nobuf() can be used.
+However, on reacquire the buffer content is no longer available. A
+reacquire cannot be used to resume printing. The callback can be called from any context (including NMI).
+Therefore it must avoid usage of any locking and instead rely
+on the console ownership for synchronization.
+  write_thread
+    NBCON callback to write out text in task context. This callback must be called only in task context with both device_lock() and the nbcon console acquired with
+NBCON_PRIO_NORMAL. The same rules for console ownership verification and unsafe
+sections handling applies as with write_atomic() . The console ownership handling is necessary for synchronization
+against write_atomic() which is synchronized only via the context. The device_lock() provides the primary serialization for operations
+on the device. It might be as relaxed (mutex)[*] or as tight
+(disabled preemption and interrupts) as needed. It allows
+the kthread to operate in the least restrictive mode[**]. [*] Standalone nbcon_context_try_acquire() is not safe with the preemption enabled, see nbcon_owner_matches() . But it
+can be safe when always called in the preemptive context
+under the device_lock() . [**] The device_lock() makes sure that nbcon_context_try_acquire() would never need to spin which is important especially with
+PREEMPT_RT.
+  [*] Standalone nbcon_context_try_acquire() is not safe with
+    the preemption enabled, see nbcon_owner_matches() . But it
+can be safe when always called in the preemptive context
+under the device_lock() .
+  [**] The device_lock() makes sure that nbcon_context_try_acquire()
+    would never need to spin which is important especially with
+PREEMPT_RT.
+  device_lock
+    NBCON callback to begin synchronization with driver code. Console drivers typically must deal with access to the hardware
+via user input/output (such as an interactive login shell) and
+output of kernel messages via printk() calls. This callback is
+called by the printk-subsystem whenever it needs to synchronize
+with hardware access by the driver. It should be implemented to
+use whatever synchronization mechanism the driver is using for
+itself (for example, the port lock for uart serial consoles). The callback is always called from task context. It may use any
+synchronization method required by the driver. IMPORTANT: The callback MUST disable migration. The console driver may be using a synchronization mechanism that already takes
+care of this (such as spinlocks). Otherwise this function must
+explicitly call migrate_disable() . The flags argument is provided as a convenience to the driver. It
+will be passed again to device_unlock() . It can be ignored if the
+driver does not need it.
+  IMPORTANT: The callback MUST disable migration. The console driver
+    may be using a synchronization mechanism that already takes
+care of this (such as spinlocks). Otherwise this function must
+explicitly call migrate_disable() .
+  device_unlock
+    NBCON callback to finish synchronization with driver code. It is the counterpart to device_lock() . This callback is always called from task context. It must
+appropriately re-enable migration (depending on how device_lock() disabled migration). The flags argument is the value of the same variable that was
+passed to device_lock() .
+  nbcon_state
+    State for nbcon consoles
+  nbcon_seq
+    Sequence number of the next record for nbcon to print
+  nbcon_device_ctxt
+    Context available for non-printing operations
+  nbcon_prev_seq
+    Seq num the previous nbcon owner was assigned to print
+  pbufs
+    Pointer to nbcon private buffer
+  kthread
+    Printer kthread for this console
+  rcuwait
+    RCU-safe wait object for kthread waking
+  irq_work
+    Defer kthread waking to IRQ work context

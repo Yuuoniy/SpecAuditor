@@ -1,0 +1,14 @@
+Function: int drm_vblank_work_schedule ( struct drm_vblank_work * work , u64 count , bool nextonmiss )
+
+schedule a vblank work
+
+Parameters
+  struct drm_vblank_work *work
+    vblank work to schedule
+  u64 count
+    target vblank count
+  bool nextonmiss
+    defer until the next vblank if target vblank was missed
+
+Description
+  Schedule work for execution once the crtc vblank count reaches count .

@@ -1,0 +1,11 @@
+Struct: struct typec_device_id
+
+USB Type-C alternate mode identifiers
+
+Members
+  svid
+    Standard or Vendor ID
+  mode
+    Mode index
+  driver_data
+    Driver specific data

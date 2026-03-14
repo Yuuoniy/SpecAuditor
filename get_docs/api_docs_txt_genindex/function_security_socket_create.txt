@@ -1,0 +1,16 @@
+Function: int security_socket_create ( int family , int type , int protocol , int kern )
+
+Check if creating a new socket is allowed
+
+Parameters
+  int family
+    protocol family
+  int type
+    communications type
+  int protocol
+    requested protocol
+  int kern
+    set to 1 if a kernel socket is requested
+
+Description
+  Check permissions prior to creating a new socket.

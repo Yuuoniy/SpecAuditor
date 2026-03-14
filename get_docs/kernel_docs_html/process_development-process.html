@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>A guide to the Kernel Development Process &#8212; The Linux Kernel  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Introduction" href="1.Intro.html" />
+    <link rel="prev" title="The Linux Kernel documentation" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../index.html">The Linux Kernel</a></h1>
+
+
+
+<p class="blurb">6.18.0-rc1</p>
+
+
+
+
+
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+<p>
+<h3 class="kernel-toc-contents">Contents</h3>
+<input type="checkbox" class="kernel-toc-toggle" id = "kernel-toc-toggle" checked>
+<label class="kernel-toc-title" for="kernel-toc-toggle"></label>
+
+<div class="kerneltoc" id="kerneltoc">
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Development process</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="1.Intro.html">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.Process.html">2. How the development process works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.Early-stage.html">3. Early-stage planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.Coding.html">4. Getting the code right</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.Posting.html">5. Posting patches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.Followthrough.html">6. Followthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.AdvancedTopics.html">7. Advanced topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.Conclusion.html">8. For more information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.Conclusion.html#conclusion">9. Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="submitting-patches.html">Submitting patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-of-conduct.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Maintainer handbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">All development-process docs</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core-api/index.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver-api/index.html">Driver APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subsystem-apis.html">Subsystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../locking/index.html">Locking</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license-rules.html">Licensing rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-guide/index.html">Writing documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-tools/index.html">Development tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-tools/testing-overview.html">Testing guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kernel-hacking/index.html">Hacking guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trace/index.html">Tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fault-injection/index.html">Fault injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../livepatch/index.html">Livepatching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">Rust</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kbuild/index.html">Build system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/reporting-issues.html">Reporting issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Userspace tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userspace-api/index.html">Userspace API</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../firmware-guide/index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devicetree/index.html">Firmware and Devicetree</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../arch/index.html">CPU architectures</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging/index.html">Unsorted documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../translations/index.html">Translations</a></li>
+</ul>
+
+</div>
+
+<script type="text/javascript"> <!--
+  var sbar = document.getElementsByClassName("sphinxsidebar")[0];
+  let currents = document.getElementsByClassName("current")
+  if (currents.length) {
+    sbar.scrollTop = currents[currents.length - 1].offsetTop;
+  }
+  --> </script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/process/development-process.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+
+
+
+
+<div class="language-selection">
+English
+
+<ul>
+
+<li><a href="../translations/zh_CN/process/development-process.html">Chinese (Simplified)</a></li>
+
+<li><a href="../translations/zh_TW/process/development-process.html">Chinese (Traditional)</a></li>
+
+<li><a href="../translations/it_IT/process/development-process.html">Italian</a></li>
+
+<li><a href="../translations/sp_SP/process/development-process.html">Spanish</a></li>
+
+</ul>
+</div>
+<section id="a-guide-to-the-kernel-development-process">
+<span id="development-process-main"></span><h1>A guide to the Kernel Development Process<a class="headerlink" href="#a-guide-to-the-kernel-development-process" title="Permalink to this heading">¶</a></h1>
+<p>The purpose of this document is to help developers (and their managers)
+work with the development community with a minimum of frustration.  It is
+an attempt to document how this community works in a way which is
+accessible to those who are not intimately familiar with Linux kernel
+development (or, indeed, free software development in general).  While
+there is some technical material here, this is very much a process-oriented
+discussion which does not require a deep knowledge of kernel programming to
+understand.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="1.Intro.html">1. Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="1.Intro.html#executive-summary">1.1. Executive summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.Intro.html#what-this-document-is-about">1.2. What this document is about</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.Intro.html#credits">1.3. Credits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.Intro.html#the-importance-of-getting-code-into-the-mainline">1.4. The importance of getting code into the mainline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.Intro.html#licensing">1.5. Licensing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="2.Process.html">2. How the development process works</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="2.Process.html#the-big-picture">2.1. The big picture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.Process.html#the-lifecycle-of-a-patch">2.2. The lifecycle of a patch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.Process.html#how-patches-get-into-the-kernel">2.3. How patches get into the Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.Process.html#next-trees">2.4. Next trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.Process.html#staging-trees">2.5. Staging trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.Process.html#tools">2.6. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.Process.html#mailing-lists">2.7. Mailing lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.Process.html#getting-started-with-kernel-development">2.8. Getting started with Kernel development</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3.Early-stage.html">3. Early-stage planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="3.Early-stage.html#specifying-the-problem">3.1. Specifying the problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.Early-stage.html#early-discussion">3.2. Early discussion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.Early-stage.html#who-do-you-talk-to">3.3. Who do you talk to?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.Early-stage.html#when-to-post">3.4. When to post?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.Early-stage.html#getting-official-buy-in">3.5. Getting official buy-in</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="4.Coding.html">4. Getting the code right</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="4.Coding.html#pitfalls">4.1. Pitfalls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.Coding.html#code-checking-tools">4.2. Code checking tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.Coding.html#documentation">4.3. Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.Coding.html#internal-api-changes">4.4. Internal API changes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="5.Posting.html">5. Posting patches</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="5.Posting.html#when-to-post">5.1. When to post</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.Posting.html#before-creating-patches">5.2. Before creating patches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.Posting.html#patch-preparation">5.3. Patch preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.Posting.html#patch-formatting-and-changelogs">5.4. Patch formatting and changelogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.Posting.html#sending-the-patch">5.5. Sending the patch</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="6.Followthrough.html">6. Followthrough</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="6.Followthrough.html#working-with-reviewers">6.1. Working with reviewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.Followthrough.html#what-happens-next">6.2. What happens next</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.Followthrough.html#other-things-that-can-happen">6.3. Other things that can happen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="7.AdvancedTopics.html">7. Advanced topics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="7.AdvancedTopics.html#managing-patches-with-git">7.1. Managing patches with git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.AdvancedTopics.html#reviewing-patches">7.2. Reviewing patches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="8.Conclusion.html">8. For more information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8.Conclusion.html#conclusion">9. Conclusion</a></li>
+</ul>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;The kernel development community.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/process/development-process.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

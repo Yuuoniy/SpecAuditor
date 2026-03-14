@@ -1,0 +1,209 @@
+Struct: struct drm_crtc_funcs
+
+control CRTCs for a given device
+
+Members
+  reset
+    Reset CRTC hardware and software state to off. This function isn’t
+called by the core directly, only through drm_mode_config_reset() .
+It’s not a helper hook only for historical reasons. Atomic drivers can use drm_atomic_helper_crtc_reset() to reset
+atomic state using this hook.
+  cursor_set
+    Update the cursor image. The cursor position is relative to the CRTC
+and can be partially or fully outside of the visible area. Note that contrary to all other KMS functions the legacy cursor entry
+points don’t take a framebuffer object, but instead take directly a
+raw buffer object id from the driver’s buffer manager (which is
+either GEM or TTM for current drivers). This entry point is deprecated, drivers should instead implement
+universal plane support and register a proper cursor plane using drm_crtc_init_with_planes() . This callback is optional RETURNS: 0 on success or a negative error code on failure.
+  cursor_set2
+    Update the cursor image, including hotspot information. The hotspot
+must not affect the cursor position in CRTC coordinates, but is only
+meant as a hint for virtualized display hardware to coordinate the
+guests and hosts cursor position. The cursor hotspot is relative to
+the cursor image. Otherwise this works exactly like cursor_set . This entry point is deprecated, drivers should instead implement
+universal plane support and register a proper cursor plane using drm_crtc_init_with_planes() . This callback is optional. RETURNS: 0 on success or a negative error code on failure.
+  cursor_move
+    Update the cursor position. The cursor does not need to be visible
+when this hook is called. This entry point is deprecated, drivers should instead implement
+universal plane support and register a proper cursor plane using drm_crtc_init_with_planes() . This callback is optional. RETURNS: 0 on success or a negative error code on failure.
+  gamma_set
+    Set gamma on the CRTC. This callback is optional. Atomic drivers who want to support gamma tables should implement the
+atomic color management support, enabled by calling drm_crtc_enable_color_mgmt() , which then supports the legacy gamma
+interface through the drm_atomic_helper_legacy_gamma_set() compatibility implementation.
+  destroy
+    Clean up CRTC resources. This is only called at driver unload time
+through drm_mode_config_cleanup() since a CRTC cannot be hotplugged
+in DRM.
+  set_config
+    This is the main legacy entry point to change the modeset state on a
+CRTC. All the details of the desired configuration are passed in a struct drm_mode_set - see there for details. Drivers implementing atomic modeset should use drm_atomic_helper_set_config() to implement this hook. RETURNS: 0 on success or a negative error code on failure.
+  page_flip
+    Legacy entry point to schedule a flip to the given framebuffer. Page flipping is a synchronization mechanism that replaces the frame
+buffer being scanned out by the CRTC with a new frame buffer during
+vertical blanking, avoiding tearing (except when requested otherwise
+through the DRM_MODE_PAGE_FLIP_ASYNC flag). When an application
+requests a page flip the DRM core verifies that the new frame buffer
+is large enough to be scanned out by the CRTC in the currently
+configured mode and then calls this hook with a pointer to the new
+frame buffer. The driver must wait for any pending rendering to the new framebuffer
+to complete before executing the flip. It should also wait for any
+pending rendering from other drivers if the underlying buffer is a
+shared dma-buf. An application can request to be notified when the page flip has
+completed. The drm core will supply a struct drm_event in the event
+parameter in this case. This can be handled by the drm_crtc_send_vblank_event() function, which the driver should call on
+the provided event upon completion of the flip. Note that if
+the driver supports vblank signalling and timestamping the vblank
+counters and timestamps must agree with the ones returned from page
+flip events. With the current vblank helper infrastructure this can
+be achieved by holding a vblank reference while the page flip is
+pending, acquired through drm_crtc_vblank_get() and released with drm_crtc_vblank_put() . Drivers are free to implement their own vblank
+counter and timestamp tracking though, e.g. if they have accurate
+timestamp registers in hardware. This callback is optional. NOTE: Very early versions of the KMS ABI mandated that the driver must
+block (but not reject) any rendering to the old framebuffer until the
+flip operation has completed and the old framebuffer is no longer
+visible. This requirement has been lifted, and userspace is instead
+expected to request delivery of an event and wait with recycling old
+buffers until such has been received. RETURNS: 0 on success or a negative error code on failure. Note that if a
+page flip operation is already pending the callback should return
+-EBUSY. Pageflips on a disabled CRTC (either by setting a NULL mode
+or just runtime disabled through DPMS respectively the new atomic
+“ACTIVE” state) should result in an -EINVAL error code. Note that drm_atomic_helper_page_flip() checks this already for atomic drivers.
+  page_flip_target
+    Same as page_flip but with an additional parameter specifying the
+absolute target vertical blank period (as reported by drm_crtc_vblank_count() ) when the flip should take effect. Note that the core code calls drm_crtc_vblank_get before this entry
+point, and will call drm_crtc_vblank_put if this entry point returns
+any non-0 error code. It’s the driver’s responsibility to call
+drm_crtc_vblank_put after this entry point returns 0, typically when
+the flip completes.
+  set_property
+    This is the legacy entry point to update a property attached to the
+CRTC. This callback is optional if the driver does not support any legacy
+driver-private properties. For atomic drivers it is not used because
+property handling is done entirely in the DRM core. RETURNS: 0 on success or a negative error code on failure.
+  atomic_duplicate_state
+    Duplicate the current atomic state for this CRTC and return it.
+The core and helpers guarantee that any atomic state duplicated with
+this hook and still owned by the caller (i.e. not transferred to the
+driver by calling drm_mode_config_funcs.atomic_commit ) will be
+cleaned up by calling the atomic_destroy_state hook in this
+structure. This callback is mandatory for atomic drivers. Atomic drivers which don’t subclass struct drm_crtc_state should use drm_atomic_helper_crtc_duplicate_state() . Drivers that subclass the
+state structure to extend it with driver-private state should use __drm_atomic_helper_crtc_duplicate_state() to make sure shared state is
+duplicated in a consistent fashion across drivers. It is an error to call this hook before drm_crtc.state has been
+initialized correctly. NOTE: If the duplicate state references refcounted resources this hook must
+acquire a reference for each of them. The driver must release these
+references again in atomic_destroy_state . RETURNS: Duplicated atomic state or NULL when the allocation failed.
+  atomic_destroy_state
+    Destroy a state duplicated with atomic_duplicate_state and release
+or unreference all resources it references This callback is mandatory for atomic drivers.
+  atomic_set_property
+    Decode a driver-private property value and store the decoded value
+into the passed-in state structure. Since the atomic core decodes all
+standardized properties (even for extensions beyond the core set of
+properties which might not be implemented by all drivers) this
+requires drivers to subclass the state structure. Such driver-private properties should really only be implemented for
+truly hardware/vendor specific state. Instead it is preferred to
+standardize atomic extension and decode the properties used to expose
+such an extension in the core. Do not call this function directly, use drm_atomic_crtc_set_property() instead. This callback is optional if the driver does not support any
+driver-private atomic properties. NOTE: This function is called in the state assembly phase of atomic
+modesets, which can be aborted for any reason (including on
+userspace’s request to just check whether a configuration would be
+possible). Drivers MUST NOT touch any persistent state (hardware or
+software) or data structures except the passed in state parameter. Also since userspace controls in which order properties are set this
+function must not do any input validation (since the state update is
+incomplete and hence likely inconsistent). Instead any such input
+validation must be done in the various atomic_check callbacks. RETURNS: 0 if the property has been found, -EINVAL if the property isn’t
+implemented by the driver (which should never happen, the core only
+asks for properties attached to this CRTC). No other validation is
+allowed by the driver. The core already checks that the property
+value is within the range (integer, valid enum value , ...) the driver
+set when registering the property.
+  atomic_get_property
+    Reads out the decoded driver-private property. This is used to
+implement the GETCRTC IOCTL. Do not call this function directly, use drm_atomic_crtc_get_property() instead. This callback is optional if the driver does not support any
+driver-private atomic properties. RETURNS: 0 on success, -EINVAL if the property isn’t implemented by the
+driver (which should never happen, the core only asks for
+properties attached to this CRTC).
+  late_register
+    This optional hook can be used to register additional userspace
+interfaces attached to the crtc like debugfs interfaces.
+It is called late in the driver load sequence from drm_dev_register() .
+Everything added from this callback should be unregistered in
+the early_unregister callback. Returns: 0 on success, or a negative error code on failure.
+  early_unregister
+    This optional hook should be used to unregister the additional
+userspace interfaces attached to the crtc from late_register . It is called from drm_dev_unregister() ,
+early in the driver unload sequence to disable userspace access
+before data structures are torndown.
+  set_crc_source
+    Changes the source of CRC checksums of frames at the request of
+userspace, typically for testing purposes. The sources available are
+specific of each driver and a NULL value indicates that CRC
+generation is to be switched off. When CRC generation is enabled, the driver should call drm_crtc_add_crc_entry() at each frame, providing any information
+that characterizes the frame contents in the crcN arguments, as
+provided from the configured source. Drivers must accept an “auto”
+source name that will select a default source for this CRTC. This may trigger an atomic modeset commit if necessary, to enable CRC
+generation. Note that “auto” can depend upon the current modeset configuration,
+e.g. it could pick an encoder or output specific CRC sampling point. This callback is optional if the driver does not support any CRC
+generation functionality. RETURNS: 0 on success or a negative error code on failure.
+  verify_crc_source
+    verifies the source of CRC checksums of frames before setting the
+source for CRC and during crc open. Source parameter can be NULL
+while disabling crc source. This callback is optional if the driver does not support any CRC
+generation functionality. RETURNS: 0 on success or a negative error code on failure.
+  get_crc_sources
+    Driver callback for getting a list of all the available sources for
+CRC generation. This callback depends upon verify_crc_source, So
+verify_crc_source callback should be implemented before implementing
+this. Driver can pass full list of available crc sources, this
+callback does the verification on each crc-source before passing it
+to userspace. This callback is optional if the driver does not support exporting of
+possible CRC sources list. RETURNS: a constant character pointer to the list of all the available CRC
+sources. On failure driver should return NULL. count should be
+updated with number of sources in list. if zero we don’t process any
+source from the list.
+  atomic_print_state
+    If driver subclasses struct drm_crtc_state , it should implement
+this optional hook for printing additional driver specific state. Do not call this directly, use drm_atomic_crtc_print_state() instead.
+  get_vblank_counter
+    Driver callback for fetching a raw hardware vblank counter for the
+CRTC. It’s meant to be used by new drivers as the replacement of drm_driver.get_vblank_counter hook. This callback is optional. If a device doesn’t have a hardware
+counter, the driver can simply leave the hook as NULL. The DRM core
+will account for missed vblank events while interrupts where disabled
+based on system timestamps. Wraparound handling and loss of events due to modesetting is dealt
+with in the DRM core code, as long as drivers call drm_crtc_vblank_off() and drm_crtc_vblank_on() when disabling or
+enabling a CRTC. See also drm_device.vblank_disable_immediate and drm_device.max_vblank_count . Returns: Raw vblank counter value.
+  enable_vblank
+    Enable vblank interrupts for the CRTC. It’s meant to be used by
+new drivers as the replacement of drm_driver.enable_vblank hook. Returns: Zero on success, appropriate errno if the vblank interrupt cannot
+be enabled.
+  disable_vblank
+    Disable vblank interrupts for the CRTC. It’s meant to be used by
+new drivers as the replacement of drm_driver.disable_vblank hook.
+  get_vblank_timestamp
+    Called by drm_get_last_vbltimestamp() . Should return a precise
+timestamp when the most recent vblank interval ended or will end. Specifically, the timestamp in vblank_time should correspond as
+closely as possible to the time when the first video scanline of
+the video frame after the end of vblank will start scanning out,
+the time immediately after end of the vblank interval. If the crtc is currently inside vblank, this will be a time in the future.
+If the crtc is currently scanning out a frame, this will be the
+past start time of the current scanout. This is meant to adhere
+to the OpenML OML_sync_control extension specification. Parameters: crtc: CRTC for which timestamp should be returned. max_error: Maximum allowable timestamp error in nanoseconds.
+Implementation should strive to provide timestamp
+with an error of at most max_error nanoseconds.
+Returns true upper bound on error for timestamp. vblank_time: Target location for returned vblank timestamp. in_vblank_irq: True when called from drm_crtc_handle_vblank() .  Some drivers
+need to apply some workarounds for gpu-specific vblank irq quirks
+if flag is set. Returns: True on success, false on failure, which means the core should
+fallback to a simple timestamp taken in drm_crtc_handle_vblank() .
+  crtc:
+    CRTC for which timestamp should be returned.
+  max_error:
+    Maximum allowable timestamp error in nanoseconds.
+Implementation should strive to provide timestamp
+with an error of at most max_error nanoseconds.
+Returns true upper bound on error for timestamp.
+  vblank_time:
+    Target location for returned vblank timestamp.
+  in_vblank_irq:
+    True when called from drm_crtc_handle_vblank() .  Some drivers
+need to apply some workarounds for gpu-specific vblank irq quirks
+if flag is set.

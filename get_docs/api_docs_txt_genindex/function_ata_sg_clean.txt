@@ -1,0 +1,10 @@
+Function: void ata_sg_clean ( struct ata_queued_cmd * qc )
+
+Unmap DMA memory associated with command
+
+Parameters
+  struct ata_queued_cmd *qc
+    Command containing DMA memory to be released
+
+Description
+  Unmap all mapped DMA memory associated with this command.

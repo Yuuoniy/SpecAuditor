@@ -1,0 +1,9 @@
+Struct: struct xa_limit
+
+Represents a range of IDs.
+
+Members
+  max
+    The maximum ID to allocate (inclusive).
+  min
+    The lowest ID to allocate (inclusive).

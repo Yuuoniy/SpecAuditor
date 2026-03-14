@@ -1,0 +1,12 @@
+Function: struct drm_bridge * drm_panel_bridge_add_typed ( struct drm_panel * panel , u32 connector_type )
+
+Creates a drm_bridge and drm_connector with an explicit connector type.
+
+Parameters
+  struct drm_panel *panel
+    The drm_panel being wrapped.  Must be non-NULL.
+  u32 connector_type
+    The connector type (DRM_MODE_CONNECTOR_*)
+
+Description
+  This is just like drm_panel_bridge_add() , but forces the connector type to connector_type instead of infering it from the panel.

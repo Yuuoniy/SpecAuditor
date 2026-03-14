@@ -1,0 +1,23 @@
+Function: int fsl_rio_config_read ( struct rio_mport * mport , int index , u16 destid , u8 hopcount , u32 offset , int len , u32 * val )
+
+Generate a MPC85xx read maintenance transaction
+
+Parameters
+  struct rio_mport *mport
+    RapidIO master port info
+  int index
+    ID of RapdiIO interface
+  u16 destid
+    Destination ID of transaction
+  u8 hopcount
+    Number of hops to target device
+  u32 offset
+    Offset into configuration space
+  int len
+    Length (in bytes) of the maintenance transaction
+  u32 *val
+    Location to be read into
+
+Description
+  Generates a MPC85xx read maintenance transaction. Returns 0 on
+success or -EINVAL on failure.

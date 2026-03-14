@@ -1,0 +1,9 @@
+Function: int __spi_register_driver ( struct module * owner , struct spi_driver * sdrv )
+
+register a SPI driver
+
+Parameters
+  struct module *owner
+    owner module of the driver to register
+  struct spi_driver *sdrv
+    the driver to register

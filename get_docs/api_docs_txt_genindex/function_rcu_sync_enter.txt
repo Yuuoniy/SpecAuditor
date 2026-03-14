@@ -1,0 +1,13 @@
+Function: void rcu_sync_enter ( struct rcu_sync * rsp )
+
+Force readers onto slowpath
+
+Parameters
+  struct rcu_sync *rsp
+    Pointer to rcu_sync structure to use for synchronization
+
+Description
+  This function is used by updaters who need readers to make use of
+a slowpath during the update.  After this function returns, all
+subsequent calls to rcu_sync_is_idle() will return false, which
+tells readers to stay off their fastpaths.  A later call to rcu_sync_exit() re-enables reader fastpaths.

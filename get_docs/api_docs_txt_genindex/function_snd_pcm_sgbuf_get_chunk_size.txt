@@ -1,0 +1,11 @@
+Function: unsigned int snd_pcm_sgbuf_get_chunk_size ( struct snd_pcm_substream * substream , unsigned int ofs , unsigned int size )
+
+Compute the max size that fits within the contig. page from the given size
+
+Parameters
+  struct snd_pcm_substream *substream
+    PCM substream
+  unsigned int ofs
+    byte offset
+  unsigned int size
+    byte size to examine

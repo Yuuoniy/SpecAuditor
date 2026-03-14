@@ -1,0 +1,13 @@
+Function: int snd_soc_runtime_set_dai_fmt ( struct snd_soc_pcm_runtime * rtd , unsigned int dai_fmt )
+
+Change DAI link format for a ASoC runtime
+
+Parameters
+  struct snd_soc_pcm_runtime *rtd
+    The runtime for which the DAI link format should be changed
+  unsigned int dai_fmt
+    The new DAI link format
+
+Description
+  This function updates the DAI link format for all DAIs connected to the DAI
+link for the specified runtime.

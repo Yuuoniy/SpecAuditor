@@ -1,0 +1,10 @@
+Function: void drm_property_blob_put ( struct drm_property_blob * blob )
+
+release a blob property reference
+
+Parameters
+  struct drm_property_blob *blob
+    DRM blob property
+
+Description
+  Releases a reference to a blob property. May free the object.

@@ -1,0 +1,15 @@
+Macro: drm_gpuva_for_each_op_safe
+
+
+
+Parameters
+  op
+    drm_gpuva_op to assign in each iteration step
+  next
+    next drm_gpuva_op to store the next step
+  ops
+    drm_gpuva_ops to walk
+
+Description
+  This iterator walks over all ops within a given list of operations. It is
+implemented with list_for_each_safe() , so save against removal of elements.

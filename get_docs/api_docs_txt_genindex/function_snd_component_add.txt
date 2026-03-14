@@ -1,0 +1,13 @@
+Function: int snd_component_add ( struct snd_card * card , const char * component )
+
+add a component string
+
+Parameters
+  struct snd_card *card
+    soundcard structure
+  const char *component
+    the component id string
+
+Description
+  This function adds the component id string to the supported list.
+The component can be referred from the alsa-lib.

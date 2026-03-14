@@ -1,0 +1,12 @@
+Function: void zynqmp_disp_avbuf_disable_video ( struct zynqmp_disp * disp , struct zynqmp_disp_layer * layer )
+
+Disable a video layer
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller
+  struct zynqmp_disp_layer *layer
+    The layer
+
+Description
+  Disable the video/graphics buffer for layer .

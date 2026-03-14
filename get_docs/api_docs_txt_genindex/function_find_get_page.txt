@@ -1,0 +1,13 @@
+Function: struct page * find_get_page ( struct address_space * mapping , pgoff_t offset )
+
+find and get a page reference
+
+Parameters
+  struct address_space *mapping
+    the address_space to search
+  pgoff_t offset
+    the page index
+
+Description
+  Looks up the page cache slot at mapping & offset .  If there is a
+page cache page, it is returned with an increased refcount.

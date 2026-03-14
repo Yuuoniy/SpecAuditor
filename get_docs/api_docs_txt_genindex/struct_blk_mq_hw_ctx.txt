@@ -1,0 +1,92 @@
+Struct: struct blk_mq_hw_ctx
+
+State for a hardware queue facing the hardware block device
+
+Members
+  {unnamed_struct}
+    anonymous
+  lock
+    Protects the dispatch list.
+  dispatch
+    Used for requests that are ready to be
+dispatched to the hardware but for some reason (e.g. lack of
+resources) could not be sent to the hardware. As soon as the
+driver can send new requests, requests at this list will
+be sent first for a fairer dispatch.
+  state
+    BLK_MQ_S_* flags. Defines the state of the hw
+queue (active, scheduled to restart, stopped).
+  run_work
+    Used for scheduling a hardware queue run at a later time.
+  cpumask
+    Map of available CPUs where this hctx can run.
+  next_cpu
+    Used by blk_mq_hctx_next_cpu() for round-robin CPU
+selection from cpumask .
+  next_cpu_batch
+    Counter of how many works left in the batch before
+changing to the next CPU.
+  flags
+    BLK_MQ_F_* flags. Defines the behaviour of the queue.
+  sched_data
+    Pointer owned by the IO scheduler attached to a request
+queue. It’s up to the IO scheduler how to use this pointer.
+  queue
+    Pointer to the request queue that owns this hardware context.
+  fq
+    Queue of requests that need to perform a flush operation.
+  driver_data
+    Pointer to data owned by the block driver that created
+this hctx
+  ctx_map
+    Bitmap for each software queue. If bit is on, there is a
+pending request in that software queue.
+  dispatch_from
+    Software queue to be used when no scheduler was
+selected.
+  dispatch_busy
+    Number used by blk_mq_update_dispatch_busy() to
+decide if the hw_queue is busy using Exponential Weighted Moving
+Average algorithm.
+  type
+    HCTX_TYPE_* flags. Type of hardware queue.
+  nr_ctx
+    Number of software queues.
+  ctxs
+    Array of software queues.
+  dispatch_wait_lock
+    Lock for dispatch_wait queue.
+  dispatch_wait
+    Waitqueue to put requests when there is no tag
+available at the moment, to wait for another try in the future.
+  wait_index
+    Index of next available dispatch_wait queue to insert
+requests.
+  tags
+    Tags owned by the block driver. A tag at this set is only
+assigned when a request is dispatched from a hardware queue.
+  sched_tags
+    Tags owned by I/O scheduler. If there is an I/O
+scheduler associated with a request queue, a tag is assigned when
+that request is allocated. Else, this member is not used.
+  numa_node
+    NUMA node the storage adapter has been connected to.
+  queue_num
+    Index of this hardware queue.
+  nr_active
+    Number of active requests. Only used when a tag set is
+shared across request queues.
+  cpuhp_online
+    List to store request if CPU is going to die
+  cpuhp_dead
+    List to store request if some CPU die.
+  kobj
+    Kernel object for sysfs.
+  debugfs_dir
+    debugfs directory for this hardware queue. Named
+as cpu<cpu_number>.
+  sched_debugfs_dir
+    debugfs directory for the scheduler.
+  hctx_list
+    if this hctx is not in use, this is an entry in
+q->unused_hctx_list.

@@ -1,0 +1,7 @@
+Function: int snd_soc_new_compress ( struct snd_soc_pcm_runtime * rtd )
+
+create a new compress.
+
+Parameters
+  struct snd_soc_pcm_runtime *rtd
+    The runtime for which we will create compress

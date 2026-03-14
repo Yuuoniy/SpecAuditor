@@ -1,0 +1,10 @@
+Function: int ccwgroup_set_online ( struct ccwgroup_device * gdev )
+
+enable a ccwgroup device
+
+Parameters
+  struct ccwgroup_device *gdev
+    target ccwgroup device
+
+Description
+  This function attempts to put the ccwgroup device into the online state.

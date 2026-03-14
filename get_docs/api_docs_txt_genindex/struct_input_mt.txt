@@ -1,0 +1,19 @@
+Struct: struct input_mt
+
+state of tracked contacts
+
+Members
+  trkid
+    stores MT tracking ID for the next contact
+  num_slots
+    number of MT slots the device uses
+  slot
+    MT slot currently being transmitted
+  flags
+    input_mt operation flags
+  frame
+    increases every time input_mt_sync_frame() is called
+  red
+    reduced cost matrix for in-kernel tracking
+  slots
+    array of slots holding current values of tracked contacts

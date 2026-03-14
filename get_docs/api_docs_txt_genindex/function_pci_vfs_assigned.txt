@@ -1,0 +1,11 @@
+Function: int pci_vfs_assigned ( struct pci_dev * dev )
+
+returns number of VFs are assigned to a guest
+
+Parameters
+  struct pci_dev *dev
+    the PCI device
+
+Description
+  Returns number of VFs belonging to this device that are assigned to a guest.
+If device is not a physical function returns 0.

@@ -1,0 +1,41 @@
+Struct: struct cfg80211_auth_request
+
+Authentication request data
+
+Members
+  bss
+    The BSS to authenticate with, the callee must obtain a reference
+to it if it needs to keep it.
+  ie
+    Extra IEs to add to Authentication frame or NULL
+  ie_len
+    Length of ie buffer in octets
+  supported_selectors
+    List of selectors that should be assumed to be
+supported by the station.
+SAE_H2E must be assumed supported if set to NULL .
+  supported_selectors_len
+    Length of supported_selectors in octets.
+  auth_type
+    Authentication type (algorithm)
+  key
+    WEP key for shared key authentication
+  key_len
+    length of WEP key for shared key authentication
+  key_idx
+    index of WEP key for shared key authentication
+  auth_data
+    Fields and elements in Authentication frames. This contains
+the authentication frame body (non-IE and IE data), excluding the
+Authentication algorithm number, i.e., starting at the Authentication
+transaction sequence number field.
+  auth_data_len
+    Length of auth_data buffer in octets
+  link_id
+    if >= 0, indicates authentication should be done as an MLD,
+the interface address is included as the MLD address and the
+necessary link (with the given link_id) will be created (and
+given an MLD address) by the driver
+  ap_mld_addr
+    AP MLD address in case of authentication request with
+an AP MLD, valid iff link_id >= 0

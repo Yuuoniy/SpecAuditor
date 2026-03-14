@@ -1,0 +1,13 @@
+Struct: struct landlock_inode_security
+
+Inode security blob
+
+Members
+  object
+    Weak pointer to an allocated object.  All assignments of a
+new object are protected by the underlying inode->i_lock.  However,
+atomically disassociating object from the inode is only protected
+by object->lock , from the time object ’s usage refcount drops to
+zero to the time this pointer is nulled out (cf. release_inode() and hook_sb_delete() ).  Indeed, such disassociation doesn’t require
+inode->i_lock thanks to the careful rcu_access_pointer() check
+performed by get_inode_object() .

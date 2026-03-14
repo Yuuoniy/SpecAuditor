@@ -1,0 +1,7 @@
+Function: void list_rotate_left ( struct list_head * head )
+
+rotate the list to the left
+
+Parameters
+  struct list_head *head
+    the head of the list

@@ -1,0 +1,19 @@
+Function: struct cfg80211_bss * cfg80211_inform_bss_frame_data ( struct wiphy * wiphy , struct cfg80211_inform_bss * data , struct ieee80211_mgmt * mgmt , size_t len , gfp_t gfp )
+
+inform cfg80211 of a received BSS frame
+
+Parameters
+  struct wiphy *wiphy
+    the wiphy reporting the BSS
+  struct cfg80211_inform_bss *data
+    the BSS metadata
+  struct ieee80211_mgmt *mgmt
+    the management frame (probe response or beacon)
+  size_t len
+    length of the management frame
+  gfp_t gfp
+    context flags
+
+Description
+  This informs cfg80211 that BSS information was found and
+the BSS should be updated/added.

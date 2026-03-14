@@ -1,0 +1,27 @@
+Struct: struct tipc_conn
+
+TIPC connection structure
+
+Members
+  kref
+    reference counter to connection object
+  conid
+    connection identifier
+  sock
+    socket handler associated with connection
+  flags
+    indicates connection state
+  server
+    pointer to connected server
+  sub_list
+    list to all pertaining subscriptions
+  sub_lock
+    lock protecting the subscription list
+  rwork
+    receive work item
+  outqueue
+    pointer to first outbound message in queue
+  outqueue_lock
+    control access to the outqueue
+  swork
+    send work item

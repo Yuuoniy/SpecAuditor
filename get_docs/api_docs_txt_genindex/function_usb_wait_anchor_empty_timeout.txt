@@ -1,0 +1,13 @@
+Function: int usb_wait_anchor_empty_timeout ( struct usb_anchor * anchor , unsigned int timeout )
+
+wait for an anchor to be unused
+
+Parameters
+  struct usb_anchor *anchor
+    the anchor you want to become unused
+  unsigned int timeout
+    how long you are willing to wait in milliseconds
+
+Description
+  Call this is you want to be sure all an anchor’s
+URBs have finished

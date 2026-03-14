@@ -1,0 +1,11 @@
+Function: int netif_get_num_default_rss_queues ( void )
+
+default number of RSS queues
+
+Parameters
+  void
+    no arguments
+
+Description
+  Default value is the number of physical cores if there are only 1 or 2, or
+divided by 2 if there are more.

@@ -1,0 +1,17 @@
+Function: struct snd_soc_dai * snd_soc_register_dai ( struct snd_soc_component * component , struct snd_soc_dai_driver * dai_drv , bool legacy_dai_naming )
+
+Register a DAI dynamically & create its widgets
+
+Parameters
+  struct snd_soc_component *component
+    The component the DAIs are registered for
+  struct snd_soc_dai_driver *dai_drv
+    DAI driver to use for the DAI
+  bool legacy_dai_naming
+    if true , use legacy single-name format;
+if false , use multiple-name format;
+
+Description
+  Topology can use this API to register DAIs when probing a component.
+These DAIs’s widgets will be freed in the card cleanup and the DAIs
+will be freed in the component cleanup.

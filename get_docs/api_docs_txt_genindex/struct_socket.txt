@@ -1,0 +1,19 @@
+Struct: struct socket
+
+general BSD socket
+
+Members
+  state
+    socket state ( SS_CONNECTED , etc)
+  type
+    socket type ( SOCK_STREAM , etc)
+  flags
+    socket flags ( SOCK_NOSPACE , etc)
+  file
+    File back pointer for gc
+  sk
+    internal networking protocol agnostic socket representation
+  ops
+    protocol specific socket operations
+  wq
+    wait queue for several uses

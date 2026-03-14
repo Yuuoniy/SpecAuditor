@@ -1,0 +1,12 @@
+Function: int pci_enable_msi ( struct pci_dev * dev )
+
+Enable MSI interrupt mode on device
+
+Parameters
+  struct pci_dev *dev
+    the PCI device to operate on
+
+Description
+  Legacy device driver API to enable MSI interrupts mode on device and
+allocate a single interrupt vector. On success, the allocated vector
+Linux IRQ will be saved at dev->irq . The driver must invoke pci_disable_msi() on cleanup.

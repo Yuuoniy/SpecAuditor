@@ -1,0 +1,10 @@
+Function: void get_pwq ( struct pool_workqueue * pwq )
+
+get an extra reference on the specified pool_workqueue
+
+Parameters
+  struct pool_workqueue *pwq
+    pool_workqueue to get
+
+Description
+  Obtain an extra reference on pwq .  The caller should guarantee that pwq has positive refcnt and be holding the matching pool->lock.

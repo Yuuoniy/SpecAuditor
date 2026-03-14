@@ -1,0 +1,7 @@
+Function: int is_highmem ( const struct zone * zone )
+
+helper function to quickly check if a struct zone is a highmem zone or not. This is an attempt to keep references to ZONE_{DMA/NORMAL/HIGHMEM/etc} in general code to a minimum.
+
+Parameters
+  const struct zone *zone
+    pointer to struct zone variable

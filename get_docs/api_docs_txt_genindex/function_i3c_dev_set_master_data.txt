@@ -1,0 +1,13 @@
+Function: void i3c_dev_set_master_data ( struct i3c_dev_desc * dev , void * data )
+
+attach master private data to an I3C device descriptor
+
+Parameters
+  struct i3c_dev_desc *dev
+    the I3C device descriptor to attach private data to
+  void *data
+    private data
+
+Description
+  This functions allows a master controller to attach per-device private data
+which can then be retrieved with i3c_dev_get_master_data() .

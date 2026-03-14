@@ -1,0 +1,10 @@
+Function: void drm_atomic_helper_connector_tv_reset ( struct drm_connector * connector )
+
+Resets Analog TV connector properties
+
+Parameters
+  struct drm_connector *connector
+    DRM connector
+
+Description
+  Resets the analog TV properties attached to a connector

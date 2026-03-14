@@ -1,0 +1,15 @@
+Function: void blk_mq_try_issue_directly ( struct blk_mq_hw_ctx * hctx , struct request * rq )
+
+Try to send a request directly to device driver.
+
+Parameters
+  struct blk_mq_hw_ctx *hctx
+    Pointer of the associated hardware queue.
+  struct request *rq
+    Pointer to request to be sent.
+
+Description
+  If the device has enough resources to accept a new request now, send the
+request directly to device driver. Else, insert at hctx->dispatch queue, so
+we can try send it another time in the future. Requests inserted at this
+queue have higher priority.

@@ -1,0 +1,14 @@
+Macro: DEVICE_BOOL_ATTR
+
+
+
+Parameters
+  _name
+    Attribute name.
+  _mode
+    File mode.
+  _var
+    Identifier of bool.
+
+Description
+  Like DEVICE_ULONG_ATTR() , but _var is a bool.

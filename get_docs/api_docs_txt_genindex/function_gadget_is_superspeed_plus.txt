@@ -1,0 +1,7 @@
+Function: int gadget_is_superspeed_plus ( struct usb_gadget * g )
+
+return true if the hardware handles superspeed plus
+
+Parameters
+  struct usb_gadget *g
+    controller that might support superspeed plus

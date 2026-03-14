@@ -1,0 +1,11 @@
+Function: void set_current_blocked ( sigset_t * newset )
+
+change current->blocked mask
+
+Parameters
+  sigset_t *newset
+    new mask
+
+Description
+  It is wrong to change ->blocked directly, this helper should be used
+to ensure the process can’t miss a shared signal we are going to block.

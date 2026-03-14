@@ -1,0 +1,16 @@
+Macro: kfifo_to_user
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used
+  to
+    where the data must be copied
+  len
+    the size of the destination buffer
+  copied
+    pointer to output variable to store the number of copied bytes
+
+Description
+  This macro copies at most len bytes from the fifo into the to buffer and returns -EFAULT/0.

@@ -1,0 +1,9 @@
+Function: void drm_rect_fp_to_int ( struct drm_rect * dst , const struct drm_rect * src )
+
+Convert a rect in 16.16 fixed point form to int form.
+
+Parameters
+  struct drm_rect *dst
+    rect to be stored the converted value
+  const struct drm_rect *src
+    rect in 16.16 fixed point form

@@ -1,0 +1,11 @@
+Macro: void wq_adjust_max_active ( struct workqueue_struct * wq )
+
+update a wq’s max_active to the current setting
+
+Parameters
+  struct workqueue_struct *wq
+    target workqueue
+
+Description
+  If wq isn’t freezing, set wq->max_active to the saved_max_active and
+activate inactive work items accordingly. If wq is freezing, clear wq->max_active to zero.

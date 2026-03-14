@@ -1,0 +1,9 @@
+Function: int iser_initialize_task_headers ( struct iscsi_task * task , struct iser_tx_desc * tx_desc )
+
+Initialize task headers
+
+Parameters
+  struct iscsi_task *task
+    iscsi task
+  struct iser_tx_desc *tx_desc
+    iser tx descriptor

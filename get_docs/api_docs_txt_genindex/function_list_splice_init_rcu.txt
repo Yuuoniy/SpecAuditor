@@ -1,0 +1,11 @@
+Function: void list_splice_init_rcu ( struct list_head * list , struct list_head * head , void ( * sync ) ( void ) )
+
+splice an RCU-protected list into an existing list, designed for stacks.
+
+Parameters
+  struct list_head *list
+    the RCU-protected list to splice
+  struct list_head *head
+    the place in the existing list to splice the first list into
+  void (*sync)(void)
+    synchronize_rcu, synchronize_rcu_expedited, ...

@@ -1,0 +1,7 @@
+Function: int platform_irq_count ( struct platform_device * dev )
+
+Count the number of IRQs a platform device uses
+
+Parameters
+  struct platform_device *dev
+    platform device

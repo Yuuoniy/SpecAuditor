@@ -1,0 +1,13 @@
+Function: int rpc_clnt_test_and_add_xprt ( struct rpc_clnt * clnt , struct rpc_xprt_switch * xps , struct rpc_xprt * xprt , void * in_max_connect )
+
+Test and add a new transport to a rpc_clnt
+
+Parameters
+  struct rpc_clnt *clnt
+    pointer to struct rpc_clnt
+  struct rpc_xprt_switch *xps
+    pointer to struct rpc_xprt_switch ,
+  struct rpc_xprt *xprt
+    pointer struct rpc_xprt
+  void *in_max_connect
+    pointer to the max_connect value for the passed in xprt transport

@@ -1,0 +1,26 @@
+Function: int i915_gem_evict_something ( struct i915_address_space * vm , struct i915_gem_ww_ctx * ww , u64 min_size , u64 alignment , unsigned long color , u64 start , u64 end , unsigned flags )
+
+Evict vmas to make room for binding a new one
+
+Parameters
+  struct i915_address_space *vm
+    address space to evict from
+  struct i915_gem_ww_ctx *ww
+    An optional struct i915_gem_ww_ctx .
+  u64 min_size
+    size of the desired free space
+  u64 alignment
+    alignment constraint of the desired free space
+  unsigned long color
+    color for the desired space
+  u64 start
+    start (inclusive) of the range from which to evict objects
+  u64 end
+    end (exclusive) of the range from which to evict objects
+  unsigned flags
+    additional flags to control the eviction algorithm
+
+Description
+  This function will try to evict vmas until a free space satisfying the
+requirements is found. Callers must check first whether any such hole exists
+already before calling this function.

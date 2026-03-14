@@ -1,0 +1,13 @@
+Function: int ssam_nfblk_call_chain ( struct ssam_nf_head * nh , struct ssam_event * event )
+
+Call event notifier callbacks of the given chain.
+
+Parameters
+  struct ssam_nf_head *nh
+    The notifier head for which the notifier callbacks should be called.
+  struct ssam_event *event
+    The event data provided to the callbacks.
+
+Description
+  Call all registered notifier callbacks in order of their priority until
+either no notifier is left or a notifier returns a value with the SSAM_NOTIF_STOP bit set. Note that this bit is automatically set via ssam_notifier_from_errno() on any non-zero error value.

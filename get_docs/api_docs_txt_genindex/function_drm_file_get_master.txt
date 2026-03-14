@@ -1,0 +1,11 @@
+Function: struct drm_master * drm_file_get_master ( struct drm_file * file_priv )
+
+reference drm_file.master of file_priv
+
+Parameters
+  struct drm_file *file_priv
+    DRM file private
+
+Description
+  Increments the reference count of file_priv ’s drm_file.master and returns
+the drm_file.master . If file_priv has no drm_file.master , returns NULL.

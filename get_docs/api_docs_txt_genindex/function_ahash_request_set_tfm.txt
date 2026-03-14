@@ -1,0 +1,13 @@
+Function: void ahash_request_set_tfm ( struct ahash_request * req , struct crypto_ahash * tfm )
+
+update cipher handle reference in request
+
+Parameters
+  struct ahash_request *req
+    request handle to be modified
+  struct crypto_ahash *tfm
+    cipher handle that shall be added to the request handle
+
+Description
+  Allow the caller to replace the existing ahash handle in the request
+data structure with a different one.

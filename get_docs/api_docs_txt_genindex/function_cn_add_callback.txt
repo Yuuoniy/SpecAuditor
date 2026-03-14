@@ -1,0 +1,14 @@
+Function: int cn_add_callback ( const struct cb_id * id , const char * name , void ( * callback ) ( struct cn_msg * , struct netlink_skb_parms * ) )
+
+Registers new callback with connector core.
+
+Parameters
+  const struct cb_id *id
+    unique connector’s user identifier.
+It must be registered in connector.h for legal
+in-kernel users.
+  const char *name
+    connector’s callback symbolic name.
+  void (*callback)(struct cn_msg *, struct netlink_skb_parms *)
+    connector’s callback.
+parameters are cn_msg and the sender’s credentials

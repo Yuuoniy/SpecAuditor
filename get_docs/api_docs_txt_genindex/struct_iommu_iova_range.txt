@@ -1,0 +1,9 @@
+Struct: struct iommu_iova_range
+
+ioctl(IOMMU_IOVA_RANGE)
+
+Members
+  start
+    First IOVA
+  last
+    Inclusive last IOVA

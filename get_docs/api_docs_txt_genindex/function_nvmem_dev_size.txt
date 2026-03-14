@@ -1,0 +1,7 @@
+Function: size_t nvmem_dev_size ( struct nvmem_device * nvmem )
+
+Get the size of a given nvmem device.
+
+Parameters
+  struct nvmem_device *nvmem
+    nvmem device.

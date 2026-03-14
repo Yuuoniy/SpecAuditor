@@ -1,0 +1,9 @@
+Function: int sysfs_create_bin_file ( struct kobject * kobj , const struct bin_attribute * attr )
+
+create binary file for object.
+
+Parameters
+  struct kobject *kobj
+    object.
+  const struct bin_attribute *attr
+    attribute descriptor.

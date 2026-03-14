@@ -1,0 +1,7 @@
+Function: void drm_kms_helper_poll_fini ( struct drm_device * dev )
+
+disable output polling and clean it up
+
+Parameters
+  struct drm_device *dev
+    drm_device

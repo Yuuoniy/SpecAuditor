@@ -1,0 +1,19 @@
+Struct: struct iser_rx_desc
+
+iSER RX descriptor
+
+Members
+  iser_header
+    iser header
+  iscsi_header
+    iscsi header
+  data
+    received data segment
+  dma_addr
+    receive buffer dma address
+  rx_sg
+    ib_sge of receive buffer
+  cqe
+    completion handler
+  pad
+    for sense data TODO: Modify to maximum sense length supported

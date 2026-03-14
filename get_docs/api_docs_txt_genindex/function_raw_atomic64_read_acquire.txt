@@ -1,0 +1,10 @@
+Function: s64 raw_atomic64_read_acquire ( const atomic64_t * v )
+
+atomic load with acquire ordering
+
+Parameters
+  const atomic64_t *v
+    pointer to atomic64_t
+
+Description
+  Atomically loads the value of v with acquire ordering.

@@ -1,0 +1,13 @@
+Function: bool folio_try_get ( struct folio * folio )
+
+Attempt to increase the refcount on a folio.
+
+Parameters
+  struct folio *folio
+    The folio.
+
+Description
+  If you do not already have a reference to a folio, you can attempt to
+get one using this function.  It may fail if, for example, the folio
+has been freed since you found a pointer to it, or it is frozen for
+the purposes of splitting or migration.

@@ -1,0 +1,9 @@
+Function: struct device * platform_find_device_by_driver ( struct device * start , const struct device_driver * drv )
+
+Find a platform device with a given driver.
+
+Parameters
+  struct device *start
+    The device to start the search from.
+  const struct device_driver *drv
+    The device driver to look for.

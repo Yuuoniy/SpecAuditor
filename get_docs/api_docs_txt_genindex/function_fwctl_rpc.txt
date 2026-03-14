@@ -1,0 +1,17 @@
+Function: struct fwctl_rpc
+
+ioctl(FWCTL_RPC)
+
+Members
+  size
+    sizeof( struct fwctl_rpc )
+  scope
+    One of enum fwctl_rpc_scope , required scope for the RPC
+  in_len
+    Length of the in memory
+  out_len
+    Length of the out memory
+  in
+    Request message in device specific format
+  out
+    Response message in device specific format

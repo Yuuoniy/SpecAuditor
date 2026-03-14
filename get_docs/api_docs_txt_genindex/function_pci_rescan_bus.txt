@@ -1,0 +1,11 @@
+Function: unsigned int pci_rescan_bus ( struct pci_bus * bus )
+
+Scan a PCI bus for devices
+
+Parameters
+  struct pci_bus *bus
+    PCI bus to scan
+
+Description
+  Scan a PCI bus and child buses for new devices, add them,
+and enable them.

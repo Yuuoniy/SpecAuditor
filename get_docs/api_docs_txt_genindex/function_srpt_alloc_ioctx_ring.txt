@@ -1,0 +1,18 @@
+Function: struct srpt_ioctx * * srpt_alloc_ioctx_ring ( struct srpt_device * sdev , int ring_size , int ioctx_size , struct kmem_cache * buf_cache , int alignment_offset , enum dma_data_direction dir )
+
+allocate a ring of SRPT I/O context structures
+
+Parameters
+  struct srpt_device *sdev
+    Device to allocate the I/O context ring for.
+  int ring_size
+    Number of elements in the I/O context ring.
+  int ioctx_size
+    I/O context size.
+  struct kmem_cache *buf_cache
+    I/O buffer cache.
+  int alignment_offset
+    Offset in each ring buffer at which the SRP information
+unit starts.
+  enum dma_data_direction dir
+    DMA data direction.

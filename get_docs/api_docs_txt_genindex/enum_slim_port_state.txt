@@ -1,0 +1,3 @@
+Enum: enum slim_port_state
+
+SLIMbus Port/Endpoint state machine according to SLIMbus Spec 2.0

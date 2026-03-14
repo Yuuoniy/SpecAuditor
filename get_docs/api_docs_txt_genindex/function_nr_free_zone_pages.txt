@@ -1,0 +1,12 @@
+Function: unsigned long nr_free_zone_pages ( int offset )
+
+count number of pages beyond high watermark
+
+Parameters
+  int offset
+    The zone index of the highest zone
+
+Description
+  nr_free_zone_pages() counts the number of pages which are beyond the
+high watermark within all zones at or below a given zone index.  For each
+zone, the number of pages is calculated as:

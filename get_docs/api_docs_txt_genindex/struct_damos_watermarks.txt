@@ -1,0 +1,15 @@
+Struct: struct damos_watermarks
+
+Controls when a given scheme should be activated.
+
+Members
+  metric
+    Metric for the watermarks.
+  interval
+    Watermarks check time interval in microseconds.
+  high
+    High watermark.
+  mid
+    Middle watermark.
+  low
+    Low watermark.

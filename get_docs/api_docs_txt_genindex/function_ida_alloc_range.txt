@@ -1,0 +1,17 @@
+Function: int ida_alloc_range ( struct ida * ida , unsigned int min , unsigned int max , gfp_t gfp )
+
+Allocate an unused ID.
+
+Parameters
+  struct ida *ida
+    IDA handle.
+  unsigned int min
+    Lowest ID to allocate.
+  unsigned int max
+    Highest ID to allocate.
+  gfp_t gfp
+    Memory allocation flags.
+
+Description
+  Allocate an ID between min and max , inclusive.  The allocated ID will
+not exceed INT_MAX , even if max is larger.

@@ -1,0 +1,12 @@
+Function: void v4l2_fh_add ( struct v4l2_fh * fh , struct file * filp )
+
+Add the fh to the list of file handles on a video_device.
+
+Parameters
+  struct v4l2_fh *fh
+    pointer to struct v4l2_fh
+  struct file *filp
+    pointer to struct file associated with fh
+
+Description
+  The function sets filp->private_data to point to fh .

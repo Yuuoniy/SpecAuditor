@@ -1,0 +1,7 @@
+Struct: struct landlock_object_underops
+
+Operations on an underlying object
+
+Members
+  release
+    Releases the underlying object (e.g. iput() for an inode).

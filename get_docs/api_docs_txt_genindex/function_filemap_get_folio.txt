@@ -1,0 +1,13 @@
+Function: struct folio * filemap_get_folio ( struct address_space * mapping , pgoff_t index )
+
+Find and get a folio.
+
+Parameters
+  struct address_space *mapping
+    The address_space to search.
+  pgoff_t index
+    The page index.
+
+Description
+  Looks up the page cache entry at mapping & index .  If a folio is
+present, it is returned with an increased refcount.

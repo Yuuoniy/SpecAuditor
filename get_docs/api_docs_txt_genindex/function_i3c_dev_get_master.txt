@@ -1,0 +1,7 @@
+Function: struct i3c_master_controller * i3c_dev_get_master ( struct i3c_dev_desc * dev )
+
+get master used to communicate with a device
+
+Parameters
+  struct i3c_dev_desc *dev
+    I3C dev

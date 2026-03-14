@@ -1,0 +1,14 @@
+Function: int drm_plane_add_size_hints_property ( struct drm_plane * plane , const struct drm_plane_size_hint * hints , int num_hints )
+
+create a size hints property
+
+Parameters
+  struct drm_plane *plane
+    drm plane
+  const struct drm_plane_size_hint *hints
+    size hints
+  int num_hints
+    number of size hints
+
+Description
+  Create a size hints property for the plane.

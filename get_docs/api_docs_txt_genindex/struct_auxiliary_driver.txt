@@ -1,0 +1,21 @@
+Struct: struct auxiliary_driver
+
+Definition of an auxiliary bus driver
+
+Members
+  probe
+    Called when a matching device is added to the bus.
+  remove
+    Called when device is removed from the bus.
+  shutdown
+    Called at shut-down time to quiesce the device.
+  suspend
+    Called to put the device to sleep mode. Usually to a power state.
+  resume
+    Called to bring a device from sleep mode.
+  name
+    Driver name.
+  driver
+    Core driver structure.
+  id_table
+    Table of devices this driver should match on the bus.

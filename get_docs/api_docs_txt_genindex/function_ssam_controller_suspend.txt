@@ -1,0 +1,12 @@
+Function: int ssam_controller_suspend ( struct ssam_controller * ctrl )
+
+Suspend the controller.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller to suspend.
+
+Description
+  Marks the controller as suspended. Note that display-off and D0-exit
+notifications have to be sent manually before transitioning the controller
+into the suspended state via this function.

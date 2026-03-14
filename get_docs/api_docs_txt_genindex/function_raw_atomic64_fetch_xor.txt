@@ -1,0 +1,12 @@
+Function: s64 raw_atomic64_fetch_xor ( s64 i , atomic64_t * v )
+
+atomic bitwise XOR with full ordering
+
+Parameters
+  s64 i
+    s64 value
+  atomic64_t *v
+    pointer to atomic64_t
+
+Description
+  Atomically updates v to ( v ^ i ) with full ordering.

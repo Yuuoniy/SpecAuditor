@@ -1,0 +1,17 @@
+Function: void dma_fence_chain_init ( struct dma_fence_chain * chain , struct dma_fence * prev , struct dma_fence * fence , uint64_t seqno )
+
+initialize a fence chain
+
+Parameters
+  struct dma_fence_chain *chain
+    the chain node to initialize
+  struct dma_fence *prev
+    the previous fence
+  struct dma_fence *fence
+    the current fence
+  uint64_t seqno
+    the sequence number to use for the fence chain
+
+Description
+  Initialize a new chain node and either start a new chain or add the node to
+the existing chain of the previous fence.

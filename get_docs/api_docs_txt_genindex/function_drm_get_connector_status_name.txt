@@ -1,0 +1,11 @@
+Function: const char * drm_get_connector_status_name ( enum drm_connector_status status )
+
+return a string for connector status
+
+Parameters
+  enum drm_connector_status status
+    connector status to compute name of
+
+Description
+  In contrast to the other drm_get_*_name functions this one here returns a
+const pointer and hence is threadsafe.

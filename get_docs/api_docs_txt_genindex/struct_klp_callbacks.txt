@@ -1,0 +1,16 @@
+Struct: struct klp_callbacks
+
+pre/post live-(un)patch callback structure
+
+Members
+  pre_patch
+    executed before code patching
+  post_patch
+    executed after code patching
+  pre_unpatch
+    executed before code unpatching
+  post_unpatch
+    executed after code unpatching
+  post_unpatch_enabled
+    flag indicating if post-unpatch callback
+should run

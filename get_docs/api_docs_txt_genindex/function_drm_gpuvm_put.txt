@@ -1,0 +1,10 @@
+Function: void drm_gpuvm_put ( struct drm_gpuvm * gpuvm )
+
+drop a struct drm_gpuvm reference
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm to release the reference of
+
+Description
+  This releases a reference to gpuvm .

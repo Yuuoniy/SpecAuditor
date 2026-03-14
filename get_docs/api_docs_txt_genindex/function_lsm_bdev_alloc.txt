@@ -1,0 +1,10 @@
+Function: int lsm_bdev_alloc ( struct block_device * bdev )
+
+allocate a composite block_device blob
+
+Parameters
+  struct block_device *bdev
+    the block_device that needs a blob
+
+Description
+  Allocate the block_device blob for all the modules

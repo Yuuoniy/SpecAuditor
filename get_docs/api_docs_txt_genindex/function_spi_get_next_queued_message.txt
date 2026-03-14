@@ -1,0 +1,11 @@
+Function: struct spi_message * spi_get_next_queued_message ( struct spi_controller * ctlr )
+
+called by driver to check for queued messages
+
+Parameters
+  struct spi_controller *ctlr
+    the controller to check for queued messages
+
+Description
+  If there are more messages in the queue, the next message is returned from
+this call.

@@ -1,0 +1,12 @@
+Function: void regulator_unregister_supply_alias ( struct device * dev , const char * id )
+
+Remove device alias
+
+Parameters
+  struct device *dev
+    device that will be given as the regulator “consumer”
+  const char *id
+    Supply name or regulator ID
+
+Description
+  Remove a lookup alias if one exists for id on dev.

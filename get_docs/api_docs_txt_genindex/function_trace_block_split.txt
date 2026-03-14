@@ -1,0 +1,15 @@
+Function: void trace_block_split ( struct bio * bio , unsigned int new_sector )
+
+split a single bio struct into two bio structs
+
+Parameters
+  struct bio *bio
+    block operation being split
+  unsigned int new_sector
+    The starting sector for the new bio
+
+Description
+  The bio request bio needs to be split into two bio requests.  The newly
+created bio request starts at new_sector . This split may be required due to
+hardware limitations such as operation crossing device boundaries in a RAID
+system.

@@ -1,0 +1,14 @@
+Function: int nand_reset ( struct nand_chip * chip , int chipnr )
+
+Reset and initialize a NAND device
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+  int chipnr
+    Internal die id
+
+Description
+  Save the timings data structure, then apply SDR timings mode 0 (see
+nand_reset_interface for details), do the reset operation, and apply
+back the previous timings.

@@ -1,0 +1,18 @@
+Function: int tipc_l2_rcv_msg ( struct sk_buff * skb , struct net_device * dev , struct packet_type * pt , struct net_device * orig_dev )
+
+handle incoming TIPC message from an interface
+
+Parameters
+  struct sk_buff *skb
+    the received message
+  struct net_device *dev
+    the net device that the packet was received on
+  struct packet_type *pt
+    the packet_type structure which was used to register this handler
+  struct net_device *orig_dev
+    the original receive net device in case the device is a bond
+
+Description
+  Accept only packets explicitly sent to this node, or broadcast packets;
+ignores packets sent using interface multicast, and traffic sent to other
+nodes (which can happen if interface is running in promiscuous mode).

@@ -1,0 +1,15 @@
+Function: u8 pci_find_capability ( struct pci_dev * dev , int cap )
+
+query for devices’ capabilities
+
+Parameters
+  struct pci_dev *dev
+    PCI device to query
+  int cap
+    capability code
+
+Description
+  Tell if a device supports a given PCI capability.
+Returns the address of the requested capability structure within the
+device’s PCI configuration space or 0 in case the device does not
+support it.  Possible values for cap include:

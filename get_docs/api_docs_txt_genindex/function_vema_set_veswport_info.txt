@@ -1,0 +1,14 @@
+Function: void vema_set_veswport_info ( struct opa_vnic_vema_port * port , struct opa_vnic_vema_mad * recvd_mad , struct opa_vnic_vema_mad * rsp_mad )
+
+Set veswport info
+
+Parameters
+  struct opa_vnic_vema_port *port
+    source port on which MAD was received
+  struct opa_vnic_vema_mad *recvd_mad
+    pointer to the received mad
+  struct opa_vnic_vema_mad *rsp_mad
+    pointer to respose mad
+
+Description
+  This function gets the port class infor for vnic

@@ -1,0 +1,18 @@
+Function: void zynqmp_disp_blend_layer_set_csc ( struct zynqmp_disp * disp , struct zynqmp_disp_layer * layer , const u16 * coeffs , const u32 * offsets )
+
+Configure colorspace conversion for layer
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller
+  struct zynqmp_disp_layer *layer
+    The layer
+  const u16 *coeffs
+    Colorspace conversion matrix
+  const u32 *offsets
+    Colorspace conversion offsets
+
+Description
+  Configure the input colorspace conversion matrix and offsets for the layer .
+Columns of the matrix are automatically swapped based on the input format to
+handle RGB and YCrCb components permutations.

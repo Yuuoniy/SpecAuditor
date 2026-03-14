@@ -1,0 +1,11 @@
+Struct: struct srpt_recv_ioctx
+
+SRPT receive I/O context
+
+Members
+  ioctx
+    See above.
+  wait_list
+    Node for insertion in srpt_rdma_ch.cmd_wait_list.
+  byte_len
+    Number of bytes in ioctx.buf .

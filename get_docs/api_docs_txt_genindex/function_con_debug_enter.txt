@@ -1,0 +1,12 @@
+Function: void con_debug_enter ( struct vc_data * vc )
+
+prepare the console for the kernel debugger
+
+Parameters
+  struct vc_data *vc
+    virtual console
+
+Description
+  Called when the console is taken over by the kernel debugger, this
+function needs to save the current console state, then put the console
+into a state suitable for the kernel debugger.

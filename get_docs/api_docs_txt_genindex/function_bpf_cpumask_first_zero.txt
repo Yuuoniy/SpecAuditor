@@ -1,0 +1,10 @@
+Function: __bpf_kfunc u32 bpf_cpumask_first_zero ( const struct cpumask * cpumask )
+
+Get the index of the first unset bit in the cpumask.
+
+Parameters
+  const struct cpumask *cpumask
+    The cpumask being queried.
+
+Description
+  Find the index of the first unset bit of the cpumask. A struct bpf_cpumask pointer may be safely passed to this function.

@@ -1,0 +1,49 @@
+Struct: struct usb_device_id
+
+identifies USB devices for probing and hotplugging
+
+Members
+  match_flags
+    Bit mask controlling which of the other fields are used to
+match against new devices. Any field except for driver_info may be
+used, although some only make sense in conjunction with other fields.
+This is usually set by a USB_DEVICE_*() macro, which sets all
+other fields in this structure except for driver_info.
+  idVendor
+    USB vendor ID for a device; numbers are assigned
+by the USB forum to its members.
+  idProduct
+    Vendor-assigned product ID.
+  bcdDevice_lo
+    Low end of range of vendor-assigned product version numbers.
+This is also used to identify individual product versions, for
+a range consisting of a single device.
+  bcdDevice_hi
+    High end of version number range.  The range of product
+versions is inclusive.
+  bDeviceClass
+    Class of device; numbers are assigned
+by the USB forum.  Products may choose to implement classes,
+or be vendor-specific.  Device classes specify behavior of all
+the interfaces on a device.
+  bDeviceSubClass
+    Subclass of device; associated with bDeviceClass.
+  bDeviceProtocol
+    Protocol of device; associated with bDeviceClass.
+  bInterfaceClass
+    Class of interface; numbers are assigned
+by the USB forum.  Products may choose to implement classes,
+or be vendor-specific.  Interface classes specify behavior only
+of a given interface; other interfaces may support other classes.
+  bInterfaceSubClass
+    Subclass of interface; associated with bInterfaceClass.
+  bInterfaceProtocol
+    Protocol of interface; associated with bInterfaceClass.
+  bInterfaceNumber
+    Number of interface; composite devices may use
+fixed interface numbers to differentiate between vendor-specific
+interfaces.
+  driver_info
+    Holds information used by the driver.  Usually it holds
+a pointer to a descriptor understood by the driver, or perhaps
+device flags.

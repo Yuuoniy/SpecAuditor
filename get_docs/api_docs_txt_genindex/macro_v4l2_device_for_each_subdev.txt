@@ -1,0 +1,14 @@
+Macro: v4l2_device_for_each_subdev
+
+
+
+Parameters
+  sd
+    pointer that will be filled by the macro with all struct v4l2_subdev pointer used as an iterator by the loop.
+  v4l2_dev
+    struct v4l2_device owning the sub-devices to iterate over.
+
+Description
+  This macro iterates over all sub-devices owned by the v4l2_dev device.
+It acts as a for loop iterator and executes the next statement with
+the sd variable pointing to each sub-device in turn.

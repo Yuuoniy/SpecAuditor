@@ -1,0 +1,10 @@
+Macro: EXPECT_NULL
+
+
+
+Parameters
+  seen
+    measured value
+
+Description
+  EXPECT_NULL(measured): NULL == measured

@@ -1,0 +1,10 @@
+Function: void netif_device_attach ( struct net_device * dev )
+
+mark device as attached
+
+Parameters
+  struct net_device *dev
+    network device
+
+Description
+  Mark device as attached from system and restart if needed.

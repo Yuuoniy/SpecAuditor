@@ -1,0 +1,18 @@
+Function: int security_socket_getpeersec_dgram ( struct socket * sock , struct sk_buff * skb , u32 * secid )
+
+Get the remote peer label
+
+Parameters
+  struct socket *sock
+    socket
+  struct sk_buff *skb
+    datagram packet
+  u32 *secid
+    remote peer label secid
+
+Description
+  This hook allows the security module to provide peer socket security state
+for udp sockets on a per-packet basis to userspace via getsockopt
+SO_GETPEERSEC. The application must first have indicated the IP_PASSSEC
+option via getsockopt. It can then retrieve the security state returned by
+this hook for a packet via the SCM_SECURITY ancillary message type.

@@ -1,0 +1,16 @@
+Function: void drm_dp_remove_payload_part1 ( struct drm_dp_mst_topology_mgr * mgr , struct drm_dp_mst_topology_state * mst_state , struct drm_dp_mst_atomic_payload * payload )
+
+Remove an MST payload along the virtual channel
+
+Parameters
+  struct drm_dp_mst_topology_mgr *mgr
+    Manager to use.
+  struct drm_dp_mst_topology_state *mst_state
+    The MST atomic state
+  struct drm_dp_mst_atomic_payload *payload
+    The payload to remove
+
+Description
+  Removes a payload along the virtual channel if it was successfully allocated.
+After calling this, the driver should set HW to generate ACT and then switch to new
+payload allocation state.

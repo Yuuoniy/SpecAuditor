@@ -1,0 +1,10 @@
+Function: errseq_t file_sample_sb_err ( struct file * file )
+
+sample the current errseq_t to test for later errors
+
+Parameters
+  struct file *file
+    file pointer to be sampled
+
+Description
+  Grab the most current superblock-level errseq_t value for the given struct file .

@@ -1,0 +1,9 @@
+Function: void netdev_tx_reset_subqueue ( const struct net_device * dev , u32 qid )
+
+reset the BQL stats and state of a netdev queue
+
+Parameters
+  const struct net_device *dev
+    network device
+  u32 qid
+    stack index of the queue to reset

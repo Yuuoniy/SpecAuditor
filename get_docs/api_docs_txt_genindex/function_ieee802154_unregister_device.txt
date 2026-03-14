@@ -1,0 +1,2 @@
+Function: void ieee802154_unregister_device ( struct ieee802154_dev * dev )
+

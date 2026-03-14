@@ -1,0 +1,15 @@
+Function: enum scsi_disposition ata_eh_decide_disposition ( struct ata_queued_cmd * qc )
+
+Disposition a qc based on sense data
+
+Parameters
+  struct ata_queued_cmd *qc
+    qc to examine
+
+Description
+  For a regular SCSI command, the SCSI completion callback ( scsi_done() )
+will call scsi_complete() , which will call scsi_decide_disposition() ,
+which will call scsi_check_sense() . scsi_complete() finally calls scsi_finish_command() . This is fine for SCSI, since any eventual sense
+data is usually returned in the completion itself (without invoking SCSI
+EH). However, for a QC, we always need to fetch the sense data
+explicitly using SCSI EH.

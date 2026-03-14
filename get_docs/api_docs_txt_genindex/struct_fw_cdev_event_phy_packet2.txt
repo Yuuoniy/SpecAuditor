@@ -1,0 +1,20 @@
+Struct: struct fw_cdev_event_phy_packet2
+
+A PHY packet was transmitted or received with time stamp.
+
+Members
+  closure
+    See fw_cdev_event_common ; set by FW_CDEV_IOC_SEND_PHY_PACKET or FW_CDEV_IOC_RECEIVE_PHY_PACKETS ioctl
+  type
+    FW_CDEV_EVENT_PHY_PACKET_SENT2 or FW_CDEV_EVENT_PHY_PACKET_RECEIVED2
+  rcode
+    RCODE_ ..., indicates success or failure of transmission
+  length
+    Data length in bytes
+  tstamp
+    For FW_CDEV_EVENT_PHY_PACKET_RECEIVED2 , the time stamp of isochronous cycle at
+which the packet arrived. For FW_CDEV_EVENT_PHY_PACKET_SENT2 and non-ping packet,
+the time stamp of isochronous cycle at which the packet was sent. For ping packet,
+the tick count for round-trip time measured by 1394 OHCI controller.
+  data
+    Incoming data

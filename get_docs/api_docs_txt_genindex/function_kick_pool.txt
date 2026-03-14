@@ -1,0 +1,11 @@
+Function: bool kick_pool ( struct worker_pool * pool )
+
+wake up an idle worker if necessary
+
+Parameters
+  struct worker_pool *pool
+    pool to kick
+
+Description
+  pool may have pending work items. Wake up worker if necessary. Returns
+whether a worker was woken up.

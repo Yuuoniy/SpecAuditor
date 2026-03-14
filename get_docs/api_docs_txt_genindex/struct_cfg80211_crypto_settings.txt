@@ -1,0 +1,44 @@
+Struct: struct cfg80211_crypto_settings
+
+Crypto settings
+
+Members
+  wpa_versions
+    indicates which, if any, WPA versions are enabled
+(from enum nl80211_wpa_versions )
+  cipher_group
+    group key cipher suite (or 0 if unset)
+  n_ciphers_pairwise
+    number of AP supported unicast ciphers
+  ciphers_pairwise
+    unicast key cipher suites
+  n_akm_suites
+    number of AKM suites
+  akm_suites
+    AKM suites
+  control_port
+    Whether user space controls IEEE 802.1X port, i.e.,
+sets/clears NL80211_STA_FLAG_AUTHORIZED . If true, the driver is
+required to assume that the port is unauthorized until authorized by
+user space. Otherwise, port is marked authorized by default.
+  control_port_ethertype
+    the control port protocol that should be
+allowed through even on unauthorized ports
+  control_port_no_encrypt
+    TRUE to prevent encryption of control port
+protocol frames.
+  control_port_over_nl80211
+    TRUE if userspace expects to exchange control
+port frames over NL80211 instead of the network interface.
+  control_port_no_preauth
+    disables pre-auth rx over the nl80211 control
+port for mac80211
+  psk
+    PSK (for devices supporting 4-way-handshake offload)
+  sae_pwd
+    password for SAE authentication (for devices supporting SAE
+offload)
+  sae_pwd_len
+    length of SAE password (for devices supporting SAE offload)
+  sae_pwe
+    The mechanisms allowed for SAE PWE derivation:

@@ -1,0 +1,10 @@
+Macro: IDR_INIT
+
+
+
+Parameters
+  name
+    Name of IDR.
+
+Description
+  A freshly-initialised IDR contains no IDs.

@@ -1,0 +1,20 @@
+Function: void read_seqbegin_or_lock ( seqlock_t * lock , int * seq )
+
+begin a seqlock_t lockless or locking reader
+
+Parameters
+  seqlock_t *lock
+    Pointer to seqlock_t
+  int *seq
+    Marker and return parameter. If the passed value is even, the
+reader will become a lockless seqlock_t reader as in read_seqbegin() .
+If the passed value is odd, the reader will become a locking reader
+as in read_seqlock_excl() .  In the first call to this function, the
+caller must initialize and pass an even value to seq ; this way, a
+lockless read can be optimistically tried first.
+
+Description
+  read_seqbegin_or_lock is an API designed to optimistically try a normal
+lockless seqlock_t read section first.  If an odd counter is found, the
+lockless read trial has failed, and the next read iteration transforms
+itself into a full seqlock_t locking reader.

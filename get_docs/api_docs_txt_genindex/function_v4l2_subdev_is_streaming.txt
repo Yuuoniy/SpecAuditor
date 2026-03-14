@@ -1,0 +1,12 @@
+Function: bool v4l2_subdev_is_streaming ( struct v4l2_subdev * sd )
+
+Returns if the subdevice is streaming
+
+Parameters
+  struct v4l2_subdev *sd
+    The subdevice
+
+Description
+  v4l2_subdev_is_streaming() tells if the subdevice is currently streaming.
+“Streaming” here means whether . s_stream() or . enable_streams() has been
+successfully called, and the streaming has not yet been disabled.

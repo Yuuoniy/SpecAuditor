@@ -1,0 +1,13 @@
+Function: int pcie_set_mps ( struct pci_dev * dev , int mps )
+
+set PCI Express maximum payload size
+
+Parameters
+  struct pci_dev *dev
+    PCI device to query
+  int mps
+    maximum payload size in bytes
+valid values are 128, 256, 512, 1024, 2048, 4096
+
+Description
+  If possible sets maximum payload size

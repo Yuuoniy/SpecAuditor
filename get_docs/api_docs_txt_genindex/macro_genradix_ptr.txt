@@ -1,0 +1,12 @@
+Macro: genradix_ptr
+
+
+
+Parameters
+  _radix
+    genradix to access
+  _idx
+    index to fetch
+
+Description
+  Returns a pointer to entry at _idx , or NULL if that entry does not exist.

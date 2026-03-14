@@ -1,0 +1,11 @@
+Function: void dma_buf_move_notify ( struct dma_buf * dmabuf )
+
+notify attachments that DMA-buf is moving
+
+Parameters
+  struct dma_buf *dmabuf
+    [in]    buffer which is moving
+
+Description
+  Informs all attachments that they need to destroy and recreate all their
+mappings.

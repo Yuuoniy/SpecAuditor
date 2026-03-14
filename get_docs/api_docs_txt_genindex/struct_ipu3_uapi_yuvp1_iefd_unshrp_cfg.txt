@@ -1,0 +1,9 @@
+Struct: struct ipu3_uapi_yuvp1_iefd_unshrp_cfg
+
+Unsharp mask config
+
+Members
+  unsharp_coef0
+    unsharp coefficient 0 config. See ipu3_uapi_unsharp_coef0
+  unsharp_coef1
+    unsharp coefficient 1 config. See ipu3_uapi_unsharp_coef1

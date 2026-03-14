@@ -1,0 +1,15 @@
+Function: int v4l2_fwnode_endpoint_alloc_parse ( struct fwnode_handle * fwnode , struct v4l2_fwnode_endpoint * vep )
+
+parse all fwnode node properties
+
+Parameters
+  struct fwnode_handle *fwnode
+    pointer to the endpoint’s fwnode handle
+  struct v4l2_fwnode_endpoint *vep
+    pointer to the V4L2 fwnode data structure
+
+Description
+  This function parses the V4L2 fwnode endpoint specific parameters from the
+firmware. There are two ways to use this function, either by letting it
+obtain the type of the bus (by setting the vep.bus_type field to
+V4L2_MBUS_UNKNOWN) or specifying the bus type explicitly to one of the enum v4l2_mbus_type types.

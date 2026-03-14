@@ -1,0 +1,9 @@
+Function: struct device_node * of_graph_get_next_port_endpoint ( const struct device_node * port , struct device_node * prev )
+
+get next endpoint node in port. If it reached to end of the port, it will return NULL.
+
+Parameters
+  const struct device_node *port
+    pointer to the target port node
+  struct device_node *prev
+    previous endpoint node, or NULL to get first

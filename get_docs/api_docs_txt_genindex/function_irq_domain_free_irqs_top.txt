@@ -1,0 +1,11 @@
+Function: void irq_domain_free_irqs_top ( struct irq_domain * domain , unsigned int virq , unsigned int nr_irqs )
+
+Clear handler and handler data, clear irqdata and free parent
+
+Parameters
+  struct irq_domain *domain
+    Interrupt domain to match
+  unsigned int virq
+    IRQ number to start with
+  unsigned int nr_irqs
+    The number of irqs to free

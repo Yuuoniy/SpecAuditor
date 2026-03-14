@@ -1,0 +1,11 @@
+Function: void * mas_walk ( struct ma_state * mas )
+
+Search for mas->index in the tree.
+
+Parameters
+  struct ma_state *mas
+    The maple state.
+
+Description
+  mas->index and mas->last will be set to the range if there is a value.  If
+mas->status is ma_none, reset to ma_start

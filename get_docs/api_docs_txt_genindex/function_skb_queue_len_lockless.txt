@@ -1,0 +1,11 @@
+Function: __u32 skb_queue_len_lockless ( const struct sk_buff_head * list_ )
+
+get queue length
+
+Parameters
+  const struct sk_buff_head *list_
+    list to measure
+
+Description
+  Return the length of an sk_buff queue.
+This variant can be used in lockless contexts.

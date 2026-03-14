@@ -1,0 +1,11 @@
+Function: void * netdev_alloc_frag ( unsigned int fragsz )
+
+allocate a page fragment
+
+Parameters
+  unsigned int fragsz
+    fragment size
+
+Description
+  Allocates a frag from a page for receive buffer.
+Uses GFP_ATOMIC allocations.

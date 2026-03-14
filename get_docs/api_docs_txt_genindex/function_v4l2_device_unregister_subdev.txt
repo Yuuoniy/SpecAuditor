@@ -1,0 +1,10 @@
+Function: void v4l2_device_unregister_subdev ( struct v4l2_subdev * sd )
+
+Unregisters a subdev with a v4l2 device.
+
+Parameters
+  struct v4l2_subdev *sd
+    pointer to struct v4l2_subdev
+
+Description
+  Note

@@ -1,0 +1,13 @@
+Struct: struct fw_cdev_send_response
+
+Send an asynchronous response packet
+
+Members
+  rcode
+    Response code as determined by the userspace handler
+  length
+    Length of outgoing payload, in bytes
+  data
+    Userspace pointer to payload
+  handle
+    The handle from the fw_cdev_event_request

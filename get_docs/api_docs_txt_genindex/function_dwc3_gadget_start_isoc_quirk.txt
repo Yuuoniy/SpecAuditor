@@ -1,0 +1,12 @@
+Function: int dwc3_gadget_start_isoc_quirk ( struct dwc3_ep * dep )
+
+workaround invalid frame number
+
+Parameters
+  struct dwc3_ep *dep
+    isoc endpoint
+
+Description
+  This function tests for the correct combination of BIT[15:14] from the 16-bit
+microframe number reported by the XferNotReady event for the future frame
+number to start the isoc transfer.

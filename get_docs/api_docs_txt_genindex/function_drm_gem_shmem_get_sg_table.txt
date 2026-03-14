@@ -1,0 +1,11 @@
+Function: struct sg_table * drm_gem_shmem_get_sg_table ( struct drm_gem_shmem_object * shmem )
+
+Provide a scatter/gather table of pinned pages for a shmem GEM object
+
+Parameters
+  struct drm_gem_shmem_object *shmem
+    shmem GEM object
+
+Description
+  This function exports a scatter/gather table suitable for PRIME usage by
+calling the standard DMA mapping API.

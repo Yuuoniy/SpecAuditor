@@ -1,0 +1,13 @@
+Function: void unlock_sock_fast ( struct sock * sk , bool slow )
+
+complement of lock_sock_fast
+
+Parameters
+  struct sock *sk
+    socket
+  bool slow
+    slow mode
+
+Description
+  fast unlock socket for user context.
+If slow mode is on, we call regular release_sock()

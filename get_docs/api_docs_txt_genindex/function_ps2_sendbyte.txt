@@ -1,0 +1,15 @@
+Function: int ps2_sendbyte ( struct ps2dev * ps2dev , u8 byte , unsigned int timeout )
+
+sends a byte to the device and wait for acknowledgement
+
+Parameters
+  struct ps2dev *ps2dev
+    a PS/2 device to send the data to
+  u8 byte
+    data to be sent to the device
+  unsigned int timeout
+    timeout for sending the data and receiving an acknowledge
+
+Description
+  The function doesn’t handle retransmission, the caller is expected to handle
+it when needed.

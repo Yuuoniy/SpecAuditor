@@ -1,0 +1,22 @@
+Function: struct drm_display_mode * drm_analog_tv_mode ( struct drm_device * dev , enum drm_connector_tv_mode tv_mode , unsigned long pixel_clock_hz , unsigned int hdisplay , unsigned int vdisplay , bool interlace )
+
+create a display mode for an analog TV
+
+Parameters
+  struct drm_device *dev
+    drm device
+  enum drm_connector_tv_mode tv_mode
+    TV Mode standard to create a mode for. See DRM_MODE_TV_MODE_*.
+  unsigned long pixel_clock_hz
+    Pixel Clock Frequency, in Hertz
+  unsigned int hdisplay
+    hdisplay size
+  unsigned int vdisplay
+    vdisplay size
+  bool interlace
+    whether to compute an interlaced mode
+
+Description
+  This function creates a struct drm_display_mode instance suited for
+an analog TV output, for one of the usual analog TV modes. Where
+this is DRM_MODE_TV_MODE_MONOCHROME, a 625-line mode will be created.

@@ -1,0 +1,9 @@
+Function: void crc8_populate_lsb ( u8 table [ CRC8_TABLE_SIZE ] , u8 polynomial )
+
+fill crc table for given polynomial in regular bit order.
+
+Parameters
+  u8 table[CRC8_TABLE_SIZE]
+    table to be filled.
+  u8 polynomial
+    polynomial for which table is to be filled.

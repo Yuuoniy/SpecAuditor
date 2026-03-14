@@ -1,0 +1,12 @@
+Function: int phy_config_interrupt ( struct phy_device * phydev , bool interrupts )
+
+configure the PHY device for the requested interrupts
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+  bool interrupts
+    interrupt flags to configure for this phydev
+
+Description
+  Returns 0 on success or < 0 on error.

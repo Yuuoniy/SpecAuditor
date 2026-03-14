@@ -1,0 +1,10 @@
+Function: bool of_usb_host_tpl_support ( struct device_node * np )
+
+to get if Targeted Peripheral List is supported for given targeted hosts (non-PC hosts)
+
+Parameters
+  struct device_node *np
+    Pointer to the given device_node
+
+Description
+  The function gets if the targeted hosts support TPL or not

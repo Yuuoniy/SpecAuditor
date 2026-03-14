@@ -1,0 +1,13 @@
+Function: void phylink_caps_to_linkmodes ( unsigned long * linkmodes , unsigned long caps )
+
+Convert capabilities to ethtool link modes
+
+Parameters
+  unsigned long *linkmodes
+    ethtool linkmode mask (must be already initialised)
+  unsigned long caps
+    bitmask of MAC capabilities
+
+Description
+  Set all possible pause, speed and duplex linkmodes in linkmodes that are
+supported by the caps . linkmodes must have been initialised previously.

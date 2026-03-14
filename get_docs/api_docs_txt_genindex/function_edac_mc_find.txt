@@ -1,0 +1,11 @@
+Function: struct mem_ctl_info * edac_mc_find ( int idx )
+
+Search for a mem_ctl_info structure whose index is idx .
+
+Parameters
+  int idx
+    index to be seek
+
+Description
+  If found, return a pointer to the structure.
+Else return NULL.

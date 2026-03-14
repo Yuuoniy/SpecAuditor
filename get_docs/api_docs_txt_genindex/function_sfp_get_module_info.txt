@@ -1,0 +1,13 @@
+Function: int sfp_get_module_info ( struct sfp_bus * bus , struct ethtool_modinfo * modinfo )
+
+Get the ethtool_modinfo for a SFP module
+
+Parameters
+  struct sfp_bus *bus
+    a pointer to the struct sfp_bus structure for the sfp module
+  struct ethtool_modinfo *modinfo
+    a struct ethtool_modinfo
+
+Description
+  Fill in the type and eeprom_len parameters in modinfo for a module on
+the sfp bus specified by bus .

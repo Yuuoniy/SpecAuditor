@@ -1,0 +1,16 @@
+Struct: struct drm_asahi_zls_buffer
+
+Describe a depth or stencil buffer.
+
+Members
+  base
+    Base address of the buffer
+  comp_base
+    If the load buffer is compressed, address of the
+compression metadata section.
+  stride
+    If layered rendering is enabled, the number of bytes
+between each layer of the buffer.
+  comp_stride
+    If layered rendering is enabled, the number of bytes
+between each layer of the compression metadata.

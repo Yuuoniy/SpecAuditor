@@ -1,0 +1,16 @@
+Function: long sys_tgkill ( pid_t tgid , pid_t pid , int sig )
+
+send signal to one specific thread
+
+Parameters
+  pid_t tgid
+    the thread group ID of the thread
+  pid_t pid
+    the PID of the thread
+  int sig
+    signal to be sent
+
+Description
+  This syscall also checks the tgid and returns -ESRCH even if the PID
+exists but it’s not belonging to the target process anymore. This
+method solves the problem of threads exiting and PIDs getting reused.

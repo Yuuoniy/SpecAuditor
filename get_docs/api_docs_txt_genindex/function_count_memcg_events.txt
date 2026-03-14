@@ -1,0 +1,11 @@
+Function: void count_memcg_events ( struct mem_cgroup * memcg , enum vm_event_item idx , unsigned long count )
+
+account VM events in a cgroup
+
+Parameters
+  struct mem_cgroup *memcg
+    the memory cgroup
+  enum vm_event_item idx
+    the event item
+  unsigned long count
+    the number of events that occurred

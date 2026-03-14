@@ -1,0 +1,7 @@
+Function: struct proc_dir_entry * scsi_template_proc_dir ( const struct scsi_host_template * sht )
+
+returns the procfs dir for a SCSI host template
+
+Parameters
+  const struct scsi_host_template *sht
+    SCSI host template pointer.

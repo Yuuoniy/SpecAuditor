@@ -1,0 +1,13 @@
+Struct: struct fw_cdev_get_cycle_timer2
+
+read cycle timer register
+
+Members
+  tv_sec
+    system time, seconds
+  tv_nsec
+    system time, sub-seconds part in nanoseconds
+  clk_id
+    input parameter, clock from which to get the system time
+  cycle_timer
+    Cycle Time register contents

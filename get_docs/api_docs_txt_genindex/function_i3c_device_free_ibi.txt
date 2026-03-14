@@ -1,0 +1,12 @@
+Function: void i3c_device_free_ibi ( struct i3c_device * dev )
+
+Free all resources needed for IBI handling
+
+Parameters
+  struct i3c_device *dev
+    device on which you want to release IBI resources
+
+Description
+  This function is responsible for de-allocating resources previously
+allocated by i3c_device_request_ibi() . It should be called after disabling
+IBIs with i3c_device_disable_ibi() .

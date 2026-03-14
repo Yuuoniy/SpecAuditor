@@ -1,0 +1,13 @@
+Function: size_t kmalloc_size_roundup ( size_t size )
+
+Report allocation bucket size for the given size
+
+Parameters
+  size_t size
+    Number of bytes to round up from.
+
+Description
+  This returns the number of bytes that would be available in a kmalloc() allocation of size bytes. For example, a 126 byte request would be
+rounded up to the next sized kmalloc bucket, 128 bytes. (This is strictly
+for the general-purpose kmalloc() -based allocations, and is not for the
+pre-sized kmem_cache_alloc() -based allocations.)

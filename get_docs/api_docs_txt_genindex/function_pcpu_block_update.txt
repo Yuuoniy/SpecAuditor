@@ -1,0 +1,16 @@
+Function: void pcpu_block_update ( struct pcpu_block_md * block , int start , int end )
+
+updates a block given a free area
+
+Parameters
+  struct pcpu_block_md *block
+    block of interest
+  int start
+    start offset in block
+  int end
+    end offset in block
+
+Description
+  Updates a block given a known free area.  The region [start, end) is
+expected to be the entirety of the free area within a block.  Chooses
+the best starting offset if the contig hints are equal.

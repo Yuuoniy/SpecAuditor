@@ -1,0 +1,7 @@
+Function: bool ssam_event_queue_is_empty ( struct ssam_event_queue * q )
+
+Check if the event queue is empty.
+
+Parameters
+  struct ssam_event_queue *q
+    The event queue.

@@ -1,0 +1,11 @@
+Function: struct pisp_be_cdn_config
+
+PiSP Back End CDN config
+
+Members
+  thresh
+    Constant for noise estimation
+  iir_strength
+    Relative strength of the IIR part of the filter
+  g_adjust
+    Proportion of the change assigned to the G channel

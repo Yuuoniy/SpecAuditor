@@ -1,0 +1,12 @@
+Function: int i2c_get_device_id ( const struct i2c_client * client , struct i2c_device_identity * id )
+
+get manufacturer, part id and die revision of a device
+
+Parameters
+  const struct i2c_client *client
+    The device to query
+  struct i2c_device_identity *id
+    The queried information
+
+Description
+  Returns negative errno on error, zero on success.

@@ -1,0 +1,13 @@
+Macro: raw_read_seqcount
+
+
+
+Parameters
+  s
+    Pointer to seqcount_t or any of the seqcount_LOCKNAME_t variants
+
+Description
+  raw_read_seqcount opens a read critical section of the given
+seqcount_t, without any lockdep checking, and without checking or
+masking the sequence counter LSB. Calling code is responsible for
+handling that.

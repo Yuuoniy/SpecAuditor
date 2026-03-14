@@ -1,0 +1,9 @@
+Macro: DRM_IOCTL_SET_CLIENT_NAME
+
+
+
+Members
+  type
+    event type.
+  length
+    total number of payload bytes (including header).

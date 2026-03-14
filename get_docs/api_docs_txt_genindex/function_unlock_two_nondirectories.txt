@@ -1,0 +1,9 @@
+Function: void unlock_two_nondirectories ( struct inode * inode1 , struct inode * inode2 )
+
+release locks from lock_two_nondirectories()
+
+Parameters
+  struct inode *inode1
+    first inode to unlock
+  struct inode *inode2
+    second inode to unlock

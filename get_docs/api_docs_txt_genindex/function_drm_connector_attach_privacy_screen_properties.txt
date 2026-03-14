@@ -1,0 +1,12 @@
+Function: void drm_connector_attach_privacy_screen_properties ( struct drm_connector * connector )
+
+attach the drm connecter’s privacy-screen properties.
+
+Parameters
+  struct drm_connector *connector
+    connector on which to attach the privacy-screen properties
+
+Description
+  This function attaches the “privacy-screen sw-state” and “privacy-screen
+hw-state” properties to the connector. The initial state of both is set
+to “Disabled”.

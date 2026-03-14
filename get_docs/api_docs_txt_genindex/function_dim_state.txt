@@ -1,0 +1,3 @@
+Function: enum dim_state
+
+DIM algorithm states

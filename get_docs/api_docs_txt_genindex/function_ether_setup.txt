@@ -1,0 +1,10 @@
+Function: void ether_setup ( struct net_device * dev )
+
+setup Ethernet network device
+
+Parameters
+  struct net_device *dev
+    network device
+
+Description
+  Fill in the fields of the device structure with Ethernet-generic values.

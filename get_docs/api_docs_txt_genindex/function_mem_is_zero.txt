@@ -1,0 +1,9 @@
+Function: bool mem_is_zero ( const void * s , size_t n )
+
+Check if an area of memory is all 0’s.
+
+Parameters
+  const void *s
+    The memory area
+  size_t n
+    The size of the area

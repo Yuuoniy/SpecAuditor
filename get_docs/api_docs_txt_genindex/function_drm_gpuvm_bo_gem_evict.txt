@@ -1,0 +1,12 @@
+Function: void drm_gpuvm_bo_gem_evict ( struct drm_gem_object * obj , bool evict )
+
+add/remove all drm_gpuvm_bo ’s in the list to/from the drm_gpuvms evicted list
+
+Parameters
+  struct drm_gem_object *obj
+    the drm_gem_object
+  bool evict
+    indicates whether obj is evicted
+
+Description
+  See drm_gpuvm_bo_evict() .

@@ -1,0 +1,18 @@
+Function: void drm_atomic_private_obj_init ( struct drm_device * dev , struct drm_private_obj * obj , struct drm_private_state * state , const struct drm_private_state_funcs * funcs )
+
+initialize private object
+
+Parameters
+  struct drm_device *dev
+    DRM device this object will be attached to
+  struct drm_private_obj *obj
+    private object
+  struct drm_private_state *state
+    initial private object state
+  const struct drm_private_state_funcs *funcs
+    pointer to the struct of function pointers that identify the object
+type
+
+Description
+  Initialize the private object, which can be embedded into any
+driver private object that needs its own atomic state.

@@ -1,0 +1,9 @@
+Function: bool xa_marked ( const struct xarray * xa , xa_mark_t mark )
+
+Inquire whether any entry in this array has a mark set
+
+Parameters
+  const struct xarray *xa
+    Array
+  xa_mark_t mark
+    Mark value

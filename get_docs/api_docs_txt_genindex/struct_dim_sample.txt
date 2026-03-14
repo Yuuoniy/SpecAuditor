@@ -1,0 +1,15 @@
+Struct: struct dim_sample
+
+Structure for DIM sample data. Used for communications between DIM and its consumer.
+
+Members
+  time
+    Sample timestamp
+  pkt_ctr
+    Number of packets
+  byte_ctr
+    Number of bytes
+  event_ctr
+    Number of events
+  comp_ctr
+    Current completion counter

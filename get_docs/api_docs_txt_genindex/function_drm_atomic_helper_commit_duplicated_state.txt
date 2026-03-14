@@ -1,0 +1,13 @@
+Function: int drm_atomic_helper_commit_duplicated_state ( struct drm_atomic_state * state , struct drm_modeset_acquire_ctx * ctx )
+
+commit duplicated state
+
+Parameters
+  struct drm_atomic_state *state
+    duplicated atomic state to commit
+  struct drm_modeset_acquire_ctx *ctx
+    pointer to acquire_ctx to use for commit.
+
+Description
+  The state returned by drm_atomic_helper_duplicate_state() and drm_atomic_helper_suspend() is partially invalid, and needs to
+be fixed up before commit.

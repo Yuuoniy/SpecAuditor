@@ -1,0 +1,14 @@
+Function: int dwc3_gadget_check_config ( struct usb_gadget * g )
+
+ensure dwc3 can support the USB configuration
+
+Parameters
+  struct usb_gadget *g
+    pointer to the USB gadget
+
+Description
+  Used to record the maximum number of endpoints being used in a USB composite
+device. (across all configurations)  This is to be used in the calculation
+of the TXFIFO sizes when resizing internal memory for individual endpoints.
+It will help ensured that the resizing logic reserves enough space for at
+least one max packet.

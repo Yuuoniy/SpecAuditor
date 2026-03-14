@@ -1,0 +1,12 @@
+Function: int driver_attach ( const struct device_driver * drv )
+
+try to bind driver to devices.
+
+Parameters
+  const struct device_driver *drv
+    driver.
+
+Description
+  Walk the list of devices that the bus has on it and try to
+match the driver with each one.  If driver_probe_device() returns 0 and the dev->driver is set, we’ve found a
+compatible pair.

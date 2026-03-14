@@ -1,0 +1,16 @@
+Function: int nand_get_features_op ( struct nand_chip * chip , u8 feature , void * data )
+
+Do a GET FEATURES operation
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+  u8 feature
+    feature id
+  void *data
+    4 bytes of data
+
+Description
+  This function sends a GET FEATURES command and waits for the NAND to be
+ready before returning.
+This function does not select/unselect the CS line.

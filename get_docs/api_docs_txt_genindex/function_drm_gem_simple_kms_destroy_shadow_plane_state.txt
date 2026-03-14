@@ -1,0 +1,14 @@
+Function: void drm_gem_simple_kms_destroy_shadow_plane_state ( struct drm_simple_display_pipe * pipe , struct drm_plane_state * plane_state )
+
+resets shadow-buffered plane state
+
+Parameters
+  struct drm_simple_display_pipe *pipe
+    the simple display pipe
+  struct drm_plane_state *plane_state
+    the plane state of type struct drm_shadow_plane_state
+
+Description
+  This function implements struct drm_simple_display_funcs .destroy_plane_state
+for shadow-buffered planes. It expects that mappings of shadow buffers
+have been released already.

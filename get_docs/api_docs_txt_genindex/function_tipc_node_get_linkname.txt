@@ -1,0 +1,15 @@
+Function: int tipc_node_get_linkname ( struct net * net , u32 bearer_id , u32 addr , char * linkname , size_t len )
+
+get the name of a link
+
+Parameters
+  struct net *net
+    the applicable net namespace
+  u32 bearer_id
+    id of the bearer
+  u32 addr
+    peer node address
+  char *linkname
+    link name output buffer
+  size_t len
+    size of linkname output buffer

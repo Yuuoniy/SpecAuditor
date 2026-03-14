@@ -1,0 +1,11 @@
+Function: struct drm_xe_query_gt_list
+
+A list with GT description items.
+
+Members
+  num_gt
+    number of GT items returned in gt_list
+  pad
+    MBZ
+  gt_list
+    The GT list returned for this device

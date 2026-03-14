@@ -1,0 +1,14 @@
+Function: size_t rpc_peeraddr ( struct rpc_clnt * clnt , struct sockaddr * buf , size_t bufsize )
+
+extract remote peer address from clnt’s xprt
+
+Parameters
+  struct rpc_clnt *clnt
+    RPC client structure
+  struct sockaddr *buf
+    target buffer
+  size_t bufsize
+    length of target buffer
+
+Description
+  Returns the number of bytes that are actually in the stored address.

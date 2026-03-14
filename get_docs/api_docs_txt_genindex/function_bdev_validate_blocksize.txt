@@ -1,0 +1,13 @@
+Function: int bdev_validate_blocksize ( struct block_device * bdev , int block_size )
+
+check that this block size is acceptable
+
+Parameters
+  struct block_device *bdev
+    blockdevice to check
+  int block_size
+    block size to check
+
+Description
+  For block device users that do not use buffer heads or the block device
+page cache, make sure that this block size can be used with the device.

@@ -1,0 +1,16 @@
+Function: int media_entity_get_fwnode_pad ( struct media_entity * entity , const struct fwnode_handle * fwnode , unsigned long direction_flags )
+
+Get pad number from fwnode
+
+Parameters
+  struct media_entity *entity
+    The entity
+  const struct fwnode_handle *fwnode
+    Pointer to the fwnode_handle which should be used to find the pad
+  unsigned long direction_flags
+    Expected direction of the pad, as defined in include/uapi/linux/media.h (seek for MEDIA_PAD_FL_* )
+
+Description
+  This function can be used to resolve the media pad number from
+a fwnode. This is useful for devices which use more complex
+mappings of media pads.

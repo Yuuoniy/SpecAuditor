@@ -1,0 +1,12 @@
+Function: int i3c_master_get_free_addr ( struct i3c_master_controller * master , u8 start_addr )
+
+get a free address on the bus
+
+Parameters
+  struct i3c_master_controller *master
+    I3C master object
+  u8 start_addr
+    where to start searching
+
+Description
+  This function must be called with the bus lock held in write mode.

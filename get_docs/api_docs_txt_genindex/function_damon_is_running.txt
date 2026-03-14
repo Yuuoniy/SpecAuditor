@@ -1,0 +1,7 @@
+Function: bool damon_is_running ( struct damon_ctx * ctx )
+
+Returns if a given DAMON context is running.
+
+Parameters
+  struct damon_ctx *ctx
+    The DAMON context to see if running.

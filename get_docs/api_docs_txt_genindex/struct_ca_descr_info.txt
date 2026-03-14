@@ -1,0 +1,9 @@
+Struct: struct ca_descr_info
+
+descrambler types and info.
+
+Members
+  num
+    number of available descramblers (keys).
+  type
+    type of supported scrambling system.

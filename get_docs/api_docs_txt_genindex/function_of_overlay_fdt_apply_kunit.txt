@@ -1,0 +1,18 @@
+Function: int of_overlay_fdt_apply_kunit ( struct kunit * test , void * overlay_fdt , u32 overlay_fdt_size , int * ovcs_id )
+
+Test managed of_overlay_fdt_apply()
+
+Parameters
+  struct kunit *test
+    test context
+  void *overlay_fdt
+    device tree overlay to apply
+  u32 overlay_fdt_size
+    size in bytes of overlay_fdt
+  int *ovcs_id
+    identifier of overlay, used to remove the overlay
+
+Description
+  Just like of_overlay_fdt_apply() , except the overlay is managed by the test
+case and is automatically removed with of_overlay_remove() after the test
+case concludes.

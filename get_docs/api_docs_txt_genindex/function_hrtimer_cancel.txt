@@ -1,0 +1,7 @@
+Function: int hrtimer_cancel ( struct hrtimer * timer )
+
+cancel a timer and wait for the handler to finish.
+
+Parameters
+  struct hrtimer *timer
+    the timer to be cancelled

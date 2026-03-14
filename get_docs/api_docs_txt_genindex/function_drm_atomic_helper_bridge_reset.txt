@@ -1,0 +1,12 @@
+Function: struct drm_bridge_state * drm_atomic_helper_bridge_reset ( struct drm_bridge * bridge )
+
+Allocate and initialize a bridge state to its default
+
+Parameters
+  struct drm_bridge *bridge
+    the bridge this state refers to
+
+Description
+  Allocates the bridge state and initializes it to default values. This helper
+is meant to be used as a bridge drm_bridge_funcs.atomic_reset hook for
+bridges that don’t subclass the bridge state.

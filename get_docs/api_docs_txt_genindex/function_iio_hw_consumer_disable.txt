@@ -1,0 +1,7 @@
+Function: void iio_hw_consumer_disable ( struct iio_hw_consumer * hwc )
+
+Disable IIO hardware consumer
+
+Parameters
+  struct iio_hw_consumer *hwc
+    iio_hw_consumer to disable.

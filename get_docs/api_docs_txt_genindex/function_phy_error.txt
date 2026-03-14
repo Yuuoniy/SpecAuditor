@@ -1,0 +1,12 @@
+Function: void phy_error ( struct phy_device * phydev )
+
+enter ERROR state for this PHY device
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  Moves the PHY to the ERROR state in response to a read
+or write error, and tells the controller the link is down.
+Must be called with phydev->lock held.

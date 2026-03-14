@@ -1,0 +1,12 @@
+Function: struct sk_buff * alloc_skb_fclone ( unsigned int size , gfp_t priority )
+
+allocate a network buffer from fclone cache
+
+Parameters
+  unsigned int size
+    size to allocate
+  gfp_t priority
+    allocation mask
+
+Description
+  This function is a convenient wrapper around __alloc_skb() .

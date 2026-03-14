@@ -1,0 +1,7 @@
+Struct: struct drm_pvr_ioctl_submit_jobs_args
+
+Arguments for DRM_IOCTL_PVR_SUBMIT_JOB
+
+Members
+  jobs
+    [IN] Array of jobs to submit.

@@ -1,0 +1,15 @@
+Function: bool ssh_rtl_cancel ( struct ssh_request * rqst , bool pending )
+
+Cancel request.
+
+Parameters
+  struct ssh_request *rqst
+    The request to cancel.
+  bool pending
+    Whether to also cancel pending requests.
+
+Description
+  Cancels the given request. If pending is false , this will not cancel
+pending requests, i.e. requests that have already been submitted to the
+packet layer but not been completed yet. If pending is true , this will
+cancel the given request regardless of the state it is in.

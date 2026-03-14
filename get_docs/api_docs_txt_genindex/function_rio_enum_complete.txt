@@ -1,0 +1,12 @@
+Function: int rio_enum_complete ( struct rio_mport * port )
+
+Tests if enumeration of a network is complete
+
+Parameters
+  struct rio_mport *port
+    Master port to send transaction
+
+Description
+  Tests the PGCCSR discovered bit for non-zero value (enumeration
+complete flag). Return 1 if enumeration is complete or 0 if
+enumeration is incomplete.

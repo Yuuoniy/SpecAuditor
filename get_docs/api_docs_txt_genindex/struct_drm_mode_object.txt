@@ -1,0 +1,15 @@
+Struct: struct drm_mode_object
+
+base structure for modeset objects
+
+Members
+  id
+    userspace visible identifier
+  type
+    type of the object, one of DRM_MODE_OBJECT_*
+  properties
+    properties attached to this object, including values
+  refcount
+    reference count for objects with dynamic lifetime
+  free_cb
+    free function callback, only set for objects with dynamic lifetime

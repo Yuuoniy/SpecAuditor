@@ -1,0 +1,29 @@
+Function: union fw_cdev_event
+
+Convenience union of fw_cdev_event_* types
+
+Members
+  common
+    Valid for all types
+  bus_reset
+    Valid if common.type == FW_CDEV_EVENT_BUS_RESET
+  response
+    Valid if common.type == FW_CDEV_EVENT_RESPONSE
+  request
+    Valid if common.type == FW_CDEV_EVENT_REQUEST
+  request2
+    Valid if common.type == FW_CDEV_EVENT_REQUEST2
+  iso_interrupt
+    Valid if common.type == FW_CDEV_EVENT_ISO_INTERRUPT
+  iso_interrupt_mc
+    Valid if common.type == FW_CDEV_EVENT_ISO_INTERRUPT_MULTICHANNEL
+  iso_resource
+    Valid if common.type == FW_CDEV_EVENT_ISO_RESOURCE_ALLOCATED or FW_CDEV_EVENT_ISO_RESOURCE_DEALLOCATED
+  phy_packet
+    Valid if common.type == FW_CDEV_EVENT_PHY_PACKET_SENT or FW_CDEV_EVENT_PHY_PACKET_RECEIVED
+  request3
+    Valid if common.type == FW_CDEV_EVENT_REQUEST3
+  response2
+    Valid if common.type == FW_CDEV_EVENT_RESPONSE2
+  phy_packet2
+    Valid if common.type == FW_CDEV_EVENT_PHY_PACKET_SENT2 or FW_CDEV_EVENT_PHY_PACKET_RECEIVED2

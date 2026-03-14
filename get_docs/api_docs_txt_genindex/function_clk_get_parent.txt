@@ -1,0 +1,11 @@
+Function: struct clk * clk_get_parent ( struct clk * clk )
+
+get the parent clock source for this clock
+
+Parameters
+  struct clk *clk
+    clock source
+
+Description
+  Returns struct clk corresponding to parent clock source, or
+valid IS_ERR() condition containing errno.

@@ -1,0 +1,14 @@
+Function: unsigned int memalloc_nofs_save ( void )
+
+Marks implicit GFP_NOFS allocation scope.
+
+Parameters
+  void
+    no arguments
+
+Description
+  This functions marks the beginning of the GFP_NOFS allocation scope.
+All further allocations will implicitly drop __GFP_FS flag and so
+they are safe for the FS critical section from the allocation recursion
+point of view. Use memalloc_nofs_restore to end the scope with flags
+returned by this function.

@@ -1,0 +1,13 @@
+Struct: struct dp_sdp_header
+
+DP secondary data packet header
+
+Members
+  HB0
+    Secondary Data Packet ID
+  HB1
+    Secondary Data Packet Type
+  HB2
+    Secondary Data Packet Specific header, Byte 0
+  HB3
+    Secondary Data packet Specific header, Byte 1

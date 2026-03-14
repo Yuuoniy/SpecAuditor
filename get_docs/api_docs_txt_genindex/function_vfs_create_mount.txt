@@ -1,0 +1,11 @@
+Function: struct vfsmount * vfs_create_mount ( struct fs_context * fc )
+
+Create a mount for a configured superblock
+
+Parameters
+  struct fs_context *fc
+    The configuration context with the superblock attached
+
+Description
+  Create a mount to an already configured superblock.  If necessary, the
+caller should invoke vfs_get_tree() before calling this.

@@ -1,0 +1,93 @@
+Struct: struct ahash_alg
+
+asynchronous message digest definition
+
+Members
+  init
+    [mandatory] Initialize the transformation context. Intended only to initialize the
+state of the HASH transformation at the beginning. This shall fill in
+the internal structures used during the entire duration of the whole
+transformation. No data processing happens at this point. Driver code
+implementation must not use req->result.
+  update
+    [mandatory] Push a chunk of data into the driver for transformation. This
+function actually pushes blocks of data from upper layers into the
+driver, which then passes those to the hardware as seen fit. This
+function must not finalize the HASH transformation by calculating the
+final message digest as this only adds more data into the
+transformation. This function shall not modify the transformation
+context, as this function may be called in parallel with the same
+transformation object. Data processing can happen synchronously
+[SHASH] or asynchronously [AHASH] at this point. Driver must not use
+req->result.
+For block-only algorithms, update must return the number
+of bytes to store in the API partial block buffer.
+  final
+    [mandatory] Retrieve result from the driver. This function finalizes the
+transformation and retrieves the resulting hash from the driver and
+pushes it back to upper layers. No data processing happens at this
+point unless hardware requires it to finish the transformation
+(then the data buffered by the device driver is processed).
+  finup
+    [optional] Combination of update and final . This function is effectively a
+combination of update and final calls issued in sequence. As some
+hardware cannot do update and final separately, this callback was
+added to allow such hardware to be used at least by IPsec. Data
+processing can happen synchronously [SHASH] or asynchronously [AHASH]
+at this point.
+  digest
+    Combination of init and update and final . This function
+effectively behaves as the entire chain of operations, init , update and final issued in sequence. Just like finup , this was
+added for hardware which cannot do even the finup , but can only do
+the whole transformation in one run. Data processing can happen
+synchronously [SHASH] or asynchronously [AHASH] at this point.
+  export
+    Export partial state of the transformation. This function dumps the
+entire state of the ongoing transformation into a provided block of
+data so it can be import ‘ed back later on. This is useful in case
+you want to save partial result of the transformation after
+processing certain amount of data and reload this partial result
+multiple times later on for multiple re-use. No data processing
+happens at this point. Driver must not use req->result.
+  import
+    Import partial state of the transformation. This function loads the
+entire state of the ongoing transformation from a provided block of
+data so the transformation can continue from this point onward. No
+data processing happens at this point. Driver must not use
+req->result.
+  export_core
+    Export partial state without partial block.  Only defined
+for algorithms that are not block-only.
+  import_core
+    Import partial state without partial block.  Only defined
+for algorithms that are not block-only.
+  setkey
+    Set optional key used by the hashing algorithm. Intended to push
+optional key used by the hashing algorithm from upper layers into
+the driver. This function can store the key in the transformation
+context or can outright program it into the hardware. In the former
+case, one must be careful to program the key into the hardware at
+appropriate time and one must be careful that . setkey() can be
+called multiple times during the existence of the transformation
+object. Not  all hashing algorithms do implement this function as it
+is only needed for keyed message digests. SHAx/MDx/CRCx do NOT
+implement this function. HMAC(MDx)/HMAC(SHAx)/CMAC(AES) do implement
+this function. This function must be called before any other of the init , update , final , finup , digest is called. No data
+processing happens at this point.
+  init_tfm
+    Initialize the cryptographic transformation object.
+This function is called only once at the instantiation
+time, right after the transformation context was
+allocated. In case the cryptographic hardware has
+some special requirements which need to be handled
+by software, this function shall check for the precise
+requirement of the transformation and put any software
+fallbacks in place.
+  exit_tfm
+    Deinitialize the cryptographic transformation object.
+This is a counterpart to init_tfm , used to remove
+various changes set in init_tfm .
+  clone_tfm
+    Copy transform into new object, may allocate memory.
+  halg
+    see struct hash_alg_common

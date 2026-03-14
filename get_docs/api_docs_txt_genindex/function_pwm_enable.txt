@@ -1,0 +1,7 @@
+Function: int pwm_enable ( struct pwm_device * pwm )
+
+start a PWM output toggling
+
+Parameters
+  struct pwm_device *pwm
+    PWM device

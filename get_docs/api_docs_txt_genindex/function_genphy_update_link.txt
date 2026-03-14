@@ -1,0 +1,11 @@
+Function: int genphy_update_link ( struct phy_device * phydev )
+
+update link status in phydev
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  current link value.  In order to do this, we need to read
+the status register twice, keeping the second value.

@@ -1,0 +1,9 @@
+Function: int phy_driver_register ( struct phy_driver * new_driver , struct module * owner )
+
+register a phy_driver with the PHY layer
+
+Parameters
+  struct phy_driver *new_driver
+    new phy_driver to register
+  struct module *owner
+    module owning this PHY

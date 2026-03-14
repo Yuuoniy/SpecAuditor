@@ -1,0 +1,31 @@
+Struct: struct futex_q
+
+The hashed futex queue entry, one per waiting task
+
+Members
+  list
+    priority-sorted list of tasks waiting on this futex
+  task
+    the task waiting on the futex
+  lock_ptr
+    the hash bucket lock
+  wake
+    the wake handler for this queue
+  wake_data
+    data associated with the wake handler
+  key
+    the key the futex is hashed on
+  pi_state
+    optional priority inheritance state
+  rt_waiter
+    rt_waiter storage for use with requeue_pi
+  requeue_pi_key
+    the requeue_pi target futex key
+  bitset
+    bitset for the optional bitmasked wakeup
+  requeue_state
+    State field for futex_requeue_pi()
+  drop_hb_ref
+    Waiter should drop the extra hash bucket reference if true
+  requeue_wait
+    RCU wait for futex_requeue_pi() (RT only)

@@ -1,0 +1,7 @@
+Function: u64 jiffies64_to_nsecs ( u64 j )
+
+Convert jiffies64 to nanoseconds
+
+Parameters
+  u64 j
+    jiffies64 value

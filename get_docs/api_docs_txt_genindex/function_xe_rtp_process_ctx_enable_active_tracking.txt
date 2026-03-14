@@ -1,0 +1,16 @@
+Function: void xe_rtp_process_ctx_enable_active_tracking ( struct xe_rtp_process_ctx * ctx , unsigned long * active_entries , size_t n_entries )
+
+Enable tracking of active entries
+
+Parameters
+  struct xe_rtp_process_ctx *ctx
+    The context for processing the table
+  unsigned long *active_entries
+    bitmap to store the active entries
+  size_t n_entries
+    number of entries to be processed
+
+Description
+  Set additional metadata to track what entries are considered “active”, i.e.
+their rules match the condition. Bits are never cleared: entries with
+matching rules set the corresponding bit in the bitmap.

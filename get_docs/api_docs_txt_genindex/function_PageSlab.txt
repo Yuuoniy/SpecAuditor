@@ -1,0 +1,7 @@
+Function: bool PageSlab ( const struct page * page )
+
+Determine if the page belongs to the slab allocator
+
+Parameters
+  const struct page *page
+    The page to test.

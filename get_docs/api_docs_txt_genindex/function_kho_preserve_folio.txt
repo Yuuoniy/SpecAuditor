@@ -1,0 +1,11 @@
+Function: int kho_preserve_folio ( struct folio * folio )
+
+preserve a folio across kexec.
+
+Parameters
+  struct folio *folio
+    folio to preserve.
+
+Description
+  Instructs KHO to preserve the whole folio across kexec. The order
+will be preserved as well.

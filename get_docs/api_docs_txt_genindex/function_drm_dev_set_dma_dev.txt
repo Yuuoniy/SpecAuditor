@@ -1,0 +1,14 @@
+Function: void drm_dev_set_dma_dev ( struct drm_device * dev , struct device * dma_dev )
+
+set the DMA device for a DRM device
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct device *dma_dev
+    DMA device or NULL
+
+Description
+  Sets the DMA device of the given DRM device. Only required if
+the DMA device is different from the DRM device’s parent. After
+calling this function, the DRM device holds a reference on dma_dev . Pass NULL to clear the DMA device.

@@ -1,0 +1,14 @@
+Function: void drm_rect_downscale ( struct drm_rect * r , int horz , int vert )
+
+downscale a rectangle
+
+Parameters
+  struct drm_rect *r
+    rectangle to be downscaled
+  int horz
+    horizontal downscale factor
+  int vert
+    vertical downscale factor
+
+Description
+  Divide the coordinates of rectangle r by horz and vert .

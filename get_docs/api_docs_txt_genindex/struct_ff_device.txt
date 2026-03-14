@@ -1,0 +1,32 @@
+Struct: struct ff_device
+
+force-feedback part of an input device
+
+Members
+  upload
+    Called to upload an new effect into device
+  erase
+    Called to erase an effect from device
+  playback
+    Called to request device to start playing specified effect
+  set_gain
+    Called to set specified gain
+  set_autocenter
+    Called to auto-center device
+  destroy
+    called by input core when parent input device is being
+destroyed
+  private
+    driver-specific data, will be freed automatically
+  ffbit
+    bitmap of force feedback capabilities truly supported by
+device (not emulated like ones in input_dev->ffbit)
+  mutex
+    mutex for serializing access to the device
+  max_effects
+    maximum number of effects supported by device
+  effects
+    pointer to an array of effects currently loaded into device
+  effect_owners
+    array of effect owners; when file handle owning
+an effect gets closed the effect is automatically erased

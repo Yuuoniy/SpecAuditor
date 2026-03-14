@@ -1,0 +1,14 @@
+Function: acpi_status wmi_query_block ( const char * guid_string , u8 instance , struct acpi_buffer * out )
+
+Return contents of a WMI block (deprecated)
+
+Parameters
+  const char *guid_string
+    36 char string of the form fa50ff2b-f2e8-45de-83fa-65417f2f49ba
+  u8 instance
+    Instance index
+  struct acpi_buffer *out
+    Empty buffer to return the contents of the data block to
+
+Description
+  Query a ACPI-WMI block, the caller must free out .

@@ -1,0 +1,10 @@
+Function: void drm_sched_wqueue_start ( struct drm_gpu_scheduler * sched )
+
+start scheduler submission
+
+Parameters
+  struct drm_gpu_scheduler *sched
+    scheduler instance
+
+Description
+  Restarts the scheduler after drm_sched_wqueue_stop() has stopped it.

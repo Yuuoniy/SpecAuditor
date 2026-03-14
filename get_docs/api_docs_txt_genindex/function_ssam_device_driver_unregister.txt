@@ -1,0 +1,7 @@
+Function: void ssam_device_driver_unregister ( struct ssam_device_driver * sdrv )
+
+Unregister a SSAM device driver.
+
+Parameters
+  struct ssam_device_driver *sdrv
+    The driver to unregister.

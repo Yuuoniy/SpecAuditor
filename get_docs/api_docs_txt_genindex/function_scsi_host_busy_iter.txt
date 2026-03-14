@@ -1,0 +1,15 @@
+Function: void scsi_host_busy_iter ( struct Scsi_Host * shost , bool ( * fn ) ( struct scsi_cmnd * , void * ) , void * priv )
+
+Iterate over all busy commands
+
+Parameters
+  struct Scsi_Host *shost
+    Pointer to Scsi_Host.
+  bool (*fn)(struct scsi_cmnd *, void *)
+    Function to call on each busy command
+  void *priv
+    Data pointer passed to fn
+
+Description
+  If locking against concurrent command completions is required
+ithas to be provided by the caller

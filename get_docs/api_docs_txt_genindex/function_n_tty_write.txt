@@ -1,0 +1,21 @@
+Function: ssize_t n_tty_write ( struct tty_struct * tty , struct file * file , const u8 * buf , size_t nr )
+
+write function for tty
+
+Parameters
+  struct tty_struct *tty
+    tty device
+  struct file *file
+    file object
+  const u8 *buf
+    userspace buffer pointer
+  size_t nr
+    size of I/O
+
+Description
+  Write function of the terminal device. This is serialized with respect to
+other write callers but not to termios changes, reads and other such events.
+Since the receive code will echo characters, thus calling driver write
+methods, the output_lock is used in the output processing functions called
+here as well as in the echo processing function to protect the column state
+and space left in the buffer.

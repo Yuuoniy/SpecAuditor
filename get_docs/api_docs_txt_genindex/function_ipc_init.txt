@@ -1,0 +1,11 @@
+Function: int ipc_init ( void )
+
+initialise ipc subsystem
+
+Parameters
+  void
+    no arguments
+
+Description
+  The various sysv ipc resources (semaphores, messages and shared
+memory) are initialised.

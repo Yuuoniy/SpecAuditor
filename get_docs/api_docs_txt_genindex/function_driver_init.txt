@@ -1,0 +1,11 @@
+Function: void driver_init ( void )
+
+initialize driver model.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Call the driver model init functions to initialize their
+subsystems. Called early from init/main.c.

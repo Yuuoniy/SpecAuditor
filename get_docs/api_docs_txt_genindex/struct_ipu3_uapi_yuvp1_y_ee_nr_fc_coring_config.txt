@@ -1,0 +1,23 @@
+Struct: struct ipu3_uapi_yuvp1_y_ee_nr_fc_coring_config
+
+Luma(Y) edge enhancement noise reduction false color correction (FCC) coring config
+
+Members
+  pos_0
+    Gain for positive edge in dark, u13.0, [0, 16], default 0.
+  reserved0
+    reserved
+  pos_delta
+    Gain for positive edge in bright, value: pos_0 + pos_delta <=16
+u13.0, default 0.
+  reserved1
+    reserved
+  neg_0
+    Gain for negative edge in dark area, u13.0, range [0, 16], default 0.
+  reserved2
+    reserved
+  neg_delta
+    Gain for negative edge in bright area. neg_0 + neg_delta <=16
+u13.0, default 0.
+  reserved3
+    reserved

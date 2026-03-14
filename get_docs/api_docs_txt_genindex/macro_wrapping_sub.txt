@@ -1,0 +1,15 @@
+Macro: wrapping_sub
+
+
+
+Parameters
+  type
+    type for result of calculation
+  a
+    minuend; value to subtract from
+  b
+    subtrahend; value to subtract from a
+
+Description
+  Return the potentially wrapped-around subtraction without
+tripping any wrap-around sanitizers that may be enabled.

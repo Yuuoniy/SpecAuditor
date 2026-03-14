@@ -1,0 +1,13 @@
+Function: int select_numa_node_cpu ( int node )
+
+Select a CPU based on NUMA node
+
+Parameters
+  int node
+    NUMA node ID that we want to select a CPU from
+
+Description
+  This function will attempt to find a “random” cpu available on a given
+node. If there are no CPUs available on the given node it will return
+WORK_CPU_UNBOUND indicating that we should just schedule to any
+available CPU if we need to schedule this work.

@@ -1,0 +1,7 @@
+Function: void i915_perf_fini ( struct drm_i915_private * i915 )
+
+Counter part to i915_perf_init()
+
+Parameters
+  struct drm_i915_private *i915
+    i915 device instance

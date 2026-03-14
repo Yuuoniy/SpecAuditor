@@ -1,0 +1,7 @@
+Function: int mpt_resume ( struct pci_dev * pdev )
+
+Fusion MPT base driver resume routine.
+
+Parameters
+  struct pci_dev *pdev
+    Pointer to pci_dev structure

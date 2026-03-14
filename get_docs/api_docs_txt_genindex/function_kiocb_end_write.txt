@@ -1,0 +1,10 @@
+Function: void kiocb_end_write ( struct kiocb * iocb )
+
+drop write access to a superblock after async file io
+
+Parameters
+  struct kiocb *iocb
+    the io context we sumbitted the write with
+
+Description
+  Should be matched with a call to kiocb_start_write() .

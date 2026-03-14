@@ -1,0 +1,7 @@
+Function: unsigned long thp_size ( struct page * page )
+
+Size of a transparent huge page.
+
+Parameters
+  struct page *page
+    Head page of a transparent huge page.

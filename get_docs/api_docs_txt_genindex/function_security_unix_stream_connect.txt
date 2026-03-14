@@ -1,0 +1,15 @@
+Function: int security_unix_stream_connect ( struct sock * sock , struct sock * other , struct sock * newsk )
+
+Check if a AF_UNIX stream is allowed
+
+Parameters
+  struct sock *sock
+    originating sock
+  struct sock *other
+    peer sock
+  struct sock *newsk
+    new sock
+
+Description
+  Check permissions before establishing a Unix domain stream connection
+between sock and other .

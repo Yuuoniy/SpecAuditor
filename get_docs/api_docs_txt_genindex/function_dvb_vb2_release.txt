@@ -1,0 +1,7 @@
+Function: int dvb_vb2_release ( struct dvb_vb2_ctx * ctx )
+
+Releases the VB2 handler allocated resources and put ctx at DVB_VB2_STATE_NONE state.
+
+Parameters
+  struct dvb_vb2_ctx *ctx
+    control struct for VB2 handler

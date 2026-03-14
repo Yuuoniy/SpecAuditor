@@ -1,0 +1,14 @@
+Function: acpi_status wmi_install_notify_handler ( const char * guid , wmi_notify_handler handler , void * data )
+
+Register handler for WMI events (deprecated)
+
+Parameters
+  const char *guid
+    36 char string of the form fa50ff2b-f2e8-45de-83fa-65417f2f49ba
+  wmi_notify_handler handler
+    Function to handle notifications
+  void *data
+    Data to be returned to handler when event is fired
+
+Description
+  Register a handler for events sent to the ACPI-WMI mapper device.

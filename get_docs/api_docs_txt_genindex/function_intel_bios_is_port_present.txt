@@ -1,0 +1,12 @@
+Function: bool intel_bios_is_port_present ( struct intel_display * display , enum port port )
+
+is the specified digital port present
+
+Parameters
+  struct intel_display *display
+    display device instance
+  enum port port
+    port to check
+
+Description
+  Return true if the device in port is present.

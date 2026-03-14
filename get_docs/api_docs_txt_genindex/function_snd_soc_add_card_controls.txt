@@ -1,0 +1,14 @@
+Function: int snd_soc_add_card_controls ( struct snd_soc_card * soc_card , const struct snd_kcontrol_new * controls , int num_controls )
+
+add an array of controls to a SoC card. Convenience function to add a list of controls.
+
+Parameters
+  struct snd_soc_card *soc_card
+    SoC card to add controls to
+  const struct snd_kcontrol_new *controls
+    array of controls to add
+  int num_controls
+    number of elements in the array
+
+Description
+  Return 0 for success, else error.

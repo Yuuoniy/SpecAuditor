@@ -1,0 +1,7 @@
+Function: int gadget_is_zlp_supported ( struct usb_gadget * g )
+
+return true iff the hardware supports zlp
+
+Parameters
+  struct usb_gadget *g
+    controller to check for quirk

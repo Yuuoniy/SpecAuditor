@@ -1,0 +1,13 @@
+Function: void tty_port_init ( struct tty_port * port )
+
+initialize tty_port
+
+Parameters
+  struct tty_port *port
+    tty_port to initialize
+
+Description
+  Initializes the state of struct tty_port . When a port was initialized using
+this function, one has to destroy the port by tty_port_destroy() . Either
+indirectly by using tty_port refcounting ( tty_port_put() ) or directly if
+refcounting is not used.

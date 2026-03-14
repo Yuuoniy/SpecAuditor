@@ -1,0 +1,13 @@
+Macro: for_each_of_graph_port_endpoint
+
+
+
+Parameters
+  parent
+    parent port node
+  child
+    loop variable pointing to the current endpoint node
+
+Description
+  When breaking out of the loop, and continue to use the child , you need to
+use return_ptr( child ) or no_free_ptr( child ) not to call __free() for it.

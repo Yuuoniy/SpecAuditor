@@ -1,0 +1,19 @@
+Function: int gpiochip_add_pingroup_range ( struct gpio_chip * gc , struct pinctrl_dev * pctldev , unsigned int gpio_offset , const char * pin_group )
+
+add a range for GPIO <-> pin mapping
+
+Parameters
+  struct gpio_chip *gc
+    the gpiochip to add the range for
+  struct pinctrl_dev *pctldev
+    the pin controller to map to
+  unsigned int gpio_offset
+    the start offset in the current gpio_chip number space
+  const char *pin_group
+    name of the pin group inside the pin controller
+
+Description
+  Calling this function directly from a DeviceTree-supported
+pinctrl driver is DEPRECATED. Please see Section 2.1 of
+Documentation/devicetree/bindings/gpio/gpio.txt on how to
+bind pinctrl and gpio drivers via the “gpio-ranges” property.

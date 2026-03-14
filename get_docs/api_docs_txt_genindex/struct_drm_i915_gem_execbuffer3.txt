@@ -1,0 +1,26 @@
+Struct: struct drm_i915_gem_execbuffer3
+
+Structure for DRM_I915_GEM_EXECBUFFER3 ioctl.
+
+Members
+  ctx_id
+    Context id Only contexts with user engine map are allowed.
+  engine_idx
+    Engine index An index in the user engine map of the context specified by ctx_id .
+  batch_address
+    Batch gpu virtual address/es. For normal submission, it is the gpu virtual address of the batch
+buffer. For parallel submission, it is a pointer to an array of
+batch buffer gpu virtual addresses with array size equal to the
+number of (parallel) engines involved in that submission (See struct i915_context_engines_parallel_submit ).
+  flags
+    Currently reserved, MBZ
+  rsvd1
+    Reserved, MBZ
+  fence_count
+    Number of fences in timeline_fences array.
+  timeline_fences
+    Pointer to an array of timeline fences. Timeline fences are of format struct drm_i915_gem_timeline_fence .
+  rsvd2
+    Reserved, MBZ
+  extensions
+    Zero-terminated chain of extensions. For future extensions. See struct i915_user_extension .

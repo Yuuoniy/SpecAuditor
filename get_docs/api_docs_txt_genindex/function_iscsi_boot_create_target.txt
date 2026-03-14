@@ -1,0 +1,17 @@
+Function: struct iscsi_boot_kobj * iscsi_boot_create_target ( struct iscsi_boot_kset * boot_kset , int index , void * data , ssize_t ( * show ) ( void * data , int type , char * buf ) , umode_t ( * is_visible ) ( void * data , int type ) , void ( * release ) ( void * data ) )
+
+create boot target sysfs dir
+
+Parameters
+  struct iscsi_boot_kset *boot_kset
+    boot kset
+  int index
+    the target id
+  void *data
+    driver specific data for target
+  ssize_t (*show) (void *data, int type, char *buf)
+    attr show function
+  umode_t (*is_visible) (void *data, int type)
+    attr visibility function
+  void (*release) (void *data)
+    release function

@@ -1,0 +1,10 @@
+Function: void drm_connector_cleanup ( struct drm_connector * connector )
+
+cleans up an initialised connector
+
+Parameters
+  struct drm_connector *connector
+    connector to cleanup
+
+Description
+  Cleans up the connector but doesn’t free the object.

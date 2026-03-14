@@ -1,0 +1,14 @@
+Function: void ttm_resource_manager_init ( struct ttm_resource_manager * man , struct ttm_device * bdev , uint64_t size )
+
+
+
+Parameters
+  struct ttm_resource_manager *man
+    memory manager object to init
+  struct ttm_device *bdev
+    ttm device this manager belongs to
+  uint64_t size
+    size of managed resources in arbitrary units
+
+Description
+  Initialise core parts of a manager object.

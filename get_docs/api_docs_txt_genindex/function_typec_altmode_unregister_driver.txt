@@ -1,0 +1,11 @@
+Function: void typec_altmode_unregister_driver ( struct typec_altmode_driver * drv )
+
+unregisters a USB Type-C alternate mode device driver
+
+Parameters
+  struct typec_altmode_driver *drv
+    pointer to struct typec_altmode_driver
+
+Description
+  These drivers will be bind to the partner alternate mode devices. They will
+handle all SVID specific communication.

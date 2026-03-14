@@ -1,0 +1,7 @@
+Function: void pwm_put ( struct pwm_device * pwm )
+
+release a PWM device
+
+Parameters
+  struct pwm_device *pwm
+    PWM device

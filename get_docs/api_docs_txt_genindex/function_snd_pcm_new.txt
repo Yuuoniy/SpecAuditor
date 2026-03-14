@@ -1,0 +1,20 @@
+Function: int snd_pcm_new ( struct snd_card * card , const char * id , int device , int playback_count , int capture_count , struct snd_pcm * * rpcm )
+
+create a new PCM instance
+
+Parameters
+  struct snd_card *card
+    the card instance
+  const char *id
+    the id string
+  int device
+    the device index (zero based)
+  int playback_count
+    the number of substreams for playback
+  int capture_count
+    the number of substreams for capture
+  struct snd_pcm **rpcm
+    the pointer to store the new pcm instance
+
+Description
+  Creates a new PCM instance.

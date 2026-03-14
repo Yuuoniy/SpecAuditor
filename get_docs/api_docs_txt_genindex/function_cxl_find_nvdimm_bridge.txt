@@ -1,0 +1,8 @@
+Function: struct cxl_nvdimm_bridge * cxl_find_nvdimm_bridge ( struct cxl_port * port )
+
+find a bridge device relative to a port
+
+Parameters
+  struct cxl_port *port
+    any descendant port of an nvdimm-bridge associated
+root-cxl-port

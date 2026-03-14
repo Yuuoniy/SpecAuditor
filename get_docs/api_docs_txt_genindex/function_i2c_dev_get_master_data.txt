@@ -1,0 +1,7 @@
+Function: void * i2c_dev_get_master_data ( const struct i2c_dev_desc * dev )
+
+get master private data attached to an I2C device descriptor
+
+Parameters
+  const struct i2c_dev_desc *dev
+    the I2C device descriptor to get private data from

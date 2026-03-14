@@ -1,0 +1,12 @@
+Function: int phy_speed_down ( struct phy_device * phydev , bool sync )
+
+set speed to lowest speed supported by both link partners
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+  bool sync
+    perform action synchronously
+
+Description
+  Typically used to save energy when waiting for a WoL packet

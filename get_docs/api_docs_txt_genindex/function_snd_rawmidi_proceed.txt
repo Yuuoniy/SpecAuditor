@@ -1,0 +1,7 @@
+Function: int snd_rawmidi_proceed ( struct snd_rawmidi_substream * substream )
+
+Discard the all pending bytes and proceed
+
+Parameters
+  struct snd_rawmidi_substream *substream
+    rawmidi substream

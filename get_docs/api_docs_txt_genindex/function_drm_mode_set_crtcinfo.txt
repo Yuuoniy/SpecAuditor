@@ -1,0 +1,12 @@
+Function: void drm_mode_set_crtcinfo ( struct drm_display_mode * p , int adjust_flags )
+
+set CRTC modesetting timing parameters
+
+Parameters
+  struct drm_display_mode *p
+    mode
+  int adjust_flags
+    a combination of adjustment flags
+
+Description
+  Setup the CRTC modesetting timing parameters for p , adjusting if necessary.

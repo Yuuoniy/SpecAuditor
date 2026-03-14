@@ -1,0 +1,10 @@
+Macro: IS_ERR_VALUE
+
+
+
+Parameters
+  x
+    The pointer to check.
+
+Description
+  Like IS_ERR() , but does not generate a compiler warning if result is unused.

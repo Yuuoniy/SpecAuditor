@@ -1,0 +1,14 @@
+Function: struct snd_kcontrol * snd_ctl_new1 ( const struct snd_kcontrol_new * ncontrol , void * private_data )
+
+create a control instance from the template
+
+Parameters
+  const struct snd_kcontrol_new *ncontrol
+    the initialization record
+  void *private_data
+    the private data to set
+
+Description
+  Allocates a new struct snd_kcontrol instance and initialize from the given
+template.  When the access field of ncontrol is 0, it’s assumed as
+READWRITE access. When the count field is 0, it’s assumes as one.

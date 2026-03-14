@@ -1,0 +1,9 @@
+Function: bool xe_rtp_match_even_instance ( const struct xe_gt * gt , const struct xe_hw_engine * hwe )
+
+Match if engine instance is even
+
+Parameters
+  const struct xe_gt *gt
+    GT structure
+  const struct xe_hw_engine *hwe
+    Engine instance

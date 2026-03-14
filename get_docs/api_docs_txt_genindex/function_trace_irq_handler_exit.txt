@@ -1,0 +1,16 @@
+Function: void trace_irq_handler_exit ( int irq , struct irqaction * action , int ret )
+
+called immediately after the irq action handler returns
+
+Parameters
+  int irq
+    irq number
+  struct irqaction *action
+    pointer to struct irqaction
+  int ret
+    return value
+
+Description
+  If the ret value is set to IRQ_HANDLED, then we know that the corresponding action->handler successfully handled this irq. Otherwise, the irq might be
+a shared irq line, or the irq was not handled successfully. Can be used in
+conjunction with the irq_handler_entry to understand irq handler latencies.

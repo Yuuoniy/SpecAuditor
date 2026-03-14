@@ -1,0 +1,10 @@
+Function: int waitqueue_active ( struct wait_queue_head * wq_head )
+
+locklessly test for waiters on the queue
+
+Parameters
+  struct wait_queue_head *wq_head
+    the waitqueue to test for waiters
+
+Description
+  returns true if the wait list is not empty

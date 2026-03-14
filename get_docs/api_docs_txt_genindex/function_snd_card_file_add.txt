@@ -1,0 +1,14 @@
+Function: int snd_card_file_add ( struct snd_card * card , struct file * file )
+
+add the file to the file list of the card
+
+Parameters
+  struct snd_card *card
+    soundcard structure
+  struct file *file
+    file pointer
+
+Description
+  This function adds the file to the file linked-list of the card.
+This linked-list is used to keep tracking the connection state,
+and to avoid the release of busy resources by hotplug.

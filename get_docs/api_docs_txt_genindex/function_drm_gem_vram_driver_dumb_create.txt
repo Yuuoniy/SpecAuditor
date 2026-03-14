@@ -1,0 +1,15 @@
+Function: int drm_gem_vram_driver_dumb_create ( struct drm_file * file , struct drm_device * dev , struct drm_mode_create_dumb * args )
+
+Implements struct drm_driver .dumb_create
+
+Parameters
+  struct drm_file *file
+    the DRM file
+  struct drm_device *dev
+    the DRM device
+  struct drm_mode_create_dumb *args
+    the arguments as provided to struct drm_driver .dumb_create
+
+Description
+  This function requires the driver to use drm_device.vram_mm for its
+instance of VRAM MM.

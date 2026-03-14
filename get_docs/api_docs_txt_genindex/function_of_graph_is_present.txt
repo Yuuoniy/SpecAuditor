@@ -1,0 +1,7 @@
+Function: bool of_graph_is_present ( const struct device_node * node )
+
+check graph’s presence
+
+Parameters
+  const struct device_node *node
+    pointer to device_node containing graph port

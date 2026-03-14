@@ -1,0 +1,9 @@
+Function: void __rcu * * mte_dead_walk ( struct maple_enode * * enode , unsigned char offset )
+
+Walk down a dead tree to just before the leaves
+
+Parameters
+  struct maple_enode **enode
+    The maple encoded node
+  unsigned char offset
+    The starting offset

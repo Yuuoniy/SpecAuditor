@@ -1,0 +1,12 @@
+Function: size_t str_has_prefix ( const char * str , const char * prefix )
+
+Test if a string has a given prefix
+
+Parameters
+  const char *str
+    The string to test
+  const char *prefix
+    The string to see if str starts with
+
+Description
+  strncmp(str, prefix, sizeof(prefix) - 1)

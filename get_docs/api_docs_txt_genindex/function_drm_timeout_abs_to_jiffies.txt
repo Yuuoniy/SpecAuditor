@@ -1,0 +1,10 @@
+Function: signed long drm_timeout_abs_to_jiffies ( int64_t timeout_nsec )
+
+calculate jiffies timeout from absolute value
+
+Parameters
+  int64_t timeout_nsec
+    timeout nsec component in ns, 0 for poll
+
+Description
+  Calculate the timeout in jiffies from an absolute time in sec/nsec.

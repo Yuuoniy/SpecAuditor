@@ -1,0 +1,11 @@
+Function: void intel_gvt_driver_remove ( struct drm_i915_private * dev_priv )
+
+cleanup GVT components when i915 driver is unbinding
+
+Parameters
+  struct drm_i915_private *dev_priv
+    drm i915 private *
+
+Description
+  This function is called at the i915 driver unloading stage, to shutdown
+GVT components and release the related resources.

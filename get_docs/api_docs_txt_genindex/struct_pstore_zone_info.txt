@@ -1,0 +1,42 @@
+Struct: struct pstore_zone_info
+
+pstore/zone back-end driver structure
+
+Members
+  owner
+    Module which is responsible for this back-end driver.
+  name
+    Name of the back-end driver.
+  total_size
+    The total size in bytes pstore/zone can use. It must be greater
+than 4096 and be multiple of 4096.
+  kmsg_size
+    The size of oops/panic zone. Zero means disabled, otherwise,
+it must be multiple of SECTOR_SIZE(512 Bytes).
+  max_reason
+    Maximum kmsg dump reason to store.
+  pmsg_size
+    The size of pmsg zone which is the same as kmsg_size .
+  console_size
+    The size of console zone which is the same as kmsg_size .
+  ftrace_size
+    The size of ftrace zone which is the same as kmsg_size .
+  read
+    The general read operation. Both of the function parameters size and offset are relative value to storage.
+On success, the number of bytes should be returned, others
+mean error.
+  write
+    The same as read , but the following error number:
+-EBUSY means try to write again later.
+-ENOMSG means to try next zone.
+  erase
+    The general erase operation for device with special removing
+job. Both of the function parameters size and offset are
+relative value to storage.
+Return 0 on success and others on failure.
+  panic_write
+    The write operation only used for panic case. It’s optional
+if you do not care panic log. The parameters are relative
+value to storage.
+On success, the number of bytes should be returned, others
+excluding -ENOMSG mean error. -ENOMSG means to try next zone.

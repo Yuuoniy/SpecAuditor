@@ -1,0 +1,9 @@
+Struct: struct ipu3_uapi_anr_config
+
+ANR config
+
+Members
+  transform
+    advanced noise reduction transform config as specified by ipu3_uapi_anr_transform_config
+  stitch
+    create 4x4 patch from 4 surrounding 8x8 patches.

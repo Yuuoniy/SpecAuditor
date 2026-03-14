@@ -1,0 +1,15 @@
+Function: int device_change_owner ( struct device * dev , kuid_t kuid , kgid_t kgid )
+
+change the owner of an existing device.
+
+Parameters
+  struct device *dev
+    device.
+  kuid_t kuid
+    new owner’s kuid
+  kgid_t kgid
+    new owner’s kgid
+
+Description
+  This changes the owner of dev and its corresponding sysfs entries to kuid / kgid . This function closely mirrors how dev was added via driver
+core.

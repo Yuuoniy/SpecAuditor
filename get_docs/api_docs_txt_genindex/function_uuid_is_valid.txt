@@ -1,0 +1,10 @@
+Function: bool uuid_is_valid ( const char * uuid )
+
+checks if a UUID string is valid
+
+Parameters
+  const char *uuid
+    UUID string to check
+
+Description
+  xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx

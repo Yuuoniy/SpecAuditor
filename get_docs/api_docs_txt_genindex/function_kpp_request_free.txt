@@ -1,0 +1,7 @@
+Function: void kpp_request_free ( struct kpp_request * req )
+
+zeroize and free kpp request
+
+Parameters
+  struct kpp_request *req
+    request to free

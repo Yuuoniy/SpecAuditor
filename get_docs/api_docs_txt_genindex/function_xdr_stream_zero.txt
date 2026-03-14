@@ -1,0 +1,11 @@
+Function: unsigned int xdr_stream_zero ( struct xdr_stream * xdr , unsigned int offset , unsigned int length )
+
+zero out a portion of an xdr_stream
+
+Parameters
+  struct xdr_stream *xdr
+    an xdr_stream to zero out
+  unsigned int offset
+    the starting point in the stream
+  unsigned int length
+    the number of bytes to zero

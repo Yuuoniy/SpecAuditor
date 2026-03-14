@@ -1,0 +1,13 @@
+Function: void ipc64_perm_to_ipc_perm ( struct ipc64_perm * in , struct ipc_perm * out )
+
+convert new ipc permissions to old
+
+Parameters
+  struct ipc64_perm *in
+    new style ipc permissions
+  struct ipc_perm *out
+    old style ipc permissions
+
+Description
+  Turn the new style permissions object in into a compatibility
+object and store it into the out pointer.

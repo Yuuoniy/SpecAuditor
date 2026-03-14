@@ -1,0 +1,11 @@
+Function: void folio_end_private_2 ( struct folio * folio )
+
+Clear PG_private_2 and wake any waiters.
+
+Parameters
+  struct folio *folio
+    The folio.
+
+Description
+  Clear the PG_private_2 bit on a folio and wake up any sleepers waiting for
+it.  The folio reference held for PG_private_2 being set is released.

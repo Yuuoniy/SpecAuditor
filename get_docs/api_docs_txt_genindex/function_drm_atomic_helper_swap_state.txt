@@ -1,0 +1,14 @@
+Function: int drm_atomic_helper_swap_state ( struct drm_atomic_state * state , bool stall )
+
+store atomic state into current sw state
+
+Parameters
+  struct drm_atomic_state *state
+    atomic state
+  bool stall
+    stall for preceding commits
+
+Description
+  This function stores the atomic state into the current state pointers in all
+driver objects. It should be called after all failing steps have been done
+and succeeded, but before the actual hardware state is committed.

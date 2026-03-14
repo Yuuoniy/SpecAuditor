@@ -1,0 +1,13 @@
+Function: int security_tun_dev_attach ( struct sock * sk , void * security )
+
+Update TUN device LSM state on attach
+
+Parameters
+  struct sock *sk
+    associated sock
+  void *security
+    TUN device LSM blob
+
+Description
+  This hook can be used by the module to update any security state associated
+with the TUN device’s sock structure.

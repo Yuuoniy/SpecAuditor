@@ -1,0 +1,12 @@
+Function: struct dma_fence * drm_syncobj_fence_get ( struct drm_syncobj * syncobj )
+
+get a reference to a fence in a sync object
+
+Parameters
+  struct drm_syncobj *syncobj
+    sync object.
+
+Description
+  This acquires additional reference to drm_syncobj.fence contained in obj ,
+if not NULL. It is illegal to call this without already holding a reference.
+No locks required.

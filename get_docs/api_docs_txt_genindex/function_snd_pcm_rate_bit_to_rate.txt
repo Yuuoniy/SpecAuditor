@@ -1,0 +1,7 @@
+Function: unsigned int snd_pcm_rate_bit_to_rate ( unsigned int rate_bit )
+
+converts SNDRV_PCM_RATE_xxx bit to sample rate
+
+Parameters
+  unsigned int rate_bit
+    the rate bit to convert

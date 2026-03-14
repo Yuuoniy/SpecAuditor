@@ -1,0 +1,12 @@
+Function: int clk_rate_exclusive_get ( struct clk * clk )
+
+get exclusivity over the rate control of a producer
+
+Parameters
+  struct clk *clk
+    clock source
+
+Description
+  This function allows drivers to get exclusive control over the rate of a
+provider. It prevents any other consumer to execute, even indirectly,
+opereation which could alter the rate of the provider or cause glitches

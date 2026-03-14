@@ -1,0 +1,12 @@
+Function: int padata_set_cpumask ( struct padata_instance * pinst , int cpumask_type , cpumask_var_t cpumask )
+
+Sets specified by cpumask_type cpumask to the value equivalent to cpumask .
+
+Parameters
+  struct padata_instance *pinst
+    padata instance
+  int cpumask_type
+    PADATA_CPU_SERIAL or PADATA_CPU_PARALLEL corresponding
+to parallel and serial cpumasks respectively.
+  cpumask_var_t cpumask
+    the cpumask to use

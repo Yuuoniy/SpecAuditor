@@ -1,0 +1,10 @@
+Function: struct rpc_clnt * rpc_clone_client ( struct rpc_clnt * clnt )
+
+Clone an RPC client structure
+
+Parameters
+  struct rpc_clnt *clnt
+    RPC client whose parameters are copied
+
+Description
+  Returns a fresh RPC client or an ERR_PTR.

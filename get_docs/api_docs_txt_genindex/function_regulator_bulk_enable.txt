@@ -1,0 +1,15 @@
+Function: int regulator_bulk_enable ( int num_consumers , struct regulator_bulk_data * consumers )
+
+enable multiple regulator consumers
+
+Parameters
+  int num_consumers
+    Number of consumers
+  struct regulator_bulk_data *consumers
+    Consumer data; clients are stored here.
+
+Description
+  This convenience API allows consumers to enable multiple regulator
+clients in a single API call.  If any consumers cannot be enabled
+then any others that were enabled will be disabled again prior to
+return.

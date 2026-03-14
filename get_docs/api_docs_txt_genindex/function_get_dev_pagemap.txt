@@ -1,0 +1,7 @@
+Function: struct dev_pagemap * get_dev_pagemap ( unsigned long pfn )
+
+take a new live reference on the dev_pagemap for pfn
+
+Parameters
+  unsigned long pfn
+    page frame number to lookup page_map

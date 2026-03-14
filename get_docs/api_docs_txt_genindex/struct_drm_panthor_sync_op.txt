@@ -1,0 +1,13 @@
+Struct: struct drm_panthor_sync_op
+
+Synchronization operation.
+
+Members
+  flags
+    Synchronization operation flags. Combination of DRM_PANTHOR_SYNC_OP values.
+  handle
+    Sync handle.
+  timeline_value
+    MBZ if
+(flags & DRM_PANTHOR_SYNC_OP_HANDLE_TYPE_MASK) !=
+DRM_PANTHOR_SYNC_OP_HANDLE_TYPE_TIMELINE_SYNCOBJ.

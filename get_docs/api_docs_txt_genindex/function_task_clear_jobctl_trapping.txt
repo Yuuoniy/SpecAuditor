@@ -1,0 +1,13 @@
+Function: void task_clear_jobctl_trapping ( struct task_struct * task )
+
+clear jobctl trapping bit
+
+Parameters
+  struct task_struct *task
+    target task
+
+Description
+  If JOBCTL_TRAPPING is set, a ptracer is waiting for us to enter TRACED.
+Clear it and wake up the ptracer.  Note that we don’t need any further
+locking. task->siglock guarantees that task->parent points to the
+ptracer.

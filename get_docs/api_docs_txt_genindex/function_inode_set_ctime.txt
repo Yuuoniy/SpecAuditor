@@ -1,0 +1,14 @@
+Function: struct timespec64 inode_set_ctime ( struct inode * inode , time64_t sec , long nsec )
+
+set the ctime in the inode
+
+Parameters
+  struct inode *inode
+    inode in which to set the ctime
+  time64_t sec
+    tv_sec value to set
+  long nsec
+    tv_nsec value to set
+
+Description
+  Set the ctime in inode to { sec , nsec }

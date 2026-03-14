@@ -1,0 +1,27 @@
+Struct: struct drm_sched_fence
+
+fences corresponding to the scheduling of a job.
+
+Members
+  scheduled
+    this fence is what will be signaled by the scheduler
+when the job is scheduled.
+  finished
+    this fence is what will be signaled by the scheduler
+when the job is completed. When setting up an out fence for the job, you should use
+this, since it’s available immediately upon drm_sched_job_init() , and the fence returned by the driver
+from run_job() won’t be created until the dependencies have
+resolved.
+  deadline
+    deadline set on drm_sched_fence.finished which
+potentially needs to be propagated to drm_sched_fence.parent
+  parent
+    the fence returned by drm_sched_backend_ops.run_job when scheduling the job on hardware. We signal the drm_sched_fence.finished fence once parent is signalled.
+  sched
+    the scheduler instance to which the job having this struct belongs to.
+  lock
+    the lock used by the scheduled and the finished fences.
+  owner
+    job owner for debugging
+  drm_client_id
+    The client_id of the drm_file which owns the job.

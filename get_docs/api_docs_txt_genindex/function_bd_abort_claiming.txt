@@ -1,0 +1,14 @@
+Function: void bd_abort_claiming ( struct block_device * bdev , void * holder )
+
+abort claiming of a block device
+
+Parameters
+  struct block_device *bdev
+    block device of interest
+  void *holder
+    holder that has claimed bdev
+
+Description
+  Abort claiming of a block device when the exclusive open failed. This can be
+also used when exclusive open is not actually desired and we just needed
+to block other exclusive openers for a while.

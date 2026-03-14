@@ -1,0 +1,13 @@
+Function: int security_bpf_token_capable ( const struct bpf_token * token , int cap )
+
+Check if BPF token is allowed to delegate requested BPF-related capability
+
+Parameters
+  const struct bpf_token *token
+    BPF token object
+  int cap
+    capabilities requested to be delegated by BPF token
+
+Description
+  Do a check when the kernel decides whether provided BPF token should allow
+delegation of requested BPF-related capabilities.

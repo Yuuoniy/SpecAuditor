@@ -1,0 +1,13 @@
+Function: int tty_ldisc_failto ( struct tty_struct * tty , int ld )
+
+helper for ldisc failback
+
+Parameters
+  struct tty_struct *tty
+    tty to open the ldisc on
+  int ld
+    ldisc we are trying to fail back to
+
+Description
+  Helper to try and recover a tty when switching back to the old ldisc fails
+and we need something attached.

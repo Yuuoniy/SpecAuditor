@@ -1,0 +1,13 @@
+Function: uint32_t drm_of_crtc_port_mask ( struct drm_device * dev , struct device_node * port )
+
+find the mask of a registered CRTC by port OF node
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct device_node *port
+    port OF node
+
+Description
+  Given a port OF node, return the possible mask of the corresponding
+CRTC within a device’s list of CRTCs.  Returns zero if not found.

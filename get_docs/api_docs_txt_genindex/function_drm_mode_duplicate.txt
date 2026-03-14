@@ -1,0 +1,13 @@
+Function: struct drm_display_mode * drm_mode_duplicate ( struct drm_device * dev , const struct drm_display_mode * mode )
+
+allocate and duplicate an existing mode
+
+Parameters
+  struct drm_device *dev
+    drm_device to allocate the duplicated mode for
+  const struct drm_display_mode *mode
+    mode to duplicate
+
+Description
+  Just allocate a new mode, copy the existing mode into it, and return
+a pointer to it.  Used to create new instances of established modes.

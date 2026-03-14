@@ -1,0 +1,14 @@
+Function: void * memchr_inv ( const void * start , int c , size_t bytes )
+
+Find an unmatching character in an area of memory.
+
+Parameters
+  const void *start
+    The memory area
+  int c
+    Find a character other than c
+  size_t bytes
+    The size of the area.
+
+Description
+  returns the address of the first character other than c , or NULL if the whole buffer contains just c .

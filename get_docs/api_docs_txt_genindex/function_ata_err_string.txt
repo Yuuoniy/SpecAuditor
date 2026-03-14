@@ -1,0 +1,12 @@
+Function: const char * ata_err_string ( unsigned int err_mask )
+
+convert err_mask to descriptive string
+
+Parameters
+  unsigned int err_mask
+    error mask to convert to string
+
+Description
+  Convert err_mask to descriptive string.  Errors are
+prioritized according to severity and only the most severe
+error is reported.

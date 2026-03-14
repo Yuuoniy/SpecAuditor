@@ -1,0 +1,12 @@
+Function: int ccwgroup_set_offline ( struct ccwgroup_device * gdev , bool call_gdrv )
+
+disable a ccwgroup device
+
+Parameters
+  struct ccwgroup_device *gdev
+    target ccwgroup device
+  bool call_gdrv
+    Call the registered gdrv set_offline function
+
+Description
+  This function attempts to put the ccwgroup device into the offline state.

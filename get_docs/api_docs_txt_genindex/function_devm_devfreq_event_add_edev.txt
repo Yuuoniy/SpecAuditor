@@ -1,0 +1,15 @@
+Function: struct devfreq_event_dev * devm_devfreq_event_add_edev ( struct device * dev , struct devfreq_event_desc * desc )
+
+Resource-managed devfreq_event_add_edev()
+
+Parameters
+  struct device *dev
+    the device owning the devfreq-event device being created
+  struct devfreq_event_desc *desc
+    the devfreq-event device’s descriptor which include essential
+data for devfreq-event device.
+
+Description
+  Note that this function manages automatically the memory of devfreq-event
+device using device resource management and simplify the free operation
+for memory of devfreq-event device.

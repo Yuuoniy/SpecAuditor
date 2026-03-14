@@ -1,0 +1,7 @@
+Function: void iscsi_iser_cleanup_task ( struct iscsi_task * task )
+
+cleanup an iscsi-iser task
+
+Parameters
+  struct iscsi_task *task
+    iscsi task

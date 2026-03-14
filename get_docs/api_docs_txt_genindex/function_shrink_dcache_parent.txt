@@ -1,0 +1,10 @@
+Function: void shrink_dcache_parent ( struct dentry * parent )
+
+prune dcache
+
+Parameters
+  struct dentry *parent
+    parent of entries to prune
+
+Description
+  Prune the dcache to remove unused children of the parent dentry.

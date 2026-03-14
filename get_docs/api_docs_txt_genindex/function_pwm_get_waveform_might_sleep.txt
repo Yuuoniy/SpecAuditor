@@ -1,0 +1,13 @@
+Function: int pwm_get_waveform_might_sleep ( struct pwm_device * pwm , struct pwm_waveform * wf )
+
+Query hardware about current configuration Cannot be used in atomic context.
+
+Parameters
+  struct pwm_device *pwm
+    PWM device
+  struct pwm_waveform *wf
+    output parameter
+
+Description
+  Stores the current configuration of the PWM in wf . Note this is the
+equivalent of pwm_get_state_hw() (and not pwm_get_state() ) for pwm_waveform.

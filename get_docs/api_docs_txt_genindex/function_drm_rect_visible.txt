@@ -1,0 +1,7 @@
+Function: bool drm_rect_visible ( const struct drm_rect * r )
+
+determine if the rectangle is visible
+
+Parameters
+  const struct drm_rect *r
+    rectangle whose visibility is returned

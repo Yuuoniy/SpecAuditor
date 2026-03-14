@@ -1,0 +1,13 @@
+Function: int vb2_queue_change_type ( struct vb2_queue * q , unsigned int type )
+
+change the type of an inactive vb2_queue
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  unsigned int type
+    the type to change to (V4L2_BUF_TYPE_VIDEO_*)
+
+Description
+  This function changes the type of the vb2_queue. This is only possible
+if the queue is not busy (i.e. no buffers have been allocated).

@@ -1,0 +1,15 @@
+Function: struct net_device * netdev_get_xmit_slave ( struct net_device * dev , struct sk_buff * skb , bool all_slaves )
+
+Get the xmit slave of master device
+
+Parameters
+  struct net_device *dev
+    device
+  struct sk_buff *skb
+    The packet
+  bool all_slaves
+    assume all the slaves are active
+
+Description
+  The reference counters are not incremented so the caller must be
+careful with locks. The caller must hold RCU lock. NULL is returned if no slave is found.

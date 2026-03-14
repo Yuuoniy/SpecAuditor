@@ -1,0 +1,17 @@
+Function: int drm_dp_dpcd_write_payload ( struct drm_dp_aux * aux , int vcpid , u8 start_time_slot , u8 time_slot_count )
+
+Write Virtual Channel information to payload table
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  int vcpid
+    Virtual Channel Payload ID
+  u8 start_time_slot
+    Starting time slot
+  u8 time_slot_count
+    Time slot count
+
+Description
+  Write the Virtual Channel payload allocation table, checking the payload
+update status and retrying as necessary.

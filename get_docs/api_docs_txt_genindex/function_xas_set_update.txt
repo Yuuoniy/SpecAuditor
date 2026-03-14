@@ -1,0 +1,14 @@
+Function: void xas_set_update ( struct xa_state * xas , xa_update_node_t update )
+
+Set up XArray operation state for a callback.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+  xa_update_node_t update
+    Function to call when updating a node.
+
+Description
+  The XArray can notify a caller after it has updated an xa_node.
+This is advanced functionality and is only needed by the page
+cache and swap cache.

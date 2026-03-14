@@ -1,0 +1,10 @@
+Function: int ccw_device_resume ( struct ccw_device * cdev )
+
+resume channel program execution
+
+Parameters
+  struct ccw_device *cdev
+    target ccw device
+
+Description
+  ccw_device_resume() calls rsch on cdev ’s subchannel.

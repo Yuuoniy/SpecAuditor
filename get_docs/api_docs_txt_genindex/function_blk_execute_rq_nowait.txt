@@ -1,0 +1,13 @@
+Function: void blk_execute_rq_nowait ( struct request * rq , bool at_head )
+
+insert a request to I/O scheduler for execution
+
+Parameters
+  struct request *rq
+    request to insert
+  bool at_head
+    insert request at head or tail of queue
+
+Description
+  Insert a fully prepared request at the back of the I/O scheduler queue
+for execution.  Don’t wait for completion.

@@ -1,0 +1,7 @@
+Function: enum media_gobj_type media_type ( struct media_gobj * gobj )
+
+return the media object type
+
+Parameters
+  struct media_gobj *gobj
+    Pointer to the struct media_gobj graph object

@@ -1,0 +1,14 @@
+Function: int amdgpu_dma_buf_begin_cpu_access ( struct dma_buf * dma_buf , enum dma_data_direction direction )
+
+dma_buf_ops.begin_cpu_access implementation
+
+Parameters
+  struct dma_buf *dma_buf
+    Shared DMA buffer
+  enum dma_data_direction direction
+    Direction of DMA transfer
+
+Description
+  This is called before CPU access to the shared DMA buffer’s memory. If it’s
+a read access, the buffer is moved to the GTT domain if possible, for optimal
+CPU read performance.

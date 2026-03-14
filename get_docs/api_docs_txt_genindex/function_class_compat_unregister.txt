@@ -1,0 +1,7 @@
+Function: void class_compat_unregister ( struct class_compat * cls )
+
+unregister a compatibility class
+
+Parameters
+  struct class_compat *cls
+    the class to unregister

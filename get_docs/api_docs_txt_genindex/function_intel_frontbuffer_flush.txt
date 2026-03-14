@@ -1,0 +1,13 @@
+Function: void intel_frontbuffer_flush ( struct intel_frontbuffer * front , enum fb_op_origin origin )
+
+flush frontbuffer object
+
+Parameters
+  struct intel_frontbuffer *front
+    GEM object to flush
+  enum fb_op_origin origin
+    which operation caused the flush
+
+Description
+  This function gets called every time rendering on the given object has
+completed and frontbuffer caching can be started again.

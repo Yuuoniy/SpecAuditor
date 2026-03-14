@@ -1,0 +1,13 @@
+Macro: drm_for_each_privobj
+
+
+
+Parameters
+  privobj
+    pointer to the current private object. Updated after each
+iteration
+  dev
+    the DRM device we want get private objects from
+
+Description
+  Allows one to iterate over all private objects attached to dev

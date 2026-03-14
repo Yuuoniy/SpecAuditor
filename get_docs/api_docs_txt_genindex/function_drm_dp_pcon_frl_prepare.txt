@@ -1,0 +1,12 @@
+Function: int drm_dp_pcon_frl_prepare ( struct drm_dp_aux * aux , bool enable_frl_ready_hpd )
+
+Prepare PCON for FRL.
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  bool enable_frl_ready_hpd
+    Configure DP_PCON_ENABLE_HPD_READY.
+
+Description
+  Returns 0 if success, else returns negative error code.

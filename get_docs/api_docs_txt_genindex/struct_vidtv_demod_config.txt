@@ -1,0 +1,10 @@
+Struct: struct vidtv_demod_config
+
+Configuration used to init the demod
+
+Members
+  drop_tslock_prob_on_low_snr
+    probability of losing the lock due to low snr
+  recover_tslock_prob_on_good_snr
+    probability of recovering when the signal
+improves

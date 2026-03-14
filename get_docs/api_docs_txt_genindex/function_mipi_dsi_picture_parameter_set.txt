@@ -1,0 +1,13 @@
+Function: int mipi_dsi_picture_parameter_set ( struct mipi_dsi_device * dsi , const struct drm_dsc_picture_parameter_set * pps )
+
+transmit the DSC PPS to the peripheral
+
+Parameters
+  struct mipi_dsi_device *dsi
+    DSI peripheral device
+  const struct drm_dsc_picture_parameter_set *pps
+    VESA DSC 1.1 Picture Parameter Set
+
+Description
+  Transmit the VESA DSC 1.1 Picture Parameter Set to the peripheral.
+This function is deprecated. Use mipi_dsi_picture_parameter_set_multi() instead.

@@ -1,0 +1,11 @@
+Function: const char * rio_name ( struct rio_dev * rdev )
+
+Get the unique RIO device identifier
+
+Parameters
+  struct rio_dev *rdev
+    RIO device
+
+Description
+  Get the unique RIO device identifier. Returns the device
+identifier string.

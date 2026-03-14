@@ -1,0 +1,16 @@
+Function: void iser_free_ib_conn_res ( struct iser_conn * iser_conn , bool destroy )
+
+release IB related resources
+
+Parameters
+  struct iser_conn *iser_conn
+    iser connection struct
+  bool destroy
+    indicator if we need to try to release the
+iser device and memory regoins pool (only iscsi
+shutdown and DEVICE_REMOVAL will use this).
+
+Description
+  This routine is called with the iser state mutex held
+so the cm_id removal is out of here. It is Safe to
+be invoked multiple times.

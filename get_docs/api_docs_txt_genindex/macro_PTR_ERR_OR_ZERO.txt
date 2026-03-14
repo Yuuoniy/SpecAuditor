@@ -1,0 +1,12 @@
+Macro: int PTR_ERR_OR_ZERO ( __force const void * ptr )
+
+Extract the error code from a pointer if it has one.
+
+Parameters
+  __force const void *ptr
+    A potential error pointer.
+
+Description
+  Convenience function that can be used inside a function that returns
+an error code to propagate errors received as error pointers.
+For example, return PTR_ERR_OR_ZERO(ptr); replaces:

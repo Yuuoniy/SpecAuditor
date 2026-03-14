@@ -1,0 +1,15 @@
+Macro: slab_folio
+
+
+
+Parameters
+  s
+    The slab.
+
+Description
+  Slabs are allocated as folios that contain the individual objects and are
+using some fields in the first struct page of the folio - those fields are
+now accessed by struct slab . It is occasionally necessary to convert back to
+a folio in order to communicate with the rest of the mm.  Please use this
+helper function instead of casting yourself, as the implementation may change
+in the future.

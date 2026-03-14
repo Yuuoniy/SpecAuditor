@@ -1,0 +1,13 @@
+Function: unsigned int textsearch_next ( struct ts_config * conf , struct ts_state * state )
+
+continue searching for a pattern
+
+Parameters
+  struct ts_config *conf
+    search configuration
+  struct ts_state *state
+    search state
+
+Description
+  Continues a search looking for more occurrences of the pattern. textsearch_find() must be called to find the first occurrence
+in order to reset the state.

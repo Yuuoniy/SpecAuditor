@@ -1,0 +1,7 @@
+Function: void cpupri_cleanup ( struct cpupri * cp )
+
+clean up the cpupri structure
+
+Parameters
+  struct cpupri *cp
+    The cpupri context

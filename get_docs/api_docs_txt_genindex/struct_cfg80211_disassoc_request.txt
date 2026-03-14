@@ -1,0 +1,16 @@
+Struct: struct cfg80211_disassoc_request
+
+Disassociation request data
+
+Members
+  ap_addr
+    the BSSID or AP MLD address to disassociate from
+  ie
+    Extra IEs to add to Disassociation frame or NULL
+  ie_len
+    Length of ie buffer in octets
+  reason_code
+    The reason code for the disassociation
+  local_state_change
+    This is a request for a local state only, i.e., no
+Disassociation frame is to be transmitted.

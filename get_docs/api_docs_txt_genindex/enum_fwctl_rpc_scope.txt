@@ -1,0 +1,3 @@
+Enum: enum fwctl_rpc_scope
+
+Scope of access for the RPC

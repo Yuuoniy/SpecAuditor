@@ -1,0 +1,17 @@
+Function: struct drm_bridge * drm_panel_bridge_add ( struct drm_panel * panel )
+
+Creates a drm_bridge and drm_connector that just calls the appropriate functions from drm_panel .
+
+Parameters
+  struct drm_panel *panel
+    The drm_panel being wrapped.  Must be non-NULL.
+
+Description
+  For drivers converting from directly using drm_panel: The expected
+usage pattern is that during either encoder module probe or DSI
+host attach, a drm_panel will be looked up through drm_of_find_panel_or_bridge() . drm_panel_bridge_add() is used to
+wrap that panel in the new bridge, and the result can then be
+passed to drm_bridge_attach() .  The drm_panel_prepare() and related
+functions can be dropped from the encoder driver (they’re now
+called by the KMS helpers before calling into the encoder), along
+with connector creation.  When done with the bridge (after drm_mode_config_cleanup() if the bridge has already been attached), then drm_panel_bridge_remove() to free it.

@@ -1,0 +1,11 @@
+Function: int of_hte_req_count ( struct device * dev )
+
+Return the number of entities to timestamp.
+
+Parameters
+  struct device *dev
+    The HTE consumer.
+
+Description
+  The function returns the total count of the requested entities to timestamp
+by parsing device tree.

@@ -1,0 +1,15 @@
+Function: int crypto_shash_final ( struct shash_desc * desc , u8 * out )
+
+calculate message digest
+
+Parameters
+  struct shash_desc *desc
+    operational state handle that is already filled with data
+  u8 *out
+    output buffer filled with the message digest
+
+Description
+  Finalize the message digest operation and create the message digest
+based on all data added to the cipher handle. The message digest is placed
+into the output buffer. The caller must ensure that the output buffer is
+large enough by using crypto_shash_digestsize.

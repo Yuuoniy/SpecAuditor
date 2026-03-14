@@ -1,0 +1,18 @@
+Function: int vscnprintf ( char * buf , size_t size , const char * fmt , va_list args )
+
+Format a string and place it in a buffer
+
+Parameters
+  char *buf
+    The buffer to place the result into
+  size_t size
+    The size of the buffer, including the trailing null space
+  const char *fmt
+    The format string to use
+  va_list args
+    Arguments for the format string
+
+Description
+  The return value is the number of characters which have been written into
+the buf not including the trailing ‘0’. If size is == 0 the function
+returns 0.

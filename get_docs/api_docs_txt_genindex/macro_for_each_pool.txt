@@ -1,0 +1,14 @@
+Macro: for_each_pool
+
+
+
+Parameters
+  pool
+    iteration cursor
+  pi
+    integer used for iteration
+
+Description
+  This must be called either with wq_pool_mutex held or RCU read
+locked.  If the pool needs to be used beyond the locking in effect, the
+caller is responsible for guaranteeing that the pool stays online.

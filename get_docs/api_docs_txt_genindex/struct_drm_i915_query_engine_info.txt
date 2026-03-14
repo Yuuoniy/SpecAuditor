@@ -1,0 +1,11 @@
+Struct: struct drm_i915_query_engine_info
+
+
+
+Members
+  num_engines
+    Number of struct drm_i915_engine_info structs following.
+  rsvd
+    MBZ
+  engines
+    Marker for drm_i915_engine_info structures.

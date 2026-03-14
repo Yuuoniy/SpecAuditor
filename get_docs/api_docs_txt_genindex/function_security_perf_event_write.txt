@@ -1,0 +1,10 @@
+Function: int security_perf_event_write ( struct perf_event * event )
+
+Check if writing a perf event label is allowed
+
+Parameters
+  struct perf_event *event
+    perf event
+
+Description
+  Write perf_event security info if allowed.

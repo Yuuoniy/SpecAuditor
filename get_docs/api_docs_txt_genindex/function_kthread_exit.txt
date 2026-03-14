@@ -1,0 +1,12 @@
+Function: void __noreturn kthread_exit ( long result )
+
+Cause the current kthread return result to kthread_stop() .
+
+Parameters
+  long result
+    The integer value to return to kthread_stop() .
+
+Description
+  While kthread_exit can be called directly, it exists so that
+functions which do some additional work in non-modular code such as
+module_put_and_kthread_exit can be implemented.

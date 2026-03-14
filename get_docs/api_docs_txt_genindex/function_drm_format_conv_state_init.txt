@@ -1,0 +1,11 @@
+Function: void drm_format_conv_state_init ( struct drm_format_conv_state * state )
+
+Initialize format-conversion state
+
+Parameters
+  struct drm_format_conv_state *state
+    The state to initialize
+
+Description
+  Clears all fields in struct drm_format_conv_state . The state will
+be empty with no preallocated resources.

@@ -1,0 +1,12 @@
+Macro: raw_write_seqcount_barrier
+
+
+
+Parameters
+  s
+    Pointer to seqcount_t or any of the seqcount_LOCKNAME_t variants
+
+Description
+  This can be used to provide an ordering guarantee instead of the usual
+consistency guarantee. It is one wmb cheaper, because it can collapse
+the two back-to-back wmb() s.

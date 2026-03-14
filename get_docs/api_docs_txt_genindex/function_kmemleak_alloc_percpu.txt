@@ -1,0 +1,15 @@
+Function: void __ref kmemleak_alloc_percpu ( const void __percpu * ptr , size_t size , gfp_t gfp )
+
+register a newly allocated __percpu object
+
+Parameters
+  const void __percpu *ptr
+    __percpu pointer to beginning of the object
+  size_t size
+    size of the object
+  gfp_t gfp
+    flags used for kmemleak internal memory allocations
+
+Description
+  This function is called from the kernel percpu allocator when a new object
+(memory block) is allocated (alloc_percpu).

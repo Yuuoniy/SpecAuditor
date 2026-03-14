@@ -1,0 +1,10 @@
+Function: void media_request_object_unbind ( struct media_request_object * obj )
+
+Unbind a media request object
+
+Parameters
+  struct media_request_object *obj
+    The object
+
+Description
+  Unbind the media request object from the request.

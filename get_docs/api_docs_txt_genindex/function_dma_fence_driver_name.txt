@@ -1,0 +1,10 @@
+Function: const char __rcu * dma_fence_driver_name ( struct dma_fence * fence )
+
+Access the driver name
+
+Parameters
+  struct dma_fence *fence
+    the fence to query
+
+Description
+  Returns a driver name backing the dma-fence implementation.

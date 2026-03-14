@@ -1,0 +1,10 @@
+Function: bool mutex_is_locked ( struct mutex * lock )
+
+is the mutex locked
+
+Parameters
+  struct mutex *lock
+    the mutex to be queried
+
+Description
+  Returns true if the mutex is locked, false if unlocked.

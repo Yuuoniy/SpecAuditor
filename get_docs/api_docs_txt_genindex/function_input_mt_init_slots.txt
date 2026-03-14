@@ -1,0 +1,18 @@
+Function: int input_mt_init_slots ( struct input_dev * dev , unsigned int num_slots , unsigned int flags )
+
+initialize MT input slots
+
+Parameters
+  struct input_dev *dev
+    input device supporting MT events and finger tracking
+  unsigned int num_slots
+    number of slots used by the device
+  unsigned int flags
+    mt tasks to handle in core
+
+Description
+  This function allocates all necessary memory for MT slot handling
+in the input device, prepares the ABS_MT_SLOT and
+ABS_MT_TRACKING_ID events for use and sets up appropriate buffers.
+Depending on the flags set, it also performs pointer emulation and
+frame synchronization.

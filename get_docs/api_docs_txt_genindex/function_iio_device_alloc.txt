@@ -1,0 +1,9 @@
+Function: struct iio_dev * iio_device_alloc ( struct device * parent , int sizeof_priv )
+
+allocate an iio_dev from a driver
+
+Parameters
+  struct device *parent
+    Parent device.
+  int sizeof_priv
+    Space to allocate for private structure.

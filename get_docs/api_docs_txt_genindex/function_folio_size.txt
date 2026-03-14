@@ -1,0 +1,7 @@
+Function: size_t folio_size ( const struct folio * folio )
+
+The number of bytes in a folio.
+
+Parameters
+  const struct folio *folio
+    The folio.

@@ -1,0 +1,10 @@
+Function: int pnp_start_dev ( struct pnp_dev * dev )
+
+low-level start of the PnP device
+
+Parameters
+  struct pnp_dev *dev
+    pointer to the desired device
+
+Description
+  assumes that resources have already been allocated

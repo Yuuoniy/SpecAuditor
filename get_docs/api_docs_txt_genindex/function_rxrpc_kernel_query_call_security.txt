@@ -1,0 +1,14 @@
+Function: u8 rxrpc_kernel_query_call_security ( struct rxrpc_call * call , u16 * _service_id , u32 * _enctype )
+
+Query call’s security parameters
+
+Parameters
+  struct rxrpc_call *call
+    The call to query
+  u16 *_service_id
+    Where to return the service ID
+  u32 *_enctype
+    Where to return the “encoding type”
+
+Description
+  This queries the security parameters of a call, setting *_service_id and *_enctype and returning the security class.

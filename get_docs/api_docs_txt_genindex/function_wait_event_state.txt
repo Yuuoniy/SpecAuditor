@@ -1,0 +1,16 @@
+Function: wait_event_state
+
+
+
+Parameters
+  wq_head
+    the waitqueue to wait on
+  condition
+    a C expression for the event to wait for
+  state
+    state to sleep in
+
+Description
+  The process is put to sleep ( state ) until the condition evaluates to true
+or a signal is received (when allowed by state ).  The condition is checked
+each time the waitqueue wq_head is woken up.

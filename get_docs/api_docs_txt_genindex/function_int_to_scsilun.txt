@@ -1,0 +1,14 @@
+Function: void int_to_scsilun ( u64 lun , struct scsi_lun * scsilun )
+
+reverts an int into a scsi_lun
+
+Parameters
+  u64 lun
+    integer to be reverted
+  struct scsi_lun *scsilun
+    struct scsi_lun to be set.
+
+Description
+  Reverts the functionality of the scsilun_to_int, which packed
+an 8-byte lun value into an int. This routine unpacks the int
+back into the lun value.

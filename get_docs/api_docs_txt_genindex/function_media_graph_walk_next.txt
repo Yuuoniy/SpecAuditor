@@ -1,0 +1,10 @@
+Function: struct media_entity * media_graph_walk_next ( struct media_graph * graph )
+
+Get the next entity in the graph
+
+Parameters
+  struct media_graph *graph
+    Media graph structure
+
+Description
+  This function is deprecated, use media_pipeline_for_each_pad() instead.

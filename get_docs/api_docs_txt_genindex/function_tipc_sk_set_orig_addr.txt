@@ -1,0 +1,9 @@
+Function: void tipc_sk_set_orig_addr ( struct msghdr * m , struct sk_buff * skb )
+
+capture sender’s address for received message
+
+Parameters
+  struct msghdr *m
+    descriptor for message info
+  struct sk_buff *skb
+    received message

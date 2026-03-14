@@ -1,0 +1,14 @@
+Function: intel_wakeref_t __intel_runtime_pm_get_if_active ( struct intel_runtime_pm * rpm , bool ignore_usecount )
+
+grab a runtime pm reference if device is active
+
+Parameters
+  struct intel_runtime_pm *rpm
+    the intel_runtime_pm structure
+  bool ignore_usecount
+    get a ref even if dev->power.usage_count is 0
+
+Description
+  This function grabs a device-level runtime pm reference if the device is
+already active and ensures that it is powered up. It is illegal to try
+and access the HW should intel_runtime_pm_get_if_active() report failure.

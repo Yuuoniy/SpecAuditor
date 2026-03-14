@@ -1,0 +1,12 @@
+Function: struct msgbuf
+
+Buffer struct to construct SSH messages.
+
+Members
+  begin
+    Pointer to the beginning of the allocated buffer space.
+  end
+    Pointer to the end (one past last element) of the allocated buffer
+space.
+  ptr
+    Pointer to the first free element in the buffer.

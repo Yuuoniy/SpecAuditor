@@ -1,0 +1,10 @@
+Function: void * iio_trigger_get_drvdata ( struct iio_trigger * trig )
+
+Get trigger driver data
+
+Parameters
+  struct iio_trigger *trig
+    IIO trigger structure
+
+Description
+  Returns the data previously set with iio_trigger_set_drvdata()

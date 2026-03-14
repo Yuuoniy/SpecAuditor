@@ -1,0 +1,19 @@
+Function: struct page * make_device_exclusive ( struct mm_struct * mm , unsigned long addr , void * owner , struct folio * * foliop )
+
+Mark a page for exclusive use by a device
+
+Parameters
+  struct mm_struct *mm
+    mm_struct of associated target process
+  unsigned long addr
+    the virtual address to mark for exclusive device access
+  void *owner
+    passed to MMU_NOTIFY_EXCLUSIVE range notifier to allow filtering
+  struct folio **foliop
+    folio pointer will be stored here on success.
+
+Description
+  This function looks up the page mapped at the given address, grabs a
+folio reference, locks the folio and replaces the PTE with special
+device-exclusive PFN swap entry, preventing access through the process
+page tables. The function will return with the folio locked and referenced.

@@ -1,0 +1,13 @@
+Function: void cfg80211_auth_timeout ( struct net_device * dev , const u8 * addr )
+
+notification of timed out authentication
+
+Parameters
+  struct net_device *dev
+    network device
+  const u8 *addr
+    The MAC address of the device with which the authentication timed out
+
+Description
+  This function may sleep. The caller must hold the corresponding wdev’s
+mutex.

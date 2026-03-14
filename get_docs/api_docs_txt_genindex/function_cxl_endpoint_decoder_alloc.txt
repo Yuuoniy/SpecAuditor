@@ -1,0 +1,7 @@
+Function: struct cxl_endpoint_decoder * cxl_endpoint_decoder_alloc ( struct cxl_port * port )
+
+Allocate an endpoint decoder
+
+Parameters
+  struct cxl_port *port
+    owning port of this decoder

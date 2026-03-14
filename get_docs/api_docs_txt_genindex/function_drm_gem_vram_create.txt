@@ -1,0 +1,18 @@
+Function: struct drm_gem_vram_object * drm_gem_vram_create ( struct drm_device * dev , size_t size , unsigned long pg_align )
+
+Creates a VRAM-backed GEM object
+
+Parameters
+  struct drm_device *dev
+    the DRM device
+  size_t size
+    the buffer size in bytes
+  unsigned long pg_align
+    the buffer’s alignment in multiples of the page size
+
+Description
+  GEM objects are allocated by calling struct drm_driver .gem_create_object,
+if set. Otherwise kzalloc() will be used. Drivers can set their own GEM
+object functions in struct drm_driver .gem_create_object. If no functions
+are set, the new GEM object will use the default functions from GEM VRAM
+helpers.

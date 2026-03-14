@@ -1,0 +1,14 @@
+Function: long int video_ioctl2 ( struct file * file , unsigned int cmd , unsigned long int arg )
+
+Handles a V4L2 ioctl.
+
+Parameters
+  struct file *file
+    Pointer to struct file .
+  unsigned int cmd
+    Ioctl name.
+  unsigned long int arg
+    Ioctl argument.
+
+Description
+  Method used to hancle an ioctl. Should be used to fill the v4l2_ioctl_ops.unlocked_ioctl on all V4L2 drivers.

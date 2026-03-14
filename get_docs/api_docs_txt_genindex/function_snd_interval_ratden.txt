@@ -1,0 +1,15 @@
+Function: int snd_interval_ratden ( struct snd_interval * i , unsigned int rats_count , const struct snd_ratden * rats , unsigned int * nump , unsigned int * denp )
+
+refine the interval value
+
+Parameters
+  struct snd_interval *i
+    interval to refine
+  unsigned int rats_count
+    number of struct ratden
+  const struct snd_ratden *rats
+    struct ratden array
+  unsigned int *nump
+    pointer to store the resultant numerator
+  unsigned int *denp
+    pointer to store the resultant denominator

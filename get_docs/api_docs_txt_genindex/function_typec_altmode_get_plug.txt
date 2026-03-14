@@ -1,0 +1,13 @@
+Function: struct typec_altmode * typec_altmode_get_plug ( struct typec_altmode * adev , enum typec_plug_index index )
+
+Find cable plug alternate mode
+
+Parameters
+  struct typec_altmode *adev
+    Handle to partner alternate mode
+  enum typec_plug_index index
+    Cable plug index
+
+Description
+  Increment reference count for cable plug alternate mode device. Returns
+handle to the cable plug alternate mode, or NULL if none is found.

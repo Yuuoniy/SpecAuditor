@@ -1,0 +1,11 @@
+Function: int drm_eld_sad_set ( u8 * eld , int sad_index , const struct cea_sad * cta_sad )
+
+set SAD to ELD from struct cea_sad
+
+Parameters
+  u8 *eld
+    ELD buffer
+  int sad_index
+    SAD index
+  const struct cea_sad *cta_sad
+    source struct cea_sad

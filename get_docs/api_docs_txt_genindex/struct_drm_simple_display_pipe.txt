@@ -1,0 +1,15 @@
+Struct: struct drm_simple_display_pipe
+
+simple display pipeline
+
+Members
+  crtc
+    CRTC control structure
+  plane
+    Plane control structure
+  encoder
+    Encoder control structure
+  connector
+    Connector control structure
+  funcs
+    Pipeline control functions (optional)

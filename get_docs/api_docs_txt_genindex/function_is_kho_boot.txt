@@ -1,0 +1,12 @@
+Function: bool is_kho_boot ( void )
+
+check if current kernel was booted via KHO-enabled kexec
+
+Parameters
+  void
+    no arguments
+
+Description
+  This function checks if the current kernel was loaded through a kexec
+operation with KHO enabled, by verifying that a valid KHO FDT
+was passed.

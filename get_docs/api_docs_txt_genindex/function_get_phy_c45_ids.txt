@@ -1,0 +1,16 @@
+Function: int get_phy_c45_ids ( struct mii_bus * bus , int addr , struct phy_c45_device_ids * c45_ids )
+
+reads the specified addr for its 802.3-c45 IDs.
+
+Parameters
+  struct mii_bus *bus
+    the target MII bus
+  int addr
+    PHY address on the MII bus
+  struct phy_c45_device_ids *c45_ids
+    where to store the c45 ID information.
+
+Description
+  Read the PHY “devices in package”. If this appears to be valid, read
+the PHY identifiers for each device. Return the “devices in package”
+and identifiers in c45_ids .

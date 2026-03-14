@@ -1,0 +1,15 @@
+Function: long copy_from_user_nofault ( void * dst , const void __user * src , size_t size )
+
+safely attempt to read from a user-space location
+
+Parameters
+  void *dst
+    pointer to the buffer that shall take the data
+  const void __user *src
+    address to read from. This must be a user address.
+  size_t size
+    size of the data chunk
+
+Description
+  Safely read from user address src to the buffer at dst . If a kernel fault
+happens, handle that and return -EFAULT.

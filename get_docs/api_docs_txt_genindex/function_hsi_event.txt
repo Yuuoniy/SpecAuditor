@@ -1,0 +1,14 @@
+Function: int hsi_event ( struct hsi_port * port , unsigned long event )
+
+Notifies clients about port events
+
+Parameters
+  struct hsi_port *port
+    Port where the event occurred
+  unsigned long event
+    The event type
+
+Description
+  Clients should not be concerned about wake line behavior. However, due
+to a race condition in HSI HW protocol, clients need to be notified
+about wake line changes, so they can implement a workaround for it.

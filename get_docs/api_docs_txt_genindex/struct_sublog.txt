@@ -1,0 +1,27 @@
+Struct: struct sublog
+
+subchannel logout area
+
+Members
+  res0
+    reserved
+  esf
+    extended status flags
+  lpum
+    last path used mask
+  arep
+    ancillary report
+  fvf
+    field-validity flags
+  sacc
+    storage access code
+  termc
+    termination code
+  devsc
+    device-status check
+  serr
+    secondary error
+  ioerr
+    i/o-error alert
+  seqc
+    sequence code

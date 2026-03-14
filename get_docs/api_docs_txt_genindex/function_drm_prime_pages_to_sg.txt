@@ -1,0 +1,16 @@
+Function: struct sg_table * drm_prime_pages_to_sg ( struct drm_device * dev , struct page * * pages , unsigned int nr_pages )
+
+converts a page array into an sg list
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct page **pages
+    pointer to the array of page pointers to convert
+  unsigned int nr_pages
+    length of the page vector
+
+Description
+  This helper creates an sg table object from a set of pages
+the driver is responsible for mapping the pages into the
+importers address space for use with dma_buf itself.

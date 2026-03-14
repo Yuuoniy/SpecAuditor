@@ -1,0 +1,10 @@
+Function: void phylink_prepare_resume ( struct phylink * pl )
+
+prepare to resume a network device
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+
+Description
+  Optional, but if called must be called prior to phylink_resume() .

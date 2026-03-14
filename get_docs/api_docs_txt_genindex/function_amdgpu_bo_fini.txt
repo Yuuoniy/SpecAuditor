@@ -1,0 +1,10 @@
+Function: void amdgpu_bo_fini ( struct amdgpu_device * adev )
+
+tear down memory manager
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device object
+
+Description
+  Reverses amdgpu_bo_init() to tear down memory manager.

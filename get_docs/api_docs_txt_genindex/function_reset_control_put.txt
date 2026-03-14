@@ -1,0 +1,7 @@
+Function: void reset_control_put ( struct reset_control * rstc )
+
+free the reset controller
+
+Parameters
+  struct reset_control *rstc
+    reset controller

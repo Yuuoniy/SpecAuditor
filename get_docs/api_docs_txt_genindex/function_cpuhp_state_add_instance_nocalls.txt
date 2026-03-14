@@ -1,0 +1,14 @@
+Function: int cpuhp_state_add_instance_nocalls ( enum cpuhp_state state , struct hlist_node * node )
+
+Add an instance for a state without invoking the startup callback.
+
+Parameters
+  enum cpuhp_state state
+    The state for which the instance is installed
+  struct hlist_node *node
+    The node for this individual state.
+
+Description
+  Installs the instance for the state . The state must have been earlier
+marked as multi-instance by cpuhp_setup_state_multi. NOP if SMP=n or
+HOTPLUG_CPU=n.

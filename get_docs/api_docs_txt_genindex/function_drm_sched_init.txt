@@ -1,0 +1,12 @@
+Function: int drm_sched_init ( struct drm_gpu_scheduler * sched , const struct drm_sched_init_args * args )
+
+Init a gpu scheduler instance
+
+Parameters
+  struct drm_gpu_scheduler *sched
+    scheduler instance
+  const struct drm_sched_init_args *args
+    scheduler initialization arguments
+
+Description
+  Return 0 on success, otherwise error code.

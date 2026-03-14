@@ -1,0 +1,12 @@
+Function: __bpf_kfunc bool bpf_cpumask_intersects ( const struct cpumask * src1 , const struct cpumask * src2 )
+
+Check two cpumasks for overlap.
+
+Parameters
+  const struct cpumask *src1
+    The first input.
+  const struct cpumask *src2
+    The second input.
+
+Description
+  struct bpf_cpumask pointers may be safely passed to src1 and src2 .

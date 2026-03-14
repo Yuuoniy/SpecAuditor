@@ -1,0 +1,13 @@
+Function: int misc_register ( struct miscdevice * misc )
+
+register a miscellaneous device
+
+Parameters
+  struct miscdevice *misc
+    device structure
+
+Description
+  Register a miscellaneous device with the kernel. If the minor
+number is set to MISC_DYNAMIC_MINOR a minor number is assigned
+and placed in the minor field of the structure. For other cases
+the minor number requested is used.

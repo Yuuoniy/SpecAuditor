@@ -1,0 +1,7 @@
+Function: void dvb_ringbuffer_flush_spinlock_wakeup ( struct dvb_ringbuffer * rbuf )
+
+flush buffer protected by spinlock and wake-up waiting task(s)
+
+Parameters
+  struct dvb_ringbuffer *rbuf
+    pointer to struct dvb_ringbuffer

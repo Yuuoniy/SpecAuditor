@@ -1,0 +1,12 @@
+Function: int security_xfrm_decode_session ( struct sk_buff * skb , u32 * secid )
+
+Determine the xfrm secid for a packet
+
+Parameters
+  struct sk_buff *skb
+    xfrm packet
+  u32 *secid
+    secid
+
+Description
+  Decode the packet in skb and return the security label in secid .

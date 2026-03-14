@@ -1,0 +1,12 @@
+Function: int dma_buf_vmap_unlocked ( struct dma_buf * dmabuf , struct iosys_map * map )
+
+Create virtual mapping for the buffer object into kernel address space. Same restrictions as for vmap and friends apply.
+
+Parameters
+  struct dma_buf *dmabuf
+    [in]    buffer to vmap
+  struct iosys_map *map
+    [out]   returns the vmap pointer
+
+Description
+  Unlocked version of dma_buf_vmap()

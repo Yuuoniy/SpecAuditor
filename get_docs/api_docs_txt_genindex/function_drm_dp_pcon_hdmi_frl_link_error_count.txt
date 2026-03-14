@@ -1,0 +1,10 @@
+Function: void drm_dp_pcon_hdmi_frl_link_error_count ( struct drm_dp_aux * aux , struct drm_connector * connector )
+
+print the error count per lane during link failure between PCON and HDMI sink
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  struct drm_connector *connector
+    DRM connector
+code.

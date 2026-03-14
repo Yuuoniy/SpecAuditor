@@ -1,0 +1,12 @@
+Function: void * vzalloc ( unsigned long size )
+
+allocate virtually contiguous memory with zero fill
+
+Parameters
+  unsigned long size
+    allocation size
+
+Description
+  Allocate enough pages to cover size from the page level
+allocator and map them into contiguous kernel virtual space.
+The memory allocated is set to zero.

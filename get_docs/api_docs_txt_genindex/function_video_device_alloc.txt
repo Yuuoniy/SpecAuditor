@@ -1,0 +1,10 @@
+Function: struct video_device * video_device_alloc ( void )
+
+helper function to alloc struct video_device
+
+Parameters
+  void
+    no arguments
+
+Description
+  Returns NULL if -ENOMEM or a struct video_device on success.

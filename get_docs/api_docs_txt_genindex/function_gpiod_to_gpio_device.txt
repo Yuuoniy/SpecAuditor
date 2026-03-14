@@ -1,0 +1,12 @@
+Function: struct gpio_device * gpiod_to_gpio_device ( struct gpio_desc * desc )
+
+Return the GPIO device to which this descriptor belongs.
+
+Parameters
+  struct gpio_desc *desc
+    Descriptor for which to return the GPIO device.
+
+Description
+  This DOES NOT increase the reference count of the GPIO device as it’s
+expected that the descriptor is requested and the users already holds a
+reference to the device.

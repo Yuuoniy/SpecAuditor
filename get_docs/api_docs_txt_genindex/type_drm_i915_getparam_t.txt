@@ -1,0 +1,19 @@
+Type: type drm_i915_getparam_t
+
+Driver parameter query structure. See struct drm_i915_getparam .
+
+Members
+  handle
+    Handle for the object being mapped.
+  pad
+    Must be zero
+  offset
+    The fake offset to use for subsequent mmap call This is a fixed-size type for 32/64 compatibility.
+  flags
+    Flags for extended behaviour. It is mandatory that one of the MMAP_OFFSET types
+should be included: I915_MMAP_OFFSET_GTT : Use mmap with the object bound to GTT. (Write-Combined) I915_MMAP_OFFSET_WC : Use Write-Combined caching. I915_MMAP_OFFSET_WB : Use Write-Back caching. I915_MMAP_OFFSET_FIXED : Use object placement to determine caching. On devices with local memory I915_MMAP_OFFSET_FIXED is the only valid
+type. On devices without local memory, this caching mode is invalid. As caching mode when specifying I915_MMAP_OFFSET_FIXED , WC or WB will
+be used, depending on the object placement on creation. WB will be used
+when the object can only exist in system memory, WC otherwise.
+  extensions
+    Zero-terminated chain of extensions. No current extensions defined; mbz.

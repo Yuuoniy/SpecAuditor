@@ -1,0 +1,17 @@
+Function: bool v4l2_subdev_has_pad_interdep ( struct media_entity * entity , unsigned int pad0 , unsigned int pad1 )
+
+MC has_pad_interdep implementation for subdevs
+
+Parameters
+  struct media_entity *entity
+    pointer to struct media_entity
+  unsigned int pad0
+    pad number for the first pad
+  unsigned int pad1
+    pad number for the second pad
+
+Description
+  This function is an implementation of the
+media_entity_operations.has_pad_interdep operation for subdevs that
+implement the multiplexed streams API (as indicated by the
+V4L2_SUBDEV_FL_STREAMS subdev flag).

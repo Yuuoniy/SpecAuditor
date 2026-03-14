@@ -1,0 +1,13 @@
+Function: void * pci_iov_get_pf_drvdata ( struct pci_dev * dev , struct pci_driver * pf_driver )
+
+Return the drvdata of a PF
+
+Parameters
+  struct pci_dev *dev
+    VF pci_dev
+  struct pci_driver *pf_driver
+    Device driver required to own the PF
+
+Description
+  This must be called from a context that ensures that a VF driver is attached.
+The value returned is invalid once the VF driver completes its remove() callback.

@@ -1,0 +1,11 @@
+Function: void i3c_bus_maintenance_unlock ( struct i3c_bus * bus )
+
+Release the bus lock after a maintenance operation
+
+Parameters
+  struct i3c_bus *bus
+    I3C bus to release the lock on
+
+Description
+  Should be called when the bus maintenance operation is done. See i3c_bus_maintenance_lock() for more details on what these maintenance
+operations are.

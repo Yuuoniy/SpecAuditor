@@ -1,0 +1,14 @@
+Function: void __drm_lut_to_dc_gamma ( const struct drm_color_lut * lut , struct dc_gamma * gamma , bool is_legacy )
+
+convert the drm_color_lut to dc_gamma.
+
+Parameters
+  const struct drm_color_lut *lut
+    DRM lookup table for color conversion
+  struct dc_gamma *gamma
+    DC gamma to set entries
+  bool is_legacy
+    legacy or atomic gamma
+
+Description
+  The conversion depends on the size of the lut - whether or not it’s legacy.

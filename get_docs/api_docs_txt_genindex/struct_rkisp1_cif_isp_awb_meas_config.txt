@@ -1,0 +1,29 @@
+Struct: struct rkisp1_cif_isp_awb_meas_config
+
+Configuration for the AWB statistics
+
+Members
+  awb_wnd
+    white balance measurement window (in pixels)
+  awb_mode
+    the awb meas mode. From enum rkisp1_cif_isp_awb_mode_type .
+  max_y
+    only pixels values < max_y contribute to awb measurement, set to 0
+to disable this feature
+  min_y
+    only pixels values > min_y contribute to awb measurement
+  max_csum
+    Chrominance sum maximum value, only consider pixels with Cb+Cr,
+smaller than threshold for awb measurements
+  min_c
+    Chrominance minimum value, only consider pixels with Cb/Cr
+each greater than threshold value for awb measurements
+  frames
+    number of frames - 1 used for mean value calculation
+(ucFrames=0 means 1 Frame)
+  awb_ref_cr
+    reference Cr value for AWB regulation, target for AWB
+  awb_ref_cb
+    reference Cb value for AWB regulation, target for AWB
+  enable_ymax_cmp
+    enable Y_MAX compare (Not valid in RGB measurement mode.)

@@ -1,0 +1,10 @@
+Function: void mt_init ( struct maple_tree * mt )
+
+Initialise an empty maple tree.
+
+Parameters
+  struct maple_tree *mt
+    Maple Tree
+
+Description
+  An empty Maple Tree.

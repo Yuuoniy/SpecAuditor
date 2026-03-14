@@ -1,0 +1,18 @@
+Function: void drm_atomic_helper_damage_iter_init ( struct drm_atomic_helper_damage_iter * iter , const struct drm_plane_state * old_state , const struct drm_plane_state * state )
+
+Initialize the damage iterator.
+
+Parameters
+  struct drm_atomic_helper_damage_iter *iter
+    The iterator to initialize.
+  const struct drm_plane_state *old_state
+    Old plane state for validation.
+  const struct drm_plane_state *state
+    Plane state from which to iterate the damage clips.
+
+Description
+  Initialize an iterator, which clips plane damage drm_plane_state.fb_damage_clips to plane drm_plane_state.src . This iterator
+returns full plane src in case damage is not present because either
+user-space didn’t sent or driver discarded it (it want to do full plane
+update). Currently this iterator returns full plane src in case plane src
+changed but that can be changed in future to return damage.

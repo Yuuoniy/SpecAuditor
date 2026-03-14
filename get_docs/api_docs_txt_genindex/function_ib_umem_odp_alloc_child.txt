@@ -1,0 +1,13 @@
+Function: struct ib_umem_odp * ib_umem_odp_alloc_child ( struct ib_umem_odp * root , unsigned long addr , size_t size , const struct mmu_interval_notifier_ops * ops )
+
+Allocate a child ODP umem under an implicit parent ODP umem
+
+Parameters
+  struct ib_umem_odp *root
+    The parent umem enclosing the child. This must be allocated using ib_alloc_implicit_odp_umem()
+  unsigned long addr
+    The starting userspace VA
+  size_t size
+    The length of the userspace VA
+  const struct mmu_interval_notifier_ops *ops
+    MMU interval ops, currently only invalidate

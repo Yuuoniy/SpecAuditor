@@ -1,0 +1,15 @@
+Function: void xdr_inline_pages ( struct xdr_buf * xdr , unsigned int offset , struct page * * pages , unsigned int base , unsigned int len )
+
+Prepare receive buffer for a large reply
+
+Parameters
+  struct xdr_buf *xdr
+    xdr_buf into which reply will be placed
+  unsigned int offset
+    expected offset where data payload will start, in bytes
+  struct page **pages
+    vector of struct page pointers
+  unsigned int base
+    offset in first page where receive should start, in bytes
+  unsigned int len
+    expected size of the upper layer data payload, in bytes

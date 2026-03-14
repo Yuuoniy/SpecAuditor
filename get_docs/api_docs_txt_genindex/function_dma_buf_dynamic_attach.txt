@@ -1,0 +1,17 @@
+Function: struct dma_buf_attachment * dma_buf_dynamic_attach ( struct dma_buf * dmabuf , struct device * dev , const struct dma_buf_attach_ops * importer_ops , void * importer_priv )
+
+Add the device to dma_buf’s attachments list
+
+Parameters
+  struct dma_buf *dmabuf
+    [in]    buffer to attach device to.
+  struct device *dev
+    [in]    device to be attached.
+  const struct dma_buf_attach_ops *importer_ops
+    [in]    importer operations for the attachment
+  void *importer_priv
+    [in]    importer private pointer for the attachment
+
+Description
+  Returns struct dma_buf_attachment pointer for this attachment. Attachments
+must be cleaned up by calling dma_buf_detach() .

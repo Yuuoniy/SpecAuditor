@@ -1,0 +1,17 @@
+Struct: struct kunit_case
+
+represents an individual test case.
+
+Members
+  run_case
+    the function representing the actual test case.
+  name
+    the name of the test case.
+  generate_params
+    the generator function for parameterized tests.
+  attr
+    the attributes associated with the test
+  param_init
+    The init function to run before a parameterized test.
+  param_exit
+    The exit function to run after a parameterized test.

@@ -1,0 +1,12 @@
+Function: struct sk_buff * skb_clone_sk ( struct sk_buff * skb )
+
+create clone of skb, and take reference to socket
+
+Parameters
+  struct sk_buff *skb
+    the skb to clone
+
+Description
+  This function creates a clone of a buffer that holds a reference on
+sk_refcnt.  Buffers created via this function are meant to be
+returned using sock_queue_err_skb, or free via kfree_skb.

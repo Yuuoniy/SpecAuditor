@@ -1,0 +1,13 @@
+Function: struct media_request * media_request_get_by_fd ( struct media_device * mdev , int request_fd )
+
+Get a media request by fd
+
+Parameters
+  struct media_device *mdev
+    Media device this request belongs to
+  int request_fd
+    The file descriptor of the request
+
+Description
+  Get the request represented by request_fd that is owned
+by the media device.

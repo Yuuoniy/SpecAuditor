@@ -1,0 +1,11 @@
+Function: ssize_t nvmem_device_cell_read ( struct nvmem_device * nvmem , struct nvmem_cell_info * info , void * buf )
+
+Read a given nvmem device and cell
+
+Parameters
+  struct nvmem_device *nvmem
+    nvmem device to read from.
+  struct nvmem_cell_info *info
+    nvmem cell info to be read.
+  void *buf
+    buffer pointer which will be populated on successful read.

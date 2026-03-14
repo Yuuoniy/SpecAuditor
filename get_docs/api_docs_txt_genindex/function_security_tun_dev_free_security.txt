@@ -1,0 +1,10 @@
+Function: void security_tun_dev_free_security ( void * security )
+
+Free a TUN device LSM blob
+
+Parameters
+  void *security
+    LSM blob
+
+Description
+  This hook allows a module to free the security structure for a TUN device.

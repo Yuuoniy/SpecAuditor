@@ -1,0 +1,12 @@
+Function: int regulator_register_notifier ( struct regulator * regulator , struct notifier_block * nb )
+
+register regulator event notifier
+
+Parameters
+  struct regulator *regulator
+    regulator source
+  struct notifier_block *nb
+    notifier block
+
+Description
+  Register notifier block to receive regulator events.

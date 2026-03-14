@@ -1,0 +1,2 @@
+Function: void coresight_unregister ( struct coresight_device * csdev ) ;
+

@@ -1,0 +1,16 @@
+Function: int sprintf ( char * buf , const char * fmt , ... )
+
+Format a string and place it in a buffer
+
+Parameters
+  char *buf
+    The buffer to place the result into
+  const char *fmt
+    The format string to use
+  ...
+    Arguments for the format string
+
+Description
+  The function returns the number of characters written
+into buf . Use snprintf() or scnprintf() in order to avoid
+buffer overflows.

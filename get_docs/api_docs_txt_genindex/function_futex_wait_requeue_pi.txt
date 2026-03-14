@@ -1,0 +1,26 @@
+Function: int futex_wait_requeue_pi ( u32 __user * uaddr , unsigned int flags , u32 val , ktime_t * abs_time , u32 bitset , u32 __user * uaddr2 )
+
+Wait on uaddr and take uaddr2
+
+Parameters
+  u32 __user *uaddr
+    the futex we initially wait on (non-pi)
+  unsigned int flags
+    futex flags (FLAGS_SHARED, FLAGS_CLOCKRT, etc.), they must be
+the same type, no requeueing from private to shared, etc.
+  u32 val
+    the expected value of uaddr
+  ktime_t *abs_time
+    absolute timeout
+  u32 bitset
+    32 bit wakeup bitset set by userspace, defaults to all
+  u32 __user *uaddr2
+    the pi futex we will take prior to returning to user-space
+
+Description
+  The caller will wait on uaddr and will be requeued by futex_requeue() to
+uaddr2 which must be PI aware and unique from uaddr.  Normal wakeup will wake
+on uaddr2 and complete the acquisition of the rt_mutex prior to returning to
+userspace.  This ensures the rt_mutex maintains an owner when it has waiters;
+without one, the pi logic would not know which task to boost/deboost, if
+there was a need to.

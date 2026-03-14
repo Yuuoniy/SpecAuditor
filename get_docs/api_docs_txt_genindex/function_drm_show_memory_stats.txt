@@ -1,0 +1,13 @@
+Function: void drm_show_memory_stats ( struct drm_printer * p , struct drm_file * file )
+
+Helper to collect and show standard fdinfo memory stats
+
+Parameters
+  struct drm_printer *p
+    the printer to print output to
+  struct drm_file *file
+    the DRM file
+
+Description
+  Helper to iterate over GEM objects with a handle allocated in the specified
+file.

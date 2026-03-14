@@ -1,0 +1,12 @@
+Function: void ata_pci_remove_one ( struct pci_dev * pdev )
+
+PCI layer callback for device removal
+
+Parameters
+  struct pci_dev *pdev
+    PCI device that was removed
+
+Description
+  PCI layer indicates to libata via this hook that hot-unplug or
+module unload event has occurred.  Detach all ports.  Resource
+release is handled via devres.

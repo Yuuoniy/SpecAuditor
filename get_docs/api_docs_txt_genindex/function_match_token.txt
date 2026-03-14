@@ -1,0 +1,19 @@
+Function: int match_token ( char * s , const match_table_t table , substring_t args [ ] )
+
+Find a token (and optional args) in a string
+
+Parameters
+  char *s
+    the string to examine for token/argument pairs
+  const match_table_t table
+    match_table_t describing the set of allowed option tokens and the
+arguments that may be associated with them. Must be terminated with a struct match_token whose pattern is set to the NULL pointer.
+  substring_t args[]
+    array of MAX_OPT_ARGS substring_t elements. Used to return match
+locations.
+
+Description
+  Detects which if any of a set of token strings has been passed
+to it. Tokens can include up to MAX_OPT_ARGS instances of basic c-style
+format identifiers which will be taken into account when matching the
+tokens, and whose locations will be returned in the args array.

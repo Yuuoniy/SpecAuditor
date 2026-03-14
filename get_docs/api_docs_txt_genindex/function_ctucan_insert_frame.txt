@@ -1,0 +1,13 @@
+Function: bool ctucan_insert_frame ( struct ctucan_priv * priv , const struct canfd_frame * cf , u8 buf , bool isfdf )
+
+Inserts frame to TXT buffer
+
+Parameters
+  struct ctucan_priv *priv
+    Pointer to private data
+  const struct canfd_frame *cf
+    Pointer to CAN frame to be inserted
+  u8 buf
+    TXT Buffer index to which frame is inserted (0-based)
+  bool isfdf
+    True - CAN FD Frame, False - CAN 2.0 Frame

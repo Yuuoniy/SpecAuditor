@@ -1,0 +1,41 @@
+Struct: struct counter_ops
+
+Callbacks from driver
+
+Members
+  signal_read
+    optional read callback for Signals. The read level of
+the respective Signal should be passed back via the
+level parameter.
+  count_read
+    read callback for Counts. The read value of the
+respective Count should be passed back via the value
+parameter.
+  count_write
+    optional write callback for Counts. The write value for
+the respective Count is passed in via the value
+parameter.
+  function_read
+    read callback the Count function modes. The read
+function mode of the respective Count should be passed
+back via the function parameter.
+  function_write
+    optional write callback for Count function modes. The
+function mode to write for the respective Count is
+passed in via the function parameter.
+  action_read
+    optional read callback the Synapse action modes. The
+read action mode of the respective Synapse should be
+passed back via the action parameter.
+  action_write
+    optional write callback for Synapse action modes. The
+action mode to write for the respective Synapse is
+passed in via the action parameter.
+  events_configure
+    optional write callback to configure events. The list of struct counter_event_node may be accessed via the
+events_list member of the counter parameter.
+  watch_validate
+    optional callback to validate a watch. The Counter
+component watch configuration is passed in via the watch
+parameter. A return value of 0 indicates a valid Counter
+component watch configuration.

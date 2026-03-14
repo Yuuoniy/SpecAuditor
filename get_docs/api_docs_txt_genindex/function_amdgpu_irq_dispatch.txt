@@ -1,0 +1,12 @@
+Function: void amdgpu_irq_dispatch ( struct amdgpu_device * adev , struct amdgpu_ih_ring * ih )
+
+dispatch IRQ to IP blocks
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device pointer
+  struct amdgpu_ih_ring *ih
+    interrupt ring instance
+
+Description
+  Dispatches IRQ to IP blocks.

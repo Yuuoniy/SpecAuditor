@@ -1,0 +1,13 @@
+Function: struct drm_gem_object * drm_gem_shmem_prime_import_no_map ( struct drm_device * dev , struct dma_buf * dma_buf )
+
+Import dmabuf without mapping its sg_table
+
+Parameters
+  struct drm_device *dev
+    Device to import into
+  struct dma_buf *dma_buf
+    dma-buf object to import
+
+Description
+  Drivers that use the shmem helpers but also wants to import dmabuf without
+mapping its sg_table can use this as their drm_driver.gem_prime_import implementation.

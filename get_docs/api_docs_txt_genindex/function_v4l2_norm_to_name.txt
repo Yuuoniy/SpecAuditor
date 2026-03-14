@@ -1,0 +1,7 @@
+Function: const char * v4l2_norm_to_name ( v4l2_std_id id )
+
+Ancillary routine to analog TV standard name from its ID.
+
+Parameters
+  v4l2_std_id id
+    analog TV standard ID.

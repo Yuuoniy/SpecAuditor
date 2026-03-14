@@ -1,0 +1,12 @@
+Function: struct tty_ldisc * tty_ldisc_ref ( struct tty_struct * tty )
+
+get the tty ldisc
+
+Parameters
+  struct tty_struct *tty
+    tty device
+
+Description
+  Dereference the line discipline for the terminal and take a reference to it.
+If the line discipline is in flux then return NULL . Can be called from IRQ
+and timer functions.

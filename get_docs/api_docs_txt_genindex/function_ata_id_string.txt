@@ -1,0 +1,18 @@
+Function: void ata_id_string ( const u16 * id , unsigned char * s , unsigned int ofs , unsigned int len )
+
+Convert IDENTIFY DEVICE page into string
+
+Parameters
+  const u16 *id
+    IDENTIFY DEVICE results we will examine
+  unsigned char *s
+    string into which data is output
+  unsigned int ofs
+    offset into identify device page
+  unsigned int len
+    length of string to return. must be an even number.
+
+Description
+  The strings in the IDENTIFY DEVICE page are broken up into
+16-bit chunks.  Run through the string, and output each
+8-bit chunk linearly, regardless of platform.

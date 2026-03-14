@@ -1,0 +1,10 @@
+Function: void v4l2_m2m_release ( struct v4l2_m2m_dev * m2m_dev )
+
+cleans up and frees a m2m_dev structure
+
+Parameters
+  struct v4l2_m2m_dev *m2m_dev
+    opaque pointer to the internal data to handle M2M context
+
+Description
+  Usually called from driver’s remove() function.

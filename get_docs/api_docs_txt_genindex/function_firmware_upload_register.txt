@@ -1,0 +1,19 @@
+Function: struct fw_upload * firmware_upload_register ( struct module * module , struct device * parent , const char * name , const struct fw_upload_ops * ops , void * dd_handle )
+
+register for the firmware upload sysfs API
+
+Parameters
+  struct module *module
+    kernel module of this device
+  struct device *parent
+    parent device instantiating firmware upload
+  const char *name
+    firmware name to be associated with this device
+  const struct fw_upload_ops *ops
+    pointer to structure of firmware upload ops
+  void *dd_handle
+    pointer to parent driver private data
+
+Description
+  name must be unique among all users of firmware upload. The firmware
+sysfs files for this device will be found at /sys/class/firmware/ name .

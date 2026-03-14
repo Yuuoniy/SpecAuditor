@@ -1,0 +1,18 @@
+Function: int security_bpf_prog_load ( struct bpf_prog * prog , union bpf_attr * attr , struct bpf_token * token , bool kernel )
+
+Check if loading of BPF program is allowed
+
+Parameters
+  struct bpf_prog *prog
+    BPF program object
+  union bpf_attr *attr
+    BPF syscall attributes used to create BPF program
+  struct bpf_token *token
+    BPF token used to grant user access to BPF subsystem
+  bool kernel
+    whether or not call originated from kernel
+
+Description
+  Perform an access control check when the kernel loads a BPF program and
+allocates associated BPF program object. This hook is also responsible for
+allocating any required LSM state for the BPF program.

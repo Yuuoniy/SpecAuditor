@@ -1,0 +1,22 @@
+Function: struct i2c_client * dvb_module_probe ( const char * module_name , const char * name , struct i2c_adapter * adap , unsigned char addr , void * platform_data )
+
+helper routine to probe an I2C module
+
+Parameters
+  const char *module_name
+    Name of the I2C module to be probed
+  const char *name
+    Optional name for the I2C module. Used for debug purposes.
+If NULL , defaults to module_name .
+  struct i2c_adapter *adap
+    pointer to struct i2c_adapter that describes the I2C adapter where
+the module will be bound.
+  unsigned char addr
+    I2C address of the adapter, in 7-bit notation.
+  void *platform_data
+    Platform data to be passed to the I2C module probed.
+
+Description
+  This function binds an I2C device into the DVB core. Should be used by
+all drivers that use I2C bus to control the hardware. A module bound
+with dvb_module_probe() should use dvb_module_release() to unbind.

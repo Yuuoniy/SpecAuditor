@@ -1,0 +1,11 @@
+Function: int nvmem_cell_write ( struct nvmem_cell * cell , void * buf , size_t len )
+
+Write to a given nvmem cell
+
+Parameters
+  struct nvmem_cell *cell
+    nvmem cell to be written.
+  void *buf
+    Buffer to be written.
+  size_t len
+    length of buffer to be written to nvmem cell.

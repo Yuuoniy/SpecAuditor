@@ -1,0 +1,17 @@
+Function: struct buffer_head * __bread ( struct block_device * bdev , sector_t block , unsigned size )
+
+Read a block.
+
+Parameters
+  struct block_device *bdev
+    The block device to read from.
+  sector_t block
+    Block number in units of block size.
+  unsigned size
+    The block size of this device in bytes.
+
+Description
+  Read a specified block, and return the buffer head that refers
+to it.  The memory is allocated from the movable area so that it can
+be migrated.  The returned buffer head has its refcount increased.
+The caller should call brelse() when it has finished with the buffer.

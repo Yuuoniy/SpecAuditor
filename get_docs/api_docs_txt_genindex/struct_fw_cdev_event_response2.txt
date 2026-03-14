@@ -1,0 +1,23 @@
+Struct: struct fw_cdev_event_response2
+
+Sent when a response packet was received
+
+Members
+  closure
+    See fw_cdev_event_common ; set by FW_CDEV_IOC_SEND_REQUEST or FW_CDEV_IOC_SEND_BROADCAST_REQUEST or FW_CDEV_IOC_SEND_STREAM_PACKET ioctl
+  type
+    See fw_cdev_event_common ; always FW_CDEV_EVENT_RESPONSE
+  rcode
+    Response code returned by the remote node
+  length
+    Data length, i.e. the response’s payload size in bytes
+  request_tstamp
+    The time stamp of isochronous cycle at which the request was sent.
+  response_tstamp
+    The time stamp of isochronous cycle at which the response was sent.
+  padding
+    Padding to keep the size of structure as multiples of 8 in various architectures
+since 4 byte alignment is used for 8 byte of object type in System V ABI for i386
+architecture.
+  data
+    Payload data, if any

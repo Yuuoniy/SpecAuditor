@@ -1,0 +1,7 @@
+Function: unsigned long xa_to_value ( const void * entry )
+
+Get value stored in an XArray entry.
+
+Parameters
+  const void *entry
+    XArray entry.

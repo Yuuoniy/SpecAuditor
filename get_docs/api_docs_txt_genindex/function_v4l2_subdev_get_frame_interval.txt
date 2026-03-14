@@ -1,0 +1,14 @@
+Function: int v4l2_subdev_get_frame_interval ( struct v4l2_subdev * sd , struct v4l2_subdev_state * state , struct v4l2_subdev_frame_interval * fi )
+
+Fill frame interval based on state
+
+Parameters
+  struct v4l2_subdev *sd
+    subdevice
+  struct v4l2_subdev_state *state
+    subdevice state
+  struct v4l2_subdev_frame_interval *fi
+    pointer to struct v4l2_subdev_frame_interval
+
+Description
+  Fill fi->interval field based on the information in the fi struct.

@@ -1,0 +1,19 @@
+Function: int rio_enum_peer ( struct rio_net * net , struct rio_mport * port , u8 hopcount , struct rio_dev * prev , int prev_port )
+
+Recursively enumerate a RIO network through a master port
+
+Parameters
+  struct rio_net *net
+    RIO network being enumerated
+  struct rio_mport *port
+    Master port to send transactions
+  u8 hopcount
+    Number of hops into the network
+  struct rio_dev *prev
+    Previous RIO device connected to the enumerated one
+  int prev_port
+    Port on previous RIO device
+
+Description
+  Recursively enumerates a RIO network.  Transactions are sent via the
+master port passed in port .

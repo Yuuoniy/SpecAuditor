@@ -1,0 +1,24 @@
+Function: void drm_fb_xrgb8888_to_xrgb1555 ( struct iosys_map * dst , const unsigned int * dst_pitch , const struct iosys_map * src , const struct drm_framebuffer * fb , const struct drm_rect * clip , struct drm_format_conv_state * state )
+
+Convert XRGB8888 to XRGB1555 clip buffer
+
+Parameters
+  struct iosys_map *dst
+    Array of XRGB1555 destination buffers
+  const unsigned int *dst_pitch
+    Array of numbers of bytes between the start of two consecutive scanlines
+within dst ; can be NULL if scanlines are stored next to each other.
+  const struct iosys_map *src
+    Array of XRGB8888 source buffer
+  const struct drm_framebuffer *fb
+    DRM framebuffer
+  const struct drm_rect *clip
+    Clip rectangle area to copy
+  struct drm_format_conv_state *state
+    Transform and conversion state
+
+Description
+  This function copies parts of a framebuffer to display memory and converts
+the color format during the process. The parameters dst , dst_pitch and src refer to arrays. Each array must have at least as many entries as
+there are planes in fb ’s format. Each entry stores the value for the
+format’s respective color plane at the same index.

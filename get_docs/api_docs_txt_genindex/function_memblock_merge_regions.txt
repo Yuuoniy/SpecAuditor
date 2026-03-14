@@ -1,0 +1,12 @@
+Function: void __init_memblock memblock_merge_regions ( struct memblock_type * type , unsigned long start_rgn , unsigned long end_rgn )
+
+merge neighboring compatible regions
+
+Parameters
+  struct memblock_type *type
+    memblock type to scan
+  unsigned long start_rgn
+    start scanning from ( start_rgn - 1)
+  unsigned long end_rgn
+    end scanning at ( end_rgn - 1)
+Scan type and merge neighboring compatible regions in [ start_rgn - 1, end_rgn )

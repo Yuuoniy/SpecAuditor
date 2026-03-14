@@ -1,0 +1,10 @@
+Function: unsigned long int_sqrt ( unsigned long x )
+
+computes the integer square root
+
+Parameters
+  unsigned long x
+    integer of which to calculate the sqrt
+
+Description
+  Computes: floor(sqrt(x))

@@ -1,0 +1,11 @@
+Function: void intel_frontbuffer_queue_flush ( struct intel_frontbuffer * front )
+
+queue flushing frontbuffer object
+
+Parameters
+  struct intel_frontbuffer *front
+    GEM object to flush
+
+Description
+  This function is targeted for our dirty callback for queueing flush when
+dma fence is signals

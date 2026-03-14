@@ -1,0 +1,11 @@
+Function: int ctucan_rx ( struct net_device * ndev )
+
+Called from CAN ISR to complete the received frame processing
+
+Parameters
+  struct net_device *ndev
+    Pointer to net_device structure
+
+Description
+  This function is invoked from the CAN isr(poll) to process the Rx frames. It does minimal
+processing and invokes “netif_receive_skb” to complete further processing.

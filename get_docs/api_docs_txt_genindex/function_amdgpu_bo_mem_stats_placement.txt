@@ -1,0 +1,13 @@
+Function: uint32_t amdgpu_bo_mem_stats_placement ( struct amdgpu_bo * bo )
+
+bo placement for memory accounting
+
+Parameters
+  struct amdgpu_bo *bo
+    the buffer object we should look at
+
+Description
+  BO can have multiple preferred placements, to avoid double counting we want
+to file it under a single placement for memory stats.
+Luckily, if we take the highest set bit in preferred_domains the result is
+quite sensible.

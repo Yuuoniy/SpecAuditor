@@ -1,0 +1,27 @@
+Struct: struct v4l2_subdev_internal_ops
+
+V4L2 subdev internal ops
+
+Members
+  init_state
+    initialize the subdev state to default values
+  registered
+    called when this subdev is registered. When called the v4l2_dev
+field is set to the correct v4l2_device.
+  unregistered
+    called when this subdev is unregistered. When called the
+v4l2_dev field is still set to the correct v4l2_device.
+  open
+    called when the subdev device node is opened by an application.
+  close
+    called when the subdev device node is closed. Please note that
+it is possible for close to be called after unregistered !
+  release
+    called when the last user of the subdev device is gone. This
+happens after the unregistered callback and when the last open
+filehandle to the v4l-subdevX device node was closed. If no device
+node was created for this sub-device, then the release callback
+is called right after the unregistered callback.
+The release callback is typically used to free the memory containing
+the v4l2_subdev structure. It is almost certainly required for any
+sub-device that sets the V4L2_SUBDEV_FL_HAS_DEVNODE flag.

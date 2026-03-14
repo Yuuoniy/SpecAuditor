@@ -1,0 +1,3 @@
+Enum: enum drm_pvr_job_type
+
+Arguments for struct drm_pvr_job .job_type

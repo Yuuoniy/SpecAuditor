@@ -1,0 +1,10 @@
+Function: unsigned int netif_get_flags ( const struct net_device * dev )
+
+get flags reported to userspace
+
+Parameters
+  const struct net_device *dev
+    device
+
+Description
+  Get the combination of flag bits exported through APIs to userspace.

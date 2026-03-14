@@ -1,0 +1,12 @@
+Function: bool of_property_present ( const struct device_node * np , const char * propname )
+
+Test if a property is present in a node
+
+Parameters
+  const struct device_node *np
+    device node to search for the property.
+  const char *propname
+    name of the property to be searched.
+
+Description
+  Test for a property present in a device node.

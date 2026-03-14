@@ -1,0 +1,11 @@
+Function: void echo_set_canon_col ( struct n_tty_data * ldata )
+
+add operation to set the canon column
+
+Parameters
+  struct n_tty_data *ldata
+    n_tty data
+
+Description
+  Add an operation to the echo buffer to set the canon column to the current
+column.

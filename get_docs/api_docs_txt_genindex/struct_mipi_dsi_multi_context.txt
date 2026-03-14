@@ -1,0 +1,13 @@
+Struct: struct mipi_dsi_multi_context
+
+Context to call multiple MIPI DSI funcs in a row
+
+Members
+  dsi
+    Pointer to the MIPI DSI device
+  accum_err
+    Storage for the accumulated error over the multiple calls Init to 0. If a function encounters an error then the error code
+will be stored here. If you call a function and this points to a
+non-zero value then the function will be a noop. This allows calling
+a function many times in a row and just checking the error at the
+end to see if any of them failed.

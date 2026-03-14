@@ -1,0 +1,9 @@
+Struct: struct dev_ext_attribute
+
+Exported device attribute with extra context.
+
+Members
+  attr
+    Exported device attribute.
+  var
+    Pointer to context.

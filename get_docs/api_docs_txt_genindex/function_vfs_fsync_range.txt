@@ -1,0 +1,17 @@
+Function: int vfs_fsync_range ( struct file * file , loff_t start , loff_t end , int datasync )
+
+helper to sync a range of data & metadata to disk
+
+Parameters
+  struct file *file
+    file to sync
+  loff_t start
+    offset in bytes of the beginning of data range to sync
+  loff_t end
+    offset in bytes of the end of data range (inclusive)
+  int datasync
+    perform only datasync
+
+Description
+  Write back data in range start ..**end** and metadata for file to disk.  If datasync is set only metadata needed to access modified file data is
+written.

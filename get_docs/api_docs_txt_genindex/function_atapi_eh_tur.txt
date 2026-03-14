@@ -1,0 +1,12 @@
+Function: unsigned int atapi_eh_tur ( struct ata_device * dev , u8 * r_sense_key )
+
+perform ATAPI TEST_UNIT_READY
+
+Parameters
+  struct ata_device *dev
+    target ATAPI device
+  u8 *r_sense_key
+    out parameter for sense_key
+
+Description
+  Perform ATAPI TEST_UNIT_READY.

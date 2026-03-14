@@ -1,0 +1,14 @@
+Function: int nand_do_read_oob ( struct nand_chip * chip , loff_t from , struct mtd_oob_ops * ops )
+
+[INTERN] NAND read out-of-band
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+  loff_t from
+    offset to read from
+  struct mtd_oob_ops *ops
+    oob operations description structure
+
+Description
+  NAND read out-of-band data from the spare area.

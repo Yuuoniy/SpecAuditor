@@ -1,0 +1,11 @@
+Function: int drm_format_info_plane_height ( const struct drm_format_info * info , int height , int plane )
+
+height of the plane given the first plane
+
+Parameters
+  const struct drm_format_info *info
+    pixel format info
+  int height
+    height of the first plane
+  int plane
+    plane index

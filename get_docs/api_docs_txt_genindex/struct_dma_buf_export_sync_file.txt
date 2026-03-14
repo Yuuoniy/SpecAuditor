@@ -1,0 +1,16 @@
+Struct: struct dma_buf_export_sync_file
+
+Get a sync_file from a dma-buf
+
+Members
+  flags
+    Read/write flags Must be DMA_BUF_SYNC_READ, DMA_BUF_SYNC_WRITE, or both. If DMA_BUF_SYNC_READ is set and DMA_BUF_SYNC_WRITE is not set,
+the returned sync file waits on any writers of the dma-buf to
+complete.  Waiting on the returned sync file is equivalent to
+poll() with POLLIN. If DMA_BUF_SYNC_WRITE is set, the returned sync file waits on
+any users of the dma-buf (read or write) to complete.  Waiting
+on the returned sync file is equivalent to poll() with POLLOUT.
+If both DMA_BUF_SYNC_WRITE and DMA_BUF_SYNC_READ are set, this
+is equivalent to just DMA_BUF_SYNC_WRITE.
+  fd
+    Returned sync file descriptor

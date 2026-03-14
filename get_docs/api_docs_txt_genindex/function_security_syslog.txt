@@ -1,0 +1,12 @@
+Function: int security_syslog ( int type )
+
+Check if accessing the kernel message ring is allowed
+
+Parameters
+  int type
+    SYSLOG_ACTION_* type
+
+Description
+  Check permission before accessing the kernel message ring or changing
+logging to the console.  See the syslog(2) manual page for an explanation of
+the type values.

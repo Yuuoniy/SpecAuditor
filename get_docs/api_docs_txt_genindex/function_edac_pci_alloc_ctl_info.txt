@@ -1,0 +1,13 @@
+Function: struct edac_pci_ctl_info * edac_pci_alloc_ctl_info ( unsigned int sz_pvt , const char * edac_pci_name )
+
+The alloc() function for the ‘edac_pci’ control info structure.
+
+Parameters
+  unsigned int sz_pvt
+    size of the private info at struct edac_pci_ctl_info
+  const char *edac_pci_name
+    name of the PCI device
+
+Description
+  The chip driver will allocate one of these for each
+edac_pci it is going to control/register with the EDAC CORE.

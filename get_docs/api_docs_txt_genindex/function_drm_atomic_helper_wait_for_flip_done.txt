@@ -1,0 +1,15 @@
+Function: void drm_atomic_helper_wait_for_flip_done ( struct drm_device * dev , struct drm_atomic_state * state )
+
+wait for all page flips to be done
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_atomic_state *state
+    atomic state object being committed
+
+Description
+  Helper to, after atomic commit, wait for page flips on all affected
+crtcs (ie. before cleaning up old framebuffers using drm_atomic_helper_cleanup_planes() ). Compared to drm_atomic_helper_wait_for_vblanks() this waits for the completion on all
+CRTCs, assuming that cursors-only updates are signalling their completion
+immediately (or using a different path).

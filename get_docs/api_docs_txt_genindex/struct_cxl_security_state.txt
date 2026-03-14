@@ -1,0 +1,17 @@
+Struct: struct cxl_security_state
+
+Device security state
+
+Members
+  state
+    state of last security operation
+  enabled_cmds
+    All security commands enabled in the CEL
+  poll_tmo_secs
+    polling timeout
+  sanitize_active
+    sanitize completion pending
+  poll_dwork
+    polling work item
+  sanitize_node
+    sanitation sysfs file to notify

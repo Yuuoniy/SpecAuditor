@@ -1,0 +1,11 @@
+Function: int ib_query_netdev_port ( struct ib_device * ibdev , struct net_device * ndev , u32 * port )
+
+Query the port number of a net_device associated with an ibdev
+
+Parameters
+  struct ib_device *ibdev
+    IB device
+  struct net_device *ndev
+    Network device
+  u32 *port
+    IB port the net_device is connected to

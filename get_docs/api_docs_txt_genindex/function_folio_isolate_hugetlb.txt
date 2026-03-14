@@ -1,0 +1,14 @@
+Function: bool folio_isolate_hugetlb ( struct folio * folio , struct list_head * list )
+
+try to isolate an allocated hugetlb folio
+
+Parameters
+  struct folio *folio
+    the folio to isolate
+  struct list_head *list
+    the list to add the folio to on success
+
+Description
+  Isolate an allocated (refcount > 0) hugetlb folio, marking it as
+isolated/non-migratable, and moving it from the active list to the
+given list.

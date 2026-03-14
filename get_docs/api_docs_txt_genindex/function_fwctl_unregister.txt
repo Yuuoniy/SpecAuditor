@@ -1,0 +1,11 @@
+Function: void fwctl_unregister ( struct fwctl_device * fwctl )
+
+Unregister a device from the subsystem
+
+Parameters
+  struct fwctl_device *fwctl
+    Previously allocated and registered fwctl_device
+
+Description
+  Undoes fwctl_register() . On return no driver ops will be called. The
+caller must still call fwctl_put() to free the fwctl.

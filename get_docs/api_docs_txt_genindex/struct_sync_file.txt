@@ -1,0 +1,21 @@
+Struct: struct sync_file
+
+sync file to export to the userspace
+
+Members
+  file
+    file representing this fence
+  user_name
+    Name of the sync file provided by userspace, for merged fences.
+Otherwise generated through driver callbacks (in which case the
+entire array is 0).
+  sync_file_list
+    membership in global file list
+  wq
+    wait queue for fence signaling
+  flags
+    flags for the sync_file
+  fence
+    fence with the fences in the sync_file
+  cb
+    fence callback information

@@ -1,0 +1,10 @@
+Function: void wmi_driver_unregister ( struct wmi_driver * driver )
+
+Unregister a WMI driver
+
+Parameters
+  struct wmi_driver *driver
+    WMI driver to unregister
+
+Description
+  Unregisters a WMI driver from the WMI bus.

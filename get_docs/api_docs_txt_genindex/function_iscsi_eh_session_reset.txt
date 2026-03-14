@@ -1,0 +1,11 @@
+Function: int iscsi_eh_session_reset ( struct scsi_cmnd * sc )
+
+drop session and attempt relogin
+
+Parameters
+  struct scsi_cmnd *sc
+    scsi command
+
+Description
+  This function will wait for a relogin, session termination from
+userspace, or a recovery/replacement timeout.

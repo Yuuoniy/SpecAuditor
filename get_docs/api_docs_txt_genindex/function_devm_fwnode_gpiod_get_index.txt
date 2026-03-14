@@ -1,0 +1,21 @@
+Function: struct gpio_desc * devm_fwnode_gpiod_get_index ( struct device * dev , struct fwnode_handle * fwnode , const char * con_id , int index , enum gpiod_flags flags , const char * label )
+
+get a GPIO descriptor from a given node
+
+Parameters
+  struct device *dev
+    GPIO consumer
+  struct fwnode_handle *fwnode
+    firmware node containing GPIO reference
+  const char *con_id
+    function within the GPIO consumer
+  int index
+    index of the GPIO to obtain in the consumer
+  enum gpiod_flags flags
+    GPIO initialization flags
+  const char *label
+    label to attach to the requested GPIO
+
+Description
+  GPIO descriptors returned from this function are automatically disposed on
+driver detach.

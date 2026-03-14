@@ -1,0 +1,12 @@
+Function: const struct of_device_id * of_match_node ( const struct of_device_id * matches , const struct device_node * node )
+
+Tell if a device_node has a matching of_match structure
+
+Parameters
+  const struct of_device_id *matches
+    array of of device match structures to search in
+  const struct device_node *node
+    the of device structure to match against
+
+Description
+  Low level utility function used by device matching.

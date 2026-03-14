@@ -1,0 +1,17 @@
+Function: unsigned int textsearch_find_continuous ( struct ts_config * conf , struct ts_state * state , const void * data , unsigned int len )
+
+search a pattern in continuous/linear data
+
+Parameters
+  struct ts_config *conf
+    search configuration
+  struct ts_state *state
+    search state
+  const void *data
+    data to search in
+  unsigned int len
+    length of data
+
+Description
+  A simplified version of textsearch_find() for continuous/linear data.
+Call textsearch_next() to retrieve subsequent matches.

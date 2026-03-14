@@ -1,0 +1,18 @@
+Function: int pci_iov_vf_bar_set_size ( struct pci_dev * dev , int resno , int size )
+
+set a new size for a VF BAR
+
+Parameters
+  struct pci_dev *dev
+    the PCI device
+  int resno
+    the resource number
+  int size
+    new size as defined in the spec (0=1MB, 31=128TB)
+
+Description
+  Set the new size of a VF BAR that supports VF resizable BAR capability.
+Unlike pci_resize_resource() , this does not cause the resource that
+reserves the MMIO space (originally up to total_VFs) to be resized, which
+means that following calls to pci_enable_sriov() can fail if the resources
+no longer fit.

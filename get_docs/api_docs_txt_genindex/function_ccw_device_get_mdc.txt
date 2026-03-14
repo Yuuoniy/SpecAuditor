@@ -1,0 +1,13 @@
+Function: int ccw_device_get_mdc ( struct ccw_device * cdev , u8 mask )
+
+accumulate max data count
+
+Parameters
+  struct ccw_device *cdev
+    ccw device for which the max data count is accumulated
+  u8 mask
+    mask of paths to use
+
+Description
+  Return the number of 64K-bytes blocks all paths at least support
+for a transport command. Return value 0 indicates failure.

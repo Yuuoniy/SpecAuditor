@@ -1,0 +1,19 @@
+Function: int kernel_connect ( struct socket * sock , struct sockaddr * addr , int addrlen , int flags )
+
+connect a socket (kernel space)
+
+Parameters
+  struct socket *sock
+    socket
+  struct sockaddr *addr
+    address
+  int addrlen
+    address length
+  int flags
+    flags (O_NONBLOCK, ...)
+
+Description
+  For datagram sockets, addr is the address to which datagrams are sent
+by default, and the only address from which datagrams are received.
+For stream sockets, attempts to connect to addr .
+Returns 0 or an error code.

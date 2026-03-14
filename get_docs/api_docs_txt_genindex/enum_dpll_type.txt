@@ -1,0 +1,3 @@
+Enum: enum dpll_type
+
+type of dpll, valid values for DPLL_A_TYPE attribute

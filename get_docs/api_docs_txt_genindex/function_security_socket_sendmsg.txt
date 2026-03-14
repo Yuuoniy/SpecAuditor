@@ -1,0 +1,14 @@
+Function: int security_socket_sendmsg ( struct socket * sock , struct msghdr * msg , int size )
+
+Check if sending a message is allowed
+
+Parameters
+  struct socket *sock
+    sending socket
+  struct msghdr *msg
+    message to send
+  int size
+    size of message
+
+Description
+  Check permission before transmitting a message to another socket.

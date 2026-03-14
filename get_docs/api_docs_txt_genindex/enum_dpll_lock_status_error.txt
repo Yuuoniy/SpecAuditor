@@ -1,0 +1,3 @@
+Enum: enum dpll_lock_status_error
+
+if previous status change was done due to a failure, this provides information of dpll device lock status error. Valid values for DPLL_A_LOCK_STATUS_ERROR attribute

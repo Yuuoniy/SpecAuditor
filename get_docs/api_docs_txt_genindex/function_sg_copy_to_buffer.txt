@@ -1,0 +1,16 @@
+Function: size_t sg_copy_to_buffer ( struct scatterlist * sgl , unsigned int nents , void * buf , size_t buflen )
+
+Copy from an SG list to a linear buffer
+
+Parameters
+  struct scatterlist *sgl
+    The SG list
+  unsigned int nents
+    Number of SG entries
+  void *buf
+    Where to copy to
+  size_t buflen
+    The number of bytes to copy
+
+Description
+  Returns the number of copied bytes.

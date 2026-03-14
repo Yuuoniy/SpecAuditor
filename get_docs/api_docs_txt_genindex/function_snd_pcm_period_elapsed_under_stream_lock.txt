@@ -1,0 +1,11 @@
+Function: void snd_pcm_period_elapsed_under_stream_lock ( struct snd_pcm_substream * substream )
+
+update the status of runtime for the next period under acquired lock of PCM substream.
+
+Parameters
+  struct snd_pcm_substream *substream
+    the instance of pcm substream.
+
+Description
+  This function is called when the batch of audio data frames as the same size as the period of
+buffer is already processed in audio data transmission.

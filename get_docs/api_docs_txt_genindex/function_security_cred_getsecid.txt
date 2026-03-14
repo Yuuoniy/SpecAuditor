@@ -1,0 +1,13 @@
+Function: void security_cred_getsecid ( const struct cred * c , u32 * secid )
+
+Get the secid from a set of credentials
+
+Parameters
+  const struct cred *c
+    credentials
+  u32 *secid
+    secid value
+
+Description
+  Retrieve the security identifier of the cred structure c .  In case of
+failure, secid will be set to zero.

@@ -1,0 +1,26 @@
+Function: int snd_pcm_set_managed_buffer ( struct snd_pcm_substream * substream , int type , struct device * data , size_t size , size_t max )
+
+set up buffer management for a substream
+
+Parameters
+  struct snd_pcm_substream *substream
+    the pcm substream instance
+  int type
+    DMA type (SNDRV_DMA_TYPE_*)
+  struct device *data
+    DMA type dependent data
+  size_t size
+    the requested pre-allocation size in bytes
+  size_t max
+    the max. allowed pre-allocation size
+
+Description
+  Do pre-allocation for the given DMA buffer type, and set the managed
+buffer allocation mode to the given substream.
+In this mode, PCM core will allocate a buffer automatically before PCM
+hw_params ops call, and release the buffer after PCM hw_free ops call
+as well, so that the driver doesn’t need to invoke the allocation and
+the release explicitly in its callback.
+When a buffer is actually allocated before the PCM hw_params call, it
+turns on the runtime buffer_changed flag for drivers changing their h/w
+parameters accordingly.

@@ -1,0 +1,10 @@
+Function: void __brelse ( struct buffer_head * bh )
+
+Release a buffer.
+
+Parameters
+  struct buffer_head *bh
+    The buffer to release.
+
+Description
+  This variant of brelse() can be called if bh is guaranteed to not be NULL.

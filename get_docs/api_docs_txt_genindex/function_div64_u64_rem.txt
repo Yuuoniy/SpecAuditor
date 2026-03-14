@@ -1,0 +1,11 @@
+Function: u64 div64_u64_rem ( u64 dividend , u64 divisor , u64 * remainder )
+
+unsigned 64bit divide with 64bit divisor and remainder
+
+Parameters
+  u64 dividend
+    unsigned 64bit dividend
+  u64 divisor
+    unsigned 64bit divisor
+  u64 *remainder
+    pointer to unsigned 64bit remainder

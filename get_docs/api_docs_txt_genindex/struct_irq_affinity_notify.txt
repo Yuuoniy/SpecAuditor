@@ -1,0 +1,19 @@
+Struct: struct irq_affinity_notify
+
+context for notification of IRQ affinity changes
+
+Members
+  irq
+    Interrupt to which notification applies
+  kref
+    Reference count, for internal use
+  work
+    Work item, for internal use
+  notify
+    Function to be called on change.  This will be
+called in process context.
+  release
+    Function to be called on release.  This will be
+called in process context.  Once registered, the
+structure must only be freed when this function is
+called or later.

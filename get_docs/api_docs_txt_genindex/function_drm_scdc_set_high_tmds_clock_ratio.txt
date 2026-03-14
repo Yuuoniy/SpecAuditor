@@ -1,0 +1,12 @@
+Function: bool drm_scdc_set_high_tmds_clock_ratio ( struct drm_connector * connector , bool set )
+
+set TMDS clock ratio
+
+Parameters
+  struct drm_connector *connector
+    connector
+  bool set
+    ret or reset the high clock ratio
+
+Description
+  TMDS character = 10 bit TMDS encoded value

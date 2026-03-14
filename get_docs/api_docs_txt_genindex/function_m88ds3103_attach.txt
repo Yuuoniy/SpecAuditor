@@ -1,0 +1,12 @@
+Function: struct dvb_frontend * m88ds3103_attach ( const struct m88ds3103_config * config , struct i2c_adapter * i2c , struct i2c_adapter * * tuner_i2c )
+
+Attach a m88ds3103 demod
+
+Parameters
+  const struct m88ds3103_config *config
+    pointer to struct m88ds3103_config with demod configuration.
+  struct i2c_adapter *i2c
+    i2c adapter to use.
+  struct i2c_adapter **tuner_i2c
+    on success, returns the I2C adapter associated with
+m88ds3103 tuner.

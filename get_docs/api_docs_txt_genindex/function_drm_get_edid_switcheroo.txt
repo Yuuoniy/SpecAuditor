@@ -1,0 +1,14 @@
+Function: struct edid * drm_get_edid_switcheroo ( struct drm_connector * connector , struct i2c_adapter * adapter )
+
+get EDID data for a vga_switcheroo output
+
+Parameters
+  struct drm_connector *connector
+    connector we’re probing
+  struct i2c_adapter *adapter
+    I2C adapter to use for DDC
+
+Description
+  Wrapper around drm_get_edid() for laptops with dual GPUs using one set of
+outputs. The wrapper adds the requisite vga_switcheroo calls to temporarily
+switch DDC to the GPU which is retrieving EDID.

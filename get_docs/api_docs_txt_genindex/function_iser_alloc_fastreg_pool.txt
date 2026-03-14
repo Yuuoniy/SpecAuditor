@@ -1,0 +1,11 @@
+Function: int iser_alloc_fastreg_pool ( struct ib_conn * ib_conn , unsigned cmds_max , unsigned int size )
+
+Creates pool of fast_reg descriptors for fast registration work requests.
+
+Parameters
+  struct ib_conn *ib_conn
+    connection RDMA resources
+  unsigned cmds_max
+    max number of SCSI commands for this connection
+  unsigned int size
+    max number of pages per map request

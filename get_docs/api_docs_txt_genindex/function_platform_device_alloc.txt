@@ -1,0 +1,13 @@
+Function: struct platform_device * platform_device_alloc ( const char * name , int id )
+
+create a platform device
+
+Parameters
+  const char *name
+    base name of the device we’re adding
+  int id
+    instance id
+
+Description
+  Create a platform device object which can have other objects attached
+to it, and which will have attached objects freed when it is released.

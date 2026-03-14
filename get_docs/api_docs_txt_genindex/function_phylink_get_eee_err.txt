@@ -1,0 +1,11 @@
+Function: int phylink_get_eee_err ( struct phylink * pl )
+
+read the energy efficient ethernet error counter
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create() .
+
+Description
+  Read the Energy Efficient Ethernet error counter from the PHY associated
+with the phylink instance specified by pl .

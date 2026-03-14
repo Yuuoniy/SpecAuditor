@@ -1,0 +1,12 @@
+Function: void v4l2_device_disconnect ( struct v4l2_device * v4l2_dev )
+
+Change V4L2 device state to disconnected.
+
+Parameters
+  struct v4l2_device *v4l2_dev
+    pointer to struct v4l2_device
+
+Description
+  Should be called when the USB parent disconnects.
+Since the parent disappears, this ensures that v4l2_dev doesn’t have
+an invalid parent pointer.

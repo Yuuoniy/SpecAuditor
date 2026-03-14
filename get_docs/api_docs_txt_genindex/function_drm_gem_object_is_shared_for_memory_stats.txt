@@ -1,0 +1,11 @@
+Function: bool drm_gem_object_is_shared_for_memory_stats ( struct drm_gem_object * obj )
+
+helper for shared memory stats
+
+Parameters
+  struct drm_gem_object *obj
+    obj in question
+
+Description
+  This helper should only be used for fdinfo shared memory stats to determine
+if a GEM object is shared.

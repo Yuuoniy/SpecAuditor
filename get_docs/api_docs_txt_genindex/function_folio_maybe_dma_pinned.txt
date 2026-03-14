@@ -1,0 +1,11 @@
+Function: bool folio_maybe_dma_pinned ( struct folio * folio )
+
+Report if a folio may be pinned for DMA.
+
+Parameters
+  struct folio *folio
+    The folio.
+
+Description
+  This function checks if a folio has been pinned via a call to
+a function in the pin_user_pages() family.

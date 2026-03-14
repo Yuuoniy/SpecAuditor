@@ -1,0 +1,12 @@
+Macro: drm_mm_nodes
+
+
+
+Parameters
+  mm
+    the struct drm_mm range manager
+
+Description
+  As the drm_mm range manager hides its node_list deep with its
+structure, extracting it looks painful and repetitive. This is
+not expected to be used outside of the drm_mm_for_each_node() macros and similar internal functions.

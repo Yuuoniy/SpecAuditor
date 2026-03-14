@@ -1,0 +1,13 @@
+Struct: struct drm_tile_group
+
+Tile group metadata
+
+Members
+  refcount
+    reference count
+  dev
+    DRM device
+  id
+    tile group id exposed to userspace
+  group_data
+    Sink-private data identifying this group

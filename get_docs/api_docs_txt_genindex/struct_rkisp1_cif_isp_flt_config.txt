@@ -1,0 +1,33 @@
+Struct: struct rkisp1_cif_isp_flt_config
+
+Configuration used by ISP filtering
+
+Members
+  mode
+    ISP_FILT_MODE register fields (from enum rkisp1_cif_isp_flt_mode )
+  grn_stage1
+    Green filter stage 1 select (range 0x0...0x8)
+  chr_h_mode
+    Chroma filter horizontal mode
+  chr_v_mode
+    Chroma filter vertical mode
+  thresh_bl0
+    If thresh_bl1 < sum_grad < thresh_bl0 then fac_bl0 is selected (blurring th)
+  thresh_bl1
+    If sum_grad < thresh_bl1 then fac_bl1 is selected (blurring th)
+  thresh_sh0
+    If thresh_sh0 < sum_grad < thresh_sh1 then thresh_sh0 is selected (sharpening th)
+  thresh_sh1
+    If thresh_sh1 < sum_grad then thresh_sh1 is selected (sharpening th)
+  lum_weight
+    Parameters for luminance weight function.
+  fac_sh1
+    filter factor for sharp1 level
+  fac_sh0
+    filter factor for sharp0 level
+  fac_mid
+    filter factor for mid level and for static filter mode
+  fac_bl0
+    filter factor for blur 0 level
+  fac_bl1
+    filter factor for blur 1 level (max blur)

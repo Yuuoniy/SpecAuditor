@@ -1,0 +1,13 @@
+Function: void input_mt_report_pointer_emulation ( struct input_dev * dev , bool use_count )
+
+common pointer emulation
+
+Parameters
+  struct input_dev *dev
+    input device with allocated MT slots
+  bool use_count
+    report number of active contacts as finger count
+
+Description
+  Performs legacy pointer emulation via BTN_TOUCH, ABS_X, ABS_Y and
+ABS_PRESSURE. Touchpad finger count is emulated if use_count is true.

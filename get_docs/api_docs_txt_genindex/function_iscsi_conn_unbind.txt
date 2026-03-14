@@ -1,0 +1,14 @@
+Function: void iscsi_conn_unbind ( struct iscsi_cls_conn * cls_conn , bool is_active )
+
+prevent queueing to conn.
+
+Parameters
+  struct iscsi_cls_conn *cls_conn
+    iscsi conn ep is bound to.
+  bool is_active
+    is the conn in use for boot or is this for EH/termination
+
+Description
+  This must be called by drivers implementing the ep_disconnect callout.
+It disables queueing to the connection from libiscsi in preparation for
+an ep_disconnect call.

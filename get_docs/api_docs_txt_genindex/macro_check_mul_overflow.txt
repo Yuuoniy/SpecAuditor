@@ -1,0 +1,14 @@
+Macro: check_mul_overflow
+
+
+
+Parameters
+  a
+    first factor
+  b
+    second factor
+  d
+    pointer to store product
+
+Description
+  Returns true on wrap-around, false otherwise.

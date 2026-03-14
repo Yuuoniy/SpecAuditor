@@ -1,0 +1,10 @@
+Function: int init_worker_pool ( struct worker_pool * pool )
+
+initialize a newly zalloc’d worker_pool
+
+Parameters
+  struct worker_pool *pool
+    worker_pool to initialize
+
+Description
+  Initialize a newly zalloc’d pool .  It also allocates pool->attrs .

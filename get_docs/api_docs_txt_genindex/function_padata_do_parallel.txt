@@ -1,0 +1,16 @@
+Function: int padata_do_parallel ( struct padata_shell * ps , struct padata_priv * padata , int * cb_cpu )
+
+padata parallelization function
+
+Parameters
+  struct padata_shell *ps
+    padatashell
+  struct padata_priv *padata
+    object to be parallelized
+  int *cb_cpu
+    pointer to the CPU that the serialization callback function should
+run on.  If it’s not in the serial cpumask of pinst (i.e. cpumask.cbcpu), this function selects a fallback CPU and if
+none found, returns -EINVAL.
+
+Description
+  The parallelization callback function will run with BHs off.

@@ -1,0 +1,14 @@
+Function: bool drm_atomic_plane_disabling ( struct drm_plane_state * old_plane_state , struct drm_plane_state * new_plane_state )
+
+check whether a plane is being disabled
+
+Parameters
+  struct drm_plane_state *old_plane_state
+    old atomic plane state
+  struct drm_plane_state *new_plane_state
+    new atomic plane state
+
+Description
+  Checks the atomic state of a plane to determine whether it’s being disabled
+or not. This also WARNs if it detects an invalid state (both CRTC and FB
+need to either both be NULL or both be non-NULL).

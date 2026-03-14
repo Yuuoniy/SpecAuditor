@@ -1,0 +1,7 @@
+Function: void scsi_eh_flush_done_q ( struct list_head * done_q )
+
+finish processed commands or retry them.
+
+Parameters
+  struct list_head *done_q
+    list_head of processed commands.

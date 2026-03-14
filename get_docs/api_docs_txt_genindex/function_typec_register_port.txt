@@ -1,0 +1,12 @@
+Function: struct typec_port * typec_register_port ( struct device * parent , const struct typec_capability * cap )
+
+Register a USB Type-C Port
+
+Parameters
+  struct device *parent
+    Parent device
+  const struct typec_capability *cap
+    Description of the port
+
+Description
+  Registers a device for USB Type-C Port described in cap .

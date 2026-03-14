@@ -1,0 +1,12 @@
+Function: void ssh_ptl_cancel ( struct ssh_packet * p )
+
+Cancel a packet.
+
+Parameters
+  struct ssh_packet *p
+    The packet to cancel.
+
+Description
+  Cancels a packet. There are no guarantees on when completion and release
+callbacks will be called. This may occur during execution of this function
+or may occur at any point later.

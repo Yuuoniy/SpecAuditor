@@ -1,0 +1,7 @@
+Function: int iscsi_iser_conn_start ( struct iscsi_cls_conn * cls_conn )
+
+start iscsi-iser connection
+
+Parameters
+  struct iscsi_cls_conn *cls_conn
+    iscsi class connection

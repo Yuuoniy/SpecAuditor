@@ -1,0 +1,53 @@
+Struct: struct rio_mport
+
+RIO master port info
+
+Members
+  dbells
+    List of doorbell events
+  pwrites
+    List of portwrite events
+  node
+    Node in global list of master ports
+  nnode
+    Node in network list of master ports
+  net
+    RIO net this mport is attached to
+  lock
+    lock to synchronize lists manipulations
+  iores
+    I/O mem resource that this master port interface owns
+  riores
+    RIO resources that this master port interfaces owns
+  inb_msg
+    RIO inbound message event descriptors
+  outb_msg
+    RIO outbound message event descriptors
+  host_deviceid
+    Host device ID associated with this master port
+  ops
+    configuration space functions
+  id
+    Port ID, unique among all ports
+  index
+    Port index, unique among all port interfaces of the same type
+  sys_size
+    RapidIO common transport system size
+  phys_efptr
+    RIO port extended features pointer
+  phys_rmap
+    LP-Serial EFB Register Mapping type (1 or 2).
+  name
+    Port name string
+  dev
+    device structure associated with an mport
+  priv
+    Master port private data
+  dma
+    DMA device associated with mport
+  nscan
+    RapidIO network enumeration/discovery operations
+  state
+    mport device state
+  pwe_refcnt
+    port-write enable ref counter to track enable/disable requests

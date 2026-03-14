@@ -1,0 +1,13 @@
+Struct: struct rio_device_id
+
+RIO device identifier
+
+Members
+  did
+    RapidIO device ID
+  vid
+    RapidIO vendor ID
+  asm_did
+    RapidIO assembly device ID
+  asm_vid
+    RapidIO assembly vendor ID

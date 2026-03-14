@@ -1,0 +1,10 @@
+Function: void virtio_device_ready ( struct virtio_device * dev )
+
+enable vq use in probe function
+
+Parameters
+  struct virtio_device *dev
+    the virtio device
+
+Description
+  Driver must call this to use vqs in the probe function.

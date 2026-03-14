@@ -1,0 +1,7 @@
+Function: int dvb_vb2_is_streaming ( struct dvb_vb2_ctx * ctx )
+
+checks if the VB2 handler is streaming
+
+Parameters
+  struct dvb_vb2_ctx *ctx
+    control struct for VB2 handler

@@ -1,0 +1,13 @@
+Function: int devfreq_event_disable_edev ( struct devfreq_event_dev * edev )
+
+Disable the devfreq-event dev and decrease the enable_count of the devfreq-event dev.
+
+Parameters
+  struct devfreq_event_dev *edev
+    the devfreq-event device
+
+Description
+  Note that this function decrease the enable_count and disable the
+devfreq-event device. After the devfreq-event device is disabled,
+devfreq device can’t use the devfreq-event device for get/set/reset
+operations.

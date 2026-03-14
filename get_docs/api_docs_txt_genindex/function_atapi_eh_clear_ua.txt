@@ -1,0 +1,12 @@
+Function: int atapi_eh_clear_ua ( struct ata_device * dev )
+
+Clear ATAPI UNIT ATTENTION after reset
+
+Parameters
+  struct ata_device *dev
+    ATAPI device to clear UA for
+
+Description
+  Resets and other operations can make an ATAPI device raise
+UNIT ATTENTION which causes the next operation to fail.  This
+function clears UA.

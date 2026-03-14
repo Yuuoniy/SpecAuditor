@@ -1,0 +1,15 @@
+Function: int ata_get_identity ( struct ata_port * ap , struct scsi_device * sdev , void __user * arg )
+
+Handler for HDIO_GET_IDENTITY ioctl
+
+Parameters
+  struct ata_port *ap
+    target port
+  struct scsi_device *sdev
+    SCSI device to get identify data for
+  void __user *arg
+    User buffer area for identify data
+
+Description
+  LOCKING:
+Defined by the SCSI layer.  We don’t really care.

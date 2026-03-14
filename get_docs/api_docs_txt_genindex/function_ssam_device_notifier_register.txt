@@ -1,0 +1,16 @@
+Function: int ssam_device_notifier_register ( struct ssam_device * sdev , struct ssam_event_notifier * n )
+
+Register an event notifier for the specified client device.
+
+Parameters
+  struct ssam_device *sdev
+    The device the notifier should be registered on.
+  struct ssam_event_notifier *n
+    The event notifier to register.
+
+Description
+  Register an event notifier. Increment the usage counter of the associated
+SAM event if the notifier is not marked as an observer. If the event is not
+marked as an observer and is currently not enabled, it will be enabled
+during this call. If the notifier is marked as an observer, no attempt will
+be made at enabling any event and no reference count will be modified.

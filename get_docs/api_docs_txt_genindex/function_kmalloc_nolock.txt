@@ -1,0 +1,12 @@
+Function: void * kmalloc_nolock ( size_t size , gfp_t gfp_flags , int node )
+
+Allocate an object of given size from any context.
+
+Parameters
+  size_t size
+    size to allocate
+  gfp_t gfp_flags
+    GFP flags. Only __GFP_ACCOUNT, __GFP_ZERO, __GFP_NO_OBJ_EXT
+allowed.
+  int node
+    node number of the target node.

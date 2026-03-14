@@ -1,0 +1,37 @@
+Struct: struct w1_bus_master
+
+operations available on a bus master
+
+Members
+  data
+    the first parameter in all the functions below
+  read_bit
+    Sample the line level return the level read (0 or 1)
+  write_bit
+    Sets the line level
+  touch_bit
+    the lowest-level function for devices that really support the
+1-wire protocol.
+touch_bit(0) = write-0 cycle
+touch_bit(1) = write-1 / read cycle return the bit read (0 or 1)
+  read_byte
+    Reads a byte. Same as 8 touch_bit(1) calls. return the byte read
+  write_byte
+    Writes a byte. Same as 8 touch_bit(x) calls.
+  read_block
+    Same as a series of read_byte() calls return the number of bytes read
+  write_block
+    Same as a series of write_byte() calls
+  triplet
+    Combines two reads and a smart write for ROM searches return bit0=Id bit1=comp_id bit2=dir_taken
+  reset_bus
+    long write-0 with a read for the presence pulse detection return -1=Error, 0=Device present, 1=No device present
+  set_pullup
+    Put out a strong pull-up pulse of the specified duration. return -1=Error, 0=completed
+  search
+    Really nice hardware can handle the different types of ROM search
+w1_master* is passed to the slave found callback.
+u8 is search_type, W1_SEARCH or W1_ALARM_SEARCH
+  dev_id
+    Optional device id string, which w1 slaves could use for
+creating names, which then give a connection to the w1 master

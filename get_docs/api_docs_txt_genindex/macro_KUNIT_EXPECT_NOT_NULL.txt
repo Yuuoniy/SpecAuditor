@@ -1,0 +1,14 @@
+Macro: KUNIT_EXPECT_NOT_NULL
+
+
+
+Parameters
+  test
+    The test context object.
+  ptr
+    an arbitrary pointer.
+
+Description
+  Sets an expectation that the value that ptr evaluates to is not null. This
+is semantically equivalent to KUNIT_EXPECT_PTR_NE( test , ptr, NULL).
+See KUNIT_EXPECT_TRUE() for more information.

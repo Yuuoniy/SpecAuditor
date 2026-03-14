@@ -1,0 +1,13 @@
+Function: int tty_put_char ( struct tty_struct * tty , u8 ch )
+
+write one character to a tty
+
+Parameters
+  struct tty_struct *tty
+    tty
+  u8 ch
+    character to write
+
+Description
+  Write one byte to the tty using the provided tty->ops-> put_char() method
+if present.

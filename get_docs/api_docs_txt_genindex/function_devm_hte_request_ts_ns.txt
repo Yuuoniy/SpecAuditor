@@ -1,0 +1,21 @@
+Function: int devm_hte_request_ts_ns ( struct device * dev , struct hte_ts_desc * desc , hte_ts_cb_t cb , hte_ts_sec_cb_t tcb , void * data )
+
+Resource managed API to request and enable hardware timestamp in nanoseconds.
+
+Parameters
+  struct device *dev
+    HTE consumer/client device.
+  struct hte_ts_desc *desc
+    Pre-allocated and initialized timestamp descriptor.
+  hte_ts_cb_t cb
+    Callback to push the timestamp data to consumer.
+  hte_ts_sec_cb_t tcb
+    Optional callback. If its provided, subsystem initializes
+workqueue. It is called when cb returns HTE_RUN_SECOND_CB.
+  void *data
+    Client data, used during cb and tcb callbacks.
+
+Description
+  The entity is provider specific for example, GPIO lines, signals, buses
+etc...The API allocates necessary resources and enables the timestamp. It
+deallocates and disables automatically when the consumer exits.

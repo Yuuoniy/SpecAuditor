@@ -1,0 +1,10 @@
+Function: void hlist_del ( struct hlist_node * n )
+
+Delete the specified hlist_node from its list
+
+Parameters
+  struct hlist_node *n
+    Node to delete.
+
+Description
+  Note that this function leaves the node in hashed state.  Use hlist_del_init() or similar instead to unhash n .

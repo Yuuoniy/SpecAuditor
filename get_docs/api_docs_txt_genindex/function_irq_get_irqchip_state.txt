@@ -1,0 +1,15 @@
+Function: int irq_get_irqchip_state ( unsigned int irq , enum irqchip_irq_state which , bool * state )
+
+returns the irqchip state of a interrupt.
+
+Parameters
+  unsigned int irq
+    Interrupt line that is forwarded to a VM
+  enum irqchip_irq_state which
+    One of IRQCHIP_STATE_* the caller wants to know about
+  bool *state
+    a pointer to a boolean where the state is to be stored
+
+Description
+  This call snapshots the internal irqchip state of an interrupt,
+returning into state the bit corresponding to stage which

@@ -1,0 +1,13 @@
+Macro: snd_pcm_stream_lock_irqsave_nested
+
+
+
+Parameters
+  substream
+    PCM substream
+  flags
+    irq flags
+
+Description
+  This locks the PCM stream like snd_pcm_stream_lock_irqsave() but with
+the single-depth lockdep subclass.

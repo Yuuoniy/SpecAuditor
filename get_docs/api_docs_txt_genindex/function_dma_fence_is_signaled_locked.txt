@@ -1,0 +1,12 @@
+Function: bool dma_fence_is_signaled_locked ( struct dma_fence * fence )
+
+Return an indication if the fence is signaled yet.
+
+Parameters
+  struct dma_fence *fence
+    the fence to check
+
+Description
+  Returns true if the fence was already signaled, false if not. Since this
+function doesn’t enable signaling, it is not guaranteed to ever return
+true if dma_fence_add_callback() , dma_fence_wait() or dma_fence_enable_sw_signaling() haven’t been called before.

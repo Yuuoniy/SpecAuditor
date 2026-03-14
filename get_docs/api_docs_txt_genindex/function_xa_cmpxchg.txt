@@ -1,0 +1,19 @@
+Function: void * xa_cmpxchg ( struct xarray * xa , unsigned long index , void * old , void * entry , gfp_t gfp )
+
+Conditionally replace an entry in the XArray.
+
+Parameters
+  struct xarray *xa
+    XArray.
+  unsigned long index
+    Index into array.
+  void *old
+    Old value to test against.
+  void *entry
+    New value to place in array.
+  gfp_t gfp
+    Memory allocation flags.
+
+Description
+  If the entry at index is the same as old , replace it with entry .
+If the return value is equal to old , then the exchange was successful.

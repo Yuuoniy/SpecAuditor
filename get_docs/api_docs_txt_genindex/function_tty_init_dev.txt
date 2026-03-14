@@ -1,0 +1,13 @@
+Function: struct tty_struct * tty_init_dev ( struct tty_driver * driver , int idx )
+
+initialise a tty device
+
+Parameters
+  struct tty_driver *driver
+    tty driver we are opening a device on
+  int idx
+    device index
+
+Description
+  Prepare a tty device. This may not be a “new” clean device but could also be
+an active device. The pty drivers require special handling because of this.

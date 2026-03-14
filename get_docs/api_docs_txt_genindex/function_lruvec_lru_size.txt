@@ -1,0 +1,11 @@
+Function: unsigned long lruvec_lru_size ( struct lruvec * lruvec , enum lru_list lru , int zone_idx )
+
+Returns the number of pages on the given LRU list.
+
+Parameters
+  struct lruvec *lruvec
+    lru vector
+  enum lru_list lru
+    lru to use
+  int zone_idx
+    zones to consider (use MAX_NR_ZONES - 1 for the whole LRU list)

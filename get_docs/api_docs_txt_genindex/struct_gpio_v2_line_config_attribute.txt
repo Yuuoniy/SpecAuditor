@@ -1,0 +1,10 @@
+Struct: struct gpio_v2_line_config_attribute
+
+a configuration attribute associated with one or more of the requested lines.
+
+Members
+  attr
+    the configurable attribute
+  mask
+    a bitmap identifying the lines to which the attribute applies,
+with each bit number corresponding to the index into struct gpio_v2_line_request .offsets

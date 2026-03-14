@@ -1,0 +1,18 @@
+Function: __le16 ieee80211_ctstoself_duration ( struct ieee80211_hw * hw , struct ieee80211_vif * vif , size_t frame_len , const struct ieee80211_tx_info * frame_txctl )
+
+Get the duration field for a CTS-to-self frame
+
+Parameters
+  struct ieee80211_hw *hw
+    pointer obtained from ieee80211_alloc_hw() .
+  struct ieee80211_vif *vif
+    struct ieee80211_vif pointer from the add_interface callback.
+  size_t frame_len
+    the length of the frame that is going to be protected by the CTS-to-self.
+  const struct ieee80211_tx_info *frame_txctl
+    struct ieee80211_tx_info of the frame.
+
+Description
+  If the CTS-to-self is generated in firmware, but the host system must provide
+the duration field, the low-level driver uses this function to receive
+the duration field value in little-endian byteorder.

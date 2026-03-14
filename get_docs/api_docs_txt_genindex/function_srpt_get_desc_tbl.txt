@@ -1,0 +1,27 @@
+Function: int srpt_get_desc_tbl ( struct srpt_recv_ioctx * recv_ioctx , struct srpt_send_ioctx * ioctx , struct srp_cmd * srp_cmd , enum dma_data_direction * dir , struct scatterlist * * sg , unsigned int * sg_cnt , u64 * data_len , u16 imm_data_offset )
+
+parse the data descriptors of a SRP_CMD request
+
+Parameters
+  struct srpt_recv_ioctx *recv_ioctx
+    I/O context associated with the received command srp_cmd .
+  struct srpt_send_ioctx *ioctx
+    I/O context that will be used for responding to the initiator.
+  struct srp_cmd *srp_cmd
+    Pointer to the SRP_CMD request data.
+  enum dma_data_direction *dir
+    Pointer to the variable to which the transfer direction will be
+written.
+  struct scatterlist **sg
+    [out] scatterlist for the parsed SRP_CMD.
+  unsigned int *sg_cnt
+    [out] length of sg .
+  u64 *data_len
+    Pointer to the variable to which the total data length of all
+descriptors in the SRP_CMD request will be written.
+  u16 imm_data_offset
+    [in] Offset in SRP_CMD requests at which immediate data
+starts.
+
+Description
+  This function initializes ioctx->nrbuf and ioctx->r_bufs.

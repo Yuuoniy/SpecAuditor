@@ -1,0 +1,11 @@
+Function: void intel_engine_cleanup_cmd_parser ( struct intel_engine_cs * engine )
+
+clean up cmd parser related fields
+
+Parameters
+  struct intel_engine_cs *engine
+    the engine to clean up
+
+Description
+  Releases any resources related to command parsing that may have been
+initialized for the specified engine.

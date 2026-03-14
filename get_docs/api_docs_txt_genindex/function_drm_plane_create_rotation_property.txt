@@ -1,0 +1,14 @@
+Function: int drm_plane_create_rotation_property ( struct drm_plane * plane , unsigned int rotation , unsigned int supported_rotations )
+
+create a new rotation property
+
+Parameters
+  struct drm_plane *plane
+    drm plane
+  unsigned int rotation
+    initial value of the rotation property
+  unsigned int supported_rotations
+    bitmask of supported rotations and reflections
+
+Description
+  This creates a new property with the selected support for transformations.

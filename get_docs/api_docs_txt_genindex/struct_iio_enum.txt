@@ -1,0 +1,13 @@
+Struct: struct iio_enum
+
+Enum channel info attribute
+
+Members
+  items
+    An array of strings.
+  num_items
+    Length of the item array.
+  set
+    Set callback function, may be NULL.
+  get
+    Get callback function, may be NULL.

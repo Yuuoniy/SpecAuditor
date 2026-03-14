@@ -1,0 +1,13 @@
+Macro: hlist_nulls_for_each_entry_safe
+
+
+
+Parameters
+  tpos
+    the type * to use as a loop cursor.
+  pos
+    the struct hlist_nulls_node to use as a loop cursor.
+  head
+    the head of the list.
+  member
+    the name of the hlist_nulls_node within the struct.

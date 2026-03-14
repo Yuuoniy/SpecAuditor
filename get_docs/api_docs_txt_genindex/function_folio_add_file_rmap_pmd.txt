@@ -1,0 +1,14 @@
+Function: void folio_add_file_rmap_pmd ( struct folio * folio , struct page * page , struct vm_area_struct * vma )
+
+add a PMD mapping to a page range of a folio
+
+Parameters
+  struct folio *folio
+    The folio to add the mapping to
+  struct page *page
+    The first page to add
+  struct vm_area_struct *vma
+    The vm area in which the mapping is added
+
+Description
+  The page range of the folio is defined by [page, page + HPAGE_PMD_NR)

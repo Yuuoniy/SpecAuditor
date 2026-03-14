@@ -1,0 +1,14 @@
+Function: long sgx_ioc_enclave_init ( struct sgx_encl * encl , void __user * arg )
+
+handler for SGX_IOC_ENCLAVE_INIT
+
+Parameters
+  struct sgx_encl *encl
+    an enclave pointer
+  void __user *arg
+    userspace pointer to a struct sgx_enclave_init instance
+
+Description
+  Flush any outstanding enqueued EADD operations and perform EINIT.  The
+Launch Enclave Public Key Hash MSRs are rewritten as necessary to match
+the enclave’s MRSIGNER, which is calculated from the provided sigstruct.

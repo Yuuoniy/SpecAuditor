@@ -1,0 +1,18 @@
+Function: int tipc_sendmcast ( struct socket * sock , struct tipc_uaddr * ua , struct msghdr * msg , size_t dlen , long timeout )
+
+send multicast message
+
+Parameters
+  struct socket *sock
+    socket structure
+  struct tipc_uaddr *ua
+    destination address struct
+  struct msghdr *msg
+    message to send
+  size_t dlen
+    length of data to send
+  long timeout
+    timeout to wait for wakeup
+
+Description
+  Called from function tipc_sendmsg() , which has done all sanity checks

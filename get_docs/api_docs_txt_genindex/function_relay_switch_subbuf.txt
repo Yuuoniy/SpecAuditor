@@ -1,0 +1,12 @@
+Function: size_t relay_switch_subbuf ( struct rchan_buf * buf , size_t length )
+
+switch to a new sub-buffer
+
+Parameters
+  struct rchan_buf *buf
+    channel buffer
+  size_t length
+    size of current event
+
+Description
+  Returns either the length passed in or 0 if full.

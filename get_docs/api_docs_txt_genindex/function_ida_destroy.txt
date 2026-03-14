@@ -1,0 +1,13 @@
+Function: void ida_destroy ( struct ida * ida )
+
+Free all IDs.
+
+Parameters
+  struct ida *ida
+    IDA handle.
+
+Description
+  Calling this function frees all IDs and releases all resources used
+by an IDA.  When this call returns, the IDA is empty and can be reused
+or freed.  If the IDA is already empty, there is no need to call this
+function.

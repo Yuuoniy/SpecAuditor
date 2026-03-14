@@ -1,0 +1,13 @@
+Function: struct sk_buff * skb_morph ( struct sk_buff * dst , struct sk_buff * src )
+
+morph one skb into another
+
+Parameters
+  struct sk_buff *dst
+    the skb to receive the contents
+  struct sk_buff *src
+    the skb to supply the contents
+
+Description
+  This is identical to skb_clone except that the target skb is
+supplied by the user.

@@ -1,0 +1,11 @@
+Struct: struct fprobe_hlist_node
+
+address based hash list node for fprobe.
+
+Members
+  hlist
+    The hlist node for address search hash table.
+  addr
+    One of the probing address of fp .
+  fp
+    The fprobe which owns this.

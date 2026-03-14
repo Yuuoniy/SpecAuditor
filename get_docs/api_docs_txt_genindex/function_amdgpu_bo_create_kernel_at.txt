@@ -1,0 +1,18 @@
+Function: int amdgpu_bo_create_kernel_at ( struct amdgpu_device * adev , uint64_t offset , uint64_t size , struct amdgpu_bo * * bo_ptr , void * * cpu_addr )
+
+create BO for kernel use at specific location
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device object
+  uint64_t offset
+    offset of the BO
+  uint64_t size
+    size of the BO
+  struct amdgpu_bo **bo_ptr
+    used to initialize BOs in structures
+  void **cpu_addr
+    optional CPU address mapping
+
+Description
+  Creates a kernel BO at a specific offset in VRAM.

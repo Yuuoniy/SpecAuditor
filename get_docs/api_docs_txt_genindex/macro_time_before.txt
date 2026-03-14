@@ -1,0 +1,9 @@
+Macro: time_before
+
+
+
+Parameters
+  a
+    first comparable as unsigned long
+  b
+    second comparable as unsigned long

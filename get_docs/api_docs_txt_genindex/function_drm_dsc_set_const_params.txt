@@ -1,0 +1,7 @@
+Function: void drm_dsc_set_const_params ( struct drm_dsc_config * vdsc_cfg )
+
+Set DSC parameters considered typically constant across operation modes
+
+Parameters
+  struct drm_dsc_config *vdsc_cfg
+    DSC Configuration data partially filled by driver

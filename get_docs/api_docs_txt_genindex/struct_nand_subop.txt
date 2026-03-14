@@ -1,0 +1,17 @@
+Struct: struct nand_subop
+
+a sub operation
+
+Members
+  cs
+    the CS line to select for this NAND sub-operation
+  instrs
+    array of instructions
+  ninstrs
+    length of the instrs array
+  first_instr_start_off
+    offset to start from for the first instruction
+of the sub-operation
+  last_instr_end_off
+    offset to end at (excluded) for the last instruction
+of the sub-operation

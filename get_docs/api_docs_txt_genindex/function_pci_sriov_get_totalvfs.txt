@@ -1,0 +1,12 @@
+Function: int pci_sriov_get_totalvfs ( struct pci_dev * dev )
+
+get total VFs supported on this device
+
+Parameters
+  struct pci_dev *dev
+    the PCI PF device
+
+Description
+  For a PCIe device with SRIOV support, return the PCIe
+SRIOV capability value of TotalVFs or the value of driver_max_VFs
+if the driver reduced it.  Otherwise 0.

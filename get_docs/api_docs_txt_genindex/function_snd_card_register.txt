@@ -1,0 +1,13 @@
+Function: int snd_card_register ( struct snd_card * card )
+
+register the soundcard
+
+Parameters
+  struct snd_card *card
+    soundcard structure
+
+Description
+  This function registers all the devices assigned to the soundcard.
+Until calling this, the ALSA control interface is blocked from the
+external accesses.  Thus, you should call this function at the end
+of the initialization of the card.

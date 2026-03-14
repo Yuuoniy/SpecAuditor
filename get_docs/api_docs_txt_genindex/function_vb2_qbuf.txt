@@ -1,0 +1,14 @@
+Function: int vb2_qbuf ( struct vb2_queue * q , struct media_device * mdev , struct v4l2_buffer * b )
+
+Queue a buffer from userspace
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  struct media_device *mdev
+    pointer to struct media_device , may be NULL.
+  struct v4l2_buffer *b
+    buffer structure passed from userspace to v4l2_ioctl_ops->vidioc_qbuf handler in driver
+
+Description
+  Should be called from v4l2_ioctl_ops->vidioc_qbuf handler of a driver.

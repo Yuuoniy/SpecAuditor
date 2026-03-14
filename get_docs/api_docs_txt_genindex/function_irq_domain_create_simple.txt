@@ -1,0 +1,21 @@
+Function: struct irq_domain * irq_domain_create_simple ( struct fwnode_handle * fwnode , unsigned int size , unsigned int first_irq , const struct irq_domain_ops * ops , void * host_data )
+
+Register an irq_domain and optionally map a range of irqs
+
+Parameters
+  struct fwnode_handle *fwnode
+    firmware node for the interrupt controller
+  unsigned int size
+    total number of irqs in mapping
+  unsigned int first_irq
+    first number of irq block assigned to the domain,
+pass zero to assign irqs on-the-fly. If first_irq is non-zero, then
+pre-map all of the irqs in the domain to virqs starting at first_irq.
+  const struct irq_domain_ops *ops
+    domain callbacks
+  void *host_data
+    Controller private data pointer
+
+Description
+  Allocates an irq_domain, and optionally if first_irq is positive then also
+allocate irq_descs and map all of the hwirqs to virqs starting at first_irq.

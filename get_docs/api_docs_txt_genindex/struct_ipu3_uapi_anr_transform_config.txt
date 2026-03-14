@@ -1,0 +1,54 @@
+Struct: struct ipu3_uapi_anr_transform_config
+
+Advanced noise reduction transform
+
+Members
+  enable
+    advanced noise reduction enabled.
+  adaptive_treshhold_en
+    On IPU3, adaptive threshold is always enabled.
+  reserved1
+    reserved
+  reserved2
+    reserved
+  alpha
+    using following defaults:
+13, 13, 13, 13, 0, 0, 0, 0
+11, 11, 11, 11, 0, 0, 0, 0
+14,  14, 14, 14, 0, 0, 0, 0
+  beta
+    use following defaults:
+24, 24, 24, 24
+21, 20, 20, 21
+25, 25, 25, 25
+  color
+    use defaults defined in driver/media/pci/intel/ipu3-tables.c
+  sqrt_lut
+    11 bits per element, values =
+[724 768 810 849 887
+923 958 991 1024 1056
+1116 1145 1173 1201 1086
+1228 1254 1280 1305 1330
+1355 1379 1402 1425 1448]
+  xreset
+    Reset value of X for r^2 calculation Value: col_start-X_center
+Constraint: Xreset + FrameWdith=4095 Xreset= -4095, default -1632.
+  reserved3
+    reserved
+  yreset
+    Reset value of Y for r^2 calculation Value: row_start-Y_center
+Constraint: Yreset + FrameHeight=4095 Yreset= -4095, default -1224.
+  reserved4
+    reserved
+  x_sqr_reset
+    Reset value of X^2 for r^2 calculation Value = (Xreset)^2
+  r_normfactor
+    Normalization factor for R. Default 14.
+  reserved5
+    reserved
+  y_sqr_reset
+    Reset value of Y^2 for r^2 calculation Value = (Yreset)^2
+  gain_scale
+    Parameter describing shading gain as a function of distance
+from the image center.
+A single value per frame, loaded by the driver. Default 115.

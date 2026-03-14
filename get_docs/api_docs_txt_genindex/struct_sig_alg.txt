@@ -1,0 +1,40 @@
+Struct: struct sig_alg
+
+generic public key signature algorithm
+
+Members
+  sign
+    Function performs a sign operation as defined by public key
+algorithm. On success, the signature size is returned.
+Optional.
+  verify
+    Function performs a complete verify operation as defined by
+public key algorithm, returning verification status. Optional.
+  set_pub_key
+    Function invokes the algorithm specific set public key
+function, which knows how to decode and interpret
+the BER encoded public key and parameters. Mandatory.
+  set_priv_key
+    Function invokes the algorithm specific set private key
+function, which knows how to decode and interpret
+the BER encoded private key and parameters. Optional.
+  key_size
+    Function returns key size. Mandatory.
+  digest_size
+    Function returns maximum digest size. Optional.
+  max_size
+    Function returns maximum signature size. Optional.
+  init
+    Initialize the cryptographic transformation object.
+This function is used to initialize the cryptographic
+transformation object. This function is called only once at
+the instantiation time, right after the transformation context
+was allocated. In case the cryptographic hardware has some
+special requirements which need to be handled by software, this
+function shall check for the precise requirement of the
+transformation and put any software fallbacks in place.
+  exit
+    Deinitialize the cryptographic transformation object. This is a
+counterpart to init , used to remove various changes set in init .
+  base
+    Common crypto API algorithm data structure

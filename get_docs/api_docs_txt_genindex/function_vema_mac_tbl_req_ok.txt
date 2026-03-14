@@ -1,0 +1,11 @@
+Function: bool vema_mac_tbl_req_ok ( struct opa_veswport_mactable * mac_tbl )
+
+Check if mac request has correct values
+
+Parameters
+  struct opa_veswport_mactable *mac_tbl
+    mac table
+
+Description
+  This function checks for the validity of the offset and number of
+entries required.

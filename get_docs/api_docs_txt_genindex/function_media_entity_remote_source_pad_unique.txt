@@ -1,0 +1,12 @@
+Function: struct media_pad * media_entity_remote_source_pad_unique ( const struct media_entity * entity )
+
+Find a remote source pad connected to an entity
+
+Parameters
+  const struct media_entity *entity
+    The entity
+
+Description
+  Search for and return a remote source pad connected to entity through an
+enabled link. If multiple (or no) remote pads match these criteria, an error
+is returned.

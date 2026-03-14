@@ -1,0 +1,13 @@
+Struct: struct media_interface
+
+A media interface graph object.
+
+Members
+  graph_obj
+    embedded graph object
+  links
+    List of links pointing to graph entities
+  type
+    Type of the interface as defined in include/uapi/linux/media.h (seek for MEDIA_INTF_T_* )
+  flags
+    Interface flags as defined in include/uapi/linux/media.h (seek for MEDIA_INTF_FL_* )

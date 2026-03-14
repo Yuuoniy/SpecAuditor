@@ -1,0 +1,14 @@
+Function: int drm_gem_dma_mmap ( struct drm_gem_dma_object * dma_obj , struct vm_area_struct * vma )
+
+memory-map an exported DMA GEM object
+
+Parameters
+  struct drm_gem_dma_object *dma_obj
+    DMA GEM object
+  struct vm_area_struct *vma
+    VMA for the area to be mapped
+
+Description
+  This function maps a buffer into a userspace process’s address space.
+In addition to the usual GEM VMA setup it immediately faults in the entire
+object instead of using on-demand faulting.

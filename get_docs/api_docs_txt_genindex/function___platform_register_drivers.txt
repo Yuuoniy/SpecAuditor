@@ -1,0 +1,17 @@
+Function: int __platform_register_drivers ( struct platform_driver * const * drivers , unsigned int count , struct module * owner )
+
+register an array of platform drivers
+
+Parameters
+  struct platform_driver * const *drivers
+    an array of drivers to register
+  unsigned int count
+    the number of drivers to register
+  struct module *owner
+    module owning the drivers
+
+Description
+  Registers platform drivers specified by an array. On failure to register a
+driver, all previously registered drivers will be unregistered. Callers of
+this API should use platform_unregister_drivers() to unregister drivers in
+the reverse order.

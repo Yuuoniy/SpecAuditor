@@ -1,0 +1,14 @@
+Function: struct reset_control * reset_control_get_optional_shared ( struct device * dev , const char * id )
+
+optional reset_control_get_shared()
+
+Parameters
+  struct device *dev
+    device to be reset by the controller
+  const char *id
+    reset line name
+
+Description
+  Optional variant of reset_control_get_shared() . If the requested reset
+is not specified in the device tree, this function returns NULL instead of
+an error.

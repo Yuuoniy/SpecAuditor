@@ -1,0 +1,13 @@
+Function: void intel_plane_destroy_state ( struct drm_plane * plane , struct drm_plane_state * state )
+
+destroy plane state
+
+Parameters
+  struct drm_plane *plane
+    drm plane
+  struct drm_plane_state *state
+    state object to destroy
+
+Description
+  Destroys the plane state (both common and Intel-specific) for the
+specified plane.

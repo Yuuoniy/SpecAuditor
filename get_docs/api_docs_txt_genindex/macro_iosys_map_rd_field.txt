@@ -1,0 +1,18 @@
+Macro: iosys_map_rd_field
+
+
+
+Parameters
+  map__
+    The iosys_map structure
+  struct_offset__
+    Offset from the beginning of the map, where the struct is located
+  struct_type__
+    The struct describing the layout of the mapping
+  field__
+    Member of the struct to read
+
+Description
+  Read a value from iosys_map considering its layout is described by a C struct starting at struct_offset__ . The field offset and size is calculated and its
+value read. If the field access would incur in un-aligned access, then either iosys_map_memcpy_from() needs to be used or the architecture must support it.
+For example: suppose there is a struct foo defined as below and the value foo.field2.inner2 needs to be read from the iosys_map:

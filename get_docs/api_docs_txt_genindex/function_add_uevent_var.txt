@@ -1,0 +1,15 @@
+Function: int add_uevent_var ( struct kobj_uevent_env * env , const char * format , ... )
+
+add key value string to the environment buffer
+
+Parameters
+  struct kobj_uevent_env *env
+    environment buffer structure
+  const char *format
+    printf format for the key=value pair
+  ...
+    variable arguments
+
+Description
+  Returns 0 if environment variable was added successfully or -ENOMEM
+if no space was available.

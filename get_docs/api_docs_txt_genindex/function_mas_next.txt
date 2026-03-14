@@ -1,0 +1,14 @@
+Function: void * mas_next ( struct ma_state * mas , unsigned long max )
+
+Get the next entry.
+
+Parameters
+  struct ma_state *mas
+    The maple state
+  unsigned long max
+    The maximum index to check.
+
+Description
+  Returns the next entry after mas->index .
+Must hold rcu_read_lock or the write lock.
+Can return the zero entry.

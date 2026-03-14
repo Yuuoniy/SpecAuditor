@@ -1,0 +1,11 @@
+Function: int list_empty_careful ( const struct list_head * head )
+
+tests whether a list is empty and not being modified
+
+Parameters
+  const struct list_head *head
+    the list to test
+
+Description
+  tests whether a list is empty _and_ checks that no other CPU might be
+in the process of modifying either member (next or prev)

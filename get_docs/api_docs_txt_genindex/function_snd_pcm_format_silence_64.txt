@@ -1,0 +1,7 @@
+Function: const unsigned char * snd_pcm_format_silence_64 ( snd_pcm_format_t format )
+
+return the silent data in 8 bytes array
+
+Parameters
+  snd_pcm_format_t format
+    the format to check

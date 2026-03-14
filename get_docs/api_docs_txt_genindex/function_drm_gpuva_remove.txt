@@ -1,0 +1,10 @@
+Function: void drm_gpuva_remove ( struct drm_gpuva * va )
+
+remove a drm_gpuva
+
+Parameters
+  struct drm_gpuva *va
+    the drm_gpuva to remove
+
+Description
+  This removes the given va from the underlying tree.

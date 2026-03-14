@@ -1,0 +1,15 @@
+Function: int hte_push_ts_ns ( const struct hte_chip * chip , u32 xlated_id , struct hte_ts_data * data )
+
+Push timestamp data in nanoseconds.
+
+Parameters
+  const struct hte_chip *chip
+    The HTE chip, used during the registration.
+  u32 xlated_id
+    entity id understood by both subsystem and provider, this is
+obtained from xlate callback during request API.
+  struct hte_ts_data *data
+    timestamp data.
+
+Description
+  It is used by the provider to push timestamp data.

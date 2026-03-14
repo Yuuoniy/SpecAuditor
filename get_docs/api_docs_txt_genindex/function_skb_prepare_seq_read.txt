@@ -1,0 +1,17 @@
+Function: void skb_prepare_seq_read ( struct sk_buff * skb , unsigned int from , unsigned int to , struct skb_seq_state * st )
+
+Prepare a sequential read of skb data
+
+Parameters
+  struct sk_buff *skb
+    the buffer to read
+  unsigned int from
+    lower offset of data to be read
+  unsigned int to
+    upper offset of data to be read
+  struct skb_seq_state *st
+    state variable
+
+Description
+  Initializes the specified state variable. Must be called before
+invoking skb_seq_read() for the first time.

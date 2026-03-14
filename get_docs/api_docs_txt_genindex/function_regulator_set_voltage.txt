@@ -1,0 +1,15 @@
+Function: int regulator_set_voltage ( struct regulator * regulator , int min_uV , int max_uV )
+
+set regulator output voltage
+
+Parameters
+  struct regulator *regulator
+    regulator source
+  int min_uV
+    Minimum required voltage in uV
+  int max_uV
+    Maximum acceptable voltage in uV
+
+Description
+  Sets a voltage regulator to the desired output voltage. This can be set
+during any regulator state. IOW, regulator can be disabled or enabled.

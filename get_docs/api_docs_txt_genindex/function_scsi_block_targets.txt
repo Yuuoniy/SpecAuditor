@@ -1,0 +1,14 @@
+Function: void scsi_block_targets ( struct Scsi_Host * shost , struct device * dev )
+
+transition all SCSI child devices to SDEV_BLOCK state
+
+Parameters
+  struct Scsi_Host *shost
+    the Scsi_Host to which this device belongs
+  struct device *dev
+    a parent device of one or more scsi_target devices
+
+Description
+  Iterate over all children of dev , which should be scsi_target devices,
+and switch all subordinate scsi devices to SDEV_BLOCK state. Wait for
+ongoing scsi_queue_rq() calls to finish. May sleep.

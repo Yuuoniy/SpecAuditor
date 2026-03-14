@@ -1,0 +1,12 @@
+Function: bool sas_ata_ncq_prio_supported ( struct scsi_device * sdev )
+
+Check for ATA NCQ command priority support
+
+Parameters
+  struct scsi_device *sdev
+    SCSI device
+
+Description
+  Check if an ATA device supports NCQ priority using VPD page 89h (ATA
+Information). Since this VPD page is implemented only for ATA devices,
+this function always returns false for SCSI devices.

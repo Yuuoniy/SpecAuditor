@@ -1,0 +1,7 @@
+Function: void scsi_exit_procfs ( void )
+
+Remove scsi/scsi and scsi from procfs
+
+Parameters
+  void
+    no arguments

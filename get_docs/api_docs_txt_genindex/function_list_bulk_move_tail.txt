@@ -1,0 +1,15 @@
+Function: void list_bulk_move_tail ( struct list_head * head , struct list_head * first , struct list_head * last )
+
+move a subsection of a list to its tail
+
+Parameters
+  struct list_head *head
+    the head that will follow our entry
+  struct list_head *first
+    first entry to move
+  struct list_head *last
+    last entry to move, can be the same as first
+
+Description
+  Move all entries between first and including last before head .
+All three entries must belong to the same linked list.

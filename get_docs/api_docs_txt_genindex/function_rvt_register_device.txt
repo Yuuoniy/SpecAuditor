@@ -1,0 +1,11 @@
+Function: int rvt_register_device ( struct rvt_dev_info * rdi )
+
+register a driver
+
+Parameters
+  struct rvt_dev_info *rdi
+    main dev structure for all of rdmavt operations
+
+Description
+  It is up to drivers to allocate the rdi and fill in the appropriate
+information.

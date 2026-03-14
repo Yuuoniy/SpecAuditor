@@ -1,0 +1,100 @@
+Struct: struct drm_display_mode
+
+DRM kernel-internal display mode structure
+
+Members
+  clock
+    Pixel clock in kHz.
+  hdisplay
+    horizontal display size
+  hsync_start
+    horizontal sync start
+  hsync_end
+    horizontal sync end
+  htotal
+    horizontal total size
+  hskew
+    horizontal skew?!
+  vdisplay
+    vertical display size
+  vsync_start
+    vertical sync start
+  vsync_end
+    vertical sync end
+  vtotal
+    vertical total size
+  vscan
+    vertical scan?!
+  flags
+    Sync and timing flags: DRM_MODE_FLAG_PHSYNC: horizontal sync is active high. DRM_MODE_FLAG_NHSYNC: horizontal sync is active low. DRM_MODE_FLAG_PVSYNC: vertical sync is active high. DRM_MODE_FLAG_NVSYNC: vertical sync is active low. DRM_MODE_FLAG_INTERLACE: mode is interlaced. DRM_MODE_FLAG_DBLSCAN: mode uses doublescan. DRM_MODE_FLAG_CSYNC: mode uses composite sync. DRM_MODE_FLAG_PCSYNC: composite sync is active high. DRM_MODE_FLAG_NCSYNC: composite sync is active low. DRM_MODE_FLAG_HSKEW: hskew provided (not used?). DRM_MODE_FLAG_BCAST: <deprecated> DRM_MODE_FLAG_PIXMUX: <deprecated> DRM_MODE_FLAG_DBLCLK: double-clocked mode. DRM_MODE_FLAG_CLKDIV2: half-clocked mode. Additionally there’s flags to specify how 3D modes are packed: DRM_MODE_FLAG_3D_NONE: normal, non-3D mode. DRM_MODE_FLAG_3D_FRAME_PACKING: 2 full frames for left and right. DRM_MODE_FLAG_3D_FIELD_ALTERNATIVE: interleaved like fields. DRM_MODE_FLAG_3D_LINE_ALTERNATIVE: interleaved lines. DRM_MODE_FLAG_3D_SIDE_BY_SIDE_FULL: side-by-side full frames. DRM_MODE_FLAG_3D_L_DEPTH: ? DRM_MODE_FLAG_3D_L_DEPTH_GFX_GFX_DEPTH: ? DRM_MODE_FLAG_3D_TOP_AND_BOTTOM: frame split into top and bottom
+parts. DRM_MODE_FLAG_3D_SIDE_BY_SIDE_HALF: frame split into left and
+right parts.
+  crtc_clock
+    Actual pixel or dot clock in the hardware. This differs from the
+logical clock when e.g. using interlacing, double-clocking, stereo
+modes or other fancy stuff that changes the timings and signals
+actually sent over the wire. This is again in kHz. Note that with digital outputs like HDMI or DP there’s usually a
+massive confusion between the dot clock and the signal clock at the
+bit encoding level. Especially when a 8b/10b encoding is used and the
+difference is exactly a factor of 10.
+  crtc_hdisplay
+    hardware mode horizontal display size
+  crtc_hblank_start
+    hardware mode horizontal blank start
+  crtc_hblank_end
+    hardware mode horizontal blank end
+  crtc_hsync_start
+    hardware mode horizontal sync start
+  crtc_hsync_end
+    hardware mode horizontal sync end
+  crtc_htotal
+    hardware mode horizontal total size
+  crtc_hskew
+    hardware mode horizontal skew?!
+  crtc_vdisplay
+    hardware mode vertical display size
+  crtc_vblank_start
+    hardware mode vertical blank start
+  crtc_vblank_end
+    hardware mode vertical blank end
+  crtc_vsync_start
+    hardware mode vertical sync start
+  crtc_vsync_end
+    hardware mode vertical sync end
+  crtc_vtotal
+    hardware mode vertical total size
+  width_mm
+    Addressable size of the output in mm, projectors should set this to
+0.
+  height_mm
+    Addressable size of the output in mm, projectors should set this to
+0.
+  type
+    A bitmask of flags, mostly about the source of a mode. Possible flags
+are: DRM_MODE_TYPE_PREFERRED: Preferred mode, usually the native
+resolution of an LCD panel. There should only be one preferred
+mode per connector at any given time. DRM_MODE_TYPE_DRIVER: Mode created by the driver, which is all of
+them really. Drivers must set this bit for all modes they create
+and expose to userspace. DRM_MODE_TYPE_USERDEF: Mode defined or selected via the kernel
+command line. Plus a big list of flags which shouldn’t be used at all, but are
+still around since these flags are also used in the userspace ABI.
+We no longer accept modes with these types though: DRM_MODE_TYPE_BUILTIN: Meant for hard-coded modes, unused.
+Use DRM_MODE_TYPE_DRIVER instead. DRM_MODE_TYPE_DEFAULT: Again a leftover, use
+DRM_MODE_TYPE_PREFERRED instead. DRM_MODE_TYPE_CLOCK_C and DRM_MODE_TYPE_CRTC_C: Define leftovers
+which are stuck around for hysterical raisins only. No one has an
+idea what they were meant for. Don’t use.
+  expose_to_userspace
+    Indicates whether the mode is to be exposed to the userspace.
+This is to maintain a set of exposed modes while preparing
+user-mode’s list in drm_mode_getconnector ioctl. The purpose of
+this only lies in the ioctl function, and is not to be used
+outside the function.
+  head
+    struct list_head for mode lists.
+  name
+    Human-readable name of the mode, filled out with drm_mode_set_name() .
+  status
+    Status of the mode, used to filter out modes not supported by the
+hardware. See enum drm_mode_status .
+  picture_aspect_ratio
+    Field for setting the HDMI picture aspect ratio of a mode.

@@ -1,0 +1,12 @@
+Function: struct drm_gpuvm_bo * drm_gpuvm_bo_create ( struct drm_gpuvm * gpuvm , struct drm_gem_object * obj )
+
+create a new instance of struct drm_gpuvm_bo
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    The drm_gpuvm the obj is mapped in.
+  struct drm_gem_object *obj
+    The drm_gem_object being mapped in the gpuvm .
+
+Description
+  If provided by the driver, this function uses the drm_gpuvm_ops vm_bo_alloc() callback to allocate.

@@ -1,0 +1,7 @@
+Function: void pci_disable_sriov ( struct pci_dev * dev )
+
+disable the SR-IOV capability
+
+Parameters
+  struct pci_dev *dev
+    the PCI device

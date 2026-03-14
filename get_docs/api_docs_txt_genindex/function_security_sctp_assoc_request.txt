@@ -1,0 +1,12 @@
+Function: int security_sctp_assoc_request ( struct sctp_association * asoc , struct sk_buff * skb )
+
+Update the LSM on a SCTP association req
+
+Parameters
+  struct sctp_association *asoc
+    SCTP association
+  struct sk_buff *skb
+    packet requesting the association
+
+Description
+  Passes the asoc and chunk->skb of the association INIT packet to the LSM.

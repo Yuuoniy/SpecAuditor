@@ -1,0 +1,10 @@
+Function: void ssam_irq_disarm_wakeup ( struct ssam_controller * ctrl )
+
+Disarm the wakeup IRQ.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller for which the IRQ should be disarmed.
+
+Description
+  Disarm the IRQ previously set up for wake via ssam_irq_arm_for_wakeup() .

@@ -1,0 +1,7 @@
+Struct: struct fw_cdev_receive_phy_packets
+
+start reception of PHY packets
+
+Members
+  closure
+    Passed back to userspace in phy packet events

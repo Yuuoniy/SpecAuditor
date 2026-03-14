@@ -1,0 +1,18 @@
+Function: int mmu_notifier_register ( struct mmu_notifier * subscription , struct mm_struct * mm )
+
+Register a notifier on a mm
+
+Parameters
+  struct mmu_notifier *subscription
+    The notifier to attach
+  struct mm_struct *mm
+    The mm to attach the notifier to
+
+Description
+  Must not hold mmap_lock nor any other VM related lock when calling
+this registration function. Must also ensure mm_users can’t go down
+to zero while this runs to avoid races with mmu_notifier_release,
+so mm has to be current->mm or the mm should be pinned safely such
+as with get_task_mm() . If the mm is not current->mm, the mm_users
+pin should be released by calling mmput after mmu_notifier_register
+returns.

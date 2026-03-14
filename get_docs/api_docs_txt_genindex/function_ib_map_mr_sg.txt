@@ -1,0 +1,18 @@
+Function: int ib_map_mr_sg ( struct ib_mr * mr , struct scatterlist * sg , int sg_nents , unsigned int * sg_offset , unsigned int page_size )
+
+Map the largest prefix of a dma mapped SG list and set it the memory region.
+
+Parameters
+  struct ib_mr *mr
+    memory region
+  struct scatterlist *sg
+    dma mapped scatterlist
+  int sg_nents
+    number of entries in sg
+  unsigned int *sg_offset
+    offset in bytes into sg
+  unsigned int page_size
+    page vector desired page size
+
+Description
+  Constraints:

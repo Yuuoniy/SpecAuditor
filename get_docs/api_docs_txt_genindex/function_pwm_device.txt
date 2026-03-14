@@ -1,0 +1,19 @@
+Function: struct pwm_device
+
+PWM channel object
+
+Members
+  label
+    name of the PWM device
+  flags
+    flags associated with the PWM device
+  hwpwm
+    per-chip relative index of the PWM device
+  chip
+    PWM chip providing this PWM device
+  args
+    PWM arguments
+  state
+    last applied state
+  last
+    last implemented state (for PWM_DEBUG)

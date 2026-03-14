@@ -1,0 +1,10 @@
+Function: void ata_force_pflags ( struct ata_port * ap )
+
+force port flags according to libata.force
+
+Parameters
+  struct ata_port *ap
+    ATA port of interest
+
+Description
+  Force port flags according to libata.force and whine about it.

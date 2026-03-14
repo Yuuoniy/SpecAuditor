@@ -1,0 +1,10 @@
+Function: void xprt_pin_rqst ( struct rpc_rqst * req )
+
+Pin a request on the transport receive list
+
+Parameters
+  struct rpc_rqst *req
+    Request to pin
+
+Description
+  Caller must ensure this is atomic with the call to xprt_lookup_rqst() so should be holding xprt->queue_lock.

@@ -1,0 +1,16 @@
+Function: u32 rio_mport_get_efb ( struct rio_mport * port , int local , u16 destid , u8 hopcount , u32 from )
+
+get pointer to next extended features block
+
+Parameters
+  struct rio_mport *port
+    Master port to issue transaction
+  int local
+    Indicate a local master port or remote device access
+  u16 destid
+    Destination ID of the device
+  u8 hopcount
+    Number of switch hops to the device
+  u32 from
+    Offset of  current Extended Feature block header (if 0 starts
+from ExtFeaturePtr)

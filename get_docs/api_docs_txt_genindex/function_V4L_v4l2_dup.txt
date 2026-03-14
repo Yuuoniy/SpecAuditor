@@ -1,0 +1,3 @@
+Function: int v4l2_dup ( int fd )
+
+operates like the libc dup() function, duplicating a file handler.

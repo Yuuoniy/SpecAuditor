@@ -1,0 +1,13 @@
+Function: int pcie_set_readrq ( struct pci_dev * dev , int rq )
+
+set PCI Express maximum memory read request
+
+Parameters
+  struct pci_dev *dev
+    PCI device to query
+  int rq
+    maximum memory read count in bytes
+valid values are 128, 256, 512, 1024, 2048, 4096
+
+Description
+  If possible sets maximum memory read request in bytes

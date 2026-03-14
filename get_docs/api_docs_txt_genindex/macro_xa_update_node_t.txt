@@ -1,0 +1,12 @@
+Macro: xa_update_node_t
+
+Typedef : A callback function from the XArray.
+
+Parameters
+  struct xa_node *node
+    The node which is being processed
+
+Description
+  This function is called every time the XArray updates the count of
+present and value entries in a node.  It allows advanced users to
+maintain the private_list in the node.

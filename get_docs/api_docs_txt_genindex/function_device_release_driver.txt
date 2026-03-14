@@ -1,0 +1,11 @@
+Function: void device_release_driver ( struct device * dev )
+
+manually detach device from driver.
+
+Parameters
+  struct device *dev
+    device.
+
+Description
+  Manually detach device from driver.
+When called for a USB interface, dev->parent lock must be held.

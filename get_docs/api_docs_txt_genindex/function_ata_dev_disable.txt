@@ -1,0 +1,10 @@
+Function: void ata_dev_disable ( struct ata_device * dev )
+
+disable ATA device
+
+Parameters
+  struct ata_device *dev
+    ATA device to disable
+
+Description
+  Disable dev .

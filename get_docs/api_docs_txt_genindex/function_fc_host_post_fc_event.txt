@@ -1,0 +1,17 @@
+Function: void fc_host_post_fc_event ( struct Scsi_Host * shost , u32 event_number , enum fc_host_event_code event_code , u32 data_len , char * data_buf , u64 vendor_id )
+
+routine to do the work of posting an event on an fc_host.
+
+Parameters
+  struct Scsi_Host *shost
+    host the event occurred on
+  u32 event_number
+    fc event number obtained from get_fc_event_number()
+  enum fc_host_event_code event_code
+    fc_host event being posted
+  u32 data_len
+    amount, in bytes, of event data
+  char *data_buf
+    pointer to event data
+  u64 vendor_id
+    value for Vendor id

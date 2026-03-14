@@ -1,0 +1,10 @@
+Function: void intel_dsb_commit ( struct intel_dsb * dsb )
+
+Trigger workload execution of DSB.
+
+Parameters
+  struct intel_dsb *dsb
+    DSB context
+
+Description
+  This function is used to do actual write to hardware using DSB.

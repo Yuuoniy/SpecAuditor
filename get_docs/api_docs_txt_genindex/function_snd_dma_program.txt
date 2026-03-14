@@ -1,0 +1,16 @@
+Function: void snd_dma_program ( unsigned long dma , unsigned long addr , unsigned int size , unsigned short mode )
+
+program an ISA DMA transfer
+
+Parameters
+  unsigned long dma
+    the dma number
+  unsigned long addr
+    the physical address of the buffer
+  unsigned int size
+    the DMA transfer size
+  unsigned short mode
+    the DMA transfer mode, DMA_MODE_XXX
+
+Description
+  Programs an ISA DMA transfer for the given buffer.

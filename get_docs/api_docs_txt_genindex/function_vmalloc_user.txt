@@ -1,0 +1,11 @@
+Function: void * vmalloc_user ( unsigned long size )
+
+allocate zeroed virtually contiguous memory for userspace
+
+Parameters
+  unsigned long size
+    allocation size
+
+Description
+  The resulting memory area is zeroed so it can be mapped to userspace
+without leaking data.

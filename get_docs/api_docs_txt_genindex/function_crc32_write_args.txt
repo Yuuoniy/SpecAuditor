@@ -1,0 +1,17 @@
+Function: struct crc32_write_args
+
+Arguments in order to write the CRC at the end of the PSI tables.
+
+Members
+  dest_buf
+    The buffer to write into.
+  dest_offset
+    where to start writing in the dest_buffer.
+  crc
+    the CRC value to write
+  pid
+    TS packet ID.
+  continuity_counter
+    Incremented on every new packet.
+  dest_buf_sz
+    The size of the dest_buffer

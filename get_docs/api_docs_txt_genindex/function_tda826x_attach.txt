@@ -1,0 +1,13 @@
+Function: struct dvb_frontend * tda826x_attach ( struct dvb_frontend * fe , int addr , struct i2c_adapter * i2c , int has_loopthrough )
+
+Attach a tda826x tuner to the supplied frontend structure.
+
+Parameters
+  struct dvb_frontend *fe
+    Frontend to attach to.
+  int addr
+    i2c address of the tuner.
+  struct i2c_adapter *i2c
+    i2c adapter to use.
+  int has_loopthrough
+    Set to 1 if the card has a loopthrough RF connector.

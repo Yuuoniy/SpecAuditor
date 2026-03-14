@@ -1,0 +1,9 @@
+Struct: struct irq_affinity_desc
+
+Interrupt affinity descriptor
+
+Members
+  mask
+    cpumask to hold the affinity assignment
+  is_managed
+    1 if the interrupt is managed internally

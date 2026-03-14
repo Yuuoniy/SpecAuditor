@@ -1,0 +1,14 @@
+Function: void xas_free_nodes ( struct xa_state * xas , struct xa_node * top )
+
+Free this node and all nodes that it references
+
+Parameters
+  struct xa_state *xas
+    Array operation state.
+  struct xa_node *top
+    Node to free
+
+Description
+  This node has been removed from the tree.  We must now free it and all
+of its subnodes.  There may be RCU walkers with references into the tree,
+so we must replace all entries with retry markers.

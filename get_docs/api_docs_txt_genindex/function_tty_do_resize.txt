@@ -1,0 +1,13 @@
+Function: int tty_do_resize ( struct tty_struct * tty , struct winsize * ws )
+
+resize event
+
+Parameters
+  struct tty_struct *tty
+    tty being resized
+  struct winsize *ws
+    new dimensions
+
+Description
+  Update the termios variables and send the necessary signals to peform a
+terminal resize correctly.

@@ -1,0 +1,11 @@
+Function: void input_unregister_handle ( struct input_handle * handle )
+
+unregister an input handle
+
+Parameters
+  struct input_handle *handle
+    handle to unregister
+
+Description
+  This function removes input handle from device’s
+and handler’s lists.

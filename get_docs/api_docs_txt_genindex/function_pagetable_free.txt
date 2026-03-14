@@ -1,0 +1,11 @@
+Function: void pagetable_free ( struct ptdesc * pt )
+
+Free pagetables
+
+Parameters
+  struct ptdesc *pt
+    The page table descriptor
+
+Description
+  pagetable_free frees the memory of all page tables described by a page
+table descriptor and the memory for the descriptor itself.

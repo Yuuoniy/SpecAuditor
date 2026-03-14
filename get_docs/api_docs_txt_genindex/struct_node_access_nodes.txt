@@ -1,0 +1,13 @@
+Struct: struct node_access_nodes
+
+Access class device to hold user visible relationships to other nodes.
+
+Members
+  dev
+    Device for this memory access class
+  list_node
+    List element in the node’s access list
+  access
+    The access class rank
+  coord
+    Heterogeneous memory performance coordinates

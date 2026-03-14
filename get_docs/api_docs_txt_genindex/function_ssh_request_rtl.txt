@@ -1,0 +1,7 @@
+Function: struct ssh_rtl * ssh_request_rtl ( struct ssh_request * rqst )
+
+Get request transport layer associated with request.
+
+Parameters
+  struct ssh_request *rqst
+    The request to get the request transport layer reference for.

@@ -1,0 +1,17 @@
+Function: ssize_t mipi_dsi_dcs_write ( struct mipi_dsi_device * dsi , u8 cmd , const void * data , size_t len )
+
+send DCS write command
+
+Parameters
+  struct mipi_dsi_device *dsi
+    DSI peripheral device
+  u8 cmd
+    DCS command
+  const void *data
+    buffer containing the command payload
+  size_t len
+    command payload length
+
+Description
+  This function will automatically choose the right data type depending on
+the command payload length.

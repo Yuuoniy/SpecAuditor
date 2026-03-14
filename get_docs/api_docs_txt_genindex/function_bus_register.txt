@@ -1,0 +1,12 @@
+Function: int bus_register ( const struct bus_type * bus )
+
+register a driver-core subsystem
+
+Parameters
+  const struct bus_type *bus
+    bus to register
+
+Description
+  Once we have that, we register the bus with the kobject
+infrastructure, then register the children subsystems it has:
+the devices and drivers that belong to the subsystem.

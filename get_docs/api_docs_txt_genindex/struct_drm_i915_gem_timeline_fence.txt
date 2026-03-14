@@ -1,0 +1,16 @@
+Struct: struct drm_i915_gem_timeline_fence
+
+An input or output timeline fence.
+
+Members
+  handle
+    User’s handle for a drm_syncobj to wait on or signal.
+  flags
+    Supported flags are: I915_TIMELINE_FENCE_WAIT:
+Wait for the input fence before the operation. I915_TIMELINE_FENCE_SIGNAL:
+Return operation completion fence as output.
+  value
+    A point in the timeline.
+Value must be 0 for a binary drm_syncobj. A Value of 0 for a
+timeline drm_syncobj is invalid as it turns a drm_syncobj into a
+binary one.

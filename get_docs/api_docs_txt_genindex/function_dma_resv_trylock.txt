@@ -1,0 +1,13 @@
+Function: bool dma_resv_trylock ( struct dma_resv * obj )
+
+trylock the reservation object
+
+Parameters
+  struct dma_resv *obj
+    the reservation object
+
+Description
+  Tries to lock the reservation object for exclusive access and modification.
+Note, that the lock is only against other writers, readers will run
+concurrently with a writer under RCU. The seqlock is used to notify readers
+if they overlap with a writer.

@@ -1,0 +1,16 @@
+Function: int drm_privacy_screen_set_sw_state ( struct drm_privacy_screen * priv , enum drm_privacy_screen_status sw_state )
+
+set a privacy-screen’s sw-state
+
+Parameters
+  struct drm_privacy_screen *priv
+    privacy screen to set the sw-state for
+  enum drm_privacy_screen_status sw_state
+    new sw-state value to set
+
+Description
+  Set the sw-state of a privacy screen. If the privacy-screen is not
+in a locked hw-state, then the actual and hw-state of the privacy-screen
+will be immediately updated to the new value. If the privacy-screen is
+in a locked hw-state, then the new sw-state will be remembered as the
+requested state to put the privacy-screen in when it becomes unlocked.

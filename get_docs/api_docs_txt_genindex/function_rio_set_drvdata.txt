@@ -1,0 +1,13 @@
+Function: void rio_set_drvdata ( struct rio_dev * rdev , void * data )
+
+Set RIO driver specific data
+
+Parameters
+  struct rio_dev *rdev
+    RIO device
+  void *data
+    Pointer to driver specific data
+
+Description
+  Set RIO driver specific data. device struct driver data pointer
+is set to the data argument.

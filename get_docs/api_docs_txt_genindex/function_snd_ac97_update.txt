@@ -1,0 +1,15 @@
+Function: int snd_ac97_update ( struct snd_ac97 * ac97 , unsigned short reg , unsigned short value )
+
+update the value on the given register
+
+Parameters
+  struct snd_ac97 *ac97
+    the ac97 instance
+  unsigned short reg
+    the register to change
+  unsigned short value
+    the value to set
+
+Description
+  Compares the value with the register cache and updates the value
+only when the value is changed.

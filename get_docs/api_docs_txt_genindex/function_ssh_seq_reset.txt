@@ -1,0 +1,7 @@
+Function: void ssh_seq_reset ( struct ssh_seq_counter * c )
+
+Reset/initialize sequence ID counter.
+
+Parameters
+  struct ssh_seq_counter *c
+    The counter to reset.

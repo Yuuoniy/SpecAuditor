@@ -1,0 +1,20 @@
+Function: phys_addr_t __init_memblock __memblock_find_range_top_down ( phys_addr_t start , phys_addr_t end , phys_addr_t size , phys_addr_t align , int nid , enum memblock_flags flags )
+
+find free area utility, in top-down
+
+Parameters
+  phys_addr_t start
+    start of candidate range
+  phys_addr_t end
+    end of candidate range, can be MEMBLOCK_ALLOC_ANYWHERE or MEMBLOCK_ALLOC_ACCESSIBLE
+  phys_addr_t size
+    size of free area to find
+  phys_addr_t align
+    alignment of free area to find
+  int nid
+    nid of the free area to find, NUMA_NO_NODE for any node
+  enum memblock_flags flags
+    pick from blocks based on memory attributes
+
+Description
+  Utility called from memblock_find_in_range_node() , find free area top-down.

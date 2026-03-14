@@ -1,0 +1,14 @@
+Function: void pwm_get_state ( const struct pwm_device * pwm , struct pwm_state * state )
+
+retrieve the current PWM state
+
+Parameters
+  const struct pwm_device *pwm
+    PWM device
+  struct pwm_state *state
+    state to fill with the current PWM state
+
+Description
+  The returned PWM state represents the state that was applied by a previous call to pwm_apply_might_sleep() . Drivers may have to slightly tweak that state before programming it to
+hardware. If pwm_apply_might_sleep() was never called, this returns either the current hardware
+state (if supported) or the default settings.

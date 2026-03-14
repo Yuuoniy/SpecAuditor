@@ -1,0 +1,13 @@
+Function: struct clk * devm_v4l2_sensor_clk_get ( struct device * dev , const char * id )
+
+lookup and obtain a reference to a clock producer for a camera sensor
+
+Parameters
+  struct device *dev
+    device for v4l2 sensor clock “consumer”
+  const char *id
+    clock consumer ID
+
+Description
+  This function behaves the same way as devm_clk_get() except where there
+is no clock producer like in ACPI-based platforms.

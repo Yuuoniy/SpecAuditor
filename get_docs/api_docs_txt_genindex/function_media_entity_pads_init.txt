@@ -1,0 +1,14 @@
+Function: int media_entity_pads_init ( struct media_entity * entity , u16 num_pads , struct media_pad * pads )
+
+Initialize the entity pads
+
+Parameters
+  struct media_entity *entity
+    entity where the pads belong
+  u16 num_pads
+    total number of sink and source pads
+  struct media_pad *pads
+    Array of num_pads pads.
+
+Description
+  The pads array is managed by the entity driver and passed to media_entity_pads_init() where its pointer will be stored in the media_entity structure.

@@ -1,0 +1,11 @@
+Macro: to_ssam_device_driver
+
+
+
+Parameters
+  d
+    The driver to cast.
+
+Description
+  Casts the given struct device_driver to a struct ssam_device_driver . The
+caller has to ensure that the given driver is actually enclosed in a struct ssam_device_driver .

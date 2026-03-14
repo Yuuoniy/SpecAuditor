@@ -1,0 +1,15 @@
+Function: int phy_modify_mmd_changed ( struct phy_device * phydev , int devad , u32 regnum , u16 mask , u16 set )
+
+Function for modifying a register on MMD
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+  int devad
+    the MMD containing register to modify
+  u32 regnum
+    register number to modify
+  u16 mask
+    bit mask of bits to clear
+  u16 set
+    new value of bits set in mask to write to regnum

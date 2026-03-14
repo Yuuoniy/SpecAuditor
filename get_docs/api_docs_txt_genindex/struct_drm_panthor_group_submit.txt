@@ -1,0 +1,11 @@
+Struct: struct drm_panthor_group_submit
+
+Arguments passed to DRM_IOCTL_PANTHOR_GROUP_SUBMIT
+
+Members
+  group_handle
+    Handle of the group to queue jobs to.
+  pad
+    MBZ.
+  queue_submits
+    Array of drm_panthor_queue_submit objects.

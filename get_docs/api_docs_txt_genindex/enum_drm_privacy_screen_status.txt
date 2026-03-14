@@ -1,0 +1,3 @@
+Enum: enum drm_privacy_screen_status
+
+privacy screen status

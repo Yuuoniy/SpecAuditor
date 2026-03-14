@@ -1,0 +1,12 @@
+Function: long sys_tkill ( pid_t pid , int sig )
+
+send signal to one specific task
+
+Parameters
+  pid_t pid
+    the PID of the task
+  int sig
+    signal to be sent
+
+Description
+  Send a signal to only one task, even if it’s a CLONE_THREAD task.

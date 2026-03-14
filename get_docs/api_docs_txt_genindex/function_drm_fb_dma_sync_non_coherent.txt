@@ -1,0 +1,17 @@
+Function: void drm_fb_dma_sync_non_coherent ( struct drm_device * drm , struct drm_plane_state * old_state , struct drm_plane_state * state )
+
+Sync GEM object to non-coherent backing memory
+
+Parameters
+  struct drm_device *drm
+    DRM device
+  struct drm_plane_state *old_state
+    Old plane state
+  struct drm_plane_state *state
+    New plane state
+
+Description
+  This function can be used by drivers that use damage clips and have
+DMA GEM objects backed by non-coherent memory. Calling this function
+in a plane’s .atomic_update ensures that all the data in the backing
+memory have been written to RAM.

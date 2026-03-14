@@ -1,0 +1,11 @@
+Function: int snd_pcm_hw_param_value ( const struct snd_pcm_hw_params * params , snd_pcm_hw_param_t var , int * dir )
+
+return params field var value
+
+Parameters
+  const struct snd_pcm_hw_params *params
+    the hw_params instance
+  snd_pcm_hw_param_t var
+    parameter to retrieve
+  int *dir
+    pointer to the direction (-1,0,1) or NULL

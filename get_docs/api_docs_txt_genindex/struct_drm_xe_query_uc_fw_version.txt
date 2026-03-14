@@ -1,0 +1,21 @@
+Struct: struct drm_xe_query_uc_fw_version
+
+query a micro-controller firmware version
+
+Members
+  uc_type
+    The micro-controller type to query firmware version
+  pad
+    MBZ
+  branch_ver
+    branch uc fw version
+  major_ver
+    major uc fw version
+  minor_ver
+    minor uc fw version
+  patch_ver
+    patch uc fw version
+  pad2
+    MBZ
+  reserved
+    Reserved

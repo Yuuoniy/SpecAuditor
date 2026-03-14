@@ -1,0 +1,13 @@
+Macro: hlist_for_each_entry_safe
+
+
+
+Parameters
+  pos
+    the type * to use as a loop cursor.
+  n
+    a struct hlist_node to use as temporary storage
+  head
+    the head for your list.
+  member
+    the name of the hlist_node within the struct.

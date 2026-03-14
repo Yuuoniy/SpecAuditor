@@ -1,0 +1,9 @@
+Function: int ep_loop_check_proc ( struct eventpoll * ep , int depth )
+
+verify that adding an epoll file ep inside another epoll file does not create closed loops, and determine the depth of the subtree starting at ep
+
+Parameters
+  struct eventpoll *ep
+    the struct eventpoll to be currently checked.
+  int depth
+    Current depth of the path being checked.

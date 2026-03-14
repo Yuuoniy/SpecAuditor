@@ -1,0 +1,7 @@
+Function: int rio_chk_dev_access ( struct rio_dev * rdev )
+
+Validate access to the specified device.
+
+Parameters
+  struct rio_dev *rdev
+    Pointer to RIO device control structure

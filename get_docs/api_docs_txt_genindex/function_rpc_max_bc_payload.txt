@@ -1,0 +1,7 @@
+Function: size_t rpc_max_bc_payload ( struct rpc_clnt * clnt )
+
+Get maximum backchannel payload size, in bytes
+
+Parameters
+  struct rpc_clnt *clnt
+    RPC client to query

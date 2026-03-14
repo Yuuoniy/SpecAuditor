@@ -1,0 +1,9 @@
+Function: enum ctucan_txtb_status ctucan_get_tx_status ( struct ctucan_priv * priv , u8 buf )
+
+Gets status of TXT buffer
+
+Parameters
+  struct ctucan_priv *priv
+    Pointer to private data
+  u8 buf
+    Buffer index (0-based)

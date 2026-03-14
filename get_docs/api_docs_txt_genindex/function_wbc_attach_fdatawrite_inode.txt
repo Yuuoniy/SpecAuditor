@@ -1,0 +1,14 @@
+Function: void wbc_attach_fdatawrite_inode ( struct writeback_control * wbc , struct inode * inode )
+
+associate wbc and inode for fdatawrite
+
+Parameters
+  struct writeback_control *wbc
+    writeback_control of interest
+  struct inode *inode
+    target inode
+
+Description
+  This function is to be used by __filemap_fdatawrite_range() , which is an
+alternative entry point into writeback code, and first ensures inode is
+associated with a bdi_writeback and attaches it to wbc .

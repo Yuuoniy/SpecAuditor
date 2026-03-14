@@ -1,0 +1,14 @@
+Function: int tty_insert_flip_string_and_push_buffer ( struct tty_port * port , const u8 * chars , size_t size )
+
+add characters to the tty buffer and push
+
+Parameters
+  struct tty_port *port
+    tty port
+  const u8 *chars
+    characters
+  size_t size
+    size
+
+Description
+  The function combines tty_insert_flip_string() and tty_flip_buffer_push() with the exception of properly holding the port->lock .

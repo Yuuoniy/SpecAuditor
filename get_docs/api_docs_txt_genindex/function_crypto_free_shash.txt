@@ -1,0 +1,10 @@
+Function: void crypto_free_shash ( struct crypto_shash * tfm )
+
+zeroize and free the message digest handle
+
+Parameters
+  struct crypto_shash *tfm
+    cipher handle to be freed
+
+Description
+  If tfm is a NULL or error pointer, this function does nothing.

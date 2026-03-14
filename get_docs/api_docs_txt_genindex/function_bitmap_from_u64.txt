@@ -1,0 +1,14 @@
+Function: void bitmap_from_u64 ( unsigned long * dst , u64 mask )
+
+Check and swap words within u64.
+
+Parameters
+  unsigned long *dst
+    destination bitmap
+  u64 mask
+    source bitmap
+
+Description
+  In 32-bit Big Endian kernel, when using (u32 *)(:c:type:`val`)[*] to read u64 mask, we will get the wrong word.
+That is (u32 *)(:c:type:`val`)[0] gets the upper 32 bits,
+but we expect the lower 32-bits of u64.

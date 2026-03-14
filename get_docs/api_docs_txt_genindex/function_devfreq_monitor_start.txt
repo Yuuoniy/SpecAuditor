@@ -1,0 +1,14 @@
+Function: void devfreq_monitor_start ( struct devfreq * devfreq )
+
+Start load monitoring of devfreq instance
+
+Parameters
+  struct devfreq *devfreq
+    the devfreq instance.
+
+Description
+  Helper function for starting devfreq device load monitoring. By default,
+deferrable timer is used for load monitoring. But the users can change this
+behavior using the “timer” type in devfreq_dev_profile. This function will be
+called by devfreq governor in response to the DEVFREQ_GOV_START event
+generated while adding a device to the devfreq framework.

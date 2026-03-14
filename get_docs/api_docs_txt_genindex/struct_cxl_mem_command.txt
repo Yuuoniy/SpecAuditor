@@ -1,0 +1,11 @@
+Struct: struct cxl_mem_command
+
+Driver representation of a memory device command
+
+Members
+  info
+    Command information as it exists for the UAPI
+  opcode
+    The actual bits used for the mailbox protocol
+  flags
+    Set of flags effecting driver behavior.

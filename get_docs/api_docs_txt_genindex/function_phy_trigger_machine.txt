@@ -1,0 +1,7 @@
+Function: void phy_trigger_machine ( struct phy_device * phydev )
+
+Trigger the state machine to run now
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct

@@ -1,0 +1,11 @@
+Function: unsigned int drm_crtc_index ( const struct drm_crtc * crtc )
+
+find the index of a registered CRTC
+
+Parameters
+  const struct drm_crtc *crtc
+    CRTC to find index for
+
+Description
+  Given a registered CRTC, return the index of that CRTC within a DRM
+device’s list of CRTCs.

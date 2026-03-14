@@ -1,0 +1,20 @@
+Function: int security_inode_setsecctx ( struct dentry * dentry , void * ctx , u32 ctxlen )
+
+Change the security label of an inode
+
+Parameters
+  struct dentry *dentry
+    inode
+  void *ctx
+    secctx
+  u32 ctxlen
+    length of secctx
+
+Description
+  Change the security context of an inode.  Updates the incore security
+context managed by the security module and invokes the fs code as needed
+(via __vfs_setxattr_noperm) to update any backing xattrs that represent the
+context.  Example usage: NFS server invokes this hook to change the security
+context in its incore inode and on the backing filesystem to a value
+provided by the client on a SETATTR operation.  Must be called with
+inode->i_mutex locked.

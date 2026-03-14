@@ -1,0 +1,19 @@
+Function: int snd_card_rw_proc_new ( struct snd_card * card , const char * name , void * private_data , void ( * read ) ( struct snd_info_entry * , struct snd_info_buffer * ) , void ( * write ) ( struct snd_info_entry * entry , struct snd_info_buffer * buffer ) )
+
+Create a read/write text proc file entry for the card
+
+Parameters
+  struct snd_card *card
+    the card instance
+  const char *name
+    the file name
+  void *private_data
+    the arbitrary private data
+  void (*read)(struct snd_info_entry *, struct snd_info_buffer *)
+    the read callback
+  void (*write)(struct snd_info_entry *entry, struct snd_info_buffer *buffer)
+    the write callback, NULL for read-only
+
+Description
+  This proc file entry will be registered via snd_card_register() call, and
+it will be removed automatically at the card removal, too.

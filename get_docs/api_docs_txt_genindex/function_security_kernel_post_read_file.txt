@@ -1,0 +1,18 @@
+Function: int security_kernel_post_read_file ( struct file * file , char * buf , loff_t size , enum kernel_read_file_id id )
+
+Read a file specified by userspace
+
+Parameters
+  struct file *file
+    file
+  char *buf
+    file contents
+  loff_t size
+    size of file contents
+  enum kernel_read_file_id id
+    file identifier
+
+Description
+  Read a file specified by userspace.  This must be paired with a prior call
+to security_kernel_read_file() call that indicated this hook would also be
+called, see security_kernel_read_file() for more information.

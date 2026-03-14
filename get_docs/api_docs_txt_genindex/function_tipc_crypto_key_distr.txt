@@ -1,0 +1,11 @@
+Function: int tipc_crypto_key_distr ( struct tipc_crypto * tx , u8 key , struct tipc_node * dest )
+
+Distribute a TX key
+
+Parameters
+  struct tipc_crypto *tx
+    the TX crypto
+  u8 key
+    the key’s index
+  struct tipc_node *dest
+    the destination tipc node, = NULL if distributing to all nodes

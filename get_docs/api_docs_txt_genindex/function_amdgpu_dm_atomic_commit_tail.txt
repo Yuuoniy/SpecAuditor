@@ -1,0 +1,12 @@
+Function: void amdgpu_dm_atomic_commit_tail ( struct drm_atomic_state * state )
+
+AMDgpu DM’s commit tail implementation.
+
+Parameters
+  struct drm_atomic_state *state
+    The atomic state to commit
+
+Description
+  This will tell DC to commit the constructed DC state from atomic_check,
+programming the hardware. Any failures here implies a hardware failure, since
+atomic check should have filtered anything non-kosher.

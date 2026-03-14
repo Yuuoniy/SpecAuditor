@@ -1,0 +1,28 @@
+Function: int usb_control_msg ( struct usb_device * dev , unsigned int pipe , __u8 request , __u8 requesttype , __u16 value , __u16 index , void * data , __u16 size , int timeout )
+
+Builds a control urb, sends it off and waits for completion
+
+Parameters
+  struct usb_device *dev
+    pointer to the usb device to send the message to
+  unsigned int pipe
+    endpoint “pipe” to send the message to
+  __u8 request
+    USB message request value
+  __u8 requesttype
+    USB message request type value
+  __u16 value
+    USB message value
+  __u16 index
+    USB message index value
+  void *data
+    pointer to the data to send
+  __u16 size
+    length in bytes of the data to send
+  int timeout
+    time in msecs to wait for the message to complete before timing
+out (if 0 the wait is forever)
+
+Description
+  This function sends a simple control message to a specified endpoint and
+waits for the message to complete, or timeout.

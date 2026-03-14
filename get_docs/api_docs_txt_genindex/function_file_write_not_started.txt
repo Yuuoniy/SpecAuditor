@@ -1,0 +1,12 @@
+Function: bool file_write_not_started ( const struct file * file )
+
+check if SB_FREEZE_WRITE is not held
+
+Parameters
+  const struct file *file
+    the file we write to
+
+Description
+  May be false positive with !CONFIG_LOCKDEP/LOCK_STATE_UNKNOWN.
+May be false positive with !S_ISREG, because file_start_write() has
+no effect on !S_ISREG.

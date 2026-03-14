@@ -1,0 +1,10 @@
+Function: void vga_switcheroo_unregister_handler ( void )
+
+unregister handler
+
+Parameters
+  void
+    no arguments
+
+Description
+  Unregister handler. Disable vga_switcheroo.

@@ -1,0 +1,7 @@
+Function: void gpiod_toggle_active_low ( struct gpio_desc * desc )
+
+toggle whether a GPIO is active-low or not
+
+Parameters
+  struct gpio_desc *desc
+    the gpio descriptor to change

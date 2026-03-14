@@ -1,0 +1,16 @@
+Function: void * mt_next ( struct maple_tree * mt , unsigned long index , unsigned long max )
+
+get the next value in the maple tree
+
+Parameters
+  struct maple_tree *mt
+    The maple tree
+  unsigned long index
+    The start index
+  unsigned long max
+    The maximum index to check
+
+Description
+  Takes RCU read lock internally to protect the search, which does not
+protect the returned pointer after dropping RCU read lock.
+See also: Maple Tree

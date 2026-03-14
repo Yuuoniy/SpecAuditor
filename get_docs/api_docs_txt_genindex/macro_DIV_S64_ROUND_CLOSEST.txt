@@ -1,0 +1,13 @@
+Macro: DIV_S64_ROUND_CLOSEST
+
+
+
+Parameters
+  dividend
+    signed 64bit dividend
+  divisor
+    signed 32bit divisor
+
+Description
+  Divide signed 64bit dividend by signed 32bit divisor
+and round to closest integer.

@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Kernel subsystem documentation &#8212; The Linux Kernel  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Memory Management Documentation" href="mm/index.html" />
+    <link rel="prev" title="Writing Device Drivers for Zorro Devices" href="driver-api/zorro.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="index.html">The Linux Kernel</a></h1>
+
+
+
+<p class="blurb">6.18.0-rc1</p>
+
+
+
+
+
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+<p>
+<h3 class="kernel-toc-contents">Contents</h3>
+<input type="checkbox" class="kernel-toc-toggle" id = "kernel-toc-toggle" checked>
+<label class="kernel-toc-title" for="kernel-toc-toggle"></label>
+
+<div class="kerneltoc" id="kerneltoc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="process/development-process.html">Development process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="process/submitting-patches.html">Submitting patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="process/code-of-conduct.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maintainer/index.html">Maintainer handbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="process/index.html">All development-process docs</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="core-api/index.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driver-api/index.html">Driver APIs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Subsystems</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#core-subsystems">Core subsystems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="core-api/index.html">Core API Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="driver-api/index.html">Driver implementer’s API guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mm/index.html">Memory Management Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="power/index.html">Power Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scheduler/index.html">Scheduler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timers/index.html">Timers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="locking/index.html">Locking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#human-interfaces">Human interfaces</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="input/index.html">Input Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hid/index.html">Human Interface Devices (HID)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sound/index.html">Sound Subsystem Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gpu/index.html">GPU Driver Developer’s Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fb/index.html">Frame Buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leds/index.html">LEDs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#networking-interfaces">Networking interfaces</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking/index.html">Networking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="netlabel/index.html">NetLabel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="infiniband/index.html">InfiniBand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="isdn/index.html">ISDN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mhi/index.html">MHI</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#storage-interfaces">Storage interfaces</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="filesystems/index.html">Filesystems in the Linux kernel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="block/index.html">Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cdrom/index.html">CD-ROM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scsi/index.html">SCSI Subsystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="target/index.html">TCM Virtual Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nvme/index.html">NVMe Subsystem</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#other-subsystems">Other subsystems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="accounting/index.html">Accounting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpu-freq/index.html">CPUFreq - CPU frequency and voltage scaling code in the Linux(TM) kernel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edac/index.html">EDAC Subsystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fpga/index.html">FPGA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="i2c/index.html">I2C/SMBus Subsystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iio/index.html">Industrial I/O</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pcmcia/index.html">PCMCIA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spi/index.html">Serial Peripheral Interface (SPI)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="w1/index.html">1-Wire Subsystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="watchdog/index.html">Watchdog Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="virt/index.html">Virtualization Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hwmon/index.html">Hardware Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="accel/index.html">Compute Accelerators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="security/index.html">Security Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crypto/index.html">Crypto API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bpf/index.html">BPF Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usb/index.html">USB support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PCI/index.html">PCI Bus Subsystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="misc-devices/index.html">Assorted Miscellaneous Devices Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="peci/index.html">PECI Subsystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wmi/index.html">WMI Subsystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tee/index.html">TEE Subsystem</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="locking/index.html">Locking</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="process/license-rules.html">Licensing rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc-guide/index.html">Writing documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-tools/index.html">Development tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-tools/testing-overview.html">Testing guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel-hacking/index.html">Hacking guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trace/index.html">Tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fault-injection/index.html">Fault injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="livepatch/index.html">Livepatching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rust/index.html">Rust</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kbuild/index.html">Build system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide/reporting-issues.html">Reporting issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools/index.html">Userspace tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userspace-api/index.html">Userspace API</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="firmware-guide/index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devicetree/index.html">Firmware and Devicetree</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="arch/index.html">CPU architectures</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="staging/index.html">Unsorted documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="translations/index.html">Translations</a></li>
+</ul>
+
+</div>
+
+<script type="text/javascript"> <!--
+  var sbar = document.getElementsByClassName("sphinxsidebar")[0];
+  let currents = document.getElementsByClassName("current")
+  if (currents.length) {
+    sbar.scrollTop = currents[currents.length - 1].offsetTop;
+  }
+  --> </script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/subsystem-apis.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+
+
+
+
+<div class="language-selection">
+English
+
+<ul>
+
+<li><a href="translations/zh_CN/subsystem-apis.html">Chinese (Simplified)</a></li>
+
+<li><a href="translations/it_IT/subsystem-apis.html">Italian</a></li>
+
+</ul>
+</div>
+<section id="kernel-subsystem-documentation">
+<h1>Kernel subsystem documentation<a class="headerlink" href="#kernel-subsystem-documentation" title="Permalink to this heading">¶</a></h1>
+<p>These books get into the details of how specific kernel subsystems work
+from the point of view of a kernel developer.  Much of the information here
+is taken directly from the kernel source, with supplemental material added
+as needed (or at least as we managed to add it — probably <em>not</em> all that is
+needed).</p>
+<section id="core-subsystems">
+<h2>Core subsystems<a class="headerlink" href="#core-subsystems" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="core-api/index.html">Core API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driver-api/index.html">Driver implementer’s API guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mm/index.html">Memory Management Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="power/index.html">Power Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scheduler/index.html">Scheduler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timers/index.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="locking/index.html">Locking</a></li>
+</ul>
+</div>
+</section>
+<section id="human-interfaces">
+<h2>Human interfaces<a class="headerlink" href="#human-interfaces" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="input/index.html">Input Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hid/index.html">Human Interface Devices (HID)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sound/index.html">Sound Subsystem Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu/index.html">GPU Driver Developer’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fb/index.html">Frame Buffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leds/index.html">LEDs</a></li>
+</ul>
+</div>
+</section>
+<section id="networking-interfaces">
+<h2>Networking interfaces<a class="headerlink" href="#networking-interfaces" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="networking/index.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netlabel/index.html">NetLabel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infiniband/index.html">InfiniBand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="isdn/index.html">ISDN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mhi/index.html">MHI</a></li>
+</ul>
+</div>
+</section>
+<section id="storage-interfaces">
+<h2>Storage interfaces<a class="headerlink" href="#storage-interfaces" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="filesystems/index.html">Filesystems in the Linux kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="block/index.html">Block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cdrom/index.html">CD-ROM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scsi/index.html">SCSI Subsystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="target/index.html">TCM Virtual Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nvme/index.html">NVMe Subsystem</a></li>
+</ul>
+</div>
+</section>
+<section id="other-subsystems">
+<h2>Other subsystems<a class="headerlink" href="#other-subsystems" title="Permalink to this heading">¶</a></h2>
+<p><strong>Fixme</strong>: much more organizational work is needed here.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="accounting/index.html">Accounting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpu-freq/index.html">CPUFreq - CPU frequency and voltage scaling code in the Linux(TM) kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edac/index.html">EDAC Subsystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fpga/index.html">FPGA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="i2c/index.html">I2C/SMBus Subsystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iio/index.html">Industrial I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pcmcia/index.html">PCMCIA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spi/index.html">Serial Peripheral Interface (SPI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="w1/index.html">1-Wire Subsystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="watchdog/index.html">Watchdog Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virt/index.html">Virtualization Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hwmon/index.html">Hardware Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accel/index.html">Compute Accelerators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security/index.html">Security Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crypto/index.html">Crypto API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpf/index.html">BPF Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usb/index.html">USB support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PCI/index.html">PCI Bus Subsystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc-devices/index.html">Assorted Miscellaneous Devices Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peci/index.html">PECI Subsystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wmi/index.html">WMI Subsystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tee/index.html">TEE Subsystem</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;The kernel development community.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/subsystem-apis.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

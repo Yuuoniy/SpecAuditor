@@ -1,0 +1,14 @@
+Macro: KUNIT_ASSERT_NOT_NULL
+
+
+
+Parameters
+  test
+    The test context object.
+  ptr
+    an arbitrary pointer.
+
+Description
+  Sets an assertion that the values that ptr evaluates to is not null. This
+is the same as KUNIT_EXPECT_NOT_NULL() , except it causes an assertion
+failure (see KUNIT_ASSERT_TRUE() ) when the assertion is not met.

@@ -1,0 +1,13 @@
+Function: void i3c_generic_ibi_recycle_slot ( struct i3c_generic_ibi_pool * pool , struct i3c_ibi_slot * s )
+
+Return a slot to a generic IBI pool
+
+Parameters
+  struct i3c_generic_ibi_pool *pool
+    the pool to return the IBI slot to
+  struct i3c_ibi_slot *s
+    IBI slot to recycle
+
+Description
+  Add an IBI slot back to its generic IBI pool. Should be called from the
+master driver struct_master_controller_ops-> recycle_ibi() method.

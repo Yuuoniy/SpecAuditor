@@ -1,0 +1,9 @@
+Function: void drm_connector_helper_add ( struct drm_connector * connector , const struct drm_connector_helper_funcs * funcs )
+
+sets the helper vtable for a connector
+
+Parameters
+  struct drm_connector *connector
+    DRM connector
+  const struct drm_connector_helper_funcs *funcs
+    helper vtable to set for connector

@@ -1,0 +1,10 @@
+Function: void tty_kclose ( struct tty_struct * tty )
+
+closes tty opened by tty_kopen
+
+Parameters
+  struct tty_struct *tty
+    tty device
+
+Description
+  Performs the final steps to release and free a tty device. It is the same as tty_release_struct() except that it also resets TTY_PORT_KOPENED flag on tty->port .

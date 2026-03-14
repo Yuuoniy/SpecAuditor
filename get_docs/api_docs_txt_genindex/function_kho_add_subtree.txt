@@ -1,0 +1,16 @@
+Function: int kho_add_subtree ( struct kho_serialization * ser , const char * name , void * fdt )
+
+record the physical address of a sub FDT in KHO root tree.
+
+Parameters
+  struct kho_serialization *ser
+    serialization control object passed by KHO notifiers.
+  const char *name
+    name of the sub tree.
+  void *fdt
+    the sub tree blob.
+
+Description
+  Creates a new child node named name in KHO root FDT and records
+the physical address of fdt . The pages of fdt must also be preserved
+by KHO for the new kernel to retrieve it after kexec.

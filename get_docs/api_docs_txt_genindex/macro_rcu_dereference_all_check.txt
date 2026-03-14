@@ -1,0 +1,18 @@
+Macro: rcu_dereference_all_check
+
+
+
+Parameters
+  p
+    The pointer to read, prior to dereferencing
+  c
+    The conditions under which the dereference will take place
+
+Description
+  This is similar to rcu_dereference_check() , but allows protection
+by all forms of vanilla RCU readers, including preemption disabled,
+bh-disabled, and interrupt-disabled regions of code.  Note that “vanilla
+RCU” excludes SRCU and the various Tasks RCU flavors.  Please note
+that this macro should not be backported to any Linux-kernel version
+preceding v5.0 due to changes in synchronize_rcu() semantics prior
+to that version.

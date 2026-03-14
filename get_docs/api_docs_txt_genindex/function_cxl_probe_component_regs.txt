@@ -1,0 +1,15 @@
+Function: void cxl_probe_component_regs ( struct device * dev , void __iomem * base , struct cxl_component_reg_map * map )
+
+Detect CXL Component register blocks
+
+Parameters
+  struct device *dev
+    Host device of the base mapping
+  void __iomem *base
+    Mapping containing the HDM Decoder Capability Header
+  struct cxl_component_reg_map *map
+    Map object describing the register block information found
+
+Description
+  See CXL 2.0 8.2.4 Component Register Layout and Definition
+See CXL 2.0 8.2.5.5 CXL Device Register Interface

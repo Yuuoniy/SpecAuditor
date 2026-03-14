@@ -1,0 +1,12 @@
+Function: bool media_entity_enum_test ( struct media_entity_enum * ent_enum , struct media_entity * entity )
+
+Test whether the entity is marked
+
+Parameters
+  struct media_entity_enum *ent_enum
+    Entity enumeration
+  struct media_entity *entity
+    Entity to be tested
+
+Description
+  Returns true if the entity was marked.

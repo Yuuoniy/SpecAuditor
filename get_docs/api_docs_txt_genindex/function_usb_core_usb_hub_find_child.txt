@@ -1,0 +1,14 @@
+Function: struct usb_device * usb_hub_find_child ( struct usb_device * hdev , int port1 )
+
+Get the pointer of child device attached to the port which is specified by port1 .
+
+Parameters
+  struct usb_device *hdev
+    USB device belonging to the usb hub
+  int port1
+    port num to indicate which port the child device
+is attached to.
+
+Description
+  USB drivers call this function to get hub’s child device
+pointer.

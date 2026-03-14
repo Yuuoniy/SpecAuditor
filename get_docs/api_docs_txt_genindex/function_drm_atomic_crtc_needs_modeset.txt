@@ -1,0 +1,13 @@
+Function: bool drm_atomic_crtc_needs_modeset ( const struct drm_crtc_state * state )
+
+compute combined modeset need
+
+Parameters
+  const struct drm_crtc_state *state
+    drm_crtc_state for the CRTC
+
+Description
+  To give drivers flexibility struct drm_crtc_state has 3 booleans to track
+whether the state CRTC changed enough to need a full modeset cycle:
+mode_changed, active_changed and connectors_changed. This helper simply
+combines these three to compute the overall need for a modeset for state .

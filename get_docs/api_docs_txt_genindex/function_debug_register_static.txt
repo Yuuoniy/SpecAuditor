@@ -1,0 +1,14 @@
+Function: void debug_register_static ( debug_info_t * id , int pages_per_area , int nr_areas )
+
+registers a static debug area
+
+Parameters
+  debug_info_t *id
+    Handle for static debug area
+  int pages_per_area
+    Number of pages per area
+  int nr_areas
+    Number of debug areas
+
+Description
+  Register debug_info_t defined using DEFINE_STATIC_DEBUG_INFO.

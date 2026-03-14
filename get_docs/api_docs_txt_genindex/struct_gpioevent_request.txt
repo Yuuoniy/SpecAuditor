@@ -1,0 +1,18 @@
+Struct: struct gpioevent_request
+
+Information about a GPIO event request
+
+Members
+  lineoffset
+    the desired line to subscribe to events from, specified by
+offset index for the associated GPIO device
+  handleflags
+    desired handle flags for the desired GPIO line, such as GPIOHANDLE_REQUEST_ACTIVE_LOW or GPIOHANDLE_REQUEST_OPEN_DRAIN
+  eventflags
+    desired flags for the desired GPIO event line, such as GPIOEVENT_REQUEST_RISING_EDGE or GPIOEVENT_REQUEST_FALLING_EDGE
+  consumer_label
+    a desired consumer label for the selected GPIO line(s)
+such as “my-listener”
+  fd
+    after a successful GPIO_GET_LINEEVENT_IOCTL operation, contains a
+valid anonymous file descriptor representing the request

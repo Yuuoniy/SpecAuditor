@@ -1,0 +1,7 @@
+Function: void pwm_disable ( struct pwm_device * pwm )
+
+stop a PWM output toggling
+
+Parameters
+  struct pwm_device *pwm
+    PWM device

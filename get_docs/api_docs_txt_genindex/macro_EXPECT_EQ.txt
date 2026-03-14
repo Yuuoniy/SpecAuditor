@@ -1,0 +1,12 @@
+Macro: EXPECT_EQ
+
+
+
+Parameters
+  expected
+    expected value
+  seen
+    measured value
+
+Description
+  EXPECT_EQ(expected, measured): expected == measured

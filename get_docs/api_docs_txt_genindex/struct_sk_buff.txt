@@ -1,0 +1,231 @@
+Struct: struct sk_buff
+
+socket buffer
+
+Members
+  {unnamed_union}
+    anonymous
+  {unnamed_struct}
+    anonymous
+  next
+    Next buffer in list
+  prev
+    Previous buffer in list
+  {unnamed_union}
+    anonymous
+  dev
+    Device we arrived on/are leaving by
+  dev_scratch
+    (aka dev ) alternate use of dev when dev would be NULL
+  rbnode
+    RB tree node, alternative to next/prev for netem/tcp
+  list
+    queue head
+  ll_node
+    anchor in an llist (eg socket defer_list)
+  sk
+    Socket we are owned by
+  {unnamed_union}
+    anonymous
+  tstamp
+    Time we arrived/left
+  skb_mstamp_ns
+    (aka tstamp ) earliest departure time; start point
+for retransmit timer
+  cb
+    Control buffer. Free for use by every layer. Put private vars here
+  {unnamed_union}
+    anonymous
+  {unnamed_struct}
+    anonymous
+  _skb_refdst
+    destination entry (with norefcount bit)
+  destructor
+    Destruct function
+  tcp_tsorted_anchor
+    list structure for TCP (tp->tsorted_sent_queue)
+  _sk_redir
+    socket redirection information for skmsg
+  _nfct
+    Associated connection, if any (with nfctinfo bits)
+  len
+    Length of actual data
+  data_len
+    Data length
+  mac_len
+    Length of link layer header
+  hdr_len
+    writable header length of cloned skb
+  queue_mapping
+    Queue mapping for multiqueue devices
+  cloned
+    Head may be cloned (check refcnt to be sure)
+  nohdr
+    Payload reference only, must not modify header
+  fclone
+    skbuff clone status
+  peeked
+    this packet has been seen already, so stats have been
+done for it, don’t do them again
+  head_frag
+    skb was allocated from page fragments,
+not allocated by kmalloc() or vmalloc() .
+  pfmemalloc
+    skbuff was allocated from PFMEMALLOC reserves
+  pp_recycle
+    mark the packet for recycling instead of freeing (implies
+page_pool support on driver)
+  active_extensions
+    active extensions (skb_ext_id types)
+  pkt_type
+    Packet class
+  ignore_df
+    allow local fragmentation
+  dst_pending_confirm
+    need to confirm neighbour
+  ip_summed
+    Driver fed us an IP checksum
+  ooo_okay
+    allow the mapping of a socket to a queue to be changed
+  tstamp_type
+    When set, skb->tstamp has the
+delivery_time clock base of skb->tstamp.
+  tc_at_ingress
+    used within tc_classify to distinguish in/egress
+  tc_skip_classify
+    do not classify packet. set by IFB device
+  remcsum_offload
+    remote checksum offload is enabled
+  csum_complete_sw
+    checksum was completed by software
+  csum_level
+    indicates the number of consecutive checksums found in
+the packet minus one that have been verified as
+CHECKSUM_UNNECESSARY (max 3)
+  inner_protocol_type
+    whether the inner protocol is
+ENCAP_TYPE_ETHER or ENCAP_TYPE_IPPROTO
+  l4_hash
+    indicate hash is a canonical 4-tuple hash over transport
+ports.
+  sw_hash
+    indicates hash was computed in software stack
+  wifi_acked_valid
+    wifi_acked was set
+  wifi_acked
+    whether frame was acked on wifi or not
+  no_fcs
+    Request NIC to treat last 4 bytes as Ethernet FCS
+  encapsulation
+    indicates the inner headers in the skbuff are valid
+  encap_hdr_csum
+    software checksum is needed
+  csum_valid
+    checksum is already valid
+  ndisc_nodetype
+    router type (from link layer)
+  ipvs_property
+    skbuff is owned by ipvs
+  nf_trace
+    netfilter packet trace flag
+  offload_fwd_mark
+    Packet was L2-forwarded in hardware
+  offload_l3_fwd_mark
+    Packet was L3-forwarded in hardware
+  redirected
+    packet was redirected by packet classifier
+  from_ingress
+    packet was redirected from the ingress path
+  nf_skip_egress
+    packet shall skip nf egress - see netfilter_netdev.h
+  decrypted
+    Decrypted SKB
+  slow_gro
+    state present at GRO time, slower prepare step required
+  csum_not_inet
+    use CRC32c to resolve CHECKSUM_PARTIAL
+  unreadable
+    indicates that at least 1 of the fragments in this skb is
+unreadable.
+  tc_index
+    Traffic control index
+  alloc_cpu
+    CPU which did the skb allocation.
+  {unnamed_union}
+    anonymous
+  csum
+    Checksum (must include start/offset pair)
+  {unnamed_struct}
+    anonymous
+  csum_start
+    Offset from skb->head where checksumming should start
+  csum_offset
+    Offset from csum_start where checksum should be stored
+  priority
+    Packet queueing priority
+  skb_iif
+    ifindex of device we arrived on
+  hash
+    the packet hash
+  {unnamed_union}
+    anonymous
+  vlan_all
+    vlan fields (proto & tci)
+  {unnamed_struct}
+    anonymous
+  vlan_proto
+    vlan encapsulation protocol
+  vlan_tci
+    vlan tag control information
+  {unnamed_union}
+    anonymous
+  napi_id
+    id of the NAPI struct this skb came from
+  sender_cpu
+    (aka napi_id ) source CPU in XPS
+  secmark
+    security marking
+  {unnamed_union}
+    anonymous
+  mark
+    Generic packet mark
+  reserved_tailroom
+    (aka mark ) number of bytes of free space available
+at the tail of an sk_buff
+  {unnamed_union}
+    anonymous
+  inner_protocol
+    Protocol (encapsulation)
+  inner_ipproto
+    (aka inner_protocol ) stores ipproto when
+skb->inner_protocol_type == ENCAP_TYPE_IPPROTO;
+  inner_transport_header
+    Inner transport layer header (encapsulation)
+  inner_network_header
+    Network layer header (encapsulation)
+  inner_mac_header
+    Link layer header (encapsulation)
+  protocol
+    Packet protocol from driver
+  transport_header
+    Transport layer header
+  network_header
+    Network layer header
+  mac_header
+    Link layer header
+  kcov_handle
+    KCOV remote handle for remote coverage collection
+  tail
+    Tail pointer
+  end
+    End pointer
+  head
+    Head of buffer
+  data
+    Data head pointer
+  truesize
+    Buffer size
+  users
+    User count - see {datagram,tcp}.c
+  extensions
+    allocated extensions, valid if active_extensions is nonzero

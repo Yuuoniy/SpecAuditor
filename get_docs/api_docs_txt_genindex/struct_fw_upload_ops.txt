@@ -1,0 +1,24 @@
+Struct: struct fw_upload_ops
+
+device specific operations to support firmware upload
+
+Members
+  prepare
+    Required: Prepare secure update
+  write
+    Required: The write() op receives the remaining
+size to be written and must return the actual
+size written or a negative error code. The write()
+op will be called repeatedly until all data is
+written.
+  poll_complete
+    Required: Check for the completion of the
+HW authentication/programming process.
+  cancel
+    Required: Request cancellation of update. This op
+is called from the context of a different kernel
+thread, so race conditions need to be considered.
+  cleanup
+    Optional: Complements the prepare() function and is called at the completion
+of the update, on success or failure, if the
+prepare function succeeded.

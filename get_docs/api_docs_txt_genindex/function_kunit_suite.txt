@@ -1,0 +1,19 @@
+Function: struct kunit_suite
+
+describes a related collection of struct kunit_case
+
+Members
+  name
+    the name of the test. Purely informational.
+  suite_init
+    called once per test suite before the test cases.
+  suite_exit
+    called once per test suite after all test cases.
+  init
+    called before every test case.
+  exit
+    called after every test case.
+  test_cases
+    a null terminated array of test cases.
+  attr
+    the attributes associated with the test suite

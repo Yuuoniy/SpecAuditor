@@ -1,0 +1,11 @@
+Function: void mpt_deregister ( u8 cb_idx )
+
+Deregister a protocol drivers resources.
+
+Parameters
+  u8 cb_idx
+    previously registered callback handle
+
+Description
+  Each protocol-specific driver should call this routine when its
+module is unloaded.

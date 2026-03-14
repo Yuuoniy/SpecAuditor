@@ -1,0 +1,11 @@
+Function: bool drm_kms_helper_is_poll_worker ( void )
+
+is current task an output poll worker?
+
+Parameters
+  void
+    no arguments
+
+Description
+  Determine if current task is an output poll worker.  This can be used
+to select distinct code paths for output polling versus other contexts.

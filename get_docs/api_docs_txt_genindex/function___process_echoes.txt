@@ -1,0 +1,11 @@
+Function: size_t __process_echoes ( struct tty_struct * tty )
+
+write pending echo characters
+
+Parameters
+  struct tty_struct *tty
+    terminal device
+
+Description
+  Write previously buffered echo (and other ldisc-generated) characters to the
+tty.

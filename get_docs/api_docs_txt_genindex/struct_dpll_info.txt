@@ -1,0 +1,19 @@
+Struct: struct dpll_info
+
+display PLL platform specific info
+
+Members
+  name
+    DPLL name; used for logging
+  funcs
+    platform specific hooks
+  id
+    unique identifier for this DPLL
+  power_domain
+    extra power domain required by the DPLL
+  always_on
+    Inform the state checker that the DPLL is kept enabled even if
+not in use by any CRTC.
+  is_alt_port_dpll
+    Inform the state checker that the DPLL can be used as a fallback
+(for TC->TBT fallback).

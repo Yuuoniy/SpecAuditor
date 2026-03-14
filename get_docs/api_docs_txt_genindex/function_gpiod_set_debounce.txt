@@ -1,0 +1,9 @@
+Function: int gpiod_set_debounce ( struct gpio_desc * desc , unsigned int debounce )
+
+sets debounce time for a GPIO
+
+Parameters
+  struct gpio_desc *desc
+    descriptor of the GPIO for which to set debounce time
+  unsigned int debounce
+    debounce time in microseconds

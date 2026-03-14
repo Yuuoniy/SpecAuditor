@@ -1,0 +1,15 @@
+Function: void xas_advance ( struct xa_state * xas , unsigned long index )
+
+Skip over sibling entries.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+  unsigned long index
+    Index of last sibling entry.
+
+Description
+  Move the operation state to refer to the last sibling entry.
+This is useful for loops that normally want to see sibling
+entries but sometimes want to skip them.  Use xas_set() if you
+want to move to an index which is not part of this entry.

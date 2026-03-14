@@ -1,0 +1,22 @@
+Function: void v4l2_ctrl_auto_cluster ( unsigned int ncontrols , struct v4l2_ctrl * * controls , u8 manual_val , bool set_volatile )
+
+Mark all controls in the cluster as belonging to that cluster and set it up for autofoo/foo-type handling.
+
+Parameters
+  unsigned int ncontrols
+    The number of controls in this cluster.
+  struct v4l2_ctrl **controls
+    The cluster control array of size ncontrols . The first control
+must be the ‘auto’ control (e.g. autogain, autoexposure, etc.)
+  u8 manual_val
+    The value for the first control in the cluster that equals the
+manual setting.
+  bool set_volatile
+    If true, then all controls except the first auto control will
+be volatile.
+
+Description
+  Use for control groups where one control selects some automatic feature and
+the other controls are only active whenever the automatic feature is turned
+off (manual mode). Typical examples: autogain vs gain, auto-whitebalance vs
+red and blue balance, etc.

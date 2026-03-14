@@ -1,0 +1,10 @@
+Function: void lsm_early_task ( struct task_struct * task )
+
+during initialization allocate a composite task blob
+
+Parameters
+  struct task_struct *task
+    the task that needs a blob
+
+Description
+  Allocate the task blob for all the modules

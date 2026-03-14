@@ -1,0 +1,21 @@
+Function: int sshp_parse_command ( const struct device * dev , const struct ssam_span * source , struct ssh_command * * command , struct ssam_span * command_data )
+
+Parse SSH command frame payload.
+
+Parameters
+  const struct device *dev
+    The device used for logging.
+  const struct ssam_span *source
+    The source to parse from.
+  struct ssh_command **command
+    The parsed command (output).
+  struct ssam_span *command_data
+    The parsed command data/payload (output).
+
+Description
+  Parses and validates a SSH command frame payload. Sets the command pointer
+to the command header and the command_data span to the command data (i.e.
+payload of the command). This will result in a zero-length span if the
+command does not have any associated data/payload. This function does not
+check the frame-payload-type field, which should be checked by the caller
+before calling this function.

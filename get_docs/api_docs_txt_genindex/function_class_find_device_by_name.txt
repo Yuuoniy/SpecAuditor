@@ -1,0 +1,9 @@
+Function: struct device * class_find_device_by_name ( const struct class * class , const char * name )
+
+device iterator for locating a particular device of a specific name.
+
+Parameters
+  const struct class *class
+    class type
+  const char *name
+    name of the device to match

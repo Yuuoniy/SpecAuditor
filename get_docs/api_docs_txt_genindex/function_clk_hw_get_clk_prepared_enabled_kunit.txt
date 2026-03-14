@@ -1,0 +1,14 @@
+Function: struct clk * clk_hw_get_clk_prepared_enabled_kunit ( struct kunit * test , struct clk_hw * hw , const char * con_id )
+
+Test managed clk_hw_get_clk() + clk_prepare_enable()
+
+Parameters
+  struct kunit *test
+    The test context
+  struct clk_hw *hw
+    clk_hw associated with the clk being consumed
+  const char *con_id
+    connection ID string on device
+
+Description
+  Just like

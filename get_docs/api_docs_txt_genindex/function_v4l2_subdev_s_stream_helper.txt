@@ -1,0 +1,12 @@
+Function: int v4l2_subdev_s_stream_helper ( struct v4l2_subdev * sd , int enable )
+
+Helper to implement the subdev s_stream operation using enable_streams and disable_streams
+
+Parameters
+  struct v4l2_subdev *sd
+    The subdevice
+  int enable
+    Enable or disable streaming
+
+Description
+  Subdevice drivers that implement the streams-aware v4l2_subdev_pad_ops.enable_streams and v4l2_subdev_pad_ops.disable_streams operations can use this helper to implement the legacy v4l2_subdev_video_ops.s_stream operation.

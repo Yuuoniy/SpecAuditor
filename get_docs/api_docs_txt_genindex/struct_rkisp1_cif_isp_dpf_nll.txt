@@ -1,0 +1,9 @@
+Struct: struct rkisp1_cif_isp_dpf_nll
+
+Noise level lookup
+
+Members
+  coeff
+    Noise level Lookup coefficient
+  scale_mode
+    dpf noise level scale mode (from enum rkisp1_cif_isp_dpf_nll_scale_mode )

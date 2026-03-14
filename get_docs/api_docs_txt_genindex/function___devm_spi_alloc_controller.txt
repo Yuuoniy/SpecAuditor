@@ -1,0 +1,16 @@
+Function: struct spi_controller * __devm_spi_alloc_controller ( struct device * dev , unsigned int size , bool target )
+
+resource-managed __spi_alloc_controller()
+
+Parameters
+  struct device *dev
+    physical device of SPI controller
+  unsigned int size
+    how much zeroed driver-private data to allocate
+  bool target
+    whether to allocate an SPI host (false) or SPI target (true) controller
+
+Description
+  Allocate an SPI controller and automatically release a reference on it
+when dev is unbound from its driver.  Drivers are thus relieved from
+having to call spi_controller_put() .

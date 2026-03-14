@@ -1,0 +1,11 @@
+Function: void drm_atomic_helper_plane_reset ( struct drm_plane * plane )
+
+default drm_plane_funcs.reset hook for planes
+
+Parameters
+  struct drm_plane *plane
+    drm plane
+
+Description
+  Resets the atomic state for plane by freeing the state pointer (which might
+be NULL, e.g. at driver load time) and allocating a new empty state object.

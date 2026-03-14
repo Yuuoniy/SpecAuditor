@@ -1,0 +1,7 @@
+Function: void net_dim_work_cancel ( struct dim * dim )
+
+synchronously cancel dim’s worker
+
+Parameters
+  struct dim *dim
+    DIM context

@@ -1,0 +1,13 @@
+Macro: FIXTURE_DATA
+
+
+
+Parameters
+  datatype_name
+    datatype name
+
+Description
+  Almost always, you want just FIXTURE() instead (see below).
+This call may be used when the type of the fixture data
+is needed.  In general, this should not be needed unless
+the self is being passed to a helper directly.

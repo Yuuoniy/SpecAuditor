@@ -1,0 +1,17 @@
+Function: int regulator_get_hardware_vsel_register ( struct regulator * regulator , unsigned * vsel_reg , unsigned * vsel_mask )
+
+get the HW voltage selector register
+
+Parameters
+  struct regulator *regulator
+    regulator source
+  unsigned *vsel_reg
+    voltage selector register, output parameter
+  unsigned *vsel_mask
+    mask for voltage selector bitfield, output parameter
+
+Description
+  Returns the hardware register offset and bitmask used for setting the
+regulator voltage. This might be useful when configuring voltage-scaling
+hardware or firmware that can make I2C requests behind the kernel’s back,
+for example.

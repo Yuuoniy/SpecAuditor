@@ -1,0 +1,12 @@
+Function: void ssam_device_mark_hot_removed ( struct ssam_device * sdev )
+
+Mark the given device as hot-removed.
+
+Parameters
+  struct ssam_device *sdev
+    The device to mark as hot-removed.
+
+Description
+  Mark the device as having been hot-removed. This signals drivers using the
+device that communication with the device should be avoided and may lead to
+timeouts.

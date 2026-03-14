@@ -1,0 +1,15 @@
+Function: void crypto_cipher_decrypt_one ( struct crypto_cipher * tfm , u8 * dst , const u8 * src )
+
+decrypt one block of ciphertext
+
+Parameters
+  struct crypto_cipher *tfm
+    cipher handle
+  u8 *dst
+    points to the buffer that will be filled with the plaintext
+  const u8 *src
+    buffer holding the ciphertext to be decrypted
+
+Description
+  Invoke the decryption operation of one block. The caller must ensure that
+the plaintext and ciphertext buffers are at least one block in size.

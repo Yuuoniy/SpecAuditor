@@ -1,0 +1,12 @@
+Function: int security_binder_transaction ( const struct cred * from , const struct cred * to )
+
+Check if a binder transaction is allowed
+
+Parameters
+  const struct cred *from
+    sending process
+  const struct cred *to
+    receiving process
+
+Description
+  Check whether from is allowed to invoke a binder transaction call to to .

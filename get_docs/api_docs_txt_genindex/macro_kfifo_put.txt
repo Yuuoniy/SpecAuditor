@@ -1,0 +1,14 @@
+Macro: kfifo_put
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used
+  val
+    the data to be added
+
+Description
+  This macro copies the given value into the fifo.
+It returns 0 if the fifo was full. Otherwise it returns the number
+processed elements.

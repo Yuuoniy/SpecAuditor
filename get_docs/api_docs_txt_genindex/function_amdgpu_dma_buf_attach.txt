@@ -1,0 +1,12 @@
+Function: int amdgpu_dma_buf_attach ( struct dma_buf * dmabuf , struct dma_buf_attachment * attach )
+
+dma_buf_ops.attach implementation
+
+Parameters
+  struct dma_buf *dmabuf
+    DMA-buf where we attach to
+  struct dma_buf_attachment *attach
+    attachment to add
+
+Description
+  Add the attachment as user to the exported DMA-buf.

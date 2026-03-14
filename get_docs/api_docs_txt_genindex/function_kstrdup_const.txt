@@ -1,0 +1,9 @@
+Function: const char * kstrdup_const ( const char * s , gfp_t gfp )
+
+conditionally duplicate an existing const string
+
+Parameters
+  const char *s
+    the string to duplicate
+  gfp_t gfp
+    the GFP mask used in the kmalloc() call when allocating memory

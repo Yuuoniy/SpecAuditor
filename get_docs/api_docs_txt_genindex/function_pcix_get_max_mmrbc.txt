@@ -1,0 +1,11 @@
+Function: int pcix_get_max_mmrbc ( struct pci_dev * dev )
+
+get PCI-X maximum designed memory read byte count
+
+Parameters
+  struct pci_dev *dev
+    PCI device to query
+
+Description
+  Returns mmrbc: maximum designed memory read count in bytes or
+appropriate error value.

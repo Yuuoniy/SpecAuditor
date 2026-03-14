@@ -1,0 +1,14 @@
+Function: void __tty_hangup ( struct tty_struct * tty , int exit_session )
+
+actual handler for hangup events
+
+Parameters
+  struct tty_struct *tty
+    tty device
+  int exit_session
+    if non-zero, signal all foreground group processes
+
+Description
+  This can be called by a “kworker” kernel thread. That is process synchronous
+but doesn’t hold any locks, so we need to make sure we have the appropriate
+locks for what we’re doing.

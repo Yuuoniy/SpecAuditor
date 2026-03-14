@@ -1,0 +1,10 @@
+Function: void amdgpu_vm_manager_init ( struct amdgpu_device * adev )
+
+init the VM manager
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+
+Description
+  Initialize the VM manager structures

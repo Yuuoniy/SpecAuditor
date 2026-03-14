@@ -1,0 +1,7 @@
+Function: u64 jiffies_64_to_clock_t ( u64 x )
+
+Convert jiffies_64 to clock_t
+
+Parameters
+  u64 x
+    jiffies_64 value

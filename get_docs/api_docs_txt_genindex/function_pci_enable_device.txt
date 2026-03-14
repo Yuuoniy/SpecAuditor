@@ -1,0 +1,12 @@
+Function: int pci_enable_device ( struct pci_dev * dev )
+
+Initialize device before it’s used by a driver.
+
+Parameters
+  struct pci_dev *dev
+    PCI device to be initialized
+
+Description
+  Initialize device before it’s used by a driver. Ask low-level code
+to enable I/O and memory. Wake up the device if it was suspended.
+Beware, this function can fail.

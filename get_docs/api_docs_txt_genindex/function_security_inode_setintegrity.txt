@@ -1,0 +1,17 @@
+Function: int security_inode_setintegrity ( const struct inode * inode , enum lsm_integrity_type type , const void * value , size_t size )
+
+Set the inode’s integrity data
+
+Parameters
+  const struct inode *inode
+    inode
+  enum lsm_integrity_type type
+    type of integrity, e.g. hash digest, signature, etc
+  const void *value
+    the integrity value
+  size_t size
+    size of the integrity value
+
+Description
+  Register a verified integrity measurement of a inode with LSMs.
+LSMs should free the previously saved data if value is NULL.

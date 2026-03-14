@@ -1,0 +1,50 @@
+Struct: struct drm_cmdline_mode
+
+DRM Mode passed through the kernel command-line
+
+Members
+  name
+    Name of the mode.
+  specified
+    Has a mode been read from the command-line?
+  refresh_specified
+    Did the mode have a preferred refresh rate?
+  bpp_specified
+    Did the mode have a preferred BPP?
+  pixel_clock
+    Pixel Clock in kHz. Optional.
+  xres
+    Active resolution on the X axis, in pixels.
+  yres
+    Active resolution on the Y axis, in pixels.
+  bpp
+    Bits per pixels for the mode.
+  refresh
+    Refresh rate, in Hertz.
+  rb
+    Do we need to use reduced blanking?
+  interlace
+    The mode is interlaced.
+  cvt
+    The timings will be calculated using the VESA Coordinated
+Video Timings instead of looking up the mode from a table.
+  margins
+    Add margins to the mode calculation (1.8% of xres rounded
+down to 8 pixels and 1.8% of yres).
+  force
+    Ignore the hotplug state of the connector, and force its
+state to one of the DRM_FORCE_* values.
+  rotation_reflection
+    Initial rotation and reflection of the mode setup from the
+command line. See DRM_MODE_ROTATE_* and
+DRM_MODE_REFLECT_*. The only rotations supported are
+DRM_MODE_ROTATE_0 and DRM_MODE_ROTATE_180.
+  panel_orientation
+    drm-connector “panel orientation” property override value,
+DRM_MODE_PANEL_ORIENTATION_UNKNOWN if not set.
+  tv_margins
+    TV margins to apply to the mode.
+  tv_mode
+    TV mode standard. See DRM_MODE_TV_MODE_*.
+  tv_mode_specified
+    Did the mode have a preferred TV mode?

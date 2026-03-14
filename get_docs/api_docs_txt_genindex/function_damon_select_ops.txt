@@ -1,0 +1,12 @@
+Function: int damon_select_ops ( struct damon_ctx * ctx , enum damon_ops_id id )
+
+Select a monitoring operations to use with the context.
+
+Parameters
+  struct damon_ctx *ctx
+    monitoring context to use the operations.
+  enum damon_ops_id id
+    id of the registered monitoring operations to select.
+
+Description
+  This function finds registered monitoring operations set of id and make ctx to use it.

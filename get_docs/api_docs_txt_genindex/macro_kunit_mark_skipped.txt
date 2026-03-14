@@ -1,0 +1,15 @@
+Macro: kunit_mark_skipped
+
+
+
+Parameters
+  test
+    The test context object.
+  fmt
+    A printk() style format string.
+  ...
+    variable arguments
+
+Description
+  Marks the test as skipped. fmt is given output as the test status
+comment, typically the reason the test was skipped.

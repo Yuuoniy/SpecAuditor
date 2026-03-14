@@ -1,0 +1,16 @@
+Struct: struct ipu3_uapi_ae_config
+
+AE config
+
+Members
+  grid_cfg
+    config for auto exposure statistics grid. See struct ipu3_uapi_ae_grid_config , as Imgu did not support output
+auto exposure statistics, so user can ignore this configuration
+and use the RGB table in auto-whitebalance statistics instead.
+  weights
+    IPU3_UAPI_AE_WEIGHTS is based on 32x24 blocks in the grid.
+Each grid cell has a corresponding value in weights LUT called
+grid value, global histogram is updated based on grid value and
+pixel value.
+  ae_ccm
+    Color convert matrix pre-processing block.

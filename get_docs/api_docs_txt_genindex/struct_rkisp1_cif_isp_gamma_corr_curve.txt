@@ -1,0 +1,7 @@
+Struct: struct rkisp1_cif_isp_gamma_corr_curve
+
+gamma curve point definition y-axis (output).
+
+Members
+  gamma_y
+    the values for the y-axis of gamma curve points. Each value is 12 bit.

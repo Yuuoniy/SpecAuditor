@@ -1,0 +1,13 @@
+Function: int genphy_c37_read_status ( struct phy_device * phydev , bool * changed )
+
+check the link status and update current link state
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+  bool *changed
+    pointer where to store if link changed
+
+Description
+  by comparing what we advertise with what the link partner
+advertises. This function is for Clause 37 1000Base-X mode.

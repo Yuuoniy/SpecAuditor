@@ -1,0 +1,7 @@
+Function: int tipc_socket_init ( void )
+
+initialize TIPC socket interface
+
+Parameters
+  void
+    no arguments

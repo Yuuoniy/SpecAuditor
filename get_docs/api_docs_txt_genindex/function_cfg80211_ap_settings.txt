@@ -1,0 +1,76 @@
+Function: struct cfg80211_ap_settings
+
+AP configuration
+
+Members
+  chandef
+    defines the channel to use
+  beacon
+    beacon data
+  beacon_interval
+    beacon interval
+  dtim_period
+    DTIM period
+  ssid
+    SSID to be used in the BSS (note: may be NULL if not provided from
+user space)
+  ssid_len
+    length of ssid
+  hidden_ssid
+    whether to hide the SSID in Beacon/Probe Response frames
+  crypto
+    crypto settings
+  privacy
+    the BSS uses privacy
+  auth_type
+    Authentication type (algorithm)
+  inactivity_timeout
+    time in seconds to determine station’s inactivity.
+  p2p_ctwindow
+    P2P CT Window
+  p2p_opp_ps
+    P2P opportunistic PS
+  acl
+    ACL configuration used by the drivers which has support for
+MAC address based access control
+  pbss
+    If set, start as a PCP instead of AP. Relevant for DMG
+networks.
+  beacon_rate
+    bitrate to be used for beacons
+  ht_cap
+    HT capabilities (or NULL if HT isn’t enabled)
+  vht_cap
+    VHT capabilities (or NULL if VHT isn’t enabled)
+  he_cap
+    HE capabilities (or NULL if HE isn’t enabled)
+  he_oper
+    HE operation IE (or NULL if HE isn’t enabled)
+  eht_cap
+    EHT capabilities (or NULL if EHT isn’t enabled)
+  eht_oper
+    EHT operation IE (or NULL if EHT isn’t enabled)
+  ht_required
+    stations must support HT
+  vht_required
+    stations must support VHT
+  he_required
+    stations must support HE
+  sae_h2e_required
+    stations must support direct H2E technique in SAE
+  twt_responder
+    Enable Target Wait Time
+  flags
+    flags, as defined in enum nl80211_ap_settings_flags
+  he_obss_pd
+    OBSS Packet Detection settings
+  fils_discovery
+    FILS discovery transmission parameters
+  unsol_bcast_probe_resp
+    Unsolicited broadcast probe response parameters
+  mbssid_config
+    AP settings for multiple bssid
+  s1g_long_beacon_period
+    S1G long beacon period
+  s1g_short_beacon
+    S1G short beacon data

@@ -1,0 +1,26 @@
+Struct: struct fw_cdev_get_info
+
+General purpose information ioctl
+
+Members
+  version
+    The version field is just a running serial number.  Both an
+input parameter (ABI version implemented by the client) and
+output parameter (ABI version implemented by the kernel).
+A client shall fill in the ABI version for which the client
+was implemented.  This is necessary for forward compatibility.
+  rom_length
+    If rom is non-zero, up to rom_length bytes of Configuration
+ROM will be copied into that user space address.  In either
+case, rom_length is updated with the actual length of the
+Configuration ROM.
+  rom
+    If non-zero, address of a buffer to be filled by a copy of the
+device’s Configuration ROM
+  bus_reset
+    If non-zero, address of a buffer to be filled by a struct fw_cdev_event_bus_reset with the current state
+of the bus.  This does not cause a bus reset to happen.
+  bus_reset_closure
+    Value of closure in this and subsequent bus reset events
+  card
+    The index of the card this device belongs to

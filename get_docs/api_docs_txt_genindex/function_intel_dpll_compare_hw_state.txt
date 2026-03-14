@@ -1,0 +1,14 @@
+Function: bool intel_dpll_compare_hw_state ( struct intel_display * display , const struct intel_dpll_hw_state * a , const struct intel_dpll_hw_state * b )
+
+compare the two states
+
+Parameters
+  struct intel_display *display
+    intel_display structure
+  const struct intel_dpll_hw_state *a
+    first DPLL hw state
+  const struct intel_dpll_hw_state *b
+    second DPLL hw state
+
+Description
+  Compare DPLL hw states a and b .

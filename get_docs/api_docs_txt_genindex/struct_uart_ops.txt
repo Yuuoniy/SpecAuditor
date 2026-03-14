@@ -1,0 +1,59 @@
+Struct: struct uart_ops
+
+interface between serial_core and the driver
+
+Members
+  tx_empty
+    unsigned int ()(struct uart_port *port)
+  set_mctrl
+    void ()(struct uart_port *port, unsigned int mctrl)
+  get_mctrl
+    unsigned int ()(struct uart_port *port)
+  stop_tx
+    void ()(struct uart_port *port)
+  start_tx
+    void ()(struct uart_port *port)
+  throttle
+    void ()(struct uart_port *port)
+  unthrottle
+    void ()(struct uart_port *port)
+  send_xchar
+    void ()(struct uart_port *port, char ch)
+  stop_rx
+    void ()(struct uart_port *port)
+  start_rx
+    void ()(struct uart_port *port)
+  enable_ms
+    void ()(struct uart_port *port)
+  break_ctl
+    void ()(struct uart_port *port, int ctl)
+  startup
+    int ()(struct uart_port *port)
+  shutdown
+    void ()(struct uart_port *port)
+  flush_buffer
+    void ()(struct uart_port *port)
+  set_termios
+    void ()(struct uart_port *port, struct ktermios *new, struct ktermios *old)
+  set_ldisc
+    void ()(struct uart_port *port, struct ktermios *termios)
+  pm
+    void ()(struct uart_port *port, unsigned int state, unsigned int oldstate)
+  type
+    const char *()(struct uart_port *port)
+  release_port
+    void ()(struct uart_port *port)
+  request_port
+    int ()(struct uart_port *port)
+  config_port
+    void ()(struct uart_port *port, int type)
+  verify_port
+    int ()(struct uart_port *port, struct serial_struct *serinfo)
+  ioctl
+    int ()(struct uart_port *port, unsigned int cmd, unsigned long arg)
+  poll_init
+    int ()(struct uart_port *port)
+  poll_put_char
+    void ()(struct uart_port *port, unsigned char ch)
+  poll_get_char
+    int ()(struct uart_port *port)

@@ -1,0 +1,11 @@
+Function: void dma_buf_unpin ( struct dma_buf_attachment * attach )
+
+Unpin a DMA-buf
+
+Parameters
+  struct dma_buf_attachment *attach
+    [in]    attachment which should be unpinned
+
+Description
+  This unpins a buffer pinned by dma_buf_pin() and allows the exporter to move
+any mapping of attach again and inform the importer through dma_buf_attach_ops.move_notify .

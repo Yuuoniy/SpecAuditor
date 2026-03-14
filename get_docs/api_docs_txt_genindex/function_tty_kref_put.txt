@@ -1,0 +1,11 @@
+Function: void tty_kref_put ( struct tty_struct * tty )
+
+release a tty kref
+
+Parameters
+  struct tty_struct *tty
+    tty device
+
+Description
+  Release a reference to the tty device and if need be let the kref layer
+destruct the object for us.

@@ -1,0 +1,10 @@
+Function: struct dma_fence * dma_fence_get_rcu ( struct dma_fence * fence )
+
+get a fence from a dma_resv_list with rcu read lock
+
+Parameters
+  struct dma_fence *fence
+    fence to increase refcount of
+
+Description
+  Function returns NULL if no refcount could be obtained, or the fence.

@@ -1,0 +1,11 @@
+Struct: struct zynqmp_dp_config
+
+Configuration of DisplayPort from DTS
+
+Members
+  misc0
+    misc0 configuration (per DP v1.2 spec)
+  misc1
+    misc1 configuration (per DP v1.2 spec)
+  bpp
+    bits per pixel

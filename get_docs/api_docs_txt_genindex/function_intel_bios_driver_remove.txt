@@ -1,0 +1,7 @@
+Function: void intel_bios_driver_remove ( struct intel_display * display )
+
+Free any resources allocated by intel_bios_init()
+
+Parameters
+  struct intel_display *display
+    display device instance

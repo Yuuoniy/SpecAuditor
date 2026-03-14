@@ -1,0 +1,17 @@
+Function: int of_property_read_reg ( struct device_node * np , int idx , u64 * addr , u64 * size )
+
+Retrieve the specified “reg” entry index without translating
+
+Parameters
+  struct device_node *np
+    device tree node for which to retrieve “reg” from
+  int idx
+    “reg” entry index to read
+  u64 *addr
+    return value for the untranslated address
+  u64 *size
+    return value for the entry size
+
+Description
+  Returns -EINVAL if “reg” is not found. Returns 0 on success with addr and
+size values filled in.

@@ -1,0 +1,7 @@
+Function: int nvmem_register_notifier ( struct notifier_block * nb )
+
+Register a notifier block for nvmem events.
+
+Parameters
+  struct notifier_block *nb
+    notifier block to be called on nvmem events.

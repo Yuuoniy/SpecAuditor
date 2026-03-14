@@ -1,0 +1,9 @@
+Function: enum drm_mode_subconnector drm_dp_subconnector_type ( const u8 dpcd [ DP_RECEIVER_CAP_SIZE ] , const u8 port_cap [ 4 ] )
+
+get DP branch device type
+
+Parameters
+  const u8 dpcd[DP_RECEIVER_CAP_SIZE]
+    DisplayPort configuration data
+  const u8 port_cap[4]
+    port capabilities

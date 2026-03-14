@@ -1,0 +1,16 @@
+Function: int ib_register_client ( struct ib_client * client )
+
+Register an IB client
+
+Parameters
+  struct ib_client *client
+    Client to register
+
+Description
+  Upper level users of the IB drivers can use ib_register_client() to
+register callbacks for IB device addition and removal.  When an IB
+device is added, each registered client’s add method will be called
+(in the order the clients were registered), and when a device is
+removed, each client’s remove method will be called (in the reverse
+order that clients were registered).  In addition, when ib_register_client() is called, the client will receive an add
+callback for all devices already registered.

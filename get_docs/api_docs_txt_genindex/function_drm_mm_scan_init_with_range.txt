@@ -1,0 +1,25 @@
+Function: void drm_mm_scan_init_with_range ( struct drm_mm_scan * scan , struct drm_mm * mm , u64 size , u64 alignment , unsigned long color , u64 start , u64 end , enum drm_mm_insert_mode mode )
+
+initialize range-restricted lru scanning
+
+Parameters
+  struct drm_mm_scan *scan
+    scan state
+  struct drm_mm *mm
+    drm_mm to scan
+  u64 size
+    size of the allocation
+  u64 alignment
+    alignment of the allocation
+  unsigned long color
+    opaque tag value to use for the allocation
+  u64 start
+    start of the allowed range for the allocation
+  u64 end
+    end of the allowed range for the allocation
+  enum drm_mm_insert_mode mode
+    fine-tune the allocation search and placement
+
+Description
+  This simply sets up the scanning routines with the parameters for the desired
+hole.

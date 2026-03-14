@@ -1,0 +1,10 @@
+Function: const char * snd_pcm_direction_name ( int direction )
+
+Get a string naming the direction of a stream
+
+Parameters
+  int direction
+    Stream’s direction, one of SNDRV_PCM_STREAM_XXX
+
+Description
+  Returns a string naming the direction of the stream.

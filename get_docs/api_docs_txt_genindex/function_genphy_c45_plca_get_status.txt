@@ -1,0 +1,13 @@
+Function: int genphy_c45_plca_get_status ( struct phy_device * phydev , struct phy_plca_status * plca_st )
+
+get PLCA status from standard registers
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+  struct phy_plca_status *plca_st
+    output structure to store the PLCA status
+
+Description
+  Management Registers specifications, this function can be used to retrieve
+the current PLCA status information from the standard registers in MMD 31.

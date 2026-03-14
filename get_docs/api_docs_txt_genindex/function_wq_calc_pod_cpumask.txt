@@ -1,0 +1,13 @@
+Function: void wq_calc_pod_cpumask ( struct workqueue_attrs * attrs , int cpu )
+
+calculate a wq_attrs’ cpumask for a pod
+
+Parameters
+  struct workqueue_attrs *attrs
+    the wq_attrs of the default pwq of the target workqueue
+  int cpu
+    the target CPU
+
+Description
+  Calculate the cpumask a workqueue with attrs should use on pod .
+The result is stored in attrs->__pod_cpumask .

@@ -1,0 +1,12 @@
+Function: void uart_handle_cts_change ( struct uart_port * uport , bool active )
+
+handle a change of clear-to-send state
+
+Parameters
+  struct uart_port *uport
+    uart_port structure for the open port
+  bool active
+    new clear-to-send status
+
+Description
+  Caller must hold uport->lock.

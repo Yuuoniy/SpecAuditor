@@ -1,0 +1,12 @@
+Function: struct opa_vnic_adapter * vema_add_vport ( struct opa_vnic_vema_port * port , u8 vport_num )
+
+Add a new vnic port
+
+Parameters
+  struct opa_vnic_vema_port *port
+    ptr to opa_vnic_vema_port struct
+  u8 vport_num
+    vnic port number (to be added)
+
+Description
+  Return a pointer to the vnic adapter structure

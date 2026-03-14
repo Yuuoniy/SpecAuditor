@@ -1,0 +1,10 @@
+Function: void amdgpu_bo_kunmap ( struct amdgpu_bo * bo )
+
+unmap an amdgpu_bo buffer object
+
+Parameters
+  struct amdgpu_bo *bo
+    amdgpu_bo buffer object to be unmapped
+
+Description
+  Unmaps a kernel map set up by amdgpu_bo_kmap() .

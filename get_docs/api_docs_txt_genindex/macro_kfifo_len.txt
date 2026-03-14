@@ -1,0 +1,7 @@
+Macro: kfifo_len
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used

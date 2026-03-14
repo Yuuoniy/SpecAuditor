@@ -1,0 +1,13 @@
+Function: int w1_reset_select_slave ( struct w1_slave * sl )
+
+reset and select a slave
+
+Parameters
+  struct w1_slave *sl
+    the slave to select
+
+Description
+  Resets the bus and then selects the slave by sending either a skip rom
+or a rom match.  A skip rom is issued if there is only one device
+registered on the bus.
+The w1 master lock must be held.

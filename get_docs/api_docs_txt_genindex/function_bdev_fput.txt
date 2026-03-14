@@ -1,0 +1,12 @@
+Function: void bdev_fput ( struct file * bdev_file )
+
+yield claim to the block device and put the file
+
+Parameters
+  struct file *bdev_file
+    open block device
+
+Description
+  Yield claim on the block device and put the file. Ensure that the
+block device can be reclaimed before the file is closed which is a
+deferred operation.

@@ -1,0 +1,14 @@
+Function: acpi_status wmidev_block_set ( struct wmi_device * wdev , u8 instance , const struct acpi_buffer * in )
+
+Write to a WMI block
+
+Parameters
+  struct wmi_device *wdev
+    A wmi bus device from a driver
+  u8 instance
+    Instance index
+  const struct acpi_buffer *in
+    Buffer containing new values for the data block
+
+Description
+  Write contents of the input buffer to an ACPI-WMI data block.

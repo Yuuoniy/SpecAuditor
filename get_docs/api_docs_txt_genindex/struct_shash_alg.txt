@@ -1,0 +1,50 @@
+Struct: struct shash_alg
+
+synchronous message digest definition
+
+Members
+  init
+    see struct ahash_alg
+  update
+    see struct ahash_alg
+  final
+    see struct ahash_alg
+  finup
+    see struct ahash_alg
+  digest
+    see struct ahash_alg
+  export
+    see struct ahash_alg
+  import
+    see struct ahash_alg
+  export_core
+    see struct ahash_alg
+  import_core
+    see struct ahash_alg
+  setkey
+    see struct ahash_alg
+  init_tfm
+    Initialize the cryptographic transformation object.
+This function is called only once at the instantiation
+time, right after the transformation context was
+allocated. In case the cryptographic hardware has
+some special requirements which need to be handled
+by software, this function shall check for the precise
+requirement of the transformation and put any software
+fallbacks in place.
+  exit_tfm
+    Deinitialize the cryptographic transformation object.
+This is a counterpart to init_tfm , used to remove
+various changes set in init_tfm .
+  clone_tfm
+    Copy transform into new object, may allocate memory.
+  descsize
+    Size of the operational state for the message digest. This state
+size is the memory size that needs to be allocated for
+shash_desc.__ctx
+  {unnamed_union}
+    anonymous
+  HASH_ALG_COMMON
+    see struct hash_alg_common
+  halg
+    see struct hash_alg_common

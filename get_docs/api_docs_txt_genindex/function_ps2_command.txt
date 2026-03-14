@@ -1,0 +1,15 @@
+Function: int ps2_command ( struct ps2dev * ps2dev , u8 * param , unsigned int command )
+
+send a command to PS/2 device
+
+Parameters
+  struct ps2dev *ps2dev
+    the PS/2 device that should execute the command
+  u8 *param
+    a buffer containing parameters to be sent along with the command,
+or place where the results of the command execution will be deposited,
+or both
+  unsigned int command
+    command word that encodes the command itself, as well as number of
+additional parameter bytes that should be sent to the device and expected
+length of the command response

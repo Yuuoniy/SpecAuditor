@@ -1,0 +1,11 @@
+Function: void mipi_dbi_pipe_disable ( struct drm_simple_display_pipe * pipe )
+
+MIPI DBI pipe disable helper
+
+Parameters
+  struct drm_simple_display_pipe *pipe
+    Display pipe
+
+Description
+  This function disables backlight if present, if not the display memory is
+blanked. The regulator is disabled if in use. Drivers can use this as their drm_simple_display_pipe_funcs->disable callback.

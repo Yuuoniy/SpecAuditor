@@ -1,0 +1,13 @@
+Function: void snd_pcm_set_runtime_buffer ( struct snd_pcm_substream * substream , struct snd_dma_buffer * bufp )
+
+Set the PCM runtime buffer
+
+Parameters
+  struct snd_pcm_substream *substream
+    PCM substream to set
+  struct snd_dma_buffer *bufp
+    the buffer information, NULL to clear
+
+Description
+  Copy the buffer information to runtime->dma_buffer when bufp is non-NULL.
+Otherwise it clears the current buffer information.

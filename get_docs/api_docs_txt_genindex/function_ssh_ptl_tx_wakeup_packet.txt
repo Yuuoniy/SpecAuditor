@@ -1,0 +1,12 @@
+Function: void ssh_ptl_tx_wakeup_packet ( struct ssh_ptl * ptl )
+
+Wake up packet transmitter thread for new packet.
+
+Parameters
+  struct ssh_ptl *ptl
+    The packet transport layer.
+
+Description
+  Wakes up the packet transmitter thread, notifying it that a new packet has
+arrived and is ready for transfer. If the packet transport layer has been
+shut down, calls to this function will be ignored.

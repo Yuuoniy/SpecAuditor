@@ -1,0 +1,12 @@
+Function: int __printk_cpu_sync_try_get ( void )
+
+Try to acquire the printk cpu-reentrant spinning lock.
+
+Parameters
+  void
+    no arguments
+
+Description
+  If no processor has the lock, the calling processor takes the lock and
+becomes the owner. If the calling processor is already the owner of the
+lock, this function succeeds immediately.

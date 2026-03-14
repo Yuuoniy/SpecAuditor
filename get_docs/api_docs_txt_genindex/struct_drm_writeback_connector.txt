@@ -1,0 +1,31 @@
+Struct: struct drm_writeback_connector
+
+DRM writeback connector
+
+Members
+  base
+    base drm_connector object
+  encoder
+    Internal encoder used by the connector to fulfill
+the DRM framework requirements. The users of the drm_writeback_connector control the behaviour of the encoder by passing the enc_funcs parameter to drm_writeback_connector_init() function.
+For users of drm_writeback_connector_init_with_encoder() , this field
+is not valid as the encoder is managed within their drivers.
+  pixel_formats_blob_ptr
+    DRM blob property data for the pixel formats list on writeback
+connectors
+See also drm_writeback_connector_init()
+  job_lock
+    Protects job_queue
+  job_queue
+    Holds a list of a connector’s writeback jobs; the last item is the
+most recent. The first item may be either waiting for the hardware
+to begin writing, or currently being written. See also: drm_writeback_queue_job() and drm_writeback_signal_completion()
+  fence_context
+    timeline context used for fence operations.
+  fence_lock
+    spinlock to protect the fences in the fence_context.
+  fence_seqno
+    Seqno variable used as monotonic counter for the fences
+created on the connector’s timeline.
+  timeline_name
+    The name of the connector’s fence timeline.

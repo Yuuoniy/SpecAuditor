@@ -1,0 +1,18 @@
+Function: int amdgpu_bo_sync_wait_resv ( struct amdgpu_device * adev , struct dma_resv * resv , enum amdgpu_sync_mode sync_mode , void * owner , bool intr )
+
+Wait for BO reservation fences
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device pointer
+  struct dma_resv *resv
+    reservation object to sync to
+  enum amdgpu_sync_mode sync_mode
+    synchronization mode
+  void *owner
+    fence owner
+  bool intr
+    Whether the wait is interruptible
+
+Description
+  Extract the fences from the reservation object and waits for them to finish.

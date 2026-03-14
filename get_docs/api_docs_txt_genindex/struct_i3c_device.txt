@@ -1,0 +1,13 @@
+Struct: struct i3c_device
+
+I3C device object
+
+Members
+  dev
+    device object to register the I3C dev to the device model
+  desc
+    pointer to an i3c device descriptor object. This link is updated
+every time the I3C device is rediscovered with a different dynamic
+address assigned
+  bus
+    I3C bus this device is attached to

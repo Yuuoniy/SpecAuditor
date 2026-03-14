@@ -1,0 +1,9 @@
+Function: void v4l2_set_subdevdata ( struct v4l2_subdev * sd , void * p )
+
+Sets V4L2 dev private device data
+
+Parameters
+  struct v4l2_subdev *sd
+    pointer to struct v4l2_subdev
+  void *p
+    pointer to the private device data to be stored.

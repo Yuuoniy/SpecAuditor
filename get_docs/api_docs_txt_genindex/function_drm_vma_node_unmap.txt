@@ -1,0 +1,14 @@
+Function: void drm_vma_node_unmap ( struct drm_vma_offset_node * node , struct address_space * file_mapping )
+
+Unmap offset node
+
+Parameters
+  struct drm_vma_offset_node *node
+    Offset node
+  struct address_space *file_mapping
+    Address space to unmap node from
+
+Description
+  Unmap all userspace mappings for a given offset node. The mappings must be
+associated with the file_mapping address-space. If no offset exists
+nothing is done.

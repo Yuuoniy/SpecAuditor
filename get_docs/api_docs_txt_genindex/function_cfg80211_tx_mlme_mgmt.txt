@@ -1,0 +1,19 @@
+Function: void cfg80211_tx_mlme_mgmt ( struct net_device * dev , const u8 * buf , size_t len , bool reconnect )
+
+notification of transmitted deauth/disassoc frame
+
+Parameters
+  struct net_device *dev
+    network device
+  const u8 *buf
+    802.11 frame (header + body)
+  size_t len
+    length of the frame data
+  bool reconnect
+    immediate reconnect is desired (include the nl80211 attribute)
+
+Description
+  This function is called whenever deauthentication has been processed in
+station mode. This includes both received deauthentication frames and
+locally generated ones. This function may sleep. The caller must hold the
+corresponding wdev’s mutex.

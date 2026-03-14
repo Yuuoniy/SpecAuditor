@@ -1,0 +1,13 @@
+Function: void __folio_set_anon ( struct folio * folio , struct vm_area_struct * vma , unsigned long address , bool exclusive )
+
+set up a new anonymous rmap for a folio
+
+Parameters
+  struct folio *folio
+    The folio to set up the new anonymous rmap for.
+  struct vm_area_struct *vma
+    VM area to add the folio to.
+  unsigned long address
+    User virtual address of the mapping
+  bool exclusive
+    Whether the folio is exclusive to the process.

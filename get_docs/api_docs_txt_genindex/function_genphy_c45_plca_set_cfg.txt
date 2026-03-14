@@ -1,0 +1,14 @@
+Function: int genphy_c45_plca_set_cfg ( struct phy_device * phydev , const struct phy_plca_cfg * plca_cfg )
+
+set PLCA configuration using standard registers
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+  const struct phy_plca_cfg *plca_cfg
+    structure containing the PLCA configuration. Fields set to -1 are
+not to be changed.
+
+Description
+  Management Registers specifications, this function can be used to modify
+the PLCA configuration using the standard registers in MMD 31.

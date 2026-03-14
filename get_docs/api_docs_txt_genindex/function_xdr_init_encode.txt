@@ -1,0 +1,13 @@
+Function: void xdr_init_encode ( struct xdr_stream * xdr , struct xdr_buf * buf , __be32 * p , struct rpc_rqst * rqst )
+
+Initialize a struct xdr_stream for sending data.
+
+Parameters
+  struct xdr_stream *xdr
+    pointer to xdr_stream struct
+  struct xdr_buf *buf
+    pointer to XDR buffer in which to encode data
+  __be32 *p
+    current pointer inside XDR buffer
+  struct rpc_rqst *rqst
+    pointer to controlling rpc_rqst, for debugging

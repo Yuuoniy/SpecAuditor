@@ -1,0 +1,13 @@
+Function: struct srpt_ioctx * srpt_alloc_ioctx ( struct srpt_device * sdev , int ioctx_size , struct kmem_cache * buf_cache , enum dma_data_direction dir )
+
+allocate a SRPT I/O context structure
+
+Parameters
+  struct srpt_device *sdev
+    SRPT HCA pointer.
+  int ioctx_size
+    I/O context size.
+  struct kmem_cache *buf_cache
+    I/O buffer cache.
+  enum dma_data_direction dir
+    DMA data direction.

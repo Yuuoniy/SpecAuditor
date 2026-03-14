@@ -1,0 +1,13 @@
+Function: u64 hrtimer_forward_now ( struct hrtimer * timer , ktime_t interval )
+
+forward the timer expiry so it expires after now
+
+Parameters
+  struct hrtimer *timer
+    hrtimer to forward
+  ktime_t interval
+    the interval to forward
+
+Description
+  It is a variant of hrtimer_forward() . The timer will expire after the current
+time of the hrtimer clock base. See hrtimer_forward() for details.

@@ -1,0 +1,15 @@
+Function: int device_rename ( struct device * dev , const char * new_name )
+
+renames a device
+
+Parameters
+  struct device *dev
+    the pointer to the struct device to be renamed
+  const char *new_name
+    the new name of the device
+
+Description
+  It is the responsibility of the caller to provide mutual
+exclusion between two different calls of device_rename
+on the same device to ensure that new_name is valid and
+won’t conflict with other devices.

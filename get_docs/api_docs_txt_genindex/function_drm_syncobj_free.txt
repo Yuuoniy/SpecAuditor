@@ -1,0 +1,10 @@
+Function: void drm_syncobj_free ( struct kref * kref )
+
+free a sync object.
+
+Parameters
+  struct kref *kref
+    kref to free.
+
+Description
+  Only to be called from kref_put in drm_syncobj_put.

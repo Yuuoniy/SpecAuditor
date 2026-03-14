@@ -1,0 +1,9 @@
+Function: int devfreq_update_status ( struct devfreq * devfreq , unsigned long freq )
+
+Update statistics of devfreq behavior
+
+Parameters
+  struct devfreq *devfreq
+    the devfreq instance
+  unsigned long freq
+    the update target frequency

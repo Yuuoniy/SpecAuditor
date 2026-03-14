@@ -1,0 +1,11 @@
+Function: int devm_hte_register_chip ( struct hte_chip * chip )
+
+Resource managed API to register HTE chip.
+
+Parameters
+  struct hte_chip *chip
+    the HTE chip to add to subsystem.
+
+Description
+  It is used by the provider to register itself with the HTE subsystem.
+The unregistration is done automatically when the provider exits.

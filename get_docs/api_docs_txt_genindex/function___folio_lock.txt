@@ -1,0 +1,7 @@
+Function: void __folio_lock ( struct folio * folio )
+
+Get a lock on the folio, assuming we need to sleep to get it.
+
+Parameters
+  struct folio *folio
+    The folio to lock

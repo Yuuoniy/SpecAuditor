@@ -1,0 +1,16 @@
+Function: dma_fence_unwrap_for_each
+
+
+
+Parameters
+  fence
+    current fence
+  cursor
+    current position inside the containers
+  head
+    starting point for the iterator
+
+Description
+  Unwrap dma_fence_chain and dma_fence_array containers and deep dive into all
+potential fences in them. If head is just a normal fence only that one is
+returned.

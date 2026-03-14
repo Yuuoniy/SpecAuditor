@@ -1,0 +1,12 @@
+Function: void * rio_get_inb_message ( struct rio_mport * mport , int mbox )
+
+Get A RIO message from an inbound mailbox queue
+
+Parameters
+  struct rio_mport *mport
+    Master port containing the inbound mailbox
+  int mbox
+    The inbound mailbox number
+
+Description
+  Get a RIO message from an inbound mailbox queue. Returns 0 on success.

@@ -1,0 +1,13 @@
+Function: int amdgpu_dm_verify_lut3d_size ( struct amdgpu_device * adev , struct drm_plane_state * plane_state )
+
+verifies if 3D LUT is supported and if user shaper and 3D LUTs match the hw supported size
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device
+  struct drm_plane_state *plane_state
+    the DRM plane state
+
+Description
+  Verifies if pre-blending (DPP) 3D LUT is supported by the HW (DCN 2.0 or
+newer) and if the user shaper and 3D LUTs match the supported size.

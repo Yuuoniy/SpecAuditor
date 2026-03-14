@@ -1,0 +1,7 @@
+Function: int snd_pcm_format_little_endian ( snd_pcm_format_t format )
+
+Check the PCM format is little-endian
+
+Parameters
+  snd_pcm_format_t format
+    the format to check

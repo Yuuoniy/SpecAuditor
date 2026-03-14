@@ -1,0 +1,13 @@
+Function: int iscsi_host_add ( struct Scsi_Host * shost , struct device * pdev )
+
+add host to system
+
+Parameters
+  struct Scsi_Host *shost
+    scsi host
+  struct device *pdev
+    parent device
+
+Description
+  This should be called by partial offload and software iscsi drivers
+to add a host to the system.

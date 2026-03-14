@@ -1,0 +1,69 @@
+Struct: struct opa_veswport_summary_counters
+
+summary counters
+
+Members
+  vp_instance
+    vport instance on the OPA port
+  vesw_id
+    virtual ethernet switch id
+  veswport_num
+    virtual ethernet switch port number
+  tx_errors
+    transmit errors
+  rx_errors
+    receive errors
+  tx_packets
+    transmit packets
+  rx_packets
+    receive packets
+  tx_bytes
+    transmit bytes
+  rx_bytes
+    receive bytes
+  tx_unicast
+    unicast packets transmitted
+  tx_mcastbcast
+    multicast/broadcast packets transmitted
+  tx_untagged
+    non-vlan packets transmitted
+  tx_vlan
+    vlan packets transmitted
+  tx_64_size
+    transmit packet length is 64 bytes
+  tx_65_127
+    transmit packet length is >=65 and < 127 bytes
+  tx_128_255
+    transmit packet length is >=128 and < 255 bytes
+  tx_256_511
+    transmit packet length is >=256 and < 511 bytes
+  tx_512_1023
+    transmit packet length is >=512 and < 1023 bytes
+  tx_1024_1518
+    transmit packet length is >=1024 and < 1518 bytes
+  tx_1519_max
+    transmit packet length >= 1519 bytes
+  rx_unicast
+    unicast packets received
+  rx_mcastbcast
+    multicast/broadcast packets received
+  rx_untagged
+    non-vlan packets received
+  rx_vlan
+    vlan packets received
+  rx_64_size
+    received packet length is 64 bytes
+  rx_65_127
+    received packet length is >=65 and < 127 bytes
+  rx_128_255
+    received packet length is >=128 and < 255 bytes
+  rx_256_511
+    received packet length is >=256 and < 511 bytes
+  rx_512_1023
+    received packet length is >=512 and < 1023 bytes
+  rx_1024_1518
+    received packet length is >=1024 and < 1518 bytes
+  rx_1519_max
+    received packet length >= 1519 bytes
+  reserved
+    reserved bytes

@@ -1,0 +1,14 @@
+Function: bool is_subdir ( struct dentry * new_dentry , struct dentry * old_dentry )
+
+is new dentry a subdirectory of old_dentry
+
+Parameters
+  struct dentry *new_dentry
+    new dentry
+  struct dentry *old_dentry
+    old dentry
+
+Description
+  Returns true if new_dentry is a subdirectory of the parent (at any depth).
+Returns false otherwise.
+Caller must ensure that “new_dentry” is pinned before calling is_subdir()

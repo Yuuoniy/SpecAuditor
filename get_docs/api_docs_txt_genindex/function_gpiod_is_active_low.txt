@@ -1,0 +1,7 @@
+Function: int gpiod_is_active_low ( const struct gpio_desc * desc )
+
+test whether a GPIO is active-low or not
+
+Parameters
+  const struct gpio_desc *desc
+    the gpio descriptor to test

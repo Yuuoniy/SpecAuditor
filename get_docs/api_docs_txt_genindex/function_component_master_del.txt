@@ -1,0 +1,13 @@
+Function: void component_master_del ( struct device * parent , const struct component_master_ops * ops )
+
+unregister an aggregate driver
+
+Parameters
+  struct device *parent
+    parent device of the aggregate driver
+  const struct component_master_ops *ops
+    callbacks for the aggregate driver
+
+Description
+  Unregisters an aggregate driver registered with component_master_add_with_match() . If necessary the aggregate driver is first
+disassembled by calling component_master_ops.unbind from ops .

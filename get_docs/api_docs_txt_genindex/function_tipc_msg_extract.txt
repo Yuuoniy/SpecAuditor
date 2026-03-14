@@ -1,0 +1,13 @@
+Function: bool tipc_msg_extract ( struct sk_buff * skb , struct sk_buff * * iskb , int * pos )
+
+extract bundled inner packet from buffer
+
+Parameters
+  struct sk_buff *skb
+    buffer to be extracted from.
+  struct sk_buff **iskb
+    extracted inner buffer, to be returned
+  int *pos
+    position in outer message of msg to be extracted.
+Returns position of next msg.
+Consumes outer buffer when last packet extracted

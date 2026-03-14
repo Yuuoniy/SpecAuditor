@@ -1,0 +1,7 @@
+Function: const struct nand_interface_config * nand_get_interface_config ( struct nand_chip * chip )
+
+Retrieve the current interface configuration of a NAND chip
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip

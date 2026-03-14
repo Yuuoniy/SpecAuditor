@@ -1,0 +1,15 @@
+Function: void fscache_unuse_cookie ( struct fscache_cookie * cookie , const void * aux_data , const loff_t * object_size )
+
+Cease usage of cookie attached to an object
+
+Parameters
+  struct fscache_cookie *cookie
+    The cookie representing the cache object
+  const void *aux_data
+    Updated auxiliary data (or NULL)
+  const loff_t *object_size
+    Revised size of the object (or NULL)
+
+Description
+  Cease usage of the cookie attached to an object.  When the users count
+reaches zero then the cookie relinquishment will be permitted to proceed.

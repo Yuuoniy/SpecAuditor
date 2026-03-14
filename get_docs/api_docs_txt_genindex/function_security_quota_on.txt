@@ -1,0 +1,10 @@
+Function: int security_quota_on ( struct dentry * dentry )
+
+Check if QUOTAON is allowed for a dentry
+
+Parameters
+  struct dentry *dentry
+    dentry
+
+Description
+  Check whether QUOTAON is allowed for dentry .

@@ -1,0 +1,11 @@
+Function: const struct link_hwss * get_dio_link_hwss ( void )
+
+Return link_hwss reference
+
+Parameters
+  void
+    no arguments
+
+Description
+  This function behaves like a get function to return the link_hwss populated
+in the link_hwss_dio.c file.

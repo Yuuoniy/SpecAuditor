@@ -1,0 +1,11 @@
+Function: ssize_t mei_cldev_send ( struct mei_cl_device * cldev , const u8 * buf , size_t length )
+
+me device send (write)
+
+Parameters
+  struct mei_cl_device *cldev
+    me client device
+  const u8 *buf
+    buffer to send
+  size_t length
+    buffer length

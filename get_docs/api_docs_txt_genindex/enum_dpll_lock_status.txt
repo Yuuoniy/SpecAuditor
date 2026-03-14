@@ -1,0 +1,3 @@
+Enum: enum dpll_lock_status
+
+provides information of dpll device lock status, valid values for DPLL_A_LOCK_STATUS attribute

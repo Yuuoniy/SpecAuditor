@@ -1,0 +1,15 @@
+Function: struct drm_gem_object * drm_gem_shmem_prime_import_sg_table ( struct drm_device * dev , struct dma_buf_attachment * attach , struct sg_table * sgt )
+
+Produce a shmem GEM object from another driver’s scatter/gather table of pinned pages
+
+Parameters
+  struct drm_device *dev
+    Device to import into
+  struct dma_buf_attachment *attach
+    DMA-BUF attachment
+  struct sg_table *sgt
+    Scatter/gather table of pinned pages
+
+Description
+  This function imports a scatter/gather table exported via DMA-BUF by
+another driver. Drivers that use the shmem helpers should set this as their drm_driver.gem_prime_import_sg_table callback.

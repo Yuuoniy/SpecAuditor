@@ -1,0 +1,16 @@
+Function: u16 pci_find_vsec_capability ( struct pci_dev * dev , u16 vendor , int cap )
+
+Find a vendor-specific extended capability
+
+Parameters
+  struct pci_dev *dev
+    PCI device to query
+  u16 vendor
+    Vendor ID for which capability is defined
+  int cap
+    Vendor-specific capability ID
+
+Description
+  If dev has Vendor ID vendor , search for a VSEC capability with
+VSEC ID cap . If found, return the capability offset in
+config space; otherwise return 0.

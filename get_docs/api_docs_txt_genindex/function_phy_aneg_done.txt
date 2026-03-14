@@ -1,0 +1,11 @@
+Function: int phy_aneg_done ( struct phy_device * phydev )
+
+return auto-negotiation status
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  Return the auto-negotiation status from this phydev Returns > 0 on success or < 0 on error. 0 means that auto-negotiation
+is still pending.

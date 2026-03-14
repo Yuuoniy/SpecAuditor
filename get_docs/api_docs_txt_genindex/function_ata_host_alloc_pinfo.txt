@@ -1,0 +1,16 @@
+Function: struct ata_host * ata_host_alloc_pinfo ( struct device * dev , const struct ata_port_info * const * ppi , int n_ports )
+
+alloc host and init with port_info array
+
+Parameters
+  struct device *dev
+    generic device this host is associated with
+  const struct ata_port_info * const * ppi
+    array of ATA port_info to initialize host with
+  int n_ports
+    number of ATA ports attached to this host
+
+Description
+  Allocate ATA host and initialize with info from ppi .  If NULL
+terminated, ppi may contain fewer entries than n_ports .  The
+last entry will be used for the remaining ports.

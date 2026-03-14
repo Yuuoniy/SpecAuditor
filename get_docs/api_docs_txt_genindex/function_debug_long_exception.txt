@@ -1,0 +1,11 @@
+Function: debug_entry_t * debug_long_exception ( debug_info_t * id , int level , unsigned long tag )
+
+writes long debug entry to active debug area (if level <= actual debug level) and switches to next debug area
+
+Parameters
+  debug_info_t *id
+    handle for debug log
+  int level
+    debug level
+  unsigned long tag
+    long integer value for debug entry

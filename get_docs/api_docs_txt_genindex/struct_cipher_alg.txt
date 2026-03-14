@@ -1,0 +1,51 @@
+Struct: struct cipher_alg
+
+single-block symmetric ciphers definition
+
+Members
+  cia_min_keysize
+    Minimum key size supported by the transformation. This is
+the smallest key length supported by this transformation
+algorithm. This must be set to one of the pre-defined
+values as this is not hardware specific. Possible values
+for this field can be found via git grep “_MIN_KEY_SIZE”
+include/crypto/
+  cia_max_keysize
+    Maximum key size supported by the transformation. This is
+the largest key length supported by this transformation
+algorithm. This must be set to one of the pre-defined values
+as this is not hardware specific. Possible values for this
+field can be found via git grep “_MAX_KEY_SIZE”
+include/crypto/
+  cia_setkey
+    Set key for the transformation. This function is used to either
+program a supplied key into the hardware or store the key in the
+transformation context for programming it later. Note that this
+function does modify the transformation context. This function
+can be called multiple times during the existence of the
+transformation object, so one must make sure the key is properly
+reprogrammed into the hardware. This function is also
+responsible for checking the key length for validity.
+  cia_encrypt
+    Encrypt a single block. This function is used to encrypt a
+single block of data, which must be cra_blocksize big. This
+always operates on a full cra_blocksize and it is not possible
+to encrypt a block of smaller size. The supplied buffers must
+therefore also be at least of cra_blocksize size. Both the
+input and output buffers are always aligned to cra_alignmask .
+In case either of the input or output buffer supplied by user
+of the crypto API is not aligned to cra_alignmask , the crypto
+API will re-align the buffers. The re-alignment means that a
+new buffer will be allocated, the data will be copied into the
+new buffer, then the processing will happen on the new buffer,
+then the data will be copied back into the original buffer and
+finally the new buffer will be freed. In case a software
+fallback was put in place in the cra_init call, this function
+might need to use the fallback if the algorithm doesn’t support
+all of the key sizes. In case the key was stored in
+transformation context, the key might need to be re-programmed
+into the hardware in this function. This function shall not
+modify the transformation context, as this function may be
+called in parallel with the same transformation object.
+  cia_decrypt
+    Decrypt a single block. This is a reverse counterpart to cia_encrypt , and the conditions are exactly the same.

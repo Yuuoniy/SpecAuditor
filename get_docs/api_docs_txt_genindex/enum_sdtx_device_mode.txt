@@ -1,0 +1,3 @@
+Enum: enum sdtx_device_mode
+
+Mode describing how (and if) the clipboard is attached to the base of the device.

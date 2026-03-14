@@ -1,0 +1,11 @@
+Function: void netdev_txq_bql_complete_prefetchw ( struct netdev_queue * dev_queue )
+
+prefetch bql data for write
+
+Parameters
+  struct netdev_queue *dev_queue
+    pointer to transmit queue
+
+Description
+  BQL enabled drivers might use this helper in their TX completion path,
+to give appropriate hint to the CPU.

@@ -1,0 +1,12 @@
+Macro: EXPECT_STREQ
+
+
+
+Parameters
+  expected
+    expected value
+  seen
+    measured value
+
+Description
+  EXPECT_STREQ(expected, measured): !strcmp(expected, measured)

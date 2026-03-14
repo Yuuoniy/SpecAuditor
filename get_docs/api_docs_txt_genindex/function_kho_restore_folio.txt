@@ -1,0 +1,7 @@
+Function: struct folio * kho_restore_folio ( phys_addr_t phys )
+
+recreates the folio from the preserved memory.
+
+Parameters
+  phys_addr_t phys
+    physical address of the folio.

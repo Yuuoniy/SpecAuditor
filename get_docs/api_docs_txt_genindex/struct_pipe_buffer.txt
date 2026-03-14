@@ -1,0 +1,17 @@
+Struct: struct pipe_buffer
+
+a linux kernel pipe buffer
+
+Members
+  page
+    the page containing the data for the pipe buffer
+  offset
+    offset of data inside the page
+  len
+    length of data inside the page
+  ops
+    operations associated with this buffer. See pipe_buf_operations .
+  flags
+    pipe buffer flags. See above.
+  private
+    private data owned by the ops.

@@ -1,0 +1,12 @@
+Function: void intel_dpll_release ( struct intel_atomic_state * state , struct intel_crtc * crtc )
+
+end use of DPLLs by CRTC in atomic state
+
+Parameters
+  struct intel_atomic_state *state
+    atomic state
+  struct intel_crtc *crtc
+    crtc from which the DPLLs are to be released
+
+Description
+  This function releases all DPLLs reserved by intel_dpll_reserve() from the current atomic commit state and the old crtc atomic state.

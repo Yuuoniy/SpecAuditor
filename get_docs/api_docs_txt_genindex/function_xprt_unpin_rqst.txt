@@ -1,0 +1,10 @@
+Function: void xprt_unpin_rqst ( struct rpc_rqst * req )
+
+Unpin a request on the transport receive list
+
+Parameters
+  struct rpc_rqst *req
+    Request to pin
+
+Description
+  Caller should be holding xprt->queue_lock.

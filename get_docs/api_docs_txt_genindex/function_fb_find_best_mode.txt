@@ -1,0 +1,14 @@
+Function: const struct fb_videomode * fb_find_best_mode ( const struct fb_var_screeninfo * var , struct list_head * head )
+
+find best matching videomode
+
+Parameters
+  const struct fb_var_screeninfo *var
+    pointer to struct fb_var_screeninfo
+  struct list_head *head
+    pointer to struct list_head of modelist
+
+Description
+  IMPORTANT:
+This function assumes that all modelist entries in
+info->modelist are valid.

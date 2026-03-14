@@ -1,0 +1,7 @@
+Function: int register_pstore_device ( struct pstore_device_info * dev )
+
+register non-block device to pstore/blk
+
+Parameters
+  struct pstore_device_info *dev
+    non-block device information

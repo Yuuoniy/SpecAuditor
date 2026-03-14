@@ -1,0 +1,21 @@
+Macro: DEFINE_STATIC_DEBUG_INFO
+
+
+
+Parameters
+  var
+    Name of debug_info_t variable
+  name
+    Name of debug log (e.g. used for debugfs entry)
+  pages
+    Number of pages per area
+  nr_areas
+    Number of debug areas
+  buf_size
+    Size of data area in each debug entry
+  view
+    Pointer to debug view struct
+
+Description
+  Define a static debug_info_t for early tracing. The associated debugfs log
+is automatically registered with the specified debug view.

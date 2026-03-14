@@ -1,0 +1,13 @@
+Function: void pcim_iounmap_region ( struct pci_dev * pdev , int bar )
+
+Unmap and release a PCI BAR
+
+Parameters
+  struct pci_dev *pdev
+    PCI device to operate on
+  int bar
+    Index of BAR to unmap and release
+
+Description
+  Unmap a BAR and release its region manually. Only pass BARs that were
+previously mapped by pcim_iomap_region() .

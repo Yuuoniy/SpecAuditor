@@ -1,0 +1,16 @@
+Function: int snd_ac97_pcm_assign ( struct snd_ac97_bus * bus , unsigned short pcms_count , const struct ac97_pcm * pcms )
+
+assign AC97 slots to given PCM streams
+
+Parameters
+  struct snd_ac97_bus *bus
+    the ac97 bus instance
+  unsigned short pcms_count
+    count of PCMs to be assigned
+  const struct ac97_pcm *pcms
+    PCMs to be assigned
+
+Description
+  It assigns available AC97 slots for given PCMs. If none or only
+some slots are available, pcm->xxx.slots and pcm->xxx.rslots[] members
+are reduced and might be zero.

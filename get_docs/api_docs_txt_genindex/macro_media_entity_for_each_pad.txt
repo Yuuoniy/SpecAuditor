@@ -1,0 +1,12 @@
+Macro: media_entity_for_each_pad
+
+
+
+Parameters
+  entity
+    The entity the pads belong to
+  iter
+    The iterator pad
+
+Description
+  Iterate on all pads in a media entity.

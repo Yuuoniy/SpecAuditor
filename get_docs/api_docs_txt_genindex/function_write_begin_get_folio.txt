@@ -1,0 +1,18 @@
+Function: struct folio * write_begin_get_folio ( const struct kiocb * iocb , struct address_space * mapping , pgoff_t index , size_t len )
+
+Get folio for write_begin with flags.
+
+Parameters
+  const struct kiocb *iocb
+    The kiocb passed from write_begin (may be NULL).
+  struct address_space *mapping
+    The address space to search.
+  pgoff_t index
+    The page cache index.
+  size_t len
+    Length of data being written.
+
+Description
+  This is a helper for filesystem write_begin() implementations.
+It wraps __filemap_get_folio() , setting appropriate flags in
+the write begin context.

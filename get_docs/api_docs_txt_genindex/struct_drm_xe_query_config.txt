@@ -1,0 +1,11 @@
+Struct: struct drm_xe_query_config
+
+describe the device configuration
+
+Members
+  num_params
+    number of parameters returned in info
+  pad
+    MBZ
+  info
+    array of elements containing the config info

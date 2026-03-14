@@ -1,0 +1,27 @@
+Struct: struct hte_chip
+
+Abstract HTE chip.
+
+Members
+  name
+    functional name of the HTE IP block.
+  dev
+    device providing the HTE.
+  ops
+    callbacks for this HTE.
+  nlines
+    number of lines/signals supported by this chip.
+  xlate_of
+    Callback which translates consumer supplied logical ids to
+physical ids, return 0 for the success and negative for the failures.
+It stores (between 0 to nlines ) in xlated_id parameter for the success.
+  xlate_plat
+    Same as above but for the consumers with no DT node.
+  match_from_linedata
+    Match HTE device using the line_data.
+  of_hte_n_cells
+    Number of cells used to form the HTE specifier.
+  gdev
+    HTE subsystem abstract device, internal to the HTE subsystem.
+  data
+    chip specific private data.

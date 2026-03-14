@@ -1,0 +1,17 @@
+Function: size_t tty_insert_flip_string_fixed_flag ( struct tty_port * port , const u8 * chars , u8 flag , size_t size )
+
+add characters to the tty buffer
+
+Parameters
+  struct tty_port *port
+    tty port
+  const u8 *chars
+    characters
+  u8 flag
+    flag value for each character
+  size_t size
+    size
+
+Description
+  Queue a series of bytes to the tty buffering. All the characters passed are
+marked with the supplied flag.

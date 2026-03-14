@@ -1,0 +1,13 @@
+Function: int drm_dp_mst_topology_mgr_resume ( struct drm_dp_mst_topology_mgr * mgr , bool sync )
+
+resume the MST manager
+
+Parameters
+  struct drm_dp_mst_topology_mgr *mgr
+    manager to resume
+  bool sync
+    whether or not to perform topology reprobing synchronously
+
+Description
+  This will fetch DPCD and see if the device is still there,
+if it is, it will rewrite the MSTM control bits, and return.

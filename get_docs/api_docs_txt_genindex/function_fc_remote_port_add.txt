@@ -1,0 +1,18 @@
+Function: struct fc_rport * fc_remote_port_add ( struct Scsi_Host * shost , int channel , struct fc_rport_identifiers * ids )
+
+notify fc transport of the existence of a remote FC port.
+
+Parameters
+  struct Scsi_Host *shost
+    scsi host the remote port is connected to.
+  int channel
+    Channel on shost port connected to.
+  struct fc_rport_identifiers *ids
+    The world wide names, fc address, and FC4 port
+roles for the remote port.
+
+Description
+  The LLDD calls this routine to notify the transport of the existence
+of a remote port. The LLDD provides the unique identifiers (wwpn,wwn)
+of the port, it’s FC address (port_id), and the FC4 roles that are
+active for the port.

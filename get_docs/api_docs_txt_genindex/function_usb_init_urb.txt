@@ -1,0 +1,10 @@
+Function: void usb_init_urb ( struct urb * urb )
+
+initializes a urb so that it can be used by a USB driver
+
+Parameters
+  struct urb *urb
+    pointer to the urb to initialize
+
+Description
+  Initializes a urb so that the USB subsystem can use it properly.

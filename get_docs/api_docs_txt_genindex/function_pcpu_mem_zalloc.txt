@@ -1,0 +1,14 @@
+Function: void * pcpu_mem_zalloc ( size_t size , gfp_t gfp )
+
+allocate memory
+
+Parameters
+  size_t size
+    bytes to allocate
+  gfp_t gfp
+    allocation flags
+
+Description
+  Allocate size bytes.  If size is smaller than PAGE_SIZE, kzalloc() is used; otherwise, the equivalent of vzalloc() is used.
+This is to facilitate passing through whitelisted flags.  The
+returned memory is always zeroed.

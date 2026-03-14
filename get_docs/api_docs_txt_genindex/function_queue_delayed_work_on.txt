@@ -1,0 +1,20 @@
+Function: bool queue_delayed_work_on ( int cpu , struct workqueue_struct * wq , struct delayed_work * dwork , unsigned long delay )
+
+queue work on specific CPU after delay
+
+Parameters
+  int cpu
+    CPU number to execute work on
+  struct workqueue_struct *wq
+    workqueue to use
+  struct delayed_work *dwork
+    work to queue
+  unsigned long delay
+    number of jiffies to wait before queueing
+
+Description
+  We queue the delayed_work to a specific CPU, for non-zero delays the
+caller must ensure it is online and can’t go away. Callers that fail
+to ensure this, may get dwork->timer queued to an offlined CPU and
+this will prevent queueing of dwork->work unless the offlined CPU
+becomes online again.

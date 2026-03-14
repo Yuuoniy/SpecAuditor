@@ -1,0 +1,11 @@
+Function: void intel_dmc_disable_program ( struct intel_display * display )
+
+disable the firmware
+
+Parameters
+  struct intel_display *display
+    display instance
+
+Description
+  Disable all event handlers in the firmware, making sure the firmware is
+inactive after the display is uninitialized.

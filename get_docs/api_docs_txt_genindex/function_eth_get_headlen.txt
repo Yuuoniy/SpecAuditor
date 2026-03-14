@@ -1,0 +1,15 @@
+Function: u32 eth_get_headlen ( const struct net_device * dev , const void * data , u32 len )
+
+determine the length of header for an ethernet frame
+
+Parameters
+  const struct net_device *dev
+    pointer to network device
+  const void *data
+    pointer to start of frame
+  u32 len
+    total length of frame
+
+Description
+  Make a best effort attempt to pull the length for all of the headers for
+a given frame in a linear buffer.

@@ -1,0 +1,11 @@
+Function: struct device_attribute
+
+Interface for exporting device attributes.
+
+Members
+  attr
+    sysfs attribute definition.
+  show
+    Show handler.
+  store
+    Store handler.

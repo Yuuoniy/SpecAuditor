@@ -1,0 +1,11 @@
+Function: int v4l2_m2m_streamon ( struct file * file , struct v4l2_m2m_ctx * m2m_ctx , enum v4l2_buf_type type )
+
+turn on streaming for a video queue
+
+Parameters
+  struct file *file
+    pointer to struct file
+  struct v4l2_m2m_ctx *m2m_ctx
+    m2m context assigned to the instance given by struct v4l2_m2m_ctx
+  enum v4l2_buf_type type
+    type of the V4L2 buffer, as defined by enum v4l2_buf_type

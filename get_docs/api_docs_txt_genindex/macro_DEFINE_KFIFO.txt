@@ -1,0 +1,11 @@
+Macro: DEFINE_KFIFO
+
+
+
+Parameters
+  fifo
+    name of the declared fifo datatype
+  type
+    type of the fifo elements
+  size
+    the number of elements in the fifo, this must be a power of 2

@@ -1,0 +1,11 @@
+Function: int snd_ac97_pcm_double_rate_rules ( struct snd_pcm_runtime * runtime )
+
+set double rate constraints
+
+Parameters
+  struct snd_pcm_runtime *runtime
+    the runtime of the ac97 front playback pcm
+
+Description
+  Installs the hardware constraint rules to prevent using double rates and
+more than two channels at the same time.

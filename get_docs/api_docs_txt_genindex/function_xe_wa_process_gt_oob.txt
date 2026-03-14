@@ -1,0 +1,11 @@
+Function: void xe_wa_process_gt_oob ( struct xe_gt * gt )
+
+process GT OOB workaround table
+
+Parameters
+  struct xe_gt *gt
+    GT instance to process workarounds for
+
+Description
+  Process OOB workaround table for this platform, marking in gt the
+workarounds that are active.

@@ -1,0 +1,12 @@
+Function: int security_inode_rmdir ( struct inode * dir , struct dentry * dentry )
+
+Check if removing a directory is allowed
+
+Parameters
+  struct inode *dir
+    parent directory
+  struct dentry *dentry
+    directory to be removed
+
+Description
+  Check the permission to remove a directory.

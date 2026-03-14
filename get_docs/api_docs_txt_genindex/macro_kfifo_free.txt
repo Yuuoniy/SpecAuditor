@@ -1,0 +1,7 @@
+Macro: kfifo_free
+
+
+
+Parameters
+  fifo
+    the fifo to be freed

@@ -1,0 +1,13 @@
+Function: int drm_dp_mst_topology_try_get_mstb ( struct drm_dp_mst_branch * mstb )
+
+Increment the topology refcount of a branch device unless it’s zero
+
+Parameters
+  struct drm_dp_mst_branch *mstb
+    struct drm_dp_mst_branch to increment the topology refcount of
+
+Description
+  Attempts to grab a topology reference to mstb , if it hasn’t yet been
+removed from the topology (e.g. drm_dp_mst_branch.topology_kref has
+reached 0). Holding a topology reference implies that a malloc reference
+will be held to mstb as long as the user holds the topology reference.

@@ -1,0 +1,46 @@
+Struct: struct snd_compr_ops
+
+compressed path DSP operations
+
+Members
+  open
+    Open the compressed stream
+This callback is mandatory and shall keep dsp ready to receive the stream
+parameter
+  free
+    Close the compressed stream, mandatory
+  set_params
+    Sets the compressed stream parameters, mandatory
+This can be called in during stream creation only to set codec params
+and the stream properties
+  get_params
+    retrieve the codec parameters, mandatory
+  set_metadata
+    Set the metadata values for a stream
+  get_metadata
+    retrieves the requested metadata values from stream
+  trigger
+    Trigger operations like start, pause, resume, drain, stop.
+This callback is mandatory
+  pointer
+    Retrieve current h/w pointer information. Mandatory
+  copy
+    Copy the compressed data to/from userspace, Optional
+Can’t be implemented if DSP supports mmap
+  mmap
+    DSP mmap method to mmap DSP memory
+  ack
+    Ack for DSP when data is written to audio buffer, Optional
+Not valid if copy is implemented
+  get_caps
+    Retrieve DSP capabilities, mandatory
+  get_codec_caps
+    Retrieve capabilities for a specific codec, mandatory
+  task_create
+    Create a set of input/output buffers for accel operations
+  task_start
+    Start (queue) a task for accel operations
+  task_stop
+    Stop (dequeue) a task for accel operations
+  task_free
+    Free a set of input/output buffers for accel operations

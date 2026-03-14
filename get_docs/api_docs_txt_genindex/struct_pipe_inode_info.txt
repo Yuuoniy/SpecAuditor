@@ -1,0 +1,53 @@
+Struct: struct pipe_inode_info
+
+a linux kernel pipe
+
+Members
+  mutex
+    mutex protecting the whole thing
+  rd_wait
+    reader wait point in case of empty pipe
+  wr_wait
+    writer wait point in case of full pipe
+  {unnamed_union}
+    anonymous
+  head_tail
+    unsigned long union of head and tail
+  {unnamed_struct}
+    anonymous
+  head
+    The point of buffer production
+  tail
+    The point of buffer consumption
+  max_usage
+    The maximum number of slots that may be used in the ring
+  ring_size
+    total number of buffers (should be a power of 2)
+  nr_accounted
+    The amount this pipe accounts for in user->pipe_bufs
+  readers
+    number of current readers of this pipe
+  writers
+    number of current writers of this pipe
+  files
+    number of struct file referring this pipe (protected by ->i_lock)
+  r_counter
+    reader counter
+  w_counter
+    writer counter
+  poll_usage
+    is this pipe used for epoll, which has crazy wakeups?
+  note_loss
+    The next read() should insert a data-lost message
+  tmp_page
+    cached released page
+  fasync_readers
+    reader side fasync
+  fasync_writers
+    writer side fasync
+  bufs
+    the circular array of pipe buffers
+  user
+    the user who created this pipe
+  watch_queue
+    If this pipe is a watch_queue, this is the stuff for that

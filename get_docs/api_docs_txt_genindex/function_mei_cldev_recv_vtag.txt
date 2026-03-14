@@ -1,0 +1,13 @@
+Function: ssize_t mei_cldev_recv_vtag ( struct mei_cl_device * cldev , u8 * buf , size_t length , u8 * vtag )
+
+client receive with vtag (read)
+
+Parameters
+  struct mei_cl_device *cldev
+    me client device
+  u8 *buf
+    buffer to receive
+  size_t length
+    buffer length
+  u8 *vtag
+    virtual tag

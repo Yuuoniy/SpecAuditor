@@ -1,0 +1,20 @@
+Function: void usb_free_noncoherent ( struct usb_device * dev , size_t size , void * addr , enum dma_data_direction dir , struct sg_table * table )
+
+free memory allocated with usb_alloc_noncoherent()
+
+Parameters
+  struct usb_device *dev
+    device the buffer was used with
+  size_t size
+    requested buffer size
+  void *addr
+    CPU address of buffer
+  enum dma_data_direction dir
+    DMA transfer direction
+  struct sg_table *table
+    describe the allocated and DMA mapped memory,
+
+Description
+  This reclaims an I/O buffer, letting it be reused.  The memory must have
+been allocated using usb_alloc_noncoherent() , and the parameters must match
+those provided in that allocation request.

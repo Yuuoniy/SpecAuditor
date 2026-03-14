@@ -1,0 +1,11 @@
+Function: bool can_reduce_fps ( struct v4l2_bt_timings * bt )
+
+check if conditions for reduced fps are true.
+
+Parameters
+  struct v4l2_bt_timings *bt
+    v4l2 timing structure
+
+Description
+  For different timings reduced fps is allowed if the following conditions
+are met:

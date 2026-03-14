@@ -1,0 +1,12 @@
+Function: void raw_atomic_and ( int i , atomic_t * v )
+
+atomic bitwise AND with relaxed ordering
+
+Parameters
+  int i
+    int value
+  atomic_t *v
+    pointer to atomic_t
+
+Description
+  Atomically updates v to ( v & i ) with relaxed ordering.

@@ -1,0 +1,7 @@
+Function: unsigned long memblock_region_memory_end_pfn ( const struct memblock_region * reg )
+
+get the end pfn of the memory region
+
+Parameters
+  const struct memblock_region *reg
+    memblock_region structure

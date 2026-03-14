@@ -1,0 +1,14 @@
+Function: int nand_read_oob ( struct mtd_info * mtd , loff_t from , struct mtd_oob_ops * ops )
+
+[MTD Interface] NAND read data and/or out-of-band
+
+Parameters
+  struct mtd_info *mtd
+    MTD device structure
+  loff_t from
+    offset to read from
+  struct mtd_oob_ops *ops
+    oob operation description structure
+
+Description
+  NAND read data and/or out-of-band data.

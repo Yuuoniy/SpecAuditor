@@ -1,0 +1,21 @@
+Function: int drm_plane_create_color_properties ( struct drm_plane * plane , u32 supported_encodings , u32 supported_ranges , enum drm_color_encoding default_encoding , enum drm_color_range default_range )
+
+color encoding related plane properties
+
+Parameters
+  struct drm_plane *plane
+    plane object
+  u32 supported_encodings
+    bitfield indicating supported color encodings
+  u32 supported_ranges
+    bitfileld indicating supported color ranges
+  enum drm_color_encoding default_encoding
+    default color encoding
+  enum drm_color_range default_range
+    default color range
+
+Description
+  Create and attach plane specific COLOR_ENCODING and COLOR_RANGE
+properties to plane . The supported encodings and ranges should
+be provided in supported_encodings and supported_ranges bitmasks.
+Each bit set in the bitmask indicates that its number as enum value is supported.

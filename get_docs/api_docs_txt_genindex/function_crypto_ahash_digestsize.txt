@@ -1,0 +1,11 @@
+Function: unsigned int crypto_ahash_digestsize ( struct crypto_ahash * tfm )
+
+obtain message digest size
+
+Parameters
+  struct crypto_ahash *tfm
+    cipher handle
+
+Description
+  The size for the message digest created by the message digest cipher
+referenced with the cipher handle is returned.

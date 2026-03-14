@@ -1,0 +1,12 @@
+Function: unsigned int ata_scsi_write_same_xlat ( struct ata_queued_cmd * qc )
+
+SATL Write Same to ATA SCT Write Same
+
+Parameters
+  struct ata_queued_cmd *qc
+    Command to be translated
+
+Description
+  Translate a SCSI WRITE SAME command to be either a DSM TRIM command or
+an SCT Write Same command.
+Based on WRITE SAME has the UNMAP flag:

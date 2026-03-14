@@ -1,0 +1,9 @@
+Function: struct pipe_buffer * pipe_buf ( const struct pipe_inode_info * pipe , unsigned int slot )
+
+Return the pipe buffer for the specified slot in the pipe ring
+
+Parameters
+  const struct pipe_inode_info *pipe
+    The pipe to access
+  unsigned int slot
+    The slot of interest

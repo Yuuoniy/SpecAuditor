@@ -1,0 +1,14 @@
+Function: struct irq_domain * of_msi_get_domain ( struct device * dev , const struct device_node * np , enum irq_domain_bus_token token )
+
+Use msi-parent to find the relevant MSI domain
+
+Parameters
+  struct device *dev
+    device for which the domain is requested
+  const struct device_node *np
+    device node for dev
+  enum irq_domain_bus_token token
+    bus type for this domain
+
+Description
+  Parse the msi-parent property and returns the corresponding MSI domain.

@@ -1,0 +1,10 @@
+Function: void sata_print_link_status ( struct ata_link * link )
+
+Print SATA link status
+
+Parameters
+  struct ata_link *link
+    SATA link to printk link status about
+
+Description
+  This function prints link speed and status of a SATA link.

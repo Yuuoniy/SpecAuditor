@@ -1,0 +1,12 @@
+Function: int process_output ( u8 c , struct tty_struct * tty )
+
+output post processor
+
+Parameters
+  u8 c
+    character (or partial unicode symbol)
+  struct tty_struct *tty
+    terminal device
+
+Description
+  Output one character with OPOST processing.

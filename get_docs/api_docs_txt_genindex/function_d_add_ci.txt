@@ -1,0 +1,16 @@
+Function: struct dentry * d_add_ci ( struct dentry * dentry , struct inode * inode , struct qstr * name )
+
+lookup or allocate new dentry with case-exact name
+
+Parameters
+  struct dentry *dentry
+    the negative dentry that was passed to the parent’s lookup func
+  struct inode *inode
+    the inode case-insensitive lookup has found
+  struct qstr *name
+    the case-exact name to be associated with the returned dentry
+
+Description
+  This is to avoid filling the dcache with case-insensitive names to the
+same inode, only the actual correct case is stored in the dcache for
+case-insensitive filesystems.

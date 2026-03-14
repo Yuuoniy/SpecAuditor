@@ -1,0 +1,19 @@
+Function: void ata_port_pbar_desc ( struct ata_port * ap , int bar , ssize_t offset , const char * name )
+
+append PCI BAR description
+
+Parameters
+  struct ata_port *ap
+    target ATA port
+  int bar
+    target PCI BAR
+  ssize_t offset
+    offset into PCI BAR
+  const char *name
+    name of the area
+
+Description
+  If offset is negative, this function formats a string which
+contains the name, address, size and type of the BAR and
+appends it to the port description.  If offset is zero or
+positive, only name and offsetted address is appended.

@@ -1,0 +1,11 @@
+Function: const char * sfp_get_name ( struct sfp_bus * bus )
+
+Get the SFP device name
+
+Parameters
+  struct sfp_bus *bus
+    a pointer to the struct sfp_bus structure for the sfp module
+
+Description
+  Gets the SFP device’s name, if bus has a registered socket. Callers must
+hold RTNL, and the returned name is only valid until RTNL is released.

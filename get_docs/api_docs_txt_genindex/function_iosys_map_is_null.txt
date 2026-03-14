@@ -1,0 +1,11 @@
+Function: bool iosys_map_is_null ( const struct iosys_map * map )
+
+Tests for a iosys mapping to be NULL
+
+Parameters
+  const struct iosys_map *map
+    The iosys_map structure
+
+Description
+  Depending on the state of struct iosys_map .is_iomem, tests if the
+mapping is NULL.

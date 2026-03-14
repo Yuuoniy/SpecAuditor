@@ -1,0 +1,15 @@
+Function: void futex_sleep_multiple ( struct futex_vector * vs , unsigned int count , struct hrtimer_sleeper * to )
+
+Check sleeping conditions and sleep
+
+Parameters
+  struct futex_vector *vs
+    List of futexes to wait for
+  unsigned int count
+    Length of vs
+  struct hrtimer_sleeper *to
+    Timeout
+
+Description
+  Sleep if and only if the timeout hasn’t expired and no futex on the list has
+been woken up.

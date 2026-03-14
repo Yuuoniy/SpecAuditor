@@ -1,0 +1,11 @@
+Function: u32 vidtv_ts_null_write_into ( struct null_packet_write_args args )
+
+Write a TS null packet into a buffer.
+
+Parameters
+  struct null_packet_write_args args
+    the arguments to use when writing.
+
+Description
+  This function will write a null packet into a buffer. This is usually used to
+pad TS streams.

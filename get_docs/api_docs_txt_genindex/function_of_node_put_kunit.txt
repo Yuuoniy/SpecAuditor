@@ -1,0 +1,13 @@
+Function: void of_node_put_kunit ( struct kunit * test , struct device_node * node )
+
+Test managed of_node_put()
+
+Parameters
+  struct kunit *test
+    test context
+  struct device_node *node
+    node to pass to of_node_put()
+
+Description
+  Just like of_node_put() , except the node is managed by the test case and is
+automatically put with of_node_put() after the test case concludes.

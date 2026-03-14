@@ -1,0 +1,10 @@
+Function: void unregister_all_irq_handlers ( struct amdgpu_device * adev )
+
+Cleans up handlers from the DM IRQ table
+
+Parameters
+  struct amdgpu_device *adev
+    The base driver device containing the DM device
+
+Description
+  Go through low and high context IRQ tables and deallocate handlers.

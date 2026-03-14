@@ -1,0 +1,11 @@
+Struct: struct dvb_frontend_tune_settings
+
+parameters to adjust frontend tuning
+
+Members
+  min_delay_ms
+    minimum delay for tuning, in ms
+  step_size
+    step size between two consecutive frequencies
+  max_drift
+    maximum drift

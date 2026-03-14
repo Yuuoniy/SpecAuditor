@@ -1,0 +1,63 @@
+Struct: struct station_parameters
+
+station parameters
+
+Members
+  vlan
+    vlan interface station should belong to
+  sta_flags_mask
+    station flags that changed
+(bitmask of BIT( NL80211_STA_FLAG_ ...))
+  sta_flags_set
+    station flags values
+(bitmask of BIT( NL80211_STA_FLAG_ ...))
+  sta_modify_mask
+    bitmap indicating which parameters changed
+(for those that don’t have a natural “no change” value),
+see enum station_parameters_apply_mask
+  listen_interval
+    listen interval or -1 for no change
+  aid
+    AID or zero for no change
+  vlan_id
+    VLAN ID for station (if nonzero)
+  peer_aid
+    mesh peer AID or zero for no change
+  plink_action
+    plink action to take
+  plink_state
+    set the peer link state for a station
+  uapsd_queues
+    bitmap of queues configured for uapsd. same format
+as the AC bitmap in the QoS info field
+  max_sp
+    max Service Period. same format as the MAX_SP in the
+QoS info field (but already shifted down)
+  local_pm
+    local link-specific mesh power save mode (no change when set
+to unknown)
+  capability
+    station capability
+  ext_capab
+    extended capabilities of the station
+  ext_capab_len
+    number of extended capabilities
+  supported_channels
+    supported channels in IEEE 802.11 format
+  supported_channels_len
+    number of supported channels
+  supported_oper_classes
+    supported oper classes in IEEE 802.11 format
+  supported_oper_classes_len
+    number of supported operating classes
+  support_p2p_ps
+    information if station supports P2P PS mechanism
+  airtime_weight
+    airtime scheduler weight for this station
+  eml_cap_present
+    Specifies if EML capabilities field ( eml_cap ) is
+present/updated
+  eml_cap
+    EML capabilities of this station
+  link_sta_params
+    link related params.

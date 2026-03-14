@@ -1,0 +1,11 @@
+Function: void set_pfnblock_bit ( const struct page * page , unsigned long pfn , enum pageblock_bits pb_bit )
+
+Set a standalone bit of a pageblock
+
+Parameters
+  const struct page *page
+    The page within the block of interest
+  unsigned long pfn
+    The target page frame number
+  enum pageblock_bits pb_bit
+    pageblock bit to set

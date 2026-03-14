@@ -1,0 +1,11 @@
+Function: void write_seqlock_bh ( seqlock_t * sl )
+
+start a softirqs-disabled seqlock_t write section
+
+Parameters
+  seqlock_t *sl
+    Pointer to seqlock_t
+
+Description
+  _bh variant of write_seqlock() . Use only if the read side section, or
+other write side sections, can be invoked from softirq contexts.

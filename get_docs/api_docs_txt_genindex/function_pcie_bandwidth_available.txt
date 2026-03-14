@@ -1,0 +1,20 @@
+Function: u32 pcie_bandwidth_available ( struct pci_dev * dev , struct pci_dev * * limiting_dev , enum pci_bus_speed * speed , enum pcie_link_width * width )
+
+determine minimum link settings of a PCIe device and its bandwidth limitation
+
+Parameters
+  struct pci_dev *dev
+    PCI device to query
+  struct pci_dev **limiting_dev
+    storage for device causing the bandwidth limitation
+  enum pci_bus_speed *speed
+    storage for speed of limiting device
+  enum pcie_link_width *width
+    storage for width of limiting device
+
+Description
+  Walk up the PCI device chain and find the point where the minimum
+bandwidth is available.  Return the bandwidth available there and (if
+limiting_dev, speed, and width pointers are supplied) information about
+that point.  The bandwidth returned is in Mb/s, i.e., megabits/second of
+raw bandwidth.

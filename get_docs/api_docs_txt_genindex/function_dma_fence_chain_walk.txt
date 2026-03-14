@@ -1,0 +1,12 @@
+Function: struct dma_fence * dma_fence_chain_walk ( struct dma_fence * fence )
+
+chain walking function
+
+Parameters
+  struct dma_fence *fence
+    current chain node
+
+Description
+  Walk the chain to the next node. Returns the next fence or NULL if we are at
+the end of the chain. Garbage collects chain nodes which are already
+signaled.

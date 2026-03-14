@@ -1,0 +1,16 @@
+Function: int inode_permission ( struct mnt_idmap * idmap , struct inode * inode , int mask )
+
+Check for access rights to a given inode
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount the inode was found from
+  struct inode *inode
+    Inode to check permission on
+  int mask
+    Right to check for ( MAY_READ , MAY_WRITE , MAY_EXEC )
+
+Description
+  Check for read/write/execute permissions on an inode.  We use fs[ug]id for
+this, letting us set arbitrary permissions for filesystem access without
+changing the “normal” UIDs which are used for other things.

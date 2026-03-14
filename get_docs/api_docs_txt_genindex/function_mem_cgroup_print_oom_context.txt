@@ -1,0 +1,9 @@
+Function: void mem_cgroup_print_oom_context ( struct mem_cgroup * memcg , struct task_struct * p )
+
+Print OOM information relevant to memory controller.
+
+Parameters
+  struct mem_cgroup *memcg
+    The memory cgroup that went over limit
+  struct task_struct *p
+    Task that is going to be killed

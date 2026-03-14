@@ -1,0 +1,7 @@
+Function: bool drm_gpuvm_resv_protected ( struct drm_gpuvm * gpuvm )
+
+indicates whether DRM_GPUVM_RESV_PROTECTED is set
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm

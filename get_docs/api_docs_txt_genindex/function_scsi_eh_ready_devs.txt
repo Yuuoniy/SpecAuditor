@@ -1,0 +1,11 @@
+Function: void scsi_eh_ready_devs ( struct Scsi_Host * shost , struct list_head * work_q , struct list_head * done_q )
+
+check device ready state and recover if not.
+
+Parameters
+  struct Scsi_Host *shost
+    host to be recovered.
+  struct list_head *work_q
+    list_head for pending commands.
+  struct list_head *done_q
+    list_head for processed commands.

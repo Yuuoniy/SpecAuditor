@@ -1,0 +1,14 @@
+Function: struct dentry * d_splice_alias ( struct inode * inode , struct dentry * dentry )
+
+splice a disconnected dentry into the tree if one exists
+
+Parameters
+  struct inode *inode
+    the inode which may have a disconnected dentry
+  struct dentry *dentry
+    a negative dentry which we want to point to the inode.
+
+Description
+  If inode is a directory and has an IS_ROOT alias, then d_move that in
+place of the given dentry and return it, else simply d_add the inode
+to the dentry and return NULL.

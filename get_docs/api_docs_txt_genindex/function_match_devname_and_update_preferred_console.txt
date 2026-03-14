@@ -1,0 +1,18 @@
+Function: int match_devname_and_update_preferred_console ( const char * devname , const char * name , const short idx )
+
+Update a preferred console when matching devname is found.
+
+Parameters
+  const char *devname
+    DEVNAME:0.0 style device name
+  const char *name
+    Name of the corresponding console driver, e.g. “ttyS”
+  const short idx
+    Console index, e.g. port number.
+
+Description
+  The function checks whether a device with the given devname is
+preferred via the console=DEVNAME:0.0 command line option.
+It fills the missing console driver name and console index
+so that a later register_console() call could find (match)
+and enable this device.

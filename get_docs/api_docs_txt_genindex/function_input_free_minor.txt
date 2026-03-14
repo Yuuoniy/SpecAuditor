@@ -1,0 +1,11 @@
+Function: void input_free_minor ( unsigned int minor )
+
+release previously allocated minor
+
+Parameters
+  unsigned int minor
+    minor to be released
+
+Description
+  This function releases previously allocated input minor so that it can be
+reused later.

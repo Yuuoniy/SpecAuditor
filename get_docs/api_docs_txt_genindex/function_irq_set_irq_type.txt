@@ -1,0 +1,9 @@
+Function: int irq_set_irq_type ( unsigned int irq , unsigned int type )
+
+set the irq trigger type for an irq
+
+Parameters
+  unsigned int irq
+    irq number
+  unsigned int type
+    IRQ_TYPE_{LEVEL,EDGE}_* value - see include/linux/irq.h

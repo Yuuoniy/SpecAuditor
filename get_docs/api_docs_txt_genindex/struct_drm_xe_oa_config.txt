@@ -1,0 +1,14 @@
+Struct: struct drm_xe_oa_config
+
+OA metric configuration
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  uuid
+    String formatted like “%08x-%04x-%04x-%04x-%012x”
+  n_regs
+    Number of regs in regs_ptr
+  regs_ptr
+    Pointer to (register address, value) pairs for OA config
+registers. Expected length of buffer is: (2 * sizeof(u32) * n_regs ).

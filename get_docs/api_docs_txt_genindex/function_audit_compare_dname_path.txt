@@ -1,0 +1,12 @@
+Function: int audit_compare_dname_path ( const struct qstr * dname , const char * path , int parentlen )
+
+compare given dentry name with last component in given path. Return of 0 indicates a match.
+
+Parameters
+  const struct qstr *dname
+    dentry name that we’re comparing
+  const char *path
+    full pathname that we’re comparing
+  int parentlen
+    length of the parent if known. Passing in AUDIT_NAME_FULL
+here indicates that we must compute this value.

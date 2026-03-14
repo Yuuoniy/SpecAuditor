@@ -1,0 +1,7 @@
+Function: int snd_ctl_register_ioctl_compat ( snd_kctl_ioctl_func_t fcn )
+
+register the device-specific 32bit compat control-ioctls
+
+Parameters
+  snd_kctl_ioctl_func_t fcn
+    ioctl callback function

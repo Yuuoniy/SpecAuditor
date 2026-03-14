@@ -1,0 +1,2 @@
+Function: void oa_tc6_exit ( struct oa_tc6 * tc6 )
+

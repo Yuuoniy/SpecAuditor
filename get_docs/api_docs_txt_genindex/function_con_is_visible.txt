@@ -1,0 +1,7 @@
+Function: bool con_is_visible ( const struct vc_data * vc )
+
+checks whether the current console is visible
+
+Parameters
+  const struct vc_data *vc
+    virtual console

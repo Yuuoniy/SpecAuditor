@@ -1,0 +1,13 @@
+Function: void intel_runtime_pm_put ( struct intel_runtime_pm * rpm , intel_wakeref_t wref )
+
+release a runtime pm reference
+
+Parameters
+  struct intel_runtime_pm *rpm
+    the intel_runtime_pm structure
+  intel_wakeref_t wref
+    wakeref acquired for the reference that is being released
+
+Description
+  This function drops the device-level runtime pm reference obtained by intel_runtime_pm_get() and might power down the corresponding
+hardware block right away if this is the last reference.

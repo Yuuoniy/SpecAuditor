@@ -1,0 +1,10 @@
+Function: void xprt_update_rtt ( struct rpc_task * task )
+
+Update RPC RTT statistics
+
+Parameters
+  struct rpc_task *task
+    RPC request that recently completed
+
+Description
+  Caller holds xprt->queue_lock.

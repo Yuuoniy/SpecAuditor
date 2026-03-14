@@ -1,0 +1,15 @@
+Function: void vb2_core_querybuf ( struct vb2_queue * q , struct vb2_buffer * vb , void * pb )
+
+query video buffer information.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  struct vb2_buffer *vb
+    pointer to struct vb2_buffer .
+  void *pb
+    buffer struct passed from userspace.
+
+Description
+  Videobuf2 core helper to implement VIDIOC_QUERYBUF() operation. It is called
+internally by VB2 by an API-specific handler, like videobuf2-v4l2.h .

@@ -1,0 +1,11 @@
+Function: bool vfs_inode_has_locks ( struct inode * inode )
+
+are any file locks held on inode ?
+
+Parameters
+  struct inode *inode
+    inode to check for locks
+
+Description
+  Return true if there are any FL_POSIX or FL_FLOCK locks currently
+set on inode .

@@ -1,0 +1,11 @@
+Struct: struct gpio_pin_range
+
+pin range controlled by a gpio chip
+
+Members
+  node
+    list for maintaining set of pin ranges, used internally
+  pctldev
+    pinctrl device which handles corresponding pins
+  range
+    actual range of pins controlled by a gpio controller

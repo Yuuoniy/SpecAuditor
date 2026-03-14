@@ -1,0 +1,7 @@
+Function: size_t mei_cldev_mtu ( const struct mei_cl_device * cldev )
+
+max message that client can send and receive
+
+Parameters
+  const struct mei_cl_device *cldev
+    mei client device

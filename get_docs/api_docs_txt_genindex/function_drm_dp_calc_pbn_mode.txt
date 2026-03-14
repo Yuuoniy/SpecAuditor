@@ -1,0 +1,12 @@
+Function: int drm_dp_calc_pbn_mode ( int clock , int bpp )
+
+Calculate the PBN for a mode.
+
+Parameters
+  int clock
+    dot clock
+  int bpp
+    bpp as .4 binary fixed point
+
+Description
+  This uses the formula in the spec to calculate the PBN value for a mode.

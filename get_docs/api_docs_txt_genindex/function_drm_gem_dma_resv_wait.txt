@@ -1,0 +1,13 @@
+Function: long drm_gem_dma_resv_wait ( struct drm_file * filep , u32 handle , bool wait_all , unsigned long timeout )
+
+Wait on GEM object’s reservation’s objects shared and/or exclusive fences.
+
+Parameters
+  struct drm_file *filep
+    DRM file private date
+  u32 handle
+    userspace handle
+  bool wait_all
+    if true, wait on all fences, else wait on just exclusive fence
+  unsigned long timeout
+    timeout value in jiffies or zero to return immediately

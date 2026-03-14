@@ -1,0 +1,22 @@
+Function: int drm_property_replace_blob_from_id ( struct drm_device * dev , struct drm_property_blob * * blob , uint64_t blob_id , ssize_t expected_size , ssize_t expected_elem_size , bool * replaced )
+
+replace a blob property taking a reference
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_property_blob **blob
+    a pointer to the member blob to be replaced
+  uint64_t blob_id
+    the id of the new blob to replace with
+  ssize_t expected_size
+    expected size of the blob property
+  ssize_t expected_elem_size
+    expected size of an element in the blob property
+  bool *replaced
+    if the blob was in fact replaced
+
+Description
+  Look up the new blob from id, take its reference, check expected sizes of
+the blob and its element and replace the old blob by the new one. Advertise
+if the replacement operation was successful.

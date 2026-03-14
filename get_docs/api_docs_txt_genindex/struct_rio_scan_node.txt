@@ -1,0 +1,11 @@
+Struct: struct rio_scan_node
+
+list node to register RapidIO enumeration and discovery methods with RapidIO core.
+
+Members
+  mport_id
+    ID of an mport (net) serviced by this enumerator
+  node
+    node in global list of registered enumerators
+  ops
+    RIO enumeration and discovery operations

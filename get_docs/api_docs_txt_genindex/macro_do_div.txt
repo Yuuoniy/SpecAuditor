@@ -1,0 +1,12 @@
+Macro: do_div
+
+
+
+Parameters
+  n
+    uint64_t dividend (will be updated)
+  base
+    uint32_t divisor
+
+Description
+  Summary: uint32_t remainder = n % base; n = n / base;

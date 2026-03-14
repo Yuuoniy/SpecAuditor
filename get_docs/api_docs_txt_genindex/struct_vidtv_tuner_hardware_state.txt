@@ -1,0 +1,18 @@
+Struct: struct vidtv_tuner_hardware_state
+
+Simulate the tuner hardware status
+
+Members
+  asleep
+    whether the tuner is asleep, i.e whether _sleep() or _suspend() was
+called.
+  lock_status
+    Whether the tuner has managed to lock on the requested
+frequency.
+  if_frequency
+    The tuner’s intermediate frequency. Hardcoded for the purposes
+of simulation.
+  tuned_frequency
+    The actual tuned frequency.
+  bandwidth
+    The actual bandwidth.

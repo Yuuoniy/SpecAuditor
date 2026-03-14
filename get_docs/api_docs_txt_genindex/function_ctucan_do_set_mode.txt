@@ -1,0 +1,12 @@
+Function: int ctucan_do_set_mode ( struct net_device * ndev , enum can_mode mode )
+
+Sets mode of the driver
+
+Parameters
+  struct net_device *ndev
+    Pointer to net_device structure
+  enum can_mode mode
+    Tells the mode of the driver
+
+Description
+  This check the drivers state and calls the corresponding modes to set.

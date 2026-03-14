@@ -1,0 +1,14 @@
+Function: struct dentry * try_lookup_noperm ( struct qstr * name , struct dentry * base )
+
+filesystem helper to lookup single pathname component
+
+Parameters
+  struct qstr *name
+    qstr storing pathname component to lookup
+  struct dentry *base
+    base directory to lookup from
+
+Description
+  Look up a dentry by name in the dcache, returning NULL if it does not
+currently exist.  The function does not try to create a dentry and if one
+is found it doesn’t try to revalidate it.

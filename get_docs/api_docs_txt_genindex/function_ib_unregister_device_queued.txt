@@ -1,0 +1,12 @@
+Function: void ib_unregister_device_queued ( struct ib_device * ib_dev )
+
+Unregister a device using a work queue
+
+Parameters
+  struct ib_device *ib_dev
+    The device to unregister
+
+Description
+  This schedules an asynchronous unregistration using a WQ for the device. A
+driver should use this to avoid holding locks while doing unregistration,
+such as holding the RTNL lock.

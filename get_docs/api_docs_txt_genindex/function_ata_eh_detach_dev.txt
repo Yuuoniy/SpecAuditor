@@ -1,0 +1,10 @@
+Function: void ata_eh_detach_dev ( struct ata_device * dev )
+
+detach ATA device
+
+Parameters
+  struct ata_device *dev
+    ATA device to detach
+
+Description
+  Detach dev .

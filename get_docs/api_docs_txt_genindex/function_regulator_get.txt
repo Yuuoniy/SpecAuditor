@@ -1,0 +1,15 @@
+Function: struct regulator * regulator_get ( struct device * dev , const char * id )
+
+lookup and obtain a reference to a regulator.
+
+Parameters
+  struct device *dev
+    device for regulator “consumer”
+  const char *id
+    Supply name or regulator ID.
+
+Description
+  Use of supply names configured via set_consumer_device_supply() is
+strongly encouraged.  It is recommended that the supply name used
+should match the name used for the supply and/or the relevant
+device pins in the datasheet.

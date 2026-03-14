@@ -1,0 +1,11 @@
+Function: bool d_same_name ( const struct dentry * dentry , const struct dentry * parent , const struct qstr * name )
+
+compare dentry name with case-exact name
+
+Parameters
+  const struct dentry *dentry
+    the negative dentry that was passed to the parent’s lookup func
+  const struct dentry *parent
+    parent dentry
+  const struct qstr *name
+    the case-exact name to be associated with the returned dentry

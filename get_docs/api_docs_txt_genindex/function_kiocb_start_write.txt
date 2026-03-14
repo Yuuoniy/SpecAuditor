@@ -1,0 +1,11 @@
+Function: void kiocb_start_write ( struct kiocb * iocb )
+
+get write access to a superblock for async file io
+
+Parameters
+  struct kiocb *iocb
+    the io context we want to submit the write with
+
+Description
+  This is a variant of sb_start_write() for async io submission.
+Should be matched with a call to kiocb_end_write() .

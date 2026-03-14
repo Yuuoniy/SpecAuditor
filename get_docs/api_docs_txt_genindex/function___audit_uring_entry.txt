@@ -1,0 +1,12 @@
+Function: void __audit_uring_entry ( u8 op )
+
+prepare the kernel task’s audit context for io_uring
+
+Parameters
+  u8 op
+    the io_uring opcode
+
+Description
+  This is similar to audit_syscall_entry() but is intended for use by io_uring
+operations.  This function should only ever be called from audit_uring_entry() as we rely on the audit context checking present in that
+function.

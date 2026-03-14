@@ -1,0 +1,12 @@
+Function: int aica_rtc_gettimeofday ( struct device * dev , struct rtc_time * tm )
+
+Get the time from the AICA RTC
+
+Parameters
+  struct device *dev
+    the RTC device (ignored)
+  struct rtc_time *tm
+    pointer to resulting RTC time structure
+
+Description
+  Grabs the current RTC seconds counter and adjusts it to the Unix Epoch.

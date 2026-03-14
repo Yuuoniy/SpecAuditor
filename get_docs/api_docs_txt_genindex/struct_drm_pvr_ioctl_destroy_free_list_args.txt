@@ -1,0 +1,9 @@
+Struct: struct drm_pvr_ioctl_destroy_free_list_args
+
+Arguments for DRM_IOCTL_PVR_DESTROY_FREE_LIST
+
+Members
+  handle
+    [IN] Handle for free list to be destroyed.
+  _padding_4
+    Reserved. This field must be zeroed.

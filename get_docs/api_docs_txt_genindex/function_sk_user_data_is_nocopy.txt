@@ -1,0 +1,7 @@
+Function: bool sk_user_data_is_nocopy ( const struct sock * sk )
+
+Test if sk_user_data pointer must not be copied
+
+Parameters
+  const struct sock *sk
+    socket

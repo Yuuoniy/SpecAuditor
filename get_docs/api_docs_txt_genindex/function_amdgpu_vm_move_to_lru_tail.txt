@@ -1,0 +1,13 @@
+Function: void amdgpu_vm_move_to_lru_tail ( struct amdgpu_device * adev , struct amdgpu_vm * vm )
+
+move all BOs to the end of LRU
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device pointer
+  struct amdgpu_vm *vm
+    vm providing the BOs
+
+Description
+  Move all BOs to the end of LRU and remember their positions to put them
+together.

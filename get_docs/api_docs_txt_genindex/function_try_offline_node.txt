@@ -1,0 +1,10 @@
+Function: void try_offline_node ( int nid )
+
+
+
+Parameters
+  int nid
+    the node ID
+
+Description
+  Offline a node if all memory sections and cpus of the node are removed.

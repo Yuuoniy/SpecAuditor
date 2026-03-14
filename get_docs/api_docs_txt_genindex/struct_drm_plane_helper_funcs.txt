@@ -1,0 +1,143 @@
+Struct: struct drm_plane_helper_funcs
+
+helper operations for planes
+
+Members
+  prepare_fb
+    This hook is to prepare a framebuffer for scanout by e.g. pinning
+its backing storage or relocating it into a contiguous block of
+VRAM. Other possible preparatory work includes flushing caches. This function must not block for outstanding rendering, since it is
+called in the context of the atomic IOCTL even for async commits to
+be able to return any errors to userspace. Instead the recommended
+way is to fill out the drm_plane_state.fence of the passed-in drm_plane_state . If the driver doesn’t support native fences then
+equivalent functionality should be implemented through private
+members in the plane structure. For GEM drivers who neither have a prepare_fb nor cleanup_fb hook
+set drm_gem_plane_helper_prepare_fb() is called automatically to
+implement this. Other drivers which need additional plane processing
+can call drm_gem_plane_helper_prepare_fb() from their prepare_fb hook. The resources acquired in prepare_fb persist after the end of
+the atomic commit. Resources that can be release at the commit’s end
+should be acquired in begin_fb_access and released in end_fb_access .
+For example, a GEM buffer’s pin operation belongs into prepare_fb to
+keep the buffer pinned after the commit. But a vmap operation for
+shadow-plane helpers belongs into begin_fb_access , so that atomic
+helpers remove the mapping at the end of the commit. The helpers will call cleanup_fb with matching arguments for every
+successful call to this hook. This callback is used by the atomic modeset helpers, but it is
+optional. See begin_fb_access for preparing per-commit resources. RETURNS: 0 on success or one of the following negative error codes allowed by
+the drm_mode_config_funcs.atomic_commit vfunc. When using helpers
+this callback is the only one which can fail an atomic commit,
+everything else must complete successfully.
+  cleanup_fb
+    This hook is called to clean up any resources allocated for the given
+framebuffer and plane configuration in prepare_fb . This callback is used by the atomic modeset helpers, but it is
+optional.
+  begin_fb_access
+    This hook prepares the plane for access during an atomic commit.
+In contrast to prepare_fb , resources acquired in begin_fb_access ,
+are released at the end of the atomic commit in end_fb_access . For example, with shadow-plane helpers, the GEM buffer’s vmap
+operation belongs into begin_fb_access , so that the buffer’s
+memory will be unmapped at the end of the commit in end_fb_access .
+But a GEM buffer’s pin operation belongs into prepare_fb to keep the buffer pinned after the commit. The callback is used by the atomic modeset helpers, but it is optional.
+See end_fb_cleanup for undoing the effects of begin_fb_access and prepare_fb for acquiring resources until the next pageflip. Returns:
+0 on success, or a negative errno code otherwise.
+  end_fb_access
+    This hook cleans up resources allocated by begin_fb_access . It it called
+at the end of a commit for the new plane state.
+  atomic_check
+    Drivers should check plane specific constraints in this hook. When using drm_atomic_helper_check_planes() plane’s atomic_check hooks are called before the ones for CRTCs, which allows drivers to
+request shared resources that the CRTC controls here. For more
+complicated dependencies the driver can call the provided check helpers
+multiple times until the computed state has a final configuration and
+everything has been checked. This function is also allowed to inspect any other object’s state and
+can add more state objects to the atomic commit if needed. Care must
+be taken though to ensure that state check and compute functions for
+these added states are all called, and derived state in other objects
+all updated. Again the recommendation is to just call check helpers
+until a maximal configuration is reached. This callback is used by the atomic modeset helpers, but it is
+optional. NOTE: This function is called in the check phase of an atomic update. The
+driver is not allowed to change anything outside of the drm_atomic_state update tracking structure. RETURNS: 0 on success, -EINVAL if the state or the transition can’t be
+supported, -ENOMEM on memory allocation failure and -EDEADLK if an
+attempt to obtain another state object ran into a drm_modeset_lock deadlock.
+  atomic_update
+    Drivers should use this function to update the plane state.  This
+hook is called in-between the drm_crtc_helper_funcs.atomic_begin and
+drm_crtc_helper_funcs.atomic_flush callbacks. Note that the power state of the display pipe when this function is
+called depends upon the exact helpers and calling sequence the driver
+has picked. See drm_atomic_helper_commit_planes() for a discussion of
+the tradeoffs and variants of plane commit helpers. This callback is used by the atomic modeset helpers, but it is optional.
+  atomic_enable
+    Drivers should use this function to unconditionally enable a plane.
+This hook is called in-between the drm_crtc_helper_funcs.atomic_begin and drm_crtc_helper_funcs.atomic_flush callbacks. It is called after atomic_update , which will be called for all enabled planes. Drivers
+that use atomic_enable should set up a plane in atomic_update and
+afterwards enable the plane in atomic_enable . If a plane needs to be
+enabled before installing the scanout buffer, drivers can still do
+so in atomic_update . Note that the power state of the display pipe when this function is
+called depends upon the exact helpers and calling sequence the driver
+has picked. See drm_atomic_helper_commit_planes() for a discussion of
+the tradeoffs and variants of plane commit helpers. This callback is used by the atomic modeset helpers, but it is
+optional. If implemented, atomic_enable should be the inverse of atomic_disable . Drivers that don’t want to use either can still
+implement the complete plane update in atomic_update .
+  atomic_disable
+    Drivers should use this function to unconditionally disable a plane.
+This hook is called in-between the drm_crtc_helper_funcs.atomic_begin and
+drm_crtc_helper_funcs.atomic_flush callbacks. It is an alternative to atomic_update , which will be called for disabling planes, too, if
+the atomic_disable hook isn’t implemented. This hook is also useful to disable planes in preparation of a modeset,
+by calling drm_atomic_helper_disable_planes_on_crtc() from the drm_crtc_helper_funcs.disable hook. Note that the power state of the display pipe when this function is
+called depends upon the exact helpers and calling sequence the driver
+has picked. See drm_atomic_helper_commit_planes() for a discussion of
+the tradeoffs and variants of plane commit helpers. This callback is used by the atomic modeset helpers, but it is
+optional. It’s intended to reverse the effects of atomic_enable .
+  atomic_async_check
+    Drivers should set this function pointer to check if the plane’s
+atomic state can be updated in a async fashion. Here async means
+“not vblank synchronized”. This hook is called by drm_atomic_async_check() to establish if a
+given update can be committed asynchronously, that is, if it can
+jump ahead of the state currently queued for update. This function is also used by drm_atomic_set_property() to determine
+if the plane can be flipped in async. The flip flag is used to
+distinguish if the function is used for just the plane state or for a
+flip. RETURNS: Return 0 on success and any error returned indicates that the update
+can not be applied in asynchronous manner.
+  atomic_async_update
+    Drivers should set this function pointer to perform asynchronous
+updates of planes, that is, jump ahead of the currently queued
+state and update the plane. Here async means “not vblank
+synchronized”. This hook is called by drm_atomic_helper_async_commit() . An async update will happen on legacy cursor updates. An async
+update won’t happen if there is an outstanding commit modifying
+the same plane. When doing async_update drivers shouldn’t replace the drm_plane_state but update the current one with the new plane
+configurations in the new plane_state. Drivers should also swap the framebuffers between current plane
+state ( drm_plane.state ) and new_state.
+This is required since cleanup for async commits is performed on
+the new state, rather than old state like for traditional commits.
+Since we want to give up the reference on the current (old) fb
+instead of our brand new one, swap them in the driver during the
+async commit. FIXME: It only works for single plane updates Async Pageflips are not supported yet Some hw might still scan out the old buffer until the next
+vblank, however we let go of the fb references as soon as
+we run this hook. For now drivers must implement their own workers
+for deferring if needed, until a common solution is created.
+  FIXME:
+    It only works for single plane updates Async Pageflips are not supported yet Some hw might still scan out the old buffer until the next
+vblank, however we let go of the fb references as soon as
+we run this hook. For now drivers must implement their own workers
+for deferring if needed, until a common solution is created.
+  get_scanout_buffer
+    Get the current scanout buffer, to display a message with drm_panic.
+The driver should do the minimum changes to provide a buffer,
+that can be used to display the panic screen. Currently only linear
+buffers are supported. Non-linear buffer support is on the TODO list.
+The device dev.mode_config .panic_lock is taken before calling this
+function, so you can safely access the plane.state It is called from a panic callback, and must follow its restrictions.
+Please look the documentation at drm_panic_trylock() for an in-depth
+discussions of what’s safe and what is not allowed.
+It’s a best effort mode, so it’s expected that in some complex cases
+the panic screen won’t be displayed.
+The returned drm_scanout_buffer.map must be valid if no error code is
+returned. Return: 0 on success, negative errno on failure.
+  panic_flush
+    It is used by drm_panic, and is called after the panic screen is
+drawn to the scanout buffer. In this function, the driver
+can send additional commands to the hardware, to make the scanout
+buffer visible.
+It is only called if get_scanout_buffer() returned successfully, and
+the dev.mode_config .panic_lock is held during the entire sequence.
+It is called from a panic callback, and must follow its restrictions.
+Please look the documentation at drm_panic_trylock() for an in-depth
+discussions of what’s safe and what is not allowed.

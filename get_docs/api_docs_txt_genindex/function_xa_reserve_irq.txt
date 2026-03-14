@@ -1,0 +1,14 @@
+Function: int xa_reserve_irq ( struct xarray * xa , unsigned long index , gfp_t gfp )
+
+Reserve this index in the XArray.
+
+Parameters
+  struct xarray *xa
+    XArray.
+  unsigned long index
+    Index into array.
+  gfp_t gfp
+    Memory allocation flags.
+
+Description
+  An interrupt-disabling version of xa_reserve() .

@@ -1,0 +1,13 @@
+Function: struct page * folio_file_page ( struct folio * folio , pgoff_t index )
+
+The page for a particular index.
+
+Parameters
+  struct folio *folio
+    The folio which contains this index.
+  pgoff_t index
+    The index we want to look up.
+
+Description
+  Sometimes after looking up a folio in the page cache, we need to
+obtain the specific page for an index (eg a page fault).

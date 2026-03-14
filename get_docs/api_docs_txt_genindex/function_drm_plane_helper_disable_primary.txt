@@ -1,0 +1,13 @@
+Function: int drm_plane_helper_disable_primary ( struct drm_plane * plane , struct drm_modeset_acquire_ctx * ctx )
+
+Helper for disabling primary planes
+
+Parameters
+  struct drm_plane *plane
+    plane to disable
+  struct drm_modeset_acquire_ctx *ctx
+    modeset locking context
+
+Description
+  This helper returns an error when trying to disable the primary
+plane.

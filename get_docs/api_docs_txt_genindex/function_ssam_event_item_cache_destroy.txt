@@ -1,0 +1,7 @@
+Function: void ssam_event_item_cache_destroy ( void )
+
+Deinitialize the event item cache.
+
+Parameters
+  void
+    no arguments

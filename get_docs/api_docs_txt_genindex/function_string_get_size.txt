@@ -1,0 +1,20 @@
+Function: int string_get_size ( u64 size , u64 blk_size , const enum string_size_units units , char * buf , int len )
+
+get the size in the specified units
+
+Parameters
+  u64 size
+    The size to be converted in blocks
+  u64 blk_size
+    Size of the block (use 1 for size in bytes)
+  const enum string_size_units units
+    Units to use (powers of 1000 or 1024), whether to include space separator
+  char *buf
+    buffer to format to
+  int len
+    length of buffer
+
+Description
+  This function returns a string formatted to 3 significant figures
+giving the size in the required units. buf should have room for
+at least 9 bytes and will always be zero terminated.

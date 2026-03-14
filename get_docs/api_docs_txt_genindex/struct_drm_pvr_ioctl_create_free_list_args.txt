@@ -1,0 +1,22 @@
+Struct: struct drm_pvr_ioctl_create_free_list_args
+
+Arguments for DRM_IOCTL_PVR_CREATE_FREE_LIST
+
+Members
+  free_list_gpu_addr
+    [IN] Address of GPU mapping of buffer object
+containing memory to be used by free list. The mapped region of the buffer object must be at least max_num_pages * sizeof(__u32) . The buffer object must have been created with DRM_PVR_BO_DEVICE_PM_FW_PROTECT set and DRM_PVR_BO_CPU_ALLOW_USERSPACE_ACCESS not set.
+  initial_num_pages
+    [IN] Pages initially allocated to free list.
+  max_num_pages
+    [IN] Maximum number of pages in free list.
+  grow_num_pages
+    [IN] Pages to grow free list by per request.
+  grow_threshold
+    [IN] Percentage of FL memory used that should
+trigger a new grow request.
+  vm_context_handle
+    [IN] Handle for VM context that the free list buffer
+object is mapped in.
+  handle
+    [OUT] Handle for created free list.

@@ -1,0 +1,7 @@
+Function: void tipc_socket_stop ( void )
+
+stop TIPC socket interface
+
+Parameters
+  void
+    no arguments

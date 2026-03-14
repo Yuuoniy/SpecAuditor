@@ -1,0 +1,13 @@
+Function: int vb2_wait_for_all_buffers ( struct vb2_queue * q )
+
+wait until all buffers are given back to vb2.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+
+Description
+  This function will wait until all buffers that have been given to the driver
+by vb2_ops->buf_queue are given back to vb2 with vb2_buffer_done() . It
+doesn’t call vb2_ops->wait_prepare / vb2_ops->wait_finish pair.
+It is intended to be called with all locks taken, for example from vb2_ops->stop_streaming callback.

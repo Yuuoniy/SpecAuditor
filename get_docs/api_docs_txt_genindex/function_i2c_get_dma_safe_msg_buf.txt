@@ -1,0 +1,13 @@
+Function: u8 * i2c_get_dma_safe_msg_buf ( struct i2c_msg * msg , unsigned int threshold )
+
+get a DMA safe buffer for the given i2c_msg
+
+Parameters
+  struct i2c_msg *msg
+    the message to be checked
+  unsigned int threshold
+    the minimum number of bytes for which using DMA makes sense.
+Should at least be 1.
+
+Description
+  This function must only be called from process context!

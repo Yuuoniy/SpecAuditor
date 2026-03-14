@@ -1,0 +1,9 @@
+Function: void v4l2_m2m_buf_remove_by_buf ( struct v4l2_m2m_queue_ctx * q_ctx , struct vb2_v4l2_buffer * vbuf )
+
+take off exact buffer from the list of ready buffers
+
+Parameters
+  struct v4l2_m2m_queue_ctx *q_ctx
+    pointer to struct v4l2_m2m_queue_ctx
+  struct vb2_v4l2_buffer *vbuf
+    the buffer to be removed

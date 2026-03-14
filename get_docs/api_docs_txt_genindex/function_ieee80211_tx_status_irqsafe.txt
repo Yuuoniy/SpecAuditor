@@ -1,0 +1,13 @@
+Function: void ieee80211_tx_status_irqsafe ( struct ieee80211_hw * hw , struct sk_buff * skb )
+
+IRQ-safe transmit status callback
+
+Parameters
+  struct ieee80211_hw *hw
+    the hardware the frame was transmitted by
+  struct sk_buff *skb
+    the frame that was transmitted, owned by mac80211 after this call
+
+Description
+  Like ieee80211_tx_status_skb() but can be called in IRQ context
+(internally defers to a tasklet.)

@@ -1,0 +1,10 @@
+Function: bool netif_running ( const struct net_device * dev )
+
+test if up
+
+Parameters
+  const struct net_device *dev
+    network device
+
+Description
+  Test if the device has been brought up.

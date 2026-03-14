@@ -1,0 +1,17 @@
+Struct: struct i2c_adapter_quirks
+
+describe flaws of an i2c adapter
+
+Members
+  flags
+    see I2C_AQ_* for possible flags and read below
+  max_num_msgs
+    maximum number of messages per transfer
+  max_write_len
+    maximum length of a write message
+  max_read_len
+    maximum length of a read message
+  max_comb_1st_msg_len
+    maximum length of the first msg in a combined message
+  max_comb_2nd_msg_len
+    maximum length of the second msg in a combined message

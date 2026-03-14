@@ -1,0 +1,11 @@
+Struct: struct mipi_dsi_host
+
+DSI host device
+
+Members
+  dev
+    driver model device node for this DSI host
+  ops
+    DSI host operations
+  list
+    list management

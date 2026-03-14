@@ -1,0 +1,14 @@
+Function: bool fault_flag_allow_retry_first ( enum fault_flag flags )
+
+check ALLOW_RETRY the first time
+
+Parameters
+  enum fault_flag flags
+    Fault flags.
+
+Description
+  This is mostly used for places where we want to try to avoid taking
+the mmap_lock for too long a time when waiting for another condition
+to change, in which case we can try to be polite to release the
+mmap_lock in the first round to avoid potential starvation of other
+processes that would also want the mmap_lock.

@@ -1,0 +1,9 @@
+Function: struct cxl_nvdimm_bridge * devm_cxl_add_nvdimm_bridge ( struct device * host , struct cxl_port * port )
+
+add the root of a LIBNVDIMM topology
+
+Parameters
+  struct device *host
+    platform firmware root device
+  struct cxl_port *port
+    CXL port at the root of a CXL topology

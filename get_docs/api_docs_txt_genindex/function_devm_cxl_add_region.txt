@@ -1,0 +1,17 @@
+Function: struct cxl_region * devm_cxl_add_region ( struct cxl_root_decoder * cxlrd , int id , enum cxl_partition_mode mode , enum cxl_decoder_type type )
+
+Adds a region to a decoder
+
+Parameters
+  struct cxl_root_decoder *cxlrd
+    root decoder
+  int id
+    memregion id to create, or memregion_free() on failure
+  enum cxl_partition_mode mode
+    mode for the endpoint decoders of this region
+  enum cxl_decoder_type type
+    select whether this is an expander or accelerator (type-2 or type-3)
+
+Description
+  This is the second step of region initialization. Regions exist within an
+address space which is mapped by a cxlrd .

@@ -1,0 +1,7 @@
+Function: void eth_addr_inc ( u8 * addr )
+
+Increment the given MAC address.
+
+Parameters
+  u8 *addr
+    Pointer to a six-byte array containing Ethernet address to increment.

@@ -1,0 +1,10 @@
+Function: void zynqmp_dp_phy_exit ( struct zynqmp_dp * dp )
+
+Exit the phy
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure
+
+Description
+  Exit the phy.

@@ -1,0 +1,3 @@
+Enum: enum drm_hdmi_broadcast_rgb
+
+Broadcast RGB Selection for an HDMI drm_connector

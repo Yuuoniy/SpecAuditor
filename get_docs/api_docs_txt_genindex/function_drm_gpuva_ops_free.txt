@@ -1,0 +1,13 @@
+Function: void drm_gpuva_ops_free ( struct drm_gpuvm * gpuvm , struct drm_gpuva_ops * ops )
+
+free the given drm_gpuva_ops
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm the ops were created for
+  struct drm_gpuva_ops *ops
+    the drm_gpuva_ops to free
+
+Description
+  Frees the given drm_gpuva_ops structure including all the ops associated
+with it.

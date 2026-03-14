@@ -1,0 +1,10 @@
+Struct: struct drm_connector_cec_funcs
+
+drm_hdmi_connector control functions
+
+Members
+  phys_addr_invalidate
+    mark CEC physical address as invalid The callback to mark CEC physical address as invalid, abstracting
+the operation.
+  phys_addr_set
+    set CEC physical address The callback to set CEC physical address, abstracting the operation.

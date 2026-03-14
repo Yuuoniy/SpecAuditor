@@ -1,0 +1,11 @@
+Function: void phy_sanitize_settings ( struct phy_device * phydev )
+
+make sure the PHY is set to supported speed and duplex
+
+Parameters
+  struct phy_device *phydev
+    the target phy_device struct
+
+Description
+  duplexes.  Drop down by one in this order:  1000/FULL,
+1000/HALF, 100/FULL, 100/HALF, 10/FULL, 10/HALF.

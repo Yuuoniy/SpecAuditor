@@ -1,0 +1,17 @@
+Function: void folios_put_refs ( struct folio_batch * folios , unsigned int * refs )
+
+Reduce the reference count on a batch of folios.
+
+Parameters
+  struct folio_batch *folios
+    The folios.
+  unsigned int *refs
+    The number of refs to subtract from each folio.
+
+Description
+  Like folio_put() , but for a batch of folios.  This is more efficient
+than writing the loop yourself as it will optimise the locks which need
+to be taken if the folios are freed.  The folios batch is returned
+empty and ready to be reused for another batch; there is no need
+to reinitialise it.  If refs is NULL, we subtract one from each
+folio refcount.

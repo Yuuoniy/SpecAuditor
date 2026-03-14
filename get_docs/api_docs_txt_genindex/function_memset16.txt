@@ -1,0 +1,16 @@
+Function: void * memset16 ( uint16_t * s , uint16_t v , size_t count )
+
+Fill a memory area with a uint16_t
+
+Parameters
+  uint16_t *s
+    Pointer to the start of the area.
+  uint16_t v
+    The value to fill the area with
+  size_t count
+    The number of values to store
+
+Description
+  Differs from memset() in that it fills with a uint16_t instead
+of a byte.  Remember that count is the number of uint16_ts to
+store, not the number of bytes.

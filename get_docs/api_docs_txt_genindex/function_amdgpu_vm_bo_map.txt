@@ -1,0 +1,20 @@
+Function: int amdgpu_vm_bo_map ( struct amdgpu_device * adev , struct amdgpu_bo_va * bo_va , uint64_t saddr , uint64_t offset , uint64_t size , uint32_t flags )
+
+map bo inside a vm
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+  struct amdgpu_bo_va *bo_va
+    bo_va to store the address
+  uint64_t saddr
+    where to map the BO
+  uint64_t offset
+    requested offset in the BO
+  uint64_t size
+    BO size in bytes
+  uint32_t flags
+    attributes of pages (read/write/valid/etc.)
+
+Description
+  Add a mapping of the BO at the specefied addr into the VM.

@@ -1,0 +1,9 @@
+Struct: struct pisp_be_cac_extra
+
+PiSP Back End CAC extra config
+
+Members
+  offset_x
+    Horizontal offset into the CAC table of this tile
+  offset_y
+    Horizontal offset into the CAC table of this tile

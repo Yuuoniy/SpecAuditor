@@ -1,0 +1,9 @@
+Function: void __audit_mq_notify ( mqd_t mqdes , const struct sigevent * notification )
+
+record audit data for a POSIX MQ notify
+
+Parameters
+  mqd_t mqdes
+    MQ descriptor
+  const struct sigevent *notification
+    Notification event

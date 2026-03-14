@@ -1,0 +1,17 @@
+Macro: strscpy
+
+
+
+Parameters
+  dst
+    Where to copy the string to
+  src
+    Where to copy the string from
+  ...
+    Size of destination buffer (optional)
+
+Description
+  Copy the source string src , or as much of it as fits, into the
+destination dst buffer. The behavior is undefined if the string
+buffers overlap. The destination dst buffer is always NUL terminated,
+unless it’s zero-sized.

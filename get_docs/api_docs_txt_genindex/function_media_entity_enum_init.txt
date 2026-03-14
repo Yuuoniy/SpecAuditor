@@ -1,0 +1,9 @@
+Function: int media_entity_enum_init ( struct media_entity_enum * ent_enum , struct media_device * mdev )
+
+Initialise an entity enumeration
+
+Parameters
+  struct media_entity_enum *ent_enum
+    Entity enumeration to be initialised
+  struct media_device *mdev
+    The related media device

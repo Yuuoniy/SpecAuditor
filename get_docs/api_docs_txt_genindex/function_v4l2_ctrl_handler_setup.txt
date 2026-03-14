@@ -1,0 +1,10 @@
+Function: int v4l2_ctrl_handler_setup ( struct v4l2_ctrl_handler * hdl )
+
+Call the s_ctrl op for all controls belonging to the handler to initialize the hardware to the current control values.
+
+Parameters
+  struct v4l2_ctrl_handler *hdl
+    The control handler.
+
+Description
+  Button controls will be skipped, as are read-only controls.

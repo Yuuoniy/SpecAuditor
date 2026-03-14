@@ -1,0 +1,16 @@
+Function: const struct drm_edid * drm_edid_read_custom ( struct drm_connector * connector , read_block_fn read_block , void * context )
+
+Read EDID data using given EDID block read function
+
+Parameters
+  struct drm_connector *connector
+    Connector to use
+  read_block_fn read_block
+    EDID block read function
+  void *context
+    Private data passed to the block read function
+
+Description
+  When the I2C adapter connected to the DDC bus is hidden behind a device that
+exposes a different interface to read EDID blocks this function can be used
+to get EDID data using a custom block read function.

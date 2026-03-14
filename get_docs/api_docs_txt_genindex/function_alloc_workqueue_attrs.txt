@@ -1,0 +1,11 @@
+Function: struct workqueue_attrs * alloc_workqueue_attrs ( void )
+
+allocate a workqueue_attrs
+
+Parameters
+  void
+    no arguments
+
+Description
+  Allocate a new workqueue_attrs, initialize with default settings and
+return it.

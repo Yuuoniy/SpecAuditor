@@ -1,0 +1,10 @@
+Function: struct worker * create_worker ( struct worker_pool * pool )
+
+create a new workqueue worker
+
+Parameters
+  struct worker_pool *pool
+    pool the new worker will belong to
+
+Description
+  Create and start a new worker which is attached to pool .

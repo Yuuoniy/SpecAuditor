@@ -1,0 +1,14 @@
+Function: void drm_sched_start ( struct drm_gpu_scheduler * sched , int errno )
+
+recover jobs after a reset
+
+Parameters
+  struct drm_gpu_scheduler *sched
+    scheduler instance
+  int errno
+    error to set on the pending fences
+
+Description
+  This function is typically used for reset recovery (see the docu of
+drm_sched_backend_ops. timedout_job() for details). Do not call it for
+scheduler startup. The scheduler itself is fully operational after drm_sched_init() succeeded.

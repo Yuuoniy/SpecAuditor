@@ -1,0 +1,7 @@
+Function: void rdma_free_hw_stats_struct ( struct rdma_hw_stats * stats )
+
+Helper function to release rdma_hw_stats
+
+Parameters
+  struct rdma_hw_stats *stats
+    statistics to release

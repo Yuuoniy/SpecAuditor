@@ -1,0 +1,13 @@
+Function: struct drm_gpuvm_bo * drm_gpuvm_bo_obtain ( struct drm_gpuvm * gpuvm , struct drm_gem_object * obj )
+
+obtains an instance of the drm_gpuvm_bo for the given drm_gpuvm and drm_gem_object
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    The drm_gpuvm the obj is mapped in.
+  struct drm_gem_object *obj
+    The drm_gem_object being mapped in the gpuvm .
+
+Description
+  Find the drm_gpuvm_bo representing the combination of the given drm_gpuvm and drm_gem_object . If found, increases the reference
+count of the drm_gpuvm_bo accordingly. If not found, allocates a new drm_gpuvm_bo .

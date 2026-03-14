@@ -1,0 +1,13 @@
+Function: void hlist_add_before_rcu ( struct hlist_node * n , struct hlist_node * next )
+
+
+
+Parameters
+  struct hlist_node *n
+    the new element to add to the hash list.
+  struct hlist_node *next
+    the existing element to add the new element before.
+
+Description
+  Adds the specified element to the specified hlist
+before the specified node while permitting racing traversals.

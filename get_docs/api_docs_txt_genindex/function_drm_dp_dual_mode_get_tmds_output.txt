@@ -1,0 +1,21 @@
+Function: int drm_dp_dual_mode_get_tmds_output ( const struct drm_device * dev , enum drm_dp_dual_mode_type type , struct i2c_adapter * adapter , bool * enabled )
+
+Get the state of the TMDS output buffers in the DP dual mode adaptor
+
+Parameters
+  const struct drm_device *dev
+    drm_device to use
+  enum drm_dp_dual_mode_type type
+    DP dual mode adaptor type
+  struct i2c_adapter *adapter
+    I2C adapter for the DDC bus
+  bool *enabled
+    current state of the TMDS output buffers
+
+Description
+  Get the state of the TMDS output buffers in the adaptor. For
+type2 adaptors this is queried from the DP_DUAL_MODE_TMDS_OEN
+register. As some type 1 adaptors have problems with registers
+(see comments in drm_dp_dual_mode_detect() ) we don’t read the
+register on those, instead we simply assume that the buffers
+are always enabled.

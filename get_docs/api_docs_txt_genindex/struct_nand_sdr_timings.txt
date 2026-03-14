@@ -1,0 +1,82 @@
+Struct: struct nand_sdr_timings
+
+SDR NAND chip timings
+
+Members
+  tBERS_max
+    Block erase time
+  tCCS_min
+    Change column setup time
+  tPROG_max
+    Page program time
+  tR_max
+    Page read time
+  tALH_min
+    ALE hold time
+  tADL_min
+    ALE to data loading time
+  tALS_min
+    ALE setup time
+  tAR_min
+    ALE to RE# delay
+  tCEA_max
+    CE# access time
+  tCEH_min
+    CE# high hold time
+  tCH_min
+    CE# hold time
+  tCHZ_max
+    CE# high to output hi-Z
+  tCLH_min
+    CLE hold time
+  tCLR_min
+    CLE to RE# delay
+  tCLS_min
+    CLE setup time
+  tCOH_min
+    CE# high to output hold
+  tCS_min
+    CE# setup time
+  tDH_min
+    Data hold time
+  tDS_min
+    Data setup time
+  tFEAT_max
+    Busy time for Set Features and Get Features
+  tIR_min
+    Output hi-Z to RE# low
+  tITC_max
+    Interface and Timing Mode Change time
+  tRC_min
+    RE# cycle time
+  tREA_max
+    RE# access time
+  tREH_min
+    RE# high hold time
+  tRHOH_min
+    RE# high to output hold
+  tRHW_min
+    RE# high to WE# low
+  tRHZ_max
+    RE# high to output hi-Z
+  tRLOH_min
+    RE# low to output hold
+  tRP_min
+    RE# pulse width
+  tRR_min
+    Ready to RE# low (data only)
+  tRST_max
+    Device reset time, measured from the falling edge of R/B# to the
+rising edge of R/B#.
+  tWB_max
+    WE# high to SR[6] low
+  tWC_min
+    WE# cycle time
+  tWH_min
+    WE# high hold time
+  tWHR_min
+    WE# high to RE# low
+  tWP_min
+    WE# pulse width
+  tWW_min
+    WP# transition to WE# low

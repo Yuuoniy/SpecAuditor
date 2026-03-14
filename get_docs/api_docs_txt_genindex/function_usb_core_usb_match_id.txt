@@ -1,0 +1,18 @@
+Function: const struct usb_device_id * usb_match_id ( struct usb_interface * interface , const struct usb_device_id * id )
+
+find first usb_device_id matching device or interface
+
+Parameters
+  struct usb_interface *interface
+    the interface of interest
+  const struct usb_device_id *id
+    array of usb_device_id structures, terminated by zero entry
+
+Description
+  usb_match_id searches an array of usb_device_id’s and returns
+the first one matching the device or interface, or null.
+This is used when binding (or rebinding) a driver to an interface.
+Most USB device drivers will use this indirectly, through the usb core,
+but some layered driver frameworks use it directly.
+These device tables are exported with MODULE_DEVICE_TABLE, through
+modutils, to support the driver loading functionality of USB hotplugging.

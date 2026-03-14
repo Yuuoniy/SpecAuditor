@@ -1,0 +1,13 @@
+Function: void n_tty_receive_char ( struct tty_struct * tty , u8 c )
+
+perform processing
+
+Parameters
+  struct tty_struct *tty
+    terminal device
+  u8 c
+    character
+
+Description
+  Process an individual character of input received from the driver.  This is
+serialized with respect to itself by the rules for the driver above.

@@ -1,0 +1,16 @@
+Function: __bpf_kfunc int bpf_xdp_metadata_rx_hash ( const struct xdp_md * ctx , u32 * hash , enum xdp_rss_hash_type * rss_type )
+
+Read XDP frame RX hash.
+
+Parameters
+  const struct xdp_md *ctx
+    XDP context pointer.
+  u32 *hash
+    Return value pointer.
+  enum xdp_rss_hash_type *rss_type
+    Return value pointer for RSS type.
+
+Description
+  The RSS hash type ( rss_type ) specifies what portion of packet headers NIC
+hardware used when calculating RSS hash value.  The RSS type can be decoded
+via enum xdp_rss_hash_type either matching on individual L3/L4 bits XDP_RSS_L* or by combined traditional RSS Hashing Types XDP_RSS_TYPE_L* .

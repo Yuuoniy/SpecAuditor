@@ -1,0 +1,12 @@
+Function: int iwpm_send_mapinfo ( u8 nl_client , int iwpm_pid )
+
+Send local and mapped IPv4/IPv6 address info of a client to the user space port mapper
+
+Parameters
+  u8 nl_client
+    The index of the netlink client
+  int iwpm_pid
+    The pid of the user space port mapper
+
+Description
+  If successful, returns the number of sent mapping info records

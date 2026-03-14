@@ -1,0 +1,18 @@
+Function: bool dmem_cgroup_state_evict_valuable ( struct dmem_cgroup_pool_state * limit_pool , struct dmem_cgroup_pool_state * test_pool , bool ignore_low , bool * ret_hit_low )
+
+Check if we should evict from test_pool
+
+Parameters
+  struct dmem_cgroup_pool_state *limit_pool
+    The pool for which we hit limits
+  struct dmem_cgroup_pool_state *test_pool
+    The pool for which to test
+  bool ignore_low
+    Whether we have to respect low watermarks.
+  bool *ret_hit_low
+    Pointer to whether it makes sense to consider low watermark.
+
+Description
+  This function returns true if we can evict from test_pool , false if not.
+When returning false and ignore_low is false, ret_hit_low may
+be set to true to indicate this function can be retried with ignore_low set to true.

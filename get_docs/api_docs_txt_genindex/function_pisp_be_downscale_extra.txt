@@ -1,0 +1,9 @@
+Function: struct pisp_be_downscale_extra
+
+PiSP Back End Downscale Extra config
+
+Members
+  scaled_width
+    Scaled image width
+  scaled_height
+    Scaled image height

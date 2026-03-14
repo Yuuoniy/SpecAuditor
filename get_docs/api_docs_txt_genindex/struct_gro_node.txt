@@ -1,0 +1,15 @@
+Struct: struct gro_node
+
+structure to support Generic Receive Offload
+
+Members
+  bitmask
+    bitmask to indicate used buckets in hash
+  hash
+    hashtable of pending aggregated skbs, separated by flows
+  rx_list
+    list of pending GRO_NORMAL skbs
+  rx_count
+    cached current length of rx_list
+  cached_napi_id
+    napi_struct::napi_id cached for hotpath, 0 for standalone

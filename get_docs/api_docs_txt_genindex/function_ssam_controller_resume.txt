@@ -1,0 +1,12 @@
+Function: int ssam_controller_resume ( struct ssam_controller * ctrl )
+
+Resume the controller from suspend.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller to resume.
+
+Description
+  Resume the controller from the suspended state it was put into via ssam_controller_suspend() . This function does not issue display-on and
+D0-entry notifications. If required, those have to be sent manually after
+this call.

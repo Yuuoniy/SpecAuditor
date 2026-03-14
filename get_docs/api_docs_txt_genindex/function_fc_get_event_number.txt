@@ -1,0 +1,7 @@
+Function: u32 fc_get_event_number ( void )
+
+Obtain the next sequential FC event number
+
+Parameters
+  void
+    no arguments

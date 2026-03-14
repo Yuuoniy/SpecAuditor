@@ -1,0 +1,7 @@
+Function: int usb_urb_dir_in ( struct urb * urb )
+
+check if an URB describes an IN transfer
+
+Parameters
+  struct urb *urb
+    URB to be checked

@@ -1,0 +1,7 @@
+Function: int v4l2_async_nf_register ( struct v4l2_async_notifier * notifier )
+
+registers a subdevice asynchronous notifier
+
+Parameters
+  struct v4l2_async_notifier *notifier
+    pointer to struct v4l2_async_notifier

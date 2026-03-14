@@ -1,0 +1,11 @@
+Function: u8 drm_eld_get_conn_type ( const u8 * eld )
+
+Get device type hdmi/dp connected
+
+Parameters
+  const u8 *eld
+    pointer to an ELD memory structure
+
+Description
+  The caller need to use DRM_ELD_CONN_TYPE_HDMI or DRM_ELD_CONN_TYPE_DP to
+identify the display type connected.

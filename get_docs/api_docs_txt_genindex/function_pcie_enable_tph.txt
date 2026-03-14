@@ -1,0 +1,12 @@
+Function: int pcie_enable_tph ( struct pci_dev * pdev , int mode )
+
+Enable TPH support for device using a specific ST mode
+
+Parameters
+  struct pci_dev *pdev
+    PCI device
+  int mode
+    ST mode to enable. Current supported modes include:
+
+Description
+  PCI_TPH_ST_NS_MODE: NO ST Mode

@@ -1,0 +1,11 @@
+Struct: struct snd_enc_real
+
+RealAudio encoder parameters
+
+Members
+  quant_bits
+    number of coupling quantization bits in the stream
+  start_region
+    coupling start region in the stream
+  num_regions
+    number of regions value

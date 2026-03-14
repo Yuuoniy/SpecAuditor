@@ -1,0 +1,11 @@
+Function: int kmem_cache_shrink ( struct kmem_cache * cachep )
+
+Shrink a cache.
+
+Parameters
+  struct kmem_cache *cachep
+    The cache to shrink.
+
+Description
+  Releases as many slabs as possible for a cache.
+To help debugging, a zero exit status indicates all slabs were released.

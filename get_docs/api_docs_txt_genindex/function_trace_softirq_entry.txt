@@ -1,0 +1,11 @@
+Function: void trace_softirq_entry ( unsigned int vec_nr )
+
+called immediately before the softirq handler
+
+Parameters
+  unsigned int vec_nr
+    softirq vector number
+
+Description
+  When used in combination with the softirq_exit tracepoint
+we can determine the softirq handler routine.

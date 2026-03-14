@@ -1,0 +1,11 @@
+Struct: struct input_value
+
+input value representation
+
+Members
+  type
+    type of value (EV_KEY, EV_ABS, etc)
+  code
+    the value code
+  value
+    the value

@@ -1,0 +1,10 @@
+Function: int raw_atomic_inc_return_relaxed ( atomic_t * v )
+
+atomic increment with relaxed ordering
+
+Parameters
+  atomic_t *v
+    pointer to atomic_t
+
+Description
+  Atomically updates v to ( v + 1) with relaxed ordering.

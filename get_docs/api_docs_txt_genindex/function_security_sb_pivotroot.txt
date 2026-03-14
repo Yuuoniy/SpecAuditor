@@ -1,0 +1,12 @@
+Function: int security_sb_pivotroot ( const struct path * old_path , const struct path * new_path )
+
+Check permissions for pivoting the rootfs
+
+Parameters
+  const struct path *old_path
+    new location for current rootfs
+  const struct path *new_path
+    location of the new rootfs
+
+Description
+  Check permission before pivoting the root filesystem.

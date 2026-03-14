@@ -1,0 +1,13 @@
+Function: void icl_set_active_port_dpll ( struct intel_crtc_state * crtc_state , enum icl_port_dpll_id port_dpll_id )
+
+select the active port DPLL for a given CRTC
+
+Parameters
+  struct intel_crtc_state *crtc_state
+    state for the CRTC to select the DPLL for
+  enum icl_port_dpll_id port_dpll_id
+    the active port_dpll_id to select
+
+Description
+  Select the given port_dpll_id instance from the DPLLs reserved for the
+CRTC.

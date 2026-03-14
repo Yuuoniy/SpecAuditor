@@ -1,0 +1,12 @@
+Function: void debugfs_leave_cancellation ( struct file * file , struct debugfs_cancellation * cancellation )
+
+leave cancellation section
+
+Parameters
+  struct file *file
+    the file being accessed
+  struct debugfs_cancellation *cancellation
+    the cancellation previously registered with debugfs_enter_cancellation()
+
+Description
+  See the documentation of debugfs_enter_cancellation() .

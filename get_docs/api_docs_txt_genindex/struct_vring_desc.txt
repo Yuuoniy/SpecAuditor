@@ -1,0 +1,15 @@
+Struct: struct vring_desc
+
+Virtio ring descriptors, 16 bytes long. These can chain together via next .
+
+Members
+  addr
+    buffer address (guest-physical)
+  len
+    buffer length
+  flags
+    descriptor flags
+  next
+    index of the next descriptor in the chain,
+if the VRING_DESC_F_NEXT flag is set. We chain unused
+descriptors via this, too.

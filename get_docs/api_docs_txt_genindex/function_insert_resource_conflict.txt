@@ -1,0 +1,12 @@
+Function: struct resource * insert_resource_conflict ( struct resource * parent , struct resource * new )
+
+Inserts resource in the resource tree
+
+Parameters
+  struct resource *parent
+    parent of the new resource
+  struct resource *new
+    new resource to insert
+
+Description
+  Returns 0 on success, conflict resource if the resource can’t be inserted.

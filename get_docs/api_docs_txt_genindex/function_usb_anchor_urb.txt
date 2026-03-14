@@ -1,0 +1,13 @@
+Function: void usb_anchor_urb ( struct urb * urb , struct usb_anchor * anchor )
+
+anchors an URB while it is processed
+
+Parameters
+  struct urb *urb
+    pointer to the urb to anchor
+  struct usb_anchor *anchor
+    pointer to the anchor
+
+Description
+  This can be called to have access to URBs which are to be executed
+without bothering to track them

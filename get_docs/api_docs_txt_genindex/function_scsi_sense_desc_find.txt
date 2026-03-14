@@ -1,0 +1,12 @@
+Function: const u8 * scsi_sense_desc_find ( const u8 * sense_buffer , int sb_len , int desc_type )
+
+search for a given descriptor type in descriptor sense data format.
+
+Parameters
+  const u8 * sense_buffer
+    byte array of descriptor format sense data
+  int sb_len
+    number of valid bytes in sense_buffer
+  int desc_type
+    value of descriptor type to find
+(e.g. 0 -> information)

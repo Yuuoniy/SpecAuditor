@@ -1,0 +1,11 @@
+Function: void drm_fb_helper_unregister_info ( struct drm_fb_helper * fb_helper )
+
+unregister fb_info framebuffer device
+
+Parameters
+  struct drm_fb_helper *fb_helper
+    driver-allocated fbdev helper, must not be NULL
+
+Description
+  A wrapper around unregister_framebuffer, to release the fb_info
+framebuffer device. This must be called before releasing all resources for fb_helper by calling drm_fb_helper_fini() .

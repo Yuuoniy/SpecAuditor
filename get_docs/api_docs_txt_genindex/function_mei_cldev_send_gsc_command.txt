@@ -1,0 +1,17 @@
+Function: ssize_t mei_cldev_send_gsc_command ( struct mei_cl_device * cldev , u8 client_id , u32 fence_id , struct scatterlist * sg_in , size_t total_in_len , struct scatterlist * sg_out )
+
+sends a gsc command, by sending a gsl mei message to gsc and receiving reply from gsc
+
+Parameters
+  struct mei_cl_device *cldev
+    me client device
+  u8 client_id
+    client id to send the command to
+  u32 fence_id
+    fence id to send the command to
+  struct scatterlist *sg_in
+    scatter gather list containing addresses for rx message buffer
+  size_t total_in_len
+    total length of data in ‘in’ sg, can be less than the sum of buffers sizes
+  struct scatterlist *sg_out
+    scatter gather list containing addresses for tx message buffer

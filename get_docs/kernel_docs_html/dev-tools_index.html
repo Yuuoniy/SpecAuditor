@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Development tools for the kernel &#8212; The Linux Kernel  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Kernel Testing Guide" href="testing-overview.html" />
+    <link rel="prev" title="Checking for needed translation updates" href="../doc-guide/checktransupdate.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../index.html">The Linux Kernel</a></h1>
+
+
+
+<p class="blurb">6.18.0-rc1</p>
+
+
+
+
+
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+<p>
+<h3 class="kernel-toc-contents">Contents</h3>
+<input type="checkbox" class="kernel-toc-toggle" id = "kernel-toc-toggle" checked>
+<label class="kernel-toc-title" for="kernel-toc-toggle"></label>
+
+<div class="kerneltoc" id="kerneltoc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../process/development-process.html">Development process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/submitting-patches.html">Submitting patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/code-of-conduct.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Maintainer handbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/index.html">All development-process docs</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core-api/index.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver-api/index.html">Driver APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subsystem-apis.html">Subsystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../locking/index.html">Locking</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../process/license-rules.html">Licensing rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-guide/index.html">Writing documentation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Development tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing-overview.html">Kernel Testing Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checkpatch.html">Checkpatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clang-format.html">clang-format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coccinelle.html">Coccinelle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparse.html">Sparse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kcov.html">KCOV: code coverage for fuzzing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcov.html">Using gcov with the Linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kasan.html">Kernel Address Sanitizer (KASAN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kmsan.html">Kernel Memory Sanitizer (KMSAN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubsan.html">Undefined Behavior Sanitizer - UBSAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kmemleak.html">Kernel Memory Leak Detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kcsan.html">Kernel Concurrency Sanitizer (KCSAN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lkmm/index.html">Linux Kernel Memory Consistency Model (LKMM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kfence.html">Kernel Electric-Fence (KFENCE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kselftest.html">Linux Kernel Selftests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kunit/index.html">KUnit - Linux Kernel Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ktap.html">The Kernel Test Anything Protocol (KTAP), version 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checkuapi.html">UAPI Checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio-sloppy-logic-analyzer.html">Linux Kernel GPIO based sloppy logic analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autofdo.html">Using AutoFDO with the Linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="propeller.html">Using Propeller with the Linux kernel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="testing-overview.html">Testing guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kernel-hacking/index.html">Hacking guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trace/index.html">Tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fault-injection/index.html">Fault injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../livepatch/index.html">Livepatching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">Rust</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kbuild/index.html">Build system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/reporting-issues.html">Reporting issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Userspace tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userspace-api/index.html">Userspace API</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../firmware-guide/index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devicetree/index.html">Firmware and Devicetree</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../arch/index.html">CPU architectures</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging/index.html">Unsorted documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../translations/index.html">Translations</a></li>
+</ul>
+
+</div>
+
+<script type="text/javascript"> <!--
+  var sbar = document.getElementsByClassName("sphinxsidebar")[0];
+  let currents = document.getElementsByClassName("current")
+  if (currents.length) {
+    sbar.scrollTop = currents[currents.length - 1].offsetTop;
+  }
+  --> </script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dev-tools/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+
+
+
+
+<div class="language-selection">
+English
+
+<ul>
+
+<li><a href="../translations/zh_CN/dev-tools/index.html">Chinese (Simplified)</a></li>
+
+<li><a href="../translations/zh_TW/dev-tools/index.html">Chinese (Traditional)</a></li>
+
+<li><a href="../translations/it_IT/dev-tools/index.html">Italian</a></li>
+
+</ul>
+</div>
+<section id="development-tools-for-the-kernel">
+<h1>Development tools for the kernel<a class="headerlink" href="#development-tools-for-the-kernel" title="Permalink to this heading">¶</a></h1>
+<p>This document is a collection of documents about development tools that can
+be used to work on the kernel. For now, the documents have been pulled
+together without any significant effort to integrate them into a coherent
+whole; patches welcome!</p>
+<p>A brief overview of testing-specific tools can be found in
+<a class="reference internal" href="testing-overview.html"><span class="doc">Kernel Testing Guide</span></a></p>
+<p>Tools that are specific to debugging can be found in
+<a class="reference internal" href="../process/debugging/index.html"><span class="doc">Debugging advice for Linux Kernel developers</span></a></p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Table of contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="testing-overview.html">Kernel Testing Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing-overview.html#writing-and-running-tests">Writing and Running Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing-overview.html#code-coverage-tools">Code Coverage Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing-overview.html#dynamic-analysis-tools">Dynamic Analysis Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing-overview.html#static-analysis-tools">Static Analysis Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="checkpatch.html">Checkpatch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="checkpatch.html#options">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checkpatch.html#message-levels">Message Levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checkpatch.html#type-descriptions">Type Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="clang-format.html">clang-format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="clang-format.html#review-files-and-patches-for-coding-style">Review files and patches for coding style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clang-format.html#reformatting-blocks-of-code">Reformatting blocks of code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clang-format.html#missing-support">Missing support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clang-format.html#extra-features-options">Extra features/options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="coccinelle.html">Coccinelle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="coccinelle.html#getting-coccinelle">Getting Coccinelle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coccinelle.html#supplemental-documentation">Supplemental documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coccinelle.html#using-coccinelle-on-the-linux-kernel">Using Coccinelle on the Linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coccinelle.html#coccinelle-parallelization">Coccinelle parallelization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coccinelle.html#using-coccinelle-with-a-single-semantic-patch">Using Coccinelle with a single semantic patch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coccinelle.html#controlling-which-files-are-processed-by-coccinelle">Controlling Which Files are Processed by Coccinelle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coccinelle.html#debugging-coccinelle-smpl-patches">Debugging Coccinelle SmPL patches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coccinelle.html#cocciconfig-support">.cocciconfig support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coccinelle.html#additional-flags">Additional flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coccinelle.html#smpl-patch-specific-options">SmPL patch specific options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coccinelle.html#smpl-patch-coccinelle-requirements">SmPL patch Coccinelle requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coccinelle.html#proposing-new-semantic-patches">Proposing new semantic patches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coccinelle.html#detailed-description-of-the-report-mode">Detailed description of the <code class="docutils literal notranslate"><span class="pre">report</span></code> mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coccinelle.html#detailed-description-of-the-patch-mode">Detailed description of the <code class="docutils literal notranslate"><span class="pre">patch</span></code> mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coccinelle.html#detailed-description-of-the-context-mode">Detailed description of the <code class="docutils literal notranslate"><span class="pre">context</span></code> mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coccinelle.html#detailed-description-of-the-org-mode">Detailed description of the <code class="docutils literal notranslate"><span class="pre">org</span></code> mode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sparse.html">Sparse</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sparse.html#using-sparse-for-typechecking">Using sparse for typechecking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparse.html#using-sparse-for-lock-checking">Using sparse for lock checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparse.html#getting-sparse">Getting sparse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparse.html#using-sparse">Using sparse</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kcov.html">KCOV: code coverage for fuzzing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kcov.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kcov.html#coverage-collection">Coverage collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kcov.html#comparison-operands-collection">Comparison operands collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kcov.html#remote-coverage-collection">Remote coverage collection</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gcov.html">Using gcov with the Linux kernel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gcov.html#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcov.html#customization">Customization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcov.html#module-specific-configs">Module specific configs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcov.html#files">Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcov.html#modules">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcov.html#separated-build-and-test-machines">Separated build and test machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcov.html#note-on-compilers">Note on compilers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcov.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcov.html#appendix-a-gather-on-build-sh">Appendix A: gather_on_build.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcov.html#appendix-b-gather-on-test-sh">Appendix B: gather_on_test.sh</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kasan.html">Kernel Address Sanitizer (KASAN)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kasan.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kasan.html#support">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kasan.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kasan.html#implementation-details">Implementation details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kasan.html#shadow-memory">Shadow memory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kasan.html#for-developers">For developers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kmsan.html">Kernel Memory Sanitizer (KMSAN)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kmsan.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kmsan.html#support">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kmsan.html#how-kmsan-works">How KMSAN works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kmsan.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ubsan.html">Undefined Behavior Sanitizer - UBSAN</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ubsan.html#report-example">Report example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubsan.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubsan.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kmemleak.html">Kernel Memory Leak Detector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kmemleak.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kmemleak.html#basic-algorithm">Basic Algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kmemleak.html#testing-specific-sections-with-kmemleak">Testing specific sections with kmemleak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kmemleak.html#freeing-kmemleak-internal-objects">Freeing kmemleak internal objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kmemleak.html#kmemleak-api">Kmemleak API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kmemleak.html#dealing-with-false-positives-negatives">Dealing with false positives/negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kmemleak.html#limitations-and-drawbacks">Limitations and Drawbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kmemleak.html#testing-with-kmemleak-test">Testing with kmemleak-test</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kcsan.html">Kernel Concurrency Sanitizer (KCSAN)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kcsan.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kcsan.html#data-races">Data Races</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kcsan.html#race-detection-beyond-data-races">Race Detection Beyond Data Races</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kcsan.html#implementation-details">Implementation Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kcsan.html#alternatives-considered">Alternatives Considered</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lkmm/index.html">Linux Kernel Memory Consistency Model (LKMM)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lkmm/readme.html">README (for LKMM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lkmm/docs/index.html">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kfence.html">Kernel Electric-Fence (KFENCE)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kfence.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kfence.html#implementation-details">Implementation Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kfence.html#interface">Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kfence.html#related-tools">Related Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kselftest.html">Linux Kernel Selftests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kselftest.html#documentation-on-the-tests">Documentation on the tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kselftest.html#running-the-selftests-hotplug-tests-are-run-in-limited-mode">Running the selftests (hotplug tests are run in limited mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kselftest.html#running-a-subset-of-selftests">Running a subset of selftests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kselftest.html#running-the-full-range-hotplug-selftests">Running the full range hotplug selftests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kselftest.html#install-selftests">Install selftests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kselftest.html#running-installed-selftests">Running installed selftests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kselftest.html#timeout-for-selftests">Timeout for selftests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kselftest.html#packaging-selftests">Packaging selftests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kselftest.html#contributing-new-tests">Contributing new tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kselftest.html#contributing-new-tests-details">Contributing new tests (details)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kselftest.html#test-module">Test Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kselftest.html#test-harness">Test Harness</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kunit/index.html">KUnit - Linux Kernel Unit Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kunit/start.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kunit/architecture.html">KUnit Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kunit/run_wrapper.html">Running tests with kunit_tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kunit/run_manual.html">Run Tests without kunit_tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kunit/usage.html">Writing Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kunit/usage.html#common-patterns">Common Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kunit/api/index.html">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kunit/style.html">Test Style and Nomenclature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kunit/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kunit/running_tips.html">Tips For Running KUnit Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kunit/index.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kunit/index.html#unit-testing">Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kunit/index.html#how-do-i-use-it">How do I use it?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ktap.html">The Kernel Test Anything Protocol (KTAP), version 1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ktap.html#version-lines">Version lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ktap.html#plan-lines">Plan lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ktap.html#test-case-result-lines">Test case result lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ktap.html#diagnostic-lines">Diagnostic lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ktap.html#unknown-lines">Unknown lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ktap.html#nested-tests">Nested tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ktap.html#major-differences-between-tap-and-ktap">Major differences between TAP and KTAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ktap.html#example-ktap-output">Example KTAP output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ktap.html#see-also">See also:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="checkuapi.html">UAPI Checker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="checkuapi.html#options">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checkuapi.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checkuapi.html#caveats">Caveats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gpio-sloppy-logic-analyzer.html">Linux Kernel GPIO based sloppy logic analyzer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gpio-sloppy-logic-analyzer.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio-sloppy-logic-analyzer.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio-sloppy-logic-analyzer.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="autofdo.html">Using AutoFDO with the Linux kernel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="autofdo.html#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autofdo.html#customization">Customization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autofdo.html#workflow">Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="propeller.html">Using Propeller with the Linux kernel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="propeller.html#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="propeller.html#customization">Customization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="propeller.html#workflow">Workflow</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;The kernel development community.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/dev-tools/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,13 @@
+Function: bool d_really_is_negative ( const struct dentry * dentry )
+
+Determine if a dentry is really negative (ignoring fallthroughs)
+
+Parameters
+  const struct dentry *dentry
+    The dentry in question
+
+Description
+  Returns true if the dentry represents either an absent name or a name that
+doesn’t map to an inode (ie. ->d_inode is NULL).  The dentry could represent
+a true miss, a whiteout that isn’t represented by a 0,0 chardev or a
+fallthrough marker in an opaque directory.

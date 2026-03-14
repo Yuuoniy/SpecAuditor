@@ -1,0 +1,13 @@
+Function: void pcim_iounmap ( struct pci_dev * pdev , void __iomem * addr )
+
+Managed pci_iounmap()
+
+Parameters
+  struct pci_dev *pdev
+    PCI device to iounmap for
+  void __iomem *addr
+    Address to unmap
+
+Description
+  Managed pci_iounmap() . addr must have been mapped using a pcim_* mapping
+function.

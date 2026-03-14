@@ -1,0 +1,16 @@
+Macro: for_each_hwgpio_in_range
+
+
+
+Parameters
+  _chip
+    Chip to iterate over.
+  _i
+    Loop counter.
+  _base
+    First GPIO in the ranger.
+  _size
+    Amount of GPIOs to check starting from base .
+  _label
+    Place to store the address of the label if the GPIO is requested.
+Set to NULL for unused GPIOs.

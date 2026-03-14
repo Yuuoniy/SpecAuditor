@@ -1,0 +1,51 @@
+Function: struct drm_gem_object_funcs
+
+GEM object functions
+
+Members
+  free
+    Deconstructor for drm_gem_objects. This callback is mandatory.
+  open
+    Called upon GEM handle creation. This callback is optional.
+  close
+    Called upon GEM handle release. This callback is optional.
+  print_info
+    If driver subclasses struct drm_gem_object , it can implement this
+optional hook for printing additional driver specific info. drm_printf_indent() should be used in the callback passing it the
+indent argument. This callback is called from drm_gem_print_info() . This callback is optional.
+  export
+    Export backing buffer as a dma_buf .
+If this is not set drm_gem_prime_export() is used. This callback is optional.
+  pin
+    Pin backing buffer in memory, such that dma-buf importers can
+access it. Used by the drm_gem_map_attach() helper. This callback is optional.
+  unpin
+    Unpin backing buffer. Used by the drm_gem_map_detach() helper. This callback is optional.
+  get_sg_table
+    Returns a Scatter-Gather table representation of the buffer.
+Used when exporting a buffer by the drm_gem_map_dma_buf() helper.
+Releasing is done by calling dma_unmap_sg_attrs() and sg_free_table() in drm_gem_unmap_buf() , therefore these helpers and this callback
+here cannot be used for sg tables pointing at driver private memory
+ranges. See also drm_prime_pages_to_sg() .
+  vmap
+    Returns a virtual address for the buffer. Used by the drm_gem_dmabuf_vmap() helper. Called with a held GEM reservation
+lock. This callback is optional.
+  vunmap
+    Releases the address previously returned by vmap . Used by the drm_gem_dmabuf_vunmap() helper. Called with a held GEM reservation
+lock. This callback is optional.
+  mmap
+    Handle mmap() of the gem object, setup vma accordingly. This callback is optional. The callback is used by both drm_gem_mmap_obj() and drm_gem_prime_mmap() .  When mmap is present vm_ops is not
+used, the mmap callback must set vma->vm_ops instead.
+  evict
+    Evicts gem object out from memory. Used by the drm_gem_object_evict() helper. Returns 0 on success, -errno otherwise. Called with a held
+GEM reservation lock. This callback is optional.
+  status
+    The optional status callback can return additional object state
+which determines which stats the object is counted against.  The
+callback is called under table_lock.  Racing against object status
+change is “harmless”, and the callback can expect to not race
+against object destruction. Called by drm_show_memory_stats() .
+  rss
+    Return resident size of the object in physical memory. Called by drm_show_memory_stats() .
+  vm_ops
+    Virtual memory operations used with mmap. This is optional but necessary for mmap support.

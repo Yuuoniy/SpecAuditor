@@ -1,0 +1,24 @@
+Function: int peci_mmio_read ( struct peci_device * device , u8 bar , u8 seg , u8 bus , u8 dev , u8 func , u64 address , u32 * data )
+
+read 32-bit memory location using 64-bit bar offset address
+
+Parameters
+  struct peci_device *device
+    PECI device to which request is going to be sent
+  u8 bar
+    PCI bar
+  u8 seg
+    PCI segment
+  u8 bus
+    bus
+  u8 dev
+    device
+  u8 func
+    function
+  u64 address
+    64-bit MMIO address
+  u32 *data
+    where to store the read data
+
+Description
+  It uses RdEndpointConfig PECI command.

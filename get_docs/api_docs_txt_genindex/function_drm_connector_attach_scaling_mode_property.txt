@@ -1,0 +1,13 @@
+Function: int drm_connector_attach_scaling_mode_property ( struct drm_connector * connector , u32 scaling_mode_mask )
+
+attach atomic scaling mode property
+
+Parameters
+  struct drm_connector *connector
+    connector to attach scaling mode property on.
+  u32 scaling_mode_mask
+    or’ed mask of BIT( DRM_MODE_SCALE_ *).
+
+Description
+  This is used to add support for scaling mode to atomic drivers.
+The scaling mode will be set to drm_connector_state.scaling_mode and can be used from drm_connector_helper_funcs->atomic_check for validation.

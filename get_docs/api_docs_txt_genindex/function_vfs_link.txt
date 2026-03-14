@@ -1,0 +1,18 @@
+Function: int vfs_link ( struct dentry * old_dentry , struct mnt_idmap * idmap , struct inode * dir , struct dentry * new_dentry , struct inode * * delegated_inode )
+
+create a new link
+
+Parameters
+  struct dentry *old_dentry
+    object to be linked
+  struct mnt_idmap *idmap
+    idmap of the mount
+  struct inode *dir
+    new parent
+  struct dentry *new_dentry
+    where to create the new link
+  struct inode **delegated_inode
+    returns inode needing a delegation break
+
+Description
+  The caller must hold dir->i_rwsem exclusively.

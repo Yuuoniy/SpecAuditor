@@ -1,0 +1,7 @@
+Function: bool drm_gem_is_imported ( const struct drm_gem_object * obj )
+
+Tests if GEM object’s buffer has been imported
+
+Parameters
+  const struct drm_gem_object *obj
+    the GEM object

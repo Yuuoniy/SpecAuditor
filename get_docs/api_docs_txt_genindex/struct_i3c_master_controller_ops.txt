@@ -1,0 +1,105 @@
+Struct: struct i3c_master_controller_ops
+
+I3C master methods
+
+Members
+  bus_init
+    hook responsible for the I3C bus initialization. You should at
+least call master_set_info() from there and set the bus mode.
+You can also put controller specific initialization in there.
+This method is mandatory.
+  bus_cleanup
+    cleanup everything done in i3c_master_controller_ops->bus_init() .
+This method is optional.
+  attach_i3c_dev
+    called every time an I3C device is attached to the bus. It
+can be after a DAA or when a device is statically declared
+by the FW, in which case it will only have a static address
+and the dynamic address will be 0.
+When this function is called, device information have not
+been retrieved yet.
+This is a good place to attach master controller specific
+data to I3C devices.
+This method is optional.
+  reattach_i3c_dev
+    called every time an I3C device has its addressed
+changed. It can be because the device has been powered
+down and has lost its address, or it can happen when a
+device had a static address and has been assigned a
+dynamic address with SETDASA.
+This method is optional.
+  detach_i3c_dev
+    called when an I3C device is detached from the bus. Usually
+happens when the master device is unregistered.
+This method is optional.
+  do_daa
+    do a DAA (Dynamic Address Assignment) procedure. This is procedure
+should send an ENTDAA CCC command and then add all devices
+discovered sure the DAA using i3c_master_add_i3c_dev_locked() .
+Add devices added with i3c_master_add_i3c_dev_locked() will then be
+attached or re-attached to the controller.
+This method is mandatory.
+  supports_ccc_cmd
+    should return true if the CCC command is supported, false
+otherwise.
+This method is optional, if not provided the core assumes
+all CCC commands are supported.
+  send_ccc_cmd
+    send a CCC command
+This method is mandatory.
+  priv_xfers
+    do one or several private I3C SDR transfers
+This method is mandatory.
+  attach_i2c_dev
+    called every time an I2C device is attached to the bus.
+This is a good place to attach master controller specific
+data to I2C devices.
+This method is optional.
+  detach_i2c_dev
+    called when an I2C device is detached from the bus. Usually
+happens when the master device is unregistered.
+This method is optional.
+  i2c_xfers
+    do one or several I2C transfers. Note that, unlike i3c
+transfers, the core does not guarantee that buffers attached to
+the transfers are DMA-safe. If drivers want to have DMA-safe
+buffers, they should use the i2c_get_dma_safe_msg_buf() and i2c_put_dma_safe_msg_buf() helpers provided by the I2C
+framework.
+This method is mandatory.
+  request_ibi
+    attach an IBI handler to an I3C device. This implies defining
+an IBI handler and the constraints of the IBI (maximum payload
+length and number of pre-allocated slots).
+Some controllers support less IBI-capable devices than regular
+devices, so this method might return - EBUSY if there’s no
+more space for an extra IBI registration
+This method is optional.
+  free_ibi
+    free an IBI previously requested with -> request_ibi() . The IBI
+should have been disabled with -> disable_irq() prior to that
+This method is mandatory only if ->request_ibi is not NULL.
+  enable_ibi
+    enable the IBI. Only valid if -> request_ibi() has been called
+prior to -> enable_ibi() . The controller should first enable
+the IBI on the controller end (for example, unmask the hardware
+IRQ) and then send the ENEC CCC command (with the IBI flag set)
+to the I3C device.
+This method is mandatory only if ->request_ibi is not NULL.
+  disable_ibi
+    disable an IBI. First send the DISEC CCC command with the IBI
+flag set and then deactivate the hardware IRQ on the
+controller end.
+This method is mandatory only if ->request_ibi is not NULL.
+  recycle_ibi_slot
+    recycle an IBI slot. Called every time an IBI has been
+processed by its handler. The IBI slot should be put back
+in the IBI slot pool so that the controller can re-use it
+for a future IBI
+This method is mandatory only if ->request_ibi is not
+NULL.
+  enable_hotjoin
+    enable hot join event detect.
+  disable_hotjoin
+    disable hot join event detect.
+  set_speed
+    adjust I3C open drain mode timing.

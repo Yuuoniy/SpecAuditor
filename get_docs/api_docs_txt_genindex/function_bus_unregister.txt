@@ -1,0 +1,11 @@
+Function: void bus_unregister ( const struct bus_type * bus )
+
+remove a bus from the system
+
+Parameters
+  const struct bus_type *bus
+    bus.
+
+Description
+  Unregister the child subsystems and the bus itself.
+Finally, we call bus_put() to release the refcount

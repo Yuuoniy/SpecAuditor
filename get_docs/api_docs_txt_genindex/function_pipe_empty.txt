@@ -1,0 +1,9 @@
+Function: bool pipe_empty ( unsigned int head , unsigned int tail )
+
+Return true if the pipe is empty
+
+Parameters
+  unsigned int head
+    The pipe ring head pointer
+  unsigned int tail
+    The pipe ring tail pointer

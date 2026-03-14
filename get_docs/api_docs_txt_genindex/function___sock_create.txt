@@ -1,0 +1,23 @@
+Function: int __sock_create ( struct net * net , int family , int type , int protocol , struct socket * * res , int kern )
+
+creates a socket
+
+Parameters
+  struct net *net
+    net namespace
+  int family
+    protocol family (AF_INET, ...)
+  int type
+    communication type (SOCK_STREAM, ...)
+  int protocol
+    protocol (0, ...)
+  struct socket **res
+    new socket
+  int kern
+    boolean for kernel space sockets
+
+Description
+  Creates a new socket and assigns it to res , passing through LSM.
+Returns 0 or an error. On failure res is set to NULL . kern must
+be set to true if the socket resides in kernel space.
+This function internally uses GFP_KERNEL.

@@ -1,0 +1,12 @@
+Function: int drm_edid_override_connector_update ( struct drm_connector * connector )
+
+add modes from override/firmware EDID
+
+Parameters
+  struct drm_connector *connector
+    connector we’re probing
+
+Description
+  Add modes from the override/firmware EDID, if available. Only to be used from drm_helper_probe_single_connector_modes() as a fallback for when DDC probe
+failed during drm_get_edid() and caused the override/firmware EDID to be
+skipped.

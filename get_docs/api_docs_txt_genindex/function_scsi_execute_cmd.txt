@@ -1,0 +1,25 @@
+Function: int scsi_execute_cmd ( struct scsi_device * sdev , const unsigned char * cmd , blk_opf_t opf , void * buffer , unsigned int bufflen , int timeout , int ml_retries , const struct scsi_exec_args * args )
+
+insert request and wait for the result
+
+Parameters
+  struct scsi_device *sdev
+    scsi_device
+  const unsigned char *cmd
+    scsi command
+  blk_opf_t opf
+    block layer request cmd_flags
+  void *buffer
+    data buffer
+  unsigned int bufflen
+    len of buffer
+  int timeout
+    request timeout in HZ
+  int ml_retries
+    number of times SCSI midlayer will retry request
+  const struct scsi_exec_args *args
+    Optional args. See struct definition for field descriptions
+
+Description
+  Returns the scsi_cmnd result field if a command was executed, or a negative
+Linux error code if we didn’t get that far.

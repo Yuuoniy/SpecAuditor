@@ -1,0 +1,13 @@
+Function: void intel_gt_mcr_lock_sanitize ( struct intel_gt * gt )
+
+Sanitize MCR steering lock
+
+Parameters
+  struct intel_gt *gt
+    GT structure
+
+Description
+  This will be used to sanitize the initial status of the hardware lock
+during driver load and resume since there won’t be any concurrent access
+from other agents at those times, but it’s possible that boot firmware
+may have left the lock in a bad state.

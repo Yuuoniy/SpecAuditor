@@ -1,0 +1,16 @@
+Macro: drm_exec_for_each_locked_object_reverse
+
+
+
+Parameters
+  exec
+    drm_exec object
+  index
+    unsigned long index for the iteration
+  obj
+    the current GEM object
+
+Description
+  Iterate over all the locked GEM objects inside the drm_exec object in
+reverse locking order. Note that index may go below zero and wrap,
+but that will be caught by drm_exec_obj() , returning a NULL object.

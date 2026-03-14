@@ -1,0 +1,7 @@
+Function: struct vb2_v4l2_buffer * v4l2_m2m_src_buf_remove ( struct v4l2_m2m_ctx * m2m_ctx )
+
+take off a source buffer from the list of ready buffers and return it
+
+Parameters
+  struct v4l2_m2m_ctx *m2m_ctx
+    m2m context assigned to the instance given by struct v4l2_m2m_ctx

@@ -1,0 +1,20 @@
+Function: int crypto_rng_generate ( struct crypto_rng * tfm , const u8 * src , unsigned int slen , u8 * dst , unsigned int dlen )
+
+get random number
+
+Parameters
+  struct crypto_rng *tfm
+    cipher handle
+  const u8 *src
+    Input buffer holding additional data, may be NULL
+  unsigned int slen
+    Length of additional data
+  u8 *dst
+    output buffer holding the random numbers
+  unsigned int dlen
+    length of the output buffer
+
+Description
+  This function fills the caller-allocated buffer with random
+numbers using the random number generator referenced by the
+cipher handle.

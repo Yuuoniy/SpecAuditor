@@ -1,0 +1,10 @@
+Function: void dvb_ringbuffer_reset ( struct dvb_ringbuffer * rbuf )
+
+resets the ringbuffer to initial state
+
+Parameters
+  struct dvb_ringbuffer *rbuf
+    pointer to struct dvb_ringbuffer
+
+Description
+  Resets the read and write pointers to zero and flush the buffer.

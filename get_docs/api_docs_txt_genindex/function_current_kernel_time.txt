@@ -1,0 +1,6 @@
+Function: struct timespec current_kernel_time ( void )
+
+These are replaced by ktime_get_coarse_real_ts64() and ktime_get_coarse_ts64() . However, A lot of code that wants
+coarse-grained times can use the simple ‘jiffies’ instead, while
+some drivers may actually want the higher resolution accessors
+these days.

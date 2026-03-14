@@ -1,0 +1,16 @@
+Function: int drm_dp_bw_channel_coding_efficiency ( bool is_uhbr )
+
+Get a DP link’s channel coding efficiency
+
+Parameters
+  bool is_uhbr
+    Whether the link has a 128b/132b channel coding
+
+Description
+  Return the channel coding efficiency of the given DP link type, which is
+either 8b/10b or 128b/132b (aka UHBR). The corresponding overhead includes
+the 8b -> 10b, 128b -> 132b pixel data to link symbol conversion overhead
+and for 128b/132b any link or PHY level control symbol insertion overhead
+(LLCP, FEC, PHY sync, see DP Standard v2.1 3.5.2.18). For 8b/10b the
+corresponding FEC overhead is BW allocation specific, included in the value
+returned by drm_dp_bw_overhead() .

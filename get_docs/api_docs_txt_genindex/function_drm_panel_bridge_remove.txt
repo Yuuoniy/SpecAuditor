@@ -1,0 +1,7 @@
+Function: void drm_panel_bridge_remove ( struct drm_bridge * bridge )
+
+Unregisters and frees a drm_bridge created by drm_panel_bridge_add() .
+
+Parameters
+  struct drm_bridge *bridge
+    The drm_bridge being freed.

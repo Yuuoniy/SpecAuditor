@@ -1,0 +1,13 @@
+Function: int xe_tile_init_noalloc ( struct xe_tile * tile )
+
+Init tile up to the point where allocations can happen.
+
+Parameters
+  struct xe_tile *tile
+    The tile to initialize.
+
+Description
+  This function prepares the tile to allow memory allocations to VRAM, but is
+not allowed to allocate memory itself. This state is useful for display
+readout, because the inherited display framebuffer will otherwise be
+overwritten as it is usually put at the start of VRAM.

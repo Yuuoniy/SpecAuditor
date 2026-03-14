@@ -1,0 +1,56 @@
+Struct: struct dvb_demux_feed
+
+describes a DVB field
+
+Members
+  feed
+    a union describing a digital TV feed.
+Depending on the feed type, it can be either feed.ts or feed.sec .
+  feed.ts
+    a struct dmx_ts_feed pointer.
+For TS feed only.
+  feed.sec
+    a struct dmx_section_feed pointer.
+For section feed only.
+  cb
+    a union describing digital TV callbacks.
+Depending on the feed type, it can be either cb.ts or cb.sec .
+  cb.ts
+    a dmx_ts_cb() calback function pointer.
+For TS feed only.
+  cb.sec
+    a dmx_section_cb() callback function pointer.
+For section feed only.
+  demux
+    pointer to struct dvb_demux .
+  priv
+    private data that can optionally be used by a DVB driver.
+  type
+    type of the filter, as defined by enum dvb_dmx_filter_type .
+  state
+    state of the filter as defined by enum dvb_dmx_state .
+  pid
+    PID to be filtered.
+  timeout
+    feed timeout.
+  filter
+    pointer to struct dvb_demux_filter .
+  buffer_flags
+    Buffer flags used to report discontinuity users via DVB
+memory mapped API, as defined by enum dmx_buffer_flags .
+  ts_type
+    type of TS, as defined by enum ts_filter_type .
+  pes_type
+    type of PES, as defined by enum dmx_ts_pes .
+  cc
+    MPEG-TS packet continuity counter
+  pusi_seen
+    if true, indicates that a discontinuity was detected.
+it is used to prevent feeding of garbage from previous section.
+  peslen
+    length of the PES (Packet Elementary Stream).
+  list_head
+    head for the list of digital TV demux feeds.
+  index
+    a unique index for each feed. Can be used as hardware
+pid filter index.

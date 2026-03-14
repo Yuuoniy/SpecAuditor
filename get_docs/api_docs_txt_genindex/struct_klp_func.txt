@@ -1,0 +1,30 @@
+Struct: struct klp_func
+
+function structure for live patching
+
+Members
+  old_name
+    name of the function to be patched
+  new_func
+    pointer to the patched function code
+  old_sympos
+    a hint indicating which symbol position the old function
+can be found (optional)
+  old_func
+    pointer to the function being patched
+  kobj
+    kobject for sysfs resources
+  node
+    list node for klp_object func_list
+  stack_node
+    list node for klp_ops func_stack list
+  old_size
+    size of the old function
+  new_size
+    size of the new function
+  nop
+    temporary patch to use the original code again; dyn. allocated
+  patched
+    the func has been added to the klp_ops list
+  transition
+    the func is currently being applied or reverted

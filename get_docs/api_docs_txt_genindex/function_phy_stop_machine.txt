@@ -1,0 +1,11 @@
+Function: void phy_stop_machine ( struct phy_device * phydev )
+
+stop the PHY state machine tracking
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  state to UP (unless it wasn’t up yet). This function must be
+called BEFORE phy_detach.

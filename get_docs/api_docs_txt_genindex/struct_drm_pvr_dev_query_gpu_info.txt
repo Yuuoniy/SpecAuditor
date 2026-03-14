@@ -1,0 +1,12 @@
+Struct: struct drm_pvr_dev_query_gpu_info
+
+Container used to fetch information about the graphics processor.
+
+Members
+  gpu_id
+    GPU identifier. For all currently supported GPUs this is the BVNC encoded as a 64-bit
+value as follows: 63..48 47..32 31..16 15..0 B V N C
+  num_phantoms
+    Number of Phantoms present.
+  _padding_c
+    Reserved. This field must be zeroed.

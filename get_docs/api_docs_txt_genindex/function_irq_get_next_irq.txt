@@ -1,0 +1,10 @@
+Function: unsigned int irq_get_next_irq ( unsigned int offset )
+
+get next allocated irq number
+
+Parameters
+  unsigned int offset
+    where to start the search
+
+Description
+  Returns next irq number after offset or nr_irqs if none is found.

@@ -1,0 +1,9 @@
+Struct: struct dvb_buffer
+
+video buffer information for v4l2.
+
+Members
+  vb
+    embedded struct vb2_buffer .
+  list
+    list of struct dvb_buffer .

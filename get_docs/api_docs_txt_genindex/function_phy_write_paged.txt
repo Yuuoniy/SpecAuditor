@@ -1,0 +1,16 @@
+Function: int phy_write_paged ( struct phy_device * phydev , int page , u32 regnum , u16 val )
+
+Convenience function for writing a paged register
+
+Parameters
+  struct phy_device *phydev
+    a pointer to a struct phy_device
+  int page
+    the page for the phy
+  u32 regnum
+    register number
+  u16 val
+    value to write
+
+Description
+  Same rules as for phy_write() .

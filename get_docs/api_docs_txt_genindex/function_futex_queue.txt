@@ -1,0 +1,17 @@
+Function: void futex_queue ( struct futex_q * q , struct futex_hash_bucket * hb , struct task_struct * task )
+
+Enqueue the futex_q on the futex_hash_bucket
+
+Parameters
+  struct futex_q *q
+    The futex_q to enqueue
+  struct futex_hash_bucket *hb
+    The destination hash bucket
+  struct task_struct *task
+    Task queueing this futex
+
+Description
+  The hb->lock must be held by the caller, and is released here. A call to futex_queue() is typically paired with exactly one call to futex_unqueue() .  The
+exceptions involve the PI related operations, which may use futex_unqueue_pi() or nothing if the unqueue is done as part of the wake process and the unqueue
+state is implicit in the state of woken task (see futex_wait_requeue_pi() for
+an example).

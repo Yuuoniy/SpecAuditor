@@ -1,0 +1,3 @@
+Function: enum xsdfec_axis_word_include
+
+Words Configuration.

@@ -1,0 +1,12 @@
+Function: void wait_for_owner_exiting ( int ret , struct task_struct * exiting )
+
+Block until the owner has exited
+
+Parameters
+  int ret
+    owner’s current futex lock status
+  struct task_struct *exiting
+    Pointer to the exiting task
+
+Description
+  Caller must hold a refcount on exiting .

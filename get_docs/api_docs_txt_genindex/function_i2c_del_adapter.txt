@@ -1,0 +1,11 @@
+Function: void i2c_del_adapter ( struct i2c_adapter * adap )
+
+unregister I2C adapter
+
+Parameters
+  struct i2c_adapter *adap
+    the adapter being unregistered
+
+Description
+  This unregisters an I2C adapter which was previously registered
+by i2c_add_adapter or i2c_add_numbered_adapter .

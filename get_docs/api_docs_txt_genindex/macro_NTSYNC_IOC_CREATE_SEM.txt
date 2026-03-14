@@ -1,0 +1,4 @@
+Macro: NTSYNC_IOC_CREATE_SEM
+
+Create a semaphore object. Takes a pointer to struct ntsync_sem_args , which is used as follows: count Initial count of the semaphore. max Maximum count of the semaphore. Fails with EINVAL if count is greater than max .
+On success, returns a file descriptor the created semaphore.

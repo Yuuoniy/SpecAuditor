@@ -1,0 +1,14 @@
+Function: bool netdev_has_upper_dev_all_rcu ( struct net_device * dev , struct net_device * upper_dev )
+
+Check if device is linked to an upper device
+
+Parameters
+  struct net_device *dev
+    device
+  struct net_device *upper_dev
+    upper device to check
+
+Description
+  Find out if a device is linked to specified upper device and return true
+in case it is. Note that this checks the entire upper device chain.
+The caller must hold rcu lock.

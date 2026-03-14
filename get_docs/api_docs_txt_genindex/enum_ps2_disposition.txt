@@ -1,0 +1,3 @@
+Enum: enum ps2_disposition
+
+indicates how received byte should be handled

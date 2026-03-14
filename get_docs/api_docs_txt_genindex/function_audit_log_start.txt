@@ -1,0 +1,14 @@
+Function: struct audit_buffer * audit_log_start ( struct audit_context * ctx , gfp_t gfp_mask , int type )
+
+obtain an audit buffer
+
+Parameters
+  struct audit_context *ctx
+    audit_context (may be NULL)
+  gfp_t gfp_mask
+    type of allocation
+  int type
+    audit message type
+
+Description
+  Returns audit_buffer pointer on success or NULL on error.

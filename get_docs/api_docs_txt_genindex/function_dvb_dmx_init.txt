@@ -1,0 +1,12 @@
+Function: int dvb_dmx_init ( struct dvb_demux * demux )
+
+initialize a digital TV demux struct.
+
+Parameters
+  struct dvb_demux *demux
+    struct dvb_demux to be initialized.
+
+Description
+  Before being able to register a digital TV demux struct, drivers
+should call this routine. On its typical usage, some fields should
+be initialized at the driver before calling it.

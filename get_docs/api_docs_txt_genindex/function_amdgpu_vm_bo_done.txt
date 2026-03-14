@@ -1,0 +1,11 @@
+Function: void amdgpu_vm_bo_done ( struct amdgpu_vm_bo_base * vm_bo )
+
+vm_bo is done
+
+Parameters
+  struct amdgpu_vm_bo_base *vm_bo
+    vm_bo which is now done
+
+Description
+  State for normal BOs which are invalidated and that change has been updated
+in the PTs.

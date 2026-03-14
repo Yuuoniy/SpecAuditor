@@ -1,0 +1,9 @@
+Function: void skb_queue_splice ( const struct sk_buff_head * list , struct sk_buff_head * head )
+
+join two skb lists, this is designed for stacks
+
+Parameters
+  const struct sk_buff_head *list
+    the new list to add
+  struct sk_buff_head *head
+    the place to add it in the first list

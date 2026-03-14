@@ -1,0 +1,11 @@
+Function: void add_timer ( struct timer_list * timer )
+
+Start a timer
+
+Parameters
+  struct timer_list *timer
+    The timer to be started
+
+Description
+  Start timer to expire at timer->expires in the future. timer->expires is the absolute expiry time measured in ‘jiffies’. When the timer expires
+timer->function(timer) will be invoked from soft interrupt context.

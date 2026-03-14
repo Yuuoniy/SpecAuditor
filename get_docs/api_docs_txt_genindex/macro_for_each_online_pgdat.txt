@@ -1,0 +1,7 @@
+Macro: for_each_online_pgdat
+
+
+
+Parameters
+  pgdat
+    pointer to a pg_data_t variable

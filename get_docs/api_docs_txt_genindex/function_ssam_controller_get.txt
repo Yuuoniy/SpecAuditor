@@ -1,0 +1,7 @@
+Function: struct ssam_controller * ssam_controller_get ( struct ssam_controller * c )
+
+Increment reference count of controller.
+
+Parameters
+  struct ssam_controller *c
+    The controller.

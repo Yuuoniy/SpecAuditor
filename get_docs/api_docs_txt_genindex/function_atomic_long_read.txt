@@ -1,0 +1,10 @@
+Function: long atomic_long_read ( const atomic_long_t * v )
+
+atomic load with relaxed ordering
+
+Parameters
+  const atomic_long_t *v
+    pointer to atomic_long_t
+
+Description
+  Atomically loads the value of v with relaxed ordering.

@@ -1,0 +1,12 @@
+Function: void napi_disable ( struct napi_struct * n )
+
+prevent NAPI from scheduling
+
+Parameters
+  struct napi_struct *n
+    NAPI context
+
+Description
+  Stop NAPI from being scheduled on this context.
+Waits till any outstanding processing completes.
+Takes netdev_lock() for associated net_device.

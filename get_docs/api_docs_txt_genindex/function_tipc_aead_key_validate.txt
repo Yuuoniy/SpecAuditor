@@ -1,0 +1,9 @@
+Function: int tipc_aead_key_validate ( struct tipc_aead_key * ukey , struct genl_info * info )
+
+Validate a AEAD user key
+
+Parameters
+  struct tipc_aead_key *ukey
+    pointer to user key data
+  struct genl_info *info
+    netlink info pointer

@@ -1,0 +1,13 @@
+Function: void pci_unregister_driver ( struct pci_driver * drv )
+
+unregister a pci driver
+
+Parameters
+  struct pci_driver *drv
+    the driver structure to unregister
+
+Description
+  Deletes the driver structure from the list of registered PCI drivers,
+gives it a chance to clean up by calling its remove() function for
+each device it was responsible for, and marks those devices as
+driverless.

@@ -1,0 +1,19 @@
+Function: int xe_pcode_init_min_freq_table ( struct xe_tile * tile , u32 min_gt_freq , u32 max_gt_freq )
+
+Initialize PCODE’s QOS frequency table
+
+Parameters
+  struct xe_tile *tile
+    tile instance
+  u32 min_gt_freq
+    Minimal (RPn) GT frequency in units of 50MHz.
+  u32 max_gt_freq
+    Maximal (RP0) GT frequency in units of 50MHz.
+
+Description
+  This function initialize PCODE’s QOS frequency table for a proper minimal
+frequency/power steering decision, depending on the current requested GT
+frequency. For older platforms this was a more complete table including
+the IA freq. However for the latest platforms this table become a simple
+1-1 Ring vs GT frequency. Even though, without setting it, PCODE might
+not take the right decisions for some memory frequencies and affect latency.

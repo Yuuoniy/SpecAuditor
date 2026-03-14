@@ -1,0 +1,17 @@
+Function: void skb_scrub_packet ( struct sk_buff * skb , bool xnet )
+
+scrub an skb
+
+Parameters
+  struct sk_buff *skb
+    buffer to clean
+  bool xnet
+    packet is crossing netns
+
+Description
+  skb_scrub_packet can be used after encapsulating or decapsulating a packet
+into/from a tunnel. Some information have to be cleared during these
+operations.
+skb_scrub_packet can also be used to clean a skb before injecting it in
+another namespace ( xnet == true). We have to clear all information in the
+skb that could impact namespace isolation.

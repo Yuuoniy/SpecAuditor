@@ -1,0 +1,14 @@
+Function: void xa_set_mark ( struct xarray * xa , unsigned long index , xa_mark_t mark )
+
+Set this mark on this entry.
+
+Parameters
+  struct xarray *xa
+    XArray.
+  unsigned long index
+    Index of entry.
+  xa_mark_t mark
+    Mark number.
+
+Description
+  Attempting to set a mark on a NULL entry does not succeed.

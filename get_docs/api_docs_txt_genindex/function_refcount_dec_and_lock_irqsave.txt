@@ -1,0 +1,15 @@
+Function: bool refcount_dec_and_lock_irqsave ( refcount_t * r , spinlock_t * lock , unsigned long * flags )
+
+return holding spinlock with disabled interrupts if able to decrement refcount to 0
+
+Parameters
+  refcount_t *r
+    the refcount
+  spinlock_t *lock
+    the spinlock to be locked
+  unsigned long *flags
+    saved IRQ-flags if the is acquired
+
+Description
+  Same as refcount_dec_and_lock() above except that the spinlock is acquired
+with disabled interrupts.

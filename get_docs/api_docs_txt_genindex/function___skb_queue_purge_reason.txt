@@ -1,0 +1,14 @@
+Function: void __skb_queue_purge_reason ( struct sk_buff_head * list , enum skb_drop_reason reason )
+
+empty a list
+
+Parameters
+  struct sk_buff_head *list
+    list to empty
+  enum skb_drop_reason reason
+    drop reason
+
+Description
+  Delete all buffers on an sk_buff list. Each buffer is removed from
+the list and one reference dropped. This function does not take the
+list lock and the caller must hold the relevant locks to use it.

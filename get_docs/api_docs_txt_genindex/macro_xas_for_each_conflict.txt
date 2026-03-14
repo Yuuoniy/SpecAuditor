@@ -1,0 +1,17 @@
+Macro: xas_for_each_conflict
+
+
+
+Parameters
+  xas
+    XArray operation state.
+  entry
+    Entry retrieved from the array.
+
+Description
+  The loop body will be executed for each entry in the XArray that
+lies within the range specified by xas .  If the loop terminates
+normally, entry will be NULL .  The user may break out of the loop,
+which will leave entry set to the conflicting entry.  The caller
+may also call xa_set_err() to exit the loop while setting an error
+to record the reason.

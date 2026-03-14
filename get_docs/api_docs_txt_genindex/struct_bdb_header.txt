@@ -1,0 +1,13 @@
+Struct: struct bdb_header
+
+BDB Header structure
+
+Members
+  signature
+    BDB signature “BIOS_DATA_BLOCK”
+  version
+    Version of the data block definitions
+  header_size
+    Size of this structure
+  bdb_size
+    Size of BDB (BDB Header and data blocks)

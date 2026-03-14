@@ -1,0 +1,10 @@
+Struct: struct landlock_id
+
+Unique rule identifier for a ruleset
+
+Members
+  key
+    Identifies either a kernel object (e.g. an inode) or
+a raw value (e.g. a TCP port).
+  type
+    Type of a landlock_ruleset’s root tree.

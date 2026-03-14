@@ -1,0 +1,11 @@
+Function: void dim_park_on_top ( struct dim * dim )
+
+enter a parking state on a top location
+
+Parameters
+  struct dim *dim
+    DIM context
+
+Description
+  Enter parking state.
+Clear all movement history.

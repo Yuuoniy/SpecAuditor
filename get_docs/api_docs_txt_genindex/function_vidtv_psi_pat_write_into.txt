@@ -1,0 +1,12 @@
+Function: u32 vidtv_psi_pat_write_into ( struct vidtv_psi_pat_write_args * args )
+
+Write PAT as MPEG-TS packets into a buffer.
+
+Parameters
+  struct vidtv_psi_pat_write_args *args
+    An instance of struct vidtv_psi_pat_write_args
+
+Description
+  This function writes the MPEG TS packets for a PAT table into a buffer.
+Calling code will usually generate the PAT via a call to its init function
+and thus is responsible for freeing it.

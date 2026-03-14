@@ -1,0 +1,21 @@
+Macro: kfifo_dma_out_prepare_mapped
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used
+  sgl
+    pointer to the scatterlist array
+  nents
+    number of entries in the scatterlist array
+  len
+    number of elements to transfer
+  dma
+    mapped dma address to fill into sgl
+
+Description
+  This macro fills a scatterlist for DMA output which at most len bytes
+to transfer.
+It returns the number entries in the scatterlist array.
+A zero means there is no space available and the scatterlist is not filled.

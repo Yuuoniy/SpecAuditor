@@ -1,0 +1,13 @@
+Function: void drm_dsc_dp_pps_header_init ( struct dp_sdp_header * pps_header )
+
+Initializes the PPS Header for DisplayPort as per the DP 1.4 spec.
+
+Parameters
+  struct dp_sdp_header *pps_header
+    Secondary data packet header for DSC Picture
+Parameter Set as defined in struct dp_sdp_header
+
+Description
+  DP 1.4 spec defines the secondary data packet for sending the
+picture parameter infoframes from the source to the sink.
+This function populates the SDP header defined in struct dp_sdp_header .

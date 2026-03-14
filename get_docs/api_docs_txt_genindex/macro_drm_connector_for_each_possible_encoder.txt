@@ -1,0 +1,9 @@
+Macro: drm_connector_for_each_possible_encoder
+
+
+
+Parameters
+  connector
+    struct drm_connector pointer
+  encoder
+    struct drm_encoder pointer used as cursor

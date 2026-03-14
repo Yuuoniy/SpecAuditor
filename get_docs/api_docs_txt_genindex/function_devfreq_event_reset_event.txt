@@ -1,0 +1,11 @@
+Function: int devfreq_event_reset_event ( struct devfreq_event_dev * edev )
+
+Reset all opeations of devfreq-event dev.
+
+Parameters
+  struct devfreq_event_dev *edev
+    the devfreq-event device
+
+Description
+  Note that this function stop all operations of devfreq-event dev and reset
+the current event data to make the devfreq-event device into initial state.

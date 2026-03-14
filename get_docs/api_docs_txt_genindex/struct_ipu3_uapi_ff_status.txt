@@ -1,0 +1,21 @@
+Struct: struct ipu3_uapi_ff_status
+
+Enable bits for each 3A fixed function
+
+Members
+  awb_en
+    auto white balance enable
+  padding
+    padding config
+  ae_en
+    auto exposure enable
+  padding1
+    padding config
+  af_en
+    auto focus enable
+  padding2
+    padding config
+  awb_fr_en
+    awb filter response enable bit
+  padding3
+    padding config

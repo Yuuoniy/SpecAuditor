@@ -1,0 +1,10 @@
+Function: void rdma_copy_ah_attr ( struct rdma_ah_attr * dest , const struct rdma_ah_attr * src )
+
+Copy rdma ah attribute from source to destination.
+
+Parameters
+  struct rdma_ah_attr *dest
+    Pointer to destination ah_attr. Contents of the destination
+pointer is assumed to be invalid and attribute are overwritten.
+  const struct rdma_ah_attr *src
+    Pointer to source ah_attr.

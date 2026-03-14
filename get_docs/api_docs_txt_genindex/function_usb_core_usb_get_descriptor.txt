@@ -1,0 +1,23 @@
+Function: int usb_get_descriptor ( struct usb_device * dev , unsigned char type , unsigned char index , void * buf , int size )
+
+issues a generic GET_DESCRIPTOR request
+
+Parameters
+  struct usb_device *dev
+    the device whose descriptor is being retrieved
+  unsigned char type
+    the descriptor type (USB_DT_*)
+  unsigned char index
+    the number of the descriptor
+  void *buf
+    where to put the descriptor
+  int size
+    how big is “buf”?
+
+Description
+  Gets a USB descriptor.  Convenience functions exist to simplify
+getting some types of descriptors.  Use usb_get_string() or usb_string() for USB_DT_STRING.
+Device (USB_DT_DEVICE) and configuration descriptors (USB_DT_CONFIG)
+are part of the device structure.
+In addition to a number of USB-standard descriptors, some
+devices also use class-specific or vendor-specific descriptors.

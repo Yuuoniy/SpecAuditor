@@ -1,0 +1,17 @@
+Struct: struct fiemap
+
+file extent mappings
+
+Members
+  fm_start
+    byte offset (inclusive) at which to start mapping (in)
+  fm_length
+    logical length of mapping which userspace wants (in)
+  fm_flags
+    FIEMAP_FLAG_* flags for request (in/out)
+  fm_mapped_extents
+    number of extents that were mapped (out)
+  fm_extent_count
+    size of fm_extents array (in)
+  fm_extents
+    array of mapped extents (out)

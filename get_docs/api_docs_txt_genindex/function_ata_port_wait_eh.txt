@@ -1,0 +1,10 @@
+Function: void ata_port_wait_eh ( struct ata_port * ap )
+
+Wait for the currently pending EH to complete
+
+Parameters
+  struct ata_port *ap
+    Port to wait EH for
+
+Description
+  Wait until the currently pending EH is complete.

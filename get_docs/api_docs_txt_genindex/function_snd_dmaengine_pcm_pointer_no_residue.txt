@@ -1,0 +1,11 @@
+Function: snd_pcm_uframes_t snd_dmaengine_pcm_pointer_no_residue ( struct snd_pcm_substream * substream )
+
+dmaengine based PCM pointer implementation
+
+Parameters
+  struct snd_pcm_substream *substream
+    PCM substream
+
+Description
+  This function is deprecated and should not be used by new drivers, as its
+results may be unreliable.

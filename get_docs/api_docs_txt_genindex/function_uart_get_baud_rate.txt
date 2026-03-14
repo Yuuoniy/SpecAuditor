@@ -1,0 +1,20 @@
+Function: unsigned int uart_get_baud_rate ( struct uart_port * port , struct ktermios * termios , const struct ktermios * old , unsigned int min , unsigned int max )
+
+return baud rate for a particular port
+
+Parameters
+  struct uart_port *port
+    uart_port structure describing the port in question.
+  struct ktermios *termios
+    desired termios settings
+  const struct ktermios *old
+    old termios (or NULL )
+  unsigned int min
+    minimum acceptable baud rate
+  unsigned int max
+    maximum acceptable baud rate
+
+Description
+  Decode the termios structure into a numeric baud rate, taking account of the
+magic 38400 baud rate (with spd_* flags), and mapping the B0 rate to 9600
+baud.

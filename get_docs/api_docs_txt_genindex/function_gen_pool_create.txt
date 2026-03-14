@@ -1,0 +1,13 @@
+Function: struct gen_pool * gen_pool_create ( int min_alloc_order , int nid )
+
+create a new special memory pool
+
+Parameters
+  int min_alloc_order
+    log base 2 of number of bytes each bitmap bit represents
+  int nid
+    node id of the node the pool structure should be allocated on, or -1
+
+Description
+  Create a new special memory pool that can be used to manage special purpose
+memory not managed by the regular kmalloc/kfree interface.

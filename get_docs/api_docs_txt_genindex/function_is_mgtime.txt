@@ -1,0 +1,10 @@
+Function: bool is_mgtime ( const struct inode * inode )
+
+is this inode using multigrain timestamps
+
+Parameters
+  const struct inode *inode
+    inode to test for multigrain timestamps
+
+Description
+  Return true if the inode uses multigrain timestamps, false otherwise.

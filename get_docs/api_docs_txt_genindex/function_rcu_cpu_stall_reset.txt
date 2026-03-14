@@ -1,0 +1,13 @@
+Function: void rcu_cpu_stall_reset ( void )
+
+restart stall-warning timeout for current grace period
+
+Parameters
+  void
+    no arguments
+
+Description
+  To perform the reset request from the caller, disable stall detection until
+3 fqs loops have passed. This is required to ensure a fresh jiffies is
+loaded.  It should be safe to do from the fqs loop as enough timer
+interrupts and context switches should have passed.

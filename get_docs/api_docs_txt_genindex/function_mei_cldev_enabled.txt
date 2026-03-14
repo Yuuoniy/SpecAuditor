@@ -1,0 +1,7 @@
+Function: bool mei_cldev_enabled ( const struct mei_cl_device * cldev )
+
+check whether the device is enabled
+
+Parameters
+  const struct mei_cl_device *cldev
+    mei client device

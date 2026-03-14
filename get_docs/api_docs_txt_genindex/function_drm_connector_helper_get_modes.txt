@@ -1,0 +1,11 @@
+Function: int drm_connector_helper_get_modes ( struct drm_connector * connector )
+
+Read EDID and update connector.
+
+Parameters
+  struct drm_connector *connector
+    The connector
+
+Description
+  Read the EDID using drm_edid_read() (which requires that connector->ddc is
+set), and update the connector using the EDID.

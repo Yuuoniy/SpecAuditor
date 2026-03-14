@@ -1,0 +1,13 @@
+Function: bool tipc_node_check_state ( struct tipc_node * n , struct sk_buff * skb , int bearer_id , struct sk_buff_head * xmitq )
+
+check and if necessary update node state
+
+Parameters
+  struct tipc_node *n
+    target tipc_node
+  struct sk_buff *skb
+    TIPC packet
+  int bearer_id
+    identity of bearer delivering the packet
+  struct sk_buff_head *xmitq
+    queue for messages to be xmited on

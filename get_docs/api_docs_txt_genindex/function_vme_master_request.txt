@@ -1,0 +1,17 @@
+Function: struct vme_resource * vme_master_request ( struct vme_dev * vdev , u32 address , u32 cycle , u32 dwidth )
+
+Request a VME master window resource.
+
+Parameters
+  struct vme_dev *vdev
+    Pointer to VME device struct vme_dev assigned to driver instance.
+  u32 address
+    Required VME address space.
+  u32 cycle
+    Required VME data transfer cycle type.
+  u32 dwidth
+    Required VME data transfer width.
+
+Description
+  Request use of a VME window resource capable of being set for the requested
+address space, data transfer cycle and width.

@@ -1,0 +1,7 @@
+Function: void msgb_push_syn ( struct msgbuf * msgb )
+
+Push SSH SYN bytes to the buffer.
+
+Parameters
+  struct msgbuf *msgb
+    The message buffer.

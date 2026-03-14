@@ -1,0 +1,12 @@
+Macro: module_usb_composite_driver
+
+
+
+Parameters
+  __usb_composite_driver
+    usb_composite_driver struct
+
+Description
+  Helper macro for USB gadget composite drivers which do not do anything
+special in module init/exit. This eliminates a lot of boilerplate. Each
+module may only use this macro once, and calling it replaces module_init() and module_exit()

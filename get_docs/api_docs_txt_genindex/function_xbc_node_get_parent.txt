@@ -1,0 +1,11 @@
+Function: struct xbc_node * xbc_node_get_parent ( struct xbc_node * node )
+
+Get the parent XBC node
+
+Parameters
+  struct xbc_node *node
+    An XBC node.
+
+Description
+  Return the parent node of node . If the node is top node of the tree,
+return NULL.

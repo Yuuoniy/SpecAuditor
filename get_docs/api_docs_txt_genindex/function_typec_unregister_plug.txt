@@ -1,0 +1,10 @@
+Function: void typec_unregister_plug ( struct typec_plug * plug )
+
+Unregister a USB Type-C Cable Plug
+
+Parameters
+  struct typec_plug *plug
+    The cable plug to be unregistered
+
+Description
+  Unregister device created with typec_register_plug() .

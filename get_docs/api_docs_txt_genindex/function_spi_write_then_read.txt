@@ -1,0 +1,21 @@
+Function: int spi_write_then_read ( struct spi_device * spi , const void * txbuf , unsigned n_tx , void * rxbuf , unsigned n_rx )
+
+SPI synchronous write followed by read
+
+Parameters
+  struct spi_device *spi
+    device with which data will be exchanged
+  const void *txbuf
+    data to be written (need not be DMA-safe)
+  unsigned n_tx
+    size of txbuf, in bytes
+  void *rxbuf
+    buffer into which data will be read (need not be DMA-safe)
+  unsigned n_rx
+    size of rxbuf, in bytes
+
+Description
+  This performs a half duplex MicroWire style transaction with the
+device, sending txbuf and then reading rxbuf.  The return value
+is zero for success, else a negative errno status code.
+This call may only be used from a context that may sleep.

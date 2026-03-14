@@ -1,0 +1,14 @@
+Function: void lease_get_mtime ( struct inode * inode , struct timespec64 * time )
+
+update modified time of an inode with exclusive lease
+
+Parameters
+  struct inode *inode
+    the inode
+  struct timespec64 *time
+    pointer to a timespec which contains the last modified time
+
+Description
+  This is to force NFS clients to flush their caches for files with
+exclusive leases.  The justification is that if someone has an
+exclusive lease, then they could be modifying it.

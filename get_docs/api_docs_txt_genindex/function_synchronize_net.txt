@@ -1,0 +1,11 @@
+Function: void synchronize_net ( void )
+
+Synchronize with packet receive processing
+
+Parameters
+  void
+    no arguments
+
+Description
+  Wait for packets currently being received to be done.
+Does not block later packets from starting.

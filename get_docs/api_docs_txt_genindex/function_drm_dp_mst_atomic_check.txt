@@ -1,0 +1,13 @@
+Function: int drm_dp_mst_atomic_check ( struct drm_atomic_state * state )
+
+Check that the new state of an MST topology in an atomic update is valid
+
+Parameters
+  struct drm_atomic_state *state
+    Pointer to the new struct drm_dp_mst_topology_state
+
+Description
+  Checks the given topology state for an atomic update to ensure that it’s
+valid, calling drm_dp_mst_atomic_check_mgr() for all MST manager in the
+atomic state. This includes checking whether there’s enough bandwidth to
+support the new timeslot allocations in the atomic update.

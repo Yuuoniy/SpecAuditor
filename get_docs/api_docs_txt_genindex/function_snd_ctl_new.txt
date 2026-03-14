@@ -1,0 +1,18 @@
+Function: int snd_ctl_new ( struct snd_kcontrol * * kctl , unsigned int count , unsigned int access , struct snd_ctl_file * file )
+
+create a new control instance with some elements
+
+Parameters
+  struct snd_kcontrol **kctl
+    the pointer to store new control instance
+  unsigned int count
+    the number of elements in this control
+  unsigned int access
+    the default access flags for elements in this control
+  struct snd_ctl_file *file
+    given when locking these elements
+
+Description
+  Allocates a memory object for a new control instance. The instance has
+elements as many as the given number ( count ). Each element has given
+access permissions ( access ). Each element is locked when file is given.

@@ -1,0 +1,13 @@
+Function: struct efi_embedded_fw_desc
+
+This struct is used by the EFI embedded-fw code to search for embedded firmwares.
+
+Members
+  name
+    Name to register the firmware with if found
+  prefix
+    First 8 bytes of the firmware
+  length
+    Length of the firmware in bytes including prefix
+  sha256
+    SHA256 of the firmware

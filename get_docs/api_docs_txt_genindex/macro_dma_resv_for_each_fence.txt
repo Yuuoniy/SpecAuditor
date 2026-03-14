@@ -1,0 +1,19 @@
+Macro: dma_resv_for_each_fence
+
+
+
+Parameters
+  cursor
+    a struct dma_resv_iter pointer
+  obj
+    a dma_resv object pointer
+  usage
+    controls which fences to return
+  fence
+    the current fence
+
+Description
+  Iterate over the fences in a struct dma_resv object while holding the dma_resv.lock . all_fences controls if the shared fences are returned as
+well. The cursor initialisation is part of the iterator and the fence stays
+valid as long as the lock is held and so no extra reference to the fence is
+taken.

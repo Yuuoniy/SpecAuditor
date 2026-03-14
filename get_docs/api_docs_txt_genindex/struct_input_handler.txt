@@ -1,0 +1,49 @@
+Struct: struct input_handler
+
+implements one of interfaces for input devices
+
+Members
+  private
+    driver-specific data
+  event
+    event handler. This method is being called by input core with
+interrupts disabled and dev->event_lock spinlock held and so
+it may not sleep
+  events
+    event sequence handler. This method is being called by
+input core with interrupts disabled and dev->event_lock
+spinlock held and so it may not sleep. The method must return
+number of events passed to it.
+  filter
+    similar to event ; separates normal event handlers from
+“filters”.
+  match
+    called after comparing device’s id with handler’s id_table
+to perform fine-grained matching between device and handler
+  connect
+    called when attaching a handler to an input device
+  disconnect
+    disconnects a handler from input device
+  start
+    starts handler for given handle. This function is called by
+input core right after connect() method and also when a process
+that “grabbed” a device releases it
+  passive_observer
+    set to true by drivers only interested in observing
+data stream from devices if there are other users present. Such
+drivers will not result in starting underlying hardware device
+when input_open_device() is called for their handles
+  legacy_minors
+    set to true by drivers using legacy minor ranges
+  minor
+    beginning of range of 32 legacy minors for devices this driver
+can provide
+  name
+    name of the handler, to be shown in /proc/bus/input/handlers
+  id_table
+    pointer to a table of input_device_ids this driver can
+handle
+  h_list
+    list of input handles associated with the handler
+  node
+    for placing the driver onto input_handler_list

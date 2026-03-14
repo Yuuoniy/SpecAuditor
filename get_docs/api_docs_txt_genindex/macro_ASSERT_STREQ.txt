@@ -1,0 +1,12 @@
+Macro: ASSERT_STREQ
+
+
+
+Parameters
+  expected
+    expected value
+  seen
+    measured value
+
+Description
+  ASSERT_STREQ(expected, measured): !strcmp(expected, measured)

@@ -1,0 +1,12 @@
+Function: struct socket * sock_alloc ( void )
+
+allocate a socket
+
+Parameters
+  void
+    no arguments
+
+Description
+  Allocate a new inode and socket object. The two are bound together
+and initialised. The socket is then returned. If we are out of inodes
+NULL is returned. This functions uses GFP_KERNEL internally.

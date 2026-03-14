@@ -1,0 +1,7 @@
+Function: void drm_client_framebuffer_delete ( struct drm_client_buffer * buffer )
+
+Delete a client framebuffer
+
+Parameters
+  struct drm_client_buffer *buffer
+    DRM client buffer (can be NULL)

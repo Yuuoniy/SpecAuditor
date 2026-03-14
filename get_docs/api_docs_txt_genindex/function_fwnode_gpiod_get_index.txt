@@ -1,0 +1,19 @@
+Function: struct gpio_desc * fwnode_gpiod_get_index ( struct fwnode_handle * fwnode , const char * con_id , int index , enum gpiod_flags flags , const char * label )
+
+obtain a GPIO from firmware node
+
+Parameters
+  struct fwnode_handle *fwnode
+    handle of the firmware node
+  const char *con_id
+    function within the GPIO consumer
+  int index
+    index of the GPIO to obtain for the consumer
+  enum gpiod_flags flags
+    GPIO initialization flags
+  const char *label
+    label to attach to the requested GPIO
+
+Description
+  This function can be used for drivers that get their configuration
+from opaque firmware.

@@ -1,0 +1,11 @@
+Function: int rio_set_port_lockout ( struct rio_dev * rdev , u32 pnum , int lock )
+
+Sets/clears LOCKOUT bit (RIO EM 1.3) for a switch port.
+
+Parameters
+  struct rio_dev *rdev
+    Pointer to RIO device control structure
+  u32 pnum
+    Switch port number to set LOCKOUT bit
+  int lock
+    Operation : set (=1) or clear (=0)

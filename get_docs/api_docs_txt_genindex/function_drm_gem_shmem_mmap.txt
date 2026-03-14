@@ -1,0 +1,13 @@
+Function: int drm_gem_shmem_mmap ( struct drm_gem_shmem_object * shmem , struct vm_area_struct * vma )
+
+Memory-map a shmem GEM object
+
+Parameters
+  struct drm_gem_shmem_object *shmem
+    shmem GEM object
+  struct vm_area_struct *vma
+    VMA for the area to be mapped
+
+Description
+  This function implements an augmented version of the GEM DRM file mmap
+operation for shmem objects.

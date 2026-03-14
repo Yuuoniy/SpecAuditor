@@ -1,0 +1,9 @@
+Function: bool drm_dp_downstream_444_to_420_conversion ( const u8 dpcd [ DP_RECEIVER_CAP_SIZE ] , const u8 port_cap [ 4 ] )
+
+determine downstream facing port YCbCr 4:4:4->4:2:0 conversion capability
+
+Parameters
+  const u8 dpcd[DP_RECEIVER_CAP_SIZE]
+    DisplayPort configuration data
+  const u8 port_cap[4]
+    downstream facing port capabilities

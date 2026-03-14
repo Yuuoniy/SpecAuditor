@@ -1,0 +1,7 @@
+Function: int mipi_dsi_shutdown_peripheral ( struct mipi_dsi_device * dsi )
+
+sends a Shutdown Peripheral command
+
+Parameters
+  struct mipi_dsi_device *dsi
+    DSI peripheral device

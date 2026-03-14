@@ -1,0 +1,12 @@
+Function: void trace_block_rq_insert ( struct request * rq )
+
+insert block operation request into queue
+
+Parameters
+  struct request *rq
+    block IO operation request
+
+Description
+  Called immediately before block operation request rq is inserted
+into queue q .  The fields in the operation request rq struct can be examined to determine which device and sectors the pending
+operation would access.

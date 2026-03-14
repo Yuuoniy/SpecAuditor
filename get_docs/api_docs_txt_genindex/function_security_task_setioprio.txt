@@ -1,0 +1,12 @@
+Function: int security_task_setioprio ( struct task_struct * p , int ioprio )
+
+Check if setting a task’s ioprio is allowed
+
+Parameters
+  struct task_struct *p
+    target task
+  int ioprio
+    ioprio value
+
+Description
+  Check permission before setting the ioprio value of p to ioprio .

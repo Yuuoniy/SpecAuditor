@@ -1,0 +1,22 @@
+Function: int drm_atomic_helper_page_flip_target ( struct drm_crtc * crtc , struct drm_framebuffer * fb , struct drm_pending_vblank_event * event , uint32_t flags , uint32_t target , struct drm_modeset_acquire_ctx * ctx )
+
+do page flip on target vblank period.
+
+Parameters
+  struct drm_crtc *crtc
+    DRM CRTC
+  struct drm_framebuffer *fb
+    DRM framebuffer
+  struct drm_pending_vblank_event *event
+    optional DRM event to signal upon completion
+  uint32_t flags
+    flip flags for non-vblank sync’ed updates
+  uint32_t target
+    specifying the target vblank period when the flip to take effect
+  struct drm_modeset_acquire_ctx *ctx
+    lock acquisition context
+
+Description
+  Provides a default drm_crtc_funcs.page_flip_target implementation.
+Similar to drm_atomic_helper_page_flip() with extra parameter to specify
+target vblank period to flip.

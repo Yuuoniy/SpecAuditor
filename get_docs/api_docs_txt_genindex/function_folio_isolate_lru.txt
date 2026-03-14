@@ -1,0 +1,11 @@
+Function: bool folio_isolate_lru ( struct folio * folio )
+
+Try to isolate a folio from its LRU list.
+
+Parameters
+  struct folio *folio
+    Folio to isolate from its LRU list.
+
+Description
+  Isolate a folio from an LRU list and adjust the vmstat statistic
+corresponding to whatever LRU list the folio was on.

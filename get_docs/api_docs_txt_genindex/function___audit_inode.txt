@@ -1,0 +1,11 @@
+Function: void __audit_inode ( struct filename * name , const struct dentry * dentry , unsigned int flags )
+
+store the inode and device from a lookup
+
+Parameters
+  struct filename *name
+    name being audited
+  const struct dentry *dentry
+    dentry being audited
+  unsigned int flags
+    attributes for this particular entry

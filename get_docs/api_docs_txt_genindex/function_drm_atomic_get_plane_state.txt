@@ -1,0 +1,14 @@
+Function: struct drm_plane_state * drm_atomic_get_plane_state ( struct drm_atomic_state * state , struct drm_plane * plane )
+
+get plane state
+
+Parameters
+  struct drm_atomic_state *state
+    global atomic state object
+  struct drm_plane *plane
+    plane to get state object for
+
+Description
+  This function returns the plane state for the given plane, allocating it if
+needed. It will also grab the relevant plane lock to make sure that the state
+is consistent.

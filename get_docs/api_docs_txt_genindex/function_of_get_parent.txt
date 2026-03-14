@@ -1,0 +1,7 @@
+Function: struct device_node * of_get_parent ( const struct device_node * node )
+
+Get a node’s parent if any
+
+Parameters
+  const struct device_node *node
+    Node to get parent

@@ -1,0 +1,17 @@
+Function: int media_device_register_entity ( struct media_device * mdev , struct media_entity * entity )
+
+registers a media entity inside a previously registered media device.
+
+Parameters
+  struct media_device *mdev
+    pointer to struct media_device
+  struct media_entity *entity
+    pointer to struct media_entity to be registered
+
+Description
+  Entities are identified by a unique positive integer ID. The media
+controller framework will such ID automatically. IDs are not guaranteed
+to be contiguous, and the ID number can change on newer Kernel versions.
+So, neither the driver nor userspace should hardcode ID numbers to refer
+to the entities, but, instead, use the framework to find the ID, when
+needed.

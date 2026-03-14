@@ -1,0 +1,9 @@
+Function: int ib_dealloc_xrcd_user ( struct ib_xrcd * xrcd , struct ib_udata * udata )
+
+Deallocates an XRC domain.
+
+Parameters
+  struct ib_xrcd *xrcd
+    The XRC domain to deallocate.
+  struct ib_udata *udata
+    Valid user data or NULL for kernel object

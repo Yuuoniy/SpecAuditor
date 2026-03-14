@@ -1,0 +1,11 @@
+Function: struct tty_struct * tty_kref_get ( struct tty_struct * tty )
+
+get a tty reference
+
+Parameters
+  struct tty_struct *tty
+    tty device
+
+Description
+  Locking: The caller must hold sufficient locks/counts to ensure that their
+existing reference cannot go away.

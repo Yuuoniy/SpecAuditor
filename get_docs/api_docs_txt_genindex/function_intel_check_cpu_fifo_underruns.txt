@@ -1,0 +1,13 @@
+Function: void intel_check_cpu_fifo_underruns ( struct intel_display * display )
+
+check for CPU fifo underruns immediately
+
+Parameters
+  struct intel_display *display
+    display device instance
+
+Description
+  Check for CPU fifo underruns immediately. Useful on IVB/HSW where the shared
+error interrupt may have been disabled, and so CPU fifo underruns won’t
+necessarily raise an interrupt, and on GMCH platforms where underruns never
+raise an interrupt.

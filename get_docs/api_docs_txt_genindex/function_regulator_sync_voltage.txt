@@ -1,0 +1,12 @@
+Function: int regulator_sync_voltage ( struct regulator * regulator )
+
+re-apply last regulator output voltage
+
+Parameters
+  struct regulator *regulator
+    regulator source
+
+Description
+  Re-apply the last configured voltage.  This is intended to be used
+where some external control source the consumer is cooperating with
+has caused the configured voltage to change.

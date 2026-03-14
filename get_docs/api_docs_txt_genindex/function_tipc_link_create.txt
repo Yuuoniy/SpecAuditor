@@ -1,0 +1,43 @@
+Function: bool tipc_link_create ( struct net * net , char * if_name , int bearer_id , int tolerance , char net_plane , u32 mtu , int priority , u32 min_win , u32 max_win , u32 session , u32 self , u32 peer , u8 * peer_id , u16 peer_caps , struct tipc_link * bc_sndlink , struct tipc_link * bc_rcvlink , struct sk_buff_head * inputq , struct sk_buff_head * namedq , struct tipc_link * * link )
+
+create a new link
+
+Parameters
+  struct net *net
+    pointer to associated network namespace
+  char *if_name
+    associated interface name
+  int bearer_id
+    id (index) of associated bearer
+  int tolerance
+    link tolerance to be used by link
+  char net_plane
+    network plane (A,B,c..) this link belongs to
+  u32 mtu
+    mtu to be advertised by link
+  int priority
+    priority to be used by link
+  u32 min_win
+    minimal send window to be used by link
+  u32 max_win
+    maximal send window to be used by link
+  u32 session
+    session to be used by link
+  u32 self
+    local unicast link id
+  u32 peer
+    node id of peer node
+  u8 *peer_id
+    128-bit ID of peer
+  u16 peer_caps
+    bitmap describing peer node capabilities
+  struct tipc_link *bc_sndlink
+    the namespace global link used for broadcast sending
+  struct tipc_link *bc_rcvlink
+    the peer specific link used for broadcast reception
+  struct sk_buff_head *inputq
+    queue to put messages ready for delivery
+  struct sk_buff_head *namedq
+    queue to put binding table update messages ready for delivery
+  struct tipc_link **link
+    return value, pointer to put the created link

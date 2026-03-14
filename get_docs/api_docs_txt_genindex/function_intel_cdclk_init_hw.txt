@@ -1,0 +1,13 @@
+Function: void intel_cdclk_init_hw ( struct intel_display * display )
+
+Initialize CDCLK hardware
+
+Parameters
+  struct intel_display *display
+    display instance
+
+Description
+  Initialize CDCLK. This consists mainly of initializing display->cdclk.hw and
+sanitizing the state of the hardware if needed. This is generally done only
+during the display core initialization sequence, after which the DMC will
+take care of turning CDCLK off/on as needed.

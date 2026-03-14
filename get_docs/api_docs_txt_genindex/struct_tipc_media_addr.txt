@@ -1,0 +1,11 @@
+Struct: struct tipc_media_addr
+
+destination address used by TIPC bearers
+
+Members
+  value
+    address info (format defined by media)
+  media_id
+    TIPC media type identifier
+  broadcast
+    non-zero if address is a broadcast address

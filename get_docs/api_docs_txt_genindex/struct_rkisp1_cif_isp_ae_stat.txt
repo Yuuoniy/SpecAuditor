@@ -1,0 +1,9 @@
+Struct: struct rkisp1_cif_isp_ae_stat
+
+statistics auto exposure data
+
+Members
+  exp_mean
+    Mean luminance value of block xx
+  bls_val
+    BLS measured values

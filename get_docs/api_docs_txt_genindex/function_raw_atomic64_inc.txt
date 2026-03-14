@@ -1,0 +1,10 @@
+Function: void raw_atomic64_inc ( atomic64_t * v )
+
+atomic increment with relaxed ordering
+
+Parameters
+  atomic64_t *v
+    pointer to atomic64_t
+
+Description
+  Atomically updates v to ( v + 1) with relaxed ordering.

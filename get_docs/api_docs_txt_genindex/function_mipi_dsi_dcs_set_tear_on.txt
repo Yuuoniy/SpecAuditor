@@ -1,0 +1,12 @@
+Function: int mipi_dsi_dcs_set_tear_on ( struct mipi_dsi_device * dsi , enum mipi_dsi_dcs_tear_mode mode )
+
+turn on the display module’s Tearing Effect output signal on the TE signal line.
+
+Parameters
+  struct mipi_dsi_device *dsi
+    DSI peripheral device
+  enum mipi_dsi_dcs_tear_mode mode
+    the Tearing Effect Output Line mode
+
+Description
+  This function is deprecated. Use mipi_dsi_dcs_set_tear_on_multi() instead.

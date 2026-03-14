@@ -1,0 +1,7 @@
+Function: int video_is_registered ( struct video_device * vdev )
+
+returns true if the struct video_device is registered.
+
+Parameters
+  struct video_device *vdev
+    pointer to struct video_device

@@ -1,0 +1,12 @@
+Function: void skb_orphan ( struct sk_buff * skb )
+
+orphan a buffer
+
+Parameters
+  struct sk_buff *skb
+    buffer to orphan
+
+Description
+  If a buffer currently has an owner then we call the owner’s
+destructor function and make the skb unowned. The buffer continues
+to exist but is no longer charged to its former owner.

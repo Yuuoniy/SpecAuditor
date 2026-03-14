@@ -1,0 +1,16 @@
+Function: void fill_mg_cmtime ( struct kstat * stat , u32 request_mask , struct inode * inode )
+
+Fill in the mtime and ctime and flag ctime as QUERIED
+
+Parameters
+  struct kstat *stat
+    where to store the resulting values
+  u32 request_mask
+    STATX_* values requested
+  struct inode *inode
+    inode from which to grab the c/mtime
+
+Description
+  Given inode , grab the ctime and mtime out if it and store the result
+in stat . When fetching the value, flag it as QUERIED (if not already)
+so the next write will record a distinct timestamp.

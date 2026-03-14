@@ -1,0 +1,21 @@
+Function: void scsi_eh_prep_cmnd ( struct scsi_cmnd * scmd , struct scsi_eh_save * ses , unsigned char * cmnd , int cmnd_size , unsigned sense_bytes )
+
+Save a scsi command info as part of error recovery
+
+Parameters
+  struct scsi_cmnd *scmd
+    SCSI command structure to hijack
+  struct scsi_eh_save *ses
+    structure to save restore information
+  unsigned char *cmnd
+    CDB to send. Can be NULL if no new cmnd is needed
+  int cmnd_size
+    size in bytes of cmnd (must be <= MAX_COMMAND_SIZE)
+  unsigned sense_bytes
+    size of sense data to copy. or 0 (if != 0 cmnd is ignored)
+
+Description
+  This function is used to save a scsi command information before re-execution
+as part of the error recovery process.  If sense_bytes is 0 the command
+sent must be one that does not transfer any data.  If sense_bytes != 0 cmnd is ignored and this functions sets up a REQUEST_SENSE command
+and cmnd buffers to read sense_bytes into scmd->sense_buffer .

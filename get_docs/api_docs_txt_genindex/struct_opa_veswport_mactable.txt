@@ -1,0 +1,13 @@
+Struct: struct opa_veswport_mactable
+
+Forwarding table array
+
+Members
+  offset
+    mac table starting offset
+  num_entries
+    Number of entries to get or set
+  mac_tbl_digest
+    mac table digest
+  tbl_entries
+    Array of table entries

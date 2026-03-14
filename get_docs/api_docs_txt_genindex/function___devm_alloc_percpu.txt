@@ -1,0 +1,15 @@
+Function: void __percpu * __devm_alloc_percpu ( struct device * dev , size_t size , size_t align )
+
+Resource-managed alloc_percpu
+
+Parameters
+  struct device *dev
+    Device to allocate per-cpu memory for
+  size_t size
+    Size of per-cpu memory to allocate
+  size_t align
+    Alignment of per-cpu memory to allocate
+
+Description
+  Managed alloc_percpu. Per-cpu memory allocated with this function is
+automatically freed on driver detach.

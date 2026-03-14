@@ -1,0 +1,11 @@
+Function: u32 spi_bpw_to_bytes ( u32 bpw )
+
+Covert bits per word to bytes
+
+Parameters
+  u32 bpw
+    Bits per word
+
+Description
+  This function converts the given bpw to bytes. The result is always
+power-of-two, e.g.,

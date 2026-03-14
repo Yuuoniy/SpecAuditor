@@ -1,0 +1,14 @@
+Macro: strtomem
+
+
+
+Parameters
+  dest
+    Pointer of destination character array (marked as __nonstring)
+  src
+    Pointer to NUL-terminated string
+
+Description
+  This is a replacement for strncpy() uses where the destination is not
+a NUL-terminated string, but with bounds checking on the source size, and
+without trailing padding. If padding is required, use strtomem_pad() .

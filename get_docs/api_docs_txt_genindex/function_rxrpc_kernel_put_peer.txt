@@ -1,0 +1,10 @@
+Function: void rxrpc_kernel_put_peer ( struct rxrpc_peer * peer )
+
+Allow a kernel app to drop a peer reference
+
+Parameters
+  struct rxrpc_peer *peer
+    The peer to drop a ref on
+
+Description
+  Drop a reference on a peer record.

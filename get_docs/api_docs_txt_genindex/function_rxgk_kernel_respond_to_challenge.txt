@@ -1,0 +1,13 @@
+Function: int rxgk_kernel_respond_to_challenge ( struct sk_buff * challenge , struct krb5_buffer * appdata )
+
+Respond to a challenge with appdata
+
+Parameters
+  struct sk_buff *challenge
+    The challenge to respond to
+  struct krb5_buffer *appdata
+    The application data to include in the RESPONSE authenticator
+
+Description
+  Allow a kernel application to respond to a CHALLENGE with application data
+to be included in the RxGK RESPONSE Authenticator.

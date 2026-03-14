@@ -1,0 +1,9 @@
+Struct: struct spi_delay
+
+SPI delay information
+
+Members
+  value
+    Value for the delay
+  unit
+    Unit for the delay

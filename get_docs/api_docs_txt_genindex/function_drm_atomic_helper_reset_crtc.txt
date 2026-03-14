@@ -1,0 +1,14 @@
+Function: int drm_atomic_helper_reset_crtc ( struct drm_crtc * crtc , struct drm_modeset_acquire_ctx * ctx )
+
+reset the active outputs of a CRTC
+
+Parameters
+  struct drm_crtc *crtc
+    DRM CRTC
+  struct drm_modeset_acquire_ctx *ctx
+    lock acquisition context
+
+Description
+  Reset the active outputs by indicating that connectors have changed.
+This implies a reset of all active components available between the CRTC and
+connectors.

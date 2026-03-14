@@ -1,0 +1,11 @@
+Function: struct net_device * netdev_master_upper_dev_get_rcu ( struct net_device * dev )
+
+Get master upper device
+
+Parameters
+  struct net_device *dev
+    device
+
+Description
+  Find a master upper device and return pointer to it or NULL in case
+it’s not there. The caller must hold the RCU read lock.

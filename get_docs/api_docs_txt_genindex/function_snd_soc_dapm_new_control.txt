@@ -1,0 +1,12 @@
+Function: struct snd_soc_dapm_widget * snd_soc_dapm_new_control ( struct snd_soc_dapm_context * dapm , const struct snd_soc_dapm_widget * widget )
+
+create new dapm control
+
+Parameters
+  struct snd_soc_dapm_context *dapm
+    DAPM context
+  const struct snd_soc_dapm_widget *widget
+    widget template
+
+Description
+  Creates new DAPM control based upon a template.

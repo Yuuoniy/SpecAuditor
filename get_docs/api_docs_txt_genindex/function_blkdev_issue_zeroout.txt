@@ -1,0 +1,20 @@
+Function: int blkdev_issue_zeroout ( struct block_device * bdev , sector_t sector , sector_t nr_sects , gfp_t gfp_mask , unsigned flags )
+
+zero-fill a block range
+
+Parameters
+  struct block_device *bdev
+    blockdev to write
+  sector_t sector
+    start sector
+  sector_t nr_sects
+    number of sectors to write
+  gfp_t gfp_mask
+    memory allocation flags (for bio_alloc)
+  unsigned flags
+    controls detailed behavior
+
+Description
+  Zero-fill a block range, either using hardware offload or by explicitly
+writing zeroes to the device.  See __blkdev_issue_zeroout() for the
+valid values for flags .

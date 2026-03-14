@@ -1,0 +1,7 @@
+Function: struct rng_alg * crypto_rng_alg ( struct crypto_rng * tfm )
+
+obtain ‘ struct rng_alg ’ pointer from RNG handle
+
+Parameters
+  struct crypto_rng *tfm
+    RNG handle

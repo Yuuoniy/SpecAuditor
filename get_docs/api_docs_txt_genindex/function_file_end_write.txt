@@ -1,0 +1,10 @@
+Function: void file_end_write ( struct file * file )
+
+drop write access to a superblock of a regular file
+
+Parameters
+  struct file *file
+    the file we wrote to
+
+Description
+  Should be matched with a call to file_start_write() .

@@ -1,0 +1,13 @@
+Function: int security_socket_shutdown ( struct socket * sock , int how )
+
+Checks if shutting down the socket is allowed
+
+Parameters
+  struct socket *sock
+    socket
+  int how
+    flag indicating how sends and receives are handled
+
+Description
+  Checks permission before all or part of a connection on the socket sock is
+shut down.

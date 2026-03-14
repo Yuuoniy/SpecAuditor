@@ -1,0 +1,9 @@
+Struct: struct nand_op_addr_instr
+
+Definition of an address instruction
+
+Members
+  naddrs
+    length of the addrs array
+  addrs
+    array containing the address cycles to issue

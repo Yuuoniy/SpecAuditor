@@ -1,0 +1,10 @@
+Function: void ib_unregister_device_and_put ( struct ib_device * ib_dev )
+
+Unregister a device while holding a ‘get’
+
+Parameters
+  struct ib_device *ib_dev
+    The device to unregister
+
+Description
+  This is the same as ib_unregister_device() , except it includes an internal ib_device_put() that should match a ‘get’ obtained by the caller.

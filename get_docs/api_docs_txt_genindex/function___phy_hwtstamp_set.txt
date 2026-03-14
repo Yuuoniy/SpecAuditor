@@ -1,0 +1,11 @@
+Function: int __phy_hwtstamp_set ( struct phy_device * phydev , struct kernel_hwtstamp_config * config , struct netlink_ext_ack * extack )
+
+Modify PHY hardware timestamping configuration
+
+Parameters
+  struct phy_device *phydev
+    the PHY device structure
+  struct kernel_hwtstamp_config *config
+    structure holding the timestamping configuration
+  struct netlink_ext_ack *extack
+    netlink extended ack structure, for error reporting

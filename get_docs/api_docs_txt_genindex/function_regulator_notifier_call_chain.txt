@@ -1,0 +1,15 @@
+Function: int regulator_notifier_call_chain ( struct regulator_dev * rdev , unsigned long event , void * data )
+
+call regulator event notifier
+
+Parameters
+  struct regulator_dev *rdev
+    regulator source
+  unsigned long event
+    notifier block
+  void *data
+    callback-specific data.
+
+Description
+  Called by regulator drivers to notify clients a regulator event has
+occurred.

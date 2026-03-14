@@ -1,0 +1,10 @@
+Function: int ata_link_abort ( struct ata_link * link )
+
+abort all qc’s on the link
+
+Parameters
+  struct ata_link *link
+    ATA link to abort qc’s for
+
+Description
+  Abort all active qc’s active on link and schedule EH.

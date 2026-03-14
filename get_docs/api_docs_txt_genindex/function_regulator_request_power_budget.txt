@@ -1,0 +1,9 @@
+Function: int regulator_request_power_budget ( struct regulator * regulator , unsigned int pw_req )
+
+request power budget on a regulator
+
+Parameters
+  struct regulator *regulator
+    regulator source
+  unsigned int pw_req
+    Power requested

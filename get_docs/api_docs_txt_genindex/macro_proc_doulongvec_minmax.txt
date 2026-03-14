@@ -1,0 +1,19 @@
+Macro: int proc_doulongvec_minmax ( const struct ctl_table * table , int write , void * buffer , size_t * lenp , loff_t * ppos )
+
+read a vector of long integers with min/max values
+
+Parameters
+  const struct ctl_table *table
+    the sysctl table
+  int write
+    TRUE if this is a write to the sysctl file
+  void *buffer
+    the user buffer
+  size_t *lenp
+    the size of the user buffer
+  loff_t *ppos
+    file position
+
+Description
+  Reads/writes up to table->maxlen/sizeof(unsigned long) unsigned long
+values from/to the user buffer, treated as an ASCII string.

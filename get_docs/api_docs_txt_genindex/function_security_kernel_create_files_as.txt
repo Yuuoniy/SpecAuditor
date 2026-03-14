@@ -1,0 +1,14 @@
+Function: int security_kernel_create_files_as ( struct cred * new , struct inode * inode )
+
+Set file creation context using an inode
+
+Parameters
+  struct cred *new
+    target credentials
+  struct inode *inode
+    reference inode
+
+Description
+  Set the file creation context in a set of credentials to be the same as the
+objective context of the specified inode.  The current task must be the one
+that nominated inode .

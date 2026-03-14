@@ -1,0 +1,11 @@
+Function: int tty_ldisc_init ( struct tty_struct * tty )
+
+ldisc setup for new tty
+
+Parameters
+  struct tty_struct *tty
+    tty being allocated
+
+Description
+  Set up the line discipline objects for a newly allocated tty. Note that the
+tty structure is not completely set up when this call is made.

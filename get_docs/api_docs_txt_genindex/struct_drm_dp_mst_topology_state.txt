@@ -1,0 +1,28 @@
+Struct: struct drm_dp_mst_topology_state
+
+DisplayPort MST topology atomic state
+
+Members
+  base
+    Base private state for atomic
+  mgr
+    The topology manager
+  pending_crtc_mask
+    A bitmask of all CRTCs this topology state touches, drivers may
+modify this to add additional dependencies if needed.
+  commit_deps
+    A list of all CRTC commits affecting this topology, this field isn’t
+populated until drm_dp_mst_atomic_wait_for_dependencies() is called.
+  num_commit_deps
+    The number of CRTC commits in commit_deps
+  payload_mask
+    A bitmask of allocated VCPIs, used for VCPI assignments
+  payloads
+    The list of payloads being created/destroyed in this state
+  total_avail_slots
+    The total number of slots this topology can handle (63 or 64)
+  start_slot
+    The first usable time slot in this topology (1 or 0)
+  pbn_div
+    The current PBN divisor for this topology. The driver is expected to fill this
+out itself.

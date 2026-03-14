@@ -1,0 +1,12 @@
+Function: int clk_set_min_rate ( struct clk * clk , unsigned long rate )
+
+set a minimum clock rate for a clock source
+
+Parameters
+  struct clk *clk
+    clock source
+  unsigned long rate
+    desired minimum clock rate in Hz, inclusive
+
+Description
+  Returns success (0) or negative errno.

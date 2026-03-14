@@ -1,0 +1,10 @@
+Function: void workqueue_sysfs_unregister ( struct workqueue_struct * wq )
+
+undo workqueue_sysfs_register()
+
+Parameters
+  struct workqueue_struct *wq
+    the workqueue to unregister
+
+Description
+  If wq is registered to sysfs by workqueue_sysfs_register() , unregister.

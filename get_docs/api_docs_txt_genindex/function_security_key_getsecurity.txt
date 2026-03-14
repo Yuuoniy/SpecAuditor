@@ -1,0 +1,14 @@
+Function: int security_key_getsecurity ( struct key * key , char * * buffer )
+
+Get the key’s security label
+
+Parameters
+  struct key *key
+    key
+  char **buffer
+    security label buffer
+
+Description
+  Get a textual representation of the security context attached to a key for
+the purposes of honouring KEYCTL_GETSECURITY.  This function allocates the
+storage for the NUL-terminated string and the caller should free it.

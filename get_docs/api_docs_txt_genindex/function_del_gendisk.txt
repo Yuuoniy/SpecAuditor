@@ -1,0 +1,12 @@
+Function: void del_gendisk ( struct gendisk * disk )
+
+remove the gendisk
+
+Parameters
+  struct gendisk *disk
+    the struct gendisk to remove
+
+Description
+  Removes the gendisk and all its associated resources. This deletes the
+partitions associated with the gendisk, and unregisters the associated
+request_queue.

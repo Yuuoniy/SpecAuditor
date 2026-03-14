@@ -1,0 +1,11 @@
+Function: struct device * bus_get_dev_root ( const struct bus_type * bus )
+
+return a pointer to the “device root” of a bus
+
+Parameters
+  const struct bus_type *bus
+    bus to return the device root of.
+
+Description
+  If a bus has a “device root” structure, return it, WITH THE REFERENCE
+COUNT INCREMENTED.

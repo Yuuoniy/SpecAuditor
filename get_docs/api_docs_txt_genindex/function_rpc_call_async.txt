@@ -1,0 +1,15 @@
+Function: int rpc_call_async ( struct rpc_clnt * clnt , const struct rpc_message * msg , int flags , const struct rpc_call_ops * tk_ops , void * data )
+
+Perform an asynchronous RPC call
+
+Parameters
+  struct rpc_clnt *clnt
+    pointer to RPC client
+  const struct rpc_message *msg
+    RPC call parameters
+  int flags
+    RPC call flags
+  const struct rpc_call_ops *tk_ops
+    RPC call ops
+  void *data
+    user call data

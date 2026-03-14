@@ -1,0 +1,23 @@
+Function: int cxl_endpoint_gather_bandwidth ( struct cxl_region * cxlr , struct cxl_endpoint_decoder * cxled , struct xarray * usp_xa , bool * gp_is_root )
+
+collect all the endpoint bandwidth in an xarray
+
+Parameters
+  struct cxl_region *cxlr
+    CXL region for the bandwidth calculation
+  struct cxl_endpoint_decoder *cxled
+    endpoint decoder to start on
+  struct xarray *usp_xa
+    (output) the xarray that collects all the bandwidth coordinates
+indexed by the upstream device with data of ‘ struct cxl_perf_ctx ’.
+  bool *gp_is_root
+    (output) bool of whether the grandparent is cxl root.
+
+Description
+  Collects aggregated endpoint bandwidth and store the bandwidth in
+an xarray indexed by the upstream device of the switch or the RP
+device. Each endpoint consists the minimum of the bandwidth from DSLBIS
+from the endpoint CDAT, the endpoint upstream link bandwidth, and the
+bandwidth from the SSLBIS of the switch CDAT for the switch upstream port to
+the downstream port that’s associated with the endpoint. If the
+device is directly connected to a RP, then no SSLBIS is involved.

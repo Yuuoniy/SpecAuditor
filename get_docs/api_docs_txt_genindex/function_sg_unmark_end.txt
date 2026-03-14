@@ -1,0 +1,10 @@
+Function: void sg_unmark_end ( struct scatterlist * sg )
+
+Undo setting the end of the scatterlist
+
+Parameters
+  struct scatterlist *sg
+    SG entryScatterlist
+
+Description
+  Removes the termination marker from the given entry of the scatterlist.

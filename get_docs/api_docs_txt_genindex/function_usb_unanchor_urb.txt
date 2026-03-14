@@ -1,0 +1,10 @@
+Function: void usb_unanchor_urb ( struct urb * urb )
+
+unanchors an URB
+
+Parameters
+  struct urb *urb
+    pointer to the urb to anchor
+
+Description
+  Call this to stop the system keeping track of this URB

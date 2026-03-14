@@ -1,0 +1,16 @@
+Function: int skb_kill_datagram ( struct sock * sk , struct sk_buff * skb , unsigned int flags )
+
+Free a datagram skbuff forcibly
+
+Parameters
+  struct sock *sk
+    socket
+  struct sk_buff *skb
+    datagram skbuff
+  unsigned int flags
+    MSG_ flags
+
+Description
+  This function frees a datagram skbuff that was received by
+skb_recv_datagram.  The flags argument must match the one
+used for skb_recv_datagram.

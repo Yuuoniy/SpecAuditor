@@ -1,0 +1,12 @@
+Function: void d_instantiate ( struct dentry * entry , struct inode * inode )
+
+fill in inode information for a dentry
+
+Parameters
+  struct dentry *entry
+    dentry to complete
+  struct inode * inode
+    inode to attach to this dentry
+
+Description
+  Fill in inode information in the entry.

@@ -1,0 +1,9 @@
+Struct: struct v4l2_jpeg_reference
+
+reference into the JPEG buffer
+
+Members
+  start
+    pointer to the start of the referenced segment or table
+  length
+    size of the referenced segment or table

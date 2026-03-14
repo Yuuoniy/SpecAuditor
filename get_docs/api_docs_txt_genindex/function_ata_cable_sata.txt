@@ -1,0 +1,10 @@
+Function: int ata_cable_sata ( struct ata_port * ap )
+
+return SATA cable type
+
+Parameters
+  struct ata_port *ap
+    port
+
+Description
+  Helper method for drivers which have SATA cables

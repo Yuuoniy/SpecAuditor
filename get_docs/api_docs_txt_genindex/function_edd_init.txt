@@ -1,0 +1,7 @@
+Function: int edd_init ( void )
+
+creates sysfs tree of EDD data
+
+Parameters
+  void
+    no arguments

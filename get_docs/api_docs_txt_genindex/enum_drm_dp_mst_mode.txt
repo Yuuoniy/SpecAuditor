@@ -1,0 +1,3 @@
+Enum: enum drm_dp_mst_mode
+
+sink’s MST mode capability

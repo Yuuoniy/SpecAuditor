@@ -1,0 +1,13 @@
+Function: void xdr_set_pagelen ( struct xdr_stream * xdr , unsigned int len )
+
+Sets the length of the XDR pages
+
+Parameters
+  struct xdr_stream *xdr
+    pointer to xdr_stream struct
+  unsigned int len
+    new length of the XDR page data
+
+Description
+  Either grows or shrinks the length of the xdr pages by setting pagelen to len bytes. When shrinking, any extra data is moved into buf->tail, whereas
+when growing any data beyond the current pointer is moved into the tail.

@@ -1,0 +1,23 @@
+Struct: struct fpga_region
+
+FPGA Region structure
+
+Members
+  dev
+    FPGA Region device
+  mutex
+    enforces exclusive reference to region
+  bridge_list
+    list of FPGA bridges specified in region
+  mgr
+    FPGA manager
+  info
+    FPGA image info
+  compat_id
+    FPGA region id for compatibility check.
+  ops_owner
+    module containing the get_bridges function
+  priv
+    private data
+  get_bridges
+    optional function to get bridges to a list

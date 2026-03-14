@@ -1,0 +1,18 @@
+Function: ssize_t drm_read ( struct file * filp , char __user * buffer , size_t count , loff_t * offset )
+
+read method for DRM file
+
+Parameters
+  struct file *filp
+    file pointer
+  char __user *buffer
+    userspace destination pointer for the read
+  size_t count
+    count in bytes to read
+  loff_t *offset
+    offset to read
+
+Description
+  This function must be used by drivers as their file_operations.read method if they use DRM events for asynchronous signalling to userspace.
+Since events are used by the KMS API for vblank and page flip completion this
+means all modern display drivers must use it.

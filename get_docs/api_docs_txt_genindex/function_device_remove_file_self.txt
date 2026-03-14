@@ -1,0 +1,12 @@
+Function: bool device_remove_file_self ( struct device * dev , const struct device_attribute * attr )
+
+remove sysfs attribute file from its own method.
+
+Parameters
+  struct device *dev
+    device.
+  const struct device_attribute *attr
+    device attribute descriptor.
+
+Description
+  See kernfs_remove_self() for details.

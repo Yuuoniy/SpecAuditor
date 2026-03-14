@@ -1,0 +1,16 @@
+Function: struct gpio_desc * devm_gpiod_get ( struct device * dev , const char * con_id , enum gpiod_flags flags )
+
+Resource-managed gpiod_get()
+
+Parameters
+  struct device *dev
+    GPIO consumer
+  const char *con_id
+    function within the GPIO consumer
+  enum gpiod_flags flags
+    optional GPIO initialization flags
+
+Description
+  Managed gpiod_get() . GPIO descriptors returned from this function are
+automatically disposed on driver detach. See gpiod_get() for detailed
+information about behavior and return values.

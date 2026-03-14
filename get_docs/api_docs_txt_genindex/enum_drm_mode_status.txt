@@ -1,0 +1,3 @@
+Enum: enum drm_mode_status
+
+hardware support status of a mode

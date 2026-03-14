@@ -1,0 +1,12 @@
+Function: void skb_checksum_none_assert ( const struct sk_buff * skb )
+
+make sure skb ip_summed is CHECKSUM_NONE
+
+Parameters
+  const struct sk_buff *skb
+    skb to check
+
+Description
+  fresh skbs have their ip_summed set to CHECKSUM_NONE.
+Instead of forcing ip_summed to CHECKSUM_NONE, we can
+use this helper, to document places where we make this assertion.

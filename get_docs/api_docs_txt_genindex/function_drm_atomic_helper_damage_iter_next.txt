@@ -1,0 +1,16 @@
+Function: bool drm_atomic_helper_damage_iter_next ( struct drm_atomic_helper_damage_iter * iter , struct drm_rect * rect )
+
+Advance the damage iterator.
+
+Parameters
+  struct drm_atomic_helper_damage_iter *iter
+    The iterator to advance.
+  struct drm_rect *rect
+    Return a rectangle in fb coordinate clipped to plane src.
+
+Description
+  Since plane src is in 16.16 fixed point and damage clips are whole number,
+this iterator round off clips that intersect with plane src. Round down for
+x1/y1 and round up for x2/y2 for the intersected coordinate. Similar rounding
+off for full plane src, in case it’s returned as damage. This iterator will
+skip damage clips outside of plane src.

@@ -1,0 +1,11 @@
+Function: unsigned int crypto_ahash_statesize ( struct crypto_ahash * tfm )
+
+obtain size of the ahash state
+
+Parameters
+  struct crypto_ahash *tfm
+    cipher handle
+
+Description
+  Return the size of the ahash state. With the crypto_ahash_export() function, the caller can export the state into a buffer whose size is
+defined with this function.

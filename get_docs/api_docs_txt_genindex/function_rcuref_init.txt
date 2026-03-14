@@ -1,0 +1,9 @@
+Function: void rcuref_init ( rcuref_t * ref , unsigned int cnt )
+
+Initialize a rcuref reference count with the given reference count
+
+Parameters
+  rcuref_t *ref
+    Pointer to the reference count
+  unsigned int cnt
+    The initial reference count typically ‘1’

@@ -1,0 +1,11 @@
+Function: struct media_pad * media_pad_remote_pad_unique ( const struct media_pad * pad )
+
+Find a remote pad connected to a pad
+
+Parameters
+  const struct media_pad *pad
+    The pad
+
+Description
+  Search for and return a remote pad connected to pad through an enabled
+link. If multiple (or no) remote pads are found, an error is returned.

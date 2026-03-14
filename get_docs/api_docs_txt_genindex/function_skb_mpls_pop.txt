@@ -1,0 +1,16 @@
+Function: int skb_mpls_pop ( struct sk_buff * skb , __be16 next_proto , int mac_len , bool ethernet )
+
+pop the outermost MPLS header
+
+Parameters
+  struct sk_buff *skb
+    buffer
+  __be16 next_proto
+    ethertype of header after popped MPLS header
+  int mac_len
+    length of the MAC header
+  bool ethernet
+    flag to indicate if the packet is ethernet
+
+Description
+  Expects skb->data at mac header.

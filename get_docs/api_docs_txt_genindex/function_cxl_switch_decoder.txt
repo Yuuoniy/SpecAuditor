@@ -1,0 +1,11 @@
+Function: struct cxl_switch_decoder
+
+Switch specific CXL HDM Decoder
+
+Members
+  cxld
+    base cxl_decoder object
+  nr_targets
+    number of elements in target
+  target
+    active ordered target list in current decoder configuration

@@ -1,0 +1,9 @@
+Function: void list_swap ( struct list_head * entry1 , struct list_head * entry2 )
+
+replace entry1 with entry2 and re-add entry1 at entry2’s position
+
+Parameters
+  struct list_head *entry1
+    the location to place entry2
+  struct list_head *entry2
+    the location to place entry1

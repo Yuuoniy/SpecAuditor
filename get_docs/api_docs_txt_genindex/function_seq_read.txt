@@ -1,0 +1,16 @@
+Function: ssize_t seq_read ( struct file * file , char __user * buf , size_t size , loff_t * ppos )
+
+->read() method for sequential files.
+
+Parameters
+  struct file *file
+    the file to read from
+  char __user *buf
+    the buffer to read to
+  size_t size
+    the maximum number of bytes to read
+  loff_t *ppos
+    the current position in the file
+
+Description
+  Ready-made ->f_op->read()

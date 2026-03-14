@@ -1,0 +1,16 @@
+Function: int fb_try_mode ( struct fb_var_screeninfo * var , struct fb_info * info , const struct fb_videomode * mode , unsigned int bpp )
+
+test a video mode
+
+Parameters
+  struct fb_var_screeninfo *var
+    frame buffer user defined part of display
+  struct fb_info *info
+    frame buffer info structure
+  const struct fb_videomode *mode
+    frame buffer video mode structure
+  unsigned int bpp
+    color depth in bits per pixel
+
+Description
+  Tries a video mode to test it’s validity for device info .

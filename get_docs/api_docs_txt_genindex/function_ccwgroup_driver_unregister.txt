@@ -1,0 +1,10 @@
+Function: void ccwgroup_driver_unregister ( struct ccwgroup_driver * cdriver )
+
+deregister a ccw group driver
+
+Parameters
+  struct ccwgroup_driver *cdriver
+    driver to be deregistered
+
+Description
+  This function is mainly a wrapper around driver_unregister() .

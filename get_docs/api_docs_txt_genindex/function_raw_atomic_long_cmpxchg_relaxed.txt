@@ -1,0 +1,15 @@
+Function: long raw_atomic_long_cmpxchg_relaxed ( atomic_long_t * v , long old , long new )
+
+atomic compare and exchange with relaxed ordering
+
+Parameters
+  atomic_long_t *v
+    pointer to atomic_long_t
+  long old
+    long value to compare with
+  long new
+    long value to assign
+
+Description
+  If ( v == old ), atomically updates v to new with relaxed ordering.
+Otherwise, v is not modified and relaxed ordering is provided.

@@ -1,0 +1,11 @@
+Struct: struct drm_xe_vm_destroy
+
+Input of DRM_IOCTL_XE_VM_DESTROY
+
+Members
+  vm_id
+    VM ID
+  pad
+    MBZ
+  reserved
+    Reserved

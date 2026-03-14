@@ -1,0 +1,12 @@
+Function: void usb_poison_anchored_urbs ( struct usb_anchor * anchor )
+
+cease all traffic from an anchor
+
+Parameters
+  struct usb_anchor *anchor
+    anchor the requests are bound to
+
+Description
+  this allows all outstanding URBs to be poisoned starting
+from the back of the queue. Newly added URBs will also be
+poisoned

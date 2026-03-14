@@ -1,0 +1,14 @@
+Function: u8 i2c_smbus_pec ( u8 crc , u8 * p , size_t count )
+
+Incremental CRC8 over the given input data array
+
+Parameters
+  u8 crc
+    previous return crc8 value
+  u8 *p
+    pointer to data buffer.
+  size_t count
+    number of bytes in data buffer.
+
+Description
+  Incremental CRC8 over count bytes in the array pointed to by p

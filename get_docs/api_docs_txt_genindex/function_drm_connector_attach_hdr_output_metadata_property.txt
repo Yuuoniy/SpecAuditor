@@ -1,0 +1,11 @@
+Function: int drm_connector_attach_hdr_output_metadata_property ( struct drm_connector * connector )
+
+attach “HDR_OUTPUT_METADA” property
+
+Parameters
+  struct drm_connector *connector
+    connector to attach the property on.
+
+Description
+  This is used to allow the userspace to send HDR Metadata to the
+driver.

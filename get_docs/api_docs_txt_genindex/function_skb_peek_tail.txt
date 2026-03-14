@@ -1,0 +1,13 @@
+Function: struct sk_buff * skb_peek_tail ( const struct sk_buff_head * list_ )
+
+peek at the tail of an sk_buff_head
+
+Parameters
+  const struct sk_buff_head *list_
+    list to peek at
+
+Description
+  Peek an sk_buff . Unlike most other operations you _MUST_
+be careful with this one. A peek leaves the buffer on the
+list and someone else may run off with it. You must hold
+the appropriate locks or have a private queue to do this.

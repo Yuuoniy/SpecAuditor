@@ -1,0 +1,12 @@
+Function: struct vme_resource * vme_lm_request ( struct vme_dev * vdev )
+
+Request a VME location monitor
+
+Parameters
+  struct vme_dev *vdev
+    Pointer to VME device struct vme_dev assigned to driver instance.
+
+Description
+  Allocate a location monitor resource to the driver. A location monitor
+allows the driver to monitor accesses to a contiguous number of
+addresses on the VME bus.

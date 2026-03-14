@@ -1,0 +1,11 @@
+Function: unsigned long vma_kernel_pagesize ( struct vm_area_struct * vma )
+
+Page size granularity for this VMA.
+
+Parameters
+  struct vm_area_struct *vma
+    The user mapping.
+
+Description
+  Folios in this VMA will be aligned to, and at least the size of the
+number of bytes returned by this function.

@@ -1,0 +1,18 @@
+Function: void usb_set_device_state ( struct usb_device * udev , enum usb_device_state new_state )
+
+change a device’s current state (usbcore, hcds)
+
+Parameters
+  struct usb_device *udev
+    pointer to device whose state should be changed
+  enum usb_device_state new_state
+    new state value to be stored
+
+Description
+  udev->state is _not_ fully protected by the device lock.  Although
+most transitions are made only while holding the lock, the state can
+can change to USB_STATE_NOTATTACHED at almost any time.  This
+is so that devices can be marked as disconnected as soon as possible,
+without having to wait for any semaphores to be released.  As a result,
+all changes to any device’s state must be protected by the
+device_state_lock spinlock.

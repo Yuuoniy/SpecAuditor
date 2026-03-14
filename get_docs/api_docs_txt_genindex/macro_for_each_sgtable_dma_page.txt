@@ -1,0 +1,17 @@
+Macro: for_each_sgtable_dma_page
+
+
+
+Parameters
+  sgt
+    sg_table object to iterate over
+  dma_iter
+    DMA page iterator to hold current page
+  pgoffset
+    starting page offset (in pages)
+
+Description
+  Iterates over the all DMA mapped pages in the buffer described by
+a scatterlist stored in the given sg_table object.
+See also for_each_sg_dma_page() . In each loop it operates on PAGE_SIZE
+unit.

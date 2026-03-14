@@ -1,0 +1,19 @@
+Function: void mpt_print_ioc_summary ( MPT_ADAPTER * ioc , char * buffer , int * size , int len , int showlan )
+
+Write ASCII summary of IOC to a buffer.
+
+Parameters
+  MPT_ADAPTER *ioc
+    Pointer to MPT_ADAPTER structure
+  char *buffer
+    Pointer to buffer where IOC summary info should be written
+  int *size
+    Pointer to number of bytes we wrote (set by this routine)
+  int len
+    Offset at which to start writing in buffer
+  int showlan
+    Display LAN stuff?
+
+Description
+  This routine writes (english readable) ASCII text, which represents
+a summary of IOC information, to a buffer.

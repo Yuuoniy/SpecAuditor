@@ -1,0 +1,9 @@
+Function: int v4l2_ctrl_type_op_validate ( const struct v4l2_ctrl * ctrl , union v4l2_ctrl_ptr ptr )
+
+Default v4l2_ctrl_type_ops validate callback.
+
+Parameters
+  const struct v4l2_ctrl *ctrl
+    The v4l2_ctrl pointer.
+  union v4l2_ctrl_ptr ptr
+    The v4l2 control value.

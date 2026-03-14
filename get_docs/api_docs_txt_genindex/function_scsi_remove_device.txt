@@ -1,0 +1,7 @@
+Function: void scsi_remove_device ( struct scsi_device * sdev )
+
+unregister a device from the scsi bus
+
+Parameters
+  struct scsi_device *sdev
+    scsi_device to unregister

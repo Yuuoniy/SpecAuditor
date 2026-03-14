@@ -1,0 +1,9 @@
+Function: void srpt_remove_one ( struct ib_device * device , void * client_data )
+
+InfiniBand device removal callback function
+
+Parameters
+  struct ib_device *device
+    Describes a HCA.
+  void *client_data
+    The value passed as the third argument to ib_set_client_data() .

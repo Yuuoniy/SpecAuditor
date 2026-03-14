@@ -1,0 +1,9 @@
+Struct: struct fw_cdev_get_cycle_timer
+
+read cycle timer register
+
+Members
+  local_time
+    system time, in microseconds since the Epoch
+  cycle_timer
+    Cycle Time register contents

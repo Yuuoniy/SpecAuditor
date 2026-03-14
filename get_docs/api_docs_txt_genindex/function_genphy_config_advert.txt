@@ -1,0 +1,14 @@
+Function: int genphy_config_advert ( struct phy_device * phydev , const unsigned long * advert )
+
+sanitize and advertise auto-negotiation parameters
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+  const unsigned long *advert
+    auto-negotiation parameters to advertise
+
+Description
+  after sanitizing the values to make sure we only advertise
+what is supported.  Returns < 0 on error, 0 if the PHY’s advertisement
+hasn’t changed, and > 0 if it has changed.

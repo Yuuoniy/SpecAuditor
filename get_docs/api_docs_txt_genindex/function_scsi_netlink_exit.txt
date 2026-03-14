@@ -1,0 +1,7 @@
+Function: void scsi_netlink_exit ( void )
+
+Called by SCSI subsystem to disable the SCSI transport netlink interface
+
+Parameters
+  void
+    no arguments

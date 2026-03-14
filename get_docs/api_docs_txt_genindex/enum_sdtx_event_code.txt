@@ -1,0 +1,3 @@
+Enum: enum sdtx_event_code
+
+Code describing the type of an event.

@@ -1,0 +1,13 @@
+Function: void fc_host_post_event ( struct Scsi_Host * shost , u32 event_number , enum fc_host_event_code event_code , u32 event_data )
+
+called to post an even on an fc_host.
+
+Parameters
+  struct Scsi_Host *shost
+    host the event occurred on
+  u32 event_number
+    fc event number obtained from get_fc_event_number()
+  enum fc_host_event_code event_code
+    fc_host event being posted
+  u32 event_data
+    32bits of data for the event being posted

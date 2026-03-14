@@ -1,0 +1,15 @@
+Function: bool copy_from_read_buf ( const struct tty_struct * tty , u8 * * kbp , size_t * nr )
+
+copy read data directly
+
+Parameters
+  const struct tty_struct *tty
+    terminal device
+  u8 **kbp
+    data
+  size_t *nr
+    size of data
+
+Description
+  Helper function to speed up n_tty_read() . It is only called when ICANON is
+off; it copies characters straight from the tty queue.

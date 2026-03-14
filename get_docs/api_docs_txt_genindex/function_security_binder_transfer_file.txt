@@ -1,0 +1,14 @@
+Function: int security_binder_transfer_file ( const struct cred * from , const struct cred * to , const struct file * file )
+
+Check if a binder file xfer is allowed
+
+Parameters
+  const struct cred *from
+    sending process
+  const struct cred *to
+    receiving process
+  const struct file *file
+    file being transferred
+
+Description
+  Check whether from is allowed to transfer file to to .

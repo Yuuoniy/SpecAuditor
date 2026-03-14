@@ -1,0 +1,16 @@
+Function: int filemap_fdatawait_range_keep_errors ( struct address_space * mapping , loff_t start_byte , loff_t end_byte )
+
+wait for writeback to complete
+
+Parameters
+  struct address_space *mapping
+    address space structure to wait for
+  loff_t start_byte
+    offset in bytes where the range starts
+  loff_t end_byte
+    offset in bytes where the range ends (inclusive)
+
+Description
+  Walk the list of under-writeback pages of the given address space in the
+given range and wait for all of them.  Unlike filemap_fdatawait_range() ,
+this function does not clear error status of the address space.

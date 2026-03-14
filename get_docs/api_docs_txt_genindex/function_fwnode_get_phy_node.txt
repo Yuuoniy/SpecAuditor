@@ -1,0 +1,13 @@
+Function: struct fwnode_handle * fwnode_get_phy_node ( const struct fwnode_handle * fwnode )
+
+Get the phy_node using the named reference.
+
+Parameters
+  const struct fwnode_handle *fwnode
+    Pointer to fwnode from which phy_node has to be obtained.
+
+Description
+  Refer return conditions of fwnode_find_reference() .
+For ACPI, only “phy-handle” is supported. Legacy DT properties “phy”
+and “phy-device” are not supported in ACPI. DT supports all the three
+named references to the phy node.

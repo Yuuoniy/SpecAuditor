@@ -1,0 +1,17 @@
+Function: int drm_atomic_helper_wait_for_fences ( struct drm_device * dev , struct drm_atomic_state * state , bool pre_swap )
+
+wait for fences stashed in plane state
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_atomic_state *state
+    atomic state object with old state structures
+  bool pre_swap
+    If true, do an interruptible wait, and state is the new state.
+Otherwise state is the old state.
+
+Description
+  For implicit sync, driver should fish the exclusive fence out from the
+incoming fb’s and stash it in the drm_plane_state.  This is called after drm_atomic_helper_swap_state() so it uses the current plane state (and
+just uses the atomic state to find the changed planes)

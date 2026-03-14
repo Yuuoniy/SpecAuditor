@@ -1,0 +1,7 @@
+Function: struct rpc_iostats * rpc_alloc_iostats ( struct rpc_clnt * clnt )
+
+allocate an rpc_iostats structure
+
+Parameters
+  struct rpc_clnt *clnt
+    RPC program, version, and xprt

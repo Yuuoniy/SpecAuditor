@@ -1,0 +1,15 @@
+Function: int drm_privacy_screen_register_notifier ( struct drm_privacy_screen * priv , struct notifier_block * nb )
+
+register a notifier
+
+Parameters
+  struct drm_privacy_screen *priv
+    Privacy screen to register the notifier with
+  struct notifier_block *nb
+    Notifier-block for the notifier to register
+
+Description
+  Register a notifier with the privacy-screen to be notified of changes made
+to the privacy-screen state from outside of the privacy-screen class.
+E.g. the state may be changed by the hardware itself in response to a
+hotkey press.

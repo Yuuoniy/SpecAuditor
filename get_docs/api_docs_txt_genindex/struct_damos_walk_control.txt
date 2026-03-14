@@ -1,0 +1,9 @@
+Struct: struct damos_walk_control
+
+Control damos_walk() .
+
+Members
+  walk_fn
+    Function to be called back for each region.
+  data
+    Data that will be passed to walk functions.

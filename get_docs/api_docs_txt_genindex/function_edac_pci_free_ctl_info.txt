@@ -1,0 +1,12 @@
+Function: void edac_pci_free_ctl_info ( struct edac_pci_ctl_info * pci )
+
+Last action on the pci control structure.
+
+Parameters
+  struct edac_pci_ctl_info *pci
+    pointer to struct edac_pci_ctl_info
+
+Description
+  Calls the remove sysfs information, which will unregister
+this control struct’s kobj. When that kobj’s ref count
+goes to zero, its release function will be call and then kfree() the memory.

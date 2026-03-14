@@ -1,0 +1,13 @@
+Function: int ssh_rtl_submit ( struct ssh_rtl * rtl , struct ssh_request * rqst )
+
+Submit a request to the transport layer.
+
+Parameters
+  struct ssh_rtl *rtl
+    The request transport layer.
+  struct ssh_request *rqst
+    The request to submit.
+
+Description
+  Submits a request to the transport layer. A single request may not be
+submitted multiple times without reinitializing it.

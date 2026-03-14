@@ -1,0 +1,12 @@
+Function: u64 int_pow ( u64 base , unsigned int exp )
+
+computes the exponentiation of the given base and exponent
+
+Parameters
+  u64 base
+    base which will be raised to the given power
+  unsigned int exp
+    power to be raised to
+
+Description
+  Computes: pow(base, exp), i.e. base raised to the exp power

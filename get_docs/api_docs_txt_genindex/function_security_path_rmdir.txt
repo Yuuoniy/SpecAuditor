@@ -1,0 +1,12 @@
+Function: int security_path_rmdir ( const struct path * dir , struct dentry * dentry )
+
+Check if removing a directory is allowed
+
+Parameters
+  const struct path *dir
+    parent directory
+  struct dentry *dentry
+    directory to remove
+
+Description
+  Check the permission to remove a directory.

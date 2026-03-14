@@ -1,0 +1,15 @@
+Function: void intel_drrs_flush ( struct intel_display * display , unsigned int frontbuffer_bits )
+
+Restart Idleness DRRS
+
+Parameters
+  struct intel_display *display
+    display device
+  unsigned int frontbuffer_bits
+    frontbuffer plane tracking bits
+
+Description
+  This function gets called every time rendering on the given planes has
+completed or flip on a crtc is completed. So DRRS should be upclocked
+(LOW_RR -> HIGH_RR). And also Idleness detection should be started again,
+if no other planes are dirty.

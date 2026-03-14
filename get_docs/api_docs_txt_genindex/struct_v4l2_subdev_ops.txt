@@ -1,0 +1,21 @@
+Struct: struct v4l2_subdev_ops
+
+Subdev operations
+
+Members
+  core
+    pointer to struct v4l2_subdev_core_ops . Can be NULL
+  tuner
+    pointer to struct v4l2_subdev_tuner_ops . Can be NULL
+  audio
+    pointer to struct v4l2_subdev_audio_ops . Can be NULL
+  video
+    pointer to struct v4l2_subdev_video_ops . Can be NULL
+  vbi
+    pointer to struct v4l2_subdev_vbi_ops . Can be NULL
+  ir
+    pointer to struct v4l2_subdev_ir_ops . Can be NULL
+  sensor
+    pointer to struct v4l2_subdev_sensor_ops . Can be NULL
+  pad
+    pointer to struct v4l2_subdev_pad_ops . Can be NULL

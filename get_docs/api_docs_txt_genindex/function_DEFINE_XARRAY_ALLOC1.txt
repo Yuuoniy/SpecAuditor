@@ -1,0 +1,11 @@
+Function: DEFINE_XARRAY_ALLOC1
+
+
+
+Parameters
+  name
+    A string that names your XArray.
+
+Description
+  This is intended for file scope definitions of allocating XArrays.
+See also DEFINE_XARRAY() .

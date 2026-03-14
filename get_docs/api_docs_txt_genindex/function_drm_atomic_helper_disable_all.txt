@@ -1,0 +1,14 @@
+Function: int drm_atomic_helper_disable_all ( struct drm_device * dev , struct drm_modeset_acquire_ctx * ctx )
+
+disable all currently active outputs
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_modeset_acquire_ctx *ctx
+    lock acquisition context
+
+Description
+  Loops through all connectors, finding those that aren’t turned off and then
+turns them off by setting their DPMS mode to OFF and deactivating the CRTC
+that they are connected to.

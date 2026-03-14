@@ -1,0 +1,9 @@
+Macro: DECLARE_KFIFO_PTR
+
+
+
+Parameters
+  fifo
+    name of the declared fifo
+  type
+    type of the fifo elements

@@ -1,0 +1,14 @@
+Function: int i915_gem_get_tiling_ioctl ( struct drm_device * dev , void * data , struct drm_file * file )
+
+IOCTL handler to get tiling mode
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  void *data
+    data pointer for the ioctl
+  struct drm_file *file
+    DRM file for the ioctl call
+
+Description
+  Returns the current tiling mode and required bit 6 swizzling for the object.

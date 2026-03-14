@@ -1,0 +1,10 @@
+Function: enum pci_bus_speed pcie_get_speed_cap ( struct pci_dev * dev )
+
+query for the PCI device’s link speed capability
+
+Parameters
+  struct pci_dev *dev
+    PCI device to query
+
+Description
+  Query the PCI device speed capability.

@@ -1,0 +1,9 @@
+Function: struct device * bus_find_next_device ( const struct bus_type * bus , struct device * cur )
+
+Find the next device after a given device in a given bus.
+
+Parameters
+  const struct bus_type *bus
+    bus type
+  struct device *cur
+    device to begin the search with.

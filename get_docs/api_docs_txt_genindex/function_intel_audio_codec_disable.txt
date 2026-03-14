@@ -1,0 +1,15 @@
+Function: void intel_audio_codec_disable ( struct intel_encoder * encoder , const struct intel_crtc_state * old_crtc_state , const struct drm_connector_state * old_conn_state )
+
+Disable the audio codec for HD audio
+
+Parameters
+  struct intel_encoder *encoder
+    encoder on which to disable audio
+  const struct intel_crtc_state *old_crtc_state
+    pointer to the old crtc state.
+  const struct drm_connector_state *old_conn_state
+    pointer to the old connector state.
+
+Description
+  The disable sequences must be performed before disabling the transcoder or
+port.

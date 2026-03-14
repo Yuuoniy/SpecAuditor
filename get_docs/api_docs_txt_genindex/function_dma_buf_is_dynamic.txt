@@ -1,0 +1,12 @@
+Function: bool dma_buf_is_dynamic ( struct dma_buf * dmabuf )
+
+check if a DMA-buf uses dynamic mappings.
+
+Parameters
+  struct dma_buf *dmabuf
+    the DMA-buf to check
+
+Description
+  Returns true if a DMA-buf exporter wants to be called with the dma_resv
+locked for the map/unmap callbacks, false if it doesn’t wants to be called
+with the lock held.

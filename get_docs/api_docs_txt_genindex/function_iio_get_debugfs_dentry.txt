@@ -1,0 +1,7 @@
+Function: struct dentry * iio_get_debugfs_dentry ( struct iio_dev * indio_dev )
+
+helper function to get the debugfs_dentry
+
+Parameters
+  struct iio_dev *indio_dev
+    IIO device structure for device

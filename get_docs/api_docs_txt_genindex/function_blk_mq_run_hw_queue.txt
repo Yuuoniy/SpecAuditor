@@ -1,0 +1,14 @@
+Function: void blk_mq_run_hw_queue ( struct blk_mq_hw_ctx * hctx , bool async )
+
+Start to run a hardware queue.
+
+Parameters
+  struct blk_mq_hw_ctx *hctx
+    Pointer to the hardware queue to run.
+  bool async
+    If we want to run the queue asynchronously.
+
+Description
+  Check if the request queue is not in a quiesced state and if there are
+pending requests to be sent. If this is true, run the queue to send requests
+to hardware.

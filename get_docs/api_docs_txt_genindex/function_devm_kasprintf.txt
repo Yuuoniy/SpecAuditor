@@ -1,0 +1,14 @@
+Function: char * devm_kasprintf ( struct device * dev , gfp_t gfp , const char * fmt , ... )
+
+Allocate resource managed space and format a string into that.
+
+Parameters
+  struct device *dev
+    Device to allocate memory for
+  gfp_t gfp
+    the GFP mask used in the devm_kmalloc() call when
+allocating memory
+  const char *fmt
+    The printf() -style format string
+  ...
+    Arguments for the format string

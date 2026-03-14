@@ -1,0 +1,10 @@
+Function: const char __rcu * dma_fence_timeline_name ( struct dma_fence * fence )
+
+Access the timeline name
+
+Parameters
+  struct dma_fence *fence
+    the fence to query
+
+Description
+  Returns a timeline name provided by the dma-fence implementation.

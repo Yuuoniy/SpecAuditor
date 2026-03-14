@@ -1,0 +1,14 @@
+Function: void maybe_create_worker ( struct worker_pool * pool )
+
+create a new worker if necessary
+
+Parameters
+  struct worker_pool *pool
+    pool to create a new worker for
+
+Description
+  Create a new worker for pool if necessary. pool is guaranteed to
+have at least one idle worker on return from this function.  If
+creating a new worker takes longer than MAYDAY_INTERVAL, mayday is
+sent to all rescuers with works scheduled on pool to resolve
+possible allocation deadlock.

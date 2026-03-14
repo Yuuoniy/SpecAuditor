@@ -1,0 +1,9 @@
+Function: int xe_ggtt_dump ( struct xe_ggtt * ggtt , struct drm_printer * p )
+
+Dump GGTT for debug
+
+Parameters
+  struct xe_ggtt *ggtt
+    the xe_ggtt to be dumped
+  struct drm_printer *p
+    the drm_mm_printer helper handle to be used to dump the information

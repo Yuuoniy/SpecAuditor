@@ -1,0 +1,10 @@
+Function: int hsi_register_controller ( struct hsi_controller * hsi )
+
+Register an HSI controller and its ports
+
+Parameters
+  struct hsi_controller *hsi
+    The HSI controller to register
+
+Description
+  Returns -errno on failure, 0 on success.

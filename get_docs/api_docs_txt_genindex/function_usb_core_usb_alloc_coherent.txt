@@ -1,0 +1,13 @@
+Function: void * usb_alloc_coherent ( struct usb_device * dev , size_t size , gfp_t mem_flags , dma_addr_t * dma )
+
+allocate dma-consistent buffer for URB_NO_xxx_DMA_MAP
+
+Parameters
+  struct usb_device *dev
+    device the buffer will be used with
+  size_t size
+    requested buffer size
+  gfp_t mem_flags
+    affect whether allocation may block
+  dma_addr_t *dma
+    used to return DMA address of buffer

@@ -1,0 +1,16 @@
+Function: int kernel_accept ( struct socket * sock , struct socket * * newsock , int flags )
+
+accept a connection (kernel space)
+
+Parameters
+  struct socket *sock
+    listening socket
+  struct socket **newsock
+    new connected socket
+  int flags
+    flags
+
+Description
+  flags must be SOCK_CLOEXEC, SOCK_NONBLOCK or 0.
+If it fails, newsock is guaranteed to be NULL .
+Returns 0 or an error.

@@ -1,0 +1,13 @@
+Function: int typec_set_mode ( struct typec_port * port , int mode )
+
+Set mode of operation for USB Type-C connector
+
+Parameters
+  struct typec_port *port
+    USB Type-C connector
+  int mode
+    Accessory Mode, USB Operation or Safe State
+
+Description
+  Configure port for Accessory Mode mode . This function will configure the
+muxes needed for mode .

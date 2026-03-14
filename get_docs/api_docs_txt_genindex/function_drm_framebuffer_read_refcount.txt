@@ -1,0 +1,10 @@
+Function: uint32_t drm_framebuffer_read_refcount ( const struct drm_framebuffer * fb )
+
+read the framebuffer reference count.
+
+Parameters
+  const struct drm_framebuffer *fb
+    framebuffer
+
+Description
+  This functions returns the framebuffer’s reference count.

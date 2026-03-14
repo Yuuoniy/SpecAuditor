@@ -1,0 +1,9 @@
+Struct: struct drm_mode_closefb
+
+
+
+Members
+  fb_id
+    Framebuffer ID.
+  pad
+    Must be zero.

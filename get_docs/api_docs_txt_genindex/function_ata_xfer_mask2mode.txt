@@ -1,0 +1,11 @@
+Function: u8 ata_xfer_mask2mode ( unsigned int xfer_mask )
+
+Find matching XFER_* for the given xfer_mask
+
+Parameters
+  unsigned int xfer_mask
+    xfer_mask of interest
+
+Description
+  Return matching XFER_* value for xfer_mask .  Only the highest
+bit of xfer_mask is considered.

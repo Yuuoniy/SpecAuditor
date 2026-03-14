@@ -1,0 +1,12 @@
+Function: int jbd2_journal_get_create_access ( handle_t * handle , struct buffer_head * bh )
+
+notify intent to use newly created bh
+
+Parameters
+  handle_t *handle
+    transaction to new buffer to
+  struct buffer_head *bh
+    new buffer.
+
+Description
+  Call this if you create a new bh.

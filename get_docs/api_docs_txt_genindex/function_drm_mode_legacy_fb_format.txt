@@ -1,0 +1,12 @@
+Function: uint32_t drm_mode_legacy_fb_format ( uint32_t bpp , uint32_t depth )
+
+compute drm fourcc code from legacy description
+
+Parameters
+  uint32_t bpp
+    bits per pixels
+  uint32_t depth
+    bit depth per pixel
+
+Description
+  Computes a drm fourcc pixel format code for the given bpp / depth values.

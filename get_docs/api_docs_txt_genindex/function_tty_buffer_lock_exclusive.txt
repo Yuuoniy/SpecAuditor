@@ -1,0 +1,12 @@
+Function: void tty_buffer_lock_exclusive ( struct tty_port * port )
+
+gain exclusive access to buffer
+
+Parameters
+  struct tty_port *port
+    tty port owning the flip buffer
+
+Description
+  Guarantees safe use of the tty_ldisc_ops.receive_buf() method by excluding
+the buffer work and any pending flush from using the flip buffer. Data can
+continue to be added concurrently to the flip buffer from the driver side.

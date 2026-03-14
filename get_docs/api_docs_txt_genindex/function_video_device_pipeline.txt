@@ -1,0 +1,11 @@
+Function: struct media_pipeline * video_device_pipeline ( struct video_device * vdev )
+
+Get the media pipeline a video device is part of
+
+Parameters
+  struct video_device *vdev
+    The video device
+
+Description
+  This function returns the media pipeline that a video device has been
+associated with when constructing the pipeline with video_device_pipeline_start() . The pointer remains valid until video_device_pipeline_stop() is called.

@@ -1,0 +1,17 @@
+Function: unsigned long rpc_cancel_tasks ( struct rpc_clnt * clnt , int error , bool ( * fnmatch ) ( const struct rpc_task * , const void * ) , const void * data )
+
+try to cancel a set of RPC tasks
+
+Parameters
+  struct rpc_clnt *clnt
+    Pointer to RPC client
+  int error
+    RPC task error value to set
+  bool (*fnmatch)(const struct rpc_task *, const void *)
+    Pointer to selector function
+  const void *data
+    User data
+
+Description
+  Uses fnmatch to define a set of RPC tasks that are to be cancelled.
+The argument error must be a negative error value.

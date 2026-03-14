@@ -1,0 +1,9 @@
+Function: struct cxl_hdm * devm_cxl_setup_hdm ( struct cxl_port * port , struct cxl_endpoint_dvsec_info * info )
+
+map HDM decoder component registers
+
+Parameters
+  struct cxl_port *port
+    cxl_port to map
+  struct cxl_endpoint_dvsec_info *info
+    cached DVSEC range register info

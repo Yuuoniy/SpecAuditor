@@ -1,0 +1,18 @@
+Function: int dma_resv_get_fences ( struct dma_resv * obj , enum dma_resv_usage usage , unsigned int * num_fences , struct dma_fence * * * fences )
+
+Get an object’s fences fences without update side lock held
+
+Parameters
+  struct dma_resv *obj
+    the reservation object
+  enum dma_resv_usage usage
+    controls which fences to include, see enum dma_resv_usage .
+  unsigned int *num_fences
+    the number of fences returned
+  struct dma_fence ***fences
+    the array of fence ptrs returned (array is krealloc’d to the
+required size, and must be freed by caller)
+
+Description
+  Retrieve all fences from the reservation object.
+Returns either zero or -ENOMEM.

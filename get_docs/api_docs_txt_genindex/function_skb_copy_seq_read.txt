@@ -1,0 +1,18 @@
+Function: int skb_copy_seq_read ( struct skb_seq_state * st , int offset , void * to , int len )
+
+copy from a skb_seq_state to a buffer
+
+Parameters
+  struct skb_seq_state *st
+    source skb_seq_state
+  int offset
+    offset in source
+  void *to
+    destination buffer
+  int len
+    number of bytes to copy
+
+Description
+  Copy len bytes from offset bytes into the source st to the destination
+buffer to . offset should increase (or be unchanged) with each subsequent
+call to this function. If offset needs to decrease from the previous use st should be reset first.

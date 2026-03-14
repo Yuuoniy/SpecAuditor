@@ -1,0 +1,11 @@
+Function: int amd_wbrf_register_notifier ( struct notifier_block * nb )
+
+register for notifications of frequency band update
+
+Parameters
+  struct notifier_block *nb
+    driver notifier block
+
+Description
+  The consumer should register itself via this API so that it can get
+notified on the frequency band updates from other producers.

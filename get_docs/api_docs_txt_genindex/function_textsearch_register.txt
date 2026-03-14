@@ -1,0 +1,13 @@
+Function: int textsearch_register ( struct ts_ops * ops )
+
+register a textsearch module
+
+Parameters
+  struct ts_ops *ops
+    operations lookup table
+
+Description
+  This function must be called by textsearch modules to announce
+their presence. The specified &**ops** must have name set to a
+unique identifier and the callbacks find() , init() , get_pattern() ,
+and get_pattern_len() must be implemented.

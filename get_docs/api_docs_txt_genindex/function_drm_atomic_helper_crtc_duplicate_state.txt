@@ -1,0 +1,11 @@
+Function: struct drm_crtc_state * drm_atomic_helper_crtc_duplicate_state ( struct drm_crtc * crtc )
+
+default state duplicate hook
+
+Parameters
+  struct drm_crtc *crtc
+    drm CRTC
+
+Description
+  Default CRTC state duplicate hook for drivers which don’t have their own
+subclassed CRTC state structure.

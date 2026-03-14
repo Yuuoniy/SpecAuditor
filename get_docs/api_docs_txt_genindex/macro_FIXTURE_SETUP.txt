@@ -1,0 +1,12 @@
+Macro: FIXTURE_SETUP
+
+
+
+Parameters
+  fixture_name
+    fixture name
+
+Description
+  Populates the required “setup” function for a fixture.  An instance of the
+datatype defined with FIXTURE_DATA() will be exposed as self for the
+implementation.

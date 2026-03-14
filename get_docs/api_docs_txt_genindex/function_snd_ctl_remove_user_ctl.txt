@@ -1,0 +1,13 @@
+Function: int snd_ctl_remove_user_ctl ( struct snd_ctl_file * file , struct snd_ctl_elem_id * id )
+
+remove and release the unlocked user control
+
+Parameters
+  struct snd_ctl_file * file
+    active control handle
+  struct snd_ctl_elem_id *id
+    the control id to remove
+
+Description
+  Finds the control instance with the given id, removes it from the
+card list and releases it.

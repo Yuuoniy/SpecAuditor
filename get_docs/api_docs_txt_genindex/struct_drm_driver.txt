@@ -1,0 +1,94 @@
+Struct: struct drm_driver
+
+DRM driver structure
+
+Members
+  load
+    Backward-compatible driver callback to complete initialization steps
+after the driver is registered.  For this reason, may suffer from
+race conditions and its use is deprecated for new drivers.  It is
+therefore only supported for existing drivers not yet converted to
+the new scheme.  See devm_drm_dev_alloc() and drm_dev_register() for
+proper and race-free way to set up a struct drm_device . This is deprecated, do not use! Returns: Zero on success, non-zero value on failure.
+  open
+    Driver callback when a new struct drm_file is opened. Useful for
+setting up driver-private data structures like buffer allocators,
+execution contexts or similar things. Such driver-private resources
+must be released again in postclose . Since the display/modeset side of DRM can only be owned by exactly
+one struct drm_file (see drm_file.is_master and drm_device.master )
+there should never be a need to set up any modeset related resources
+in this callback. Doing so would be a driver design bug. Returns: 0 on success, a negative error code on failure, which will be
+promoted to userspace as the result of the open() system call.
+  postclose
+    One of the driver callbacks when a new struct drm_file is closed.
+Useful for tearing down driver-private data structures allocated in open like buffer allocators, execution contexts or similar things. Since the display/modeset side of DRM can only be owned by exactly
+one struct drm_file (see drm_file.is_master and drm_device.master )
+there should never be a need to tear down any modeset related
+resources in this callback. Doing so would be a driver design bug.
+  unload
+    Reverse the effects of the driver load callback.  Ideally,
+the clean up performed by the driver should happen in the
+reverse order of the initialization.  Similarly to the load
+hook, this handler is deprecated and its usage should be
+dropped in favor of an open-coded teardown function at the
+driver layer.  See drm_dev_unregister() and drm_dev_put() for the proper way to remove a struct drm_device . The unload() hook is called right after unregistering
+the device.
+  release
+    Optional callback for destroying device data after the final
+reference is released, i.e. the device is being destroyed. This is deprecated, clean up all memory allocations associated with a drm_device using drmm_add_action() , drmm_kmalloc() and related
+managed resources functions.
+  master_set
+    Called whenever the minor master is set. Only used by vmwgfx.
+  master_drop
+    Called whenever the minor master is dropped. Only used by vmwgfx.
+  debugfs_init
+    Allows drivers to create driver-specific debugfs files.
+  gem_create_object
+    constructor for gem objects Hook for allocating the GEM object struct, for use by the CMA
+and SHMEM GEM helpers. Returns a GEM object on success, or an ERR_PTR() -encoded error code otherwise.
+  prime_handle_to_fd
+    PRIME export function. Only used by vmwgfx.
+  prime_fd_to_handle
+    PRIME import function. Only used by vmwgfx.
+  gem_prime_import
+    Import hook for GEM drivers. This defaults to drm_gem_prime_import() if not set.
+  gem_prime_import_sg_table
+    Optional hook used by the PRIME helper functions drm_gem_prime_import() respectively drm_gem_prime_import_dev() .
+  dumb_create
+    This creates a new dumb buffer in the driver’s backing storage manager (GEM,
+TTM or something else entirely) and returns the resulting buffer handle. This
+handle can then be wrapped up into a framebuffer modeset object. Note that userspace is not allowed to use such objects for render
+acceleration - drivers must create their own private ioctls for such a use
+case. Width, height and depth are specified in the drm_mode_create_dumb argument. The callback needs to fill the handle, pitch and size for
+the created buffer. Called by the user via ioctl. Returns: Zero on success, negative errno on failure.
+  dumb_map_offset
+    Allocate an offset in the drm device node’s address space to be able to
+memory map a dumb buffer. The default implementation is drm_gem_create_mmap_offset() . GEM based
+drivers must not overwrite this. Called by the user via ioctl. Returns: Zero on success, negative errno on failure.
+  fbdev_probe
+    Allocates and initialize the fb_info structure for fbdev emulation.
+Furthermore it also needs to allocate the DRM framebuffer used to
+back the fbdev. This callback is mandatory for fbdev support. Returns: 0 on success ot a negative error code otherwise.
+  show_fdinfo
+    Print device specific fdinfo.  See DRM client usage stats .
+  major
+    driver major number
+  minor
+    driver minor number
+  patchlevel
+    driver patch level
+  name
+    driver name
+  desc
+    driver description
+  driver_features
+    Driver features, see enum drm_driver_feature . Drivers can disable
+some features on a per-instance basis using drm_device.driver_features .
+  ioctls
+    Array of driver-private IOCTL description entries. See the chapter on IOCTL support in the userland interfaces
+chapter for the full details.
+  num_ioctls
+    Number of entries in ioctls .
+  fops
+    File operations for the DRM device node. See the discussion in file operations for in-depth coverage and
+some examples.

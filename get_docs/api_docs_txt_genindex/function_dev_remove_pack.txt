@@ -1,0 +1,13 @@
+Function: void dev_remove_pack ( struct packet_type * pt )
+
+remove packet handler
+
+Parameters
+  struct packet_type *pt
+    packet type declaration
+
+Description
+  Remove a protocol handler that was previously added to the kernel
+protocol handlers by dev_add_pack() . The passed packet_type is removed
+from the kernel lists and can be freed or reused once this function
+returns.

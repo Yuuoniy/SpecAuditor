@@ -1,0 +1,7 @@
+Function: int dmi_name_in_vendors ( const char * str )
+
+Check if string is in the DMI system or board vendor name
+
+Parameters
+  const char *str
+    Case sensitive Name

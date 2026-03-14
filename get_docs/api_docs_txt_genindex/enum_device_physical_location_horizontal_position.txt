@@ -1,0 +1,3 @@
+Enum: enum device_physical_location_horizontal_position
+
+Describes horizontal position of the device connection point on the panel surface.

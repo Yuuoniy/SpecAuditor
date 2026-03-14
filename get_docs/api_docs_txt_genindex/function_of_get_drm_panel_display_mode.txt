@@ -1,0 +1,15 @@
+Function: int of_get_drm_panel_display_mode ( struct device_node * np , struct drm_display_mode * dmode , u32 * bus_flags )
+
+get a panel-timing drm_display_mode from devicetree
+
+Parameters
+  struct device_node *np
+    device_node with the panel-timing specification
+  struct drm_display_mode *dmode
+    will be set to the return value
+  u32 *bus_flags
+    information about pixelclk, sync and DE polarity
+
+Description
+  The mandatory Device Tree properties width-mm and height-mm
+are read and set on the display mode.

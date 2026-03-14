@@ -1,0 +1,14 @@
+Function: int drm_buddy_init ( struct drm_buddy * mm , u64 size , u64 chunk_size )
+
+init memory manager
+
+Parameters
+  struct drm_buddy *mm
+    DRM buddy manager to initialize
+  u64 size
+    size in bytes to manage
+  u64 chunk_size
+    minimum page size in bytes for our allocations
+
+Description
+  Initializes the memory manager and its resources.

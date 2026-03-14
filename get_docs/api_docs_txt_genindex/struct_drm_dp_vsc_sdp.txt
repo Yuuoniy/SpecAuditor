@@ -1,0 +1,21 @@
+Struct: struct drm_dp_vsc_sdp
+
+drm DP VSC SDP
+
+Members
+  sdp_type
+    secondary-data packet type
+  revision
+    revision number
+  length
+    number of valid data bytes
+  pixelformat
+    pixel encoding format
+  colorimetry
+    colorimetry format
+  bpc
+    bit per color
+  dynamic_range
+    dynamic range information
+  content_type
+    CTA-861-G defines content types and expected processing by a sink device

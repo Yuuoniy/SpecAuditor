@@ -1,0 +1,13 @@
+Function: int generic_file_fsync ( struct file * file , loff_t start , loff_t end , int datasync )
+
+generic fsync implementation for simple filesystems with flush
+
+Parameters
+  struct file *file
+    file to synchronize
+  loff_t start
+    start offset in bytes
+  loff_t end
+    end offset in bytes (inclusive)
+  int datasync
+    only synchronize essential metadata if true

@@ -1,0 +1,14 @@
+Function: int security_socket_getsockopt ( struct socket * sock , int level , int optname )
+
+Check if reading a socket option is allowed
+
+Parameters
+  struct socket *sock
+    socket
+  int level
+    option’s protocol level
+  int optname
+    option name
+
+Description
+  Check permissions before retrieving the options associated with socket sock .

@@ -1,0 +1,7 @@
+Function: u8 w1_read_8 ( struct w1_master * dev )
+
+Reads 8 bits.
+
+Parameters
+  struct w1_master *dev
+    the master device

@@ -1,0 +1,15 @@
+Function: struct ciw * ccw_device_get_ciw ( struct ccw_device * cdev , __u32 ct )
+
+Search for CIW command in extended sense data.
+
+Parameters
+  struct ccw_device *cdev
+    ccw device to inspect
+  __u32 ct
+    command type to look for
+
+Description
+  During SenseID, command information words (CIWs) describing special
+commands available to the device may have been stored in the extended
+sense data. This function searches for CIWs of a specified command
+type in the extended sense data.

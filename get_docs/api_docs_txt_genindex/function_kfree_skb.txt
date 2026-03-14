@@ -1,0 +1,7 @@
+Function: void kfree_skb ( struct sk_buff * skb )
+
+free an sk_buff with ‘NOT_SPECIFIED’ reason
+
+Parameters
+  struct sk_buff *skb
+    buffer to free

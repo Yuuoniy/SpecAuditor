@@ -1,0 +1,12 @@
+Function: int drm_dp_get_phy_test_pattern ( struct drm_dp_aux * aux , struct drm_dp_phy_test_params * data )
+
+get the requested pattern from the sink.
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  struct drm_dp_phy_test_params *data
+    DP phy compliance test parameters.
+
+Description
+  Returns 0 on success or a negative error code on failure.

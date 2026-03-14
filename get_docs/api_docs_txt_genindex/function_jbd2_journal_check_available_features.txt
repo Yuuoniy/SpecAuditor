@@ -1,0 +1,17 @@
+Function: int jbd2_journal_check_available_features ( journal_t * journal , unsigned long compat , unsigned long ro , unsigned long incompat )
+
+Check feature set in journalling layer
+
+Parameters
+  journal_t *journal
+    Journal to check.
+  unsigned long compat
+    bitmask of compatible features
+  unsigned long ro
+    bitmask of features that force read-only mount
+  unsigned long incompat
+    bitmask of incompatible features
+
+Description
+  Check whether the journaling code supports the use of
+all of a given set of features on this journal.  Return true

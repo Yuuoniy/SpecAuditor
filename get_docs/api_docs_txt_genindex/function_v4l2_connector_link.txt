@@ -1,0 +1,10 @@
+Function: struct v4l2_connector_link
+
+connector link data structure
+
+Members
+  head
+    structure to be used to add the link to the struct v4l2_fwnode_connector
+  fwnode_link
+    struct v4l2_fwnode_link link between the connector and the
+device the connector belongs to.

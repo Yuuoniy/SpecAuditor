@@ -1,0 +1,13 @@
+Struct: struct drm_connector_tv_margins
+
+TV connector related margins
+
+Members
+  bottom
+    Bottom margin in pixels.
+  left
+    Left margin in pixels.
+  right
+    Right margin in pixels.
+  top
+    Top margin in pixels.

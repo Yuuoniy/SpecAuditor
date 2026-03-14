@@ -1,0 +1,11 @@
+Function: void sgl_free_n_order ( struct scatterlist * sgl , int nents , int order )
+
+free a scatterlist and its pages
+
+Parameters
+  struct scatterlist *sgl
+    Scatterlist with one or more elements
+  int nents
+    Maximum number of elements to free
+  int order
+    Second argument for __free_pages()

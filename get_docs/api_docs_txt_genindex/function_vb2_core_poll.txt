@@ -1,0 +1,21 @@
+Function: __poll_t vb2_core_poll ( struct vb2_queue * q , struct file * file , poll_table * wait )
+
+implements poll syscall() logic.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  struct file *file
+    struct file argument passed to the poll
+file operation handler.
+  poll_table *wait
+    poll_table wait argument passed to the poll
+file operation handler.
+
+Description
+  This function implements poll file operation handler for a driver.
+For CAPTURE queues, if a buffer is ready to be dequeued, the userspace will
+be informed that the file descriptor of a video device is available for
+reading.
+For OUTPUT queues, if a buffer is ready to be dequeued, the file descriptor
+will be reported as available for writing.

@@ -1,0 +1,7 @@
+Function: void srp_release_transport ( struct scsi_transport_template * t )
+
+release SRP transport template instance
+
+Parameters
+  struct scsi_transport_template *t
+    transport template instance

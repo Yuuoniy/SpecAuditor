@@ -1,0 +1,12 @@
+Function: u32 vidtv_psi_pmt_write_into ( struct vidtv_psi_pmt_write_args * args )
+
+Write PMT as MPEG-TS packets into a buffer.
+
+Parameters
+  struct vidtv_psi_pmt_write_args *args
+    an instance of struct vidtv_psi_pmt_write_args
+
+Description
+  This function writes the MPEG TS packets for a PMT section into a buffer.
+Calling code will usually generate the PMT section via a call to its init function
+and thus is responsible for freeing it.

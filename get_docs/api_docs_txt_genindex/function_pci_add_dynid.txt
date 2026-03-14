@@ -1,0 +1,26 @@
+Function: int pci_add_dynid ( struct pci_driver * drv , unsigned int vendor , unsigned int device , unsigned int subvendor , unsigned int subdevice , unsigned int class , unsigned int class_mask , unsigned long driver_data )
+
+add a new PCI device ID to this driver and re-probe devices
+
+Parameters
+  struct pci_driver *drv
+    target pci driver
+  unsigned int vendor
+    PCI vendor ID
+  unsigned int device
+    PCI device ID
+  unsigned int subvendor
+    PCI subvendor ID
+  unsigned int subdevice
+    PCI subdevice ID
+  unsigned int class
+    PCI class
+  unsigned int class_mask
+    PCI class mask
+  unsigned long driver_data
+    private driver data
+
+Description
+  Adds a new dynamic pci device ID to this driver and causes the
+driver to probe for all devices again. drv must have been
+registered prior to calling this function.

@@ -1,0 +1,20 @@
+Function: struct dentry * debugfs_create_symlink ( const char * name , struct dentry * parent , const char * target )
+
+create a symbolic link in the debugfs filesystem
+
+Parameters
+  const char *name
+    a pointer to a string containing the name of the symbolic link to
+create.
+  struct dentry *parent
+    a pointer to the parent dentry for this symbolic link.  This
+should be a directory dentry if set.  If this parameter is NULL,
+then the symbolic link will be created in the root of the debugfs
+filesystem.
+  const char *target
+    a pointer to a string containing the path to the target of the
+symbolic link.
+
+Description
+  This function creates a symbolic link with the given name in debugfs that
+links to the given target path.

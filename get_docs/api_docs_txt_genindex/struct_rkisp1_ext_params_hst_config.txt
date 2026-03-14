@@ -1,0 +1,9 @@
+Struct: struct rkisp1_ext_params_hst_config
+
+RkISP1 extensible params Histogram config
+
+Members
+  header
+    The RkISP1 extensible parameters header, see rkisp1_ext_params_block_header
+  config
+    Histogram statistics configuration, see rkisp1_cif_isp_hst_config

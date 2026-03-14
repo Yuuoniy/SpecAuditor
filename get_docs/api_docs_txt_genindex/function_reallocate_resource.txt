@@ -1,0 +1,13 @@
+Function: int reallocate_resource ( struct resource * root , struct resource * old , resource_size_t newsize , struct resource_constraint * constraint )
+
+allocate a slot in the resource tree given range & alignment. The resource will be relocated if the new size cannot be reallocated in the current location.
+
+Parameters
+  struct resource *root
+    root resource descriptor
+  struct resource *old
+    resource descriptor desired by caller
+  resource_size_t newsize
+    new size of the resource descriptor
+  struct resource_constraint *constraint
+    the memory range and alignment constraints to be met.

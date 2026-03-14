@@ -1,0 +1,17 @@
+Function: int security_path_mknod ( const struct path * dir , struct dentry * dentry , umode_t mode , unsigned int dev )
+
+Check if creating a special file is allowed
+
+Parameters
+  const struct path *dir
+    parent directory
+  struct dentry *dentry
+    new file
+  umode_t mode
+    new file mode
+  unsigned int dev
+    device number
+
+Description
+  Check permissions when creating a file. Note that this hook is called even
+if mknod operation is being done for a regular file.

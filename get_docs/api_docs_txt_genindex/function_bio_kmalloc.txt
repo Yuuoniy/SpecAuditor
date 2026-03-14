@@ -1,0 +1,14 @@
+Function: struct bio * bio_kmalloc ( unsigned short nr_vecs , gfp_t gfp_mask )
+
+kmalloc a bio
+
+Parameters
+  unsigned short nr_vecs
+    number of bio_vecs to allocate
+  gfp_t gfp_mask
+    the GFP_* mask given to the slab allocator
+
+Description
+  Use kmalloc to allocate a bio (including bvecs).  The bio must be initialized
+using bio_init() before use.  To free a bio returned from this function use kfree() after calling bio_uninit() .  A bio returned from this function can
+be reused by calling bio_uninit() before calling bio_init() again.

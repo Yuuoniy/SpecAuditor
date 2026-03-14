@@ -1,0 +1,21 @@
+Struct: struct ccs_pll_branch_limits_bk
+
+CCS PLL back-end limits
+
+Members
+  min_sys_clk_div
+    Minimum system clock divider
+  max_sys_clk_div
+    Maximum system clock divider
+  min_sys_clk_freq_hz
+    Minimum system clock frequency
+  max_sys_clk_freq_hz
+    Maximum system clock frequency
+  min_pix_clk_div
+    Minimum pixel clock divider
+  max_pix_clk_div
+    Maximum pixel clock divider
+  min_pix_clk_freq_hz
+    Minimum pixel clock frequency
+  max_pix_clk_freq_hz
+    Maximum pixel clock frequency

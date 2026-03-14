@@ -1,0 +1,11 @@
+Function: int vimc_streamer_thread ( void * data )
+
+Process frames through the pipeline
+
+Parameters
+  void *data
+    vimc_stream struct of the current stream
+
+Description
+  From the source to the sink, gets a frame from each subdevice and send to
+the next one of the pipeline at a fixed framerate.

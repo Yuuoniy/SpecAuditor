@@ -1,0 +1,24 @@
+Function: int drm_mm_insert_node_in_range ( struct drm_mm * const mm , struct drm_mm_node * const node , u64 size , u64 alignment , unsigned long color , u64 range_start , u64 range_end , enum drm_mm_insert_mode mode )
+
+ranged search for space and insert node
+
+Parameters
+  struct drm_mm * const mm
+    drm_mm to allocate from
+  struct drm_mm_node * const node
+    preallocate node to insert
+  u64 size
+    size of the allocation
+  u64 alignment
+    alignment of the allocation
+  unsigned long color
+    opaque tag value to use for this node
+  u64 range_start
+    start of the allowed range for this node
+  u64 range_end
+    end of the allowed range for this node
+  enum drm_mm_insert_mode mode
+    fine-tune the allocation search and placement
+
+Description
+  The preallocated node must be cleared to 0.

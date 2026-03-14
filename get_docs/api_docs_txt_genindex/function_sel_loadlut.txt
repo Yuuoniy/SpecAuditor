@@ -1,0 +1,11 @@
+Function: int sel_loadlut ( u32 __user * lut )
+
+load the LUT table
+
+Parameters
+  u32 __user *lut
+    user table
+
+Description
+  Load the LUT table from user space. Make a temporary copy so a partial
+update doesn’t make a mess.

@@ -1,0 +1,13 @@
+Function: uint8_t * nand_transfer_oob ( struct nand_chip * chip , uint8_t * oob , struct mtd_oob_ops * ops , size_t len )
+
+[INTERN] Transfer oob to client buffer
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+  uint8_t *oob
+    oob destination address
+  struct mtd_oob_ops *ops
+    oob ops structure
+  size_t len
+    size of oob to transfer

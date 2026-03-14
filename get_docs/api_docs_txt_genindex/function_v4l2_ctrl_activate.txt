@@ -1,0 +1,15 @@
+Function: void v4l2_ctrl_activate ( struct v4l2_ctrl * ctrl , bool active )
+
+Make the control active or inactive.
+
+Parameters
+  struct v4l2_ctrl *ctrl
+    The control to (de)activate.
+  bool active
+    True if the control should become active.
+
+Description
+  This sets or clears the V4L2_CTRL_FLAG_INACTIVE flag atomically.
+Does nothing if ctrl == NULL.
+This will usually be called from within the s_ctrl op.
+The V4L2_EVENT_CTRL event will be generated afterwards.

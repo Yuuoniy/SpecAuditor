@@ -1,0 +1,10 @@
+Function: bool drm_detect_hdmi_monitor ( const struct edid * edid )
+
+detect whether monitor is HDMI
+
+Parameters
+  const struct edid *edid
+    monitor EDID information
+
+Description
+  Parse the CEA extension according to CEA-861-B.

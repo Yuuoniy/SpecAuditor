@@ -1,0 +1,11 @@
+Function: int spi_bus_unlock ( struct spi_controller * ctlr )
+
+release the lock for exclusive SPI bus usage
+
+Parameters
+  struct spi_controller *ctlr
+    SPI bus controller that was locked for exclusive bus access
+
+Description
+  This call may only be used from a context that may sleep.  The sleep
+is non-interruptible, and has no timeout.

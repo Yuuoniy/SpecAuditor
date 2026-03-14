@@ -1,0 +1,10 @@
+Function: struct rc_dev * devm_rc_allocate_device ( struct device * dev , enum rc_driver_type )
+
+Managed RC device allocation
+
+Parameters
+  struct device *dev
+    pointer to struct device
+  enum rc_driver_type
+    specifies the type of the RC output to be allocated
+returns a pointer to struct rc_dev .

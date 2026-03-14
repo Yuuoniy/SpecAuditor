@@ -1,0 +1,12 @@
+Function: int blk_lld_busy ( struct request_queue * q )
+
+Check if underlying low-level drivers of a device are busy
+
+Parameters
+  struct request_queue *q
+    the queue of the device being checked
+
+Description
+  Check if underlying low-level drivers of a device are busy.
+If the drivers want to export their busy state, they must set own
+exporting function using blk_queue_lld_busy() first.

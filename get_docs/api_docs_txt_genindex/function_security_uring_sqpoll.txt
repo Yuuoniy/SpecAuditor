@@ -1,0 +1,11 @@
+Function: int security_uring_sqpoll ( void )
+
+Check if IORING_SETUP_SQPOLL is allowed
+
+Parameters
+  void
+    no arguments
+
+Description
+  Check whether the current task is allowed to spawn a io_uring polling thread
+(IORING_SETUP_SQPOLL).

@@ -1,0 +1,11 @@
+Struct: struct pisp_be_lsc_config
+
+PiSP Back End LSC config
+
+Members
+  grid_step_x
+    Reciprocal of cell size width
+  grid_step_y
+    Reciprocal of cell size height
+  lut_packed
+    Jointly-coded RGB gains for each LSC grid

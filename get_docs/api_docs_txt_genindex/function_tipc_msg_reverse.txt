@@ -1,0 +1,12 @@
+Function: bool tipc_msg_reverse ( u32 own_node , struct sk_buff * * skb , int err )
+
+swap source and destination addresses and add error code
+
+Parameters
+  u32 own_node
+    originating node id for reversed message
+  struct sk_buff **skb
+    buffer containing message to be reversed; will be consumed
+  int err
+    error code to be set in message, if any
+Replaces consumed buffer with new one when successful

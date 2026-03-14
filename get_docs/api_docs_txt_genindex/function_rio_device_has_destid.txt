@@ -1,0 +1,16 @@
+Function: int rio_device_has_destid ( struct rio_mport * port , int src_ops , int dst_ops )
+
+Test if a device contains a destination ID register
+
+Parameters
+  struct rio_mport *port
+    Master port to issue transaction
+  int src_ops
+    RIO device source operations
+  int dst_ops
+    RIO device destination operations
+
+Description
+  Checks the provided src_ops and dst_ops for the necessary transaction
+capabilities that indicate whether or not a device will implement a
+destination ID register. Returns 1 if true or 0 if false.

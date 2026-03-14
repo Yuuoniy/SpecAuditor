@@ -1,0 +1,10 @@
+Function: int lsm_bpf_map_alloc ( struct bpf_map * map )
+
+allocate a composite bpf_map blob
+
+Parameters
+  struct bpf_map *map
+    the bpf_map that needs a blob
+
+Description
+  Allocate the bpf_map blob for all the modules

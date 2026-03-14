@@ -1,0 +1,69 @@
+Struct: struct tipc_sock
+
+TIPC socket structure
+
+Members
+  sk
+    socket - interacts with ‘port’ and with user via the socket API
+  max_pkt
+    maximum packet size “hint” used when building messages sent by port
+  maxnagle
+    maximum size of msg which can be subject to nagle
+  portid
+    unique port identity in TIPC socket hash table
+  phdr
+    preformatted message header used when sending messages
+  cong_links
+    list of congested links
+  publications
+    list of publications for port
+  pub_count
+    total # of publications port has made during its lifetime
+  dupl_rcvcnt
+    number of bytes counted twice, in both backlog and rcv queue
+  conn_timeout
+    the time we can wait for an unresponded setup request
+  probe_unacked
+    probe has not received ack yet
+  cong_link_cnt
+    number of congested links
+  snt_unacked
+    # messages sent by socket, and not yet acked by peer
+  snd_win
+    send window size
+  peer_caps
+    peer capabilities mask
+  rcv_unacked
+    # messages read by user, but not yet acked back to peer
+  rcv_win
+    receive window size
+  peer
+    ‘connected’ peer for dgram/rdm
+  node
+    hash table node
+  mc_method
+    cookie for use between socket and broadcast layer
+  rcu
+    rcu struct for tipc_sock
+  group
+    TIPC communications group
+  oneway
+    message count in one direction (FIXME)
+  nagle_start
+    current nagle value
+  snd_backlog
+    send backlog count
+  msg_acc
+    messages accepted; used in managing backlog and nagle
+  pkt_cnt
+    TIPC socket packet count
+  expect_ack
+    whether this TIPC socket is expecting an ack
+  nodelay
+    setsockopt() TIPC_NODELAY setting
+  group_is_open
+    TIPC socket group is fully open (FIXME)
+  published
+    true if port has one or more associated names
+  conn_addrtype
+    address type used when establishing connection

@@ -1,0 +1,10 @@
+Function: bool sb_write_not_started ( const struct super_block * sb )
+
+check if SB_FREEZE_WRITE is not held
+
+Parameters
+  const struct super_block *sb
+    the super we write to
+
+Description
+  May be false positive with !CONFIG_LOCKDEP/LOCK_STATE_UNKNOWN.

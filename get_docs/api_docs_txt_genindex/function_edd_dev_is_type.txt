@@ -1,0 +1,12 @@
+Function: int edd_dev_is_type ( struct edd_device * edev , const char * type )
+
+is this EDD device a ‘type’ device?
+
+Parameters
+  struct edd_device *edev
+    target edd_device
+  const char *type
+    a host bus or interface identifier string per the EDD spec
+
+Description
+  Returns 1 (TRUE) if it is a ‘type’ device, 0 otherwise.

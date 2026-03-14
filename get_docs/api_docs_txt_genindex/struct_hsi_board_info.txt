@@ -1,0 +1,19 @@
+Struct: struct hsi_board_info
+
+HSI client board info
+
+Members
+  name
+    Name for the HSI device
+  hsi_id
+    HSI controller id where the client sits
+  port
+    Port number in the controller where the client sits
+  tx_cfg
+    HSI TX configuration
+  rx_cfg
+    HSI RX configuration
+  platform_data
+    Platform related data
+  archdata
+    Architecture-dependent device data

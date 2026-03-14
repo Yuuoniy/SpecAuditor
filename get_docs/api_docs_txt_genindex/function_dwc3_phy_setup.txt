@@ -1,0 +1,12 @@
+Function: int dwc3_phy_setup ( struct dwc3 * dwc )
+
+Configure USB PHY Interface of DWC3 Core
+
+Parameters
+  struct dwc3 *dwc
+    Pointer to our controller context structure
+
+Description
+  Returns 0 on success. The USB PHY interfaces are configured but not
+initialized. The PHY interfaces and the PHYs get initialized together with
+the core in dwc3_core_init.

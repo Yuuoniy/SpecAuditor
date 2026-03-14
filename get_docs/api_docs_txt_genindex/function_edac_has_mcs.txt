@@ -1,0 +1,7 @@
+Function: bool edac_has_mcs ( void )
+
+Check if any MCs have been allocated.
+
+Parameters
+  void
+    no arguments

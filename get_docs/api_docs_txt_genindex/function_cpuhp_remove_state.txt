@@ -1,0 +1,11 @@
+Function: void cpuhp_remove_state ( enum cpuhp_state state )
+
+Remove hotplug state callbacks and invoke the teardown
+
+Parameters
+  enum cpuhp_state state
+    The state for which the calls are removed
+
+Description
+  Removes the callback functions and invokes the teardown callback on
+the online cpus which have already reached the state .

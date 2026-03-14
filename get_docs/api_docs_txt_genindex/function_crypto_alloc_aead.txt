@@ -1,0 +1,16 @@
+Function: struct crypto_aead * crypto_alloc_aead ( const char * alg_name , u32 type , u32 mask )
+
+allocate AEAD cipher handle
+
+Parameters
+  const char *alg_name
+    is the cra_name / name or cra_driver_name / driver name of the
+AEAD cipher
+  u32 type
+    specifies the type of the cipher
+  u32 mask
+    specifies the mask for the cipher
+
+Description
+  Allocate a cipher handle for an AEAD. The returned struct crypto_aead is the cipher handle that is required for any subsequent
+API invocation for that AEAD.

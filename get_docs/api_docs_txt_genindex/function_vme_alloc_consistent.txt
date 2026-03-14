@@ -1,0 +1,15 @@
+Function: void * vme_alloc_consistent ( struct vme_resource * resource , size_t size , dma_addr_t * dma )
+
+Allocate contiguous memory.
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME resource.
+  size_t size
+    Size of allocation required.
+  dma_addr_t *dma
+    Pointer to variable to store physical address of allocation.
+
+Description
+  Allocate a contiguous block of memory for use by the driver. This is used to
+create the buffers for the slave windows.

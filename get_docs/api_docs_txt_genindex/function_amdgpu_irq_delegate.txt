@@ -1,0 +1,15 @@
+Function: void amdgpu_irq_delegate ( struct amdgpu_device * adev , struct amdgpu_iv_entry * entry , unsigned int num_dw )
+
+delegate IV to soft IH ring
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device pointer
+  struct amdgpu_iv_entry *entry
+    IV entry
+  unsigned int num_dw
+    size of IV
+
+Description
+  Delegate the IV to the soft IH ring and schedule processing of it. Used
+if the hardware delegation to IH1 or IH2 doesn’t work for some reason.

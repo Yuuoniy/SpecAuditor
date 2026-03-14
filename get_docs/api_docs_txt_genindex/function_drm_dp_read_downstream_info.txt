@@ -1,0 +1,14 @@
+Function: int drm_dp_read_downstream_info ( struct drm_dp_aux * aux , const u8 dpcd [ DP_RECEIVER_CAP_SIZE ] , u8 downstream_ports [ DP_MAX_DOWNSTREAM_PORTS ] )
+
+read DPCD downstream port info if available
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  const u8 dpcd[DP_RECEIVER_CAP_SIZE]
+    A cached copy of the port’s DPCD
+  u8 downstream_ports[DP_MAX_DOWNSTREAM_PORTS]
+    buffer to store the downstream port info in
+
+Description
+  See also: drm_dp_downstream_max_clock() drm_dp_downstream_max_bpc()

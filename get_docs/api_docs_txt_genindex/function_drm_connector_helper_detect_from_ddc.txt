@@ -1,0 +1,16 @@
+Function: int drm_connector_helper_detect_from_ddc ( struct drm_connector * connector , struct drm_modeset_acquire_ctx * ctx , bool force )
+
+Read EDID and detect connector status.
+
+Parameters
+  struct drm_connector *connector
+    The connector
+  struct drm_modeset_acquire_ctx *ctx
+    Acquire context
+  bool force
+    Perform screen-destructive operations, if necessary
+
+Description
+  Detects the connector status by reading the EDID using drm_probe_ddc() ,
+which requires connector->ddc to be set. Returns connector_status_connected
+on success or connector_status_disconnected on failure.

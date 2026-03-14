@@ -1,0 +1,34 @@
+Struct: struct cxl_memdev_state
+
+Generic Type-3 Memory Device Class driver data
+
+Members
+  cxlds
+    Core driver state common across Type-2 and Type-3 devices
+  lsa_size
+    Size of Label Storage Area
+(CXL 2.0 8.2.9.5.1.1 Identify Memory Device)
+  firmware_version
+    Firmware version for the memory device.
+  total_bytes
+    sum of all possible capacities
+  volatile_only_bytes
+    hard volatile capacity
+  persistent_only_bytes
+    hard persistent capacity
+  partition_align_bytes
+    alignment size for partition-able capacity
+  active_volatile_bytes
+    sum of hard + soft volatile
+  active_persistent_bytes
+    sum of hard + soft persistent
+  event
+    event log driver state
+  poison
+    poison driver state info
+  security
+    security driver state info
+  fw
+    firmware upload / activation state
+  mce_notifier
+    MCE notifier

@@ -1,0 +1,7 @@
+Function: int snd_pcm_format_linear ( snd_pcm_format_t format )
+
+Check the PCM format is linear
+
+Parameters
+  snd_pcm_format_t format
+    the format to check

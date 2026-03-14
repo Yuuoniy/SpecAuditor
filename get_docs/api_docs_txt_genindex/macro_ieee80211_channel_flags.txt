@@ -1,0 +1,3 @@
+Macro: enum ieee80211_channel_flags
+
+channel flags

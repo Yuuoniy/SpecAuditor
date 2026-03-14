@@ -1,0 +1,14 @@
+Function: bool task_set_jobctl_pending ( struct task_struct * task , unsigned long mask )
+
+set jobctl pending bits
+
+Parameters
+  struct task_struct *task
+    target task
+  unsigned long mask
+    pending bits to set
+
+Description
+  Clear mask from task->jobctl . mask must be subset of JOBCTL_PENDING_MASK | JOBCTL_STOP_CONSUME | JOBCTL_STOP_SIGMASK | JOBCTL_TRAPPING .  If stop signo is being set, the existing signo is
+cleared.  If task is already being killed or exiting, this function
+becomes noop.

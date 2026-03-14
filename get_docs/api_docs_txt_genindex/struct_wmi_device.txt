@@ -1,0 +1,13 @@
+Struct: struct wmi_device
+
+WMI device structure
+
+Members
+  dev
+    Device associated with this WMI device
+  setable
+    True for devices implementing the Set Control Method
+  driver_override
+    Driver name to force a match; do not set directly,
+because core frees it; use driver_set_override() to
+set or clear it.

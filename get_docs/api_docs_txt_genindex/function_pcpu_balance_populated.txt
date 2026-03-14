@@ -1,0 +1,14 @@
+Function: void pcpu_balance_populated ( void )
+
+manage the amount of populated pages
+
+Parameters
+  void
+    no arguments
+
+Description
+  Maintain a certain amount of populated pages to satisfy atomic allocations.
+It is possible that this is called when physical memory is scarce causing
+OOM killer to be triggered.  We should avoid doing so until an actual
+allocation causes the failure as it is possible that requests can be
+serviced from already backed regions.

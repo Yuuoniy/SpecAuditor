@@ -1,0 +1,21 @@
+Function: struct ssh_command
+
+Payload of a command-type frame.
+
+Members
+  type
+    The type of the payload. See enum ssh_payload_type . Should be
+SSH_PLD_TYPE_CMD for this struct.
+  tc
+    Command target category.
+  tid
+    Target ID. Indicates the target of the message.
+  sid
+    Source ID. Indicates the source of the message.
+  iid
+    Instance ID.
+  rqid
+    Request ID. Used to match requests with responses and differentiate
+between responses and events.
+  cid
+    Command ID.

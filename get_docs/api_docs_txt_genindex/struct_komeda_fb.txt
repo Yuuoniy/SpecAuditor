@@ -1,0 +1,19 @@
+Struct: struct komeda_fb
+
+Entending drm_framebuffer with komeda attribute
+
+Members
+  base
+    drm_framebuffer
+  format_caps
+    extends drm_format_info for komeda specific information
+  is_va
+    if smmu is enabled, it will be true
+  aligned_w
+    aligned frame buffer width
+  aligned_h
+    aligned frame buffer height
+  afbc_size
+    minimum size of afbc
+  offset_payload
+    start of afbc body buffer

@@ -1,0 +1,13 @@
+Function: size_t num_pages_contiguous ( struct page * * pages , size_t nr_pages )
+
+determine the number of contiguous pages that represent contiguous PFNs
+
+Parameters
+  struct page **pages
+    an array of page pointers
+  size_t nr_pages
+    length of the array, at least 1
+
+Description
+  Determine the number of contiguous pages that represent contiguous PFNs
+in pages , starting from the first page.

@@ -1,0 +1,13 @@
+Function: struct drm_plane * drm_plane_from_index ( struct drm_device * dev , int idx )
+
+find the registered plane at an index
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  int idx
+    index of registered plane to find for
+
+Description
+  Given a plane index, return the registered plane from DRM device’s
+list of planes with matching index. This is the inverse of drm_plane_index() .

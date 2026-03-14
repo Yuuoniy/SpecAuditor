@@ -1,0 +1,12 @@
+Function: void edd_release ( struct kobject * kobj )
+
+free edd structure
+
+Parameters
+  struct kobject * kobj
+    kobject of edd structure
+
+Description
+  This is called when the refcount of the edd structure
+reaches 0. This should happen right after we unregister,
+but just in case, we use the release callback anyway.

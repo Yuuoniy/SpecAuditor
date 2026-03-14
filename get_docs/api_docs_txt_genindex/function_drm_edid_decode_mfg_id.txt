@@ -1,0 +1,10 @@
+Function: const char * drm_edid_decode_mfg_id ( u16 mfg_id , char vend [ 4 ] )
+
+Decode the manufacturer ID
+
+Parameters
+  u16 mfg_id
+    The manufacturer ID
+  char vend[4]
+    A 4-byte buffer to store the 3-letter vendor string plus a ‘0’
+termination

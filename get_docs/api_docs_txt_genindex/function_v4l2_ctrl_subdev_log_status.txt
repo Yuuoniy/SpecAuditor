@@ -1,0 +1,7 @@
+Function: int v4l2_ctrl_subdev_log_status ( struct v4l2_subdev * sd )
+
+Log all controls owned by subdev’s control handler.
+
+Parameters
+  struct v4l2_subdev *sd
+    pointer to struct v4l2_subdev

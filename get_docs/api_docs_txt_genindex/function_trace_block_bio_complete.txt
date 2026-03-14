@@ -1,0 +1,13 @@
+Function: void trace_block_bio_complete ( struct request_queue * q , struct bio * bio )
+
+completed all work on the block operation
+
+Parameters
+  struct request_queue *q
+    queue holding the block operation
+  struct bio *bio
+    block operation completed
+
+Description
+  This tracepoint indicates there is no further work to do on this
+block IO operation bio .

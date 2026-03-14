@@ -1,0 +1,15 @@
+Function: long sys_sigprocmask ( int how , old_sigset_t __user * nset , old_sigset_t __user * oset )
+
+examine and change blocked signals
+
+Parameters
+  int how
+    whether to add, remove, or set signals
+  old_sigset_t __user * nset
+    signals to add or remove (if non-null)
+  old_sigset_t __user * oset
+    previous value of signal mask if non-null
+
+Description
+  Some platforms have their own version with special arguments;
+others support only sys_rt_sigprocmask.

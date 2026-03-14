@@ -1,0 +1,15 @@
+Struct: struct v4l2_subdev_io_pin_config
+
+Subdevice external IO pin configuration
+
+Members
+  flags
+    bitmask with flags for this pin’s config, whose bits are defined by enum v4l2_subdev_io_pin_bits .
+  pin
+    Chip external IO pin to configure
+  function
+    Internal signal pad/function to route to IO pin
+  value
+    Initial value for pin - e.g. GPIO output value
+  strength
+    Pin drive strength

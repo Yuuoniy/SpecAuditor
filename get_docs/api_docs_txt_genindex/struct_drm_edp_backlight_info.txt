@@ -1,0 +1,19 @@
+Struct: struct drm_edp_backlight_info
+
+Probed eDP backlight info struct
+
+Members
+  pwmgen_bit_count
+    The pwmgen bit count
+  pwm_freq_pre_divider
+    The PWM frequency pre-divider value being used for this backlight, if any
+  max
+    The maximum backlight level that may be set
+  lsb_reg_used
+    Do we also write values to the DP_EDP_BACKLIGHT_BRIGHTNESS_LSB register?
+  aux_enable
+    Does the panel support the AUX enable cap?
+  aux_set
+    Does the panel support setting the brightness through AUX?
+  luminance_set
+    Does the panel support setting the brightness through AUX using luminance values?

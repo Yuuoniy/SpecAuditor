@@ -1,0 +1,14 @@
+Function: bool mod_delayed_work ( struct workqueue_struct * wq , struct delayed_work * dwork , unsigned long delay )
+
+modify delay of or queue a delayed work
+
+Parameters
+  struct workqueue_struct *wq
+    workqueue to use
+  struct delayed_work *dwork
+    work to queue
+  unsigned long delay
+    number of jiffies to wait before queueing
+
+Description
+  mod_delayed_work_on() on local CPU.

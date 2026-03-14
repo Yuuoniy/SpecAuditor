@@ -1,0 +1,21 @@
+Function: ssize_t pci_write_legacy_io ( struct file * filp , struct kobject * kobj , const struct bin_attribute * bin_attr , char * buf , loff_t off , size_t count )
+
+write byte(s) to legacy I/O port space
+
+Parameters
+  struct file *filp
+    open sysfs file
+  struct kobject *kobj
+    kobject corresponding to file to read from
+  const struct bin_attribute *bin_attr
+    struct bin_attribute for this file
+  char *buf
+    buffer containing value to be written
+  loff_t off
+    offset into legacy I/O port space
+  size_t count
+    number of bytes to write
+
+Description
+  Writes 1, 2, or 4 bytes from legacy I/O port space using an arch specific
+callback routine (pci_legacy_write).

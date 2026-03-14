@@ -1,0 +1,15 @@
+Function: struct zynqmp_dpsub_drm
+
+ZynqMP DisplayPort Subsystem DRM/KMS data
+
+Members
+  dpsub
+    Backpointer to the DisplayPort subsystem
+  dev
+    The DRM/KMS device
+  planes
+    The DRM planes
+  crtc
+    The DRM CRTC
+  encoder
+    The dummy DRM encoder

@@ -1,0 +1,15 @@
+Function: unsigned long invalidate_mapping_pages ( struct address_space * mapping , pgoff_t start , pgoff_t end )
+
+Invalidate all clean, unlocked cache of one inode
+
+Parameters
+  struct address_space *mapping
+    the address_space which holds the cache to invalidate
+  pgoff_t start
+    the offset ‘from’ which to invalidate
+  pgoff_t end
+    the offset ‘to’ which to invalidate (inclusive)
+
+Description
+  This function removes pages that are clean, unmapped and unlocked,
+as well as shadow entries. It will not block on IO activity.

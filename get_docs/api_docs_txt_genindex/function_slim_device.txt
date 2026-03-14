@@ -1,0 +1,21 @@
+Function: struct slim_device
+
+Slim device handle.
+
+Members
+  dev
+    Driver model representation of the device.
+  e_addr
+    Enumeration address of this device.
+  ctrl
+    slim controller instance.
+  status
+    slim device status
+  laddr
+    1-byte Logical address of this device.
+  is_laddr_valid
+    indicates if the laddr is valid or not
+  stream_list
+    List of streams on this device
+  stream_list_lock
+    lock to protect the stream list

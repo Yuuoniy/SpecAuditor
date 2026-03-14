@@ -1,0 +1,7 @@
+Function: struct fwctl_device
+
+Per-driver registration struct
+
+Members
+  dev
+    The sysfs (class/fwctl/fwctlXX) device

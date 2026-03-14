@@ -1,0 +1,11 @@
+Function: struct device_node * of_get_next_cpu_node ( struct device_node * prev )
+
+Iterate on cpu nodes
+
+Parameters
+  struct device_node *prev
+    previous child of the /cpus node, or NULL to get first
+
+Description
+  Unusable CPUs (those with the status property set to “fail” or “fail-...”)
+will be skipped.

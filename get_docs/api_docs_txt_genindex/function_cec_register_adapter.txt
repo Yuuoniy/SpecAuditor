@@ -1,0 +1,2 @@
+Function: int cec_register_adapter ( struct cec_adapter * adap , struct device * parent ) ;
+

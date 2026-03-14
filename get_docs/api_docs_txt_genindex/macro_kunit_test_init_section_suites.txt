@@ -1,0 +1,11 @@
+Macro: kunit_test_init_section_suites
+
+
+
+Parameters
+  __suites...
+    a statically allocated list of struct kunit_suite .
+
+Description
+  This functions similar to kunit_test_suites() except that it compiles the
+list of suites during init phase.

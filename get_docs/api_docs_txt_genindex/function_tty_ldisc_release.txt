@@ -1,0 +1,11 @@
+Function: void tty_ldisc_release ( struct tty_struct * tty )
+
+release line discipline
+
+Parameters
+  struct tty_struct *tty
+    tty being shut down (or one end of pty pair)
+
+Description
+  Called during the final close of a tty or a pty pair in order to shut down
+the line discpline layer. On exit, each tty’s ldisc is NULL .

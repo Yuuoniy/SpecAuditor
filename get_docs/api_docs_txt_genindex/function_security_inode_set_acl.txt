@@ -1,0 +1,17 @@
+Function: int security_inode_set_acl ( struct mnt_idmap * idmap , struct dentry * dentry , const char * acl_name , struct posix_acl * kacl )
+
+Check if setting posix acls is allowed
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount
+  struct dentry *dentry
+    file
+  const char *acl_name
+    acl name
+  struct posix_acl *kacl
+    acl struct
+
+Description
+  Check permission before setting posix acls, the posix acls in kacl are
+identified by acl_name .

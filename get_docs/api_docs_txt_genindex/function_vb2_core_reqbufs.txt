@@ -1,0 +1,18 @@
+Function: int vb2_core_reqbufs ( struct vb2_queue * q , enum vb2_memory memory , unsigned int flags , unsigned int * count )
+
+Initiate streaming.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  enum vb2_memory memory
+    memory type, as defined by enum vb2_memory .
+  unsigned int flags
+    auxiliary queue/buffer management flags. Currently, the only
+used flag is V4L2_MEMORY_FLAG_NON_COHERENT .
+  unsigned int *count
+    requested buffer count.
+
+Description
+  Videobuf2 core helper to implement VIDIOC_REQBUF() operation. It is called
+internally by VB2 by an API-specific handler, like videobuf2-v4l2.h .

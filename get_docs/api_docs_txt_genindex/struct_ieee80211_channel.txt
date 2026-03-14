@@ -1,0 +1,40 @@
+Struct: struct ieee80211_channel
+
+channel definition
+
+Members
+  band
+    band this channel belongs to.
+  center_freq
+    center frequency in MHz
+  freq_offset
+    offset from center_freq , in KHz
+  hw_value
+    hardware-specific value for the channel
+  flags
+    channel flags from enum ieee80211_channel_flags .
+  max_antenna_gain
+    maximum antenna gain in dBi
+  max_power
+    maximum transmission power (in dBm)
+  max_reg_power
+    maximum regulatory transmission power (in dBm)
+  beacon_found
+    helper to regulatory code to indicate when a beacon
+has been found on this channel. Use regulatory_hint_found_beacon() to enable this, this is useful only on 5 GHz band.
+  orig_flags
+    channel flags at registration time, used by regulatory
+code to support devices with additional restrictions
+  orig_mag
+    internal use
+  orig_mpwr
+    internal use
+  dfs_state
+    current state of this channel. Only relevant if radar is required
+on this channel.
+  dfs_state_entered
+    timestamp (jiffies) when the dfs state was entered.
+  dfs_cac_ms
+    DFS CAC time in milliseconds, this is valid for DFS channels.
+  psd
+    power spectral density (in dBm)

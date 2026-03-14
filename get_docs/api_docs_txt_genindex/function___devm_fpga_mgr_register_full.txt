@@ -1,0 +1,15 @@
+Function: struct fpga_manager * __devm_fpga_mgr_register_full ( struct device * parent , const struct fpga_manager_info * info , struct module * owner )
+
+resource managed variant of fpga_mgr_register()
+
+Parameters
+  struct device *parent
+    fpga manager device from pdev
+  const struct fpga_manager_info *info
+    parameters for fpga manager
+  struct module *owner
+    owner module containing the ops
+
+Description
+  This is the devres variant of fpga_mgr_register_full() for which the unregister
+function will be called automatically when the managing device is detached.

@@ -1,0 +1,10 @@
+Function: const struct netfs_cache_ops * fscache_operation_valid ( const struct netfs_cache_resources * cres )
+
+Return true if operations resources are usable
+
+Parameters
+  const struct netfs_cache_resources *cres
+    The resources to check.
+
+Description
+  Returns a pointer to the operations table if usable or NULL if not.

@@ -1,0 +1,12 @@
+Function: struct irq_domain * irq_get_default_domain ( void )
+
+Retrieve the “default” irq domain
+
+Parameters
+  void
+    no arguments
+
+Description
+  Modern code should never use this. This should only be used on
+systems that cannot implement a firmware->fwnode mapping (which
+both DT and ACPI provide).

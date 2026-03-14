@@ -1,0 +1,3 @@
+Function: enum gpio_v2_line_changed_type
+
+struct gpio_v2_line_changed .event_type values

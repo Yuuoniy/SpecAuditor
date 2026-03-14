@@ -1,0 +1,16 @@
+Function: __poll_t datagram_poll ( struct file * file , struct socket * sock , poll_table * wait )
+
+generic datagram poll
+
+Parameters
+  struct file *file
+    file struct
+  struct socket *sock
+    socket
+  poll_table *wait
+    poll table
+
+Description
+  Datagram poll: Again totally generic. This also handles
+sequenced packet sockets providing the socket receive queue
+is only ever holding data ready to receive.

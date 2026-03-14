@@ -1,0 +1,11 @@
+Function: void __ref kmemleak_update_trace ( const void * ptr )
+
+update object allocation stack trace
+
+Parameters
+  const void *ptr
+    pointer to beginning of the object
+
+Description
+  Override the object allocation stack trace for cases where the actual
+allocation place is not always useful.

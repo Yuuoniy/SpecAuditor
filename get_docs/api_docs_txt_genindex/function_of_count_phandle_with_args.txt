@@ -1,0 +1,11 @@
+Function: int of_count_phandle_with_args ( const struct device_node * np , const char * list_name , const char * cells_name )
+
+Find the number of phandles references in a property
+
+Parameters
+  const struct device_node *np
+    pointer to a device tree node containing a list
+  const char *list_name
+    property name that contains a list
+  const char *cells_name
+    property name that specifies phandles’ arguments count

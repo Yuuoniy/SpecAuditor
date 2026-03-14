@@ -1,0 +1,7 @@
+Function: clockid_t iio_device_get_clock ( const struct iio_dev * indio_dev )
+
+Retrieve current timestamping clock for the device
+
+Parameters
+  const struct iio_dev *indio_dev
+    IIO device structure containing the device

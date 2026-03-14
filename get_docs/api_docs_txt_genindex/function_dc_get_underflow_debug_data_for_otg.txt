@@ -1,0 +1,16 @@
+Function: void dc_get_underflow_debug_data_for_otg ( struct dc * dc , int primary_otg_inst , struct dc_underflow_debug_data * out_data )
+
+Retrieve underflow debug data.
+
+Parameters
+  struct dc *dc
+    Pointer to the display core context.
+  int primary_otg_inst
+    Instance index of the primary OTG that underflowed.
+  struct dc_underflow_debug_data *out_data
+    Pointer to a dc_underflow_debug_data struct to be filled with debug information.
+
+Description
+  This function collects and logs underflow-related HW states when underflow happens,
+including OTG underflow status, current read positions, frame count, and per-HUBP debug data.
+The results are stored in the provided out_data structure for further analysis or logging.

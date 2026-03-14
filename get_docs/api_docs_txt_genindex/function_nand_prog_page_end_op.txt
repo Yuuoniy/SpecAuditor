@@ -1,0 +1,11 @@
+Function: int nand_prog_page_end_op ( struct nand_chip * chip )
+
+ends a PROG PAGE operation
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+
+Description
+  This function issues the second half of a PROG PAGE operation.
+This function does not select/unselect the CS line.

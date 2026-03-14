@@ -1,0 +1,18 @@
+Function: unsigned long page_address_in_vma ( const struct folio * folio , const struct page * page , const struct vm_area_struct * vma )
+
+The virtual address of a page in this VMA.
+
+Parameters
+  const struct folio *folio
+    The folio containing the page.
+  const struct page *page
+    The page within the folio.
+  const struct vm_area_struct *vma
+    The VMA we need to know the address in.
+
+Description
+  Calculates the user virtual address of this page in the specified VMA.
+It is the caller’s responsibility to check the page is actually
+within the VMA.  There may not currently be a PTE pointing at this
+page, but if a page fault occurs at this address, this is the page
+which will be accessed.

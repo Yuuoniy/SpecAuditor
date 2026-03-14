@@ -1,0 +1,13 @@
+Function: int drm_client_framebuffer_flush ( struct drm_client_buffer * buffer , struct drm_rect * rect )
+
+Manually flush client framebuffer
+
+Parameters
+  struct drm_client_buffer *buffer
+    DRM client buffer (can be NULL)
+  struct drm_rect *rect
+    Damage rectangle (if NULL flushes all)
+
+Description
+  This calls drm_framebuffer_funcs->dirty (if present) to flush buffer changes
+for drivers that need it.

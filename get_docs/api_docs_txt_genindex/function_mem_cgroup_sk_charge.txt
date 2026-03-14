@@ -1,0 +1,14 @@
+Function: bool mem_cgroup_sk_charge ( const struct sock * sk , unsigned int nr_pages , gfp_t gfp_mask )
+
+charge socket memory
+
+Parameters
+  const struct sock *sk
+    socket in memcg to charge
+  unsigned int nr_pages
+    number of pages to charge
+  gfp_t gfp_mask
+    reclaim mode
+
+Description
+  Charges nr_pages to memcg . Returns true if the charge fit within memcg ’s configured limit, false if it doesn’t.

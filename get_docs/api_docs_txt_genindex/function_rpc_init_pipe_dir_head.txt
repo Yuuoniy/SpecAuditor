@@ -1,0 +1,7 @@
+Function: void rpc_init_pipe_dir_head ( struct rpc_pipe_dir_head * pdh )
+
+initialise a struct rpc_pipe_dir_head
+
+Parameters
+  struct rpc_pipe_dir_head *pdh
+    pointer to struct rpc_pipe_dir_head

@@ -1,0 +1,7 @@
+Function: u64 amdgpu_bo_gpu_offset_no_check ( struct amdgpu_bo * bo )
+
+return GPU offset of bo
+
+Parameters
+  struct amdgpu_bo *bo
+    amdgpu object for which we query the offset

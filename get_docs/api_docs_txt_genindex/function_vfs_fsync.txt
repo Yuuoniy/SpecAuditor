@@ -1,0 +1,13 @@
+Function: int vfs_fsync ( struct file * file , int datasync )
+
+perform a fsync or fdatasync on a file
+
+Parameters
+  struct file *file
+    file to sync
+  int datasync
+    only perform a fdatasync operation
+
+Description
+  Write back data and metadata for file to disk.  If datasync is
+set only metadata needed to access modified file data is written.

@@ -1,0 +1,28 @@
+Struct: struct drm_gpuvm_bo
+
+structure representing a drm_gpuvm and drm_gem_object combination
+
+Members
+  vm
+    The drm_gpuvm the obj is mapped in. This is a reference
+counted pointer.
+  obj
+    The drm_gem_object being mapped in vm . This is a reference
+counted pointer.
+  evicted
+    Indicates whether the drm_gem_object is evicted; field
+protected by the drm_gem_object ’s dma-resv lock.
+  kref
+    The reference count for this drm_gpuvm_bo .
+  list
+    Structure containing all list_heads .
+  list.gpuva
+    The list of linked drm_gpuvas . It is safe to access entries from this list as long as the
+GEM’s gpuva lock is held. See also struct drm_gem_object .
+  list.entry
+    Structure containing all list_heads serving as
+entry.
+  list.entry.gem
+    List entry to attach to the drm_gem_objects gpuva list.
+  list.entry.evict
+    List entry to attach to the drm_gpuvms evict list.

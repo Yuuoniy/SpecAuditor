@@ -1,0 +1,11 @@
+Macro: snd_BUG_ON
+
+
+
+Parameters
+  cond
+    condition to evaluate
+
+Description
+  Has the same behavior as WARN_ON when CONFIG_SND_DEBUG is set,
+otherwise just evaluates the conditional and returns the value.

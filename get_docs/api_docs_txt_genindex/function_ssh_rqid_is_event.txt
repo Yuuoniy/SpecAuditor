@@ -1,0 +1,7 @@
+Function: bool ssh_rqid_is_event ( u16 rqid )
+
+Check if given request ID is a valid event ID.
+
+Parameters
+  u16 rqid
+    The request ID to check.

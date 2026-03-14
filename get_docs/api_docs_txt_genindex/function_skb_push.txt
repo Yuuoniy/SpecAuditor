@@ -1,0 +1,14 @@
+Function: void * skb_push ( struct sk_buff * skb , unsigned int len )
+
+add data to the start of a buffer
+
+Parameters
+  struct sk_buff *skb
+    buffer to use
+  unsigned int len
+    amount of data to add
+
+Description
+  This function extends the used data area of the buffer at the buffer
+start. If this would exceed the total buffer headroom the kernel will
+panic. A pointer to the first byte of the extra data is returned.

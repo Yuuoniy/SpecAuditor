@@ -1,0 +1,21 @@
+Struct: struct drm_nouveau_vm_bind
+
+structure for DRM_IOCTL_NOUVEAU_VM_BIND
+
+Members
+  op_count
+    the number of drm_nouveau_vm_bind_op
+  flags
+    the flags for a drm_nouveau_vm_bind ioctl Supported values: DRM_NOUVEAU_VM_BIND_RUN_ASYNC - Indicates that the given VM_BIND
+operation should be executed asynchronously by the kernel. If this flag is not supplied the kernel executes the associated
+operations synchronously and doesn’t accept any drm_nouveau_sync objects.
+  wait_count
+    the number of wait drm_nouveau_syncs
+  sig_count
+    the number of drm_nouveau_syncs to signal when finished
+  wait_ptr
+    pointer to drm_nouveau_syncs to wait for
+  sig_ptr
+    pointer to drm_nouveau_syncs to signal when finished
+  op_ptr
+    pointer to the drm_nouveau_vm_bind_ops to execute

@@ -1,0 +1,12 @@
+Struct: struct ipu3_uapi_af_config_s
+
+AF config
+
+Members
+  filter_config
+    AF uses Y1 and Y2 filters as configured in ipu3_uapi_af_filter_config
+  padding
+    paddings
+  grid_cfg
+    See ipu3_uapi_grid_config , default resolution 16x16. Use large
+grid size for large image and vice versa.

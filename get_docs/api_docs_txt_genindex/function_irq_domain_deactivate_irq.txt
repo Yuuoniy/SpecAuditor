@@ -1,0 +1,11 @@
+Function: void irq_domain_deactivate_irq ( struct irq_data * irq_data )
+
+Call domain_ops->deactivate recursively to deactivate interrupt
+
+Parameters
+  struct irq_data *irq_data
+    outermost irq_data associated with interrupt
+
+Description
+  It calls domain_ops->deactivate to program interrupt controllers to disable
+interrupt delivery.

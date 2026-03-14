@@ -1,0 +1,11 @@
+Function: void ata_scsi_unlock_native_capacity ( struct scsi_device * sdev )
+
+unlock native capacity
+
+Parameters
+  struct scsi_device *sdev
+    SCSI device to adjust device capacity for
+
+Description
+  This function is called if a partition on sdev extends beyond
+the end of the device.  It requests EH to unlock HPA.

@@ -1,0 +1,9 @@
+Struct: struct dtv_properties
+
+a set of command/value pairs.
+
+Members
+  num
+    amount of commands stored at the struct.
+  props
+    a pointer to struct dtv_property .

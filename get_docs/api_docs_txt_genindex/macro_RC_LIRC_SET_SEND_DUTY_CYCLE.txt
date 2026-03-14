@@ -1,0 +1,2 @@
+Macro: LIRC_SET_SEND_DUTY_CYCLE
+

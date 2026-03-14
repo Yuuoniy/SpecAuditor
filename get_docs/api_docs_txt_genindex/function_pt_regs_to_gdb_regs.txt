@@ -1,0 +1,13 @@
+Function: void pt_regs_to_gdb_regs ( unsigned long * gdb_regs , struct pt_regs * regs )
+
+Convert ptrace regs to GDB regs
+
+Parameters
+  unsigned long *gdb_regs
+    A pointer to hold the registers in the order GDB wants.
+  struct pt_regs *regs
+    The struct pt_regs of the current process.
+
+Description
+  Convert the pt_regs in regs into the format for registers that
+GDB expects, stored in gdb_regs .

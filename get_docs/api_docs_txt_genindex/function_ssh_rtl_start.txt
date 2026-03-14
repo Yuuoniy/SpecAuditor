@@ -1,0 +1,7 @@
+Function: int ssh_rtl_start ( struct ssh_rtl * rtl )
+
+Start request transmitter and receiver.
+
+Parameters
+  struct ssh_rtl *rtl
+    The request transport layer.

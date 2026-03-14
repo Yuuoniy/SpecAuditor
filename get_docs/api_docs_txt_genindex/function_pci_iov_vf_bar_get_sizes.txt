@@ -1,0 +1,15 @@
+Function: u32 pci_iov_vf_bar_get_sizes ( struct pci_dev * dev , int resno , int num_vfs )
+
+get VF BAR sizes allowing to create up to num_vfs
+
+Parameters
+  struct pci_dev *dev
+    the PCI device
+  int resno
+    the resource number
+  int num_vfs
+    number of VFs
+
+Description
+  Get the sizes of a VF resizable BAR that can accommodate num_vfs within
+the currently assigned size of the resource resno .

@@ -1,0 +1,10 @@
+Function: struct input_dev * input_allocate_device ( void )
+
+allocate memory for new input device
+
+Parameters
+  void
+    no arguments
+
+Description
+  Returns prepared struct input_dev or NULL .

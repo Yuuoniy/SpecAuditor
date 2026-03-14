@@ -1,0 +1,3 @@
+Enum: enum drm_gem_object_status
+
+bitmask of object state for fdinfo reporting

@@ -1,0 +1,14 @@
+Function: void ssh_request_put ( struct ssh_request * r )
+
+Decrement reference count of request.
+
+Parameters
+  struct ssh_request *r
+    The request to decrement the reference count of.
+
+Description
+  Decrements the reference count of the given request by decrementing the
+reference count of the underlying struct ssh_packet , enclosed in it. If
+the reference count reaches zero, the release callback specified in the
+request’s struct ssh_request_ops , i.e. r->ops->release , will be
+called.

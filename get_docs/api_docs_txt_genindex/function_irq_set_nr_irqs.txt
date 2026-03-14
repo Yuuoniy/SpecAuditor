@@ -1,0 +1,7 @@
+Function: unsigned int irq_set_nr_irqs ( unsigned int nr )
+
+Set the number of interrupts supported by the system.
+
+Parameters
+  unsigned int nr
+    New number of interrupts.

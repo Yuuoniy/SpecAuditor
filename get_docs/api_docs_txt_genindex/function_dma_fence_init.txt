@@ -1,0 +1,20 @@
+Function: void dma_fence_init ( struct dma_fence * fence , const struct dma_fence_ops * ops , spinlock_t * lock , u64 context , u64 seqno )
+
+Initialize a custom fence.
+
+Parameters
+  struct dma_fence *fence
+    the fence to initialize
+  const struct dma_fence_ops *ops
+    the dma_fence_ops for operations on this fence
+  spinlock_t *lock
+    the irqsafe spinlock to use for locking this fence
+  u64 context
+    the execution context this fence is run on
+  u64 seqno
+    a linear increasing sequence number for this context
+
+Description
+  Initializes an allocated fence, the caller doesn’t have to keep its
+refcount after committing with this fence, but it will need to hold a
+refcount again if dma_fence_ops.enable_signaling gets called.

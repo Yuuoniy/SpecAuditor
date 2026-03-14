@@ -1,0 +1,9 @@
+Struct: struct drm_pvr_dev_query_heap_info
+
+Container used to fetch information about heaps supported by the device driver.
+
+Members
+  heaps
+    Array of struct drm_pvr_heap . If pointer is NULL, the count
+and stride will be updated with those known to the driver version, to
+facilitate allocation by the caller.

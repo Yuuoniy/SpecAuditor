@@ -1,0 +1,12 @@
+Function: bool phy_is_default_hwtstamp ( struct phy_device * phydev )
+
+Is the PHY hwtstamp the default timestamp
+
+Parameters
+  struct phy_device *phydev
+    Pointer to phy_device
+
+Description
+  This is used to get default timestamping device taking into account
+the new API choice, which is selecting the timestamping from MAC by
+default if the phydev does not have default_timestamp flag enabled.

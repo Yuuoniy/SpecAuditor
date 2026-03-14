@@ -1,0 +1,12 @@
+Function: void tsk_rej_rx_queue ( struct sock * sk , int error )
+
+reject all buffers in socket receive queue
+
+Parameters
+  struct sock *sk
+    network socket
+  int error
+    response error code
+
+Description
+  Caller must hold socket lock

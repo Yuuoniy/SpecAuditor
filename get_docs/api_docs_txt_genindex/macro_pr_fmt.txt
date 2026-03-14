@@ -1,0 +1,12 @@
+Macro: pr_fmt
+
+
+
+Parameters
+  fmt
+    format string passed from a pr_*() macro
+
+Description
+  This macro can be used to generate a unified format string for pr_*()
+macros. A common use is to prefix all pr_*() messages in a file with a common
+string. For example, defining this at the top of a source file:

@@ -1,0 +1,7 @@
+Function: int snd_ctl_unregister_ioctl_compat ( snd_kctl_ioctl_func_t fcn )
+
+de-register the device-specific compat 32bit control-ioctls
+
+Parameters
+  snd_kctl_ioctl_func_t fcn
+    ioctl callback function to unregister

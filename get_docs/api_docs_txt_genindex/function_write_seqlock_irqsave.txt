@@ -1,0 +1,14 @@
+Function: write_seqlock_irqsave
+
+
+
+Parameters
+  lock
+    Pointer to seqlock_t
+  flags
+    Stack-allocated storage for saving caller’s local interrupt
+state, to be passed to write_sequnlock_irqrestore() .
+
+Description
+  _irqsave variant of write_seqlock() . Use it only if the read side
+section, or other write sections, can be invoked from hardirq context.

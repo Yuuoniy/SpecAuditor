@@ -1,0 +1,20 @@
+Function: int peci_pci_local_read ( struct peci_device * device , u8 bus , u8 dev , u8 func , u16 reg , u32 * data )
+
+read 32-bit memory location using raw address
+
+Parameters
+  struct peci_device *device
+    PECI device to which request is going to be sent
+  u8 bus
+    bus
+  u8 dev
+    device
+  u8 func
+    function
+  u16 reg
+    register
+  u32 *data
+    where to store the read data
+
+Description
+  It uses RdPCIConfigLocal PECI command.

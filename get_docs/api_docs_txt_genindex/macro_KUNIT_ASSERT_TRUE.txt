@@ -1,0 +1,16 @@
+Macro: KUNIT_ASSERT_TRUE
+
+
+
+Parameters
+  test
+    The test context object.
+  condition
+    an arbitrary boolean expression. The test fails and aborts when
+this does not evaluate to true.
+
+Description
+  This and assertions of the form KUNIT_ASSERT_* will cause the test case to
+fail and immediately abort when the specified condition is not met. Unlike
+an expectation failure, it will prevent the test case from continuing to run;
+this is otherwise known as an assertion failure .

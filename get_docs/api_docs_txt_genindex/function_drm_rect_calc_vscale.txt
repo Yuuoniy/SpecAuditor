@@ -1,0 +1,17 @@
+Function: int drm_rect_calc_vscale ( const struct drm_rect * src , const struct drm_rect * dst , int min_vscale , int max_vscale )
+
+calculate the vertical scaling factor
+
+Parameters
+  const struct drm_rect *src
+    source window rectangle
+  const struct drm_rect *dst
+    destination window rectangle
+  int min_vscale
+    minimum allowed vertical scaling factor
+  int max_vscale
+    maximum allowed vertical scaling factor
+
+Description
+  Calculate the vertical scaling factor as
+( src height) / ( dst height).

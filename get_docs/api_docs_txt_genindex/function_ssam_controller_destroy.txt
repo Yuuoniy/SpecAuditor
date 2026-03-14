@@ -1,0 +1,15 @@
+Function: void ssam_controller_destroy ( struct ssam_controller * ctrl )
+
+Destroy the controller and free its resources.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller.
+
+Description
+  Ensures that all resources associated with the controller get freed. This
+function should only be called after the controller has been stopped via ssam_controller_shutdown() . In general, this function should not be called
+directly. The only valid place to call this function directly is during
+initialization, before the controller has been fully initialized and passed
+to other processes. This function is called automatically when the
+reference count of the controller reaches zero.

@@ -1,0 +1,11 @@
+Function: void padata_do_serial ( struct padata_priv * padata )
+
+padata serialization function
+
+Parameters
+  struct padata_priv *padata
+    object to be serialized.
+
+Description
+  padata_do_serial must be called for every parallelized object.
+The serialization callback function will run with BHs off.

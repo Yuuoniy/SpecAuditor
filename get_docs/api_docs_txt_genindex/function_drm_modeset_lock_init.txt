@@ -1,0 +1,7 @@
+Function: void drm_modeset_lock_init ( struct drm_modeset_lock * lock )
+
+initialize lock
+
+Parameters
+  struct drm_modeset_lock *lock
+    lock to init

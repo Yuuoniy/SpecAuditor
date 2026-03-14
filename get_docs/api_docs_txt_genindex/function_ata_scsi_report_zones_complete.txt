@@ -1,0 +1,12 @@
+Function: void ata_scsi_report_zones_complete ( struct ata_queued_cmd * qc )
+
+convert ATA output
+
+Parameters
+  struct ata_queued_cmd *qc
+    command structure returning the data
+
+Description
+  Convert T-13 little-endian field representation into
+T-10 big-endian field representation.
+What a mess.

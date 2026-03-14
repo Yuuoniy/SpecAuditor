@@ -1,0 +1,18 @@
+Function: int usb_clear_halt ( struct usb_device * dev , int pipe )
+
+tells device to clear endpoint halt/stall condition
+
+Parameters
+  struct usb_device *dev
+    device whose endpoint is halted
+  int pipe
+    endpoint “pipe” being cleared
+
+Description
+  This is used to clear halt conditions for bulk and interrupt endpoints,
+as reported by URB completion status.  Endpoints that are halted are
+sometimes referred to as being “stalled”.  Such endpoints are unable
+to transmit or receive data until the halt status is cleared.  Any URBs
+queued for such an endpoint should normally be unlinked by the driver
+before clearing the halt condition, as described in sections 5.7.5
+and 5.8.5 of the USB 2.0 spec.

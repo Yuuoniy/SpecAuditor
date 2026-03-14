@@ -1,0 +1,14 @@
+Function: int vb2_core_streamoff ( struct vb2_queue * q , unsigned int type )
+
+Implements VB2 stream OFF logic
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue
+  unsigned int type
+    type of the queue to be started.
+For V4L2, this is defined by enum v4l2_buf_type type.
+
+Description
+  Videobuf2 core helper to implement VIDIOC_STREAMOFF() operation. It is
+called internally by VB2 by an API-specific handler, like videobuf2-v4l2.h .

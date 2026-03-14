@@ -1,0 +1,13 @@
+Function: int drm_mode_create_tv_properties ( struct drm_device * dev , unsigned int supported_tv_modes )
+
+create TV specific connector properties
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  unsigned int supported_tv_modes
+    Bitmask of TV modes supported (See DRM_MODE_TV_MODE_*)
+
+Description
+  Called by a driver’s TV initialization routine, this function creates
+the TV specific connector properties for a given device.

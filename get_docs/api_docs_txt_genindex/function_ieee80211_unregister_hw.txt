@@ -1,0 +1,11 @@
+Function: void ieee80211_unregister_hw ( struct ieee80211_hw * hw )
+
+Unregister a hardware device
+
+Parameters
+  struct ieee80211_hw *hw
+    the hardware to unregister
+
+Description
+  This function instructs mac80211 to free allocated resources
+and unregister netdevices from the networking subsystem.

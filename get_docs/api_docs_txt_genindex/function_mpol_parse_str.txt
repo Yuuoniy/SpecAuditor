@@ -1,0 +1,12 @@
+Function: int mpol_parse_str ( char * str , struct mempolicy * * mpol )
+
+parse string to mempolicy, for tmpfs mpol mount option.
+
+Parameters
+  char *str
+    string containing mempolicy to parse
+  struct mempolicy **mpol
+    pointer to struct mempolicy pointer, returned on success.
+
+Description
+  <mode>[=<flags>][:<nodelist>]

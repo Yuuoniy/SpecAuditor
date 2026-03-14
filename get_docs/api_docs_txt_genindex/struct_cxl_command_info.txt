@@ -1,0 +1,13 @@
+Struct: struct cxl_command_info
+
+Command information returned from a query.
+
+Members
+  id
+    ID number for the command.
+  flags
+    Flags that specify command behavior.
+  size_in
+    Expected input size, or ~0 if variable length.
+  size_out
+    Expected output size, or ~0 if variable length.

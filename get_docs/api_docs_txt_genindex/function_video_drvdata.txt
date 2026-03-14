@@ -1,0 +1,10 @@
+Function: void * video_drvdata ( struct file * file )
+
+gets private data from struct video_device using the struct file .
+
+Parameters
+  struct file *file
+    pointer to struct file
+
+Description
+  This is function combines both video_get_drvdata() and video_devdata() as this is used very often.

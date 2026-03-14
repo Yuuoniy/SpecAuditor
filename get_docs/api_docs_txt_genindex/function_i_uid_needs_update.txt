@@ -1,0 +1,15 @@
+Function: bool i_uid_needs_update ( struct mnt_idmap * idmap , const struct iattr * attr , const struct inode * inode )
+
+check whether inode’s i_uid needs to be updated
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount the inode was found from
+  const struct iattr *attr
+    the new attributes of inode
+  const struct inode *inode
+    the inode to update
+
+Description
+  Check whether the $inode’s i_uid field needs to be updated taking idmapped
+mounts into account if the filesystem supports it.

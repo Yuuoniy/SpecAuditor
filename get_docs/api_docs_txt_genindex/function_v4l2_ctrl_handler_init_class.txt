@@ -1,0 +1,22 @@
+Function: int v4l2_ctrl_handler_init_class ( struct v4l2_ctrl_handler * hdl , unsigned int nr_of_controls_hint , struct lock_class_key * key , const char * name )
+
+Initialize the control handler.
+
+Parameters
+  struct v4l2_ctrl_handler *hdl
+    The control handler.
+  unsigned int nr_of_controls_hint
+    A hint of how many controls this handler is
+expected to refer to. This is the total number, so including
+any inherited controls. It doesn’t have to be precise, but if
+it is way off, then you either waste memory (too many buckets
+are allocated) or the control lookup becomes slower (not enough
+buckets are allocated, so there are more slow list lookups).
+It will always work, though.
+  struct lock_class_key *key
+    Used by the lock validator if CONFIG_LOCKDEP is set.
+  const char *name
+    Used by the lock validator if CONFIG_LOCKDEP is set.
+
+Description
+  Attention

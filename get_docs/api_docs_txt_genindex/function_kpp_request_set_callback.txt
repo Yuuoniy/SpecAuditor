@@ -1,0 +1,17 @@
+Function: void kpp_request_set_callback ( struct kpp_request * req , u32 flgs , crypto_completion_t cmpl , void * data )
+
+Sets an asynchronous callback.
+
+Parameters
+  struct kpp_request *req
+    request that the callback will be set for
+  u32 flgs
+    specify for instance if the operation may backlog
+  crypto_completion_t cmpl
+    callback which will be called
+  void *data
+    private data used by the caller
+
+Description
+  Callback will be called when an asynchronous operation on a given
+request is finished.

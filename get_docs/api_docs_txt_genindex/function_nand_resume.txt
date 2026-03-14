@@ -1,0 +1,7 @@
+Function: void nand_resume ( struct mtd_info * mtd )
+
+[MTD Interface] Resume the NAND flash
+
+Parameters
+  struct mtd_info *mtd
+    MTD device structure

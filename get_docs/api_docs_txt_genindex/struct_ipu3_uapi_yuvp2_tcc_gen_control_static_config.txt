@@ -1,0 +1,22 @@
+Struct: struct ipu3_uapi_yuvp2_tcc_gen_control_static_config
+
+Total color correction general control config
+
+Members
+  en
+    0 - TCC disabled. Output = input 1 - TCC enabled.
+  blend_shift
+    blend shift, Range[3, 4], default NA.
+  gain_according_to_y_only
+    0: Gain is calculated according to YUV,
+1: Gain is calculated according to Y only
+  reserved0
+    reserved
+  gamma
+    Final blending coefficients. Values[-16, 16], default NA.
+  reserved1
+    reserved
+  delta
+    Final blending coefficients. Values[-16, 16], default NA.
+  reserved2
+    reserved

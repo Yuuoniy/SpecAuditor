@@ -1,0 +1,422 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>CPU Architectures &#8212; The Linux Kernel  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ARC architecture" href="arc/index.html" />
+    <link rel="prev" title="Submitting Devicetree (DT) binding patches" href="../devicetree/bindings/submitting-patches.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../index.html">The Linux Kernel</a></h1>
+
+
+
+<p class="blurb">6.18.0-rc1</p>
+
+
+
+
+
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+<p>
+<h3 class="kernel-toc-contents">Contents</h3>
+<input type="checkbox" class="kernel-toc-toggle" id = "kernel-toc-toggle" checked>
+<label class="kernel-toc-title" for="kernel-toc-toggle"></label>
+
+<div class="kerneltoc" id="kerneltoc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../process/development-process.html">Development process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/submitting-patches.html">Submitting patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/code-of-conduct.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Maintainer handbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/index.html">All development-process docs</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core-api/index.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver-api/index.html">Driver APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subsystem-apis.html">Subsystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../locking/index.html">Locking</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../process/license-rules.html">Licensing rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-guide/index.html">Writing documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-tools/index.html">Development tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-tools/testing-overview.html">Testing guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kernel-hacking/index.html">Hacking guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trace/index.html">Tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fault-injection/index.html">Fault injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../livepatch/index.html">Livepatching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">Rust</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kbuild/index.html">Build system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/reporting-issues.html">Reporting issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Userspace tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userspace-api/index.html">Userspace API</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../firmware-guide/index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devicetree/index.html">Firmware and Devicetree</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CPU architectures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arc/index.html">ARC architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm/index.html">ARM Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/index.html">ARM64 Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loongarch/index.html">LoongArch Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="m68k/index.html">m68k Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mips/index.html">MIPS-specific Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nios2/index.html">Nios II Specific Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openrisc/index.html">OpenRISC Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parisc/index.html">PA-RISC Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/index.html">powerpc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="riscv/index.html">RISC-V architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s390/index.html">s390 Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sh/index.html">SuperH Interfaces Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparc/index.html">Sparc Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/index.html">x86-specific Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xtensa/index.html">Xtensa Architecture</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging/index.html">Unsorted documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../translations/index.html">Translations</a></li>
+</ul>
+
+</div>
+
+<script type="text/javascript"> <!--
+  var sbar = document.getElementsByClassName("sphinxsidebar")[0];
+  let currents = document.getElementsByClassName("current")
+  if (currents.length) {
+    sbar.scrollTop = currents[currents.length - 1].offsetTop;
+  }
+  --> </script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/arch/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+
+
+
+
+<div class="language-selection">
+English
+
+<ul>
+
+<li><a href="../translations/zh_CN/arch/index.html">Chinese (Simplified)</a></li>
+
+<li><a href="../translations/zh_TW/arch/index.html">Chinese (Traditional)</a></li>
+
+</ul>
+</div>
+<section id="cpu-architectures">
+<h1>CPU Architectures<a class="headerlink" href="#cpu-architectures" title="Permalink to this heading">¶</a></h1>
+<p>These books provide programming details about architecture-specific
+implementation.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="arc/index.html">ARC architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arc/arc.html">Linux kernel for ARC processors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arc/features.html">Feature status on arc architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arm/index.html">ARM Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arm/arm.html">ARM Linux 2.6 and upper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm/booting.html">Booting ARM Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm/cluster-pm-race-avoidance.html">Cluster-wide Power-up/power-down race avoidance algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm/firmware.html">Interface for registering and calling firmware-specific operations for ARM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm/interrupts.html">Interrupts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm/kernel_mode_neon.html">Kernel mode NEON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm/kernel_user_helpers.html">Kernel-provided User Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm/memory.html">Kernel Memory Layout on ARM Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm/mem_alignment.html">Memory alignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm/tcm.html">ARM TCM (Tightly-Coupled Memory) handling in Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm/setup.html">Kernel initialisation parameters on ARM Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm/swp_emulation.html">Software emulation of deprecated SWP instruction (CONFIG_SWP_EMULATE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm/uefi.html">The Unified Extensible Firmware Interface (UEFI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm/vlocks.html">vlocks for Bare-Metal Mutual Exclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm/porting.html">Porting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm/features.html">Feature status on arm architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm/index.html#soc-specific-documents">SoC-specific documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arm64/index.html">ARM64 Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arm64/acpi_object_usage.html">ACPI Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/amu.html">Activity Monitors Unit (AMU) extension in AArch64 Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/arm-acpi.html">ACPI on Arm systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/arm-cca.html">Arm Confidential Compute Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/asymmetric-32bit.html">Asymmetric 32-bit SoCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/booting.html">Booting AArch64 Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/cpu-feature-registers.html">ARM64 CPU Feature Registers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/cpu-hotplug.html">CPU Hotplug and ACPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/elf_hwcaps.html">ARM64 ELF hwcaps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/gcs.html">Guarded Control Stack support for AArch64 Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/hugetlbpage.html">HugeTLBpage on ARM64</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/kdump.html">crashkernel memory reservation on arm64</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/legacy_instructions.html">Legacy instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/memory.html">Memory Layout on AArch64 Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/memory-tagging-extension.html">Memory Tagging Extension (MTE) in AArch64 Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/mops.html">Memory copy/set instructions (MOPS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/perf.html">Perf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/pointer-authentication.html">Pointer authentication in AArch64 Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/ptdump.html">Kernel page table dump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/silicon-errata.html">Silicon Errata and Software Workarounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/sme.html">Scalable Matrix Extension support for AArch64 Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/sve.html">Scalable Vector Extension support for AArch64 Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/tagged-address-abi.html">AArch64 TAGGED ADDRESS ABI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/tagged-pointers.html">Tagged virtual addresses in AArch64 Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm64/features.html">Feature status on arm64 architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loongarch/index.html">LoongArch Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="loongarch/introduction.html">1. Introduction to LoongArch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loongarch/booting.html">2. Booting Linux/LoongArch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loongarch/irq-chip-model.html">3. IRQ chip model (hierarchy) of LoongArch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loongarch/features.html">4. Feature status on loongarch architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="m68k/index.html">m68k Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="m68k/kernel-options.html">Command Line Options for Linux/m68k</a></li>
+<li class="toctree-l2"><a class="reference internal" href="m68k/buddha-driver.html">Amiga Buddha and Catweasel IDE Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="m68k/features.html">Feature status on m68k architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mips/index.html">MIPS-specific Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mips/booting.html">1. BMIPS DeviceTree Booting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mips/ingenic-tcu.html">2. Ingenic JZ47xx SoCs Timer/Counter Unit hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mips/features.html">3. Feature status on mips architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nios2/index.html">Nios II Specific Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nios2/nios2.html">1. Linux on the Nios II architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nios2/features.html">2. Feature status on nios2 architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="openrisc/index.html">OpenRISC Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="openrisc/openrisc_port.html">OpenRISC Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openrisc/todo.html">TODO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openrisc/features.html">Feature status on openrisc architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="parisc/index.html">PA-RISC Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="parisc/debugging.html">PA-RISC Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parisc/registers.html">Register Usage for Linux/PA-RISC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parisc/features.html">Feature status on parisc architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="powerpc/index.html">powerpc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/associativity.html">NUMA resource associativity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/booting.html">DeviceTree Booting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/bootwrapper.html">The PowerPC boot wrapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/cpu_families.html">CPU Families</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/cpu_features.html">CPU Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/dawr-power9.html">DAWR issues on POWER9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/dexcr.html">DEXCR (Dynamic Execution Control Register)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/dscr.html">DSCR (Data Stream Control Register)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/eeh-pci-error-recovery.html">PCI Bus EEH Error Recovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/elf_hwcaps.html">POWERPC ELF HWCAPs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/elfnote.html">ELF Note PowerPC Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/firmware-assisted-dump.html">Firmware-Assisted Dump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/htm.html">HTM (Hardware Trace Macro)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/hvcs.html">HVCS IBM “Hypervisor Virtual Console Server” Installation Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/imc.html">IMC (In-Memory Collection Counters)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/isa-versions.html">CPU to ISA Version Mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/kaslr-booke32.html">KASLR for Freescale BookE32</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/mpc52xx.html">Linux 2.6.x on MPC52xx family</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/kvm-nested.html">Nested KVM on POWER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/papr_hcalls.html">Hypercall Op-codes (hcalls)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/pci_iov_resource_on_powernv.html">PCI Express I/O Virtualization Resource on Powerenv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/pmu-ebb.html">PMU Event Based Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/ptrace.html">Ptrace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/qe_firmware.html">Freescale QUICC Engine Firmware Uploading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/syscall64-abi.html">Power Architecture 64-bit Linux system call ABI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/transactional_memory.html">Transactional Memory support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/ultravisor.html">Protected Execution Facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/vas-api.html">Virtual Accelerator Switchboard (VAS) userspace API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/vcpudispatch_stats.html">VCPU Dispatch Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/vmemmap_dedup.html">Device DAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/vpa-dtl.html">DTL (Dispatch Trace Log)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerpc/features.html">Feature status on powerpc architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="riscv/index.html">RISC-V architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="riscv/acpi.html">ACPI on RISC-V</a></li>
+<li class="toctree-l2"><a class="reference internal" href="riscv/boot.html">RISC-V Kernel Boot Requirements and Constraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="riscv/boot-image-header.html">Boot image header in RISC-V Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="riscv/vm-layout.html">Virtual Memory Layout on RISC-V Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="riscv/hwprobe.html">RISC-V Hardware Probing Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="riscv/patch-acceptance.html">arch/riscv maintenance guidelines for developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="riscv/uabi.html">RISC-V Linux User ABI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="riscv/vector.html">Vector Extension Support for RISC-V Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="riscv/cmodx.html">Concurrent Modification and Execution of Instructions (CMODX) for RISC-V Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="riscv/features.html">Feature status on riscv architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="s390/index.html">s390 Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="s390/cds.html">Linux for S/390 and zSeries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s390/3270.html">IBM 3270 Display System support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s390/driver-model.html">S/390 driver model interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s390/mm.html">Memory Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s390/monreader.html">Linux API for read access to z/VM Monitor Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s390/qeth.html">IBM s390 QDIO Ethernet Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s390/s390dbf.html">S390 Debug Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s390/vfio-ap.html">Adjunct Processor (AP) facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s390/vfio-ap-locking.html">VFIO AP Locks Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s390/vfio-ccw.html">vfio-ccw: the basic infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s390/zfcpdump.html">The s390 SCSI dump tool (zfcpdump)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s390/common_io.html">S/390 common I/O-Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s390/pci.html">S/390 PCI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s390/text_files.html">ibm 3270 changelog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s390/text_files.html#ibm-3270-config3270-sh">ibm 3270 config3270.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s390/features.html">Feature status on s390 architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sh/index.html">SuperH Interfaces Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sh/booting.html">DeviceTree Booting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sh/new-machine.html">Adding a new board to LinuxSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sh/register-banks.html">Notes on register bank usage in the kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sh/features.html">Feature status on sh architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sh/index.html#memory-management">Memory Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sh/index.html#machine-specific-interfaces">Machine Specific Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sh/index.html#busses">Busses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sparc/index.html">Sparc Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sparc/console.html">Steps for sending ‘break’ on sunhv console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparc/adi.html">Application Data Integrity (ADI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparc/oradax/oracle-dax.html">Oracle Data Analytics Accelerator (DAX)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparc/features.html">Feature status on sparc architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="x86/index.html">x86-specific Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="x86/boot.html">1. The Linux/x86 Boot Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/booting-dt.html">2. DeviceTree Booting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/cpuinfo.html">3. x86 Feature Flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/topology.html">4. x86 Topology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/exception-tables.html">5. Kernel level exception handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/kernel-stacks.html">6. Kernel Stacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/entry_64.html">7. Kernel Entries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/earlyprintk.html">8. Early Printk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/orc-unwinder.html">9. ORC unwinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/zero-page.html">10. Zero Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/tlb.html">11. The TLB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/mtrr.html">12. MTRR (Memory Type Range Register) control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/pat.html">13. PAT (Page Attribute Table)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/intel-hfi.html">14. Hardware-Feedback Interface for scheduling on Intel Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/shstk.html">15. Control-flow Enforcement Technology (CET) Shadow Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/iommu.html">16. x86 IOMMU Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/intel_txt.html">17. Intel(R) TXT Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/amd-debugging.html">18. Debugging AMD Zen systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/amd-memory-encryption.html">19. AMD Memory Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/amd_hsmp.html">20. AMD HSMP interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/amd-hfi.html">21. Hardware Feedback Interface For Hetero Core Scheduling On AMD Platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/tdx.html">22. Intel Trust Domain Extensions (TDX)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/pti.html">23. Page Table Isolation (PTI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/mds.html">24. Microarchitectural Data Sampling (MDS) mitigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/microcode.html">25. The Linux Microcode Loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/tsx_async_abort.html">26. TSX Async Abort (TAA) mitigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/buslock.html">27. Bus lock detection and handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/usb-legacy-support.html">28. USB Legacy support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/i386/index.html">29. i386 Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/x86_64/index.html">30. x86_64 Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/ifs.html">31. In-Field Scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/sva.html">32. Shared Virtual Addressing (SVA) with ENQCMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/sgx.html">33. Software Guard eXtensions (SGX)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/features.html">34. Feature status on x86 architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/elf_auxvec.html">35. x86-specific ELF Auxiliary Vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x86/xstate.html">36. Using XSTATE features in user space applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="xtensa/index.html">Xtensa Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="xtensa/atomctl.html">Atomic Operation Control (ATOMCTL) Register</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xtensa/booting.html">Passing boot parameters to the kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xtensa/mmu.html">MMUv3 initialization sequence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xtensa/features.html">Feature status on xtensa architecture</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;The kernel development community.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/arch/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

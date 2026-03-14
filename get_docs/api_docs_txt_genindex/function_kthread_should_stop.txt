@@ -1,0 +1,12 @@
+Function: bool kthread_should_stop ( void )
+
+should this kthread return now?
+
+Parameters
+  void
+    no arguments
+
+Description
+  When someone calls kthread_stop() on your kthread, it will be woken
+and this will return true.  You should then return, and your return
+value will be passed through to kthread_stop() .

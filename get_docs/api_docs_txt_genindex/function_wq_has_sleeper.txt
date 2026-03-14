@@ -1,0 +1,10 @@
+Function: bool wq_has_sleeper ( struct wait_queue_head * wq_head )
+
+check if there are any waiting processes
+
+Parameters
+  struct wait_queue_head *wq_head
+    wait queue head
+
+Description
+  Returns true if wq_head has waiting processes

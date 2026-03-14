@@ -1,0 +1,14 @@
+Function: __bpf_kfunc __u8 * hid_bpf_get_data ( struct hid_bpf_ctx * ctx , unsigned int offset , const size_t rdwr_buf_size )
+
+Get the kernel memory pointer associated with the context ctx
+
+Parameters
+  struct hid_bpf_ctx *ctx
+    The HID-BPF context
+  unsigned int offset
+    The offset within the memory
+  const size_t rdwr_buf_size
+    the const size of the buffer
+
+Description
+  returns NULL on error, an __u8 memory pointer on success

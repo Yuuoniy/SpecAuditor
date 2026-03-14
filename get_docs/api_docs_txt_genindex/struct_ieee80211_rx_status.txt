@@ -1,0 +1,80 @@
+Struct: struct ieee80211_rx_status
+
+receive status
+
+Members
+  mactime
+    value in microseconds of the 64-bit Time Synchronization Function
+(TSF) timer when the first data symbol (MPDU) arrived at the hardware.
+  {unnamed_union}
+    anonymous
+  boottime_ns
+    CLOCK_BOOTTIME timestamp the frame was received at, this is
+needed only for beacons and probe responses that update the scan cache.
+  ack_tx_hwtstamp
+    Hardware timestamp for the ack TX in nanoseconds. Only
+needed for Timing measurement and Fine timing measurement action frames.
+Only reported by devices that have timestamping enabled.
+  device_timestamp
+    arbitrary timestamp for the device, mac80211 doesn’t use
+it but can store it and pass it back to the driver for synchronisation
+  ampdu_reference
+    A-MPDU reference number, must be a different value for
+each A-MPDU but the same for each subframe within one A-MPDU
+  flag
+    RX_FLAG_ *
+  freq
+    frequency the radio was tuned to when receiving this frame, in MHz
+This field must be set for management frames, but isn’t strictly needed
+for data (other) frames - for those it only affects radiotap reporting.
+  freq_offset
+    freq has a positive offset of 500Khz.
+  enc_flags
+    uses bits from enum mac80211_rx_encoding_flags
+  encoding
+    enum mac80211_rx_encoding
+  bw
+    enum rate_info_bw
+  {unnamed_union}
+    anonymous
+  {unnamed_struct}
+    anonymous
+  he_ru
+    HE RU, from enum nl80211_he_ru_alloc
+  he_gi
+    HE GI, from enum nl80211_he_gi
+  he_dcm
+    HE DCM value
+  eht
+    EHT specific rate information
+  eht.ru
+    EHT RU, from enum nl80211_eht_ru_alloc
+  eht.gi
+    EHT GI, from enum nl80211_eht_gi
+  rate_idx
+    index of data rate into band’s supported rates or MCS index if
+HT or VHT is used ( RX_FLAG_HT / RX_FLAG_VHT )
+  nss
+    number of streams (VHT, HE and EHT only)
+  rx_flags
+    internal RX flags for mac80211
+  band
+    the active band when this frame was received
+  antenna
+    antenna used
+  signal
+    signal strength when receiving this frame, either in dBm, in dB or
+unspecified depending on the hardware capabilities flags IEEE80211_HW_SIGNAL_*
+  chains
+    bitmask of receive chains for which separate signal strength
+values were filled.
+  chain_signal
+    per-chain signal strength, in dBm (unlike signal , doesn’t
+support dB or unspecified units)
+  zero_length_psdu_type
+    radiotap type of the 0-length PSDU
+  link_valid
+    if the link which is identified by link_id is valid. This flag
+is set only when connection is MLO.
+  link_id
+    id of the link used to receive the packet. This is used along with link_valid .

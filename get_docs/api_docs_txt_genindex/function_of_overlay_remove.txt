@@ -1,0 +1,11 @@
+Function: int of_overlay_remove ( int * ovcs_id )
+
+Revert and free an overlay changeset
+
+Parameters
+  int *ovcs_id
+    Pointer to overlay changeset id
+
+Description
+  Removes an overlay if it is permissible. ovcs_id was previously returned
+by of_overlay_fdt_apply() .

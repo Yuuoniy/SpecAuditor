@@ -1,0 +1,13 @@
+Function: bool tipc_crypto_key_rcv ( struct tipc_crypto * rx , struct tipc_msg * hdr )
+
+Receive a session key
+
+Parameters
+  struct tipc_crypto *rx
+    the RX crypto
+  struct tipc_msg *hdr
+    the TIPC v2 message incl. the receiving session key in its data
+
+Description
+  This function retrieves the session key in the message from peer, then
+schedules a RX work to attach the key to the corresponding RX crypto.

@@ -1,0 +1,11 @@
+Struct: struct drm_xe_oa_stream_info
+
+OA stream info returned from DRM_XE_OBSERVATION_IOCTL_INFO observation stream fd ioctl
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  oa_buf_size
+    OA buffer size
+  reserved
+    reserved for future use

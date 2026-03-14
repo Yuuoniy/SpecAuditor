@@ -1,0 +1,14 @@
+Function: struct drm_display_mode * drm_dp_downstream_mode ( struct drm_device * dev , const u8 dpcd [ DP_RECEIVER_CAP_SIZE ] , const u8 port_cap [ 4 ] )
+
+return a mode for downstream facing port
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  const u8 dpcd[DP_RECEIVER_CAP_SIZE]
+    DisplayPort configuration data
+  const u8 port_cap[4]
+    port capabilities
+
+Description
+  Provides a suitable mode for downstream facing ports without EDID.

@@ -1,0 +1,14 @@
+Function: int pci_sriov_configure_simple ( struct pci_dev * dev , int nr_virtfn )
+
+helper to configure SR-IOV
+
+Parameters
+  struct pci_dev *dev
+    the PCI device
+  int nr_virtfn
+    number of virtual functions to enable, 0 to disable
+
+Description
+  Enable or disable SR-IOV for devices that don’t require any PF setup
+before enabling SR-IOV.  Return value is negative on error, or number of
+VFs allocated on success.

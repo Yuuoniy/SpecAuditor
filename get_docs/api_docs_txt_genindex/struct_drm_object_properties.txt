@@ -1,0 +1,21 @@
+Struct: struct drm_object_properties
+
+property tracking for drm_mode_object
+
+Members
+  count
+    number of valid properties, must be less than or equal to
+DRM_OBJECT_MAX_PROPERTY.
+  properties
+    Array of pointers to drm_property . NOTE: if we ever start dynamically destroying properties (ie.
+not at drm_mode_config_cleanup() time), then we’d have to do
+a better job of detaching property from mode objects to avoid
+dangling property pointers:
+  values
+    Array to store the property values, matching properties . Do
+not read/write values directly, but use drm_object_property_get_value() and drm_object_property_set_value() . Note that atomic drivers do not store mutable properties in this
+array, but only the decoded values in the corresponding state
+structure. The decoding is done using the drm_crtc.atomic_get_property and drm_crtc.atomic_set_property hooks for struct drm_crtc . For struct drm_plane the hooks are drm_plane_funcs.atomic_get_property and drm_plane_funcs.atomic_set_property . And for struct drm_connector the hooks are drm_connector_funcs.atomic_get_property and drm_connector_funcs.atomic_set_property . Hence atomic drivers should not use drm_object_property_set_value() and drm_object_property_get_value() on mutable objects, i.e. those
+without the DRM_MODE_PROP_IMMUTABLE flag set. For atomic drivers the default value of properties is stored in this
+array, so drm_object_property_get_default_value can be used to
+retrieve it.

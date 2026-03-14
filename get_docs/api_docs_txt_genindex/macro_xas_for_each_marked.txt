@@ -1,0 +1,20 @@
+Macro: xas_for_each_marked
+
+
+
+Parameters
+  xas
+    XArray operation state.
+  entry
+    Entry retrieved from the array.
+  max
+    Maximum index to retrieve from array.
+  mark
+    Mark to search for.
+
+Description
+  The loop body will be executed for each marked entry in the xarray
+between the current xas position and max . entry will be set to
+the entry retrieved from the xarray.  It is safe to delete entries
+from the array in the loop body.  You should hold either the RCU lock
+or the xa_lock while iterating.  If you need to drop the lock, call xas_pause() first.

@@ -1,0 +1,10 @@
+Function: void zynqmp_disp_avbuf_disable_channels ( struct zynqmp_disp * disp )
+
+Disable buffer channels
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller
+
+Description
+  Disable all (video and audio) buffer channels.

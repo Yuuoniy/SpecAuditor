@@ -1,0 +1,14 @@
+Function: char * kunit_kstrdup ( struct kunit * test , const char * str , gfp_t gfp )
+
+Duplicates a string into a test managed allocation.
+
+Parameters
+  struct kunit *test
+    The test context object.
+  const char *str
+    The NULL-terminated string to duplicate.
+  gfp_t gfp
+    flags passed to underlying kmalloc() .
+
+Description
+  See kstrdup() and kunit_kmalloc_array() for more information.

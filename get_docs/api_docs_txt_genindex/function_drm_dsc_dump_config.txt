@@ -1,0 +1,14 @@
+Function: void drm_dsc_dump_config ( struct drm_printer * p , int indent , const struct drm_dsc_config * cfg )
+
+Dump the provided DSC configuration
+
+Parameters
+  struct drm_printer *p
+    The printer used for output
+  int indent
+    Tab indentation level (max 5)
+  const struct drm_dsc_config *cfg
+    DSC configuration to print
+
+Description
+  Print the provided DSC configuration in cfg .

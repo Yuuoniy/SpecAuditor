@@ -1,0 +1,10 @@
+Function: int scsi_internal_device_block_nowait ( struct scsi_device * sdev )
+
+try to transition to the SDEV_BLOCK state
+
+Parameters
+  struct scsi_device *sdev
+    device to block
+
+Description
+  Pause SCSI command processing on the specified device. Does not sleep.

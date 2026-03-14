@@ -1,0 +1,7 @@
+Function: void tipc_disc_delete ( struct tipc_discoverer * d )
+
+destroy object sending periodic link setup requests
+
+Parameters
+  struct tipc_discoverer *d
+    ptr to link dest structure

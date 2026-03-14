@@ -1,0 +1,16 @@
+Function: int regulator_set_voltage_time ( struct regulator * regulator , int old_uV , int new_uV )
+
+get raise/fall time
+
+Parameters
+  struct regulator *regulator
+    regulator source
+  int old_uV
+    starting voltage in microvolts
+  int new_uV
+    target voltage in microvolts
+
+Description
+  Provided with the starting and ending voltage, this function attempts to
+calculate the time in microseconds required to rise or fall to this new
+voltage.

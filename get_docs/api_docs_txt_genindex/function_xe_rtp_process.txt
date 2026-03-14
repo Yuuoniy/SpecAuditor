@@ -1,0 +1,15 @@
+Function: void xe_rtp_process ( struct xe_rtp_process_ctx * ctx , const struct xe_rtp_entry * entries )
+
+Process all rtp entries , without running any action
+
+Parameters
+  struct xe_rtp_process_ctx *ctx
+    The context for processing the table, with one of device, gt or hwe
+  const struct xe_rtp_entry *entries
+    Table with RTP definitions
+
+Description
+  Walk the table pointed by entries (with an empty sentinel), executing the
+rules. One difference from xe_rtp_process_to_sr() : there is no action
+associated with each entry since this uses struct xe_rtp_entry . Its main use
+is for marking active workarounds via xe_rtp_process_ctx_enable_active_tracking() .

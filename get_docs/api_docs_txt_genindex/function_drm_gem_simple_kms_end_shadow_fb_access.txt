@@ -1,0 +1,14 @@
+Function: void drm_gem_simple_kms_end_shadow_fb_access ( struct drm_simple_display_pipe * pipe , struct drm_plane_state * plane_state )
+
+releases shadow framebuffers from CPU access
+
+Parameters
+  struct drm_simple_display_pipe *pipe
+    the simple display pipe
+  struct drm_plane_state *plane_state
+    the plane state of type struct drm_shadow_plane_state
+
+Description
+  This function implements struct drm_simple_display_funcs .end_fb_access.
+It undoes all effects of drm_gem_simple_kms_begin_shadow_fb_access() in
+reverse order.

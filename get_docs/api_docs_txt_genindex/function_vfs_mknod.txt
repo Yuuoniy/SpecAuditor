@@ -1,0 +1,18 @@
+Function: int vfs_mknod ( struct mnt_idmap * idmap , struct inode * dir , struct dentry * dentry , umode_t mode , dev_t dev )
+
+create device node or file
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount the inode was found from
+  struct inode *dir
+    inode of the parent directory
+  struct dentry *dentry
+    dentry of the child device node
+  umode_t mode
+    mode of the child device node
+  dev_t dev
+    device number of device to create
+
+Description
+  Create a device node or file.

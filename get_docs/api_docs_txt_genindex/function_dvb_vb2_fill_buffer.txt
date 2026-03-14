@@ -1,0 +1,14 @@
+Function: int dvb_vb2_fill_buffer ( struct dvb_vb2_ctx * ctx , const unsigned char * src , int len , enum dmx_buffer_flags * buffer_flags )
+
+fills a VB2 buffer
+
+Parameters
+  struct dvb_vb2_ctx *ctx
+    control struct for VB2 handler
+  const unsigned char *src
+    place where the data is stored
+  int len
+    number of bytes to be copied from src
+  enum dmx_buffer_flags *buffer_flags
+    pointer to buffer flags as defined by enum dmx_buffer_flags .
+can be NULL.

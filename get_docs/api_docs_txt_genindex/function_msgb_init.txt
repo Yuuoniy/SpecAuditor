@@ -1,0 +1,15 @@
+Function: void msgb_init ( struct msgbuf * msgb , u8 * ptr , size_t cap )
+
+Initialize the given message buffer struct.
+
+Parameters
+  struct msgbuf *msgb
+    The buffer struct to initialize
+  u8 *ptr
+    Pointer to the underlying memory by which the buffer will be backed.
+  size_t cap
+    Size of the underlying memory.
+
+Description
+  Initialize the given message buffer struct using the provided memory as
+backing.

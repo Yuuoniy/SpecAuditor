@@ -1,0 +1,11 @@
+Function: struct parport * parport_find_base ( unsigned long base )
+
+find a parallel port by base address
+
+Parameters
+  unsigned long base
+    base I/O address
+
+Description
+  This returns the parallel port with the specified base
+address, or NULL if there is none.

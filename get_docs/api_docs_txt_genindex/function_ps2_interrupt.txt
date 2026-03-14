@@ -1,0 +1,17 @@
+Function: irqreturn_t ps2_interrupt ( struct serio * serio , u8 data , unsigned int flags )
+
+common interrupt handler for PS/2 devices
+
+Parameters
+  struct serio *serio
+    serio port for the device
+  u8 data
+    a data byte received from the device
+  unsigned int flags
+    flags such as SERIO_PARITY or SERIO_TIMEOUT indicating state of
+the data transfer
+
+Description
+  ps2_interrupt() invokes pre-receive handler, optionally handles command
+acknowledgement and response from the device, and finally passes the data
+to the main protocol handler for future processing.

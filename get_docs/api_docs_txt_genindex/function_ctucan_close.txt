@@ -1,0 +1,7 @@
+Function: int ctucan_close ( struct net_device * ndev )
+
+Driver close routine
+
+Parameters
+  struct net_device *ndev
+    Pointer to net_device structure

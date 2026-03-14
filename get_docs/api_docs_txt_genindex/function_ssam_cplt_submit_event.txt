@@ -1,0 +1,14 @@
+Function: int ssam_cplt_submit_event ( struct ssam_cplt * cplt , struct ssam_event_item * item )
+
+Submit an event to the completion system.
+
+Parameters
+  struct ssam_cplt *cplt
+    The completion system.
+  struct ssam_event_item *item
+    The event item to submit.
+
+Description
+  Submits the event to the completion system by queuing it on the event item
+queue and queuing the respective event queue work item on the completion
+workqueue, which will eventually complete the event.

@@ -1,0 +1,11 @@
+Function: void xz_dec_reset ( struct xz_dec * s )
+
+Reset an already allocated decoder state
+
+Parameters
+  struct xz_dec *s
+    Decoder state allocated using xz_dec_init()
+
+Description
+  This function can be used to reset the multi-call decoder state without
+freeing and reallocating memory with xz_dec_end() and xz_dec_init() .

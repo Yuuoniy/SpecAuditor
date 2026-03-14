@@ -1,0 +1,19 @@
+Function: struct inode * iget5_locked_rcu ( struct super_block * sb , unsigned long hashval , int ( * test ) ( struct inode * , void * ) , int ( * set ) ( struct inode * , void * ) , void * data )
+
+obtain an inode from a mounted file system
+
+Parameters
+  struct super_block *sb
+    super block of file system
+  unsigned long hashval
+    hash value (usually inode number) to get
+  int (*test)(struct inode *, void *)
+    callback used for comparisons between inodes
+  int (*set)(struct inode *, void *)
+    callback used to initialize a new struct inode
+  void *data
+    opaque data pointer to pass to test and set
+
+Description
+  This is equivalent to iget5_locked, except the test callback must
+tolerate the inode not being stable, including being mid-teardown.

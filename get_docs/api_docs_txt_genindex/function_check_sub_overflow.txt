@@ -1,0 +1,14 @@
+Function: check_sub_overflow
+
+
+
+Parameters
+  a
+    minuend; value to subtract from
+  b
+    subtrahend; value to subtract from a
+  d
+    pointer to store difference
+
+Description
+  Returns true on wrap-around, false otherwise.

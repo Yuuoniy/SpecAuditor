@@ -1,0 +1,10 @@
+Function: void add_timer_local ( struct timer_list * timer )
+
+Start a timer on the local CPU
+
+Parameters
+  struct timer_list *timer
+    The timer to be started
+
+Description
+  Same as add_timer() except that the timer flag TIMER_PINNED is set.

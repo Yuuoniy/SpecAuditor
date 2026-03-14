@@ -1,0 +1,14 @@
+Function: int clk_notifier_register ( struct clk * clk , struct notifier_block * nb )
+
+register a clock rate-change notifier callback
+
+Parameters
+  struct clk *clk
+    clock whose rate we are interested in
+  struct notifier_block *nb
+    notifier block with callback function pointer
+
+Description
+  ProTip: debugging across notifier chains can be frustrating. Make sure that
+your notifier callback function prints a nice big warning in case of
+failure.

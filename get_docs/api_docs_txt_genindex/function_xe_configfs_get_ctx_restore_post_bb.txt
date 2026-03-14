@@ -1,0 +1,11 @@
+Function: u32 xe_configfs_get_ctx_restore_post_bb ( struct pci_dev * pdev , enum xe_engine_class class , const u32 * * cs )
+
+get configfs ctx_restore_post_bb setting
+
+Parameters
+  struct pci_dev *pdev
+    pci device
+  enum xe_engine_class class
+    hw engine class
+  const u32 **cs
+    pointer to the bb to use - only valid during probe

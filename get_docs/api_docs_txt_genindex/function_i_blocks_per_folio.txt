@@ -1,0 +1,12 @@
+Function: unsigned int i_blocks_per_folio ( const struct inode * inode , const struct folio * folio )
+
+How many blocks fit in this folio.
+
+Parameters
+  const struct inode *inode
+    The inode which contains the blocks.
+  const struct folio *folio
+    The folio.
+
+Description
+  If the block size is larger than the size of this folio, return zero.

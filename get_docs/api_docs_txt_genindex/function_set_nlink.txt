@@ -1,0 +1,13 @@
+Function: void set_nlink ( struct inode * inode , unsigned int nlink )
+
+directly set an inode’s link count
+
+Parameters
+  struct inode *inode
+    inode
+  unsigned int nlink
+    new nlink (should be non-zero)
+
+Description
+  This is a low-level filesystem helper to replace any
+direct filesystem manipulation of i_nlink.

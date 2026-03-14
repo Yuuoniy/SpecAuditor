@@ -1,0 +1,12 @@
+Function: bool sysfs_remove_file_self ( struct kobject * kobj , const struct attribute * attr )
+
+remove an object attribute from its own method
+
+Parameters
+  struct kobject *kobj
+    object we’re acting for
+  const struct attribute *attr
+    attribute descriptor
+
+Description
+  See kernfs_remove_self() for details.

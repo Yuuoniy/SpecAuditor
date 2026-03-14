@@ -1,0 +1,12 @@
+Struct: struct drm_gpuva_op_unmap
+
+GPU VA unmap operation
+
+Members
+  va
+    the drm_gpuva to unmap
+  keep
+    Indicates whether this drm_gpuva is physically contiguous with the
+original mapping request. Optionally, if keep is set, drivers may keep the actual page table
+mappings for this drm_gpuva , adding the missing page table entries
+only and update the drm_gpuvm accordingly.

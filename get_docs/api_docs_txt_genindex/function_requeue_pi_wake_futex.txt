@@ -1,0 +1,15 @@
+Function: void requeue_pi_wake_futex ( struct futex_q * q , union futex_key * key , struct futex_hash_bucket * hb )
+
+Wake a task that acquired the lock during requeue
+
+Parameters
+  struct futex_q *q
+    the futex_q
+  union futex_key *key
+    the key of the requeue target futex
+  struct futex_hash_bucket *hb
+    the hash_bucket of the requeue target futex
+
+Description
+  During futex_requeue, with requeue_pi=1, it is possible to acquire the
+target futex if it is uncontended or via a lock steal.

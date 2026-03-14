@@ -1,0 +1,15 @@
+Function: struct folio * folioq_folio ( const struct folio_queue * folioq , unsigned int slot )
+
+Get a folio from a folio queue segment
+
+Parameters
+  const struct folio_queue *folioq
+    The segment to access
+  unsigned int slot
+    The folio slot to access
+
+Description
+  Retrieve the folio in the specified slot from a folio queue segment.  Note
+that no bounds check is made and if the slot hasn’t been added into yet, the
+pointer will be undefined.  If the slot has been cleared, NULL will be
+returned.

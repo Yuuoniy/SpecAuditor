@@ -1,0 +1,7 @@
+Function: bool is_ssam_device ( struct device * d )
+
+Check if the given device is a SSAM client device.
+
+Parameters
+  struct device *d
+    The device to test the type of.

@@ -1,0 +1,11 @@
+Macro: list_entry_is_head
+
+
+
+Parameters
+  pos
+    the type * to cursor
+  head
+    the head for your list.
+  member
+    the name of the list_head within the struct.

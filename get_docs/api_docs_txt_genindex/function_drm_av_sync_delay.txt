@@ -1,0 +1,9 @@
+Function: int drm_av_sync_delay ( struct drm_connector * connector , const struct drm_display_mode * mode )
+
+compute the HDMI/DP sink audio-video sync delay
+
+Parameters
+  struct drm_connector *connector
+    connector associated with the HDMI/DP sink
+  const struct drm_display_mode *mode
+    the display mode

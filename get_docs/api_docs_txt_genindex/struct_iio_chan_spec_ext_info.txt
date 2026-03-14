@@ -1,0 +1,15 @@
+Struct: struct iio_chan_spec_ext_info
+
+Extended channel info attribute
+
+Members
+  name
+    Info attribute name
+  shared
+    Whether this attribute is shared between all channels.
+  read
+    Read callback for this info attribute, may be NULL.
+  write
+    Write callback for this info attribute, may be NULL.
+  private
+    Data private to the driver.

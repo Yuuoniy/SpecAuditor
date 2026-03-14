@@ -1,0 +1,14 @@
+Function: int of_get_named_gpio ( const struct device_node * np , const char * propname , int index )
+
+Get a GPIO number to use with GPIO API
+
+Parameters
+  const struct device_node *np
+    device node to get GPIO from
+  const char *propname
+    Name of property containing gpio specifier(s)
+  int index
+    index of the GPIO
+
+Description
+  DEPRECATED This function is deprecated and must not be used in new code.

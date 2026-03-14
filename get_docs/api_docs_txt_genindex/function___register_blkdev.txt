@@ -1,0 +1,16 @@
+Function: int __register_blkdev ( unsigned int major , const char * name , void ( * probe ) ( dev_t devt ) )
+
+register a new block device
+
+Parameters
+  unsigned int major
+    the requested major device number [1..BLKDEV_MAJOR_MAX-1]. If major = 0, try to allocate any unused major number.
+  const char *name
+    the name of the new block device as a zero terminated string
+  void (*probe)(dev_t devt)
+    pre-devtmpfs / pre-udev callback used to create disks when their
+pre-created device node is accessed. When a probe call uses add_disk() and it fails the driver must cleanup resources. This
+interface may soon be removed.
+
+Description
+  The name must be unique within the system.

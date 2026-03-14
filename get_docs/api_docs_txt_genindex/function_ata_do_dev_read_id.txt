@@ -1,0 +1,16 @@
+Function: unsigned int ata_do_dev_read_id ( struct ata_device * dev , struct ata_taskfile * tf , __le16 * id )
+
+default ID read method
+
+Parameters
+  struct ata_device *dev
+    device
+  struct ata_taskfile *tf
+    proposed taskfile
+  __le16 *id
+    data buffer
+
+Description
+  Issue the identify taskfile and hand back the buffer containing
+identify data. For some RAID controllers and for pre ATA devices
+this function is wrapped or replaced by the driver

@@ -1,0 +1,10 @@
+Function: void wbc_detach_inode ( struct writeback_control * wbc )
+
+disassociate wbc from inode and perform foreign detection
+
+Parameters
+  struct writeback_control *wbc
+    writeback_control of the just finished writeback
+
+Description
+  To be called after a writeback attempt of an inode finishes and undoes wbc_attach_and_unlock_inode() .  Can be called under any context.

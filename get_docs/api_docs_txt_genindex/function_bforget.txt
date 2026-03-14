@@ -1,0 +1,12 @@
+Function: void bforget ( struct buffer_head * bh )
+
+Discard any dirty data in a buffer.
+
+Parameters
+  struct buffer_head *bh
+    The buffer to forget.
+
+Description
+  Call this function instead of brelse() if the data written to a buffer
+no longer needs to be written back.  It will clear the buffer’s dirty
+flag so writeback of this buffer will be skipped.

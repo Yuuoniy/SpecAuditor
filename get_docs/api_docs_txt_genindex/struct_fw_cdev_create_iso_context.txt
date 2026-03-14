@@ -1,0 +1,17 @@
+Struct: struct fw_cdev_create_iso_context
+
+Create a context for isochronous I/O
+
+Members
+  type
+    FW_CDEV_ISO_CONTEXT_TRANSMIT or FW_CDEV_ISO_CONTEXT_RECEIVE or FW_CDEV_ISO_CONTEXT_RECEIVE_MULTICHANNEL
+  header_size
+    Header size to strip in single-channel reception
+  channel
+    Channel to bind to in single-channel reception or transmission
+  speed
+    Transmission speed
+  closure
+    To be returned in fw_cdev_event_iso_interrupt or fw_cdev_event_iso_interrupt_multichannel
+  handle
+    Handle to context, written back by kernel

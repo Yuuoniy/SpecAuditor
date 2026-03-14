@@ -1,0 +1,11 @@
+Function: bool freeze_workqueues_busy ( void )
+
+are freezable workqueues still busy?
+
+Parameters
+  void
+    no arguments
+
+Description
+  Check whether freezing is complete.  This function must be called
+between freeze_workqueues_begin() and thaw_workqueues() .

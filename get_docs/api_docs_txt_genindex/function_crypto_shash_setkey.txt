@@ -1,0 +1,16 @@
+Function: int crypto_shash_setkey ( struct crypto_shash * tfm , const u8 * key , unsigned int keylen )
+
+set key for message digest
+
+Parameters
+  struct crypto_shash *tfm
+    cipher handle
+  const u8 *key
+    buffer holding the key
+  unsigned int keylen
+    length of the key in bytes
+
+Description
+  The caller provided key is set for the keyed message digest cipher. The
+cipher handle must point to a keyed message digest cipher in order for this
+function to succeed.

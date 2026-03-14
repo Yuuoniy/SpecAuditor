@@ -1,0 +1,21 @@
+Struct: struct zynqmp_dp_test
+
+Configuration for test mode
+
+Members
+  pattern
+    The test pattern
+  enhanced
+    Use enhanced framing
+  downspread
+    Use SSC
+  active
+    Whether test mode is active
+  custom
+    Custom pattern for TEST_80BIT_CUSTOM
+  train_set
+    Voltage/preemphasis settings
+  bw_code
+    Bandwidth code for the link
+  link_cnt
+    Number of lanes

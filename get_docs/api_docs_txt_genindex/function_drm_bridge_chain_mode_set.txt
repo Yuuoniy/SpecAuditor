@@ -1,0 +1,15 @@
+Function: void drm_bridge_chain_mode_set ( struct drm_bridge * bridge , const struct drm_display_mode * mode , const struct drm_display_mode * adjusted_mode )
+
+set proposed mode for all bridges in the encoder chain
+
+Parameters
+  struct drm_bridge *bridge
+    bridge control structure
+  const struct drm_display_mode *mode
+    desired mode to be set for the encoder chain
+  const struct drm_display_mode *adjusted_mode
+    updated mode that works for this encoder chain
+
+Description
+  Calls drm_bridge_funcs.mode_set op for all the bridges in the
+encoder chain, starting from the first bridge to the last.

@@ -1,0 +1,10 @@
+Function: int clk_drop_range ( struct clk * clk )
+
+Reset any range set on that clock
+
+Parameters
+  struct clk *clk
+    clock source
+
+Description
+  Returns success (0) or negative errno.

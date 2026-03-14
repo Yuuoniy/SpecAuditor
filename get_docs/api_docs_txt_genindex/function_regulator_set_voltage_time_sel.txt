@@ -1,0 +1,15 @@
+Function: int regulator_set_voltage_time_sel ( struct regulator_dev * rdev , unsigned int old_selector , unsigned int new_selector )
+
+get raise/fall time
+
+Parameters
+  struct regulator_dev *rdev
+    regulator source device
+  unsigned int old_selector
+    selector for starting voltage
+  unsigned int new_selector
+    selector for target voltage
+
+Description
+  Provided with the starting and target voltage selectors, this function
+returns time in microseconds required to rise or fall to this new voltage

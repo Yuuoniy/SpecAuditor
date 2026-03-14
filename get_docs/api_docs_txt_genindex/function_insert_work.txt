@@ -1,0 +1,17 @@
+Function: void insert_work ( struct pool_workqueue * pwq , struct work_struct * work , struct list_head * head , unsigned int extra_flags )
+
+insert a work into a pool
+
+Parameters
+  struct pool_workqueue *pwq
+    pwq work belongs to
+  struct work_struct *work
+    work to insert
+  struct list_head *head
+    insertion point
+  unsigned int extra_flags
+    extra WORK_STRUCT_* flags to set
+
+Description
+  Insert work which belongs to pwq after head . extra_flags is or’d to
+work_struct flags.

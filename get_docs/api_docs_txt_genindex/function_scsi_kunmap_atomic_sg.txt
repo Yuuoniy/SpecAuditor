@@ -1,0 +1,7 @@
+Function: void scsi_kunmap_atomic_sg ( void * virt )
+
+atomically unmap a virtual address, previously mapped with scsi_kmap_atomic_sg
+
+Parameters
+  void *virt
+    virtual address to be unmapped

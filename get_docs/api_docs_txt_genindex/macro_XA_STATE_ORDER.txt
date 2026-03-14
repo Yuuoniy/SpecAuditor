@@ -1,0 +1,17 @@
+Macro: XA_STATE_ORDER
+
+
+
+Parameters
+  name
+    Name of this operation state (usually xas).
+  array
+    Array to operate on.
+  index
+    Initial index of interest.
+  order
+    Order of entry.
+
+Description
+  Declare and initialise an xa_state on the stack.  This variant of XA_STATE() allows you to specify the ‘order’ of the element you
+want to operate on.`

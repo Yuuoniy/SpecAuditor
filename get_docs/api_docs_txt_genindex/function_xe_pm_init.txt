@@ -1,0 +1,10 @@
+Function: int xe_pm_init ( struct xe_device * xe )
+
+Initialize Xe Power Management
+
+Parameters
+  struct xe_device *xe
+    xe device instance
+
+Description
+  This component is responsible for System and Device sleep states.

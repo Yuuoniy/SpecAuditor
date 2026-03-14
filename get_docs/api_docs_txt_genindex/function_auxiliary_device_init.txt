@@ -1,0 +1,11 @@
+Function: int auxiliary_device_init ( struct auxiliary_device * auxdev )
+
+check auxiliary_device and initialize
+
+Parameters
+  struct auxiliary_device *auxdev
+    auxiliary device struct
+
+Description
+  This is the second step in the three-step process to register an
+auxiliary_device.

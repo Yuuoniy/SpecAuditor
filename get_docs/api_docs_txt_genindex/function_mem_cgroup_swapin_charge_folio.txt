@@ -1,0 +1,17 @@
+Function: int mem_cgroup_swapin_charge_folio ( struct folio * folio , struct mm_struct * mm , gfp_t gfp , swp_entry_t entry )
+
+Charge a newly allocated folio for swapin.
+
+Parameters
+  struct folio *folio
+    folio to charge.
+  struct mm_struct *mm
+    mm context of the victim
+  gfp_t gfp
+    reclaim mode
+  swp_entry_t entry
+    swap entry for which the folio is allocated
+
+Description
+  This function charges a folio allocated for swapin. Please call this before
+adding the folio to the swapcache.

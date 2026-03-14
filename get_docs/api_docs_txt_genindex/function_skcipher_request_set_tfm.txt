@@ -1,0 +1,13 @@
+Function: void skcipher_request_set_tfm ( struct skcipher_request * req , struct crypto_skcipher * tfm )
+
+update cipher handle reference in request
+
+Parameters
+  struct skcipher_request *req
+    request handle to be modified
+  struct crypto_skcipher *tfm
+    cipher handle that shall be added to the request handle
+
+Description
+  Allow the caller to replace the existing skcipher handle in the request
+data structure with a different one.

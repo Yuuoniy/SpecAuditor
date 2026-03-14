@@ -1,0 +1,14 @@
+Function: int mipi_dsi_dcs_write_buffer_chatty ( struct mipi_dsi_device * dsi , const void * data , size_t len )
+
+mipi_dsi_dcs_write_buffer() w/ an error log
+
+Parameters
+  struct mipi_dsi_device *dsi
+    DSI peripheral device
+  const void *data
+    buffer containing data to be transmitted
+  size_t len
+    size of transmission buffer
+
+Description
+  Like mipi_dsi_dcs_write_buffer() but includes a dev_err() call for you and returns 0 upon success, not the number of bytes sent.

@@ -1,0 +1,7 @@
+Function: struct device_node * of_find_node_by_phandle ( phandle handle )
+
+Find a node given a phandle
+
+Parameters
+  phandle handle
+    phandle of the node to find

@@ -1,0 +1,15 @@
+Function: int tty_tiocmset ( struct tty_struct * tty , unsigned int cmd , unsigned __user * p )
+
+set modem status
+
+Parameters
+  struct tty_struct *tty
+    tty device
+  unsigned int cmd
+    command - clear bits, set bits or set all
+  unsigned __user *p
+    pointer to desired bits
+
+Description
+  Set the modem status bits from the tty driver if the feature
+is supported. Return - ENOTTY if it is not available.

@@ -1,0 +1,11 @@
+Function: void amdgpu_vm_bo_evicted ( struct amdgpu_vm_bo_base * vm_bo )
+
+vm_bo is evicted
+
+Parameters
+  struct amdgpu_vm_bo_base *vm_bo
+    vm_bo which is evicted
+
+Description
+  State for PDs/PTs and per VM BOs which are not at the location they should
+be.

@@ -1,0 +1,23 @@
+Function: int xbc_node_compose_key_after ( struct xbc_node * root , struct xbc_node * node , char * buf , size_t size )
+
+Compose partial key string of the XBC node
+
+Parameters
+  struct xbc_node *root
+    Root XBC node
+  struct xbc_node *node
+    Target XBC node.
+  char *buf
+    A buffer to store the key.
+  size_t size
+    The size of the buf .
+
+Description
+  Compose the partial key of the node into buf , which is starting right
+after root ( root is not included.) If root is NULL, this returns full
+key words of node .
+Returns the total length of the key stored in buf . Returns -EINVAL
+if node is NULL or root is not the ancestor of node or root is node ,
+or returns -ERANGE if the key depth is deeper than max depth.
+This is expected to be used with xbc_find_node() to list up all (child)
+keys under given key.

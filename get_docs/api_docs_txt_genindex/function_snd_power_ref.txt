@@ -1,0 +1,12 @@
+Function: void snd_power_ref ( struct snd_card * card )
+
+Take the reference count for power control
+
+Parameters
+  struct snd_card *card
+    sound card object
+
+Description
+  The power_ref reference of the card is used for managing to block
+the snd_power_sync_ref() operation.  This function increments the reference.
+The counterpart snd_power_unref() has to be called appropriately later.

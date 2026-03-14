@@ -1,0 +1,12 @@
+Function: int __dwc3_gadget_ep_disable ( struct dwc3_ep * dep )
+
+disables a hw endpoint
+
+Parameters
+  struct dwc3_ep *dep
+    the endpoint to disable
+
+Description
+  This function undoes what __dwc3_gadget_ep_enable did and also removes
+requests which are currently being processed by the hardware and those which
+are not yet scheduled.

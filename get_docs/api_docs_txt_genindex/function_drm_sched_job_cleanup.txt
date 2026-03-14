@@ -1,0 +1,10 @@
+Function: void drm_sched_job_cleanup ( struct drm_sched_job * job )
+
+clean up scheduler job resources
+
+Parameters
+  struct drm_sched_job *job
+    scheduler job to clean up
+
+Description
+  Cleans up the resources allocated with drm_sched_job_init() .

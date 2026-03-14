@@ -1,0 +1,13 @@
+Function: u32 mpt_GetIocState ( MPT_ADAPTER * ioc , int cooked )
+
+Get the current state of a MPT adapter.
+
+Parameters
+  MPT_ADAPTER *ioc
+    Pointer to MPT_ADAPTER structure
+  int cooked
+    Request raw or cooked IOC state
+
+Description
+  Returns all IOC Doorbell register bits if cooked==0, else just the
+Doorbell bits in MPI_IOC_STATE_MASK.

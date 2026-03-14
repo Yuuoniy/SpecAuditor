@@ -1,0 +1,9 @@
+Function: long sys_rt_sigsuspend ( sigset_t __user * unewset , size_t sigsetsize )
+
+replace the signal mask for a value with the unewset value until a signal is received
+
+Parameters
+  sigset_t __user * unewset
+    new signal mask value
+  size_t sigsetsize
+    size of sigset_t type

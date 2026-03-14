@@ -1,0 +1,12 @@
+Function: int register_netdevice ( struct net_device * dev )
+
+register a network device
+
+Parameters
+  struct net_device *dev
+    device to register
+
+Description
+  Take a prepared network device structure and make it externally accessible.
+A NETDEV_REGISTER message is sent to the netdev notifier chain.
+Callers must hold the rtnl lock - you may want register_netdev() instead of this.

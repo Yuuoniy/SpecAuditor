@@ -1,0 +1,16 @@
+Function: int devm_clk_bulk_get_optional ( struct device * dev , int num_clks , struct clk_bulk_data * clks )
+
+managed get multiple optional consumer clocks
+
+Parameters
+  struct device *dev
+    device for clock “consumer”
+  int num_clks
+    the number of clk_bulk_data
+  struct clk_bulk_data *clks
+    pointer to the clk_bulk_data table of consumer
+
+Description
+  Behaves the same as devm_clk_bulk_get() except where there is no clock
+producer.  In this case, instead of returning -ENOENT, the function returns
+NULL for given clk. It is assumed all clocks in clk_bulk_data are optional.

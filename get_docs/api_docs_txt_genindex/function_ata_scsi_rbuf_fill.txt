@@ -1,0 +1,19 @@
+Function: void ata_scsi_rbuf_fill ( struct ata_device * dev , struct scsi_cmnd * cmd , unsigned int ( * actor ) ( struct ata_device * dev , struct scsi_cmnd * cmd , u8 * rbuf ) )
+
+wrapper for SCSI command simulators
+
+Parameters
+  struct ata_device *dev
+    Target device.
+  struct scsi_cmnd *cmd
+    SCSI command of interest.
+  unsigned int (*actor)(struct ata_device *dev, struct scsi_cmnd *cmd, u8 *rbuf)
+    Callback hook for desired SCSI command simulator
+
+Description
+  Takes care of the hard work of simulating a SCSI command...
+Mapping the response buffer, calling the command’s handler,
+and handling the handler’s return value.  This return value
+indicates whether the handler wishes the SCSI command to be
+completed successfully (0), or not (in which case cmd->result
+and sense buffer are assumed to be set).

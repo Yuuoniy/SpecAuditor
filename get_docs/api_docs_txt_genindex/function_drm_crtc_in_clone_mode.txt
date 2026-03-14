@@ -1,0 +1,11 @@
+Function: bool drm_crtc_in_clone_mode ( struct drm_crtc_state * crtc_state )
+
+check if the given CRTC state is in clone mode
+
+Parameters
+  struct drm_crtc_state *crtc_state
+    CRTC state to check
+
+Description
+  This function determines if the given CRTC state is being cloned by multiple
+encoders.

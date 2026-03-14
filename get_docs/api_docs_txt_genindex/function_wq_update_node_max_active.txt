@@ -1,0 +1,14 @@
+Function: void wq_update_node_max_active ( struct workqueue_struct * wq , int off_cpu )
+
+Update per-node max_actives to use
+
+Parameters
+  struct workqueue_struct *wq
+    workqueue to update
+  int off_cpu
+    CPU that’s going down, -1 if a CPU is not going down
+
+Description
+  Update wq->node_nr_active**[]->max. **wq must be unbound. max_active is
+distributed among nodes according to the proportions of numbers of online
+cpus. The result is always between wq->min_active and max_active.

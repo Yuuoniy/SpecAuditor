@@ -1,0 +1,17 @@
+Function: u32 crc32_be ( u32 crc , const void * p , size_t len )
+
+Compute most-significant-bit-first IEEE CRC-32
+
+Parameters
+  u32 crc
+    Initial CRC value.  ~0 (recommended) or 0 for a new CRC computation, or
+the previous CRC value if computing incrementally.
+  const void *p
+    Pointer to the data buffer
+  size_t len
+    Length of data in bytes
+
+Description
+  crc32_be() is the same as crc32_le() except that crc32_be() computes the most-significant-bit-first variant of the CRC.  I.e., within each byte, the
+most significant bit is processed first (treated as highest order polynomial
+coefficient).  The same bit order is also used for the CRC value itself:

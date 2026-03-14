@@ -1,0 +1,9 @@
+Struct: struct c3_isp_af_stats
+
+Auto Focus statistics information
+
+Members
+  stats
+    array of auto focus block statistics
+  reserved
+    undefined buffer space

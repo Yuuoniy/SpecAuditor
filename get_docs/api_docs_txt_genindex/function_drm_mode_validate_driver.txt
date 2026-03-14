@@ -1,0 +1,13 @@
+Function: enum drm_mode_status drm_mode_validate_driver ( struct drm_device * dev , const struct drm_display_mode * mode )
+
+make sure the mode is somewhat sane
+
+Parameters
+  struct drm_device *dev
+    drm device
+  const struct drm_display_mode *mode
+    mode to check
+
+Description
+  First do basic validation on the mode, and then allow the driver
+to check for device/driver specific limitations via the optional drm_mode_config_helper_funcs.mode_valid hook.

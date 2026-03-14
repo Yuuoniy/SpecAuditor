@@ -1,0 +1,11 @@
+Function: void intel_uncore_forcewake_user_put ( struct intel_uncore * uncore )
+
+release forcewake on behalf of userspace
+
+Parameters
+  struct intel_uncore *uncore
+    the intel_uncore structure
+
+Description
+  This function complements intel_uncore_forcewake_user_get() and releases
+the GT powerwell taken on behalf of the userspace bypass.

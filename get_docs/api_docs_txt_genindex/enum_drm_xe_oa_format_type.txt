@@ -1,0 +1,3 @@
+Enum: enum drm_xe_oa_format_type
+
+OA format types as specified in PRM/Bspec 52198/60942

@@ -1,0 +1,11 @@
+Struct: struct drm_pvr_create_hwrt_rt_data_args
+
+Render target arguments used for struct drm_pvr_ioctl_create_hwrt_dataset_args .rt_data_args.
+
+Members
+  pm_mlist_dev_addr
+    [IN] PM MLIST GPU virtual address.
+  macrotile_array_dev_addr
+    [IN] Macrotile array GPU virtual address.
+  region_header_dev_addr
+    [IN] Region header array GPU virtual address.

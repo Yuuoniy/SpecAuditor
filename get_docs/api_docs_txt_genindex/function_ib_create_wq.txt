@@ -1,0 +1,18 @@
+Function: struct ib_wq * ib_create_wq ( struct ib_pd * pd , struct ib_wq_init_attr * wq_attr )
+
+Creates a WQ associated with the specified protection domain.
+
+Parameters
+  struct ib_pd *pd
+    The protection domain associated with the WQ.
+  struct ib_wq_init_attr *wq_attr
+    A list of initial attributes required to create the
+WQ. If WQ creation succeeds, then the attributes are updated to
+the actual capabilities of the created WQ.
+
+Description
+  wq_attr->max_wr and wq_attr->max_sge determine
+the requested size of the WQ, and set to the actual values allocated
+on return.
+If ib_create_wq() succeeds, then max_wr and max_sge will always be
+at least as large as the requested values.

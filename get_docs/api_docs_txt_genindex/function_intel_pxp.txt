@@ -1,0 +1,59 @@
+Function: struct intel_pxp
+
+pxp state
+
+Members
+  ctrl_gt
+    pointer to the tile that owns the controls for PXP subsystem assets that
+the VDBOX, the KCR engine (and GSC CS depending on the platform)
+  platform_cfg_is_bad
+    used to track if any prior arb session creation resulted
+in a failure that was caused by a platform configuration issue, meaning that
+failure will not get resolved without a change to the platform (not kernel)
+such as BIOS configuration, firwmware update, etc. This bool gets reflected when
+GET_PARAM:I915_PARAM_PXP_STATUS is called.
+  kcr_base
+    base mmio offset for the KCR engine which is different on legacy platforms
+vs newer platforms where the KCR is inside the media-tile.
+  gsccs_res
+    resources for request submission for platforms that have a GSC engine.
+  pxp_component
+    i915_pxp_component struct of the bound mei_pxp
+module. Only set and cleared inside component bind/unbind functions,
+which are protected by tee_mutex .
+  dev_link
+    Enforce module relationship for power management ordering.
+  pxp_component_added
+    track if the pxp component has been added.
+Set and cleared in tee init and fini functions respectively.
+  ce
+    kernel-owned context used for PXP operations
+  arb_mutex
+    protects arb session start
+  arb_is_valid
+    tracks arb session status.
+After a teardown, the arb session can still be in play on the HW
+even if the keys are gone, so we can’t rely on the HW state of the
+session to know if it’s valid and need to track the status in SW.
+  key_instance
+    tracks which key instance we’re on, so we can use it
+to determine if an object was created using the current key or a
+previous one.
+  tee_mutex
+    protects the tee channel binding and messaging.
+  stream_cmd
+    LMEM obj used to send stream PXP commands to the GSC
+  hw_state_invalidated
+    if the HW perceives an attack on the integrity
+of the encryption it will invalidate the keys and expect SW to
+re-initialize the session. We keep track of this state to make sure
+we only re-start the arb session when required.
+  irq_enabled
+    tracks the status of the kcr irqs
+  termination
+    tracks the status of a pending termination. Only
+re-initialized under gt->irq_lock and completed in session_work .
+  session_work
+    worker that manages session events.
+  session_events
+    pending session events, protected with gt->irq_lock.

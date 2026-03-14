@@ -1,0 +1,49 @@
+Struct: struct tty_driver
+
+driver for TTY devices
+
+Members
+  kref
+    reference counting. Reaching zero frees all the internals and the
+driver.
+  cdevs
+    allocated/registered character /dev devices
+  owner
+    modules owning this driver. Used drivers cannot be rmmod’ed.
+Automatically set by tty_alloc_driver() .
+  driver_name
+    name of the driver used in /proc/tty
+  name
+    used for constructing /dev node name
+  name_base
+    used as a number base for constructing /dev node name
+  major
+    major /dev device number (zero for autoassignment)
+  minor_start
+    the first minor /dev device number
+  num
+    number of devices allocated
+  type
+    type of tty driver ( enum tty_driver_type )
+  subtype
+    subtype of tty driver ( enum tty_driver_subtype )
+  init_termios
+    termios to set to each tty initially (e.g. tty_std_termios )
+  flags
+    tty driver flags ( TTY_DRIVER_ )
+  proc_entry
+    proc fs entry, used internally
+  other
+    driver of the linked tty; only used for the PTY driver
+  ttys
+    array of active struct tty_struct , set by tty_standard_install()
+  ports
+    array of struct tty_port ; can be set during initialization by tty_port_link_device() and similar
+  termios
+    storage for termios at each TTY close for the next open
+  driver_state
+    pointer to driver’s arbitrary data
+  ops
+    driver hooks for TTYs. Set them using tty_set_operations() . Use struct tty_port helpers in them as much as possible.
+  tty_drivers
+    used internally to link tty_drivers together

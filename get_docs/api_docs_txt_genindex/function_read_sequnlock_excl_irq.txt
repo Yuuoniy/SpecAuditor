@@ -1,0 +1,7 @@
+Function: void read_sequnlock_excl_irq ( seqlock_t * sl )
+
+end an interrupts-disabled seqlock_t locking reader section
+
+Parameters
+  seqlock_t *sl
+    Pointer to seqlock_t

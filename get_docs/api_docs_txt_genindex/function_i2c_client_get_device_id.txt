@@ -1,0 +1,10 @@
+Function: const struct i2c_device_id * i2c_client_get_device_id ( const struct i2c_client * client )
+
+get the driver match table entry of a device
+
+Parameters
+  const struct i2c_client *client
+    the device to query. The device must be bound to a driver
+
+Description
+  Returns a pointer to the matching entry if found, NULL otherwise.

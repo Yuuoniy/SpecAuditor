@@ -1,0 +1,14 @@
+Function: void intel_dpll_dump_hw_state ( struct intel_display * display , struct drm_printer * p , const struct intel_dpll_hw_state * dpll_hw_state )
+
+dump hw_state
+
+Parameters
+  struct intel_display *display
+    intel_display structure
+  struct drm_printer *p
+    where to print the state to
+  const struct intel_dpll_hw_state *dpll_hw_state
+    hw state to be dumped
+
+Description
+  Dumo out the relevant values in dpll_hw_state .

@@ -1,0 +1,16 @@
+Function: u8 pci_find_next_ht_capability ( struct pci_dev * dev , u8 pos , int ht_cap )
+
+query a device’s HyperTransport capabilities
+
+Parameters
+  struct pci_dev *dev
+    PCI device to query
+  u8 pos
+    Position from which to continue searching
+  int ht_cap
+    HyperTransport capability code
+
+Description
+  To be used in conjunction with pci_find_ht_capability() to search for
+all capabilities matching ht_cap . pos should always be a value returned
+from pci_find_ht_capability() .

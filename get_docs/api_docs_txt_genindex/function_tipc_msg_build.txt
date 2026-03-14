@@ -1,0 +1,21 @@
+Function: int tipc_msg_build ( struct tipc_msg * mhdr , struct msghdr * m , int offset , int dsz , int pktmax , struct sk_buff_head * list )
+
+create buffer chain containing specified header and data
+
+Parameters
+  struct tipc_msg *mhdr
+    Message header, to be prepended to data
+  struct msghdr *m
+    User message
+  int offset
+    buffer offset for fragmented messages (FIXME)
+  int dsz
+    Total length of user data
+  int pktmax
+    Max packet size that can be used
+  struct sk_buff_head *list
+    Buffer or chain of buffers to be returned to caller
+
+Description
+  Note that the recursive call we are making here is safe, since it can
+logically go only one further level down.

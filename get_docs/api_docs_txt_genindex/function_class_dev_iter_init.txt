@@ -1,0 +1,19 @@
+Function: void class_dev_iter_init ( struct class_dev_iter * iter , const struct class * class , const struct device * start , const struct device_type * type )
+
+initialize class device iterator
+
+Parameters
+  struct class_dev_iter *iter
+    class iterator to initialize
+  const struct class *class
+    the class we wanna iterate over
+  const struct device *start
+    the device to start iterating from, if any
+  const struct device_type *type
+    device_type of the devices to iterate over, NULL for all
+
+Description
+  Initialize class iterator iter such that it iterates over devices
+of class .  If start is set, the list iteration will start there,
+otherwise if it is NULL, the iteration starts at the beginning of
+the list.

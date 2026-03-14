@@ -1,0 +1,11 @@
+Function: void * vmalloc_32 ( unsigned long size )
+
+allocate virtually contiguous memory (32bit addressable)
+
+Parameters
+  unsigned long size
+    allocation size
+
+Description
+  Allocate enough 32bit PA addressable pages to cover size from the
+page level allocator and map them into contiguous kernel virtual space.

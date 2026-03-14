@@ -1,0 +1,10 @@
+Function: bool netif_queue_stopped ( const struct net_device * dev )
+
+test if transmit queue is flowblocked
+
+Parameters
+  const struct net_device *dev
+    network device
+
+Description
+  Test if transmit queue on device is currently unable to send.

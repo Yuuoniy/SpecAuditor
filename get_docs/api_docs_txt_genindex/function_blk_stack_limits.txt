@@ -1,0 +1,19 @@
+Function: int blk_stack_limits ( struct queue_limits * t , struct queue_limits * b , sector_t start )
+
+adjust queue_limits for stacked devices
+
+Parameters
+  struct queue_limits *t
+    the stacking driver limits (top device)
+  struct queue_limits *b
+    the underlying queue limits (bottom, component device)
+  sector_t start
+    first data sector within component device
+
+Description
+  This function is used by stacking drivers like MD and DM to ensure
+that all component devices have compatible block sizes and
+alignments.  The stacking driver must provide a queue_limits
+struct (top) and then iteratively call the stacking function for
+all component (bottom) devices.  The stacking function will
+attempt to combine the values and ensure proper alignment.

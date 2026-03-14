@@ -1,0 +1,15 @@
+Function: void intel_frontbuffer_flip_prepare ( struct intel_display * display , unsigned frontbuffer_bits )
+
+prepare asynchronous frontbuffer flip
+
+Parameters
+  struct intel_display *display
+    display device
+  unsigned frontbuffer_bits
+    frontbuffer plane tracking bits
+
+Description
+  This function gets called after scheduling a flip on obj . The actual
+frontbuffer flushing will be delayed until completion is signalled with
+intel_frontbuffer_flip_complete. If an invalidate happens in between this
+flush will be cancelled.

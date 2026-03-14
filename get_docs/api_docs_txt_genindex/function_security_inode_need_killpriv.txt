@@ -1,0 +1,10 @@
+Function: int security_inode_need_killpriv ( struct dentry * dentry )
+
+Check if security_inode_killpriv() required
+
+Parameters
+  struct dentry *dentry
+    associated dentry
+
+Description
+  Called when an inode has been changed to determine if security_inode_killpriv() should be called.

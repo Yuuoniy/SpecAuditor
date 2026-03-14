@@ -1,0 +1,19 @@
+Function: void pcs_get_state ( struct phylink_pcs * pcs , unsigned int neg_mode , struct phylink_link_state * state )
+
+Read the current inband link state from the hardware
+
+Parameters
+  struct phylink_pcs *pcs
+    a pointer to a struct phylink_pcs .
+  unsigned int neg_mode
+    link negotiation mode (PHYLINK_PCS_NEG_xxx)
+  struct phylink_link_state *state
+    a pointer to a struct phylink_link_state .
+
+Description
+  Read the current inband link state from the MAC PCS, reporting the
+current speed in state->speed , duplex mode in state->duplex , pause
+mode in state->pause using the MLO_PAUSE_RX and MLO_PAUSE_TX bits,
+negotiation completion state in state->an_complete , and link up state
+in state->link . If possible, state->lp_advertising should also be
+populated.

@@ -1,0 +1,12 @@
+Macro: v4l2_check_dv_timings_fnc
+
+Typedef : timings check callback
+
+Parameters
+  const struct v4l2_dv_timings *t
+    the v4l2_dv_timings struct.
+  void *handle
+    a handle from the driver.
+
+Description
+  Returns true if the given timings are valid.

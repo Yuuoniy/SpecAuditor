@@ -1,0 +1,11 @@
+Function: dma_fence_unwrap_merge
+
+
+
+Parameters
+  ...
+    variable arguments
+
+Description
+  All fences given as parameters are unwrapped and merged back together as flat
+dma_fence_array. Useful if multiple containers need to be merged together.

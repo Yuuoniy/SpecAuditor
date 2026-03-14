@@ -1,0 +1,15 @@
+Function: void drm_atomic_helper_wait_for_vblanks ( struct drm_device * dev , struct drm_atomic_state * state )
+
+wait for vblank on CRTCs
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_atomic_state *state
+    atomic state object being committed
+
+Description
+  Helper to, after atomic commit, wait for vblanks on all affected
+CRTCs (ie. before cleaning up old framebuffers using drm_atomic_helper_cleanup_planes() ). It will only wait on CRTCs where the
+framebuffers have actually changed to optimize for the legacy cursor and
+plane update use-case.

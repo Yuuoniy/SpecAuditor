@@ -1,0 +1,16 @@
+Function: int snd_soc_jack_add_pins ( struct snd_soc_jack * jack , int count , struct snd_soc_jack_pin * pins )
+
+Associate DAPM pins with an ASoC jack
+
+Parameters
+  struct snd_soc_jack *jack
+    ASoC jack created with snd_soc_card_jack_new_pins()
+  int count
+    Number of pins
+  struct snd_soc_jack_pin *pins
+    Array of pins
+
+Description
+  After this function has been called the DAPM pins specified in the
+pins array will have their status updated to reflect the current
+state of the jack whenever the jack status is updated.

@@ -1,0 +1,11 @@
+Struct: struct rkisp1_cif_isp_gamma_curve_x_axis_pnts
+
+De-Gamma Curve definition x increments (sampling points). gamma_dx0 is for the lower samples (1-8), gamma_dx1 is for the higher samples (9-16). The reset values for both fields is 0x44444444. This means that each sample is 4 units away from the previous one on the x-axis.
+
+Members
+  gamma_dx0
+    gamma curve sample points definitions. Bits 0:2 for sample 1. Bit 3 unused.
+Bits 4:6 for sample 2. bit 7 unused ... Bits 28:30 for sample 8. Bit 31 unused
+  gamma_dx1
+    gamma curve sample points definitions. Bits 0:2 for sample 9. Bit 3 unused.
+Bits 4:6 for sample 10. bit 7 unused ... Bits 28:30 for sample 16. Bit 31 unused

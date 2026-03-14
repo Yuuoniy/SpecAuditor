@@ -1,0 +1,7 @@
+Function: unsigned int readahead_count ( const struct readahead_control * rac )
+
+The number of pages in this readahead request.
+
+Parameters
+  const struct readahead_control *rac
+    The readahead request.

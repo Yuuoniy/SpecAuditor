@@ -1,0 +1,17 @@
+Function: u32 intel_gt_mcr_read ( struct intel_gt * gt , i915_mcr_reg_t reg , int group , int instance )
+
+read a specific instance of an MCR register
+
+Parameters
+  struct intel_gt *gt
+    GT structure
+  i915_mcr_reg_t reg
+    the MCR register to read
+  int group
+    the MCR group
+  int instance
+    the MCR instance
+
+Description
+  Returns the value read from an MCR register after steering toward a specific
+group/instance.

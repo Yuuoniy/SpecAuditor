@@ -1,0 +1,19 @@
+Function: u32 intel_gt_mcr_multicast_rmw ( struct intel_gt * gt , i915_mcr_reg_t reg , u32 clear , u32 set )
+
+Performs a multicast RMW operations
+
+Parameters
+  struct intel_gt *gt
+    GT structure
+  i915_mcr_reg_t reg
+    the MCR register to read and write
+  u32 clear
+    bits to clear during RMW
+  u32 set
+    bits to set during RMW
+
+Description
+  Performs a read-modify-write on an MCR register in a multicast manner.
+This operation only makes sense on MCR registers where all instances are
+expected to have the same value.  The read will target any non-terminated
+instance and the write will be applied to all instances.

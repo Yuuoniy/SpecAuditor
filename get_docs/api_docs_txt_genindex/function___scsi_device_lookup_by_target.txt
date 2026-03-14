@@ -1,0 +1,15 @@
+Function: struct scsi_device * __scsi_device_lookup_by_target ( struct scsi_target * starget , u64 lun )
+
+find a device given the target (UNLOCKED)
+
+Parameters
+  struct scsi_target *starget
+    SCSI target pointer
+  u64 lun
+    SCSI Logical Unit Number
+
+Description
+  Looks up the scsi_device with the specified lun for a given starget .  The returned scsi_device does not have an additional
+reference.  You must hold the host’s host_lock over this call and
+any access to the returned scsi_device. A scsi_device in state
+SDEV_DEL is skipped.

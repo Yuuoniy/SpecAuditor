@@ -1,0 +1,15 @@
+Function: int amdgpu_dm_irq_handler ( struct amdgpu_device * adev , struct amdgpu_irq_src * source , struct amdgpu_iv_entry * entry )
+
+Generic DM IRQ handler
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu base driver device containing the DM device
+  struct amdgpu_irq_src *source
+    Unused
+  struct amdgpu_iv_entry *entry
+    Data about the triggered interrupt
+
+Description
+  Calls all registered high irq work immediately, and schedules work for low
+irq. The DM IRQ table is used to find the corresponding handlers.

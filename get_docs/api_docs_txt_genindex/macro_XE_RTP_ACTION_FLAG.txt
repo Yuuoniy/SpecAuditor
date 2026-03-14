@@ -1,0 +1,11 @@
+Macro: XE_RTP_ACTION_FLAG
+
+
+
+Parameters
+  ...
+    Action flags, without the XE_RTP_ACTION_FLAG_ prefix
+
+Description
+  Helper to automatically add a XE_RTP_ACTION_FLAG_ prefix to the flags
+when defining struct xe_rtp_action entries. Example:

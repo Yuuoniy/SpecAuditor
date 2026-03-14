@@ -1,0 +1,19 @@
+Function: __le16 ieee80211_generic_frame_duration ( struct ieee80211_hw * hw , struct ieee80211_vif * vif , enum nl80211_band band , size_t frame_len , struct ieee80211_rate * rate )
+
+Calculate the duration field for a frame
+
+Parameters
+  struct ieee80211_hw *hw
+    pointer obtained from ieee80211_alloc_hw() .
+  struct ieee80211_vif *vif
+    struct ieee80211_vif pointer from the add_interface callback.
+  enum nl80211_band band
+    the band to calculate the frame duration on
+  size_t frame_len
+    the length of the frame.
+  struct ieee80211_rate *rate
+    the rate at which the frame is going to be transmitted.
+
+Description
+  Calculate the duration field of some generic frame, given its
+length and transmission rate (in 100kbps).

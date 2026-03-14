@@ -1,0 +1,11 @@
+Function: void pcim_pin_device ( struct pci_dev * pdev )
+
+Pin managed PCI device
+
+Parameters
+  struct pci_dev *pdev
+    PCI device to pin
+
+Description
+  Pin managed PCI device pdev . Pinned device won’t be disabled on driver
+detach. pdev must have been enabled with pcim_enable_device() .

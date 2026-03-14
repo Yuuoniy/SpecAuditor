@@ -1,0 +1,7 @@
+Function: struct iscsi_boot_kset * iscsi_boot_create_kset ( const char * set_name )
+
+creates root sysfs tree
+
+Parameters
+  const char *set_name
+    name of root dir

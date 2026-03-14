@@ -1,0 +1,13 @@
+Function: void drm_clflush_virt_range ( void * addr , unsigned long length )
+
+Flush dcache lines of a region
+
+Parameters
+  void *addr
+    Initial kernel memory address.
+  unsigned long length
+    Region size.
+
+Description
+  Flush every data cache line entry that points to an address in the
+region requested.

@@ -1,0 +1,21 @@
+Struct: struct pstore_zone
+
+single stored buffer
+
+Members
+  off
+    zone offset of storage
+  name
+    front-end name for this zone
+  type
+    front-end type for this zone
+  buffer
+    pointer to data buffer managed by this zone
+  oldbuf
+    pointer to old data buffer
+  buffer_size
+    bytes in buffer->data
+  should_recover
+    whether this zone should recover from storage
+  dirty
+    whether the data in buffer dirty

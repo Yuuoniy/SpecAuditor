@@ -1,0 +1,18 @@
+Function: int of_dma_configure_id ( struct device * dev , struct device_node * np , bool force_dma , const u32 * id )
+
+Setup DMA configuration
+
+Parameters
+  struct device *dev
+    Device to apply DMA configuration
+  struct device_node *np
+    Pointer to OF node having DMA configuration
+  bool force_dma
+    Whether device is to be set up by of_dma_configure() even if
+DMA capability is not explicitly described by firmware.
+  const u32 *id
+    Optional const pointer value input id
+
+Description
+  Try to get devices’s DMA configuration from DT and update it
+accordingly.

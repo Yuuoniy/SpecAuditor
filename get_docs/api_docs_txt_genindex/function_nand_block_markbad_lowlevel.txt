@@ -1,0 +1,14 @@
+Function: int nand_block_markbad_lowlevel ( struct nand_chip * chip , loff_t ofs )
+
+mark a block bad
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+  loff_t ofs
+    offset from device start
+
+Description
+  This function performs the generic NAND bad block marking steps (i.e., bad
+block table(s) and/or marker(s)). We only allow the hardware driver to
+specify how to write bad block markers to OOB (chip->legacy.block_markbad).

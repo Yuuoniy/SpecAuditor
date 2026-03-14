@@ -1,0 +1,18 @@
+Function: __poll_t tipc_poll ( struct file * file , struct socket * sock , poll_table * wait )
+
+read and possibly block on pollmask
+
+Parameters
+  struct file *file
+    file structure associated with the socket
+  struct socket *sock
+    socket for which to calculate the poll bits
+  poll_table *wait
+    ???
+
+Description
+  COMMENTARY:
+It appears that the usual socket locking mechanisms are not useful here
+since the pollmask info is potentially out-of-date the moment this routine
+exits.  TCP and other protocols seem to rely on higher level poll routines
+to handle any preventable race conditions, so TIPC will do the same ...

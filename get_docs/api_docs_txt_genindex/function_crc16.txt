@@ -1,0 +1,14 @@
+Function: u16 crc16 ( u16 crc , const u8 * p , size_t len )
+
+compute the CRC-16 for the data buffer
+
+Parameters
+  u16 crc
+    previous CRC value
+  const u8 *p
+    data pointer
+  size_t len
+    number of bytes in the buffer
+
+Description
+  Returns the updated CRC value.

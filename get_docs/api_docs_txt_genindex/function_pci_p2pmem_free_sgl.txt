@@ -1,0 +1,9 @@
+Function: void pci_p2pmem_free_sgl ( struct pci_dev * pdev , struct scatterlist * sgl )
+
+free a scatterlist allocated by pci_p2pmem_alloc_sgl()
+
+Parameters
+  struct pci_dev *pdev
+    the device to allocate memory from
+  struct scatterlist *sgl
+    the allocated scatterlist

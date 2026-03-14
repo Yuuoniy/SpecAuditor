@@ -1,0 +1,11 @@
+Function: struct device * bus_find_device_by_name ( const struct bus_type * bus , struct device * start , const char * name )
+
+device iterator for locating a particular device of a specific name.
+
+Parameters
+  const struct bus_type *bus
+    bus type
+  struct device *start
+    Device to begin with
+  const char *name
+    name of the device to match

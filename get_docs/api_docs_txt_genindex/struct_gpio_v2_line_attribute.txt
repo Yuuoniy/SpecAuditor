@@ -1,0 +1,22 @@
+Struct: struct gpio_v2_line_attribute
+
+a configurable attribute of a line
+
+Members
+  id
+    attribute identifier with value from enum gpio_v2_line_attr_id
+  padding
+    reserved for future use and must be zero filled
+  {unnamed_union}
+    anonymous
+  flags
+    if id is GPIO_V2_LINE_ATTR_ID_FLAGS , the flags for the GPIO
+line, with values from enum gpio_v2_line_flag , such as GPIO_V2_LINE_FLAG_ACTIVE_LOW , GPIO_V2_LINE_FLAG_OUTPUT etc, added
+together.  This overrides the default flags contained in the struct gpio_v2_line_config for the associated line.
+  values
+    if id is GPIO_V2_LINE_ATTR_ID_OUTPUT_VALUES , a bitmap
+containing the values to which the lines will be set, with each bit
+number corresponding to the index into struct gpio_v2_line_request .offsets
+  debounce_period_us
+    if id is GPIO_V2_LINE_ATTR_ID_DEBOUNCE , the
+desired debounce period, in microseconds

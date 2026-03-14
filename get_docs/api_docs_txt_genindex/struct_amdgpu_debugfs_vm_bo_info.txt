@@ -1,0 +1,12 @@
+Struct: void amdgpu_debugfs_vm_bo_info ( struct amdgpu_vm * vm , struct seq_file * m )
+
+print BO info for the VM
+
+Parameters
+  struct amdgpu_vm *vm
+    Requested VM for printing BO info
+  struct seq_file *m
+    debugfs file
+
+Description
+  Print BO information in debugfs file for the VM

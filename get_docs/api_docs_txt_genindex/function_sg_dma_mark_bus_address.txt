@@ -1,0 +1,13 @@
+Function: void sg_dma_mark_bus_address ( struct scatterlist * sg )
+
+Mark the scatterlist entry as a bus address
+
+Parameters
+  struct scatterlist *sg
+    SG entry
+
+Description
+  Marks the passed in sg entry to indicate that the dma_address is
+a bus address and doesn’t need to be unmapped. This should only be
+used by dma_map_sg() implementations to mark bus addresses
+so they can be properly cleaned up in dma_unmap_sg() .

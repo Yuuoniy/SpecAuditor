@@ -1,0 +1,9 @@
+Function: int phy_sfp_probe ( struct phy_device * phydev , const struct sfp_upstream_ops * ops )
+
+probe for a SFP cage attached to this PHY device
+
+Parameters
+  struct phy_device *phydev
+    Pointer to phy_device
+  const struct sfp_upstream_ops *ops
+    SFP’s upstream operations

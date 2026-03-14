@@ -1,0 +1,17 @@
+Struct: ssize_t hdmi_vendor_infoframe_pack_only ( const struct hdmi_vendor_infoframe * frame , void * buffer , size_t size )
+
+write a HDMI vendor infoframe to binary buffer
+
+Parameters
+  const struct hdmi_vendor_infoframe *frame
+    HDMI infoframe
+  void *buffer
+    destination buffer
+  size_t size
+    size of buffer
+
+Description
+  Packs the information contained in the frame structure into a binary
+representation that can be written into the corresponding controller
+registers. Also computes the checksum as required by section 5.3.5 of
+the HDMI 1.4 specification.

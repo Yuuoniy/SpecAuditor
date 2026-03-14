@@ -1,0 +1,22 @@
+Struct: struct drm_panthor_queue_submit
+
+Job submission arguments.
+
+Members
+  queue_index
+    Index of the queue inside a group.
+  stream_size
+    Size of the command stream to execute. Must be 64-bit/8-byte aligned (the size of a CS instruction) Can be zero if stream_addr is zero too. When the stream size is zero, the queue submit serves as a
+synchronization point.
+  stream_addr
+    GPU address of the command stream to execute. Must be aligned on 64-byte. Can be zero is stream_size is zero too.
+  latest_flush
+    FLUSH_ID read at the time the stream was built. This allows cache flush elimination for the automatic
+flush+invalidate(all) done at submission time, which is needed to
+ensure the GPU doesn’t get garbage when reading the indirect command
+stream buffers. If you want the cache flush to happen
+unconditionally, pass a zero here. Ignored when stream_size is zero.
+  pad
+    MBZ.
+  syncs
+    Array of struct drm_panthor_sync_op sync operations.

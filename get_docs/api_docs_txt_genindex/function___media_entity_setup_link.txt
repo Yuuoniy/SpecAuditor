@@ -1,0 +1,13 @@
+Function: int __media_entity_setup_link ( struct media_link * link , u32 flags )
+
+Configure a media link without locking
+
+Parameters
+  struct media_link *link
+    The link being configured
+  u32 flags
+    Link configuration flags
+
+Description
+  The bulk of link setup is handled by the two entities connected through the
+link. This function notifies both entities of the link configuration change.

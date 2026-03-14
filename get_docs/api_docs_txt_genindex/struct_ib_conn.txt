@@ -1,0 +1,21 @@
+Struct: struct ib_conn
+
+Infiniband related objects
+
+Members
+  cma_id
+    rdma_cm connection maneger handle
+  qp
+    Connection Queue-pair
+  cq
+    Connection completion queue
+  cq_size
+    The number of max outstanding completions
+  device
+    reference to iser device
+  fr_pool
+    connection fast registration pool
+  pi_support
+    Indicate device T10-PI support
+  reg_cqe
+    completion handler

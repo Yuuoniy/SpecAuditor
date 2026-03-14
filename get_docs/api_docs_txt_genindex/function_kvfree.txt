@@ -1,0 +1,12 @@
+Function: void kvfree ( const void * addr )
+
+Free memory.
+
+Parameters
+  const void *addr
+    Pointer to allocated memory.
+
+Description
+  kvfree frees memory allocated by any of vmalloc() , kmalloc() or kvmalloc() .
+It is slightly more efficient to use kfree() or vfree() if you are certain
+that you know which one to use.

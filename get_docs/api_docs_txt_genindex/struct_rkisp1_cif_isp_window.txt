@@ -1,0 +1,13 @@
+Struct: struct rkisp1_cif_isp_window
+
+measurement window.
+
+Members
+  h_offs
+    the horizontal offset of the window from the left of the frame in pixels.
+  v_offs
+    the vertical offset of the window from the top of the frame in pixels.
+  h_size
+    the horizontal size of the window in pixels
+  v_size
+    the vertical size of the window in pixels.

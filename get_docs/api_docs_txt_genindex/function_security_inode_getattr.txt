@@ -1,0 +1,10 @@
+Function: int security_inode_getattr ( const struct path * path )
+
+Check if getting file attributes is allowed
+
+Parameters
+  const struct path *path
+    file
+
+Description
+  Check permission before obtaining file attributes.

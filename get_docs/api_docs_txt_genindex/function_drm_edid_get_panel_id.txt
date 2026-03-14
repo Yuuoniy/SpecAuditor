@@ -1,0 +1,13 @@
+Function: u32 drm_edid_get_panel_id ( const struct drm_edid * drm_edid )
+
+Get a panel’s ID from EDID
+
+Parameters
+  const struct drm_edid *drm_edid
+    EDID that contains panel ID.
+
+Description
+  This function uses the first block of the EDID of a panel and (assuming
+that the EDID is valid) extracts the ID out of it. The ID is a 32-bit value
+(16 bits of manufacturer ID and 16 bits of per-manufacturer ID) that’s
+supposed to be different for each different modem of panel.

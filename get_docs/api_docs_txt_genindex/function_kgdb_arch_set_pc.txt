@@ -1,0 +1,13 @@
+Function: void kgdb_arch_set_pc ( struct pt_regs * regs , unsigned long pc )
+
+Generic call back to the program counter
+
+Parameters
+  struct pt_regs *regs
+    Current struct pt_regs .
+  unsigned long pc
+    The new value for the program counter
+
+Description
+  This function handles updating the program counter and requires an
+architecture specific implementation.

@@ -1,0 +1,9 @@
+Function: int gpiod_disable_hw_timestamp_ns ( struct gpio_desc * desc , unsigned long flags )
+
+Disable hardware timestamp.
+
+Parameters
+  struct gpio_desc *desc
+    GPIO to disable.
+  unsigned long flags
+    Flags related to GPIO edge, same value as used during enable call.

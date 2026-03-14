@@ -1,0 +1,13 @@
+Struct: struct kunit
+
+represents a running instance of a test.
+
+Members
+  priv
+    for user to store arbitrary data. Commonly used to pass data
+created in the init function (see struct kunit_suite ).
+  parent
+    reference to the parent context of type struct kunit that can
+be used for storing shared resources.
+  params_array
+    for storing the parameter array.

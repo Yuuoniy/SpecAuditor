@@ -1,0 +1,11 @@
+Function: void amdgpu_bo_fence ( struct amdgpu_bo * bo , struct dma_fence * fence , bool shared )
+
+add fence to buffer object
+
+Parameters
+  struct amdgpu_bo *bo
+    buffer object in question
+  struct dma_fence *fence
+    fence to add
+  bool shared
+    true if fence should be added shared

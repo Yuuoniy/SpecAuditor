@@ -1,0 +1,13 @@
+Struct: struct pisp_be_global_config
+
+PiSP global enable bitmaps
+
+Members
+  bayer_enables
+    Bayer input enable flags
+  rgb_enables
+    RGB output enable flags
+  bayer_order
+    Bayer input format ordering
+  pad
+    Padding bytes

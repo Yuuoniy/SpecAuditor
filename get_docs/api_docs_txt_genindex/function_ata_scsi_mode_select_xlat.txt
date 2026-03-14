@@ -1,0 +1,12 @@
+Function: unsigned int ata_scsi_mode_select_xlat ( struct ata_queued_cmd * qc )
+
+Simulate MODE SELECT 6, 10 commands
+
+Parameters
+  struct ata_queued_cmd *qc
+    Storage for translated ATA taskfile
+
+Description
+  Converts a MODE SELECT command to an ATA SET FEATURES taskfile.
+Assume this is invoked for direct access devices (e.g. disks) only.
+There should be no block descriptor for other device types.

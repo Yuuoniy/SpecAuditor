@@ -1,0 +1,12 @@
+Function: int em_dev_update_chip_binning ( struct device * dev )
+
+Update Energy Model after the new voltage information is present in the OPPs.
+
+Parameters
+  struct device *dev
+    Device for which the Energy Model has to be updated.
+
+Description
+  This function allows to update easily the EM with new values available in
+the OPP framework and DT. It can be used after the chip has been properly
+verified by device drivers and the voltages adjusted for the ‘chip binning’.

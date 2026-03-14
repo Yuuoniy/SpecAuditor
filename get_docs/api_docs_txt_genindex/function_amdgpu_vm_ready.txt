@@ -1,0 +1,10 @@
+Function: bool amdgpu_vm_ready ( struct amdgpu_vm * vm )
+
+check VM is ready for updates
+
+Parameters
+  struct amdgpu_vm *vm
+    VM to check
+
+Description
+  Check if all VM PDs/PTs are ready for updates

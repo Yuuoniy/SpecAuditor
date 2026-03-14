@@ -1,0 +1,15 @@
+Function: void scsi_report_device_reset ( struct Scsi_Host * shost , int channel , int target )
+
+report device reset observed
+
+Parameters
+  struct Scsi_Host *shost
+    Host in question
+  int channel
+    channel on which reset was observed
+  int target
+    target on which reset was observed
+
+Description
+  Utility function used by low-level drivers to report that
+they have observed a device reset on the device being handled.

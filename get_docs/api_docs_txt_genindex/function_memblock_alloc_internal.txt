@@ -1,0 +1,21 @@
+Function: void * memblock_alloc_internal ( phys_addr_t size , phys_addr_t align , phys_addr_t min_addr , phys_addr_t max_addr , int nid , bool exact_nid )
+
+allocate boot memory block
+
+Parameters
+  phys_addr_t size
+    size of memory block to be allocated in bytes
+  phys_addr_t align
+    alignment of the region and block’s size
+  phys_addr_t min_addr
+    the lower bound of the memory region to allocate (phys address)
+  phys_addr_t max_addr
+    the upper bound of the memory region to allocate (phys address)
+  int nid
+    nid of the free area to find, NUMA_NO_NODE for any node
+  bool exact_nid
+    control the allocation fall back to other nodes
+
+Description
+  Allocates memory block using memblock_alloc_range_nid() and
+converts the returned physical address to virtual.

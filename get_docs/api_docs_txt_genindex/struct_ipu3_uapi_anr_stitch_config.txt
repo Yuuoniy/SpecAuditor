@@ -1,0 +1,18 @@
+Struct: struct ipu3_uapi_anr_stitch_config
+
+ANR stitch config
+
+Members
+  anr_stitch_en
+    enable stitch. Enabled with 1.
+  reserved
+    reserved
+  pyramid
+    pyramid table as defined by ipu3_uapi_anr_stitch_pyramid default values:
+{ 1, 3, 5 }, { 7, 7, 5 }, { 3, 1, 3 },
+{ 9, 15, 21 }, { 21, 15, 9 }, { 3, 5, 15 },
+{ 25, 35, 35 }, { 25, 15, 5 }, { 7, 21, 35 },
+{ 49, 49, 35 }, { 21, 7, 7 }, { 21, 35, 49 },
+{ 49, 35, 21 }, { 7, 5, 15 }, { 25, 35, 35 },
+{ 25, 15, 5 }, { 3, 9, 15 }, { 21, 21, 15 },
+{ 9, 3, 1 }, { 3, 5, 7 }, { 7, 5, 3}, { 1 }

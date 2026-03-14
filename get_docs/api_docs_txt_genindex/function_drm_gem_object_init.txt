@@ -1,0 +1,15 @@
+Function: int drm_gem_object_init ( struct drm_device * dev , struct drm_gem_object * obj , size_t size )
+
+initialize an allocated shmem-backed GEM object
+
+Parameters
+  struct drm_device *dev
+    drm_device the object should be initialized for
+  struct drm_gem_object *obj
+    drm_gem_object to initialize
+  size_t size
+    object size
+
+Description
+  Initialize an already allocated GEM object of the specified size with
+shmfs backing store.

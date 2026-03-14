@@ -1,0 +1,21 @@
+Function: int bitmap_bitremap ( int oldbit , const unsigned long * old , const unsigned long * new , int bits )
+
+Apply map defined by a pair of bitmaps to a single bit
+
+Parameters
+  int oldbit
+    bit position to be mapped
+  const unsigned long *old
+    defines domain of map
+  const unsigned long *new
+    defines range of map
+  int bits
+    number of bits in each of these bitmaps
+
+Description
+  Let old and new define a mapping of bit positions, such that
+whatever position is held by the n-th set bit in old is mapped
+to the n-th set bit in new .  In the more general case, allowing
+for the possibility that the weight ‘w’ of new is less than the
+weight of old , map the position of the n-th set bit in old to
+the position of the m-th set bit in new , where m == n % w.

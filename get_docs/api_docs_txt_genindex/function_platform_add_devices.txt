@@ -1,0 +1,9 @@
+Function: int platform_add_devices ( struct platform_device * * devs , int num )
+
+add a numbers of platform devices
+
+Parameters
+  struct platform_device **devs
+    array of platform devices to add
+  int num
+    number of platform devices in array

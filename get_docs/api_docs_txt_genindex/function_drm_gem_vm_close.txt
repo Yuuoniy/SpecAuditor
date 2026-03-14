@@ -1,0 +1,11 @@
+Function: void drm_gem_vm_close ( struct vm_area_struct * vma )
+
+vma->ops->close implementation for GEM
+
+Parameters
+  struct vm_area_struct *vma
+    VM area structure
+
+Description
+  This function implements the #vm_operations_struct close() callback for GEM
+drivers. This must be used together with drm_gem_vm_open() .

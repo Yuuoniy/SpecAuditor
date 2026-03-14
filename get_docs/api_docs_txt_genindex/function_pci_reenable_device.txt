@@ -1,0 +1,7 @@
+Function: int pci_reenable_device ( struct pci_dev * dev )
+
+Resume abandoned device
+
+Parameters
+  struct pci_dev *dev
+    PCI device to be resumed

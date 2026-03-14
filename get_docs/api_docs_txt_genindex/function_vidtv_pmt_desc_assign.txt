@@ -1,0 +1,16 @@
+Function: void vidtv_pmt_desc_assign ( struct vidtv_psi_table_pmt * pmt , struct vidtv_psi_desc * * to , struct vidtv_psi_desc * desc )
+
+Assigns a descriptor loop at some point in a PMT section.
+
+Parameters
+  struct vidtv_psi_table_pmt *pmt
+    The PMT section that will contain the descriptor loop
+  struct vidtv_psi_desc **to
+    Where in the PMT to assign this descriptor loop to
+  struct vidtv_psi_desc *desc
+    The descriptor loop that will be assigned.
+
+Description
+  This will free the loop in ‘to’, if any.
+This will assign ownership of the loop to the table, i.e. the table
+will free this loop when a call to its destroy function is made.

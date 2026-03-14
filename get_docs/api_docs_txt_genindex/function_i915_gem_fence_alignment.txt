@@ -1,0 +1,17 @@
+Function: u32 i915_gem_fence_alignment ( struct drm_i915_private * i915 , u32 size , unsigned int tiling , unsigned int stride )
+
+required global GTT alignment for a fence
+
+Parameters
+  struct drm_i915_private *i915
+    i915 device
+  u32 size
+    object size
+  unsigned int tiling
+    tiling mode
+  unsigned int stride
+    tiling stride
+
+Description
+  Return the required global GTT alignment for a fence (a view of a tiled
+object), taking into account potential fence register mapping.

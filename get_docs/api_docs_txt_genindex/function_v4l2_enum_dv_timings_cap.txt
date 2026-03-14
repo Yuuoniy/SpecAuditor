@@ -1,0 +1,18 @@
+Function: int v4l2_enum_dv_timings_cap ( struct v4l2_enum_dv_timings * t , const struct v4l2_dv_timings_cap * cap , v4l2_check_dv_timings_fnc fnc , void * fnc_handle )
+
+Helper function to enumerate possible DV timings based on capabilities
+
+Parameters
+  struct v4l2_enum_dv_timings *t
+    the v4l2_enum_dv_timings struct.
+  const struct v4l2_dv_timings_cap *cap
+    the v4l2_dv_timings_cap capabilities.
+  v4l2_check_dv_timings_fnc fnc
+    callback to check if this timing is OK. May be NULL.
+  void *fnc_handle
+    a handle that is passed on to fnc .
+
+Description
+  This enumerates dv_timings using the full list of possible CEA-861 and DMT
+timings, filtering out any timings that are not supported based on the
+hardware capabilities and the callback function (if non-NULL).

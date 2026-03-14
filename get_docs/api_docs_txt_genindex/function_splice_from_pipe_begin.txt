@@ -1,0 +1,11 @@
+Function: void splice_from_pipe_begin ( struct splice_desc * sd )
+
+start splicing from pipe
+
+Parameters
+  struct splice_desc *sd
+    information about the splice operation
+
+Description
+  This function should be called before a loop containing splice_from_pipe_next() and splice_from_pipe_feed() to
+initialize the necessary fields of sd .

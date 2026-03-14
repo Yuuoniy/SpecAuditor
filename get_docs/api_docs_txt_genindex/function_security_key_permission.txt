@@ -1,0 +1,14 @@
+Function: int security_key_permission ( key_ref_t key_ref , const struct cred * cred , enum key_need_perm need_perm )
+
+Check if a kernel key operation is allowed
+
+Parameters
+  key_ref_t key_ref
+    key reference
+  const struct cred *cred
+    credentials of actor requesting access
+  enum key_need_perm need_perm
+    requested permissions
+
+Description
+  See whether a specific operational right is granted to a process on a key.

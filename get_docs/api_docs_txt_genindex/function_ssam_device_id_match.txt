@@ -1,0 +1,13 @@
+Function: const struct ssam_device_id * ssam_device_id_match ( const struct ssam_device_id * table , const struct ssam_device_uid uid )
+
+Find the matching ID table entry for the given UID.
+
+Parameters
+  const struct ssam_device_id *table
+    The table to search in.
+  const struct ssam_device_uid uid
+    The UID to matched against the individual table entries.
+
+Description
+  Find the first match for the provided device UID in the provided ID table
+and return it. Returns NULL if no match could be found.

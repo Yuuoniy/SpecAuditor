@@ -1,0 +1,32 @@
+Struct: struct srpt_send_ioctx
+
+SRPT send I/O context
+
+Members
+  ioctx
+    See above.
+  ch
+    Channel pointer.
+  recv_ioctx
+    Receive I/O context associated with this send I/O context.
+Only used for processing immediate data.
+  s_rw_ctx
+    rw_ctxs points here if only a single rw_ctx is needed.
+  rw_ctxs
+    RDMA read/write contexts.
+  imm_sg
+    Scatterlist for immediate data.
+  rdma_cqe
+    RDMA completion queue element.
+  state
+    I/O context state.
+  cmd
+    Target core command data structure.
+  n_rdma
+    Number of work requests needed to transfer this ioctx.
+  n_rw_ctx
+    Size of rw_ctxs array.
+  queue_status_only
+    Send a SCSI status back to the initiator but no data.
+  sense_data
+    Sense data to be sent to the initiator.

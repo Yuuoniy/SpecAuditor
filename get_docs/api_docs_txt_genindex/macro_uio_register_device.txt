@@ -1,0 +1,12 @@
+Macro: uio_register_device
+
+
+
+Parameters
+  parent
+    parent device
+  info
+    UIO device capabilities
+
+Description
+  returns zero on success or a negative error code.

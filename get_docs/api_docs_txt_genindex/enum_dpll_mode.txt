@@ -1,0 +1,3 @@
+Enum: enum dpll_mode
+
+working modes a dpll can support, differentiates if and how dpll selects one of its inputs to syntonize with it, valid values for DPLL_A_MODE attribute

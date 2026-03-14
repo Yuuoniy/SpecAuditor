@@ -1,0 +1,13 @@
+Function: int security_sb_mnt_opts_compat ( struct super_block * sb , void * mnt_opts )
+
+Check if new mount options are allowed
+
+Parameters
+  struct super_block *sb
+    filesystem superblock
+  void *mnt_opts
+    new mount options
+
+Description
+  Determine if the new mount options in mnt_opts are allowed given the
+existing mounted filesystem at sb . sb superblock being compared.

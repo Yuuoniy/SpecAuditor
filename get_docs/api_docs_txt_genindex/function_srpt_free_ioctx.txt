@@ -1,0 +1,13 @@
+Function: void srpt_free_ioctx ( struct srpt_device * sdev , struct srpt_ioctx * ioctx , struct kmem_cache * buf_cache , enum dma_data_direction dir )
+
+free a SRPT I/O context structure
+
+Parameters
+  struct srpt_device *sdev
+    SRPT HCA pointer.
+  struct srpt_ioctx *ioctx
+    I/O context pointer.
+  struct kmem_cache *buf_cache
+    I/O buffer cache.
+  enum dma_data_direction dir
+    DMA data direction.

@@ -1,0 +1,12 @@
+Function: void inc_nlink ( struct inode * inode )
+
+directly increment an inode’s link count
+
+Parameters
+  struct inode *inode
+    inode
+
+Description
+  This is a low-level filesystem helper to replace any
+direct filesystem manipulation of i_nlink.  Currently,
+it is only here for parity with dec_nlink() .

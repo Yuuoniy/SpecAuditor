@@ -1,0 +1,11 @@
+Function: void mempool_destroy ( mempool_t * pool )
+
+deallocate a memory pool
+
+Parameters
+  mempool_t *pool
+    pointer to the memory pool which was allocated via mempool_create() .
+
+Description
+  Free all reserved elements in pool and pool itself.  This function
+only sleeps if the free_fn() function sleeps.

@@ -1,0 +1,14 @@
+Function: void scsi_6_lba_len ( const u8 * cdb , u64 * plba , u32 * plen )
+
+Get LBA and transfer length
+
+Parameters
+  const u8 *cdb
+    SCSI command to translate
+  u64 *plba
+    the LBA
+  u32 *plen
+    the transfer length
+
+Description
+  Calculate LBA and transfer length for 6-byte commands.

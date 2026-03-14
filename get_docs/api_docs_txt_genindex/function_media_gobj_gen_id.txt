@@ -1,0 +1,9 @@
+Function: u32 media_gobj_gen_id ( enum media_gobj_type type , u64 local_id )
+
+encapsulates type and ID on at the object ID
+
+Parameters
+  enum media_gobj_type type
+    object type as define at enum media_gobj_type .
+  u64 local_id
+    next ID, from struct media_device.id .

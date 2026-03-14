@@ -1,0 +1,16 @@
+Struct: struct drm_gem_vram_object
+
+GEM object backed by VRAM
+
+Members
+  bo
+    TTM buffer object
+  map
+    Mapping information for bo
+  vmap_use_count
+    Reference count on the virtual address.
+The address are un-mapped when the count reaches zero.
+  placement
+    TTM placement information. Supported placements are TTM_PL_VRAM and TTM_PL_SYSTEM
+  placements
+    TTM placement information.

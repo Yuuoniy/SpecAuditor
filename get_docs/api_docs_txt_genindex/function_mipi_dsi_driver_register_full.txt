@@ -1,0 +1,9 @@
+Function: int mipi_dsi_driver_register_full ( struct mipi_dsi_driver * drv , struct module * owner )
+
+register a driver for DSI devices
+
+Parameters
+  struct mipi_dsi_driver *drv
+    DSI driver structure
+  struct module *owner
+    owner module

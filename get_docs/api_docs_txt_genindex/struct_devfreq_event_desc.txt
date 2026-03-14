@@ -1,0 +1,13 @@
+Struct: struct devfreq_event_desc
+
+the descriptor of devfreq-event device
+
+Members
+  name
+    the name of devfreq-event device.
+  event_type
+    the type of the event determined and used by driver
+  driver_data
+    the private data for devfreq-event driver.
+  ops
+    the operation to control devfreq-event device.

@@ -1,0 +1,3 @@
+Enum: enum drm_xe_observation_ioctls
+
+Observation stream fd ioctl’s

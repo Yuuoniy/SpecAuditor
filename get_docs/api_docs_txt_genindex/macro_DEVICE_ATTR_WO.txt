@@ -1,0 +1,10 @@
+Macro: DEVICE_ATTR_WO
+
+
+
+Parameters
+  _name
+    Attribute name.
+
+Description
+  Like DEVICE_ATTR() , but _mode is 0200 and _store is <_name>_store.

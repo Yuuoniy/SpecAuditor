@@ -1,0 +1,11 @@
+Function: struct drm_gpuvm * drm_gpuvm_get ( struct drm_gpuvm * gpuvm )
+
+acquire a struct drm_gpuvm reference
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm to acquire the reference of
+
+Description
+  This function acquires an additional reference to gpuvm . It is illegal to
+call this without already holding a reference. No locks required.

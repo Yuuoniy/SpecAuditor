@@ -1,0 +1,16 @@
+Function: int mpol_misplaced ( struct folio * folio , struct vm_fault * vmf , unsigned long addr )
+
+check whether current folio node is valid in policy
+
+Parameters
+  struct folio *folio
+    folio to be checked
+  struct vm_fault *vmf
+    structure describing the fault
+  unsigned long addr
+    virtual address in vma for shared policy lookup and interleave policy
+
+Description
+  Lookup current policy node id for vma,addr and “compare to” folio’s
+node id.  Policy determination “mimics” alloc_page_vma() .
+Called from fault path where we know the vma and faulting address.

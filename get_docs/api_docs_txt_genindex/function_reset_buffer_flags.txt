@@ -1,0 +1,10 @@
+Function: void reset_buffer_flags ( struct n_tty_data * ldata )
+
+reset buffer state
+
+Parameters
+  struct n_tty_data *ldata
+    line disc data to reset
+
+Description
+  Reset the read buffer counters and clear the flags. Called from n_tty_open() and n_tty_flush_buffer() .

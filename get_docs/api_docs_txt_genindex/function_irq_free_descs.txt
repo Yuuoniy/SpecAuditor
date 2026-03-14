@@ -1,0 +1,9 @@
+Function: void irq_free_descs ( unsigned int from , unsigned int cnt )
+
+free irq descriptors
+
+Parameters
+  unsigned int from
+    Start of descriptor range
+  unsigned int cnt
+    Number of consecutive irqs to free

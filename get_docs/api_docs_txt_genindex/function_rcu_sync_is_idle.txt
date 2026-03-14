@@ -1,0 +1,11 @@
+Function: bool rcu_sync_is_idle ( struct rcu_sync * rsp )
+
+Are readers permitted to use their fastpaths?
+
+Parameters
+  struct rcu_sync *rsp
+    Pointer to rcu_sync structure to use for synchronization
+
+Description
+  Returns true if readers are permitted to use their fastpaths.  Must be
+invoked within some flavor of RCU read-side critical section.

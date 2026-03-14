@@ -1,0 +1,10 @@
+Function: int devfreq_remove_device ( struct devfreq * devfreq )
+
+Remove devfreq feature from a device.
+
+Parameters
+  struct devfreq *devfreq
+    the devfreq instance to be removed
+
+Description
+  The opposite of devfreq_add_device() .

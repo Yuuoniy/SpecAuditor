@@ -1,0 +1,13 @@
+Function: bool iosys_map_is_equal ( const struct iosys_map * lhs , const struct iosys_map * rhs )
+
+Compares two iosys mapping structures for equality
+
+Parameters
+  const struct iosys_map *lhs
+    The iosys_map structure
+  const struct iosys_map *rhs
+    A iosys_map structure to compare with
+
+Description
+  Two iosys mapping structures are equal if they both refer to the same type of memory
+and to the same address within that memory.

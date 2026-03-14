@@ -1,0 +1,9 @@
+Function: int ccw_device_get_cssid ( struct ccw_device * cdev , u8 * cssid )
+
+obtain Channel Subsystem ID
+
+Parameters
+  struct ccw_device *cdev
+    device to obtain the CSSID for
+  u8 *cssid
+    The resulting Channel Subsystem ID

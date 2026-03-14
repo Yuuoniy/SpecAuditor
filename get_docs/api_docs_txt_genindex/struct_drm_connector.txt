@@ -1,0 +1,214 @@
+Struct: struct drm_connector
+
+central DRM connector control structure
+
+Members
+  dev
+    parent DRM device
+  kdev
+    kernel device for sysfs attributes
+  attr
+    sysfs attributes
+  fwnode
+    associated fwnode supplied by platform firmware Drivers can set this to associate a fwnode with a connector, drivers
+are expected to get a reference on the fwnode when setting this. drm_connector_cleanup() will call fwnode_handle_put() on this.
+  head
+    List of all connectors on a dev , linked from drm_mode_config.connector_list . Protected by drm_mode_config.connector_list_lock , but please only use drm_connector_list_iter to walk this list.
+  global_connector_list_entry
+    Connector entry in the global connector-list, used by drm_connector_find_by_fwnode() .
+  base
+    base KMS object
+  name
+    human readable name, can be overwritten by the driver
+  mutex
+    Lock for general connector state, but currently only protects registered . Most of the connector state is still protected by drm_mode_config.mutex .
+  index
+    Compacted connector index, which matches the position inside
+the mode_config.list for drivers not supporting hot-add/removing. Can
+be used as an array index. It is invariant over the lifetime of the
+connector.
+  connector_type
+    one of the DRM_MODE_CONNECTOR_<foo> types from drm_mode.h
+  connector_type_id
+    index into connector type enum
+  interlace_allowed
+    Can this connector handle interlaced modes? Only used by drm_helper_probe_single_connector_modes() for mode filtering.
+  doublescan_allowed
+    Can this connector handle doublescan? Only used by drm_helper_probe_single_connector_modes() for mode filtering.
+  stereo_allowed
+    Can this connector handle stereo modes? Only used by drm_helper_probe_single_connector_modes() for mode filtering.
+  ycbcr_420_allowed
+    This bool indicates if this connector is
+capable of handling YCBCR 420 output. While parsing the EDID
+blocks it’s very helpful to know if the source is capable of
+handling YCBCR 420 outputs.
+  registration_state
+    Is this connector initializing, exposed
+(registered) with userspace, or unregistered? Protected by mutex .
+  modes
+    Modes available on this connector (from fill_modes() + user).
+Protected by drm_mode_config.mutex .
+  status
+    One of the drm_connector_status enums (connected, not, or unknown).
+Protected by drm_mode_config.mutex .
+  probed_modes
+    These are modes added by probing with DDC or the BIOS, before
+filtering is applied. Used by the probe helpers. Protected by drm_mode_config.mutex .
+  display_info
+    Display information is filled from EDID information
+when a display is detected. For non hot-pluggable displays such as
+flat panels in embedded systems, the driver should initialize the drm_display_info.width_mm and drm_display_info.height_mm fields
+with the physical size of the display. Protected by drm_mode_config.mutex .
+  funcs
+    connector control functions
+  edid_blob_ptr
+    DRM property containing EDID if present. Protected by drm_mode_config.mutex . This must be updated only by calling drm_edid_connector_update() or drm_connector_update_edid_property() . This must not be used by drivers directly.
+  properties
+    property tracking for this connector
+  scaling_mode_property
+    Optional atomic property to control the
+upscaling. See drm_connector_attach_content_protection_property() .
+  vrr_capable_property
+    Optional property to help userspace
+query hardware support for variable refresh rate on a connector.
+connector. Drivers can add the property to a connector by
+calling drm_connector_attach_vrr_capable_property() . This should be updated only by calling drm_connector_set_vrr_capable_property() .
+  colorspace_property
+    Connector property to set the suitable
+colorspace supported by the sink.
+  path_blob_ptr
+    DRM blob property data for the DP MST path property. This should only
+be updated by calling drm_connector_set_path_property() .
+  max_bpc
+    Maximum bits per color channel the connector supports.
+  max_bpc_property
+    Default connector property for the max bpc to be
+driven out of the connector.
+  privacy_screen
+    drm_privacy_screen for this connector, or NULL.
+  privacy_screen_notifier
+    privacy-screen notifier_block
+  privacy_screen_sw_state_property
+    Optional atomic property for the
+connector to control the integrated privacy screen.
+  privacy_screen_hw_state_property
+    Optional atomic property for the
+connector to report the actual integrated privacy screen state.
+  broadcast_rgb_property
+    Connector property to set the
+Broadcast RGB selection to output with.
+  polled
+    Connector polling mode, a combination of DRM_CONNECTOR_POLL_HPD The connector generates hotplug events and doesn’t need to be
+periodically polled. The CONNECT and DISCONNECT flags must not
+be set together with the HPD flag. DRM_CONNECTOR_POLL_CONNECT Periodically poll the connector for connection. DRM_CONNECTOR_POLL_DISCONNECT Periodically poll the connector for disconnection, without
+causing flickering even when the connector is in use. DACs should
+rarely do this without a lot of testing. Set to 0 for connectors that don’t support connection status
+discovery.
+  DRM_CONNECTOR_POLL_HPD
+    The connector generates hotplug events and doesn’t need to be
+periodically polled. The CONNECT and DISCONNECT flags must not
+be set together with the HPD flag.
+  DRM_CONNECTOR_POLL_CONNECT
+    Periodically poll the connector for connection.
+  DRM_CONNECTOR_POLL_DISCONNECT
+    Periodically poll the connector for disconnection, without
+causing flickering even when the connector is in use. DACs should
+rarely do this without a lot of testing.
+  dpms
+    Current dpms state. For legacy drivers the drm_connector_funcs.dpms callback must update this. For atomic
+drivers, this is handled by the core atomic code, and drivers must
+only take drm_crtc_state.active into account.
+  helper_private
+    mid-layer private data
+  cmdline_mode
+    mode line parsed from the kernel cmdline for this connector
+  force
+    a DRM_FORCE_<foo> state for forced mode sets
+  edid_override
+    Override EDID set via debugfs. Do not modify or access outside of the drm_edid_override_* family of
+functions.
+  edid_override_mutex
+    Protect access to edid_override.
+  epoch_counter
+    used to detect any other changes in connector, besides status
+  possible_encoders
+    Bit mask of encoders that can drive this
+connector, drm_encoder_index() determines the index into the bitfield
+and the bits are set with drm_connector_attach_encoder() .
+  encoder
+    Currently bound encoder driving this connector, if any.
+Only really meaningful for non-atomic drivers. Atomic drivers should
+instead look at drm_connector_state.best_encoder , and in case they
+need the CRTC driving this output, drm_connector_state.crtc .
+  eld
+    EDID-like data, if present, protected by eld_mutex
+  eld_mutex
+    protection for concurrenct access to eld
+  latency_present
+    AV delay info from ELD, if found
+  video_latency
+    Video latency info from ELD, if found.
+[0]: progressive, [1]: interlaced
+  audio_latency
+    audio latency info from ELD, if found
+[0]: progressive, [1]: interlaced
+  ddc
+    associated ddc adapter.
+A connector usually has its associated ddc adapter. If a driver uses
+this field, then an appropriate symbolic link is created in connector
+sysfs directory to make it easy for the user to tell which i2c
+adapter is for a particular display. The field should be set by calling drm_connector_init_with_ddc() .
+  null_edid_counter
+    track sinks that give us all zeros for the EDID.
+Needed to workaround some HW bugs where we get all 0s
+  bad_edid_counter
+    track sinks that give us an EDID with invalid checksum
+  edid_corrupt
+    Indicates whether the last read EDID was corrupt. Used
+in Displayport compliance testing - Displayport Link CTS Core 1.2
+rev1.1 4.2.2.6
+  real_edid_checksum
+    real edid checksum for corrupted edid block.
+Required in Displayport 1.4 compliance testing
+rev1.1 4.2.2.6
+  debugfs_entry
+    debugfs directory for this connector
+  state
+    Current atomic state for this connector. This is protected by drm_mode_config.connection_mutex . Note that
+nonblocking atomic commits access the current connector state without
+taking locks. Either by going through the struct drm_atomic_state pointers, see for_each_oldnew_connector_in_state() , for_each_old_connector_in_state() and for_each_new_connector_in_state() . Or through careful ordering of
+atomic commit operations as implemented in the atomic helpers, see struct drm_crtc_commit .
+  tile_blob_ptr
+    DRM blob property data for the tile property (used mostly by DP MST).
+This is meant for screens which are driven through separate display
+pipelines represented by drm_crtc , which might not be running with
+genlocked clocks. For tiled panels which are genlocked, like
+dual-link LVDS or dual-link DSI, the driver should try to not expose
+the tiling and virtualize both drm_crtc and drm_plane if needed. This should only be updated by calling drm_connector_set_tile_property() .
+  has_tile
+    is this connector connected to a tiled monitor
+  tile_group
+    tile group for the connected monitor
+  tile_is_single_monitor
+    whether the tile is one monitor housing
+  num_h_tile
+    number of horizontal tiles in the tile group
+  num_v_tile
+    number of vertical tiles in the tile group
+  tile_h_loc
+    horizontal location of this tile
+  tile_v_loc
+    vertical location of this tile
+  tile_h_size
+    horizontal size of this tile.
+  tile_v_size
+    vertical size of this tile.
+  free_node
+    List used only by drm_connector_list_iter to be able to clean up a
+connector from any context, in conjunction with drm_mode_config.connector_free_work .
+  hdmi
+    HDMI-related variable and properties.
+  hdmi_audio
+    HDMI codec properties and non-DRM state.
+  cec
+    CEC-related data.

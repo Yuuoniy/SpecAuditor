@@ -1,0 +1,7 @@
+Function: void register_syscore_ops ( struct syscore_ops * ops )
+
+Register a set of system core operations.
+
+Parameters
+  struct syscore_ops *ops
+    System core operations to register.

@@ -1,0 +1,15 @@
+Function: int tty_port_install ( struct tty_port * port , struct tty_driver * driver , struct tty_struct * tty )
+
+generic tty->ops->install handler
+
+Parameters
+  struct tty_port *port
+    tty_port of the device
+  struct tty_driver *driver
+    tty_driver for this device
+  struct tty_struct *tty
+    tty to be installed
+
+Description
+  It is the same as tty_standard_install() except the provided port is linked
+to a concrete tty specified by tty . Use this or tty_port_register_device() (or both). Call tty_port_link_device() as a last resort.

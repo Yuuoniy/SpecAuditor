@@ -1,0 +1,10 @@
+Function: __bpf_kfunc struct hid_bpf_ctx * hid_bpf_allocate_context ( unsigned int hid_id )
+
+Allocate a context to the given HID device
+
+Parameters
+  unsigned int hid_id
+    the system unique identifier of the HID device
+
+Description
+  returns A pointer to struct hid_bpf_ctx on success, NULL on error.

@@ -1,0 +1,7 @@
+Function: void dma_fence_put ( struct dma_fence * fence )
+
+decreases refcount of the fence
+
+Parameters
+  struct dma_fence *fence
+    fence to reduce refcount of

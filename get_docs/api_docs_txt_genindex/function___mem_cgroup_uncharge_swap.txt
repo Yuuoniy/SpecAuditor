@@ -1,0 +1,9 @@
+Function: void __mem_cgroup_uncharge_swap ( swp_entry_t entry , unsigned int nr_pages )
+
+uncharge swap space
+
+Parameters
+  swp_entry_t entry
+    swap entry to uncharge
+  unsigned int nr_pages
+    the amount of swap space to uncharge

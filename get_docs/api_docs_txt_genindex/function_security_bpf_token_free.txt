@@ -1,0 +1,10 @@
+Function: void security_bpf_token_free ( struct bpf_token * token )
+
+Free a BPF token’s LSM blob
+
+Parameters
+  struct bpf_token *token
+    BPF token struct
+
+Description
+  Clean up the security information stored inside BPF token.

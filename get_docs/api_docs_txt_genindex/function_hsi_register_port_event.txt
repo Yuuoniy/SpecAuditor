@@ -1,0 +1,15 @@
+Function: int hsi_register_port_event ( struct hsi_client * cl , void ( * handler ) ( struct hsi_client * , unsigned long ) )
+
+Register a client to receive port events
+
+Parameters
+  struct hsi_client *cl
+    HSI client that wants to receive port events
+  void (*handler)(struct hsi_client *, unsigned long)
+    Event handler callback
+
+Description
+  Clients should register a callback to be able to receive
+events from the ports. Registration should happen after
+claiming the port.
+The handler can be called in interrupt context.

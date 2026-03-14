@@ -1,0 +1,7 @@
+Function: unsigned long memblock_region_reserved_base_pfn ( const struct memblock_region * reg )
+
+get the lowest pfn of the reserved region
+
+Parameters
+  const struct memblock_region *reg
+    memblock_region structure

@@ -1,0 +1,19 @@
+Function: int iio_push_to_buffers_with_ts_unaligned ( struct iio_dev * indio_dev , const void * data , size_t data_sz , int64_t timestamp )
+
+push to registered buffer, no alignment or space requirements.
+
+Parameters
+  struct iio_dev *indio_dev
+    iio_dev structure for device.
+  const void *data
+    channel data excluding the timestamp.
+  size_t data_sz
+    size of data.
+  int64_t timestamp
+    timestamp for the sample data.
+
+Description
+  This special variant of iio_push_to_buffers_with_timestamp() does
+not require space for the timestamp, or 8 byte alignment of data.
+It does however require an allocation on first call and additional
+copies on all calls, so should be avoided if possible.

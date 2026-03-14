@@ -1,0 +1,15 @@
+Function: int security_task_setrlimit ( struct task_struct * p , unsigned int resource , struct rlimit * new_rlim )
+
+Check if setting a new rlimit value is allowed
+
+Parameters
+  struct task_struct *p
+    target task’s group leader
+  unsigned int resource
+    resource whose limit is being set
+  struct rlimit *new_rlim
+    new resource limit
+
+Description
+  Check permission before setting the resource limits of process p for resource to new_rlim .  The old resource limit values can be examined by
+dereferencing (p->signal->rlim + resource).

@@ -1,0 +1,14 @@
+Macro: time_after
+
+
+
+Parameters
+  a
+    first comparable as unsigned long
+  b
+    second comparable as unsigned long
+
+Description
+  Do this with “<0” and “>=0” to only test the sign of the result. A
+good compiler would generate better code (and a really good compiler
+wouldn’t care). Gcc is currently neither.

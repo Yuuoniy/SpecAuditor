@@ -1,0 +1,7 @@
+Function: void dwc3_ref_clk_period ( struct dwc3 * dwc )
+
+Reference clock period configuration Default reference clock period depends on hardware configuration. For systems with reference clock that differs from the default, this will set clock period in DWC3_GUCTL register.
+
+Parameters
+  struct dwc3 *dwc
+    Pointer to our controller context structure

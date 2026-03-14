@@ -1,0 +1,9 @@
+Function: char * strrchr ( const char * s , int c )
+
+Find the last occurrence of a character in a string
+
+Parameters
+  const char *s
+    The string to be searched
+  int c
+    The character to search for

@@ -1,0 +1,12 @@
+Function: int gpiochip_irqchip_add_domain ( struct gpio_chip * gc , struct irq_domain * domain )
+
+adds an irqdomain to a gpiochip
+
+Parameters
+  struct gpio_chip *gc
+    the gpiochip to add the irqchip to
+  struct irq_domain *domain
+    the irqdomain to add to the gpiochip
+
+Description
+  This function adds an IRQ domain to the gpiochip.

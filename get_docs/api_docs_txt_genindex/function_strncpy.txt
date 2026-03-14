@@ -1,0 +1,15 @@
+Function: char * strncpy ( char * const p , const char * q , __kernel_size_t size )
+
+Copy a string to memory with non-guaranteed NUL padding
+
+Parameters
+  char * const p
+    pointer to destination of copy
+  const char *q
+    pointer to NUL-terminated source string to copy
+  __kernel_size_t size
+    bytes to write at p
+
+Description
+  If strlen( q ) >= size , the copy of q will stop after size bytes,
+and p will NOT be NUL-terminated

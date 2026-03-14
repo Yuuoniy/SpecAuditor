@@ -1,0 +1,15 @@
+Function: void snd_soc_dapm_stream_event ( struct snd_soc_pcm_runtime * rtd , int stream , int event )
+
+send a stream event to the dapm core
+
+Parameters
+  struct snd_soc_pcm_runtime *rtd
+    PCM runtime data
+  int stream
+    stream name
+  int event
+    stream event
+
+Description
+  Sends a stream event to the dapm core. The core then makes any
+necessary widget power changes.

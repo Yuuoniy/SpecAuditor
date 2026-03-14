@@ -1,0 +1,13 @@
+Struct: struct drm_pvr_heap
+
+Container holding information about a single heap.
+
+Members
+  base
+    Base address of heap.
+  size
+    Size of heap, in bytes. Will be 0 if the heap is not present.
+  flags
+    Flags for this heap. Currently always 0.
+  page_size_log2
+    Log2 of page size.

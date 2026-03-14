@@ -1,0 +1,11 @@
+Function: void tty_unregister_ldisc ( struct tty_ldisc_ops * ldisc )
+
+unload a line discipline
+
+Parameters
+  struct tty_ldisc_ops *ldisc
+    ldisc number
+
+Description
+  Remove a line discipline from the kernel providing it is not currently in
+use.

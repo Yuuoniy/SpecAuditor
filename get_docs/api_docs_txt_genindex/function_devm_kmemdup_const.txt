@@ -1,0 +1,13 @@
+Function: const void * devm_kmemdup_const ( struct device * dev , const void * src , size_t len , gfp_t gfp )
+
+conditionally duplicate and manage a region of memory
+
+Parameters
+  struct device *dev
+    Device this memory belongs to
+  const void *src
+    memory region to duplicate
+  size_t len
+    memory region length,
+  gfp_t gfp
+    GFP mask to use

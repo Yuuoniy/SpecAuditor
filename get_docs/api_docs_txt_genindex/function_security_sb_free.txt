@@ -1,0 +1,11 @@
+Function: void security_sb_free ( struct super_block * sb )
+
+Free a super_block LSM blob
+
+Parameters
+  struct super_block *sb
+    filesystem superblock
+
+Description
+  Deallocate and clear the sb->s_security field. sb contains the super_block
+structure to be modified.

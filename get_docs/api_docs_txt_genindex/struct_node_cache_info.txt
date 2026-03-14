@@ -1,0 +1,11 @@
+Struct: struct node_cache_info
+
+Internal tracking for memory node caches
+
+Members
+  dev
+    Device represeting the cache level
+  node
+    List element for tracking in the node
+  cache_attrs
+    Attributes for this cache level

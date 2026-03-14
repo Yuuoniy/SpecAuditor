@@ -1,0 +1,14 @@
+Function: int tty_dev_name_to_number ( const char * name , dev_t * number )
+
+return dev_t for device name
+
+Parameters
+  const char *name
+    user space name of device under /dev
+  dev_t *number
+    pointer to dev_t that this function will populate
+
+Description
+  This function converts device names like ttyS0 or ttyUSB1 into dev_t like
+(4, 64) or (188, 1). If no corresponding driver is registered then the
+function returns - ENODEV .

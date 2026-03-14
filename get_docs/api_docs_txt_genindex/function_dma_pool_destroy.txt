@@ -1,0 +1,11 @@
+Function: void dma_pool_destroy ( struct dma_pool * pool )
+
+destroys a pool of dma memory blocks.
+
+Parameters
+  struct dma_pool *pool
+    dma pool that will be destroyed
+
+Description
+  Caller guarantees that no more memory from the pool is in use,
+and that nothing will try to use the pool after this call.

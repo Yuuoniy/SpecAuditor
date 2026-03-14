@@ -1,0 +1,10 @@
+Function: void drm_gem_lru_remove ( struct drm_gem_object * obj )
+
+remove object from whatever LRU it is in
+
+Parameters
+  struct drm_gem_object *obj
+    The GEM object to remove from current LRU
+
+Description
+  If the object is currently in any LRU, remove it.

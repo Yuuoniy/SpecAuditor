@@ -1,0 +1,28 @@
+Struct: struct v4l2_subscribed_event
+
+Internal struct representing a subscribed event.
+
+Members
+  list
+    List node for the v4l2_fh->subscribed list.
+  type
+    Event type.
+  id
+    Associated object ID (e.g. control ID). 0 if there isn’t any.
+  flags
+    Copy of v4l2_event_subscription->flags.
+  fh
+    Filehandle that subscribed to this event.
+  node
+    List node that hooks into the object’s event list
+(if there is one).
+  ops
+    v4l2_subscribed_event_ops
+  elems
+    The number of elements in the events array.
+  first
+    The index of the events containing the oldest available event.
+  in_use
+    The number of queued events.
+  events
+    An array of elems events.

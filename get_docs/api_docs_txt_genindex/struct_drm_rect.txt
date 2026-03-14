@@ -1,0 +1,13 @@
+Struct: struct drm_rect
+
+two dimensional rectangle
+
+Members
+  x1
+    horizontal starting coordinate (inclusive)
+  y1
+    vertical starting coordinate (inclusive)
+  x2
+    horizontal ending coordinate (exclusive)
+  y2
+    vertical ending coordinate (exclusive)

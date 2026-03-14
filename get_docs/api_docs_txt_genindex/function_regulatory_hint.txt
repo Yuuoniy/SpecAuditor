@@ -1,0 +1,21 @@
+Function: int regulatory_hint ( struct wiphy * wiphy , const char * alpha2 )
+
+driver hint to the wireless core a regulatory domain
+
+Parameters
+  struct wiphy *wiphy
+    the wireless device giving the hint (used only for reporting
+conflicts)
+  const char *alpha2
+    the ISO/IEC 3166 alpha2 the driver claims its regulatory domain
+should be in. If rd is set this should be NULL. Note that if you
+set this to NULL you should still set rd->alpha2 to some accepted
+alpha2.
+
+Description
+  Wireless drivers can use this function to hint to the wireless core
+what it believes should be the current regulatory domain by
+giving it an ISO/IEC 3166 alpha2 country code it knows its regulatory
+domain should be in or by providing a completely build regulatory domain.
+If the driver provides an ISO/IEC 3166 alpha2 userspace will be queried
+for a regulatory domain structure for the respective country.

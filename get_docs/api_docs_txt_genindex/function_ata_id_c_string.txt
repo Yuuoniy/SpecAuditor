@@ -1,0 +1,18 @@
+Function: void ata_id_c_string ( const u16 * id , unsigned char * s , unsigned int ofs , unsigned int len )
+
+Convert IDENTIFY DEVICE page into C string
+
+Parameters
+  const u16 *id
+    IDENTIFY DEVICE results we will examine
+  unsigned char *s
+    string into which data is output
+  unsigned int ofs
+    offset into identify device page
+  unsigned int len
+    length of string to return. must be an odd number.
+
+Description
+  This function is identical to ata_id_string except that it
+trims trailing spaces and terminates the resulting string with
+null. len must be actual maximum length (even number) + 1.

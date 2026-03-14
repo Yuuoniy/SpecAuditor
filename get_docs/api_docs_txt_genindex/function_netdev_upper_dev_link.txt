@@ -1,0 +1,17 @@
+Function: int netdev_upper_dev_link ( struct net_device * dev , struct net_device * upper_dev , struct netlink_ext_ack * extack )
+
+Add a link to the upper device
+
+Parameters
+  struct net_device *dev
+    device
+  struct net_device *upper_dev
+    new upper device
+  struct netlink_ext_ack *extack
+    netlink extended ack
+
+Description
+  Adds a link to device which is upper to this one. The caller must hold
+the RTNL lock. On a failure a negative errno code is returned.
+On success the reference counts are adjusted and the function
+returns zero.

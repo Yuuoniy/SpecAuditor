@@ -1,0 +1,7 @@
+Function: struct sas_phy * sas_port_get_phy ( struct sas_port * port )
+
+try to take a reference on a port member
+
+Parameters
+  struct sas_port *port
+    port to check

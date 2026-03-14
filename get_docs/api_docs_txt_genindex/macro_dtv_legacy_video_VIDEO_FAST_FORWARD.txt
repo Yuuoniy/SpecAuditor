@@ -1,0 +1,2 @@
+Macro: VIDEO_FAST_FORWARD
+

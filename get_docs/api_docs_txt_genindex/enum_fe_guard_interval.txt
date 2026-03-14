@@ -1,0 +1,3 @@
+Enum: enum fe_guard_interval
+
+Guard interval

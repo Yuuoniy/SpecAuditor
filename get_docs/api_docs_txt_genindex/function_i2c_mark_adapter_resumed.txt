@@ -1,0 +1,11 @@
+Function: void i2c_mark_adapter_resumed ( struct i2c_adapter * adap )
+
+Report resumed state of the adapter to the core
+
+Parameters
+  struct i2c_adapter *adap
+    Adapter to mark as resumed
+
+Description
+  When using this helper to mark an adapter as resumed, the core will allow
+further transfers to this adapter. See also further notes to i2c_mark_adapter_suspended() .

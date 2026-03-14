@@ -1,0 +1,15 @@
+Function: int mtree_insert_range ( struct maple_tree * mt , unsigned long first , unsigned long last , void * entry , gfp_t gfp )
+
+Insert an entry at a given range if there is no value.
+
+Parameters
+  struct maple_tree *mt
+    The maple tree
+  unsigned long first
+    The start of the range
+  unsigned long last
+    The end of the range
+  void *entry
+    The entry to store
+  gfp_t gfp
+    The GFP_FLAGS to use for allocations.

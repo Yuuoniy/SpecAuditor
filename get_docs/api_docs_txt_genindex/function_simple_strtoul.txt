@@ -1,0 +1,14 @@
+Function: unsigned long simple_strtoul ( const char * cp , char * * endp , unsigned int base )
+
+convert a string to an unsigned long
+
+Parameters
+  const char *cp
+    The start of the string
+  char **endp
+    A pointer to the end of the parsed string will be placed here
+  unsigned int base
+    The number base to use
+
+Description
+  This function has caveats. Please use kstrtoul instead.

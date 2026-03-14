@@ -1,0 +1,12 @@
+Function: struct cxl_dport * __devm_cxl_add_dport_by_dev ( struct cxl_port * port , struct device * dport_dev )
+
+allocate a dport by dport device
+
+Parameters
+  struct cxl_port *port
+    cxl_port that hosts the dport
+  struct device *dport_dev
+    ‘ struct device ’ of the dport
+
+Description
+  Returns the allocated dport on success or ERR_PTR() of -errno on error

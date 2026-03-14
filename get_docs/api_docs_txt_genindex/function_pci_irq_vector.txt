@@ -1,0 +1,13 @@
+Function: int pci_irq_vector ( struct pci_dev * dev , unsigned int nr )
+
+Get Linux IRQ number of a device interrupt vector
+
+Parameters
+  struct pci_dev *dev
+    the PCI device to operate on
+  unsigned int nr
+    device-relative interrupt vector index (0-based); has different
+meanings, depending on interrupt mode:
+
+Description
+  MSI-X     the index in the MSI-X vector table

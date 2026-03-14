@@ -1,0 +1,21 @@
+Function: void queue_limits_stack_bdev ( struct queue_limits * t , struct block_device * bdev , sector_t offset , const char * pfx )
+
+adjust queue_limits for stacked devices
+
+Parameters
+  struct queue_limits *t
+    the stacking driver limits (top device)
+  struct block_device *bdev
+    the underlying block device (bottom)
+  sector_t offset
+    offset to beginning of data within component device
+  const char *pfx
+    prefix to use for warnings logged
+
+Description
+  This function is used by stacking drivers like MD and DM to ensure
+that all component devices have compatible block sizes and
+alignments.  The stacking driver must provide a queue_limits
+struct (top) and then iteratively call the stacking function for
+all component (bottom) devices.  The stacking function will
+attempt to combine the values and ensure proper alignment.

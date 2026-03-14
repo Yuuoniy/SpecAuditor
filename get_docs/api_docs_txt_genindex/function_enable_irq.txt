@@ -1,0 +1,11 @@
+Function: void enable_irq ( unsigned int irq )
+
+enable handling of an irq
+
+Parameters
+  unsigned int irq
+    Interrupt to enable
+
+Description
+  Undoes the effect of one call to disable_irq() .  If this matches the
+last disable, processing of interrupts on this IRQ line is re-enabled.

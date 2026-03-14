@@ -1,0 +1,83 @@
+Struct: struct drm_display_info
+
+runtime data about the connected sink
+
+Members
+  width_mm
+    Physical width in mm.
+  height_mm
+    Physical height in mm.
+  bpc
+    Maximum bits per color channel. Used by HDMI and DP outputs.
+  subpixel_order
+    Subpixel order of LCD panels.
+  panel_orientation
+    Read only connector property for built-in panels,
+indicating the orientation of the panel vs the device’s casing. drm_connector_init() sets this to DRM_MODE_PANEL_ORIENTATION_UNKNOWN.
+When not UNKNOWN this gets used by the drm_fb_helpers to rotate the
+fb to compensate and gets exported as prop to userspace.
+  color_formats
+    HDMI Color formats, selects between RGB and YCrCb
+modes. Used DRM_COLOR_FORMAT_ defines, which are _not_ the same ones
+as used to describe the pixel format in framebuffers, and also don’t
+match the formats in bus_formats which are shared with v4l.
+  bus_formats
+    Pixel data format on the wire, somewhat redundant with color_formats . Array of size num_bus_formats encoded using
+MEDIA_BUS_FMT_ defines shared with v4l and media drivers.
+  num_bus_formats
+    Size of bus_formats array.
+  bus_flags
+    Additional information (like pixel signal polarity) for
+the pixel data on the bus, using enum drm_bus_flags values
+DRM_BUS_FLAGS_.
+  max_tmds_clock
+    Maximum TMDS clock rate supported by the
+sink in kHz. 0 means undefined.
+  dvi_dual
+    Dual-link DVI sink?
+  is_hdmi
+    True if the sink is an HDMI device. This field shall be used instead of calling drm_detect_hdmi_monitor() when possible.
+  has_audio
+    True if the sink supports audio. This field shall be used instead of calling drm_detect_monitor_audio() when possible.
+  has_hdmi_infoframe
+    Does the sink support the HDMI infoframe?
+  rgb_quant_range_selectable
+    Does the sink support selecting
+the RGB quantization range?
+  edid_hdmi_rgb444_dc_modes
+    Mask of supported hdmi deep color modes
+in RGB 4:4:4. Even more stuff redundant with bus_formats .
+  edid_hdmi_ycbcr444_dc_modes
+    Mask of supported hdmi deep color
+modes in YCbCr 4:4:4. Even more stuff redundant with bus_formats .
+  cea_rev
+    CEA revision of the HDMI sink.
+  hdmi
+    advance features of a HDMI sink.
+  hdr_sink_metadata
+    HDR Metadata Information read from sink
+  non_desktop
+    Non desktop display (HMD).
+  monitor_range
+    Frequency range supported by monitor range descriptor
+  luminance_range
+    Luminance range supported by panel
+  mso_stream_count
+    eDP Multi-SST Operation (MSO) stream count from
+the DisplayID VESA vendor block. 0 for conventional Single-Stream
+Transport (SST), or 2 or 4 MSO streams.
+  mso_pixel_overlap
+    eDP MSO segment pixel overlap, 0-8 pixels.
+  max_dsc_bpp
+    Maximum DSC target bitrate, if it is set to 0 the
+monitor’s default value is used instead.
+  vics
+    Array of vics_len VICs. Internal to EDID parsing.
+  vics_len
+    Number of elements in vics. Internal to EDID parsing.
+  quirks
+    EDID based quirks. DRM core and drivers can query the drm_edid_quirk quirks using drm_edid_has_quirk() , the rest of
+the quirks also tracked here are internal to EDID parsing.
+  source_physical_address
+    Source Physical Address from HDMI
+Vendor-Specific Data Block, for CEC usage. Defaults to CEC_PHYS_ADDR_INVALID (0xffff).

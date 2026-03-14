@@ -1,0 +1,7 @@
+Function: bool drm_gpuva_invalidated ( struct drm_gpuva * va )
+
+indicates whether the backing BO of this drm_gpuva is invalidated
+
+Parameters
+  struct drm_gpuva *va
+    the drm_gpuva to check

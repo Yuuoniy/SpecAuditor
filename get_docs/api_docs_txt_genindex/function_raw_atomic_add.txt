@@ -1,0 +1,12 @@
+Function: void raw_atomic_add ( int i , atomic_t * v )
+
+atomic add with relaxed ordering
+
+Parameters
+  int i
+    int value to add
+  atomic_t *v
+    pointer to atomic_t
+
+Description
+  Atomically updates v to ( v + i ) with relaxed ordering.

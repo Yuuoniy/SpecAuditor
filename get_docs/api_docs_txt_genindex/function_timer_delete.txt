@@ -1,0 +1,13 @@
+Function: int timer_delete ( struct timer_list * timer )
+
+Deactivate a timer
+
+Parameters
+  struct timer_list *timer
+    The timer to be deactivated
+
+Description
+  The function only deactivates a pending timer, but contrary to timer_delete_sync() it does not take into account whether the timer’s
+callback function is concurrently executed on a different CPU or not.
+It neither prevents rearming of the timer.  If timer can be rearmed
+concurrently then the return value of this function is meaningless.

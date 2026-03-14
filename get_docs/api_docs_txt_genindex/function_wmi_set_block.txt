@@ -1,0 +1,14 @@
+Function: acpi_status wmi_set_block ( const char * guid_string , u8 instance , const struct acpi_buffer * in )
+
+Write to a WMI block (deprecated)
+
+Parameters
+  const char *guid_string
+    36 char string of the form fa50ff2b-f2e8-45de-83fa-65417f2f49ba
+  u8 instance
+    Instance index
+  const struct acpi_buffer *in
+    Buffer containing new values for the data block
+
+Description
+  Write the contents of the input buffer to an ACPI-WMI data block.

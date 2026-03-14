@@ -1,0 +1,16 @@
+Function: int notify_change ( struct mnt_idmap * idmap , struct dentry * dentry , struct iattr * attr , struct inode * * delegated_inode )
+
+modify attributes of a filesystem object
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount the inode was found from
+  struct dentry *dentry
+    object affected
+  struct iattr *attr
+    new attributes
+  struct inode **delegated_inode
+    returns inode, if the inode is delegated
+
+Description
+  The caller must hold the i_rwsem exclusively on the affected object.

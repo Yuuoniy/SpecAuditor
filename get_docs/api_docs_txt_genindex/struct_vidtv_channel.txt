@@ -1,0 +1,24 @@
+Struct: struct vidtv_channel
+
+A ‘channel’ abstraction
+
+Members
+  name
+    name of the channel
+  transport_stream_id
+    a number to identify the TS, chosen at will.
+  service
+    A _single_ service. Will be concatenated into the SDT.
+  program_num
+    The link between PAT, PMT and SDT.
+  program
+    A _single_ program with one or more streams associated with it.
+Will be concatenated into the PAT.
+  streams
+    A stream loop used to populate the PMT section for ‘program’
+  encoders
+    A encoder loop. There must be one encoder for each stream.
+  events
+    Optional event information. This will feed into the EIT.
+  next
+    Optionally chain this channel.

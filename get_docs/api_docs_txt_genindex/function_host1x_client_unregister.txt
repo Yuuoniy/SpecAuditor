@@ -1,0 +1,11 @@
+Function: void host1x_client_unregister ( struct host1x_client * client )
+
+unregister a host1x client
+
+Parameters
+  struct host1x_client *client
+    host1x client
+
+Description
+  Removes a host1x client from its host1x controller instance. If a logical
+device has already been initialized, it will be torn down.

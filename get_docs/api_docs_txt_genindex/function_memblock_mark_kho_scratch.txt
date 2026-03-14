@@ -1,0 +1,13 @@
+Function: int memblock_mark_kho_scratch ( phys_addr_t base , phys_addr_t size )
+
+Mark a memory region as MEMBLOCK_KHO_SCRATCH.
+
+Parameters
+  phys_addr_t base
+    the base phys addr of the region
+  phys_addr_t size
+    the size of the region
+
+Description
+  Only memory regions marked with MEMBLOCK_KHO_SCRATCH will be considered
+for allocations during early boot with kexec handover.

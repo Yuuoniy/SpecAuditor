@@ -1,0 +1,11 @@
+Function: void cec_notifier_phys_addr_invalidate ( struct cec_notifier * n )
+
+set the physical address to INVALID
+
+Parameters
+  struct cec_notifier *n
+    the CEC notifier
+
+Description
+  This is a simple helper function to invalidate the physical
+address. Does nothing if n == NULL.

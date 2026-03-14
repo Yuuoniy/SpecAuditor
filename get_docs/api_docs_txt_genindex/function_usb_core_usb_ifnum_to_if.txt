@@ -1,0 +1,13 @@
+Function: struct usb_interface * usb_ifnum_to_if ( const struct usb_device * dev , unsigned ifnum )
+
+get the interface object with a given interface number
+
+Parameters
+  const struct usb_device *dev
+    the device whose current configuration is considered
+  unsigned ifnum
+    the desired interface
+
+Description
+  This walks the device descriptor for the currently active configuration
+to find the interface object with the particular interface number.

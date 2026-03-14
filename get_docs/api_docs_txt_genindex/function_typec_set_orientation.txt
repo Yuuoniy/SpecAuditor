@@ -1,0 +1,12 @@
+Function: int typec_set_orientation ( struct typec_port * port , enum typec_orientation orientation )
+
+Set USB Type-C cable plug orientation
+
+Parameters
+  struct typec_port *port
+    USB Type-C Port
+  enum typec_orientation orientation
+    USB Type-C cable plug orientation
+
+Description
+  Set cable plug orientation for port .

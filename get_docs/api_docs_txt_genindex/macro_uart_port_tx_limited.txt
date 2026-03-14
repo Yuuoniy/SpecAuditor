@@ -1,0 +1,20 @@
+Macro: uart_port_tx_limited
+
+
+
+Parameters
+  port
+    uart port
+  ch
+    variable to store a character to be written to the HW
+  count
+    a limit of characters to send
+  tx_ready
+    can HW accept more data function
+  put_char
+    function to write a character
+  tx_done
+    function to call after the loop is done
+
+Description
+  This helper transmits characters from the xmit buffer to the hardware using put_char() . It does so until count characters are sent and while tx_ready evaluates to true.

@@ -1,0 +1,13 @@
+Function: int snd_soc_jack_get_type ( struct snd_soc_jack * jack , int micbias_voltage )
+
+Based on the mic bias value, this function returns the type of jack from the zones declared in the jack type
+
+Parameters
+  struct snd_soc_jack *jack
+    ASoC jack
+  int micbias_voltage
+    mic bias voltage at adc channel when jack is plugged in
+
+Description
+  Based on the mic bias value passed, this function helps identify
+the type of jack from the already declared jack zones

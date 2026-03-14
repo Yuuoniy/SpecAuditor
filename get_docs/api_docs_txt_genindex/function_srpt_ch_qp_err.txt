@@ -1,0 +1,7 @@
+Function: int srpt_ch_qp_err ( struct srpt_rdma_ch * ch )
+
+set the channel queue pair state to ‘error’
+
+Parameters
+  struct srpt_rdma_ch *ch
+    SRPT RDMA channel.

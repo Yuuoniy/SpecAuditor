@@ -1,0 +1,16 @@
+Function: void i915_oa_poll_wait ( struct i915_perf_stream * stream , struct file * file , poll_table * wait )
+
+call poll_wait() for an OA stream poll()
+
+Parameters
+  struct i915_perf_stream *stream
+    An i915-perf stream opened for OA metrics
+  struct file *file
+    An i915 perf stream file
+  poll_table *wait
+    poll() state table
+
+Description
+  For handling userspace polling on an i915 perf stream opened for OA metrics,
+this starts a poll_wait with the wait queue that our hrtimer callback wakes
+when it sees data ready to read in the circular OA buffer.

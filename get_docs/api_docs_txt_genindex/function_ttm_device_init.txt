@@ -1,0 +1,22 @@
+Function: int ttm_device_init ( struct ttm_device * bdev , const struct ttm_device_funcs * funcs , struct device * dev , struct address_space * mapping , struct drm_vma_offset_manager * vma_manager , bool use_dma_alloc , bool use_dma32 )
+
+
+
+Parameters
+  struct ttm_device *bdev
+    A pointer to a struct ttm_device to initialize.
+  const struct ttm_device_funcs *funcs
+    Function table for the device.
+  struct device *dev
+    The core kernel device pointer for DMA mappings and allocations.
+  struct address_space *mapping
+    The address space to use for this bo.
+  struct drm_vma_offset_manager *vma_manager
+    A pointer to a vma manager.
+  bool use_dma_alloc
+    If coherent DMA allocation API should be used.
+  bool use_dma32
+    If we should use GFP_DMA32 for device memory allocations.
+
+Description
+  Initializes a struct ttm_device :

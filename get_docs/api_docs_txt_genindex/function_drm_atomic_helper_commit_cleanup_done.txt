@@ -1,0 +1,11 @@
+Function: void drm_atomic_helper_commit_cleanup_done ( struct drm_atomic_state * state )
+
+signal completion of commit
+
+Parameters
+  struct drm_atomic_state *state
+    atomic state object being committed
+
+Description
+  This signals completion of the atomic update state , including any
+cleanup work. If used, it must be called right before calling drm_atomic_state_put() .

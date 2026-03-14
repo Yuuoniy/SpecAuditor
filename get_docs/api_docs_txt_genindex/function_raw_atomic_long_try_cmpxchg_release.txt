@@ -1,0 +1,16 @@
+Function: bool raw_atomic_long_try_cmpxchg_release ( atomic_long_t * v , long * old , long new )
+
+atomic compare and exchange with release ordering
+
+Parameters
+  atomic_long_t *v
+    pointer to atomic_long_t
+  long *old
+    pointer to long value to compare with
+  long new
+    long value to assign
+
+Description
+  If ( v == old ), atomically updates v to new with release ordering.
+Otherwise, v is not modified, old is updated to the current value of v ,
+and relaxed ordering is provided.

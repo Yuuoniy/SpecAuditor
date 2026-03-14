@@ -1,0 +1,15 @@
+Function: int cxl_find_regblock ( struct pci_dev * pdev , enum cxl_regloc_type type , struct cxl_register_map * map )
+
+Locate register blocks by type
+
+Parameters
+  struct pci_dev *pdev
+    The CXL PCI device to enumerate.
+  enum cxl_regloc_type type
+    Register Block Indicator id
+  struct cxl_register_map *map
+    Enumeration output, clobbered on error
+
+Description
+  A CXL DVSEC may point to one or more register blocks, search for them
+by type .

@@ -1,0 +1,21 @@
+Function: int request_any_context_irq ( unsigned int irq , irq_handler_t handler , unsigned long flags , const char * name , void * dev_id )
+
+allocate an interrupt line
+
+Parameters
+  unsigned int irq
+    Interrupt line to allocate
+  irq_handler_t handler
+    Function to be called when the IRQ occurs.
+Threaded handler for threaded interrupts.
+  unsigned long flags
+    Interrupt type flags
+  const char *name
+    An ascii name for the claiming device
+  void *dev_id
+    A cookie passed back to the handler function
+
+Description
+  This call allocates interrupt resources and enables the interrupt line
+and IRQ handling. It selects either a hardirq or threaded handling
+method depending on the context.

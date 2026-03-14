@@ -1,0 +1,14 @@
+Function: int handle_early_requeue_pi_wakeup ( struct futex_hash_bucket * hb , struct futex_q * q , struct hrtimer_sleeper * timeout )
+
+Handle early wakeup on the initial futex
+
+Parameters
+  struct futex_hash_bucket *hb
+    the hash_bucket futex_q was original enqueued on
+  struct futex_q *q
+    the futex_q woken while waiting to be requeued
+  struct hrtimer_sleeper *timeout
+    the timeout associated with the wait (NULL if none)
+
+Description
+  Determine the cause for the early wakeup.

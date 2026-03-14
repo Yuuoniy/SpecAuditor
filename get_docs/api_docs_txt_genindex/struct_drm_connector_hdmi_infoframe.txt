@@ -1,0 +1,9 @@
+Struct: struct drm_connector_hdmi_infoframe
+
+HDMI Infoframe container
+
+Members
+  data
+    HDMI Infoframe structure
+  set
+    Is the content of data valid?

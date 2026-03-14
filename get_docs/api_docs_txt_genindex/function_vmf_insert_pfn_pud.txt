@@ -1,0 +1,14 @@
+Function: vm_fault_t vmf_insert_pfn_pud ( struct vm_fault * vmf , unsigned long pfn , bool write )
+
+insert a pud size pfn
+
+Parameters
+  struct vm_fault *vmf
+    Structure describing the fault
+  unsigned long pfn
+    pfn to insert
+  bool write
+    whether it’s a write fault
+
+Description
+  Insert a pud size pfn. See vmf_insert_pfn() for additional info.

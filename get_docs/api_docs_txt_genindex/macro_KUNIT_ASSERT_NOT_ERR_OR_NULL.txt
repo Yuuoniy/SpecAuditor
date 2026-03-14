@@ -1,0 +1,13 @@
+Macro: KUNIT_ASSERT_NOT_ERR_OR_NULL
+
+
+
+Parameters
+  test
+    The test context object.
+  ptr
+    an arbitrary pointer.
+
+Description
+  Sets an assertion that the value that ptr evaluates to is not null and not
+an errno stored in a pointer. This is the same as KUNIT_EXPECT_NOT_ERR_OR_NULL() , except it causes an assertion failure (see KUNIT_ASSERT_TRUE() ) when the assertion is not met.

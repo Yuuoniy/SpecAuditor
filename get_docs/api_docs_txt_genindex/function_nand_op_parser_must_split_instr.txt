@@ -1,0 +1,22 @@
+Function: bool nand_op_parser_must_split_instr ( const struct nand_op_parser_pattern_elem * pat , const struct nand_op_instr * instr , unsigned int * start_offset )
+
+Checks if an instruction must be split
+
+Parameters
+  const struct nand_op_parser_pattern_elem *pat
+    the parser pattern element that matches instr
+  const struct nand_op_instr *instr
+    pointer to the instruction to check
+  unsigned int *start_offset
+    this is an in/out parameter. If instr has already been
+split, then start_offset is the offset from which to start
+(either an address cycle or an offset in the data buffer).
+Conversely, if the function returns true (ie. instr must be
+split), this parameter is updated to point to the first
+data/address cycle that has not been taken care of.
+
+Description
+  Some NAND controllers are limited and cannot send X address cycles with a
+unique operation, or cannot read/write more than Y bytes at the same time.
+In this case, split the instruction that does not fit in a single
+controller-operation into two or more chunks.

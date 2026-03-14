@@ -1,0 +1,3 @@
+Enum: enum dmxdev_state
+
+state machine for the dmxdev.

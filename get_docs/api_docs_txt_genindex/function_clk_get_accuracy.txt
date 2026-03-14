@@ -1,0 +1,11 @@
+Function: long clk_get_accuracy ( struct clk * clk )
+
+obtain the clock accuracy in ppb (parts per billion) for a clock source.
+
+Parameters
+  struct clk *clk
+    clock source
+
+Description
+  This gets the clock source accuracy expressed in ppb.
+A perfect clock returns 0.

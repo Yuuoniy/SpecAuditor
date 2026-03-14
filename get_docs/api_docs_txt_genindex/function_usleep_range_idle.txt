@@ -1,0 +1,12 @@
+Function: void usleep_range_idle ( unsigned long min , unsigned long max )
+
+Sleep for an approximate time with idle time accounting
+
+Parameters
+  unsigned long min
+    Minimum time in microseconds to sleep
+  unsigned long max
+    Maximum time in microseconds to sleep
+
+Description
+  For basic information please refere to usleep_range_state() .

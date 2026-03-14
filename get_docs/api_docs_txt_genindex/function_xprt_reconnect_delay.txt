@@ -1,0 +1,7 @@
+Function: unsigned long xprt_reconnect_delay ( const struct rpc_xprt * xprt )
+
+compute the wait before scheduling a connect
+
+Parameters
+  const struct rpc_xprt *xprt
+    transport instance

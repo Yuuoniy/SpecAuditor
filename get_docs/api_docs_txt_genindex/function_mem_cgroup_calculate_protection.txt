@@ -1,0 +1,12 @@
+Function: void mem_cgroup_calculate_protection ( struct mem_cgroup * root , struct mem_cgroup * memcg )
+
+check if memory consumption is in the normal range
+
+Parameters
+  struct mem_cgroup *root
+    the top ancestor of the sub-tree being checked
+  struct mem_cgroup *memcg
+    the memory cgroup to check
+
+Description
+  of a top-down tree iteration, not for isolated queries.

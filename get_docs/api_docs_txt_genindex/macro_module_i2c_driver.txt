@@ -1,0 +1,12 @@
+Macro: module_i2c_driver
+
+
+
+Parameters
+  __i2c_driver
+    i2c_driver struct
+
+Description
+  Helper macro for I2C drivers which do not do anything special in module
+init/exit. This eliminates a lot of boilerplate. Each module may only
+use this macro once, and calling it replaces module_init() and module_exit()

@@ -1,0 +1,12 @@
+Function: int irq_setup_alt_chip ( struct irq_data * d , unsigned int type )
+
+Switch to alternative chip
+
+Parameters
+  struct irq_data *d
+    irq_data for this interrupt
+  unsigned int type
+    Flow type to be initialized
+
+Description
+  Only to be called from chip-> irq_set_type() callbacks.

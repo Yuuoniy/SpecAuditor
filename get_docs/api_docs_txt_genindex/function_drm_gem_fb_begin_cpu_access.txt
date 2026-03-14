@@ -1,0 +1,14 @@
+Function: int drm_gem_fb_begin_cpu_access ( struct drm_framebuffer * fb , enum dma_data_direction dir )
+
+prepares GEM buffer objects for CPU access
+
+Parameters
+  struct drm_framebuffer *fb
+    the framebuffer
+  enum dma_data_direction dir
+    access mode
+
+Description
+  Prepares a framebuffer’s GEM buffer objects for CPU access. This function
+must be called before accessing the BO data within the kernel. For imported
+BOs, the function calls dma_buf_begin_cpu_access() .

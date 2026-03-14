@@ -1,0 +1,12 @@
+Function: char * match_strdup ( const substring_t * s )
+
+allocate a new string with the contents of a substring_t
+
+Parameters
+  const substring_t *s
+    substring_t to copy
+
+Description
+  Allocates and returns a string filled with the contents of
+the substring_t s . The caller is responsible for freeing the returned
+string with kfree() .

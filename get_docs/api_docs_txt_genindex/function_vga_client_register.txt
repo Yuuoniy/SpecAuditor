@@ -1,0 +1,12 @@
+Function: int vga_client_register ( struct pci_dev * pdev , unsigned int ( * set_decode ) ( struct pci_dev * pdev , bool decode ) )
+
+register or unregister a VGA arbitration client
+
+Parameters
+  struct pci_dev *pdev
+    PCI device of the VGA client
+  unsigned int (*set_decode)(struct pci_dev *pdev, bool decode)
+    VGA decode change callback
+
+Description
+  Clients have two callback mechanisms they can use.

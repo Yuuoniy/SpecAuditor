@@ -1,0 +1,14 @@
+Function: void kgdb_roundup_cpus ( void )
+
+Get other CPUs into a holding pattern
+
+Parameters
+  void
+    no arguments
+
+Description
+  On SMP systems, we need to get the attention of the other CPUs
+and get them into a known state.  This should do what is needed
+to get the other CPUs to call kgdb_wait() . Note that on some arches,
+the NMI approach is not used for rounding up all the CPUs.  Normally
+those architectures can just not implement this and get the default.

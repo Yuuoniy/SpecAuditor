@@ -1,0 +1,19 @@
+Function: int nand_read_oob_op ( struct nand_chip * chip , unsigned int page , unsigned int offset_in_oob , void * buf , unsigned int len )
+
+Do a READ OOB operation
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+  unsigned int page
+    page to read
+  unsigned int offset_in_oob
+    offset within the OOB area
+  void *buf
+    buffer used to store the data
+  unsigned int len
+    length of the buffer
+
+Description
+  This function issues a READ OOB operation.
+This function does not select/unselect the CS line.

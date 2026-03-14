@@ -1,0 +1,12 @@
+Function: int nand_choose_interface_config ( struct nand_chip * chip )
+
+find the best data interface and timings
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+
+Description
+  Find the best data interface and NAND timings supported by the chip
+and the driver. Eventually let the NAND manufacturer driver propose his own
+set of timings.

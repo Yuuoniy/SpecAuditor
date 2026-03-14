@@ -1,0 +1,13 @@
+Function: void cec_notifier_set_phys_addr ( struct cec_notifier * n , u16 pa )
+
+set a new physical address.
+
+Parameters
+  struct cec_notifier *n
+    the CEC notifier
+  u16 pa
+    the CEC physical address
+
+Description
+  Set a new CEC physical address.
+Does nothing if n == NULL.

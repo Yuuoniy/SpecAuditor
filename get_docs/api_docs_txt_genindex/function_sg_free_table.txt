@@ -1,0 +1,7 @@
+Function: void sg_free_table ( struct sg_table * table )
+
+Free a previously allocated sg table
+
+Parameters
+  struct sg_table *table
+    The mapped sg table header

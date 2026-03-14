@@ -1,0 +1,7 @@
+Function: bool drm_modeset_is_locked ( struct drm_modeset_lock * lock )
+
+equivalent to mutex_is_locked()
+
+Parameters
+  struct drm_modeset_lock *lock
+    lock to check

@@ -1,0 +1,10 @@
+Function: void security_xfrm_state_free ( struct xfrm_state * x )
+
+Free a xfrm state
+
+Parameters
+  struct xfrm_state *x
+    xfrm state
+
+Description
+  Deallocate x->security.

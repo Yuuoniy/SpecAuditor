@@ -1,0 +1,10 @@
+Function: int unregister_fprobe ( struct fprobe * fp )
+
+Unregister fprobe.
+
+Parameters
+  struct fprobe *fp
+    A fprobe data structure to be unregistered.
+
+Description
+  Unregister fprobe (and remove ftrace hooks from the function entries).

@@ -1,0 +1,11 @@
+Function: struct ww_acquire_ctx * dma_resv_locking_ctx ( struct dma_resv * obj )
+
+returns the context used to lock the object
+
+Parameters
+  struct dma_resv *obj
+    the reservation object
+
+Description
+  Returns the context used to lock a reservation object or NULL if no context
+was used or the object is not locked at all.

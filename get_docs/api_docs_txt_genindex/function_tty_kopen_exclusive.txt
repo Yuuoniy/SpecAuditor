@@ -1,0 +1,11 @@
+Function: struct tty_struct * tty_kopen_exclusive ( dev_t device )
+
+open a tty device for kernel
+
+Parameters
+  dev_t device
+    dev_t of device to open
+
+Description
+  Opens tty exclusively for kernel. Performs the driver lookup, makes sure
+it’s not already opened and performs the first-time tty initialization.

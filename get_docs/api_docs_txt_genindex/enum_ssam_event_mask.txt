@@ -1,0 +1,3 @@
+Enum: enum ssam_event_mask
+
+Flags specifying how events are matched to notifiers.

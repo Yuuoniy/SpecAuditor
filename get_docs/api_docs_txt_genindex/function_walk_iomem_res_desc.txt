@@ -1,0 +1,21 @@
+Function: int walk_iomem_res_desc ( unsigned long desc , unsigned long flags , u64 start , u64 end , void * arg , int ( * func ) ( struct resource * , void * ) )
+
+Walks through iomem resources and calls func() with matching resource ranges. *
+
+Parameters
+  unsigned long desc
+    I/O resource descriptor. Use IORES_DESC_NONE to skip desc check.
+  unsigned long flags
+    I/O resource flags
+  u64 start
+    start addr
+  u64 end
+    end addr
+  void *arg
+    function argument for the callback func
+  int (*func)(struct resource *, void *)
+    callback function that is called for each qualifying resource area
+
+Description
+  All the memory ranges which overlap start,end and also match flags and
+desc are valid candidates.

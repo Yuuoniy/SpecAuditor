@@ -1,0 +1,12 @@
+Function: int usb_function_activate ( struct usb_function * function )
+
+allow function and gadget enumeration
+
+Parameters
+  struct usb_function *function
+    function on which usb_function_activate() was called
+
+Description
+  Reverses effect of usb_function_deactivate() .  If no more functions
+are delaying their activation, the gadget driver will respond to
+host enumeration procedures.

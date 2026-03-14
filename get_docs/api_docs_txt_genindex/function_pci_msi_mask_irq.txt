@@ -1,0 +1,7 @@
+Function: void pci_msi_mask_irq ( struct irq_data * data )
+
+Generic IRQ chip callback to mask PCI/MSI interrupts
+
+Parameters
+  struct irq_data *data
+    pointer to irqdata associated to that interrupt

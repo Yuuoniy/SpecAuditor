@@ -1,0 +1,13 @@
+Function: long sgx_ioc_enclave_remove_pages ( struct sgx_encl * encl , void __user * arg )
+
+handler for SGX_IOC_ENCLAVE_REMOVE_PAGES
+
+Parameters
+  struct sgx_encl *encl
+    an enclave pointer
+  void __user *arg
+    userspace pointer to struct sgx_enclave_remove_pages instance
+
+Description
+  Final step of the flow removing pages from an initialized enclave. The
+complete flow is:

@@ -1,0 +1,12 @@
+Function: int numa_nearest_node ( int node , unsigned int state )
+
+Find nearest node by state
+
+Parameters
+  int node
+    Node id to start the search
+  unsigned int state
+    State to filter the search
+
+Description
+  Lookup the closest node by distance if nid is not in state.

@@ -1,0 +1,11 @@
+Function: struct ssam_request_spec_md
+
+Blue-print specification for multi-device SAM request.
+
+Members
+  target_category
+    Category of the request’s target. See enum ssam_ssh_tc .
+  command_id
+    Command ID of the request.
+  flags
+    Flags for the request. See enum ssam_request_flags .

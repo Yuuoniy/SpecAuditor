@@ -1,0 +1,24 @@
+Struct: struct ttm_kmap_iter_iomap
+
+Specialization for a struct io_mapping + struct sg_table backed struct ttm_resource .
+
+Members
+  base
+    Embedded struct ttm_kmap_iter providing the usage interface.
+  iomap
+    struct io_mapping representing the underlying linear io_memory.
+  st
+    sg_table into iomap , representing the memory of the struct ttm_resource .
+  start
+    Offset that needs to be subtracted from st to make
+sg_dma_address(st->sgl) - start == 0 for iomap start.
+  cache
+    Scatterlist traversal cache for fast lookups.
+  cache.sg
+    Pointer to the currently cached scatterlist segment.
+  cache.i
+    First index of sg . PAGE_SIZE granularity.
+  cache.end
+    Last index + 1 of sg . PAGE_SIZE granularity.
+  cache.offs
+    First offset into iomap of sg . PAGE_SIZE granularity.

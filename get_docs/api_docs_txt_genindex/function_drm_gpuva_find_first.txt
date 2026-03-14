@@ -1,0 +1,11 @@
+Function: struct drm_gpuva * drm_gpuva_find_first ( struct drm_gpuvm * gpuvm , u64 addr , u64 range )
+
+find the first drm_gpuva in the given range
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm to search in
+  u64 addr
+    the drm_gpuvas address
+  u64 range
+    the drm_gpuvas range

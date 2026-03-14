@@ -1,0 +1,9 @@
+Function: struct kpp_request * kpp_request_alloc ( struct crypto_kpp * tfm , gfp_t gfp )
+
+allocates kpp request
+
+Parameters
+  struct crypto_kpp *tfm
+    KPP tfm handle allocated with crypto_alloc_kpp()
+  gfp_t gfp
+    allocation flags

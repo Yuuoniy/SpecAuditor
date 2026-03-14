@@ -1,0 +1,7 @@
+Macro: RCU_INITIALIZER
+
+
+
+Parameters
+  v
+    The value to statically initialize with.

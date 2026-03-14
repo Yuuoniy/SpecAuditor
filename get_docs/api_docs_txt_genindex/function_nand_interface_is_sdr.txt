@@ -1,0 +1,7 @@
+Function: bool nand_interface_is_sdr ( const struct nand_interface_config * conf )
+
+get the interface type
+
+Parameters
+  const struct nand_interface_config *conf
+    The data interface

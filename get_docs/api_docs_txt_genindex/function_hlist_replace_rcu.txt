@@ -1,0 +1,14 @@
+Function: void hlist_replace_rcu ( struct hlist_node * old , struct hlist_node * new )
+
+replace old entry by new one
+
+Parameters
+  struct hlist_node *old
+    the element to be replaced
+  struct hlist_node *new
+    the new element to insert
+
+Description
+  The old entry will be replaced with the new entry atomically from
+the perspective of concurrent readers.  It is the caller’s responsibility
+to synchronize with concurrent updaters, if any.

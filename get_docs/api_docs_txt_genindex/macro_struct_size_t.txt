@@ -1,0 +1,16 @@
+Macro: struct_size_t
+
+
+
+Parameters
+  type
+    structure type name.
+  member
+    Name of the array member.
+  count
+    Number of elements in the array.
+
+Description
+  Calculates size of memory needed for structure type followed by an
+array of count number of member elements. Prefer using struct_size() when possible instead, to keep calculations associated with a specific
+instance variable of type type .

@@ -1,0 +1,24 @@
+Function: int gen_new_estimator ( struct gnet_stats_basic_sync * bstats , struct gnet_stats_basic_sync __percpu * cpu_bstats , struct net_rate_estimator __rcu * * rate_est , spinlock_t * lock , bool running , struct nlattr * opt )
+
+create a new rate estimator
+
+Parameters
+  struct gnet_stats_basic_sync *bstats
+    basic statistics
+  struct gnet_stats_basic_sync __percpu *cpu_bstats
+    bstats per cpu
+  struct net_rate_estimator __rcu **rate_est
+    rate estimator statistics
+  spinlock_t *lock
+    lock for statistics and control path
+  bool running
+    true if bstats represents a running qdisc, thus bstats ’
+internal values might change during basic reads. Only used
+if bstats_cpu is NULL
+  struct nlattr *opt
+    rate estimator configuration TLV
+
+Description
+  Creates a new rate estimator with bstats as source and rate_est as destination. A new timer with the interval specified in the
+configuration TLV is created. Upon each interval, the latest statistics
+will be read from bstats and the estimated rate will be stored in rate_est with the statistics lock grabbed during this period.

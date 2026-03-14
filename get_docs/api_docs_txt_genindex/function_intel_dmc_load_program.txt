@@ -1,0 +1,12 @@
+Function: void intel_dmc_load_program ( struct intel_display * display )
+
+write the firmware from memory to register.
+
+Parameters
+  struct intel_display *display
+    display instance
+
+Description
+  DMC firmware is read from a .bin file and kept in internal memory one time.
+Everytime display comes back from low power state this function is called to
+copy the firmware from internal memory to registers.

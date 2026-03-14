@@ -1,0 +1,12 @@
+Function: char * devm_kstrdup ( struct device * dev , const char * s , gfp_t gfp )
+
+Allocate resource managed space and copy an existing string into that.
+
+Parameters
+  struct device *dev
+    Device to allocate memory for
+  const char *s
+    the string to duplicate
+  gfp_t gfp
+    the GFP mask used in the devm_kmalloc() call when
+allocating memory

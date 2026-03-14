@@ -1,0 +1,20 @@
+Function: int buffer_migrate_folio ( struct address_space * mapping , struct folio * dst , struct folio * src , enum migrate_mode mode )
+
+Migration function for folios with buffers.
+
+Parameters
+  struct address_space *mapping
+    The address space containing src .
+  struct folio *dst
+    The folio to migrate to.
+  struct folio *src
+    The folio to migrate from.
+  enum migrate_mode mode
+    How to migrate the folio.
+
+Description
+  This function can only be used if the underlying filesystem guarantees
+that no other references to src exist. For example attached buffer
+heads are accessed only under the folio lock.  If your filesystem cannot
+provide this guarantee, buffer_migrate_folio_norefs() may be more
+appropriate.

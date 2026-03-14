@@ -1,0 +1,12 @@
+Function: void usb_block_urb ( struct urb * urb )
+
+reliably prevent further use of an URB
+
+Parameters
+  struct urb *urb
+    pointer to URB to be blocked, may be NULL
+
+Description
+  After the routine has run, attempts to resubmit the URB will fail
+with error -EPERM.  Thus even if the URB’s completion handler always
+tries to resubmit, it will not succeed and the URB will become idle.

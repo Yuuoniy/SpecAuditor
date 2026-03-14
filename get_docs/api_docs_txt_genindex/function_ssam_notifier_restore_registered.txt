@@ -1,0 +1,12 @@
+Function: void ssam_notifier_restore_registered ( struct ssam_controller * ctrl )
+
+Restore/re-enable events for all registered notifiers.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller for which to restore the notifiers/events.
+
+Description
+  Restores/re-enables all events for which notifiers have been registered on
+the given controller. In case of a failure, the error is logged and the
+function continues to try and enable the remaining events.

@@ -1,0 +1,7 @@
+Function: void zynqmp_disp_disable ( struct zynqmp_disp * disp )
+
+Disable the display controller
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller

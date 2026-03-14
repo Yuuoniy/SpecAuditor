@@ -1,0 +1,10 @@
+Function: struct ata_port * ata_port_alloc ( struct ata_host * host )
+
+allocate and initialize basic ATA port resources
+
+Parameters
+  struct ata_host *host
+    ATA host this allocated port belongs to
+
+Description
+  Allocate and initialize basic ATA port resources.

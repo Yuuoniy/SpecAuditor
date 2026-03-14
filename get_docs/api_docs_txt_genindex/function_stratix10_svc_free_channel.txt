@@ -1,0 +1,10 @@
+Function: void stratix10_svc_free_channel ( struct stratix10_svc_chan * chan )
+
+free service channel
+
+Parameters
+  struct stratix10_svc_chan *chan
+    service channel to be freed
+
+Description
+  This function is used by service client to free a service channel.

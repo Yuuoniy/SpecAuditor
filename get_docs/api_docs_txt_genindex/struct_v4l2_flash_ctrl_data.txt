@@ -1,0 +1,10 @@
+Struct: struct v4l2_flash_ctrl_data
+
+flash control initialization data, filled basing on the features declared by the LED flash class driver in the v4l2_flash_config
+
+Members
+  config
+    initialization data for a control
+  cid
+    contains v4l2 flash control id if the config
+field was initialized, 0 otherwise

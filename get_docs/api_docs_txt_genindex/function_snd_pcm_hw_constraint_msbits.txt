@@ -1,0 +1,19 @@
+Function: int snd_pcm_hw_constraint_msbits ( struct snd_pcm_runtime * runtime , unsigned int cond , unsigned int width , unsigned int msbits )
+
+add a hw constraint msbits rule
+
+Parameters
+  struct snd_pcm_runtime *runtime
+    PCM runtime instance
+  unsigned int cond
+    condition bits
+  unsigned int width
+    sample bits width
+  unsigned int msbits
+    msbits width
+
+Description
+  This constraint will set the number of most significant bits (msbits) if a
+sample format with the specified width has been select. If width is set to 0
+the msbits will be set for any sample format with a width larger than the
+specified msbits.

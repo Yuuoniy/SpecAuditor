@@ -1,0 +1,12 @@
+Function: bool raw_atomic64_sub_and_test ( s64 i , atomic64_t * v )
+
+atomic subtract and test if zero with full ordering
+
+Parameters
+  s64 i
+    s64 value to subtract
+  atomic64_t *v
+    pointer to atomic64_t
+
+Description
+  Atomically updates v to ( v - i ) with full ordering.

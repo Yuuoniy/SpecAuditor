@@ -1,0 +1,15 @@
+Macro: wait_event_timeout
+
+
+
+Parameters
+  wq_head
+    the waitqueue to wait on
+  condition
+    a C expression for the event to wait for
+  timeout
+    timeout, in jiffies
+
+Description
+  The process is put to sleep (TASK_UNINTERRUPTIBLE) until the condition evaluates to true. The condition is checked each time
+the waitqueue wq_head is woken up.

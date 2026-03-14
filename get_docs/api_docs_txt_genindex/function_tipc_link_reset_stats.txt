@@ -1,0 +1,7 @@
+Function: void tipc_link_reset_stats ( struct tipc_link * l )
+
+reset link statistics
+
+Parameters
+  struct tipc_link *l
+    pointer to link

@@ -1,0 +1,18 @@
+Function: int ep_poll ( struct eventpoll * ep , struct epoll_event __user * events , int maxevents , struct timespec64 * timeout )
+
+Retrieves ready events, and delivers them to the caller-supplied event buffer.
+
+Parameters
+  struct eventpoll *ep
+    Pointer to the eventpoll context.
+  struct epoll_event __user *events
+    Pointer to the userspace buffer where the ready events should be
+stored.
+  int maxevents
+    Size (in terms of number of events) of the caller event buffer.
+  struct timespec64 *timeout
+    Maximum timeout for the ready events fetch operation, in
+timespec. If the timeout is zero, the function will not block,
+while if the timeout ptr is NULL, the function will block
+until at least one event has been retrieved (or an error
+occurred).

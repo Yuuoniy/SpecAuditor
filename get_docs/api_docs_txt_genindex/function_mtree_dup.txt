@@ -1,0 +1,22 @@
+Function: int mtree_dup ( struct maple_tree * mt , struct maple_tree * new , gfp_t gfp )
+
+Duplicate an entire maple tree
+
+Parameters
+  struct maple_tree *mt
+    The source maple tree
+  struct maple_tree *new
+    The new maple tree
+  gfp_t gfp
+    The GFP_FLAGS to use for allocations
+
+Description
+  This function duplicates a maple tree in Depth-First Search (DFS) pre-order
+traversal. It uses memcpy() to copy nodes in the source tree and allocate
+new child nodes in non-leaf nodes. The new node is exactly the same as the
+source node except for all the addresses stored in it. It will be faster than
+traversing all elements in the source tree and inserting them one by one into
+the new tree.
+The user needs to ensure that the attributes of the source tree and the new
+tree are the same, and the new tree needs to be an empty tree, otherwise
+-EINVAL will be returned.

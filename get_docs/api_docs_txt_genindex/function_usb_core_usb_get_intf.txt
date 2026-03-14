@@ -1,0 +1,10 @@
+Function: struct usb_interface * usb_get_intf ( struct usb_interface * intf )
+
+increments the reference count of the usb interface structure
+
+Parameters
+  struct usb_interface *intf
+    the interface being referenced
+
+Description
+  Each live reference to a interface must be refcounted.

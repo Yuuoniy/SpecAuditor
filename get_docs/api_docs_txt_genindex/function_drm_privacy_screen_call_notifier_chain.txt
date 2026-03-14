@@ -1,0 +1,18 @@
+Function: void drm_privacy_screen_call_notifier_chain ( struct drm_privacy_screen * priv )
+
+notify consumers of state change
+
+Parameters
+  struct drm_privacy_screen *priv
+    Privacy screen to register the notifier with
+
+Description
+  A privacy-screen provider driver can call this functions upon external
+changes to the privacy-screen state. E.g. the state may be changed by the
+hardware itself in response to a hotkey press.
+This function must be called without holding the privacy-screen lock.
+the driver must update sw_state and hw_state to reflect the new state before
+calling this function.
+The expected behavior from the driver upon receiving an external state
+change event is: 1. Take the lock; 2. Update sw_state and hw_state;
+3. Release the lock. 4. Call drm_privacy_screen_call_notifier_chain() .

@@ -1,0 +1,7 @@
+Function: int ieee80211_frequency_to_channel ( int freq )
+
+convert frequency to channel number
+
+Parameters
+  int freq
+    center frequency in MHz

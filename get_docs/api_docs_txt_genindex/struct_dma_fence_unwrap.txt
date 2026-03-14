@@ -1,0 +1,11 @@
+Struct: struct dma_fence_unwrap
+
+cursor into the container structure
+
+Members
+  chain
+    potential dma_fence_chain, but can be other fence as well
+  array
+    potential dma_fence_array, but can be other fence as well
+  index
+    last returned index if array is really a dma_fence_array

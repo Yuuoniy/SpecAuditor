@@ -1,0 +1,16 @@
+Function: enum forcewake_domains intel_uncore_forcewake_for_reg ( struct intel_uncore * uncore , i915_reg_t reg , unsigned int op )
+
+which forcewake domains are needed to access a register
+
+Parameters
+  struct intel_uncore *uncore
+    pointer to struct intel_uncore
+  i915_reg_t reg
+    register in question
+  unsigned int op
+    operation bitmask of FW_REG_READ and/or FW_REG_WRITE
+
+Description
+  Returns a set of forcewake domains required to be taken with for example
+intel_uncore_forcewake_get for the specified register to be accessible in the
+specified mode (read, write or read/write) with raw mmio accessors.

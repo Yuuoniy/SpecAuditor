@@ -1,0 +1,9 @@
+Function: int nand_block_markbad ( struct mtd_info * mtd , loff_t ofs )
+
+[MTD Interface] Mark block at the given offset as bad
+
+Parameters
+  struct mtd_info *mtd
+    MTD device structure
+  loff_t ofs
+    offset relative to mtd start

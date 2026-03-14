@@ -1,0 +1,19 @@
+Struct: struct drm_afbc_framebuffer
+
+a special afbc frame buffer object
+
+Members
+  base
+    base framebuffer structure.
+  block_width
+    width of a single afbc block
+  block_height
+    height of a single afbc block
+  aligned_width
+    aligned frame buffer width
+  aligned_height
+    aligned frame buffer height
+  offset
+    offset of the first afbc header
+  afbc_size
+    minimum size of afbc buffer

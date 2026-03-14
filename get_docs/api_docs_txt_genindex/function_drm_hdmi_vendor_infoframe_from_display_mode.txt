@@ -1,0 +1,16 @@
+Function: int drm_hdmi_vendor_infoframe_from_display_mode ( struct hdmi_vendor_infoframe * frame , const struct drm_connector * connector , const struct drm_display_mode * mode )
+
+fill an HDMI infoframe with data from a DRM display mode
+
+Parameters
+  struct hdmi_vendor_infoframe *frame
+    HDMI vendor infoframe
+  const struct drm_connector *connector
+    the connector
+  const struct drm_display_mode *mode
+    DRM display mode
+
+Description
+  Note that there’s is a need to send HDMI vendor infoframes only when using a
+4k or stereoscopic 3D mode. So when giving any other mode as input this
+function will return -EINVAL, error that can be safely ignored.

@@ -1,0 +1,7 @@
+Function: struct zynqmp_disp_layer * zynqmp_dp_disp_connected_live_layer ( struct zynqmp_dp * dp )
+
+Return the first connected live layer
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure

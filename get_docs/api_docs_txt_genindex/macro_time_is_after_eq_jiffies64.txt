@@ -1,0 +1,7 @@
+Macro: time_is_after_eq_jiffies64
+
+
+
+Parameters
+  a
+    time (__u64) to compare to jiffies_64

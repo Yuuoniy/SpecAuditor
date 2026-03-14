@@ -1,0 +1,11 @@
+Function: void intel_runtime_pm_put_unchecked ( struct intel_runtime_pm * rpm )
+
+release an unchecked runtime pm reference
+
+Parameters
+  struct intel_runtime_pm *rpm
+    the intel_runtime_pm structure
+
+Description
+  This function drops the device-level runtime pm reference obtained by intel_runtime_pm_get() and might power down the corresponding
+hardware block right away if this is the last reference.

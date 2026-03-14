@@ -1,0 +1,12 @@
+Macro: DECLARE_COMPLETION
+
+
+
+Parameters
+  work
+    identifier for the completion structure
+
+Description
+  This macro declares and initializes a completion structure. Generally used
+for static declarations. You should use the _ONSTACK variant for automatic
+variables.

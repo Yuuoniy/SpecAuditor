@@ -1,0 +1,12 @@
+Function: int security_inode_unlink ( struct inode * dir , struct dentry * dentry )
+
+Check if removing a hard link is allowed
+
+Parameters
+  struct inode *dir
+    parent directory
+  struct dentry *dentry
+    file
+
+Description
+  Check the permission to remove a hard link to a file.

@@ -1,0 +1,17 @@
+Function: int get_futex_key ( u32 __user * uaddr , unsigned int flags , union futex_key * key , enum futex_access rw )
+
+Get parameters which are the keys for a futex
+
+Parameters
+  u32 __user *uaddr
+    virtual address of the futex
+  unsigned int flags
+    FLAGS_*
+  union futex_key *key
+    address where result is stored.
+  enum futex_access rw
+    mapping needs to be read/write (values: FUTEX_READ,
+FUTEX_WRITE)
+
+Description
+  The key words are stored in key on success.

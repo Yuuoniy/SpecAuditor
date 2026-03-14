@@ -1,0 +1,9 @@
+Function: int dvb_dmxdev_init ( struct dmxdev * dmxdev , struct dvb_adapter * adap )
+
+initializes a digital TV demux and registers both demux and DVR devices.
+
+Parameters
+  struct dmxdev *dmxdev
+    pointer to struct dmxdev .
+  struct dvb_adapter *adap
+    pointer to struct dvb_adapter .

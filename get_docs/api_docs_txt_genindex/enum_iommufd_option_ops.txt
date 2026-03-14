@@ -1,0 +1,3 @@
+Enum: enum iommufd_option_ops
+
+ioctl(IOMMU_OPTION_OP_SET) and ioctl(IOMMU_OPTION_OP_GET)

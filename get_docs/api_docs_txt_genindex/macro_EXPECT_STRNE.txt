@@ -1,0 +1,12 @@
+Macro: EXPECT_STRNE
+
+
+
+Parameters
+  expected
+    expected value
+  seen
+    measured value
+
+Description
+  EXPECT_STRNE(expected, measured): strcmp(expected, measured)

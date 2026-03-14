@@ -1,0 +1,14 @@
+Function: int security_mptcp_add_subflow ( struct sock * sk , struct sock * ssk )
+
+Inherit the LSM label from the MPTCP socket
+
+Parameters
+  struct sock *sk
+    the owning MPTCP socket
+  struct sock *ssk
+    the new subflow
+
+Description
+  Update the labeling for the given MPTCP subflow, to match the one of the
+owning MPTCP socket. This hook has to be called after the socket creation and
+initialization via the security_socket_create() and security_socket_post_create() LSM hooks.

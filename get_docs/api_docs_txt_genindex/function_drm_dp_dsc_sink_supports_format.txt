@@ -1,0 +1,12 @@
+Function: bool drm_dp_dsc_sink_supports_format ( const u8 dsc_dpcd [ DP_DSC_RECEIVER_CAP_SIZE ] , u8 output_format )
+
+check if sink supports DSC with given output format
+
+Parameters
+  const u8 dsc_dpcd[DP_DSC_RECEIVER_CAP_SIZE]
+    DSC-capability DPCDs of the sink
+  u8 output_format
+    output_format which is to be checked
+
+Description
+  Returns true if the sink supports DSC with the given output_format, false otherwise.

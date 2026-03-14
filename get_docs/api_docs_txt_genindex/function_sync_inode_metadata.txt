@@ -1,0 +1,12 @@
+Function: int sync_inode_metadata ( struct inode * inode , int wait )
+
+write an inode to disk
+
+Parameters
+  struct inode *inode
+    the inode to sync
+  int wait
+    wait for I/O to complete.
+
+Description
+  Write an inode to disk and adjust its dirty state after completion.

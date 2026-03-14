@@ -1,0 +1,15 @@
+Function: drm_gem_for_each_gpuvm_bo_safe
+
+
+
+Parameters
+  entry__
+    drm_gpuvm_bostructure to assign to in each iteration step
+  next__
+    next drm_gpuvm_bo to store the next step
+  obj__
+    the drm_gem_object the drm_gpuvm_bo to walk are associated with
+
+Description
+  This iterator walks over all drm_gpuvm_bo structures associated with the drm_gem_object . It is implemented with list_for_each_entry_safe() , hence
+it is save against removal of elements.

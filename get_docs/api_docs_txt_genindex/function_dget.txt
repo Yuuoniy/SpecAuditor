@@ -1,0 +1,16 @@
+Function: struct dentry * dget ( struct dentry * dentry )
+
+get a reference to a dentry
+
+Parameters
+  struct dentry *dentry
+    dentry to get a reference to
+
+Description
+  Given a dentry or NULL pointer increment the reference count
+if appropriate and return the dentry.  A dentry will not be
+destroyed when it has references.  Conversely, a dentry with
+no references can disappear for any number of reasons, starting
+with memory pressure.  In other words, that primitive is
+used to clone an existing reference; using it on something with
+zero refcount is a bug.

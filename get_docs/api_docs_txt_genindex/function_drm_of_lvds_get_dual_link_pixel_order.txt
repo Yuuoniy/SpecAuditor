@@ -1,0 +1,15 @@
+Function: int drm_of_lvds_get_dual_link_pixel_order ( const struct device_node * port1 , const struct device_node * port2 )
+
+Get LVDS dual-link source pixel order
+
+Parameters
+  const struct device_node *port1
+    First DT port node of the Dual-link LVDS source
+  const struct device_node *port2
+    Second DT port node of the Dual-link LVDS source
+
+Description
+  An LVDS dual-link connection is made of two links, with even pixels
+transitting on one link, and odd pixels on the other link. This function
+returns, for two ports of an LVDS dual-link source, which port shall transmit
+the even and odd pixels, based on the requirements of the connected sink.

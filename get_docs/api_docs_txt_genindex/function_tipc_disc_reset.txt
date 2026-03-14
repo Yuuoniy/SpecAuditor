@@ -1,0 +1,9 @@
+Function: void tipc_disc_reset ( struct net * net , struct tipc_bearer * b )
+
+reset object to send periodic link setup requests
+
+Parameters
+  struct net *net
+    the applicable net namespace
+  struct tipc_bearer *b
+    ptr to bearer issuing requests

@@ -1,0 +1,19 @@
+Function: void xas_split_alloc ( struct xa_state * xas , void * entry , unsigned int order , gfp_t gfp )
+
+Allocate memory for splitting an entry.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+  void *entry
+    New entry which will be stored in the array.
+  unsigned int order
+    Current entry order.
+  gfp_t gfp
+    Memory allocation flags.
+
+Description
+  This function should be called before calling xas_split() .
+If necessary, it will allocate new nodes (and fill them with entry )
+to prepare for the upcoming split of an entry of order size into
+entries of the order stored in the xas .

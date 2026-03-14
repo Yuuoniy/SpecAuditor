@@ -1,0 +1,14 @@
+Function: struct sk_buff * skb_expand_head ( struct sk_buff * skb , unsigned int headroom )
+
+reallocate header of sk_buff
+
+Parameters
+  struct sk_buff *skb
+    buffer to reallocate
+  unsigned int headroom
+    needed headroom
+
+Description
+  Unlike skb_realloc_headroom, this one does not allocate a new skb
+if possible; copies skb->sk to new skb as needed
+and frees original skb in case of failures.

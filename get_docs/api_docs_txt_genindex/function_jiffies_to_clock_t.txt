@@ -1,0 +1,7 @@
+Function: clock_t jiffies_to_clock_t ( unsigned long x )
+
+Convert jiffies to clock_t
+
+Parameters
+  unsigned long x
+    jiffies value

@@ -1,0 +1,2 @@
+Function: void cec_s_phys_addr_from_edid ( struct cec_adapter * adap , const struct edid * edid ) ;
+

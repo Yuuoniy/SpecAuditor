@@ -1,0 +1,14 @@
+Function: void * alloc_pages_exact ( size_t size , gfp_t gfp_mask )
+
+allocate an exact number physically-contiguous pages.
+
+Parameters
+  size_t size
+    the number of bytes to allocate
+  gfp_t gfp_mask
+    GFP flags for the allocation, must not contain __GFP_COMP
+
+Description
+  This function is similar to alloc_pages() , except that it allocates the
+minimum number of pages to satisfy the request. alloc_pages() can only
+allocate memory in power-of-two pages.

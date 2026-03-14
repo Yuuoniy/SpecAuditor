@@ -1,0 +1,11 @@
+Function: void write_sequnlock ( seqlock_t * sl )
+
+end a seqlock_t write side critical section
+
+Parameters
+  seqlock_t *sl
+    Pointer to seqlock_t
+
+Description
+  write_sequnlock closes the (serialized and non-preemptible) write side
+critical section of given seqlock_t.

@@ -1,0 +1,12 @@
+Function: int pcie_reset_flr ( struct pci_dev * dev , bool probe )
+
+initiate a PCIe function level reset
+
+Parameters
+  struct pci_dev *dev
+    device to reset
+  bool probe
+    if true, return 0 if device can be reset this way
+
+Description
+  Initiate a function level reset on dev .

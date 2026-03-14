@@ -1,0 +1,55 @@
+Struct: struct irq_domain
+
+Hardware interrupt number translation object
+
+Members
+  link
+    Element in global irq_domain list.
+  name
+    Name of interrupt domain
+  ops
+    Pointer to irq_domain methods
+  host_data
+    Private data pointer for use by owner.  Not touched by irq_domain
+core code.
+  flags
+    Per irq_domain flags
+  mapcount
+    The number of mapped interrupts
+  mutex
+    Domain lock, hierarchical domains use root domain’s lock
+  root
+    Pointer to root domain, or containing structure if non-hierarchical
+  fwnode
+    Pointer to firmware node associated with the irq_domain. Pretty easy
+to swap it for the of_node via the irq_domain_get_of_node accessor
+  bus_token
+    fwnode ’s device_node might be used for several irq domains. But
+in connection with bus_token , the pair shall be unique in a
+system.
+  gc
+    Pointer to a list of generic chips. There is a helper function for
+setting up one or more generic chips for interrupt controllers
+drivers using the generic chip library which uses this pointer.
+  dev
+    Pointer to the device which instantiated the irqdomain
+With per device irq domains this is not necessarily the same
+as pm_dev .
+  pm_dev
+    Pointer to a device that can be utilized for power management
+purposes related to the irq domain.
+  parent
+    Pointer to parent irq_domain to support hierarchy irq_domains
+  msi_parent_ops
+    Pointer to MSI parent domain methods for per device domain init
+  exit
+    Function called when the domain is destroyed
+  hwirq_max
+    Top limit for the HW irq number. Especially to avoid
+conflicts/failures with reserved HW irqs. Can be ~0.
+  revmap_size
+    Size of the linear map table revmap
+  revmap_tree
+    Radix map tree for hwirqs that don’t fit in the linear map
+  revmap
+    Linear table of irq_data pointers

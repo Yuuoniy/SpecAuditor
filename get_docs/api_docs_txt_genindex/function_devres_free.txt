@@ -1,0 +1,10 @@
+Function: void devres_free ( void * res )
+
+Free device resource data
+
+Parameters
+  void *res
+    Pointer to devres data to free
+
+Description
+  Free devres created with devres_alloc() .

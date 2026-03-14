@@ -1,0 +1,13 @@
+Struct: struct dwc3_trb
+
+transfer request block (hw format)
+
+Members
+  bpl
+    DW0-3
+  bph
+    DW4-7
+  size
+    DW8-B
+  ctrl
+    DWC-F

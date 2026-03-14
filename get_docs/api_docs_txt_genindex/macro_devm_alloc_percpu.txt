@@ -1,0 +1,13 @@
+Macro: devm_alloc_percpu
+
+
+
+Parameters
+  dev
+    Device to allocate per-cpu memory for
+  type
+    Type to allocate per-cpu memory for
+
+Description
+  Managed alloc_percpu. Per-cpu memory allocated with this function is
+automatically freed on driver detach.

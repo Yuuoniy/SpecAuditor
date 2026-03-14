@@ -1,0 +1,12 @@
+Function: void security_transfer_creds ( struct cred * new , const struct cred * old )
+
+Transfer creds
+
+Parameters
+  struct cred *new
+    target credentials
+  const struct cred *old
+    original credentials
+
+Description
+  Transfer data from original creds to new creds.

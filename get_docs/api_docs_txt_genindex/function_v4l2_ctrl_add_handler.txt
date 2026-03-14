@@ -1,0 +1,22 @@
+Function: int v4l2_ctrl_add_handler ( struct v4l2_ctrl_handler * hdl , struct v4l2_ctrl_handler * add , v4l2_ctrl_filter filter , bool from_other_dev )
+
+Add all controls from handler add to handler hdl .
+
+Parameters
+  struct v4l2_ctrl_handler *hdl
+    The control handler.
+  struct v4l2_ctrl_handler *add
+    The control handler whose controls you want to add to
+the hdl control handler.
+  v4l2_ctrl_filter filter
+    This function will filter which controls should be added.
+  bool from_other_dev
+    If true, then the controls in add were defined in another
+device than hdl .
+
+Description
+  Does nothing if either of the two handlers is a NULL pointer.
+If filter is NULL, then all controls are added. Otherwise only those
+controls for which filter returns true will be added.
+In case of an error hdl->error will be set to the error code (if it
+wasn’t set already).

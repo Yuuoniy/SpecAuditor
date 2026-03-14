@@ -1,0 +1,20 @@
+Struct: struct drm_vblank_work
+
+A delayed work item which delays until a target vblank passes, and then executes at realtime priority outside of IRQ context.
+
+Members
+  base
+    The base kthread_work item which will be executed by drm_vblank_crtc.worker . Drivers should not interact with this
+directly, and instead rely on drm_vblank_work_init() to initialize
+this.
+  vblank
+    A pointer to drm_vblank_crtc this work item belongs to.
+  count
+    The target vblank this work will execute on. Drivers should
+not modify this value directly, and instead use drm_vblank_work_schedule()
+  cancelling
+    The number of drm_vblank_work_cancel_sync() calls that
+are currently running. A work item cannot be rescheduled until all
+calls have finished.
+  node
+    The position of this work item in drm_vblank_crtc.pending_work .

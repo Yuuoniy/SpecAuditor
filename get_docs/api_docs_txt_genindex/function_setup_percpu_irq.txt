@@ -1,0 +1,12 @@
+Function: int setup_percpu_irq ( unsigned int irq , struct irqaction * act )
+
+setup a per-cpu interrupt
+
+Parameters
+  unsigned int irq
+    Interrupt line to setup
+  struct irqaction *act
+    irqaction for the interrupt
+
+Description
+  Used to statically setup per-cpu interrupts in the early boot process.

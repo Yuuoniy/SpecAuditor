@@ -1,0 +1,14 @@
+Function: int skb_cow ( struct sk_buff * skb , unsigned int headroom )
+
+copy header of skb when it is required
+
+Parameters
+  struct sk_buff *skb
+    buffer to cow
+  unsigned int headroom
+    needed headroom
+
+Description
+  If the skb passed lacks sufficient headroom or its data part
+is shared, data is reallocated. If reallocation fails, an error
+is returned and original skb is not changed.

@@ -1,0 +1,12 @@
+Function: void media_graph_walk_start ( struct media_graph * graph , struct media_entity * entity )
+
+Start walking the media graph at a given entity
+
+Parameters
+  struct media_graph *graph
+    Media graph structure that will be used to walk the graph
+  struct media_entity *entity
+    Starting entity
+
+Description
+  This function is deprecated, use media_pipeline_for_each_pad() instead.

@@ -1,0 +1,12 @@
+Function: int ib_cm_listen ( struct ib_cm_id * cm_id , __be64 service_id )
+
+Initiates listening on the specified service ID for connection and service ID resolution requests.
+
+Parameters
+  struct ib_cm_id *cm_id
+    Connection identifier associated with the listen request.
+  __be64 service_id
+    Service identifier matched against incoming connection
+and service ID resolution requests.  The service ID should be specified
+network-byte order.  If set to IB_CM_ASSIGN_SERVICE_ID, the CM will
+assign a service ID to the caller.

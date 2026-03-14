@@ -1,0 +1,7 @@
+Function: void scsi_remove_host ( struct Scsi_Host * shost )
+
+remove a scsi host
+
+Parameters
+  struct Scsi_Host *shost
+    a pointer to a scsi host to remove

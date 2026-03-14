@@ -1,0 +1,14 @@
+Function: int snd_soc_add_dai_controls ( struct snd_soc_dai * dai , const struct snd_kcontrol_new * controls , int num_controls )
+
+add an array of controls to a DAI. Convenience function to add a list of controls.
+
+Parameters
+  struct snd_soc_dai *dai
+    DAI to add controls to
+  const struct snd_kcontrol_new *controls
+    array of controls to add
+  int num_controls
+    number of elements in the array
+
+Description
+  Return 0 for success, else error.

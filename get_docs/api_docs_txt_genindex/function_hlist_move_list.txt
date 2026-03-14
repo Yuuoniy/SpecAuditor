@@ -1,0 +1,13 @@
+Function: void hlist_move_list ( struct hlist_head * old , struct hlist_head * new )
+
+Move an hlist
+
+Parameters
+  struct hlist_head *old
+    hlist_head for old list.
+  struct hlist_head *new
+    hlist_head for new list.
+
+Description
+  Move a list from one list head to another. Fixup the pprev
+reference of the first entry if it exists.

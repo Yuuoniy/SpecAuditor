@@ -1,0 +1,16 @@
+Function: void snd_soc_jack_report ( struct snd_soc_jack * jack , int status , int mask )
+
+Report the current status for a jack
+
+Parameters
+  struct snd_soc_jack *jack
+    the jack
+  int status
+    a bitmask of enum snd_jack_type values that are currently detected.
+  int mask
+    a bitmask of enum snd_jack_type values that being reported.
+
+Description
+  If configured using snd_soc_jack_add_pins() then the associated
+DAPM pins will be enabled or disabled as appropriate and DAPM
+synchronised.

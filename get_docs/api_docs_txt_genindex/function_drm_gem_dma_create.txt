@@ -1,0 +1,13 @@
+Function: struct drm_gem_dma_object * drm_gem_dma_create ( struct drm_device * drm , size_t size )
+
+allocate an object with the given size
+
+Parameters
+  struct drm_device *drm
+    DRM device
+  size_t size
+    size of the object to allocate
+
+Description
+  This function creates a DMA GEM object and allocates memory as backing store.
+The allocated memory will occupy a contiguous chunk of bus address space.

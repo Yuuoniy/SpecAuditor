@@ -1,0 +1,33 @@
+Struct: struct cxl_dev_state
+
+The driver device state
+
+Members
+  dev
+    The device associated with this CXL state
+  cxlmd
+    The device representing the CXL.mem capabilities of dev
+  reg_map
+    component and ras register mapping parameters
+  regs
+    Parsed register blocks
+  cxl_dvsec
+    Offset to the PCIe device DVSEC
+  rcd
+    operating in RCD mode (CXL 3.0 9.11.8 CXL Devices Attached to an RCH)
+  media_ready
+    Indicate whether the device media is usable
+  dpa_res
+    Overall DPA resource tree for the device
+  part
+    DPA partition array
+  nr_partitions
+    Number of DPA partitions
+  serial
+    PCIe Device Serial Number
+  type
+    Generic Memory Class device or Vendor Specific Memory device
+  cxl_mbox
+    CXL mailbox context
+  cxlfs
+    CXL features context

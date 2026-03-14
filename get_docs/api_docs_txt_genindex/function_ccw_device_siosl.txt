@@ -1,0 +1,11 @@
+Function: int ccw_device_siosl ( struct ccw_device * cdev )
+
+initiate logging
+
+Parameters
+  struct ccw_device *cdev
+    ccw device
+
+Description
+  This function is used to invoke model-dependent logging within the channel
+subsystem.

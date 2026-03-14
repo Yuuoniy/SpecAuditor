@@ -1,0 +1,16 @@
+Function: int usb_gadget_get_string ( const struct usb_gadget_strings * table , int id , u8 * buf )
+
+fill out a string descriptor
+
+Parameters
+  const struct usb_gadget_strings *table
+    of c strings encoded using UTF-8
+  int id
+    string id, from low byte of wValue in get string descriptor
+  u8 *buf
+    at least 256 bytes, must be 16-bit aligned
+
+Description
+  Finds the UTF-8 string matching the ID, and converts it into a
+string descriptor in utf16-le.
+Returns length of descriptor (always even) or negative errno

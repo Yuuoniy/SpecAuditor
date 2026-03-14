@@ -1,0 +1,17 @@
+Function: void blk_add_trace_rq_remap ( void * ignore , struct request * rq , dev_t dev , sector_t from )
+
+Add a trace for a request-remap operation
+
+Parameters
+  void *ignore
+    trace callback data parameter (not used)
+  struct request *rq
+    the source request
+  dev_t dev
+    target device
+  sector_t from
+    source sector
+
+Description
+  Device mapper remaps request to other devices.
+Add a trace for that action.

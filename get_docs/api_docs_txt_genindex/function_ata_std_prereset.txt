@@ -1,0 +1,16 @@
+Function: int ata_std_prereset ( struct ata_link * link , unsigned long deadline )
+
+prepare for reset
+
+Parameters
+  struct ata_link *link
+    ATA link to be reset
+  unsigned long deadline
+    deadline jiffies for the operation
+
+Description
+  link is about to be reset.  Initialize it.  Failure from
+prereset makes libata abort whole reset sequence and give up
+that port, so prereset should be best-effort.  It does its
+best to prepare for reset sequence but if things go wrong, it
+should just whine, not fail.

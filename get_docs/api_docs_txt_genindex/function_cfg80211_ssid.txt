@@ -1,0 +1,9 @@
+Function: struct cfg80211_ssid
+
+SSID description
+
+Members
+  ssid
+    the SSID
+  ssid_len
+    length of the ssid

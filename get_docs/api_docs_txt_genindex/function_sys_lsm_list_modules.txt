@@ -1,0 +1,19 @@
+Function: long sys_lsm_list_modules ( u64 __user * ids , u32 __user * size , u32 flags )
+
+Return a list of the active security modules
+
+Parameters
+  u64 __user * ids
+    the LSM module ids
+  u32 __user * size
+    pointer to size of ids , updated on return
+  u32 flags
+    reserved for future use, must be zero
+
+Description
+  Returns a list of the active LSM ids. On success this function
+returns the number of ids array elements. This value may be zero
+if there are no LSMs active. If size is insufficient to contain
+the return data -E2BIG is returned and size is set to the minimum
+required size. In all other cases a negative value indicating the
+error is returned.

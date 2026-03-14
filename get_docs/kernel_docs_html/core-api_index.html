@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Core API Documentation &#8212; The Linux Kernel  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Linux Kernel API" href="kernel-api.html" />
+    <link rel="prev" title="Deprecated Interfaces, Language Features, Attributes, and Conventions" href="../process/deprecated.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../index.html">The Linux Kernel</a></h1>
+
+
+
+<p class="blurb">6.18.0-rc1</p>
+
+
+
+
+
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+<p>
+<h3 class="kernel-toc-contents">Contents</h3>
+<input type="checkbox" class="kernel-toc-toggle" id = "kernel-toc-toggle" checked>
+<label class="kernel-toc-title" for="kernel-toc-toggle"></label>
+
+<div class="kerneltoc" id="kerneltoc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../process/development-process.html">Development process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/submitting-patches.html">Submitting patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/code-of-conduct.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Maintainer handbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/index.html">All development-process docs</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Core API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#core-utilities">Core utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kernel-api.html">The Linux Kernel API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workqueue.html">Workqueue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="watch_queue.html">General notification mechanism</a></li>
+<li class="toctree-l3"><a class="reference internal" href="printk-basics.html">Message logging with printk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="printk-formats.html">How to get printk format specifiers right</a></li>
+<li class="toctree-l3"><a class="reference internal" href="printk-index.html">Printk Index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="symbol-namespaces.html">Symbol Namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="asm-annotations.html">Assembler Annotations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="real-time/index.html">Real-time preemption</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#data-structures-and-low-level-utilities">Data structures and low-level utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kobject.html">Everything you never wanted to know about kobjects, ksets, and ktypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kref.html">Adding reference counters (krefs) to kernel objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleanup.html">Scope-based Cleanup Helpers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="assoc_array.html">Generic Associative Array Implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="folio_queue.html">Folio Queue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xarray.html">XArray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="maple_tree.html">Maple Tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="idr.html">ID Allocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="circular-buffers.html">Circular Buffers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rbtree.html">Red-black Trees (rbtree) in Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generic-radix-tree.html">Generic radix trees/sparse arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="packing.html">Generic bitfield packing and unpacking functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="this_cpu_ops.html">this_cpu operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timekeeping.html">ktime accessors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="errseq.html">The errseq_t datatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wrappers/atomic_t.html">Atomic types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wrappers/atomic_bitops.html">Atomic bitops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="floating-point.html">Floating-point API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="union_find.html">Union-Find in Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="min_heap.html">Min Heap API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parser.html">Generic parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="list.html">Linked Lists in Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#low-level-entry-and-exit">Low level entry and exit</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="entry.html">Entry/exit handling for exceptions, interrupts, syscalls and KVM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#concurrency-primitives">Concurrency primitives</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="refcount-vs-atomic.html">refcount_t API compared to atomic_t</a></li>
+<li class="toctree-l3"><a class="reference internal" href="irq/index.html">IRQs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="local_ops.html">Semantics and Behavior of Local Atomic Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="padata.html">The padata parallel execution mechanism</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../RCU/index.html">RCU Handbook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wrappers/memory-barriers.html">Linux kernel memory barriers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#low-level-hardware-management">Low-level hardware management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cachetlb.html">Cache and TLB Flushing Under Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpu_hotplug.html">CPU hotplug in the Kernel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="memory-hotplug.html">Memory hotplug</a></li>
+<li class="toctree-l3"><a class="reference internal" href="genericirq.html">Linux generic IRQ handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="protection-keys.html">Memory Protection Keys</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#memory-management">Memory management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="memory-allocation.html">Memory Allocation Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unaligned-memory-access.html">Unaligned Memory Accesses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dma-api.html">Dynamic DMA mapping using the generic device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dma-api-howto.html">Dynamic DMA mapping Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dma-attributes.html">DMA attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dma-isa-lpc.html">DMA with ISA and LPC devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swiotlb.html">DMA and swiotlb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mm-api.html">Memory Management APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cgroup.html">Cgroup Kernel APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="genalloc.html">The genalloc/genpool subsystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pin_user_pages.html">pin_user_pages() and related calls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boot-time-mm.html">Boot time memory management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gfp_mask-from-fs-io.html">GFP masks used from FS/IO context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kho/index.html">Kexec Handover Subsystem</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#interfaces-for-kernel-debugging">Interfaces for kernel debugging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="debug-objects.html">The object-lifetime debugging infrastructure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tracepoint.html">The Linux Kernel Tracepoint API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debugging-via-ohci1394.html">Using physical DMA provided by OHCI-1394 FireWire controllers for debugging</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#everything-else">Everything else</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="librs.html">Reed-Solomon Library Programming Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="netlink.html">Netlink notes for kernel developers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../driver-api/index.html">Driver APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subsystem-apis.html">Subsystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../locking/index.html">Locking</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../process/license-rules.html">Licensing rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-guide/index.html">Writing documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-tools/index.html">Development tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-tools/testing-overview.html">Testing guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kernel-hacking/index.html">Hacking guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trace/index.html">Tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fault-injection/index.html">Fault injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../livepatch/index.html">Livepatching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">Rust</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kbuild/index.html">Build system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/reporting-issues.html">Reporting issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Userspace tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userspace-api/index.html">Userspace API</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../firmware-guide/index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devicetree/index.html">Firmware and Devicetree</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../arch/index.html">CPU architectures</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging/index.html">Unsorted documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../translations/index.html">Translations</a></li>
+</ul>
+
+</div>
+
+<script type="text/javascript"> <!--
+  var sbar = document.getElementsByClassName("sphinxsidebar")[0];
+  let currents = document.getElementsByClassName("current")
+  if (currents.length) {
+    sbar.scrollTop = currents[currents.length - 1].offsetTop;
+  }
+  --> </script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/core-api/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+
+
+
+
+<div class="language-selection">
+English
+
+<ul>
+
+<li><a href="../translations/zh_CN/core-api/index.html">Chinese (Simplified)</a></li>
+
+<li><a href="../translations/it_IT/core-api/index.html">Italian</a></li>
+
+</ul>
+</div>
+<section id="core-api-documentation">
+<h1>Core API Documentation<a class="headerlink" href="#core-api-documentation" title="Permalink to this heading">¶</a></h1>
+<p>This is the beginning of a manual for core kernel APIs.  The conversion
+(and writing!) of documents for this manual is much appreciated!</p>
+<section id="core-utilities">
+<h2>Core utilities<a class="headerlink" href="#core-utilities" title="Permalink to this heading">¶</a></h2>
+<p>This section has general and “core core” documentation.  The first is a
+massive grab-bag of kerneldoc info left over from the docbook days; it
+should really be broken up someday when somebody finds the energy to do
+it.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="kernel-api.html">The Linux Kernel API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workqueue.html">Workqueue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="watch_queue.html">General notification mechanism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="printk-basics.html">Message logging with printk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="printk-formats.html">How to get printk format specifiers right</a></li>
+<li class="toctree-l1"><a class="reference internal" href="printk-index.html">Printk Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="symbol-namespaces.html">Symbol Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="asm-annotations.html">Assembler Annotations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="real-time/index.html">Real-time preemption</a></li>
+</ul>
+</div>
+</section>
+<section id="data-structures-and-low-level-utilities">
+<h2>Data structures and low-level utilities<a class="headerlink" href="#data-structures-and-low-level-utilities" title="Permalink to this heading">¶</a></h2>
+<p>Library functionality that is used throughout the kernel.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="kobject.html">Everything you never wanted to know about kobjects, ksets, and ktypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kref.html">Adding reference counters (krefs) to kernel objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cleanup.html">Scope-based Cleanup Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assoc_array.html">Generic Associative Array Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folio_queue.html">Folio Queue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xarray.html">XArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maple_tree.html">Maple Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idr.html">ID Allocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="circular-buffers.html">Circular Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rbtree.html">Red-black Trees (rbtree) in Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generic-radix-tree.html">Generic radix trees/sparse arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packing.html">Generic bitfield packing and unpacking functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="this_cpu_ops.html">this_cpu operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timekeeping.html">ktime accessors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="errseq.html">The errseq_t datatype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wrappers/atomic_t.html">Atomic types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wrappers/atomic_bitops.html">Atomic bitops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="floating-point.html">Floating-point API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="union_find.html">Union-Find in Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="min_heap.html">Min Heap API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parser.html">Generic parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="list.html">Linked Lists in Linux</a></li>
+</ul>
+</div>
+</section>
+<section id="low-level-entry-and-exit">
+<h2>Low level entry and exit<a class="headerlink" href="#low-level-entry-and-exit" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="entry.html">Entry/exit handling for exceptions, interrupts, syscalls and KVM</a></li>
+</ul>
+</div>
+</section>
+<section id="concurrency-primitives">
+<h2>Concurrency primitives<a class="headerlink" href="#concurrency-primitives" title="Permalink to this heading">¶</a></h2>
+<p>How Linux keeps everything from happening at the same time.  See
+<a class="reference internal" href="../locking/index.html"><span class="doc">Locking</span></a> for more related documentation.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="refcount-vs-atomic.html">refcount_t API compared to atomic_t</a></li>
+<li class="toctree-l1"><a class="reference internal" href="irq/index.html">IRQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local_ops.html">Semantics and Behavior of Local Atomic Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="padata.html">The padata parallel execution mechanism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RCU/index.html">RCU Handbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wrappers/memory-barriers.html">Linux kernel memory barriers</a></li>
+</ul>
+</div>
+</section>
+<section id="low-level-hardware-management">
+<h2>Low-level hardware management<a class="headerlink" href="#low-level-hardware-management" title="Permalink to this heading">¶</a></h2>
+<p>Cache management, managing CPU hotplug, etc.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cachetlb.html">Cache and TLB Flushing Under Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpu_hotplug.html">CPU hotplug in the Kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="memory-hotplug.html">Memory hotplug</a></li>
+<li class="toctree-l1"><a class="reference internal" href="genericirq.html">Linux generic IRQ handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="protection-keys.html">Memory Protection Keys</a></li>
+</ul>
+</div>
+</section>
+<section id="memory-management">
+<h2>Memory management<a class="headerlink" href="#memory-management" title="Permalink to this heading">¶</a></h2>
+<p>How to allocate and use memory in the kernel.  Note that there is a lot
+more memory-management documentation in <a class="reference internal" href="../mm/index.html"><span class="doc">Memory Management Documentation</span></a>.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="memory-allocation.html">Memory Allocation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unaligned-memory-access.html">Unaligned Memory Accesses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dma-api.html">Dynamic DMA mapping using the generic device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dma-api-howto.html">Dynamic DMA mapping Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dma-attributes.html">DMA attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dma-isa-lpc.html">DMA with ISA and LPC devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swiotlb.html">DMA and swiotlb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mm-api.html">Memory Management APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cgroup.html">Cgroup Kernel APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="genalloc.html">The genalloc/genpool subsystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pin_user_pages.html">pin_user_pages() and related calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boot-time-mm.html">Boot time memory management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gfp_mask-from-fs-io.html">GFP masks used from FS/IO context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kho/index.html">Kexec Handover Subsystem</a></li>
+</ul>
+</div>
+</section>
+<section id="interfaces-for-kernel-debugging">
+<h2>Interfaces for kernel debugging<a class="headerlink" href="#interfaces-for-kernel-debugging" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="debug-objects.html">The object-lifetime debugging infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracepoint.html">The Linux Kernel Tracepoint API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging-via-ohci1394.html">Using physical DMA provided by OHCI-1394 FireWire controllers for debugging</a></li>
+</ul>
+</div>
+</section>
+<section id="everything-else">
+<h2>Everything else<a class="headerlink" href="#everything-else" title="Permalink to this heading">¶</a></h2>
+<p>Documents that don’t fit elsewhere or which have yet to be categorized.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="librs.html">Reed-Solomon Library Programming Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netlink.html">Netlink notes for kernel developers</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;The kernel development community.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/core-api/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

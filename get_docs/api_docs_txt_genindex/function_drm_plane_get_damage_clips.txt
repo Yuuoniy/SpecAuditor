@@ -1,0 +1,12 @@
+Function: struct drm_mode_rect * drm_plane_get_damage_clips ( const struct drm_plane_state * state )
+
+Returns damage clips.
+
+Parameters
+  const struct drm_plane_state *state
+    Plane state.
+
+Description
+  Note that this function returns uapi type drm_mode_rect . Drivers might want
+to use the helper functions drm_atomic_helper_damage_iter_init() and drm_atomic_helper_damage_iter_next() or drm_atomic_helper_damage_merged() if
+the driver can only handle a single damage region at most.

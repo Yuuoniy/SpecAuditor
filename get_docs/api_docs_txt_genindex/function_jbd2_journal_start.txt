@@ -1,0 +1,20 @@
+Function: handle_t * jbd2_journal_start ( journal_t * journal , int nblocks )
+
+Obtain a new handle.
+
+Parameters
+  journal_t *journal
+    Journal to start transaction on.
+  int nblocks
+    number of block buffer we might modify
+
+Description
+  We make sure that the transaction can guarantee at least nblocks of
+modified buffers in the log.  We block until the log can guarantee
+that much space. Additionally, if rsv_blocks > 0, we also create another
+handle with rsv_blocks reserved blocks in the journal. This handle is
+stored in h_rsv_handle. It is not attached to any particular transaction
+and thus doesn’t block transaction commit. If the caller uses this reserved
+handle, it has to set h_rsv_handle to NULL as otherwise jbd2_journal_stop() on the parent handle will dispose the reserved one. Reserved handle has to
+be converted to a normal handle using jbd2_journal_start_reserved() before
+it can be used.

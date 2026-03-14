@@ -1,0 +1,20 @@
+Function: int snd_pcm_add_chmap_ctls ( struct snd_pcm * pcm , int stream , const struct snd_pcm_chmap_elem * chmap , int max_channels , unsigned long private_value , struct snd_pcm_chmap * * info_ret )
+
+create channel-mapping control elements
+
+Parameters
+  struct snd_pcm *pcm
+    the assigned PCM instance
+  int stream
+    stream direction
+  const struct snd_pcm_chmap_elem *chmap
+    channel map elements (for query)
+  int max_channels
+    the max number of channels for the stream
+  unsigned long private_value
+    the value passed to each kcontrol’s private_value field
+  struct snd_pcm_chmap **info_ret
+    store struct snd_pcm_chmap instance if non-NULL
+
+Description
+  Create channel-mapping control elements assigned to the given PCM stream(s).

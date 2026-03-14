@@ -1,0 +1,7 @@
+Function: int ssam_nf_head_init ( struct ssam_nf_head * nh )
+
+Initialize the given notifier head.
+
+Parameters
+  struct ssam_nf_head *nh
+    The notifier head to initialize.

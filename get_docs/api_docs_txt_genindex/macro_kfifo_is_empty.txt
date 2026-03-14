@@ -1,0 +1,7 @@
+Macro: kfifo_is_empty
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used

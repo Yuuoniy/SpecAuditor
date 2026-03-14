@@ -1,0 +1,12 @@
+Function: struct pci_bus * pci_find_next_bus ( const struct pci_bus * from )
+
+begin or continue searching for a PCI bus
+
+Parameters
+  const struct pci_bus *from
+    Previous PCI bus found, or NULL for new search.
+
+Description
+  Iterates through the list of known PCI buses.  A new search is
+initiated by passing NULL as the from argument.  Otherwise if from is not NULL , searches continue from next device on the
+global list.

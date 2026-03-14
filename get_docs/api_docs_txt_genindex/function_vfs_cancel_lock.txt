@@ -1,0 +1,12 @@
+Function: int vfs_cancel_lock ( struct file * filp , struct file_lock * fl )
+
+file byte range unblock lock
+
+Parameters
+  struct file *filp
+    The file to apply the unblock to
+  struct file_lock *fl
+    The lock to be unblocked
+
+Description
+  Used by lock managers to cancel blocked requests

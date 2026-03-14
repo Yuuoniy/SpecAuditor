@@ -1,0 +1,7 @@
+Function: int genphy_c45_pma_suspend ( struct phy_device * phydev )
+
+suspends the PMA module
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct

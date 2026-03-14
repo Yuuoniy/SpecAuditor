@@ -1,0 +1,14 @@
+Function: int i2c_atr_add_adapter ( struct i2c_atr * atr , struct i2c_atr_adap_desc * desc )
+
+Create a child (“downstream”) I2C bus.
+
+Parameters
+  struct i2c_atr *atr
+    The I2C ATR
+  struct i2c_atr_adap_desc *desc
+    An ATR adapter descriptor
+
+Description
+  After calling this function a new i2c bus will appear. Adding and removing
+devices on the downstream bus will result in calls to the i2c_atr_ops->attach_client and i2c_atr_ops->detach_client callbacks for the
+driver to assign an alias to the device.

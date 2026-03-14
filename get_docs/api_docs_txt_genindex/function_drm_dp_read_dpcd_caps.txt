@@ -1,0 +1,14 @@
+Function: int drm_dp_read_dpcd_caps ( struct drm_dp_aux * aux , u8 dpcd [ DP_RECEIVER_CAP_SIZE ] )
+
+read DPCD caps and extended DPCD caps if available
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  u8 dpcd[DP_RECEIVER_CAP_SIZE]
+    Buffer to store the resulting DPCD in
+
+Description
+  Attempts to read the base DPCD caps for aux . Additionally, this function
+checks for and reads the extended DPRX caps ( DP_DP13_DPCD_REV ) if
+present.

@@ -1,0 +1,7 @@
+Function: const char * ctucan_state_to_str ( enum can_state state )
+
+Converts CAN controller state code to corresponding text
+
+Parameters
+  enum can_state state
+    CAN controller state code

@@ -1,0 +1,16 @@
+Function: void * memset32 ( uint32_t * s , uint32_t v , size_t count )
+
+Fill a memory area with a uint32_t
+
+Parameters
+  uint32_t *s
+    Pointer to the start of the area.
+  uint32_t v
+    The value to fill the area with
+  size_t count
+    The number of values to store
+
+Description
+  Differs from memset() in that it fills with a uint32_t instead
+of a byte.  Remember that count is the number of uint32_ts to
+store, not the number of bytes.

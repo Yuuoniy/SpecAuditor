@@ -1,0 +1,21 @@
+Struct: struct c3_isp_params_ae_config
+
+Stats settings for auto-exposure
+
+Members
+  header
+    the C3 ISP parameters block header
+  tap_point
+    the tap point from enum c3_isp_params_ae_tap_point
+  horiz_zones_num
+    active number of horizontal zones [0..17]
+  vert_zones_num
+    active number of vertical zones [0..15]
+  zone_weight
+    array of weights for AE statistics zones [0..15]
+  horiz_coord
+    the horizontal coordinate of points on the diagonal [0..2888]
+  vert_coord
+    the vertical coordinate of points on the diagonal [0..2240]
+  reserved
+    applications must zero this array

@@ -1,0 +1,14 @@
+Macro: genradix_ptr_alloc
+
+
+
+Parameters
+  _radix
+    genradix to access
+  _idx
+    index to fetch
+  _gfp
+    gfp mask
+
+Description
+  Returns a pointer to entry at _idx , or NULL on allocation failure

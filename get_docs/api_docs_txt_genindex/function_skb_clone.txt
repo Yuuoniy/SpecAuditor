@@ -1,0 +1,15 @@
+Function: struct sk_buff * skb_clone ( struct sk_buff * skb , gfp_t gfp_mask )
+
+duplicate an sk_buff
+
+Parameters
+  struct sk_buff *skb
+    buffer to clone
+  gfp_t gfp_mask
+    allocation priority
+
+Description
+  Duplicate an sk_buff . The new one is not owned by a socket. Both
+copies share the same packet data but not structure. The new
+buffer has a reference count of 1. If the allocation fails the
+function returns NULL otherwise the new buffer is returned.

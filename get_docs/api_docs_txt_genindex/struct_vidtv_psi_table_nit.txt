@@ -1,0 +1,15 @@
+Struct: struct vidtv_psi_table_nit
+
+A Network Information Table (NIT). See ETSI 300 468 section 5.2.1
+
+Members
+  header
+    A PSI table header
+  bitfield
+    Contains the network descriptor length
+  descriptor
+    A descriptor loop describing the network
+  bitfield2
+    Contains the transport stream loop length
+  transport
+    The transport stream loop

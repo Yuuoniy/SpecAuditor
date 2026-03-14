@@ -1,0 +1,10 @@
+Macro: IIO_G_TO_M_S_2
+
+
+
+Parameters
+  g
+    A value in g
+
+Description
+  Returns the given value converted from g to meter / second**2

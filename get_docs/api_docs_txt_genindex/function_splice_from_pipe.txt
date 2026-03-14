@@ -1,0 +1,21 @@
+Function: ssize_t splice_from_pipe ( struct pipe_inode_info * pipe , struct file * out , loff_t * ppos , size_t len , unsigned int flags , splice_actor * actor )
+
+splice data from a pipe to a file
+
+Parameters
+  struct pipe_inode_info *pipe
+    pipe to splice from
+  struct file *out
+    file to splice to
+  loff_t *ppos
+    position in out
+  size_t len
+    how many bytes to splice
+  unsigned int flags
+    splice modifier flags
+  splice_actor *actor
+    handler that splices the data
+
+Description
+  See __splice_from_pipe. This function locks the pipe inode,
+otherwise it’s identical to __splice_from_pipe() .

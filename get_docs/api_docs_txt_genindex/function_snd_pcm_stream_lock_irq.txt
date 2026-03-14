@@ -1,0 +1,12 @@
+Function: void snd_pcm_stream_lock_irq ( struct snd_pcm_substream * substream )
+
+Lock the PCM stream
+
+Parameters
+  struct snd_pcm_substream *substream
+    PCM substream
+
+Description
+  This locks the PCM stream like snd_pcm_stream_lock() and disables the local
+IRQ (only when nonatomic is false).  In nonatomic case, this is identical
+as snd_pcm_stream_lock() .

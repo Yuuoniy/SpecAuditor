@@ -1,0 +1,11 @@
+Function: s64 drm_gem_vram_offset ( struct drm_gem_vram_object * gbo )
+
+Returns a GEM VRAM object’s offset in video memory
+
+Parameters
+  struct drm_gem_vram_object *gbo
+    the GEM VRAM object
+
+Description
+  This function returns the buffer object’s offset in the device’s video
+memory. The buffer object has to be pinned to TTM_PL_VRAM .

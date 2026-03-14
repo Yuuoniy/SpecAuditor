@@ -1,0 +1,12 @@
+Function: int ccw_device_clear ( struct ccw_device * cdev , unsigned long intparm )
+
+terminate I/O request processing
+
+Parameters
+  struct ccw_device *cdev
+    target ccw device
+  unsigned long intparm
+    interruption parameter to be returned upon conclusion of csch
+
+Description
+  ccw_device_clear() calls csch on cdev ’s subchannel.

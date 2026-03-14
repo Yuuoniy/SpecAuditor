@@ -1,0 +1,7 @@
+Function: int i3c_device_do_setdasa ( struct i3c_device * dev )
+
+do I3C dynamic address assignement with static address
+
+Parameters
+  struct i3c_device *dev
+    device with which the DAA should be done

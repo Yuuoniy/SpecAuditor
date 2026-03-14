@@ -1,0 +1,19 @@
+Function: struct vidtv_s302m_encoder_init_args
+
+Args for the s302m encoder.
+
+Members
+  name
+    A name to identify this particular instance
+  src_buf
+    The source buffer, encoder will default to a sine wave if this is NULL.
+  src_buf_sz
+    The size of the source buffer.
+  es_pid
+    The MPEG Elementary Stream PID to use.
+  sync
+    Attempt to synchronize audio with this video encoder, if not NULL.
+  last_sample_cb
+    A callback called when the encoder runs out of data.
+  head
+    Add to this chain

@@ -1,0 +1,23 @@
+Struct: struct jbd2_inode
+
+The jbd_inode type is the structure linking inodes in ordered mode present in a transaction so that we can sync them during commit.
+
+Members
+  i_transaction
+    Which transaction does this inode belong to? Either the running
+transaction or the committing one. [j_list_lock]
+  i_next_transaction
+    Pointer to the running transaction modifying inode’s data in case
+there is already a committing transaction touching it. [j_list_lock]
+  i_list
+    List of inodes in the i_transaction [j_list_lock]
+  i_vfs_inode
+    VFS inode this inode belongs to [constant for lifetime of structure]
+  i_flags
+    Flags of inode [j_list_lock]
+  i_dirty_start
+    Offset in bytes where the dirty range for this inode starts.
+[j_list_lock]
+  i_dirty_end
+    Inclusive offset in bytes where the dirty range for this inode
+ends. [j_list_lock]

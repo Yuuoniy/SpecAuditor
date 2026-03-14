@@ -1,0 +1,11 @@
+Macro: module_ssam_device_driver
+
+
+
+Parameters
+  drv
+    The driver managed by this module.
+
+Description
+  Helper macro to register a SSAM device driver via module_init() and module_exit() . This macro may only be used once per module and replaces the
+aforementioned definitions.

@@ -1,0 +1,32 @@
+Struct: struct page_pool_params
+
+page pool parameters
+
+Members
+  fast
+    params accessed frequently on hotpath
+  order
+    2^order pages on allocation
+  pool_size
+    size of the ptr_ring
+  nid
+    NUMA node id to allocate from pages from
+  dev
+    device, for DMA pre-mapping purposes
+  napi
+    NAPI which is the sole consumer of pages, otherwise NULL
+  dma_dir
+    DMA mapping direction
+  max_len
+    max DMA sync memory size for PP_FLAG_DMA_SYNC_DEV
+  offset
+    DMA sync address offset for PP_FLAG_DMA_SYNC_DEV
+  slow
+    params with slowpath access only (initialization and Netlink)
+  netdev
+    netdev this pool will serve (leave as NULL if none or multiple)
+  queue_idx
+    queue idx this page_pool is being created for.
+  flags
+    PP_FLAG_DMA_MAP, PP_FLAG_DMA_SYNC_DEV, PP_FLAG_SYSTEM_POOL,
+PP_FLAG_ALLOW_UNREADABLE_NETMEM.

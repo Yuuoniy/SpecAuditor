@@ -1,0 +1,13 @@
+Function: struct skb_ext
+
+sk_buff extensions
+
+Members
+  refcnt
+    1 on allocation, deallocated on 0
+  offset
+    offset to add to data to obtain extension address
+  chunks
+    size currently allocated, stored in SKB_EXT_ALIGN_SHIFT units
+  data
+    start of extension data, variable sized

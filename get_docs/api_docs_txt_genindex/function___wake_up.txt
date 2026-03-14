@@ -1,0 +1,18 @@
+Function: int __wake_up ( struct wait_queue_head * wq_head , unsigned int mode , int nr_exclusive , void * key )
+
+wake up threads blocked on a waitqueue.
+
+Parameters
+  struct wait_queue_head *wq_head
+    the waitqueue
+  unsigned int mode
+    which threads
+  int nr_exclusive
+    how many wake-one or wake-many threads to wake up
+  void *key
+    is directly passed to the wakeup function
+
+Description
+  If this function wakes up a task, it executes a full memory barrier
+before accessing the task state.  Returns the number of exclusive
+tasks that were awaken.

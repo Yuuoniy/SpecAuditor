@@ -1,0 +1,19 @@
+Function: void __media_device_usb_init ( struct media_device * mdev , struct usb_device * udev , const char * board_name , const char * driver_name )
+
+create and initialize a struct media_device from a PCI device.
+
+Parameters
+  struct media_device *mdev
+    pointer to struct media_device
+  struct usb_device *udev
+    pointer to struct usb_device
+  const char *board_name
+    media device name. If NULL , the routine will use the usb
+product name, if available.
+  const char *driver_name
+    name of the driver. if NULL , the routine will use the name
+given by udev->dev->driver->name , with is usually the wrong
+thing to do.
+
+Description
+  Note

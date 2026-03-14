@@ -1,0 +1,7 @@
+Function: void * i2c_atr_get_driver_data ( struct i2c_atr * atr )
+
+Get the stored drive data.
+
+Parameters
+  struct i2c_atr *atr
+    The I2C ATR

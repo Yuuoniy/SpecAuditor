@@ -1,0 +1,13 @@
+Function: void intel_uncore_forcewake_put ( struct intel_uncore * uncore , enum forcewake_domains fw_domains )
+
+release a forcewake domain reference
+
+Parameters
+  struct intel_uncore *uncore
+    the intel_uncore structure
+  enum forcewake_domains fw_domains
+    forcewake domains to put references
+
+Description
+  This function drops the device-level forcewakes for specified
+domains obtained by intel_uncore_forcewake_get() .

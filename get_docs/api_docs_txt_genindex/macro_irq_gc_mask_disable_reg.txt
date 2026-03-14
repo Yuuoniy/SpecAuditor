@@ -1,0 +1,11 @@
+Macro: void irq_gc_mask_disable_reg ( struct irq_data * d )
+
+Mask chip via disable register
+
+Parameters
+  struct irq_data *d
+    irq_data
+
+Description
+  Chip has separate enable/disable registers instead of a single mask
+register.

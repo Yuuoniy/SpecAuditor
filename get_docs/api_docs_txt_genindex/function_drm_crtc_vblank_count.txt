@@ -1,0 +1,13 @@
+Function: u64 drm_crtc_vblank_count ( struct drm_crtc * crtc )
+
+retrieve “cooked” vblank counter value
+
+Parameters
+  struct drm_crtc *crtc
+    which counter to retrieve
+
+Description
+  Fetches the “cooked” vblank count value that represents the number of
+vblank events since the system was booted, including lost events due to
+modesetting activity. Note that this timer isn’t correct against a racing
+vblank interrupt (since it only reports the software vblank counter), see drm_crtc_accurate_vblank_count() for such use-cases.

@@ -1,0 +1,7 @@
+Function: int rdev_get_id ( struct regulator_dev * rdev )
+
+get regulator ID
+
+Parameters
+  struct regulator_dev *rdev
+    regulator

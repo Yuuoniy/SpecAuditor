@@ -1,0 +1,10 @@
+Function: u16 dmi_memdev_handle ( int slot )
+
+get the DMI handle of a memory slot
+
+Parameters
+  int slot
+    slot number
+
+Description
+  Return the DMI handle associated with a given memory slot, or 0xFFFF if there is no such slot.

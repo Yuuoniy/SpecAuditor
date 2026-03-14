@@ -1,0 +1,16 @@
+Function: struct gen_pool * of_gen_pool_get ( struct device_node * np , const char * propname , int index )
+
+find a pool by phandle property
+
+Parameters
+  struct device_node *np
+    device node
+  const char *propname
+    property name containing phandle(s)
+  int index
+    index into the phandle array
+
+Description
+  Returns the pool that contains the chunk starting at the physical
+address of the device tree node pointed at by the phandle property,
+or NULL if not found.

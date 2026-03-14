@@ -1,0 +1,10 @@
+Macro: to_wmi_device
+
+
+
+Parameters
+  device
+    device struct
+
+Description
+  Cast a struct device to a struct wmi_device .

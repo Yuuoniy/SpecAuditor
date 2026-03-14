@@ -1,0 +1,11 @@
+Function: void xe_wa_process_device_oob ( struct xe_device * xe )
+
+process OOB workaround table
+
+Parameters
+  struct xe_device *xe
+    device instance to process workarounds for
+
+Description
+  process OOB workaround table for this device, marking in xe the
+workarounds that are active.

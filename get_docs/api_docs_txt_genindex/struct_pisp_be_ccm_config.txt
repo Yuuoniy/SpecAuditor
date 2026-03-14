@@ -1,0 +1,11 @@
+Struct: struct pisp_be_ccm_config
+
+PiSP Back End CCM config
+
+Members
+  coeffs
+    Matrix coefficients
+  pad
+    Padding bytes
+  offsets
+    Offsets triplet

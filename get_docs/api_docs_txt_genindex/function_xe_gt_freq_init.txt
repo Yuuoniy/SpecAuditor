@@ -1,0 +1,10 @@
+Function: int xe_gt_freq_init ( struct xe_gt * gt )
+
+Initialize Xe Freq component
+
+Parameters
+  struct xe_gt *gt
+    Xe GT object
+
+Description
+  It needs to be initialized after GT Sysfs and GuC PC components are ready.

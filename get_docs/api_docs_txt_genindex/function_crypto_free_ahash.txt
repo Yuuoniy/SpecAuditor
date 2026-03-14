@@ -1,0 +1,10 @@
+Function: void crypto_free_ahash ( struct crypto_ahash * tfm )
+
+zeroize and free the ahash handle
+
+Parameters
+  struct crypto_ahash *tfm
+    cipher handle to be freed
+
+Description
+  If tfm is a NULL or error pointer, this function does nothing.

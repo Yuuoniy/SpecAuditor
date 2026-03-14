@@ -1,0 +1,13 @@
+Function: bool rxrpc_kernel_check_life ( const struct socket * sock , const struct rxrpc_call * call )
+
+Check to see whether a call is still alive
+
+Parameters
+  const struct socket *sock
+    The socket the call is on
+  const struct rxrpc_call *call
+    The call to check
+
+Description
+  Allow a kernel service to find out whether a call is still alive - whether
+it has completed successfully and all received data has been consumed.

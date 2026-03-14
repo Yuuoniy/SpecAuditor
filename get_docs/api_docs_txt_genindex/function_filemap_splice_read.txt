@@ -1,0 +1,20 @@
+Function: ssize_t filemap_splice_read ( struct file * in , loff_t * ppos , struct pipe_inode_info * pipe , size_t len , unsigned int flags )
+
+Splice data from a file’s pagecache into a pipe
+
+Parameters
+  struct file *in
+    The file to read from
+  loff_t *ppos
+    Pointer to the file position to read from
+  struct pipe_inode_info *pipe
+    The pipe to splice into
+  size_t len
+    The amount to splice
+  unsigned int flags
+    The SPLICE_F_* flags
+
+Description
+  This function gets folios from a file’s pagecache and splices them into the
+pipe.  Readahead will be called as necessary to fill more folios.  This may
+be used for blockdevs also.

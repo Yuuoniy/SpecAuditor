@@ -1,0 +1,12 @@
+Function: u64 dma_fence_context_alloc ( unsigned num )
+
+allocate an array of fence contexts
+
+Parameters
+  unsigned num
+    amount of contexts to allocate
+
+Description
+  This function will return the first index of the number of fence contexts
+allocated.  The fence context is used for setting dma_fence.context to a
+unique number by passing the context to dma_fence_init() .

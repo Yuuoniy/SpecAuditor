@@ -1,0 +1,13 @@
+Function: void drm_print_memory_stats ( struct drm_printer * p , const struct drm_memory_stats * stats , enum drm_gem_object_status supported_status , const char * region )
+
+A helper to print memory stats
+
+Parameters
+  struct drm_printer *p
+    The printer to print output to
+  const struct drm_memory_stats *stats
+    The collected memory stats
+  enum drm_gem_object_status supported_status
+    Bitmask of optional stats which are available
+  const char *region
+    The memory region

@@ -1,0 +1,11 @@
+Function: void trace_block_rq_merge ( struct request * rq )
+
+merge request with another one in the elevator
+
+Parameters
+  struct request *rq
+    block IO operation request
+
+Description
+  Called when block operation request rq from queue q is merged to another
+request queued in the elevator.

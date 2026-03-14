@@ -1,0 +1,17 @@
+Function: struct device_node * of_find_node_opts_by_path ( const char * path , const char * * opts )
+
+Find a node matching a full OF path
+
+Parameters
+  const char *path
+    Either the full path to match, or if the path does not
+start with ‘/’, the name of a property of the /aliases
+node (an alias).  In the case of an alias, the node
+matching the alias’ value will be returned.
+  const char **opts
+    Address of a pointer into which to store the start of
+an options string appended to the end of the path with
+a ‘:’ separator.
+
+Description
+  /foo/bar  Full path

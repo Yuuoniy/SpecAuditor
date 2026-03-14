@@ -1,0 +1,16 @@
+Function: int security_audit_rule_match ( struct lsm_prop * prop , u32 field , u32 op , void * lsmrule )
+
+Check if a label matches an audit rule
+
+Parameters
+  struct lsm_prop *prop
+    security label
+  u32 field
+    LSM audit field
+  u32 op
+    matching operator
+  void *lsmrule
+    audit rule
+
+Description
+  Determine if given secid matches a rule previously approved by security_audit_rule_known() .

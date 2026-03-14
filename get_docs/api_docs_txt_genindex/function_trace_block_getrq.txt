@@ -1,0 +1,10 @@
+Function: void trace_block_getrq ( struct bio * bio )
+
+get a free request entry in queue for block IO operations
+
+Parameters
+  struct bio *bio
+    pending block IO operation (can be NULL )
+
+Description
+  A request struct has been allocated to handle the block IO operation bio .

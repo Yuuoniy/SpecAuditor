@@ -1,0 +1,7 @@
+Function: void intel_audio_init ( struct intel_display * display )
+
+Initialize the audio driver either using component framework or using lpe audio bridge
+
+Parameters
+  struct intel_display *display
+    display device

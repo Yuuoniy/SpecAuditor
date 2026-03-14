@@ -1,0 +1,11 @@
+Function: dma_addr_t page_pool_get_dma_addr ( const struct page * page )
+
+Retrieve the stored DMA address.
+
+Parameters
+  const struct page *page
+    page allocated from a page pool
+
+Description
+  Fetch the DMA address of the page. The page pool to which the page belongs
+must had been created with PP_FLAG_DMA_MAP.

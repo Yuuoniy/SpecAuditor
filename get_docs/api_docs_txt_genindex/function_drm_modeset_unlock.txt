@@ -1,0 +1,7 @@
+Function: void drm_modeset_unlock ( struct drm_modeset_lock * lock )
+
+drop modeset lock
+
+Parameters
+  struct drm_modeset_lock *lock
+    lock to release

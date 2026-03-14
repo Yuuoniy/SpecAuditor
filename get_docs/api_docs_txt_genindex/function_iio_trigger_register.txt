@@ -1,0 +1,7 @@
+Function: int iio_trigger_register ( struct iio_trigger * trig_info )
+
+register a trigger with the IIO core
+
+Parameters
+  struct iio_trigger *trig_info
+    trigger to be registered

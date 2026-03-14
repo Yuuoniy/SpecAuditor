@@ -1,0 +1,6 @@
+{
+  "benchmark_rows": 48,
+  "reference_detected_bug_rows": 39,
+  "benchmark_seed_patch_count": 9,
+  "generation_seed_count": 12
+}

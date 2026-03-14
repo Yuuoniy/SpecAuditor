@@ -1,0 +1,12 @@
+Function: struct drm_bridge_state * drm_atomic_helper_bridge_duplicate_state ( struct drm_bridge * bridge )
+
+Duplicate a bridge state object
+
+Parameters
+  struct drm_bridge *bridge
+    bridge object
+
+Description
+  Allocates a new bridge state and initializes it with the current bridge
+state values. This helper is meant to be used as a bridge drm_bridge_funcs.atomic_duplicate_state hook for bridges that don’t
+subclass the bridge state.

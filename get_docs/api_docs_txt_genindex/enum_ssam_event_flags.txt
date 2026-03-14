@@ -1,0 +1,3 @@
+Enum: enum ssam_event_flags
+
+Flags for enabling/disabling SAM events

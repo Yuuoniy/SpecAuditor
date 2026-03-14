@@ -1,0 +1,3 @@
+Enum: enum device_link_state
+
+Device link states.

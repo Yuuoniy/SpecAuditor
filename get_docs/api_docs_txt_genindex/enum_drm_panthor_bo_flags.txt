@@ -1,0 +1,3 @@
+Enum: enum drm_panthor_bo_flags
+
+Buffer object flags, passed at creation time.

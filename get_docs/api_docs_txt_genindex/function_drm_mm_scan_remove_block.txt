@@ -1,0 +1,14 @@
+Function: bool drm_mm_scan_remove_block ( struct drm_mm_scan * scan , struct drm_mm_node * node )
+
+remove a node from the scan list
+
+Parameters
+  struct drm_mm_scan *scan
+    the active drm_mm scanner
+  struct drm_mm_node *node
+    drm_mm_node to remove
+
+Description
+  Nodes must be removed in exactly the reverse order from the scan list as
+they have been added (e.g. using list_add() as they are added and then list_for_each() over that eviction list to remove), otherwise the internal
+state of the memory manager will be corrupted.

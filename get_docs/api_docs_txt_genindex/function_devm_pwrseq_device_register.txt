@@ -1,0 +1,9 @@
+Function: struct pwrseq_device * devm_pwrseq_device_register ( struct device * dev , const struct pwrseq_config * config )
+
+Managed variant of pwrseq_device_register() .
+
+Parameters
+  struct device *dev
+    Managing device.
+  const struct pwrseq_config *config
+    Configuration of the new power sequencing device.

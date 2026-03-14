@@ -1,0 +1,13 @@
+Function: void pwq_dec_nr_in_flight ( struct pool_workqueue * pwq , unsigned long work_data )
+
+decrement pwq’s nr_in_flight
+
+Parameters
+  struct pool_workqueue *pwq
+    pwq of interest
+  unsigned long work_data
+    work_data of work which left the queue
+
+Description
+  A work either has completed or is removed from pending queue,
+decrement nr_in_flight of its pwq and handle workqueue flushing.

@@ -1,0 +1,9 @@
+Function: ssize_t folio_mkwrite_check_truncate ( const struct folio * folio , const struct inode * inode )
+
+check if folio was truncated
+
+Parameters
+  const struct folio *folio
+    the folio to check
+  const struct inode *inode
+    the inode to check the folio against

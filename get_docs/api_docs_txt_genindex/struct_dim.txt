@@ -1,0 +1,29 @@
+Struct: struct dim
+
+Main structure for dynamic interrupt moderation (DIM). Used for holding all information about a specific DIM instance.
+
+Members
+  state
+    Algorithm state (see below)
+  prev_stats
+    Measured rates from previous iteration (for comparison)
+  start_sample
+    Sampled data at start of current iteration
+  measuring_sample
+    A dim_sample that is used to update the current events
+  work
+    Work to perform on action required
+  priv
+    A pointer to the struct that points to dim
+  profile_ix
+    Current moderation profile
+  mode
+    CQ period count mode
+  tune_state
+    Algorithm tuning state (see below)
+  steps_right
+    Number of steps taken towards higher moderation
+  steps_left
+    Number of steps taken towards lower moderation
+  tired
+    Parking depth counter

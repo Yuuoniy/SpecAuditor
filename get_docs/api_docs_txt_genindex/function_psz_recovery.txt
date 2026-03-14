@@ -1,0 +1,10 @@
+Function: int psz_recovery ( struct psz_context * cxt )
+
+recover data from storage
+
+Parameters
+  struct psz_context *cxt
+    the context of pstore/zone
+
+Description
+  recovery means reading data back from storage after rebooting

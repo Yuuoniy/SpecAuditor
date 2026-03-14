@@ -1,0 +1,10 @@
+Struct: struct usb_os_desc_table
+
+describes OS descriptors associated with one interface of a usb_function
+
+Members
+  if_id
+    Interface id
+  os_desc
+    “Extended Compatibility ID” and “Extended Properties” of the
+interface

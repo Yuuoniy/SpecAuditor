@@ -1,0 +1,17 @@
+Struct: struct nand_interface_config
+
+NAND interface timing
+
+Members
+  type
+    type of the timing
+  timings
+    The timing information
+  timings.mode
+    Timing mode as defined in the specification
+  {unnamed_union}
+    anonymous
+  timings.sdr
+    Use it when type is NAND_SDR_IFACE .
+  timings.nvddr
+    Use it when type is NAND_NVDDR_IFACE .

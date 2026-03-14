@@ -1,0 +1,10 @@
+Function: void netif_carrier_on ( struct net_device * dev )
+
+set carrier
+
+Parameters
+  struct net_device *dev
+    network device
+
+Description
+  Device has detected acquisition of carrier.

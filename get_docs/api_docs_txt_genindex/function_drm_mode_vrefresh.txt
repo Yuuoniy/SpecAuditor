@@ -1,0 +1,7 @@
+Function: int drm_mode_vrefresh ( const struct drm_display_mode * mode )
+
+get the vrefresh of a mode
+
+Parameters
+  const struct drm_display_mode *mode
+    mode

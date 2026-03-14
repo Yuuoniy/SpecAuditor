@@ -1,0 +1,7 @@
+Function: void iser_free_fastreg_pool ( struct ib_conn * ib_conn )
+
+releases the pool of fast_reg descriptors
+
+Parameters
+  struct ib_conn *ib_conn
+    connection RDMA resources

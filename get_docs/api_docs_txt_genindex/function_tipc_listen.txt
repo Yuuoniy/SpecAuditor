@@ -1,0 +1,9 @@
+Function: int tipc_listen ( struct socket * sock , int len )
+
+allow socket to listen for incoming connections
+
+Parameters
+  struct socket *sock
+    socket structure
+  int len
+    (unused)

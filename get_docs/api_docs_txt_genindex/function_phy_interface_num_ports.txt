@@ -1,0 +1,7 @@
+Function: int phy_interface_num_ports ( phy_interface_t interface )
+
+Return the number of links that can be carried by a given MAC-PHY physical link. Returns 0 if this is unknown, the number of links else.
+
+Parameters
+  phy_interface_t interface
+    The interface mode we want to get the number of ports

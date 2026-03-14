@@ -1,0 +1,11 @@
+Struct: struct drm_dsc_rc_range_parameters
+
+DSC Rate Control range parameters
+
+Members
+  range_min_qp
+    Min Quantization Parameters allowed for this range
+  range_max_qp
+    Max Quantization Parameters allowed for this range
+  range_bpg_offset
+    Bits/group offset to apply to target for this group

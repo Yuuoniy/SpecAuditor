@@ -1,0 +1,10 @@
+Function: struct dma_fence * dma_resv_iter_first_unlocked ( struct dma_resv_iter * cursor )
+
+first fence in an unlocked dma_resv obj.
+
+Parameters
+  struct dma_resv_iter *cursor
+    the cursor with the current position
+
+Description
+  Subsequent fences are iterated with dma_resv_iter_next_unlocked() .

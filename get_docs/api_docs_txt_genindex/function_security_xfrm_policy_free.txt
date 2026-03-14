@@ -1,0 +1,10 @@
+Function: void security_xfrm_policy_free ( struct xfrm_sec_ctx * ctx )
+
+Free a xfrm security context
+
+Parameters
+  struct xfrm_sec_ctx *ctx
+    xfrm security context
+
+Description
+  Free LSM resources associated with ctx .

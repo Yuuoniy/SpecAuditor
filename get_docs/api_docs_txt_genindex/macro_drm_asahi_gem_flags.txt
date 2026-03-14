@@ -1,0 +1,3 @@
+Macro: enum drm_asahi_gem_flags
+
+Flags for GEM creation

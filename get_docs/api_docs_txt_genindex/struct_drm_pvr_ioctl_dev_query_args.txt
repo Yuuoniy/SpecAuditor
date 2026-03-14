@@ -1,0 +1,16 @@
+Struct: struct drm_pvr_ioctl_dev_query_args
+
+Arguments for DRM_IOCTL_PVR_DEV_QUERY .
+
+Members
+  type
+    Type of query and output struct. See enum drm_pvr_dev_query .
+  size
+    Size of the receiving struct, see type . After a successful call this will be updated to the written byte
+length.
+Can also be used to get the minimum byte length (see pointer ).
+This allows additional fields to be appended to the structs in
+future.
+  pointer
+    Pointer to struct type . Must be large enough to contain size bytes.
+If pointer is NULL, the expected size will be returned in the size field, but no other data will be written.

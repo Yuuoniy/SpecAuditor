@@ -1,0 +1,19 @@
+Function: int generic_encode_ino32_fh ( struct inode * inode , __u32 * fh , int * max_len , struct inode * parent )
+
+generic export_operations->encode_fh function
+
+Parameters
+  struct inode *inode
+    the object to encode
+  __u32 *fh
+    where to store the file handle fragment
+  int *max_len
+    maximum length to store there (in 4 byte units)
+  struct inode *parent
+    parent directory inode, if wanted
+
+Description
+  This generic encode_fh function assumes that the 32 inode number
+is suitable for locating an inode, and that the generation number
+can be used to check that it is still valid.  It places them in the
+filehandle fragment where export_decode_fh expects to find them.

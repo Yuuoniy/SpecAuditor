@@ -1,0 +1,12 @@
+Function: int get_old_timespec32 ( struct timespec64 * ts , const void __user * uts )
+
+get user’s old-format time value into kernel space
+
+Parameters
+  struct timespec64 *ts
+    destination struct timespec64
+  const void __user *uts
+    user’s old-format time value ( struct old_timespec32 )
+
+Description
+  Handles X86_X32_ABI compatibility conversion.

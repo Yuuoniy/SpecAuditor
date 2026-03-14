@@ -1,0 +1,23 @@
+Struct: struct amd_shmem_info
+
+Shared memory table for AMD HFI
+
+Members
+  header
+    The PCCT table header including signature, length flags and command.
+  version_number
+    Version number of the table
+  n_logical_processors
+    Number of logical processors
+  n_capabilities
+    Number of ranking dimensions (performance, efficiency, etc)
+  table_update_context
+    Command being sent over the subspace
+  n_bitmaps
+    Number of 32-bit bitmaps to enumerate all the APIC IDs
+This is based on the maximum APIC ID enumerated in the system
+  reserved
+    24 bit spare
+  table_data
+    Bit Map(s) of enabled logical processors
+Followed by the ranking data for each logical processor

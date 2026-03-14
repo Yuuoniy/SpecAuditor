@@ -1,0 +1,10 @@
+Function: long raw_atomic_long_fetch_inc ( atomic_long_t * v )
+
+atomic increment with full ordering
+
+Parameters
+  atomic_long_t *v
+    pointer to atomic_long_t
+
+Description
+  Atomically updates v to ( v + 1) with full ordering.

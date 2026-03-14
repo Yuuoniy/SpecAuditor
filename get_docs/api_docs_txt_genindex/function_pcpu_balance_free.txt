@@ -1,0 +1,12 @@
+Function: void pcpu_balance_free ( bool empty_only )
+
+manage the amount of free chunks
+
+Parameters
+  bool empty_only
+    free chunks only if there are no populated pages
+
+Description
+  If empty_only is false , reclaim all fully free chunks regardless of the
+number of populated pages.  Otherwise, only reclaim chunks that have no
+populated pages.

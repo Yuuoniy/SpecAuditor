@@ -1,0 +1,14 @@
+Function: struct reset_control * reset_control_get_exclusive_released ( struct device * dev , const char * id )
+
+Lookup and obtain a temoprarily exclusive reference to a reset controller.
+
+Parameters
+  struct device *dev
+    device to be reset by the controller
+  const char *id
+    reset line name
+
+Description
+  Returns a struct reset_control or IS_ERR() condition containing errno.
+reset-controls returned by this function must be acquired via reset_control_acquire() before they can be used and should be released
+via reset_control_release() afterwards.

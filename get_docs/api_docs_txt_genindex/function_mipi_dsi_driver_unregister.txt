@@ -1,0 +1,7 @@
+Function: void mipi_dsi_driver_unregister ( struct mipi_dsi_driver * drv )
+
+unregister a driver for DSI devices
+
+Parameters
+  struct mipi_dsi_driver *drv
+    DSI driver structure

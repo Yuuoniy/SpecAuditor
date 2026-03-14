@@ -1,0 +1,15 @@
+Function: void xas_pause ( struct xa_state * xas )
+
+Pause a walk to drop a lock.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+
+Description
+  Some users need to pause a walk and drop the lock they’re holding in
+order to yield to a higher priority thread or carry out an operation
+on an entry.  Those users should call this function before they drop
+the lock.  It resets the xas to be suitable for the next iteration
+of the loop after the user has reacquired the lock.  If most entries
+found during a walk require you to call xas_pause() , the xa_for_each() iterator may be more appropriate.

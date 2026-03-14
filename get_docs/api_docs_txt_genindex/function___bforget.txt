@@ -1,0 +1,11 @@
+Function: void __bforget ( struct buffer_head * bh )
+
+Discard any dirty data in a buffer.
+
+Parameters
+  struct buffer_head *bh
+    The buffer to forget.
+
+Description
+  This variant of bforget() can be called if bh is guaranteed to not
+be NULL.

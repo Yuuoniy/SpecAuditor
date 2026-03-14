@@ -1,0 +1,7 @@
+Function: void i2c_unregister_device ( struct i2c_client * client )
+
+reverse effect of i2c_new_* _device()
+
+Parameters
+  struct i2c_client *client
+    value returned from i2c_new_* _device()

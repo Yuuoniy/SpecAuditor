@@ -1,0 +1,10 @@
+Function: int v4l2_fh_is_singular_file ( struct file * filp )
+
+Returns 1 if this filehandle is the only filehandle opened for the associated video_device.
+
+Parameters
+  struct file *filp
+    pointer to struct file
+
+Description
+  This is a helper function variant of v4l2_fh_is_singular() with uses struct file as argument.

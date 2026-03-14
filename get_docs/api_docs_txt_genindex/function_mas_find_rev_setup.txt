@@ -1,0 +1,11 @@
+Function: bool mas_find_rev_setup ( struct ma_state * mas , unsigned long min , void * * entry )
+
+Internal function to set up mas_find_* _rev()
+
+Parameters
+  struct ma_state *mas
+    The maple state
+  unsigned long min
+    The minimum index
+  void **entry
+    Pointer to the entry

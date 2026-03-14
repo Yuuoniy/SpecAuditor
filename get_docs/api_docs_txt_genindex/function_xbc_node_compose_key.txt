@@ -1,0 +1,16 @@
+Function: int xbc_node_compose_key ( struct xbc_node * node , char * buf , size_t size )
+
+Compose full key string of the XBC node
+
+Parameters
+  struct xbc_node *node
+    An XBC node.
+  char *buf
+    A buffer to store the key.
+  size_t size
+    The size of the buf .
+
+Description
+  Compose the full-length key of the node into buf . Returns the total
+length of the key stored in buf . Or returns -EINVAL if node is NULL,
+and -ERANGE if the key depth is deeper than max depth.

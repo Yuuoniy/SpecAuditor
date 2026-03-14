@@ -1,0 +1,26 @@
+Function: void ahash_request_set_callback ( struct ahash_request * req , u32 flags , crypto_completion_t compl , void * data )
+
+set asynchronous callback function
+
+Parameters
+  struct ahash_request *req
+    request handle
+  u32 flags
+    specify zero or an ORing of the flags
+CRYPTO_TFM_REQ_MAY_BACKLOG the request queue may back log and
+increase the wait queue beyond the initial maximum size;
+CRYPTO_TFM_REQ_MAY_SLEEP the request processing may sleep
+  crypto_completion_t compl
+    callback function pointer to be registered with the request handle
+  void *data
+    The data pointer refers to memory that is not used by the kernel
+crypto API, but provided to the callback function for it to use. Here,
+the caller can provide a reference to memory the callback function can
+operate on. As the callback function is invoked asynchronously to the
+related functionality, it may need to access data structures of the
+related functionality which can be referenced using this pointer. The
+callback function can access the memory via the “data” field in the crypto_async_request data structure provided to the callback function.
+
+Description
+  This function allows setting the callback function that is triggered once
+the cipher operation completes.

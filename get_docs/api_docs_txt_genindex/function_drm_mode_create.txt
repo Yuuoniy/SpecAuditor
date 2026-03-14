@@ -1,0 +1,11 @@
+Function: struct drm_display_mode * drm_mode_create ( struct drm_device * dev )
+
+create a new display mode
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  Create a new, cleared drm_display_mode with kzalloc, allocate an ID for it
+and return it.

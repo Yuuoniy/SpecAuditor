@@ -1,0 +1,9 @@
+Function: ssize_t frames_to_bytes ( struct snd_pcm_runtime * runtime , snd_pcm_sframes_t size )
+
+Unit conversion of the size from frames to bytes
+
+Parameters
+  struct snd_pcm_runtime *runtime
+    PCM runtime instance
+  snd_pcm_sframes_t size
+    size in frames

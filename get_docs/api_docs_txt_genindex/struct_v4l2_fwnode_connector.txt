@@ -1,0 +1,19 @@
+Struct: struct v4l2_fwnode_connector
+
+the connector data structure
+
+Members
+  name
+    the connector device name
+  label
+    optional connector label
+  type
+    connector type
+  links
+    list of all connector struct v4l2_connector_link links
+  nr_of_links
+    total number of links
+  connector
+    connector configuration
+  connector.analog
+    analog connector configuration struct v4l2_fwnode_connector_analog

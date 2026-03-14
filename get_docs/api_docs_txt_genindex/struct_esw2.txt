@@ -1,0 +1,15 @@
+Struct: struct esw2
+
+Format 2 Extended Status Word (ESW)
+
+Members
+  zero0
+    reserved zeros
+  lpum
+    last path used mask
+  dcti
+    device-connect-time interval
+  erw
+    extended report word
+  zeros
+    three fullwords of zeros

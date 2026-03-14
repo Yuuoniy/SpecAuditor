@@ -1,0 +1,11 @@
+Function: unsigned int irq_chip_startup_parent ( struct irq_data * data )
+
+Startup the parent interrupt
+
+Parameters
+  struct irq_data *data
+    Pointer to interrupt specific data
+
+Description
+  Invokes the irq_startup() callback of the parent if available or falls
+back to irq_chip_enable_parent() .

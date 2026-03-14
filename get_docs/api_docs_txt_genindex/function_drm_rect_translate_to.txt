@@ -1,0 +1,15 @@
+Function: void drm_rect_translate_to ( struct drm_rect * r , int x , int y )
+
+translate the rectangle to an absolute position
+
+Parameters
+  struct drm_rect *r
+    rectangle to be translated
+  int x
+    horizontal position
+  int y
+    vertical position
+
+Description
+  Move rectangle r to x in the horizontal direction,
+and to y in the vertical direction.

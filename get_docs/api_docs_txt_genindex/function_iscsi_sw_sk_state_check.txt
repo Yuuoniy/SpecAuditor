@@ -1,0 +1,12 @@
+Function: int iscsi_sw_sk_state_check ( struct sock * sk )
+
+check socket state
+
+Parameters
+  struct sock *sk
+    socket
+
+Description
+  If the socket is in CLOSE or CLOSE_WAIT we should
+not close the connection if there is still some
+data pending.

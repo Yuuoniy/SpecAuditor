@@ -1,0 +1,10 @@
+Function: long raw_atomic_long_read_acquire ( const atomic_long_t * v )
+
+atomic load with acquire ordering
+
+Parameters
+  const atomic_long_t *v
+    pointer to atomic_long_t
+
+Description
+  Atomically loads the value of v with acquire ordering.

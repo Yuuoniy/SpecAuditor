@@ -1,0 +1,7 @@
+Function: struct mipi_dsi_host * of_find_mipi_dsi_host_by_node ( struct device_node * node )
+
+find the MIPI DSI host matching a device tree node
+
+Parameters
+  struct device_node *node
+    device tree node

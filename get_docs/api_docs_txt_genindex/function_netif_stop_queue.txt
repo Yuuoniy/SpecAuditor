@@ -1,0 +1,11 @@
+Function: void netif_stop_queue ( struct net_device * dev )
+
+stop transmitted packets
+
+Parameters
+  struct net_device *dev
+    network device
+
+Description
+  Stop upper layers calling the device hard_start_xmit routine.
+Used for flow control when transmit resources are unavailable.

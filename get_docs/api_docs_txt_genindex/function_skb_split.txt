@@ -1,0 +1,11 @@
+Function: void skb_split ( struct sk_buff * skb , struct sk_buff * skb1 , const u32 len )
+
+Split fragmented skb to two parts at length len.
+
+Parameters
+  struct sk_buff *skb
+    the buffer to split
+  struct sk_buff *skb1
+    the buffer to receive the second part
+  const u32 len
+    new length for skb

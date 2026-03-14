@@ -1,0 +1,14 @@
+Function: int tiocswinsz ( struct tty_struct * tty , struct winsize __user * arg )
+
+implement window size set ioctl
+
+Parameters
+  struct tty_struct *tty
+    tty side of tty
+  struct winsize __user *arg
+    user buffer for result
+
+Description
+  Copies the user idea of the window size to the kernel. Traditionally this is
+just advisory information but for the Linux console it actually has driver
+level meaning and triggers a VC resize.

@@ -1,0 +1,9 @@
+Function: int of_driver_match_device ( struct device * dev , const struct device_driver * drv )
+
+Tell if a driver’s of_match_table matches a device.
+
+Parameters
+  struct device *dev
+    the device structure to match against
+  const struct device_driver *drv
+    the device_driver structure to test

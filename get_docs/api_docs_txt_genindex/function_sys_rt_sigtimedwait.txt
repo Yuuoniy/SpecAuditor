@@ -1,0 +1,13 @@
+Function: long sys_rt_sigtimedwait ( const sigset_t __user * uthese , siginfo_t __user * uinfo , const struct __kernel_timespec __user * uts , size_t sigsetsize )
+
+synchronously wait for queued signals specified in uthese
+
+Parameters
+  const sigset_t __user * uthese
+    queued signals to wait for
+  siginfo_t __user * uinfo
+    if non-null, the signal’s siginfo is returned here
+  const struct __kernel_timespec __user * uts
+    upper bound on process time suspension
+  size_t sigsetsize
+    size of sigset_t type

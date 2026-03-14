@@ -1,0 +1,11 @@
+Function: void intel_dsb_cleanup ( struct intel_dsb * dsb )
+
+To cleanup DSB context.
+
+Parameters
+  struct intel_dsb *dsb
+    DSB context
+
+Description
+  This function cleanup the DSB context by unpinning and releasing
+the VMA object associated with it.

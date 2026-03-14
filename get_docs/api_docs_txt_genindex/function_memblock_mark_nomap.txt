@@ -1,0 +1,15 @@
+Function: int __init_memblock memblock_mark_nomap ( phys_addr_t base , phys_addr_t size )
+
+Mark a memory region with flag MEMBLOCK_NOMAP.
+
+Parameters
+  phys_addr_t base
+    the base phys addr of the region
+  phys_addr_t size
+    the size of the region
+
+Description
+  The memory regions marked with MEMBLOCK_NOMAP will not be added to the
+direct mapping of the physical memory. These regions will still be
+covered by the memory map. The struct page representing NOMAP memory
+frames in the memory map will be PageReserved()

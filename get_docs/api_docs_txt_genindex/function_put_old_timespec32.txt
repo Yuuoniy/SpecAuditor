@@ -1,0 +1,12 @@
+Function: int put_old_timespec32 ( const struct timespec64 * ts , void __user * uts )
+
+convert timespec64 value to struct old_timespec32 and copy the latter to userspace
+
+Parameters
+  const struct timespec64 *ts
+    input struct timespec64
+  void __user *uts
+    user’s struct old_timespec32
+
+Description
+  Handles X86_X32_ABI compatibility conversion.

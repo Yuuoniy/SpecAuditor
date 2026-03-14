@@ -1,0 +1,15 @@
+Function: void drm_rect_translate ( struct drm_rect * r , int dx , int dy )
+
+translate the rectangle
+
+Parameters
+  struct drm_rect *r
+    rectangle to be translated
+  int dx
+    horizontal translation
+  int dy
+    vertical translation
+
+Description
+  Move rectangle r by dx in the horizontal direction,
+and by dy in the vertical direction.

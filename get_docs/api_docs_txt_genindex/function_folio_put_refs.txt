@@ -1,0 +1,15 @@
+Function: void folio_put_refs ( struct folio * folio , int refs )
+
+Reduce the reference count on a folio.
+
+Parameters
+  struct folio *folio
+    The folio.
+  int refs
+    The amount to subtract from the folio’s reference count.
+
+Description
+  If the folio’s reference count reaches zero, the memory will be
+released back to the page allocator and may be used by another
+allocation immediately.  Do not access the memory or the struct folio after calling folio_put_refs() unless you can be sure that these weren’t
+the last references.

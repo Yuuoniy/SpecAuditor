@@ -1,0 +1,7 @@
+Function: int genphy_c45_an_config_eee_aneg ( struct phy_device * phydev )
+
+configure EEE advertisement
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct

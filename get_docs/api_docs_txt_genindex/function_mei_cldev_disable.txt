@@ -1,0 +1,7 @@
+Function: int mei_cldev_disable ( struct mei_cl_device * cldev )
+
+disable me client device disconnect form the me client
+
+Parameters
+  struct mei_cl_device *cldev
+    me client device

@@ -1,0 +1,12 @@
+Function: struct cxl_ep
+
+track an endpoint’s interest in a port
+
+Members
+  ep
+    device that hosts a generic CXL endpoint (expander or accelerator)
+  dport
+    which dport routes to this endpoint on port
+  next
+    cxl switch port across the link attached to dport NULL if
+attached to an endpoint

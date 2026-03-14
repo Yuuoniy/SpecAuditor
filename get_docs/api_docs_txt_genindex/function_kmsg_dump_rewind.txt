@@ -1,0 +1,11 @@
+Function: void kmsg_dump_rewind ( struct kmsg_dump_iter * iter )
+
+reset the iterator
+
+Parameters
+  struct kmsg_dump_iter *iter
+    kmsg dump iterator
+
+Description
+  Reset the dumper’s iterator so that kmsg_dump_get_line() and kmsg_dump_get_buffer() can be called again and used multiple
+times within the same dumper. dump() callback.

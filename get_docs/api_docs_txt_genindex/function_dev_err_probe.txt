@@ -1,0 +1,21 @@
+Function: int dev_err_probe ( const struct device * dev , int err , const char * fmt , ... )
+
+probe error check and log helper
+
+Parameters
+  const struct device *dev
+    the pointer to the struct device
+  int err
+    error value to test
+  const char *fmt
+    printf-style format string
+  ...
+    arguments as specified in the format string
+
+Description
+  This helper implements common pattern present in probe functions for error
+checking: print debug or error message depending if the error value is
+-EPROBE_DEFER and propagate error upwards.
+In case of -EPROBE_DEFER it sets also defer probe reason, which can be
+checked later by reading devices_deferred debugfs attribute.
+It replaces the following code sequence:

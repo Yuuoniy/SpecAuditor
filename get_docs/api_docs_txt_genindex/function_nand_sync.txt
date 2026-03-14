@@ -1,0 +1,10 @@
+Function: void nand_sync ( struct mtd_info * mtd )
+
+[MTD Interface] sync
+
+Parameters
+  struct mtd_info *mtd
+    MTD device structure
+
+Description
+  Sync is actually a wait for chip ready function.

@@ -1,0 +1,17 @@
+Function: int drm_gem_vram_vmap ( struct drm_gem_vram_object * gbo , struct iosys_map * map )
+
+Pins and maps a GEM VRAM object into kernel address space
+
+Parameters
+  struct drm_gem_vram_object *gbo
+    The GEM VRAM object to map
+  struct iosys_map *map
+    Returns the kernel virtual address of the VRAM GEM object’s backing
+store.
+
+Description
+  The vmap function pins a GEM VRAM object to its current location, either
+system or video memory, and maps its buffer into kernel address space.
+As pinned object cannot be relocated, you should avoid pinning objects
+permanently. Call drm_gem_vram_vunmap() with the returned address to
+unmap and unpin the GEM VRAM object.

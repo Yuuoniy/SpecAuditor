@@ -1,0 +1,21 @@
+Function: signed long dma_fence_wait_any_timeout ( struct dma_fence * * fences , uint32_t count , bool intr , signed long timeout , uint32_t * idx )
+
+sleep until any fence gets signaled or until timeout elapses
+
+Parameters
+  struct dma_fence **fences
+    array of fences to wait on
+  uint32_t count
+    number of fences to wait on
+  bool intr
+    if true, do an interruptible wait
+  signed long timeout
+    timeout value in jiffies, or MAX_SCHEDULE_TIMEOUT
+  uint32_t *idx
+    used to store the first signaled fence index, meaningful only on
+positive return
+
+Description
+  Returns -EINVAL on custom fence wait implementation, -ERESTARTSYS if
+interrupted, 0 if the wait timed out, or the remaining timeout in jiffies
+on success.

@@ -1,0 +1,11 @@
+Function: void __ref kmemleak_free_percpu ( const void __percpu * ptr )
+
+unregister a previously registered __percpu object
+
+Parameters
+  const void __percpu *ptr
+    __percpu pointer to beginning of the object
+
+Description
+  This function is called from the kernel percpu allocator when an object
+(memory block) is freed (free_percpu).

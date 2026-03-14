@@ -1,0 +1,13 @@
+Function: int zynqmp_disp_layer_update ( struct zynqmp_disp_layer * layer , struct drm_plane_state * state )
+
+Update the layer framebuffer
+
+Parameters
+  struct zynqmp_disp_layer *layer
+    The layer
+  struct drm_plane_state *state
+    The plane state
+
+Description
+  Update the framebuffer for the layer by issuing a new DMA engine transaction
+for the new framebuffer.

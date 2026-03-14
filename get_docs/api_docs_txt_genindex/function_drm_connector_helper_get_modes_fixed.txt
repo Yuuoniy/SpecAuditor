@@ -1,0 +1,14 @@
+Function: int drm_connector_helper_get_modes_fixed ( struct drm_connector * connector , const struct drm_display_mode * fixed_mode )
+
+Duplicates a display mode for a connector
+
+Parameters
+  struct drm_connector *connector
+    the connector
+  const struct drm_display_mode *fixed_mode
+    the display hardware’s mode
+
+Description
+  This function duplicates a display modes for a connector. Drivers for hardware
+that only supports a single fixed mode can use this function in their connector’s
+get_modes helper.

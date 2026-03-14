@@ -1,0 +1,19 @@
+Macro: kunit_register_params_array
+
+
+
+Parameters
+  test
+    The KUnit test structure to which parameters will be added.
+  array
+    An array of test parameters.
+  param_count
+    Number of parameters.
+  get_desc
+    Function that generates a string description for a given parameter
+element.
+
+Description
+  This macro initializes the test ’s parameter array data, storing information
+including the parameter array, its count, the element size, and the parameter
+description function within test->params_array .

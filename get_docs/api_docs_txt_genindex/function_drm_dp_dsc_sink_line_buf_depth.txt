@@ -1,0 +1,14 @@
+Function: u8 drm_dp_dsc_sink_line_buf_depth ( const u8 dsc_dpcd [ DP_DSC_RECEIVER_CAP_SIZE ] )
+
+Get the line buffer depth in bits
+
+Parameters
+  const u8 dsc_dpcd[DP_DSC_RECEIVER_CAP_SIZE]
+    DSC capabilities from DPCD
+
+Description
+  Read the DSC DPCD register to parse the line buffer depth in bits which is
+number of bits of precision within the decoder line buffer supported by
+the DSC sink. This is used to populate the DSC parameters in the struct drm_dsc_config by the driver.
+Driver creates an infoframe using these parameters to populate struct drm_dsc_pps_infoframe . These are sent to the sink using DSC
+infoframe using the helper function drm_dsc_pps_infoframe_pack()

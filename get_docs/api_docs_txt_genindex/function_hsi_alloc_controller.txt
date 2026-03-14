@@ -1,0 +1,12 @@
+Function: struct hsi_controller * hsi_alloc_controller ( unsigned int n_ports , gfp_t flags )
+
+Allocate an HSI controller and its ports
+
+Parameters
+  unsigned int n_ports
+    Number of ports on the HSI controller
+  gfp_t flags
+    Kernel allocation flags
+
+Description
+  Return NULL on failure or a pointer to an hsi_controller on success.

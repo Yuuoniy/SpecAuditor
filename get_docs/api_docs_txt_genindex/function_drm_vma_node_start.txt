@@ -1,0 +1,13 @@
+Function: unsigned long drm_vma_node_start ( const struct drm_vma_offset_node * node )
+
+Return start address for page-based addressing
+
+Parameters
+  const struct drm_vma_offset_node *node
+    Node to inspect
+
+Description
+  Return the start address of the given node. This can be used as offset into
+the linear VM space that is provided by the VMA offset manager. Note that
+this can only be used for page-based addressing. If you need a proper offset
+for user-space mappings, you must apply “<< PAGE_SHIFT” or use the drm_vma_node_offset_addr() helper instead.

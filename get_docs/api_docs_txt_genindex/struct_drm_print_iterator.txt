@@ -1,0 +1,12 @@
+Struct: struct drm_print_iterator
+
+local struct used with drm_printer_coredump
+
+Members
+  data
+    Pointer to the devcoredump output buffer, can be NULL if using
+drm_printer_coredump to determine size of devcoredump
+  start
+    The offset within the buffer to start writing
+  remain
+    The number of bytes to write for this iteration

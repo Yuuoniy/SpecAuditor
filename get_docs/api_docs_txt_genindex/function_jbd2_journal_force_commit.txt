@@ -1,0 +1,11 @@
+Function: int jbd2_journal_force_commit ( journal_t * journal )
+
+force any uncommitted transactions
+
+Parameters
+  journal_t *journal
+    journal to force
+
+Description
+  Caller want unconditional commit. We can only force the running transaction
+if we don’t have an active handle, otherwise, we will deadlock.

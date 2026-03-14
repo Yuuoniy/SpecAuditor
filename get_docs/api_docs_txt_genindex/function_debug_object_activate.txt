@@ -1,0 +1,10 @@
+Function: int debug_object_activate ( void * addr , const struct debug_obj_descr * descr )
+
+debug checks when an object is activated
+
+Parameters
+  void *addr
+    address of the object
+  const struct debug_obj_descr *descr
+    pointer to an object specific debug description structure
+Returns 0 for success, -EINVAL for check failed.

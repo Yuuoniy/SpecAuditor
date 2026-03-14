@@ -1,0 +1,3 @@
+Enum: enum pwm_polarity
+
+polarity of a PWM signal

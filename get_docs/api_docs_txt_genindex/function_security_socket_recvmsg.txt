@@ -1,0 +1,16 @@
+Function: int security_socket_recvmsg ( struct socket * sock , struct msghdr * msg , int size , int flags )
+
+Check if receiving a message is allowed
+
+Parameters
+  struct socket *sock
+    receiving socket
+  struct msghdr *msg
+    message to receive
+  int size
+    size of message
+  int flags
+    operational flags
+
+Description
+  Check permission before receiving a message from a socket.

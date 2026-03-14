@@ -1,0 +1,13 @@
+Function: int usb_set_wireless_status ( struct usb_interface * iface , enum usb_wireless_status status )
+
+sets the wireless_status struct member
+
+Parameters
+  struct usb_interface *iface
+    the interface to modify
+  enum usb_wireless_status status
+    the new wireless status
+
+Description
+  Set the wireless_status struct member to the new value, and emit
+sysfs changes as necessary.

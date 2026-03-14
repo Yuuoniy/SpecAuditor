@@ -1,0 +1,14 @@
+Function: void vm_unmap_aliases ( void )
+
+unmap outstanding lazy aliases in the vmap layer
+
+Parameters
+  void
+    no arguments
+
+Description
+  The vmap/vmalloc layer lazily flushes kernel virtual mappings primarily
+to amortize TLB flushing overheads. What this means is that any page you
+have now, may, in a former life, have been mapped into kernel virtual
+address by the vmap layer and so there might be some CPUs with TLB entries
+still referencing that page (additional to the regular 1:1 kernel mapping).

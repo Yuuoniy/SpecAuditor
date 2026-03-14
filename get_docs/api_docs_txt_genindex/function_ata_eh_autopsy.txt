@@ -1,0 +1,11 @@
+Function: void ata_eh_autopsy ( struct ata_port * ap )
+
+analyze error and determine recovery action
+
+Parameters
+  struct ata_port *ap
+    host port to perform autopsy on
+
+Description
+  Analyze all links of ap and determine why they failed and
+which recovery actions are needed.

@@ -1,0 +1,13 @@
+Function: int skb_copy_datagram_iter ( const struct sk_buff * skb , int offset , struct iov_iter * to , int len )
+
+Copy a datagram to an iovec iterator.
+
+Parameters
+  const struct sk_buff *skb
+    buffer to copy
+  int offset
+    offset in the buffer to start copying from
+  struct iov_iter *to
+    iovec iterator to copy to
+  int len
+    amount of data to copy from buffer to iovec

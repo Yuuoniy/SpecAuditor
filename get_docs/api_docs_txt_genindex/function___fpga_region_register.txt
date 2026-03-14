@@ -1,0 +1,18 @@
+Function: struct fpga_region * __fpga_region_register ( struct device * parent , struct fpga_manager * mgr , int ( * get_bridges ) ( struct fpga_region * ) , struct module * owner )
+
+create and register an FPGA Region device
+
+Parameters
+  struct device *parent
+    device parent
+  struct fpga_manager *mgr
+    manager that programs this region
+  int (*get_bridges)(struct fpga_region *)
+    optional function to get bridges to a list
+  struct module *owner
+    module containing the get_bridges function
+
+Description
+  This simple version of the register function should be sufficient for most users.
+The fpga_region_register_full() function is available for users that need to
+pass additional, optional parameters.

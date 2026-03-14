@@ -1,0 +1,7 @@
+Function: void v4l2_ctrl_type_op_log ( const struct v4l2_ctrl * ctrl )
+
+Default v4l2_ctrl_type_ops log callback.
+
+Parameters
+  const struct v4l2_ctrl *ctrl
+    The v4l2_ctrl pointer.

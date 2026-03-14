@@ -1,0 +1,12 @@
+Function: struct device_node * of_find_node_by_name ( struct device_node * from , const char * name )
+
+Find a node by its “name” property
+
+Parameters
+  struct device_node *from
+    The node to start searching from or NULL; the node
+you pass will not be searched, only the next one
+will. Typically, you pass what the previous call
+returned. of_node_put() will be called on from .
+  const char *name
+    The name string to match against

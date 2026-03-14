@@ -1,0 +1,12 @@
+Function: int skb_mpls_update_lse ( struct sk_buff * skb , __be32 mpls_lse )
+
+modify outermost MPLS header and update csum
+
+Parameters
+  struct sk_buff *skb
+    buffer
+  __be32 mpls_lse
+    new MPLS label stack entry to update to
+
+Description
+  Expects skb->data at mac header.

@@ -1,0 +1,14 @@
+Function: int irq_chip_compose_msi_msg ( struct irq_data * data , struct msi_msg * msg )
+
+Compose msi message for a irq chip
+
+Parameters
+  struct irq_data *data
+    Pointer to interrupt specific data
+  struct msi_msg *msg
+    Pointer to the MSI message
+
+Description
+  For hierarchical domains we find the first chip in the hierarchy
+which implements the irq_compose_msi_msg callback. For non
+hierarchical we use the top level chip.

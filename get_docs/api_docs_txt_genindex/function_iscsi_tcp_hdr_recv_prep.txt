@@ -1,0 +1,12 @@
+Function: void iscsi_tcp_hdr_recv_prep ( struct iscsi_tcp_conn * tcp_conn )
+
+prep segment for hdr reception
+
+Parameters
+  struct iscsi_tcp_conn *tcp_conn
+    iscsi connection to prep for
+
+Description
+  This function always passes NULL for the crcp argument, because when this
+function is called we do not yet know the final size of the header and want
+to delay the digest processing until we know that.

@@ -1,0 +1,13 @@
+Struct: struct rkisp1_cif_isp_sdg_config
+
+Configuration used by sensor degamma
+
+Members
+  curve_r
+    gamma curve point definition axis for red
+  curve_g
+    gamma curve point definition axis for green
+  curve_b
+    gamma curve point definition axis for blue
+  xa_pnts
+    x axis increments

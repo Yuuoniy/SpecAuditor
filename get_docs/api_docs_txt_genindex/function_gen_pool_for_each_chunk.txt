@@ -1,0 +1,15 @@
+Function: void gen_pool_for_each_chunk ( struct gen_pool * pool , void ( * func ) ( struct gen_pool * pool , struct gen_pool_chunk * chunk , void * data ) , void * data )
+
+call func for every chunk of generic memory pool
+
+Parameters
+  struct gen_pool *pool
+    the generic memory pool
+  void (*func)(struct gen_pool *pool, struct gen_pool_chunk *chunk, void *data)
+    func to call
+  void *data
+    additional data used by func
+
+Description
+  Call func for every chunk of generic memory pool.  The func is
+called with rcu_read_lock held.

@@ -1,0 +1,19 @@
+Function: int drm_atomic_helper_page_flip ( struct drm_crtc * crtc , struct drm_framebuffer * fb , struct drm_pending_vblank_event * event , uint32_t flags , struct drm_modeset_acquire_ctx * ctx )
+
+execute a legacy page flip
+
+Parameters
+  struct drm_crtc *crtc
+    DRM CRTC
+  struct drm_framebuffer *fb
+    DRM framebuffer
+  struct drm_pending_vblank_event *event
+    optional DRM event to signal upon completion
+  uint32_t flags
+    flip flags for non-vblank sync’ed updates
+  struct drm_modeset_acquire_ctx *ctx
+    lock acquisition context
+
+Description
+  Provides a default drm_crtc_funcs.page_flip implementation
+using the atomic driver interface.

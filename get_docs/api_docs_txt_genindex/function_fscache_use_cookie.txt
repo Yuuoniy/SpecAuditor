@@ -1,0 +1,14 @@
+Function: void fscache_use_cookie ( struct fscache_cookie * cookie , bool will_modify )
+
+Request usage of cookie attached to an object
+
+Parameters
+  struct fscache_cookie *cookie
+    The cookie representing the cache object
+  bool will_modify
+    If cache is expected to be modified locally
+
+Description
+  Request usage of the cookie attached to an object.  The caller should tell
+the cache if the object’s contents are about to be modified locally and then
+the cache can apply the policy that has been set to handle this case.

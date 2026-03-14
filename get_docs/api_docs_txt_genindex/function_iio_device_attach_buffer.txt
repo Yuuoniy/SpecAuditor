@@ -1,0 +1,12 @@
+Function: int iio_device_attach_buffer ( struct iio_dev * indio_dev , struct iio_buffer * buffer )
+
+Attach a buffer to a IIO device
+
+Parameters
+  struct iio_dev *indio_dev
+    The device the buffer should be attached to
+  struct iio_buffer *buffer
+    The buffer to attach to the device
+
+Description
+  Return 0 if successful, negative if error.

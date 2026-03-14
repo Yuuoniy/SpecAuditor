@@ -1,0 +1,12 @@
+Function: void set_bit ( long nr , volatile unsigned long * addr )
+
+Atomically set a bit in memory
+
+Parameters
+  long nr
+    the bit to set
+  volatile unsigned long *addr
+    the address to start counting from
+
+Description
+  This is a relaxed atomic operation (no implied memory barriers).

@@ -1,0 +1,12 @@
+Macro: drm_for_each_crtc
+
+
+
+Parameters
+  crtc
+    a struct drm_crtc as the loop cursor
+  dev
+    the struct drm_device
+
+Description
+  Iterate over all CRTCs of dev .

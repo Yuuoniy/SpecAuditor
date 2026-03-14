@@ -1,0 +1,13 @@
+Function: struct timespec64 timespec64_add_safe ( const struct timespec64 lhs , const struct timespec64 rhs )
+
+Add two timespec64 values and do a safety check for overflow.
+
+Parameters
+  const struct timespec64 lhs
+    first (left) timespec64 to add
+  const struct timespec64 rhs
+    second (right) timespec64 to add
+
+Description
+  It’s assumed that both values are valid (>= 0).
+And, each timespec64 is in normalized form.

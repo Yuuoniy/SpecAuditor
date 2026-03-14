@@ -1,0 +1,7 @@
+Function: bool skb_unref ( struct sk_buff * skb )
+
+decrement the skb’s reference count
+
+Parameters
+  struct sk_buff *skb
+    buffer

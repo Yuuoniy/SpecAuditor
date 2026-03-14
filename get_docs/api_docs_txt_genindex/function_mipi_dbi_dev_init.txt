@@ -1,0 +1,19 @@
+Function: int mipi_dbi_dev_init ( struct mipi_dbi_dev * dbidev , const struct drm_simple_display_pipe_funcs * funcs , const struct drm_display_mode * mode , unsigned int rotation )
+
+MIPI DBI device initialization
+
+Parameters
+  struct mipi_dbi_dev *dbidev
+    MIPI DBI device structure to initialize
+  const struct drm_simple_display_pipe_funcs *funcs
+    Display pipe functions
+  const struct drm_display_mode *mode
+    Display mode
+  unsigned int rotation
+    Initial rotation in degrees Counter Clock Wise
+
+Description
+  This function sets up a drm_simple_display_pipe with a drm_connector that
+has one fixed drm_display_mode which is rotated according to rotation .
+This mode is used to set the mode config min/max width/height properties.
+Additionally mipi_dbi.tx_buf is allocated.

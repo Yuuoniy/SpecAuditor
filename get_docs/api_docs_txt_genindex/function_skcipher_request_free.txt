@@ -1,0 +1,7 @@
+Function: void skcipher_request_free ( struct skcipher_request * req )
+
+zeroize and free request data structure
+
+Parameters
+  struct skcipher_request *req
+    request data structure cipher handle to be freed

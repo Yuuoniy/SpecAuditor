@@ -1,0 +1,10 @@
+Function: void ssleep ( unsigned int seconds )
+
+wrapper for seconds around msleep
+
+Parameters
+  unsigned int seconds
+    Requested sleep duration in seconds
+
+Description
+  Please refere to msleep() for detailed information.

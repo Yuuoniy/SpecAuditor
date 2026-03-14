@@ -1,0 +1,9 @@
+Function: int irq_domain_alloc_generic_chips ( struct irq_domain * d , const struct irq_domain_chip_generic_info * info )
+
+Allocate generic chips for an irq domain
+
+Parameters
+  struct irq_domain *d
+    irq domain for which to allocate chips
+  const struct irq_domain_chip_generic_info *info
+    Generic chip information

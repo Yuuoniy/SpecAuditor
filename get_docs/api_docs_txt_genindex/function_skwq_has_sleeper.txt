@@ -1,0 +1,11 @@
+Function: bool skwq_has_sleeper ( struct socket_wq * wq )
+
+check if there are any waiting processes
+
+Parameters
+  struct socket_wq *wq
+    struct socket_wq
+
+Description
+  The purpose of the skwq_has_sleeper and sock_poll_wait is to wrap the memory
+barrier call. They were added due to the race found within the tcp code.

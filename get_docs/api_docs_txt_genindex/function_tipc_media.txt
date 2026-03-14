@@ -1,0 +1,36 @@
+Function: struct tipc_media
+
+Media specific info exposed to generic bearer layer
+
+Members
+  send_msg
+    routine which handles buffer transmission
+  enable_media
+    routine which enables a media
+  disable_media
+    routine which disables a media
+  addr2str
+    convert media address format to string
+  addr2msg
+    convert from media addr format to discovery msg addr format
+  msg2addr
+    convert from discovery msg addr format to media addr format
+  raw2addr
+    convert from raw addr format to media addr format
+  priority
+    default link (and bearer) priority
+  tolerance
+    default time (in ms) before declaring link failure
+  min_win
+    minimum window (in packets) before declaring link congestion
+  max_win
+    maximum window (in packets) before declaring link congestion
+  mtu
+    max packet size bearer can support for media type not dependent on
+underlying device MTU
+  type_id
+    TIPC media identifier
+  hwaddr_len
+    TIPC media address len
+  name
+    media name

@@ -1,0 +1,16 @@
+Struct: struct amdgpu_hdmi_vsdb_info
+
+Keep track of the VSDB info
+
+Members
+  amd_vsdb_version
+    Vendor Specific Data Block Version, should be
+used to determine which Vendor Specific InfoFrame (VSIF) to send.
+  freesync_supported
+    FreeSync Supported.
+  min_refresh_rate_hz
+    FreeSync Minimum Refresh Rate in Hz.
+  max_refresh_rate_hz
+    FreeSync Maximum Refresh Rate in Hz
+  replay_mode
+    Replay supported

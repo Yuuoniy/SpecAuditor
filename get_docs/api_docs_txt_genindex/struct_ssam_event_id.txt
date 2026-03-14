@@ -1,0 +1,9 @@
+Struct: struct ssam_event_id
+
+Unique event ID used for enabling events.
+
+Members
+  target_category
+    Target category of the event source.
+  instance
+    Instance ID of the event source.

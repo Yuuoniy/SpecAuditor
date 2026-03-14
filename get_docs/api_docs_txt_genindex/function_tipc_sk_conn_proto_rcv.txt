@@ -1,0 +1,13 @@
+Function: void tipc_sk_conn_proto_rcv ( struct tipc_sock * tsk , struct sk_buff * skb , struct sk_buff_head * inputq , struct sk_buff_head * xmitq )
+
+receive a connection mng protocol message
+
+Parameters
+  struct tipc_sock *tsk
+    receiving socket
+  struct sk_buff *skb
+    pointer to message buffer.
+  struct sk_buff_head *inputq
+    buffer list containing the buffers
+  struct sk_buff_head *xmitq
+    output message area

@@ -1,0 +1,14 @@
+Function: int v4l2_ctrl_s_ctrl ( struct v4l2_ctrl * ctrl , s32 val )
+
+Helper function to set the control’s value from within a driver.
+
+Parameters
+  struct v4l2_ctrl *ctrl
+    The control.
+  s32 val
+    The new value.
+
+Description
+  This sets the control’s new value safely by going through the control
+framework. This function will lock the control’s handler, so it cannot be
+used from within the v4l2_ctrl_ops functions.

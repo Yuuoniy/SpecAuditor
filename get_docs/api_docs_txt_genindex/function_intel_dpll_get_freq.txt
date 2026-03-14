@@ -1,0 +1,14 @@
+Function: int intel_dpll_get_freq ( struct intel_display * display , const struct intel_dpll * pll , const struct intel_dpll_hw_state * dpll_hw_state )
+
+calculate the DPLL’s output frequency
+
+Parameters
+  struct intel_display *display
+    intel_display device
+  const struct intel_dpll *pll
+    DPLL for which to calculate the output frequency
+  const struct intel_dpll_hw_state *dpll_hw_state
+    DPLL state from which to calculate the output frequency
+
+Description
+  Return the output frequency corresponding to pll ’s passed in dpll_hw_state .

@@ -1,0 +1,15 @@
+Function: void * skb_pull_data ( struct sk_buff * skb , size_t len )
+
+remove data from the start of a buffer returning its original position.
+
+Parameters
+  struct sk_buff *skb
+    buffer to use
+  size_t len
+    amount of data to remove
+
+Description
+  This function removes data from the start of a buffer, returning
+the memory to the headroom. A pointer to the original data in the buffer
+is returned after checking if there is enough data to pull. Once the
+data has been pulled future pushes will overwrite the old data.

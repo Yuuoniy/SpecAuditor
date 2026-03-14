@@ -1,0 +1,7 @@
+Function: int usb_get_current_frame_number ( struct usb_device * dev )
+
+return current bus frame number
+
+Parameters
+  struct usb_device *dev
+    the device whose bus is being queried

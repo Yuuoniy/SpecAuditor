@@ -1,0 +1,14 @@
+Function: int drm_dp_dpcd_read_byte ( struct drm_dp_aux * aux , unsigned int offset , u8 * valuep )
+
+read a single byte from the DPCD
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  unsigned int offset
+    address of the register to read
+  u8 *valuep
+    location where the value of the register will be stored
+
+Description
+  Returns zero (0) on success, or a negative error code on failure.

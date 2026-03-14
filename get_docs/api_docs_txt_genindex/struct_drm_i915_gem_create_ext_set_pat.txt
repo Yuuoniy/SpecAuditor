@@ -1,0 +1,14 @@
+Struct: struct drm_i915_gem_create_ext_set_pat
+
+The I915_GEM_CREATE_EXT_SET_PAT extension.
+
+Members
+  base
+    Extension link. See struct i915_user_extension .
+  pat_index
+    PAT index to be set
+PAT index is a bit field in Page Table Entry to control caching
+behaviors for GPU accesses. The definition of PAT index is
+platform dependent and can be found in hardware specifications,
+  rsvd
+    reserved for future use

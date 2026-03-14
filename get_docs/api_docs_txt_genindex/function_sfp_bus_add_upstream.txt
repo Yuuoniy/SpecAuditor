@@ -1,0 +1,16 @@
+Function: int sfp_bus_add_upstream ( struct sfp_bus * bus , void * upstream , const struct sfp_upstream_ops * ops )
+
+parse and register the neighbouring device
+
+Parameters
+  struct sfp_bus *bus
+    the struct sfp_bus found via sfp_bus_find_fwnode()
+  void *upstream
+    the upstream private data
+  const struct sfp_upstream_ops *ops
+    the upstream’s struct sfp_upstream_ops
+
+Description
+  Add upstream driver for the SFP bus, and if the bus is complete, register
+the SFP bus using sfp_register_upstream() .  This takes a reference on the
+bus, so it is safe to put the bus after this call.

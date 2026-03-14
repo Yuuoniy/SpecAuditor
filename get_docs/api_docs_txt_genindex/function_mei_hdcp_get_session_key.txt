@@ -1,0 +1,11 @@
+Function: int mei_hdcp_get_session_key ( struct device * dev , struct hdcp_port_data * data , struct hdcp2_ske_send_eks * ske_data )
+
+Prepare SKE_Send_Eks.
+
+Parameters
+  struct device *dev
+    device corresponding to the mei_cl_device
+  struct hdcp_port_data *data
+    Intel HW specific hdcp data
+  struct hdcp2_ske_send_eks *ske_data
+    SKE_Send_Eks msg output from ME FW.

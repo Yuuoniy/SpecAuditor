@@ -1,0 +1,16 @@
+Function: bool raw_atomic_try_cmpxchg ( atomic_t * v , int * old , int new )
+
+atomic compare and exchange with full ordering
+
+Parameters
+  atomic_t *v
+    pointer to atomic_t
+  int *old
+    pointer to int value to compare with
+  int new
+    int value to assign
+
+Description
+  If ( v == old ), atomically updates v to new with full ordering.
+Otherwise, v is not modified, old is updated to the current value of v ,
+and relaxed ordering is provided.

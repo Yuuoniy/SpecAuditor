@@ -1,0 +1,12 @@
+Function: void security_d_instantiate ( struct dentry * dentry , struct inode * inode )
+
+Populate an inode’s LSM state based on a dentry
+
+Parameters
+  struct dentry *dentry
+    dentry
+  struct inode *inode
+    inode
+
+Description
+  Fill in inode security information for a dentry if allowed.

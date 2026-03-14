@@ -1,0 +1,12 @@
+Function: size_t relay_file_read_start_pos ( struct rchan_buf * buf )
+
+find the first available byte to read
+
+Parameters
+  struct rchan_buf *buf
+    relay channel buffer
+
+Description
+  If the read_pos is in the middle of padding, return the
+position of the first actually available byte, otherwise
+return the original value.

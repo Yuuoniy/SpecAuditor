@@ -1,0 +1,17 @@
+Macro: kmem_cache_create
+
+
+
+Parameters
+  __name
+    A string which is used in /proc/slabinfo to identify this cache.
+  __object_size
+    The size of objects to be created in this cache.
+  __args
+    Optional arguments, see struct kmem_cache_args . Passing NULL means defaults will be used for all the arguments.
+  ...
+    variable arguments
+
+Description
+  This is currently implemented as a macro using _Generic() to call
+either the new variant of the function, or a legacy one.

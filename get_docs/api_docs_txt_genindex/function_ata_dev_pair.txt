@@ -1,0 +1,11 @@
+Function: struct ata_device * ata_dev_pair ( struct ata_device * adev )
+
+return other device on cable
+
+Parameters
+  struct ata_device *adev
+    device
+
+Description
+  Obtain the other device on the same cable, or if none is
+present NULL is returned

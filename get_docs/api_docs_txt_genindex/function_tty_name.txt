@@ -1,0 +1,11 @@
+Function: const char * tty_name ( const struct tty_struct * tty )
+
+return tty naming
+
+Parameters
+  const struct tty_struct *tty
+    tty structure
+
+Description
+  Convert a tty structure into a name. The name reflects the kernel naming
+policy and if udev is in use may not reflect user space

@@ -1,0 +1,17 @@
+Function: bool update_sd_pick_busiest ( struct lb_env * env , struct sd_lb_stats * sds , struct sched_group * sg , struct sg_lb_stats * sgs )
+
+return 1 on busiest group
+
+Parameters
+  struct lb_env *env
+    The load balancing environment.
+  struct sd_lb_stats *sds
+    sched_domain statistics
+  struct sched_group *sg
+    sched_group candidate to be checked for being the busiest
+  struct sg_lb_stats *sgs
+    sched_group statistics
+
+Description
+  Determine if sg is a busier group than the previously selected
+busiest group.

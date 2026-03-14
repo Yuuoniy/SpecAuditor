@@ -1,0 +1,11 @@
+Function: void srpt_get_iou ( struct ib_dm_mad * mad )
+
+write IOUnitInfo to a management datagram
+
+Parameters
+  struct ib_dm_mad *mad
+    Datagram that will be sent as response to DM_ATTR_IOU_INFO.
+
+Description
+  See also section 16.3.3.3 IOUnitInfo in the InfiniBand Architecture
+Specification. See also section B.7, table B.6 in the SRP r16a document.

@@ -1,0 +1,11 @@
+Struct: struct drm_debugfs_entry
+
+Per-device debugfs node structure
+
+Members
+  dev
+    struct drm_device for this node.
+  file
+    Template for this node.
+  list
+    Linked list of all device nodes.

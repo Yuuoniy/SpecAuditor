@@ -1,0 +1,13 @@
+Function: void drm_flip_work_queue ( struct drm_flip_work * work , void * val )
+
+queue work
+
+Parameters
+  struct drm_flip_work *work
+    the flip-work
+  void *val
+    the value to queue
+
+Description
+  Queues work, that will later be run (passed back to drm_flip_func_t
+func) on a work queue after drm_flip_work_commit() is called.

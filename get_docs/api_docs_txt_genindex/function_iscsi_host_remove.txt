@@ -1,0 +1,13 @@
+Function: void iscsi_host_remove ( struct Scsi_Host * shost , bool is_shutdown )
+
+remove host and sessions
+
+Parameters
+  struct Scsi_Host *shost
+    scsi host
+  bool is_shutdown
+    true if called from a driver shutdown callout
+
+Description
+  If there are any sessions left, this will initiate the removal and wait
+for the completion.

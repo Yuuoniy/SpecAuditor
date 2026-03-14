@@ -1,0 +1,23 @@
+Struct: struct cxl_register_map
+
+DVSEC harvested register block mapping parameters
+
+Members
+  host
+    device for devm operations and logging
+  base
+    virtual base of the register-block-BAR + block_offset
+  resource
+    physical resource base of the register block
+  max_size
+    maximum mapping size to perform register search
+  reg_type
+    see enum cxl_regloc_type
+  {unnamed_union}
+    anonymous
+  component_map
+    cxl_reg_map for component registers
+  device_map
+    cxl_reg_maps for device registers
+  pmu_map
+    cxl_reg_maps for CXL Performance Monitoring Units

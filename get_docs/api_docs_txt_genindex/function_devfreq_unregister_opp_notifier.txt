@@ -1,0 +1,13 @@
+Function: int devfreq_unregister_opp_notifier ( struct device * dev , struct devfreq * devfreq )
+
+Helper function to stop getting devfreq notified for any changes in the OPP availability changes anymore.
+
+Parameters
+  struct device *dev
+    The devfreq user device. (parent of devfreq)
+  struct devfreq *devfreq
+    The devfreq object.
+
+Description
+  At exit() callback of devfreq_dev_profile, this must be included if
+devfreq_recommended_opp is used.

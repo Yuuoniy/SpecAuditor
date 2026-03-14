@@ -1,0 +1,16 @@
+Function: int nand_read_page_raw ( struct nand_chip * chip , uint8_t * buf , int oob_required , int page )
+
+[INTERN] read raw page data without ecc
+
+Parameters
+  struct nand_chip *chip
+    nand chip info structure
+  uint8_t *buf
+    buffer to store read data
+  int oob_required
+    caller requires OOB data read to chip->oob_poi
+  int page
+    page number to read
+
+Description
+  Not for syndrome calculating ECC controllers, which use a special oob layout.

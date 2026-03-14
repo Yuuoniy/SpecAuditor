@@ -1,0 +1,12 @@
+Macro: ttm_resource_manager_for_each_res
+
+
+
+Parameters
+  cursor
+    struct ttm_resource_cursor for the current position
+  res
+    the current resource
+
+Description
+  Iterate over all the evictable resources in a resource manager.

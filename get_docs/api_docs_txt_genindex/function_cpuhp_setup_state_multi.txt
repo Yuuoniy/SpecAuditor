@@ -1,0 +1,18 @@
+Function: int cpuhp_setup_state_multi ( enum cpuhp_state state , const char * name , int ( * startup ) ( unsigned int cpu , struct hlist_node * node ) , int ( * teardown ) ( unsigned int cpu , struct hlist_node * node ) )
+
+Add callbacks for multi state
+
+Parameters
+  enum cpuhp_state state
+    The state for which the calls are installed
+  const char *name
+    Name of the callback.
+  int (*startup)(unsigned int cpu, struct hlist_node *node)
+    startup callback function or NULL if not required
+  int (*teardown)(unsigned int cpu, struct hlist_node *node)
+    teardown callback function or NULL if not required
+
+Description
+  Sets the internal multi_instance flag and prepares a state to work as a multi
+instance callback. No callbacks are invoked at this point. The callbacks are
+invoked once an instance for this state are registered via cpuhp_state_add_instance() or cpuhp_state_add_instance_nocalls()

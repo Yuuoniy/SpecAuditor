@@ -1,0 +1,40 @@
+Struct: struct drm_xe_gt
+
+describe an individual GT.
+
+Members
+  type
+    GT type: Main or Media
+  tile_id
+    Tile ID where this GT lives (Information only)
+  gt_id
+    Unique ID of this GT within the PCI Device
+  pad
+    MBZ
+  reference_clock
+    A clock frequency for timestamp
+  near_mem_regions
+    Bit mask of instances from
+drm_xe_query_mem_regions that are nearest to the current engines
+of this GT.
+Each index in this mask refers directly to the struct drm_xe_query_mem_regions ’ instance, no assumptions should
+be made about order. The type of each region is described
+by struct drm_xe_query_mem_regions ’ mem_class.
+  far_mem_regions
+    Bit mask of instances from
+drm_xe_query_mem_regions that are far from the engines of this GT.
+In general, they have extra indirections when compared to the near_mem_regions . For a discrete device this could mean system
+memory and memory living in a different tile.
+Each index in this mask refers directly to the struct drm_xe_query_mem_regions ’ instance, no assumptions should
+be made about order. The type of each region is described
+by struct drm_xe_query_mem_regions ’ mem_class.
+  ip_ver_major
+    Graphics/media IP major version on GMD_ID platforms
+  ip_ver_minor
+    Graphics/media IP minor version on GMD_ID platforms
+  ip_ver_rev
+    Graphics/media IP revision version on GMD_ID platforms
+  pad2
+    MBZ
+  reserved
+    Reserved

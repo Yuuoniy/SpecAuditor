@@ -1,0 +1,17 @@
+Struct: struct drm_flip_work
+
+flip work queue
+
+Members
+  name
+    debug name
+  func
+    callback fxn called for each committed item
+  worker
+    worker which calls func
+  queued
+    queued tasks
+  commited
+    commited tasks
+  lock
+    lock to access queued and commited lists

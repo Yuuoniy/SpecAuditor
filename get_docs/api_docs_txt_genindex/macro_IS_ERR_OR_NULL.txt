@@ -1,0 +1,10 @@
+Macro: bool IS_ERR_OR_NULL ( __force const void * ptr )
+
+Detect an error pointer or a null pointer.
+
+Parameters
+  __force const void *ptr
+    The pointer to check.
+
+Description
+  Like IS_ERR() , but also returns true for a null pointer.

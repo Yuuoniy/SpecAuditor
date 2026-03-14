@@ -1,0 +1,15 @@
+Function: int rio_write_config_16 ( struct rio_dev * rdev , u32 offset , u16 data )
+
+Write 16 bits to configuration space
+
+Parameters
+  struct rio_dev *rdev
+    RIO device
+  u32 offset
+    Offset into device configuration space
+  u16 data
+    Data to be written
+
+Description
+  Writes 16 bits of data to the specified offset within the
+RIO device’s configuration space.

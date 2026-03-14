@@ -1,0 +1,20 @@
+Function: void timer_init_key ( struct timer_list * timer , void ( * func ) ( struct timer_list * ) , unsigned int flags , const char * name , struct lock_class_key * key )
+
+initialize a timer
+
+Parameters
+  struct timer_list *timer
+    the timer to be initialized
+  void (*func)(struct timer_list *)
+    timer callback function
+  unsigned int flags
+    timer flags
+  const char *name
+    name of the timer
+  struct lock_class_key *key
+    lockdep class key of the fake lock used for tracking timer
+sync lock dependencies
+
+Description
+  timer_init_key() must be done to a timer prior to calling any of the
+other timer functions.

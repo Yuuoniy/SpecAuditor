@@ -1,0 +1,7 @@
+Function: void __mt_destroy ( struct maple_tree * mt )
+
+Walk and free all nodes of a locked maple tree.
+
+Parameters
+  struct maple_tree *mt
+    The maple tree

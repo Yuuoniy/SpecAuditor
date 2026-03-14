@@ -1,0 +1,14 @@
+Function: int regulator_set_load ( struct regulator * regulator , int uA_load )
+
+set regulator load
+
+Parameters
+  struct regulator *regulator
+    regulator source
+  int uA_load
+    load current
+
+Description
+  Notifies the regulator core of a new device load. This is then used by
+DRMS (if enabled by constraints) to set the most efficient regulator
+operating mode for the new regulator loading.

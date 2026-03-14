@@ -1,0 +1,10 @@
+Function: int iio_hw_consumer_enable ( struct iio_hw_consumer * hwc )
+
+Enable IIO hardware consumer
+
+Parameters
+  struct iio_hw_consumer *hwc
+    iio_hw_consumer to enable.
+
+Description
+  Returns 0 on success.

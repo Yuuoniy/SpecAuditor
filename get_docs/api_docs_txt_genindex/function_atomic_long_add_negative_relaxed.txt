@@ -1,0 +1,12 @@
+Function: bool atomic_long_add_negative_relaxed ( long i , atomic_long_t * v )
+
+atomic add and test if negative with relaxed ordering
+
+Parameters
+  long i
+    long value to add
+  atomic_long_t *v
+    pointer to atomic_long_t
+
+Description
+  Atomically updates v to ( v + i ) with relaxed ordering.

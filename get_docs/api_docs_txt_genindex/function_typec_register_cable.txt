@@ -1,0 +1,13 @@
+Function: struct typec_cable * typec_register_cable ( struct typec_port * port , struct typec_cable_desc * desc )
+
+Register a USB Type-C Cable
+
+Parameters
+  struct typec_port *port
+    The USB Type-C Port the cable is connected to
+  struct typec_cable_desc *desc
+    Description of the cable
+
+Description
+  Registers a device for USB Type-C Cable described in desc . The cable will be
+parent for the optional cable plug devises.

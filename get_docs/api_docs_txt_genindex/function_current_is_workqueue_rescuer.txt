@@ -1,0 +1,11 @@
+Function: bool current_is_workqueue_rescuer ( void )
+
+is current workqueue rescuer?
+
+Parameters
+  void
+    no arguments
+
+Description
+  Determine whether current is a workqueue rescuer.  Can be used from
+work functions to determine whether it’s being run off the rescuer task.

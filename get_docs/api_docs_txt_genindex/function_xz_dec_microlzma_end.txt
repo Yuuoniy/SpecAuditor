@@ -1,0 +1,8 @@
+Function: void xz_dec_microlzma_end ( struct xz_dec_microlzma * s )
+
+Free the memory allocated for the decoder state
+
+Parameters
+  struct xz_dec_microlzma *s
+    Decoder state allocated using xz_dec_microlzma_alloc() .
+If s is NULL, this function does nothing.

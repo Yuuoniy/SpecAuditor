@@ -1,0 +1,11 @@
+Function: void iscsi_destroy_flashnode_sess ( struct iscsi_bus_flash_session * fnode_sess )
+
+destroy flashnode session entry
+
+Parameters
+  struct iscsi_bus_flash_session *fnode_sess
+    pointer to flashnode session entry to be destroyed
+
+Description
+  Deletes the flashnode session entry and all children flashnode connection
+entries from sysfs

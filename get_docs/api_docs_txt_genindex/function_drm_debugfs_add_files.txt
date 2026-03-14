@@ -1,0 +1,14 @@
+Function: void drm_debugfs_add_files ( struct drm_device * dev , const struct drm_debugfs_info * files , int count )
+
+Add an array of files to the DRM device debugfs file list
+
+Parameters
+  struct drm_device *dev
+    drm device for the ioctl
+  const struct drm_debugfs_info *files
+    The array of files to create
+  int count
+    The number of files given
+
+Description
+  Add a given set of debugfs files represented by an array of struct drm_debugfs_info in the DRM device debugfs file list.

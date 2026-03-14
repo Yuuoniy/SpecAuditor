@@ -1,0 +1,10 @@
+Function: int snd_soc_dapm_new_widgets ( struct snd_soc_card * card )
+
+add new dapm widgets
+
+Parameters
+  struct snd_soc_card *card
+    card to be checked for new dapm widgets
+
+Description
+  Checks the codec for any new dapm widgets and creates them if found.

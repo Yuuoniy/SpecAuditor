@@ -1,0 +1,10 @@
+Function: enum scsi_disposition scsi_check_sense ( struct scsi_cmnd * scmd )
+
+Examine scsi cmd sense
+
+Parameters
+  struct scsi_cmnd *scmd
+    Cmd to have sense checked.
+
+Description
+  SUCCESS or FAILED or NEEDS_RETRY or ADD_TO_MLQUEUE

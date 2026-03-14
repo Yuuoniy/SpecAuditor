@@ -1,0 +1,20 @@
+Function: void inode_init_owner ( struct mnt_idmap * idmap , struct inode * inode , const struct inode * dir , umode_t mode )
+
+Init uid,gid,mode for new inode according to posix standards
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount the inode was created from
+  struct inode *inode
+    New inode
+  const struct inode *dir
+    Directory inode
+  umode_t mode
+    mode of the new inode
+
+Description
+  If the inode has been created through an idmapped mount the idmap of
+the vfsmount must be passed through idmap . This function will then take
+care to map the inode according to idmap before checking permissions
+and initializing i_uid and i_gid. On non-idmapped mounts or if permission
+checking is to be performed on the raw inode simply pass nop_mnt_idmap .

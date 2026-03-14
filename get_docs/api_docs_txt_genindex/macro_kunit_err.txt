@@ -1,0 +1,14 @@
+Macro: kunit_err
+
+
+
+Parameters
+  test
+    The test context object.
+  fmt
+    A printk() style format string.
+  ...
+    variable arguments
+
+Description
+  Prints an error level message.

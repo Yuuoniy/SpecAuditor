@@ -1,0 +1,20 @@
+Struct: struct rc_map
+
+represents a keycode map table
+
+Members
+  scan
+    pointer to struct rc_map_table
+  size
+    Max number of entries
+  len
+    Number of entries that are in use
+  alloc
+    size of *scan, in bytes
+  rc_proto
+    type of the remote controller protocol, as defined at
+enum rc_proto
+  name
+    name of the key map table
+  lock
+    lock to protect access to this structure

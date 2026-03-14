@@ -1,0 +1,13 @@
+Function: int parport_claim_or_block ( struct pardevice * dev )
+
+claim access to a parallel port device
+
+Parameters
+  struct pardevice *dev
+    pointer to structure representing a device on the port
+
+Description
+  This behaves like parport_claim() , but will block if necessary
+to wait for the port to be free.  A return value of 1
+indicates that it slept; 0 means that it succeeded without
+needing to sleep.  A negative error code indicates failure.

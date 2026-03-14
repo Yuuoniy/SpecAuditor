@@ -1,0 +1,11 @@
+Function: unsigned int idr_get_cursor ( const struct idr * idr )
+
+Return the current position of the cyclic allocator
+
+Parameters
+  const struct idr *idr
+    idr handle
+
+Description
+  The value returned is the value that will be next returned from idr_alloc_cyclic() if it is free (otherwise the search will start from
+this position).

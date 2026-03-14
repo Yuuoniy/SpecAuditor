@@ -1,0 +1,13 @@
+Function: void netdev_lower_state_changed ( struct net_device * lower_dev , void * lower_state_info )
+
+Dispatch event about lower device state change
+
+Parameters
+  struct net_device *lower_dev
+    device
+  void *lower_state_info
+    state to dispatch
+
+Description
+  Send NETDEV_CHANGELOWERSTATE to netdev notifiers with info.
+The caller must hold the RTNL lock.

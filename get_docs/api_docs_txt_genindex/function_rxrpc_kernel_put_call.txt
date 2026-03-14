@@ -1,0 +1,12 @@
+Function: void rxrpc_kernel_put_call ( struct socket * sock , struct rxrpc_call * call )
+
+Release a reference to a call
+
+Parameters
+  struct socket *sock
+    The socket the call is on
+  struct rxrpc_call *call
+    The call to put
+
+Description
+  Drop the application’s ref on an rxrpc call.

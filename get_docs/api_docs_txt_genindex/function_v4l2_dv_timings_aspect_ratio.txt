@@ -1,0 +1,7 @@
+Function: struct v4l2_fract v4l2_dv_timings_aspect_ratio ( const struct v4l2_dv_timings * t )
+
+calculate the aspect ratio based on the v4l2_dv_timings information.
+
+Parameters
+  const struct v4l2_dv_timings *t
+    the timings data.

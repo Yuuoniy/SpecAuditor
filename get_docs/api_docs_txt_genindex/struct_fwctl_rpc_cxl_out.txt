@@ -1,0 +1,15 @@
+Struct: struct fwctl_rpc_cxl_out
+
+ioctl(FWCTL_RPC) output for CXL
+
+Members
+  size
+    Size of the output payload
+  retval
+    Return value from device
+  {unnamed_union}
+    anonymous
+  get_sup_feats_out
+    Get Supported Features output
+  payload
+    raw byte stream of payload

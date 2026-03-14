@@ -1,0 +1,20 @@
+Struct: struct pisp_be_sdn_config
+
+PiSP Back End SDN config
+
+Members
+  black_level
+    Black level subtracted from pixel for noise estimation
+  leakage
+    Proportion of the original undenoised value to mix in
+denoised output
+  pad
+    Padding byte
+  noise_constant
+    Noise constant used for noise estimation
+  noise_slope
+    Noise slope value used for noise estimation
+  noise_constant2
+    Second noise constant used for noise estimation
+  noise_slope2
+    Second slope value used for noise estimation

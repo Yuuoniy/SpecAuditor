@@ -1,0 +1,15 @@
+Function: int component_add_typed ( struct device * dev , const struct component_ops * ops , int subcomponent )
+
+register a component
+
+Parameters
+  struct device *dev
+    component device
+  const struct component_ops *ops
+    component callbacks
+  int subcomponent
+    nonzero identifier for subcomponents
+
+Description
+  Register a new component for dev . Functions in ops will be call when the
+aggregate driver is ready to bind the overall driver by calling component_bind_all() . See also struct component_ops .

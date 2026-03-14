@@ -1,0 +1,7 @@
+Function: unsigned int ieee80211_hdrlen ( __le16 fc )
+
+get header length in bytes from frame control
+
+Parameters
+  __le16 fc
+    frame control field in little-endian format

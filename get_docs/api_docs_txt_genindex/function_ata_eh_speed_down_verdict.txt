@@ -1,0 +1,12 @@
+Function: unsigned int ata_eh_speed_down_verdict ( struct ata_device * dev )
+
+Determine speed down verdict
+
+Parameters
+  struct ata_device *dev
+    Device of interest
+
+Description
+  This function examines error ring of dev and determines
+whether NCQ needs to be turned off, transfer speed should be
+stepped down, or falling back to PIO is necessary.

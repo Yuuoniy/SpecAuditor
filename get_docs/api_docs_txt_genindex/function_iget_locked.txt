@@ -1,0 +1,14 @@
+Function: struct inode * iget_locked ( struct super_block * sb , unsigned long ino )
+
+obtain an inode from a mounted file system
+
+Parameters
+  struct super_block *sb
+    super block of file system
+  unsigned long ino
+    inode number to get
+
+Description
+  Search for the inode specified by ino in the inode cache and if present
+return it with an increased reference count. This is for file systems
+where the inode number is sufficient for unique identification of an inode.

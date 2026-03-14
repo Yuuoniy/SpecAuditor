@@ -1,0 +1,14 @@
+Function: void dvb_frontend_sleep_until ( ktime_t * waketime , u32 add_usec )
+
+Sleep for the amount of time given by add_usec parameter
+
+Parameters
+  ktime_t *waketime
+    pointer to struct ktime_t
+  u32 add_usec
+    time to sleep, in microseconds
+
+Description
+  This function is used to measure the time required for the FE_DISHNETWORK_SEND_LEGACY_CMD() ioctl to work. It needs to be as precise
+as possible, as it affects the detection of the dish tone command at the
+satellite subsystem.

@@ -1,0 +1,16 @@
+Function: int v4l2_subdev_disable_streams ( struct v4l2_subdev * sd , u32 pad , u64 streams_mask )
+
+Disable streams on a pad
+
+Parameters
+  struct v4l2_subdev *sd
+    The subdevice
+  u32 pad
+    The pad
+  u64 streams_mask
+    Bitmask of streams to disable
+
+Description
+  This function disables streams on a source pad of a subdevice. The pad is
+identified by its index, while the streams are identified by the streams_mask bitmask. This allows disabling multiple streams on a pad at
+once.

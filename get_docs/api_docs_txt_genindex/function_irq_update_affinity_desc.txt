@@ -1,0 +1,13 @@
+Function: int irq_update_affinity_desc ( unsigned int irq , struct irq_affinity_desc * affinity )
+
+Update affinity management for an interrupt
+
+Parameters
+  unsigned int irq
+    The interrupt number to update
+  struct irq_affinity_desc *affinity
+    Pointer to the affinity descriptor
+
+Description
+  This interface can be used to configure the affinity management of
+interrupts which have been allocated already.

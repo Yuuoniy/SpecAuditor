@@ -1,0 +1,43 @@
+Function: struct dvb_adapter
+
+represents a Digital TV adapter using Linux DVB API
+
+Members
+  num
+    Number of the adapter
+  list_head
+    List with the DVB adapters
+  device_list
+    List with the DVB devices
+  name
+    Name of the adapter
+  proposed_mac
+    proposed MAC address for the adapter
+  priv
+    private data
+  device
+    pointer to struct device
+  module
+    pointer to struct module
+  mfe_shared
+    indicates mutually exclusive frontends.
+1 = legacy exclusion behavior: blocking any open() call
+2 = enhanced exclusion behavior, emulating the standard
+behavior of busy frontends: allowing read-only sharing
+and otherwise returning immediately with -EBUSY when any
+of the frontends is already opened with write access.
+  mfe_dvbdev
+    Frontend device in use, in the case of MFE
+  mfe_lock
+    Lock to prevent using the other frontends when MFE is
+used.
+  mdev_lock
+    Protect access to the mdev pointer.
+  mdev
+    pointer to struct media_device , used when the media
+controller is used.
+  conn
+    RF connector. Used only if the device has no separate
+tuner.
+  conn_pads
+    pointer to struct media_pad associated with conn ;

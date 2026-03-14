@@ -1,0 +1,12 @@
+Function: int scsi_device_get ( struct scsi_device * sdev )
+
+get an additional reference to a scsi_device
+
+Parameters
+  struct scsi_device *sdev
+    device to get a reference to
+
+Description
+  Gets a reference to the scsi_device and increments the use count
+of the underlying LLDD module.  You must hold host_lock of the
+parent Scsi_Host or already have a reference when calling this.

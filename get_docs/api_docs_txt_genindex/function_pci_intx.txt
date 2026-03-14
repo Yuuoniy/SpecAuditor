@@ -1,0 +1,12 @@
+Function: void pci_intx ( struct pci_dev * pdev , int enable )
+
+enables/disables PCI INTx for device dev
+
+Parameters
+  struct pci_dev *pdev
+    the PCI device to operate on
+  int enable
+    boolean: whether to enable or disable PCI INTx
+
+Description
+  Enables/disables PCI INTx for device pdev

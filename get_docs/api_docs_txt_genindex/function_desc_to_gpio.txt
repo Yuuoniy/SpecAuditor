@@ -1,0 +1,11 @@
+Function: int desc_to_gpio ( const struct gpio_desc * desc )
+
+convert a GPIO descriptor to the integer namespace
+
+Parameters
+  const struct gpio_desc *desc
+    GPIO descriptor
+
+Description
+  This should disappear in the future but is needed since we still
+use GPIO numbers for error messages and sysfs nodes.

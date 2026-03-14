@@ -1,0 +1,3 @@
+Enum: enum ssh_ptl_state_flags
+
+State-flags for struct ssh_ptl .

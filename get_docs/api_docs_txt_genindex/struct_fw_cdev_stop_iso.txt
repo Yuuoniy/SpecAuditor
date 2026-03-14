@@ -1,0 +1,7 @@
+Struct: struct fw_cdev_stop_iso
+
+Stop an isochronous transmission or reception
+
+Members
+  handle
+    Handle of isochronous context to stop

@@ -1,0 +1,9 @@
+Function: unsigned long gcd ( unsigned long a , unsigned long b )
+
+calculate and return the greatest common divisor of 2 unsigned longs
+
+Parameters
+  unsigned long a
+    first value
+  unsigned long b
+    second value

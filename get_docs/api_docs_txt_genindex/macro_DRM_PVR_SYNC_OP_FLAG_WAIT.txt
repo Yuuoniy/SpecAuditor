@@ -1,0 +1,9 @@
+Macro: DRM_PVR_SYNC_OP_FLAG_WAIT
+
+Wait operation requested. The job will wait for this particular syncobj or syncobj
+point to be signaled before being started.
+This is the default operation.
+
+Members
+  jobs
+    [IN] Array of jobs to submit.

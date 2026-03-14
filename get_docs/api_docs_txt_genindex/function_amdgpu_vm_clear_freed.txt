@@ -1,0 +1,16 @@
+Function: int amdgpu_vm_clear_freed ( struct amdgpu_device * adev , struct amdgpu_vm * vm , struct dma_fence * * fence )
+
+clear freed BOs in the PT
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+  struct amdgpu_vm *vm
+    requested vm
+  struct dma_fence **fence
+    optional resulting fence (unchanged if no work needed to be done
+or if an error occurred)
+
+Description
+  Make sure all freed BOs are cleared in the PT.
+PTs have to be reserved and mutex must be locked!

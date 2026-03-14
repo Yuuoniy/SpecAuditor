@@ -1,0 +1,14 @@
+Function: int dwc3_send_gadget_ep_cmd ( struct dwc3_ep * dep , unsigned int cmd , struct dwc3_gadget_ep_cmd_params * params )
+
+issue an endpoint command
+
+Parameters
+  struct dwc3_ep *dep
+    the endpoint to which the command is going to be issued
+  unsigned int cmd
+    the command to be issued
+  struct dwc3_gadget_ep_cmd_params *params
+    parameters to the command
+
+Description
+  Caller should handle locking. This function will issue cmd with given params to dep and wait for its completion.

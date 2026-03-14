@@ -1,0 +1,14 @@
+Function: void ssam_request_sync_set_resp ( struct ssam_request_sync * rqst , struct ssam_response * resp )
+
+Set response buffer of a synchronous request.
+
+Parameters
+  struct ssam_request_sync *rqst
+    The request.
+  struct ssam_response *resp
+    The response buffer.
+
+Description
+  Sets the response buffer of a synchronous request. This buffer will store
+the response of the request after it has been completed. May be NULL if no
+response is expected.

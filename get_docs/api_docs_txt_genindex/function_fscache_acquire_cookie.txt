@@ -1,0 +1,22 @@
+Function: struct fscache_cookie * fscache_acquire_cookie ( struct fscache_volume * volume , u8 advice , const void * index_key , size_t index_key_len , const void * aux_data , size_t aux_data_len , loff_t object_size )
+
+Acquire a cookie to represent a cache object
+
+Parameters
+  struct fscache_volume *volume
+    The volume in which to locate/create this cookie
+  u8 advice
+    Advice flags (FSCACHE_COOKIE_ADV_*)
+  const void *index_key
+    The index key for this cookie
+  size_t index_key_len
+    Size of the index key
+  const void *aux_data
+    The auxiliary data for the cookie (may be NULL)
+  size_t aux_data_len
+    Size of the auxiliary data buffer
+  loff_t object_size
+    The initial size of object
+
+Description
+  Acquire a cookie to represent a data file within the given cache volume.

@@ -1,0 +1,11 @@
+Function: struct resource * platform_get_resource_byname ( struct platform_device * dev , unsigned int type , const char * name )
+
+get a resource for a device by name
+
+Parameters
+  struct platform_device *dev
+    platform device
+  unsigned int type
+    resource type
+  const char *name
+    resource name

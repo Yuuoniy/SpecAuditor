@@ -1,0 +1,21 @@
+Function: int pcpu_alloc_area ( struct pcpu_chunk * chunk , int alloc_bits , size_t align , int start )
+
+allocates an area from a pcpu_chunk
+
+Parameters
+  struct pcpu_chunk *chunk
+    chunk of interest
+  int alloc_bits
+    size of request in allocation units
+  size_t align
+    alignment of area (max PAGE_SIZE)
+  int start
+    bit_off to start searching
+
+Description
+  This function takes in a start offset to begin searching to fit an
+allocation of alloc_bits with alignment align .  It needs to scan
+the allocation map because if it fits within the block’s contig hint, start will be block->first_free. This is an attempt to fill the
+allocation prior to breaking the contig hint.  The allocation and
+boundary maps are updated accordingly if it confirms a valid
+free area.

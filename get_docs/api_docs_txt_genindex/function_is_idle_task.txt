@@ -1,0 +1,7 @@
+Function: bool is_idle_task ( const struct task_struct * p )
+
+is the specified task an idle task?
+
+Parameters
+  const struct task_struct *p
+    the task in question.

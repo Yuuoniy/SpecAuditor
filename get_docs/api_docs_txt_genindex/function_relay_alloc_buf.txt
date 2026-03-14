@@ -1,0 +1,13 @@
+Function: void * relay_alloc_buf ( struct rchan_buf * buf , size_t * size )
+
+allocate a channel buffer
+
+Parameters
+  struct rchan_buf *buf
+    the buffer struct
+  size_t *size
+    total size of the buffer
+
+Description
+  Returns a pointer to the resulting buffer, NULL if unsuccessful. The
+passed in size will get page aligned, if it isn’t already.

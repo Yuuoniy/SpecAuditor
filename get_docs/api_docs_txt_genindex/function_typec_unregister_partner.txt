@@ -1,0 +1,10 @@
+Function: void typec_unregister_partner ( struct typec_partner * partner )
+
+Unregister a USB Type-C Partner
+
+Parameters
+  struct typec_partner *partner
+    The partner to be unregistered
+
+Description
+  Unregister device created with typec_register_partner() .

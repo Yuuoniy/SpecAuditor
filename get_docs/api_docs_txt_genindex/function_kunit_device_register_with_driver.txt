@@ -1,0 +1,17 @@
+Function: struct device * kunit_device_register_with_driver ( struct kunit * test , const char * name , const struct device_driver * drv )
+
+Create a struct device for use in KUnit tests
+
+Parameters
+  struct kunit *test
+    The test context object.
+  const char *name
+    The name to give the created device.
+  const struct device_driver *drv
+    The struct device_driver to associate with the device.
+
+Description
+  Creates a struct kunit_device (which is a struct device ) with the given
+name, and driver. The device will be cleaned up on test exit, or when
+kunit_device_unregister is called. See also kunit_device_register, if you
+wish KUnit to create and manage a driver for you.

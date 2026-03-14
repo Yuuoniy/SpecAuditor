@@ -1,0 +1,15 @@
+Function: int gnet_stats_copy_app ( struct gnet_dump * d , void * st , int len )
+
+copy application specific statistics into statistics TLV
+
+Parameters
+  struct gnet_dump *d
+    dumping handle
+  void *st
+    application specific statistics data
+  int len
+    length of data
+
+Description
+  Appends the application specific statistics to the top level TLV created by gnet_stats_start_copy() and remembers the data for XSTATS if the dumping
+handle is in backward compatibility mode.

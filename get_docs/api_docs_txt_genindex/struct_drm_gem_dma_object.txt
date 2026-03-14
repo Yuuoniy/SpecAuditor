@@ -1,0 +1,17 @@
+Struct: struct drm_gem_dma_object
+
+GEM object backed by DMA memory allocations
+
+Members
+  base
+    base GEM object
+  dma_addr
+    DMA address of the backing memory
+  sgt
+    scatter/gather table for imported PRIME buffers. The table can have
+more than one entry but they are guaranteed to have contiguous
+DMA addresses.
+  vaddr
+    kernel virtual address of the backing memory
+  map_noncoherent
+    if true, the GEM object is backed by non-coherent memory

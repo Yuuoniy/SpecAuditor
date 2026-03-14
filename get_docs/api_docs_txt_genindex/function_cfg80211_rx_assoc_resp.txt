@@ -1,0 +1,13 @@
+Function: void cfg80211_rx_assoc_resp ( struct net_device * dev , const struct cfg80211_rx_assoc_resp_data * data )
+
+notification of processed association response
+
+Parameters
+  struct net_device *dev
+    network device
+  const struct cfg80211_rx_assoc_resp_data *data
+    association response data, struct cfg80211_rx_assoc_resp_data
+
+Description
+  After being asked to associate via cfg80211_ops:: assoc() the driver must
+call either this function or cfg80211_auth_timeout() .

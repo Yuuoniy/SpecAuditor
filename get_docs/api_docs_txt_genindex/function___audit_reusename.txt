@@ -1,0 +1,12 @@
+Function: struct filename * __audit_reusename ( __user const char * uptr )
+
+fill out filename with info from existing entry
+
+Parameters
+  const __user char *uptr
+    userland ptr to pathname
+
+Description
+  Search the audit_names list for the current audit context. If there is an
+existing entry with a matching “uptr” then return the filename
+associated with that audit_name. If not, return NULL.

@@ -1,0 +1,12 @@
+Function: void folio_batch_remove_exceptionals ( struct folio_batch * fbatch )
+
+Prune non-folios from a batch.
+
+Parameters
+  struct folio_batch *fbatch
+    The batch to prune
+
+Description
+  find_get_entries() fills a batch with both folios and shadow/swap/DAX
+entries.  This function prunes all the non-folio entries from fbatch without leaving holes, so that it can be passed on to folio-only batch
+operations.

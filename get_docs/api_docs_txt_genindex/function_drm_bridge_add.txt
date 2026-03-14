@@ -1,0 +1,10 @@
+Function: void drm_bridge_add ( struct drm_bridge * bridge )
+
+add the given bridge to the global bridge list
+
+Parameters
+  struct drm_bridge *bridge
+    bridge control structure
+
+Description
+  The bridge to be added must have been allocated by devm_drm_bridge_alloc() .

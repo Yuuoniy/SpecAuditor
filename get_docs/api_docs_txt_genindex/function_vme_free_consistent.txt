@@ -1,0 +1,16 @@
+Function: void vme_free_consistent ( struct vme_resource * resource , size_t size , void * vaddr , dma_addr_t dma )
+
+Free previously allocated memory.
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME resource.
+  size_t size
+    Size of allocation to free.
+  void *vaddr
+    Virtual address of allocation.
+  dma_addr_t dma
+    Physical address of allocation.
+
+Description
+  Free previously allocated block of contiguous memory.

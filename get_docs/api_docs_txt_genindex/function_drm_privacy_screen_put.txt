@@ -1,0 +1,11 @@
+Function: void drm_privacy_screen_put ( struct drm_privacy_screen * priv )
+
+release a privacy-screen reference
+
+Parameters
+  struct drm_privacy_screen *priv
+    privacy screen reference to release
+
+Description
+  Release a privacy-screen provider reference gotten through drm_privacy_screen_get() . May be called with a NULL or ERR_PTR,
+in which case it is a no-op.

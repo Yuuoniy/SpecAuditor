@@ -1,0 +1,7 @@
+Function: void drm_modeset_lock_assert_held ( struct drm_modeset_lock * lock )
+
+equivalent to lockdep_assert_held()
+
+Parameters
+  struct drm_modeset_lock *lock
+    lock to check

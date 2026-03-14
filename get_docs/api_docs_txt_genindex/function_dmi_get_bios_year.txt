@@ -1,0 +1,12 @@
+Function: int dmi_get_bios_year ( void )
+
+get a year out of DMI_BIOS_DATE field
+
+Parameters
+  void
+    no arguments
+
+Description
+  Returns year on success, -ENXIO if DMI is not selected,
+or a different negative error code if DMI field is not present
+or not parseable.

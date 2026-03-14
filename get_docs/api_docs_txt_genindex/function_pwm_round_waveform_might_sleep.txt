@@ -1,0 +1,14 @@
+Function: int pwm_round_waveform_might_sleep ( struct pwm_device * pwm , struct pwm_waveform * wf )
+
+Query hardware capabilities Cannot be used in atomic context.
+
+Parameters
+  struct pwm_device *pwm
+    PWM device
+  struct pwm_waveform *wf
+    waveform to round and output parameter
+
+Description
+  Typically a given waveform cannot be implemented exactly by hardware, e.g.
+because hardware only supports coarse period resolution or no duty_offset.
+This function returns the actually implemented waveform if you pass wf to pwm_set_waveform_might_sleep() now.

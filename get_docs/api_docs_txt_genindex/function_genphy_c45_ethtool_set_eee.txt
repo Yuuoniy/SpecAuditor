@@ -1,0 +1,18 @@
+Function: int genphy_c45_ethtool_set_eee ( struct phy_device * phydev , struct ethtool_keee * data )
+
+set EEE supported and status
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+  struct ethtool_keee *data
+    ethtool_keee data
+
+Description
+  sets the Supported/Advertisement/LP Advertisement
+capabilities. If eee_enabled is false, no links modes are
+advertised, but the previously advertised link modes are
+retained. This allows EEE to be enabled/disabled in a
+non-destructive way.
+Returns either error code, 0 if there was no change, or positive
+value if there was a change which triggered auto-neg.

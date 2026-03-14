@@ -1,0 +1,16 @@
+Function: struct ssam_nf_refcount_entry * ssam_nf_refcount_dec ( struct ssam_nf * nf , struct ssam_event_registry reg , struct ssam_event_id id )
+
+Decrement reference-/activation-count of the given event.
+
+Parameters
+  struct ssam_nf *nf
+    The notifier system reference.
+  struct ssam_event_registry reg
+    The registry used to enable/disable the event.
+  struct ssam_event_id id
+    The event ID.
+
+Description
+  Decrements the reference-/activation-count of the specified event,
+returning its entry. If the returned entry has a refcount of zero, the
+caller is responsible for freeing it using kfree() .

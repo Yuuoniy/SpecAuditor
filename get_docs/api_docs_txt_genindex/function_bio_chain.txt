@@ -1,0 +1,13 @@
+Function: void bio_chain ( struct bio * bio , struct bio * parent )
+
+chain bio completions
+
+Parameters
+  struct bio *bio
+    the target bio
+  struct bio *parent
+    the parent bio of bio
+
+Description
+  The caller won’t have a bi_end_io called when bio completes - instead, parent ’s bi_end_io won’t be called until both parent and bio have
+completed; the chained bio will also be freed when it completes.

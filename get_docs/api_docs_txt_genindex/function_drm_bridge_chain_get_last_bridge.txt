@@ -1,0 +1,10 @@
+Function: struct drm_bridge * drm_bridge_chain_get_last_bridge ( struct drm_encoder * encoder )
+
+Get the last bridge in the chain
+
+Parameters
+  struct drm_encoder *encoder
+    encoder object
+
+Description
+  The refcount of the returned bridge is incremented. Use drm_bridge_put() when done with it.

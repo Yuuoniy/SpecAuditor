@@ -1,0 +1,7 @@
+Function: const char * fw_rcode_string ( int rcode )
+
+convert a firewire result code to an error description
+
+Parameters
+  int rcode
+    the result code

@@ -1,0 +1,12 @@
+Function: bool drm_edid_match ( const struct drm_edid * drm_edid , const struct drm_edid_ident * ident )
+
+match drm_edid with given identity
+
+Parameters
+  const struct drm_edid *drm_edid
+    EDID
+  const struct drm_edid_ident *ident
+    the EDID identity to match with
+
+Description
+  Check if the EDID matches with the given identity.

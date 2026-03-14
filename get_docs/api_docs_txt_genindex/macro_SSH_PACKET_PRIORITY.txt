@@ -1,0 +1,15 @@
+Macro: SSH_PACKET_PRIORITY
+
+
+
+Parameters
+  base
+    The base priority as suffix of enum ssh_packet_base_priority , e.g. FLUSH , DATA , ACK , or NAK .
+  try
+    The number of tries (must be less than 16).
+
+Description
+  Compute the combined packet priority. The combined priority is dominated by
+the base priority, whereas the number of (re-)tries decides the precedence
+of packets with the same base priority, giving higher priority to packets
+that already have more tries.

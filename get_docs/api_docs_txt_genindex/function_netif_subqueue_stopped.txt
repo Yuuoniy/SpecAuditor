@@ -1,0 +1,12 @@
+Function: bool netif_subqueue_stopped ( const struct net_device * dev , struct sk_buff * skb )
+
+test status of subqueue
+
+Parameters
+  const struct net_device *dev
+    network device
+  struct sk_buff *skb
+    sub queue buffer pointer
+
+Description
+  Check individual transmit queue of a device with multiple transmit queues.

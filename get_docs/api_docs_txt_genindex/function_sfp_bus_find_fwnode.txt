@@ -1,0 +1,12 @@
+Function: struct sfp_bus * sfp_bus_find_fwnode ( const struct fwnode_handle * fwnode )
+
+parse and locate the SFP bus from fwnode
+
+Parameters
+  const struct fwnode_handle *fwnode
+    firmware node for the parent device (MAC or PHY)
+
+Description
+  Parse the parent device’s firmware node for a SFP bus, and locate
+the sfp_bus structure, incrementing its reference count.  This must
+be put via sfp_bus_put() when done.

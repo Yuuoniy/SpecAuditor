@@ -1,0 +1,13 @@
+Function: int jbd2_journal_get_write_access ( handle_t * handle , struct buffer_head * bh )
+
+notify intent to modify a buffer for metadata (not data) update.
+
+Parameters
+  handle_t *handle
+    transaction to add buffer modifications to
+  struct buffer_head *bh
+    bh to be used for metadata writes
+
+Description
+  In full data journalling mode the buffer may be of type BJ_AsyncData,
+because we’re write()ing a buffer which is also part of a shared mapping.

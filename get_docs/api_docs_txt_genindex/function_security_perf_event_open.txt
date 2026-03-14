@@ -1,0 +1,10 @@
+Function: int security_perf_event_open ( int type )
+
+Check if a perf event open is allowed
+
+Parameters
+  int type
+    type of event
+
+Description
+  Check whether the type of perf_event_open syscall is allowed.

@@ -1,0 +1,7 @@
+Function: struct dvb_frontend * zd1301_demod_get_dvb_frontend ( struct platform_device * pdev )
+
+Get pointer to DVB frontend
+
+Parameters
+  struct platform_device *pdev
+    Pointer to platform device

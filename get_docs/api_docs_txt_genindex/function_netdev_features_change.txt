@@ -1,0 +1,10 @@
+Function: void netdev_features_change ( struct net_device * dev )
+
+device changes features
+
+Parameters
+  struct net_device *dev
+    device to cause notification
+
+Description
+  Called to indicate a device has changed features.

@@ -1,0 +1,11 @@
+Function: page_folio
+
+
+
+Parameters
+  p
+    The page.
+
+Description
+  Every page is part of a folio.  This function cannot be called on a
+NULL pointer.

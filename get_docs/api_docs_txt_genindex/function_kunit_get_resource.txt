@@ -1,0 +1,7 @@
+Function: void kunit_get_resource ( struct kunit_resource * res )
+
+Hold resource for use. Should not need to be used by most users as we automatically get resources retrieved by kunit_find_resource*().
+
+Parameters
+  struct kunit_resource *res
+    resource

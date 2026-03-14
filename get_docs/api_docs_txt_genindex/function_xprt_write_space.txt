@@ -1,0 +1,10 @@
+Function: bool xprt_write_space ( struct rpc_xprt * xprt )
+
+wake the task waiting for transport output buffer space
+
+Parameters
+  struct rpc_xprt *xprt
+    transport with waiting tasks
+
+Description
+  Can be called in a soft IRQ context, so xprt_write_space never sleeps.

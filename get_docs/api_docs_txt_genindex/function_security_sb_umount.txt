@@ -1,0 +1,12 @@
+Function: int security_sb_umount ( struct vfsmount * mnt , int flags )
+
+Check permission for unmounting a filesystem
+
+Parameters
+  struct vfsmount *mnt
+    mounted filesystem
+  int flags
+    unmount flags
+
+Description
+  Check permission before the mnt file system is unmounted.

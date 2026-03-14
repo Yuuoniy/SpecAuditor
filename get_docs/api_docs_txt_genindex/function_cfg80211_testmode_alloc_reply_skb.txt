@@ -1,0 +1,15 @@
+Function: struct sk_buff * cfg80211_testmode_alloc_reply_skb ( struct wiphy * wiphy , int approxlen )
+
+allocate testmode reply
+
+Parameters
+  struct wiphy *wiphy
+    the wiphy
+  int approxlen
+    an upper bound of the length of the data that will
+be put into the skb
+
+Description
+  This function allocates and pre-fills an skb for a reply to
+the testmode command. Since it is intended for a reply, calling
+it outside of the testmode_cmd operation is invalid.

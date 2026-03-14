@@ -1,0 +1,168 @@
+Function: struct phy_device
+
+An instance of a PHY
+
+Members
+  mdio
+    MDIO bus this PHY is on
+  drv
+    Pointer to the driver for this PHY instance
+  devlink
+    Create a link between phy dev and mac dev, if the external phy
+used by current mac interface is managed by another mac interface.
+  phyindex
+    Unique id across the phy’s parent tree of phys to address the PHY
+from userspace, similar to ifindex. A zero index means the PHY
+wasn’t assigned an id yet.
+  phy_id
+    UID for this device found during discovery
+  c45_ids
+    802.3-c45 Device Identifiers if is_c45.
+  is_c45
+    Set to true if this PHY uses clause 45 addressing.
+  is_internal
+    Set to true if this PHY is internal to a MAC.
+  is_pseudo_fixed_link
+    Set to true if this PHY is an Ethernet switch, etc.
+  is_gigabit_capable
+    Set to true if PHY supports 1000Mbps
+  has_fixups
+    Set to true if this PHY has fixups/quirks.
+  suspended
+    Set to true if this PHY has been suspended successfully.
+  suspended_by_mdio_bus
+    Set to true if this PHY was suspended by MDIO bus.
+  sysfs_links
+    Internal boolean tracking sysfs symbolic links setup/removal.
+  loopback_enabled
+    Set true if this PHY has been loopbacked successfully.
+  downshifted_rate
+    Set true if link speed has been downshifted.
+  is_on_sfp_module
+    Set true if PHY is located on an SFP module.
+  mac_managed_pm
+    Set true if MAC driver takes of suspending/resuming PHY
+  wol_enabled
+    Set to true if the PHY or the attached MAC have Wake-on-LAN
+enabled.
+  is_genphy_driven
+    PHY is driven by one of the generic PHY drivers
+  autoneg
+    Flag autoneg being used
+  link
+    Current link state
+  autoneg_complete
+    Flag auto negotiation of the link has completed
+  interrupts
+    Flag interrupts have been enabled
+  irq_suspended
+    Flag indicating PHY is suspended and therefore interrupt
+handling shall be postponed until PHY has resumed
+  irq_rerun
+    Flag indicating interrupts occurred while PHY was suspended,
+requiring a rerun of the interrupt handler after resume
+  default_timestamp
+    Flag indicating whether we are using the phy
+timestamp as the default one
+  rate_matching
+    Current rate matching mode
+  state
+    State of the PHY for management purposes
+  dev_flags
+    Device-specific flags used by the PHY driver.
+  interface
+    enum phy_interface_t value
+  possible_interfaces
+    bitmap if interface modes that the attached PHY
+will switch between depending on media speed.
+  speed
+    Current link speed
+  duplex
+    Current duplex
+  port
+    Current port
+  pause
+    Current pause
+  asym_pause
+    Current asymmetric pause
+  master_slave_get
+    Current master/slave advertisement
+  master_slave_set
+    User requested master/slave configuration
+  master_slave_state
+    Current master/slave configuration
+  supported
+    Combined MAC/PHY supported linkmodes
+  advertising
+    Currently advertised linkmodes
+  lp_advertising
+    Current link partner advertised linkmodes
+  adv_old
+    Saved advertised while power saving for WoL
+  supported_eee
+    supported PHY EEE linkmodes
+  advertising_eee
+    Currently advertised EEE linkmodes
+  eee_disabled_modes
+    Energy efficient ethernet modes not to be advertised
+  enable_tx_lpi
+    When True, MAC should transmit LPI to PHY
+  eee_active
+    phylib private state, indicating that EEE has been negotiated
+  eee_cfg
+    User configuration of EEE
+  host_interfaces
+    PHY interface modes supported by host
+  phy_led_triggers
+    Array of LED triggers
+  phy_num_led_triggers
+    Number of triggers in phy_led_triggers
+  last_triggered
+    last LED trigger for link speed
+  led_link_trigger
+    LED trigger for link up/down
+  leds
+    list of PHY LED structures
+  irq
+    IRQ number of the PHY’s interrupt (-1 if none)
+  priv
+    Pointer to driver private data
+  shared
+    Pointer to private data shared by phys in one package
+  skb
+    Netlink message for cable diagnostics
+  ehdr
+    nNtlink header for cable diagnostics
+  nest
+    Netlink nest used for cable diagnostics
+  state_queue
+    Work queue for state machine
+  lock
+    Mutex for serialization access to PHY
+  sfp_bus_attached
+    Flag indicating whether the SFP bus has been attached
+  sfp_bus
+    SFP bus attached to this PHY’s fiber port
+  phylink
+    Pointer to phylink instance for this PHY
+  attached_dev
+    The attached enet driver’s device instance ptr
+  mii_ts
+    Pointer to time stamper callbacks
+  psec
+    Pointer to Power Sourcing Equipment control struct
+  mdix
+    Current crossover
+  mdix_ctrl
+    User setting of crossover
+  pma_extable
+    Cached value of PMA/PMD Extended Abilities Register
+  link_down_events
+    Number of times link was lost
+  phy_link_change
+    Callback for phylink for notification of link change
+  adjust_link
+    Callback for the enet controller to respond to changes: in the
+link state.
+  macsec_ops
+    MACsec offloading ops.

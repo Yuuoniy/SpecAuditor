@@ -1,0 +1,11 @@
+Function: int audit_signal_info_syscall ( struct task_struct * t )
+
+record signal info for syscalls
+
+Parameters
+  struct task_struct *t
+    task being signaled
+
+Description
+  If the audit subsystem is being terminated, record the task (pid)
+and uid that is doing that.

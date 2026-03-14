@@ -1,0 +1,11 @@
+Function: int skb_linearize ( struct sk_buff * skb )
+
+convert paged skb to linear one
+
+Parameters
+  struct sk_buff *skb
+    buffer to linarize
+
+Description
+  If there is no free memory -ENOMEM is returned, otherwise zero
+is returned and the old skb data released.

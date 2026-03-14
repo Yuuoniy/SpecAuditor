@@ -1,0 +1,16 @@
+Function: int video_register_device_no_warn ( struct video_device * vdev , enum vfl_devnode_type type , int nr )
+
+register video4linux devices
+
+Parameters
+  struct video_device *vdev
+    struct video_device to register
+  enum vfl_devnode_type type
+    type of device to register, as defined by enum vfl_devnode_type
+  int nr
+    which device node number is desired:
+(0 == /dev/video0, 1 == /dev/video1, ..., -1 == first free)
+
+Description
+  This function is identical to video_register_device() except that no
+warning is issued if the desired device node number was already in use.

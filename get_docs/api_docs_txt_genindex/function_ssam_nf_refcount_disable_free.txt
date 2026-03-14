@@ -1,0 +1,18 @@
+Function: int ssam_nf_refcount_disable_free ( struct ssam_controller * ctrl , struct ssam_nf_refcount_entry * entry , u8 flags , bool ec )
+
+Disable event for reference count entry if it is no longer in use and free the corresponding entry.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller to disable the event on.
+  struct ssam_nf_refcount_entry *entry
+    The reference count entry for the event to be disabled.
+  u8 flags
+    The flags used for enabling the event on the EC.
+  bool ec
+    Flag specifying if the event should actually be disabled on the EC.
+
+Description
+  If ec equals true and the reference count equals zero (i.e. the
+event is no longer requested by any client), the specified event will be
+disabled on the EC via the corresponding request.

@@ -1,0 +1,11 @@
+Function: u32 vidtv_ts_pcr_write_into ( struct pcr_write_args args )
+
+Write a PCR packet into a buffer.
+
+Parameters
+  struct pcr_write_args args
+    the arguments to use when writing.
+
+Description
+  This function will write a PCR packet into a buffer. This is used to
+synchronize the clocks between encoders and decoders.

@@ -1,0 +1,7 @@
+Function: struct tipc_media * tipc_media_find ( const char * name )
+
+locates specified media object by name
+
+Parameters
+  const char *name
+    name to locate

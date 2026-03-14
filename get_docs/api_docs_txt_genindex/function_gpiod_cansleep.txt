@@ -1,0 +1,7 @@
+Function: int gpiod_cansleep ( const struct gpio_desc * desc )
+
+report whether gpio value access may sleep
+
+Parameters
+  const struct gpio_desc *desc
+    gpio to check

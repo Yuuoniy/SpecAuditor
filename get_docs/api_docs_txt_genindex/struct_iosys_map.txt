@@ -1,0 +1,14 @@
+Struct: struct iosys_map
+
+Pointer to IO/system memory
+
+Members
+  {unnamed_union}
+    anonymous
+  vaddr_iomem
+    The buffer’s address if in I/O memory
+  vaddr
+    The buffer’s address if in system memory
+  is_iomem
+    True if the buffer is located in I/O memory, or false
+otherwise.

@@ -1,0 +1,17 @@
+Function: int rvt_init_port ( struct rvt_dev_info * rdi , struct rvt_ibport * port , int port_index , u16 * pkey_table )
+
+init internal data for driver port
+
+Parameters
+  struct rvt_dev_info *rdi
+    rvt_dev_info struct
+  struct rvt_ibport *port
+    rvt port
+  int port_index
+    0 based index of ports, different from IB core port num
+  u16 *pkey_table
+    pkey_table for port
+
+Description
+  Keep track of a list of ports. No need to have a detach port.
+They persist until the driver goes away.

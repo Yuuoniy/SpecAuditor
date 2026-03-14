@@ -1,0 +1,22 @@
+Function: int dma_mmap_attrs ( struct device * dev , struct vm_area_struct * vma , void * cpu_addr , dma_addr_t dma_addr , size_t size , unsigned long attrs )
+
+map a coherent DMA allocation into user space
+
+Parameters
+  struct device *dev
+    valid struct device pointer, or NULL for ISA and EISA-like devices
+  struct vm_area_struct *vma
+    vm_area_struct describing requested user mapping
+  void *cpu_addr
+    kernel CPU-view address returned from dma_alloc_attrs
+  dma_addr_t dma_addr
+    device-view address returned from dma_alloc_attrs
+  size_t size
+    size of memory originally requested in dma_alloc_attrs
+  unsigned long attrs
+    attributes of mapping properties requested in dma_alloc_attrs
+
+Description
+  Map a coherent DMA buffer previously allocated by dma_alloc_attrs into user
+space.  The coherent DMA buffer must not be freed by the driver until the
+user space mapping has been released.

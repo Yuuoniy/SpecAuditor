@@ -1,0 +1,11 @@
+Function: int zynqmp_dp_phy_ready ( struct zynqmp_dp * dp )
+
+Check if PHY is ready
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure
+
+Description
+  Check if PHY is ready. If PHY is not ready, wait 1ms to check for 100 times.
+This amount of delay was suggested by IP designer.

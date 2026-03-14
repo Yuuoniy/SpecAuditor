@@ -1,0 +1,12 @@
+Function: const char * vfs_get_link ( struct dentry * dentry , struct delayed_call * done )
+
+get symlink body
+
+Parameters
+  struct dentry *dentry
+    dentry on which to get symbolic link
+  struct delayed_call *done
+    caller needs to free returned data with this
+
+Description
+  Calls security hook and i_op-> get_link() on the supplied inode.

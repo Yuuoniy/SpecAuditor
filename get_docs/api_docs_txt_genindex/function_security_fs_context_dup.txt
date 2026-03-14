@@ -1,0 +1,13 @@
+Function: int security_fs_context_dup ( struct fs_context * fc , struct fs_context * src_fc )
+
+Duplicate a fs_context LSM blob
+
+Parameters
+  struct fs_context *fc
+    destination filesystem context
+  struct fs_context *src_fc
+    source filesystem context
+
+Description
+  Allocate and attach a security structure to sc->security.  This pointer is
+initialised to NULL by the caller. fc indicates the new filesystem context. src_fc indicates the original filesystem context.

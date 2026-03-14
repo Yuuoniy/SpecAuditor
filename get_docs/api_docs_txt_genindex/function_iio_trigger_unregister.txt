@@ -1,0 +1,7 @@
+Function: void iio_trigger_unregister ( struct iio_trigger * trig_info )
+
+unregister a trigger from the core
+
+Parameters
+  struct iio_trigger *trig_info
+    trigger to be unregistered

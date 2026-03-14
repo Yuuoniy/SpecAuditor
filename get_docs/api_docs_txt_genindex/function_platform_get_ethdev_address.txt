@@ -1,0 +1,13 @@
+Function: int platform_get_ethdev_address ( struct device * dev , struct net_device * netdev )
+
+Set netdev’s MAC address from a given device
+
+Parameters
+  struct device *dev
+    Pointer to the device
+  struct net_device *netdev
+    Pointer to netdev to write the address to
+
+Description
+  Wrapper around eth_platform_get_mac_address() which writes the address
+directly to netdev->dev_addr.

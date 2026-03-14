@@ -1,0 +1,11 @@
+Function: struct ssam_event_queue * ssam_cplt_get_event_queue ( struct ssam_cplt * cplt , u8 tid , u16 rqid )
+
+Get the event queue for the given parameters.
+
+Parameters
+  struct ssam_cplt *cplt
+    The completion system on which to look for the queue.
+  u8 tid
+    The target ID of the queue.
+  u16 rqid
+    The request ID representing the event ID for which to get the queue.

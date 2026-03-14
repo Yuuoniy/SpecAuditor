@@ -1,0 +1,7 @@
+Function: void tty_port_tty_vhangup ( struct tty_port * port )
+
+helper to hang up a tty synchronously
+
+Parameters
+  struct tty_port *port
+    tty port

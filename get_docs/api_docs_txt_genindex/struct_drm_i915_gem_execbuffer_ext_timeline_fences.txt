@@ -1,0 +1,16 @@
+Struct: struct drm_i915_gem_execbuffer_ext_timeline_fences
+
+Timeline fences for execbuf ioctl.
+
+Members
+  base
+    Extension link. See struct i915_user_extension .
+  fence_count
+    Number of elements in the handles_ptr & value_ptr arrays.
+  handles_ptr
+    Pointer to an array of struct drm_i915_gem_exec_fence of length fence_count .
+  values_ptr
+    Pointer to an array of u64 values of length fence_count .
+Values must be 0 for a binary drm_syncobj. A Value of 0 for a
+timeline drm_syncobj is invalid as it turns a drm_syncobj into a
+binary one.

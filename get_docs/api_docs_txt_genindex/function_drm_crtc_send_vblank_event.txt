@@ -1,0 +1,13 @@
+Function: void drm_crtc_send_vblank_event ( struct drm_crtc * crtc , struct drm_pending_vblank_event * e )
+
+helper to send vblank event after pageflip
+
+Parameters
+  struct drm_crtc *crtc
+    the source CRTC of the vblank event
+  struct drm_pending_vblank_event *e
+    the event to send
+
+Description
+  Updates sequence # and timestamp on event for the most recently processed
+vblank, and sends it to userspace.  Caller must hold event lock.

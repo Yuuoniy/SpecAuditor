@@ -1,0 +1,13 @@
+Function: void drm_dev_unplug ( struct drm_device * dev )
+
+unplug a DRM device
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  This unplugs a hotpluggable DRM device, which makes it inaccessible to
+userspace operations. Entry-points can use drm_dev_enter() and drm_dev_exit() to protect device resources in a race free manner. This
+essentially unregisters the device like drm_dev_unregister() , but can be
+called while there are still open users of dev .

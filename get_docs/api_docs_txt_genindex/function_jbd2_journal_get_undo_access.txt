@@ -1,0 +1,17 @@
+Function: int jbd2_journal_get_undo_access ( handle_t * handle , struct buffer_head * bh )
+
+Notify intent to modify metadata with non-rewindable consequences
+
+Parameters
+  handle_t *handle
+    transaction
+  struct buffer_head *bh
+    buffer to undo
+
+Description
+  Sometimes there is a need to distinguish between metadata which has
+been committed to disk and that which has not.  The ext3fs code uses
+this for freeing and allocating space, we have to make sure that we
+do not reuse freed space until the deallocation has been committed,
+since if we overwrote that space we would make the delete
+un-rewindable in case of a crash.

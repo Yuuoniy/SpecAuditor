@@ -1,0 +1,17 @@
+Function: void update_sg_lb_stats ( struct lb_env * env , struct sd_lb_stats * sds , struct sched_group * group , struct sg_lb_stats * sgs , bool * sg_overloaded , bool * sg_overutilized )
+
+Update sched_group’s statistics for load balancing.
+
+Parameters
+  struct lb_env *env
+    The load balancing environment.
+  struct sd_lb_stats *sds
+    Load-balancing data with statistics of the local group.
+  struct sched_group *group
+    sched_group whose statistics are to be updated.
+  struct sg_lb_stats *sgs
+    variable to hold the statistics for this group.
+  bool *sg_overloaded
+    sched_group is overloaded
+  bool *sg_overutilized
+    sched_group is overutilized

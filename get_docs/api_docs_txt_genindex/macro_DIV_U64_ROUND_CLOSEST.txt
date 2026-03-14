@@ -1,0 +1,13 @@
+Macro: DIV_U64_ROUND_CLOSEST
+
+
+
+Parameters
+  dividend
+    unsigned 64bit dividend
+  divisor
+    unsigned 32bit divisor
+
+Description
+  Divide unsigned 64bit dividend by unsigned 32bit divisor
+and round to closest integer.

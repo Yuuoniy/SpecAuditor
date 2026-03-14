@@ -1,0 +1,17 @@
+Struct: struct dh
+
+define a DH private key
+
+Members
+  key
+    Private DH key
+  p
+    Diffie-Hellman parameter P
+  g
+    Diffie-Hellman generator G
+  key_size
+    Size of the private DH key
+  p_size
+    Size of DH parameter P
+  g_size
+    Size of DH generator G

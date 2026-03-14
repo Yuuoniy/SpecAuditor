@@ -1,0 +1,12 @@
+Function: void n_tty_flush_buffer ( struct tty_struct * tty )
+
+clean input queue
+
+Parameters
+  struct tty_struct *tty
+    terminal device
+
+Description
+  Flush the input buffer. Called when the tty layer wants the buffer flushed
+(eg at hangup) or when the N_TTY line discipline internally has to clean
+the pending queue (for example some signals).

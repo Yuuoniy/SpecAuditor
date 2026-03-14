@@ -1,0 +1,16 @@
+Function: void eth_hw_addr_gen ( struct net_device * dev , const u8 * base_addr , unsigned int id )
+
+Generate and assign Ethernet address to a port
+
+Parameters
+  struct net_device *dev
+    pointer to port’s net_device structure
+  const u8 *base_addr
+    base Ethernet address
+  unsigned int id
+    offset to add to the base address
+
+Description
+  Generate a MAC address using a base address and an offset and assign it
+to a net_device. Commonly used by switch drivers which need to compute
+addresses for all their ports. addr_assign_type is not changed.

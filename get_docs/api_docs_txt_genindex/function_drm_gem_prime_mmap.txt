@@ -1,0 +1,15 @@
+Function: int drm_gem_prime_mmap ( struct drm_gem_object * obj , struct vm_area_struct * vma )
+
+PRIME mmap function for GEM drivers
+
+Parameters
+  struct drm_gem_object *obj
+    GEM object
+  struct vm_area_struct *vma
+    Virtual address range
+
+Description
+  This function sets up a userspace mapping for PRIME exported buffers using
+the same codepath that is used for regular GEM buffer mapping on the DRM fd.
+The fake GEM offset is added to vma->vm_pgoff and drm_driver->fops ->mmap is
+called to set up the mapping.

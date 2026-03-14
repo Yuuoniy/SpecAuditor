@@ -1,0 +1,7 @@
+Function: unsigned int vb2_get_num_buffers ( struct vb2_queue * q )
+
+get the number of buffer in a queue
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.

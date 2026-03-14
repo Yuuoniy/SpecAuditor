@@ -1,0 +1,13 @@
+Function: struct v4l2_ctrl * v4l2_ctrl_request_hdl_ctrl_find ( struct v4l2_ctrl_handler * hdl , u32 id )
+
+Find a control with the given ID.
+
+Parameters
+  struct v4l2_ctrl_handler *hdl
+    The control handler from the request.
+  u32 id
+    The ID of the control to find.
+
+Description
+  This function returns a pointer to the control if this control is
+part of the request or NULL otherwise.

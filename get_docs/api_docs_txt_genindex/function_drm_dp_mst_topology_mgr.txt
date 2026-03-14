@@ -1,0 +1,93 @@
+Function: struct drm_dp_mst_topology_mgr
+
+DisplayPort MST manager
+
+Members
+  base
+    Base private object for atomic
+  dev
+    device pointer for adding i2c devices etc.
+  cbs
+    callbacks for connector addition and destruction.
+  max_dpcd_transaction_bytes
+    maximum number of bytes to read/write
+in one go.
+  aux
+    AUX channel for the DP MST connector this topolgy mgr is
+controlling.
+  max_payloads
+    maximum number of payloads the GPU can generate.
+  conn_base_id
+    DRM connector ID this mgr is connected to. Only used
+to build the MST connector path value.
+  up_req_recv
+    Message receiver state for up requests.
+  down_rep_recv
+    Message receiver state for replies to down
+requests.
+  lock
+    protects mst_state , mst_primary , dpcd , and payload_id_table_cleared .
+  probe_lock
+    Prevents work and up_req_work , the only writers of drm_dp_mst_port.mstb and drm_dp_mst_branch.ports , from racing
+while they update the topology.
+  mst_state
+    If this manager is enabled for an MST capable port. False
+if no MST sink/branch devices is connected.
+  payload_id_table_cleared
+    Whether or not we’ve cleared the payload
+ID table for mst_primary . Protected by lock .
+  reset_rx_state
+    The down request’s reply and up request message
+receiver state must be reset, after the topology manager got
+removed. Protected by lock .
+  payload_count
+    The number of currently active payloads in hardware. This value is only
+intended to be used internally by MST helpers for payload tracking, and is only safe to
+read/write from the atomic commit (not check) context.
+  next_start_slot
+    The starting timeslot to use for new VC payloads. This value is used
+internally by MST helpers for payload tracking, and is only safe to read/write from the
+atomic commit (not check) context.
+  mst_primary
+    Pointer to the primary/first branch device.
+  dpcd
+    Cache of DPCD for primary port.
+  sink_count
+    Sink count from DEVICE_SERVICE_IRQ_VECTOR_ESI0.
+  funcs
+    Atomic helper callbacks
+  qlock
+    protects tx_msg_downq and drm_dp_sideband_msg_tx.state
+  tx_msg_downq
+    List of pending down requests
+  tx_waitq
+    Wait to queue stall for the tx worker.
+  work
+    Probe work.
+  tx_work
+    Sideband transmit worker. This can nest within the main work worker for each transaction work launches.
+  destroy_port_list
+    List of to be destroyed connectors.
+  destroy_branch_device_list
+    List of to be destroyed branch
+devices.
+  delayed_destroy_lock
+    Protects destroy_port_list and destroy_branch_device_list .
+  delayed_destroy_wq
+    Workqueue used for delayed_destroy_work items.
+A dedicated WQ makes it possible to drain any requeued work items
+on it.
+  delayed_destroy_work
+    Work item to destroy MST port and branch
+devices, needed to avoid locking inversion.
+  up_req_list
+    List of pending up requests from the topology that
+need to be processed, in chronological order.
+  up_req_lock
+    Protects up_req_list
+  up_req_work
+    Work item to process up requests received from the
+topology. Needed to avoid blocking hotplug handling and sideband
+transmissions.
+  topology_ref_history_lock
+    protects drm_dp_mst_port.topology_ref_history and drm_dp_mst_branch.topology_ref_history .

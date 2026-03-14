@@ -1,0 +1,14 @@
+Function: void kunit_device_unregister ( struct kunit * test , struct device * dev )
+
+Unregister a KUnit-managed device
+
+Parameters
+  struct kunit *test
+    The test context object which created the device
+  struct device *dev
+    The device.
+
+Description
+  Unregisters and destroys a struct device which was created with
+kunit_device_register or kunit_device_register_with_driver. If KUnit created
+a driver, cleans it up as well.

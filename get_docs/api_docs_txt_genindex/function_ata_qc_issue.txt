@@ -1,0 +1,13 @@
+Function: void ata_qc_issue ( struct ata_queued_cmd * qc )
+
+issue taskfile to device
+
+Parameters
+  struct ata_queued_cmd *qc
+    command to issue to device
+
+Description
+  Prepare an ATA command to submission to device.
+This includes mapping the data into a DMA-able
+area, filling in the S/G table, and finally
+writing the taskfile to hardware, starting the command.

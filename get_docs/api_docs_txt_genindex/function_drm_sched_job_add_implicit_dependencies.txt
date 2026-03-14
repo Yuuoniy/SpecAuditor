@@ -1,0 +1,17 @@
+Function: int drm_sched_job_add_implicit_dependencies ( struct drm_sched_job * job , struct drm_gem_object * obj , bool write )
+
+adds implicit dependencies as job dependencies
+
+Parameters
+  struct drm_sched_job *job
+    scheduler job to add the dependencies to
+  struct drm_gem_object *obj
+    the gem object to add new dependencies from.
+  bool write
+    whether the job might write the object (so we need to depend on
+shared fences in the reservation object).
+
+Description
+  This should be called after drm_gem_lock_reservations() on your array of
+GEM objects used in the job but before updating the reservations with your
+own fences.

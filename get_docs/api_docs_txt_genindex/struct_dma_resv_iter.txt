@@ -1,0 +1,21 @@
+Struct: struct dma_resv_iter
+
+current position into the dma_resv fences
+
+Members
+  obj
+    The dma_resv object we iterate over
+  usage
+    Return fences with this usage or lower.
+  fence
+    the currently handled fence
+  fence_usage
+    the usage of the current fence
+  index
+    index into the shared fences
+  fences
+    the shared fences; private, MUST not dereference
+  num_fences
+    number of fences
+  is_restarted
+    true if this is the first returned fence

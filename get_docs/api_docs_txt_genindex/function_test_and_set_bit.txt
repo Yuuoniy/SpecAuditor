@@ -1,0 +1,12 @@
+Function: bool test_and_set_bit ( long nr , volatile unsigned long * addr )
+
+Set a bit and return its old value
+
+Parameters
+  long nr
+    Bit to set
+  volatile unsigned long *addr
+    Address to count from
+
+Description
+  This is an atomic fully-ordered operation (implied full memory barrier).

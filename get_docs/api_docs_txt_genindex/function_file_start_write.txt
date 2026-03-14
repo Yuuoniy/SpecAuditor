@@ -1,0 +1,11 @@
+Function: void file_start_write ( struct file * file )
+
+get write access to a superblock for regular file io
+
+Parameters
+  struct file *file
+    the file we want to write to
+
+Description
+  This is a variant of sb_start_write() which is a noop on non-regualr file.
+Should be matched with a call to file_end_write() .

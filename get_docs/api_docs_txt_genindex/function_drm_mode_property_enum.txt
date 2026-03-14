@@ -1,0 +1,9 @@
+Function: struct drm_mode_property_enum
+
+Description for an enum/bitfield entry.
+
+Members
+  value
+    numeric value for this enum entry .
+  name
+    symbolic name for this enum entry .

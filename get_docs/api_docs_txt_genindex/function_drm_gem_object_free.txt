@@ -1,0 +1,10 @@
+Function: void drm_gem_object_free ( struct kref * kref )
+
+free a GEM object
+
+Parameters
+  struct kref *kref
+    kref of the object to free
+
+Description
+  Called after the last reference to the object has been lost.

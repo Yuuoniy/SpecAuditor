@@ -1,0 +1,16 @@
+Struct: struct v4l2_async_connection
+
+sub-device connection descriptor, as known to a bridge
+
+Members
+  match
+    struct of match type and per-bus type matching data sets
+  notifier
+    the async notifier the connection is related to
+  asc_entry
+    used to add struct v4l2_async_connection objects to the
+notifier waiting_list or done_list
+  asc_subdev_entry
+    entry in struct v4l2_async_subdev .asc_list list
+  sd
+    the related sub-device

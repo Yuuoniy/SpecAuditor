@@ -1,0 +1,14 @@
+Function: u32 drm_color_lut_extract ( u32 user_input , int bit_precision )
+
+clamp and round LUT entries
+
+Parameters
+  u32 user_input
+    input value
+  int bit_precision
+    number of bits the hw LUT supports
+
+Description
+  Extract a degamma/gamma LUT value provided by user (in the form of drm_color_lut entries) and round it to the precision supported by the
+hardware, following OpenGL int<->float conversion rules
+(see eg. OpenGL 4.6 specification - 2.3.5 Fixed-Point Data Conversions).

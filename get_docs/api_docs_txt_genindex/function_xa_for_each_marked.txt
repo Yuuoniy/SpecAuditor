@@ -1,0 +1,21 @@
+Function: xa_for_each_marked
+
+
+
+Parameters
+  xa
+    XArray.
+  index
+    Index of entry .
+  entry
+    Entry retrieved from array.
+  filter
+    Selection criterion.
+
+Description
+  During the iteration, entry will have the value of the entry stored
+in xa at index .  The iteration will skip all entries in the array
+which do not match filter .  You may modify index during the iteration
+if you want to skip or reprocess indices.  It is safe to modify the array
+during the iteration.  At the end of the iteration, entry will be set to
+NULL and index will have a value less than or equal to max.

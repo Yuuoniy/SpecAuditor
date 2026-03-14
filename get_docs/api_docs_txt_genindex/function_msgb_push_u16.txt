@@ -1,0 +1,9 @@
+Function: void msgb_push_u16 ( struct msgbuf * msgb , u16 value )
+
+Push a u16 value to the buffer.
+
+Parameters
+  struct msgbuf *msgb
+    The message buffer.
+  u16 value
+    The value to push to the buffer.

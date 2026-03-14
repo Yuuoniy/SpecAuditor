@@ -1,0 +1,12 @@
+Function: void wiphy_read_of_freq_limits ( struct wiphy * wiphy )
+
+read frequency limits from device tree
+
+Parameters
+  struct wiphy *wiphy
+    the wireless device to get extra limits for
+
+Description
+  Some devices may have extra limitations specified in DT. This may be useful
+for chipsets that normally support more bands but are limited due to board
+design (e.g. by antennas or external power amplifier).

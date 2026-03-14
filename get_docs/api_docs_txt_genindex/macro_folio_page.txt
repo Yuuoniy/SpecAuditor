@@ -1,0 +1,14 @@
+Macro: folio_page
+
+
+
+Parameters
+  folio
+    The folio.
+  n
+    The page number to return.
+
+Description
+  n is relative to the start of the folio.  This function does not
+check that the page number lies within folio ; the caller is presumed
+to have a reference to the page.

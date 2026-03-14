@@ -1,0 +1,11 @@
+Function: bool kunit_resource_name_match ( struct kunit * test , struct kunit_resource * res , void * match_name )
+
+Match a resource with the same name.
+
+Parameters
+  struct kunit *test
+    Test case to which the resource belongs.
+  struct kunit_resource *res
+    The resource.
+  void *match_name
+    The name to match against.

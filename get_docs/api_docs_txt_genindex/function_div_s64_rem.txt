@@ -1,0 +1,11 @@
+Function: s64 div_s64_rem ( s64 dividend , s32 divisor , s32 * remainder )
+
+signed 64bit divide with 32bit divisor with remainder
+
+Parameters
+  s64 dividend
+    signed 64bit dividend
+  s32 divisor
+    signed 32bit divisor
+  s32 *remainder
+    pointer to signed 32bit remainder

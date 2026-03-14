@@ -1,0 +1,13 @@
+Struct: struct phy_led
+
+An LED driven by the PHY
+
+Members
+  list
+    List of LEDs
+  phydev
+    PHY this LED is attached to
+  led_cdev
+    Standard LED class structure
+  index
+    Number of the LED

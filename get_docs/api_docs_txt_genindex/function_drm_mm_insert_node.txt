@@ -1,0 +1,15 @@
+Function: int drm_mm_insert_node ( struct drm_mm * mm , struct drm_mm_node * node , u64 size )
+
+search for space and insert node
+
+Parameters
+  struct drm_mm *mm
+    drm_mm to allocate from
+  struct drm_mm_node *node
+    preallocate node to insert
+  u64 size
+    size of the allocation
+
+Description
+  This is a simplified version of drm_mm_insert_node_generic() with color set
+to 0.

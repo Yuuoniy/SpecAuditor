@@ -1,0 +1,15 @@
+Struct: struct zynqmp_disp
+
+Display controller
+
+Members
+  dev
+    Device structure
+  dpsub
+    Display subsystem
+  blend
+    Register I/O base address for the blender
+  avbuf
+    Register I/O base address for the audio/video buffer manager
+  layers
+    Layers (planes)

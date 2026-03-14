@@ -1,0 +1,16 @@
+Function: int folio_referenced ( struct folio * folio , int is_locked , struct mem_cgroup * memcg , vm_flags_t * vm_flags )
+
+Test if the folio was referenced.
+
+Parameters
+  struct folio *folio
+    The folio to test.
+  int is_locked
+    Caller holds lock on the folio.
+  struct mem_cgroup *memcg
+    target memory cgroup
+  vm_flags_t *vm_flags
+    A combination of all the vma->vm_flags which referenced the folio.
+
+Description
+  Quick test_and_clear_referenced for all mappings of a folio,

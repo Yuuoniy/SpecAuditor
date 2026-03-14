@@ -1,0 +1,19 @@
+Function: int v4l2_m2m_mmap ( struct file * file , struct v4l2_m2m_ctx * m2m_ctx , struct vm_area_struct * vma )
+
+source and destination queues-aware mmap multiplexer
+
+Parameters
+  struct file *file
+    pointer to struct file
+  struct v4l2_m2m_ctx *m2m_ctx
+    m2m context assigned to the instance given by struct v4l2_m2m_ctx
+  struct vm_area_struct *vma
+    pointer to struct vm_area_struct
+
+Description
+  Call from driver’s mmap() function. Will handle mmap() for both queues
+seamlessly for the video buffer, which will receive normal per-queue offsets
+and proper vb2 queue pointers. The differentiation is made outside
+vb2 by adding a predefined offset to buffers from one of the queues
+and subtracting it before passing it back to vb2. Only drivers (and
+thus applications) receive modified offsets.

@@ -1,0 +1,12 @@
+Function: struct cpumask * unbound_effective_cpumask ( struct workqueue_struct * wq )
+
+effective cpumask of an unbound workqueue
+
+Parameters
+  struct workqueue_struct *wq
+    workqueue of interest
+
+Description
+  wq->unbound_attrs->cpumask contains the cpumask requested by the user which
+is masked with wq_unbound_cpumask to determine the effective cpumask. The
+default pwq is always mapped to the pool with the current effective cpumask.

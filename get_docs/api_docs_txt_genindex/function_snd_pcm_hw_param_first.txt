@@ -1,0 +1,17 @@
+Function: int snd_pcm_hw_param_first ( struct snd_pcm_substream * pcm , struct snd_pcm_hw_params * params , snd_pcm_hw_param_t var , int * dir )
+
+refine config space and return minimum value
+
+Parameters
+  struct snd_pcm_substream *pcm
+    PCM instance
+  struct snd_pcm_hw_params *params
+    the hw_params instance
+  snd_pcm_hw_param_t var
+    parameter to retrieve
+  int *dir
+    pointer to the direction (-1,0,1) or NULL
+
+Description
+  Inside configuration space defined by params remove from var all
+values > minimum. Reduce configuration space accordingly.

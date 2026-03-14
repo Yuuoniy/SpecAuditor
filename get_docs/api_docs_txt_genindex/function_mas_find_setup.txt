@@ -1,0 +1,11 @@
+Function: bool mas_find_setup ( struct ma_state * mas , unsigned long max , void * * entry )
+
+Internal function to set up mas_find*().
+
+Parameters
+  struct ma_state *mas
+    The maple state
+  unsigned long max
+    The maximum index
+  void **entry
+    Pointer to the entry

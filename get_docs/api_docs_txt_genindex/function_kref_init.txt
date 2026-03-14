@@ -1,0 +1,7 @@
+Function: void kref_init ( struct kref * kref )
+
+initialize object.
+
+Parameters
+  struct kref *kref
+    object in question.

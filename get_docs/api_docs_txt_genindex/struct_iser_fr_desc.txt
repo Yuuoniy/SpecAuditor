@@ -1,0 +1,13 @@
+Struct: struct iser_fr_desc
+
+Fast registration descriptor
+
+Members
+  list
+    entry in connection fastreg pool
+  rsc
+    data buffer registration resources
+  sig_protected
+    is region protected indicator
+  all_list
+    first and last list members

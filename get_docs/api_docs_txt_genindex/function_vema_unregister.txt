@@ -1,0 +1,10 @@
+Function: void vema_unregister ( struct opa_vnic_ctrl_port * cport )
+
+Unregisters agent
+
+Parameters
+  struct opa_vnic_ctrl_port *cport
+    pointer to control port
+
+Description
+  This deletes the registration by VEMA for MADs

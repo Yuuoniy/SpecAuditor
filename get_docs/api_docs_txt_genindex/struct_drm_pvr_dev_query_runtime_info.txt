@@ -1,0 +1,24 @@
+Struct: struct drm_pvr_dev_query_runtime_info
+
+Container used to fetch information about the graphics runtime.
+
+Members
+  free_list_min_pages
+    Minimum allowed free list size,
+in PM physical pages.
+  free_list_max_pages
+    Maximum allowed free list size,
+in PM physical pages.
+  common_store_alloc_region_size
+    Size of the Allocation
+Region within the Common Store used for coefficient and shared
+registers, in dwords.
+  common_store_partition_space_size
+    Size of the
+Partition Space within the Common Store for output buffers, in
+dwords.
+  max_coeffs
+    Maximum coefficients, in dwords.
+  cdm_max_local_mem_size_regs
+    Maximum amount of local
+memory available to a compute kernel, in dwords.

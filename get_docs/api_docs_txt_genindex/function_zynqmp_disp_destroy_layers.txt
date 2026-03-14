@@ -1,0 +1,7 @@
+Function: void zynqmp_disp_destroy_layers ( struct zynqmp_disp * disp )
+
+Destroy all layers
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller

@@ -1,0 +1,7 @@
+Struct: struct nand_op_cmd_instr
+
+Definition of a command instruction
+
+Members
+  opcode
+    the command to issue in one cycle

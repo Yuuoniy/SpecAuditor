@@ -1,0 +1,20 @@
+Macro: ssam_request_do_sync_onstack
+
+
+
+Parameters
+  ctrl
+    The controller via which the request is submitted.
+  rqst
+    The request specification.
+  rsp
+    The response buffer.
+  payload_len
+    The (maximum) request payload length.
+
+Description
+  Allocates a synchronous request with specified payload length on the stack,
+fully initializes it via the provided request specification, submits it,
+and finally waits for its completion before returning its status. This
+helper macro essentially allocates the request message buffer on the stack
+and then calls ssam_request_do_sync_with_buffer() .

@@ -1,0 +1,19 @@
+Function: void ssh_packet_init ( struct ssh_packet * packet , unsigned long type , u8 priority , const struct ssh_packet_ops * ops )
+
+Initialize SSH packet.
+
+Parameters
+  struct ssh_packet *packet
+    The packet to initialize.
+  unsigned long type
+    Type-flags of the packet.
+  u8 priority
+    Priority of the packet. See SSH_PACKET_PRIORITY() for details.
+  const struct ssh_packet_ops *ops
+    Packet operations.
+
+Description
+  Initializes the given SSH packet. Sets the transmission buffer pointer to NULL and the transmission buffer length to zero. For data-type packets,
+this buffer has to be set separately via ssh_packet_set_data() before
+submission, and must contain a valid SSH message, i.e. frame with optional
+payload of any type.

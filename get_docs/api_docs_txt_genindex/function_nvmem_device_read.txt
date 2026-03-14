@@ -1,0 +1,13 @@
+Function: int nvmem_device_read ( struct nvmem_device * nvmem , unsigned int offset , size_t bytes , void * buf )
+
+Read from a given nvmem device
+
+Parameters
+  struct nvmem_device *nvmem
+    nvmem device to read from.
+  unsigned int offset
+    offset in nvmem device.
+  size_t bytes
+    number of bytes to read.
+  void *buf
+    buffer pointer which will be populated on successful read.

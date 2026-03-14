@@ -1,0 +1,13 @@
+Function: int jbd2_journal_skip_recovery ( journal_t * journal )
+
+Start journal and wipe exiting records
+
+Parameters
+  journal_t *journal
+    journal to startup
+
+Description
+  Locate any valid recovery information from the journal and set up the
+journal structures in memory to ignore it (presumably because the
+caller has evidence that it is out of date).
+This function doesn’t appear to be exported..

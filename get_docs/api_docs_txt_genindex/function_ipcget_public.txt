@@ -1,0 +1,18 @@
+Function: int ipcget_public ( struct ipc_namespace * ns , struct ipc_ids * ids , const struct ipc_ops * ops , struct ipc_params * params )
+
+get an ipc object or create a new one
+
+Parameters
+  struct ipc_namespace *ns
+    ipc namespace
+  struct ipc_ids *ids
+    ipc identifier set
+  const struct ipc_ops *ops
+    the actual creation routine to call
+  struct ipc_params *params
+    its parameters
+
+Description
+  This routine is called by sys_msgget, sys_semget() and sys_shmget() when the key is not IPC_PRIVATE.
+It adds a new entry if the key is not found and does some permission
+/ security checkings if the key is found.

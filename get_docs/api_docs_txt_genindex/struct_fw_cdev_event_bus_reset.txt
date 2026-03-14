@@ -1,0 +1,21 @@
+Struct: struct fw_cdev_event_bus_reset
+
+Sent when a bus reset occurred
+
+Members
+  closure
+    See fw_cdev_event_common ; set by FW_CDEV_IOC_GET_INFO ioctl
+  type
+    See fw_cdev_event_common ; always FW_CDEV_EVENT_BUS_RESET
+  node_id
+    New node ID of this node
+  local_node_id
+    Node ID of the local node, i.e. of the controller
+  bm_node_id
+    Node ID of the bus manager
+  irm_node_id
+    Node ID of the iso resource manager
+  root_node_id
+    Node ID of the root node
+  generation
+    New bus generation

@@ -1,0 +1,11 @@
+Function: void drm_mode_config_cleanup ( struct drm_device * dev )
+
+free up DRM mode_config info
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  Free up all the connectors and CRTCs associated with this DRM device, then
+free up the framebuffers and associated buffer objects.

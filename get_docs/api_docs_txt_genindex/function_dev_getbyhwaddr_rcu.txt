@@ -1,0 +1,18 @@
+Function: struct net_device * dev_getbyhwaddr_rcu ( struct net * net , unsigned short type , const char * ha )
+
+find a device by its hardware address
+
+Parameters
+  struct net *net
+    the applicable net namespace
+  unsigned short type
+    media type of device
+  const char *ha
+    hardware address
+
+Description
+  Search for an interface by MAC address. Returns NULL if the device
+is not found or a pointer to the device.
+The caller must hold RCU.
+The returned device has not had its ref count increased
+and the caller must therefore be careful about locking

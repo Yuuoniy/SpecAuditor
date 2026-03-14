@@ -1,0 +1,17 @@
+Function: int drm_rect_calc_hscale ( const struct drm_rect * src , const struct drm_rect * dst , int min_hscale , int max_hscale )
+
+calculate the horizontal scaling factor
+
+Parameters
+  const struct drm_rect *src
+    source window rectangle
+  const struct drm_rect *dst
+    destination window rectangle
+  int min_hscale
+    minimum allowed horizontal scaling factor
+  int max_hscale
+    maximum allowed horizontal scaling factor
+
+Description
+  Calculate the horizontal scaling factor as
+( src width) / ( dst width).

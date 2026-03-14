@@ -1,0 +1,17 @@
+Macro: v4l2_device_has_op
+
+
+
+Parameters
+  v4l2_dev
+    struct v4l2_device owning the sub-devices to iterate over.
+  grpid
+    struct v4l2_subdev ->grp_id group ID to match.
+Use 0 to match them all.
+  o
+    name of the element at struct v4l2_subdev_ops that contains f .
+Each element there groups a set of operations functions.
+  f
+    operation function that will be called if cond matches.
+The operation functions are defined in groups, according to
+each element at struct v4l2_subdev_ops .

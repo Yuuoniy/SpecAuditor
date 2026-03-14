@@ -1,0 +1,10 @@
+Function: int ata_xfer_mode2shift ( u8 xfer_mode )
+
+Find matching xfer_shift for XFER_*
+
+Parameters
+  u8 xfer_mode
+    XFER_* of interest
+
+Description
+  Return matching xfer_shift for xfer_mode .

@@ -1,0 +1,16 @@
+Function: int mac_enable_tx_lpi ( struct phylink_config * config , u32 timer , bool tx_clk_stop )
+
+configure and enable LPI generation at the MAC
+
+Parameters
+  struct phylink_config *config
+    a pointer to a struct phylink_config .
+  u32 timer
+    LPI timeout in microseconds.
+  bool tx_clk_stop
+    allow xMII transmit clock to be stopped during LPI
+
+Description
+  Configure the LPI timeout accordingly. This will only be called when
+the link is already up, to cater for situations where the hardware
+needs to be programmed according to the link speed.

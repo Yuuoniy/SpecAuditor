@@ -1,0 +1,19 @@
+Function: int append_oa_status ( struct i915_perf_stream * stream , char __user * buf , size_t count , size_t * offset , enum drm_i915_perf_record_type type )
+
+Appends a status record to a userspace read() buffer.
+
+Parameters
+  struct i915_perf_stream *stream
+    An i915-perf stream opened for OA metrics
+  char __user *buf
+    destination buffer given by userspace
+  size_t count
+    the number of bytes userspace wants to read
+  size_t *offset
+    (inout): the current position for writing into buf
+  enum drm_i915_perf_record_type type
+    The kind of status to report to userspace
+
+Description
+  Writes a status record (such as DRM_I915_PERF_RECORD_OA_REPORT_LOST )
+into the userspace read() buffer.

@@ -1,0 +1,12 @@
+Function: unsigned long i915_gem_shrink_all ( struct drm_i915_private * i915 )
+
+Shrink buffer object caches completely
+
+Parameters
+  struct drm_i915_private *i915
+    i915 device
+
+Description
+  This is a simple wrapper around i915_gem_shrink() to aggressively shrink all
+caches completely. It also first waits for and retires all outstanding
+requests to also be able to release backing storage for active objects.

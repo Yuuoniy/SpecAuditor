@@ -1,0 +1,10 @@
+Function: bool dma_resv_is_locked ( struct dma_resv * obj )
+
+is the reservation object locked
+
+Parameters
+  struct dma_resv *obj
+    the reservation object
+
+Description
+  Returns true if the mutex is locked, false if unlocked.

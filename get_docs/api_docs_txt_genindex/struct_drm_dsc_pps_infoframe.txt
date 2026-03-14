@@ -1,0 +1,10 @@
+Struct: struct drm_dsc_pps_infoframe
+
+DSC infoframe carrying the Picture Parameter Set Metadata
+
+Members
+  pps_header
+    Header for PPS as per DP SDP header format of type struct dp_sdp_header
+  pps_payload
+    PPS payload fields as per DSC specification Table 4-1
+as represented in struct drm_dsc_picture_parameter_set

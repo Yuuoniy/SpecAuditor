@@ -1,0 +1,3 @@
+Enum: enum atscmh_sccc_code_mode
+
+Type of Series Concatenated Convolutional Code Rate.

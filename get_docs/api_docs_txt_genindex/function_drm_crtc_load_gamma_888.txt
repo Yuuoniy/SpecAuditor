@@ -1,0 +1,15 @@
+Function: void drm_crtc_load_gamma_888 ( struct drm_crtc * crtc , const struct drm_color_lut * lut , drm_crtc_set_lut_func set_gamma )
+
+Programs gamma ramp for RGB888-like formats
+
+Parameters
+  struct drm_crtc *crtc
+    The displaying CRTC
+  const struct drm_color_lut *lut
+    The gamma ramp to program
+  drm_crtc_set_lut_func set_gamma
+    Callback for programming the hardware gamma LUT
+
+Description
+  Programs the gamma ramp specified in lut to hardware. The input gamma
+ramp must have 256 entries per color component.

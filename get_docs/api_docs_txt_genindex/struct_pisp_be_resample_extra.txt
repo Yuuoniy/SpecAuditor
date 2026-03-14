@@ -1,0 +1,13 @@
+Struct: struct pisp_be_resample_extra
+
+PiSP Back End Resample config
+
+Members
+  scaled_width
+    Width in pixels of the scaled output
+  scaled_height
+    Height in pixels of the scaled output
+  initial_phase_h
+    Initial horizontal phase
+  initial_phase_v
+    Initial vertical phase

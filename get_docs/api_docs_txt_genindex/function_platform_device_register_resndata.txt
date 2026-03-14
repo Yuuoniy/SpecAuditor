@@ -1,0 +1,22 @@
+Function: struct platform_device * platform_device_register_resndata ( struct device * parent , const char * name , int id , const struct resource * res , unsigned int num , const void * data , size_t size )
+
+add a platform-level device with resources and platform-specific data
+
+Parameters
+  struct device *parent
+    parent device for the device we’re adding
+  const char *name
+    base name of the device we’re adding
+  int id
+    instance id
+  const struct resource *res
+    set of resources that needs to be allocated for the device
+  unsigned int num
+    number of resources
+  const void *data
+    platform specific data for this platform device
+  size_t size
+    size of platform specific data
+
+Description
+  Returns struct platform_device pointer on success, or ERR_PTR() on error.

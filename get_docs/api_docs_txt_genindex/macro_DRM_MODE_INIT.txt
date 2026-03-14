@@ -1,0 +1,19 @@
+Macro: DRM_MODE_INIT
+
+
+
+Parameters
+  hz
+    Vertical refresh rate in Hertz
+  hd
+    Horizontal resolution, width
+  vd
+    Vertical resolution, height
+  hd_mm
+    Display width in millimeters
+  vd_mm
+    Display height in millimeters
+
+Description
+  This macro initializes a drm_display_mode that contains information about
+refresh rate, resolution and physical size.

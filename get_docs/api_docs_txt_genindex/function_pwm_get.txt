@@ -1,0 +1,14 @@
+Function: struct pwm_device * pwm_get ( struct device * dev , const char * con_id )
+
+look up and request a PWM device
+
+Parameters
+  struct device *dev
+    device for PWM consumer
+  const char *con_id
+    consumer name
+
+Description
+  Lookup is first attempted using DT. If the device was not instantiated from
+a device tree, a PWM chip and a relative index is looked up via a table
+supplied by board setup code (see pwm_add_table() ).

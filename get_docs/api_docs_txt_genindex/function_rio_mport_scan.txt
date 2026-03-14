@@ -1,0 +1,7 @@
+Function: int rio_mport_scan ( int mport_id )
+
+execute enumeration/discovery on the specified mport
+
+Parameters
+  int mport_id
+    number (ID) of mport device

@@ -1,0 +1,7 @@
+Function: __bpf_kfunc struct cgroup * bpf_cgroup_acquire ( struct cgroup * cgrp )
+
+Acquire a reference to a cgroup. A cgroup acquired by this kfunc which is not stored in a map as a kptr, must be released by calling bpf_cgroup_release() .
+
+Parameters
+  struct cgroup *cgrp
+    The cgroup on which a reference is being acquired.

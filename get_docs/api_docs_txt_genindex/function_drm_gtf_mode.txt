@@ -1,0 +1,20 @@
+Function: struct drm_display_mode * drm_gtf_mode ( struct drm_device * dev , int hdisplay , int vdisplay , int vrefresh , bool interlaced , int margins )
+
+create the modeline based on the GTF algorithm
+
+Parameters
+  struct drm_device *dev
+    drm device
+  int hdisplay
+    hdisplay size
+  int vdisplay
+    vdisplay size
+  int vrefresh
+    vrefresh rate.
+  bool interlaced
+    whether to compute an interlaced mode
+  int margins
+    desired margin (borders) size
+
+Description
+  return the modeline based on GTF algorithm

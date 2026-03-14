@@ -1,0 +1,9 @@
+Function: int phylink_ethtool_set_pauseparam ( struct phylink * pl , struct ethtool_pauseparam * pause )
+
+set the current pause parameters
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+  struct ethtool_pauseparam *pause
+    a pointer to a struct ethtool_pauseparam

@@ -1,0 +1,21 @@
+Function: struct faux_device * faux_device_create ( const char * name , struct device * parent , const struct faux_device_ops * faux_ops )
+
+create and register with the driver core a faux device
+
+Parameters
+  const char *name
+    The name of the device we are adding, must be unique for all
+faux devices.
+  struct device *parent
+    Pointer to a potential parent struct device .  If set to
+NULL, the device will be created in the “root” of the faux
+device tree in sysfs.
+  const struct faux_device_ops *faux_ops
+    struct faux_device_ops that the new device will call back
+into, can be NULL.
+
+Description
+  Create a new faux device and register it in the driver core properly.
+If present, callbacks in faux_ops will be called with the device that
+for the caller to do something with at the proper time given the
+device’s lifecycle.

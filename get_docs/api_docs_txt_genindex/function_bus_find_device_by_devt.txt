@@ -1,0 +1,9 @@
+Function: struct device * bus_find_device_by_devt ( const struct bus_type * bus , dev_t devt )
+
+device iterator for locating a particular device matching the device type.
+
+Parameters
+  const struct bus_type *bus
+    bus type
+  dev_t devt
+    device type of the device to match.

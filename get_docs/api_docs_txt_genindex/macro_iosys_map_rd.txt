@@ -1,0 +1,16 @@
+Macro: iosys_map_rd
+
+
+
+Parameters
+  map__
+    The iosys_map structure
+  offset__
+    The offset from which to read
+  type__
+    Type of the value being read
+
+Description
+  Read a C type value (u8, u16, u32 and u64) from iosys_map. For other types or
+if pointer may be unaligned (and problematic for the architecture supported),
+use iosys_map_memcpy_from() .

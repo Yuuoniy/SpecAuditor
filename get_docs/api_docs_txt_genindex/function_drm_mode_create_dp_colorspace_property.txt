@@ -1,0 +1,13 @@
+Function: int drm_mode_create_dp_colorspace_property ( struct drm_connector * connector , u32 supported_colorspaces )
+
+create dp colorspace property
+
+Parameters
+  struct drm_connector *connector
+    connector to create the Colorspace property on.
+  u32 supported_colorspaces
+    bitmap of supported color spaces
+
+Description
+  Called by a driver the first time it’s needed, must be attached to desired
+DP connectors.

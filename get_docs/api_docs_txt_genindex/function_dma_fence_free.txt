@@ -1,0 +1,10 @@
+Function: void dma_fence_free ( struct dma_fence * fence )
+
+default release function for dma_fence .
+
+Parameters
+  struct dma_fence *fence
+    fence to release
+
+Description
+  This is the default implementation for dma_fence_ops.release . It calls kfree_rcu() on fence .

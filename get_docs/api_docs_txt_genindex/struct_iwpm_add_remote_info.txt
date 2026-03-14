@@ -1,0 +1,7 @@
+Struct: void iwpm_add_remote_info ( struct iwpm_remote_info * reminfo )
+
+Add remote address info of the connecting peer to the remote info hash table
+
+Parameters
+  struct iwpm_remote_info *reminfo
+    The remote info to be added

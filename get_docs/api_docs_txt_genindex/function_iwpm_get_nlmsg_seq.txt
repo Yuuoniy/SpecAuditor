@@ -1,0 +1,10 @@
+Function: int iwpm_get_nlmsg_seq ( void )
+
+Get the sequence number for a netlink message to send to the port mapper
+
+Parameters
+  void
+    no arguments
+
+Description
+  Returns the sequence number for the netlink message.

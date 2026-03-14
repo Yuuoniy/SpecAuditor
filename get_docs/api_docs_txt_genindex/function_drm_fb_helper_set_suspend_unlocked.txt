@@ -1,0 +1,15 @@
+Function: void drm_fb_helper_set_suspend_unlocked ( struct drm_fb_helper * fb_helper , bool suspend )
+
+wrapper around fb_set_suspend that also takes the console lock
+
+Parameters
+  struct drm_fb_helper *fb_helper
+    driver-allocated fbdev helper, can be NULL
+  bool suspend
+    whether to suspend or resume
+
+Description
+  A wrapper around fb_set_suspend() that takes the console lock. If the lock
+isn’t available on resume, a worker is tasked with waiting for the lock
+to become available. The console lock can be pretty contented on resume
+due to all the printk activity.

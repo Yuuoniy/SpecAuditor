@@ -1,0 +1,12 @@
+Function: int irq_chip_set_type_parent ( struct irq_data * data , unsigned int type )
+
+Set IRQ type on the parent interrupt
+
+Parameters
+  struct irq_data *data
+    Pointer to interrupt specific data
+  unsigned int type
+    IRQ_TYPE_{LEVEL,EDGE}_* value - see include/linux/irq.h
+
+Description
+  Conditional, as the underlying parent chip might not implement it.

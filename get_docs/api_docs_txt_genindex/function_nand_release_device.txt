@@ -1,0 +1,10 @@
+Function: void nand_release_device ( struct nand_chip * chip )
+
+[GENERIC] release chip
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+
+Description
+  Release chip lock and wake up anyone waiting on the device.

@@ -1,0 +1,7 @@
+Macro: v4l2_ctrl_filter
+
+Typedef : Typedef to define the filter function to be used when adding a control handler.
+
+Parameters
+  const struct v4l2_ctrl *ctrl
+    pointer to struct v4l2_ctrl .

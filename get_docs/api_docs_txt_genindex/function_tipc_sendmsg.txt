@@ -1,0 +1,17 @@
+Function: int tipc_sendmsg ( struct socket * sock , struct msghdr * m , size_t dsz )
+
+send message in connectionless manner
+
+Parameters
+  struct socket *sock
+    socket structure
+  struct msghdr *m
+    message to send
+  size_t dsz
+    amount of user data to be sent
+
+Description
+  Message must have an destination specified explicitly.
+Used for SOCK_RDM and SOCK_DGRAM messages,
+and for ‘SYN’ messages on SOCK_SEQPACKET and SOCK_STREAM connections.
+(Note: ‘SYN+’ is prohibited on SOCK_STREAM.)

@@ -1,0 +1,16 @@
+Function: int security_getprocattr ( struct task_struct * p , int lsmid , const char * name , char * * value )
+
+Read an attribute for a task
+
+Parameters
+  struct task_struct *p
+    the task
+  int lsmid
+    LSM identification
+  const char *name
+    attribute name
+  char **value
+    attribute value
+
+Description
+  Read attribute name for task p and store it into value if allowed.

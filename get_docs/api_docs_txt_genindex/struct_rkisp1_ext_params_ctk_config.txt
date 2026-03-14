@@ -1,0 +1,9 @@
+Struct: struct rkisp1_ext_params_ctk_config
+
+RkISP1 extensible params CTK config
+
+Members
+  header
+    The RkISP1 extensible parameters header, see rkisp1_ext_params_block_header
+  config
+    Cross-Talk configuration, see rkisp1_cif_isp_ctk_config

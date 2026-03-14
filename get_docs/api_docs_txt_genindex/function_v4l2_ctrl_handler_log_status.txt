@@ -1,0 +1,15 @@
+Function: void v4l2_ctrl_handler_log_status ( struct v4l2_ctrl_handler * hdl , const char * prefix )
+
+Log all controls owned by the handler.
+
+Parameters
+  struct v4l2_ctrl_handler *hdl
+    The control handler.
+  const char *prefix
+    The prefix to use when logging the control values. If the
+prefix does not end with a space, then “: “ will be added
+after the prefix. If prefix == NULL, then no prefix will be
+used.
+
+Description
+  For use with VIDIOC_LOG_STATUS.

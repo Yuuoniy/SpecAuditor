@@ -1,0 +1,15 @@
+Function: int drm_add_modes_noedid ( struct drm_connector * connector , unsigned int hdisplay , unsigned int vdisplay )
+
+add modes for the connectors without EDID
+
+Parameters
+  struct drm_connector *connector
+    connector we’re probing
+  unsigned int hdisplay
+    the horizontal display limit
+  unsigned int vdisplay
+    the vertical display limit
+
+Description
+  Add the specified modes to the connector’s mode list. Only when the
+hdisplay/vdisplay is not beyond the given limit, it will be added.

@@ -1,0 +1,9 @@
+Function: void SET_IEEE80211_DEV ( struct ieee80211_hw * hw , struct device * dev )
+
+set device for 802.11 hardware
+
+Parameters
+  struct ieee80211_hw *hw
+    the struct ieee80211_hw to set the device for
+  struct device *dev
+    the struct device of this 802.11 device

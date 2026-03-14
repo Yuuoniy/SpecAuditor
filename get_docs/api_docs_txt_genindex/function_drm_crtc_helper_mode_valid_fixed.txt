@@ -1,0 +1,11 @@
+Function: enum drm_mode_status drm_crtc_helper_mode_valid_fixed ( struct drm_crtc * crtc , const struct drm_display_mode * mode , const struct drm_display_mode * fixed_mode )
+
+Validates a display mode
+
+Parameters
+  struct drm_crtc *crtc
+    the crtc
+  const struct drm_display_mode *mode
+    the mode to validate
+  const struct drm_display_mode *fixed_mode
+    the display hardware’s mode

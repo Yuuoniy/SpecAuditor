@@ -1,0 +1,47 @@
+Struct: struct ptdesc
+
+Memory descriptor for page tables.
+
+Members
+  pt_flags
+    enum pt_flags plus zone/node/section.
+  {unnamed_union}
+    anonymous
+  pt_rcu_head
+    For freeing page table pages.
+  pt_list
+    List of used page tables. Used for s390 gmap shadow pages
+(which are not linked into the user page tables) and x86
+pgds.
+  {unnamed_struct}
+    anonymous
+  _pt_pad_1
+    Padding that aliases with page’s compound head.
+  pmd_huge_pte
+    Protected by ptdesc->ptl, used for THPs.
+  __page_mapping
+    Aliases with page->mapping. Unused for page tables.
+  {unnamed_union}
+    anonymous
+  pt_index
+    Used for s390 gmap.
+  pt_mm
+    Used for x86 pgds.
+  pt_frag_refcount
+    For fragmented page table tracking. Powerpc only.
+  pt_share_count
+    Used for HugeTLB PMD page table share count.
+  {unnamed_union}
+    anonymous
+  _pt_pad_2
+    Padding to ensure proper alignment.
+  ptl
+    Lock for the page table.
+  ptl
+    Lock for the page table.
+  __page_type
+    Same as page->page_type. Unused for page tables.
+  __page_refcount
+    Same as page refcount.
+  pt_memcg_data
+    Memcg data. Tracked for page tables here.

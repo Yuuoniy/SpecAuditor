@@ -1,0 +1,9 @@
+Struct: struct rkisp1_ext_params_dpf_strength_config
+
+RkISP1 extensible params DPF strength config
+
+Members
+  header
+    The RkISP1 extensible parameters header, see rkisp1_ext_params_block_header
+  config
+    De-noise Pre-Filter strength configuration, see rkisp1_cif_isp_dpf_strength_config

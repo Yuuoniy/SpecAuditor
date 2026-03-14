@@ -1,0 +1,13 @@
+Function: int snd_soc_component_update_bits ( struct snd_soc_component * component , unsigned int reg , unsigned int mask , unsigned int val )
+
+Perform read/modify/write cycle
+
+Parameters
+  struct snd_soc_component *component
+    Component to update
+  unsigned int reg
+    Register to update
+  unsigned int mask
+    Mask that specifies which bits to update
+  unsigned int val
+    New value for the bits specified by mask

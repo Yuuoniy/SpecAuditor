@@ -1,0 +1,9 @@
+Function: long sys_kill ( pid_t pid , int sig )
+
+send a signal to a process
+
+Parameters
+  pid_t pid
+    the PID of the process
+  int sig
+    signal to be sent

@@ -1,0 +1,10 @@
+Function: void ata_dev_init ( struct ata_device * dev )
+
+Initialize an ata_device structure
+
+Parameters
+  struct ata_device *dev
+    Device structure to initialize
+
+Description
+  Initialize dev in preparation for probing.

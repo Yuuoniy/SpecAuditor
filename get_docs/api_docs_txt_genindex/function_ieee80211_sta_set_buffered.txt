@@ -1,0 +1,16 @@
+Function: void ieee80211_sta_set_buffered ( struct ieee80211_sta * sta , u8 tid , bool buffered )
+
+inform mac80211 about driver-buffered frames
+
+Parameters
+  struct ieee80211_sta *sta
+    struct ieee80211_sta pointer for the sleeping station
+  u8 tid
+    the TID that has buffered frames
+  bool buffered
+    indicates whether or not frames are buffered for this TID
+
+Description
+  If a driver buffers frames for a powersave station instead of passing
+them back to mac80211 for retransmission, the station may still need
+to be told that there are buffered frames via the TIM bit.

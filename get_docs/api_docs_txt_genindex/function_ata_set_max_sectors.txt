@@ -1,0 +1,12 @@
+Function: int ata_set_max_sectors ( struct ata_device * dev , u64 new_sectors )
+
+Set max sectors
+
+Parameters
+  struct ata_device *dev
+    target device
+  u64 new_sectors
+    new max sectors value to set for the device
+
+Description
+  Set max sectors of dev to new_sectors .

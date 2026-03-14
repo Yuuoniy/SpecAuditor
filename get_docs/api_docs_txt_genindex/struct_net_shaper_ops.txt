@@ -1,0 +1,18 @@
+Struct: struct net_shaper_ops
+
+Operations on device H/W shapers
+
+Members
+  group
+    create the specified shapers scheduling group Nest the leaves shapers identified under the * node shaper.
+All the shapers belong to the device specified by binding .
+The leaves arrays size is specified by leaves_count .
+Create either the leaves and the node shaper; or if they already
+exists, links them together in the desired way. leaves scope must be NET_SHAPER_SCOPE_QUEUE.
+  set
+    Updates the specified shaper Updates or creates the shaper on the device specified by binding .
+  delete
+    Removes the specified shaper Removes the shaper configuration as identified by the given handle on the device specified by binding , restoring the default behavior.
+  capabilities
+    get the shaper features supported by the device Fills the bitmask cap with the supported capabilities for the
+specified scope and device specified by binding .

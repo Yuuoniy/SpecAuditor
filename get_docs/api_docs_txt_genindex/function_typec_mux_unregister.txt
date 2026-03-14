@@ -1,0 +1,10 @@
+Function: void typec_mux_unregister ( struct typec_mux_dev * mux_dev )
+
+Unregister Multiplexer Switch
+
+Parameters
+  struct typec_mux_dev *mux_dev
+    USB Type-C Connector Multiplexer/DeMultiplexer
+
+Description
+  Unregister mux that was registered with typec_mux_register() .

@@ -1,0 +1,11 @@
+Function: void xe_configfs_check_device ( struct pci_dev * pdev )
+
+Test if device was configured by configfs
+
+Parameters
+  struct pci_dev *pdev
+    the pci_dev device to test
+
+Description
+  Try to find the configfs group that belongs to the specified pci device
+and print a diagnostic message if different than the default value.

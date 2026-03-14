@@ -1,0 +1,16 @@
+Function: void move_linked_works ( struct work_struct * work , struct list_head * head , struct work_struct * * nextp )
+
+move linked works to a list
+
+Parameters
+  struct work_struct *work
+    start of series of works to be scheduled
+  struct list_head *head
+    target list to append work to
+  struct work_struct **nextp
+    out parameter for nested worklist walking
+
+Description
+  Schedule linked works starting from work to head . Work series to be
+scheduled starts at work and includes any consecutive work with
+WORK_STRUCT_LINKED set in its predecessor. See assign_work() for details on nextp .

@@ -1,0 +1,14 @@
+Function: void debugfs_lookup_and_remove ( const char * name , struct dentry * parent )
+
+lookup a directory or file and recursively remove it
+
+Parameters
+  const char *name
+    a pointer to a string containing the name of the item to look up.
+  struct dentry *parent
+    a pointer to the parent dentry of the item.
+
+Description
+  This is the equlivant of doing something like
+debugfs_remove(debugfs_lookup(..)) but with the proper reference counting
+handled for the directory being looked up.

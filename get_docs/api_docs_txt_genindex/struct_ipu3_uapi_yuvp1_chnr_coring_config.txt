@@ -1,0 +1,13 @@
+Struct: struct ipu3_uapi_yuvp1_chnr_coring_config
+
+Coring thresholds for UV
+
+Members
+  u
+    U coring level, u0.13, range [0.0, 1.0], default 0.0
+  reserved0
+    reserved
+  v
+    V coring level, u0.13, range [0.0, 1.0], default 0.0
+  reserved1
+    reserved

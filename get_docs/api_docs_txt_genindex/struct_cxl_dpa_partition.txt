@@ -1,0 +1,11 @@
+Struct: struct cxl_dpa_partition
+
+DPA partition descriptor
+
+Members
+  res
+    shortcut to the partition in the DPA resource tree (cxlds->dpa_res)
+  perf
+    performance attributes of the partition from CDAT
+  mode
+    operation mode for the DPA capacity, e.g. ram, pmem, dynamic...

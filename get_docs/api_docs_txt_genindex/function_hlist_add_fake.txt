@@ -1,0 +1,12 @@
+Function: void hlist_add_fake ( struct hlist_node * n )
+
+create a fake hlist consisting of a single headless node
+
+Parameters
+  struct hlist_node *n
+    Node to make a fake list out of
+
+Description
+  This makes n appear to be its own predecessor on a headless hlist.
+The point of this is to allow things like hlist_del() to work correctly
+in cases where there is no list.

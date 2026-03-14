@@ -1,0 +1,10 @@
+Function: void ndelay ( unsigned long nsec )
+
+Inserting a delay based on nanoseconds with busy waiting
+
+Parameters
+  unsigned long nsec
+    requested delay in nanoseconds
+
+Description
+  See udelay() for basic information about ndelay() and it’s variants.

@@ -1,0 +1,13 @@
+Function: void parport_remove_port ( struct parport * port )
+
+deregister a parallel port
+
+Parameters
+  struct parport *port
+    parallel port to deregister
+
+Description
+  When a parallel port driver is forcibly unloaded, or a
+parallel port becomes inaccessible, the port driver must call
+this function in order to deal with device drivers that still
+want to use it.

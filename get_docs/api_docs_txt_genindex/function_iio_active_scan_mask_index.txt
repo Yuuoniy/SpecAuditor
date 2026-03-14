@@ -1,0 +1,7 @@
+Function: int iio_active_scan_mask_index ( struct iio_dev * indio_dev )
+
+Get index of the active scan mask inside the available scan masks array
+
+Parameters
+  struct iio_dev *indio_dev
+    the IIO device containing the active and available scan masks

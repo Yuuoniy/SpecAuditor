@@ -1,0 +1,14 @@
+Function: struct snd_info_entry * snd_info_create_card_entry ( struct snd_card * card , const char * name , struct snd_info_entry * parent )
+
+create an info entry for the given card
+
+Parameters
+  struct snd_card *card
+    the card instance
+  const char *name
+    the file name
+  struct snd_info_entry * parent
+    the parent directory
+
+Description
+  Creates a new info entry and assigns it to the given card.

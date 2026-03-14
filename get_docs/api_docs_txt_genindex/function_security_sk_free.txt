@@ -1,0 +1,10 @@
+Function: void security_sk_free ( struct sock * sk )
+
+Free the sock’s LSM blob
+
+Parameters
+  struct sock *sk
+    sock
+
+Description
+  Deallocate security structure.

@@ -1,0 +1,13 @@
+Macro: drm_for_each_connector_iter
+
+
+
+Parameters
+  connector
+    struct drm_connector pointer used as cursor
+  iter
+    struct drm_connector_list_iter
+
+Description
+  Note that connector is only valid within the list body, if you want to use connector after calling drm_connector_list_iter_end() then you need to grab
+your own reference first using drm_connector_get() .

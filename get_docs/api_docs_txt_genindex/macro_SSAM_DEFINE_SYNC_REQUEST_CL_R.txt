@@ -1,0 +1,20 @@
+Macro: SSAM_DEFINE_SYNC_REQUEST_CL_R
+
+
+
+Parameters
+  name
+    Name of the generated function.
+  rtype
+    Type of the request’s return value.
+  spec...
+    Specification ( struct ssam_request_spec_md ) defining the request.
+
+Description
+  Defines a function executing the synchronous SAM request specified by spec , with the request taking no argument but having a return value of
+type rtype . Device specifying parameters are not hard-coded, but instead
+are provided via the client device, specifically its UID, supplied when
+calling this function. The generated function takes care of setting up the
+request struct, buffer allocation, as well as execution of the request
+itself, returning once the request has been fully completed. The required
+transport buffer will be allocated on the stack.

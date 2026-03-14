@@ -1,0 +1,7 @@
+Macro: drm_gpuva_last_op
+
+
+
+Parameters
+  ops
+    the drm_gpuva_ops to get the last drm_gpuva_op from

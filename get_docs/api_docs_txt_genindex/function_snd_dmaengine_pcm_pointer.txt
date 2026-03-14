@@ -1,0 +1,11 @@
+Function: snd_pcm_uframes_t snd_dmaengine_pcm_pointer ( struct snd_pcm_substream * substream )
+
+dmaengine based PCM pointer implementation
+
+Parameters
+  struct snd_pcm_substream *substream
+    PCM substream
+
+Description
+  This function can be used as the PCM pointer callback for dmaengine based PCM
+driver implementations.

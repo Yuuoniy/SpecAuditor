@@ -1,0 +1,9 @@
+Function: void zynqmp_disp_blend_layer_enable ( struct zynqmp_disp * disp , struct zynqmp_disp_layer * layer )
+
+Enable a layer
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller
+  struct zynqmp_disp_layer *layer
+    The layer

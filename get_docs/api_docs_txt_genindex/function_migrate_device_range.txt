@@ -1,0 +1,16 @@
+Function: int migrate_device_range ( unsigned long * src_pfns , unsigned long start , unsigned long npages )
+
+migrate device private pfns to normal memory.
+
+Parameters
+  unsigned long *src_pfns
+    array large enough to hold migrating source device private pfns.
+  unsigned long start
+    starting pfn in the range to migrate.
+  unsigned long npages
+    number of pages to migrate.
+
+Description
+  migrate_vma_setup() is similar in concept to migrate_vma_setup() except that
+instead of looking up pages based on virtual address mappings a range of
+device pfns that should be migrated to system memory is used instead.

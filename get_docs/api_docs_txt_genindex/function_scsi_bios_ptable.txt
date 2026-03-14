@@ -1,0 +1,10 @@
+Function: unsigned char * scsi_bios_ptable ( struct gendisk * dev )
+
+Read PC partition table out of first sector of device.
+
+Parameters
+  struct gendisk *dev
+    from this device
+
+Description
+  starting at offset 0x1be .

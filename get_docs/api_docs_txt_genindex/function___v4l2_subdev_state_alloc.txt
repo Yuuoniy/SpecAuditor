@@ -1,0 +1,14 @@
+Function: struct v4l2_subdev_state * __v4l2_subdev_state_alloc ( struct v4l2_subdev * sd , const char * lock_name , struct lock_class_key * key )
+
+allocate v4l2_subdev_state
+
+Parameters
+  struct v4l2_subdev *sd
+    pointer to struct v4l2_subdev for which the state is being allocated.
+  const char *lock_name
+    name of the state lock
+  struct lock_class_key *key
+    lock_class_key for the lock
+
+Description
+  Must call __v4l2_subdev_state_free() when state is no longer needed.

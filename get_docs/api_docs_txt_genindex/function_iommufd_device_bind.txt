@@ -1,0 +1,14 @@
+Function: struct iommufd_device * iommufd_device_bind ( struct iommufd_ctx * ictx , struct device * dev , u32 * id )
+
+Bind a physical device to an iommu fd
+
+Parameters
+  struct iommufd_ctx *ictx
+    iommufd file descriptor
+  struct device *dev
+    Pointer to a physical device struct
+  u32 *id
+    Output ID number to return to userspace for this device
+
+Description
+  A successful bind establishes an ownership over the device and returns struct iommufd_device pointer, otherwise returns error pointer.

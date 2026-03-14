@@ -1,0 +1,13 @@
+Function: void amdgpu_bo_placement_from_domain ( struct amdgpu_bo * abo , u32 domain )
+
+set buffer’s placement
+
+Parameters
+  struct amdgpu_bo *abo
+    amdgpu_bo buffer object whose placement is to be set
+  u32 domain
+    requested domain
+
+Description
+  Sets buffer’s placement according to requested domain and the buffer’s
+flags.

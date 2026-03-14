@@ -1,0 +1,15 @@
+Function: void drm_gpuvm_resv_add_fence ( struct drm_gpuvm * gpuvm , struct drm_exec * exec , struct dma_fence * fence , enum dma_resv_usage private_usage , enum dma_resv_usage extobj_usage )
+
+add fence to private and all extobj dma-resv
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm to add a fence to
+  struct drm_exec *exec
+    the drm_exec locking context
+  struct dma_fence *fence
+    fence to add
+  enum dma_resv_usage private_usage
+    private dma-resv usage
+  enum dma_resv_usage extobj_usage
+    extobj dma-resv usage

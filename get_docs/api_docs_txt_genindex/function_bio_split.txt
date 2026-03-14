@@ -1,0 +1,16 @@
+Function: struct bio * bio_split ( struct bio * bio , int sectors , gfp_t gfp , struct bio_set * bs )
+
+split a bio
+
+Parameters
+  struct bio *bio
+    bio to split
+  int sectors
+    number of sectors to split from the front of bio
+  gfp_t gfp
+    gfp mask
+  struct bio_set *bs
+    bio set to allocate from
+
+Description
+  Allocates and returns a new bio which represents sectors from the start of bio , and updates bio to represent the remaining sectors.

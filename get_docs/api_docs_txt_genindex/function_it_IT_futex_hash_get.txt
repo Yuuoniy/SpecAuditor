@@ -1,0 +1,11 @@
+Function: void futex_hash_get ( struct futex_hash_bucket * hb )
+
+Get an additional reference for the local hash.
+
+Parameters
+  struct futex_hash_bucket *hb
+    ptr to the private local hash.
+
+Description
+  Obtain an additional reference for the already obtained hash bucket. The
+caller must already own an reference.

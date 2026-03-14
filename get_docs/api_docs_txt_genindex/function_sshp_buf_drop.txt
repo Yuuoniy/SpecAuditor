@@ -1,0 +1,13 @@
+Function: void sshp_buf_drop ( struct sshp_buf * buf , size_t n )
+
+Drop data from the beginning of the buffer.
+
+Parameters
+  struct sshp_buf *buf
+    The buffer to drop data from.
+  size_t n
+    The number of bytes to drop.
+
+Description
+  Drops the first n bytes from the buffer. Re-aligns any remaining data to
+the beginning of the buffer.

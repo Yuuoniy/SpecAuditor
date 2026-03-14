@@ -1,0 +1,11 @@
+Function: int v4l2_s_parm_cap ( struct video_device * vdev , struct v4l2_subdev * sd , struct v4l2_streamparm * a )
+
+helper routine for vidioc_s_parm to fill this in by calling the set_frame_interval op of the given subdev. It only works for V4L2_BUF_TYPE_VIDEO_CAPTURE(_MPLANE), hence the _cap in the function name.
+
+Parameters
+  struct video_device *vdev
+    the struct video_device pointer. Used to determine the device caps.
+  struct v4l2_subdev *sd
+    the sub-device pointer.
+  struct v4l2_streamparm *a
+    the VIDIOC_S_PARM argument.

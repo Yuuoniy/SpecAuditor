@@ -1,0 +1,16 @@
+Function: void drm_bridge_hpd_enable ( struct drm_bridge * bridge , void ( * cb ) ( void * data , enum drm_connector_status status ) , void * data )
+
+enable hot plug detection for the bridge
+
+Parameters
+  struct drm_bridge *bridge
+    bridge control structure
+  void (*cb)(void *data, enum drm_connector_status status)
+    hot-plug detection callback
+  void *data
+    data to be passed to the hot-plug detection callback
+
+Description
+  Call drm_bridge_funcs.hpd_enable if implemented and register the given cb and data as hot plug notification callback. From now on the cb will be
+called with data when an output status change is detected by the bridge,
+until hot plug notification gets disabled with drm_bridge_hpd_disable() .

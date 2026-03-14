@@ -1,0 +1,5 @@
+Macro: NTSYNC_IOC_SET_EVENT
+
+Signal an event object. Takes a pointer to a 32-bit integer, which on
+output contains the previous state of the event. Eligible threads will be woken, and auto-reset events will be
+designaled appropriately.

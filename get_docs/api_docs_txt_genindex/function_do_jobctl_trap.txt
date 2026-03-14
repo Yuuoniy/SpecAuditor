@@ -1,0 +1,13 @@
+Function: void do_jobctl_trap ( void )
+
+take care of ptrace jobctl traps
+
+Parameters
+  void
+    no arguments
+
+Description
+  When PT_SEIZED, it’s used for both group stop and explicit
+SEIZE/INTERRUPT traps.  Both generate PTRACE_EVENT_STOP trap with
+accompanying siginfo.  If stopped, lower eight bits of exit_code contain
+the stop signal; otherwise, SIGTRAP .

@@ -1,0 +1,15 @@
+Function: int vb2_prepare_buf ( struct vb2_queue * q , struct media_device * mdev , struct v4l2_buffer * b )
+
+Pass ownership of a buffer from userspace to the kernel
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  struct media_device *mdev
+    pointer to struct media_device , may be NULL.
+  struct v4l2_buffer *b
+    buffer structure passed from userspace to v4l2_ioctl_ops->vidioc_prepare_buf handler in driver
+
+Description
+  Should be called from v4l2_ioctl_ops->vidioc_prepare_buf ioctl handler
+of a driver.

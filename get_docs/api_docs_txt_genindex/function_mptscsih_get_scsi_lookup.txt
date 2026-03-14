@@ -1,0 +1,12 @@
+Function: struct scsi_cmnd * mptscsih_get_scsi_lookup ( MPT_ADAPTER * ioc , int i )
+
+retrieves scmd entry
+
+Parameters
+  MPT_ADAPTER *ioc
+    Pointer to MPT_ADAPTER structure
+  int i
+    index into the array
+
+Description
+  Returns the scsi_cmd pointer

@@ -1,0 +1,15 @@
+Function: int nand_fill_column_cycles ( struct nand_chip * chip , u8 * addrs , unsigned int offset_in_page )
+
+fill the column cycles of an address
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+  u8 *addrs
+    Array of address cycles to fill
+  unsigned int offset_in_page
+    The offset in the page
+
+Description
+  Fills the first or the first two bytes of the addrs field depending
+on the NAND bus width and the page size.

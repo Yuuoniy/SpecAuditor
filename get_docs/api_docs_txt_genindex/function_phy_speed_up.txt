@@ -1,0 +1,10 @@
+Function: int phy_speed_up ( struct phy_device * phydev )
+
+(re)set advertised speeds to all supported speeds
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+
+Description
+  Used to revert the effect of phy_speed_down

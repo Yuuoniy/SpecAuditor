@@ -1,0 +1,13 @@
+Struct: struct ipu3_uapi_radial_reset_xy
+
+Radial coordinate reset
+
+Members
+  x
+    Radial reset of x coordinate. Precision s12, [-4095, 4095], default 0.
+  reserved0
+    reserved
+  y
+    Radial center y coordinate. Precision s12, [-4095, 4095], default 0.
+  reserved1
+    reserved

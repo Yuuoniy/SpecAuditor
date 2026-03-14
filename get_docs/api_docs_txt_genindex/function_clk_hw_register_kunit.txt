@@ -1,0 +1,15 @@
+Function: int clk_hw_register_kunit ( struct kunit * test , struct device * dev , struct clk_hw * hw )
+
+Test managed clk_hw_register()
+
+Parameters
+  struct kunit *test
+    The test context
+  struct device *dev
+    device that is registering this clock
+  struct clk_hw *hw
+    link to hardware-specific clock data
+
+Description
+  Just like clk_hw_register() , except the clk registration is managed by the
+test case and is automatically unregistered after the test case concludes.

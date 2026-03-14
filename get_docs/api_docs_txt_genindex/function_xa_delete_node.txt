@@ -1,0 +1,9 @@
+Function: void xa_delete_node ( struct xa_node * node , xa_update_node_t update )
+
+Private interface for workingset code.
+
+Parameters
+  struct xa_node *node
+    Node to be removed from the tree.
+  xa_update_node_t update
+    Function to call to update ancestor nodes.

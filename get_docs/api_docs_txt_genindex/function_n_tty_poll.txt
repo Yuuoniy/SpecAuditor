@@ -1,0 +1,16 @@
+Function: __poll_t n_tty_poll ( struct tty_struct * tty , struct file * file , poll_table * wait )
+
+poll method for N_TTY
+
+Parameters
+  struct tty_struct *tty
+    terminal device
+  struct file *file
+    file accessing it
+  poll_table *wait
+    poll table
+
+Description
+  Called when the line discipline is asked to poll() for data or for special
+events. This code is not serialized with respect to other events save
+open/close.

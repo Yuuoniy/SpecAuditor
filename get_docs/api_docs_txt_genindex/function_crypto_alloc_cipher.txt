@@ -1,0 +1,16 @@
+Function: struct crypto_cipher * crypto_alloc_cipher ( const char * alg_name , u32 type , u32 mask )
+
+allocate single block cipher handle
+
+Parameters
+  const char *alg_name
+    is the cra_name / name or cra_driver_name / driver name of the
+single block cipher
+  u32 type
+    specifies the type of the cipher
+  u32 mask
+    specifies the mask for the cipher
+
+Description
+  Allocate a cipher handle for a single block cipher. The returned struct crypto_cipher is the cipher handle that is required for any subsequent API
+invocation for that single block cipher.

@@ -1,0 +1,10 @@
+Function: void snd_soc_dapm_free_widget ( struct snd_soc_dapm_widget * w )
+
+Free specified widget
+
+Parameters
+  struct snd_soc_dapm_widget *w
+    widget to free
+
+Description
+  Removes widget from all paths and frees memory occupied by it.

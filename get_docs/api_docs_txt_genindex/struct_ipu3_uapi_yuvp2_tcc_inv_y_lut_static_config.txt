@@ -1,0 +1,10 @@
+Struct: struct ipu3_uapi_yuvp2_tcc_inv_y_lut_static_config
+
+Total color correction inverse y lookup table
+
+Members
+  entries
+    lookup table for inverse y estimation, and use it to estimate the
+ratio between luma and chroma. Chroma by approximate the absolute
+value of the radius on the chroma plane (R = sqrt(u^2+v^2) ) and
+luma by approximate by 1/Y.

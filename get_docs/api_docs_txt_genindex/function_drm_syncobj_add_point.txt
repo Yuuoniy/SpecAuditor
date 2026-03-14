@@ -1,0 +1,16 @@
+Function: void drm_syncobj_add_point ( struct drm_syncobj * syncobj , struct dma_fence_chain * chain , struct dma_fence * fence , uint64_t point )
+
+add new timeline point to the syncobj
+
+Parameters
+  struct drm_syncobj *syncobj
+    sync object to add timeline point do
+  struct dma_fence_chain *chain
+    chain node to use to add the point
+  struct dma_fence *fence
+    fence to encapsulate in the chain node
+  uint64_t point
+    sequence number to use for the point
+
+Description
+  Add the chain node as new timeline point to the syncobj.

@@ -1,0 +1,12 @@
+Macro: write_seqcount_begin_nested
+
+
+
+Parameters
+  s
+    Pointer to seqcount_t or any of the seqcount_LOCKNAME_t variants
+  subclass
+    lockdep nesting level
+
+Description
+  See Runtime locking correctness validator

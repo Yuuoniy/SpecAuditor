@@ -1,0 +1,7 @@
+Function: void cec_notifier_conn_unregister ( struct cec_notifier * n )
+
+decrease refcount and delete when the refcount reaches 0.
+
+Parameters
+  struct cec_notifier *n
+    notifier. If NULL, then this function does nothing.

@@ -1,0 +1,13 @@
+Function: blk_status_t blk_execute_rq ( struct request * rq , bool at_head )
+
+insert a request into queue for execution
+
+Parameters
+  struct request *rq
+    request to insert
+  bool at_head
+    insert request at head or tail of queue
+
+Description
+  Insert a fully prepared request at the back of the I/O scheduler queue
+for execution and wait for completion.

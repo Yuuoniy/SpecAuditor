@@ -1,0 +1,13 @@
+Function: void netdev_upper_dev_unlink ( struct net_device * dev , struct net_device * upper_dev )
+
+Removes a link to upper device
+
+Parameters
+  struct net_device *dev
+    device
+  struct net_device *upper_dev
+    new upper device
+
+Description
+  Removes a link to device which is upper to this one. The caller must hold
+the RTNL lock.

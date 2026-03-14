@@ -1,0 +1,14 @@
+Function: int security_inode_alloc ( struct inode * inode , gfp_t gfp )
+
+Allocate an inode LSM blob
+
+Parameters
+  struct inode *inode
+    the inode
+  gfp_t gfp
+    allocation flags
+
+Description
+  Allocate and attach a security structure to inode->i_security .  The
+i_security field is initialized to NULL when the inode structure is
+allocated.

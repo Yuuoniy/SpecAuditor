@@ -1,0 +1,12 @@
+Function: void blk_mq_destroy_queue ( struct request_queue * q )
+
+shutdown a request queue
+
+Parameters
+  struct request_queue *q
+    request queue to shutdown
+
+Description
+  This shuts down a request queue allocated by blk_mq_alloc_queue() . All future
+requests will be failed with -ENODEV. The caller is responsible for dropping
+the reference from blk_mq_alloc_queue() by calling blk_put_queue() .

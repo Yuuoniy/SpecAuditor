@@ -1,0 +1,9 @@
+Function: void kernel_fpu_begin ( void )
+
+These functions create a floating-point critical section. It is only
+valid to call kernel_fpu_begin() after a previous call to kernel_fpu_available() returned true . These functions are only
+guaranteed to be callable from (preemptible or non-preemptible) process
+context. Preemption may be disabled inside critical sections, so their size
+should be minimized. They are not required to be reentrant. If the
+caller expects to nest critical sections, it must implement its own
+reference counting.

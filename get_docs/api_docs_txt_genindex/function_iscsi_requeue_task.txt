@@ -1,0 +1,10 @@
+Function: void iscsi_requeue_task ( struct iscsi_task * task )
+
+requeue task to run from session workqueue
+
+Parameters
+  struct iscsi_task *task
+    task to requeue
+
+Description
+  Callers must have taken a ref to the task that is going to be requeued.

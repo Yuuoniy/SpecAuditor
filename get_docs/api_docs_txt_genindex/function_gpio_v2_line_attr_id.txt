@@ -1,0 +1,3 @@
+Function: enum gpio_v2_line_attr_id
+
+struct gpio_v2_line_attribute .id values identifying which field of the attribute union is in use.

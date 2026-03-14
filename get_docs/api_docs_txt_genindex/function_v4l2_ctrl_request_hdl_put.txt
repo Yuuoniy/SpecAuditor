@@ -1,0 +1,10 @@
+Function: void v4l2_ctrl_request_hdl_put ( struct v4l2_ctrl_handler * hdl )
+
+Put the control handler
+
+Parameters
+  struct v4l2_ctrl_handler *hdl
+    Put this control handler
+
+Description
+  This function released the control handler previously obtained from’ v4l2_ctrl_request_hdl_find() .

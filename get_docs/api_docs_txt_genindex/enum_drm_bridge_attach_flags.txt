@@ -1,0 +1,3 @@
+Enum: enum drm_bridge_attach_flags
+
+Flags for drm_bridge_funcs.attach

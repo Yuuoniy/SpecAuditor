@@ -1,0 +1,14 @@
+Function: void cdev_set_parent ( struct cdev * p , struct kobject * kobj )
+
+set the parent kobject for a char device
+
+Parameters
+  struct cdev *p
+    the cdev structure
+  struct kobject *kobj
+    the kobject to take a reference to
+
+Description
+  cdev_set_parent() sets a parent kobject which will be referenced
+appropriately so the parent is not freed before the cdev. This
+should be called before cdev_add.

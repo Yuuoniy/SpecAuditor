@@ -1,0 +1,7 @@
+Function: struct device * i3cdev_to_dev ( struct i3c_device * i3cdev )
+
+Returns the device embedded in i3cdev
+
+Parameters
+  struct i3c_device *i3cdev
+    I3C device

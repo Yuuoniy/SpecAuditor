@@ -1,0 +1,12 @@
+Function: const struct drm_panel_backlight_quirk * drm_get_panel_backlight_quirk ( const struct drm_edid * edid )
+
+Get backlight quirks for a panel
+
+Parameters
+  const struct drm_edid *edid
+    EDID of the panel to check
+
+Description
+  This function checks for platform specific (e.g. DMI based) quirks
+providing info on the minimum backlight brightness for systems where this
+cannot be probed correctly from the hard-/firm-ware and other sources.

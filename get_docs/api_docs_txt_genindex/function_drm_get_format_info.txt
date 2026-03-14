@@ -1,0 +1,11 @@
+Function: const struct drm_format_info * drm_get_format_info ( struct drm_device * dev , u32 pixel_format , u64 modifier )
+
+query information for a given framebuffer configuration
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  u32 pixel_format
+    pixel format (DRM_FORMAT_*)
+  u64 modifier
+    modifier

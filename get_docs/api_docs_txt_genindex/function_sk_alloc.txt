@@ -1,0 +1,15 @@
+Function: struct sock * sk_alloc ( struct net * net , int family , gfp_t priority , struct proto * prot , int kern )
+
+All socket objects are allocated here
+
+Parameters
+  struct net *net
+    the applicable net namespace
+  int family
+    protocol family
+  gfp_t priority
+    for allocation ( GFP_KERNEL , GFP_ATOMIC , etc)
+  struct proto *prot
+    struct proto associated with this new sock instance
+  int kern
+    is this to be a kernel socket?

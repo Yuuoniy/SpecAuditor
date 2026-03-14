@@ -1,0 +1,13 @@
+Function: struct device_driver * driver_find ( const char * name , const struct bus_type * bus )
+
+locate driver on a bus by its name.
+
+Parameters
+  const char *name
+    name of the driver.
+  const struct bus_type *bus
+    bus to scan for the driver.
+
+Description
+  Call kset_find_obj() to iterate over list of drivers on
+a bus to find driver by name. Return driver if found.

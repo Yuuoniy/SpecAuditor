@@ -1,0 +1,11 @@
+Function: int ieee80211_data_to_8023 ( struct sk_buff * skb , const u8 * addr , enum nl80211_iftype iftype )
+
+convert an 802.11 data frame to 802.3
+
+Parameters
+  struct sk_buff *skb
+    the 802.11 data frame
+  const u8 *addr
+    the device MAC address
+  enum nl80211_iftype iftype
+    the virtual interface type

@@ -1,0 +1,15 @@
+Function: unsigned long gen_pool_alloc ( struct gen_pool * pool , size_t size )
+
+allocate special memory from the pool
+
+Parameters
+  struct gen_pool *pool
+    pool to allocate from
+  size_t size
+    number of bytes to allocate from the pool
+
+Description
+  Allocate the requested number of bytes from the specified pool.
+Uses the pool allocation function (with first-fit algorithm by default).
+Can not be used in NMI handler on architectures without
+NMI-safe cmpxchg implementation.

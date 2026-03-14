@@ -1,0 +1,7 @@
+Function: void debug_unregister ( debug_info_t * id )
+
+give back debug area.
+
+Parameters
+  debug_info_t *id
+    handle for debug log

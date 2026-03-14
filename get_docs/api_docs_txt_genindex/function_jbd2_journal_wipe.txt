@@ -1,0 +1,14 @@
+Function: int jbd2_journal_wipe ( journal_t * journal , int write )
+
+Wipe journal contents
+
+Parameters
+  journal_t *journal
+    Journal to act on.
+  int write
+    flag (see below)
+
+Description
+  Wipe out all of the contents of a journal, safely.  This will produce
+a warning if the journal contains any valid recovery information.
+Must be called between journal_init_*() and jbd2_journal_load() .

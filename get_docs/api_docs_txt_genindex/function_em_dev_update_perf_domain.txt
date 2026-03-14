@@ -1,0 +1,12 @@
+Function: int em_dev_update_perf_domain ( struct device * dev , struct em_perf_table * new_table )
+
+Update runtime EM table for a device
+
+Parameters
+  struct device *dev
+    Device for which the EM is to be updated
+  struct em_perf_table *new_table
+    The new EM table that is going to be used from now
+
+Description
+  Update EM runtime modifiable table for the dev using the provided table .

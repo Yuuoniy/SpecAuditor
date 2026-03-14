@@ -1,0 +1,21 @@
+Struct: struct ipu3_uapi_yuvp1_chnr_sense_gain_config
+
+Chroma noise reduction gains
+
+Members
+  vy
+    Sensitivity of horizontal edge of Y, default 100
+  vu
+    Sensitivity of horizontal edge of U, default 100
+  vv
+    Sensitivity of horizontal edge of V, default 100
+  reserved0
+    reserved
+  hy
+    Sensitivity of vertical edge of Y, default 50
+  hu
+    Sensitivity of vertical edge of U, default 50
+  hv
+    Sensitivity of vertical edge of V, default 50
+  reserved1
+    reserved

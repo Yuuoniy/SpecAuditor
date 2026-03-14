@@ -1,0 +1,13 @@
+Function: void iommufd_device_unbind ( struct iommufd_device * idev )
+
+Undo iommufd_device_bind()
+
+Parameters
+  struct iommufd_device *idev
+    Device returned by iommufd_device_bind()
+
+Description
+  Release the device from iommufd control. The DMA ownership will return back
+to unowned with DMA controlled by the DMA API. This invalidates the
+iommufd_device pointer, other APIs that consume it must not be called
+concurrently.

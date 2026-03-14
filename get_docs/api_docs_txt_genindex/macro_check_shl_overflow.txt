@@ -1,0 +1,14 @@
+Macro: check_shl_overflow
+
+
+
+Parameters
+  a
+    Value to be shifted
+  s
+    How many bits left to shift
+  d
+    Pointer to where to store the result
+
+Description
+  Computes *d = ( a << s )

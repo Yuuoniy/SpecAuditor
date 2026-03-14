@@ -1,0 +1,11 @@
+Function: void dma_fence_enable_sw_signaling ( struct dma_fence * fence )
+
+enable signaling on fence
+
+Parameters
+  struct dma_fence *fence
+    the fence to enable
+
+Description
+  This will request for sw signaling to be enabled, to make the fence
+complete as soon as possible. This calls dma_fence_ops.enable_signaling internally.

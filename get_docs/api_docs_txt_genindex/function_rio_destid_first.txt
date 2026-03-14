@@ -1,0 +1,7 @@
+Function: u16 rio_destid_first ( struct rio_net * net )
+
+return first destID in use
+
+Parameters
+  struct rio_net *net
+    RIO network

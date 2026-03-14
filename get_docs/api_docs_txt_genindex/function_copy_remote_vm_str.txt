@@ -1,0 +1,18 @@
+Function: int copy_remote_vm_str ( struct task_struct * tsk , unsigned long addr , void * buf , int len , unsigned int gup_flags )
+
+copy a string from another process’s address space.
+
+Parameters
+  struct task_struct *tsk
+    the task of the target address space
+  unsigned long addr
+    start address to read from
+  void *buf
+    destination buffer
+  int len
+    number of bytes to copy
+  unsigned int gup_flags
+    flags modifying lookup behaviour
+
+Description
+  The caller must hold a reference on mm .

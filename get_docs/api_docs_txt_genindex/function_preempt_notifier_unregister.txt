@@ -1,0 +1,10 @@
+Function: void preempt_notifier_unregister ( struct preempt_notifier * notifier )
+
+no longer interested in preemption notifications
+
+Parameters
+  struct preempt_notifier *notifier
+    notifier struct to unregister
+
+Description
+  This is not safe to call from within a preemption notifier.

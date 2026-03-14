@@ -1,0 +1,7 @@
+Function: int usb_anchor_empty ( struct usb_anchor * anchor )
+
+is an anchor empty
+
+Parameters
+  struct usb_anchor *anchor
+    the anchor you want to query

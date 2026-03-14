@@ -1,0 +1,7 @@
+Function: void mctrl_gpio_enable_ms ( struct mctrl_gpios * gpios )
+
+enable irqs and handling of changes to the ms lines
+
+Parameters
+  struct mctrl_gpios *gpios
+    gpios to enable

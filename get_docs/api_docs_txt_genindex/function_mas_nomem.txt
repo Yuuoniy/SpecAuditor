@@ -1,0 +1,9 @@
+Function: bool mas_nomem ( struct ma_state * mas , gfp_t gfp )
+
+Check if there was an error allocating and do the allocation if necessary If there are allocations, then free them.
+
+Parameters
+  struct ma_state *mas
+    The maple state
+  gfp_t gfp
+    The GFP_FLAGS to use for allocations

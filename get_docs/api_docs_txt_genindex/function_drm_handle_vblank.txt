@@ -1,0 +1,13 @@
+Function: bool drm_handle_vblank ( struct drm_device * dev , unsigned int pipe )
+
+handle a vblank event
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  unsigned int pipe
+    index of CRTC where this event occurred
+
+Description
+  Drivers should call this routine in their vblank interrupt handlers to
+update the vblank counter and send any signals that may be pending.

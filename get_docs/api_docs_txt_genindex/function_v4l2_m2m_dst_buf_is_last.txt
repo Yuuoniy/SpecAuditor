@@ -1,0 +1,11 @@
+Function: bool v4l2_m2m_dst_buf_is_last ( struct v4l2_m2m_ctx * m2m_ctx )
+
+return the current encoding/decoding session draining management state of next queued capture buffer
+
+Parameters
+  struct v4l2_m2m_ctx *m2m_ctx
+    m2m context assigned to the instance given by struct v4l2_m2m_ctx
+
+Description
+  This last capture buffer should be tagged with V4L2_BUF_FLAG_LAST to notify
+the end of the capture session.

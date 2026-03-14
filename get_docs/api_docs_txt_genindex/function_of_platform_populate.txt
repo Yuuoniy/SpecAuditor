@@ -1,0 +1,21 @@
+Function: int of_platform_populate ( struct device_node * root , const struct of_device_id * matches , const struct of_dev_auxdata * lookup , struct device * parent )
+
+Populate platform_devices from device tree data
+
+Parameters
+  struct device_node *root
+    parent of the first level to probe or NULL for the root of the tree
+  const struct of_device_id *matches
+    match table, NULL to use the default
+  const struct of_dev_auxdata *lookup
+    auxdata table for matching id and platform_data with device nodes
+  struct device *parent
+    parent to hook devices from, NULL for toplevel
+
+Description
+  Similar to of_platform_bus_probe() , this function walks the device tree
+and creates devices from nodes.  It differs in that it follows the modern
+convention of requiring all device nodes to have a ‘compatible’ property,
+and it is suitable for creating devices which are children of the root
+node (of_platform_bus_probe will only create children of the root which
+are selected by the matches argument).

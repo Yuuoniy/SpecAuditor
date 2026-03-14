@@ -1,0 +1,11 @@
+Function: void mutex_lock ( struct mutex * lock )
+
+acquire the mutex
+
+Parameters
+  struct mutex *lock
+    the mutex to be acquired
+
+Description
+  Lock the mutex exclusively for this task. If the mutex is not
+available right now, it will sleep until it can get it.

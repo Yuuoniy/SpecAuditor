@@ -1,0 +1,16 @@
+Function: int amdgpu_dm_atomic_check ( struct drm_device * dev , struct drm_atomic_state * state )
+
+Atomic check implementation for AMDgpu DM.
+
+Parameters
+  struct drm_device *dev
+    The DRM device
+  struct drm_atomic_state *state
+    The atomic state to commit
+
+Description
+  Validate that the given atomic state is programmable by DC into hardware.
+This involves constructing a struct dc_state reflecting the new hardware
+state we wish to commit, then querying DC to see if it is programmable. It’s
+important not to modify the existing DC state. Otherwise, atomic_check
+may unexpectedly commit hardware changes.

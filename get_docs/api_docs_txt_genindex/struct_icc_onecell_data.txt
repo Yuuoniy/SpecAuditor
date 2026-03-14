@@ -1,0 +1,9 @@
+Struct: struct icc_onecell_data
+
+driver data for onecell interconnect providers
+
+Members
+  num_nodes
+    number of nodes in this device
+  nodes
+    array of pointers to the nodes in this device

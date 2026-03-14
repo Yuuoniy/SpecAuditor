@@ -1,0 +1,16 @@
+Function: int nand_scan_with_ids ( struct nand_chip * chip , unsigned int maxchips , struct nand_flash_dev * ids )
+
+[NAND Interface] Scan for the NAND device
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+  unsigned int maxchips
+    number of chips to scan for.
+  struct nand_flash_dev *ids
+    optional flash IDs table
+
+Description
+  This fills out all the uninitialized function pointers with the defaults.
+The flash ID is read and the mtd/chip structures are filled with the
+appropriate values.

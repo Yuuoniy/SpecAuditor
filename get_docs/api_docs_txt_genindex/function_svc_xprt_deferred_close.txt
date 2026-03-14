@@ -1,0 +1,11 @@
+Function: void svc_xprt_deferred_close ( struct svc_xprt * xprt )
+
+Close a transport
+
+Parameters
+  struct svc_xprt *xprt
+    transport instance
+
+Description
+  Used in contexts that need to defer the work of shutting down
+the transport to an nfsd thread.

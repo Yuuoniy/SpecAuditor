@@ -1,0 +1,7 @@
+Function: void * wiphy_priv ( struct wiphy * wiphy )
+
+return priv from wiphy
+
+Parameters
+  struct wiphy *wiphy
+    the wiphy whose priv pointer to return

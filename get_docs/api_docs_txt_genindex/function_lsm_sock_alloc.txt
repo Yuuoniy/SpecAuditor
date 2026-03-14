@@ -1,0 +1,12 @@
+Function: int lsm_sock_alloc ( struct sock * sock , gfp_t gfp )
+
+allocate a composite sock blob
+
+Parameters
+  struct sock *sock
+    the sock that needs a blob
+  gfp_t gfp
+    allocation mode
+
+Description
+  Allocate the sock blob for all the modules

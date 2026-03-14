@@ -1,0 +1,13 @@
+Function: int clk_get_scaled_duty_cycle ( struct clk * clk , unsigned int scale )
+
+return the duty cycle ratio of a clock signal
+
+Parameters
+  struct clk *clk
+    clock signal source
+  unsigned int scale
+    scaling factor to be applied to represent the ratio as an integer
+
+Description
+  Returns the duty cycle ratio multiplied by the scale provided, otherwise
+returns -EERROR.

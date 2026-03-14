@@ -1,0 +1,13 @@
+Function: void cond_synchronize_rcu_expedited ( unsigned long oldstate )
+
+Conditionally wait for an expedited RCU grace period
+
+Parameters
+  unsigned long oldstate
+    value from get_state_synchronize_rcu() , start_poll_synchronize_rcu() , or start_poll_synchronize_rcu_expedited()
+
+Description
+  If any type of full RCU grace period has elapsed since the earlier
+call to get_state_synchronize_rcu() , start_poll_synchronize_rcu() ,
+or start_poll_synchronize_rcu_expedited() , just return.  Otherwise,
+invoke synchronize_rcu_expedited() to wait for a full grace period.

@@ -1,0 +1,10 @@
+Function: struct dma_fence * dma_fence_allocate_private_stub ( ktime_t timestamp )
+
+return a private, signaled fence
+
+Parameters
+  ktime_t timestamp
+    timestamp when the fence was signaled
+
+Description
+  Return a newly allocated and signaled stub fence.

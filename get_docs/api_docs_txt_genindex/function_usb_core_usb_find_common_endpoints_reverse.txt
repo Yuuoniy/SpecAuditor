@@ -1,0 +1,20 @@
+Function: int usb_find_common_endpoints_reverse ( struct usb_host_interface * alt , struct usb_endpoint_descriptor * * bulk_in , struct usb_endpoint_descriptor * * bulk_out , struct usb_endpoint_descriptor * * int_in , struct usb_endpoint_descriptor * * int_out )
+
+look up common endpoint descriptors
+
+Parameters
+  struct usb_host_interface *alt
+    alternate setting to search
+  struct usb_endpoint_descriptor **bulk_in
+    pointer to descriptor pointer, or NULL
+  struct usb_endpoint_descriptor **bulk_out
+    pointer to descriptor pointer, or NULL
+  struct usb_endpoint_descriptor **int_in
+    pointer to descriptor pointer, or NULL
+  struct usb_endpoint_descriptor **int_out
+    pointer to descriptor pointer, or NULL
+
+Description
+  Search the alternate setting’s endpoint descriptors for the last bulk-in,
+bulk-out, interrupt-in and interrupt-out endpoints and return them in the
+provided pointers (unless they are NULL).

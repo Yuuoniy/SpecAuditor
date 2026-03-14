@@ -1,0 +1,7 @@
+Function: void __folio_clear_lru_flags ( struct folio * folio )
+
+Clear page lru flags before releasing a page.
+
+Parameters
+  struct folio *folio
+    The folio that was on lru and now has a zero reference.

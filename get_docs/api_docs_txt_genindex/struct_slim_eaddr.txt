@@ -1,0 +1,13 @@
+Struct: struct slim_eaddr
+
+Enumeration address for a SLIMbus device
+
+Members
+  instance
+    Instance value
+  dev_index
+    Device index
+  prod_code
+    Product code
+  manf_id
+    Manufacturer Id for the device

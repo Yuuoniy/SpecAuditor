@@ -1,0 +1,17 @@
+Macro: kfifo_from_user
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used
+  from
+    pointer to the data to be added
+  len
+    the length of the data to be added
+  copied
+    pointer to output variable to store the number of copied bytes
+
+Description
+  This macro copies at most len bytes from the from into the
+fifo, depending of the available space and returns -EFAULT/0.

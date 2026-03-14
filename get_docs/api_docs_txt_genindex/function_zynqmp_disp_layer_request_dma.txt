@@ -1,0 +1,12 @@
+Function: int zynqmp_disp_layer_request_dma ( struct zynqmp_disp * disp , struct zynqmp_disp_layer * layer )
+
+Request DMA channels for a layer
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller
+  struct zynqmp_disp_layer *layer
+    The layer
+
+Description
+  Request all DMA engine channels needed by layer .

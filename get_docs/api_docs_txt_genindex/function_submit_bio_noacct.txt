@@ -1,0 +1,12 @@
+Function: void submit_bio_noacct ( struct bio * bio )
+
+re-submit a bio to the block device layer for I/O
+
+Parameters
+  struct bio *bio
+    The bio describing the location in memory and on the device.
+
+Description
+  This is a version of submit_bio() that shall only be used for I/O that is
+resubmitted to lower level drivers by stacking block drivers.  All file
+systems and other upper level users of the block layer should use submit_bio() instead.

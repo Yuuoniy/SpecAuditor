@@ -1,0 +1,27 @@
+Struct: struct survey_info
+
+channel survey response
+
+Members
+  channel
+    the channel this survey record reports, may be NULL for a single
+record to report global statistics
+  time
+    amount of time in ms the radio was turn on (on the channel)
+  time_busy
+    amount of time the primary channel was sensed busy
+  time_ext_busy
+    amount of time the extension channel was sensed busy
+  time_rx
+    amount of time the radio spent receiving data
+  time_tx
+    amount of time the radio spent transmitting data
+  time_scan
+    amount of time the radio spent for scanning
+  time_bss_rx
+    amount of time the radio spent receiving data on a local BSS
+  filled
+    bitflag of flags from enum survey_info_flags
+  noise
+    channel noise in dBm. This and all following fields are
+optional

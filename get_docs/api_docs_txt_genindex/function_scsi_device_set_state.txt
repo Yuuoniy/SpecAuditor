@@ -1,0 +1,13 @@
+Function: int scsi_device_set_state ( struct scsi_device * sdev , enum scsi_device_state state )
+
+Take the given device through the device state model.
+
+Parameters
+  struct scsi_device *sdev
+    scsi device to change the state of.
+  enum scsi_device_state state
+    state to change to.
+
+Description
+  Returns zero if successful or an error if the requested
+transition is illegal.

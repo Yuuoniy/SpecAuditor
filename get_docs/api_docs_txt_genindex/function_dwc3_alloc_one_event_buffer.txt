@@ -1,0 +1,13 @@
+Function: struct dwc3_event_buffer * dwc3_alloc_one_event_buffer ( struct dwc3 * dwc , unsigned int length )
+
+Allocates one event buffer structure
+
+Parameters
+  struct dwc3 *dwc
+    Pointer to our controller context structure
+  unsigned int length
+    size of the event buffer
+
+Description
+  Returns a pointer to the allocated event buffer structure on success
+otherwise ERR_PTR(errno).

@@ -1,0 +1,15 @@
+Struct: struct iser_device
+
+iSER device handle
+
+Members
+  ib_device
+    RDMA device
+  pd
+    Protection Domain for this device
+  event_handler
+    IB events handle routine
+  ig_list
+    entry in devices list
+  refcount
+    Reference counter, dominated by open iser connections

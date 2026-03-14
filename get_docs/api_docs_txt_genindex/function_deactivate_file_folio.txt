@@ -1,0 +1,12 @@
+Function: void deactivate_file_folio ( struct folio * folio )
+
+Deactivate a file folio.
+
+Parameters
+  struct folio *folio
+    Folio to deactivate.
+
+Description
+  This function hints to the VM that folio is a good reclaim candidate,
+for example if its invalidation fails due to the folio being dirty
+or under writeback.

@@ -1,0 +1,9 @@
+Function: int xe_pm_set_vram_threshold ( struct xe_device * xe , u32 threshold )
+
+Set a VRAM threshold for allowing/blocking D3Cold
+
+Parameters
+  struct xe_device *xe
+    xe device instance
+  u32 threshold
+    VRAM size in MiB for the D3cold threshold

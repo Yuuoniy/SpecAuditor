@@ -1,0 +1,19 @@
+Function: int mapping_wrprotect_range ( struct address_space * mapping , pgoff_t pgoff , unsigned long pfn , unsigned long nr_pages )
+
+Write-protect all mappings in a specified range.
+
+Parameters
+  struct address_space *mapping
+    The mapping whose reverse mapping should be traversed.
+  pgoff_t pgoff
+    The page offset at which pfn is mapped within mapping .
+  unsigned long pfn
+    The PFN of the page mapped in mapping at pgoff .
+  unsigned long nr_pages
+    The number of physically contiguous base pages spanned.
+
+Description
+  Traverses the reverse mapping, finding all VMAs which contain a shared
+mapping of the pages in the specified range in mapping , and write-protects
+them (that is, updates the page tables to mark the mappings read-only such
+that a write protection fault arises when the mappings are written to).

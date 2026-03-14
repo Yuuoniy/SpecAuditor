@@ -1,0 +1,10 @@
+Function: void irq_cpu_offline ( void )
+
+Invoke all irq_cpu_offline functions.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Iterate through all irqs and invoke the chip. irq_cpu_offline() for each.

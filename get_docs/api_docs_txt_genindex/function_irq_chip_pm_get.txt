@@ -1,0 +1,11 @@
+Function: int irq_chip_pm_get ( struct irq_data * data )
+
+Enable power for an IRQ chip
+
+Parameters
+  struct irq_data *data
+    Pointer to interrupt specific data
+
+Description
+  Enable the power to the IRQ chip referenced by the interrupt data
+structure.

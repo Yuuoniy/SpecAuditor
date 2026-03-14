@@ -1,0 +1,9 @@
+Function: int put_itimerspec64 ( const struct itimerspec64 * it , struct __kernel_itimerspec __user * uit )
+
+convert struct itimerspec64 to __kernel_itimerspec format and copy the latter to userspace
+
+Parameters
+  const struct itimerspec64 *it
+    input struct itimerspec64
+  struct __kernel_itimerspec __user *uit
+    user’s struct __kernel_itimerspec

@@ -1,0 +1,12 @@
+Function: void snd_compr_task_finished ( struct snd_compr_stream * stream , struct snd_compr_task_runtime * task )
+
+Notify that the task was finished
+
+Parameters
+  struct snd_compr_stream *stream
+    pointer to stream
+  struct snd_compr_task_runtime *task
+    runtime task structure
+
+Description
+  Set the finished task state and notify waiters.

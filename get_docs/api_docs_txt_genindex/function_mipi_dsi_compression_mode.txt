@@ -1,0 +1,13 @@
+Function: int mipi_dsi_compression_mode ( struct mipi_dsi_device * dsi , bool enable )
+
+enable/disable DSC on the peripheral
+
+Parameters
+  struct mipi_dsi_device *dsi
+    DSI peripheral device
+  bool enable
+    Whether to enable or disable the DSC
+
+Description
+  Enable or disable Display Stream Compression on the peripheral using the
+default Picture Parameter Set and VESA DSC 1.1 algorithm.

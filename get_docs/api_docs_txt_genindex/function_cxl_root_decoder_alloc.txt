@@ -1,0 +1,9 @@
+Function: struct cxl_root_decoder * cxl_root_decoder_alloc ( struct cxl_port * port , unsigned int nr_targets )
+
+Allocate a root level decoder
+
+Parameters
+  struct cxl_port *port
+    owning CXL root of this decoder
+  unsigned int nr_targets
+    static number of downstream targets

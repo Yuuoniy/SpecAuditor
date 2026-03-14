@@ -1,0 +1,10 @@
+Function: void drm_panel_remove ( struct drm_panel * panel )
+
+remove a panel from the global registry
+
+Parameters
+  struct drm_panel *panel
+    DRM panel
+
+Description
+  Removes a panel from the global registry.

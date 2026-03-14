@@ -1,0 +1,7 @@
+Function: void iio_buffer_put ( struct iio_buffer * buffer )
+
+Release the reference to the buffer
+
+Parameters
+  struct iio_buffer *buffer
+    The buffer to release the reference for, may be NULL

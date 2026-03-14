@@ -1,0 +1,12 @@
+Function: int cpuhp_state_remove_instance_nocalls ( enum cpuhp_state state , struct hlist_node * node )
+
+Remove hotplug instance from state without invoking the teardown callback
+
+Parameters
+  enum cpuhp_state state
+    The state from which the instance is removed
+  struct hlist_node *node
+    The node for this individual state.
+
+Description
+  Removes the instance without invoking the teardown callback.

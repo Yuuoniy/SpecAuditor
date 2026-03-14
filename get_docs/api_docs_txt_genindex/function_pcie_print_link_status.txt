@@ -1,0 +1,10 @@
+Function: void pcie_print_link_status ( struct pci_dev * dev )
+
+Report the PCI device’s link speed and width
+
+Parameters
+  struct pci_dev *dev
+    PCI device to query
+
+Description
+  Report the available bandwidth at the device.

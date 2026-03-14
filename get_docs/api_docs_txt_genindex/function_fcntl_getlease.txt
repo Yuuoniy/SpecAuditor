@@ -1,0 +1,11 @@
+Function: int fcntl_getlease ( struct file * filp )
+
+Enquire what lease is currently active
+
+Parameters
+  struct file *filp
+    the file
+
+Description
+  The value returned by this function will be one of
+(if no lease break is pending):

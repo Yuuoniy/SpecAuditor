@@ -1,0 +1,26 @@
+Function: void v4l2_ctrl_fill ( u32 id , const char * * name , enum v4l2_ctrl_type * type , s64 * min , s64 * max , u64 * step , s64 * def , u32 * flags )
+
+Fill in the control fields based on the control ID.
+
+Parameters
+  u32 id
+    ID of the control
+  const char **name
+    pointer to be filled with a string with the name of the control
+  enum v4l2_ctrl_type *type
+    pointer for storing the type of the control
+  s64 *min
+    pointer for storing the minimum value for the control
+  s64 *max
+    pointer for storing the maximum value for the control
+  u64 *step
+    pointer for storing the control step
+  s64 *def
+    pointer for storing the default value for the control
+  u32 *flags
+    pointer for storing the flags to be used on the control
+
+Description
+  This works for all standard V4L2 controls.
+For non-standard controls it will only fill in the given arguments
+and name content will be set to NULL .

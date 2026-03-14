@@ -1,0 +1,10 @@
+Function: void zynqmp_dp_train_loop ( struct zynqmp_dp * dp )
+
+Downshift the link rate during training
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure
+
+Description
+  Train the link by downshifting the link rate if training is not successful.

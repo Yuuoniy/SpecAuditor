@@ -1,0 +1,16 @@
+Function: void drm_print_bits ( struct drm_printer * p , unsigned long value , const char * const bits [ ] , unsigned int nbits )
+
+print bits to a drm_printer stream
+
+Parameters
+  struct drm_printer *p
+    the drm_printer
+  unsigned long value
+    field value.
+  const char * const bits[]
+    Array with bit names.
+  unsigned int nbits
+    Size of bit names array.
+
+Description
+  Print bits (in flag fields for example) in human readable form.

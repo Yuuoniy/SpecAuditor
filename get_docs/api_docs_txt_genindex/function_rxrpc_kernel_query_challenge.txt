@@ -1,0 +1,18 @@
+Function: void rxrpc_kernel_query_challenge ( struct sk_buff * challenge , struct rxrpc_peer * * _peer , unsigned long * _peer_appdata , u16 * _service_id , u8 * _security_index )
+
+Query the parameters of a challenge
+
+Parameters
+  struct sk_buff *challenge
+    The challenge to query
+  struct rxrpc_peer **_peer
+    Where to return the peer record
+  unsigned long *_peer_appdata
+    The application data attached to a peer record
+  u16 *_service_id
+    Where to return the connection service ID
+  u8 *_security_index
+    Where to return the connection security index
+
+Description
+  Extract useful parameters from a CHALLENGE message.

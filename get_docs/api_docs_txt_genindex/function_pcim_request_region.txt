@@ -1,0 +1,14 @@
+Function: int pcim_request_region ( struct pci_dev * pdev , int bar , const char * name )
+
+Request a PCI BAR
+
+Parameters
+  struct pci_dev *pdev
+    PCI device to request region for
+  int bar
+    Index of BAR to request
+  const char *name
+    Name of the driver requesting the resource
+
+Description
+  Request region specified by bar .

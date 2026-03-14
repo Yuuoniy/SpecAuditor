@@ -1,0 +1,30 @@
+Function: bool v4l2_detect_gtf ( unsigned int frame_height , unsigned int hfreq , unsigned int vsync , u32 polarities , bool interlaced , struct v4l2_fract aspect , const struct v4l2_dv_timings_cap * cap , struct v4l2_dv_timings * fmt )
+
+detect if the given timings follow the GTF standard
+
+Parameters
+  unsigned int frame_height
+    the total height of the frame (including blanking) in lines.
+  unsigned int hfreq
+    the horizontal frequency in Hz.
+  unsigned int vsync
+    the height of the vertical sync in lines.
+  u32 polarities
+    the horizontal and vertical polarities (same as struct v4l2_bt_timings polarities).
+  bool interlaced
+    if this flag is true, it indicates interlaced format
+  struct v4l2_fract aspect
+    preferred aspect ratio. GTF has no method of determining the
+aspect ratio in order to derive the image width from the
+image height, so it has to be passed explicitly. Usually
+the native screen aspect ratio is used for this. If it
+is not filled in correctly, then 16:9 will be assumed.
+  const struct v4l2_dv_timings_cap *cap
+    the v4l2_dv_timings_cap capabilities.
+  struct v4l2_dv_timings *fmt
+    the resulting timings.
+
+Description
+  This function will attempt to detect if the given values correspond to a
+valid GTF format. If so, then it will return true, and fmt will be filled
+in with the found GTF timings.

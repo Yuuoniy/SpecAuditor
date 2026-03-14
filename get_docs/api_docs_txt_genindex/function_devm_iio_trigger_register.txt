@@ -1,0 +1,15 @@
+Function: int devm_iio_trigger_register ( struct device * dev , struct iio_trigger * trig_info )
+
+Resource-managed iio_trigger_register()
+
+Parameters
+  struct device *dev
+    device this trigger was allocated for
+  struct iio_trigger *trig_info
+    trigger to register
+
+Description
+  Managed iio_trigger_register() .  The IIO trigger registered with this
+function is automatically unregistered on driver detach. This function
+calls iio_trigger_register() internally. Refer to that function for more
+information.

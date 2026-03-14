@@ -1,0 +1,10 @@
+Function: struct socket * sock_from_file ( struct file * file )
+
+Return the socket bounded to file .
+
+Parameters
+  struct file *file
+    file
+
+Description
+  On failure returns NULL .

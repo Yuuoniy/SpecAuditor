@@ -1,0 +1,11 @@
+Function: unsigned int pci_scan_child_bus ( struct pci_bus * bus )
+
+Scan devices below a bus
+
+Parameters
+  struct pci_bus *bus
+    Bus to scan for devices
+
+Description
+  Scans devices below bus including subordinate buses. Returns new
+subordinate number including all the found devices.

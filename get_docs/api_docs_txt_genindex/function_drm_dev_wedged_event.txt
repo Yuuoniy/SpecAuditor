@@ -1,0 +1,16 @@
+Function: int drm_dev_wedged_event ( struct drm_device * dev , unsigned long method , struct drm_wedge_task_info * info )
+
+generate a device wedged uevent
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  unsigned long method
+    method(s) to be used for recovery
+  struct drm_wedge_task_info *info
+    optional information about the guilty task
+
+Description
+  This generates a device wedged uevent for the DRM device specified by dev .
+Recovery method (s) of choice will be sent in the uevent environment as WEDGED=<method1>[,..,<methodN>] in order of less to more side-effects.
+If caller is unsure about recovery or method is unknown (0), WEDGED=unknown will be sent instead.

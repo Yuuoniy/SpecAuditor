@@ -1,0 +1,3 @@
+Function: enum blk_eh_timer_return
+
+How the timeout handler should proceed

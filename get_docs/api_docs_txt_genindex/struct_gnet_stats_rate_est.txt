@@ -1,0 +1,9 @@
+Struct: struct gnet_stats_rate_est
+
+rate estimator
+
+Members
+  bps
+    current byte rate
+  pps
+    current packet rate

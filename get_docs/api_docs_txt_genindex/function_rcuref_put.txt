@@ -1,0 +1,10 @@
+Function: bool rcuref_put ( rcuref_t * ref )
+
+Release one reference for a rcuref reference count
+
+Parameters
+  rcuref_t *ref
+    Pointer to the reference count
+
+Description
+  Can be invoked from any context.

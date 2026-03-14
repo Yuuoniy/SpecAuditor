@@ -1,0 +1,24 @@
+Struct: struct rkisp1_cif_isp_ie_config
+
+Configuration used by image effects
+
+Members
+  effect
+    values from ‘ enum v4l2_colorfx ’. Possible values are: V4L2_COLORFX_SEPIA,
+V4L2_COLORFX_SET_CBCR, V4L2_COLORFX_AQUA, V4L2_COLORFX_EMBOSS,
+V4L2_COLORFX_SKETCH,   V4L2_COLORFX_BW,   V4L2_COLORFX_NEGATIVE
+  color_sel
+    bits 0:2 - colors bitmask (001 - blue, 010 - green, 100 - red).
+bits 8:15 - Threshold value of the RGB colors for the color selection effect.
+  eff_mat_1
+    3x3 Matrix Coefficients for Emboss Effect 1
+  eff_mat_2
+    3x3 Matrix Coefficients for Emboss Effect 2
+  eff_mat_3
+    3x3 Matrix Coefficients for Emboss 3/Sketch 1
+  eff_mat_4
+    3x3 Matrix Coefficients for Sketch Effect 2
+  eff_mat_5
+    3x3 Matrix Coefficients for Sketch Effect 3
+  eff_tint
+    Chrominance increment values of tint (used for sepia effect)

@@ -1,0 +1,13 @@
+Function: irqreturn_t ctucan_interrupt ( int irq , void * dev_id )
+
+CAN Isr
+
+Parameters
+  int irq
+    irq number
+  void *dev_id
+    device id pointer
+
+Description
+  This is the CTU CAN FD ISR. It checks for the type of interrupt
+and invokes the corresponding ISR.

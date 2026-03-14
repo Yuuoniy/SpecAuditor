@@ -1,0 +1,15 @@
+Function: struct folio * mapping_read_folio_gfp ( struct address_space * mapping , pgoff_t index , gfp_t gfp )
+
+Read into page cache, using specified allocation flags.
+
+Parameters
+  struct address_space *mapping
+    The address_space for the folio.
+  pgoff_t index
+    The index that the allocated folio will contain.
+  gfp_t gfp
+    The page allocator flags to use if allocating.
+
+Description
+  This is the same as “read_cache_folio(mapping, index, NULL, NULL)”, but with
+any new memory allocations done using the specified allocation flags.

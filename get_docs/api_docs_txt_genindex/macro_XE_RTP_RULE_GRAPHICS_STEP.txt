@@ -1,0 +1,13 @@
+Macro: XE_RTP_RULE_GRAPHICS_STEP
+
+
+
+Parameters
+  start_
+    First stepping matching the rule
+  end_
+    First stepping that does not match the rule
+
+Description
+  Note that the range matching this rule is [ start_ , end_ ), i.e. inclusive
+on the left, exclusive on the right.

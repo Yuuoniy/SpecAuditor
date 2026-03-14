@@ -1,0 +1,20 @@
+Function: void skcipher_request_set_crypt ( struct skcipher_request * req , struct scatterlist * src , struct scatterlist * dst , unsigned int cryptlen , void * iv )
+
+set data buffers
+
+Parameters
+  struct skcipher_request *req
+    request handle
+  struct scatterlist *src
+    source scatter / gather list
+  struct scatterlist *dst
+    destination scatter / gather list
+  unsigned int cryptlen
+    number of bytes to process from src
+  void *iv
+    IV for the cipher operation which must comply with the IV size defined
+by crypto_skcipher_ivsize
+
+Description
+  This function allows setting of the source data and destination data
+scatter / gather lists.

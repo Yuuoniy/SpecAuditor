@@ -1,0 +1,12 @@
+Function: void drm_connector_list_update ( struct drm_connector * connector )
+
+update the mode list for the connector
+
+Parameters
+  struct drm_connector *connector
+    the connector to update
+
+Description
+  This moves the modes from the connector probed_modes list
+to the actual mode list. It compares the probed mode against the current
+list and only adds different/new modes.

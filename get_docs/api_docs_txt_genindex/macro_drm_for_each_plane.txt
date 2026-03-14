@@ -1,0 +1,12 @@
+Macro: drm_for_each_plane
+
+
+
+Parameters
+  plane
+    the loop cursor
+  dev
+    the DRM device
+
+Description
+  Iterate over all planes of dev , include primary and cursor planes.

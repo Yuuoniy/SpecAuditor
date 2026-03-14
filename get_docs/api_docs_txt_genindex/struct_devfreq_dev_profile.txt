@@ -1,0 +1,46 @@
+Struct: struct devfreq_dev_profile
+
+Devfreq’s user device profile
+
+Members
+  initial_freq
+    The operating frequency when devfreq_add_device() is
+called.
+  polling_ms
+    The polling interval in ms. 0 disables polling.
+  timer
+    Timer type is either deferrable or delayed timer.
+  target
+    The device should set its operating frequency at
+freq or lowest-upper-than-freq value. If freq is
+higher than any operable frequency, set maximum.
+Before returning, target function should set
+freq at the current frequency.
+The “flags” parameter’s possible values are
+explained above with “DEVFREQ_FLAG_*” macros.
+  get_dev_status
+    The device should provide the current performance
+status to devfreq. Governors are recommended not to
+use this directly. Instead, governors are recommended
+to use devfreq_update_stats() along with
+devfreq.last_status.
+  get_cur_freq
+    The device should provide the current frequency
+at which it is operating.
+  exit
+    An optional callback that is called when devfreq
+is removing the devfreq object due to error or
+from devfreq_remove_device() call. If the user
+has registered devfreq->nb at a notifier-head,
+this is the time to unregister it.
+  freq_table
+    Optional list of frequencies to support statistics
+and freq_table must be generated in ascending order.
+  max_state
+    The size of freq_table.
+  is_cooling_device
+    A self-explanatory boolean giving the device a
+cooling effect property.
+  dev_groups
+    Optional device-specific sysfs attribute groups that to
+be attached to the devfreq device.

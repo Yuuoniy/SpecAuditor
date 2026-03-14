@@ -1,0 +1,14 @@
+Function: void drm_writeback_queue_job ( struct drm_writeback_connector * wb_connector , struct drm_connector_state * conn_state )
+
+Queue a writeback job for later signalling
+
+Parameters
+  struct drm_writeback_connector *wb_connector
+    The writeback connector to queue a job on
+  struct drm_connector_state *conn_state
+    The connector state containing the job to queue
+
+Description
+  This function adds the job contained in conn_state to the job_queue for a
+writeback connector. It takes ownership of the writeback job and sets the conn_state->writeback_job to NULL, and so no access to the job may be
+performed by the caller after this function returns.

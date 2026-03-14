@@ -1,0 +1,12 @@
+Function: unsigned long nsecs_to_jiffies ( u64 n )
+
+Convert nsecs in u64 to jiffies
+
+Parameters
+  u64 n
+    nsecs in u64
+
+Description
+  Unlike {m,u}secs_to_jiffies, type of input is not unsigned int but u64.
+And this doesn’t return MAX_JIFFY_OFFSET since this function is designed
+for scheduler, not for use in device drivers to calculate timeout value.

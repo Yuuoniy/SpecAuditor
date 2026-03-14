@@ -1,0 +1,30 @@
+Struct: struct usb_configuration
+
+represents one gadget configuration
+
+Members
+  label
+    For diagnostics, describes the configuration.
+  strings
+    Tables of strings, keyed by identifiers assigned during bind() and by language IDs provided in control requests.
+  descriptors
+    Table of descriptors preceding all function descriptors.
+Examples include OTG and vendor-specific descriptors.
+  unbind
+    Reverses bind ; called as a side effect of unregistering the
+driver which added this configuration.
+  setup
+    Used to delegate control requests that aren’t handled by standard
+device infrastructure or directed at a specific interface.
+  bConfigurationValue
+    Copied into configuration descriptor.
+  iConfiguration
+    Copied into configuration descriptor.
+  bmAttributes
+    Copied into configuration descriptor.
+  MaxPower
+    Power consumption in mA. Used to compute bMaxPower in the
+configuration descriptor after considering the bus speed.
+  cdev
+    assigned by usb_add_config() before calling bind() ; this is
+the device associated with this configuration.

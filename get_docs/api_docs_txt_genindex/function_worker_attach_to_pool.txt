@@ -1,0 +1,14 @@
+Function: void worker_attach_to_pool ( struct worker * worker , struct worker_pool * pool )
+
+attach a worker to a pool
+
+Parameters
+  struct worker *worker
+    worker to be attached
+  struct worker_pool *pool
+    the target pool
+
+Description
+  Attach worker to pool .  Once attached, the WORKER_UNBOUND flag and
+cpu-binding of worker are kept coordinated with the pool across
+cpu-[un]hotplugs.

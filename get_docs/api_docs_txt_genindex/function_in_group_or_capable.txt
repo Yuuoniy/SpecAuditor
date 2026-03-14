@@ -1,0 +1,16 @@
+Function: bool in_group_or_capable ( struct mnt_idmap * idmap , const struct inode * inode , vfsgid_t vfsgid )
+
+check whether caller is CAP_FSETID privileged
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount inode was found from
+  const struct inode *inode
+    inode to check
+  vfsgid_t vfsgid
+    the new/current vfsgid of inode
+
+Description
+  Check whether vfsgid is in the caller’s group list or if the caller is
+privileged with CAP_FSETID over inode . This can be used to determine
+whether the setgid bit can be kept or must be dropped.

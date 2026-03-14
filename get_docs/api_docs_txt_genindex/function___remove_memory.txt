@@ -1,0 +1,9 @@
+Function: void __remove_memory ( u64 start , u64 size )
+
+Remove memory if every memory block is offline
+
+Parameters
+  u64 start
+    physical address of the region to remove
+  u64 size
+    size of the region to remove

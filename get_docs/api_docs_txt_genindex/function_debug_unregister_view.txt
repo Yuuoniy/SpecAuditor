@@ -1,0 +1,9 @@
+Function: int debug_unregister_view ( debug_info_t * id , struct debug_view * view )
+
+unregisters debug view and removes debugfs dir entry
+
+Parameters
+  debug_info_t *id
+    handle for debug log
+  struct debug_view *view
+    pointer to debug view struct

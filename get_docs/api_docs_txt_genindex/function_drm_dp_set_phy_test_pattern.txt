@@ -1,0 +1,14 @@
+Function: int drm_dp_set_phy_test_pattern ( struct drm_dp_aux * aux , struct drm_dp_phy_test_params * data , u8 dp_rev )
+
+set the pattern to the sink.
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  struct drm_dp_phy_test_params *data
+    DP phy compliance test parameters.
+  u8 dp_rev
+    DP revision to use for compliance testing
+
+Description
+  Returns 0 on success or a negative error code on failure.

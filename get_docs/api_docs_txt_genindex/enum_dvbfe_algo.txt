@@ -1,0 +1,3 @@
+Enum: enum dvbfe_algo
+
+defines the algorithm used to tune into a channel

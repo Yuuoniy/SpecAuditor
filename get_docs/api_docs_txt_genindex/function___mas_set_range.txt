@@ -1,0 +1,15 @@
+Function: void __mas_set_range ( struct ma_state * mas , unsigned long start , unsigned long last )
+
+Set up Maple Tree operation state to a sub-range of the current location.
+
+Parameters
+  struct ma_state *mas
+    Maple Tree operation state.
+  unsigned long start
+    New start of range in the Maple Tree.
+  unsigned long last
+    New end of range in the Maple Tree.
+
+Description
+  set the internal maple state values to a sub-range.
+Please use mas_set_range() if you do not know where you are in the tree.

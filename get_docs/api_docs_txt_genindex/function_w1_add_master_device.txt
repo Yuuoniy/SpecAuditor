@@ -1,0 +1,7 @@
+Function: int w1_add_master_device ( struct w1_bus_master * master )
+
+registers a new master device
+
+Parameters
+  struct w1_bus_master *master
+    master bus device to register

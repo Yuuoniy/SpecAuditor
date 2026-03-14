@@ -1,0 +1,9 @@
+Function: void audit_filter_uring ( struct task_struct * tsk , struct audit_context * ctx )
+
+apply filters to an io_uring operation
+
+Parameters
+  struct task_struct *tsk
+    associated task
+  struct audit_context *ctx
+    audit context

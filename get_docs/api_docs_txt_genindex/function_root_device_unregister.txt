@@ -1,0 +1,10 @@
+Function: void root_device_unregister ( struct device * dev )
+
+unregister and free a root device
+
+Parameters
+  struct device *dev
+    device going away
+
+Description
+  This function unregisters and cleans up a device that was created by root_device_register() .

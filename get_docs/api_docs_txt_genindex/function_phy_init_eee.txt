@@ -1,0 +1,15 @@
+Function: int phy_init_eee ( struct phy_device * phydev , bool clk_stop_enable )
+
+init and check the EEE feature
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+  bool clk_stop_enable
+    PHY may stop the clock during LPI
+
+Description
+  it checks if the Energy-Efficient Ethernet (EEE)
+is supported by looking at the MMD registers 3.20 and 7.60/61
+and it programs the MMD register 3.0 setting the “Clock stop enable”
+bit if required.

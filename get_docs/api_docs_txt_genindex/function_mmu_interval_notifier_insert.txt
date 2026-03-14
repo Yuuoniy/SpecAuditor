@@ -1,0 +1,20 @@
+Function: int mmu_interval_notifier_insert ( struct mmu_interval_notifier * interval_sub , struct mm_struct * mm , unsigned long start , unsigned long length , const struct mmu_interval_notifier_ops * ops )
+
+Insert an interval notifier
+
+Parameters
+  struct mmu_interval_notifier *interval_sub
+    Interval subscription to register
+  struct mm_struct *mm
+    mm_struct to attach to
+  unsigned long start
+    Starting virtual address to monitor
+  unsigned long length
+    Length of the range to monitor
+  const struct mmu_interval_notifier_ops *ops
+    Interval notifier operations to be called on matching events
+
+Description
+  This function subscribes the interval notifier for notifications from the
+mm.  Upon return the ops related to mmu_interval_notifier will be called
+whenever an event that intersects with the given range occurs.

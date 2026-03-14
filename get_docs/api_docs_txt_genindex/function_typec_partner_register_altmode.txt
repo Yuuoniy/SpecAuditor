@@ -1,0 +1,14 @@
+Function: struct typec_altmode * typec_partner_register_altmode ( struct typec_partner * partner , const struct typec_altmode_desc * desc )
+
+Register USB Type-C Partner Alternate Mode
+
+Parameters
+  struct typec_partner *partner
+    USB Type-C Partner that supports the alternate mode
+  const struct typec_altmode_desc *desc
+    Description of the alternate mode
+
+Description
+  This routine is used to register each alternate mode individually that partner has listed in response to Discover SVIDs command. The modes for a
+SVID listed in response to Discover Modes command need to be listed in an
+array in desc .

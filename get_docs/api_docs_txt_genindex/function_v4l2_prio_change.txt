@@ -1,0 +1,14 @@
+Function: int v4l2_prio_change ( struct v4l2_prio_state * global , enum v4l2_priority * local , enum v4l2_priority new )
+
+changes the v4l2 file handler priority
+
+Parameters
+  struct v4l2_prio_state *global
+    pointer to the struct v4l2_prio_state of the device node.
+  enum v4l2_priority *local
+    pointer to the desired priority, as defined by enum v4l2_priority
+  enum v4l2_priority new
+    Priority type requested, as defined by enum v4l2_priority .
+
+Description
+  Note

@@ -1,0 +1,16 @@
+Function: void pcpu_reclaim_populated ( void )
+
+scan over to_depopulate chunks and free empty pages
+
+Parameters
+  void
+    no arguments
+
+Description
+  Scan over chunks in the depopulate list and try to release unused populated
+pages back to the system.  Depopulated chunks are sidelined to prevent
+repopulating these pages unless required.  Fully free chunks are reintegrated
+and freed accordingly (1 is kept around).  If we drop below the empty
+populated pages threshold, reintegrate the chunk if it has empty free pages.
+Each chunk is scanned in the reverse order to keep populated pages close to
+the beginning of the chunk.

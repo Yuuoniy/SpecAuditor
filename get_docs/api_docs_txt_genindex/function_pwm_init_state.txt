@@ -1,0 +1,17 @@
+Function: void pwm_init_state ( const struct pwm_device * pwm , struct pwm_state * state )
+
+prepare a new state to be applied with pwm_apply_might_sleep()
+
+Parameters
+  const struct pwm_device *pwm
+    PWM device
+  struct pwm_state *state
+    state to fill with the prepared PWM state
+
+Description
+  This functions prepares a state that can later be tweaked and applied
+to the PWM device with pwm_apply_might_sleep() . This is a convenient function
+that first retrieves the current PWM state and the replaces the period
+and polarity fields with the reference values defined in pwm->args.
+Once the function returns, you can adjust the ->enabled and ->duty_cycle
+fields according to your needs before calling pwm_apply_might_sleep() .

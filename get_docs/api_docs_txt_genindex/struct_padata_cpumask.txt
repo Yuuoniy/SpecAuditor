@@ -1,0 +1,9 @@
+Struct: struct padata_cpumask
+
+The cpumasks for the parallel/serial workers
+
+Members
+  pcpu
+    cpumask for the parallel workers.
+  cbcpu
+    cpumask for the serial (callback) workers.

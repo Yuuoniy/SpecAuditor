@@ -1,0 +1,14 @@
+Function: void xdr_truncate_encode ( struct xdr_stream * xdr , size_t len )
+
+truncate an encode buffer
+
+Parameters
+  struct xdr_stream *xdr
+    pointer to xdr_stream
+  size_t len
+    new length of buffer
+
+Description
+  Truncates the xdr stream, so that xdr->buf->len == len,
+and xdr->p points at offset len from the start of the buffer, and
+head, tail, and page lengths are adjusted to correspond.

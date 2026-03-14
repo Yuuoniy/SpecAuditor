@@ -1,0 +1,14 @@
+Function: int __aperture_remove_legacy_vga_devices ( struct pci_dev * pdev )
+
+remove legacy VGA devices of a PCI devices
+
+Parameters
+  struct pci_dev *pdev
+    PCI device
+
+Description
+  This function removes VGA devices provided by pdev , such as a VGA
+framebuffer or a console. This is useful if you have a VGA-compatible
+PCI graphics device with framebuffers in non-BAR locations. Drivers
+should acquire ownership of those memory areas and afterwards call
+this helper to release remaining VGA devices.

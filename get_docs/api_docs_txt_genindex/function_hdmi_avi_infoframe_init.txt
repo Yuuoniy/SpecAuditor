@@ -1,0 +1,7 @@
+Function: void hdmi_avi_infoframe_init ( struct hdmi_avi_infoframe * frame )
+
+initialize an HDMI AVI infoframe
+
+Parameters
+  struct hdmi_avi_infoframe *frame
+    HDMI AVI infoframe

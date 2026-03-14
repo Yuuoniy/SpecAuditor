@@ -1,0 +1,16 @@
+Function: int dwc3_prepare_last_sg ( struct dwc3_ep * dep , struct dwc3_request * req , unsigned int entry_length , unsigned int node )
+
+prepare TRBs for the last SG entry
+
+Parameters
+  struct dwc3_ep *dep
+    The endpoint that the request belongs to
+  struct dwc3_request *req
+    The request to prepare
+  unsigned int entry_length
+    The last SG entry size
+  unsigned int node
+    Indicates whether this is not the first entry (for isoc only)
+
+Description
+  Return the number of TRBs prepared.

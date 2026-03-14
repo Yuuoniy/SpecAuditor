@@ -1,0 +1,3 @@
+Enum: enum damos_quota_goal_metric
+
+Represents the metric to be used as the goal

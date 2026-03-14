@@ -1,0 +1,13 @@
+Function: void * vmalloc_node ( unsigned long size , int node )
+
+allocate memory on a specific node
+
+Parameters
+  unsigned long size
+    allocation size
+  int node
+    numa node
+
+Description
+  Allocate enough pages to cover size from the page level
+allocator and map them into contiguous kernel virtual space.

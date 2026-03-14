@@ -1,0 +1,7 @@
+Function: struct irq_domain * irq_domain_instantiate ( const struct irq_domain_info * info )
+
+Instantiate a new irq domain data structure
+
+Parameters
+  const struct irq_domain_info *info
+    Domain information pointer pointing to the information for this domain

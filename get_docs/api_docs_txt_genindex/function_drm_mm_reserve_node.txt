@@ -1,0 +1,16 @@
+Function: int drm_mm_reserve_node ( struct drm_mm * mm , struct drm_mm_node * node )
+
+insert an pre-initialized node
+
+Parameters
+  struct drm_mm *mm
+    drm_mm allocator to insert node into
+  struct drm_mm_node *node
+    drm_mm_node to insert
+
+Description
+  This functions inserts an already set-up drm_mm_node into the allocator,
+meaning that start, size and color must be set by the caller. All other
+fields must be cleared to 0. This is useful to initialize the allocator with
+preallocated objects which must be set-up before the range allocator can be
+set-up, e.g. when taking over a firmware framebuffer.

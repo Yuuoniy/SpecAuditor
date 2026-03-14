@@ -1,0 +1,24 @@
+Struct: struct dvb_demux_filter
+
+Describes a DVB demux section filter.
+
+Members
+  filter
+    Section filter as defined by struct dmx_section_filter .
+  maskandmode
+    logical and bit mask.
+  maskandnotmode
+    logical and not bit mask.
+  doneq
+    flag that indicates when a filter is ready.
+  next
+    pointer to the next section filter.
+  feed
+    struct dvb_demux_feed pointer.
+  index
+    index of the used demux filter.
+  state
+    state of the filter as described by enum dvb_dmx_state .
+  type
+    type of the filter as described
+by enum dvb_dmx_filter_type .

@@ -1,0 +1,15 @@
+Function: struct drm_asahi_gem_create
+
+Arguments passed to DRM_IOCTL_ASAHI_GEM_CREATE
+
+Members
+  size
+    Size of the BO
+  flags
+    Combination of drm_asahi_gem_flags flags.
+  vm_id
+    VM ID to assign to the BO, if DRM_ASAHI_GEM_VM_PRIVATE is set
+  handle
+    Returned GEM handle for the BO
+  pad
+    MBZ

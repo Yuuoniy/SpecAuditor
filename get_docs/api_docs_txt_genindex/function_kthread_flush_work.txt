@@ -1,0 +1,10 @@
+Function: void kthread_flush_work ( struct kthread_work * work )
+
+flush a kthread_work
+
+Parameters
+  struct kthread_work *work
+    work to flush
+
+Description
+  If work is queued or executing, wait for it to finish execution.

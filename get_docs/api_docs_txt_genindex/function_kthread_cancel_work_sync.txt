@@ -1,0 +1,12 @@
+Function: bool kthread_cancel_work_sync ( struct kthread_work * work )
+
+cancel a kthread work and wait for it to finish
+
+Parameters
+  struct kthread_work *work
+    the kthread work to cancel
+
+Description
+  Cancel work and wait for its execution to finish.  This function
+can be used even if the work re-queues itself. On return from this
+function, work is guaranteed to be not pending or executing on any CPU.

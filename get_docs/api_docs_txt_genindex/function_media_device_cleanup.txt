@@ -1,0 +1,11 @@
+Function: void media_device_cleanup ( struct media_device * mdev )
+
+Cleanups a media device element
+
+Parameters
+  struct media_device *mdev
+    pointer to struct media_device
+
+Description
+  This function that will destroy the graph_mutex that is
+initialized in media_device_init() .

@@ -1,0 +1,11 @@
+Struct: struct ieee80211_tx_rate
+
+rate selection/status
+
+Members
+  idx
+    rate index to attempt to send with
+  count
+    number of tries in this rate before going to the next rate
+  flags
+    rate control flags ( enum mac80211_rate_control_flags )

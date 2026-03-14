@@ -1,0 +1,11 @@
+Function: int mac_map_monitor_sense ( int sense )
+
+Convert monitor sense to vmode
+
+Parameters
+  int sense
+    Macintosh monitor sense number
+
+Description
+  Converts a Macintosh monitor sense number to a MacOS
+vmode number.

@@ -1,0 +1,17 @@
+Function: void ata_port_desc ( struct ata_port * ap , const char * fmt , ... )
+
+append port description
+
+Parameters
+  struct ata_port *ap
+    target ATA port
+  const char *fmt
+    printf format string
+  ...
+    variable arguments
+
+Description
+  Format string according to fmt and append it to port
+description.  If port description is not empty, “ “ is added
+in-between.  This function is to be used while initializing
+ata_host.  The description is printed on host registration.

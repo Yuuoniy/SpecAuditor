@@ -1,0 +1,19 @@
+Function: bool __drm_dp_mst_state_iter_get ( struct drm_atomic_state * state , struct drm_dp_mst_topology_mgr * * mgr , struct drm_dp_mst_topology_state * * old_state , struct drm_dp_mst_topology_state * * new_state , int i )
+
+private atomic state iterator function for macro-internal use
+
+Parameters
+  struct drm_atomic_state *state
+    struct drm_atomic_state pointer
+  struct drm_dp_mst_topology_mgr **mgr
+    pointer to the struct drm_dp_mst_topology_mgr iteration cursor
+  struct drm_dp_mst_topology_state **old_state
+    optional pointer to the old struct drm_dp_mst_topology_state iteration cursor
+  struct drm_dp_mst_topology_state **new_state
+    optional pointer to the new struct drm_dp_mst_topology_state iteration cursor
+  int i
+    int iteration cursor, for macro-internal use
+
+Description
+  Used by for_each_oldnew_mst_mgr_in_state() , for_each_old_mst_mgr_in_state() , and for_each_new_mst_mgr_in_state() . Don’t
+call this directly.

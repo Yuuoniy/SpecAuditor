@@ -1,0 +1,16 @@
+Function: int drm_dp_mst_detect_port ( struct drm_connector * connector , struct drm_modeset_acquire_ctx * ctx , struct drm_dp_mst_topology_mgr * mgr , struct drm_dp_mst_port * port )
+
+get connection status for an MST port
+
+Parameters
+  struct drm_connector *connector
+    DRM connector for this port
+  struct drm_modeset_acquire_ctx *ctx
+    The acquisition context to use for grabbing locks
+  struct drm_dp_mst_topology_mgr *mgr
+    manager for this port
+  struct drm_dp_mst_port *port
+    pointer to a port
+
+Description
+  This returns the current connection state for a port.

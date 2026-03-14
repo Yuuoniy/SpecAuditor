@@ -1,0 +1,2 @@
+Function: int close ( int fd )
+

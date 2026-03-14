@@ -1,0 +1,12 @@
+Function: void phy_resolve_aneg_pause ( struct phy_device * phydev )
+
+Determine pause autoneg results
+
+Parameters
+  struct phy_device *phydev
+    The phy_device struct
+
+Description
+  Once autoneg has completed the local pause settings can be
+resolved.  Determine if pause and asymmetric pause should be used
+by the MAC.

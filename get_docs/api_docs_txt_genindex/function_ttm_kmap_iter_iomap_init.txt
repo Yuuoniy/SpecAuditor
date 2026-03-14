@@ -1,0 +1,14 @@
+Function: struct ttm_kmap_iter * ttm_kmap_iter_iomap_init ( struct ttm_kmap_iter_iomap * iter_io , struct io_mapping * iomap , struct sg_table * st , resource_size_t start )
+
+Initialize a struct ttm_kmap_iter_iomap
+
+Parameters
+  struct ttm_kmap_iter_iomap *iter_io
+    The struct ttm_kmap_iter_iomap to initialize.
+  struct io_mapping *iomap
+    The struct io_mapping representing the underlying linear io_memory.
+  struct sg_table *st
+    sg_table into iomap , representing the memory of the struct ttm_resource .
+  resource_size_t start
+    Offset that needs to be subtracted from st to make
+sg_dma_address(st->sgl) - start == 0 for iomap start.

@@ -1,0 +1,17 @@
+Function: struct cxl_decoder * cxl_port_pick_region_decoder ( struct cxl_port * port , struct cxl_endpoint_decoder * cxled , struct cxl_region * cxlr )
+
+assign or lookup a decoder for a region
+
+Parameters
+  struct cxl_port *port
+    a port in the ancestry of the endpoint implied by cxled
+  struct cxl_endpoint_decoder *cxled
+    endpoint decoder to be, or currently, mapped by port
+  struct cxl_region *cxlr
+    region to establish, or validate, decode port
+
+Description
+  In the region creation path cxl_port_pick_region_decoder() is an
+allocator to find a free port. In the region assembly path, it is
+recalling the decoder that platform firmware picked for validation
+purposes.

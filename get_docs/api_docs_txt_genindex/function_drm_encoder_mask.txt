@@ -1,0 +1,11 @@
+Function: u32 drm_encoder_mask ( const struct drm_encoder * encoder )
+
+find the mask of a registered encoder
+
+Parameters
+  const struct drm_encoder *encoder
+    encoder to find mask for
+
+Description
+  Given a registered encoder, return the mask bit of that encoder for an
+encoder’s possible_clones field.

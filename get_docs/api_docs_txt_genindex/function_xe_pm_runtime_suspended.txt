@@ -1,0 +1,13 @@
+Function: bool xe_pm_runtime_suspended ( struct xe_device * xe )
+
+Check if runtime_pm state is suspended
+
+Parameters
+  struct xe_device *xe
+    xe device instance
+
+Description
+  This does not provide any guarantee that the device is going to remain
+suspended as it might be racing with the runtime state transitions.
+It can be used only as a non-reliable assertion, to ensure that we are not in
+the sleep state while trying to access some memory for instance.

@@ -1,0 +1,15 @@
+Function: ssize_t dvb_ringbuffer_read_user ( struct dvb_ringbuffer * rbuf , u8 __user * buf , size_t len )
+
+Reads a buffer into a user pointer
+
+Parameters
+  struct dvb_ringbuffer *rbuf
+    pointer to struct dvb_ringbuffer
+  u8 __user *buf
+    pointer to the buffer where the data will be stored
+  size_t len
+    bytes from ring buffer into buf
+
+Description
+  This variant assumes that the buffer is a memory at the userspace. So,
+it will internally call copy_to_user() .

@@ -1,0 +1,12 @@
+Function: void media_device_pci_init ( struct media_device * mdev , struct pci_dev * pci_dev , const char * name )
+
+create and initialize a struct media_device from a PCI device.
+
+Parameters
+  struct media_device *mdev
+    pointer to struct media_device
+  struct pci_dev *pci_dev
+    pointer to struct pci_dev
+  const char *name
+    media device name. If NULL , the routine will use the default
+name for the pci device, given by pci_name() macro.

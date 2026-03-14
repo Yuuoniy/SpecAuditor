@@ -1,0 +1,10 @@
+Function: void dmem_cgroup_unregister_region ( struct dmem_cgroup_region * region )
+
+Unregister a previously registered region.
+
+Parameters
+  struct dmem_cgroup_region *region
+    The region to unregister.
+
+Description
+  This function undoes dmem_cgroup_register_region.

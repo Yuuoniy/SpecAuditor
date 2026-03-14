@@ -1,0 +1,17 @@
+Function: int vme_lm_get ( struct vme_resource * resource , unsigned long long * lm_base , u32 * aspace , u32 * cycle )
+
+Retrieve location monitor settings
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME location monitor resource.
+  unsigned long long *lm_base
+    Pointer used to output the base address monitored.
+  u32 *aspace
+    Pointer used to output the address space monitored.
+  u32 *cycle
+    Pointer used to output the VME bus cycle type monitored.
+
+Description
+  Retrieve the base address, address space and cycle type of accesses to
+be monitored by the location monitor.

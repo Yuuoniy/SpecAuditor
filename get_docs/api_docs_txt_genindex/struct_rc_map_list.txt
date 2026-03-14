@@ -1,0 +1,9 @@
+Struct: struct rc_map_list
+
+list of the registered rc_map maps
+
+Members
+  list
+    pointer to struct list_head
+  map
+    pointer to struct rc_map

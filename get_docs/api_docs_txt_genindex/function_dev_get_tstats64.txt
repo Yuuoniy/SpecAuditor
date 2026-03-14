@@ -1,0 +1,12 @@
+Function: void dev_get_tstats64 ( struct net_device * dev , struct rtnl_link_stats64 * s )
+
+ndo_get_stats64 implementation
+
+Parameters
+  struct net_device *dev
+    device to get statistics from
+  struct rtnl_link_stats64 *s
+    place to store stats
+
+Description
+  Populate s from dev->stats and dev->tstats. Can be used as ndo_get_stats64() callback.

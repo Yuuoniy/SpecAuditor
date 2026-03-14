@@ -1,0 +1,14 @@
+Function: int simple_setattr ( struct mnt_idmap * idmap , struct dentry * dentry , struct iattr * iattr )
+
+setattr for simple filesystem
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the target mount
+  struct dentry *dentry
+    dentry
+  struct iattr *iattr
+    iattr structure
+
+Description
+  Returns 0 on success, -error on failure.

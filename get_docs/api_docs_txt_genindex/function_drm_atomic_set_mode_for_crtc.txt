@@ -1,0 +1,13 @@
+Function: int drm_atomic_set_mode_for_crtc ( struct drm_crtc_state * state , const struct drm_display_mode * mode )
+
+set mode for CRTC
+
+Parameters
+  struct drm_crtc_state *state
+    the CRTC whose incoming state to update
+  const struct drm_display_mode *mode
+    kernel-internal mode to use for the CRTC, or NULL to disable
+
+Description
+  Set a mode (originating from the kernel) on the desired CRTC state and update
+the enable property.

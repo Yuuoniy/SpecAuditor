@@ -1,0 +1,12 @@
+Function: struct worker_pool * get_work_pool ( struct work_struct * work )
+
+return the worker_pool a given work was associated with
+
+Parameters
+  struct work_struct *work
+    the work item of interest
+
+Description
+  Pools are created and destroyed under wq_pool_mutex, and allows read
+access under RCU read lock.  As such, this function should be
+called under wq_pool_mutex or inside of a rcu_read_lock() region.

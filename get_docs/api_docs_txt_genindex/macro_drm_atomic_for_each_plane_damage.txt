@@ -1,0 +1,14 @@
+Macro: drm_atomic_for_each_plane_damage
+
+
+
+Parameters
+  iter
+    The iterator to advance.
+  rect
+    Return a rectangle in fb coordinate clipped to plane src.
+
+Description
+  Note that if the first call to iterator macro return false then no need to do
+plane update. Iterator will return full plane src when damage is not passed
+by user-space.

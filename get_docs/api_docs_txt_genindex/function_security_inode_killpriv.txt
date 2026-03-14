@@ -1,0 +1,13 @@
+Function: int security_inode_killpriv ( struct mnt_idmap * idmap , struct dentry * dentry )
+
+The setuid bit is removed, update LSM state
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount
+  struct dentry *dentry
+    associated dentry
+
+Description
+  The dentry ’s setuid bit is being removed.  Remove similar security labels.
+Called with the dentry->d_inode->i_mutex held.

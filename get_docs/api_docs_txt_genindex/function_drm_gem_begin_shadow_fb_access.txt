@@ -1,0 +1,15 @@
+Function: int drm_gem_begin_shadow_fb_access ( struct drm_plane * plane , struct drm_plane_state * plane_state )
+
+prepares shadow framebuffers for CPU access
+
+Parameters
+  struct drm_plane *plane
+    the plane
+  struct drm_plane_state *plane_state
+    the plane state of type struct drm_shadow_plane_state
+
+Description
+  This function implements struct drm_plane_helper_funcs.begin_fb_access . It
+maps all buffer objects of the plane’s framebuffer into kernel address
+space and stores them in struct drm_shadow_plane_state.map . The first data
+bytes are available in struct drm_shadow_plane_state.data .

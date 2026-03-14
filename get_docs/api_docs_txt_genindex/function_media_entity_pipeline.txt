@@ -1,0 +1,10 @@
+Function: struct media_pipeline * media_entity_pipeline ( struct media_entity * entity )
+
+Get the media pipeline an entity is part of
+
+Parameters
+  struct media_entity *entity
+    The entity
+
+Description
+  DEPRECATED: use media_pad_pipeline() instead.

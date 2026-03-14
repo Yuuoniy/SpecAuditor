@@ -1,0 +1,7 @@
+Function: struct gpio_device * gpio_device_get ( struct gpio_device * gdev )
+
+Increase the reference count of this GPIO device
+
+Parameters
+  struct gpio_device *gdev
+    GPIO device to increase the refcount for

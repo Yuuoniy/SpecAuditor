@@ -1,0 +1,11 @@
+Function: void __iio_device_release_direct ( struct iio_dev * indio_dev )
+
+releases claim on direct mode
+
+Parameters
+  struct iio_dev *indio_dev
+    the iio_dev associated with the device
+
+Description
+  Release the claim. Device is no longer guaranteed to stay
+in direct mode.

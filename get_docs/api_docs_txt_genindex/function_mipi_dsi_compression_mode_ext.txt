@@ -1,0 +1,17 @@
+Function: int mipi_dsi_compression_mode_ext ( struct mipi_dsi_device * dsi , bool enable , enum mipi_dsi_compression_algo algo , unsigned int pps_selector )
+
+enable/disable DSC on the peripheral
+
+Parameters
+  struct mipi_dsi_device *dsi
+    DSI peripheral device
+  bool enable
+    Whether to enable or disable the DSC
+  enum mipi_dsi_compression_algo algo
+    Selected compression algorithm
+  unsigned int pps_selector
+    Select PPS from the table of pre-stored or uploaded PPS entries
+
+Description
+  Enable or disable Display Stream Compression on the peripheral.
+This function is deprecated. Use mipi_dsi_compression_mode_ext_multi() instead.

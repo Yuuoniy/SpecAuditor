@@ -1,0 +1,11 @@
+Function: struct nand_op_parser_pattern
+
+NAND sub-operation pattern descriptor
+
+Members
+  elems
+    array of pattern elements
+  nelems
+    number of pattern elements in elems array
+  exec
+    the function that will issue a sub-operation

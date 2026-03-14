@@ -1,0 +1,10 @@
+Function: void security_secmark_refcount_inc ( void )
+
+Increment the secmark labeling rule count
+
+Parameters
+  void
+    no arguments
+
+Description
+  Tells the LSM to increment the number of secmark labeling rules loaded.

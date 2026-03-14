@@ -1,0 +1,9 @@
+Function: struct device_node * of_graph_get_port_by_id ( struct device_node * parent , u32 id )
+
+get the port matching a given id
+
+Parameters
+  struct device_node *parent
+    pointer to the parent device node
+  u32 id
+    id of the port

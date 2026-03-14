@@ -1,0 +1,9 @@
+Function: struct vm_area_struct * vma_lookup ( struct mm_struct * mm , unsigned long addr )
+
+Find a VMA at a specific address
+
+Parameters
+  struct mm_struct *mm
+    The process address space.
+  unsigned long addr
+    The user address.

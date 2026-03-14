@@ -1,0 +1,16 @@
+Function: void rdma_move_ah_attr ( struct rdma_ah_attr * dest , struct rdma_ah_attr * src )
+
+Move ah_attr pointed by source to destination.
+
+Parameters
+  struct rdma_ah_attr *dest
+    Pointer to destination ah_attr to copy to.
+dest is assumed to be valid or zero’d
+  struct rdma_ah_attr *src
+    Pointer to the new ah_attr.
+
+Description
+  rdma_move_ah_attr() first releases any reference in the destination ah_attr
+if it is valid. This also transfers ownership of internal references from
+src to dest, making src invalid in the process. No new reference of the src
+ah_attr is taken.

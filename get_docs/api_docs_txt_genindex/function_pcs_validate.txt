@@ -1,0 +1,16 @@
+Function: int pcs_validate ( struct phylink_pcs * pcs , unsigned long * supported , const struct phylink_link_state * state )
+
+validate the link configuration.
+
+Parameters
+  struct phylink_pcs *pcs
+    a pointer to a struct phylink_pcs .
+  unsigned long *supported
+    ethtool bitmask for supported link modes.
+  const struct phylink_link_state *state
+    a const pointer to a struct phylink_link_state .
+
+Description
+  Validate the interface mode, and advertising’s autoneg bit, removing any
+media ethtool link modes that would not be supportable from the supported
+mask. Phylink will propagate the changes to the advertising mask. See the struct phylink_mac_ops validate() method.

@@ -1,0 +1,12 @@
+Function: void stratix10_svc_free_memory ( struct stratix10_svc_chan * chan , void * kaddr )
+
+free allocated memory
+
+Parameters
+  struct stratix10_svc_chan *chan
+    service channel assigned to the client
+  void *kaddr
+    memory to be freed
+
+Description
+  This function is used by service client to free allocated buffers.

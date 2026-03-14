@@ -1,0 +1,11 @@
+Function: void eventfd_ctx_put ( struct eventfd_ctx * ctx )
+
+Releases a reference to the internal eventfd context.
+
+Parameters
+  struct eventfd_ctx *ctx
+    [in] Pointer to eventfd context.
+
+Description
+  The eventfd context reference must have been previously acquired either
+with eventfd_ctx_fdget() or eventfd_ctx_fileget() .

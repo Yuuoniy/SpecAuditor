@@ -1,0 +1,96 @@
+Struct: struct rtnl_link_stats64
+
+The main device statistics structure.
+
+Members
+  rx_packets
+    Number of good packets received by the interface.
+For hardware interfaces counts all good packets received from the device
+by the host, including packets which host had to drop at various stages
+of processing (even in the driver).
+  tx_packets
+    Number of packets successfully transmitted.
+For hardware interfaces counts packets which host was able to successfully
+hand over to the device, which does not necessarily mean that packets
+had been successfully transmitted out of the device, only that device
+acknowledged it copied them out of host memory.
+  rx_bytes
+    Number of good received bytes, corresponding to rx_packets .
+  tx_bytes
+    Number of good transmitted bytes, corresponding to tx_packets .
+  rx_errors
+    Total number of bad packets received on this network device.
+This counter must include events counted by rx_length_errors , rx_crc_errors , rx_frame_errors and other errors not otherwise
+counted.
+  tx_errors
+    Total number of transmit problems.
+This counter must include events counter by tx_aborted_errors , tx_carrier_errors , tx_fifo_errors , tx_heartbeat_errors , tx_window_errors and other errors not otherwise counted.
+  rx_dropped
+    Number of packets received but not processed,
+e.g. due to lack of resources or unsupported protocol.
+For hardware interfaces this counter may include packets discarded
+due to L2 address filtering but should not include packets dropped
+by the device due to buffer exhaustion which are counted separately in rx_missed_errors (since procfs folds those two counters together).
+  tx_dropped
+    Number of packets dropped on their way to transmission,
+e.g. due to lack of resources.
+  multicast
+    Multicast packets received.
+For hardware interfaces this statistic is commonly calculated
+at the device level (unlike rx_packets ) and therefore may include
+packets which did not reach the host.
+  collisions
+    Number of collisions during packet transmissions.
+  rx_length_errors
+    Number of packets dropped due to invalid length.
+Part of aggregate “frame” errors in /proc/net/dev .
+  rx_over_errors
+    Receiver FIFO overflow event counter.
+  rx_crc_errors
+    Number of packets received with a CRC error.
+Part of aggregate “frame” errors in /proc/net/dev .
+  rx_frame_errors
+    Receiver frame alignment errors.
+Part of aggregate “frame” errors in /proc/net/dev .
+  rx_fifo_errors
+    Receiver FIFO error counter.
+  rx_missed_errors
+    Count of packets missed by the host.
+Folded into the “drop” counter in /proc/net/dev .
+  tx_aborted_errors
+    Part of aggregate “carrier” errors in /proc/net/dev .
+For IEEE 802.3 devices capable of half-duplex operation this counter
+must be equivalent to:
+  tx_carrier_errors
+    Number of frame transmission errors due to loss
+of carrier during transmission.
+Part of aggregate “carrier” errors in /proc/net/dev .
+  tx_fifo_errors
+    Number of frame transmission errors due to device
+FIFO underrun / underflow. This condition occurs when the device
+begins transmission of a frame but is unable to deliver the
+entire frame to the transmitter in time for transmission.
+Part of aggregate “carrier” errors in /proc/net/dev .
+  tx_heartbeat_errors
+    Number of Heartbeat / SQE Test errors for
+old half-duplex Ethernet.
+Part of aggregate “carrier” errors in /proc/net/dev .
+  tx_window_errors
+    Number of frame transmission errors due
+to late collisions (for Ethernet - after the first 64B of transmission).
+Part of aggregate “carrier” errors in /proc/net/dev .
+  rx_compressed
+    Number of correctly received compressed packets.
+This counters is only meaningful for interfaces which support
+packet compression (e.g. CSLIP, PPP).
+  tx_compressed
+    Number of transmitted compressed packets.
+This counters is only meaningful for interfaces which support
+packet compression (e.g. CSLIP, PPP).
+  rx_nohandler
+    Number of packets received on the interface
+but dropped by the networking stack because the device is
+not designated to receive packets (e.g. backup link in a bond).
+  rx_otherhost_dropped
+    Number of packets dropped due to mismatch
+in destination MAC address.

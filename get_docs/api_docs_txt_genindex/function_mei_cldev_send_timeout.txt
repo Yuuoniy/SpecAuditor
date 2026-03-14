@@ -1,0 +1,13 @@
+Function: ssize_t mei_cldev_send_timeout ( struct mei_cl_device * cldev , const u8 * buf , size_t length , unsigned long timeout )
+
+me device send with timeout (write)
+
+Parameters
+  struct mei_cl_device *cldev
+    me client device
+  const u8 *buf
+    buffer to send
+  size_t length
+    buffer length
+  unsigned long timeout
+    send timeout in milliseconds, 0 for infinite timeout

@@ -1,0 +1,16 @@
+Function: void __phy_ethtool_get_phy_stats ( struct phy_device * phydev , struct ethtool_eth_phy_stats * phy_stats , struct ethtool_phy_stats * phydev_stats )
+
+Retrieve standardized PHY statistics
+
+Parameters
+  struct phy_device *phydev
+    Pointer to the PHY device
+  struct ethtool_eth_phy_stats *phy_stats
+    Pointer to ethtool_eth_phy_stats structure
+  struct ethtool_phy_stats *phydev_stats
+    Pointer to ethtool_phy_stats structure
+
+Description
+  Fetches PHY statistics using a kernel-defined interface for consistent
+diagnostics. Unlike phy_ethtool_get_stats() , which allows custom stats,
+this function enforces a standardized format for better interoperability.

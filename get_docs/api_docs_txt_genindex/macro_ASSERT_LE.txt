@@ -1,0 +1,12 @@
+Macro: ASSERT_LE
+
+
+
+Parameters
+  expected
+    expected value
+  seen
+    measured value
+
+Description
+  ASSERT_LE(expected, measured): expected <= measured

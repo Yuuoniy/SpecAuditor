@@ -1,0 +1,19 @@
+Function: int extcon_get_property ( struct extcon_dev * edev , unsigned int id , unsigned int prop , union extcon_property_value * prop_val )
+
+Get the property value of an external connector.
+
+Parameters
+  struct extcon_dev *edev
+    the extcon device
+  unsigned int id
+    the unique id indicating an external connector
+  unsigned int prop
+    the property id indicating an extcon property
+  union extcon_property_value *prop_val
+    the pointer which store the value of extcon property
+
+Description
+  Note that when getting the property value of external connector,
+the external connector should be attached. If detached state, function
+return 0 without property value. Also, the each property should be
+included in the list of supported properties according to extcon type.

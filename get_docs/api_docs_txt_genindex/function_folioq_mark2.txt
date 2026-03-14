@@ -1,0 +1,13 @@
+Function: void folioq_mark2 ( struct folio_queue * folioq , unsigned int slot )
+
+Set the second mark on a folio in a folio queue segment
+
+Parameters
+  struct folio_queue *folioq
+    The segment to modify
+  unsigned int slot
+    The slot number of the folio to modify
+
+Description
+  Set the second mark for the folio in the specified slot in a folio queue
+segment.

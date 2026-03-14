@@ -1,0 +1,13 @@
+Function: int input_ff_event ( struct input_dev * dev , unsigned int type , unsigned int code , int value )
+
+generic handler for force-feedback events
+
+Parameters
+  struct input_dev *dev
+    input device to send the effect to
+  unsigned int type
+    event type (anything but EV_FF is ignored)
+  unsigned int code
+    event code
+  int value
+    event value

@@ -1,0 +1,11 @@
+Function: struct dma_fence * sync_file_get_fence ( int fd )
+
+get the fence related to the sync_file fd
+
+Parameters
+  int fd
+    sync_file fd to get the fence from
+
+Description
+  Ensures fd references a valid sync_file and returns a fence that
+represents all fence in the sync_file. On error NULL is returned.

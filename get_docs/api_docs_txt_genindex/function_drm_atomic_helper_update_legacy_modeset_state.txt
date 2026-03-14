@@ -1,0 +1,13 @@
+Function: void drm_atomic_helper_update_legacy_modeset_state ( struct drm_device * dev , struct drm_atomic_state * state )
+
+update legacy modeset state
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_atomic_state *state
+    atomic state object being committed
+
+Description
+  This function updates all the various legacy modeset state pointers in
+connectors, encoders and CRTCs.

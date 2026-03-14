@@ -1,0 +1,11 @@
+Function: struct dentry * d_find_any_alias ( struct inode * inode )
+
+find any alias for a given inode
+
+Parameters
+  struct inode *inode
+    inode to find an alias for
+
+Description
+  If any aliases exist for the given inode, take and return a
+reference for one of them.  If no aliases exist, return NULL .

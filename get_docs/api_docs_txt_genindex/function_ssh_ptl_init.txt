@@ -1,0 +1,16 @@
+Function: int ssh_ptl_init ( struct ssh_ptl * ptl , struct serdev_device * serdev , struct ssh_ptl_ops * ops )
+
+Initialize packet transport layer.
+
+Parameters
+  struct ssh_ptl *ptl
+    The packet transport layer to initialize.
+  struct serdev_device *serdev
+    The underlying serial device, i.e. the lower-level transport.
+  struct ssh_ptl_ops *ops
+    Packet layer operations.
+
+Description
+  Initializes the given packet transport layer. Transmitter and receiver
+threads must be started separately via ssh_ptl_tx_start() and ssh_ptl_rx_start() , after the packet-layer has been initialized and the
+lower-level transport layer has been set up.

@@ -1,0 +1,12 @@
+Function: bool kthread_should_park ( void )
+
+should this kthread park now?
+
+Parameters
+  void
+    no arguments
+
+Description
+  When someone calls kthread_park() on your kthread, it will be woken
+and this will return true.  You should then do the necessary
+cleanup and call kthread_parkme()

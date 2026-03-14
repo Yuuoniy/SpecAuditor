@@ -1,0 +1,16 @@
+Function: int ipc_addid ( struct ipc_ids * ids , struct kern_ipc_perm * new , int limit )
+
+add an ipc identifier
+
+Parameters
+  struct ipc_ids *ids
+    ipc identifier set
+  struct kern_ipc_perm *new
+    new ipc permission set
+  int limit
+    limit for the number of used ids
+
+Description
+  Add an entry ‘new’ to the ipc ids idr. The permissions object is
+initialised and the first free entry is set up and the index assigned
+is returned. The ‘new’ entry is returned in a locked state on success.

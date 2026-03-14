@@ -1,0 +1,13 @@
+Function: int __init_memblock memblock_reserved_mark_noinit ( phys_addr_t base , phys_addr_t size )
+
+Mark a reserved memory region with flag MEMBLOCK_RSRV_NOINIT
+
+Parameters
+  phys_addr_t base
+    the base phys addr of the region
+  phys_addr_t size
+    the size of the region
+
+Description
+  The struct pages for the reserved regions marked MEMBLOCK_RSRV_NOINIT will
+not be fully initialized to allow the caller optimize their initialization.

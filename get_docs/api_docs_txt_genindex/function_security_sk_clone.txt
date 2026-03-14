@@ -1,0 +1,12 @@
+Function: void security_sk_clone ( const struct sock * sk , struct sock * newsk )
+
+Clone a sock’s LSM state
+
+Parameters
+  const struct sock *sk
+    original sock
+  struct sock *newsk
+    target sock
+
+Description
+  Clone/copy security structure.

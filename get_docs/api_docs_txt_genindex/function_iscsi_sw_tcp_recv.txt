@@ -1,0 +1,13 @@
+Function: int iscsi_sw_tcp_recv ( read_descriptor_t * rd_desc , struct sk_buff * skb , unsigned int offset , size_t len )
+
+TCP receive in sendfile fashion
+
+Parameters
+  read_descriptor_t *rd_desc
+    read descriptor
+  struct sk_buff *skb
+    socket buffer
+  unsigned int offset
+    offset in skb
+  size_t len
+    skb->len - offset

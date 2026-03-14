@@ -1,0 +1,11 @@
+Function: void drm_atomic_helper_calc_timestamping_constants ( struct drm_atomic_state * state )
+
+update vblank timestamping constants
+
+Parameters
+  struct drm_atomic_state *state
+    atomic state object
+
+Description
+  Updates the timestamping constants used for precise vblank timestamps
+by calling drm_calc_timestamping_constants() for all enabled crtcs in state .

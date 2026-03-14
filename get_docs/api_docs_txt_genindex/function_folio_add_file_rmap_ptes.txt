@@ -1,0 +1,16 @@
+Function: void folio_add_file_rmap_ptes ( struct folio * folio , struct page * page , int nr_pages , struct vm_area_struct * vma )
+
+add PTE mappings to a page range of a folio
+
+Parameters
+  struct folio *folio
+    The folio to add the mappings to
+  struct page *page
+    The first page to add
+  int nr_pages
+    The number of pages that will be mapped using PTEs
+  struct vm_area_struct *vma
+    The vm area in which the mappings are added
+
+Description
+  The page range of the folio is defined by [page, page + nr_pages)

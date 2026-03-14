@@ -1,0 +1,16 @@
+Function: int snd_ac97_tune_hardware ( struct snd_ac97 * ac97 , const struct ac97_quirk * quirk , const char * override )
+
+tune up the hardware
+
+Parameters
+  struct snd_ac97 *ac97
+    the ac97 instance
+  const struct ac97_quirk *quirk
+    quirk list
+  const char *override
+    explicit quirk value (overrides the list if non-NULL)
+
+Description
+  Do some workaround for each pci device, such as renaming of the
+headphone (true line-out) control as “Master”.
+The quirk-list must be terminated with a zero-filled entry.

@@ -1,0 +1,12 @@
+Function: void xa_destroy ( struct xarray * xa )
+
+Free all internal data structures.
+
+Parameters
+  struct xarray *xa
+    XArray.
+
+Description
+  After calling this function, the XArray is empty and has freed all memory
+allocated for its internal data structures.  You are responsible for
+freeing the objects referenced by the XArray.

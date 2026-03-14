@@ -1,0 +1,11 @@
+Struct: struct kunit_resource
+
+represents a test managed resource
+
+Members
+  data
+    for the user to store arbitrary data.
+  name
+    optional name
+  free
+    a user supplied function to free the resource.

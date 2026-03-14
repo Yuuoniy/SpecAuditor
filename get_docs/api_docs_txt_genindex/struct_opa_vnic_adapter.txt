@@ -1,0 +1,39 @@
+Struct: struct opa_vnic_adapter
+
+OPA VNIC netdev private data structure
+
+Members
+  netdev
+    pointer to associated netdev
+  ibdev
+    ib device
+  cport
+    pointer to opa vnic control port
+  rn_ops
+    rdma netdev’s net_device_ops
+  port_num
+    OPA port number
+  vport_num
+    vesw port number
+  lock
+    adapter lock
+  info
+    virtual ethernet switch port information
+  vema_mac_addr
+    mac address configured by vema
+  umac_hash
+    unicast maclist hash
+  mmac_hash
+    multicast maclist hash
+  mactbl
+    hash table of MAC entries
+  mactbl_lock
+    mac table lock
+  stats_lock
+    statistics lock
+  flow_tbl
+    flow to default port redirection table
+  trap_timeout
+    trap timeout
+  trap_count
+    no. of traps allowed within timeout period

@@ -1,0 +1,10 @@
+Macro: secs_to_jiffies
+
+
+
+Parameters
+  _secs
+    time in seconds
+
+Description
+  Conversion is done by simple multiplication with HZ

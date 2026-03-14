@@ -1,0 +1,13 @@
+Function: int security_shm_shmctl ( struct kern_ipc_perm * shp , int cmd )
+
+Check if a sysv shm operation is allowed
+
+Parameters
+  struct kern_ipc_perm *shp
+    sysv ipc permission structure
+  int cmd
+    operation
+
+Description
+  Check permission when a shared memory control operation specified by cmd is
+to be performed on the shared memory region with permissions in shp .

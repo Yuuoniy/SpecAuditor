@@ -1,0 +1,13 @@
+Function: void tty_buffer_free ( struct tty_port * port , struct tty_buffer * b )
+
+free a tty buffer
+
+Parameters
+  struct tty_port *port
+    tty port owning the buffer
+  struct tty_buffer *b
+    the buffer to free
+
+Description
+  Free a tty buffer, or add it to the free list according to our internal
+strategy.

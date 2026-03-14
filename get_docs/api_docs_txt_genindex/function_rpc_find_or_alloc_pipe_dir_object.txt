@@ -1,0 +1,15 @@
+Function: struct rpc_pipe_dir_object * rpc_find_or_alloc_pipe_dir_object ( struct net * net , struct rpc_pipe_dir_head * pdh , int ( * match ) ( struct rpc_pipe_dir_object * , void * ) , struct rpc_pipe_dir_object * ( * alloc ) ( void * ) , void * data )
+
+
+
+Parameters
+  struct net *net
+    pointer to struct net
+  struct rpc_pipe_dir_head *pdh
+    pointer to struct rpc_pipe_dir_head
+  int (*match)(struct rpc_pipe_dir_object *, void *)
+    match struct rpc_pipe_dir_object to data
+  struct rpc_pipe_dir_object *(*alloc)(void *)
+    allocate a new struct rpc_pipe_dir_object
+  void *data
+    user defined data for match() and alloc()

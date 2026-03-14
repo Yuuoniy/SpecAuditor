@@ -1,0 +1,10 @@
+Function: void drm_connector_get ( struct drm_connector * connector )
+
+acquire a connector reference
+
+Parameters
+  struct drm_connector *connector
+    DRM connector
+
+Description
+  This function increments the connector’s refcount.

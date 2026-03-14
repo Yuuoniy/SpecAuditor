@@ -1,0 +1,13 @@
+Function: long sys_flock ( unsigned int fd , unsigned int cmd )
+
+flock() system call.
+
+Parameters
+  unsigned int fd
+    the file descriptor to lock.
+  unsigned int cmd
+    the type of lock to apply.
+
+Description
+  Apply a FL_FLOCK style lock to an open file descriptor.
+The cmd can be one of:

@@ -1,0 +1,9 @@
+Function: void devm_clk_put ( struct device * dev , struct clk * clk )
+
+“free” a managed clock source
+
+Parameters
+  struct device *dev
+    device used to acquire the clock
+  struct clk *clk
+    clock source acquired with devm_clk_get()

@@ -1,0 +1,13 @@
+Function: void sg_assign_page ( struct scatterlist * sg , struct page * page )
+
+Assign a given page to an SG entry
+
+Parameters
+  struct scatterlist *sg
+    SG entry
+  struct page *page
+    The page
+
+Description
+  Assign page to sg entry. Also see sg_set_page() , the most commonly used
+variant.

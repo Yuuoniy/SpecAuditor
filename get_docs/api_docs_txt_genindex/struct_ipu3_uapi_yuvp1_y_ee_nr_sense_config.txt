@@ -1,0 +1,23 @@
+Struct: struct ipu3_uapi_yuvp1_y_ee_nr_sense_config
+
+Luma(Y) edge enhancement noise reduction sensitivity gains
+
+Members
+  edge_sense_0
+    Sensitivity of edge in dark area. u13.0, default 8191.
+  reserved0
+    reserved
+  delta_edge_sense
+    Difference in the sensitivity of edges between
+the bright and dark areas. u13.0, default 0.
+  reserved1
+    reserved
+  corner_sense_0
+    Sensitivity of corner in dark area. u13.0, default 0.
+  reserved2
+    reserved
+  delta_corner_sense
+    Difference in the sensitivity of corners between
+the bright and dark areas. u13.0, default 8191.
+  reserved3
+    reserved

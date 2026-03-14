@@ -1,0 +1,18 @@
+Function: int request_percpu_nmi ( unsigned int irq , irq_handler_t handler , const char * name , void __percpu * dev_id )
+
+allocate a percpu interrupt line for NMI delivery
+
+Parameters
+  unsigned int irq
+    Interrupt line to allocate
+  irq_handler_t handler
+    Function to be called when the IRQ occurs.
+  const char *name
+    An ascii name for the claiming device
+  void __percpu *dev_id
+    A percpu cookie passed back to the handler function
+
+Description
+  This call allocates interrupt resources for a per CPU NMI. Per CPU NMIs
+have to be setup on each CPU by calling prepare_percpu_nmi() before
+being enabled on the same CPU by using enable_percpu_nmi() .

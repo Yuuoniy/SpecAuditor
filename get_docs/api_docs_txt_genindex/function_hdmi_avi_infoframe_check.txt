@@ -1,0 +1,11 @@
+Function: int hdmi_avi_infoframe_check ( struct hdmi_avi_infoframe * frame )
+
+check a HDMI AVI infoframe
+
+Parameters
+  struct hdmi_avi_infoframe *frame
+    HDMI AVI infoframe
+
+Description
+  Validates that the infoframe is consistent and updates derived fields
+(eg. length) based on other fields.

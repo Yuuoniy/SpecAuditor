@@ -1,0 +1,14 @@
+Function: void snd_pcm_set_ops ( struct snd_pcm * pcm , int direction , const struct snd_pcm_ops * ops )
+
+set the PCM operators
+
+Parameters
+  struct snd_pcm *pcm
+    the pcm instance
+  int direction
+    stream direction, SNDRV_PCM_STREAM_XXX
+  const struct snd_pcm_ops *ops
+    the operator table
+
+Description
+  Sets the given PCM operators to the pcm instance.

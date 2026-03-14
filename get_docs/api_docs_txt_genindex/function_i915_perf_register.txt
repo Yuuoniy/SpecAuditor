@@ -1,0 +1,12 @@
+Function: void i915_perf_register ( struct drm_i915_private * i915 )
+
+exposes i915-perf to userspace
+
+Parameters
+  struct drm_i915_private *i915
+    i915 device instance
+
+Description
+  In particular OA metric sets are advertised under a sysfs metrics/
+directory allowing userspace to enumerate valid IDs that can be
+used to open an i915-perf stream.

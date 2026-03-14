@@ -1,0 +1,15 @@
+Function: bool raw_atomic_long_add_unless ( atomic_long_t * v , long a , long u )
+
+atomic add unless value with full ordering
+
+Parameters
+  atomic_long_t *v
+    pointer to atomic_long_t
+  long a
+    long value to add
+  long u
+    long value to compare with
+
+Description
+  If ( v != u ), atomically updates v to ( v + a ) with full ordering.
+Otherwise, v is not modified and relaxed ordering is provided.

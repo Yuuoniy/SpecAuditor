@@ -1,0 +1,14 @@
+Struct: struct edac_mc_layer
+
+describes the memory controller hierarchy
+
+Members
+  type
+    layer type
+  size
+    number of components per layer. For example,
+if the channel layer has two channels, size = 2
+  is_virt_csrow
+    This layer is part of the “csrow” when old API
+compatibility mode is enabled. Otherwise, it is
+a channel

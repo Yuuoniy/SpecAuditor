@@ -1,0 +1,12 @@
+Function: bool spi_is_bpw_supported ( struct spi_device * spi , u32 bpw )
+
+Check if bits per word is supported
+
+Parameters
+  struct spi_device *spi
+    SPI device
+  u32 bpw
+    Bits per word
+
+Description
+  This function checks to see if the SPI controller supports bpw .

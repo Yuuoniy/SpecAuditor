@@ -1,0 +1,11 @@
+Function: void console_unlock ( void )
+
+unblock the legacy console subsystem from printing
+
+Parameters
+  void
+    no arguments
+
+Description
+  Releases the console_lock which the caller holds to block printing of
+the legacy console subsystem.

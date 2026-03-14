@@ -1,0 +1,19 @@
+Function: int i3c_master_register ( struct i3c_master_controller * master , struct device * parent , const struct i3c_master_controller_ops * ops , bool secondary )
+
+register an I3C master
+
+Parameters
+  struct i3c_master_controller *master
+    master used to send frames on the bus
+  struct device *parent
+    the parent device (the one that provides this I3C master
+controller)
+  const struct i3c_master_controller_ops *ops
+    the master controller operations
+  bool secondary
+    true if you are registering a secondary master. Will return
+-EOPNOTSUPP if set to true since secondary masters are not yet
+supported
+
+Description
+  This function takes care of everything for you:

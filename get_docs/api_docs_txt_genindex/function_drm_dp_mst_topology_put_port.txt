@@ -1,0 +1,10 @@
+Function: void drm_dp_mst_topology_put_port ( struct drm_dp_mst_port * port )
+
+release a topology reference to a port
+
+Parameters
+  struct drm_dp_mst_port *port
+    The struct drm_dp_mst_port to release the topology reference from
+
+Description
+  Releases a topology reference from port by decrementing drm_dp_mst_port.topology_kref .

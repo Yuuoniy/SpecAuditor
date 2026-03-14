@@ -1,0 +1,16 @@
+Function: int tipc_sk_dump ( struct sock * sk , u16 dqueues , char * buf )
+
+dump TIPC socket
+
+Parameters
+  struct sock *sk
+    tipc sk to be dumped
+  u16 dqueues
+    bitmask to decide if any socket queue to be dumped?
+- TIPC_DUMP_NONE: don’t dump socket queues
+- TIPC_DUMP_SK_SNDQ: dump socket send queue
+- TIPC_DUMP_SK_RCVQ: dump socket rcv queue
+- TIPC_DUMP_SK_BKLGQ: dump socket backlog queue
+- TIPC_DUMP_ALL: dump all the socket queues above
+  char *buf
+    returned buffer of dump data in format

@@ -1,0 +1,12 @@
+Function: void atomic64_add ( s64 i , atomic64_t * v )
+
+atomic add with relaxed ordering
+
+Parameters
+  s64 i
+    s64 value to add
+  atomic64_t *v
+    pointer to atomic64_t
+
+Description
+  Atomically updates v to ( v + i ) with relaxed ordering.

@@ -1,0 +1,14 @@
+Function: const char * rpc_peeraddr2str ( struct rpc_clnt * clnt , enum rpc_display_format_t format )
+
+return remote peer address in printable format
+
+Parameters
+  struct rpc_clnt *clnt
+    RPC client structure
+  enum rpc_display_format_t format
+    address format
+
+Description
+  NB: the lifetime of the memory referenced by the returned pointer is
+the same as the rpc_xprt itself.  As long as the caller uses this
+pointer, it must hold the RCU read lock.

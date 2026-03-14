@@ -1,0 +1,14 @@
+Function: int snd_ac97_update_power ( struct snd_ac97 * ac97 , int reg , int powerup )
+
+update the powerdown register
+
+Parameters
+  struct snd_ac97 *ac97
+    the codec instance
+  int reg
+    the rate register, e.g. AC97_PCM_FRONT_DAC_RATE
+  int powerup
+    non-zero when power up the part
+
+Description
+  Update the AC97 powerdown register bits of the given part.

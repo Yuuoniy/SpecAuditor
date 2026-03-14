@@ -1,0 +1,12 @@
+Function: int devm_register_framebuffer ( struct device * dev , struct fb_info * fb_info )
+
+resource-managed frame buffer device registration
+
+Parameters
+  struct device *dev
+    device the framebuffer belongs to
+  struct fb_info *fb_info
+    frame buffer info structure
+
+Description
+  Registers a frame buffer device fb_info to device dev .

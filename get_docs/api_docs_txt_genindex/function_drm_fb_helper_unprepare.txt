@@ -1,0 +1,10 @@
+Function: void drm_fb_helper_unprepare ( struct drm_fb_helper * fb_helper )
+
+clean up a drm_fb_helper structure
+
+Parameters
+  struct drm_fb_helper *fb_helper
+    driver-allocated fbdev helper structure to set up
+
+Description
+  Cleans up the framebuffer helper. Inverse of drm_fb_helper_prepare() .

@@ -1,0 +1,7 @@
+Function: bool ssh_tid_is_valid ( u8 tid )
+
+Check if target ID is valid/supported.
+
+Parameters
+  u8 tid
+    The target ID to check.

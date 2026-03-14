@@ -1,0 +1,13 @@
+Struct: struct v4l2_subscribed_event_ops
+
+Subscribed event operations.
+
+Members
+  add
+    Optional callback, called when a new listener is added
+  del
+    Optional callback, called when a listener stops listening
+  replace
+    Optional callback that can replace event ‘old’ with event ‘new’.
+  merge
+    Optional callback that can merge event ‘old’ into event ‘new’.

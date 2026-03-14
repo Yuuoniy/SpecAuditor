@@ -1,0 +1,16 @@
+Function: int firmware_request_cache ( struct device * device , const char * name )
+
+cache firmware for suspend so resume can use it
+
+Parameters
+  struct device *device
+    device for which firmware should be cached for
+  const char *name
+    name of firmware file
+
+Description
+  There are some devices with an optimization that enables the device to not
+require loading firmware on system reboot. This optimization may still
+require the firmware present on resume from suspend. This routine can be
+used to ensure the firmware is present on resume from suspend in these
+situations. This helper is not compatible with drivers which use request_firmware_into_buf() or request_firmware_nowait() with no uevent set.

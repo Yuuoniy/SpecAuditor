@@ -1,0 +1,17 @@
+Function: struct drm_gem_object * drm_gem_dma_prime_import_sg_table ( struct drm_device * dev , struct dma_buf_attachment * attach , struct sg_table * sgt )
+
+produce a DMA GEM object from another driver’s scatter/gather table of pinned pages
+
+Parameters
+  struct drm_device *dev
+    device to import into
+  struct dma_buf_attachment *attach
+    DMA-BUF attachment
+  struct sg_table *sgt
+    scatter/gather table of pinned pages
+
+Description
+  This function imports a scatter/gather table exported via DMA-BUF by
+another driver. Imported buffers must be physically contiguous in memory
+(i.e. the scatter/gather table must contain a single entry). Drivers that
+use the DMA helpers should set this as their drm_driver.gem_prime_import_sg_table callback.

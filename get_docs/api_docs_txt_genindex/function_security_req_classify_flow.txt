@@ -1,0 +1,12 @@
+Function: void security_req_classify_flow ( const struct request_sock * req , struct flowi_common * flic )
+
+Set a flow’s secid based on request_sock
+
+Parameters
+  const struct request_sock *req
+    request_sock
+  struct flowi_common *flic
+    target flow
+
+Description
+  Sets flic ’s secid to req ’s secid.

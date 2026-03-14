@@ -1,0 +1,7 @@
+Function: struct scsi_transport_template * srp_attach_transport ( struct srp_function_template * ft )
+
+instantiate SRP transport template
+
+Parameters
+  struct srp_function_template *ft
+    SRP transport class function template

@@ -1,0 +1,9 @@
+Function: int pci_platform_power_transition ( struct pci_dev * dev , pci_power_t state )
+
+Use platform to change device power state
+
+Parameters
+  struct pci_dev *dev
+    PCI device to handle.
+  pci_power_t state
+    State to put the device into.

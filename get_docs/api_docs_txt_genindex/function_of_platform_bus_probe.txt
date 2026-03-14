@@ -1,0 +1,15 @@
+Function: int of_platform_bus_probe ( struct device_node * root , const struct of_device_id * matches , struct device * parent )
+
+Probe the device-tree for platform buses
+
+Parameters
+  struct device_node *root
+    parent of the first level to probe or NULL for the root of the tree
+  const struct of_device_id *matches
+    match table for bus nodes
+  struct device *parent
+    parent to hook devices from, NULL for toplevel
+
+Description
+  Note that children of the provided root are not instantiated as devices
+unless the specified root itself matches the bus list and is not NULL.

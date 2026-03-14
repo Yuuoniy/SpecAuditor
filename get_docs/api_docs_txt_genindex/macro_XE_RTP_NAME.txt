@@ -1,0 +1,10 @@
+Macro: XE_RTP_NAME
+
+
+
+Parameters
+  s_
+    Name describing this rule, often a HW-specific number
+
+Description
+  TODO: maybe move this behind a debug config?

@@ -1,0 +1,15 @@
+Function: struct Scsi_Host * iscsi_host_alloc ( const struct scsi_host_template * sht , int dd_data_size , bool xmit_can_sleep )
+
+allocate a host and driver data
+
+Parameters
+  const struct scsi_host_template *sht
+    scsi host template
+  int dd_data_size
+    driver host data size
+  bool xmit_can_sleep
+    bool indicating if LLD will queue IO from a work queue
+
+Description
+  This should be called by partial offload and software iscsi drivers.
+To access the driver specific memory use the iscsi_host_priv() macro.

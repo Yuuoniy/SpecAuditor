@@ -1,0 +1,13 @@
+Function: debug_entry_t * debug_event ( debug_info_t * id , int level , void * data , int length )
+
+writes binary debug entry to active debug area (if level <= actual debug level)
+
+Parameters
+  debug_info_t *id
+    handle for debug log
+  int level
+    debug level
+  void *data
+    pointer to data for debug entry
+  int length
+    length of data in bytes

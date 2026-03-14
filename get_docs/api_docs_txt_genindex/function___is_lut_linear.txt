@@ -1,0 +1,14 @@
+Function: bool __is_lut_linear ( const struct drm_color_lut * lut , uint32_t size )
+
+check if the given lut is a linear mapping of values
+
+Parameters
+  const struct drm_color_lut *lut
+    given lut to check values
+  uint32_t size
+    lut size
+
+Description
+  It is considered linear if the lut represents:
+f(a) = (0xFF00/MAX_COLOR_LUT_ENTRIES-1)a; for integer a in [0,
+MAX_COLOR_LUT_ENTRIES)

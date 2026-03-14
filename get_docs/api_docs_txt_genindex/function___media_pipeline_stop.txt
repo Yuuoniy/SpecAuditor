@@ -1,0 +1,10 @@
+Function: void __media_pipeline_stop ( struct media_pad * pad )
+
+Mark a pipeline as not streaming
+
+Parameters
+  struct media_pad *pad
+    Starting pad
+
+Description
+  Note

@@ -1,0 +1,14 @@
+Function: void drm_wait_one_vblank ( struct drm_device * dev , unsigned int pipe )
+
+wait for one vblank
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  unsigned int pipe
+    CRTC index
+
+Description
+  This waits for one vblank to pass on pipe , using the irq driver interfaces.
+It is a failure to call this when the vblank irq for pipe is disabled, e.g.
+due to lack of driver support or because the crtc is off.

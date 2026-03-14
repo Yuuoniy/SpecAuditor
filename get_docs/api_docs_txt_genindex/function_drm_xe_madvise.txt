@@ -1,0 +1,35 @@
+Function: struct drm_xe_madvise
+
+Input of DRM_IOCTL_XE_MADVISE
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  start
+    start of the virtual address range
+  range
+    size of the virtual address range
+  vm_id
+    vm_id of the virtual range
+  type
+    type of attribute
+  {unnamed_union}
+    anonymous
+  preferred_mem_loc
+    preferred memory location Used when type == DRM_XE_MEM_RANGE_ATTR_PREFERRED_LOC Supported values for preferred_mem_loc.devmem_fd : DRM_XE_PREFERRED_LOC_DEFAULT_DEVICE: set vram of fault tile as preferred loc DRM_XE_PREFERRED_LOC_DEFAULT_SYSTEM: set smem as preferred loc Supported values for preferred_mem_loc.migration_policy : DRM_XE_MIGRATE_ALL_PAGES DRM_XE_MIGRATE_ONLY_SYSTEM_PAGES
+  Supported values for preferred_mem_loc.devmem_fd :
+    DRM_XE_PREFERRED_LOC_DEFAULT_DEVICE: set vram of fault tile as preferred loc DRM_XE_PREFERRED_LOC_DEFAULT_SYSTEM: set smem as preferred loc
+  Supported values for preferred_mem_loc.migration_policy :
+    DRM_XE_MIGRATE_ALL_PAGES DRM_XE_MIGRATE_ONLY_SYSTEM_PAGES
+  atomic
+    Atomic access policy Used when type == DRM_XE_MEM_RANGE_ATTR_ATOMIC. Supported values for atomic.val : DRM_XE_ATOMIC_UNDEFINED: Undefined or default behaviour.
+Support both GPU and CPU atomic operations for system allocator.
+Support GPU atomic operations for normal(bo) allocator. DRM_XE_ATOMIC_DEVICE: Support GPU atomic operations. DRM_XE_ATOMIC_GLOBAL: Support both GPU and CPU atomic operations. DRM_XE_ATOMIC_CPU: Support CPU atomic only, no GPU atomics supported.
+  Supported values for atomic.val :
+    DRM_XE_ATOMIC_UNDEFINED: Undefined or default behaviour.
+Support both GPU and CPU atomic operations for system allocator.
+Support GPU atomic operations for normal(bo) allocator. DRM_XE_ATOMIC_DEVICE: Support GPU atomic operations. DRM_XE_ATOMIC_GLOBAL: Support both GPU and CPU atomic operations. DRM_XE_ATOMIC_CPU: Support CPU atomic only, no GPU atomics supported.
+  pat_index
+    Page attribute table index Used when type == DRM_XE_MEM_RANGE_ATTR_PAT.
+  reserved
+    Reserved

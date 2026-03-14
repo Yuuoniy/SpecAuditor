@@ -1,0 +1,14 @@
+Function: void * mas_find_rev ( struct ma_state * mas , unsigned long min )
+
+On the first call, find the first non-null entry at or below mas->index down to min . Otherwise find the first non-null entry below mas->index down to min .
+
+Parameters
+  struct ma_state *mas
+    The maple state
+  unsigned long min
+    The minimum value to check.
+
+Description
+  Must hold rcu_read_lock or the write lock.
+If an entry exists, last and index are updated accordingly.
+May set mas->status to ma_underflow.

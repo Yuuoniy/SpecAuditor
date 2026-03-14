@@ -1,0 +1,11 @@
+Function: int phy_restart_aneg ( struct phy_device * phydev )
+
+restart auto-negotiation
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  Restart the autonegotiation on phydev .  Returns >= 0 on success or
+negative errno on error.

@@ -1,0 +1,13 @@
+Function: int jbd2_journal_dirty_metadata ( handle_t * handle , struct buffer_head * bh )
+
+mark a buffer as containing dirty metadata
+
+Parameters
+  handle_t *handle
+    transaction to add buffer to.
+  struct buffer_head *bh
+    buffer to mark
+
+Description
+  mark dirty metadata which needs to be journaled as part of the current
+transaction.

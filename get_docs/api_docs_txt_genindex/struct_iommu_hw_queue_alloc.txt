@@ -1,0 +1,23 @@
+Struct: struct iommu_hw_queue_alloc
+
+ioctl(IOMMU_HW_QUEUE_ALLOC)
+
+Members
+  size
+    sizeof( struct iommu_hw_queue_alloc )
+  flags
+    Must be 0
+  viommu_id
+    Virtual IOMMU ID to associate the HW queue with
+  type
+    One of enum iommu_hw_queue_type
+  index
+    The logical index to the HW queue per virtual IOMMU for a multi-queue
+model
+  out_hw_queue_id
+    The ID of the new HW queue
+  nesting_parent_iova
+    Base address of the queue memory in the guest physical
+address space
+  length
+    Length of the queue memory

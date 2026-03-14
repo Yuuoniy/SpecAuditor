@@ -1,0 +1,12 @@
+Function: void dvb_dmx_release ( struct dvb_demux * demux )
+
+releases a digital TV demux internal buffers.
+
+Parameters
+  struct dvb_demux *demux
+    struct dvb_demux to be released.
+
+Description
+  The DVB core internally allocates data at demux . This routine
+releases those data. Please notice that the struct itelf is not
+released, as it can be embedded on other structs.

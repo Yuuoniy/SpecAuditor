@@ -1,0 +1,10 @@
+Function: struct rchan_buf * relay_create_buf ( struct rchan * chan )
+
+allocate and initialize a channel buffer
+
+Parameters
+  struct rchan *chan
+    the relay channel
+
+Description
+  Returns channel buffer if successful, NULL otherwise.

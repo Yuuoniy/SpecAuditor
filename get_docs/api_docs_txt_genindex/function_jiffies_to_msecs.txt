@@ -1,0 +1,11 @@
+Function: unsigned int jiffies_to_msecs ( const unsigned long j )
+
+Convert jiffies to milliseconds
+
+Parameters
+  const unsigned long j
+    jiffies value
+
+Description
+  Avoid unnecessary multiplications/divisions in the
+two most common HZ cases.

@@ -1,0 +1,11 @@
+Function: void irq_gc_mask_set_bit ( struct irq_data * d )
+
+Mask chip via setting bit in mask register
+
+Parameters
+  struct irq_data *d
+    irq_data
+
+Description
+  Chip has a single mask register. Values of this register are cached
+and protected by gc->lock

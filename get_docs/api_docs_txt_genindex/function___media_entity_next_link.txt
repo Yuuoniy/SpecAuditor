@@ -1,0 +1,16 @@
+Function: struct media_link * __media_entity_next_link ( struct media_entity * entity , struct media_link * link , unsigned long link_type )
+
+Iterate through a media_entity ’s links
+
+Parameters
+  struct media_entity *entity
+    pointer to the media_entity
+  struct media_link *link
+    pointer to a media_link to hold the iterated values
+  unsigned long link_type
+    one of the MEDIA_LNK_FL_LINK_TYPE flags
+
+Description
+  Return the next link against an entity matching a specific link type. This
+allows iteration through an entity’s links whilst guaranteeing all of the
+returned links are of the given type.

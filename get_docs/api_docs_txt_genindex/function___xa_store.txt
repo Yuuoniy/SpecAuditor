@@ -1,0 +1,18 @@
+Function: void * __xa_store ( struct xarray * xa , unsigned long index , void * entry , gfp_t gfp )
+
+Store this entry in the XArray.
+
+Parameters
+  struct xarray *xa
+    XArray.
+  unsigned long index
+    Index into array.
+  void *entry
+    New entry.
+  gfp_t gfp
+    Memory allocation flags.
+
+Description
+  You must already be holding the xa_lock when calling this function.
+It will drop the lock if needed to allocate memory, and then reacquire
+it afterwards.

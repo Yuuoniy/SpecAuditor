@@ -1,0 +1,13 @@
+Function: int mipi_dbi_command_buf ( struct mipi_dbi * dbi , u8 cmd , u8 * data , size_t len )
+
+MIPI DCS command with parameter(s) in an array
+
+Parameters
+  struct mipi_dbi *dbi
+    MIPI DBI structure
+  u8 cmd
+    Command
+  u8 *data
+    Parameter buffer
+  size_t len
+    Buffer length

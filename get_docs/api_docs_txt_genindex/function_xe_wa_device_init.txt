@@ -1,0 +1,10 @@
+Function: int xe_wa_device_init ( struct xe_device * xe )
+
+initialize device with workaround oob bookkeeping
+
+Parameters
+  struct xe_device *xe
+    Xe device instance to initialize
+
+Description
+  Returns 0 for success, negative with error code otherwise

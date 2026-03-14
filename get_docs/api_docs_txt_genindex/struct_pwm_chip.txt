@@ -1,0 +1,35 @@
+Struct: struct pwm_chip
+
+abstract a PWM controller
+
+Members
+  dev
+    device providing the PWMs
+  cdev
+    struct cdev for this device
+  ops
+    callbacks for this PWM controller
+  owner
+    module providing this chip
+  id
+    unique number of this PWM chip
+  npwm
+    number of PWMs controlled by this chip
+  of_xlate
+    request a PWM device given a device tree PWM specifier
+  atomic
+    can the driver’s -> apply() be called in atomic context
+  gpio
+    struct gpio_chip to operate this PWM chip’s lines as GPO
+  uses_pwmchip_alloc
+    signals if pwmchip_allow was used to allocate this chip
+  operational
+    signals if the chip can be used (or is already deregistered)
+  {unnamed_union}
+    anonymous
+  nonatomic_lock
+    mutex for nonatomic chips
+  atomic_lock
+    mutex for atomic chips
+  pwms
+    array of PWM devices allocated by the framework

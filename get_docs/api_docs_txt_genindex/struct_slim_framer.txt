@@ -1,0 +1,14 @@
+Struct: struct slim_framer
+
+Represents SLIMbus framer. Every controller may have multiple framers. There is 1 active framer device responsible for clocking the bus. Manager is responsible for framer hand-over.
+
+Members
+  dev
+    Driver model representation of the device.
+  e_addr
+    Enumeration address of the framer.
+  rootfreq
+    Root Frequency at which the framer can run. This is maximum
+frequency (‘clock gear 10’) at which the bus can operate.
+  superfreq
+    Superframes per root frequency. Every frame is 6144 bits.

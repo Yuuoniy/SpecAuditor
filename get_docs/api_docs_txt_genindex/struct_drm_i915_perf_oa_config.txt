@@ -1,0 +1,22 @@
+Struct: struct drm_i915_perf_oa_config
+
+
+
+Members
+  uuid
+    String formatted like “%08x-%04x-%04x-%04x-%012x”
+  n_mux_regs
+    Number of mux regs in mux_regs_ptr .
+  n_boolean_regs
+    Number of boolean regs in boolean_regs_ptr .
+  n_flex_regs
+    Number of flex regs in flex_regs_ptr .
+  mux_regs_ptr
+    Pointer to tuples of u32 values (register address, value) for mux
+registers.  Expected length of buffer is (2 * sizeof(u32) * n_mux_regs ).
+  boolean_regs_ptr
+    Pointer to tuples of u32 values (register address, value) for mux
+registers.  Expected length of buffer is (2 * sizeof(u32) * n_boolean_regs ).
+  flex_regs_ptr
+    Pointer to tuples of u32 values (register address, value) for mux
+registers.  Expected length of buffer is (2 * sizeof(u32) * n_flex_regs ).

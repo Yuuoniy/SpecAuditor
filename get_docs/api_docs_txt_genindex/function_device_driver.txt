@@ -1,0 +1,59 @@
+Function: struct device_driver
+
+The basic device driver structure
+
+Members
+  name
+    Name of the device driver.
+  bus
+    The bus which the device of this driver belongs to.
+  owner
+    The module owner.
+  mod_name
+    Used for built-in modules.
+  suppress_bind_attrs
+    Disables bind/unbind via sysfs.
+  probe_type
+    Type of the probe (synchronous or asynchronous) to use.
+  of_match_table
+    The open firmware table.
+  acpi_match_table
+    The ACPI match table.
+  probe
+    Called to query the existence of a specific device,
+whether this driver can work with it, and bind the driver
+to a specific device.
+  sync_state
+    Called to sync device state to software state after all the
+state tracking consumers linked to this device (present at
+the time of late_initcall) have successfully bound to a
+driver. If the device has no consumers, this function will
+be called at late_initcall_sync level. If the device has
+consumers that are never bound to a driver, this function
+will never get called until they do.
+  remove
+    Called when the device is removed from the system to
+unbind a device from this driver.
+  shutdown
+    Called at shut-down time to quiesce the device.
+  suspend
+    Called to put the device to sleep mode. Usually to a
+low power state.
+  resume
+    Called to bring a device from sleep mode.
+  groups
+    Default attributes that get created by the driver core
+automatically.
+  dev_groups
+    Additional attributes attached to device instance once
+it is bound to the driver.
+  pm
+    Power management operations of the device which matched
+this driver.
+  coredump
+    Called when sysfs entry is written to. The device driver
+is expected to call the dev_coredump API resulting in a
+uevent.
+  p
+    Driver core’s private data, no one other than the driver
+core can touch this.

@@ -1,0 +1,14 @@
+Function: int drm_atomic_helper_connector_hdmi_update_audio_infoframe ( struct drm_connector * connector , struct hdmi_audio_infoframe * frame )
+
+Update the Audio Infoframe
+
+Parameters
+  struct drm_connector *connector
+    A pointer to the HDMI connector
+  struct hdmi_audio_infoframe *frame
+    A pointer to the audio infoframe to write
+
+Description
+  This function is meant for HDMI connector drivers to update their
+audio infoframe. It will typically be used in one of the ALSA hooks
+(most likely prepare).

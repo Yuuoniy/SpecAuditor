@@ -1,0 +1,21 @@
+Function: const char * xbc_node_find_value ( struct xbc_node * parent , const char * key , struct xbc_node * * vnode )
+
+Find a value node which matches given key
+
+Parameters
+  struct xbc_node *parent
+    An XBC node.
+  const char *key
+    A key string.
+  struct xbc_node **vnode
+    A container pointer of found XBC node.
+
+Description
+  Search a value node under parent whose (parent) key node matches key ,
+store it in *vnode , and returns the value string.
+The key can contain several words jointed with ‘.’. If parent is NULL,
+this searches the node from whole tree. Return the value string if a
+matched key found, return NULL if no node is matched.
+Note that this returns 0-length string and stores NULL in *vnode if the
+key has no value. And also it will return the value of the first entry if
+the value is an array.

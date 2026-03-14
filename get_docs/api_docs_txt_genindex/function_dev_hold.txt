@@ -1,0 +1,11 @@
+Function: void dev_hold ( struct net_device * dev )
+
+get reference to device
+
+Parameters
+  struct net_device *dev
+    network device
+
+Description
+  Hold reference to device to keep it from being freed.
+Try using netdev_hold() instead.

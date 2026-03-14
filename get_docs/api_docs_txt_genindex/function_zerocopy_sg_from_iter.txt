@@ -1,0 +1,13 @@
+Function: int zerocopy_sg_from_iter ( struct sk_buff * skb , struct iov_iter * from )
+
+Build a zerocopy datagram from an iov_iter
+
+Parameters
+  struct sk_buff *skb
+    buffer to copy
+  struct iov_iter *from
+    the source to copy from
+
+Description
+  The function will first copy up to headlen, and then pin the userspace
+pages and build frags through them.

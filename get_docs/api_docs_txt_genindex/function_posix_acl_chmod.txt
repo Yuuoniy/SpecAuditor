@@ -1,0 +1,18 @@
+Function: int posix_acl_chmod ( struct mnt_idmap * idmap , struct dentry * dentry , umode_t mode )
+
+chmod a posix acl
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount inode was found from
+  struct dentry *dentry
+    dentry to check permissions on
+  umode_t mode
+    the new mode of inode
+
+Description
+  If the dentry has been found through an idmapped mount the idmap of
+the vfsmount must be passed through idmap . This function will then
+take care to map the inode according to idmap before checking
+permissions. On non-idmapped mounts or if permission checking is to be
+performed on the raw inode simply pass nop_mnt_idmap .

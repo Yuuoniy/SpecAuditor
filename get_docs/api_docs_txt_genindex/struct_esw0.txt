@@ -1,0 +1,13 @@
+Struct: struct esw0
+
+Format 0 Extended Status Word (ESW)
+
+Members
+  sublog
+    subchannel logout
+  erw
+    extended report word
+  faddr
+    failing storage address
+  saddr
+    secondary ccw address

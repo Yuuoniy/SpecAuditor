@@ -1,0 +1,11 @@
+Function: int genphy_c45_pma_read_ext_abilities ( struct phy_device * phydev )
+
+read supported link modes from PMA
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  Read the supported link modes from the PMA/PMD extended ability register
+(Register 1.11).

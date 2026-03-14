@@ -1,0 +1,19 @@
+Function: long dma_resv_wait_timeout ( struct dma_resv * obj , enum dma_resv_usage usage , bool intr , unsigned long timeout )
+
+Wait on reservation’s objects fences
+
+Parameters
+  struct dma_resv *obj
+    the reservation object
+  enum dma_resv_usage usage
+    controls which fences to include, see enum dma_resv_usage .
+  bool intr
+    if true, do interruptible wait
+  unsigned long timeout
+    timeout value in jiffies or zero to return immediately
+
+Description
+  Callers are not required to hold specific locks, but maybe hold dma_resv_lock() already
+RETURNS
+Returns -ERESTARTSYS if interrupted, 0 if the wait timed out, or
+greater than zero on success.

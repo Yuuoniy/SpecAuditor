@@ -1,0 +1,17 @@
+Function: int ssam_ctrl_notif_display_off ( struct ssam_controller * ctrl )
+
+Notify EC that the display has been turned off.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller.
+
+Description
+  Notify the EC that the display has been turned off and the driver may enter
+a lower-power state. This will prevent events from being sent directly.
+Rather, the EC signals an event by pulling the wakeup GPIO high for as long
+as there are pending events. The events then need to be manually released,
+one by one, via the GPIO callback request. All pending events accumulated
+during this state can also be released by issuing the display-on
+notification, e.g. via ssam_ctrl_notif_display_on() , which will also reset
+the GPIO.

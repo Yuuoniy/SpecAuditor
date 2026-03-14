@@ -1,0 +1,16 @@
+Function: int drm_get_panel_orientation_quirk ( int width , int height )
+
+Check for panel orientation quirks
+
+Parameters
+  int width
+    width in pixels of the panel
+  int height
+    height in pixels of the panel
+
+Description
+  This function checks for platform specific (e.g. DMI based) quirks
+providing info on panel_orientation for systems where this cannot be
+probed from the hard-/firm-ware. To avoid false-positive this function
+takes the panel resolution as argument and checks that against the
+resolution expected by the quirk-table entry.

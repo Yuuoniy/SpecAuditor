@@ -1,0 +1,9 @@
+Function: ssize_t samples_to_bytes ( struct snd_pcm_runtime * runtime , ssize_t size )
+
+Unit conversion of the size from samples to bytes
+
+Parameters
+  struct snd_pcm_runtime *runtime
+    PCM runtime instance
+  ssize_t size
+    size in samples

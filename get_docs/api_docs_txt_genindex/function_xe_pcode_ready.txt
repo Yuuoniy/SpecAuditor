@@ -1,0 +1,16 @@
+Function: int xe_pcode_ready ( struct xe_device * xe , bool locked )
+
+Ensure PCODE is initialized
+
+Parameters
+  struct xe_device *xe
+    xe instance
+  bool locked
+    true if lock held, false otherwise
+
+Description
+  PCODE init mailbox is polled only on root gt of root tile
+as the root tile provides the initialization is complete only
+after all the tiles have completed the initialization.
+Called only on early probe without locks and with locks in
+resume path.

@@ -1,0 +1,98 @@
+Struct: struct usb_gadget
+
+represents a usb device
+
+Members
+  work
+    (internal use) Workqueue to be used for sysfs_notify()
+  udc
+    struct usb_udc pointer for this gadget
+  ops
+    Function pointers used to access hardware-specific operations.
+  ep0
+    Endpoint zero, used when reading or writing responses to
+driver setup() requests
+  ep_list
+    List of other endpoints supported by the device.
+  speed
+    Speed of current connection to USB host.
+  max_speed
+    Maximal speed the UDC can handle.  UDC must support this
+and all slower speeds.
+  ssp_rate
+    Current connected SuperSpeed Plus signaling rate and lane count.
+  max_ssp_rate
+    Maximum SuperSpeed Plus signaling rate and lane count the UDC
+can handle. The UDC must support this and all slower speeds and lower
+number of lanes.
+  state
+    the state we are now (attached, suspended, configured, etc)
+  name
+    Identifies the controller hardware type.  Used in diagnostics
+and sometimes configuration.
+  dev
+    Driver model state for this abstract device.
+  isoch_delay
+    value from Set Isoch Delay request. Only valid on SS/SSP
+  out_epnum
+    last used out ep number
+  in_epnum
+    last used in ep number
+  mA
+    last set mA value
+  otg_caps
+    OTG capabilities of this gadget.
+  sg_supported
+    true if we can handle scatter-gather
+  is_otg
+    True if the USB device port uses a Mini-AB jack, so that the
+gadget driver must provide a USB OTG descriptor.
+  is_a_peripheral
+    False unless is_otg, the “A” end of a USB cable
+is in the Mini-AB jack, and HNP has been used to switch roles
+so that the “A” device currently acts as A-Peripheral, not A-Host.
+  b_hnp_enable
+    OTG device feature flag, indicating that the A-Host
+enabled HNP support.
+  a_hnp_support
+    OTG device feature flag, indicating that the A-Host
+supports HNP at this port.
+  a_alt_hnp_support
+    OTG device feature flag, indicating that the A-Host
+only supports HNP on a different root port.
+  hnp_polling_support
+    OTG device feature flag, indicating if the OTG device
+in peripheral mode can support HNP polling.
+  host_request_flag
+    OTG device feature flag, indicating if A-Peripheral
+or B-Peripheral wants to take host role.
+  quirk_ep_out_aligned_size
+    epout requires buffer size to be aligned to
+MaxPacketSize.
+  quirk_altset_not_supp
+    UDC controller doesn’t support alt settings.
+  quirk_stall_not_supp
+    UDC controller doesn’t support stalling.
+  quirk_zlp_not_supp
+    UDC controller doesn’t support ZLP.
+  quirk_avoids_skb_reserve
+    udc/platform wants to avoid skb_reserve() in
+u_ether.c to improve performance.
+  is_selfpowered
+    if the gadget is self-powered.
+  deactivated
+    True if gadget is deactivated - in deactivated state it cannot
+be connected.
+  connected
+    True if gadget is connected.
+  lpm_capable
+    If the gadget max_speed is FULL or HIGH, this flag
+indicates that it supports LPM as per the LPM ECN & errata.
+  wakeup_capable
+    True if gadget is capable of sending remote wakeup.
+  wakeup_armed
+    True if gadget is armed by the host for remote wakeup.
+  irq
+    the interrupt number for device controller.
+  id_number
+    a unique ID number for ensuring that gadget names are distinct

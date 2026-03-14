@@ -1,0 +1,7 @@
+Function: void ssam_controller_write_wakeup ( struct ssam_controller * ctrl )
+
+Notify the controller that the underlying device has space available for data to be written.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller.

@@ -1,0 +1,12 @@
+Function: void stratix10_svc_done ( struct stratix10_svc_chan * chan )
+
+complete service request transactions
+
+Parameters
+  struct stratix10_svc_chan *chan
+    service channel assigned to the client
+
+Description
+  This function should be called when client has finished its request
+or there is an error in the request process. It allows the service layer
+to stop the running thread to have maximize savings in kernel resources.

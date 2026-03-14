@@ -1,0 +1,15 @@
+Function: ssize_t ssam_controller_receive_buf ( struct ssam_controller * ctrl , const u8 * buf , size_t n )
+
+Provide input-data to the controller.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller.
+  const u8 *buf
+    The input buffer.
+  size_t n
+    The number of bytes in the input buffer.
+
+Description
+  Provide input data to be evaluated by the controller, which has been
+received via the lower-level transport.

@@ -1,0 +1,7 @@
+Function: void mt_free_walk ( struct rcu_head * head )
+
+Walk & free a tree in the RCU callback context
+
+Parameters
+  struct rcu_head *head
+    The RCU head that’s within the node.

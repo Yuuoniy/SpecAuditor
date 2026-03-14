@@ -1,0 +1,11 @@
+Function: int snd_info_register ( struct snd_info_entry * entry )
+
+register the info entry
+
+Parameters
+  struct snd_info_entry *entry
+    the info entry
+
+Description
+  Registers the proc info entry.
+The all children entries are registered recursively.

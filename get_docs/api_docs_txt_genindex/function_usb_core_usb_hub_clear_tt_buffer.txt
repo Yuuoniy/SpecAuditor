@@ -1,0 +1,13 @@
+Function: int usb_hub_clear_tt_buffer ( struct urb * urb )
+
+clear control/bulk TT state in high speed hub
+
+Parameters
+  struct urb *urb
+    an URB associated with the failed or incomplete split transaction
+
+Description
+  High speed HCDs use this to tell the hub driver that some split control or
+bulk transaction failed in a way that requires clearing internal state of
+a transaction translator.  This is normally detected (and reported) from
+interrupt context.

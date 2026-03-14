@@ -1,0 +1,3 @@
+Enum: enum fpga_mgr_states
+
+fpga framework states

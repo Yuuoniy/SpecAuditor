@@ -1,0 +1,34 @@
+Struct: struct drm_client_funcs
+
+DRM client callbacks
+
+Members
+  owner
+    The module owner
+  unregister
+    Called when drm_device is unregistered. The client should respond by
+releasing its resources using drm_client_release() . This callback is optional.
+  restore
+    Called on drm_lastclose() . The first client instance in the list that
+returns zero gets the privilege to restore and no more clients are
+called. This callback is not called after unregister has been called. Note that the core does not guarantee exclusion against concurrent drm_open() . Clients need to ensure this themselves, for example by
+using drm_master_internal_acquire() and drm_master_internal_release() . This callback is optional.
+  hotplug
+    Called on drm_kms_helper_hotplug_event() .
+This callback is not called after unregister has been called. This callback is optional.
+  suspend
+    Called when suspending the device. This callback is optional. FIXME: Some callers hold the console lock when invoking this function. This interferes with fbdev emulation, which
+also tries to acquire the lock. Push the console lock
+into the callback and remove ‘holds_console_lock’.
+  FIXME: Some callers hold the console lock when invoking this
+    function. This interferes with fbdev emulation, which
+also tries to acquire the lock. Push the console lock
+into the callback and remove ‘holds_console_lock’.
+  resume
+    Called when resuming the device from suspend. This callback is optional. FIXME: Some callers hold the console lock when invoking this function. This interferes with fbdev emulation, which
+also tries to acquire the lock. Push the console lock
+into the callback and remove ‘holds_console_lock’.
+  FIXME: Some callers hold the console lock when invoking this
+    function. This interferes with fbdev emulation, which
+also tries to acquire the lock. Push the console lock
+into the callback and remove ‘holds_console_lock’.

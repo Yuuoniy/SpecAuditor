@@ -1,0 +1,9 @@
+Function: void iwpm_set_registration ( u8 nl_client , u32 reg )
+
+Set the client registration
+
+Parameters
+  u8 nl_client
+    The index of the netlink client
+  u32 reg
+    Registration type to set

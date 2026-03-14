@@ -1,0 +1,12 @@
+Function: bool printk_timed_ratelimit ( unsigned long * caller_jiffies , unsigned int interval_msecs )
+
+caller-controlled printk ratelimiting
+
+Parameters
+  unsigned long *caller_jiffies
+    pointer to caller’s state
+  unsigned int interval_msecs
+    minimum interval between prints
+
+Description
+  printk_timed_ratelimit() returns true if more than interval_msecs milliseconds have elapsed since the last time printk_timed_ratelimit() returned true.

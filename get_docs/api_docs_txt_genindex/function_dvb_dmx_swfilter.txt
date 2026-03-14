@@ -1,0 +1,15 @@
+Function: void dvb_dmx_swfilter ( struct dvb_demux * demux , const u8 * buf , size_t count )
+
+use dvb software filter for a buffer with multiple MPEG-TS packets with 188 bytes each.
+
+Parameters
+  struct dvb_demux *demux
+    pointer to struct dvb_demux
+  const u8 *buf
+    buffer with data to be filtered
+  size_t count
+    number of MPEG-TS packets with size of 188.
+
+Description
+  If a DVB packet doesn’t start with 0x47, it will seek for the first
+byte that starts with 0x47.

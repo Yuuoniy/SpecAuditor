@@ -1,0 +1,11 @@
+Function: int v4l2_event_dequeue ( struct v4l2_fh * fh , struct v4l2_event * event , int nonblocking )
+
+Dequeue events from video device.
+
+Parameters
+  struct v4l2_fh *fh
+    pointer to struct v4l2_fh
+  struct v4l2_event *event
+    pointer to struct v4l2_event
+  int nonblocking
+    if not zero, waits for an event to arrive

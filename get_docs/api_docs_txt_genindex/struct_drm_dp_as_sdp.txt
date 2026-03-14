@@ -1,0 +1,23 @@
+Struct: struct drm_dp_as_sdp
+
+drm DP Adaptive Sync SDP
+
+Members
+  sdp_type
+    Secondary-data packet type
+  revision
+    Revision Number
+  length
+    Number of valid data bytes
+  vtotal
+    Minimum Vertical Vtotal
+  target_rr
+    Target Refresh
+  duration_incr_ms
+    Successive frame duration increase
+  duration_decr_ms
+    Successive frame duration decrease
+  target_rr_divider
+    Target refresh rate divider
+  mode
+    Adaptive Sync Operation Mode

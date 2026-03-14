@@ -1,0 +1,7 @@
+Function: void uio_unregister_device ( struct uio_info * info )
+
+unregister a industrial IO device
+
+Parameters
+  struct uio_info *info
+    UIO device capabilities

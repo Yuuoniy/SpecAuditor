@@ -1,0 +1,14 @@
+Function: int security_post_notification ( const struct cred * w_cred , const struct cred * cred , struct watch_notification * n )
+
+Check if a watch notification can be posted
+
+Parameters
+  const struct cred *w_cred
+    credentials of the task that set the watch
+  const struct cred *cred
+    credentials of the task which triggered the watch
+  struct watch_notification *n
+    the notification
+
+Description
+  Check to see if a watch notification can be posted to a particular queue.

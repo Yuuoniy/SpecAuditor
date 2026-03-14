@@ -1,0 +1,7 @@
+Function: bool of_machine_is_compatible ( const char * compat )
+
+Test root of device tree for a given compatible value
+
+Parameters
+  const char *compat
+    compatible string to look for in root node’s compatible property.

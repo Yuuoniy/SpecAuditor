@@ -1,0 +1,14 @@
+Function: struct device * __root_device_register ( const char * name , struct module * owner )
+
+allocate and register a root device
+
+Parameters
+  const char *name
+    root device name
+  struct module *owner
+    owner module of the root device, usually THIS_MODULE
+
+Description
+  This function allocates a root device and registers it
+using device_register() . In order to free the returned
+device, use root_device_unregister() .

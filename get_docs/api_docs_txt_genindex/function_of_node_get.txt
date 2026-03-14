@@ -1,0 +1,8 @@
+Function: struct device_node * of_node_get ( struct device_node * node )
+
+Increment refcount of a node
+
+Parameters
+  struct device_node *node
+    Node to inc refcount, NULL is supported to simplify writing of
+callers

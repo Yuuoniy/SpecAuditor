@@ -1,0 +1,13 @@
+Function: void __drm_atomic_helper_plane_state_reset ( struct drm_plane_state * plane_state , struct drm_plane * plane )
+
+resets plane state to default values
+
+Parameters
+  struct drm_plane_state *plane_state
+    atomic plane state, must not be NULL
+  struct drm_plane *plane
+    plane object, must not be NULL
+
+Description
+  Initializes the newly allocated plane_state with default
+values. This is useful for drivers that subclass the CRTC state.

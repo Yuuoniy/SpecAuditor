@@ -1,0 +1,23 @@
+Function: void * devm_krealloc ( struct device * dev , void * ptr , size_t new_size , gfp_t gfp )
+
+Resource-managed krealloc()
+
+Parameters
+  struct device *dev
+    Device to re-allocate memory for
+  void *ptr
+    Pointer to the memory chunk to re-allocate
+  size_t new_size
+    New allocation size
+  gfp_t gfp
+    Allocation gfp flags
+
+Description
+  Managed krealloc() . Resizes the memory chunk allocated with devm_kmalloc() .
+Behaves similarly to regular krealloc() : if ptr is NULL or ZERO_SIZE_PTR,
+it’s the equivalent of devm_kmalloc() . If new_size is zero, it frees the
+previously allocated memory and returns ZERO_SIZE_PTR. This function doesn’t
+change the order in which the release callback for the re-alloc’ed devres
+will be called (except when falling back to devm_kmalloc() or when freeing
+resources when new_size is zero). The contents of the memory are preserved
+up to the lesser of new and old sizes.

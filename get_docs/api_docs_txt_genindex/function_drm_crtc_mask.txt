@@ -1,0 +1,10 @@
+Function: uint32_t drm_crtc_mask ( const struct drm_crtc * crtc )
+
+find the mask of a registered CRTC
+
+Parameters
+  const struct drm_crtc *crtc
+    CRTC to find mask for
+
+Description
+  Given a registered CRTC, return the mask bit of that CRTC for the drm_encoder.possible_crtcs and drm_plane.possible_crtcs fields.

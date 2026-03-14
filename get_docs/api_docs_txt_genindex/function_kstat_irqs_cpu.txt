@@ -1,0 +1,13 @@
+Function: unsigned int kstat_irqs_cpu ( unsigned int irq , int cpu )
+
+Get the statistics for an interrupt on a cpu
+
+Parameters
+  unsigned int irq
+    The interrupt number
+  int cpu
+    The cpu number
+
+Description
+  Returns the sum of interrupt counts on cpu since boot for irq . The caller must ensure that the interrupt is not removed
+concurrently.

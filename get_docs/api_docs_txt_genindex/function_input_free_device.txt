@@ -1,0 +1,12 @@
+Function: void input_free_device ( struct input_dev * dev )
+
+free memory occupied by input_dev structure
+
+Parameters
+  struct input_dev *dev
+    input device to free
+
+Description
+  This function should only be used if input_register_device() was not called yet or if it failed. Once device was registered
+use input_unregister_device() and memory will be freed once last
+reference to the device is dropped.

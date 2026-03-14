@@ -1,0 +1,3 @@
+Enum: enum v4l2_subdev_ir_mode
+
+describes the type of IR supported

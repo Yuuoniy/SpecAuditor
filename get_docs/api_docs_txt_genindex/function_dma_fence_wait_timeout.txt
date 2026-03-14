@@ -1,0 +1,16 @@
+Function: signed long dma_fence_wait_timeout ( struct dma_fence * fence , bool intr , signed long timeout )
+
+sleep until the fence gets signaled or until timeout elapses
+
+Parameters
+  struct dma_fence *fence
+    the fence to wait on
+  bool intr
+    if true, do an interruptible wait
+  signed long timeout
+    timeout value in jiffies, or MAX_SCHEDULE_TIMEOUT
+
+Description
+  Returns -ERESTARTSYS if interrupted, 0 if the wait timed out, or the
+remaining timeout in jiffies on success. Other error values may be
+returned on custom implementations.

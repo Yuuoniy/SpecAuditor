@@ -1,0 +1,18 @@
+Function: int damon_start ( struct damon_ctx * * ctxs , int nr_ctxs , bool exclusive )
+
+Starts the monitorings for a given group of contexts.
+
+Parameters
+  struct damon_ctx **ctxs
+    an array of the pointers for contexts to start monitoring
+  int nr_ctxs
+    size of ctxs
+  bool exclusive
+    exclusiveness of this contexts group
+
+Description
+  This function starts a group of monitoring threads for a group of monitoring
+contexts.  One thread per each context is created and run in parallel.  The
+caller should handle synchronization between the threads by itself.  If exclusive is true and a group of threads that created by other
+‘ damon_start() ’ call is currently running, this function does nothing but
+returns -EBUSY.

@@ -1,0 +1,7 @@
+Function: const struct nand_nvddr_timings * nand_get_nvddr_timings ( const struct nand_interface_config * conf )
+
+get NV-DDR timing from data interface
+
+Parameters
+  const struct nand_interface_config *conf
+    The data interface

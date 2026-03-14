@@ -1,0 +1,17 @@
+Struct: struct ccw_device
+
+channel attached device
+
+Members
+  ccwlock
+    pointer to device lock
+  id
+    id of this device
+  drv
+    ccw driver for this device
+  dev
+    embedded device structure
+  online
+    online status of device
+  handler
+    interrupt handler

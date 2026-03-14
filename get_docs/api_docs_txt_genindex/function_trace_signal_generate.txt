@@ -1,0 +1,22 @@
+Function: void trace_signal_generate ( int sig , struct kernel_siginfo * info , struct task_struct * task , int group , int result )
+
+called when a signal is generated
+
+Parameters
+  int sig
+    signal number
+  struct kernel_siginfo *info
+    pointer to struct siginfo
+  struct task_struct *task
+    pointer to struct task_struct
+  int group
+    shared or private
+  int result
+    TRACE_SIGNAL_*
+
+Description
+  Current process sends a ‘sig’ signal to ‘task’ process with
+‘info’ siginfo. If ‘info’ is SEND_SIG_NOINFO or SEND_SIG_PRIV,
+‘info’ is not a pointer and you can’t access its field. Instead,
+SEND_SIG_NOINFO means that si_code is SI_USER, and SEND_SIG_PRIV
+means that si_code is SI_KERNEL.

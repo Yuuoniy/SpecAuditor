@@ -1,0 +1,10 @@
+Function: void i3c_master_dma_unmap_single ( struct i3c_dma * dma_xfer )
+
+Unmap buffer after DMA
+
+Parameters
+  struct i3c_dma *dma_xfer
+    DMA transfer and mapping descriptor
+
+Description
+  Unmap buffer and cleanup DMA transfer descriptor.

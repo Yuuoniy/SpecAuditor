@@ -1,0 +1,11 @@
+Function: void brelse ( struct buffer_head * bh )
+
+Release a buffer.
+
+Parameters
+  struct buffer_head *bh
+    The buffer to release.
+
+Description
+  Decrement a buffer_head’s reference count.  If bh is NULL, this
+function is a no-op.

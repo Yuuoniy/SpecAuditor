@@ -1,0 +1,24 @@
+Function: int security_socket_post_create ( struct socket * sock , int family , int type , int protocol , int kern )
+
+Initialize a newly created socket
+
+Parameters
+  struct socket *sock
+    socket
+  int family
+    protocol family
+  int type
+    communications type
+  int protocol
+    requested protocol
+  int kern
+    set to 1 if a kernel socket is requested
+
+Description
+  This hook allows a module to update or allocate a per-socket security
+structure. Note that the security field was not added directly to the socket
+structure, but rather, the socket security information is stored in the
+associated inode.  Typically, the inode alloc_security hook will allocate
+and attach security information to SOCK_INODE(sock)->i_security.  This hook
+may be used to update the SOCK_INODE(sock)->i_security field with additional
+information that wasn’t available when the inode was allocated.

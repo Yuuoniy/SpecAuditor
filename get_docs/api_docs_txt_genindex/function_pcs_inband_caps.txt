@@ -1,0 +1,15 @@
+Function: unsigned int pcs_inband_caps ( struct phylink_pcs * pcs , phy_interface_t interface )
+
+query PCS in-band capabilities for interface mode.
+
+Parameters
+  struct phylink_pcs *pcs
+    a pointer to a struct phylink_pcs .
+  phy_interface_t interface
+    interface mode to be queried
+
+Description
+  Returns zero if it is unknown what in-band signalling is supported by the
+PHY (e.g. because the PHY driver doesn’t implement the method.) Otherwise,
+returns a bit mask of the LINK_INBAND_* values from enum link_inband_signalling to describe which inband modes are supported
+for this interface mode.

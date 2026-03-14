@@ -1,0 +1,13 @@
+Function: int phy_get_tx_amplitude_gain ( struct phy_device * phydev , struct device * dev , enum ethtool_link_mode_bit_indices linkmode , u32 * val )
+
+stores tx amplitude gain in val
+
+Parameters
+  struct phy_device *phydev
+    phy_device struct
+  struct device *dev
+    pointer to the devices device struct
+  enum ethtool_link_mode_bit_indices linkmode
+    linkmode for which the tx amplitude gain should be retrieved
+  u32 *val
+    tx amplitude gain

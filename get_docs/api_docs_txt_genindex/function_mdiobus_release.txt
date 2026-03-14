@@ -1,0 +1,11 @@
+Function: void mdiobus_release ( struct device * d )
+
+mii_bus device release callback
+
+Parameters
+  struct device *d
+    the target struct device that contains the mii_bus
+
+Description
+  called when the last reference to an mii_bus is
+dropped, to free the underlying memory.

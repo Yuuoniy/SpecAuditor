@@ -1,0 +1,15 @@
+Function: enum drm_connector_status drm_bridge_detect ( struct drm_bridge * bridge , struct drm_connector * connector )
+
+check if anything is attached to the bridge output
+
+Parameters
+  struct drm_bridge *bridge
+    bridge control structure
+  struct drm_connector *connector
+    attached connector
+
+Description
+  If the bridge supports output detection, as reported by the
+DRM_BRIDGE_OP_DETECT bridge ops flag, call drm_bridge_funcs.detect for the
+bridge and return the connection status. Otherwise return
+connector_status_unknown.

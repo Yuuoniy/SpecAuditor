@@ -1,0 +1,14 @@
+Function: int devm_clk_notifier_register ( struct device * dev , struct clk * clk , struct notifier_block * nb )
+
+register a managed rate-change notifier callback
+
+Parameters
+  struct device *dev
+    device for clock “consumer”
+  struct clk *clk
+    clock whose rate we are interested in
+  struct notifier_block *nb
+    notifier block with callback function pointer
+
+Description
+  Returns 0 on success, -EERROR otherwise

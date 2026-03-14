@@ -1,0 +1,14 @@
+Function: int mpt_Soft_Hard_ResetHandler ( MPT_ADAPTER * ioc , int sleepFlag )
+
+Try less expensive reset
+
+Parameters
+  MPT_ADAPTER *ioc
+    Pointer to MPT_ADAPTER structure
+  int sleepFlag
+    Indicates if sleep or schedule must be called.
+
+Description
+  Returns 0 for SUCCESS or -1 if FAILED.
+Try for softreset first, only if it fails go for expensive
+HardReset.

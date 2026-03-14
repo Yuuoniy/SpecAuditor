@@ -1,0 +1,11 @@
+Function: int folio_has_private ( const struct folio * folio )
+
+Determine if folio has private stuff
+
+Parameters
+  const struct folio *folio
+    The folio to be checked
+
+Description
+  Determine if a folio has private stuff, indicating that release routines
+should be invoked upon it.

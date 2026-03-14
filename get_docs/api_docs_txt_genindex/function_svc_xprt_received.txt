@@ -1,0 +1,11 @@
+Function: void svc_xprt_received ( struct svc_xprt * xprt )
+
+start next receiver thread
+
+Parameters
+  struct svc_xprt *xprt
+    controlling transport
+
+Description
+  The caller must hold the XPT_BUSY bit and must
+not thereafter touch transport data.

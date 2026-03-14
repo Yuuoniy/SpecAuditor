@@ -1,0 +1,18 @@
+Function: int drm_dp_mst_atomic_check_mgr ( struct drm_atomic_state * state , struct drm_dp_mst_topology_mgr * mgr , struct drm_dp_mst_topology_state * mst_state , struct drm_dp_mst_port * * failing_port )
+
+Check the atomic state of an MST topology manager
+
+Parameters
+  struct drm_atomic_state *state
+    The global atomic state
+  struct drm_dp_mst_topology_mgr *mgr
+    Manager to check
+  struct drm_dp_mst_topology_state *mst_state
+    The MST atomic state for mgr
+  struct drm_dp_mst_port **failing_port
+    Returns the port with a BW limitation
+
+Description
+  Checks the given MST manager’s topology state for an atomic update to ensure
+that it’s valid. This includes checking whether there’s enough bandwidth to
+support the new timeslot allocations in the atomic update.

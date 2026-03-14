@@ -1,0 +1,12 @@
+Macro: array_size
+
+
+
+Parameters
+  a
+    dimension one
+  b
+    dimension two
+
+Description
+  Calculates size of 2-dimensional array: a * b .

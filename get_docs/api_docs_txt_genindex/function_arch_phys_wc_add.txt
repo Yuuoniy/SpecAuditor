@@ -1,0 +1,14 @@
+Function: int arch_phys_wc_add ( unsigned long base , unsigned long size )
+
+add a WC MTRR and handle errors if PAT is unavailable
+
+Parameters
+  unsigned long base
+    Physical base address
+  unsigned long size
+    Size of region
+
+Description
+  If PAT is available, this does nothing.  If PAT is unavailable, it
+attempts to add a WC MTRR covering size bytes starting at base and
+logs an error if this fails.

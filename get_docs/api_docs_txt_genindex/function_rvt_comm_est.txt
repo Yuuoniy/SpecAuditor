@@ -1,0 +1,7 @@
+Function: void rvt_comm_est ( struct rvt_qp * qp )
+
+handle trap with QP established
+
+Parameters
+  struct rvt_qp *qp
+    the QP

@@ -1,0 +1,17 @@
+Function: int gpiod_export ( struct gpio_desc * desc , bool direction_may_change )
+
+export a GPIO through sysfs
+
+Parameters
+  struct gpio_desc *desc
+    GPIO to make available, already requested
+  bool direction_may_change
+    true if userspace may change GPIO direction
+
+Description
+  When drivers want to make a GPIO accessible to userspace after they
+have requested it -- perhaps while debugging, or as part of their
+public interface -- they may use this routine.  If the GPIO can
+change direction (some can’t) and the caller allows it, userspace
+will see “direction” sysfs attribute which may be used to change
+the gpio’s direction.  A “value” attribute will always be provided.

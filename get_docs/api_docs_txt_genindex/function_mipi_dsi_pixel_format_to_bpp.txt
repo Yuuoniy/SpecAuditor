@@ -1,0 +1,7 @@
+Function: int mipi_dsi_pixel_format_to_bpp ( enum mipi_dsi_pixel_format fmt )
+
+obtain the number of bits per pixel for any given pixel format defined by the MIPI DSI specification
+
+Parameters
+  enum mipi_dsi_pixel_format fmt
+    MIPI DSI pixel format

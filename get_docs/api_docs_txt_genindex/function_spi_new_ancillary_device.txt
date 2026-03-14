@@ -1,0 +1,13 @@
+Function: struct spi_device * spi_new_ancillary_device ( struct spi_device * spi , u8 chip_select )
+
+Register ancillary SPI device
+
+Parameters
+  struct spi_device *spi
+    Pointer to the main SPI device registering the ancillary device
+  u8 chip_select
+    Chip Select of the ancillary device
+
+Description
+  Register an ancillary SPI device; for example some chips have a chip-select
+for normal device usage and another one for setup/firmware upload.

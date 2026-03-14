@@ -1,0 +1,9 @@
+Function: bool drm_sched_job_has_dependency ( struct drm_sched_job * job , struct dma_fence * fence )
+
+check whether fence is the job’s dependency
+
+Parameters
+  struct drm_sched_job *job
+    scheduler job to check
+  struct dma_fence *fence
+    fence to look for

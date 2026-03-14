@@ -1,0 +1,11 @@
+Struct: struct ttm_kmap_iter_tt
+
+Specialization of a mappig iterator for a tt.
+
+Members
+  base
+    Embedded struct ttm_kmap_iter providing the usage interface
+  tt
+    Cached struct ttm_tt .
+  prot
+    Cached page protection for mapping.

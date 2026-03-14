@@ -1,0 +1,26 @@
+Function: void v4l_bound_align_image ( unsigned int * width , unsigned int wmin , unsigned int wmax , unsigned int walign , unsigned int * height , unsigned int hmin , unsigned int hmax , unsigned int halign , unsigned int salign )
+
+adjust video dimensions according to a given constraints.
+
+Parameters
+  unsigned int *width
+    pointer to width that will be adjusted if needed.
+  unsigned int wmin
+    minimum width.
+  unsigned int wmax
+    maximum width.
+  unsigned int walign
+    least significant bit on width.
+  unsigned int *height
+    pointer to height that will be adjusted if needed.
+  unsigned int hmin
+    minimum height.
+  unsigned int hmax
+    maximum height.
+  unsigned int halign
+    least significant bit on height.
+  unsigned int salign
+    least significant bit for the image size (e. g. ).
+
+Description
+  Clip an image to have width between wmin and wmax , and height between hmin and hmax , inclusive.

@@ -1,0 +1,10 @@
+Function: void drm_sched_fault ( struct drm_gpu_scheduler * sched )
+
+immediately start timeout handler
+
+Parameters
+  struct drm_gpu_scheduler *sched
+    scheduler where the timeout handling should be started.
+
+Description
+  Start timeout handling immediately when the driver detects a hardware fault.

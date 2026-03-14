@@ -1,0 +1,19 @@
+Function: struct dma_pool * dmam_pool_create ( const char * name , struct device * dev , size_t size , size_t align , size_t allocation )
+
+Managed dma_pool_create()
+
+Parameters
+  const char *name
+    name of pool, for diagnostics
+  struct device *dev
+    device that will be doing the DMA
+  size_t size
+    size of the blocks in this pool.
+  size_t align
+    alignment requirement for blocks; must be a power of two
+  size_t allocation
+    returned blocks won’t cross this boundary (or zero)
+
+Description
+  Managed dma_pool_create() .  DMA pool created with this function is
+automatically destroyed on driver detach.

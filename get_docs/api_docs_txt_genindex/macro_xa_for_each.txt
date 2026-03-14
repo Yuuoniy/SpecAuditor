@@ -1,0 +1,17 @@
+Macro: xa_for_each
+
+
+
+Parameters
+  xa
+    XArray.
+  index
+    Index of entry .
+  entry
+    Entry retrieved from array.
+
+Description
+  During the iteration, entry will have the value of the entry stored
+in xa at index .  You may modify index during the iteration if you want
+to skip or reprocess indices.  It is safe to modify the array during the
+iteration.  At the end of the iteration, entry will be set to NULL and index will have a value less than or equal to max.

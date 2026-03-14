@@ -1,0 +1,13 @@
+Function: void tty_buffer_flush ( struct tty_struct * tty , struct tty_ldisc * ld )
+
+flush full tty buffers
+
+Parameters
+  struct tty_struct *tty
+    tty to flush
+  struct tty_ldisc *ld
+    optional ldisc ptr (must be referenced)
+
+Description
+  Flush all the buffers containing receive data. If ld != NULL , flush the
+ldisc input buffer.

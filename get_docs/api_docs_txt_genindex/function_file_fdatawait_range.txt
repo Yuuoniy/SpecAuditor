@@ -1,0 +1,16 @@
+Function: int file_fdatawait_range ( struct file * file , loff_t start_byte , loff_t end_byte )
+
+wait for writeback to complete
+
+Parameters
+  struct file *file
+    file pointing to address space structure to wait for
+  loff_t start_byte
+    offset in bytes where the range starts
+  loff_t end_byte
+    offset in bytes where the range ends (inclusive)
+
+Description
+  Walk the list of under-writeback pages of the address space that file
+refers to, in the given range and wait for all of them.  Check error
+status of the address space vs. the file->f_wb_err cursor and return it.

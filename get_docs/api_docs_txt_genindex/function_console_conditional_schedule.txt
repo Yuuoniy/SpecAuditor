@@ -1,0 +1,12 @@
+Function: void console_conditional_schedule ( void )
+
+yield the CPU if required
+
+Parameters
+  void
+    no arguments
+
+Description
+  If the console code is currently allowed to sleep, and
+if this CPU should yield the CPU to another task, do
+so here.

@@ -1,0 +1,11 @@
+Function: void sfp_bus_del_upstream ( struct sfp_bus * bus )
+
+Delete a sfp bus
+
+Parameters
+  struct sfp_bus *bus
+    a pointer to the struct sfp_bus structure for the sfp module
+
+Description
+  Delete a previously registered upstream connection for the SFP
+module. bus should have been added by sfp_bus_add_upstream() .

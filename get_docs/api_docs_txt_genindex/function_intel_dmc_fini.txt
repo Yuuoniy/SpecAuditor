@@ -1,0 +1,11 @@
+Function: void intel_dmc_fini ( struct intel_display * display )
+
+unload the DMC firmware.
+
+Parameters
+  struct intel_display *display
+    display instance
+
+Description
+  Firmmware unloading includes freeing the internal memory and reset the
+firmware loading status.

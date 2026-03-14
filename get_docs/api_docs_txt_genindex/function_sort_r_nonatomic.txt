@@ -1,0 +1,20 @@
+Function: void sort_r_nonatomic ( void * base , size_t num , size_t size , cmp_r_func_t cmp_func , swap_r_func_t swap_func , const void * priv )
+
+sort an array of elements, with cond_resched
+
+Parameters
+  void *base
+    pointer to data to sort
+  size_t num
+    number of elements
+  size_t size
+    size of each element
+  cmp_r_func_t cmp_func
+    pointer to comparison function
+  swap_r_func_t swap_func
+    pointer to swap function or NULL
+  const void *priv
+    third argument passed to comparison function
+
+Description
+  Same as sort_r, but preferred for larger arrays as it does a periodic cond_resched() .

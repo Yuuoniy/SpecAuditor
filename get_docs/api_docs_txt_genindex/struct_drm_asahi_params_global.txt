@@ -1,0 +1,55 @@
+Struct: struct drm_asahi_params_global
+
+Global parameters.
+
+Members
+  features
+    Feature bits from drm_asahi_feature
+  gpu_generation
+    GPU generation, e.g. 13 for G13G
+  gpu_variant
+    GPU variant as a character, e.g. ‘C’ for G13C
+  gpu_revision
+    GPU revision in BCD, e.g. 0x00 for ‘A0’ or
+0x21 for ‘C1’
+  chip_id
+    Chip ID in BCD, e.g. 0x8103 for T8103
+  num_dies
+    Number of dies in the SoC
+  num_clusters_total
+    Number of GPU clusters (across all dies)
+  num_cores_per_cluster
+    Number of logical cores per cluster
+(including inactive/nonexistent)
+  max_frequency_khz
+    Maximum GPU core clock frequency
+  core_masks
+    Bitmask of present/enabled cores per cluster
+  vm_start
+    VM range start VMA. Together with vm_end , this defines
+the window of valid GPU VAs. Userspace is expected to subdivide VAs
+out of this window. This window contains all virtual addresses that userspace needs to
+know about. There may be kernel-internal GPU VAs outside this range,
+but that detail is not relevant here.
+  vm_end
+    VM range end VMA
+  vm_kernel_min_size
+    Minimum kernel VMA window size. When creating a VM, userspace is required to carve out a section of
+virtual addresses (within the range given by vm_start and vm_end ). The kernel will allocate various internal structures
+within the specified VA range. Allowing userspace to choose the VA range for the kernel, rather than
+the kernel reserving VAs and requiring userspace to cope, can assist
+in implementing SVM.
+  max_commands_per_submission
+    Maximum number of supported commands
+per submission. This mirrors firmware limits. Userspace must split up
+larger command buffers, which may require inserting additional
+synchronization.
+  max_attachments
+    Maximum number of drm_asahi_attachment’s per
+command
+  command_timestamp_frequency_hz
+    Timebase frequency for timestamps
+written during command execution, specified via drm_asahi_timestamp
+structures. As this rate is controlled by the firmware, it is a
+queryable parameter. Userspace must divide by this frequency to convert timestamps to
+seconds, rather than hardcoding a particular firmware’s rate.

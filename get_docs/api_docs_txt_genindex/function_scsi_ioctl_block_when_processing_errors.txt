@@ -1,0 +1,14 @@
+Function: int scsi_ioctl_block_when_processing_errors ( struct scsi_device * sdev , int cmd , bool ndelay )
+
+prevent commands from being queued
+
+Parameters
+  struct scsi_device *sdev
+    target scsi device
+  int cmd
+    which ioctl is it
+  bool ndelay
+    no delay (non-blocking)
+
+Description
+  We can process a reset even when a device isn’t fully operable.

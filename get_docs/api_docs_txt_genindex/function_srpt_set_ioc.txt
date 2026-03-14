@@ -1,0 +1,15 @@
+Function: void srpt_set_ioc ( u8 * c_list , u32 slot , u8 value )
+
+initialize a IOUnitInfo structure
+
+Parameters
+  u8 *c_list
+    controller list.
+  u32 slot
+    one-based slot number.
+  u8 value
+    four-bit value.
+
+Description
+  Copies the lowest four bits of value in element slot of the array of four
+bit elements called c_list (controller list). The index slot is one-based.

@@ -1,0 +1,19 @@
+Function: int tipc_setsockopt ( struct socket * sock , int lvl , int opt , sockptr_t ov , unsigned int ol )
+
+set socket option
+
+Parameters
+  struct socket *sock
+    socket structure
+  int lvl
+    option level
+  int opt
+    option identifier
+  sockptr_t ov
+    pointer to new option value
+  unsigned int ol
+    length of option value
+
+Description
+  For stream sockets only, accepts and ignores all IPPROTO_TCP options
+(to ease compatibility).

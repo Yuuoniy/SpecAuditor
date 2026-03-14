@@ -1,0 +1,12 @@
+Function: int vga_remove_vgacon ( struct pci_dev * pdev )
+
+deactivate VGA console
+
+Parameters
+  struct pci_dev *pdev
+    PCI device.
+
+Description
+  Unbind and unregister vgacon in case pdev is the default VGA device.
+Can be called by GPU drivers on initialization to make sure VGA register
+access done by vgacon will not disturb the device.

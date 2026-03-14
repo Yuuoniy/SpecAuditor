@@ -1,0 +1,21 @@
+Function: KUNIT_CASE_PARAM_WITH_INIT
+
+
+
+Parameters
+  test_name
+    The function implementing the test case.
+  gen_params
+    The function to generate parameters for the test case.
+  init
+    A reference to the param_init() function to run before a parameterized test.
+  exit
+    A reference to the param_exit() function to run after a parameterized test.
+
+Description
+  Provides the option to register param_init() and param_exit() functions.
+param_init/exit will be passed the parameterized test context and run once
+before and once after the parameterized test. The init function can be used
+to add resources to share between parameter runs, pass parameter arrays,
+and any other setup logic. The exit function can be used to clean up resources
+that were not managed by the parameterized test, and any other teardown logic.

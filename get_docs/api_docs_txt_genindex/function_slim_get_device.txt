@@ -1,0 +1,9 @@
+Function: struct slim_device * slim_get_device ( struct slim_controller * ctrl , struct slim_eaddr * e_addr )
+
+get handle to a device.
+
+Parameters
+  struct slim_controller *ctrl
+    Controller on which this device will be added/queried
+  struct slim_eaddr *e_addr
+    Enumeration address of the device to be queried

@@ -1,0 +1,16 @@
+Function: long int video_usercopy ( struct file * file , unsigned int cmd , unsigned long int arg , v4l2_kioctl func )
+
+copies data from/to userspace memory when an ioctl is issued.
+
+Parameters
+  struct file *file
+    Pointer to struct file .
+  unsigned int cmd
+    Ioctl name.
+  unsigned long int arg
+    Ioctl argument.
+  v4l2_kioctl func
+    function that will handle the ioctl
+
+Description
+  Note

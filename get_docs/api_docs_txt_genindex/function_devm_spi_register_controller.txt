@@ -1,0 +1,13 @@
+Function: int devm_spi_register_controller ( struct device * dev , struct spi_controller * ctlr )
+
+register managed SPI host or target controller
+
+Parameters
+  struct device *dev
+    device managing SPI controller
+  struct spi_controller *ctlr
+    initialized controller, originally from spi_alloc_host() or spi_alloc_target()
+
+Description
+  Register a SPI device as with spi_register_controller() which will
+automatically be unregistered and freed.

@@ -1,0 +1,17 @@
+Function: ssize_t parport_write ( struct parport * port , const void * buffer , size_t len )
+
+write a block of data to a parallel port
+
+Parameters
+  struct parport *port
+    port to write to
+  const void *buffer
+    data buffer (in kernel space)
+  size_t len
+    number of bytes of data to transfer
+
+Description
+  This will write up to len bytes of buffer to the port
+specified, using the IEEE 1284 transfer mode most recently
+negotiated to (using parport_negotiate() ), as long as that
+mode supports forward transfers (host to peripheral).

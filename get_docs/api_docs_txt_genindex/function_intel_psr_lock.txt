@@ -1,0 +1,12 @@
+Function: void intel_psr_lock ( const struct intel_crtc_state * crtc_state )
+
+grab PSR lock
+
+Parameters
+  const struct intel_crtc_state *crtc_state
+    the crtc state
+
+Description
+  This is initially meant to be used by around CRTC update, when
+vblank sensitive registers are updated and we need grab the lock
+before it to avoid vblank evasion.

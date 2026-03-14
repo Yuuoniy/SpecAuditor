@@ -1,0 +1,11 @@
+Function: void __ref kmemleak_alloc_phys ( phys_addr_t phys , size_t size , gfp_t gfp )
+
+similar to kmemleak_alloc but taking a physical address argument
+
+Parameters
+  phys_addr_t phys
+    physical address of the object
+  size_t size
+    size of the object
+  gfp_t gfp
+    kmalloc() flags used for kmemleak internal memory allocations

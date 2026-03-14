@@ -1,0 +1,17 @@
+Function: void * gen_pool_dma_alloc ( struct gen_pool * pool , size_t size , dma_addr_t * dma )
+
+allocate special memory from the pool for DMA usage
+
+Parameters
+  struct gen_pool *pool
+    pool to allocate from
+  size_t size
+    number of bytes to allocate from the pool
+  dma_addr_t *dma
+    dma-view physical address return value.  Use NULL if unneeded.
+
+Description
+  Allocate the requested number of bytes from the specified pool.
+Uses the pool allocation function (with first-fit algorithm by default).
+Can not be used in NMI handler on architectures without
+NMI-safe cmpxchg implementation.

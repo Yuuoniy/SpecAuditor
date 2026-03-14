@@ -1,0 +1,12 @@
+Function: void ether_addr_copy ( u8 * dst , const u8 * src )
+
+Copy an Ethernet address
+
+Parameters
+  u8 *dst
+    Pointer to a six-byte array Ethernet address destination
+  const u8 *src
+    Pointer to a six-byte array Ethernet address source
+
+Description
+  Please note: dst & src must both be aligned to u16.

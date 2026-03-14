@@ -1,0 +1,7 @@
+Function: bool xe_pm_runtime_get_if_in_use ( struct xe_device * xe )
+
+Get a new reference if device is active with previous ref taken
+
+Parameters
+  struct xe_device *xe
+    xe device instance

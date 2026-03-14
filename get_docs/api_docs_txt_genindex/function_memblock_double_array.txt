@@ -1,0 +1,18 @@
+Function: int __init_memblock memblock_double_array ( struct memblock_type * type , phys_addr_t new_area_start , phys_addr_t new_area_size )
+
+double the size of the memblock regions array
+
+Parameters
+  struct memblock_type *type
+    memblock type of the regions array being doubled
+  phys_addr_t new_area_start
+    starting address of memory range to avoid overlap with
+  phys_addr_t new_area_size
+    size of memory range to avoid overlap with
+
+Description
+  Double the size of the type regions array. If memblock is being used to
+allocate memory for a new reserved regions array and there is a previously
+allocated memory range [ new_area_start , new_area_start + new_area_size ]
+waiting to be reserved, ensure the memory used by the new array does
+not overlap.

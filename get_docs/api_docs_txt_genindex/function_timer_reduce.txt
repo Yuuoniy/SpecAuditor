@@ -1,0 +1,13 @@
+Function: int timer_reduce ( struct timer_list * timer , unsigned long expires )
+
+Modify a timer’s timeout if it would reduce the timeout
+
+Parameters
+  struct timer_list *timer
+    The timer to be modified
+  unsigned long expires
+    New absolute timeout in jiffies
+
+Description
+  timer_reduce() is very similar to mod_timer() , except that it will only
+modify an enqueued timer if that would reduce the expiration time. If timer is not enqueued it starts the timer.

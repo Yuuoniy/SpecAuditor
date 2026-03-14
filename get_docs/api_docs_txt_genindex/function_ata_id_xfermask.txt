@@ -1,0 +1,11 @@
+Function: unsigned int ata_id_xfermask ( const u16 * id )
+
+Compute xfermask from the given IDENTIFY data
+
+Parameters
+  const u16 *id
+    IDENTIFY data to compute xfer mask from
+
+Description
+  Compute the xfermask for this device. This is not as trivial
+as it seems if we must consider early devices correctly.

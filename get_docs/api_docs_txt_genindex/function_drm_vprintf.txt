@@ -1,0 +1,11 @@
+Function: void drm_vprintf ( struct drm_printer * p , const char * fmt , va_list * va )
+
+print to a drm_printer stream
+
+Parameters
+  struct drm_printer *p
+    the drm_printer
+  const char *fmt
+    format string
+  va_list *va
+    the va_list

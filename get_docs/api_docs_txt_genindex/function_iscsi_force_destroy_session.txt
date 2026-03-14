@@ -1,0 +1,11 @@
+Function: void iscsi_force_destroy_session ( struct iscsi_cls_session * session )
+
+destroy a session from the kernel
+
+Parameters
+  struct iscsi_cls_session *session
+    session to destroy
+
+Description
+  Force the destruction of a session from the kernel. This should only be
+used when userspace is no longer running during system shutdown.

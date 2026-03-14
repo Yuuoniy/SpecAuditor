@@ -1,0 +1,7 @@
+Function: void pcs_disable ( struct phylink_pcs * pcs )
+
+disable the PCS.
+
+Parameters
+  struct phylink_pcs *pcs
+    a pointer to a struct phylink_pcs .

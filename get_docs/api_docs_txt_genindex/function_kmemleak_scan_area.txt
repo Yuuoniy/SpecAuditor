@@ -1,0 +1,17 @@
+Function: void __ref kmemleak_scan_area ( const void * ptr , size_t size , gfp_t gfp )
+
+limit the range to be scanned in an allocated object
+
+Parameters
+  const void *ptr
+    pointer to beginning or inside the object. This also
+represents the start of the scan area
+  size_t size
+    size of the scan area
+  gfp_t gfp
+    kmalloc() flags used for kmemleak internal memory allocations
+
+Description
+  This function is used when it is known that only certain parts of an object
+contain references to other objects. Kmemleak will only scan these areas
+reducing the number false negatives.

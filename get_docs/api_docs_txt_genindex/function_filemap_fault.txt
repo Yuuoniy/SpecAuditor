@@ -1,0 +1,11 @@
+Function: vm_fault_t filemap_fault ( struct vm_fault * vmf )
+
+read in file data for page fault handling
+
+Parameters
+  struct vm_fault *vmf
+    struct vm_fault containing details of the fault
+
+Description
+  filemap_fault() is invoked via the vma operations vector for a
+mapped memory region to read in file data during a page fault.

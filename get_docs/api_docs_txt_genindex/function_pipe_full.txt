@@ -1,0 +1,11 @@
+Function: bool pipe_full ( unsigned int head , unsigned int tail , unsigned int limit )
+
+Return true if the pipe is full
+
+Parameters
+  unsigned int head
+    The pipe ring head pointer
+  unsigned int tail
+    The pipe ring tail pointer
+  unsigned int limit
+    The maximum amount of slots available.

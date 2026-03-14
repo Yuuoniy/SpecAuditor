@@ -1,0 +1,11 @@
+Macro: XE_RTP_ACTIONS
+
+
+
+Parameters
+  ...
+    Actions to be taken
+
+Description
+  At least one action is needed and up to 12 are supported. See XE_RTP_ACTION_*
+for the possible actions. Example:

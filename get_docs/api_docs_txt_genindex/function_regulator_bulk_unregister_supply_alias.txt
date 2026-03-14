@@ -1,0 +1,15 @@
+Function: void regulator_bulk_unregister_supply_alias ( struct device * dev , const char * const * id , int num_id )
+
+unregister multiple aliases
+
+Parameters
+  struct device *dev
+    device that will be given as the regulator “consumer”
+  const char *const *id
+    List of supply names or regulator IDs
+  int num_id
+    Number of aliases to unregister
+
+Description
+  This helper function allows drivers to unregister several supply
+aliases in one operation.

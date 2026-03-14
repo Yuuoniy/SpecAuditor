@@ -1,0 +1,14 @@
+Function: void migrate_device_pages ( unsigned long * src_pfns , unsigned long * dst_pfns , unsigned long npages )
+
+migrate meta-data from src page to dst page
+
+Parameters
+  unsigned long *src_pfns
+    src_pfns returned from migrate_device_range()
+  unsigned long *dst_pfns
+    array of pfns allocated by the driver to migrate memory to
+  unsigned long npages
+    number of pages in the range
+
+Description
+  Equivalent to migrate_vma_pages() . This is called to migrate struct page meta-data from source struct page to destination.

@@ -1,0 +1,13 @@
+Function: long sys_rt_sigaction ( int sig , const struct sigaction __user * act , struct sigaction __user * oact , size_t sigsetsize )
+
+alter an action taken by a process
+
+Parameters
+  int sig
+    signal to be sent
+  const struct sigaction __user * act
+    new sigaction
+  struct sigaction __user * oact
+    used to save the previous sigaction
+  size_t sigsetsize
+    size of sigset_t type

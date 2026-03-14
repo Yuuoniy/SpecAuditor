@@ -1,0 +1,16 @@
+Function: int usb_func_wakeup ( struct usb_function * func )
+
+sends function wake notification to the host.
+
+Parameters
+  struct usb_function *func
+    function that sends the remote wakeup notification.
+
+Description
+  Applicable to devices operating at enhanced superspeed when usb
+functions are put in function suspend state and armed for function
+remote wakeup. On completion, function wake notification is sent. If
+the device is in low power state it tries to bring the device to active
+state before sending the wake notification. Since it is a synchronous
+call, caller must take care of not calling it in interrupt context.
+For devices operating at lower speeds  returns negative errno.

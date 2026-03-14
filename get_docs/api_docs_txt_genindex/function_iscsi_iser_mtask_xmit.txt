@@ -1,0 +1,9 @@
+Function: int iscsi_iser_mtask_xmit ( struct iscsi_conn * conn , struct iscsi_task * task )
+
+xmit management (immediate) task
+
+Parameters
+  struct iscsi_conn *conn
+    iscsi connection
+  struct iscsi_task *task
+    task management task

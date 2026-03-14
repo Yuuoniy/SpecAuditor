@@ -1,0 +1,18 @@
+Function: struct dma_buf * drm_gem_prime_handle_to_dmabuf ( struct drm_device * dev , struct drm_file * file_priv , uint32_t handle , uint32_t flags )
+
+PRIME export function for GEM drivers
+
+Parameters
+  struct drm_device *dev
+    dev to export the buffer from
+  struct drm_file *file_priv
+    drm file-private structure
+  uint32_t handle
+    buffer handle to export
+  uint32_t flags
+    flags like DRM_CLOEXEC
+
+Description
+  This is the PRIME export function which must be used mandatorily by GEM
+drivers to ensure correct lifetime management of the underlying GEM object.
+The actual exporting from GEM object to a dma-buf is done through the drm_gem_object_funcs.export callback.

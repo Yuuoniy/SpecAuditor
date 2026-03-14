@@ -1,0 +1,7 @@
+Struct: struct pisp_be_hog_buffer_config
+
+PiSP Back End HOG buffer
+
+Members
+  addr
+    HOG buffer address

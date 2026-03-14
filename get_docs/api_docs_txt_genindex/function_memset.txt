@@ -1,0 +1,14 @@
+Function: void * memset ( void * s , int c , size_t count )
+
+Fill a region of memory with the given value
+
+Parameters
+  void *s
+    Pointer to the start of the area.
+  int c
+    The byte to fill the area with
+  size_t count
+    The size of the area.
+
+Description
+  Do not use memset() to access IO space, use memset_io() instead.

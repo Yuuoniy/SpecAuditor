@@ -1,0 +1,17 @@
+Struct: struct cxd2820r_config
+
+configuration for cxd2020r demod
+
+Members
+  i2c_address
+    Demodulator I2C address. Driver determines DVB-C slave I2C
+address automatically from master address.
+Default: none, must set. Values: 0x6c, 0x6d.
+  ts_mode
+    TS output mode. Default: none, must set. Values: FIXME?
+  ts_clock_inv
+    TS clock inverted. Default: 0. Values: 0, 1.
+  if_agc_polarity
+    Default: 0. Values: 0, 1
+  spec_inv
+    Spectrum inversion. Default: 0. Values: 0, 1.

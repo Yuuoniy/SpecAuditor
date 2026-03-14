@@ -1,0 +1,3 @@
+Enum: enum link_inband_signalling
+
+in-band signalling modes that are supported

@@ -1,0 +1,16 @@
+Macro: kthread_run
+
+
+
+Parameters
+  threadfn
+    the function to run until signal_pending(current).
+  data
+    data ptr for threadfn .
+  namefmt
+    printf-style name for the thread.
+  ...
+    variable arguments
+
+Description
+  Convenient wrapper for kthread_create() followed by wake_up_process() .  Returns the kthread or ERR_PTR(-ENOMEM).

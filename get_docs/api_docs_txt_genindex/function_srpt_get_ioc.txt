@@ -1,0 +1,16 @@
+Function: void srpt_get_ioc ( struct srpt_port * sport , u32 slot , struct ib_dm_mad * mad )
+
+write IOControllerprofile to a management datagram
+
+Parameters
+  struct srpt_port *sport
+    HCA port through which the MAD has been received.
+  u32 slot
+    Slot number specified in DM_ATTR_IOC_PROFILE query.
+  struct ib_dm_mad *mad
+    Datagram that will be sent as response to DM_ATTR_IOC_PROFILE.
+
+Description
+  See also section 16.3.3.4 IOControllerProfile in the InfiniBand
+Architecture Specification. See also section B.7, table B.7 in the SRP
+r16a document.

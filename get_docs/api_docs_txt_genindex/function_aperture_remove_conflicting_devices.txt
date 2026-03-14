@@ -1,0 +1,14 @@
+Function: int aperture_remove_conflicting_devices ( resource_size_t base , resource_size_t size , const char * name )
+
+remove devices in the given range
+
+Parameters
+  resource_size_t base
+    the aperture’s base address in physical memory
+  resource_size_t size
+    aperture size in bytes
+  const char *name
+    a descriptive name of the requesting driver
+
+Description
+  This function removes devices that own apertures within base and size .

@@ -1,0 +1,13 @@
+Struct: struct stratix10_svc_cb_data
+
+callback data structure from service layer
+
+Members
+  status
+    the status of sent command
+  kaddr1
+    address of 1st completed data block
+  kaddr2
+    address of 2nd completed data block
+  kaddr3
+    address of 3rd completed data block

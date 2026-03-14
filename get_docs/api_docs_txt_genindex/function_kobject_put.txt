@@ -1,0 +1,10 @@
+Function: void kobject_put ( struct kobject * kobj )
+
+Decrement refcount for object.
+
+Parameters
+  struct kobject *kobj
+    object.
+
+Description
+  Decrement the refcount, and if 0, call kobject_cleanup() .

@@ -1,0 +1,17 @@
+Function: int gpiod_set_array_value ( unsigned int array_size , struct gpio_desc * * desc_array , struct gpio_array * array_info , unsigned long * value_bitmap )
+
+assign values to an array of GPIOs
+
+Parameters
+  unsigned int array_size
+    number of elements in the descriptor array / value bitmap
+  struct gpio_desc **desc_array
+    array of GPIO descriptors whose values will be assigned
+  struct gpio_array *array_info
+    information on applicability of fast bitmap processing path
+  unsigned long *value_bitmap
+    bitmap of values to assign
+
+Description
+  Set the logical values of the GPIOs, i.e. taking their ACTIVE_LOW status
+into account.

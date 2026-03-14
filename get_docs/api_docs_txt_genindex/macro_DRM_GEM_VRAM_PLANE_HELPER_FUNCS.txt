@@ -1,0 +1,11 @@
+Macro: DRM_GEM_VRAM_PLANE_HELPER_FUNCS
+
+
+
+Members
+  vram_base
+    Base address of the managed video memory
+  vram_size
+    Size of the managed video memory in bytes
+  bdev
+    The TTM BO device.

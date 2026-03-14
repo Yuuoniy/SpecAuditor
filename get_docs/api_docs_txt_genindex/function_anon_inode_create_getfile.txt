@@ -1,0 +1,19 @@
+Function: struct file * anon_inode_create_getfile ( const char * name , const struct file_operations * fops , void * priv , int flags , const struct inode * context_inode )
+
+Like anon_inode_getfile() , but creates a new !S_PRIVATE anon inode rather than reuse the singleton anon inode and calls the inode_init_security_anon() LSM hook.
+
+Parameters
+  const char *name
+    [in]    name of the “class” of the new file
+  const struct file_operations *fops
+    [in]    file operations for the new file
+  void *priv
+    [in]    private data for the new file (will be file’s private_data)
+  int flags
+    [in]    flags
+  const struct inode *context_inode
+    [in]    the logical relationship with the new inode (optional)
+
+Description
+  Create a new anonymous inode and file pair.  This can be done for two
+reasons:

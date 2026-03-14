@@ -1,0 +1,15 @@
+Function: struct dentry * securityfs_create_dir ( const char * name , struct dentry * parent )
+
+create a directory in the securityfs filesystem
+
+Parameters
+  const char *name
+    a pointer to a string containing the name of the directory to
+create.
+  struct dentry *parent
+    a pointer to the parent dentry for this file.  This should be a
+directory dentry if set.  If this parameter is NULL , then the
+directory will be created in the root of the securityfs filesystem.
+
+Description
+  This function creates a directory in securityfs with the given name .

@@ -1,0 +1,11 @@
+Function: bool napi_if_scheduled_mark_missed ( struct napi_struct * n )
+
+if napi is running, set the NAPIF_STATE_MISSED
+
+Parameters
+  struct napi_struct *n
+    NAPI context
+
+Description
+  If napi is running, set the NAPIF_STATE_MISSED, and return true if
+NAPI is scheduled.

@@ -1,0 +1,15 @@
+Function: int timer_delete_sync ( struct timer_list * timer )
+
+Deactivate a timer and wait for the handler to finish.
+
+Parameters
+  struct timer_list *timer
+    The timer to be deactivated
+
+Description
+  Synchronization rules: Callers must prevent restarting of the timer,
+otherwise this function is meaningless. It must not be called from
+interrupt contexts unless the timer is an irqsafe one. The caller must
+not hold locks which would prevent completion of the timer’s callback
+function. The timer’s handler must not call add_timer_on() . Upon exit
+the timer is not queued and the handler is not running on any CPU.

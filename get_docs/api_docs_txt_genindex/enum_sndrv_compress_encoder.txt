@@ -1,0 +1,3 @@
+Enum: enum sndrv_compress_encoder
+
+encoder metadata key

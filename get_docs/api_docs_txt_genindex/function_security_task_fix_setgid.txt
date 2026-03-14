@@ -1,0 +1,17 @@
+Function: int security_task_fix_setgid ( struct cred * new , const struct cred * old , int flags )
+
+Update LSM with new group id attributes
+
+Parameters
+  struct cred *new
+    updated credentials
+  const struct cred *old
+    credentials being replaced
+  int flags
+    LSM_SETID_* flag value
+
+Description
+  Update the module’s state after setting one or more of the group identity
+attributes of the current process.  The flags parameter indicates which of
+the set*gid system calls invoked this hook. new is the set of credentials
+that will be installed.  Modifications should be made to this rather than to current->cred .

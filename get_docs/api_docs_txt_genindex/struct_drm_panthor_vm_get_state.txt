@@ -1,0 +1,9 @@
+Struct: struct drm_panthor_vm_get_state
+
+Get VM state.
+
+Members
+  vm_id
+    VM targeted by the get_state request.
+  state
+    state returned by the driver. Must be one of the enum drm_panthor_vm_state values.

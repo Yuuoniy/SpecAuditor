@@ -1,0 +1,23 @@
+Function: void sort_r ( void * base , size_t num , size_t size , cmp_r_func_t cmp_func , swap_r_func_t swap_func , const void * priv )
+
+sort an array of elements
+
+Parameters
+  void *base
+    pointer to data to sort
+  size_t num
+    number of elements
+  size_t size
+    size of each element
+  cmp_r_func_t cmp_func
+    pointer to comparison function
+  swap_r_func_t swap_func
+    pointer to swap function or NULL
+  const void *priv
+    third argument passed to comparison function
+
+Description
+  This function does a heapsort on the given array.  You may provide
+a swap_func function if you need to do something more than a memory
+copy (e.g. fix up pointers or auxiliary data), but the built-in swap
+avoids a slow retpoline and so is significantly faster.

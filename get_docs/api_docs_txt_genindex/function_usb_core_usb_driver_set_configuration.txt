@@ -1,0 +1,16 @@
+Function: int usb_driver_set_configuration ( struct usb_device * udev , int config )
+
+Provide a way for drivers to change device configurations
+
+Parameters
+  struct usb_device *udev
+    the device whose configuration is being updated
+  int config
+    the configuration being chosen.
+
+Description
+  Device interface drivers are not allowed to change device configurations.
+This is because changing configurations will destroy the interface the
+driver is bound to and create new ones; it would be like a floppy-disk
+driver telling the computer to replace the floppy-disk drive with a
+tape drive!

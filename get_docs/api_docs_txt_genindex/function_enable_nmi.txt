@@ -1,0 +1,12 @@
+Function: void enable_nmi ( unsigned int irq )
+
+enable handling of an nmi
+
+Parameters
+  unsigned int irq
+    Interrupt to enable
+
+Description
+  The interrupt to enable must have been requested through request_nmi.
+Undoes the effect of one call to disable_nmi() . If this matches the last
+disable, processing of interrupts on this IRQ line is re-enabled.

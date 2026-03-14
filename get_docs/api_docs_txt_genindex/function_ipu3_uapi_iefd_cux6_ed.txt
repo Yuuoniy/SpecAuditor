@@ -1,0 +1,49 @@
+Function: struct ipu3_uapi_iefd_cux6_ed
+
+Calculate power of non-directed sharpening element, Config Unit 6 for edge detail (ED).
+
+Members
+  x0
+    X coordinate of point 0, u9.0, default 0.
+  x1
+    X coordinate of point 1, u9.0, default 0.
+  x2
+    X coordinate of point 2, u9.0, default 0.
+  reserved0
+    reserved
+  x3
+    X coordinate of point 3, u9.0, default 0.
+  x4
+    X coordinate of point 4, u9.0, default 0.
+  x5
+    X coordinate of point 5, u9.0, default 0.
+  reserved1
+    reserved
+  a01
+    slope A points 01, s4.4, default 0.
+  a12
+    slope A points 12, s4.4, default 0.
+  a23
+    slope A points 23, s4.4, default 0.
+  reserved2
+    reserved
+  a34
+    slope A points 34, s4.4, default 0.
+  a45
+    slope A points 45, s4.4, default 0.
+  reserved3
+    reserved
+  b01
+    slope B points 01, s4.4, default 0.
+  b12
+    slope B points 12, s4.4, default 0.
+  b23
+    slope B points 23, s4.4, default 0.
+  reserved4
+    reserved
+  b34
+    slope B points 34, s4.4, default 0.
+  b45
+    slope B points 45, s4.4, default 0.
+  reserved5
+    reserved.

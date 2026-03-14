@@ -1,0 +1,14 @@
+Function: void drm_modeset_acquire_init ( struct drm_modeset_acquire_ctx * ctx , uint32_t flags )
+
+initialize acquire context
+
+Parameters
+  struct drm_modeset_acquire_ctx *ctx
+    the acquire context
+  uint32_t flags
+    0 or DRM_MODESET_ACQUIRE_INTERRUPTIBLE
+
+Description
+  When passing DRM_MODESET_ACQUIRE_INTERRUPTIBLE to flags ,
+all calls to drm_modeset_lock() will perform an interruptible
+wait.

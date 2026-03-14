@@ -1,0 +1,12 @@
+Struct: struct dmx_exportbuffer
+
+export of dmx buffer as DMABUF file descriptor
+
+Members
+  index
+    id number of the buffer
+  flags
+    flags for newly created file, currently only O_CLOEXEC is
+supported, refer to manual of open syscall for more details
+  fd
+    file descriptor associated with DMABUF (set by driver)

@@ -1,0 +1,14 @@
+Macro: PVR_IOCTL
+
+
+
+Parameters
+  _ioctl
+    An incrementing id for this IOCTL. Added to DRM_COMMAND_BASE .
+  _mode
+    Must be one of DRM_IOR , DRM_IOW or DRM_IOWR .
+  _data
+    The type of the args struct passed by this IOCTL.
+
+Description
+  The struct referred to by _data must have a drm_pvr_ioctl_ prefix and an _args suffix . They are therefore omitted from _data .

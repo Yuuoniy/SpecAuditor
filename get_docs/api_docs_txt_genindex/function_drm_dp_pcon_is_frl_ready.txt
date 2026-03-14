@@ -1,0 +1,10 @@
+Function: bool drm_dp_pcon_is_frl_ready ( struct drm_dp_aux * aux )
+
+Is PCON ready for FRL
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+
+Description
+  Returns true if success, else returns false.

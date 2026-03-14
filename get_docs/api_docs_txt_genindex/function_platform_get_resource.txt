@@ -1,0 +1,11 @@
+Function: struct resource * platform_get_resource ( struct platform_device * dev , unsigned int type , unsigned int num )
+
+get a resource for a device
+
+Parameters
+  struct platform_device *dev
+    platform device
+  unsigned int type
+    resource type
+  unsigned int num
+    resource index

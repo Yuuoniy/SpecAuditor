@@ -1,0 +1,17 @@
+Function: int snd_jack_set_key ( struct snd_jack * jack , enum snd_jack_types type , int keytype )
+
+Set a key mapping on a jack
+
+Parameters
+  struct snd_jack *jack
+    The jack to configure
+  enum snd_jack_types type
+    Jack report type for this key
+  int keytype
+    Input layer key type to be reported
+
+Description
+  Map a SND_JACK_BTN_* button type to an input layer key, allowing
+reporting of keys on accessories via the jack abstraction.  If no
+mapping is provided but keys are enabled in the jack type then
+BTN_n numeric buttons will be reported.

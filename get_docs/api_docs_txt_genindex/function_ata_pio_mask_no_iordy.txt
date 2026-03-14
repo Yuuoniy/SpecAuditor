@@ -1,0 +1,11 @@
+Function: u32 ata_pio_mask_no_iordy ( const struct ata_device * adev )
+
+Return the non IORDY mask
+
+Parameters
+  const struct ata_device *adev
+    ATA device
+
+Description
+  Compute the highest mode possible if we are not using iordy. Return
+-1 if no iordy mode is available.

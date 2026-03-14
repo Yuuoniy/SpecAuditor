@@ -1,0 +1,51 @@
+Struct: struct dmxdev_filter
+
+digital TV dmxdev filter
+
+Members
+  filter
+    a union describing a dmxdev filter.
+Currently used only for section filters.
+  filter.sec
+    a struct dmx_section_filter pointer.
+For section filter only.
+  feed
+    a union describing a dmxdev feed.
+Depending on the filter type, it can be either feed.ts or feed.sec .
+  feed.ts
+    a struct list_head list.
+For TS and PES feeds.
+  feed.sec
+    a struct dmx_section_feed pointer.
+For section feed only.
+  params
+    a union describing dmxdev filter parameters.
+Depending on the filter type, it can be either params.sec or params.pes .
+  params.sec
+    a struct dmx_sct_filter_params embedded struct.
+For section filter only.
+  params.pes
+    a struct dmx_pes_filter_params embedded struct.
+For PES filter only.
+  type
+    type of the dmxdev filter, as defined by enum dmxdev_type .
+  state
+    state of the dmxdev filter, as defined by enum dmxdev_state .
+  dev
+    pointer to struct dmxdev .
+  buffer
+    an embedded struct dvb_ringbuffer buffer.
+  vb2_ctx
+    control struct for VB2 handler
+  mutex
+    protects the access to struct dmxdev_filter .
+  timer
+    struct timer_list embedded timer, used to check for
+feed timeouts.
+Only for section filter.
+  todo
+    index for the secheader .
+Only for section filter.
+  secheader
+    buffer cache to parse the section header.
+Only for section filter.

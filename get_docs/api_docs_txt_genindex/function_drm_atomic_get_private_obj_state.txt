@@ -1,0 +1,14 @@
+Function: struct drm_private_state * drm_atomic_get_private_obj_state ( struct drm_atomic_state * state , struct drm_private_obj * obj )
+
+get private object state
+
+Parameters
+  struct drm_atomic_state *state
+    global atomic state
+  struct drm_private_obj *obj
+    private object to get the state for
+
+Description
+  This function returns the private object state for the given private object,
+allocating the state if needed. It will also grab the relevant private
+object lock to make sure that the state is consistent.

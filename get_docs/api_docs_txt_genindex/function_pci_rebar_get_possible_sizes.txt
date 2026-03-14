@@ -1,0 +1,13 @@
+Function: u32 pci_rebar_get_possible_sizes ( struct pci_dev * pdev , int bar )
+
+get possible sizes for BAR
+
+Parameters
+  struct pci_dev *pdev
+    PCI device
+  int bar
+    BAR to query
+
+Description
+  Get the possible sizes of a resizable BAR as bitmask defined in the spec
+(bit 0=1MB, bit 31=128TB). Returns 0 if BAR isn’t resizable.

@@ -1,0 +1,13 @@
+Function: void generic_fill_statx_attr ( struct inode * inode , struct kstat * stat )
+
+Fill in the statx attributes from the inode flags
+
+Parameters
+  struct inode *inode
+    Inode to use as the source
+  struct kstat *stat
+    Where to fill in the attribute flags
+
+Description
+  Fill in the STATX_ATTR_* flags in the kstat structure for properties of the
+inode that are published on i_flags and enforced by the VFS.

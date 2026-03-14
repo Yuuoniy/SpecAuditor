@@ -1,0 +1,7 @@
+Function: void drm_bridge_remove ( struct drm_bridge * bridge )
+
+remove the given bridge from the global bridge list
+
+Parameters
+  struct drm_bridge *bridge
+    bridge control structure

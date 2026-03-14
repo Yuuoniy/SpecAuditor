@@ -1,0 +1,15 @@
+Function: s64 atomic64_cmpxchg_release ( atomic64_t * v , s64 old , s64 new )
+
+atomic compare and exchange with release ordering
+
+Parameters
+  atomic64_t *v
+    pointer to atomic64_t
+  s64 old
+    s64 value to compare with
+  s64 new
+    s64 value to assign
+
+Description
+  If ( v == old ), atomically updates v to new with release ordering.
+Otherwise, v is not modified and relaxed ordering is provided.

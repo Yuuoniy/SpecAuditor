@@ -1,0 +1,22 @@
+Function: void pcpu_next_fit_region ( struct pcpu_chunk * chunk , int alloc_bits , int align , int * bit_off , int * bits )
+
+finds fit areas for a given allocation request
+
+Parameters
+  struct pcpu_chunk *chunk
+    chunk of interest
+  int alloc_bits
+    size of allocation
+  int align
+    alignment of area (max PAGE_SIZE)
+  int *bit_off
+    chunk offset
+  int *bits
+    size of free area
+
+Description
+  Finds the next free region that is viable for use with a given size and
+alignment.  This only returns if there is a valid area to be used for this
+allocation.  block->first_free is returned if the allocation request fits
+within the block to see if the request can be fulfilled prior to the contig
+hint.

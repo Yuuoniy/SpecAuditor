@@ -1,0 +1,14 @@
+Function: void dvb_ringbuffer_read ( struct dvb_ringbuffer * rbuf , u8 * buf , size_t len )
+
+Reads a buffer into a pointer
+
+Parameters
+  struct dvb_ringbuffer *rbuf
+    pointer to struct dvb_ringbuffer
+  u8 *buf
+    pointer to the buffer where the data will be stored
+  size_t len
+    bytes from ring buffer into buf
+
+Description
+  This variant assumes that the buffer is a memory at the Kernel space

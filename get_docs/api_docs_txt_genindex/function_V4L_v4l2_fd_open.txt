@@ -1,0 +1,6 @@
+Function: int v4l2_fd_open ( int fd , int v4l2_flags )
+
+opens an already opened fd for further use through v4l2lib and possibly
+modify libv4l2’s default behavior through the v4l2_flags argument.
+Currently, v4l2_flags can be V4L2_DISABLE_CONVERSION , to disable
+format conversion.

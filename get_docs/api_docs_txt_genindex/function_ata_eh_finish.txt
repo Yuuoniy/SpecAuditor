@@ -1,0 +1,11 @@
+Function: void ata_eh_finish ( struct ata_port * ap )
+
+finish up EH
+
+Parameters
+  struct ata_port *ap
+    host port to finish EH for
+
+Description
+  Recovery is complete.  Clean up EH states and retry or finish
+failed qcs.

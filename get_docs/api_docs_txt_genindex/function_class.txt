@@ -1,0 +1,33 @@
+Function: struct class
+
+device classes
+
+Members
+  name
+    Name of the class.
+  class_groups
+    Default attributes of this class.
+  dev_groups
+    Default attributes of the devices that belong to the class.
+  dev_uevent
+    Called when a device is added, removed from this class, or a
+few other things that generate uevents to add the environment
+variables.
+  devnode
+    Callback to provide the devtmpfs.
+  class_release
+    Called to release this class.
+  dev_release
+    Called to release the device.
+  shutdown_pre
+    Called at shut-down time before driver shutdown.
+  ns_type
+    Callbacks so sysfs can detemine namespaces.
+  namespace
+    Namespace of the device belongs to this class.
+  get_ownership
+    Allows class to specify uid/gid of the sysfs directories
+for the devices belonging to the class. Usually tied to
+device’s namespace.
+  pm
+    The default device power management operations of this class.

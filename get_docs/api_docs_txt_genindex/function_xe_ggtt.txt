@@ -1,0 +1,28 @@
+Function: struct xe_ggtt
+
+Main GGTT struct
+
+Members
+  tile
+    Back pointer to tile where this GGTT belongs
+  size
+    Total size of this GGTT
+  flags
+    Flags for this GGTT
+Acceptable flags:
+- XE_GGTT_FLAGS_64K - if PTE size is 64K. Otherwise, regular is 4K.
+  scratch
+    Internal object allocation used as a scratch page
+  lock
+    Mutex lock to protect GGTT data
+  gsm
+    The iomem pointer to the actual location of the translation
+table located in the GSM for easy PTE manipulation
+  pt_ops
+    Page Table operations per platform
+  mm
+    The memory manager used to manage individual GGTT allocations
+  access_count
+    counts GGTT writes
+  wq
+    Dedicated unordered work queue to process node removals

@@ -1,0 +1,11 @@
+Function: struct dma_fence * dma_fence_chain_contained ( struct dma_fence * fence )
+
+return the contained fence
+
+Parameters
+  struct dma_fence *fence
+    the fence to test
+
+Description
+  If the fence is a dma_fence_chain the function returns the fence contained
+inside the chain object, otherwise it returns the fence itself.

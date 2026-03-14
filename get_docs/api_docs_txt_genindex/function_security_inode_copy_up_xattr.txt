@@ -1,0 +1,14 @@
+Function: int security_inode_copy_up_xattr ( struct dentry * src , const char * name )
+
+Filter xattrs in an overlayfs copy-up op
+
+Parameters
+  struct dentry *src
+    union dentry of copy-up file
+  const char *name
+    xattr name
+
+Description
+  Filter the xattrs being copied up when a unioned file is copied up from a
+lower layer to the union/overlay layer.   The caller is responsible for
+reading and writing the xattrs, this hook is merely a filter.

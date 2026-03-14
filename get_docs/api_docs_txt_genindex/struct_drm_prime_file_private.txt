@@ -1,0 +1,7 @@
+Struct: struct drm_prime_file_private
+
+per-file tracking for PRIME
+
+Members
+  struct dma_buf * drm_gem_dmabuf_export ( struct drm_device * dev , struct dma_buf_export_info * exp_info ) ¶
+    dma_buf export implementation for GEM

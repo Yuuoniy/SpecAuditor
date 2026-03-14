@@ -1,0 +1,10 @@
+Function: int bdev_thaw ( struct block_device * bdev )
+
+unlock filesystem
+
+Parameters
+  struct block_device *bdev
+    blockdevice to unlock
+
+Description
+  Unlocks the filesystem and marks it writeable again after bdev_freeze() .

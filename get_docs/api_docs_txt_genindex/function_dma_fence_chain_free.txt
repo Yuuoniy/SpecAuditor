@@ -1,0 +1,13 @@
+Function: void dma_fence_chain_free ( struct dma_fence_chain * chain )
+
+
+
+Parameters
+  struct dma_fence_chain *chain
+    chain node to free
+
+Description
+  Frees up an allocated but not used struct dma_fence_chain object. This
+doesn’t need an RCU grace period since the fence was never initialized nor
+published. After dma_fence_chain_init() has been called the fence must be
+released by calling dma_fence_put() , and not through this function.

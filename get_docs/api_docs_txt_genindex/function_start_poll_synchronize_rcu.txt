@@ -1,0 +1,13 @@
+Function: unsigned long start_poll_synchronize_rcu ( void )
+
+Snapshot and start RCU grace period
+
+Parameters
+  void
+    no arguments
+
+Description
+  Returns a cookie that is used by a later call to cond_synchronize_rcu() or poll_state_synchronize_rcu() to determine whether or not a full
+grace period has elapsed in the meantime.  If the needed grace period
+is not already slated to start, notifies RCU core of the need for that
+grace period.

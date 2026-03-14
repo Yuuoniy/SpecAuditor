@@ -1,0 +1,13 @@
+Function: int kernel_getpeername ( struct socket * sock , struct sockaddr * addr )
+
+get the address which the socket is connected (kernel space)
+
+Parameters
+  struct socket *sock
+    socket
+  struct sockaddr *addr
+    address holder
+
+Description
+  Fills the addr pointer with the address which the socket is connected.
+Returns the length of the address in bytes or an error code.

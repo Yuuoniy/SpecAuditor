@@ -1,0 +1,13 @@
+Macro: SSAM_EVENT_REGISTRY
+
+
+
+Parameters
+  tc
+    Target category for the event registry requests.
+  tid
+    Target ID for the event registry requests.
+  cid_en
+    Command ID for the event-enable request.
+  cid_dis
+    Command ID for the event-disable request.

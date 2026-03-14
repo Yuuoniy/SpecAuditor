@@ -1,0 +1,13 @@
+Function: void skb_reserve ( struct sk_buff * skb , int len )
+
+adjust headroom
+
+Parameters
+  struct sk_buff *skb
+    buffer to alter
+  int len
+    bytes to move
+
+Description
+  Increase the headroom of an empty sk_buff by reducing the tail
+room. This is only allowed for an empty buffer.

@@ -1,0 +1,12 @@
+Function: int atomic_dec_and_mutex_lock ( atomic_t * cnt , struct mutex * lock )
+
+return holding mutex if we dec to 0
+
+Parameters
+  atomic_t *cnt
+    the atomic which we are to dec
+  struct mutex *lock
+    the mutex to return holding if we dec to 0
+
+Description
+  return true and hold lock if we dec to 0, return false otherwise

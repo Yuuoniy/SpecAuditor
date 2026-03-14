@@ -1,0 +1,7 @@
+Function: blk_status_t blk_insert_cloned_request ( struct request * rq )
+
+Helper for stacking drivers to submit a request
+
+Parameters
+  struct request *rq
+    the request being queued

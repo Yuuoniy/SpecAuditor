@@ -1,0 +1,15 @@
+Function: dma_addr_t drm_fb_dma_get_gem_addr ( struct drm_framebuffer * fb , struct drm_plane_state * state , unsigned int plane )
+
+Get DMA (bus) address for framebuffer, for pixel formats where values are grouped in blocks this will get you the beginning of the block
+
+Parameters
+  struct drm_framebuffer *fb
+    The framebuffer
+  struct drm_plane_state *state
+    Which state of drm plane
+  unsigned int plane
+    Which plane
+Return the DMA GEM address for given framebuffer.
+
+Description
+  This function will usually be called from the PLANE callback functions.

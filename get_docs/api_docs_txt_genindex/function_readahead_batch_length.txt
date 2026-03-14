@@ -1,0 +1,7 @@
+Function: size_t readahead_batch_length ( const struct readahead_control * rac )
+
+The number of bytes in the current batch.
+
+Parameters
+  const struct readahead_control *rac
+    The readahead request.

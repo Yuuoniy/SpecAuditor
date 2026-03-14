@@ -1,0 +1,12 @@
+Function: int regulator_is_enabled ( struct regulator * regulator )
+
+is the regulator output enabled
+
+Parameters
+  struct regulator *regulator
+    regulator source
+
+Description
+  Note that the device backing this regulator handle can have multiple
+users, so it might be enabled even if regulator_enable() was never
+called for this particular source.

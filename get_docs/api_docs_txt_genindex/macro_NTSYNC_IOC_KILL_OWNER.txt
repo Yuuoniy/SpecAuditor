@@ -1,0 +1,7 @@
+Macro: NTSYNC_IOC_KILL_OWNER
+
+Mark a mutex as unowned and abandoned if it is owned by the given
+owner. Takes an input-only pointer to a 32-bit integer denoting the
+owner. If the owner is zero, the ioctl fails with EINVAL . If the
+owner does not own the mutex, the function fails with EPERM . Eligible threads waiting on the mutex will be woken as appropriate
+(and such waits will fail with EOWNERDEAD , as described below).

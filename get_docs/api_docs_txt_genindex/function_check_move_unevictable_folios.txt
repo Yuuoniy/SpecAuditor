@@ -1,0 +1,12 @@
+Function: void check_move_unevictable_folios ( struct folio_batch * fbatch )
+
+Move evictable folios to appropriate zone lru list
+
+Parameters
+  struct folio_batch *fbatch
+    Batch of lru folios to check.
+
+Description
+  Checks folios for evictability, if an evictable folio is in the unevictable
+lru list, moves it to the appropriate evictable lru list. This function
+should be only used for lru folios.

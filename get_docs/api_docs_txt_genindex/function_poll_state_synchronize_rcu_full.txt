@@ -1,0 +1,14 @@
+Function: bool poll_state_synchronize_rcu_full ( struct rcu_gp_oldstate * rgosp )
+
+Has the specified RCU grace period completed?
+
+Parameters
+  struct rcu_gp_oldstate *rgosp
+    value from get_state_synchronize_rcu_full() or start_poll_synchronize_rcu_full()
+
+Description
+  If a full RCU grace period has elapsed since the earlier call from
+which rgosp was obtained, return **true* , otherwise return false .
+If false is returned, it is the caller’s responsibility to invoke this
+function later on until it does return true .  Alternatively, the caller
+can explicitly wait for a grace period, for example, by passing rgosp to cond_synchronize_rcu() or by directly invoking synchronize_rcu() .

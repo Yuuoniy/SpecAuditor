@@ -1,0 +1,13 @@
+Struct: struct drm_i915_query_guc_submission_version
+
+query GuC submission interface version
+
+Members
+  branch
+    Firmware branch version.
+  major
+    Firmware major version.
+  minor
+    Firmware minor version.
+  patch
+    Firmware patch version.

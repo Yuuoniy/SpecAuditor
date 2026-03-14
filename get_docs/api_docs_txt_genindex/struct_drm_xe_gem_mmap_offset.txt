@@ -1,0 +1,15 @@
+Struct: struct drm_xe_gem_mmap_offset
+
+Input of DRM_IOCTL_XE_GEM_MMAP_OFFSET
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  handle
+    Handle for the object being mapped.
+  flags
+    Flags
+  offset
+    The fake offset to use for subsequent mmap call
+  reserved
+    Reserved

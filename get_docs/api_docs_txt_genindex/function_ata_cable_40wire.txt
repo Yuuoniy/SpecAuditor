@@ -1,0 +1,11 @@
+Function: int ata_cable_40wire ( struct ata_port * ap )
+
+return 40 wire cable type
+
+Parameters
+  struct ata_port *ap
+    port
+
+Description
+  Helper method for drivers which want to hardwire 40 wire cable
+detection.

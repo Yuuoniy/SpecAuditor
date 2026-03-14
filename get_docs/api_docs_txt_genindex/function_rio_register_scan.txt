@@ -1,0 +1,15 @@
+Function: int rio_register_scan ( int mport_id , struct rio_scan * scan_ops )
+
+enumeration/discovery method registration interface
+
+Parameters
+  int mport_id
+    mport device ID for which fabric scan routine has to be set
+(RIO_MPORT_ANY = set for all available mports)
+  struct rio_scan *scan_ops
+    enumeration/discovery operations structure
+
+Description
+  Registers enumeration/discovery operations with RapidIO subsystem and
+attaches it to the specified mport device (or all available mports
+if RIO_MPORT_ANY is specified).

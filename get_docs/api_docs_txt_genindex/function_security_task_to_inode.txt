@@ -1,0 +1,13 @@
+Function: void security_task_to_inode ( struct task_struct * p , struct inode * inode )
+
+Set the security attributes of a task’s inode
+
+Parameters
+  struct task_struct *p
+    task
+  struct inode *inode
+    inode
+
+Description
+  Set the security attributes for an inode based on an associated task’s
+security attributes, e.g. for /proc/pid inodes.

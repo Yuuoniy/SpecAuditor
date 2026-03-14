@@ -1,0 +1,497 @@
+Struct: struct net_device
+
+The DEVICE structure.
+
+Members
+  priv_flags
+    flags invisible to userspace defined as bits, see enum netdev_priv_flags for the definitions
+  lltx
+    device supports lockless Tx. Deprecated for real HW
+drivers. Mainly used by logical interfaces, such as
+bonding and tunnels
+  netmem_tx
+    device support netmem_tx.
+  netdev_ops
+    Includes several pointers to callbacks,
+if one wants to override the ndo_*() functions
+  header_ops
+    Includes callbacks for creating,parsing,caching,etc
+of Layer 2 headers.
+  _tx
+    Array of TX queues
+  gso_partial_features
+    value(s) from NETIF_F_GSO*
+  real_num_tx_queues
+    Number of TX queues currently active in device
+  gso_max_size
+    Maximum size of generic segmentation offload
+  gso_ipv4_max_size
+    Maximum size of generic segmentation offload,
+for IPv4.
+  gso_max_segs
+    Maximum number of segments that can be passed to the
+NIC for GSO
+  num_tc
+    Number of traffic classes in the net device
+  mtu
+    Interface MTU value
+  needed_headroom
+    Extra headroom the hardware may need, but not in all
+cases can this be guaranteed
+  tc_to_txq
+    XXX: need comments on this one
+  xps_maps
+    XXX: need comments on this one
+  nf_hooks_egress
+    netfilter hooks executed for egress packets
+  tcx_egress
+    BPF & clsact qdisc specific data for egress processing
+  {unnamed_union}
+    anonymous
+  lstats
+    Loopback statistics: packets, bytes
+  tstats
+    Tunnel statistics: RX/TX packets, RX/TX bytes
+  dstats
+    Dummy statistics: RX/TX/drop packets, RX/TX bytes
+  state
+    Generic network queuing layer state, see netdev_state_t
+  flags
+    Interface flags (a la BSD)
+  hard_header_len
+    Maximum hardware header length.
+  features
+    Currently active device features
+  ip6_ptr
+    IPv6 specific data
+  xdp_prog
+    XDP sockets filter program pointer
+  ptype_specific
+    Device-specific, protocol-specific packet handlers
+  ifindex
+    interface index
+  real_num_rx_queues
+    Number of RX queues currently active in device
+  _rx
+    Array of RX queues
+  gro_max_size
+    Maximum size of aggregated packet in generic
+receive offload (GRO)
+  gro_ipv4_max_size
+    Maximum size of aggregated packet in generic
+receive offload (GRO), for IPv4.
+  rx_handler
+    handler for received packets
+  rx_handler_data
+    XXX: need comments on this one
+  nd_net
+    Network namespace this network device is inside
+protected by lock
+  npinfo
+    XXX: need comments on this one
+  tcx_ingress
+    BPF & clsact qdisc specific data for ingress processing
+  name
+    This is the first field of the “visible” part of this structure
+(i.e. as seen by users in the “Space.c” file).  It is the name
+of the interface.
+  name_node
+    Name hashlist node
+  ifalias
+    SNMP alias
+  mem_end
+    Shared memory end
+  mem_start
+    Shared memory start
+  base_addr
+    Device I/O address
+  dev_list
+    The global list of network devices
+  napi_list
+    List entry used for polling NAPI devices
+  unreg_list
+    List entry  when we are unregistering the
+device; see the function unregister_netdev
+  close_list
+    List entry used when we are closing the device
+  ptype_all
+    Device-specific packet handlers for all protocols
+  adj_list
+    Directly linked devices, like slaves for bonding
+  xdp_features
+    XDP capability supported by the device
+  xdp_metadata_ops
+    Includes pointers to XDP metadata callbacks.
+  xsk_tx_metadata_ops
+    Includes pointers to AF_XDP TX metadata callbacks.
+  gflags
+    Global flags ( kept as legacy )
+  needed_tailroom
+    Extra tailroom the hardware may need, but not in all
+cases can this be guaranteed. Some cases also use
+LL_MAX_HEADER instead to allocate the skb
+  hw_features
+    User-changeable features
+  wanted_features
+    User-requested features
+  vlan_features
+    Mask of features inheritable by VLAN devices
+  hw_enc_features
+    Mask of features inherited by encapsulating devices
+This field indicates what encapsulation
+offloads the hardware is capable of doing,
+and drivers will need to set them appropriately.
+  mpls_features
+    Mask of features inheritable by MPLS
+  min_mtu
+    Interface Minimum MTU value
+  max_mtu
+    Interface Maximum MTU value
+  type
+    Interface hardware type
+  min_header_len
+    Minimum hardware header length
+  name_assign_type
+    network interface name assignment type
+  group
+    The group the device belongs to
+  stats
+    Statistics struct, which was left as a legacy, use
+rtnl_link_stats64 instead
+  core_stats
+    core networking counters,
+do not use this in drivers
+  carrier_up_count
+    Number of times the carrier has been up
+  carrier_down_count
+    Number of times the carrier has been down
+  wireless_handlers
+    List of functions to handle Wireless Extensions,
+instead of ioctl,
+see <net/iw_handler.h> for details.
+  ethtool_ops
+    Management operations
+  l3mdev_ops
+    Layer 3 master device operations
+  ndisc_ops
+    Includes callbacks for different IPv6 neighbour
+discovery handling. Necessary for e.g. 6LoWPAN.
+  xfrmdev_ops
+    Transformation offload operations
+  tlsdev_ops
+    Transport Layer Security offload operations
+  operstate
+    RFC2863 operstate
+  link_mode
+    Mapping policy to operstate
+  if_port
+    Selectable AUI, TP, ...
+  dma
+    DMA channel
+  perm_addr
+    Permanent hw address
+  addr_assign_type
+    Hw address assignment type
+  addr_len
+    Hardware address length
+  upper_level
+    Maximum depth level of upper devices.
+  lower_level
+    Maximum depth level of lower devices.
+  threaded
+    napi threaded state.
+  neigh_priv_len
+    Used in neigh_alloc()
+  dev_id
+    Used to differentiate devices that share
+the same link layer address
+  dev_port
+    Used to differentiate devices that share
+the same function
+  irq
+    Device IRQ number
+  priv_len
+    Size of the ->priv flexible array
+  addr_list_lock
+    XXX: need comments on this one
+  uc
+    unicast mac addresses
+  mc
+    multicast mac addresses
+  dev_addrs
+    list of device hw addresses
+  queues_kset
+    Group of all Kobjects in the Tx and RX queues
+  unlink_list
+    As netif_addr_lock() can be called recursively,
+keep a list of interfaces to be deleted.
+  promiscuity
+    Number of times the NIC is told to work in
+promiscuous mode; if it becomes 0 the NIC will
+exit promiscuous mode
+  allmulti
+    Counter, enables or disables allmulticast mode
+  uc_promisc
+    Counter that indicates promiscuous mode
+has been enabled due to the need to listen to
+additional unicast addresses in a device that
+does not implement ndo_set_rx_mode()
+  nested_level
+    Used as a parameter of spin_lock_nested() of
+dev->addr_list_lock.
+  ip_ptr
+    IPv4 specific data
+  fib_nh_head
+    nexthops associated with this netdev
+  vlan_info
+    VLAN info
+  dsa_ptr
+    dsa specific data
+  tipc_ptr
+    TIPC specific data
+  atalk_ptr
+    AppleTalk link
+  ax25_ptr
+    AX.25 specific data
+  ieee80211_ptr
+    IEEE 802.11 specific data, assign before registering
+  ieee802154_ptr
+    IEEE 802.15.4 low-rate Wireless Personal Area Network
+device struct
+  mpls_ptr
+    mpls_dev struct pointer
+  mctp_ptr
+    MCTP specific data
+  psp_dev
+    PSP crypto device registered for this netdev
+  dev_addr
+    Hw address (before bcast,
+because most packets are unicast)
+  num_rx_queues
+    Number of RX queues
+allocated at register_netdev() time
+  xdp_zc_max_segs
+    Maximum number of segments supported by AF_XDP
+zero copy driver
+  ingress_queue
+    XXX: need comments on this one
+  nf_hooks_ingress
+    netfilter hooks executed for ingress packets
+  broadcast
+    hw bcast address
+  rx_cpu_rmap
+    CPU reverse-mapping for RX completion interrupts,
+indexed by RX queue number. Assigned by driver.
+This must only be set if the ndo_rx_flow_steer
+operation is defined
+  index_hlist
+    Device index hash chain
+  num_tx_queues
+    Number of TX queues allocated at alloc_netdev_mq() time
+  qdisc
+    Root qdisc from userspace point of view
+  tx_queue_len
+    Max frames per queue allowed
+  tx_global_lock
+    XXX: need comments on this one
+  xdp_bulkq
+    XDP device bulk queue
+  qdisc_hash
+    qdisc hash table
+  watchdog_timer
+    List of timers
+  watchdog_timeo
+    Represents the timeout that is used by
+the watchdog (see dev_watchdog() )
+  proto_down_reason
+    reason a netdev interface is held down
+  todo_list
+    Delayed register/unregister
+  pcpu_refcnt
+    Number of references to this device
+  dev_refcnt
+    Number of references to this device
+  refcnt_tracker
+    Tracker directory for tracked references to this device
+  link_watch_list
+    XXX: need comments on this one
+  reg_state
+    Register/unregister state machine
+  dismantle
+    Device is going to be freed
+  moving_ns
+    device is changing netns, protected by lock
+  rtnl_link_initializing
+    Device being created, suppress events
+  needs_free_netdev
+    Should unregister perform free_netdev?
+  priv_destructor
+    Called from unregister
+  ml_priv
+    Mid-layer private
+  ml_priv_type
+    Mid-layer private type
+  pcpu_stat_type
+    Type of device statistics which the core should
+allocate/free: none, lstats, tstats, dstats. none
+means the driver is handling statistics allocation/
+freeing internally.
+  garp_port
+    GARP
+  mrp_port
+    MRP
+  dm_private
+    Drop monitor private
+  dev
+    Class/net/name entry
+  sysfs_groups
+    Space for optional device, statistics and wireless
+sysfs groups
+  sysfs_rx_queue_group
+    Space for optional per-rx queue attributes
+  rtnl_link_ops
+    Rtnl_link_ops
+  stat_ops
+    Optional ops for queue-aware statistics
+  queue_mgmt_ops
+    Optional ops for queue management
+  tso_max_size
+    Device (as in HW) limit on the max TSO request size
+  tso_max_segs
+    Device (as in HW) limit on the max TSO segment count
+  dcbnl_ops
+    Data Center Bridging netlink ops
+  prio_tc_map
+    XXX: need comments on this one
+  fcoe_ddp_xid
+    Max exchange id for FCoE LRO by ddp
+  priomap
+    XXX: need comments on this one
+  link_topo
+    Physical link topology tracking attached PHYs
+  phydev
+    Physical device may attach itself
+for hardware timestamping
+  sfp_bus
+    attached struct sfp_bus structure.
+  qdisc_tx_busylock
+    lockdep class annotating Qdisc->busylock spinlock
+  proto_down
+    protocol port state information can be sent to the
+switch driver and used to set the phys state of the
+switch port.
+  irq_affinity_auto
+    driver wants the core to store and re-assign the IRQ
+affinity. Set by netif_enable_irq_affinity() , then
+the driver must create a persistent napi by netif_napi_add_config() and finally bind the napi to
+IRQ (via netif_napi_set_irq() ).
+  rx_cpu_rmap_auto
+    driver wants the core to manage the ARFS rmap.
+Set by calling netif_enable_cpu_rmap() .
+  see_all_hwtstamp_requests
+    device wants to see calls to ndo_hwtstamp_set() for all timestamp requests
+regardless of source, even if those aren’t
+HWTSTAMP_SOURCE_NETDEV
+  change_proto_down
+    device supports setting carrier via IFLA_PROTO_DOWN
+  netns_immutable
+    interface can’t change network namespaces
+  fcoe_mtu
+    device supports maximum FCoE MTU, 2158 bytes
+  net_notifier_list
+    List of per-net netdev notifier block
+that follow this device when it is moved
+to another network namespace.
+  macsec_ops
+    MACsec offloading ops
+  udp_tunnel_nic_info
+    static structure describing the UDP tunnel
+offload capabilities of the device
+  udp_tunnel_nic
+    UDP tunnel offload state
+  cfg
+    net_device queue-related configuration
+  cfg_pending
+    same as cfg but when device is being actively reconfigured includes any changes to the configuration
+requested by the user, but which may or may not be rejected.
+  same as cfg but when device is being actively
+    reconfigured includes any changes to the configuration
+requested by the user, but which may or may not be rejected.
+  ethtool
+    ethtool related state
+  xdp_state
+    stores info on attached XDP BPF programs
+  dev_addr_shadow
+    Copy of dev_addr to catch direct writes.
+  linkwatch_dev_tracker
+    refcount tracker used by linkwatch.
+  watchdog_dev_tracker
+    refcount tracker used by watchdog.
+  dev_registered_tracker
+    tracker for reference held while
+registered
+  offload_xstats_l3
+    L3 HW stats for this netdevice.
+  devlink_port
+    Pointer to related devlink port structure.
+Assigned by a driver before netdev registration using
+SET_NETDEV_DEVLINK_PORT macro. This pointer is static
+during the time netdevice is registered.
+  dpll_pin
+    Pointer to the SyncE source pin of a DPLL subsystem,
+where the clock is recovered.
+  page_pools
+    page pools created for this netdevice
+  irq_moder
+    dim parameters used if IS_ENABLED(CONFIG_DIMLIB).
+  max_pacing_offload_horizon
+    max EDT offload horizon in nsec.
+  napi_config
+    An array of napi_config structures containing per-NAPI
+settings.
+  num_napi_configs
+    number of allocated NAPI config structs,
+always >= max(num_rx_queues, num_tx_queues).
+  napi_defer_hard_irqs
+    If not zero, provides a counter that would
+allow to avoid NIC hard IRQ, on busy queues.
+  gro_flush_timeout
+    timeout for GRO layer in NAPI
+  up
+    copy of state ’s IFF_UP, but safe to read with just lock . May report false negatives while the device is being opened
+or closed ( lock does not protect .ndo_open, or .ndo_close).
+  copy of state ’s IFF_UP, but safe to read with just lock .
+    May report false negatives while the device is being opened
+or closed ( lock does not protect .ndo_open, or .ndo_close).
+  request_ops_lock
+    request the core to run all netdev_ops and ethtool_ops under the lock .
+  lock
+    netdev-scope lock, protects a small selection of fields.
+Should always be taken using netdev_lock() / netdev_unlock() helpers.
+Drivers are free to use it for other protection. For the drivers that implement shaper or queue API, the scope
+of this lock is expanded to cover most ndo/queue/ethtool/sysfs
+operations. Drivers may opt-in to this behavior by setting request_ops_lock . lock protection mixes with rtnl_lock in multiple ways, fields are
+either: simply protected by the instance lock ; double protected - writers hold both locks, readers hold either; ops protected - protected by the lock held around the NDOs
+and other callbacks, that is the instance lock on devices for
+which netdev_need_ops_lock() returns true, otherwise by rtnl_lock; double ops protected - always protected by rtnl_lock but for
+devices for which netdev_need_ops_lock() returns true - also
+the instance lock. Simply protects: gro_flush_timeout , napi_defer_hard_irqs , napi_list , net_shaper_hierarchy , reg_state , threaded Double protects: up , moving_ns , nd_net , xdp_features Double ops protects: real_num_rx_queues , real_num_tx_queues Also protects some fields in: struct napi_struct , struct netdev_queue , struct netdev_rx_queue Ordering: take after rtnl_lock.
+  Simply protects:
+    gro_flush_timeout , napi_defer_hard_irqs , napi_list , net_shaper_hierarchy , reg_state , threaded
+  Double protects:
+    up , moving_ns , nd_net , xdp_features
+  Double ops protects:
+    real_num_rx_queues , real_num_tx_queues
+  Also protects some fields in:
+    struct napi_struct , struct netdev_queue , struct netdev_rx_queue
+  net_shaper_hierarchy
+    data tracking the current shaper status see include/net/net_shapers.h
+  data tracking the current shaper status
+    see include/net/net_shapers.h
+  neighbours
+    List heads pointing to this device’s neighbours’
+dev_list, one per address-family.
+  hwprov
+    Tracks which PTP performs hardware packet time stamping.
+  priv
+    Flexible array containing private data

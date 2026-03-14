@@ -1,0 +1,2 @@
+Macro: VIDIOC_G_PRIORITY
+

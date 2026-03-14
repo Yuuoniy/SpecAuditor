@@ -1,0 +1,16 @@
+Function: struct cxl_dport * devm_cxl_add_rch_dport ( struct cxl_port * port , struct device * dport_dev , int port_id , resource_size_t rcrb )
+
+append RCH downstream port data to a cxl_port
+
+Parameters
+  struct cxl_port *port
+    the cxl_port that references this dport
+  struct device *dport_dev
+    firmware or PCI device representing the dport
+  int port_id
+    identifier for this dport in a decoder’s target list
+  resource_size_t rcrb
+    mandatory location of a Root Complex Register Block
+
+Description
+  See CXL 3.0 9.11.8 CXL Devices Attached to an RCH

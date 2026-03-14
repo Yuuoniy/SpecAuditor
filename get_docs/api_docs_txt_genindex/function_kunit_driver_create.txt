@@ -1,0 +1,13 @@
+Function: struct device_driver * kunit_driver_create ( struct kunit * test , const char * name )
+
+Create a struct device_driver attached to the kunit_bus
+
+Parameters
+  struct kunit *test
+    The test context object.
+  const char *name
+    The name to give the created driver.
+
+Description
+  Creates a struct device_driver attached to the kunit_bus, with the name name .
+This driver will automatically be cleaned up on test exit.

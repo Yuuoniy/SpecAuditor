@@ -1,0 +1,37 @@
+Struct: struct komeda_dev
+
+
+
+Members
+  dev
+    the base device structure
+  reg_base
+    the base address of komeda io space
+  chip
+    the basic chip information
+  fmt_tbl
+    initialized by komeda_dev_funcs->init_format_table
+  aclk
+    HW main engine clk
+  irq
+    irq number
+  lock
+    used to protect dpmode
+  dpmode
+    current display mode
+  n_pipelines
+    the number of pipe in pipelines
+  pipelines
+    the komeda pipelines
+  funcs
+    chip funcs to access to HW
+  chip_data
+    chip data will be added by komeda_dev_funcs.enum_resources() and
+destroyed by komeda_dev_funcs.cleanup()
+  iommu
+    iommu domain
+  debugfs_root
+    root directory of komeda debugfs
+  err_verbosity
+    bitmask for how much extra info to print on error See KOMEDA_DEV_* macros for details. Low byte contains the debug
+level categories, the high byte contains extra debug options.

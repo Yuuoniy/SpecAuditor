@@ -1,0 +1,11 @@
+Function: int ccw_device_tm_intrg ( struct ccw_device * cdev )
+
+perform interrogate function
+
+Parameters
+  struct ccw_device *cdev
+    ccw device on which to perform the interrogate function
+
+Description
+  Perform an interrogate function on the given ccw device. Return zero on
+success, non-zero otherwise.

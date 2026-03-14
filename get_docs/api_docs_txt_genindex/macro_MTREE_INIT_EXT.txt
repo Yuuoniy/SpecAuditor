@@ -1,0 +1,11 @@
+Macro: MTREE_INIT_EXT
+
+
+
+Parameters
+  name
+    The tree name
+  __flags
+    The maple tree flags
+  __lock
+    The external lock

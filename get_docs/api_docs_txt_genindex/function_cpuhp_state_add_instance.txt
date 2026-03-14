@@ -1,0 +1,13 @@
+Function: int cpuhp_state_add_instance ( enum cpuhp_state state , struct hlist_node * node )
+
+Add an instance for a state and invoke startup callback.
+
+Parameters
+  enum cpuhp_state state
+    The state for which the instance is installed
+  struct hlist_node *node
+    The node for this individual state.
+
+Description
+  Installs the instance for the state and invokes the registered startup
+callback on the online cpus which have already reached the state . The state must have been earlier marked as multi-instance by cpuhp_setup_state_multi() .

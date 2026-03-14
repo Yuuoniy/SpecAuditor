@@ -1,0 +1,14 @@
+Function: void handle_untracked_irq ( struct irq_desc * desc )
+
+Simple and software-decoded IRQs.
+
+Parameters
+  struct irq_desc *desc
+    the interrupt description structure for this irq
+
+Description
+  Untracked interrupts are sent from a demultiplexing interrupt handler
+when the demultiplexer does not know which device it its multiplexed irq
+domain generated the interrupt. IRQ’s handled through here are not
+subjected to stats tracking, randomness, or spurious interrupt
+detection.

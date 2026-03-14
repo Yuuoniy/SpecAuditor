@@ -1,0 +1,10 @@
+Function: int atapi_cmd_type ( u8 opcode )
+
+Determine ATAPI command type from SCSI opcode
+
+Parameters
+  u8 opcode
+    SCSI opcode
+
+Description
+  Determine ATAPI command type from opcode .

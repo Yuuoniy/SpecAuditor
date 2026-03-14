@@ -1,0 +1,12 @@
+Function: int scsi_change_queue_depth ( struct scsi_device * sdev , int depth )
+
+change a device’s queue depth
+
+Parameters
+  struct scsi_device *sdev
+    SCSI Device in question
+  int depth
+    number of commands allowed to be queued to the driver
+
+Description
+  Sets the device queue depth and returns the new value.

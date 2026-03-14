@@ -1,0 +1,7 @@
+Function: void xdr_finish_decode ( struct xdr_stream * xdr )
+
+Clean up the xdr_stream after decoding data.
+
+Parameters
+  struct xdr_stream *xdr
+    pointer to xdr_stream struct

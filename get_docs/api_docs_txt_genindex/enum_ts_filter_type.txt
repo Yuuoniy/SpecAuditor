@@ -1,0 +1,3 @@
+Enum: enum ts_filter_type
+
+filter type bitmap for dmx_ts_feed. set()

@@ -1,0 +1,10 @@
+Function: int sas_rphy_add ( struct sas_rphy * rphy )
+
+add a SAS remote PHY to the device hierarchy
+
+Parameters
+  struct sas_rphy *rphy
+    The remote PHY to be added
+
+Description
+  Publishes a SAS remote PHY to the rest of the system.

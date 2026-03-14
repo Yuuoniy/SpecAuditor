@@ -1,0 +1,14 @@
+Function: void drm_dp_mst_atomic_wait_for_dependencies ( struct drm_atomic_state * state )
+
+Wait for all pending commits on MST topologies, prepare new MST state for commit
+
+Parameters
+  struct drm_atomic_state *state
+    global atomic state
+
+Description
+  Goes through any MST topologies in this atomic state, and waits for any pending commits which
+touched CRTCs that were/are on an MST topology to be programmed to hardware and flipped to before
+returning. This is to prevent multiple non-blocking commits affecting an MST topology from racing
+with eachother by forcing them to be executed sequentially in situations where the only resources
+the modeset objects in these commits share are an MST topology.

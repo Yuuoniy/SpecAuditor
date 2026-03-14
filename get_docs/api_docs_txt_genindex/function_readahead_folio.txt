@@ -1,0 +1,7 @@
+Function: struct folio * readahead_folio ( struct readahead_control * ractl )
+
+Get the next folio to read.
+
+Parameters
+  struct readahead_control *ractl
+    The current readahead request.

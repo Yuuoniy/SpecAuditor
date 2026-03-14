@@ -1,0 +1,15 @@
+Function: int security_key_alloc ( struct key * key , const struct cred * cred , unsigned long flags )
+
+Allocate and initialize a kernel key LSM blob
+
+Parameters
+  struct key *key
+    key
+  const struct cred *cred
+    credentials
+  unsigned long flags
+    allocation flags
+
+Description
+  Permit allocation of a key and assign security data. Note that key does not
+have a serial number assigned at this point.

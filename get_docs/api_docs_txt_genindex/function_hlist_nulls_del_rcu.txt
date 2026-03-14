@@ -1,0 +1,7 @@
+Function: void hlist_nulls_del_rcu ( struct hlist_nulls_node * n )
+
+deletes entry from hash list without re-initialization
+
+Parameters
+  struct hlist_nulls_node *n
+    the element to delete from the hash list.

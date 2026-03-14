@@ -1,0 +1,11 @@
+Function: void ssam_clear_controller ( void )
+
+Remove/clear the main controller reference.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Clears the main controller reference, i.e. sets it to NULL . This function
+should be called before the controller is shut down.

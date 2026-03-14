@@ -1,0 +1,16 @@
+Function: struct iio_trigger * __devm_iio_trigger_alloc ( struct device * parent , struct module * this_mod , const char * fmt , ... )
+
+Resource-managed iio_trigger_alloc() Managed iio_trigger_alloc. iio_trigger allocated with this function is automatically freed on driver detach.
+
+Parameters
+  struct device *parent
+    Device to allocate iio_trigger for
+  struct module *this_mod
+    module allocating the trigger
+  const char *fmt
+    trigger name format. If it includes format
+specifiers, the additional arguments following
+format are formatted and inserted in the resulting
+string replacing their respective specifiers.
+  ...
+    variable arguments

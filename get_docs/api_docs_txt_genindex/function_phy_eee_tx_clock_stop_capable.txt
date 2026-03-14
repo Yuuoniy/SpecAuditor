@@ -1,0 +1,12 @@
+Function: int phy_eee_tx_clock_stop_capable ( struct phy_device * phydev )
+
+indicate whether the MAC can stop tx clock
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  Indicate whether the MAC can disable the transmit xMII clock while in LPI
+state. Returns 1 if the MAC may stop the transmit clock, 0 if the MAC must
+not stop the transmit clock, or negative error.

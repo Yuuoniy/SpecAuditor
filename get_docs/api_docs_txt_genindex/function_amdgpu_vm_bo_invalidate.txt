@@ -1,0 +1,12 @@
+Function: void amdgpu_vm_bo_invalidate ( struct amdgpu_bo * bo , bool evicted )
+
+mark the bo as invalid
+
+Parameters
+  struct amdgpu_bo *bo
+    amdgpu buffer object
+  bool evicted
+    is the BO evicted
+
+Description
+  Mark bo as invalid.

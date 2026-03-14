@@ -1,0 +1,11 @@
+Function: void w1_touch_block ( struct w1_master * dev , u8 * buf , int len )
+
+Touches a series of bytes.
+
+Parameters
+  struct w1_master *dev
+    the master device
+  u8 *buf
+    pointer to the data to write
+  int len
+    the number of bytes to write

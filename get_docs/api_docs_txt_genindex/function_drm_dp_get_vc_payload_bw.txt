@@ -1,0 +1,15 @@
+Function: fixed20_12 drm_dp_get_vc_payload_bw ( int link_rate , int link_lane_count )
+
+get the VC payload BW for an MTP link
+
+Parameters
+  int link_rate
+    link rate in 10kbits/s units
+  int link_lane_count
+    lane count
+
+Description
+  Calculate the total bandwidth of a MultiStream Transport link. The returned
+value is in units of PBNs/(timeslots/1 MTP). This value can be used to
+convert the number of PBNs required for a given stream to the number of
+timeslots this stream requires in each MTP.

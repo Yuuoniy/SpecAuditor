@@ -1,0 +1,15 @@
+Struct: struct vidtv_psi_pat_write_args
+
+Arguments for writing a PAT table
+
+Members
+  buf
+    The destination buffer.
+  offset
+    The offset into the destination buffer.
+  pat
+    A pointer to the PAT.
+  buf_sz
+    The size of the destination buffer.
+  continuity_counter
+    A pointer to the CC. Incremented on every new packet.

@@ -1,0 +1,16 @@
+Function: int parse_int_array_user ( const char __user * from , size_t count , int * * array )
+
+Split string into a sequence of integers
+
+Parameters
+  const char __user *from
+    The user space buffer to read from
+  size_t count
+    The maximum number of bytes to read
+  int **array
+    Returned pointer to sequence of integers
+
+Description
+  On success array is allocated and initialized with a sequence of
+integers extracted from the from plus an additional element that
+begins the sequence and specifies the integers count.

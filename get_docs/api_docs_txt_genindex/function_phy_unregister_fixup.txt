@@ -1,0 +1,11 @@
+Function: int phy_unregister_fixup ( const char * bus_id , u32 phy_uid , u32 phy_uid_mask )
+
+remove a phy_fixup from the list
+
+Parameters
+  const char *bus_id
+    A string matches fixup->bus_id (or PHY_ANY_ID) in phy_fixup_list
+  u32 phy_uid
+    A phy id matches fixup->phy_id (or PHY_ANY_UID) in phy_fixup_list
+  u32 phy_uid_mask
+    Applied to phy_uid and fixup->phy_uid before comparison

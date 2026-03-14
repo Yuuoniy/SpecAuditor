@@ -1,0 +1,7 @@
+Function: int pci_msix_vec_count ( struct pci_dev * dev )
+
+Get number of MSI-X interrupt vectors on device
+
+Parameters
+  struct pci_dev *dev
+    the PCI device to operate on

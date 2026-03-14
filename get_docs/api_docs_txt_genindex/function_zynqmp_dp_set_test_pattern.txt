@@ -1,0 +1,11 @@
+Function: int zynqmp_dp_set_test_pattern ( struct zynqmp_dp * dp , enum test_pattern pattern , u8 * const custom )
+
+Configure the link for a test pattern
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure
+  enum test_pattern pattern
+    The test pattern to configure
+  u8 *const custom
+    The custom pattern to use if pattern is TEST_80BIT_CUSTOM

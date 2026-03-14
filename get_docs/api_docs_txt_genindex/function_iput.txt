@@ -1,0 +1,11 @@
+Function: void iput ( struct inode * inode )
+
+put an inode
+
+Parameters
+  struct inode *inode
+    inode to put
+
+Description
+  Puts an inode, dropping its usage count. If the inode use count hits
+zero, the inode is then freed and may also be destroyed.

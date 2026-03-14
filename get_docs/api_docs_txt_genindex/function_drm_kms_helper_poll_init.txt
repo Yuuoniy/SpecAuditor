@@ -1,0 +1,12 @@
+Function: void drm_kms_helper_poll_init ( struct drm_device * dev )
+
+initialize and enable output polling
+
+Parameters
+  struct drm_device *dev
+    drm_device
+
+Description
+  This function initializes and then also enables output polling support for dev . Drivers which do not have reliable hotplug support in hardware can use
+this helper infrastructure to regularly poll such connectors for changes in
+their connection state.

@@ -1,0 +1,32 @@
+Struct: struct edac_raw_error_desc
+
+Raw error report structure
+
+Members
+  location
+    location of the error
+  label
+    label of the affected DIMM(s)
+  grain
+    minimum granularity for an error report, in bytes
+  error_count
+    number of errors of the same type
+  type
+    severity of the error (CE/UE/Fatal)
+  top_layer
+    top layer of the error (layer[0])
+  mid_layer
+    middle layer of the error (layer[1])
+  low_layer
+    low layer of the error (layer[2])
+  page_frame_number
+    page where the error happened
+  offset_in_page
+    page offset
+  syndrome
+    syndrome of the error (or 0 if unknown or if
+the syndrome is not applicable)
+  msg
+    error message
+  other_detail
+    other driver-specific detail about the error

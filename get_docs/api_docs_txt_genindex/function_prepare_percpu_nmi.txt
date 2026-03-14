@@ -1,0 +1,11 @@
+Function: int prepare_percpu_nmi ( unsigned int irq )
+
+performs CPU local setup for NMI delivery
+
+Parameters
+  unsigned int irq
+    Interrupt line to prepare for NMI delivery
+
+Description
+  This call prepares an interrupt line to deliver NMI on the current CPU,
+before that interrupt line gets enabled with enable_percpu_nmi() .

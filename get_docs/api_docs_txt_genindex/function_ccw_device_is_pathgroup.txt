@@ -1,0 +1,10 @@
+Function: int ccw_device_is_pathgroup ( struct ccw_device * cdev )
+
+determine if paths to this device are grouped
+
+Parameters
+  struct ccw_device *cdev
+    ccw device
+
+Description
+  Return non-zero if there is a path group, zero otherwise.

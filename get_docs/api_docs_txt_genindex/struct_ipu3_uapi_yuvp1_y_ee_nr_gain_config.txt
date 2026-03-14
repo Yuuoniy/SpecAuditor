@@ -1,0 +1,23 @@
+Struct: struct ipu3_uapi_yuvp1_y_ee_nr_gain_config
+
+Luma(Y) edge enhancement noise reduction gain config
+
+Members
+  gain_pos_0
+    Gain for positive edge in dark area. u5.0, [0, 16], default 2.
+  reserved0
+    reserved
+  delta_gain_posi
+    Difference in the gain of edges between the bright and
+dark areas for positive edges. u5.0, [0, 16], default 0.
+  reserved1
+    reserved
+  gain_neg_0
+    Gain for negative edge in dark area. u5.0, [0, 16], default 8.
+  reserved2
+    reserved
+  delta_gain_neg
+    Difference in the gain of edges between the bright and
+dark areas for negative edges. u5.0, [0, 16], default 0.
+  reserved3
+    reserved

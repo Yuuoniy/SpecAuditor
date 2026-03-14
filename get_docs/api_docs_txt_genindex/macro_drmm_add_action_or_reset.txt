@@ -1,0 +1,14 @@
+Macro: drmm_add_action_or_reset
+
+
+
+Parameters
+  dev
+    DRM device
+  action
+    function which should be called when dev is released
+  data
+    opaque pointer, passed to action
+
+Description
+  Similar to drmm_add_action() , with the only difference that upon failure action is directly called for any cleanup work necessary on failures.

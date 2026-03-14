@@ -1,0 +1,10 @@
+Function: int dvb_frontend_resume ( struct dvb_frontend * fe )
+
+Resumes a Digital TV frontend
+
+Parameters
+  struct dvb_frontend *fe
+    pointer to struct dvb_frontend
+
+Description
+  This function resumes the usual operation of the tuner after resume.

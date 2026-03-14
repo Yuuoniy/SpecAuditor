@@ -1,0 +1,9 @@
+Struct: struct rkisp1_cif_isp_hist_stat
+
+statistics histogram data
+
+Members
+  hist_bins
+    measured bin counters. Each bin is a 20 bits unsigned fixed point
+type. Bits 0-4 are the fractional part and bits 5-19 are the
+integer part.

@@ -1,0 +1,16 @@
+Function: bool tipc_update_nametbl ( struct net * net , struct distr_item * i , u32 node , u32 dtype )
+
+try to process a nametable update and notify subscribers
+
+Parameters
+  struct net *net
+    the associated network namespace
+  struct distr_item *i
+    location of item in the message
+  u32 node
+    node address
+  u32 dtype
+    name distributor message type
+
+Description
+  tipc_nametbl_lock must be held.

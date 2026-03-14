@@ -1,0 +1,3 @@
+Enum: enum rc_proto
+
+the Remote Controller protocol

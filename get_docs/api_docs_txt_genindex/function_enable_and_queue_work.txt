@@ -1,0 +1,16 @@
+Function: bool enable_and_queue_work ( struct workqueue_struct * wq , struct work_struct * work )
+
+Enable and queue a work item on a specific workqueue
+
+Parameters
+  struct workqueue_struct *wq
+    The target workqueue
+  struct work_struct *work
+    The work item to be enabled and queued
+
+Description
+  This function combines the operations of enable_work() and queue_work() ,
+providing a convenient way to enable and queue a work item in a single call.
+It invokes enable_work() on work and then queues it if the disable depth
+reached 0. Returns true if the disable depth reached 0 and work is queued,
+and false otherwise.

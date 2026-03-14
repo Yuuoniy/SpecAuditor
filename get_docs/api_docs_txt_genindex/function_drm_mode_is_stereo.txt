@@ -1,0 +1,7 @@
+Function: bool drm_mode_is_stereo ( const struct drm_display_mode * mode )
+
+check for stereo mode flags
+
+Parameters
+  const struct drm_display_mode *mode
+    drm_display_mode to check

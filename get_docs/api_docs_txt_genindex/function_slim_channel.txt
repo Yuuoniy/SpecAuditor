@@ -1,0 +1,17 @@
+Function: struct slim_channel
+
+SLIMbus channel, used for state machine
+
+Members
+  id
+    ID of channel
+  prrate
+    Presense rate of channel from Table 66 of SLIMbus 2.0 Specs
+  seg_dist
+    segment distribution code from Table 20 of SLIMbus 2.0 Specs
+  data_fmt
+    Data format of channel.
+  aux_fmt
+    Aux format for this channel.
+  state
+    channel state machine

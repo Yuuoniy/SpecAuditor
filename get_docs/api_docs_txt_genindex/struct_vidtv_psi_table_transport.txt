@@ -1,0 +1,15 @@
+Struct: struct vidtv_psi_table_transport
+
+A entry in the TS loop for the NIT and/or other tables. See ETSI 300 468 section 5.2.1
+
+Members
+  transport_id
+    The TS ID being described
+  network_id
+    The network_id that contains the TS ID
+  bitfield
+    Contains the descriptor loop length
+  descriptor
+    A descriptor loop
+  next
+    Pointer to the next entry

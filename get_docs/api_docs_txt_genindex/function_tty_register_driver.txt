@@ -1,0 +1,10 @@
+Function: int tty_register_driver ( struct tty_driver * driver )
+
+register a tty driver
+
+Parameters
+  struct tty_driver *driver
+    driver to register
+
+Description
+  Called by a tty driver to register itself.

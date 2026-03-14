@@ -1,0 +1,13 @@
+Function: bool ata_link_online ( struct ata_link * link )
+
+test whether the given link is online
+
+Parameters
+  struct ata_link *link
+    ATA link to test
+
+Description
+  Test whether link is online.  This is identical to ata_phys_link_online() when there’s no slave link.  When
+there’s a slave link, this function should only be called on
+the master link and will return true if any of M/S links is
+online.

@@ -1,0 +1,9 @@
+Function: bool folio_contains ( const struct folio * folio , pgoff_t index )
+
+Does this folio contain this index?
+
+Parameters
+  const struct folio *folio
+    The folio.
+  pgoff_t index
+    The page index within the file.

@@ -1,0 +1,17 @@
+Function: void * __drm_dev_alloc ( struct device * parent , const struct drm_driver * driver , size_t size , size_t offset )
+
+Allocation of a drm_device instance
+
+Parameters
+  struct device *parent
+    Parent device object
+  const struct drm_driver *driver
+    DRM driver
+  size_t size
+    the size of the struct which contains struct drm_device
+  size_t offset
+    the offset of the drm_device within the container.
+
+Description
+  This should NOT be by any drivers, but is a dedicated interface for the
+corresponding Rust abstraction.

@@ -1,0 +1,12 @@
+Function: void put_tty_queue ( u8 c , struct n_tty_data * ldata )
+
+add character to tty
+
+Parameters
+  u8 c
+    character
+  struct n_tty_data *ldata
+    n_tty data
+
+Description
+  Add a character to the tty read_buf queue.

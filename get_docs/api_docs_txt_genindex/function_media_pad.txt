@@ -1,0 +1,20 @@
+Function: struct media_pad
+
+A media pad graph object.
+
+Members
+  graph_obj
+    Embedded structure containing the media object common data
+  entity
+    Entity this pad belongs to
+  index
+    Pad index in the entity pads array, numbered from 0 to n
+  num_links
+    Number of links connected to this pad
+  sig_type
+    Type of the signal inside a media pad
+  flags
+    Pad flags, as defined in include/uapi/linux/media.h (seek for MEDIA_PAD_FL_* )
+  pipe
+    Pipeline this pad belongs to. Use media_entity_pipeline() to
+access this field.

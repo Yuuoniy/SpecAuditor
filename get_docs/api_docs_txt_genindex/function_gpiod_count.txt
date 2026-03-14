@@ -1,0 +1,9 @@
+Function: int gpiod_count ( struct device * dev , const char * con_id )
+
+return the number of GPIOs associated with a device / function
+
+Parameters
+  struct device *dev
+    GPIO consumer, can be NULL for system-global GPIOs
+  const char *con_id
+    function within the GPIO consumer

@@ -1,0 +1,18 @@
+Struct: struct vme_driver
+
+Structure representing a VME driver
+
+Members
+  name
+    Driver name, should be unique among VME drivers and usually the same
+as the module name.
+  match
+    Callback used to determine whether probe should be run.
+  probe
+    Callback for device binding, called when new device is detected.
+  remove
+    Callback, called on device removal.
+  driver
+    Underlying generic device driver structure.
+  devices
+    List of VME devices ( struct vme_dev ) associated with this driver.

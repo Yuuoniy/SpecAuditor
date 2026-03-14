@@ -1,0 +1,9 @@
+Struct: struct rkisp1_cif_isp_goc_config
+
+Configuration used by Gamma Out correction
+
+Members
+  mode
+    goc mode (from enum rkisp1_cif_isp_goc_mode )
+  gamma_y
+    gamma out curve y-axis for all color components

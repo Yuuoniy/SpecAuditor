@@ -1,0 +1,14 @@
+Function: int nand_status_op ( struct nand_chip * chip , u8 * status )
+
+Do a STATUS operation
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+  u8 *status
+    out variable to store the NAND status
+
+Description
+  This function sends a STATUS command and reads back the status returned by
+the NAND.
+This function does not select/unselect the CS line.

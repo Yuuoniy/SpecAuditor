@@ -1,0 +1,13 @@
+Function: int drm_simple_display_pipe_attach_bridge ( struct drm_simple_display_pipe * pipe , struct drm_bridge * bridge )
+
+Attach a bridge to the display pipe
+
+Parameters
+  struct drm_simple_display_pipe *pipe
+    simple display pipe object
+  struct drm_bridge *bridge
+    bridge to attach
+
+Description
+  Makes it possible to still use the drm_simple_display_pipe helpers when
+a DRM bridge has to be used.

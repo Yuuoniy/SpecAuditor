@@ -1,0 +1,12 @@
+Function: struct backlight_device * of_find_backlight_by_node ( struct device_node * node )
+
+find backlight device by device-tree node
+
+Parameters
+  struct device_node *node
+    device-tree node of the backlight device
+
+Description
+  Returns a pointer to the backlight device corresponding to the given DT
+node or NULL if no such backlight device exists or if the device hasn’t
+been probed yet.

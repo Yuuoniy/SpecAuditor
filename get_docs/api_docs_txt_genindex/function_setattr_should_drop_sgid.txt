@@ -1,0 +1,15 @@
+Function: int setattr_should_drop_sgid ( struct mnt_idmap * idmap , const struct inode * inode )
+
+determine whether the setgid bit needs to be removed
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount inode was found from
+  const struct inode *inode
+    inode to check
+
+Description
+  This function determines whether the setgid bit needs to be removed.
+We retain backwards compatibility and require setgid bit to be removed
+unconditionally if S_IXGRP is set. Otherwise we have the exact same
+requirements as setattr_prepare() and setattr_copy() .

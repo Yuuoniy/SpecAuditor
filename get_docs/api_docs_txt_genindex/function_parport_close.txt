@@ -1,0 +1,10 @@
+Function: void parport_close ( struct pardevice * dev )
+
+close a device opened with parport_open()
+
+Parameters
+  struct pardevice *dev
+    device to close
+
+Description
+  This is to parport_open() as parport_unregister_device() is to parport_register_device() .

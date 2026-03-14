@@ -1,0 +1,14 @@
+Function: int __mdiobus_read ( struct mii_bus * bus , int addr , u32 regnum )
+
+Unlocked version of the mdiobus_read function
+
+Parameters
+  struct mii_bus *bus
+    the mii_bus struct
+  int addr
+    the phy address
+  u32 regnum
+    register number to read
+
+Description
+  Read a MDIO bus register. Caller must hold the mdio bus lock.

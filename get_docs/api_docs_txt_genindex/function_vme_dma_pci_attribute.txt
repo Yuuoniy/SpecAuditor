@@ -1,0 +1,12 @@
+Function: struct vme_dma_attr * vme_dma_pci_attribute ( dma_addr_t address )
+
+Create “PCI” type VME DMA list attribute.
+
+Parameters
+  dma_addr_t address
+    PCI base address for DMA transfer.
+
+Description
+  Create VME DMA list attribute pointing to a location on PCI for DMA
+transfers. It is the responsibility of the user to free used attributes
+using vme_dma_free_attribute() .

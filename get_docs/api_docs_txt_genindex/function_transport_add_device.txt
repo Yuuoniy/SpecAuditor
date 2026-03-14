@@ -1,0 +1,13 @@
+Function: int transport_add_device ( struct device * dev )
+
+declare a new dev for transport class association
+
+Parameters
+  struct device *dev
+    the generic device representing the entity being added
+
+Description
+  Usually, dev represents some component in the HBA system (either
+the HBA itself or a device remote across the HBA bus).  This
+routine is simply a trigger point used to add the device to the
+system and register attributes for it.

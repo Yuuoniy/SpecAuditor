@@ -1,0 +1,28 @@
+Function: int pci_request_irq ( struct pci_dev * dev , unsigned int nr , irq_handler_t handler , irq_handler_t thread_fn , void * dev_id , const char * fmt , ... )
+
+allocate an interrupt line for a PCI device
+
+Parameters
+  struct pci_dev *dev
+    PCI device to operate on
+  unsigned int nr
+    device-relative interrupt vector index (0-based).
+  irq_handler_t handler
+    Function to be called when the IRQ occurs.
+Primary handler for threaded interrupts.
+If NULL and thread_fn != NULL the default primary handler is
+installed.
+  irq_handler_t thread_fn
+    Function called from the IRQ handler thread
+If NULL, no IRQ thread is created
+  void *dev_id
+    Cookie passed back to the handler function
+  const char *fmt
+    Printf-like format string naming the handler
+  ...
+    variable arguments
+
+Description
+  This call allocates interrupt resources and enables the interrupt line and
+IRQ handling. From the point this call is made handler and thread_fn may
+be invoked.  All interrupts requested using this function might be shared.

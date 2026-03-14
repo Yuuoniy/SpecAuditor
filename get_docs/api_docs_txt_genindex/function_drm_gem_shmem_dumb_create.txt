@@ -1,0 +1,17 @@
+Function: int drm_gem_shmem_dumb_create ( struct drm_file * file , struct drm_device * dev , struct drm_mode_create_dumb * args )
+
+Create a dumb shmem buffer object
+
+Parameters
+  struct drm_file *file
+    DRM file structure to create the dumb buffer for
+  struct drm_device *dev
+    DRM device
+  struct drm_mode_create_dumb *args
+    IOCTL data
+
+Description
+  This function computes the pitch of the dumb buffer and rounds it up to an
+integer number of bytes per pixel. Drivers for hardware that doesn’t have
+any additional restrictions on the pitch can directly use this function as
+their drm_driver.dumb_create callback.

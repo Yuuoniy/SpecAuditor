@@ -1,0 +1,10 @@
+Function: u8 w1_read_bit ( struct w1_master * dev )
+
+Generates a write-1 cycle and samples the level.
+
+Parameters
+  struct w1_master *dev
+    the master device
+
+Description
+  Only call if dev->bus_master->touch_bit is NULL

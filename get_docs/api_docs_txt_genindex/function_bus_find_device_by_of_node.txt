@@ -1,0 +1,9 @@
+Function: struct device * bus_find_device_by_of_node ( const struct bus_type * bus , const struct device_node * np )
+
+device iterator for locating a particular device matching the of_node.
+
+Parameters
+  const struct bus_type *bus
+    bus type
+  const struct device_node *np
+    of_node of the device to match.

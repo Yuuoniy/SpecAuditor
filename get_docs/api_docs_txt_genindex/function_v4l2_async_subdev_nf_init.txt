@@ -1,0 +1,13 @@
+Function: void v4l2_async_subdev_nf_init ( struct v4l2_async_notifier * notifier , struct v4l2_subdev * sd )
+
+Initialize a sub-device notifier.
+
+Parameters
+  struct v4l2_async_notifier *notifier
+    pointer to struct v4l2_async_notifier
+  struct v4l2_subdev *sd
+    pointer to struct v4l2_subdev
+
+Description
+  This function initializes the notifier asc_list . It must be called
+before adding a subdevice to a notifier, using one of: v4l2_async_nf_add_fwnode_remote() , v4l2_async_nf_add_fwnode() or v4l2_async_nf_add_i2c() .

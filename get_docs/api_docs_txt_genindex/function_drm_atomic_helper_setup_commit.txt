@@ -1,0 +1,14 @@
+Function: int drm_atomic_helper_setup_commit ( struct drm_atomic_state * state , bool nonblock )
+
+setup possibly nonblocking commit
+
+Parameters
+  struct drm_atomic_state *state
+    new modeset state to be committed
+  bool nonblock
+    whether nonblocking behavior is requested.
+
+Description
+  This function prepares state to be used by the atomic helper’s support for
+nonblocking commits. Drivers using the nonblocking commit infrastructure
+should always call this function from their drm_mode_config_funcs.atomic_commit hook.

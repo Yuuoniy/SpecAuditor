@@ -1,0 +1,10 @@
+Function: void security_ib_free_security ( void * sec )
+
+Free an Infiniband LSM blob
+
+Parameters
+  void *sec
+    LSM blob
+
+Description
+  Deallocate an Infiniband security structure.

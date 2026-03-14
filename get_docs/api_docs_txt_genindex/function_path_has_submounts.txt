@@ -1,0 +1,11 @@
+Function: int path_has_submounts ( const struct path * parent )
+
+check for mounts over a dentry in the current namespace.
+
+Parameters
+  const struct path *parent
+    path to check.
+
+Description
+  Return true if the parent or its subdirectories contain
+a mount point in the current namespace.

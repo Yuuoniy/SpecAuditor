@@ -1,0 +1,16 @@
+Function: int pci_request_region ( struct pci_dev * pdev , int bar , const char * name )
+
+Reserve PCI I/O and memory resource
+
+Parameters
+  struct pci_dev *pdev
+    PCI device whose resources are to be reserved
+  int bar
+    BAR to be reserved
+  const char *name
+    name of the driver requesting the resource
+
+Description
+  Mark the PCI region associated with PCI device pdev BAR bar as being
+reserved by owner name . Do not access any address inside the PCI regions
+unless this call returns successfully.

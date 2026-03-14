@@ -1,0 +1,9 @@
+Struct: struct rkisp1_ext_params_goc_config
+
+RkISP1 extensible params GOC config
+
+Members
+  header
+    The RkISP1 extensible parameters header, see rkisp1_ext_params_block_header
+  config
+    Gamma-Out configuration, see rkisp1_cif_isp_goc_config

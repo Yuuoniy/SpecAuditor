@@ -1,0 +1,12 @@
+Function: int v4l2_device_register ( struct device * dev , struct v4l2_device * v4l2_dev )
+
+Initialize v4l2_dev and make dev->driver_data point to v4l2_dev .
+
+Parameters
+  struct device *dev
+    pointer to struct device
+  struct v4l2_device *v4l2_dev
+    pointer to struct v4l2_device
+
+Description
+  Note

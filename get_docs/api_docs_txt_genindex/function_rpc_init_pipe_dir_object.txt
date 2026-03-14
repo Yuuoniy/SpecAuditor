@@ -1,0 +1,11 @@
+Function: void rpc_init_pipe_dir_object ( struct rpc_pipe_dir_object * pdo , const struct rpc_pipe_dir_object_ops * pdo_ops , void * pdo_data )
+
+initialise a struct rpc_pipe_dir_object
+
+Parameters
+  struct rpc_pipe_dir_object *pdo
+    pointer to struct rpc_pipe_dir_object
+  const struct rpc_pipe_dir_object_ops *pdo_ops
+    pointer to const struct rpc_pipe_dir_object_ops
+  void *pdo_data
+    pointer to caller-defined data

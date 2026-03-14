@@ -1,0 +1,13 @@
+Macro: hlist_bl_for_each_entry_rcu
+
+
+
+Parameters
+  tpos
+    the type * to use as a loop cursor.
+  pos
+    the struct hlist_bl_node to use as a loop cursor.
+  head
+    the head for your list.
+  member
+    the name of the hlist_bl_node within the struct.

@@ -1,0 +1,9 @@
+Struct: struct reset_control_bulk_data
+
+Data used for bulk reset control operations.
+
+Members
+  id
+    reset control consumer ID
+  rstc
+    struct reset_control * to store the associated reset control

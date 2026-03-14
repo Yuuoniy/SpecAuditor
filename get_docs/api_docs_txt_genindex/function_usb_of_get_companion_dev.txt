@@ -1,0 +1,10 @@
+Function: struct device * usb_of_get_companion_dev ( struct device * dev )
+
+Find the companion device
+
+Parameters
+  struct device *dev
+    the device pointer to find a companion
+
+Description
+  Find the companion device from platform bus.

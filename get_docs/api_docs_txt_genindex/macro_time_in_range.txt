@@ -1,0 +1,11 @@
+Macro: time_in_range
+
+
+
+Parameters
+  a
+    time to test
+  b
+    beginning of the range
+  c
+    end of the range

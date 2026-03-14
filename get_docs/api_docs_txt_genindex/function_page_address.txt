@@ -1,0 +1,10 @@
+Function: void * page_address ( const struct page * page )
+
+get the mapped virtual address of a page
+
+Parameters
+  const struct page *page
+    struct page to get the virtual address of
+
+Description
+  Returns the page’s virtual address.

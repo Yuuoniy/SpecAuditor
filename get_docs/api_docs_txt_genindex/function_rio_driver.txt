@@ -1,0 +1,25 @@
+Function: struct rio_driver
+
+RIO driver info
+
+Members
+  node
+    Node in list of drivers
+  name
+    RIO driver name
+  id_table
+    RIO device ids to be associated with this driver
+  probe
+    RIO device inserted
+  remove
+    RIO device removed
+  shutdown
+    shutdown notification callback
+  suspend
+    RIO device suspended
+  resume
+    RIO device awakened
+  enable_wake
+    RIO device enable wake event
+  driver
+    LDM driver struct

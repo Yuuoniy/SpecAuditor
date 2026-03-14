@@ -1,0 +1,14 @@
+Function: void __audit_uring_exit ( int success , long code )
+
+wrap up the kernel task’s audit context after io_uring
+
+Parameters
+  int success
+    true/false value to indicate if the operation succeeded or not
+  long code
+    operation return code
+
+Description
+  This is similar to audit_syscall_exit() but is intended for use by io_uring
+operations.  This function should only ever be called from audit_uring_exit() as we rely on the audit context checking present in that
+function.

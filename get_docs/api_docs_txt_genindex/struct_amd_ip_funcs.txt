@@ -1,0 +1,55 @@
+Struct: struct amd_ip_funcs
+
+general hooks for managing amdgpu IP Blocks
+
+Members
+  name
+    Name of IP block
+  early_init
+    sets up early driver state (pre sw_init),
+does not configure hw - Optional
+  late_init
+    sets up late driver/hw state (post hw_init) - Optional
+  sw_init
+    sets up driver state, does not configure hw
+  sw_fini
+    tears down driver state, does not configure hw
+  early_fini
+    tears down stuff before dev detached from driver
+  hw_init
+    sets up the hw state
+  hw_fini
+    tears down the hw state
+  late_fini
+    final cleanup
+  prepare_suspend
+    handle IP specific changes to prepare for suspend
+(such as allocating any required memory)
+  suspend
+    handles IP specific hw/sw changes for suspend
+  resume
+    handles IP specific hw/sw changes for resume
+  complete
+    handles IP specific changes after resume
+  is_idle
+    returns current IP block idle status
+  wait_for_idle
+    poll for idle
+  check_soft_reset
+    check soft reset the IP block
+  pre_soft_reset
+    pre soft reset the IP block
+  soft_reset
+    soft reset the IP block
+  post_soft_reset
+    post soft reset the IP block
+  set_clockgating_state
+    enable/disable cg for the IP block
+  set_powergating_state
+    enable/disable pg for the IP block
+  get_clockgating_state
+    get current clockgating status
+  dump_ip_state
+    dump the IP state of the ASIC during a gpu hang
+  print_ip_state
+    print the IP state in devcoredump for each IP of the ASIC

@@ -1,0 +1,11 @@
+Function: void drm_privacy_screen_unregister ( struct drm_privacy_screen * priv )
+
+unregister privacy-screen
+
+Parameters
+  struct drm_privacy_screen *priv
+    privacy-screen to unregister
+
+Description
+  Unregister a privacy-screen registered with drm_privacy_screen_register() .
+May be called with a NULL or ERR_PTR, in which case it is a no-op.

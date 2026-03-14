@@ -1,0 +1,18 @@
+Function: int vga_switcheroo_register_client ( struct pci_dev * pdev , const struct vga_switcheroo_client_ops * ops , bool driver_power_control )
+
+register vga client
+
+Parameters
+  struct pci_dev *pdev
+    client pci device
+  const struct vga_switcheroo_client_ops *ops
+    client callbacks
+  bool driver_power_control
+    whether power state is controlled by the driver’s
+runtime pm
+
+Description
+  Register vga client (GPU). Enable vga_switcheroo if another GPU and a
+handler have already registered. The power state of the client is assumed
+to be ON. Beforehand, vga_switcheroo_client_probe_defer() shall be called
+to ensure that all prerequisites are met.

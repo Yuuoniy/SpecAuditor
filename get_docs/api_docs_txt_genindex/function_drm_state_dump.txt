@@ -1,0 +1,14 @@
+Function: void drm_state_dump ( struct drm_device * dev , struct drm_printer * p )
+
+dump entire device atomic state
+
+Parameters
+  struct drm_device *dev
+    the drm device
+  struct drm_printer *p
+    where to print the state to
+
+Description
+  Just for debugging.  Drivers might want an option to dump state
+to dmesg in case of error irq’s.  (Hint, you probably want to
+ratelimit this!)

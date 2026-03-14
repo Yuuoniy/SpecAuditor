@@ -1,0 +1,10 @@
+Macro: ASSERT_EXCLUSIVE_ACCESS_SCOPED
+
+
+
+Parameters
+  var
+    variable to assert on
+
+Description
+  Scoped variant of ASSERT_EXCLUSIVE_ACCESS() .

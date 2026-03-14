@@ -1,0 +1,15 @@
+Function: void drm_edid_decode_panel_id ( u32 panel_id , char vend [ 4 ] , u16 * product_id )
+
+Decode a panel ID from drm_edid_encode_panel_id()
+
+Parameters
+  u32 panel_id
+    The panel ID to decode.
+  char vend[4]
+    A 4-byte buffer to store the 3-letter vendor string plus a ‘0’
+termination
+  u16 *product_id
+    The product ID will be returned here.
+
+Description
+  drm_edid_decode_panel_id(0x09e52d08, vend, product_id )

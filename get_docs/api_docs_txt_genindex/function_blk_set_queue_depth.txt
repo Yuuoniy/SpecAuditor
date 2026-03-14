@@ -1,0 +1,9 @@
+Function: void blk_set_queue_depth ( struct request_queue * q , unsigned int depth )
+
+tell the block layer about the device queue depth
+
+Parameters
+  struct request_queue *q
+    the request queue for the device
+  unsigned int depth
+    queue depth

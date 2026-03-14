@@ -1,0 +1,11 @@
+Function: int slim_writeb ( struct slim_device * sdev , u32 addr , u8 value )
+
+Write byte to SLIMbus value element
+
+Parameters
+  struct slim_device *sdev
+    client handle.
+  u32 addr
+    address of value element to write.
+  u8 value
+    value to write to value element

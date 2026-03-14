@@ -1,0 +1,7 @@
+Function: void msgb_push_nak ( struct msgbuf * msgb )
+
+Push a SSH NAK frame to the buffer.
+
+Parameters
+  struct msgbuf *msgb
+    The message buffer

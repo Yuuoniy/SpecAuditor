@@ -1,0 +1,7 @@
+Function: int wiphy_register ( struct wiphy * wiphy )
+
+register a wiphy with cfg80211
+
+Parameters
+  struct wiphy *wiphy
+    The wiphy to register.

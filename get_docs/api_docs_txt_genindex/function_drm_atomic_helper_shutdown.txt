@@ -1,0 +1,12 @@
+Function: void drm_atomic_helper_shutdown ( struct drm_device * dev )
+
+shutdown all CRTC
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  This shuts down all CRTC, which is useful for driver unloading. Shutdown on
+suspend should instead be handled with drm_atomic_helper_suspend() , since
+that also takes a snapshot of the modeset state to be restored on resume.

@@ -1,0 +1,20 @@
+Function: void xz_dec_microlzma_reset ( struct xz_dec_microlzma * s , uint32_t comp_size , uint32_t uncomp_size , int uncomp_size_is_exact )
+
+Reset the MicroLZMA decoder state
+
+Parameters
+  struct xz_dec_microlzma *s
+    Decoder state allocated using xz_dec_microlzma_alloc()
+  uint32_t comp_size
+    Compressed size of the input stream
+  uint32_t uncomp_size
+    Uncompressed size of the input stream. A value smaller
+than the real uncompressed size of the input stream can
+be specified if uncomp_size_is_exact is set to false.
+uncomp_size can never be set to a value larger than the
+expected real uncompressed size because it would eventually
+result in XZ_DATA_ERROR.
+  int uncomp_size_is_exact
+    This is an int instead of bool to avoid
+requiring stdbool.h. This should normally be set to true.
+When this is set to false, error detection is weaker.

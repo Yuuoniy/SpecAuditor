@@ -1,0 +1,11 @@
+Macro: wmi_driver_register
+
+
+
+Parameters
+  driver
+    wmi_driver struct
+
+Description
+  Helper macro for registering a WMI driver. It automatically passes
+THIS_MODULE to the underlying function.

@@ -1,0 +1,9 @@
+Function: struct drm_gem_object * drm_exec_obj ( struct drm_exec * exec , unsigned long index )
+
+Return the object for a give drm_exec index
+
+Parameters
+  struct drm_exec *exec
+    Pointer to the drm_exec context
+  unsigned long index
+    The index.

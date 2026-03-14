@@ -1,0 +1,33 @@
+Struct: struct perf_open_properties
+
+for validated properties given to open a stream
+
+Members
+  sample_flags
+    DRM_I915_PERF_PROP_SAMPLE_* properties are tracked as flags
+  single_context
+    Whether a single or all gpu contexts should be monitored
+  hold_preemption
+    Whether the preemption is disabled for the filtered
+context
+  ctx_handle
+    A gem ctx handle for use with single_context
+  metrics_set
+    An ID for an OA unit metric set advertised via sysfs
+  oa_format
+    An OA unit HW report format
+  oa_periodic
+    Whether to enable periodic OA unit sampling
+  oa_period_exponent
+    The OA unit sampling period is derived from this
+  engine
+    The engine (typically rcs0) being monitored by the OA unit
+  has_sseu
+    Whether sseu was specified by userspace
+  sseu
+    internal SSEU configuration computed either from the userspace
+specified configuration in the opening parameters or a default value
+(see get_default_sseu_config() )
+  poll_oa_period
+    The period in nanoseconds at which the CPU will check for OA
+data availability

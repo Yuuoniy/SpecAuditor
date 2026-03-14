@@ -1,0 +1,13 @@
+Function: int tipc_l2_send_msg ( struct net * net , struct sk_buff * skb , struct tipc_bearer * b , struct tipc_media_addr * dest )
+
+send a TIPC packet out over an L2 interface
+
+Parameters
+  struct net *net
+    the associated network namespace
+  struct sk_buff *skb
+    the packet to be sent
+  struct tipc_bearer *b
+    the bearer through which the packet is to be sent
+  struct tipc_media_addr *dest
+    peer destination address

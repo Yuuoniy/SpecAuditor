@@ -1,0 +1,9 @@
+Function: bool vb2_buffer_in_use ( struct vb2_queue * q , struct vb2_buffer * vb )
+
+return true if the buffer is in use and the queue cannot be freed (by the means of VIDIOC_REQBUFS(0)) call.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  struct vb2_buffer *vb
+    buffer for which plane size should be returned.

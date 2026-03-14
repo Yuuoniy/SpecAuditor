@@ -1,0 +1,17 @@
+Struct: struct drm_asahi_gem_bind_op
+
+Description of a single GEM bind operation.
+
+Members
+  flags
+    Combination of drm_asahi_bind_flags flags.
+  handle
+    GEM object to bind (except for UNBIND)
+  offset
+    Offset into the object (except for UNBIND). For a regular bind, this is the beginning of the region of the GEM
+object to bind. For a single-page bind, this is the offset to the single page that
+will be repeatedly bound. Must be page-size aligned.
+  range
+    Number of bytes to bind/unbind to addr . Must be page-size aligned.
+  addr
+    Address to bind to. Must be page-size aligned.

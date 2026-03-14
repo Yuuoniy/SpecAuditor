@@ -1,0 +1,13 @@
+Function: void set_worker_dying ( struct worker * worker , struct list_head * list )
+
+Tag a worker for destruction
+
+Parameters
+  struct worker *worker
+    worker to be destroyed
+  struct list_head *list
+    transfer worker away from its pool->idle_list and into list
+
+Description
+  Tag worker for destruction and adjust pool stats accordingly.  The worker
+should be idle.

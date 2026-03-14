@@ -1,0 +1,16 @@
+Function: int usb_hcd_check_unlink_urb ( struct usb_hcd * hcd , struct urb * urb , int status )
+
+check whether an URB may be unlinked
+
+Parameters
+  struct usb_hcd *hcd
+    host controller to which urb was submitted
+  struct urb *urb
+    URB being checked for unlinkability
+  int status
+    error code to store in urb if the unlink succeeds
+
+Description
+  Host controller drivers should call this routine in their dequeue() method.  The HCD’s private spinlock must be held and interrupts must
+be disabled.  The actions carried out here are required for making
+sure than an unlink is valid.

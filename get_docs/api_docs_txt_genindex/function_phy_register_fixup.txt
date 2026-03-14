@@ -1,0 +1,15 @@
+Function: int phy_register_fixup ( const char * bus_id , u32 phy_uid , u32 phy_uid_mask , int ( * run ) ( struct phy_device * ) )
+
+creates a new phy_fixup and adds it to the list
+
+Parameters
+  const char *bus_id
+    A string which matches phydev->mdio.dev.bus_id (or PHY_ANY_ID)
+  u32 phy_uid
+    Used to match against phydev->phy_id (the UID of the PHY)
+It can also be PHY_ANY_UID
+  u32 phy_uid_mask
+    Applied to phydev->phy_id and fixup->phy_uid before
+comparison
+  int (*run)(struct phy_device *)
+    The actual code to be run when a matching PHY is found

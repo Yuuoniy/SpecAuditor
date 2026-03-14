@@ -1,0 +1,8 @@
+Function: bool name_contains_dotdot ( const char * name )
+
+check if a file name contains “..” path components
+
+Parameters
+  const char *name
+    File path string to check
+Search for “..” surrounded by either ‘/’ or start/end of string.

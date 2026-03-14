@@ -1,0 +1,12 @@
+Function: void ib_unregister_driver ( enum rdma_driver_id driver_id )
+
+Unregister all IB devices for a driver
+
+Parameters
+  enum rdma_driver_id driver_id
+    The driver to unregister
+
+Description
+  This implements a fence for device unregistration. It only returns once all
+devices associated with the driver_id have fully completed their
+unregistration and returned from ib_unregister_device*().

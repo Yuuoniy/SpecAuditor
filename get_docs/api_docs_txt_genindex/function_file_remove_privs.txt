@@ -1,0 +1,11 @@
+Function: int file_remove_privs ( struct file * file )
+
+remove special file privileges (suid, capabilities)
+
+Parameters
+  struct file *file
+    file to remove privileges from
+
+Description
+  When file is modified by a write or truncation ensure that special
+file privileges are removed.

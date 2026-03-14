@@ -1,0 +1,11 @@
+Function: void input_unregister_handler ( struct input_handler * handler )
+
+unregisters an input handler
+
+Parameters
+  struct input_handler *handler
+    handler to be unregistered
+
+Description
+  This function disconnects a handler from its input devices and
+removes it from lists of known handlers.

@@ -1,0 +1,18 @@
+Function: int security_bpf ( int cmd , union bpf_attr * attr , unsigned int size , bool kernel )
+
+Check if the bpf syscall operation is allowed
+
+Parameters
+  int cmd
+    command
+  union bpf_attr *attr
+    bpf attribute
+  unsigned int size
+    size
+  bool kernel
+    whether or not call originated from kernel
+
+Description
+  Do a initial check for all bpf syscalls after the attribute is copied into
+the kernel. The actual security module can implement their own rules to
+check the specific cmd they need.

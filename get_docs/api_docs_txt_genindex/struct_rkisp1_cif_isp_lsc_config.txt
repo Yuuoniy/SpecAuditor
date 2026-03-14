@@ -1,0 +1,25 @@
+Struct: struct rkisp1_cif_isp_lsc_config
+
+Configuration used by Lens shading correction
+
+Members
+  r_data_tbl
+    sample table red
+  gr_data_tbl
+    sample table green (red)
+  gb_data_tbl
+    sample table green (blue)
+  b_data_tbl
+    sample table blue
+  x_grad_tbl
+    gradient table x
+  y_grad_tbl
+    gradient table y
+  x_size_tbl
+    size table x
+  y_size_tbl
+    size table y
+  config_width
+    not used at the moment
+  config_height
+    not used at the moment

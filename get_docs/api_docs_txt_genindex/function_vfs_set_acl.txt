@@ -1,0 +1,16 @@
+Function: int vfs_set_acl ( struct mnt_idmap * idmap , struct dentry * dentry , const char * acl_name , struct posix_acl * kacl )
+
+set posix acls
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount
+  struct dentry *dentry
+    the dentry based on which to set the posix acls
+  const char *acl_name
+    the name of the posix acl
+  struct posix_acl *kacl
+    the posix acls in the appropriate VFS format
+
+Description
+  This function sets kacl . The caller must all posix_acl_release() on kacl afterwards.

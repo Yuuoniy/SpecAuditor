@@ -1,0 +1,11 @@
+Function: int drm_panel_of_backlight ( struct drm_panel * panel )
+
+use backlight device node for backlight
+
+Parameters
+  struct drm_panel *panel
+    DRM panel
+
+Description
+  Use this function to enable backlight handling if your panel
+uses device tree and has a backlight phandle.

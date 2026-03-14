@@ -1,0 +1,10 @@
+Function: int drm_edid_header_is_valid ( const void * _edid )
+
+sanity check the header of the base EDID block
+
+Parameters
+  const void *_edid
+    pointer to raw base EDID block
+
+Description
+  Sanity check the header of the base EDID block.

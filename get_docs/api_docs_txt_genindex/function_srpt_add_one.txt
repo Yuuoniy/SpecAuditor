@@ -1,0 +1,7 @@
+Function: int srpt_add_one ( struct ib_device * device )
+
+InfiniBand device addition callback function
+
+Parameters
+  struct ib_device *device
+    Describes a HCA.

@@ -1,0 +1,15 @@
+Function: void * vmap_pfn ( unsigned long * pfns , unsigned int count , pgprot_t prot )
+
+map an array of PFNs into virtually contiguous space
+
+Parameters
+  unsigned long *pfns
+    array of PFNs
+  unsigned int count
+    number of pages to map
+  pgprot_t prot
+    page protection for the mapping
+
+Description
+  Maps count PFNs from pfns into contiguous kernel virtual space and returns
+the start address of the mapping.

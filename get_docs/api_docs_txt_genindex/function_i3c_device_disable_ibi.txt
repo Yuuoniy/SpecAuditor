@@ -1,0 +1,11 @@
+Function: int i3c_device_disable_ibi ( struct i3c_device * dev )
+
+Disable IBIs coming from a specific device
+
+Parameters
+  struct i3c_device *dev
+    device on which IBIs should be disabled
+
+Description
+  This function disable IBIs coming from a specific device and wait for
+all pending IBIs to be processed.

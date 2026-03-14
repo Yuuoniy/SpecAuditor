@@ -1,0 +1,14 @@
+Function: bool rdma_dev_access_netns ( const struct ib_device * dev , const struct net * net )
+
+Return whether an rdma device can be accessed from a specified net namespace or not.
+
+Parameters
+  const struct ib_device *dev
+    Pointer to rdma device which needs to be checked
+  const struct net *net
+    Pointer to net namesapce for which access to be checked
+
+Description
+  When the rdma device is in shared mode, it ignores the net namespace.
+When the rdma device is exclusive to a net namespace, rdma device net
+namespace is checked against the specified one.

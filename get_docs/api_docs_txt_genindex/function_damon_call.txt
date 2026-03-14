@@ -1,0 +1,14 @@
+Function: int damon_call ( struct damon_ctx * ctx , struct damon_call_control * control )
+
+Invoke a given function on DAMON worker thread (kdamond).
+
+Parameters
+  struct damon_ctx *ctx
+    DAMON context to call the function for.
+  struct damon_call_control *control
+    Control variable of the call request.
+
+Description
+  Ask DAMON worker thread (kdamond) of ctx to call a function with an
+argument data that respectively passed via damon_call_control->fn and damon_call_control->data of control .  If damon_call_control->repeat of control is set, further wait until the kdamond finishes handling of the
+request.  Otherwise, return as soon as the request is made.

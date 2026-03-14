@@ -1,0 +1,15 @@
+Function: int dma_fence_add_callback ( struct dma_fence * fence , struct dma_fence_cb * cb , dma_fence_func_t func )
+
+add a callback to be called when the fence is signaled
+
+Parameters
+  struct dma_fence *fence
+    the fence to wait on
+  struct dma_fence_cb *cb
+    the callback to register
+  dma_fence_func_t func
+    the function to call
+
+Description
+  Add a software callback to the fence. The caller should keep a reference to
+the fence.

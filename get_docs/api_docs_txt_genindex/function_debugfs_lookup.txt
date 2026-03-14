@@ -1,0 +1,14 @@
+Function: struct dentry * debugfs_lookup ( const char * name , struct dentry * parent )
+
+look up an existing debugfs file
+
+Parameters
+  const char *name
+    a pointer to a string containing the name of the file to look up.
+  struct dentry *parent
+    a pointer to the parent dentry of the file.
+
+Description
+  This function will return a pointer to a dentry if it succeeds.  If the file
+doesn’t exist or an error occurs, NULL will be returned.  The returned
+dentry must be passed to dput() when it is no longer needed.

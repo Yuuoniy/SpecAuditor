@@ -1,0 +1,18 @@
+Function: void usb_hcd_giveback_urb ( struct usb_hcd * hcd , struct urb * urb , int status )
+
+return URB from HCD to device driver
+
+Parameters
+  struct usb_hcd *hcd
+    host controller returning the URB
+  struct urb *urb
+    urb being returned to the USB device driver.
+  int status
+    completion status code for the URB.
+
+Description
+  This hands the URB from HCD to its USB device driver, using its
+completion function.  The HCD has freed all per-urb resources
+(and is done using urb->hcpriv).  It also released all HCD locks;
+the device driver won’t cause problems if it frees, modifies,
+or resubmits this URB.

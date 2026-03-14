@@ -1,0 +1,14 @@
+Macro: kunit_warn
+
+
+
+Parameters
+  test
+    The test context object.
+  fmt
+    A printk() style format string.
+  ...
+    variable arguments
+
+Description
+  Prints a warning level message.

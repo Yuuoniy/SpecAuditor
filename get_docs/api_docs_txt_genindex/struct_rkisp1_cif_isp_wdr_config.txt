@@ -1,0 +1,25 @@
+Struct: struct rkisp1_cif_isp_wdr_config
+
+Configuration for wide dynamic range.
+
+Members
+  tone_curve
+    tone mapping curve.
+  iref_config
+    illumination reference configuration. (when use_iref is true)
+  rgb_offset
+    RGB offset value for RGB operation mode. (12 bits)
+  luma_offset
+    luminance offset value for RGB operation mode. (12 bits)
+  dmin_thresh
+    lower threshold for deltaMin value. (12 bits)
+  dmin_strength
+    strength factor for deltaMin. (valid range is 0x00..0x10)
+  use_rgb_colorspace
+    use RGB instead of luminance/chrominance colorspace.
+  bypass_chroma_mapping
+    disable chrominance mapping (only valid if
+use_rgb_colorspace = 0)
+  use_iref
+    use illumination reference instead of Y for tone mapping
+and gain calculations.

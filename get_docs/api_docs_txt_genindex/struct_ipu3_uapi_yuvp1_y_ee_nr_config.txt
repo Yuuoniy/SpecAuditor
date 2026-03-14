@@ -1,0 +1,19 @@
+Struct: struct ipu3_uapi_yuvp1_y_ee_nr_config
+
+Edge enhancement and noise reduction
+
+Members
+  lpf
+    low-pass filter config. See ipu3_uapi_yuvp1_y_ee_nr_lpf_config
+  sense
+    sensitivity config. See ipu3_uapi_yuvp1_y_ee_nr_sense_config
+  gain
+    gain config as defined in ipu3_uapi_yuvp1_y_ee_nr_gain_config
+  clip
+    clip config as defined in ipu3_uapi_yuvp1_y_ee_nr_clip_config
+  frng
+    fringe config as defined in ipu3_uapi_yuvp1_y_ee_nr_frng_config
+  diag
+    diagonal edge config. See ipu3_uapi_yuvp1_y_ee_nr_diag_config
+  fc_coring
+    coring config for fringe control. See ipu3_uapi_yuvp1_y_ee_nr_fc_coring_config

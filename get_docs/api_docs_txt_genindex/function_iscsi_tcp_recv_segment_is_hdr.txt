@@ -1,0 +1,11 @@
+Function: int iscsi_tcp_recv_segment_is_hdr ( struct iscsi_tcp_conn * tcp_conn )
+
+tests if we are reading in a header
+
+Parameters
+  struct iscsi_tcp_conn *tcp_conn
+    iscsi tcp conn
+
+Description
+  returns non zero if we are currently processing or setup to process
+a header.

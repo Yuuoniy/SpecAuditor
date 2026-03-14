@@ -1,0 +1,15 @@
+Function: size_t usb_ep_align_maybe ( struct usb_gadget * g , struct usb_ep * ep , size_t len )
+
+returns len aligned to ep’s maxpacketsize if gadget requires quirk_ep_out_aligned_size, otherwise returns len.
+
+Parameters
+  struct usb_gadget *g
+    controller to check for quirk
+  struct usb_ep *ep
+    the endpoint whose maxpacketsize is used to align len
+  size_t len
+    buffer size’s length to align to ep ’s maxpacketsize
+
+Description
+  This helper is used in case it’s required for any reason to check and maybe
+align buffer’s size to an ep’s maxpacketsize.

@@ -1,0 +1,16 @@
+Function: struct folio * __filemap_get_folio ( struct address_space * mapping , pgoff_t index , fgf_t fgp_flags , gfp_t gfp )
+
+Find and get a reference to a folio.
+
+Parameters
+  struct address_space *mapping
+    The address_space to search.
+  pgoff_t index
+    The page index.
+  fgf_t fgp_flags
+    FGP flags modify how the folio is returned.
+  gfp_t gfp
+    Memory allocation flags to use if FGP_CREAT is specified.
+
+Description
+  Looks up the page cache entry at mapping & index .

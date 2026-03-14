@@ -1,0 +1,11 @@
+Function: int sysfs_create_file_ns ( struct kobject * kobj , const struct attribute * attr , const void * ns )
+
+create an attribute file for an object with custom ns
+
+Parameters
+  struct kobject *kobj
+    object we’re creating for
+  const struct attribute *attr
+    attribute descriptor
+  const void *ns
+    namespace the new file should belong to

@@ -1,0 +1,12 @@
+Function: void drm_panel_add ( struct drm_panel * panel )
+
+add a panel to the global registry
+
+Parameters
+  struct drm_panel *panel
+    panel to add
+
+Description
+  Add a panel to the global registry so that it can be looked
+up by display drivers. The panel to be added must have been
+allocated by devm_drm_panel_alloc() .

@@ -1,0 +1,12 @@
+Macro: module_i3c_driver
+
+
+
+Parameters
+  __drv
+    the I3C driver to register
+
+Description
+  Provide generic init/exit functions that simply register/unregister an I3C
+driver.
+Should be used by any driver that does not require extra init/cleanup steps.

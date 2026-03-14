@@ -1,0 +1,15 @@
+Function: int snd_jack_add_new_kctl ( struct snd_jack * jack , const char * name , int mask )
+
+Create a new snd_jack_kctl and add it to jack
+
+Parameters
+  struct snd_jack *jack
+    the jack instance which the kctl will attaching to
+  const char * name
+    the name for the snd_kcontrol object
+  int mask
+    a bitmask of enum snd_jack_type values that can be detected
+by this snd_jack_kctl object.
+
+Description
+  Creates a new snd_kcontrol object and adds it to the jack kctl_list.

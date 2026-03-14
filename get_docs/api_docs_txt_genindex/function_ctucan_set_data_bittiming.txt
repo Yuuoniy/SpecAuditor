@@ -1,0 +1,7 @@
+Function: int ctucan_set_data_bittiming ( struct net_device * ndev )
+
+CAN set data bit timing routine
+
+Parameters
+  struct net_device *ndev
+    Pointer to net_device structure

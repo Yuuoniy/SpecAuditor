@@ -1,0 +1,20 @@
+Struct: struct nand_controller
+
+Structure used to describe a NAND controller
+
+Members
+  lock
+    lock used to serialize accesses to the NAND controller
+  ops
+    NAND controller operations.
+  supported_op
+    NAND controller known-to-be-supported operations,
+only writable by the core after initial checking.
+  supported_op.data_only_read
+    The controller supports reading more data from
+the bus without restarting an entire read operation nor
+changing the column.
+  supported_op.cont_read
+    The controller supports sequential cache reads.
+  controller_wp
+    the controller is in charge of handling the WP pin.

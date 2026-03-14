@@ -1,0 +1,9 @@
+Struct: struct dev_msi_info
+
+Device data related to MSI
+
+Members
+  domain
+    The MSI interrupt domain associated to the device
+  data
+    Pointer to MSI device data

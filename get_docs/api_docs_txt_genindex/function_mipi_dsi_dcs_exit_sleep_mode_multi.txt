@@ -1,0 +1,11 @@
+Function: void mipi_dsi_dcs_exit_sleep_mode_multi ( struct mipi_dsi_multi_context * ctx )
+
+send DCS EXIT_SLEEP_MODE packet
+
+Parameters
+  struct mipi_dsi_multi_context *ctx
+    Context for multiple DSI transactions
+
+Description
+  Like mipi_dsi_dcs_exit_sleep_mode() but deals with errors in a way that
+makes it convenient to make several calls in a row.

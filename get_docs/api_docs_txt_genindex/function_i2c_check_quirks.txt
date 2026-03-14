@@ -1,0 +1,9 @@
+Function: bool i2c_check_quirks ( struct i2c_adapter * adap , u64 quirks )
+
+Function for checking the quirk flags in an i2c adapter
+
+Parameters
+  struct i2c_adapter *adap
+    i2c adapter
+  u64 quirks
+    quirk flags

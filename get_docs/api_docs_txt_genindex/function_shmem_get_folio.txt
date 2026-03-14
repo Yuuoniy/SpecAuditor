@@ -1,0 +1,19 @@
+Function: int shmem_get_folio ( struct inode * inode , pgoff_t index , loff_t write_end , struct folio * * foliop , enum sgp_type sgp )
+
+find, and lock a shmem folio.
+
+Parameters
+  struct inode *inode
+    inode to search
+  pgoff_t index
+    the page index.
+  loff_t write_end
+    end of a write, could extend inode size
+  struct folio **foliop
+    pointer to the folio if found
+  enum sgp_type sgp
+    SGP_* flags to control behavior
+
+Description
+  Looks up the page cache entry at inode & index .  If a folio is
+present, it is returned locked with an increased refcount.

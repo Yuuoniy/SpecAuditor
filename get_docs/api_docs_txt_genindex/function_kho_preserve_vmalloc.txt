@@ -1,0 +1,14 @@
+Function: int kho_preserve_vmalloc ( void * ptr , struct kho_vmalloc * preservation )
+
+preserve memory allocated with vmalloc() across kexec
+
+Parameters
+  void *ptr
+    pointer to the area in vmalloc address space
+  struct kho_vmalloc *preservation
+    placeholder for preservation metadata
+
+Description
+  Instructs KHO to preserve the area in vmalloc address space at ptr . The
+physical pages mapped at ptr will be preserved and on successful return preservation will hold the physical address of a structure that describes
+the preservation.

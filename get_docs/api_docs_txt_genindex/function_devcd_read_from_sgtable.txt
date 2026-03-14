@@ -1,0 +1,16 @@
+Function: ssize_t devcd_read_from_sgtable ( char * buffer , loff_t offset , size_t buf_len , void * data , size_t data_len )
+
+copy data from sg_table to a given buffer and return the number of bytes read
+
+Parameters
+  char *buffer
+    the buffer to copy the data to it
+  loff_t offset
+    start copy from offset**** bytes from the head of the data
+in the given scatterlist
+  size_t buf_len
+    the length of the buffer
+  void *data
+    the scatterlist table to copy from
+  size_t data_len
+    the length of the data in the sg_table

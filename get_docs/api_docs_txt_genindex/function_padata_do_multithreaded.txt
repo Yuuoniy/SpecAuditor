@@ -1,0 +1,10 @@
+Function: void padata_do_multithreaded ( struct padata_mt_job * job )
+
+run a multithreaded job
+
+Parameters
+  struct padata_mt_job *job
+    Description of the job.
+
+Description
+  See the definition of struct padata_mt_job for more details.

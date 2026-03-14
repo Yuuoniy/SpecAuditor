@@ -1,0 +1,15 @@
+Struct: struct cxl_fw_state
+
+Firmware upload / activation state
+
+Members
+  state
+    fw_uploader state bitmask
+  oneshot
+    whether the fw upload fits in a single transfer
+  num_slots
+    Number of FW slots available
+  cur_slot
+    Slot number currently active
+  next_slot
+    Slot number for the new firmware

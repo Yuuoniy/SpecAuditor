@@ -1,0 +1,11 @@
+Function: struct v4l2_subdev_state * v4l2_subdev_lock_and_get_active_state ( struct v4l2_subdev * sd )
+
+Locks and returns the active subdev state for the subdevice
+
+Parameters
+  struct v4l2_subdev *sd
+    The subdevice
+
+Description
+  Returns the locked active state for the subdevice, or NULL if the subdev
+does not support active state.

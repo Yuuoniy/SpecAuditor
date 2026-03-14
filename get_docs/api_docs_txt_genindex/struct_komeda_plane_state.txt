@@ -1,0 +1,11 @@
+Struct: struct komeda_plane_state
+
+
+
+Members
+  base
+    drm_plane_state
+  zlist_node
+    zorder list node
+  layer_split
+    on/off layer_split

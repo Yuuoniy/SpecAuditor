@@ -1,0 +1,20 @@
+Function: ssize_t extract_iter_to_sg ( struct iov_iter * iter , size_t maxsize , struct sg_table * sgtable , unsigned int sg_max , iov_iter_extraction_t extraction_flags )
+
+Extract pages from an iterator and add to an sglist
+
+Parameters
+  struct iov_iter *iter
+    The iterator to extract from
+  size_t maxsize
+    The amount of iterator to copy
+  struct sg_table *sgtable
+    The scatterlist table to fill in
+  unsigned int sg_max
+    Maximum number of elements in sgtable that may be filled
+  iov_iter_extraction_t extraction_flags
+    Flags to qualify the request
+
+Description
+  Extract the page fragments from the given amount of the source iterator and
+add them to a scatterlist that refers to all of those bits, to a maximum
+addition of sg_max elements.

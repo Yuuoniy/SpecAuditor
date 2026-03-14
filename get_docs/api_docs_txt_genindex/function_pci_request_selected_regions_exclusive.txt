@@ -1,0 +1,11 @@
+Function: int pci_request_selected_regions_exclusive ( struct pci_dev * pdev , int bars , const char * name )
+
+Request regions exclusively
+
+Parameters
+  struct pci_dev *pdev
+    PCI device to request regions from
+  int bars
+    bit mask of BARs to request
+  const char *name
+    name of the driver requesting the resources

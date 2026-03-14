@@ -1,0 +1,12 @@
+Function: bool drm_dp_as_sdp_supported ( struct drm_dp_aux * aux , const u8 dpcd [ DP_RECEIVER_CAP_SIZE ] )
+
+check if adaptive sync sdp is supported
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  const u8 dpcd[DP_RECEIVER_CAP_SIZE]
+    DisplayPort configuration data
+
+Description
+  Returns true if adaptive sync sdp is supported, else returns false

@@ -1,0 +1,24 @@
+Struct: struct devfreq_passive_data
+
+void *data fed to struct devfreq and devfreq_add_device
+
+Members
+  parent
+    the devfreq instance of parent device.
+  get_target_freq
+    Optional callback, Returns desired operating frequency
+for the device using passive governor. That is called
+when passive governor should decide the next frequency
+by using the new frequency of parent devfreq device
+using governors except for passive governor.
+If the devfreq device has the specific method to decide
+the next frequency, should use this callback.
+  parent_type
+    the parent type of the device.
+  this
+    the devfreq instance of own device.
+  nb
+    the notifier block for DEVFREQ_TRANSITION_NOTIFIER or
+CPUFREQ_TRANSITION_NOTIFIER list.
+  cpu_data_list
+    the list of cpu frequency data for all cpufreq_policy.

@@ -1,0 +1,13 @@
+Function: void kfree_strarray ( char * * array , size_t n )
+
+free a number of dynamically allocated strings contained in an array and the array itself
+
+Parameters
+  char **array
+    Dynamically allocated array of strings to free.
+  size_t n
+    Number of strings (starting from the beginning of the array) to free.
+
+Description
+  Passing a non-NULL array and n == 0 as well as NULL array are valid
+use-cases. If array is NULL, the function does nothing.

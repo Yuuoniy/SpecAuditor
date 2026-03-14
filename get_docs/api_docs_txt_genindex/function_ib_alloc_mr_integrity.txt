@@ -1,0 +1,12 @@
+Function: struct ib_mr * ib_alloc_mr_integrity ( struct ib_pd * pd , u32 max_num_data_sg , u32 max_num_meta_sg )
+
+Allocates an integrity memory region
+
+Parameters
+  struct ib_pd *pd
+    protection domain associated with the region
+  u32 max_num_data_sg
+    maximum data sg entries available for registration
+  u32 max_num_meta_sg
+    maximum metadata sg entries available for
+registration

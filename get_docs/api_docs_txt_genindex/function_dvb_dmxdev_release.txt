@@ -1,0 +1,7 @@
+Function: void dvb_dmxdev_release ( struct dmxdev * dmxdev )
+
+releases a digital TV demux and unregisters it.
+
+Parameters
+  struct dmxdev *dmxdev
+    pointer to struct dmxdev .

@@ -1,0 +1,17 @@
+Function: int drm_connector_set_panel_orientation_with_quirk ( struct drm_connector * connector , enum drm_panel_orientation panel_orientation , int width , int height )
+
+set the connector’s panel_orientation after checking for quirks
+
+Parameters
+  struct drm_connector *connector
+    connector for which to init the panel-orientation property.
+  enum drm_panel_orientation panel_orientation
+    drm_panel_orientation value to set
+  int width
+    width in pixels of the panel, used for panel quirk detection
+  int height
+    height in pixels of the panel, used for panel quirk detection
+
+Description
+  Like drm_connector_set_panel_orientation() , but with a check for platform
+specific (e.g. DMI based) quirks overriding the passed in panel_orientation.

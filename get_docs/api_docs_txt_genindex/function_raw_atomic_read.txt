@@ -1,0 +1,10 @@
+Function: int raw_atomic_read ( const atomic_t * v )
+
+atomic load with relaxed ordering
+
+Parameters
+  const atomic_t *v
+    pointer to atomic_t
+
+Description
+  Atomically loads the value of v with relaxed ordering.

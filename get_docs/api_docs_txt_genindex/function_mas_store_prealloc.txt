@@ -1,0 +1,9 @@
+Function: void mas_store_prealloc ( struct ma_state * mas , void * entry )
+
+Store a value into the tree using memory preallocated in the maple state.
+
+Parameters
+  struct ma_state *mas
+    The maple state
+  void *entry
+    The entry to store.

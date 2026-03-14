@@ -1,0 +1,20 @@
+Function: struct device * device_create ( const struct class * class , struct device * parent , dev_t devt , void * drvdata , const char * fmt , ... )
+
+creates a device and registers it with sysfs
+
+Parameters
+  const struct class *class
+    pointer to the struct class that this device should be registered to
+  struct device *parent
+    pointer to the parent struct device of this new device, if any
+  dev_t devt
+    the dev_t for the char device to be added
+  void *drvdata
+    the data to be added to the device for callbacks
+  const char *fmt
+    string for the device’s name
+  ...
+    variable arguments
+
+Description
+  This function can be used by char device classes.  A struct device will be created in sysfs, registered to the specified class.

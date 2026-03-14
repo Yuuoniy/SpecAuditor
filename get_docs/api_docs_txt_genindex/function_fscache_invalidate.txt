@@ -1,0 +1,19 @@
+Function: void fscache_invalidate ( struct fscache_cookie * cookie , const void * aux_data , loff_t size , unsigned int flags )
+
+Notify cache that an object needs invalidation
+
+Parameters
+  struct fscache_cookie *cookie
+    The cookie representing the cache object
+  const void *aux_data
+    The updated auxiliary data for the cookie (may be NULL)
+  loff_t size
+    The revised size of the object.
+  unsigned int flags
+    Invalidation flags (FSCACHE_INVAL_*)
+
+Description
+  Notify the cache that an object is needs to be invalidated and that it
+should abort any retrievals or stores it is doing on the cache.  This
+increments inval_counter on the cookie which can be used by the caller to
+reconsider I/O requests as they complete.

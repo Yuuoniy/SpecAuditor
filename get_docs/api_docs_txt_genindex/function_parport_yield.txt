@@ -1,0 +1,12 @@
+Function: int parport_yield ( struct pardevice * dev )
+
+relinquish a parallel port temporarily
+
+Parameters
+  struct pardevice *dev
+    a device on the parallel port
+
+Description
+  This function relinquishes the port if it would be helpful to other
+drivers to do so.  Afterwards it tries to reclaim the port using parport_claim() , and the return value is the same as for parport_claim() .  If it fails, the port is left unclaimed and it is
+the driver’s responsibility to reclaim the port.

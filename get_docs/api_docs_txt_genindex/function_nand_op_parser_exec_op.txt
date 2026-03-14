@@ -1,0 +1,20 @@
+Function: int nand_op_parser_exec_op ( struct nand_chip * chip , const struct nand_op_parser * parser , const struct nand_operation * op , bool check_only )
+
+exec_op parser
+
+Parameters
+  struct nand_chip *chip
+    the NAND chip
+  const struct nand_op_parser *parser
+    patterns description provided by the controller driver
+  const struct nand_operation *op
+    the NAND operation to address
+  bool check_only
+    when true, the function only checks if op can be handled but
+does not execute the operation
+
+Description
+  Helper function designed to ease integration of NAND controller drivers that
+only support a limited set of instruction sequences. The supported sequences
+are described in parser , and the framework takes care of splitting op into
+multiple sub-operations (if required) and pass them back to the -> exec() callback of the matching pattern if check_only is set to false.

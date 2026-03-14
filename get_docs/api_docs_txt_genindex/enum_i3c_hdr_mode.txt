@@ -1,0 +1,3 @@
+Enum: enum i3c_hdr_mode
+
+HDR mode ids

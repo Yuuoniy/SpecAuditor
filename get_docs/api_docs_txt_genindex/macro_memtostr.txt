@@ -1,0 +1,13 @@
+Macro: memtostr
+
+
+
+Parameters
+  dest
+    Pointer to destination NUL-terminates string
+  src
+    Pointer to character array (likely marked as __nonstring)
+
+Description
+  This is a replacement for strncpy() uses where the source is not
+a NUL-terminated string.

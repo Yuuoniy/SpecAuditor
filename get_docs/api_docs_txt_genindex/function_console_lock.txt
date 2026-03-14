@@ -1,0 +1,11 @@
+Function: void console_lock ( void )
+
+block the console subsystem from printing
+
+Parameters
+  void
+    no arguments
+
+Description
+  Acquires a lock which guarantees that no consoles will
+be in or enter their write() callback.

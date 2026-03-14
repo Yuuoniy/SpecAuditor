@@ -1,0 +1,7 @@
+Function: int dwc3_get_dr_mode ( struct dwc3 * dwc )
+
+Validates and sets dr_mode
+
+Parameters
+  struct dwc3 *dwc
+    pointer to our context structure

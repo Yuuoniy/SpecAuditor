@@ -1,0 +1,20 @@
+Function: void __iomem * pci_iomap_wc_range ( struct pci_dev * dev , int bar , unsigned long offset , unsigned long maxlen )
+
+create a virtual WC mapping cookie for a PCI BAR
+
+Parameters
+  struct pci_dev *dev
+    PCI device that owns the BAR
+  int bar
+    BAR number
+  unsigned long offset
+    map memory at the given offset in BAR
+  unsigned long maxlen
+    max length of the memory to map
+
+Description
+  Using this function you will get a __iomem address to your device BAR.
+You can access it using ioread*() and iowrite*(). These functions hide
+the details if this is a MMIO or PIO address space and will just do what
+you expect from them in the correct way. When possible write combining
+is used.

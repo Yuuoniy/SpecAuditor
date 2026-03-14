@@ -1,0 +1,15 @@
+Function: ssize_t vfs_listxattr ( struct dentry * dentry , char * list , size_t size )
+
+retrieve 0 separated list of xattr names
+
+Parameters
+  struct dentry *dentry
+    the dentry from whose inode the xattr names are retrieved
+  char *list
+    buffer to store xattr names into
+  size_t size
+    size of the buffer
+
+Description
+  This function returns the names of all xattrs associated with the
+inode of dentry .

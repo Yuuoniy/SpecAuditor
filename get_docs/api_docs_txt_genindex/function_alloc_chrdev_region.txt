@@ -1,0 +1,18 @@
+Function: int alloc_chrdev_region ( dev_t * dev , unsigned baseminor , unsigned count , const char * name )
+
+register a range of char device numbers
+
+Parameters
+  dev_t *dev
+    output parameter for first assigned number
+  unsigned baseminor
+    first of the requested range of minor numbers
+  unsigned count
+    the number of minor numbers required
+  const char *name
+    the name of the associated device or driver
+
+Description
+  Allocates a range of char device numbers.  The major number will be
+chosen dynamically, and returned (along with the first minor number)
+in dev .  Returns zero or a negative error code.

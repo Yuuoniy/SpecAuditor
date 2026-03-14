@@ -1,0 +1,15 @@
+Function: int security_msg_queue_msgsnd ( struct kern_ipc_perm * msq , struct msg_msg * msg , int msqflg )
+
+Check if sending a sysv ipc message is allowed
+
+Parameters
+  struct kern_ipc_perm *msq
+    sysv ipc permission structure
+  struct msg_msg *msg
+    message
+  int msqflg
+    operation flags
+
+Description
+  Check permission before a message, msg , is enqueued on the message queue
+with permissions specified in msq .

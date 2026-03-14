@@ -1,0 +1,13 @@
+Function: int irq_force_affinity ( unsigned int irq , const struct cpumask * cpumask )
+
+Force the irq affinity of a given irq
+
+Parameters
+  unsigned int irq
+    Interrupt to set affinity
+  const struct cpumask *cpumask
+    cpumask
+
+Description
+  Same as irq_set_affinity, but without checking the mask against
+online cpus.

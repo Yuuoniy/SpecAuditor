@@ -1,0 +1,11 @@
+Function: const struct drm_edid * drm_edid_read_base_block ( struct i2c_adapter * adapter )
+
+Get a panel’s EDID base block
+
+Parameters
+  struct i2c_adapter *adapter
+    I2C adapter to use for DDC
+
+Description
+  This function returns the drm_edid containing the first block of the EDID of
+a panel.

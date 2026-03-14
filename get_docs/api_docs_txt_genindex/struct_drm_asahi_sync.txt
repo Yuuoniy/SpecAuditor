@@ -1,0 +1,11 @@
+Struct: struct drm_asahi_sync
+
+Sync item
+
+Members
+  sync_type
+    One of drm_asahi_sync_type
+  handle
+    The sync object handle
+  timeline_value
+    Timeline value for timeline sync objects

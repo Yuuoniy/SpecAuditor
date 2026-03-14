@@ -1,0 +1,16 @@
+Function: int drm_edp_backlight_enable ( struct drm_dp_aux * aux , const struct drm_edp_backlight_info * bl , const u32 level )
+
+Enable an eDP panel’s backlight using DPCD
+
+Parameters
+  struct drm_dp_aux *aux
+    The DP AUX channel to use
+  const struct drm_edp_backlight_info *bl
+    Backlight capability info from drm_edp_backlight_init()
+  const u32 level
+    The initial backlight level to set via AUX, if there is one
+
+Description
+  This function handles enabling DPCD backlight controls on a panel over DPCD, while additionally
+restoring any important backlight state such as the given backlight level, the brightness byte
+count, backlight frequency, etc.

@@ -1,0 +1,34 @@
+Function: int ib_sa_service_rec_get ( struct ib_sa_client * client , struct ib_device * device , u32 port_num , struct sa_service_rec * rec , ib_sa_comp_mask comp_mask , unsigned long timeout_ms , gfp_t gfp_mask , void ( * callback ) ( int status , struct sa_service_rec * resp , unsigned int num_services , void * context ) , void * context , struct ib_sa_query * * sa_query )
+
+Start a Service get query
+
+Parameters
+  struct ib_sa_client *client
+    SA client
+  struct ib_device *device
+    device to send query on
+  u32 port_num
+    port number to send query on
+  struct sa_service_rec *rec
+    Service Record to send in query
+  ib_sa_comp_mask comp_mask
+    component mask to send in query
+  unsigned long timeout_ms
+    time to wait for response
+  gfp_t gfp_mask
+    GFP mask to use for internal allocations
+  void (*callback)(int status, struct sa_service_rec *resp, unsigned int num_services, void *context)
+    function called when query completes, times out or is
+canceled
+  void *context
+    opaque user context passed to callback
+  struct ib_sa_query **sa_query
+    query context, used to cancel query
+
+Description
+  Send a Service Record Get query to the SA to look up a path.  The
+callback function will be called when the query completes (or
+fails); status is 0 for a successful response, -EINTR if the query
+is canceled, -ETIMEDOUT is the query timed out, or -EIO if an error
+occurred sending the query.  The resp parameter of the callback is
+only valid if status is 0.

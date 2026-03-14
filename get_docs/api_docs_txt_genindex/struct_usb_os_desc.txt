@@ -1,0 +1,19 @@
+Struct: struct usb_os_desc
+
+describes OS descriptors associated with one interface
+
+Members
+  ext_compat_id
+    16 bytes of “Compatible ID” and “Subcompatible ID”
+  ext_prop
+    Extended Properties list
+  ext_prop_len
+    Total length of Extended Properties blobs
+  ext_prop_count
+    Number of Extended Properties
+  opts_mutex
+    Optional mutex protecting config data of a usb_function_instance
+  group
+    Represents OS descriptors associated with an interface in configfs
+  owner
+    Module associated with this OS descriptor

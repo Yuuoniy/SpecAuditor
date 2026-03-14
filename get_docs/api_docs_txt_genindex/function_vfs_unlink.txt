@@ -1,0 +1,16 @@
+Function: int vfs_unlink ( struct mnt_idmap * idmap , struct inode * dir , struct dentry * dentry , struct inode * * delegated_inode )
+
+unlink a filesystem object
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount the inode was found from
+  struct inode *dir
+    parent directory
+  struct dentry *dentry
+    victim
+  struct inode **delegated_inode
+    returns victim inode, if the inode is delegated.
+
+Description
+  The caller must hold dir->i_rwsem exclusively.

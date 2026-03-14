@@ -1,0 +1,12 @@
+Function: void pci_release_regions ( struct pci_dev * pdev )
+
+Release reserved PCI I/O and memory resources
+
+Parameters
+  struct pci_dev *pdev
+    PCI device whose resources were previously reserved by pci_request_regions()
+
+Description
+  Releases all PCI I/O and memory resources previously reserved by a
+successful call to pci_request_regions() .  Call this function only
+after all use of the PCI regions has ceased.

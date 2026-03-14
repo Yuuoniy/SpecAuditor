@@ -1,0 +1,7 @@
+Function: int srpt_create_ch_ib ( struct srpt_rdma_ch * ch )
+
+create receive and send completion queues
+
+Parameters
+  struct srpt_rdma_ch *ch
+    SRPT RDMA channel.

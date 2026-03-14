@@ -1,0 +1,12 @@
+Function: int amdgpu_bo_kmap ( struct amdgpu_bo * bo , void * * ptr )
+
+map an amdgpu_bo buffer object
+
+Parameters
+  struct amdgpu_bo *bo
+    amdgpu_bo buffer object to be mapped
+  void **ptr
+    kernel virtual address to be returned
+
+Description
+  Calls ttm_bo_kmap() to set up the kernel virtual mapping; calls amdgpu_bo_kptr() to get the kernel virtual address.

@@ -1,0 +1,12 @@
+Function: struct pwrseq_device * pwrseq_device_register ( const struct pwrseq_config * config )
+
+Register a new power sequencer.
+
+Parameters
+  const struct pwrseq_config *config
+    Configuration of the new power sequencing device.
+
+Description
+  The config structure is only used during the call and can be freed after
+the function returns. The config structure must have the parent device
+as well as the match() callback and at least one target set.

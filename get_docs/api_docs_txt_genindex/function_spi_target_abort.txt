@@ -1,0 +1,7 @@
+Function: int spi_target_abort ( struct spi_device * spi )
+
+abort the ongoing transfer request on an SPI target controller
+
+Parameters
+  struct spi_device *spi
+    device used for the current transfer

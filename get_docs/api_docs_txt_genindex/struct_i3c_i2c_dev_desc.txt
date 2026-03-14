@@ -1,0 +1,14 @@
+Struct: struct i3c_i2c_dev_desc
+
+Common part of the I3C/I2C device descriptor
+
+Members
+  node
+    node element used to insert the slot into the I2C or I3C device
+list
+  master
+    I3C master that instantiated this device. Will be used to do
+I2C/I3C transfers
+  master_priv
+    master private data assigned to the device. Can be used to
+add master specific information

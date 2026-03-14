@@ -1,0 +1,20 @@
+Function: int clean_record_pte ( pte_t * pte , unsigned long addr , unsigned long end , struct mm_walk * walk )
+
+Clean a pte and record its address space offset in a bitmap
+
+Parameters
+  pte_t *pte
+    Pointer to the pte
+  unsigned long addr
+    The start of virtual address to be clean
+  unsigned long end
+    The end of virtual address to be clean
+  struct mm_walk *walk
+    pagetable walk callback argument
+
+Description
+  The function cleans a pte and records the range in
+virtual address space of touched ptes for efficient TLB flushes.
+It also records dirty ptes in a bitmap representing page offsets
+in the address_space, as well as the first and last of the bits
+touched.

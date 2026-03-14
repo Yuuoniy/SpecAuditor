@@ -1,0 +1,14 @@
+Function: int eth_header_cache ( const struct neighbour * neigh , struct hh_cache * hh , __be16 type )
+
+fill cache entry from neighbour
+
+Parameters
+  const struct neighbour *neigh
+    source neighbour
+  struct hh_cache *hh
+    destination cache entry
+  __be16 type
+    Ethernet type field
+
+Description
+  Create an Ethernet header template from the neighbour.

@@ -1,0 +1,12 @@
+Function: struct i2c_client * i2c_new_smbus_alert_device ( struct i2c_adapter * adapter , struct i2c_smbus_alert_setup * setup )
+
+get ara client for SMBus alert support
+
+Parameters
+  struct i2c_adapter *adapter
+    the target adapter
+  struct i2c_smbus_alert_setup *setup
+    setup data for the SMBus alert handler
+
+Description
+  Setup handling of the SMBus alert protocol on a given I2C bus segment.

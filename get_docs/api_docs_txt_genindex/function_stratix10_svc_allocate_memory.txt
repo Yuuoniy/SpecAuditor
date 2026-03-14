@@ -1,0 +1,13 @@
+Function: void * stratix10_svc_allocate_memory ( struct stratix10_svc_chan * chan , size_t size )
+
+allocate memory
+
+Parameters
+  struct stratix10_svc_chan *chan
+    service channel assigned to the client
+  size_t size
+    memory size requested by a specific service client
+
+Description
+  Service layer allocates the requested number of bytes buffer from the
+memory pool, service client uses this function to get allocated buffers.

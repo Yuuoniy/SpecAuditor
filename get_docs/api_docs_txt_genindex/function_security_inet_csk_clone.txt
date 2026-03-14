@@ -1,0 +1,12 @@
+Function: void security_inet_csk_clone ( struct sock * newsk , const struct request_sock * req )
+
+Set new sock LSM state based on request_sock
+
+Parameters
+  struct sock *newsk
+    new sock
+  const struct request_sock *req
+    connection request_sock
+
+Description
+  Set that LSM state of sock using the LSM state from req .

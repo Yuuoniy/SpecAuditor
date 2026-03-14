@@ -1,0 +1,10 @@
+Function: void rcu_async_hurry ( void )
+
+Make future async RCU callbacks not lazy.
+
+Parameters
+  void
+    no arguments
+
+Description
+  After a call to this function, future calls to call_rcu() will be processed in a timely fashion.

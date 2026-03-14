@@ -1,0 +1,13 @@
+Function: void __drm_gem_reset_shadow_plane ( struct drm_plane * plane , struct drm_shadow_plane_state * shadow_plane_state )
+
+resets a shadow-buffered plane
+
+Parameters
+  struct drm_plane *plane
+    the plane
+  struct drm_shadow_plane_state *shadow_plane_state
+    the shadow-buffered plane state
+
+Description
+  This function resets state for shadow-buffered planes. Helpful
+for drivers that subclass struct drm_shadow_plane_state .

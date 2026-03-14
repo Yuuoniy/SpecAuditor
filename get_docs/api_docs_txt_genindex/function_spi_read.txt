@@ -1,0 +1,15 @@
+Function: int spi_read ( struct spi_device * spi , void * buf , size_t len )
+
+SPI synchronous read
+
+Parameters
+  struct spi_device *spi
+    device from which data will be read
+  void *buf
+    data buffer
+  size_t len
+    data buffer size
+
+Description
+  This function reads the buffer buf .
+Callable only from contexts that can sleep.

@@ -1,0 +1,10 @@
+Function: const char * ata_get_cmd_name ( u8 command )
+
+get name for ATA command
+
+Parameters
+  u8 command
+    ATA command code to get name for
+
+Description
+  Return a textual name of the given command or “unknown”

@@ -1,0 +1,9 @@
+Function: size_t size_sub ( size_t minuend , size_t subtrahend )
+
+Calculate size_t subtraction with saturation at SIZE_MAX
+
+Parameters
+  size_t minuend
+    value to subtract from
+  size_t subtrahend
+    value to subtract from minuend

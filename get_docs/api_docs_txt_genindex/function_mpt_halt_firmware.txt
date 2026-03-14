@@ -1,0 +1,7 @@
+Function: void __noreturn mpt_halt_firmware ( MPT_ADAPTER * ioc )
+
+Halts the firmware if it is operational and panic the kernel
+
+Parameters
+  MPT_ADAPTER *ioc
+    Pointer to MPT_ADAPTER structure

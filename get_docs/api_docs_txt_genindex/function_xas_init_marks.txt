@@ -1,0 +1,12 @@
+Function: void xas_init_marks ( const struct xa_state * xas )
+
+Initialise all marks for the entry
+
+Parameters
+  const struct xa_state *xas
+    Array operations state.
+
+Description
+  Initialise all marks for the entry specified by xas .  If we’re tracking
+free entries with a mark, we need to set it on all entries.  All other
+marks are cleared.

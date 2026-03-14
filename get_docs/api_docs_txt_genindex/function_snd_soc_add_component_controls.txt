@@ -1,0 +1,11 @@
+Function: int snd_soc_add_component_controls ( struct snd_soc_component * component , const struct snd_kcontrol_new * controls , unsigned int num_controls )
+
+Add an array of controls to a component.
+
+Parameters
+  struct snd_soc_component *component
+    Component to add controls to
+  const struct snd_kcontrol_new *controls
+    Array of controls to add
+  unsigned int num_controls
+    Number of elements in the array

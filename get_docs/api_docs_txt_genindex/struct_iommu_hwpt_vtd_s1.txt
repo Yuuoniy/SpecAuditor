@@ -1,0 +1,13 @@
+Struct: struct iommu_hwpt_vtd_s1
+
+Intel VT-d stage-1 page table info (IOMMU_HWPT_DATA_VTD_S1)
+
+Members
+  flags
+    Combination of enum iommu_hwpt_vtd_s1_flags
+  pgtbl_addr
+    The base address of the stage-1 page table.
+  addr_width
+    The address width of the stage-1 page table
+  __reserved
+    Must be 0

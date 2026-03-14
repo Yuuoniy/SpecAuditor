@@ -1,0 +1,7 @@
+Function: int ssh_ctrl_packet_cache_init ( void )
+
+Initialize the control packet cache.
+
+Parameters
+  void
+    no arguments

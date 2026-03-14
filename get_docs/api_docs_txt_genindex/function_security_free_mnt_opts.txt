@@ -1,0 +1,10 @@
+Function: void security_free_mnt_opts ( void * * mnt_opts )
+
+Free memory associated with mount options
+
+Parameters
+  void **mnt_opts
+    LSM processed mount options
+
+Description
+  Free memory associated with mnt_ops .

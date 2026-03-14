@@ -1,0 +1,22 @@
+Function: int security_inode_init_security ( struct inode * inode , struct inode * dir , const struct qstr * qstr , const initxattrs initxattrs , void * fs_data )
+
+Initialize an inode’s LSM context
+
+Parameters
+  struct inode *inode
+    the inode
+  struct inode *dir
+    parent directory
+  const struct qstr *qstr
+    last component of the pathname
+  const initxattrs initxattrs
+    callback function to write xattrs
+  void *fs_data
+    filesystem specific data
+
+Description
+  Obtain the security attribute name suffix and value to set on a newly
+created inode and set up the incore security field for the new inode.  This
+hook is called by the fs code as part of the inode creation transaction and
+provides for atomic labeling of the inode, unlike the post_create/mkdir/...
+hooks called by the VFS.

@@ -1,0 +1,14 @@
+Function: __bpf_kfunc int hid_bpf_hw_output_report ( struct hid_bpf_ctx * ctx , __u8 * buf , size_t buf__sz )
+
+Send an output report to a HID device
+
+Parameters
+  struct hid_bpf_ctx *ctx
+    the HID-BPF context previously allocated in hid_bpf_allocate_context()
+  __u8 *buf
+    a PTR_TO_MEM buffer
+  size_t buf__sz
+    the size of the data to transfer
+
+Description
+  Returns the number of bytes transferred on success, a negative error code otherwise.

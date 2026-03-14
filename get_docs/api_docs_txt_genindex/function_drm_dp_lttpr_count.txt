@@ -1,0 +1,10 @@
+Function: int drm_dp_lttpr_count ( const u8 caps [ DP_LTTPR_COMMON_CAP_SIZE ] )
+
+get the number of detected LTTPRs
+
+Parameters
+  const u8 caps[DP_LTTPR_COMMON_CAP_SIZE]
+    LTTPR common capabilities
+
+Description
+  Get the number of detected LTTPRs from the LTTPR common capabilities info.

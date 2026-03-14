@@ -1,0 +1,20 @@
+Function: int pci_enable_msix_range ( struct pci_dev * dev , struct msix_entry * entries , int minvec , int maxvec )
+
+Enable MSI-X interrupt mode on device
+
+Parameters
+  struct pci_dev *dev
+    the PCI device to operate on
+  struct msix_entry *entries
+    input/output parameter, array of MSI-X configuration entries
+  int minvec
+    minimum required number of MSI-X vectors
+  int maxvec
+    maximum desired number of MSI-X vectors
+
+Description
+  Legacy device driver API to enable MSI-X interrupt mode on device and
+configure its MSI-X capability structure as appropriate.  The passed entries array must have each of its members “entry” field set to a
+desired (valid) MSI-X vector number, where the range of valid MSI-X
+vector numbers can be queried through pci_msix_vec_count() .  If
+successful, the driver must invoke pci_disable_msix() on cleanup.

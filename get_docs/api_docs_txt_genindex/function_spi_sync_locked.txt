@@ -1,0 +1,14 @@
+Function: int spi_sync_locked ( struct spi_device * spi , struct spi_message * message )
+
+version of spi_sync with exclusive bus usage
+
+Parameters
+  struct spi_device *spi
+    device with which data will be exchanged
+  struct spi_message *message
+    describes the data transfers
+
+Description
+  This call may only be used from a context that may sleep.  The sleep
+is non-interruptible, and has no timeout.  Low-overhead controller
+drivers may DMA directly into and out of the message buffers.

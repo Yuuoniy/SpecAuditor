@@ -1,0 +1,22 @@
+Macro: xbc_node_for_each_array_value
+
+
+
+Parameters
+  node
+    An XBC node.
+  key
+    A key string searched under node
+  anode
+    Iterated XBC node of array entry.
+  value
+    Iterated value of array entry.
+
+Description
+  Iterate array entries of given key under node . Each array entry node
+is stored to anode and value . If the node doesn’t have key node,
+it does nothing.
+Note that even if the found key node has only one value (not array)
+this executes block once. However, if the found key node has no value
+(key-only node), this does nothing. So don’t use this for testing the
+key-value pair existence.

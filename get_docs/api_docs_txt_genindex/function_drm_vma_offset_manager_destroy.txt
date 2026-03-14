@@ -1,0 +1,12 @@
+Function: void drm_vma_offset_manager_destroy ( struct drm_vma_offset_manager * mgr )
+
+Destroy offset manager
+
+Parameters
+  struct drm_vma_offset_manager *mgr
+    Manager object
+
+Description
+  Destroy an object manager which was previously created via drm_vma_offset_manager_init() . The caller must remove all allocated nodes
+before destroying the manager. Otherwise, drm_mm will refuse to free the
+requested resources.

@@ -1,0 +1,16 @@
+Function: int uart_parse_earlycon ( char * p , enum uart_iotype * iotype , resource_size_t * addr , char * * options )
+
+Parse earlycon options
+
+Parameters
+  char *p
+    ptr to 2nd field (ie., just beyond ‘<name>,’)
+  enum uart_iotype *iotype
+    ptr for decoded iotype (out)
+  resource_size_t *addr
+    ptr for decoded mapbase/iobase (out)
+  char **options
+    ptr for <options> field; NULL if not present (out)
+
+Description
+  earlycon=<name>,io|mmio|mmio16|mmio32|mmio32be|mmio32native,<addr>,<options>

@@ -1,0 +1,12 @@
+Function: struct vfsmount * clone_private_mount ( const struct path * path )
+
+create a private clone of a path
+
+Parameters
+  const struct path *path
+    path to clone
+
+Description
+  This creates a new vfsmount, which will be the clone of path .  The new mount
+will not be attached anywhere in the namespace and will be private (i.e.
+changes to the originating mount won’t be propagated into this).

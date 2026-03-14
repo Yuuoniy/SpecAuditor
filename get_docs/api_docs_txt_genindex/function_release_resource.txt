@@ -1,0 +1,7 @@
+Function: int release_resource ( struct resource * old )
+
+release a previously reserved resource
+
+Parameters
+  struct resource *old
+    resource pointer

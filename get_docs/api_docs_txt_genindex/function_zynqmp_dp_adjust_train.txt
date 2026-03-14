@@ -1,0 +1,9 @@
+Function: void zynqmp_dp_adjust_train ( struct zynqmp_dp * dp , u8 link_status [ DP_LINK_STATUS_SIZE ] )
+
+Adjust train values
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure
+  u8 link_status[DP_LINK_STATUS_SIZE]
+    link status from sink which contains requested training values

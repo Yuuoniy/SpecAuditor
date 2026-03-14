@@ -1,0 +1,10 @@
+Function: void security_msg_queue_free ( struct kern_ipc_perm * msq )
+
+Free a sysv ipc msg queue LSM blob
+
+Parameters
+  struct kern_ipc_perm *msq
+    sysv ipc permission structure
+
+Description
+  Deallocate security field perm->security for the message queue.

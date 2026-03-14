@@ -1,0 +1,39 @@
+Struct: struct ssh_rtl
+
+SSH request transport layer.
+
+Members
+  ptl
+    Underlying packet transport layer.
+  state
+    State(-flags) of the transport layer.
+  queue
+    Request submission queue.
+  queue.lock
+    Lock for modifying the request submission queue.
+  queue.head
+    List-head of the request submission queue.
+  pending
+    Set/list of pending requests.
+  pending.lock
+    Lock for modifying the request set.
+  pending.head
+    List-head of the pending set/list.
+  pending.count
+    Number of currently pending requests.
+  tx
+    Transmitter subsystem.
+  tx.work
+    Transmitter work item.
+  rtx_timeout
+    Retransmission timeout subsystem.
+  rtx_timeout.lock
+    Lock for modifying the retransmission timeout reaper.
+  rtx_timeout.timeout
+    Timeout interval for retransmission.
+  rtx_timeout.expires
+    Time specifying when the reaper work is next scheduled.
+  rtx_timeout.reaper
+    Work performing timeout checks and subsequent actions.
+  ops
+    Request layer operations.

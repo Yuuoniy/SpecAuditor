@@ -1,0 +1,11 @@
+Macro: DRM_DEV_ERROR
+
+
+
+Parameters
+  dev
+    device pointer
+  fmt
+    printf() like format string.
+  ...
+    variable arguments

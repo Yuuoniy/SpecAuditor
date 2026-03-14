@@ -1,0 +1,14 @@
+Function: void rvt_ruc_loopback ( struct rvt_qp * sqp )
+
+handle UC and RC loopback requests
+
+Parameters
+  struct rvt_qp *sqp
+    the sending QP
+
+Description
+  This is called from rvt_do_send() to forward a WQE addressed to the same HFI
+Note that although we are single threaded due to the send engine, we still
+have to protect against post_send() .  We don’t have to worry about
+receive interrupts since this is a connected protocol and all packets
+will pass through here.

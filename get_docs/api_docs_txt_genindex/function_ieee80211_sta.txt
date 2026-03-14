@@ -1,0 +1,66 @@
+Function: struct ieee80211_sta
+
+station table entry
+
+Members
+  addr
+    MAC address
+  aid
+    AID we assigned to the station if we’re an AP
+  max_rx_aggregation_subframes
+    maximal amount of frames in a single AMPDU
+that this station is allowed to transmit to us.
+Can be modified by driver.
+  wme
+    indicates whether the STA supports QoS/WME (if local devices does,
+otherwise always false)
+  uapsd_queues
+    bitmap of queues configured for uapsd. Only valid
+if wme is supported. The bits order is like in
+IEEE80211_WMM_IE_STA_QOSINFO_AC_*.
+  max_sp
+    max Service Period. Only valid if wme is supported.
+  rates
+    rate control selection table
+  tdls
+    indicates whether the STA is a TDLS peer
+  tdls_initiator
+    indicates the STA is an initiator of the TDLS link. Only
+valid if the STA is a TDLS peer in the first place.
+  mfp
+    indicates whether the STA uses management frame protection or not.
+  mlo
+    indicates whether the STA is MLO station.
+  spp_amsdu
+    indicates whether the STA uses SPP A-MSDU or not.
+  max_amsdu_subframes
+    indicates the maximal number of MSDUs in a single
+A-MSDU. Taken from the Extended Capabilities element. 0 means
+unlimited.
+  eml_cap
+    EML capabilities of this MLO station
+  cur
+    currently valid data as aggregated from the active links
+For non MLO STA it will point to the deflink data. For MLO STA ieee80211_sta_recalc_aggregates() must be called to update it.
+  support_p2p_ps
+    indicates whether the STA supports P2P PS mechanism or not.
+  txq
+    per-TID data TX queues; note that the last entry ( IEEE80211_NUM_TIDS )
+is used for non-data frames
+  valid_links
+    bitmap of valid links, or 0 for non-MLO
+  deflink
+    This holds the default link STA information, for non MLO STA all link
+specific STA information is accessed through deflink or through
+link[0] which points to address of deflink . For MLO Link STA
+the first added link STA will point to deflink.
+  link
+    reference to Link Sta entries. For Non MLO STA, except 1st link,
+i.e link[0] all links would be assigned to NULL by default and
+would access link information via deflink or link[0]. For MLO
+STA, first link STA being added will point its link pointer to deflink address and remaining would be allocated and the address
+would be assigned to link[link_id] where link_id is the id assigned
+by the AP.
+  drv_priv
+    data area for driver use, will always be aligned to
+sizeof(void *), size is determined in hw information.

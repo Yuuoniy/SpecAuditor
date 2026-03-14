@@ -1,0 +1,7 @@
+Function: const char * drm_dp_get_dual_mode_type_name ( enum drm_dp_dual_mode_type type )
+
+Get the name of the DP dual mode adaptor type as a string
+
+Parameters
+  enum drm_dp_dual_mode_type type
+    DP dual mode adaptor type

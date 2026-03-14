@@ -1,0 +1,10 @@
+Function: bool is_power_of_2 ( unsigned long n )
+
+check if a value is a power of two
+
+Parameters
+  unsigned long n
+    the value to check
+
+Description
+  Determine whether some value is a power of two, where zero is not considered a power of two.

@@ -1,0 +1,7 @@
+Function: void reset_controller_unregister ( struct reset_controller_dev * rcdev )
+
+unregister a reset controller device
+
+Parameters
+  struct reset_controller_dev *rcdev
+    a pointer to the reset controller device

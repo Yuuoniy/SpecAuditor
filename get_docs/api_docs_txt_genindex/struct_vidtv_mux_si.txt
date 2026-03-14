@@ -1,0 +1,15 @@
+Struct: struct vidtv_mux_si
+
+Store the PSI context.
+
+Members
+  pat
+    The PAT in use by the muxer.
+  pmt_secs
+    The PMT sections in use by the muxer. One for each program in the PAT.
+  sdt
+    The SDT in use by the muxer.
+  nit
+    The NIT in use by the muxer.
+  eit
+    the EIT in use by the muxer.

@@ -1,0 +1,13 @@
+Function: bool phydev_id_compare ( struct phy_device * phydev , u32 id )
+
+compare id with the PHY’s Clause 22 ID
+
+Parameters
+  struct phy_device *phydev
+    the PHY device
+  u32 id
+    the PHY ID to be matched
+
+Description
+  Compare the phydev clause 22 ID with the provided id and return true or
+false depending whether it matches, using the bound driver mask. The phydev must be bound to a driver.

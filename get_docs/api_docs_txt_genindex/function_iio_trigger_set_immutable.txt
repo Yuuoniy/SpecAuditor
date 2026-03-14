@@ -1,0 +1,9 @@
+Function: int iio_trigger_set_immutable ( struct iio_dev * indio_dev , struct iio_trigger * trig )
+
+set an immutable trigger on destination
+
+Parameters
+  struct iio_dev *indio_dev
+    IIO device structure containing the device
+  struct iio_trigger *trig
+    trigger to assign to device

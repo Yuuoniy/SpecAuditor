@@ -1,0 +1,14 @@
+Function: struct drm_gem_object * drm_gem_prime_import ( struct drm_device * dev , struct dma_buf * dma_buf )
+
+helper library implementation of the import callback
+
+Parameters
+  struct drm_device *dev
+    drm_device to import into
+  struct dma_buf *dma_buf
+    dma-buf object to import
+
+Description
+  This is the implementation of the gem_prime_import functions for GEM drivers
+using the PRIME helpers. Drivers can use this as their drm_driver.gem_prime_import implementation. It is used as the default
+implementation in drm_gem_prime_fd_to_handle() .

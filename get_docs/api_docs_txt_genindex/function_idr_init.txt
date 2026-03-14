@@ -1,0 +1,11 @@
+Function: void idr_init ( struct idr * idr )
+
+Initialise an IDR.
+
+Parameters
+  struct idr *idr
+    IDR handle.
+
+Description
+  Initialise a dynamically allocated IDR.  To initialise a
+statically allocated IDR, use DEFINE_IDR() .

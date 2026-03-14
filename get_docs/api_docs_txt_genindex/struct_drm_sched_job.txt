@@ -1,0 +1,37 @@
+Struct: struct drm_sched_job
+
+A job to be run by an entity.
+
+Members
+  submit_ts
+    When the job was pushed into the entity queue.
+  sched
+    The scheduler this job is or will be scheduled on. Gets set by drm_sched_job_arm() . Valid until drm_sched_backend_ops. free_job() has finished.
+  s_fence
+    contains the fences for the scheduling of job.
+  entity
+    the entity to which this job belongs.
+  s_priority
+    the priority of the job.
+  credits
+    the number of credits this job contributes to the scheduler
+  last_dependency
+    tracks dependencies as they signal
+  karma
+    increment on every hang caused by this job. If this exceeds the hang
+limit of the scheduler then the job is marked guilty and will not
+be scheduled further.
+  queue_node
+    used to append this struct to the queue of jobs in an entity.
+  list
+    a job participates in a “pending” and “done” lists.
+  {unnamed_union}
+    anonymous
+  finish_cb
+    the callback for the finished fence.
+  work
+    Helper to reschedule job kill to different context.
+  cb
+    the callback for the parent fence in s_fence.
+  dependencies
+    Contains the dependencies as struct dma_fence for this job, see drm_sched_job_add_dependency() and drm_sched_job_add_implicit_dependencies() .

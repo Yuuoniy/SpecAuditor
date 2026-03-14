@@ -1,0 +1,11 @@
+Function: int ata_scsi_sdev_init ( struct scsi_device * sdev )
+
+Early setup of SCSI device
+
+Parameters
+  struct scsi_device *sdev
+    SCSI device to examine
+
+Description
+  This is called from scsi_alloc_sdev() when the scsi device
+associated with an ATA device is scanned on a port.

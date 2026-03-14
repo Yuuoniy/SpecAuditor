@@ -1,0 +1,11 @@
+Function: void dma_resv_reset_max_fences ( struct dma_resv * obj )
+
+reset fences for debugging
+
+Parameters
+  struct dma_resv *obj
+    the dma_resv object to reset
+
+Description
+  Reset the number of pre-reserved fence slots to test that drivers do
+correct slot allocation using dma_resv_reserve_fences() . See also dma_resv_list.max_fences .

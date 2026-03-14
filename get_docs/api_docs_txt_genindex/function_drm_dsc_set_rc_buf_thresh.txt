@@ -1,0 +1,7 @@
+Function: void drm_dsc_set_rc_buf_thresh ( struct drm_dsc_config * vdsc_cfg )
+
+Set thresholds for the RC model in accordance with the DSC 1.2 specification.
+
+Parameters
+  struct drm_dsc_config *vdsc_cfg
+    DSC Configuration data partially filled by driver

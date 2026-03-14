@@ -1,0 +1,14 @@
+Function: bool intel_psr_link_ok ( struct intel_dp * intel_dp )
+
+return psr->link_ok
+
+Parameters
+  struct intel_dp *intel_dp
+    struct intel_dp
+
+Description
+  We are seeing unexpected link re-trainings with some panels. This is caused
+by panel stating bad link status after PSR is enabled. Code checking link
+status can call this to ensure it can ignore bad link status stated by the
+panel I.e. if panel is stating bad link and intel_psr_link_ok is stating link
+is ok caller should rely on latter.

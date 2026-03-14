@@ -1,0 +1,3 @@
+Enum: enum iommu_hwpt_vtd_s1_flags
+
+Intel VT-d stage-1 page table entry attributes

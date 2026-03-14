@@ -1,0 +1,23 @@
+Struct: struct iscsi_iser_task
+
+iser task context
+
+Members
+  desc
+    TX descriptor
+  iser_conn
+    link to iser connection
+  status
+    current task status
+  sc
+    link to scsi command
+  command_sent
+    indicate if command was sent
+  dir
+    iser data direction
+  rdma_reg
+    task rdma registration desc
+  data
+    iser data buffer desc
+  prot
+    iser protection buffer desc

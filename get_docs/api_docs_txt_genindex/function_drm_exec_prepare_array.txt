@@ -1,0 +1,17 @@
+Function: int drm_exec_prepare_array ( struct drm_exec * exec , struct drm_gem_object * * objects , unsigned int num_objects , unsigned int num_fences )
+
+helper to prepare an array of objects
+
+Parameters
+  struct drm_exec *exec
+    the drm_exec object with the state
+  struct drm_gem_object **objects
+    array of GEM object to prepare
+  unsigned int num_objects
+    number of GEM objects in the array
+  unsigned int num_fences
+    number of fences to reserve on each GEM object
+
+Description
+  Prepares all GEM objects in an array, aborts on first error.
+Reserves num_fences on each GEM object after locking it.

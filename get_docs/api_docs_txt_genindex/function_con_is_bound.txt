@@ -1,0 +1,11 @@
+Function: int con_is_bound ( const struct consw * csw )
+
+checks if driver is bound to the console
+
+Parameters
+  const struct consw *csw
+    console driver
+
+Description
+  Drivers can call this and if zero, they should release
+all resources allocated on consw.con_startup()

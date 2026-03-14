@@ -1,0 +1,9 @@
+Struct: struct drm_pvr_ioctl_create_vm_context_args
+
+Arguments for DRM_IOCTL_PVR_CREATE_VM_CONTEXT
+
+Members
+  handle
+    [OUT] Handle for new VM context.
+  _padding_4
+    Reserved. This field must be zeroed.

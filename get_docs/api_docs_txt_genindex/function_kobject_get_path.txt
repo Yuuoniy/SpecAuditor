@@ -1,0 +1,9 @@
+Function: char * kobject_get_path ( const struct kobject * kobj , gfp_t gfp_mask )
+
+Allocate memory and fill in the path for kobj .
+
+Parameters
+  const struct kobject *kobj
+    kobject in question, with which to build the path
+  gfp_t gfp_mask
+    the allocation type used to allocate the path

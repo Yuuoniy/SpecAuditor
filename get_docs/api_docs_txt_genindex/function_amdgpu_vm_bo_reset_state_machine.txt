@@ -1,0 +1,11 @@
+Function: void amdgpu_vm_bo_reset_state_machine ( struct amdgpu_vm * vm )
+
+reset the vm_bo state machine
+
+Parameters
+  struct amdgpu_vm *vm
+    the VM which state machine to reset
+
+Description
+  Move all vm_bo object in the VM into a state where they will be updated
+again during validation.

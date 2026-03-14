@@ -1,0 +1,10 @@
+Function: void drm_encoder_cleanup ( struct drm_encoder * encoder )
+
+cleans up an initialised encoder
+
+Parameters
+  struct drm_encoder *encoder
+    encoder to cleanup
+
+Description
+  Cleans up the encoder but doesn’t free the object.

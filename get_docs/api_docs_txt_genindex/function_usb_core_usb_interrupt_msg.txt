@@ -1,0 +1,23 @@
+Function: int usb_interrupt_msg ( struct usb_device * usb_dev , unsigned int pipe , void * data , int len , int * actual_length , int timeout )
+
+Builds an interrupt urb, sends it off and waits for completion
+
+Parameters
+  struct usb_device *usb_dev
+    pointer to the usb device to send the message to
+  unsigned int pipe
+    endpoint “pipe” to send the message to
+  void *data
+    pointer to the data to send
+  int len
+    length in bytes of the data to send
+  int *actual_length
+    pointer to a location to put the actual length transferred
+in bytes
+  int timeout
+    time in msecs to wait for the message to complete before
+timing out (if 0 the wait is forever)
+
+Description
+  This function sends a simple interrupt message to a specified endpoint and
+waits for the message to complete, or timeout.

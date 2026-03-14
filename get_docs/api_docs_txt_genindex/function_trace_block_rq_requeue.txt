@@ -1,0 +1,11 @@
+Function: void trace_block_rq_requeue ( struct request * rq )
+
+place block IO request back on a queue
+
+Parameters
+  struct request *rq
+    block IO operation request
+
+Description
+  The block operation request rq is being placed back into queue q .  For some reason the request was not completed and needs to be
+put back in the queue.

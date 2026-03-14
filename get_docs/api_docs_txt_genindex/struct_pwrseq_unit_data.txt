@@ -1,0 +1,16 @@
+Struct: struct pwrseq_unit_data
+
+Configuration of a single power sequencing unit.
+
+Members
+  name
+    Name of the unit.
+  deps
+    Units that must be enabled before this one and disabled after it
+in the order they come in this array. Must be NULL-terminated.
+  enable
+    Callback running the part of the power-on sequence provided by
+this unit.
+  disable
+    Callback running the part of the power-off sequence provided
+by this unit.

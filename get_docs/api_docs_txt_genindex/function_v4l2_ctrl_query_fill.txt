@@ -1,0 +1,18 @@
+Function: int v4l2_ctrl_query_fill ( struct v4l2_queryctrl * qctrl , s32 min , s32 max , s32 step , s32 def )
+
+Fill in a struct v4l2_queryctrl
+
+Parameters
+  struct v4l2_queryctrl *qctrl
+    pointer to the struct v4l2_queryctrl to be filled
+  s32 min
+    minimum value for the control
+  s32 max
+    maximum value for the control
+  s32 step
+    control step
+  s32 def
+    default value for the control
+
+Description
+  Fills the struct v4l2_queryctrl fields for the query control.

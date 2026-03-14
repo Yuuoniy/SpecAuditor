@@ -1,0 +1,15 @@
+Struct: struct drm_dp_aux_msg
+
+DisplayPort AUX channel transaction
+
+Members
+  address
+    address of the (first) register to access
+  request
+    contains the type of transaction (see DP_AUX_* macros)
+  reply
+    upon completion, contains the reply type of the transaction
+  buffer
+    pointer to a transmission or reception buffer
+  size
+    size of buffer

@@ -1,0 +1,9 @@
+Function: struct irq_domain * irq_find_matching_fwspec ( struct irq_fwspec * fwspec , enum irq_domain_bus_token bus_token )
+
+Locates a domain for a given fwspec
+
+Parameters
+  struct irq_fwspec *fwspec
+    FW specifier for an interrupt
+  enum irq_domain_bus_token bus_token
+    domain-specific data

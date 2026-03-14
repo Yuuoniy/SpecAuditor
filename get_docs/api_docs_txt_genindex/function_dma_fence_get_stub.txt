@@ -1,0 +1,12 @@
+Function: struct dma_fence * dma_fence_get_stub ( void )
+
+return a signaled fence
+
+Parameters
+  void
+    no arguments
+
+Description
+  Return a stub fence which is already signaled. The fence’s
+timestamp corresponds to the first time after boot this
+function is called.

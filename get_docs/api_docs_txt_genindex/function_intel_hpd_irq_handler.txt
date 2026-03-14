@@ -1,0 +1,19 @@
+Function: void intel_hpd_irq_handler ( struct intel_display * display , u32 pin_mask , u32 long_mask )
+
+main hotplug irq handler
+
+Parameters
+  struct intel_display *display
+    display device
+  u32 pin_mask
+    a mask of hpd pins that have triggered the irq
+  u32 long_mask
+    a mask of hpd pins that may be long hpd pulses
+
+Description
+  This is the main hotplug irq handler for all platforms. The platform specific
+irq handlers call the platform specific hotplug irq handlers, which read and
+decode the appropriate registers into bitmasks about hpd pins that have
+triggered ( pin_mask ), and which of those pins may be long pulses
+( long_mask ). The long_mask is ignored if the port corresponding to the pin
+is not a digital port.

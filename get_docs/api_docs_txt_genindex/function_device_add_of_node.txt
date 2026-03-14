@@ -1,0 +1,9 @@
+Function: int device_add_of_node ( struct device * dev , struct device_node * of_node )
+
+Add an of_node to an existing device
+
+Parameters
+  struct device *dev
+    device whose device tree node is being added
+  struct device_node *of_node
+    of_node to add

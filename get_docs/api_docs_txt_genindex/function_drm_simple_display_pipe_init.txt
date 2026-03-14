@@ -1,0 +1,23 @@
+Function: int drm_simple_display_pipe_init ( struct drm_device * dev , struct drm_simple_display_pipe * pipe , const struct drm_simple_display_pipe_funcs * funcs , const uint32_t * formats , unsigned int format_count , const uint64_t * format_modifiers , struct drm_connector * connector )
+
+Initialize a simple display pipeline
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_simple_display_pipe *pipe
+    simple display pipe object to initialize
+  const struct drm_simple_display_pipe_funcs *funcs
+    callbacks for the display pipe (optional)
+  const uint32_t *formats
+    array of supported formats (DRM_FORMAT_*)
+  unsigned int format_count
+    number of elements in formats
+  const uint64_t *format_modifiers
+    array of formats modifiers
+  struct drm_connector *connector
+    connector to attach and register (optional)
+
+Description
+  Sets up a display pipeline which consist of a really simple
+plane-crtc-encoder pipe.

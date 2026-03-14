@@ -1,0 +1,14 @@
+Macro: dvb_attach
+
+
+
+Parameters
+  FUNCTION
+    function on a frontend module to be called.
+  ARGS...
+    FUNCTION arguments.
+
+Description
+  This ancillary function loads a frontend module in runtime and runs
+the FUNCTION function there, with ARGS .
+As it increments symbol usage cont, at unregister, dvb_detach() should be called.

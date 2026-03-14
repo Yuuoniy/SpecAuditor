@@ -1,0 +1,16 @@
+Function: void security_sctp_sk_clone ( struct sctp_association * asoc , struct sock * sk , struct sock * newsk )
+
+Clone a SCTP sock’s LSM state
+
+Parameters
+  struct sctp_association *asoc
+    SCTP association
+  struct sock *sk
+    original sock
+  struct sock *newsk
+    target sock
+
+Description
+  Called whenever a new socket is created by accept(2) (i.e. a TCP style
+socket) or when a socket is ‘peeled off’ e.g userspace calls
+sctp_peeloff(3).

@@ -1,0 +1,13 @@
+Function: int clk_set_phase ( struct clk * clk , int degrees )
+
+adjust the phase shift of a clock signal
+
+Parameters
+  struct clk *clk
+    clock signal source
+  int degrees
+    number of degrees the signal is shifted
+
+Description
+  Shifts the phase of a clock signal by the specified degrees. Returns 0 on
+success, -EERROR otherwise.

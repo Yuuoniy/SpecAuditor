@@ -1,0 +1,10 @@
+Function: int lsm_superblock_alloc ( struct super_block * sb )
+
+allocate a composite superblock blob
+
+Parameters
+  struct super_block *sb
+    the superblock that needs a blob
+
+Description
+  Allocate the superblock blob for all the modules

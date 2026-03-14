@@ -1,0 +1,15 @@
+Function: struct host1x_syncpt * host1x_syncpt_alloc ( struct host1x * host , unsigned long flags , const char * name )
+
+allocate a syncpoint
+
+Parameters
+  struct host1x *host
+    host1x device data
+  unsigned long flags
+    bitfield of HOST1X_SYNCPT_* flags
+  const char *name
+    name for the syncpoint for use in debug prints
+
+Description
+  Allocates a hardware syncpoint for the caller’s use. The caller then has
+the sole authority to mutate the syncpoint’s value until it is freed again.

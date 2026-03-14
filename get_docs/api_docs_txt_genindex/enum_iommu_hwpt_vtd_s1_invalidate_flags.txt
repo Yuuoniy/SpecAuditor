@@ -1,0 +1,3 @@
+Enum: enum iommu_hwpt_vtd_s1_invalidate_flags
+
+Flags for Intel VT-d stage-1 cache invalidation

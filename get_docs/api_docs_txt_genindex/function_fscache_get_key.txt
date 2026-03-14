@@ -1,0 +1,10 @@
+Function: void * fscache_get_key ( struct fscache_cookie * cookie )
+
+Get a pointer to the cookie key
+
+Parameters
+  struct fscache_cookie *cookie
+    The cookie to query
+
+Description
+  Return a pointer to the where a cookie’s key is stored.

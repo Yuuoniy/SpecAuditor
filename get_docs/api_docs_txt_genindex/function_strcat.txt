@@ -1,0 +1,16 @@
+Function: char * strcat ( char * const p , const char * q )
+
+Append a string to an existing string
+
+Parameters
+  char * const p
+    pointer to NUL-terminated string to append to
+  const char *q
+    pointer to NUL-terminated source string to append from
+
+Description
+  Do not use this function. While FORTIFY_SOURCE tries to avoid
+read and write overflows, this is only possible when the
+destination buffer size is known to the compiler. Prefer
+building the string with formatting, via scnprintf() or similar.
+At the very least, use strncat() .

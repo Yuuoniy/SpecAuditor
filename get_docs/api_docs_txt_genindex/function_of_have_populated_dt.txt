@@ -1,0 +1,7 @@
+Function: bool of_have_populated_dt ( void )
+
+Has DT been populated by bootloader
+
+Parameters
+  void
+    no arguments

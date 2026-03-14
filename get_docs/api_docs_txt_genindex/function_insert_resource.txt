@@ -1,0 +1,12 @@
+Function: int insert_resource ( struct resource * parent , struct resource * new )
+
+Inserts a resource in the resource tree
+
+Parameters
+  struct resource *parent
+    parent of the new resource
+  struct resource *new
+    new resource to insert
+
+Description
+  Returns 0 on success, -EBUSY if the resource can’t be inserted.

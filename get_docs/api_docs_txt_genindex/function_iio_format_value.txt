@@ -1,0 +1,16 @@
+Function: ssize_t iio_format_value ( char * buf , unsigned int type , int size , int * vals )
+
+Formats a IIO value into its string representation
+
+Parameters
+  char *buf
+    The buffer to which the formatted value gets written
+which is assumed to be big enough (i.e. PAGE_SIZE).
+  unsigned int type
+    One of the IIO_VAL_* constants. This decides how the val
+and val2 parameters are formatted.
+  int size
+    Number of IIO value entries contained in vals
+  int *vals
+    Pointer to the values, exact meaning depends on the
+type parameter.

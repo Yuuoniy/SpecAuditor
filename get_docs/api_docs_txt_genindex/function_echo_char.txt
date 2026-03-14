@@ -1,0 +1,13 @@
+Function: void echo_char ( u8 c , const struct tty_struct * tty )
+
+echo a character
+
+Parameters
+  u8 c
+    unicode byte to echo
+  const struct tty_struct *tty
+    terminal device
+
+Description
+  Echo user input back onto the screen. This must be called only when
+L_ECHO(tty) is true. Called from the tty_driver.receive_buf() path.

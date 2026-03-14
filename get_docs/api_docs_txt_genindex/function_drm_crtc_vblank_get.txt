@@ -1,0 +1,11 @@
+Function: int drm_crtc_vblank_get ( struct drm_crtc * crtc )
+
+get a reference count on vblank events
+
+Parameters
+  struct drm_crtc *crtc
+    which CRTC to own
+
+Description
+  Acquire a reference count on vblank events to avoid having them disabled
+while in use.

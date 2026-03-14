@@ -1,0 +1,13 @@
+Function: unsigned long rxrpc_kernel_set_peer_data ( struct rxrpc_peer * peer , unsigned long app_data )
+
+Set app-specific data on a peer.
+
+Parameters
+  struct rxrpc_peer *peer
+    The peer to alter
+  unsigned long app_data
+    The data to set
+
+Description
+  Set the app-specific data on a peer.  AF_RXRPC makes no effort to retain
+anything the data might refer to.

@@ -1,0 +1,12 @@
+Function: void raw_atomic_set_release ( atomic_t * v , int i )
+
+atomic set with release ordering
+
+Parameters
+  atomic_t *v
+    pointer to atomic_t
+  int i
+    int value to assign
+
+Description
+  Atomically sets v to i with release ordering.

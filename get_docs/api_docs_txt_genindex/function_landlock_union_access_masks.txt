@@ -1,0 +1,7 @@
+Function: struct access_masks landlock_union_access_masks ( const struct landlock_ruleset * const domain )
+
+Return all access rights handled in the domain
+
+Parameters
+  const struct landlock_ruleset *const domain
+    Landlock ruleset (used as a domain)

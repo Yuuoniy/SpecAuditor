@@ -1,0 +1,13 @@
+Function: void ib_register_event_handler ( struct ib_event_handler * event_handler )
+
+Register an IB event handler
+
+Parameters
+  struct ib_event_handler *event_handler
+    Handler to register
+
+Description
+  ib_register_event_handler() registers an event handler that will be
+called back when asynchronous IB events occur (as defined in
+chapter 11 of the InfiniBand Architecture Specification). This
+callback occurs in workqueue context.

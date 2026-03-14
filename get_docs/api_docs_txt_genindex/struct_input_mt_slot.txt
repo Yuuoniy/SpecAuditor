@@ -1,0 +1,11 @@
+Struct: struct input_mt_slot
+
+represents the state of an input MT slot
+
+Members
+  abs
+    holds current values of ABS_MT axes for this slot
+  frame
+    last frame at which input_mt_report_slot_state() was called
+  key
+    optional driver designation of this slot

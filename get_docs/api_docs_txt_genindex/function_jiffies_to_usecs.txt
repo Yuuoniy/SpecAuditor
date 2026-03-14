@@ -1,0 +1,7 @@
+Function: unsigned int jiffies_to_usecs ( const unsigned long j )
+
+Convert jiffies to microseconds
+
+Parameters
+  const unsigned long j
+    jiffies value

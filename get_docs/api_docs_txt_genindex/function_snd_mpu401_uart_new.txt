@@ -1,0 +1,22 @@
+Function: int snd_mpu401_uart_new ( struct snd_card * card , int device , unsigned short hardware , unsigned long port , unsigned int info_flags , int irq , struct snd_rawmidi * * rrawmidi )
+
+create an MPU401-UART instance
+
+Parameters
+  struct snd_card *card
+    the card instance
+  int device
+    the device index, zero-based
+  unsigned short hardware
+    the hardware type, MPU401_HW_XXXX
+  unsigned long port
+    the base address of MPU401 port
+  unsigned int info_flags
+    bitflags MPU401_INFO_XXX
+  int irq
+    the ISA irq number, -1 if not to be allocated
+  struct snd_rawmidi ** rrawmidi
+    the pointer to store the new rawmidi instance
+
+Description
+  Creates a new MPU-401 instance.

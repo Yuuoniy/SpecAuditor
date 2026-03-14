@@ -1,0 +1,15 @@
+Function: int usb_reset_configuration ( struct usb_device * dev )
+
+lightweight device reset
+
+Parameters
+  struct usb_device *dev
+    the device whose configuration is being reset
+
+Description
+  This issues a standard SET_CONFIGURATION request to the device using
+the current configuration.  The effect is to reset most USB-related
+state in the device, including interface altsettings (reset to zero),
+endpoint halts (cleared), and endpoint state (only for bulk and interrupt
+endpoints).  Other usbcore state is unchanged, including bindings of
+usb device drivers to interfaces.

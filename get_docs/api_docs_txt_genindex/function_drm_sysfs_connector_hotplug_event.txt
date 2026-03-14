@@ -1,0 +1,11 @@
+Function: void drm_sysfs_connector_hotplug_event ( struct drm_connector * connector )
+
+generate a DRM uevent for any connector change
+
+Parameters
+  struct drm_connector *connector
+    connector which has changed
+
+Description
+  Send a uevent for the DRM connector specified by connector . This will send
+a uevent with the properties HOTPLUG=1 and CONNECTOR.

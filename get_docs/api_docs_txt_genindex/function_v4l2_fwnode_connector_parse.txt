@@ -1,0 +1,16 @@
+Function: int v4l2_fwnode_connector_parse ( struct fwnode_handle * fwnode , struct v4l2_fwnode_connector * connector )
+
+initialize the ‘ struct v4l2_fwnode_connector ’
+
+Parameters
+  struct fwnode_handle *fwnode
+    pointer to the subdev endpoint’s fwnode handle where the connector
+is connected to or to the connector endpoint fwnode handle.
+  struct v4l2_fwnode_connector *connector
+    pointer to the V4L2 fwnode connector data structure
+
+Description
+  Fill the struct v4l2_fwnode_connector with the connector type, label and
+all enum v4l2_connector_type specific connector data. The label is optional
+so it is set to NULL if no one was found. The function initialize the links
+to zero. Adding links to the connector is done by calling v4l2_fwnode_connector_add_link() .

@@ -1,0 +1,9 @@
+Function: void publ_to_item ( struct distr_item * i , struct publication * p )
+
+add publication info to a publication message
+
+Parameters
+  struct distr_item *i
+    location of item in the message
+  struct publication *p
+    publication info

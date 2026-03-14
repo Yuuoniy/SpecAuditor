@@ -1,0 +1,10 @@
+Function: void serial8250_suspend_port ( int line )
+
+suspend one serial port
+
+Parameters
+  int line
+    serial line number
+
+Description
+  Suspend one serial port.

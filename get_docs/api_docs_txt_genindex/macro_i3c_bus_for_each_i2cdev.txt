@@ -1,0 +1,13 @@
+Macro: i3c_bus_for_each_i2cdev
+
+
+
+Parameters
+  bus
+    the I3C bus
+  dev
+    an I2C device descriptor pointer updated to point to the current slot
+at each iteration of the loop
+
+Description
+  Iterate over all I2C devs present on the bus.

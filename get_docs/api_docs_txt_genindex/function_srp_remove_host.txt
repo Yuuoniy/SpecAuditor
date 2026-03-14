@@ -1,0 +1,11 @@
+Function: void srp_remove_host ( struct Scsi_Host * shost )
+
+tear down a Scsi_Host’s SRP data structures
+
+Parameters
+  struct Scsi_Host *shost
+    Scsi Host that is torn down
+
+Description
+  Removes all SRP remote ports for a given Scsi_Host.
+Must be called just before scsi_remove_host for SRP HBAs.

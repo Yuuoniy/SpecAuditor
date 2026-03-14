@@ -1,0 +1,7 @@
+Function: bool hlist_fake ( struct hlist_node * h )
+
+Is this node a fake hlist?
+
+Parameters
+  struct hlist_node *h
+    Node to check for being a self-referential fake hlist.

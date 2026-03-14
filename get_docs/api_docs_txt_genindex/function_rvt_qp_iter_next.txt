@@ -1,0 +1,11 @@
+Function: int rvt_qp_iter_next ( struct rvt_qp_iter * iter )
+
+return the next QP in iter
+
+Parameters
+  struct rvt_qp_iter *iter
+    the iterator
+
+Description
+  Fine grained QP iterator suitable for use
+with debugfs seq_file mechanisms.

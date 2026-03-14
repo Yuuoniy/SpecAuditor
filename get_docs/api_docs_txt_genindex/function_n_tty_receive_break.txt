@@ -1,0 +1,11 @@
+Function: void n_tty_receive_break ( struct tty_struct * tty )
+
+handle break
+
+Parameters
+  struct tty_struct *tty
+    terminal
+
+Description
+  An RS232 break event has been hit in the incoming bitstream. This can cause
+a variety of events depending upon the termios settings.

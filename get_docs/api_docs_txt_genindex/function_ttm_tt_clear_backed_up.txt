@@ -1,0 +1,11 @@
+Function: void ttm_tt_clear_backed_up ( struct ttm_tt * tt )
+
+Clear the ttm_tt backed-up status
+
+Parameters
+  struct ttm_tt *tt
+    The struct ttm_tt .
+
+Description
+  Drivers can use this functionto clear the backed-up status,
+for example before destroying or re-validating a purged tt.

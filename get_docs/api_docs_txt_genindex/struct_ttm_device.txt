@@ -1,0 +1,30 @@
+Struct: struct ttm_device
+
+Buffer object driver device-specific data.
+
+Members
+  device_list
+    Our entry in the global device list.
+Constant after bo device init
+  funcs
+    Function table for the device.
+Constant after bo device init
+  sysman
+    Resource manager for the system domain.
+Access via ttm_manager_type.
+  man_drv
+    An array of resource_managers, one per resource type.
+  vma_manager
+    Address space manager for finding BOs to mmap.
+  pool
+    page pool for the device.
+  lru_lock
+    Protection for the per manager LRU and ddestroy lists.
+  unevictable
+    Buffer objects which are pinned or swapped and as such
+not on an LRU list.
+  dev_mapping
+    A pointer to the struct address_space for invalidating
+CPU mappings on buffer move. Protected by load/unload sync.
+  wq
+    Work queue structure for the delayed delete workqueue.

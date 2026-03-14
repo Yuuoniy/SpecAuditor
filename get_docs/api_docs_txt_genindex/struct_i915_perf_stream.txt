@@ -1,0 +1,91 @@
+Struct: struct i915_perf_stream
+
+state for a single open stream FD
+
+Members
+  perf
+    i915_perf backpointer
+  uncore
+    mmio access path
+  engine
+    Engine associated with this performance stream.
+  lock
+    Lock associated with operations on stream
+  sample_flags
+    Flags representing the DRM_I915_PERF_PROP_SAMPLE_* properties given when opening a stream, representing the contents
+of a single sample as read() by userspace.
+  sample_size
+    Considering the configured contents of a sample
+combined with the required header size, this is the total size
+of a single sample record.
+  ctx
+    NULL if measuring system-wide across all contexts or a
+specific context that is being monitored.
+  enabled
+    Whether the stream is currently enabled, considering
+whether the stream was opened in a disabled state and based
+on I915_PERF_IOCTL_ENABLE and I915_PERF_IOCTL_DISABLE calls.
+  hold_preemption
+    Whether preemption is put on hold for command
+submissions done on the ctx . This is useful for some drivers that
+cannot easily post process the OA buffer context to subtract delta
+of performance counters not associated with ctx .
+  ops
+    The callbacks providing the implementation of this specific
+type of configured stream.
+  oa_config
+    The OA configuration used by the stream.
+  oa_config_bos
+    A list of struct i915_oa_config_bo allocated lazily
+each time oa_config changes.
+  pinned_ctx
+    The OA context specific information.
+  specific_ctx_id
+    The id of the specific context.
+  specific_ctx_id_mask
+    The mask used to masking specific_ctx_id bits.
+  poll_check_timer
+    High resolution timer that will periodically
+check for data in the circular OA buffer for notifying userspace
+(e.g. during a read() or poll()).
+  poll_wq
+    The wait queue that hrtimer callback wakes when it
+sees data ready to read in the circular OA buffer.
+  pollin
+    Whether there is data available to read.
+  periodic
+    Whether periodic sampling is currently enabled.
+  period_exponent
+    The OA unit sampling frequency is derived from this.
+  oa_buffer
+    State of the OA buffer.
+  oa_buffer.ptr_lock
+    Locks reads and writes to all
+head/tail state Consider: the head and tail pointer state needs to be read
+consistently from a hrtimer callback (atomic context) and
+read() fop (user context) with tail pointer updates happening
+in atomic context and head updates in user context and the
+(unlikely) possibility of read() errors needing to reset all
+head/tail state. Note: Contention/performance aren’t currently a significant
+concern here considering the relatively low frequency of
+hrtimer callbacks (5ms period) and that reads typically only
+happen in response to a hrtimer event and likely complete
+before the next callback. Note: This lock is not held while reading and copying data
+to userspace so the value of head observed in htrimer
+callbacks won’t represent any partial consumption of data.
+  oa_buffer.head
+    Although we can always read back
+the head pointer register,
+we prefer to avoid trusting the HW state, just to avoid any
+risk that some hardware condition could * somehow bump the
+head pointer unpredictably and cause us to forward the wrong
+OA buffer data to userspace.
+  oa_buffer.tail
+    The last verified tail that can be
+read by userspace.
+  noa_wait
+    A batch buffer doing a wait on the GPU for the NOA logic to be
+reprogrammed.
+  poll_oa_period
+    The period in nanoseconds at which the OA
+buffer should be checked for available data.

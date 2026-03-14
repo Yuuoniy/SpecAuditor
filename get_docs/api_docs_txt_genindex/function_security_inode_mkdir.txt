@@ -1,0 +1,15 @@
+Function: int security_inode_mkdir ( struct inode * dir , struct dentry * dentry , umode_t mode )
+
+Check if creating a new directory is allowed
+
+Parameters
+  struct inode *dir
+    parent directory
+  struct dentry *dentry
+    new directory
+  umode_t mode
+    new directory mode
+
+Description
+  Check permissions to create a new directory in the existing directory
+associated with inode structure dir .

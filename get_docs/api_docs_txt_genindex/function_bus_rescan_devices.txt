@@ -1,0 +1,12 @@
+Function: int bus_rescan_devices ( const struct bus_type * bus )
+
+rescan devices on the bus for possible drivers
+
+Parameters
+  const struct bus_type *bus
+    the bus to scan.
+
+Description
+  This function will look for devices on the bus with no driver
+attached and rescan it against existing drivers to see if it matches
+any by calling device_attach() for the unbound devices.

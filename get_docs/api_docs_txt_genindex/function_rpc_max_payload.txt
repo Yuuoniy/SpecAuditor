@@ -1,0 +1,13 @@
+Function: size_t rpc_max_payload ( struct rpc_clnt * clnt )
+
+Get maximum payload size for a transport, in bytes
+
+Parameters
+  struct rpc_clnt *clnt
+    RPC client to query
+
+Description
+  For stream transports, this is one RPC record fragment (see RFC
+1831), as we don’t support multi-record requests yet.  For datagram
+transports, this is the size of an IP packet minus the IP, UDP, and
+RPC header sizes.

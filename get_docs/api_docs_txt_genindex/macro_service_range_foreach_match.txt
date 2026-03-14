@@ -1,0 +1,13 @@
+Macro: service_range_foreach_match
+
+
+
+Parameters
+  sr
+    the service range pointer as a loop cursor
+  sc
+    the pointer to tipc service which holds the service range rbtree
+  start
+    beginning of the search range (end >= start) for matching
+  end
+    end of the search range (end >= start) for matching

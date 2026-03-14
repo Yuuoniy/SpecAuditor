@@ -1,0 +1,18 @@
+Function: void ssam_nf_call ( struct ssam_nf * nf , struct device * dev , u16 rqid , struct ssam_event * event )
+
+Call notification callbacks for the provided event.
+
+Parameters
+  struct ssam_nf *nf
+    The notifier system
+  struct device *dev
+    The associated device, only used for logging.
+  u16 rqid
+    The request ID of the event.
+  struct ssam_event *event
+    The event provided to the callbacks.
+
+Description
+  Execute registered callbacks in order of their priority until either no
+callback is left or a callback returns a value with the SSAM_NOTIF_STOP bit set. Note that this bit is set automatically when converting non-zero
+error values via ssam_notifier_from_errno() to notifier values.

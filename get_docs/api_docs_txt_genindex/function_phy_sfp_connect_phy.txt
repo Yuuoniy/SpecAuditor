@@ -1,0 +1,13 @@
+Function: int phy_sfp_connect_phy ( void * upstream , struct phy_device * phy )
+
+Connect the SFP module’s PHY to the upstream PHY
+
+Parameters
+  void *upstream
+    pointer to the upstream phy device
+  struct phy_device *phy
+    pointer to the SFP module’s phy device
+
+Description
+  This helper allows keeping track of PHY devices on the link. It adds the
+SFP module’s phy to the phy namespace of the upstream phy

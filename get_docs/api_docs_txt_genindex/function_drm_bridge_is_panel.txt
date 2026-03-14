@@ -1,0 +1,10 @@
+Function: bool drm_bridge_is_panel ( const struct drm_bridge * bridge )
+
+Checks if a drm_bridge is a panel_bridge.
+
+Parameters
+  const struct drm_bridge *bridge
+    The drm_bridge to be checked.
+
+Description
+  Returns true if the bridge is a panel bridge, or false otherwise.

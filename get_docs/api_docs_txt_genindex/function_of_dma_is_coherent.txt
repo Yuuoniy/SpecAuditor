@@ -1,0 +1,13 @@
+Function: bool of_dma_is_coherent ( struct device_node * np )
+
+Check if device is coherent
+
+Parameters
+  struct device_node *np
+    device node
+
+Description
+  It returns true if “dma-coherent” property was found
+for this device in the DT, or if DMA is coherent by
+default for OF devices on the current platform and no
+“dma-noncoherent” property was found for this device.

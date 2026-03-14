@@ -1,0 +1,12 @@
+Function: void handle_simple_irq ( struct irq_desc * desc )
+
+Simple and software-decoded IRQs.
+
+Parameters
+  struct irq_desc *desc
+    the interrupt description structure for this irq
+
+Description
+  Simple interrupts are either sent from a demultiplexing interrupt
+handler or come from hardware, where no interrupt hardware control is
+necessary.

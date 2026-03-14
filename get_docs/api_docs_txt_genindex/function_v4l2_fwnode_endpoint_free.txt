@@ -1,0 +1,11 @@
+Function: void v4l2_fwnode_endpoint_free ( struct v4l2_fwnode_endpoint * vep )
+
+free the V4L2 fwnode acquired by v4l2_fwnode_endpoint_alloc_parse()
+
+Parameters
+  struct v4l2_fwnode_endpoint *vep
+    the V4L2 fwnode the resources of which are to be released
+
+Description
+  It is safe to call this function with NULL argument or on a V4L2 fwnode the
+parsing of which failed.

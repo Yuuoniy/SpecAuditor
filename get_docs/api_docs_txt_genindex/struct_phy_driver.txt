@@ -1,0 +1,195 @@
+Struct: struct phy_driver
+
+Driver structure for a particular PHY type
+
+Members
+  mdiodrv
+    Data common to all MDIO devices
+  phy_id
+    The result of reading the UID registers of this PHY
+type, and ANDing them with the phy_id_mask.  This driver
+only works for PHYs with IDs which match this field
+  name
+    The friendly name of this PHY type
+  phy_id_mask
+    Defines the important bits of the phy_id
+  features
+    A mandatory list of features (speed, duplex, etc)
+supported by this PHY
+  flags
+    A bitfield defining certain other features this PHY
+supports (like interrupts)
+  driver_data
+    Static driver data
+  soft_reset
+    Called to issue a PHY software reset
+  config_init
+    Called to initialize the PHY,
+including after a reset
+  probe
+    Called during discovery.  Used to set
+up device-specific structures, if any
+  get_features
+    Probe the hardware to determine what
+abilities it has.  Should only set phydev->supported.
+  inband_caps
+    query whether in-band is supported for the given PHY
+interface mode. Returns a bitmask of bits defined by enum link_inband_signalling .
+  config_inband
+    configure in-band mode for the PHY
+  get_rate_matching
+    Get the supported type of rate matching for a
+particular phy interface. This is used by phy consumers to determine
+whether to advertise lower-speed modes for that interface. It is
+assumed that if a rate matching mode is supported on an interface,
+then that interface’s rate can be adapted to all slower link speeds
+supported by the phy. If the interface is not supported, this should
+return RATE_MATCH_NONE .
+  suspend
+    Suspend the hardware, saving state if needed
+  resume
+    Resume the hardware, restoring state if needed
+  config_aneg
+    Configures the advertisement and resets
+autonegotiation if phydev->autoneg is on,
+forces the speed to the current settings in phydev
+if phydev->autoneg is off
+  aneg_done
+    Determines the auto negotiation result
+  read_status
+    Determines the negotiated speed and duplex
+  config_intr
+    Enables or disables interrupts.
+It should also clear any pending interrupts prior to enabling the
+IRQs and after disabling them.
+  handle_interrupt
+    Override default interrupt handling
+  remove
+    Clears up any memory if needed
+  match_phy_device
+    Returns true if this is a suitable
+driver for the given phydev.  If NULL, matching is based on
+phy_id and phy_id_mask.
+  set_wol
+    Some devices (e.g. qnap TS-119P II) require PHY
+register changes to enable Wake on LAN, so set_wol is
+provided to be called in the ethernet driver’s set_wol
+function.
+  get_wol
+    See set_wol, but for checking whether Wake on LAN
+is enabled.
+  link_change_notify
+    Called to inform a PHY device driver
+when the core is about to change the link state. This
+callback is supposed to be used as fixup hook for drivers
+that need to take action when the link state
+changes. Drivers are by no means allowed to mess with the
+PHY device structure in their implementations.
+  read_mmd
+    PHY specific driver override for reading a MMD
+register.  This function is optional for PHY specific
+drivers.  When not provided, the default MMD read function
+will be used by phy_read_mmd() , which will use either a
+direct read for Clause 45 PHYs or an indirect read for
+Clause 22 PHYs.  devnum is the MMD device number within the
+PHY device, regnum is the register within the selected MMD
+device.
+  write_mmd
+    PHY specific driver override for writing a MMD
+register.  This function is optional for PHY specific
+drivers.  When not provided, the default MMD write function
+will be used by phy_write_mmd() , which will use either a
+direct write for Clause 45 PHYs, or an indirect write for
+Clause 22 PHYs.  devnum is the MMD device number within the
+PHY device, regnum is the register within the selected MMD
+device.  val is the value to be written.
+  read_page
+    Return the current PHY register page number
+  write_page
+    Set the current PHY register page number
+  module_info
+    Get the size and type of the eeprom contained
+within a plug-in module
+  module_eeprom
+    Get the eeprom information from the plug-in
+module
+  cable_test_start
+    Start a cable test
+  cable_test_tdr_start
+    Start a raw TDR cable test
+  cable_test_get_status
+    Once per second, or on interrupt,
+request the status of the test.
+  get_phy_stats
+    Retrieve PHY statistics. dev : The PHY device for which the statistics are retrieved. eth_stats : structure where Ethernet PHY stats will be stored. stats : structure where additional PHY-specific stats will be stored. Retrieves the supported PHY statistics and populates the provided
+structures. The input structures are pre-initialized with ETHTOOL_STAT_NOT_SET , and the driver must only modify members
+corresponding to supported statistics. Unmodified members will remain
+set to ETHTOOL_STAT_NOT_SET and will not be returned to userspace.
+  get_link_stats
+    Retrieve link statistics. dev : The PHY device for which the statistics are retrieved. link_stats : structure where link-specific stats will be stored. Retrieves link-related statistics for the given PHY device. The input
+structure is pre-initialized with ETHTOOL_STAT_NOT_SET , and the
+driver must only modify members corresponding to supported
+statistics. Unmodified members will remain set to ETHTOOL_STAT_NOT_SET and will not be returned to userspace.
+  update_stats
+    Trigger periodic statistics updates. dev : The PHY device for which statistics updates are triggered. Periodically gathers statistics from the PHY device to update locally
+maintained 64-bit counters. This is necessary for PHYs that implement
+reduced-width counters (e.g., 16-bit or 32-bit) which can overflow
+more frequently compared to 64-bit counters. By invoking this
+callback, drivers can fetch the current counter values, handle
+overflow detection, and accumulate the results into local 64-bit
+counters for accurate reporting through the get_phy_stats and get_link_stats interfaces. Return: 0 on success or a negative error code on failure.
+  get_sset_count
+    Number of statistic counters
+  get_strings
+    Names of the statistic counters
+  get_stats
+    Return the statistic counter values
+  get_tunable
+    Return the value of a tunable
+  set_tunable
+    Set the value of a tunable
+  set_loopback
+    Set the loopback mode of the PHY
+enable selects if the loopback mode is enabled or disabled. If the
+loopback mode is enabled, then the speed of the loopback mode can be
+requested with the speed argument. If the speed argument is zero,
+then any speed can be selected. If the speed argument is > 0, then
+this speed shall be selected for the loopback mode or EOPNOTSUPP
+shall be returned if speed selection is not supported.
+  get_sqi
+    Get the signal quality indication
+  get_sqi_max
+    Get the maximum signal quality indication
+  get_plca_cfg
+    Return the current PLCA configuration
+  set_plca_cfg
+    Set the PLCA configuration
+  get_plca_status
+    Return the current PLCA status info
+  led_brightness_set
+    Set a PHY LED brightness. Index
+indicates which of the PHYs led should be set. Value
+follows the standard LED class meaning, e.g. LED_OFF,
+LED_HALF, LED_FULL.
+  led_blink_set
+    Set a PHY LED blinking.  Index indicates
+which of the PHYs led should be configured to blink. Delays
+are in milliseconds and if both are zero then a sensible
+default should be chosen.  The call should adjust the
+timings in that case and if it can’t match the values
+specified exactly.
+  led_hw_is_supported
+    Can the HW support the given rules. dev : PHY device which has the LED index : Which LED of the PHY device rules The core is interested in these rules Return 0 if yes,  -EOPNOTSUPP if not, or an error code.
+  led_hw_control_set
+    Set the HW to control the LED dev : PHY device which has the LED index : Which LED of the PHY device rules The rules used to control the LED Returns 0, or a an error code.
+  led_hw_control_get
+    Get how the HW is controlling the LED dev : PHY device which has the LED index : Which LED of the PHY device rules Pointer to the rules used to control the LED Set *rules to how the HW is currently blinking. Returns 0
+on success, or a error code if the current blinking cannot
+be represented in rules, or some other error happens.
+  led_polarity_set
+    Set the LED polarity modes dev : PHY device which has the LED index : Which LED of the PHY device modes : bitmap of LED polarity modes Configure LED with all the required polarity modes in modes to make it correctly turn ON or OFF. Returns 0, or an error code.
+  get_next_update_time
+    Get the time until the next update event dev : PHY device Callback to determine the time (in jiffies) until the next
+update event for the PHY state  machine. Allows PHY drivers to
+dynamically adjust polling intervals based on link state or other
+conditions. Returns the time in jiffies until the next update event.

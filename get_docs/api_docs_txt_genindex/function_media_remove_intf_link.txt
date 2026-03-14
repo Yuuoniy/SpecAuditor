@@ -1,0 +1,10 @@
+Function: void media_remove_intf_link ( struct media_link * link )
+
+remove a single interface link
+
+Parameters
+  struct media_link *link
+    pointer to media_link .
+
+Description
+  Note

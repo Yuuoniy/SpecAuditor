@@ -1,0 +1,38 @@
+Struct: struct c3_isp_params_awb_config
+
+Stats settings for auto-white balance
+
+Members
+  header
+    the C3 ISP parameters block header
+  tap_point
+    the tap point from enum c3_isp_params_awb_tap_point
+  satur_vald
+    AWB statistic over saturation control
+value: 0: disable, 1: enable
+  horiz_zones_num
+    active number of hotizontal zones [0..32]
+  vert_zones_num
+    active number of vertical zones [0..24]
+  rg_min
+    minimum R/G ratio (Q4.8 format)
+  rg_max
+    maximum R/G ratio (Q4.8 format)
+  bg_min
+    minimum B/G ratio (Q4.8 format)
+  bg_max
+    maximum B/G ratio (Q4.8 format)
+  rg_low
+    R/G ratio trim low (Q4.8 format)
+  rg_high
+    R/G ratio trim hight (Q4.8 format)
+  bg_low
+    B/G ratio trim low (Q4.8 format)
+  bg_high
+    B/G ratio trim high (Q4.8 format)
+  zone_weight
+    array of weights for AWB statistics zones [0..15]
+  horiz_coord
+    the horizontal coordinate of points on the diagonal [0..2888]
+  vert_coord
+    the vertical coordinate of points on the diagonal [0..2240]

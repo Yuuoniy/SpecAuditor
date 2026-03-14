@@ -1,0 +1,8 @@
+Function: struct edac_device_ctl_info * edac_device_del_device ( struct device * dev )
+
+Remove sysfs entries for specified edac_device structure and then remove edac_device structure from global list
+
+Parameters
+  struct device *dev
+    Pointer to struct device representing the edac device
+structure to remove.

@@ -1,0 +1,20 @@
+Function: struct file * anon_inode_getfile ( const char * name , const struct file_operations * fops , void * priv , int flags )
+
+creates a new file instance by hooking it up to an anonymous inode, and a dentry that describe the “class” of the file
+
+Parameters
+  const char *name
+    [in]    name of the “class” of the new file
+  const struct file_operations *fops
+    [in]    file operations for the new file
+  void *priv
+    [in]    private data for the new file (will be file’s private_data)
+  int flags
+    [in]    flags
+
+Description
+  Creates a new file by hooking it on a single inode. This is useful for files
+that do not need to have a full-fledged inode in order to operate correctly.
+All the files created with anon_inode_getfile() will share a single inode,
+hence saving memory and avoiding code duplication for the file/inode/dentry
+setup.  Returns the newly created file* or an error pointer.

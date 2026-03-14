@@ -1,0 +1,12 @@
+Function: int genphy_read_status ( struct phy_device * phydev )
+
+check the link status and update current link state
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  by comparing what we advertise with what the link partner
+advertises.  Start by checking the gigabit possibilities,
+then move on to 10/100.

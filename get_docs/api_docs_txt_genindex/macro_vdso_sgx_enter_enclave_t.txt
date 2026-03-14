@@ -1,0 +1,19 @@
+Macro: vdso_sgx_enter_enclave_t
+
+Typedef : Prototype for __vdso_sgx_enter_enclave() , a vDSO function to enter an SGX enclave.
+
+Parameters
+  unsigned long rdi
+    Pass-through value for RDI
+  unsigned long rsi
+    Pass-through value for RSI
+  unsigned long rdx
+    Pass-through value for RDX
+  unsigned int function
+    ENCLU function, must be EENTER or ERESUME
+  unsigned long r8
+    Pass-through value for R8
+  unsigned long r9
+    Pass-through value for R9
+  struct sgx_enclave_run *run
+    struct sgx_enclave_run , must be non-NULL

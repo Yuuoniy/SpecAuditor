@@ -1,0 +1,15 @@
+Function: void ttm_resource_fini ( struct ttm_resource_manager * man , struct ttm_resource * res )
+
+resource destructor
+
+Parameters
+  struct ttm_resource_manager *man
+    the resource manager this resource belongs to
+  struct ttm_resource *res
+    the resource to clean up
+
+Description
+  Should be used by resource manager backends to clean up the TTM resource
+objects before freeing the underlying structure. Makes sure the resource is
+removed from the LRU before destruction.
+Counterpart of ttm_resource_init() .

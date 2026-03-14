@@ -1,0 +1,13 @@
+Function: int drm_atomic_add_encoder_bridges ( struct drm_atomic_state * state , struct drm_encoder * encoder )
+
+add bridges attached to an encoder
+
+Parameters
+  struct drm_atomic_state *state
+    atomic state
+  struct drm_encoder *encoder
+    DRM encoder
+
+Description
+  This function adds all bridges attached to encoder . This is needed to add
+bridge states to state and make them available when drm_bridge_funcs.atomic_check() , drm_bridge_funcs.atomic_pre_enable() , drm_bridge_funcs.atomic_enable() , drm_bridge_funcs.atomic_disable_post_disable() are called.

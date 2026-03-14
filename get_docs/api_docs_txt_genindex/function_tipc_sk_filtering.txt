@@ -1,0 +1,11 @@
+Function: bool tipc_sk_filtering ( struct sock * sk )
+
+check if a socket should be traced
+
+Parameters
+  struct sock *sk
+    the socket to be examined
+
+Description
+  sysctl_tipc_sk_filter is used as the socket tuple for filtering:
+(portid, sock type, name type, name lower, name upper)

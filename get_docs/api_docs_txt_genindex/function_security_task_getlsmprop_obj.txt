@@ -1,0 +1,13 @@
+Function: void security_task_getlsmprop_obj ( struct task_struct * p , struct lsm_prop * prop )
+
+Get a task’s objective LSM data
+
+Parameters
+  struct task_struct *p
+    target task
+  struct lsm_prop *prop
+    lsm specific information
+
+Description
+  Retrieve the objective security identifier of the task_struct in p and
+return it in prop .

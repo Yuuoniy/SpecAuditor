@@ -1,0 +1,17 @@
+Function: void sparse_keymap_report_entry ( struct input_dev * dev , const struct key_entry * ke , unsigned int value , bool autorelease )
+
+report event corresponding to given key entry
+
+Parameters
+  struct input_dev *dev
+    Input device for which event should be reported
+  const struct key_entry *ke
+    key entry describing event
+  unsigned int value
+    Value that should be reported (ignored by KE_SW entries)
+  bool autorelease
+    Signals whether release event should be emitted for KE_KEY entries right after reporting press event, ignored by all other
+entries
+
+Description
+  This function is used to report input event described by given struct key_entry .

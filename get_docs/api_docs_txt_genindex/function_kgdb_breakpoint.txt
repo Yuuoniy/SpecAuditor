@@ -1,0 +1,12 @@
+Function: void kgdb_breakpoint ( void )
+
+compiled in breakpoint
+
+Parameters
+  void
+    no arguments
+
+Description
+  This will be implemented as a static inline per architecture.  This
+function is called by the kgdb core to execute an architecture
+specific trap to cause kgdb to enter the exception processing.

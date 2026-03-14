@@ -1,0 +1,9 @@
+Function: void ssam_device_set_drvdata ( struct ssam_device * sdev , void * data )
+
+Set driver-data of SSAM client device.
+
+Parameters
+  struct ssam_device *sdev
+    The device to set the driver-data of.
+  void *data
+    The data to set the device’s driver-data pointer to.

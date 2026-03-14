@@ -1,0 +1,15 @@
+Struct: struct ipu3_uapi_yuvp1_chnr_config
+
+Chroma noise reduction config
+
+Members
+  enable
+    chroma noise reduction enable, see ipu3_uapi_yuvp1_chnr_enable_config
+  coring
+    coring config for chroma noise reduction, see ipu3_uapi_yuvp1_chnr_coring_config
+  sense_gain
+    sensitivity config for chroma noise reduction, see
+ipu3_uapi_yuvp1_chnr_sense_gain_config
+  iir_fir
+    iir and fir config for chroma noise reduction, see
+ipu3_uapi_yuvp1_chnr_iir_fir_config

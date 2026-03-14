@@ -1,0 +1,2 @@
+Function: int cec_transmit_msg ( struct cec_adapter * adap , struct cec_msg * msg , bool block ) ;
+

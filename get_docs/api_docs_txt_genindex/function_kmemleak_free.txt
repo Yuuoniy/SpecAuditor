@@ -1,0 +1,11 @@
+Function: void __ref kmemleak_free ( const void * ptr )
+
+unregister a previously registered object
+
+Parameters
+  const void *ptr
+    pointer to beginning of the object
+
+Description
+  This function is called from the kernel allocators when an object (memory
+block) is freed (kmem_cache_free, kfree, vfree etc.).

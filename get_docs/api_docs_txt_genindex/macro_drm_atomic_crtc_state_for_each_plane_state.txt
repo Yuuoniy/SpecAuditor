@@ -1,0 +1,17 @@
+Macro: drm_atomic_crtc_state_for_each_plane_state
+
+
+
+Parameters
+  plane
+    the loop cursor
+  plane_state
+    loop cursor for the plane’s state, must be const
+  crtc_state
+    the incoming CRTC state
+
+Description
+  Similar to drm_crtc_for_each_plane() , but iterates the planes that will be
+attached if the specified state is applied.  Useful during for example
+in code called from drm_mode_config_funcs.atomic_check operations, to
+validate the incoming state.

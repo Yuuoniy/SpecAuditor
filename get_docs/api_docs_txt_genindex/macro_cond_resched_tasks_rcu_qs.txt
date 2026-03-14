@@ -1,0 +1,14 @@
+Macro: cond_resched_tasks_rcu_qs
+
+
+
+Parameters
+  old_ts
+    jiffies at start of processing.
+
+Description
+  This helper is for long-running softirq handlers, such as NAPI threads in
+networking. The caller should initialize the variable passed in as old_ts at the beginning of the softirq handler. When invoked frequently, this macro
+will invoke rcu_softirq_qs() every 100 milliseconds thereafter, which will
+provide both RCU and RCU-Tasks quiescent states. Note that this macro
+modifies its old_ts argument.

@@ -1,0 +1,14 @@
+Function: struct drm_property * drm_property_find ( struct drm_device * dev , struct drm_file * file_priv , uint32_t id )
+
+find property object
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_file *file_priv
+    drm file to check for lease against.
+  uint32_t id
+    property object id
+
+Description
+  This function looks up the property object specified by id and returns it.

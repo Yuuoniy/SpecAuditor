@@ -1,0 +1,12 @@
+Function: void cxl_region_shared_upstream_bandwidth_update ( struct cxl_region * cxlr )
+
+Recalculate the bandwidth for the region
+
+Parameters
+  struct cxl_region *cxlr
+    the cxl region to recalculate
+
+Description
+  The function walks the topology from bottom up and calculates the bandwidth. It
+starts at the endpoints, processes at the switches if any, processes at the rootport
+level, at the host bridge level, and finally aggregates at the region.

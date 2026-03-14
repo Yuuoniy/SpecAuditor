@@ -1,0 +1,19 @@
+Function: void list_cut_before ( struct list_head * list , struct list_head * head , struct list_head * entry )
+
+cut a list into two, before given entry
+
+Parameters
+  struct list_head *list
+    a new list to add all removed entries
+  struct list_head *head
+    a list with entries
+  struct list_head *entry
+    an entry within head, could be the head itself
+
+Description
+  This helper moves the initial part of head , up to but
+excluding entry , from head to list .  You should pass
+in entry an element you know is on head . list should
+be an empty list or a list you do not care about losing
+its data.
+If entry == head , all entries on head are moved to list .

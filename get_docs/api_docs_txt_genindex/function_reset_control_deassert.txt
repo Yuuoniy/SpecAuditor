@@ -1,0 +1,12 @@
+Function: int reset_control_deassert ( struct reset_control * rstc )
+
+deasserts the reset line
+
+Parameters
+  struct reset_control *rstc
+    reset controller
+
+Description
+  After calling this function, the reset is guaranteed to be deasserted.
+Consumers must not use reset_control_reset on shared reset lines when
+reset_control_(de)assert has been used.

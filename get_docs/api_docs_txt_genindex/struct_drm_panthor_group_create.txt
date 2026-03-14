@@ -1,0 +1,31 @@
+Struct: struct drm_panthor_group_create
+
+Arguments passed to DRM_IOCTL_PANTHOR_GROUP_CREATE
+
+Members
+  queues
+    Array of drm_panthor_queue_create elements.
+  max_compute_cores
+    Maximum number of cores that can be used by compute
+jobs across CS queues bound to this group. Must be less or equal to the number of bits set in compute_core_mask .
+  max_fragment_cores
+    Maximum number of cores that can be used by fragment
+jobs across CS queues bound to this group. Must be less or equal to the number of bits set in fragment_core_mask .
+  max_tiler_cores
+    Maximum number of tilers that can be used by tiler jobs
+across CS queues bound to this group. Must be less or equal to the number of bits set in tiler_core_mask .
+  priority
+    Group priority (see enum drm_panthor_group_priority ).
+  pad
+    Padding field, MBZ.
+  compute_core_mask
+    Mask encoding cores that can be used for compute jobs. This field must have at least max_compute_cores bits set. The bits set here should also be set in drm_panthor_gpu_info::shader_present.
+  fragment_core_mask
+    Mask encoding cores that can be used for fragment jobs. This field must have at least max_fragment_cores bits set. The bits set here should also be set in drm_panthor_gpu_info::shader_present.
+  tiler_core_mask
+    Mask encoding cores that can be used for tiler jobs. This field must have at least max_tiler_cores bits set. The bits set here should also be set in drm_panthor_gpu_info::tiler_present.
+  vm_id
+    VM ID to bind this group to. All submission to queues bound to this group will use this VM.
+  group_handle
+    Returned group handle. Passed back when submitting jobs or
+destroying a group.

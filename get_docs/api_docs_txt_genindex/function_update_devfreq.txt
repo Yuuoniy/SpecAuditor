@@ -1,0 +1,7 @@
+Function: int update_devfreq ( struct devfreq * devfreq )
+
+Reevaluate the device and configure frequency.
+
+Parameters
+  struct devfreq *devfreq
+    the devfreq instance.

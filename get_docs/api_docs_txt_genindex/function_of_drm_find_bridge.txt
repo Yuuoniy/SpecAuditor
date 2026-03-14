@@ -1,0 +1,7 @@
+Function: struct drm_bridge * of_drm_find_bridge ( struct device_node * np )
+
+find the bridge corresponding to the device node in the global bridge list
+
+Parameters
+  struct device_node *np
+    device node

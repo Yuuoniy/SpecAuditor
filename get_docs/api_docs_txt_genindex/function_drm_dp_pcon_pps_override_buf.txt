@@ -1,0 +1,12 @@
+Function: int drm_dp_pcon_pps_override_buf ( struct drm_dp_aux * aux , u8 pps_buf [ 128 ] )
+
+Configure PPS encoder override buffer for HDMI sink
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  u8 pps_buf[128]
+    128 bytes to be written into PPS buffer for HDMI sink by PCON.
+
+Description
+  Returns 0 on success, else returns negative error code.

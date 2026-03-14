@@ -1,0 +1,9 @@
+Struct: struct drm_pvr_ioctl_destroy_context_args
+
+Arguments for DRM_IOCTL_PVR_DESTROY_CONTEXT
+
+Members
+  handle
+    [IN] Handle for context to be destroyed.
+  _padding_4
+    Reserved. This field must be zeroed.

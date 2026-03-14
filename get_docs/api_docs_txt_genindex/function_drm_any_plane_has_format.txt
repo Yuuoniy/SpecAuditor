@@ -1,0 +1,11 @@
+Function: bool drm_any_plane_has_format ( struct drm_device * dev , u32 format , u64 modifier )
+
+Check whether any plane supports this format and modifier combination
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  u32 format
+    pixel format (DRM_FORMAT_*)
+  u64 modifier
+    data layout modifier

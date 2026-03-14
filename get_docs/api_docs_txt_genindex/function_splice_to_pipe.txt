@@ -1,0 +1,14 @@
+Function: ssize_t splice_to_pipe ( struct pipe_inode_info * pipe , struct splice_pipe_desc * spd )
+
+fill passed data into a pipe
+
+Parameters
+  struct pipe_inode_info *pipe
+    pipe to fill
+  struct splice_pipe_desc *spd
+    data to fill
+
+Description
+  spd contains a map of pages and len/offset tuples, along with
+the struct pipe_buf_operations associated with these pages. This
+function will link that data to the pipe.

@@ -1,0 +1,15 @@
+Function: int drm_connector_update_edid_property ( struct drm_connector * connector , const struct edid * edid )
+
+update the edid property of a connector
+
+Parameters
+  struct drm_connector *connector
+    drm connector
+  const struct edid *edid
+    new value of the edid property
+
+Description
+  This function creates a new blob modeset object and assigns its id to the
+connector’s edid property.
+Since we also parse tile information from EDID’s displayID block, we also
+set the connector’s tile property here. See drm_connector_set_tile_property() for more details.

@@ -1,0 +1,18 @@
+Function: void * drmm_kmalloc_array ( struct drm_device * dev , size_t n , size_t size , gfp_t flags )
+
+drm_device managed kmalloc_array()
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  size_t n
+    number of array elements to allocate
+  size_t size
+    size of array member
+  gfp_t flags
+    GFP allocation flags
+
+Description
+  This is a drm_device managed version of kmalloc_array() . The allocated
+memory is automatically freed on the final drm_dev_put() and works exactly
+like a memory allocation obtained by drmm_kmalloc() .

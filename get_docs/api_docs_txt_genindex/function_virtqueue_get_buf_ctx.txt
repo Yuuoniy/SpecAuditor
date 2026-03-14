@@ -1,0 +1,17 @@
+Function: void * virtqueue_get_buf_ctx ( struct virtqueue * _vq , unsigned int * len , void * * ctx )
+
+get the next used buffer
+
+Parameters
+  struct virtqueue *_vq
+    the struct virtqueue we’re talking about.
+  unsigned int *len
+    the length written into the buffer
+  void **ctx
+    extra context for the token
+
+Description
+  If the device wrote data into the buffer, len will be set to the
+amount written.  This means you don’t need to clear the buffer
+beforehand to ensure there’s no data leakage in the case of short
+writes.

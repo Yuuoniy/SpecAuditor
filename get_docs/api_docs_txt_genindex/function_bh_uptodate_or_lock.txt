@@ -1,0 +1,11 @@
+Function: int bh_uptodate_or_lock ( struct buffer_head * bh )
+
+Test whether the buffer is uptodate
+
+Parameters
+  struct buffer_head *bh
+    struct buffer_head
+
+Description
+  Return true if the buffer is up-to-date and false,
+with the buffer locked, if not.

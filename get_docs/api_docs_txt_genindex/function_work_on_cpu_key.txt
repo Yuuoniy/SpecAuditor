@@ -1,0 +1,17 @@
+Function: long work_on_cpu_key ( int cpu , long ( * fn ) ( void * ) , void * arg , struct lock_class_key * key )
+
+run a function in thread context on a particular cpu
+
+Parameters
+  int cpu
+    the cpu to run on
+  long (*fn)(void *)
+    the function to run
+  void *arg
+    the function arg
+  struct lock_class_key *key
+    The lock class key for lock debugging purposes
+
+Description
+  It is up to the caller to ensure that the cpu doesn’t go offline.
+The caller must not hold any locks which would prevent fn from completing.

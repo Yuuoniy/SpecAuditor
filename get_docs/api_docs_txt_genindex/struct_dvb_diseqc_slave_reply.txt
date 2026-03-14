@@ -1,0 +1,15 @@
+Struct: struct dvb_diseqc_slave_reply
+
+DiSEqC received data
+
+Members
+  msg
+    DiSEqC message buffer to store a message received via DiSEqC.
+It contains one byte header with: framing and
+an optional argument of up to 3 bytes of data.
+  msg_len
+    Length of the DiSEqC message. Valid values are 0 to 4,
+where 0 means no message.
+  timeout
+    Return from ioctl after timeout ms with errorcode when
+no message was received.

@@ -1,0 +1,17 @@
+Function: void * of_fdt_unflatten_tree ( const unsigned long * blob , struct device_node * dad , struct device_node * * mynodes )
+
+create tree of device_nodes from flat blob
+
+Parameters
+  const unsigned long *blob
+    Flat device tree blob
+  struct device_node *dad
+    Parent device node
+  struct device_node **mynodes
+    The device tree created by the call
+
+Description
+  unflattens the device-tree passed by the firmware, creating the
+tree of struct device_node . It also fills the “name” and “type”
+pointers of the nodes so the normal device-tree walking functions
+can be used.

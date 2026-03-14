@@ -1,0 +1,14 @@
+Function: int security_inode_create ( struct inode * dir , struct dentry * dentry , umode_t mode )
+
+Check if creating a file is allowed
+
+Parameters
+  struct inode *dir
+    the parent directory
+  struct dentry *dentry
+    the file being created
+  umode_t mode
+    requested file mode
+
+Description
+  Check permission to create a regular file.

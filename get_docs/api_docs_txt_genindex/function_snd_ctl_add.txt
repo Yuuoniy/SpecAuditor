@@ -1,0 +1,13 @@
+Function: int snd_ctl_add ( struct snd_card * card , struct snd_kcontrol * kcontrol )
+
+add the control instance to the card
+
+Parameters
+  struct snd_card *card
+    the card instance
+  struct snd_kcontrol *kcontrol
+    the control instance to add
+
+Description
+  Adds the control instance created via snd_ctl_new() or snd_ctl_new1() to the given card. Assigns also an unique
+numid used for fast search.

@@ -1,0 +1,11 @@
+Struct: struct pstore_device_info
+
+back-end pstore/blk driver structure.
+
+Members
+  flags
+    Refer to macro starting with PSTORE_FLAGS defined in
+linux/pstore.h. It means what front-ends this device support.
+Zero means all backends for compatible.
+  zone
+    The struct pstore_zone_info details.

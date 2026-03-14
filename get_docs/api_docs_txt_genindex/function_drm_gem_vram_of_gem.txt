@@ -1,0 +1,7 @@
+Function: struct drm_gem_vram_object * drm_gem_vram_of_gem ( struct drm_gem_object * gem )
+
+Returns the container of type struct drm_gem_vram_object for field gem.
+
+Parameters
+  struct drm_gem_object *gem
+    the GEM object

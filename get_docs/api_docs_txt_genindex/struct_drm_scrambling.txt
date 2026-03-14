@@ -1,0 +1,9 @@
+Struct: struct drm_scrambling
+
+sink’s scrambling support.
+
+Members
+  supported
+    scrambling supported for rates > 340 Mhz.
+  low_rates
+    scrambling supported for rates <= 340 Mhz.

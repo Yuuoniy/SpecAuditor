@@ -1,0 +1,11 @@
+Function: int srpt_post_recv ( struct srpt_device * sdev , struct srpt_rdma_ch * ch , struct srpt_recv_ioctx * ioctx )
+
+post an IB receive request
+
+Parameters
+  struct srpt_device *sdev
+    SRPT HCA pointer.
+  struct srpt_rdma_ch *ch
+    SRPT RDMA channel.
+  struct srpt_recv_ioctx *ioctx
+    Receive I/O context pointer.

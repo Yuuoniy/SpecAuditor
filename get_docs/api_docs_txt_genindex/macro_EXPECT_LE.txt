@@ -1,0 +1,12 @@
+Macro: EXPECT_LE
+
+
+
+Parameters
+  expected
+    expected value
+  seen
+    measured value
+
+Description
+  EXPECT_LE(expected, measured): expected <= measured

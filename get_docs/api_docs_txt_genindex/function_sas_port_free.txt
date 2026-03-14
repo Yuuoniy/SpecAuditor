@@ -1,0 +1,10 @@
+Function: void sas_port_free ( struct sas_port * port )
+
+free a SAS PORT
+
+Parameters
+  struct sas_port *port
+    SAS PORT to free
+
+Description
+  Frees the specified SAS PORT.

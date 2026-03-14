@@ -1,0 +1,15 @@
+Function: void workqueue_init_early ( void )
+
+early init for workqueue subsystem
+
+Parameters
+  void
+    no arguments
+
+Description
+  This is the first step of three-staged workqueue subsystem initialization and
+invoked as soon as the bare basics - memory allocation, cpumasks and idr are
+up. It sets up all the data structures and system workqueues and allows early
+boot code to create workqueues and queue/cancel work items. Actual work item
+execution starts only after kthreads can be created and scheduled right
+before early initcalls.

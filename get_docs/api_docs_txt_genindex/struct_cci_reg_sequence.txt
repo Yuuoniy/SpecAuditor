@@ -1,0 +1,9 @@
+Struct: struct cci_reg_sequence
+
+An individual write from a sequence of CCI writes
+
+Members
+  reg
+    Register address, use CCI_REG#() macros to encode reg width
+  val
+    Register value

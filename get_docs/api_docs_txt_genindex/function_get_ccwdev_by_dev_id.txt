@@ -1,0 +1,11 @@
+Function: struct ccw_device * get_ccwdev_by_dev_id ( struct ccw_dev_id * dev_id )
+
+obtain device from a ccw device id
+
+Parameters
+  struct ccw_dev_id *dev_id
+    id of the device to be searched
+
+Description
+  This function searches all devices attached to the ccw bus for a device
+matching dev_id .

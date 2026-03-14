@@ -1,0 +1,21 @@
+Function: void drm_mm_scan_init ( struct drm_mm_scan * scan , struct drm_mm * mm , u64 size , u64 alignment , unsigned long color , enum drm_mm_insert_mode mode )
+
+initialize lru scanning
+
+Parameters
+  struct drm_mm_scan *scan
+    scan state
+  struct drm_mm *mm
+    drm_mm to scan
+  u64 size
+    size of the allocation
+  u64 alignment
+    alignment of the allocation
+  unsigned long color
+    opaque tag value to use for the allocation
+  enum drm_mm_insert_mode mode
+    fine-tune the allocation search and placement
+
+Description
+  This is a simplified version of drm_mm_scan_init_with_range() with no range
+restrictions applied.

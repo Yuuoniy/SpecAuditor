@@ -1,0 +1,11 @@
+Function: struct dvb_frontend * zl10036_attach ( struct dvb_frontend * fe , const struct zl10036_config * config , struct i2c_adapter * i2c )
+
+Attach a zl10036 tuner to the supplied frontend structure.
+
+Parameters
+  struct dvb_frontend *fe
+    Frontend to attach to.
+  const struct zl10036_config *config
+    zl10036_config structure.
+  struct i2c_adapter *i2c
+    pointer to struct i2c_adapter .

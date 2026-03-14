@@ -1,0 +1,15 @@
+Macro: wrapping_add
+
+
+
+Parameters
+  type
+    type for result of calculation
+  a
+    first addend
+  b
+    second addend
+
+Description
+  Return the potentially wrapped-around addition without
+tripping any wrap-around sanitizers that may be enabled.

@@ -1,0 +1,15 @@
+Function: int snd_card_file_remove ( struct snd_card * card , struct file * file )
+
+remove the file from the file list
+
+Parameters
+  struct snd_card *card
+    soundcard structure
+  struct file *file
+    file pointer
+
+Description
+  This function removes the file formerly added to the card via snd_card_file_add() function.
+If all files are removed and snd_card_free_when_closed() was
+called beforehand, it processes the pending release of
+resources.

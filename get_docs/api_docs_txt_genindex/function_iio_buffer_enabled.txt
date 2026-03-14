@@ -1,0 +1,7 @@
+Function: bool iio_buffer_enabled ( struct iio_dev * indio_dev )
+
+helper function to test if the buffer is enabled
+
+Parameters
+  struct iio_dev *indio_dev
+    IIO device structure for device

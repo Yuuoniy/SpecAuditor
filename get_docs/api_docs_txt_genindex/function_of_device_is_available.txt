@@ -1,0 +1,7 @@
+Function: bool of_device_is_available ( const struct device_node * device )
+
+check if a device is available for use
+
+Parameters
+  const struct device_node *device
+    Node to check for availability

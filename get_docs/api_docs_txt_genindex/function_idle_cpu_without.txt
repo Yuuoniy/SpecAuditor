@@ -1,0 +1,9 @@
+Function: int idle_cpu_without ( int cpu , struct task_struct * p )
+
+would a given CPU be idle without p ?
+
+Parameters
+  int cpu
+    the processor on which idleness is tested.
+  struct task_struct *p
+    task which should be ignored.

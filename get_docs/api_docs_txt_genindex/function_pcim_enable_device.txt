@@ -1,0 +1,11 @@
+Function: int pcim_enable_device ( struct pci_dev * pdev )
+
+Managed pci_enable_device()
+
+Parameters
+  struct pci_dev *pdev
+    PCI device to be initialized
+
+Description
+  Managed pci_enable_device() . Device will automatically be disabled on
+driver detach.

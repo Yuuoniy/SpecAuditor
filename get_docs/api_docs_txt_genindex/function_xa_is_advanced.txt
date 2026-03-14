@@ -1,0 +1,7 @@
+Function: bool xa_is_advanced ( const void * entry )
+
+Is the entry only permitted for the advanced API?
+
+Parameters
+  const void *entry
+    Entry to be stored in the XArray.

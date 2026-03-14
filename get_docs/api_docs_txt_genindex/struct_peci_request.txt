@@ -1,0 +1,19 @@
+Struct: struct peci_request
+
+PECI request
+
+Members
+  device
+    PECI device to which the request is sent
+  rx
+    RX buffer specific data
+  rx.buf
+    RX buffer
+  rx.len
+    received data length in bytes
+  tx
+    TX buffer specific data
+  tx.buf
+    TX buffer
+  tx.len
+    transfer data length in bytes

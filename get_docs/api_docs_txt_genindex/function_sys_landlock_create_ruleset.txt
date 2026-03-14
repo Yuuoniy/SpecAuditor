@@ -1,0 +1,16 @@
+Function: long sys_landlock_create_ruleset ( const struct landlock_ruleset_attr __user * const attr , const size_t size , const __u32 flags )
+
+Create a new ruleset
+
+Parameters
+  const struct landlock_ruleset_attr __user *const attr
+    Pointer to a struct landlock_ruleset_attr identifying the scope of
+the new ruleset.
+  const size_t size
+    Size of the pointed struct landlock_ruleset_attr (needed for
+backward and forward compatibility).
+  const __u32 flags
+    Supported values:
+
+Description
+  LANDLOCK_CREATE_RULESET_VERSION

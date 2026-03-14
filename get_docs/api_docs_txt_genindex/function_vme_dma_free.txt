@@ -1,0 +1,10 @@
+Function: int vme_dma_free ( struct vme_resource * resource )
+
+Free a VME DMA resource.
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME DMA resource.
+
+Description
+  Free the provided DMA resource so that it may be reallocated.

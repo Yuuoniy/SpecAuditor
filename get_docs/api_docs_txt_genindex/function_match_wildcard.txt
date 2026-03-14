@@ -1,0 +1,13 @@
+Function: bool match_wildcard ( const char * pattern , const char * str )
+
+parse if a string matches given wildcard pattern
+
+Parameters
+  const char *pattern
+    wildcard pattern
+  const char *str
+    the string to be parsed
+
+Description
+  Parse the string str to check if matches wildcard
+pattern pattern . The pattern may contain two types of wildcards:

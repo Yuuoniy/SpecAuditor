@@ -1,0 +1,3 @@
+Enum: enum mac80211_tx_info_flags
+
+flags to describe transmission information/status

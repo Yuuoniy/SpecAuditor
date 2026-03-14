@@ -1,0 +1,12 @@
+Function: int drm_connector_dynamic_register ( struct drm_connector * connector )
+
+register a dynamic connector
+
+Parameters
+  struct drm_connector *connector
+    the connector to register
+
+Description
+  Register userspace interfaces for a connector. Only call this for connectors
+initialized by calling drm_connector_dynamic_init() . All other connectors
+will be registered automatically when calling drm_dev_register() .

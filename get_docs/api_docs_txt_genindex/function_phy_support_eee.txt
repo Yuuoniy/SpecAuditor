@@ -1,0 +1,15 @@
+Function: void phy_support_eee ( struct phy_device * phydev )
+
+Set initial EEE policy configuration
+
+Parameters
+  struct phy_device *phydev
+    Target phy_device struct
+
+Description
+  This function configures the initial policy for Energy Efficient Ethernet
+(EEE) on the specified PHY device, influencing that EEE capabilities are
+advertised before the link is established. It should be called during PHY
+registration by the MAC driver and/or the PHY driver (for SmartEEE PHYs)
+if MAC supports LPI or PHY is capable to compensate missing LPI functionality
+of the MAC.

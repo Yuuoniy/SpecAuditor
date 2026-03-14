@@ -1,0 +1,12 @@
+Function: int mod_timer ( struct timer_list * timer , unsigned long expires )
+
+Modify a timer’s timeout
+
+Parameters
+  struct timer_list *timer
+    The timer to be modified
+  unsigned long expires
+    New absolute timeout in jiffies
+
+Description
+  mod_timer(timer, expires) is equivalent to:

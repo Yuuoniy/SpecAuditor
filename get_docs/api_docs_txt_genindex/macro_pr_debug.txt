@@ -1,0 +1,14 @@
+Macro: pr_debug
+
+
+
+Parameters
+  fmt
+    format string
+  ...
+    arguments for the format string
+
+Description
+  This macro expands to dynamic_pr_debug() if CONFIG_DYNAMIC_DEBUG is
+set. Otherwise, if DEBUG is defined, it’s equivalent to a printk with
+KERN_DEBUG loglevel. If DEBUG is not defined it does nothing.

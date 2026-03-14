@@ -1,0 +1,11 @@
+Struct: struct nand_ecc_caps
+
+capability of ECC engine
+
+Members
+  stepinfos
+    array of ECC step information
+  nstepinfos
+    number of ECC step information
+  calc_ecc_bytes
+    driver’s hook to calculate ECC bytes per step

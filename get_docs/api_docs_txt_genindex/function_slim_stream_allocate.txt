@@ -1,0 +1,14 @@
+Function: struct slim_stream_runtime * slim_stream_allocate ( struct slim_device * dev , const char * name )
+
+Allocate a new SLIMbus Stream
+
+Parameters
+  struct slim_device *dev
+    Slim device to be associated with
+  const char *name
+    name of the stream
+
+Description
+  This is very first call for SLIMbus streaming, this API will allocate
+a new SLIMbus stream and return a valid stream runtime pointer for client
+to use it in subsequent stream apis. state of stream is set to ALLOCATED

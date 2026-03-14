@@ -1,0 +1,7 @@
+Struct: struct fwctl_info_pds
+
+
+
+Members
+  uctx_caps
+    bitmap of firmware capabilities

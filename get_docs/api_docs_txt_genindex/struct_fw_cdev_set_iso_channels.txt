@@ -1,0 +1,9 @@
+Struct: struct fw_cdev_set_iso_channels
+
+Select channels in multichannel reception
+
+Members
+  channels
+    Bitmask of channels to listen to
+  handle
+    Handle of the mutichannel receive context

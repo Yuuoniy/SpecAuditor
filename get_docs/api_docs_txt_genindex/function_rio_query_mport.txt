@@ -1,0 +1,13 @@
+Function: int rio_query_mport ( struct rio_mport * port , struct rio_mport_attr * mport_attr )
+
+Query mport device attributes
+
+Parameters
+  struct rio_mport *port
+    mport device to query
+  struct rio_mport_attr *mport_attr
+    mport attributes data structure
+
+Description
+  Returns attributes of specified mport through the
+pointer to attributes data structure.

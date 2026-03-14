@@ -1,0 +1,11 @@
+Function: bool link_retransmit_failure ( struct tipc_link * l , struct tipc_link * r , int * rc )
+
+Detect repeated retransmit failures
+
+Parameters
+  struct tipc_link *l
+    tipc link sender
+  struct tipc_link *r
+    tipc link receiver (= l in case of unicast)
+  int *rc
+    returned code

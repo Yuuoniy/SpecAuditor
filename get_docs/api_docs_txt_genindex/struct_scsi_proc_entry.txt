@@ -1,0 +1,13 @@
+Struct: struct scsi_proc_entry
+
+(host template, SCSI proc dir) association
+
+Members
+  entry
+    entry in scsi_proc_list.
+  sht
+    SCSI host template associated with the procfs directory.
+  proc_dir
+    procfs directory associated with the SCSI host template.
+  present
+    Number of SCSI hosts instantiated for sht .

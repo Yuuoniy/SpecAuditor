@@ -1,0 +1,17 @@
+Function: void drm_sched_entity_modify_sched ( struct drm_sched_entity * entity , struct drm_gpu_scheduler * * sched_list , unsigned int num_sched_list )
+
+Modify sched of an entity
+
+Parameters
+  struct drm_sched_entity *entity
+    scheduler entity to init
+  struct drm_gpu_scheduler **sched_list
+    the list of new drm scheds which will replace
+existing entity->sched_list
+  unsigned int num_sched_list
+    number of drm sched in sched_list
+
+Description
+  Note that this must be called under the same common lock for entity as drm_sched_job_arm() and drm_sched_entity_push_job() , or the driver needs to
+guarantee through some other means that this is never called while new jobs
+can be pushed to entity .

@@ -1,0 +1,13 @@
+Function: int lookup_bdev ( const char * pathname , dev_t * dev )
+
+Look up a struct block_device by name.
+
+Parameters
+  const char *pathname
+    Name of the block device in the filesystem.
+  dev_t *dev
+    Pointer to the block device’s dev_t, if found.
+
+Description
+  Lookup the block device’s dev_t at pathname in the current
+namespace if possible and return it in dev .

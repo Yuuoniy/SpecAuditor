@@ -1,0 +1,12 @@
+Function: int drm_class_device_register ( struct device * dev )
+
+register new device with the DRM sysfs class
+
+Parameters
+  struct device *dev
+    device to register
+
+Description
+  Registers a new struct device within the DRM sysfs class. Essentially only
+used by ttm to have a place for its global settings. Drivers should never use
+this.

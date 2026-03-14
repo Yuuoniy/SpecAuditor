@@ -1,0 +1,34 @@
+Struct: struct spi_statistics
+
+statistics for spi transfers
+
+Members
+  syncp
+    seqcount to protect members in this struct for per-cpu update
+on 32-bit systems
+  messages
+    number of spi-messages handled
+  transfers
+    number of spi_transfers handled
+  errors
+    number of errors during spi_transfer
+  timedout
+    number of timeouts during spi_transfer
+  spi_sync
+    number of times spi_sync is used
+  spi_sync_immediate
+    number of times spi_sync is executed immediately
+in calling context without queuing and scheduling
+  spi_async
+    number of times spi_async is used
+  bytes
+    number of bytes transferred to/from device
+  bytes_rx
+    number of bytes received from device
+  bytes_tx
+    number of bytes sent to device
+  transfer_bytes_histo
+    transfer bytes histogram
+  transfers_split_maxsize
+    number of transfers that have been split because of
+maxsize limit

@@ -1,0 +1,21 @@
+Function: struct fpga_manager
+
+fpga manager structure
+
+Members
+  name
+    name of low level fpga manager
+  dev
+    fpga manager device
+  ref_mutex
+    only allows one reference to fpga manager
+  state
+    state of fpga manager
+  compat_id
+    FPGA manager id for compatibility check.
+  mops
+    pointer to struct of fpga manager ops
+  mops_owner
+    module containing the mops
+  priv
+    low level driver private date

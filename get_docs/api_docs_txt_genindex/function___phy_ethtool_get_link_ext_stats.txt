@@ -1,0 +1,13 @@
+Function: void __phy_ethtool_get_link_ext_stats ( struct phy_device * phydev , struct ethtool_link_ext_stats * link_stats )
+
+Retrieve extended link statistics for a PHY
+
+Parameters
+  struct phy_device *phydev
+    Pointer to the PHY device
+  struct ethtool_link_ext_stats *link_stats
+    Pointer to the structure to store extended link statistics
+
+Description
+  Populates the ethtool_link_ext_stats structure with link down event counts
+and additional driver-specific link statistics, if available.

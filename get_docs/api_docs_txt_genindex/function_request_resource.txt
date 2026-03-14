@@ -1,0 +1,12 @@
+Function: int request_resource ( struct resource * root , struct resource * new )
+
+request and reserve an I/O or memory resource
+
+Parameters
+  struct resource *root
+    root resource descriptor
+  struct resource *new
+    resource descriptor desired by caller
+
+Description
+  Returns 0 for success, negative error code on error.

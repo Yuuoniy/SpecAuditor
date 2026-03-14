@@ -1,0 +1,25 @@
+Function: struct ipu3_uapi_bnr_static_config
+
+BNR static config
+
+Members
+  wb_gains
+    white balance gains ipu3_uapi_bnr_static_config_wb_gains_config
+  wb_gains_thr
+    white balance gains threshold as defined by ipu3_uapi_bnr_static_config_wb_gains_thr_config
+  thr_coeffs
+    coefficients of threshold ipu3_uapi_bnr_static_config_thr_coeffs_config
+  thr_ctrl_shd
+    control of shading threshold ipu3_uapi_bnr_static_config_thr_ctrl_shd_config
+  opt_center
+    optical center ipu3_uapi_bnr_static_config_opt_center_config
+  lut
+    lookup table ipu3_uapi_bnr_static_config_lut_config
+  bp_ctrl
+    detect and remove bad pixels as defined in struct ipu3_uapi_bnr_static_config_bp_ctrl_config
+  dn_detect_ctrl
+    detect and remove noise. ipu3_uapi_bnr_static_config_dn_detect_ctrl_config
+  column_size
+    The number of pixels in column.
+  opt_center_sqr
+    Reset value of r^2 to optical center, see ipu3_uapi_bnr_static_config_opt_center_sqr_config .

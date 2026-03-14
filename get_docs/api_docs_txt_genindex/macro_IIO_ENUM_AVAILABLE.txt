@@ -1,0 +1,15 @@
+Macro: IIO_ENUM_AVAILABLE
+
+
+
+Parameters
+  _name
+    Attribute name (“_available” will be appended to the name)
+  _shared
+    Whether the attribute is shared between all channels
+  _e
+    Pointer to an iio_enum struct
+
+Description
+  Creates a read only attribute which lists all the available enum items in a
+space separated list. This should usually be used together with IIO_ENUM()

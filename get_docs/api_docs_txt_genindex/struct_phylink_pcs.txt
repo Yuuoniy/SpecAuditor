@@ -1,0 +1,19 @@
+Struct: struct phylink_pcs
+
+PHYLINK PCS instance
+
+Members
+  supported_interfaces
+    describing which PHY_INTERFACE_MODE_xxx
+are supported by this PCS.
+  ops
+    a pointer to the struct phylink_pcs_ops structure
+  phylink
+    pointer to struct phylink_config
+  poll
+    poll the PCS for link changes
+  rxc_always_on
+    The MAC driver requires the reference clock
+to always be on. Standalone PCS drivers which
+do not have access to a PHY device can check
+this instead of PHY_F_RXC_ALWAYS_ON.

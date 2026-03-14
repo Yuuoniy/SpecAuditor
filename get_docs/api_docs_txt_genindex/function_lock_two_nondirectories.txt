@@ -1,0 +1,13 @@
+Function: void lock_two_nondirectories ( struct inode * inode1 , struct inode * inode2 )
+
+take two i_mutexes on non-directory objects
+
+Parameters
+  struct inode *inode1
+    first inode to lock
+  struct inode *inode2
+    second inode to lock
+
+Description
+  Lock any non-NULL argument. Passed objects must not be directories.
+Zero, one or two objects may be locked by this function.

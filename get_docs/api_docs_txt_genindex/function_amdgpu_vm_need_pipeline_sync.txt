@@ -1,0 +1,9 @@
+Function: bool amdgpu_vm_need_pipeline_sync ( struct amdgpu_ring * ring , struct amdgpu_job * job )
+
+Check if pipe sync is needed for job.
+
+Parameters
+  struct amdgpu_ring *ring
+    ring on which the job will be submitted
+  struct amdgpu_job *job
+    job to submit

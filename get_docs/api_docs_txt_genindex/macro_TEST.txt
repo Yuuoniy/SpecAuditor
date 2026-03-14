@@ -1,0 +1,13 @@
+Macro: TEST
+
+
+
+Parameters
+  test_name
+    test name
+
+Description
+  Defines a test by name.
+Names must be unique and tests must not be run in parallel.  The
+implementation containing block is a function and scoping should be treated
+as such.  Returning early may be performed with a bare “return;” statement.

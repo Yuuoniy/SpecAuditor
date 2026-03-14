@@ -1,0 +1,10 @@
+Function: struct ssh_packet * ssh_packet_get ( struct ssh_packet * packet )
+
+Increment reference count of packet.
+
+Parameters
+  struct ssh_packet *packet
+    The packet to increment the reference count of.
+
+Description
+  Increments the reference count of the given packet. See ssh_packet_put() for the counter-part of this function.

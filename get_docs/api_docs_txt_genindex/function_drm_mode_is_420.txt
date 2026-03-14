@@ -1,0 +1,9 @@
+Function: bool drm_mode_is_420 ( const struct drm_display_info * display , const struct drm_display_mode * mode )
+
+if a given videomode can be supported in YCBCR420 output format
+
+Parameters
+  const struct drm_display_info *display
+    display under action.
+  const struct drm_display_mode *mode
+    video mode to be tested.

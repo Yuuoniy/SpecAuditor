@@ -1,0 +1,11 @@
+Function: struct drm_printer drm_dbg_printer ( struct drm_device * drm , enum drm_debug_category category , const char * prefix )
+
+construct a drm_printer for drm device specific output
+
+Parameters
+  struct drm_device *drm
+    the struct drm_device pointer, or NULL
+  enum drm_debug_category category
+    the debug category to use
+  const char *prefix
+    debug output prefix, or NULL for no prefix

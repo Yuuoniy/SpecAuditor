@@ -1,0 +1,11 @@
+Function: int cxl_decoder_add ( struct cxl_decoder * cxld )
+
+Add a decoder with targets
+
+Parameters
+  struct cxl_decoder *cxld
+    The cxl decoder allocated by cxl_<type> _decoder_alloc()
+
+Description
+  This is the unlocked variant of cxl_decoder_add_locked() .
+See cxl_decoder_add_locked() .

@@ -1,0 +1,13 @@
+Function: int genphy_c45_plca_get_cfg ( struct phy_device * phydev , struct phy_plca_cfg * plca_cfg )
+
+get PLCA configuration from standard registers
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+  struct phy_plca_cfg *plca_cfg
+    output structure to store the PLCA configuration
+
+Description
+  Management Registers specifications, this function can be used to retrieve
+the current PLCA configuration from the standard registers in MMD 31.

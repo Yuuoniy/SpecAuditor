@@ -1,0 +1,17 @@
+Function: int ssam_client_link ( struct ssam_controller * c , struct device * client )
+
+Link an arbitrary client device to the controller.
+
+Parameters
+  struct ssam_controller *c
+    The controller to link to.
+  struct device *client
+    The client device.
+
+Description
+  Link an arbitrary client device to the controller by creating a device link
+between it as consumer and the controller device as provider. This function
+can be used for non-SSAM devices (or SSAM devices not registered as child
+under the controller) to guarantee that the controller is valid for as long
+as the driver of the client device is bound, and that proper suspend and
+resume ordering is guaranteed.

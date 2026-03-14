@@ -1,0 +1,7 @@
+Function: int fw_get_request_speed ( struct fw_request * request )
+
+returns speed at which the request was received
+
+Parameters
+  struct fw_request *request
+    firewire request data

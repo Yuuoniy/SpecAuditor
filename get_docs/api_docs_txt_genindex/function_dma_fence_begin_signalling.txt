@@ -1,0 +1,11 @@
+Function: bool dma_fence_begin_signalling ( void )
+
+begin a critical DMA fence signalling section
+
+Parameters
+  void
+    no arguments
+
+Description
+  Drivers should use this to annotate the beginning of any code section
+required to eventually complete dma_fence by calling dma_fence_signal() .

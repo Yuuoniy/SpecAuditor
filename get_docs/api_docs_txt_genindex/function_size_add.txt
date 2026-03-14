@@ -1,0 +1,9 @@
+Function: size_t size_add ( size_t addend1 , size_t addend2 )
+
+Calculate size_t addition with saturation at SIZE_MAX
+
+Parameters
+  size_t addend1
+    first addend
+  size_t addend2
+    second addend

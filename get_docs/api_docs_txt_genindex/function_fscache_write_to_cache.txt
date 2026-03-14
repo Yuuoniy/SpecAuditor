@@ -1,0 +1,27 @@
+Function: void fscache_write_to_cache ( struct fscache_cookie * cookie , struct address_space * mapping , loff_t start , size_t len , loff_t i_size , netfs_io_terminated_t term_func , void * term_func_priv , bool using_pgpriv2 , bool caching )
+
+Save a write to the cache and clear PG_fscache
+
+Parameters
+  struct fscache_cookie *cookie
+    The cookie representing the cache object
+  struct address_space *mapping
+    The netfs inode to use as the source
+  loff_t start
+    The start position in mapping
+  size_t len
+    The amount of data to write back
+  loff_t i_size
+    The new size of the inode
+  netfs_io_terminated_t term_func
+    The function to call upon completion
+  void *term_func_priv
+    The private data for term_func
+  bool using_pgpriv2
+    If we’re using PG_private_2 to mark in-progress write
+  bool caching
+    If we actually want to do the caching
+
+Description
+  Helper function for a netfs to write dirty data from an inode into the cache
+object that’s backing it.

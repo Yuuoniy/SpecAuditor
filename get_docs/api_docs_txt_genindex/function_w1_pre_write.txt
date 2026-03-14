@@ -1,0 +1,12 @@
+Function: void w1_pre_write ( struct w1_master * dev )
+
+pre-write operations
+
+Parameters
+  struct w1_master *dev
+    the master device
+
+Description
+  Pre-write operation, currently only supporting strong pullups.
+Program the hardware for a strong pullup, if one has been requested and
+the hardware supports it.

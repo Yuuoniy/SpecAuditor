@@ -1,0 +1,15 @@
+Function: int __of_overlay_apply_kunit ( struct kunit * test , u8 * overlay_begin , const u8 * overlay_end )
+
+Test managed of_overlay_fdt_apply() variant
+
+Parameters
+  struct kunit *test
+    test context
+  u8 *overlay_begin
+    start address of overlay to apply
+  const u8 *overlay_end
+    end address of overlay to apply
+
+Description
+  This is mostly internal API. See of_overlay_apply_kunit() for the wrapper
+that makes this easier to use.

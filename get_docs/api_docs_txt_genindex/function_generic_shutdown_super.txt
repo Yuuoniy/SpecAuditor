@@ -1,0 +1,13 @@
+Function: void generic_shutdown_super ( struct super_block * sb )
+
+common helper for -> kill_sb()
+
+Parameters
+  struct super_block *sb
+    superblock to kill
+
+Description
+  generic_shutdown_super() does all fs-independent work on superblock
+shutdown.  Typical -> kill_sb() should pick all fs-specific objects
+that need destruction out of superblock, call generic_shutdown_super() and release aforementioned objects.  Note: dentries and inodes _are_
+taken care of and do not need specific handling.

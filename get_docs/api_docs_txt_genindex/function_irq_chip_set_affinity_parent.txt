@@ -1,0 +1,14 @@
+Function: int irq_chip_set_affinity_parent ( struct irq_data * data , const struct cpumask * dest , bool force )
+
+Set affinity on the parent interrupt
+
+Parameters
+  struct irq_data *data
+    Pointer to interrupt specific data
+  const struct cpumask *dest
+    The affinity mask to set
+  bool force
+    Flag to enforce setting (disable online checks)
+
+Description
+  Conditional, as the underlying parent chip might not implement it.

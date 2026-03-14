@@ -1,0 +1,11 @@
+Macro: DECLARE_COMPLETION_ONSTACK
+
+
+
+Parameters
+  work
+    identifier for the completion structure
+
+Description
+  This macro declares and initializes a completion structure on the kernel
+stack.

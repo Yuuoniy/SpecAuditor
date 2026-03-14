@@ -1,0 +1,7 @@
+Function: void rcu_sync_dtor ( struct rcu_sync * rsp )
+
+Clean up an rcu_sync structure
+
+Parameters
+  struct rcu_sync *rsp
+    Pointer to rcu_sync structure to be cleaned up

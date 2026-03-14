@@ -1,0 +1,7 @@
+Function: struct dst_entry * skb_dst ( const struct sk_buff * skb )
+
+returns skb dst_entry
+
+Parameters
+  const struct sk_buff *skb
+    buffer

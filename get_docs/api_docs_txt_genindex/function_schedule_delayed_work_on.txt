@@ -1,0 +1,15 @@
+Function: bool schedule_delayed_work_on ( int cpu , struct delayed_work * dwork , unsigned long delay )
+
+queue work in global workqueue on CPU after delay
+
+Parameters
+  int cpu
+    cpu to use
+  struct delayed_work *dwork
+    job to be done
+  unsigned long delay
+    number of jiffies to wait
+
+Description
+  After waiting for a given time this puts a job in the kernel-global
+workqueue on the specified CPU.

@@ -1,0 +1,7 @@
+Function: void phy_disconnect ( struct phy_device * phydev )
+
+disable interrupts, stop state machine, and detach a PHY device
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct

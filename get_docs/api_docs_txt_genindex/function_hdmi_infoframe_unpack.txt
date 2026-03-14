@@ -1,0 +1,16 @@
+Function: int hdmi_infoframe_unpack ( union hdmi_infoframe * frame , const void * buffer , size_t size )
+
+unpack binary buffer to a HDMI infoframe
+
+Parameters
+  union hdmi_infoframe *frame
+    HDMI infoframe
+  const void *buffer
+    source buffer
+  size_t size
+    size of buffer
+
+Description
+  Unpacks the information contained in binary buffer buffer into a structured frame of a HDMI infoframe.
+Also verifies the checksum as required by section 5.3.5 of the HDMI 1.4
+specification.

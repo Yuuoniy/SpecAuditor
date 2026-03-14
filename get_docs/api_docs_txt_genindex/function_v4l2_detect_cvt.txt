@@ -1,0 +1,28 @@
+Function: bool v4l2_detect_cvt ( unsigned int frame_height , unsigned int hfreq , unsigned int vsync , unsigned int active_width , u32 polarities , bool interlaced , const struct v4l2_dv_timings_cap * cap , struct v4l2_dv_timings * fmt )
+
+detect if the given timings follow the CVT standard
+
+Parameters
+  unsigned int frame_height
+    the total height of the frame (including blanking) in lines.
+  unsigned int hfreq
+    the horizontal frequency in Hz.
+  unsigned int vsync
+    the height of the vertical sync in lines.
+  unsigned int active_width
+    active width of image (does not include blanking). This
+information is needed only in case of version 2 of reduced blanking.
+In other cases, this parameter does not have any effect on timings.
+  u32 polarities
+    the horizontal and vertical polarities (same as struct v4l2_bt_timings polarities).
+  bool interlaced
+    if this flag is true, it indicates interlaced format
+  const struct v4l2_dv_timings_cap *cap
+    the v4l2_dv_timings_cap capabilities.
+  struct v4l2_dv_timings *fmt
+    the resulting timings.
+
+Description
+  This function will attempt to detect if the given values correspond to a
+valid CVT format. If so, then it will return true, and fmt will be filled
+in with the found CVT timings.

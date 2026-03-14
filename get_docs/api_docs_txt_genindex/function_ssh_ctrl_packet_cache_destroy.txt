@@ -1,0 +1,7 @@
+Function: void ssh_ctrl_packet_cache_destroy ( void )
+
+Deinitialize the control packet cache.
+
+Parameters
+  void
+    no arguments

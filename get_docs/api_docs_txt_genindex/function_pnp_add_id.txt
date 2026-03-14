@@ -1,0 +1,9 @@
+Function: struct pnp_id * pnp_add_id ( struct pnp_dev * dev , const char * id )
+
+adds an EISA id to the specified device
+
+Parameters
+  struct pnp_dev *dev
+    pointer to the desired device
+  const char *id
+    pointer to an EISA id string

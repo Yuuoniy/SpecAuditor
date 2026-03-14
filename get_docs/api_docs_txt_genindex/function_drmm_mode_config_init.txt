@@ -1,0 +1,11 @@
+Function: int drmm_mode_config_init ( struct drm_device * dev )
+
+managed DRM mode_configuration structure initialization
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  Initialize dev ’s mode_config structure, used for tracking the graphics
+configuration of dev .

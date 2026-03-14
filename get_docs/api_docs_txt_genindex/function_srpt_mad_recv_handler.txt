@@ -1,0 +1,11 @@
+Function: void srpt_mad_recv_handler ( struct ib_mad_agent * mad_agent , struct ib_mad_send_buf * send_buf , struct ib_mad_recv_wc * mad_wc )
+
+MAD reception callback function
+
+Parameters
+  struct ib_mad_agent *mad_agent
+    Return value of ib_register_mad_agent() .
+  struct ib_mad_send_buf *send_buf
+    Not used.
+  struct ib_mad_recv_wc *mad_wc
+    Work completion reporting that a MAD has been received.

@@ -1,0 +1,16 @@
+Function: int crypto_sig_set_pubkey ( struct crypto_sig * tfm , const void * key , unsigned int keylen )
+
+Invoke set public key operation
+
+Parameters
+  struct crypto_sig *tfm
+    tfm handle
+  const void *key
+    BER encoded public key, algo OID, paramlen, BER encoded
+parameters
+  unsigned int keylen
+    length of the key (not including other data)
+
+Description
+  Function invokes the algorithm specific set key function, which knows
+how to decode and interpret the encoded key and parameters

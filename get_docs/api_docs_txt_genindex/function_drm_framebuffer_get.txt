@@ -1,0 +1,10 @@
+Function: void drm_framebuffer_get ( struct drm_framebuffer * fb )
+
+acquire a framebuffer reference
+
+Parameters
+  struct drm_framebuffer *fb
+    DRM framebuffer
+
+Description
+  This function increments the framebuffer’s reference count.

@@ -1,0 +1,13 @@
+Struct: struct memblock_region
+
+represents a memory region
+
+Members
+  base
+    base address of the region
+  size
+    size of the region
+  flags
+    memory region attributes
+  nid
+    NUMA node id

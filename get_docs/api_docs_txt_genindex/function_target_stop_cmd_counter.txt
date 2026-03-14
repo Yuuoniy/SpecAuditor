@@ -1,0 +1,7 @@
+Function: void target_stop_cmd_counter ( struct target_cmd_counter * cmd_cnt )
+
+Stop new IO from being added to the counter.
+
+Parameters
+  struct target_cmd_counter *cmd_cnt
+    counter to stop

@@ -1,0 +1,7 @@
+Struct: struct media_devnode * media_devnode_data ( struct file * filp )
+
+returns a pointer to the media_devnode
+
+Parameters
+  struct file *filp
+    pointer to struct file

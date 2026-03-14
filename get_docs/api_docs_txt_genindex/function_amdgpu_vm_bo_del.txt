@@ -1,0 +1,12 @@
+Function: void amdgpu_vm_bo_del ( struct amdgpu_device * adev , struct amdgpu_bo_va * bo_va )
+
+remove a bo from a specific vm
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+  struct amdgpu_bo_va *bo_va
+    requested bo_va
+
+Description
+  Remove bo_va->bo from the requested vm.

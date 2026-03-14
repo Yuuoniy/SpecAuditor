@@ -1,0 +1,12 @@
+Function: void dwc3_gadget_setup_nump ( struct dwc3 * dwc )
+
+calculate and initialize NUMP field of DWC3_DCFG
+
+Parameters
+  struct dwc3 *dwc
+    pointer to our context structure
+
+Description
+  The following looks like complex but it’s actually very simple. In order to
+calculate the number of packets we can burst at once on OUT transfers, we’re
+gonna use RxFIFO size.

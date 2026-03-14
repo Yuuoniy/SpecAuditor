@@ -1,0 +1,12 @@
+Function: void drm_atomic_helper_connector_reset ( struct drm_connector * connector )
+
+default drm_connector_funcs.reset hook for connectors
+
+Parameters
+  struct drm_connector *connector
+    drm connector
+
+Description
+  Resets the atomic state for connector by freeing the state pointer (which
+might be NULL, e.g. at driver load time) and allocating a new empty state
+object.

@@ -1,0 +1,21 @@
+Struct: struct damos_quota
+
+Controls the aggressiveness of the given scheme.
+
+Members
+  reset_interval
+    Charge reset interval in milliseconds.
+  ms
+    Maximum milliseconds that the scheme can use.
+  sz
+    Maximum bytes of memory that the action can be applied.
+  goals
+    Head of quota tuning goals ( damos_quota_goal ) list.
+  esz
+    Effective size quota in bytes.
+  weight_sz
+    Weight of the region’s size for prioritization.
+  weight_nr_accesses
+    Weight of the region’s nr_accesses for prioritization.
+  weight_age
+    Weight of the region’s age for prioritization.

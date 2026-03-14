@@ -1,0 +1,14 @@
+Function: bool consume_stock ( struct mem_cgroup * memcg , unsigned int nr_pages )
+
+Try to consume stocked charge on this cpu.
+
+Parameters
+  struct mem_cgroup *memcg
+    memcg to consume from.
+  unsigned int nr_pages
+    how many pages to charge.
+
+Description
+  Consume the cached charge if enough nr_pages are present otherwise return
+failure. Also return failure for charge request larger than
+MEMCG_CHARGE_BATCH or if the local lock is already taken.

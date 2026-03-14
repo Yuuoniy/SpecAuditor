@@ -1,0 +1,20 @@
+Function: void bitmap_cut ( unsigned long * dst , const unsigned long * src , unsigned int first , unsigned int cut , unsigned int nbits )
+
+remove bit region from bitmap and right shift remaining bits
+
+Parameters
+  unsigned long *dst
+    destination bitmap, might overlap with src
+  const unsigned long *src
+    source bitmap
+  unsigned int first
+    start bit of region to be removed
+  unsigned int cut
+    number of bits to remove
+  unsigned int nbits
+    bitmap size, in bits
+
+Description
+  Set the n-th bit of dst iff the n-th bit of src is set and
+n is less than first , or the m-th bit of src is set for any
+m such that first <= n < nbits, and m = n + cut .

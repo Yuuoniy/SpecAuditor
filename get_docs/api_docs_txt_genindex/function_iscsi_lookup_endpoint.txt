@@ -1,0 +1,10 @@
+Function: struct iscsi_endpoint * iscsi_lookup_endpoint ( u64 handle )
+
+get ep from handle
+
+Parameters
+  u64 handle
+    endpoint handle
+
+Description
+  Caller must do a iscsi_put_endpoint.

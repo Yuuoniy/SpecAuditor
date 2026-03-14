@@ -1,0 +1,15 @@
+Function: void typec_set_pwr_opmode ( struct typec_port * port , enum typec_pwr_opmode opmode )
+
+Report changed power operation mode
+
+Parameters
+  struct typec_port *port
+    The USB Type-C Port where the mode was changed
+  enum typec_pwr_opmode opmode
+    New power operation mode
+
+Description
+  This routine is used by the port drivers to report changed power operation
+mode in port . The modes are USB (default), 1.5A, 3.0A as defined in USB
+Type-C specification, and “USB Power Delivery” when the power levels are
+negotiated with methods defined in USB Power Delivery specification.

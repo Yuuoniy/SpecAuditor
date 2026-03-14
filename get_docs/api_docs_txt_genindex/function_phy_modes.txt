@@ -1,0 +1,12 @@
+Function: const char * phy_modes ( phy_interface_t interface )
+
+map phy_interface_t enum to device tree binding of phy-mode
+
+Parameters
+  phy_interface_t interface
+    enum phy_interface_t value
+
+Description
+  maps enum phy_interface_t defined in this file
+into the device tree binding of ‘phy-mode’, so that Ethernet
+device driver can get PHY interface from device tree.

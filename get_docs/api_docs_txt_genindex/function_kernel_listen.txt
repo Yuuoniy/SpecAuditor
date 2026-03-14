@@ -1,0 +1,12 @@
+Function: int kernel_listen ( struct socket * sock , int backlog )
+
+move socket to listening state (kernel space)
+
+Parameters
+  struct socket *sock
+    socket
+  int backlog
+    pending connections queue size
+
+Description
+  Returns 0 or an error.

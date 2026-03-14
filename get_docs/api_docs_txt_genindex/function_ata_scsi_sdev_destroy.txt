@@ -1,0 +1,15 @@
+Function: void ata_scsi_sdev_destroy ( struct scsi_device * sdev )
+
+SCSI device is about to be destroyed
+
+Parameters
+  struct scsi_device *sdev
+    SCSI device to be destroyed
+
+Description
+  sdev is about to be destroyed for hot/warm unplugging.  If
+this unplugging was initiated by libata as indicated by NULL
+dev->sdev, this function doesn’t have to do anything.
+Otherwise, SCSI layer initiated warm-unplug is in progress.
+Clear dev->sdev, schedule the device for ATA detach and invoke
+EH.

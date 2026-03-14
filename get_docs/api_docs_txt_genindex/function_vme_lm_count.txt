@@ -1,0 +1,12 @@
+Function: int vme_lm_count ( struct vme_resource * resource )
+
+Determine number of VME Addresses monitored
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME location monitor resource.
+
+Description
+  The number of contiguous addresses monitored is hardware dependent.
+Return the number of contiguous addresses monitored by the
+location monitor.

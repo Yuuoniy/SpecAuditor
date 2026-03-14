@@ -1,0 +1,13 @@
+Function: int register_sound_mixer ( const struct file_operations * fops , int dev )
+
+register a mixer device
+
+Parameters
+  const struct file_operations *fops
+    File operations for the driver
+  int dev
+    Unit number to allocate
+
+Description
+  Allocate a mixer device. Unit is the number of the mixer requested.
+Pass -1 to request the next free mixer unit.

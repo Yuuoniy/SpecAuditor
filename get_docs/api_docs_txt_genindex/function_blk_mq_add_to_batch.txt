@@ -1,0 +1,17 @@
+Function: bool blk_mq_add_to_batch ( struct request * req , struct io_comp_batch * iob , bool is_error , void ( * complete ) ( struct io_comp_batch * ) )
+
+add a request to the completion batch
+
+Parameters
+  struct request *req
+    The request to add to batch
+  struct io_comp_batch *iob
+    The batch to add the request
+  bool is_error
+    Specify true if the request failed with an error
+  void (*complete)(struct io_comp_batch *)
+    The completaion handler for the request
+
+Description
+  Batched completions only work when there is no I/O error and no special
+->end_io handler.

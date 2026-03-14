@@ -1,0 +1,14 @@
+Macro: kfifo_alloc
+
+
+
+Parameters
+  fifo
+    pointer to the fifo
+  size
+    the number of elements in the fifo, this must be a power of 2
+  gfp_mask
+    get_free_pages mask, passed to kmalloc()
+
+Description
+  This macro dynamically allocates a new fifo buffer.

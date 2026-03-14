@@ -1,0 +1,12 @@
+Function: void unplug_oldest_pwq ( struct workqueue_struct * wq )
+
+unplug the oldest pool_workqueue
+
+Parameters
+  struct workqueue_struct *wq
+    workqueue_struct where its oldest pwq is to be unplugged
+
+Description
+  This function should only be called for ordered workqueues where only the
+oldest pwq is unplugged, the others are plugged to suspend execution to
+ensure proper work item ordering:

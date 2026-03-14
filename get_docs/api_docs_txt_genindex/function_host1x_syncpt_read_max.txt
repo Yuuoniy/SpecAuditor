@@ -1,0 +1,11 @@
+Function: u32 host1x_syncpt_read_max ( struct host1x_syncpt * sp )
+
+read maximum syncpoint value
+
+Parameters
+  struct host1x_syncpt *sp
+    host1x syncpoint
+
+Description
+  The maximum syncpoint value indicates how many operations there are in
+queue, either in channel or in a software thread.

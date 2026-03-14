@@ -1,0 +1,17 @@
+Function: unsigned long cpu_util ( int cpu , struct task_struct * p , int dst_cpu , int boost )
+
+Estimates the amount of CPU capacity used by CFS tasks.
+
+Parameters
+  int cpu
+    the CPU to get the utilization for
+  struct task_struct *p
+    task for which the CPU utilization should be predicted or NULL
+  int dst_cpu
+    CPU p migrates to, -1 if p moves from cpu or p == NULL
+  int boost
+    1 to enable boosting, otherwise 0
+
+Description
+  The unit of the return value must be the same as the one of CPU capacity
+so that CPU utilization can be compared with CPU capacity.

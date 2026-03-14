@@ -1,0 +1,9 @@
+Function: int audit_list_rules_send ( struct sk_buff * request_skb , int seq )
+
+list the audit rules
+
+Parameters
+  struct sk_buff *request_skb
+    skb of request we are replying to (used to target the reply)
+  int seq
+    netlink audit message sequence (serial) number

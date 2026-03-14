@@ -1,0 +1,14 @@
+Macro: list_prepare_entry
+
+
+
+Parameters
+  pos
+    the type * to use as a start point
+  head
+    the head of the list
+  member
+    the name of the list_head within the struct.
+
+Description
+  Prepares a pos entry for use as a start point in list_for_each_entry_continue() .

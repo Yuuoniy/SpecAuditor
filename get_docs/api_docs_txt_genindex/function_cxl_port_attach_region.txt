@@ -1,0 +1,18 @@
+Function: int cxl_port_attach_region ( struct cxl_port * port , struct cxl_region * cxlr , struct cxl_endpoint_decoder * cxled , int pos )
+
+track a region’s interest in a port by endpoint
+
+Parameters
+  struct cxl_port *port
+    port to add a new region reference ‘ struct cxl_region_ref ’
+  struct cxl_region *cxlr
+    region to attach to port
+  struct cxl_endpoint_decoder *cxled
+    endpoint decoder used to create or further pin a region reference
+  int pos
+    interleave position of cxled in cxlr
+
+Description
+  The attach event is an opportunity to validate CXL decode setup
+constraints and record metadata needed for programming HDM decoders,
+in particular decoder target lists.

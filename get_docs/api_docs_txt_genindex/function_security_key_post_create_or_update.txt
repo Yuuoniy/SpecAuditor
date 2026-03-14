@@ -1,0 +1,20 @@
+Function: void security_key_post_create_or_update ( struct key * keyring , struct key * key , const void * payload , size_t payload_len , unsigned long flags , bool create )
+
+Notification of key create or update
+
+Parameters
+  struct key *keyring
+    keyring to which the key is linked to
+  struct key *key
+    created or updated key
+  const void *payload
+    data used to instantiate or update the key
+  size_t payload_len
+    length of payload
+  unsigned long flags
+    key flags
+  bool create
+    flag indicating whether the key was created or updated
+
+Description
+  Notify the caller of a key creation or update.

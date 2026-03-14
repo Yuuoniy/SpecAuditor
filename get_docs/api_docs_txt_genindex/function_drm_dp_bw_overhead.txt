@@ -1,0 +1,29 @@
+Function: int drm_dp_bw_overhead ( int lane_count , int hactive , int dsc_slice_count , int bpp_x16 , unsigned long flags )
+
+Calculate the BW overhead of a DP link stream
+
+Parameters
+  int lane_count
+    DP link lane count
+  int hactive
+    pixel count of the active period in one scanline of the stream
+  int dsc_slice_count
+    number of slices for DSC or ‘0’ for non-DSC
+  int bpp_x16
+    bits per pixel in .4 binary fixed point
+  unsigned long flags
+    DRM_DP_OVERHEAD_x flags
+
+Description
+  Calculate the BW allocation overhead of a DP link stream, depending
+on the link’s
+- lane_count - SST/MST mode ( flags / DRM_DP_OVERHEAD_MST )
+- symbol size ( flags / DRM_DP_OVERHEAD_UHBR )
+- FEC mode ( flags / DRM_DP_OVERHEAD_FEC )
+- SSC/REF_CLK mode ( flags / DRM_DP_OVERHEAD_SSC_REF_CLK )
+as well as the stream’s
+- hactive timing
+- bpp_x16 color depth
+- compression mode ( dsc_slice_count != 0)
+Note that this overhead doesn’t account for the 8b/10b, 128b/132b
+channel coding efficiency, for that see drm_dp_link_bw_channel_coding_efficiency() .

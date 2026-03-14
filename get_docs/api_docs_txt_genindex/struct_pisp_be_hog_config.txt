@@ -1,0 +1,11 @@
+Struct: struct pisp_be_hog_config
+
+PiSP Back End HOG config
+
+Members
+  compute_signed
+    Set 0 for unsigned gradients, 1 for signed
+  channel_mix
+    Channels proportions to use
+  stride
+    Stride in bytes between blocks directly below

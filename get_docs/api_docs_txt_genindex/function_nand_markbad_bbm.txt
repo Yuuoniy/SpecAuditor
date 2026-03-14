@@ -1,0 +1,9 @@
+Function: int nand_markbad_bbm ( struct nand_chip * chip , loff_t ofs )
+
+mark a block by updating the BBM
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+  loff_t ofs
+    offset of the block to mark bad

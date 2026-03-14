@@ -1,0 +1,13 @@
+Function: void sil_dev_config ( struct ata_device * dev )
+
+Apply device/host-specific errata fixups
+
+Parameters
+  struct ata_device *dev
+    Device to be examined
+
+Description
+  After the IDENTIFY [PACKET] DEVICE step is complete, and a
+device is known to be present, this function is called.
+We apply two errata fixups which are specific to Silicon Image,
+a Seagate and a Maxtor fixup.

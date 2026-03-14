@@ -1,0 +1,11 @@
+Macro: peci_driver_register
+
+
+
+Parameters
+  driver
+    the driver to be registered
+
+Description
+  PECI drivers that don’t need to do anything special in module init should
+use the convenience “module_peci_driver” macro instead

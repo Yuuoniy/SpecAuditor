@@ -1,0 +1,3 @@
+Enum: enum amd_ip_block_type
+
+Used to classify IP blocks by functionality.

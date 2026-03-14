@@ -1,0 +1,13 @@
+Struct: struct iio_trigger_ops
+
+operations structure for an iio_trigger.
+
+Members
+  set_trigger_state
+    switch on/off the trigger on demand
+  reenable
+    function to reenable the trigger when the
+use count is zero (may be NULL)
+  validate_device
+    function to validate the device when the
+current trigger gets changed.

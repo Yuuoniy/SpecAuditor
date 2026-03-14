@@ -1,0 +1,20 @@
+Function: void * __devres_alloc_node ( dr_release_t release , size_t size , gfp_t gfp , int nid , const char * name )
+
+Allocate device resource data
+
+Parameters
+  dr_release_t release
+    Release function devres will be associated with
+  size_t size
+    Allocation size
+  gfp_t gfp
+    Allocation flags
+  int nid
+    NUMA node
+  const char *name
+    Name of the resource
+
+Description
+  Allocate devres of size bytes.  The allocated area is zeroed, then
+associated with release .  The returned pointer can be passed to
+other devres_*() functions.

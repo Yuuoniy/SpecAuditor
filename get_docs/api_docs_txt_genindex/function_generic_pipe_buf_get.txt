@@ -1,0 +1,14 @@
+Function: bool generic_pipe_buf_get ( struct pipe_inode_info * pipe , struct pipe_buffer * buf )
+
+get a reference to a struct pipe_buffer
+
+Parameters
+  struct pipe_inode_info *pipe
+    the pipe that the buffer belongs to
+  struct pipe_buffer *buf
+    the buffer to get a reference to
+
+Description
+  This function grabs an extra reference to buf . It’s used in
+the tee() system call, when we duplicate the buffers in one
+pipe into another.

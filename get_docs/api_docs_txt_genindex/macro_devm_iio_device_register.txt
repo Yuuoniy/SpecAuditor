@@ -1,0 +1,15 @@
+Macro: devm_iio_device_register
+
+
+
+Parameters
+  dev
+    Device to allocate iio_dev for
+  indio_dev
+    Device structure filled by the device driver
+
+Description
+  Managed iio_device_register.  The IIO device registered with this
+function is automatically unregistered on driver detach. This function
+calls iio_device_register() internally. Refer to that function for more
+information.

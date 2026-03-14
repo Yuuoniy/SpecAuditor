@@ -1,0 +1,10 @@
+Function: int jbd2_journal_stop ( handle_t * handle )
+
+complete a transaction
+
+Parameters
+  handle_t *handle
+    transaction to complete.
+
+Description
+  All done for a particular handle.

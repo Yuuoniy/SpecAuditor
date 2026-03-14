@@ -1,0 +1,25 @@
+Function: struct gpio_desc * gpiochip_request_own_desc ( struct gpio_chip * gc , unsigned int hwnum , const char * label , enum gpio_lookup_flags lflags , enum gpiod_flags dflags )
+
+Allow GPIO chip to request its own descriptor
+
+Parameters
+  struct gpio_chip *gc
+    GPIO chip
+  unsigned int hwnum
+    hardware number of the GPIO for which to request the descriptor
+  const char *label
+    label for the GPIO
+  enum gpio_lookup_flags lflags
+    lookup flags for this GPIO or 0 if default, this can be used to
+specify things like line inversion semantics with the machine flags
+such as GPIO_OUT_LOW
+  enum gpiod_flags dflags
+    descriptor request flags for this GPIO or 0 if default, this
+can be used to specify consumer semantics such as open drain
+
+Description
+  Function allows GPIO chip drivers to request and use their own GPIO
+descriptors via gpiolib API. Difference to gpiod_request() is that this
+function will not increase reference count of the GPIO chip module. This
+allows the GPIO chip module to be unloaded as needed (we assume that the
+GPIO chip driver handles freeing the GPIOs it has requested).

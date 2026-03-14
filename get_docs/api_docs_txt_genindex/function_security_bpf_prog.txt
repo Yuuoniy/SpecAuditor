@@ -1,0 +1,11 @@
+Function: int security_bpf_prog ( struct bpf_prog * prog )
+
+Check if access to a bpf program is allowed
+
+Parameters
+  struct bpf_prog *prog
+    bpf program
+
+Description
+  Do a check when the kernel generates and returns a file descriptor for eBPF
+programs.

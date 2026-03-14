@@ -1,0 +1,18 @@
+Function: bool intel_set_pch_fifo_underrun_reporting ( struct intel_display * display , enum pipe pch_transcoder , bool enable )
+
+set PCH fifo underrun reporting state
+
+Parameters
+  struct intel_display *display
+    display device instance
+  enum pipe pch_transcoder
+    the PCH transcoder (same as pipe on IVB and older)
+  bool enable
+    whether underruns should be reported or not
+
+Description
+  This function makes us disable or enable PCH fifo underruns for a specific
+PCH transcoder. Notice that on some PCHs (e.g. CPT/PPT), disabling FIFO
+underrun reporting for one transcoder may also disable all the other PCH
+error interruts for the other transcoders, due to the fact that there’s just
+one interrupt mask/enable bit for all the transcoders.

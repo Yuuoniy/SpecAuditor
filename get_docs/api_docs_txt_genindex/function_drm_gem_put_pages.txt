@@ -1,0 +1,13 @@
+Function: void drm_gem_put_pages ( struct drm_gem_object * obj , struct page * * pages , bool dirty , bool accessed )
+
+helper to free backing pages for a GEM object
+
+Parameters
+  struct drm_gem_object *obj
+    obj in question
+  struct page **pages
+    pages to free
+  bool dirty
+    if true, pages will be marked as dirty
+  bool accessed
+    if true, the pages will be marked as accessed

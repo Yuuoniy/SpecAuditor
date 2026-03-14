@@ -1,0 +1,7 @@
+Function: void pci_clear_master ( struct pci_dev * dev )
+
+disables bus-mastering for device dev
+
+Parameters
+  struct pci_dev *dev
+    the PCI device to disable

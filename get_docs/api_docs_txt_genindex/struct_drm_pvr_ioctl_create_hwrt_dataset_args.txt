@@ -1,0 +1,40 @@
+Struct: struct drm_pvr_ioctl_create_hwrt_dataset_args
+
+Arguments for DRM_IOCTL_PVR_CREATE_HWRT_DATASET
+
+Members
+  geom_data_args
+    [IN] Geometry data arguments.
+  rt_data_args
+    [IN] Array of render target arguments. Each entry in this array represents a render target in a double buffered
+setup.
+  free_list_handles
+    [IN] Array of free list handles. free_list_handles[PVR_DRM_HWRT_FREE_LIST_LOCAL] must have initial
+size of at least that reported by drm_pvr_dev_query_runtime_info.free_list_min_pages .
+  width
+    [IN] Width in pixels.
+  height
+    [IN] Height in pixels.
+  samples
+    [IN] Number of samples.
+  layers
+    [IN] Number of layers.
+  isp_merge_lower_x
+    [IN] Lower X coefficient for triangle merging.
+  isp_merge_lower_y
+    [IN] Lower Y coefficient for triangle merging.
+  isp_merge_scale_x
+    [IN] Scale X coefficient for triangle merging.
+  isp_merge_scale_y
+    [IN] Scale Y coefficient for triangle merging.
+  isp_merge_upper_x
+    [IN] Upper X coefficient for triangle merging.
+  isp_merge_upper_y
+    [IN] Upper Y coefficient for triangle merging.
+  region_header_size
+    [IN] Size of region header array. This common field is used by
+both render targets in this data set. The units for this field differ depending on what version of the simple internal
+parameter format the device uses. If format 2 is in use then this is interpreted as the
+number of region headers. For other formats it is interpreted as the size in dwords.
+  handle
+    [OUT] Handle for created HWRT dataset.

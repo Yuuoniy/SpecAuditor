@@ -1,0 +1,14 @@
+Function: int balance_dirty_pages_ratelimited_flags ( struct address_space * mapping , unsigned int flags )
+
+Balance dirty memory state.
+
+Parameters
+  struct address_space *mapping
+    address_space which was dirtied.
+  unsigned int flags
+    BDP flags.
+
+Description
+  Processes which are dirtying memory should call in here once for each page
+which was newly dirtied.  The function will periodically check the system’s
+dirty state and will initiate writeback if needed.

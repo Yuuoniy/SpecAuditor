@@ -1,0 +1,10 @@
+Function: void ib_unregister_event_handler ( struct ib_event_handler * event_handler )
+
+Unregister an event handler
+
+Parameters
+  struct ib_event_handler *event_handler
+    Handler to unregister
+
+Description
+  Unregister an event handler registered with ib_register_event_handler() .

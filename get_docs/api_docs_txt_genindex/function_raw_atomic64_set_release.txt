@@ -1,0 +1,12 @@
+Function: void raw_atomic64_set_release ( atomic64_t * v , s64 i )
+
+atomic set with release ordering
+
+Parameters
+  atomic64_t *v
+    pointer to atomic64_t
+  s64 i
+    s64 value to assign
+
+Description
+  Atomically sets v to i with release ordering.

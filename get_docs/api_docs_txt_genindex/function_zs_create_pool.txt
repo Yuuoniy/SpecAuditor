@@ -1,0 +1,11 @@
+Function: struct zs_pool * zs_create_pool ( const char * name )
+
+Creates an allocation pool to work from.
+
+Parameters
+  const char *name
+    pool name to be created
+
+Description
+  This function must be called before anything when using
+the zsmalloc allocator.

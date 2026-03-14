@@ -1,0 +1,11 @@
+Function: struct timespec64 simple_inode_init_ts ( struct inode * inode )
+
+initialize the timestamps for a new inode
+
+Parameters
+  struct inode *inode
+    inode to be initialized
+
+Description
+  When a new inode is created, most filesystems set the timestamps to the
+current time. Add a helper to do this.

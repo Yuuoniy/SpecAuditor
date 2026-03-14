@@ -1,0 +1,15 @@
+Function: struct clk * clk_get_kunit ( struct kunit * test , struct device * dev , const char * con_id )
+
+Test managed clk_get()
+
+Parameters
+  struct kunit *test
+    The test context
+  struct device *dev
+    device for clock “consumer”
+  const char *con_id
+    clock consumer ID
+
+Description
+  Just like clk_get() , except the clk is managed by the test case and is
+automatically put with clk_put() after the test case concludes.

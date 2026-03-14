@@ -1,0 +1,13 @@
+Function: mipi_dsi_generic_write_seq_multi
+
+
+
+Parameters
+  ctx
+    Context for multiple DSI transactions
+  seq...
+    buffer containing the payload
+
+Description
+  This macro will print errors for you and error handling is optimized for
+callers that call this multiple times in a row.

@@ -1,0 +1,14 @@
+Function: int tipc_node_xmit ( struct net * net , struct sk_buff_head * list , u32 dnode , int selector )
+
+general link level function for message sending
+
+Parameters
+  struct net *net
+    the applicable net namespace
+  struct sk_buff_head *list
+    chain of buffers containing message
+  u32 dnode
+    address of destination node
+  int selector
+    a number used for deterministic link selection
+Consumes the buffer chain.

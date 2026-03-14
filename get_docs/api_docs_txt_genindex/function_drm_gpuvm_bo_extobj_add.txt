@@ -1,0 +1,12 @@
+Function: void drm_gpuvm_bo_extobj_add ( struct drm_gpuvm_bo * vm_bo )
+
+adds the drm_gpuvm_bo to its drm_gpuvm ’s extobj list
+
+Parameters
+  struct drm_gpuvm_bo *vm_bo
+    The drm_gpuvm_bo to add to its drm_gpuvm ’s the extobj list.
+
+Description
+  Adds the given vm_bo to its drm_gpuvm ’s extobj list if not on the list
+already and if the corresponding drm_gem_object is an external object,
+actually.

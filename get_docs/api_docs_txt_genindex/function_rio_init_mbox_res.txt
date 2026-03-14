@@ -1,0 +1,16 @@
+Function: void rio_init_mbox_res ( struct resource * res , int start , int end )
+
+Initialize a RIO mailbox resource
+
+Parameters
+  struct resource *res
+    resource struct
+  int start
+    start of mailbox range
+  int end
+    end of mailbox range
+
+Description
+  This function is used to initialize the fields of a resource
+for use as a mailbox resource.  It initializes a range of
+mailboxes using the start and end arguments.

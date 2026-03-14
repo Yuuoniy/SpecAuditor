@@ -1,0 +1,12 @@
+Function: void * phys_to_virt ( phys_addr_t address )
+
+map physical address to virtual
+
+Parameters
+  phys_addr_t address
+    address to remap
+
+Description
+  The returned virtual address is a current CPU mapping for
+the memory address given. It is only valid to use this function on
+addresses that have a kernel mapping

@@ -1,0 +1,20 @@
+Function: struct rchan * relay_open ( const char * base_filename , struct dentry * parent , size_t subbuf_size , size_t n_subbufs , const struct rchan_callbacks * cb , void * private_data )
+
+create a new relay channel
+
+Parameters
+  const char *base_filename
+    base name of files to create
+  struct dentry *parent
+    dentry of parent directory, NULL for root directory or buffer
+  size_t subbuf_size
+    size of sub-buffers
+  size_t n_subbufs
+    number of sub-buffers
+  const struct rchan_callbacks *cb
+    client callback functions
+  void *private_data
+    user-defined data
+
+Description
+  Returns channel pointer if successful, NULL otherwise.

@@ -1,0 +1,27 @@
+Struct: struct ifs_data
+
+attributes related to intel IFS driver
+
+Members
+  loaded_version
+    stores the currently loaded ifs image version.
+  loaded
+    If a valid test binary has been loaded into the memory
+  loading_error
+    Error occurred on another CPU while loading image
+  valid_chunks
+    number of chunks which could be validated.
+  status
+    it holds simple status pass/fail/untested
+  scan_details
+    opaque scan status code from h/w
+  cur_batch
+    number indicating the currently loaded test file
+  generation
+    IFS test generation enumerated by hardware
+  chunk_size
+    size of a test chunk
+  array_gen
+    test generation of array test
+  max_bundle
+    maximum bundle index

@@ -1,0 +1,12 @@
+Function: irqreturn_t amdgpu_irq_handler ( int irq , void * arg )
+
+IRQ handler
+
+Parameters
+  int irq
+    IRQ number (unused)
+  void *arg
+    pointer to DRM device
+
+Description
+  IRQ handler for amdgpu driver (all ASICs).

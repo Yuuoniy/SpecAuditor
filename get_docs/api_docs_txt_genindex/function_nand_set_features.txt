@@ -1,0 +1,15 @@
+Function: int nand_set_features ( struct nand_chip * chip , int addr , u8 * subfeature_param )
+
+wrapper to perform a SET_FEATURE
+
+Parameters
+  struct nand_chip *chip
+    NAND chip info structure
+  int addr
+    feature address
+  u8 *subfeature_param
+    the subfeature parameters, a four bytes array
+
+Description
+  Returns 0 for success, a negative error otherwise. Returns -ENOTSUPP if the
+operation cannot be handled.

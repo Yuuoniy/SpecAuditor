@@ -1,0 +1,11 @@
+Function: bool pci_check_and_mask_intx ( struct pci_dev * dev )
+
+mask INTx on pending interrupt
+
+Parameters
+  struct pci_dev *dev
+    the PCI device to operate on
+
+Description
+  Check if the device dev has its INTx line asserted, mask it and return
+true in that case. False is returned if no interrupt was pending.

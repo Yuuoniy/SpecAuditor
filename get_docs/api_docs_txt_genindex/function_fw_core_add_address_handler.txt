@@ -1,0 +1,12 @@
+Function: int fw_core_add_address_handler ( struct fw_address_handler * handler , const struct fw_address_region * region )
+
+register for incoming requests
+
+Parameters
+  struct fw_address_handler *handler
+    callback
+  const struct fw_address_region *region
+    region in the IEEE 1212 node space address range
+
+Description
+  region->start, ->end, and handler->length have to be quadlet-aligned.

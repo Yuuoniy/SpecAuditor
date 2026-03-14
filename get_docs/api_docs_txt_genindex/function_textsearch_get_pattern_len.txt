@@ -1,0 +1,7 @@
+Function: unsigned int textsearch_get_pattern_len ( struct ts_config * conf )
+
+return length of the pattern
+
+Parameters
+  struct ts_config *conf
+    search configuration

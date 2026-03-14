@@ -1,0 +1,14 @@
+Function: void kunit_deactivate_static_stub ( struct kunit * test , void * real_fn_addr )
+
+disable a function redirection
+
+Parameters
+  struct kunit *test
+    A pointer to the ‘ struct kunit ’ test context for the current test.
+  void *real_fn_addr
+    The address of the function to no-longer redirect
+
+Description
+  Deactivates a redirection configured with kunit_activate_static_stub() . After
+this function returns, calls to real_fn_addr() will execute the original
+real_fn, not any previously-configured replacement.

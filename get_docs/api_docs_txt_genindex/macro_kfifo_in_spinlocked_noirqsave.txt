@@ -1,0 +1,16 @@
+Macro: kfifo_in_spinlocked_noirqsave
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used
+  buf
+    the data to be added
+  n
+    number of elements to be added
+  lock
+    pointer to the spinlock to use for locking
+
+Description
+  This is a variant of kfifo_in_spinlocked() but uses spin_lock/ unlock() for locking and doesn’t disable interrupts.

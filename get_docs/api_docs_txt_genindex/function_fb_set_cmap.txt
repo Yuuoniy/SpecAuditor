@@ -1,0 +1,12 @@
+Function: int fb_set_cmap ( struct fb_cmap * cmap , struct fb_info * info )
+
+set the colormap
+
+Parameters
+  struct fb_cmap *cmap
+    frame buffer colormap structure
+  struct fb_info *info
+    frame buffer info structure
+
+Description
+  Sets the colormap cmap for a screen of device info .

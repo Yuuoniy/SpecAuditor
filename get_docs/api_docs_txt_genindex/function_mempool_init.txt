@@ -1,0 +1,20 @@
+Function: int mempool_init ( mempool_t * pool , int min_nr , mempool_alloc_t * alloc_fn , mempool_free_t * free_fn , void * pool_data )
+
+initialize a memory pool
+
+Parameters
+  mempool_t *pool
+    pointer to the memory pool that should be initialized
+  int min_nr
+    the minimum number of elements guaranteed to be
+allocated for this pool.
+  mempool_alloc_t *alloc_fn
+    user-defined element-allocation function.
+  mempool_free_t *free_fn
+    user-defined element-freeing function.
+  void *pool_data
+    optional private data available to the user-defined functions.
+
+Description
+  Like mempool_create() , but initializes the pool in (i.e. embedded in another
+structure).

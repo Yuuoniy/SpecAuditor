@@ -1,0 +1,13 @@
+Struct: struct cxl_dpa_perf
+
+DPA performance property entry
+
+Members
+  dpa_range
+    range for DPA address
+  coord
+    QoS performance data (i.e. latency, bandwidth)
+  cdat_coord
+    raw QoS performance data from CDAT
+  qos_class
+    QoS Class cookies

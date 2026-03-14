@@ -1,0 +1,7 @@
+Function: void show_one_workqueue ( struct workqueue_struct * wq )
+
+dump state of specified workqueue
+
+Parameters
+  struct workqueue_struct *wq
+    workqueue whose state will be printed

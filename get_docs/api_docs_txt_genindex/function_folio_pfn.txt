@@ -1,0 +1,11 @@
+Function: unsigned long folio_pfn ( const struct folio * folio )
+
+Return the Page Frame Number of a folio.
+
+Parameters
+  const struct folio *folio
+    The folio.
+
+Description
+  A folio may contain multiple pages.  The pages have consecutive
+Page Frame Numbers.

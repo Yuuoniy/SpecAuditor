@@ -1,0 +1,17 @@
+Function: struct scsi_device * scsi_device_lookup ( struct Scsi_Host * shost , uint channel , uint id , u64 lun )
+
+find a device given the host
+
+Parameters
+  struct Scsi_Host *shost
+    SCSI host pointer
+  uint channel
+    SCSI channel (zero if only one channel)
+  uint id
+    SCSI target number (physical unit number)
+  u64 lun
+    SCSI Logical Unit Number
+
+Description
+  Looks up the scsi_device with the specified channel , id , lun for a given host.  The returned scsi_device has an additional reference that
+needs to be released with scsi_device_put once you’re done with it.

@@ -1,0 +1,10 @@
+Function: int security_ismaclabel ( const char * name )
+
+Check if the named attribute is a MAC label
+
+Parameters
+  const char *name
+    full extended attribute name
+
+Description
+  Check if the extended attribute specified by name represents a MAC label.

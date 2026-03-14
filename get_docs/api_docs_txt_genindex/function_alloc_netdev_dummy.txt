@@ -1,0 +1,7 @@
+Function: struct net_device * alloc_netdev_dummy ( int sizeof_priv )
+
+Allocate and initialize a dummy net device.
+
+Parameters
+  int sizeof_priv
+    size of private data to allocate space for

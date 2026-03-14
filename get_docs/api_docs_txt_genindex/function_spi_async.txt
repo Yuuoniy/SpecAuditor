@@ -1,0 +1,13 @@
+Function: int spi_async ( struct spi_device * spi , struct spi_message * message )
+
+asynchronous SPI transfer
+
+Parameters
+  struct spi_device *spi
+    device with which data will be exchanged
+  struct spi_message *message
+    describes the data transfers, including completion callback
+
+Description
+  This call may be used in_irq and other contexts which can’t sleep,
+as well as from task contexts which can sleep.

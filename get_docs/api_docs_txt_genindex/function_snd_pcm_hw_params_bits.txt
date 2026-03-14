@@ -1,0 +1,7 @@
+Function: int snd_pcm_hw_params_bits ( const struct snd_pcm_hw_params * p )
+
+Get the number of bits per the sample.
+
+Parameters
+  const struct snd_pcm_hw_params *p
+    hardware parameters

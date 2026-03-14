@@ -1,0 +1,10 @@
+Function: struct amdgpu_bo * amdgpu_bo_ref ( struct amdgpu_bo * bo )
+
+reference an amdgpu_bo buffer object
+
+Parameters
+  struct amdgpu_bo *bo
+    amdgpu_bo buffer object
+
+Description
+  References the contained ttm_buffer_object .

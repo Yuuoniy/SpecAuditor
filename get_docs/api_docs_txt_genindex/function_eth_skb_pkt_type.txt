@@ -1,0 +1,13 @@
+Function: void eth_skb_pkt_type ( struct sk_buff * skb , const struct net_device * dev )
+
+Assign packet type if destination address does not match
+
+Parameters
+  struct sk_buff *skb
+    Assigned a packet type if address does not match dev address
+  const struct net_device *dev
+    Network device used to compare packet address against
+
+Description
+  If the destination MAC address of the packet does not match the network
+device address, assign an appropriate packet type.

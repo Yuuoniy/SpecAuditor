@@ -1,0 +1,11 @@
+Struct: int hdmi_spd_infoframe_check ( struct hdmi_spd_infoframe * frame )
+
+check a HDMI SPD infoframe
+
+Parameters
+  struct hdmi_spd_infoframe *frame
+    HDMI SPD infoframe
+
+Description
+  Validates that the infoframe is consistent and updates derived fields
+(eg. length) based on other fields.

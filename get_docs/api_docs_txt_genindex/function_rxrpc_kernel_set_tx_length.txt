@@ -1,0 +1,15 @@
+Function: void rxrpc_kernel_set_tx_length ( struct socket * sock , struct rxrpc_call * call , s64 tx_total_len )
+
+Set the total Tx length on a call
+
+Parameters
+  struct socket *sock
+    The socket the call is on
+  struct rxrpc_call *call
+    The call to be informed
+  s64 tx_total_len
+    The amount of data to be transmitted for this call
+
+Description
+  Allow a kernel service to set the total transmit length on a call.  This
+allows buffer-to-packet encrypt-and-copy to be performed.

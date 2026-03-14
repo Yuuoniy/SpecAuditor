@@ -1,0 +1,15 @@
+Macro: castable_to_type
+
+
+
+Parameters
+  n
+    variable or constant value
+  T
+    variable or data type
+
+Description
+  Unlike the __same_type() macro, this allows a constant value as the
+first argument. If this value would not overflow into an assignment
+of the second argument’s type, it returns true. Otherwise, this falls
+back to __same_type() .

@@ -1,0 +1,10 @@
+Function: void iommufd_ctx_get ( struct iommufd_ctx * ictx )
+
+Get a context reference
+
+Parameters
+  struct iommufd_ctx *ictx
+    Context to get
+
+Description
+  The caller must already hold a valid reference to ictx.

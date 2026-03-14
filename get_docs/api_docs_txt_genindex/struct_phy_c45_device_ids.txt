@@ -1,0 +1,11 @@
+Struct: struct phy_c45_device_ids
+
+802.3-c45 Device Identifiers
+
+Members
+  devices_in_package
+    IEEE 802.3 devices in package register value.
+  mmds_present
+    bit vector of MMDs present.
+  device_ids
+    The device identifier for each present device.

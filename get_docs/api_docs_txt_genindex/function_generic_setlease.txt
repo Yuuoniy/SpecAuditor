@@ -1,0 +1,18 @@
+Function: int generic_setlease ( struct file * filp , int arg , struct file_lease * * flp , void * * priv )
+
+sets a lease on an open file
+
+Parameters
+  struct file *filp
+    file pointer
+  int arg
+    type of lease to obtain
+  struct file_lease **flp
+    input - file_lock to use, output - file_lock inserted
+  void **priv
+    private data for lm_setup (may be NULL if lm_setup
+doesn’t require it)
+
+Description
+  The (input) flp->fl_lmops->lm_break function is required
+by break_lease() .

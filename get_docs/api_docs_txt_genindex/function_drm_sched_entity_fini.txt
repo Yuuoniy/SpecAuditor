@@ -1,0 +1,10 @@
+Function: void drm_sched_entity_fini ( struct drm_sched_entity * entity )
+
+Destroy a context entity
+
+Parameters
+  struct drm_sched_entity *entity
+    scheduler entity
+
+Description
+  Cleanups up entity which has been initialized by drm_sched_entity_init() .

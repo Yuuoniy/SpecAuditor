@@ -1,0 +1,11 @@
+Function: void drm_buddy_free_list ( struct drm_buddy * mm , struct list_head * objects , unsigned int flags )
+
+free blocks
+
+Parameters
+  struct drm_buddy *mm
+    DRM buddy manager
+  struct list_head *objects
+    input list head to free blocks
+  unsigned int flags
+    optional flags like DRM_BUDDY_CLEARED

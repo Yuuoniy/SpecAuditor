@@ -1,0 +1,11 @@
+Function: void drm_atomic_state_default_clear ( struct drm_atomic_state * state )
+
+clear base atomic state
+
+Parameters
+  struct drm_atomic_state *state
+    atomic state
+
+Description
+  Default implementation for clearing atomic state.
+This should only be used by drivers which are still subclassing drm_atomic_state and haven’t switched to drm_private_state yet.

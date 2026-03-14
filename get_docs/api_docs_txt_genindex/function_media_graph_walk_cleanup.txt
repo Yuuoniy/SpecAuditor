@@ -1,0 +1,10 @@
+Function: void media_graph_walk_cleanup ( struct media_graph * graph )
+
+Release resources used by graph walk.
+
+Parameters
+  struct media_graph *graph
+    Media graph structure that will be used to walk the graph
+
+Description
+  This function is deprecated, use media_pipeline_for_each_pad() instead.

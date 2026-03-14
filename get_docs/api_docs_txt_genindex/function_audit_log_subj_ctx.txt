@@ -1,0 +1,12 @@
+Function: int audit_log_subj_ctx ( struct audit_buffer * ab , struct lsm_prop * prop )
+
+Add LSM subject information
+
+Parameters
+  struct audit_buffer *ab
+    audit_buffer
+  struct lsm_prop *prop
+    LSM subject properties.
+
+Description
+  Add a subj= field and, if necessary, a AUDIT_MAC_TASK_CONTEXTS record.

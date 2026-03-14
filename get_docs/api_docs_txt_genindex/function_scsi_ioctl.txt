@@ -1,0 +1,18 @@
+Function: int scsi_ioctl ( struct scsi_device * sdev , bool open_for_write , int cmd , void __user * arg )
+
+Dispatch ioctl to scsi device
+
+Parameters
+  struct scsi_device *sdev
+    scsi device receiving ioctl
+  bool open_for_write
+    is the file / block device opened for writing?
+  int cmd
+    which ioctl is it
+  void __user *arg
+    data associated with ioctl
+
+Description
+  The scsi_ioctl() function differs from most ioctls in that it
+does not take a major/minor number as the dev field.  Rather, it takes
+a pointer to a struct scsi_device .

@@ -1,0 +1,7 @@
+Function: int xe_ggtt_init ( struct xe_ggtt * ggtt )
+
+Regular non-early GGTT initialization
+
+Parameters
+  struct xe_ggtt *ggtt
+    the xe_ggtt to be initialized

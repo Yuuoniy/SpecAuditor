@@ -1,0 +1,7 @@
+Function: __bpf_kfunc void bpf_task_release ( struct task_struct * p )
+
+Release the reference acquired on a task.
+
+Parameters
+  struct task_struct *p
+    The task on which a reference is being released.

@@ -1,0 +1,7 @@
+Function: void svc_xprt_enqueue ( struct svc_xprt * xprt )
+
+Queue a transport on an idle nfsd thread
+
+Parameters
+  struct svc_xprt *xprt
+    transport with data pending

@@ -1,0 +1,9 @@
+Function: struct dvb_frontend * drxk_attach ( const struct drxk_config * config , struct i2c_adapter * i2c )
+
+Attach a drxk demod
+
+Parameters
+  const struct drxk_config *config
+    pointer to struct drxk_config with demod configuration.
+  struct i2c_adapter *i2c
+    i2c adapter to use.

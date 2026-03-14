@@ -1,0 +1,20 @@
+Function: int drm_event_reserve_init ( struct drm_device * dev , struct drm_file * file_priv , struct drm_pending_event * p , struct drm_event * e )
+
+init a DRM event and reserve space for it
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_file *file_priv
+    DRM file private data
+  struct drm_pending_event *p
+    tracking structure for the pending event
+  struct drm_event *e
+    actual event data to deliver to userspace
+
+Description
+  This function prepares the passed in event for eventual delivery. If the event
+doesn’t get delivered (because the IOCTL fails later on, before queuing up
+anything) then the even must be cancelled and freed using drm_event_cancel_free() . Successfully initialized events should be sent out
+using drm_send_event() or drm_send_event_locked() to signal completion of the
+asynchronous event to userspace.

@@ -1,0 +1,14 @@
+Function: int xbc_get_info ( int * node_size , size_t * data_size )
+
+Get the information of loaded boot config
+
+Parameters
+  int *node_size
+    A pointer to store the number of nodes.
+  size_t *data_size
+    A pointer to store the size of bootconfig data.
+
+Description
+  Get the number of used nodes in node_size if it is not NULL,
+and the size of bootconfig data in data_size if it is not NULL.
+Return 0 if the boot config is initialized, or return -ENODEV.

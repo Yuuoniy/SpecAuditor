@@ -1,0 +1,12 @@
+Function: drm_for_each_encoder
+
+
+
+Parameters
+  encoder
+    the loop cursor
+  dev
+    the DRM device
+
+Description
+  Iterate over all encoders of dev .

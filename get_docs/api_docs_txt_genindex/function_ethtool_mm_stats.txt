@@ -1,0 +1,18 @@
+Function: struct ethtool_mm_stats
+
+802.3 MAC merge layer statistics
+
+Members
+  MACMergeFrameAssErrorCount
+    received MAC frames with reassembly errors
+  MACMergeFrameSmdErrorCount
+    received MAC frames/fragments rejected due to unknown or incorrect SMD
+  MACMergeFrameAssOkCount
+    received MAC frames that were successfully reassembled and passed up
+  MACMergeFragCountRx
+    number of additional correct SMD-C mPackets received due to preemption
+  MACMergeFragCountTx
+    number of additional mPackets sent due to preemption
+  MACMergeHoldCount
+    number of times the MM layer entered the HOLD state, which blocks
+transmission of preemptible traffic

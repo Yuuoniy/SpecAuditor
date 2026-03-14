@@ -1,0 +1,13 @@
+Function: struct edid * drm_get_edid ( struct drm_connector * connector , struct i2c_adapter * adapter )
+
+get EDID data, if available
+
+Parameters
+  struct drm_connector *connector
+    connector we’re probing
+  struct i2c_adapter *adapter
+    I2C adapter to use for DDC
+
+Description
+  Poke the given I2C channel to grab EDID data if possible.  If found,
+attach it to the connector.

@@ -1,0 +1,53 @@
+Struct: struct mii_bus
+
+Represents an MDIO bus
+
+Members
+  owner
+    Who owns this device
+  name
+    User friendly name for this MDIO device, or driver name
+  id
+    Unique identifier for this bus, typical from bus hierarchy
+  priv
+    Driver private data
+  read
+    Perform a read transfer on the bus
+  write
+    Perform a write transfer on the bus
+  read_c45
+    Perform a C45 read transfer on the bus
+  write_c45
+    Perform a C45 write transfer on the bus
+  reset
+    Perform a reset of the bus
+  stats
+    Statistic counters per device on the bus
+  mdio_lock
+    A lock to ensure that only one thing can read/write
+the MDIO bus at a time
+  parent
+    Parent device of this bus
+  state
+    State of bus structure
+  dev
+    Kernel device representation
+  mdio_map
+    list of all MDIO devices on bus
+  phy_mask
+    PHY addresses to be ignored when probing
+  phy_ignore_ta_mask
+    PHY addresses to ignore the TA/read failure
+  irq
+    An array of interrupts, each PHY’s interrupt at the index
+matching its address
+  reset_delay_us
+    GPIO reset pulse width in microseconds
+  reset_post_delay_us
+    GPIO reset deassert delay in microseconds
+  reset_gpiod
+    Reset GPIO descriptor pointer
+  shared_lock
+    protect access to the shared element
+  shared
+    shared state across different PHYs

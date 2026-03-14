@@ -1,0 +1,11 @@
+Function: u32 intel_read_rawclk ( struct intel_display * display )
+
+Determine the current RAWCLK frequency
+
+Parameters
+  struct intel_display *display
+    display instance
+
+Description
+  Determine the current RAWCLK frequency. RAWCLK is a fixed
+frequency clock so this needs to done only once.

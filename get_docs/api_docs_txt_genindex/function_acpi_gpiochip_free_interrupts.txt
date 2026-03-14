@@ -1,0 +1,11 @@
+Function: void acpi_gpiochip_free_interrupts ( struct gpio_chip * chip )
+
+Free GPIO ACPI event interrupts.
+
+Parameters
+  struct gpio_chip *chip
+    GPIO chip
+
+Description
+  Free interrupts associated with GPIO ACPI event method for the given
+GPIO chip.

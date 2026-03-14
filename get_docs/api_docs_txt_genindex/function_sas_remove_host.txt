@@ -1,0 +1,11 @@
+Function: void sas_remove_host ( struct Scsi_Host * shost )
+
+tear down a Scsi_Host’s SAS data structures
+
+Parameters
+  struct Scsi_Host *shost
+    Scsi Host that is torn down
+
+Description
+  Removes all SAS PHYs and remote PHYs for a given Scsi_Host and remove the
+Scsi_Host as well.

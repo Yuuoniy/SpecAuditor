@@ -1,0 +1,15 @@
+Function: int irq_set_vcpu_affinity ( unsigned int irq , void * vcpu_info )
+
+Set vcpu affinity for the interrupt
+
+Parameters
+  unsigned int irq
+    interrupt number to set affinity
+  void *vcpu_info
+    vCPU specific data or pointer to a percpu array of vCPU
+specific data for percpu_devid interrupts
+
+Description
+  This function uses the vCPU specific data to set the vCPU affinity for
+an irq. The vCPU specific data is passed from outside, such as KVM. One
+example code path is as below: KVM -> IOMMU -> irq_set_vcpu_affinity() .

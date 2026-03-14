@@ -1,0 +1,13 @@
+Struct: struct ipu3_uapi_anr_stitch_pyramid
+
+ANR stitch pyramid
+
+Members
+  entry0
+    pyramid LUT entry0, range [0x0, 0x3f]
+  entry1
+    pyramid LUT entry1, range [0x0, 0x3f]
+  entry2
+    pyramid LUT entry2, range [0x0, 0x3f]
+  reserved
+    reserved

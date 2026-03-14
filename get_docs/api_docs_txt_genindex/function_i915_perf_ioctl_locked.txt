@@ -1,0 +1,11 @@
+Function: long i915_perf_ioctl_locked ( struct i915_perf_stream * stream , unsigned int cmd , unsigned long arg )
+
+support ioctl() usage with i915 perf stream FDs
+
+Parameters
+  struct i915_perf_stream *stream
+    An i915 perf stream
+  unsigned int cmd
+    the ioctl request
+  unsigned long arg
+    the ioctl data

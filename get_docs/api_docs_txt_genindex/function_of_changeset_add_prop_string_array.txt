@@ -1,0 +1,18 @@
+Function: int of_changeset_add_prop_string_array ( struct of_changeset * ocs , struct device_node * np , const char * prop_name , const char * const * str_array , size_t sz )
+
+Add a string list property to a changeset
+
+Parameters
+  struct of_changeset *ocs
+    changeset pointer
+  struct device_node *np
+    device node pointer
+  const char *prop_name
+    name of the property to be added
+  const char * const *str_array
+    pointer to an array of null terminated strings
+  size_t sz
+    number of string array elements
+
+Description
+  Create a string list property and add it to a changeset.

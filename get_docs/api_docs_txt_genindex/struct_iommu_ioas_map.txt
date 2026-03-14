@@ -1,0 +1,20 @@
+Struct: struct iommu_ioas_map
+
+ioctl(IOMMU_IOAS_MAP)
+
+Members
+  size
+    sizeof( struct iommu_ioas_map )
+  flags
+    Combination of enum iommufd_ioas_map_flags
+  ioas_id
+    IOAS ID to change the mapping of
+  __reserved
+    Must be 0
+  user_va
+    Userspace pointer to start mapping from
+  length
+    Number of bytes to map
+  iova
+    IOVA the mapping was placed at. If IOMMU_IOAS_MAP_FIXED_IOVA is set
+then this must be provided as input.

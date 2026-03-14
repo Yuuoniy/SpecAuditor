@@ -1,0 +1,10 @@
+Function: int v4l2_fh_is_singular ( struct v4l2_fh * fh )
+
+Returns 1 if this filehandle is the only filehandle opened for the associated video_device.
+
+Parameters
+  struct v4l2_fh *fh
+    pointer to struct v4l2_fh
+
+Description
+  If fh is NULL, then it returns 0.

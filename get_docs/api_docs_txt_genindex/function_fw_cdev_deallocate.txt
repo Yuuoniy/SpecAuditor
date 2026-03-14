@@ -1,0 +1,8 @@
+Function: struct fw_cdev_deallocate
+
+Free a CSR address range or isochronous resource
+
+Members
+  handle
+    Handle to the address range or iso resource, as returned by the
+kernel when the range or resource was allocated

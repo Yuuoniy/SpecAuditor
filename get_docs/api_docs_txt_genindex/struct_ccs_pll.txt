@@ -1,0 +1,47 @@
+Struct: struct ccs_pll
+
+Full CCS PLL configuration
+
+Members
+  bus_type
+    Type of the data bus, CCS_PLL_BUS_TYPE_* (input)
+  op_lanes
+    Number of operational lanes (input)
+  vt_lanes
+    Number of video timing lanes (input)
+  csi2
+    CSI-2 related parameters
+  csi2.lanes
+    The number of the CSI-2 data lanes (input)
+  binning_horizontal
+    Horizontal binning factor (input)
+  binning_vertical
+    Vertical binning factor (input)
+  scale_m
+    Downscaling factor, M component, [16, max] (input)
+  scale_n
+    Downscaling factor, N component, typically 16 (input)
+  bits_per_pixel
+    Bits per pixel on the output data bus (input)
+  op_bits_per_lane
+    Number of bits per OP lane (input)
+  flags
+    CCS_PLL_FLAG_* (input)
+  link_freq
+    Chosen link frequency (input)
+  ext_clk_freq_hz
+    External clock frequency, i.e. the sensor’s input clock
+(input)
+  vt_fr
+    Video timing front-end configuration (output)
+  vt_bk
+    Video timing back-end configuration (output)
+  op_fr
+    Operational timing front-end configuration (output)
+  op_bk
+    Operational timing back-end configuration (output)
+  pixel_rate_csi
+    Pixel rate on the output data bus (output)
+  pixel_rate_pixel_array
+    Nominal pixel rate in the sensor’s pixel array
+(output)

@@ -1,0 +1,14 @@
+Function: int drm_gpuvm_prepare_vm ( struct drm_gpuvm * gpuvm , struct drm_exec * exec , unsigned int num_fences )
+
+prepare the GPUVMs common dma-resv
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm
+  struct drm_exec *exec
+    the drm_exec context
+  unsigned int num_fences
+    the amount of dma_fences to reserve
+
+Description
+  Calls drm_exec_prepare_obj() for the GPUVMs dummy drm_gem_object ; if num_fences is zero drm_exec_lock_obj() is called instead.

@@ -1,0 +1,14 @@
+Function: int snd_dmaengine_pcm_open ( struct snd_pcm_substream * substream , struct dma_chan * chan )
+
+Open a dmaengine based PCM substream
+
+Parameters
+  struct snd_pcm_substream *substream
+    PCM substream
+  struct dma_chan *chan
+    DMA channel to use for data transfers
+
+Description
+  The function should usually be called from the pcm open callback. Note that
+this function will use private_data field of the substream’s runtime. So it
+is not available to your pcm driver implementation.

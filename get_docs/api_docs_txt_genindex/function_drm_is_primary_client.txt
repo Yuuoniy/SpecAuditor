@@ -1,0 +1,10 @@
+Function: bool drm_is_primary_client ( const struct drm_file * file_priv )
+
+is this an open file of the primary node
+
+Parameters
+  const struct drm_file *file_priv
+    DRM file
+
+Description
+  Returns true if this is an open file of the primary node, i.e. drm_file.minor of file_priv is a primary minor.

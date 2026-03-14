@@ -1,0 +1,10 @@
+Function: u32 eth_hw_addr_crc ( struct netdev_hw_addr * ha )
+
+Calculate CRC from netdev_hw_addr
+
+Parameters
+  struct netdev_hw_addr *ha
+    pointer to hardware address
+
+Description
+  Calculate CRC from a hardware address as basis for filter hashes.

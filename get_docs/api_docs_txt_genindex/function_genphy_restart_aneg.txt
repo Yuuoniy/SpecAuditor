@@ -1,0 +1,7 @@
+Function: int genphy_restart_aneg ( struct phy_device * phydev )
+
+Enable and Restart Autonegotiation
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct

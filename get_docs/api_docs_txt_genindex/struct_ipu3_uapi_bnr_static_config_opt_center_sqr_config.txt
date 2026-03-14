@@ -1,0 +1,9 @@
+Struct: struct ipu3_uapi_bnr_static_config_opt_center_sqr_config
+
+BNR optical square
+
+Members
+  x_sqr_reset
+    Reset value of X^2.
+  y_sqr_reset
+    Reset value of Y^2.

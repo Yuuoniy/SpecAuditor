@@ -1,0 +1,11 @@
+Function: s32 i2c_smbus_read_byte ( const struct i2c_client * client )
+
+SMBus “receive byte” protocol
+
+Parameters
+  const struct i2c_client *client
+    Handle to slave device
+
+Description
+  This executes the SMBus “receive byte” protocol, returning negative errno
+else the byte received from the device.

@@ -1,0 +1,13 @@
+Struct: struct srpt_port_id
+
+LIO RDMA port information
+
+Members
+  mutex
+    Protects tpg_list changes.
+  tpg_list
+    TPGs associated with the RDMA port name.
+  wwn
+    WWN associated with the RDMA port name.
+  name
+    ASCII representation of the port name.

@@ -1,0 +1,14 @@
+Function: void drm_mm_init ( struct drm_mm * mm , u64 start , u64 size )
+
+initialize a drm-mm allocator
+
+Parameters
+  struct drm_mm *mm
+    the drm_mm structure to initialize
+  u64 start
+    start of the range managed by mm
+  u64 size
+    end of the range managed by mm
+
+Description
+  Note that mm must be cleared to 0 before calling this function.

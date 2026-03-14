@@ -1,0 +1,13 @@
+Function: struct rkisp1_cif_isp_bls_meas_val
+
+BLS measured values
+
+Members
+  meas_r
+    Mean measured value for Bayer pattern R
+  meas_gr
+    Mean measured value for Bayer pattern Gr
+  meas_gb
+    Mean measured value for Bayer pattern Gb
+  meas_b
+    Mean measured value for Bayer pattern B

@@ -1,0 +1,22 @@
+Function: int vme_slave_get ( struct vme_resource * resource , int * enabled , unsigned long long * vme_base , unsigned long long * size , dma_addr_t * buf_base , u32 * aspace , u32 * cycle )
+
+Retrieve VME slave window configuration.
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME slave resource.
+  int *enabled
+    Pointer to variable for storing state.
+  unsigned long long *vme_base
+    Pointer to variable for storing window base address.
+  unsigned long long *size
+    Pointer to variable for storing window size.
+  dma_addr_t *buf_base
+    Pointer to variable for storing slave buffer base address.
+  u32 *aspace
+    Pointer to variable for storing VME address space.
+  u32 *cycle
+    Pointer to variable for storing VME data transfer cycle type.
+
+Description
+  Return configuration for provided VME slave window.

@@ -1,0 +1,9 @@
+Function: struct nvmem_device * devm_nvmem_register ( struct device * dev , const struct nvmem_config * config )
+
+Register a managed nvmem device for given nvmem_config. Also creates a binary entry in /sys/bus/nvmem/devices/dev-name/nvmem
+
+Parameters
+  struct device *dev
+    Device that uses the nvmem device.
+  const struct nvmem_config *config
+    nvmem device configuration with which nvmem device is created.

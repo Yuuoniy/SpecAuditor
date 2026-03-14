@@ -1,0 +1,20 @@
+Function: void uart_parse_options ( const char * options , int * baud , int * parity , int * bits , int * flow )
+
+Parse serial port baud/parity/bits/flow control.
+
+Parameters
+  const char *options
+    pointer to option string
+  int *baud
+    pointer to an ‘int’ variable for the baud rate.
+  int *parity
+    pointer to an ‘int’ variable for the parity.
+  int *bits
+    pointer to an ‘int’ variable for the number of data bits.
+  int *flow
+    pointer to an ‘int’ variable for the flow control character.
+
+Description
+  uart_parse_options() decodes a string containing the serial console
+options. The format of the string is <baud><parity><bits><flow>,
+eg: 115200n8r

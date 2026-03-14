@@ -1,0 +1,7 @@
+Function: void gpiod_add_lookup_table ( struct gpiod_lookup_table * table )
+
+register GPIO device consumers
+
+Parameters
+  struct gpiod_lookup_table *table
+    table of consumers to register

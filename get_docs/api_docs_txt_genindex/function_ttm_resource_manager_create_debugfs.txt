@@ -1,0 +1,15 @@
+Function: void ttm_resource_manager_create_debugfs ( struct ttm_resource_manager * man , struct dentry * parent , const char * name )
+
+Create debugfs entry for specified resource manager.
+
+Parameters
+  struct ttm_resource_manager *man
+    The TTM resource manager for which the debugfs stats file be creates
+  struct dentry * parent
+    debugfs directory in which the file will reside
+  const char *name
+    The filename to create.
+
+Description
+  This function setups up a debugfs file that can be used to look
+at debug statistics of the specified ttm_resource_manager.

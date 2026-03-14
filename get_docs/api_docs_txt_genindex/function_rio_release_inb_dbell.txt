@@ -1,0 +1,16 @@
+Function: int rio_release_inb_dbell ( struct rio_mport * mport , u16 start , u16 end )
+
+release inbound doorbell message service
+
+Parameters
+  struct rio_mport *mport
+    RIO master port from which to release the doorbell resource
+  u16 start
+    Doorbell info range start
+  u16 end
+    Doorbell info range end
+
+Description
+  Releases ownership of an inbound doorbell resource and removes
+callback from the doorbell event list. Returns 0 if the request
+has been satisfied.

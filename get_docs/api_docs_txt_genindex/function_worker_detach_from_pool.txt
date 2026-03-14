@@ -1,0 +1,12 @@
+Function: void worker_detach_from_pool ( struct worker * worker )
+
+detach a worker from its pool
+
+Parameters
+  struct worker *worker
+    worker which is attached to its pool
+
+Description
+  Undo the attaching which had been done in worker_attach_to_pool() .  The
+caller worker shouldn’t access to the pool after detached except it has
+other reference to the pool.

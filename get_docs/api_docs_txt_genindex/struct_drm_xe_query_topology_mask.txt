@@ -1,0 +1,13 @@
+Struct: struct drm_xe_query_topology_mask
+
+describe the topology mask of a GT
+
+Members
+  gt_id
+    GT ID the mask is associated with
+  type
+    type of mask
+  num_bytes
+    number of bytes in requested mask
+  mask
+    little-endian mask of num_bytes

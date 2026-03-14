@@ -1,0 +1,14 @@
+Function: void __drm_atomic_helper_connector_hdmi_reset ( struct drm_connector * connector , struct drm_connector_state * new_conn_state )
+
+Initializes all HDMI drm_connector_state resources
+
+Parameters
+  struct drm_connector *connector
+    DRM connector
+  struct drm_connector_state *new_conn_state
+    connector state to reset
+
+Description
+  Initializes all HDMI resources from a drm_connector_state without
+actually allocating it. This is useful for HDMI drivers, in
+combination with __drm_atomic_helper_connector_reset() or drm_atomic_helper_connector_reset() .

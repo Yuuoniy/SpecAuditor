@@ -1,0 +1,14 @@
+Function: int ata_host_start ( struct ata_host * host )
+
+start and freeze ports of an ATA host
+
+Parameters
+  struct ata_host *host
+    ATA host to start ports for
+
+Description
+  Start and then freeze ports of host .  Started status is
+recorded in host->flags, so this function can be called
+multiple times.  Ports are guaranteed to get started only
+once.  If host->ops is not initialized yet, it is set to the
+first non-dummy port ops.

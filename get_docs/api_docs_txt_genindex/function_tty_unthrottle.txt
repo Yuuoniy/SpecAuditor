@@ -1,0 +1,13 @@
+Function: void tty_unthrottle ( struct tty_struct * tty )
+
+flow control
+
+Parameters
+  struct tty_struct *tty
+    terminal
+
+Description
+  Indicate that a tty may continue transmitting data down the stack. Takes
+the tty_struct->termios_rwsem to protect against parallel
+throttle/unthrottle and also to ensure the driver can consistently reference
+its own termios data at this point when implementing software flow control.

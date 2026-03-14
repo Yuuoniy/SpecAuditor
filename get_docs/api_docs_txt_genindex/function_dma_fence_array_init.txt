@@ -1,0 +1,21 @@
+Function: void dma_fence_array_init ( struct dma_fence_array * array , int num_fences , struct dma_fence * * fences , u64 context , unsigned seqno , bool signal_on_any )
+
+Init a custom fence array
+
+Parameters
+  struct dma_fence_array *array
+    [in]    dma fence array to arm
+  int num_fences
+    [in]    number of fences to add in the array
+  struct dma_fence **fences
+    [in]    array containing the fences
+  u64 context
+    [in]    fence context to use
+  unsigned seqno
+    [in]    sequence number to use
+  bool signal_on_any
+    [in]    signal on any fence in the array
+
+Description
+  Implementation of dma_fence_array_create without allocation. Useful to init
+a preallocated dma fence array in the path of reclaim or dma fence signaling.

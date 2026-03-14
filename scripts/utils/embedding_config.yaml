@@ -1,0 +1,7 @@
+embedding:
+  api_key_env: EMBEDDING_API_KEY
+  legacy_api_key_env: SILICONFLOW_API_KEY
+  base_url_env: EMBEDDING_BASE_URL
+  model_env: EMBEDDING_MODEL
+  default_base_url: "https://api.siliconflow.cn/v1/embeddings"
+  default_model: "BAAI/bge-large-en-v1.5"

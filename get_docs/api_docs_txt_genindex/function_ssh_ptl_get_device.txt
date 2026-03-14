@@ -1,0 +1,7 @@
+Function: struct device * ssh_ptl_get_device ( struct ssh_ptl * ptl )
+
+Get device associated with packet transport layer.
+
+Parameters
+  struct ssh_ptl *ptl
+    The packet transport layer.

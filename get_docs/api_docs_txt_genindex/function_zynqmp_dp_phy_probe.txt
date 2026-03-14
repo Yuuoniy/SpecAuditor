@@ -1,0 +1,12 @@
+Function: int zynqmp_dp_phy_probe ( struct zynqmp_dp * dp )
+
+Probe the PHYs
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure
+
+Description
+  Probe PHYs for all lanes. Less PHYs may be available than the number of
+lanes, which is not considered an error as long as at least one PHY is
+found. The caller can check dp->num_lanes to check how many PHYs were found.

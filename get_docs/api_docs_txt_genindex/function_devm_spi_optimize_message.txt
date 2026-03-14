@@ -1,0 +1,15 @@
+Function: int devm_spi_optimize_message ( struct device * dev , struct spi_device * spi , struct spi_message * msg )
+
+managed version of spi_optimize_message()
+
+Parameters
+  struct device *dev
+    the device that manages msg (usually spi->dev )
+  struct spi_device *spi
+    the device that will be used for the message
+  struct spi_message *msg
+    the message to optimize
+
+Description
+  spi_unoptimize_message() will automatically be called when the device is
+removed.

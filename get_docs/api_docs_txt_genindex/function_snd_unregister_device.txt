@@ -1,0 +1,10 @@
+Function: int snd_unregister_device ( struct device * dev )
+
+unregister the device on the given card
+
+Parameters
+  struct device *dev
+    the device instance
+
+Description
+  Unregisters the device file already registered via snd_register_device() .

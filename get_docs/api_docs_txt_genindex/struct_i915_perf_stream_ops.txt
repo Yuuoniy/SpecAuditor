@@ -1,0 +1,29 @@
+Struct: struct i915_perf_stream_ops
+
+the OPs to support a specific stream type
+
+Members
+  enable
+    Enables the collection of HW samples, either in response to I915_PERF_IOCTL_ENABLE or implicitly called when stream is opened
+without I915_PERF_FLAG_DISABLED .
+  disable
+    Disables the collection of HW samples, either in response
+to I915_PERF_IOCTL_DISABLE or implicitly called before destroying
+the stream.
+  poll_wait
+    Call poll_wait, passing a wait queue that will be woken
+once there is something ready to read() for the stream
+  wait_unlocked
+    For handling a blocking read, wait until there is
+something to ready to read() for the stream. E.g. wait on the same
+wait queue that would be passed to poll_wait() .
+  read
+    Copy buffered metrics as records to userspace buf : the userspace, destination buffer count : the number of bytes to copy, requested by userspace offset : zero at the start of the read, updated as the read
+proceeds, it represents how many bytes have been copied so far and
+the buffer offset for copying the next record. Copy as many buffered i915 perf samples and records for this stream
+to userspace as will fit in the given buffer. Only write complete records; returning - ENOSPC if there isn’t room
+for a complete record. Return any error condition that results in a short read such as
+- ENOSPC or - EFAULT , even though these may be squashed before
+returning to userspace.
+  destroy
+    Cleanup any stream specific resources. The stream will always be disabled before this is called.

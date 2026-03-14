@@ -1,0 +1,15 @@
+Macro: v4l2_subdev_state_get_crop
+
+
+
+Parameters
+  state
+    subdevice state
+  pad
+    pad id
+  ...
+    stream id (optional argument)
+
+Description
+  This returns a pointer to crop rectangle for the given pad + stream in the
+subdev state.

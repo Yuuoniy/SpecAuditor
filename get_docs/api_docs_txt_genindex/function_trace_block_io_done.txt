@@ -1,0 +1,10 @@
+Function: void trace_block_io_done ( struct request * rq )
+
+block IO operation request completed
+
+Parameters
+  struct request *rq
+    block IO operation request
+
+Description
+  Called when block operation request rq is completed

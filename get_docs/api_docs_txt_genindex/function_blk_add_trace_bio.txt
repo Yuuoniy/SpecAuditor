@@ -1,0 +1,16 @@
+Function: void blk_add_trace_bio ( struct request_queue * q , struct bio * bio , u32 what , int error )
+
+Add a trace for a bio oriented action
+
+Parameters
+  struct request_queue *q
+    queue the io is for
+  struct bio *bio
+    the source bio
+  u32 what
+    the action
+  int error
+    error, if any
+
+Description
+  Records an action against a bio. Will log the bio offset + size.

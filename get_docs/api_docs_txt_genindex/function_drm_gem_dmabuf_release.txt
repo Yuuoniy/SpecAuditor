@@ -1,0 +1,11 @@
+Function: void drm_gem_dmabuf_release ( struct dma_buf * dma_buf )
+
+dma_buf release implementation for GEM
+
+Parameters
+  struct dma_buf *dma_buf
+    buffer to be released
+
+Description
+  Generic release function for dma_bufs exported as PRIME buffers. GEM drivers
+must use this in their dma_buf_ops structure as the release callback. drm_gem_dmabuf_release() should be used in conjunction with drm_gem_dmabuf_export() .

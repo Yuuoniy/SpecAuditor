@@ -1,0 +1,16 @@
+Function: bool page_pool_get_stats ( const struct page_pool * pool , struct page_pool_stats * stats )
+
+fetch page pool stats
+
+Parameters
+  const struct page_pool *pool
+    pool from which page was allocated
+  struct page_pool_stats *stats
+    struct page_pool_stats to fill in
+
+Description
+  Retrieve statistics about the page_pool. This API is only available
+if the kernel has been configured with CONFIG_PAGE_POOL_STATS=y .
+A pointer to a caller allocated struct page_pool_stats structure
+is passed to this API which is filled in. The caller can then report
+those stats to the user (perhaps via ethtool, debugfs, etc.).

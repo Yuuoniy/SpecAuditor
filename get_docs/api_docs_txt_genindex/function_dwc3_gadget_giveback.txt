@@ -1,0 +1,16 @@
+Function: void dwc3_gadget_giveback ( struct dwc3_ep * dep , struct dwc3_request * req , int status )
+
+call struct usb_request ’s ->complete callback
+
+Parameters
+  struct dwc3_ep *dep
+    The endpoint to whom the request belongs to
+  struct dwc3_request *req
+    The request we’re giving back
+  int status
+    completion code for the request
+
+Description
+  Must be called with controller’s lock held and interrupts disabled. This
+function will unmap req and call its -> complete() callback to notify upper
+layers that it has completed.

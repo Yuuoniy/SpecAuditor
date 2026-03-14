@@ -1,0 +1,20 @@
+Struct: struct iommu_ioas_copy
+
+ioctl(IOMMU_IOAS_COPY)
+
+Members
+  size
+    sizeof( struct iommu_ioas_copy )
+  flags
+    Combination of enum iommufd_ioas_map_flags
+  dst_ioas_id
+    IOAS ID to change the mapping of
+  src_ioas_id
+    IOAS ID to copy from
+  length
+    Number of bytes to copy and map
+  dst_iova
+    IOVA the mapping was placed at. If IOMMU_IOAS_MAP_FIXED_IOVA is
+set then this must be provided as input.
+  src_iova
+    IOVA to start the copy

@@ -1,0 +1,7 @@
+Function: int dwc3_core_soft_reset ( struct dwc3 * dwc )
+
+Issues core soft reset and PHY reset
+
+Parameters
+  struct dwc3 *dwc
+    pointer to our context structure

@@ -1,0 +1,17 @@
+Function: int drm_mode_create_tv_properties_legacy ( struct drm_device * dev , unsigned int num_modes , const char * const modes [ ] )
+
+create TV specific connector properties
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  unsigned int num_modes
+    number of different TV formats (modes) supported
+  const char * const modes[]
+    array of pointers to strings containing name of each format
+
+Description
+  Called by a driver’s TV initialization routine, this function creates
+the TV specific connector properties for a given device.  Caller is
+responsible for allocating a list of format names and passing them to
+this routine.

@@ -1,0 +1,15 @@
+Function: ssize_t mipi_dsi_generic_write ( struct mipi_dsi_device * dsi , const void * payload , size_t size )
+
+transmit data using a generic write packet
+
+Parameters
+  struct mipi_dsi_device *dsi
+    DSI peripheral device
+  const void *payload
+    buffer containing the payload
+  size_t size
+    size of payload buffer
+
+Description
+  This function will automatically choose the right data type depending on
+the payload length.

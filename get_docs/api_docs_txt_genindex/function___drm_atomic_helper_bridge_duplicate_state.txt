@@ -1,0 +1,13 @@
+Function: void __drm_atomic_helper_bridge_duplicate_state ( struct drm_bridge * bridge , struct drm_bridge_state * state )
+
+Copy atomic bridge state
+
+Parameters
+  struct drm_bridge *bridge
+    bridge object
+  struct drm_bridge_state *state
+    atomic bridge state
+
+Description
+  Copies atomic state from a bridge’s current state and resets inferred values.
+This is useful for drivers that subclass the bridge state.

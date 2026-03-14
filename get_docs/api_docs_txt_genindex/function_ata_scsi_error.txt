@@ -1,0 +1,10 @@
+Function: void ata_scsi_error ( struct Scsi_Host * host )
+
+SCSI layer error handler callback
+
+Parameters
+  struct Scsi_Host *host
+    SCSI host on which error occurred
+
+Description
+  Handles SCSI-layer-thrown error events.

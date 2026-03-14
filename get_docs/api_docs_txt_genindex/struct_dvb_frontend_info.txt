@@ -1,0 +1,35 @@
+Struct: struct dvb_frontend_info
+
+Frontend properties and capabilities
+
+Members
+  name
+    Name of the frontend
+  type
+    DEPRECATED .
+Should not be used on modern programs,
+as a frontend may have more than one type.
+In order to get the support types of a given
+frontend, use DTV_ENUM_DELSYS instead.
+  frequency_min
+    Minimal frequency supported by the frontend.
+  frequency_max
+    Minimal frequency supported by the frontend.
+  frequency_stepsize
+    All frequencies are multiple of this value.
+  frequency_tolerance
+    Frequency tolerance.
+  symbol_rate_min
+    Minimal symbol rate, in bauds
+(for Cable/Satellite systems).
+  symbol_rate_max
+    Maximal symbol rate, in bauds
+(for Cable/Satellite systems).
+  symbol_rate_tolerance
+    Maximal symbol rate tolerance, in ppm
+(for Cable/Satellite systems).
+  notifier_delay
+    DEPRECATED . Not used by any driver.
+  caps
+    Capabilities supported by the frontend,
+as specified in enum fe_caps .

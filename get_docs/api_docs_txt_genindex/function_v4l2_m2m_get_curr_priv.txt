@@ -1,0 +1,7 @@
+Function: void * v4l2_m2m_get_curr_priv ( struct v4l2_m2m_dev * m2m_dev )
+
+return driver private data for the currently running instance or NULL if no instance is running
+
+Parameters
+  struct v4l2_m2m_dev *m2m_dev
+    opaque pointer to the internal data to handle M2M context

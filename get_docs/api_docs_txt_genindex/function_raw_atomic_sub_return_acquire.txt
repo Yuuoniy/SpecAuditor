@@ -1,0 +1,12 @@
+Function: int raw_atomic_sub_return_acquire ( int i , atomic_t * v )
+
+atomic subtract with acquire ordering
+
+Parameters
+  int i
+    int value to subtract
+  atomic_t *v
+    pointer to atomic_t
+
+Description
+  Atomically updates v to ( v - i ) with acquire ordering.

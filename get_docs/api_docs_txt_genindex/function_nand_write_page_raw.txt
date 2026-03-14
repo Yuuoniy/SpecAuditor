@@ -1,0 +1,16 @@
+Function: int nand_write_page_raw ( struct nand_chip * chip , const uint8_t * buf , int oob_required , int page )
+
+[INTERN] raw page write function
+
+Parameters
+  struct nand_chip *chip
+    nand chip info structure
+  const uint8_t *buf
+    data buffer
+  int oob_required
+    must write chip->oob_poi to OOB
+  int page
+    page number to write
+
+Description
+  Not for syndrome calculating ECC controllers, which use a special oob layout.

@@ -1,0 +1,8 @@
+Function: int edac_device_add_device ( struct edac_device_ctl_info * edac_dev )
+
+Insert the ‘edac_dev’ structure into the edac_device global list and create sysfs entries associated with edac_device structure.
+
+Parameters
+  struct edac_device_ctl_info *edac_dev
+    pointer to edac_device structure to be added to the list
+‘edac_device’ structure.

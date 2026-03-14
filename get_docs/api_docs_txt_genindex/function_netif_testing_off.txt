@@ -1,0 +1,10 @@
+Function: void netif_testing_off ( struct net_device * dev )
+
+set device as not under test.
+
+Parameters
+  struct net_device *dev
+    network device
+
+Description
+  Device is not in testing state.

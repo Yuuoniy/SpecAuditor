@@ -1,0 +1,12 @@
+Function: bool raw_atomic_add_negative_relaxed ( int i , atomic_t * v )
+
+atomic add and test if negative with relaxed ordering
+
+Parameters
+  int i
+    int value to add
+  atomic_t *v
+    pointer to atomic_t
+
+Description
+  Atomically updates v to ( v + i ) with relaxed ordering.

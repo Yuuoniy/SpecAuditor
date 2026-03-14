@@ -1,0 +1,12 @@
+Function: int folio_mapcount ( const struct folio * folio )
+
+Number of mappings of this folio.
+
+Parameters
+  const struct folio *folio
+    The folio.
+
+Description
+  The folio mapcount corresponds to the number of present user page table
+entries that reference any part of a folio. Each such present user page
+table entry must be paired with exactly on folio reference.

@@ -1,0 +1,7 @@
+Function: void scsi_host_put ( struct Scsi_Host * shost )
+
+dec a Scsi_Host ref count
+
+Parameters
+  struct Scsi_Host *shost
+    Pointer to Scsi_Host to dec.

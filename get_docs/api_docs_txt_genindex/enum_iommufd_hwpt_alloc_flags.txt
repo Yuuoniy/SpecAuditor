@@ -1,0 +1,3 @@
+Enum: enum iommufd_hwpt_alloc_flags
+
+Flags for HWPT allocation

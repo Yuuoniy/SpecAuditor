@@ -1,0 +1,62 @@
+Struct: struct video_device
+
+Structure used to create and manage the V4L2 device nodes.
+
+Members
+  entity
+    struct media_entity
+  intf_devnode
+    pointer to struct media_intf_devnode
+  pipe
+    struct media_pipeline
+  fops
+    pointer to struct v4l2_file_operations for the video device
+  device_caps
+    device capabilities as used in v4l2_capabilities
+  dev
+    struct device for the video device
+  cdev
+    character device
+  v4l2_dev
+    pointer to struct v4l2_device parent
+  dev_parent
+    pointer to struct device parent
+  ctrl_handler
+    Control handler associated with this device node.
+May be NULL.
+  queue
+    struct vb2_queue associated with this device node. May be NULL.
+  prio
+    pointer to struct v4l2_prio_state with device’s Priority state.
+If NULL, then v4l2_dev->prio will be used.
+  name
+    video device name
+  vfl_type
+    V4L device type, as defined by enum vfl_devnode_type
+  vfl_dir
+    V4L receiver, transmitter or m2m
+  minor
+    device node ‘minor’. It is set to -1 if the registration failed
+  num
+    number of the video device node
+  flags
+    video device flags. Use bitops to set/clear/test flags.
+Contains a set of enum v4l2_video_device_flags .
+  index
+    attribute to differentiate multiple indices on one physical device
+  fh_lock
+    Lock for all v4l2_fhs
+  fh_list
+    List of struct v4l2_fh
+  dev_debug
+    Internal device debug flags, not for use by drivers
+  tvnorms
+    Supported tv norms
+  release
+    video device release() callback
+  ioctl_ops
+    pointer to struct v4l2_ioctl_ops with ioctl callbacks
+  valid_ioctls
+    bitmap with the valid ioctls for this device
+  lock
+    pointer to struct mutex serialization lock

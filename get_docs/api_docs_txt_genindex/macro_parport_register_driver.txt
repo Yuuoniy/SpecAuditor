@@ -1,0 +1,12 @@
+Macro: parport_register_driver
+
+
+
+Parameters
+  driver
+    structure describing the driver
+
+Description
+  This can be called by a parallel port device driver in order
+to receive notifications about ports being found in the
+system, as well as ports no longer available.

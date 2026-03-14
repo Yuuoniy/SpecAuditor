@@ -1,0 +1,9 @@
+Function: int bearer_name_validate ( const char * name , struct tipc_bearer_names * name_parts )
+
+validate & (optionally) deconstruct bearer name
+
+Parameters
+  const char *name
+    ptr to bearer name string
+  struct tipc_bearer_names *name_parts
+    ptr to area for bearer name components (or NULL if not needed)

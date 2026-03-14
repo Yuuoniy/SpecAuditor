@@ -1,0 +1,17 @@
+Function: int snd_ac97_mixer ( struct snd_ac97_bus * bus , struct snd_ac97_template * template , struct snd_ac97 * * rac97 )
+
+create an Codec97 component
+
+Parameters
+  struct snd_ac97_bus *bus
+    the AC97 bus which codec is attached to
+  struct snd_ac97_template *template
+    the template of ac97, including index, callbacks and
+the private data.
+  struct snd_ac97 **rac97
+    the pointer to store the new ac97 instance.
+
+Description
+  Creates an Codec97 component.  An struct snd_ac97 instance is newly
+allocated and initialized from the template.  The codec
+is then initialized by the standard procedure.

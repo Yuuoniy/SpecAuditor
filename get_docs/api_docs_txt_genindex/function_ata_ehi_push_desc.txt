@@ -1,0 +1,15 @@
+Function: void ata_ehi_push_desc ( struct ata_eh_info * ehi , const char * fmt , ... )
+
+push error description with separator
+
+Parameters
+  struct ata_eh_info *ehi
+    target EHI
+  const char *fmt
+    printf format string
+  ...
+    variable arguments
+
+Description
+  Format string according to fmt and append it to ehi->desc .
+If ehi->desc is not empty, “, “ is added in-between.

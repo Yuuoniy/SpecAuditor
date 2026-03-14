@@ -1,0 +1,19 @@
+Function: int iscsi_tcp_recv_skb ( struct iscsi_conn * conn , struct sk_buff * skb , unsigned int offset , bool offloaded , int * status )
+
+Process skb
+
+Parameters
+  struct iscsi_conn *conn
+    iscsi connection
+  struct sk_buff *skb
+    network buffer with header and/or data segment
+  unsigned int offset
+    offset in skb
+  bool offloaded
+    bool indicating if transfer was offloaded
+  int *status
+    iscsi TCP status result
+
+Description
+  Will return status of transfer in status . And will return
+number of bytes copied.

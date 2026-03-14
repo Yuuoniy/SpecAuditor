@@ -1,0 +1,10 @@
+Function: void intel_runtime_pm_enable ( struct intel_runtime_pm * rpm )
+
+enable runtime pm
+
+Parameters
+  struct intel_runtime_pm *rpm
+    the intel_runtime_pm structure
+
+Description
+  This function enables runtime pm at the end of the driver load sequence.

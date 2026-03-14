@@ -1,0 +1,15 @@
+Function: int security_task_prlimit ( const struct cred * cred , const struct cred * tcred , unsigned int flags )
+
+Check if get/setting resources limits is allowed
+
+Parameters
+  const struct cred *cred
+    current task credentials
+  const struct cred *tcred
+    target task credentials
+  unsigned int flags
+    LSM_PRLIMIT_* flag bits indicating a get/set/both
+
+Description
+  Check permission before getting and/or setting the resource limits of
+another task.

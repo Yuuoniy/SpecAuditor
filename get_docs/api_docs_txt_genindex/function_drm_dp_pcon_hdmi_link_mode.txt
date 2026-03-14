@@ -1,0 +1,16 @@
+Function: int drm_dp_pcon_hdmi_link_mode ( struct drm_dp_aux * aux , u8 * frl_trained_mask )
+
+get the PCON HDMI LINK MODE
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  u8 *frl_trained_mask
+    pointer to store bitmask of the trained bw configuration.
+Valid only if the MODE returned is FRL. For Normal Link training mode
+only 1 of the bits will be set, but in case of Extended mode, more than
+one bits can be set.
+
+Description
+  Returns the link mode : TMDS or FRL on success, else returns negative error
+code.

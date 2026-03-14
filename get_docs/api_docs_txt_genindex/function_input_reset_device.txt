@@ -1,0 +1,12 @@
+Function: void input_reset_device ( struct input_dev * dev )
+
+reset/restore the state of input device
+
+Parameters
+  struct input_dev *dev
+    input device whose state needs to be reset
+
+Description
+  This function tries to reset the state of an opened input device and
+bring internal state and state if the hardware in sync with each other.
+We mark all keys as released, restore LED state, repeat rate, etc.

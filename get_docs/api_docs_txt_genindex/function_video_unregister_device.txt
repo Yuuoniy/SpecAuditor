@@ -1,0 +1,10 @@
+Function: void video_unregister_device ( struct video_device * vdev )
+
+Unregister video devices.
+
+Parameters
+  struct video_device *vdev
+    struct video_device to register
+
+Description
+  Does nothing if vdev == NULL or if video_is_registered() returns false.

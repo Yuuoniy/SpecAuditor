@@ -1,0 +1,15 @@
+Function: void intel_frontbuffer_track ( struct intel_frontbuffer * old , struct intel_frontbuffer * new , unsigned int frontbuffer_bits )
+
+update frontbuffer tracking
+
+Parameters
+  struct intel_frontbuffer *old
+    current buffer for the frontbuffer slots
+  struct intel_frontbuffer *new
+    new buffer for the frontbuffer slots
+  unsigned int frontbuffer_bits
+    bitmask of frontbuffer slots
+
+Description
+  This updates the frontbuffer tracking bits frontbuffer_bits by clearing them
+from old and setting them in new . Both old and new can be NULL.

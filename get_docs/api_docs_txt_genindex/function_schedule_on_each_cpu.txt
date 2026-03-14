@@ -1,0 +1,11 @@
+Function: int schedule_on_each_cpu ( work_func_t func )
+
+execute a function synchronously on each online CPU
+
+Parameters
+  work_func_t func
+    the function to call
+
+Description
+  schedule_on_each_cpu() executes func on each online CPU using the
+system workqueue and blocks until all CPUs have completed. schedule_on_each_cpu() is very slow.

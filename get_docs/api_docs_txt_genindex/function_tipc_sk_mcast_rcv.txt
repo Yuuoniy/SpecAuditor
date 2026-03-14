@@ -1,0 +1,14 @@
+Function: void tipc_sk_mcast_rcv ( struct net * net , struct sk_buff_head * arrvq , struct sk_buff_head * inputq )
+
+Deliver multicast messages to all destination sockets
+
+Parameters
+  struct net *net
+    the associated network namespace
+  struct sk_buff_head *arrvq
+    queue with arriving messages, to be cloned after destination lookup
+  struct sk_buff_head *inputq
+    queue with cloned messages, delivered to socket after dest lookup
+
+Description
+  Multi-threaded: parallel calls with reference to same queues may occur

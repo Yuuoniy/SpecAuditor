@@ -1,0 +1,13 @@
+Function: void mpt_free_msg_frame ( MPT_ADAPTER * ioc , MPT_FRAME_HDR * mf )
+
+Place MPT request frame back on FreeQ.
+
+Parameters
+  MPT_ADAPTER *ioc
+    Pointer to MPT adapter structure
+  MPT_FRAME_HDR *mf
+    Pointer to MPT request frame
+
+Description
+  This routine places a MPT request frame back on the MPT adapter’s
+FreeQ.

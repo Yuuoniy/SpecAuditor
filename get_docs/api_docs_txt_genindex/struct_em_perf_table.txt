@@ -1,0 +1,11 @@
+Struct: struct em_perf_table
+
+Performance states table
+
+Members
+  rcu
+    RCU used for safe access and destruction
+  kref
+    Reference counter to track the users
+  state
+    List of performance states, in ascending order

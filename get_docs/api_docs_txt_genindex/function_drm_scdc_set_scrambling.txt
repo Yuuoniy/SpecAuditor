@@ -1,0 +1,14 @@
+Function: bool drm_scdc_set_scrambling ( struct drm_connector * connector , bool enable )
+
+enable scrambling
+
+Parameters
+  struct drm_connector *connector
+    connector
+  bool enable
+    bool to indicate if scrambling is to be enabled/disabled
+
+Description
+  Writes the TMDS config register over SCDC channel, and:
+enables scrambling when enable = 1
+disables scrambling when enable = 0

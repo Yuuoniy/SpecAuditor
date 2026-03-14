@@ -1,0 +1,11 @@
+Function: void virtqueue_disable_cb ( struct virtqueue * _vq )
+
+disable callbacks
+
+Parameters
+  struct virtqueue *_vq
+    the struct virtqueue we’re talking about.
+
+Description
+  Note that this is not necessarily synchronous, hence unreliable and only
+useful as an optimization.

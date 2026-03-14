@@ -1,0 +1,11 @@
+Function: struct sk_buff * skb_get ( struct sk_buff * skb )
+
+reference buffer
+
+Parameters
+  struct sk_buff *skb
+    buffer to reference
+
+Description
+  Makes another reference to a socket buffer and returns a pointer
+to the buffer.

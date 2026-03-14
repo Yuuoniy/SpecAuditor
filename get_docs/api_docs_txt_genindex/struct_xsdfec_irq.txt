@@ -1,0 +1,9 @@
+Struct: struct xsdfec_irq
+
+Enabling or Disabling Interrupts.
+
+Members
+  enable_isr
+    If true enables the ISR
+  enable_ecc_isr
+    If true enables the ECC ISR

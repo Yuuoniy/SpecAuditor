@@ -1,0 +1,18 @@
+Function: void * __vmalloc_node ( unsigned long size , unsigned long align , gfp_t gfp_mask , int node , const void * caller )
+
+allocate virtually contiguous memory
+
+Parameters
+  unsigned long size
+    allocation size
+  unsigned long align
+    desired alignment
+  gfp_t gfp_mask
+    flags for the page level allocator
+  int node
+    node to use for allocation or NUMA_NO_NODE
+  const void *caller
+    caller’s return address
+
+Description
+  Allocate enough pages to cover size from the page level allocator with gfp_mask flags.  Map them into contiguous kernel virtual space.

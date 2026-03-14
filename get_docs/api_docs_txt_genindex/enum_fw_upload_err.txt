@@ -1,0 +1,3 @@
+Enum: enum fw_upload_err
+
+firmware upload error codes

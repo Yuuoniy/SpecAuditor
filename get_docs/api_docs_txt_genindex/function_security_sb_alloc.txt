@@ -1,0 +1,11 @@
+Function: int security_sb_alloc ( struct super_block * sb )
+
+Allocate a super_block LSM blob
+
+Parameters
+  struct super_block *sb
+    filesystem superblock
+
+Description
+  Allocate and attach a security structure to the sb->s_security field.  The
+s_security field is initialized to NULL when the structure is allocated. sb contains the super_block structure to be modified.

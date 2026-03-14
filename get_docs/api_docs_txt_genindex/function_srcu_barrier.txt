@@ -1,0 +1,7 @@
+Function: void srcu_barrier ( struct srcu_struct * ssp )
+
+Wait until all in-flight call_srcu() callbacks complete.
+
+Parameters
+  struct srcu_struct *ssp
+    srcu_struct on which to wait for in-flight callbacks.

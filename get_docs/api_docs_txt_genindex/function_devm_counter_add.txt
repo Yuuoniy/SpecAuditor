@@ -1,0 +1,13 @@
+Function: int devm_counter_add ( struct device * dev , struct counter_device * const counter )
+
+complete registration of a counter
+
+Parameters
+  struct device *dev
+    the device to register the release callback for
+  struct counter_device *const counter
+    the counter to add
+
+Description
+  This is the device managed version of counter_add() . It registers a cleanup
+callback to care for calling counter_unregister() .

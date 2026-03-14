@@ -1,0 +1,12 @@
+Function: void svc_recv ( struct svc_rqst * rqstp )
+
+Receive and process the next request on any transport
+
+Parameters
+  struct svc_rqst *rqstp
+    an idle RPC service thread
+
+Description
+  This code is carefully organised not to touch any cachelines in
+the shared svc_serv structure, only cachelines in the local
+svc_pool.

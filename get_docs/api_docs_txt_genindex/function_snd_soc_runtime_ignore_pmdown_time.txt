@@ -1,0 +1,13 @@
+Function: bool snd_soc_runtime_ignore_pmdown_time ( struct snd_soc_pcm_runtime * rtd )
+
+Check whether to ignore the power down delay
+
+Parameters
+  struct snd_soc_pcm_runtime *rtd
+    The ASoC PCM runtime that should be checked.
+
+Description
+  This function checks whether the power down delay should be ignored for a
+specific PCM runtime. Returns true if the delay is 0, if the DAI link has
+been configured to ignore the delay, or if none of the components benefits
+from having the delay.

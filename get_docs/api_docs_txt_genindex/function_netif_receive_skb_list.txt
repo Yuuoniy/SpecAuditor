@@ -1,0 +1,11 @@
+Function: void netif_receive_skb_list ( struct list_head * head )
+
+process many receive buffers from network
+
+Parameters
+  struct list_head *head
+    list of skbs to process.
+
+Description
+  Since return value of netif_receive_skb() is normally ignored, and
+wouldn’t be meaningful for a list, this function returns void.

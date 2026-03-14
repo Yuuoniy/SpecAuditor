@@ -1,0 +1,11 @@
+Function: void fscache_count_object ( struct fscache_cache * cache )
+
+Tell fscache that an object has been added
+
+Parameters
+  struct fscache_cache *cache
+    The cache to account to
+
+Description
+  Tell fscache that an object has been added to the cache.  This prevents the
+cache from tearing down the cache structure until the object is uncounted.

@@ -1,0 +1,19 @@
+Function: void mark_bbt_block_bad ( struct nand_chip * this , struct nand_bbt_descr * td , int chip , int block )
+
+Mark one of the block reserved for BBT bad
+
+Parameters
+  struct nand_chip *this
+    the NAND device
+  struct nand_bbt_descr *td
+    the BBT description
+  int chip
+    the CHIP selector
+  int block
+    the BBT block to mark
+
+Description
+  Blocks reserved for BBT can become bad. This functions is an helper to mark
+such blocks as bad. It takes care of updating the in-memory BBT, marking the
+block as bad using a bad block marker and invalidating the associated
+td->pages[] entry.

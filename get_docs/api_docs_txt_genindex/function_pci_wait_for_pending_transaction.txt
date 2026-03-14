@@ -1,0 +1,10 @@
+Function: int pci_wait_for_pending_transaction ( struct pci_dev * dev )
+
+wait for pending transaction
+
+Parameters
+  struct pci_dev *dev
+    the PCI device to operate on
+
+Description
+  Return 0 if transaction is pending 1 otherwise.

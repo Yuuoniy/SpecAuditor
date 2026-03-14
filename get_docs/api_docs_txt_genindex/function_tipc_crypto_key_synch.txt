@@ -1,0 +1,14 @@
+Function: void tipc_crypto_key_synch ( struct tipc_crypto * rx , struct sk_buff * skb )
+
+Synch own key data according to peer key status
+
+Parameters
+  struct tipc_crypto *rx
+    RX crypto handle
+  struct sk_buff *skb
+    TIPCv2 message buffer (incl. the ehdr from peer)
+
+Description
+  This function updates the peer node related data as the peer RX active key
+has changed, so the number of TX keys’ users on this node are increased and
+decreased correspondingly.

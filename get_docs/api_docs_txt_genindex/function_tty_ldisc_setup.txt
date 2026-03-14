@@ -1,0 +1,14 @@
+Function: int tty_ldisc_setup ( struct tty_struct * tty , struct tty_struct * o_tty )
+
+open line discipline
+
+Parameters
+  struct tty_struct *tty
+    tty being shut down
+  struct tty_struct *o_tty
+    pair tty for pty/tty pairs
+
+Description
+  Called during the initial open of a tty/pty pair in order to set up the line
+disciplines and bind them to the tty . This has no locking issues as the
+device isn’t yet active.

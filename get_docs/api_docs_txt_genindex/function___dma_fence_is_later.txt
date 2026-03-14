@@ -1,0 +1,15 @@
+Function: bool __dma_fence_is_later ( struct dma_fence * fence , u64 f1 , u64 f2 )
+
+return if f1 is chronologically later than f2
+
+Parameters
+  struct dma_fence *fence
+    fence in whose context to do the comparison
+  u64 f1
+    the first fence’s seqno
+  u64 f2
+    the second fence’s seqno from the same context
+
+Description
+  Returns true if f1 is chronologically later than f2. Both fences must be
+from the same context, since a seqno is not common across contexts.

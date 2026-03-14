@@ -1,0 +1,12 @@
+Function: __kernel_size_t strnlen ( const char * const p , __kernel_size_t maxlen )
+
+Return bounded count of characters in a NUL-terminated string
+
+Parameters
+  const char * const p
+    pointer to NUL-terminated string to count.
+  __kernel_size_t maxlen
+    maximum number of characters to count.
+
+Description
+  Returns number of characters in p (NOT including the final NUL), or maxlen , if no NUL has been found up to there.

@@ -1,0 +1,9 @@
+Function: void list_move_tail ( struct list_head * list , struct list_head * head )
+
+delete from one list and add as another’s tail
+
+Parameters
+  struct list_head *list
+    the entry to move
+  struct list_head *head
+    the head that will follow our entry

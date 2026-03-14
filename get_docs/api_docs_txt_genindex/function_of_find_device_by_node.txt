@@ -1,0 +1,11 @@
+Function: struct platform_device * of_find_device_by_node ( struct device_node * np )
+
+Find the platform_device associated with a node
+
+Parameters
+  struct device_node *np
+    Pointer to device tree node
+
+Description
+  Takes a reference to the embedded struct device which needs to be dropped
+after use.

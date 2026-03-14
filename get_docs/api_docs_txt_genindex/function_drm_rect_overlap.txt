@@ -1,0 +1,9 @@
+Function: bool drm_rect_overlap ( const struct drm_rect * a , const struct drm_rect * b )
+
+Check if two rectangles overlap
+
+Parameters
+  const struct drm_rect *a
+    first rectangle
+  const struct drm_rect *b
+    second rectangle

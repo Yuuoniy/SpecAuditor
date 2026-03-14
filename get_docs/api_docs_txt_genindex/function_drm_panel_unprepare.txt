@@ -1,0 +1,13 @@
+Function: void drm_panel_unprepare ( struct drm_panel * panel )
+
+power off a panel
+
+Parameters
+  struct drm_panel *panel
+    DRM panel
+
+Description
+  Calling this function will completely power off a panel (assert the panel’s
+reset, turn off power supplies, ...). After this function has completed, it
+is usually no longer possible to communicate with the panel until another
+call to drm_panel_prepare() .

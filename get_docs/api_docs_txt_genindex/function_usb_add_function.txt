@@ -1,0 +1,14 @@
+Function: int usb_add_function ( struct usb_configuration * config , struct usb_function * function )
+
+add a function to a configuration
+
+Parameters
+  struct usb_configuration *config
+    the configuration
+  struct usb_function *function
+    the function being added
+
+Description
+  After initialization, each configuration must have one or more
+functions added to it.  Adding a function involves calling its bind() method to allocate resources such as interface and string identifiers
+and endpoints.

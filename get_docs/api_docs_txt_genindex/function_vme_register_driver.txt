@@ -1,0 +1,12 @@
+Function: int vme_register_driver ( struct vme_driver * drv , unsigned int ndevs )
+
+Register a VME driver
+
+Parameters
+  struct vme_driver *drv
+    Pointer to VME driver structure to register.
+  unsigned int ndevs
+    Maximum number of devices to allow to be enumerated.
+
+Description
+  Register a VME device driver with the VME subsystem.

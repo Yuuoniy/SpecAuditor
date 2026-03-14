@@ -1,0 +1,10 @@
+Function: void mutex_unlock ( struct mutex * lock )
+
+release the mutex
+
+Parameters
+  struct mutex *lock
+    the mutex to be released
+
+Description
+  Unlock a mutex that has been locked by this task previously.

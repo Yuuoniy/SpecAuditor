@@ -1,0 +1,20 @@
+Struct: struct drm_pvr_job
+
+Job arguments passed to the DRM_IOCTL_PVR_SUBMIT_JOBS ioctl
+
+Members
+  type
+    [IN] Type of job being submitted This must be one of the values defined by enum drm_pvr_job_type .
+  context_handle
+    [IN] Context handle. When job_type is DRM_PVR_JOB_TYPE_RENDER , DRM_PVR_JOB_TYPE_COMPUTE or DRM_PVR_JOB_TYPE_TRANSFER_FRAG , this must be a valid handle returned by DRM_IOCTL_PVR_CREATE_CONTEXT . The type of context must be compatible
+with the type of job being submitted. When job_type is DRM_PVR_JOB_TYPE_NULL , this must be zero.
+  flags
+    [IN] Flags for command. Those are job-dependent. See all DRM_PVR_SUBMIT_JOB_* .
+  cmd_stream_len
+    [IN] Length of command stream, in bytes.
+  cmd_stream
+    [IN] Pointer to command stream for command. The command stream must be u64-aligned.
+  sync_ops
+    [IN] Fragment sync operations.
+  hwrt
+    [IN] HWRT data used by render jobs (geometry or fragment). Must be zero for non-render jobs.

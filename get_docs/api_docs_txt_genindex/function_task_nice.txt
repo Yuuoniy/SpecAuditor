@@ -1,0 +1,7 @@
+Function: int task_nice ( const struct task_struct * p )
+
+return the nice value of a given task.
+
+Parameters
+  const struct task_struct *p
+    the task in question.

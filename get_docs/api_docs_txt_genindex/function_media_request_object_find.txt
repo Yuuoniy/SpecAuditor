@@ -1,0 +1,14 @@
+Function: struct media_request_object * media_request_object_find ( struct media_request * req , const struct media_request_object_ops * ops , void * priv )
+
+Find an object in a request
+
+Parameters
+  struct media_request *req
+    The media request
+  const struct media_request_object_ops *ops
+    Find an object with this ops value
+  void *priv
+    Find an object with this priv value
+
+Description
+  Both ops and priv must be non-NULL.

@@ -1,0 +1,22 @@
+Function: void * tipc_aead_mem_alloc ( struct crypto_aead * tfm , unsigned int crypto_ctx_size , u8 * * iv , struct aead_request * * req , struct scatterlist * * sg , int nsg )
+
+Allocate memory for AEAD request operations
+
+Parameters
+  struct crypto_aead *tfm
+    cipher handle to be registered with the request
+  unsigned int crypto_ctx_size
+    size of crypto context for callback
+  u8 **iv
+    returned pointer to IV data
+  struct aead_request **req
+    returned pointer to AEAD request data
+  struct scatterlist **sg
+    returned pointer to SG lists
+  int nsg
+    number of SG lists to be allocated
+
+Description
+  Allocate memory to store the crypto context data, AEAD request, IV and SG
+lists, the memory layout is as follows:
+crypto_ctx || iv || aead_req || sg[]

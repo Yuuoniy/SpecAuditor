@@ -1,0 +1,13 @@
+Function: bool drm_atomic_crtc_effectively_active ( const struct drm_crtc_state * state )
+
+compute whether CRTC is actually active
+
+Parameters
+  const struct drm_crtc_state *state
+    drm_crtc_state for the CRTC
+
+Description
+  When in self refresh mode, the crtc_state->active value will be false, since
+the CRTC is off. However in some cases we’re interested in whether the CRTC
+is active, or effectively active (ie: it’s connected to an active display).
+In these cases, use this function instead of just checking active.

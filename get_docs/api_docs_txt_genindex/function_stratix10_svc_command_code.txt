@@ -1,0 +1,3 @@
+Function: enum stratix10_svc_command_code
+
+supported service commands

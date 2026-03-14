@@ -1,0 +1,20 @@
+Function: void ata_to_sense_error ( u8 drv_stat , u8 drv_err , u8 * sk , u8 * asc , u8 * ascq )
+
+convert ATA error to SCSI error
+
+Parameters
+  u8 drv_stat
+    value contained in ATA status register
+  u8 drv_err
+    value contained in ATA error register
+  u8 *sk
+    the sense key we’ll fill out
+  u8 *asc
+    the additional sense code we’ll fill out
+  u8 *ascq
+    the additional sense code qualifier we’ll fill out
+
+Description
+  Converts an ATA error into a SCSI error.  Fill out pointers to
+SK, ASC, and ASCQ bytes for later use in fixed or descriptor
+format sense blocks.

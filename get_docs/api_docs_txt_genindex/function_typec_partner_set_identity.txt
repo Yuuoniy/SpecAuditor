@@ -1,0 +1,11 @@
+Function: int typec_partner_set_identity ( struct typec_partner * partner )
+
+Report result from Discover Identity command
+
+Parameters
+  struct typec_partner *partner
+    The partner updated identity values
+
+Description
+  This routine is used to report that the result of Discover Identity USB power
+delivery command has become available.

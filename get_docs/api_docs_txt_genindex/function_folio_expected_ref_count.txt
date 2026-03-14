@@ -1,0 +1,13 @@
+Function: int folio_expected_ref_count ( const struct folio * folio )
+
+calculate the expected folio refcount
+
+Parameters
+  const struct folio *folio
+    the folio
+
+Description
+  Calculate the expected folio refcount, taking references from the pagecache,
+swapcache, PG_private and page table mappings into account. Useful in
+combination with folio_ref_count() to detect unexpected references (e.g.,
+GUP or other temporary references).

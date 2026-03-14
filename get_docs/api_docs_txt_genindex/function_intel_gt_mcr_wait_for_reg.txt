@@ -1,0 +1,20 @@
+Function: int intel_gt_mcr_wait_for_reg ( struct intel_gt * gt , i915_mcr_reg_t reg , u32 mask , u32 value , unsigned int fast_timeout_us , unsigned int slow_timeout_ms )
+
+wait until MCR register matches expected state
+
+Parameters
+  struct intel_gt *gt
+    GT structure
+  i915_mcr_reg_t reg
+    the register to read
+  u32 mask
+    mask to apply to register value
+  u32 value
+    value to wait for
+  unsigned int fast_timeout_us
+    fast timeout in microsecond for atomic/tight wait
+  unsigned int slow_timeout_ms
+    slow timeout in millisecond
+
+Description
+  This routine waits until the target register reg contains the expected value after applying the mask , i.e. it waits until

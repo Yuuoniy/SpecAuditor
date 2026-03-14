@@ -1,0 +1,11 @@
+Function: void drm_atomic_state_default_release ( struct drm_atomic_state * state )
+
+release memory initialized by drm_atomic_state_init
+
+Parameters
+  struct drm_atomic_state *state
+    atomic state
+
+Description
+  Free all the memory allocated by drm_atomic_state_init.
+This should only be used by drivers which are still subclassing drm_atomic_state and haven’t switched to drm_private_state yet.

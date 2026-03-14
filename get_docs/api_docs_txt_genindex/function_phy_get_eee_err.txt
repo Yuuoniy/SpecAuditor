@@ -1,0 +1,11 @@
+Function: int phy_get_eee_err ( struct phy_device * phydev )
+
+report the EEE wake error count
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  it is to report the number of time where the PHY
+failed to complete its normal wake sequence.

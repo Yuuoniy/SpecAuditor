@@ -1,0 +1,10 @@
+Function: void ssam_controller_stateunlock ( struct ssam_controller * c )
+
+Unlock controller state transitions.
+
+Parameters
+  struct ssam_controller *c
+    The controller to unlock.
+
+Description
+  See ssam_controller_statelock() for the corresponding lock function.

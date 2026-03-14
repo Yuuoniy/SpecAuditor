@@ -1,0 +1,9 @@
+Function: void class_compat_remove_link ( struct class_compat * cls , struct device * dev )
+
+remove a compatibility class device link to a bus device
+
+Parameters
+  struct class_compat *cls
+    the compatibility class
+  struct device *dev
+    the target bus device

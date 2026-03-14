@@ -1,0 +1,16 @@
+Struct: struct drm_privacy_screen_ops
+
+drm_privacy_screen operations
+
+Members
+  set_sw_state
+    Called to request a change of the privacy-screen
+state. The privacy-screen class code contains a check to avoid this
+getting called when the hw_state reports the state is locked.
+It is the driver’s responsibility to update sw_state and hw_state.
+This is always called with the drm_privacy_screen’s lock held.
+  get_hw_state
+    Called to request that the driver gets the current
+privacy-screen state from the hardware and then updates sw_state and
+hw_state accordingly. This will be called by the core just before
+the privacy-screen is registered in sysfs.

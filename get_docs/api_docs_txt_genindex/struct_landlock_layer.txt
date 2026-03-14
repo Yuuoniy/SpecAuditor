@@ -1,0 +1,10 @@
+Struct: struct landlock_layer
+
+Access rights for a given layer
+
+Members
+  level
+    Position of this layer in the layer stack.
+  access
+    Bitfield of allowed actions on the kernel object.  They are
+relative to the object type (e.g. LANDLOCK_ACTION_FS_READ ).

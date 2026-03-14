@@ -1,0 +1,11 @@
+Function: int drm_dp_lttpr_init ( struct drm_dp_aux * aux , int lttpr_count )
+
+init LTTPR transparency mode according to DP standard
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  int lttpr_count
+    Number of LTTPRs. Between 0 and 8, according to DP standard.
+Negative error code for any non-valid number.
+See drm_dp_lttpr_count() .

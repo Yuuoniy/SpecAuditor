@@ -1,0 +1,19 @@
+Struct: struct renamedata
+
+contains all information required for renaming
+
+Members
+  mnt_idmap
+    idmap of the mount in which the rename is happening.
+  old_parent
+    parent of source
+  old_dentry
+    source
+  new_parent
+    parent of destination
+  new_dentry
+    destination
+  delegated_inode
+    returns an inode needing a delegation break
+  flags
+    rename flags

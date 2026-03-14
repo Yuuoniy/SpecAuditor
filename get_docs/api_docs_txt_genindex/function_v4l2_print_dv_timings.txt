@@ -1,0 +1,13 @@
+Function: void v4l2_print_dv_timings ( const char * dev_prefix , const char * prefix , const struct v4l2_dv_timings * t , bool detailed )
+
+log the contents of a dv_timings struct
+
+Parameters
+  const char *dev_prefix
+    device prefix for each log line.
+  const char *prefix
+    additional prefix for each log line, may be NULL.
+  const struct v4l2_dv_timings *t
+    the timings data.
+  bool detailed
+    if true, give a detailed log.

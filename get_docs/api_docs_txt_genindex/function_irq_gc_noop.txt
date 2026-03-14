@@ -1,0 +1,7 @@
+Function: void irq_gc_noop ( struct irq_data * d )
+
+NOOP function
+
+Parameters
+  struct irq_data *d
+    irq_data

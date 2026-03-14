@@ -1,0 +1,11 @@
+Macro: DRM_GEM_DMA_DRIVER_OPS
+
+
+
+Parameters
+  dumb_create_func
+    callback function for .dumb_create
+
+Description
+  This macro provides a shortcut for setting the default GEM operations in the drm_driver structure for drivers that need the virtual address also on
+imported buffers.

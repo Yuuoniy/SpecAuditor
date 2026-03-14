@@ -1,0 +1,3 @@
+Enum: enum landlock_rule_type
+
+Landlock rule type

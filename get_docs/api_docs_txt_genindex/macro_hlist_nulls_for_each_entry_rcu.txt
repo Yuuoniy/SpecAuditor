@@ -1,0 +1,19 @@
+Macro: hlist_nulls_for_each_entry_rcu
+
+
+
+Parameters
+  tpos
+    the type * to use as a loop cursor.
+  pos
+    the struct hlist_nulls_node to use as a loop cursor.
+  head
+    the head of the list.
+  member
+    the name of the hlist_nulls_node within the struct.
+
+Description
+  The barrier() is needed to make sure compiler doesn’t cache first element [1],
+as this loop can be restarted [2]
+[1] Documentation/memory-barriers.txt around line 1533
+[2] Using RCU hlist_nulls to protect list and objects around line 146

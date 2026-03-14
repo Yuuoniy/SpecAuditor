@@ -1,0 +1,14 @@
+Function: bool amdgpu_irq_enabled ( struct amdgpu_device * adev , struct amdgpu_irq_src * src , unsigned int type )
+
+check whether interrupt is enabled or not
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device pointer
+  struct amdgpu_irq_src *src
+    interrupt source pointer
+  unsigned int type
+    type of interrupt
+
+Description
+  Checks whether the given type of interrupt is enabled on the given source.

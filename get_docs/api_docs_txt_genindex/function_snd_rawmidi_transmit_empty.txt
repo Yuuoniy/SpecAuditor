@@ -1,0 +1,7 @@
+Function: int snd_rawmidi_transmit_empty ( struct snd_rawmidi_substream * substream )
+
+check whether the output buffer is empty
+
+Parameters
+  struct snd_rawmidi_substream *substream
+    the rawmidi substream

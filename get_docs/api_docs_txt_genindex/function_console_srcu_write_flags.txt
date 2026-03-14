@@ -1,0 +1,13 @@
+Function: void console_srcu_write_flags ( struct console * con , short flags )
+
+Write flags for a registered console
+
+Parameters
+  struct console *con
+    struct console pointer of console to write flags to
+  short flags
+    new flags value to write
+
+Description
+  Only use this function to write flags for registered consoles. It
+requires holding the console_list_lock.

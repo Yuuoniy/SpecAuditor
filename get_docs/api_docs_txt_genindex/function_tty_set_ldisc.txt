@@ -1,0 +1,15 @@
+Function: int tty_set_ldisc ( struct tty_struct * tty , int disc )
+
+set line discipline
+
+Parameters
+  struct tty_struct *tty
+    the terminal to set
+  int disc
+    the line discipline number
+
+Description
+  Set the discipline of a tty line. Must be called from a process context. The
+ldisc change logic has to protect itself against any overlapping ldisc
+change (including on the other end of pty pairs), the close of one side of a
+tty/pty pair, and eventually hangup.

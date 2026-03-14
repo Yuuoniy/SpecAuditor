@@ -1,0 +1,15 @@
+Function: int request_firmware ( const struct firmware * * firmware_p , const char * name , struct device * device )
+
+send firmware request and wait for it
+
+Parameters
+  const struct firmware **firmware_p
+    pointer to firmware image
+  const char *name
+    name of firmware file
+  struct device *device
+    device for which firmware is being loaded
+
+Description
+  firmware_p will be used to return a firmware image by the name
+of name for device device .

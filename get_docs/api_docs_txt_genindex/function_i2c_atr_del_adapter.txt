@@ -1,0 +1,9 @@
+Function: void i2c_atr_del_adapter ( struct i2c_atr * atr , u32 chan_id )
+
+Remove a child (“downstream”) I2C bus added by i2c_atr_add_adapter() . If no I2C bus has been added this function is a no-op.
+
+Parameters
+  struct i2c_atr *atr
+    The I2C ATR
+  u32 chan_id
+    Index of the adapter to be removed (0 .. max_adapters-1)

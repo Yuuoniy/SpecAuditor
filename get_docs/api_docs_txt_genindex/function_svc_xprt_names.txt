@@ -1,0 +1,15 @@
+Function: int svc_xprt_names ( struct svc_serv * serv , char * buf , const int buflen )
+
+format a buffer with a list of transport names
+
+Parameters
+  struct svc_serv *serv
+    pointer to an RPC service
+  char *buf
+    pointer to a buffer to be filled in
+  const int buflen
+    length of buffer to be filled in
+
+Description
+  Fills in buf with a string containing a list of transport names,
+each name terminated with ‘n’.

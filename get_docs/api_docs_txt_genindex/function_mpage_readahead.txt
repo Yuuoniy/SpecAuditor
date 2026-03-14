@@ -1,0 +1,13 @@
+Function: void mpage_readahead ( struct readahead_control * rac , get_block_t get_block )
+
+start reads against pages
+
+Parameters
+  struct readahead_control *rac
+    Describes which pages to read.
+  get_block_t get_block
+    The filesystem’s block mapper function.
+
+Description
+  This function walks the pages and the blocks within each page, building and
+emitting large BIOs.

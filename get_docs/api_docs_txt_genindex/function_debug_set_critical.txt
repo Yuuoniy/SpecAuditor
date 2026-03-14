@@ -1,0 +1,13 @@
+Function: void debug_set_critical ( void )
+
+event/exception functions try lock instead of spin.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Currently used in case of stopping all CPUs but the current one.
+Once in this state, functions to write a debug entry for an
+event or exception no longer spin on the debug area lock,
+but only try to get it and fail if they do not get the lock.

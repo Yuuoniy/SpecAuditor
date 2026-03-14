@@ -1,0 +1,15 @@
+Function: void rdma_replace_ah_attr ( struct rdma_ah_attr * old , const struct rdma_ah_attr * new )
+
+Replace valid ah_attr with new one.
+
+Parameters
+  struct rdma_ah_attr *old
+    Pointer to existing ah_attr which needs to be replaced.
+old is assumed to be valid or zero’d
+  const struct rdma_ah_attr *new
+    Pointer to the new ah_attr.
+
+Description
+  rdma_replace_ah_attr() first releases any reference in the old ah_attr if
+old the ah_attr is valid; after that it copies the new attribute and holds
+the reference to the replaced ah_attr.

@@ -1,0 +1,7 @@
+Function: bool folio_test_large ( const struct folio * folio )
+
+Does this folio contain more than one page?
+
+Parameters
+  const struct folio *folio
+    The folio to test.

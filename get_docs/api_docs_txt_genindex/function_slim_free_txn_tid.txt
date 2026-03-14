@@ -1,0 +1,9 @@
+Function: void slim_free_txn_tid ( struct slim_controller * ctrl , struct slim_msg_txn * txn )
+
+Free tid of txn
+
+Parameters
+  struct slim_controller *ctrl
+    Controller handle
+  struct slim_msg_txn *txn
+    transaction whose tid should be freed

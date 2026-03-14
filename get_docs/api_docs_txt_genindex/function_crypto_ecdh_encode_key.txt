@@ -1,0 +1,17 @@
+Function: int crypto_ecdh_encode_key ( char * buf , unsigned int len , const struct ecdh * p )
+
+encode the private key
+
+Parameters
+  char *buf
+    Buffer allocated by the caller to hold the packet ECDH
+private key. The buffer should be at least crypto_ecdh_key_len
+bytes in size.
+  unsigned int len
+    Length of the packet private key buffer
+  const struct ecdh *p
+    Buffer with the caller-specified private key
+
+Description
+  The ECDH implementations operate on a packet representation of the private
+key.

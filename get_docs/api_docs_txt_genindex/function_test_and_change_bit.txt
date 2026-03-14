@@ -1,0 +1,12 @@
+Function: bool test_and_change_bit ( long nr , volatile unsigned long * addr )
+
+Change a bit and return its old value
+
+Parameters
+  long nr
+    Bit to change
+  volatile unsigned long *addr
+    Address to count from
+
+Description
+  This is an atomic fully-ordered operation (implied full memory barrier).

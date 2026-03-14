@@ -1,0 +1,19 @@
+Function: struct damos_quota_goal
+
+DAMOS scheme quota auto-tuning goal.
+
+Members
+  metric
+    Metric to be used for representing the goal.
+  target_value
+    Target value of metric to achieve with the tuning.
+  current_value
+    Current value of metric .
+  {unnamed_union}
+    anonymous
+  last_psi_total
+    Last measured total PSI
+  nid
+    Node id.
+  list
+    List head for siblings.

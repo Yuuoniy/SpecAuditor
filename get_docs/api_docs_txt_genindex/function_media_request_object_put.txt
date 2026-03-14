@@ -1,0 +1,11 @@
+Function: void media_request_object_put ( struct media_request_object * obj )
+
+Put a media request object
+
+Parameters
+  struct media_request_object *obj
+    The object
+
+Description
+  Put a media request object. Once all references are gone, the
+object’s memory is released.

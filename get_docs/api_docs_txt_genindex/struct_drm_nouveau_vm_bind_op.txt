@@ -1,0 +1,27 @@
+Struct: struct drm_nouveau_vm_bind_op
+
+VM_BIND operation
+
+Members
+  op
+    the operation type Supported values: DRM_NOUVEAU_VM_BIND_OP_MAP - Map a GEM object to the GPU’s VA
+space. Optionally, the DRM_NOUVEAU_VM_BIND_SPARSE flag can be
+passed to instruct the kernel to create sparse mappings for the
+given range. DRM_NOUVEAU_VM_BIND_OP_UNMAP - Unmap an existing mapping in the
+GPU’s VA space. If the region the mapping is located in is a
+sparse region, new sparse mappings are created where the unmapped
+(memory backed) mapping was mapped previously. To remove a sparse
+region the DRM_NOUVEAU_VM_BIND_SPARSE must be set.
+  flags
+    the flags for a drm_nouveau_vm_bind_op Supported values: DRM_NOUVEAU_VM_BIND_SPARSE - Indicates that an allocated VA
+space region should be sparse.
+  handle
+    the handle of the DRM GEM object to map
+  pad
+    32 bit padding, should be 0
+  addr
+    the address the VA space region or (memory backed) mapping should be mapped to
+  bo_offset
+    the offset within the BO backing the mapping
+  range
+    the size of the requested mapping in bytes

@@ -1,0 +1,7 @@
+Function: void kunit_put_resource ( struct kunit_resource * res )
+
+When caller is done with retrieved resource, kunit_put_resource() should be called to drop reference count. The resource list maintains a reference count on resources, so if no users are utilizing a resource and it is removed from the resource list, it will be freed via the associated free function (if any). Only needs to be used if we alloc_and_get() or find() resource.
+
+Parameters
+  struct kunit_resource *res
+    resource

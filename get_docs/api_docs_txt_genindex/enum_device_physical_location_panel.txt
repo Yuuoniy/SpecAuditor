@@ -1,0 +1,3 @@
+Enum: enum device_physical_location_panel
+
+Describes which panel surface of the system’s housing the device connection point resides on.

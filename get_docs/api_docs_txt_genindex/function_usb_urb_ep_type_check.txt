@@ -1,0 +1,12 @@
+Function: int usb_urb_ep_type_check ( const struct urb * urb )
+
+sanity check of endpoint in the given urb
+
+Parameters
+  const struct urb *urb
+    urb to be checked
+
+Description
+  This performs a light-weight sanity check for the endpoint in the
+given urb.  It returns 0 if the urb contains a valid endpoint, otherwise
+a negative error code.

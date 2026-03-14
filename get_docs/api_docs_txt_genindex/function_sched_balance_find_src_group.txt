@@ -1,0 +1,11 @@
+Function: struct sched_group * sched_balance_find_src_group ( struct lb_env * env )
+
+Returns the busiest group within the sched_domain if there is an imbalance.
+
+Parameters
+  struct lb_env *env
+    The load balancing environment.
+
+Description
+  Also calculates the amount of runnable load which should be moved
+to restore balance.

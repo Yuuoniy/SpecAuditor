@@ -1,0 +1,7 @@
+Function: struct tipc_media * media_find_id ( u8 type )
+
+locates specified media object by type identifier
+
+Parameters
+  u8 type
+    type identifier to locate

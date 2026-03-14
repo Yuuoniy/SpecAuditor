@@ -1,0 +1,17 @@
+Struct: struct rkisp1_cif_isp_dpcc_methods_config
+
+DPCC methods set configuration
+
+Members
+  method
+    Method enable bits (RKISP1_CIF_ISP_DPCC_METHODS_SET_*)
+  line_thresh
+    Line threshold (RKISP1_CIF_ISP_DPCC_LINE_THRESH_*)
+  line_mad_fac
+    Line Mean Absolute Difference factor (RKISP1_CIF_ISP_DPCC_LINE_MAD_FAC_*)
+  pg_fac
+    Peak gradient factor (RKISP1_CIF_ISP_DPCC_PG_FAC_*)
+  rnd_thresh
+    Rank Neighbor Difference threshold (RKISP1_CIF_ISP_DPCC_RND_THRESH_*)
+  rg_fac
+    Rank gradient factor (RKISP1_CIF_ISP_DPCC_RG_FAC_*)

@@ -1,0 +1,10 @@
+Function: void nand_get_device ( struct nand_chip * chip )
+
+[GENERIC] Get chip for selected access
+
+Parameters
+  struct nand_chip *chip
+    NAND chip structure
+
+Description
+  Lock the device and its controller for exclusive access

@@ -1,0 +1,17 @@
+Struct: struct i915_gem_proto_engine
+
+prototype engine
+
+Members
+  type
+    Type of this engine
+  engine
+    Engine, for physical
+  num_siblings
+    Number of balanced or parallel siblings
+  width
+    Width of each sibling
+  siblings
+    Balanced siblings or num_siblings * width for parallel
+  sseu
+    Client-set SSEU parameters

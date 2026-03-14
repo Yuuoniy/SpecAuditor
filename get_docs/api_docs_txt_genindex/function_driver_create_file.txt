@@ -1,0 +1,9 @@
+Function: int driver_create_file ( const struct device_driver * drv , const struct driver_attribute * attr )
+
+create sysfs file for driver.
+
+Parameters
+  const struct device_driver *drv
+    driver.
+  const struct driver_attribute *attr
+    driver attribute descriptor.

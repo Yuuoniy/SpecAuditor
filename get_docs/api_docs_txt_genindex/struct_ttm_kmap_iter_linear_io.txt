@@ -1,0 +1,11 @@
+Struct: struct ttm_kmap_iter_linear_io
+
+Iterator specialization for linear io
+
+Members
+  base
+    The base iterator
+  dmap
+    Points to the starting address of the region
+  needs_unmap
+    Whether we need to unmap on fini

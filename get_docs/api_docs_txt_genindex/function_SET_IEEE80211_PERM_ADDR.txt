@@ -1,0 +1,9 @@
+Function: void SET_IEEE80211_PERM_ADDR ( struct ieee80211_hw * hw , const u8 * addr )
+
+set the permanent MAC address for 802.11 hardware
+
+Parameters
+  struct ieee80211_hw *hw
+    the struct ieee80211_hw to set the MAC address for
+  const u8 *addr
+    the address to set

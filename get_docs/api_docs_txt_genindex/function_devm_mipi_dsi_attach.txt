@@ -1,0 +1,13 @@
+Function: int devm_mipi_dsi_attach ( struct device * dev , struct mipi_dsi_device * dsi )
+
+Attach a MIPI-DSI device to its DSI Host
+
+Parameters
+  struct device *dev
+    device to tie the MIPI-DSI device attachment lifetime to
+  struct mipi_dsi_device *dsi
+    DSI peripheral
+
+Description
+  This is the managed version of mipi_dsi_attach() which automatically
+calls mipi_dsi_detach() when dev is unbound.

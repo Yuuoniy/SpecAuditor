@@ -1,0 +1,12 @@
+Macro: kfree_rcu_mightsleep
+
+
+
+Parameters
+  ptr
+    pointer to kfree for single-argument invocations.
+
+Description
+  When it comes to head-less variant, only one argument
+is passed and that is just a pointer which has to be
+freed after a grace period. Therefore the semantic is

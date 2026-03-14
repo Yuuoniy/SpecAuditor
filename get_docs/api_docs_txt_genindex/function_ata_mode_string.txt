@@ -1,0 +1,11 @@
+Function: const char * ata_mode_string ( unsigned int xfer_mask )
+
+convert xfer_mask to string
+
+Parameters
+  unsigned int xfer_mask
+    mask of bits supported; only highest bit counts.
+
+Description
+  Determine string which represents the highest speed
+(highest bit in modemask ).

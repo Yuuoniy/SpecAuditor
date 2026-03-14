@@ -1,0 +1,16 @@
+Function: int v4l2_subdev_enable_streams ( struct v4l2_subdev * sd , u32 pad , u64 streams_mask )
+
+Enable streams on a pad
+
+Parameters
+  struct v4l2_subdev *sd
+    The subdevice
+  u32 pad
+    The pad
+  u64 streams_mask
+    Bitmask of streams to enable
+
+Description
+  This function enables streams on a source pad of a subdevice. The pad is
+identified by its index, while the streams are identified by the streams_mask bitmask. This allows enabling multiple streams on a pad at
+once.

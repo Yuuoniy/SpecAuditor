@@ -1,0 +1,15 @@
+Function: void mipi_dsi_generic_write_multi ( struct mipi_dsi_multi_context * ctx , const void * payload , size_t size )
+
+mipi_dsi_generic_write() w/ accum_err
+
+Parameters
+  struct mipi_dsi_multi_context *ctx
+    Context for multiple DSI transactions
+  const void *payload
+    buffer containing the payload
+  size_t size
+    size of payload buffer
+
+Description
+  A wrapper around mipi_dsi_generic_write() that deals with errors in a way
+that makes it convenient to make several calls in a row.

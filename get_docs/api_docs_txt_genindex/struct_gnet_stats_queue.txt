@@ -1,0 +1,15 @@
+Struct: struct gnet_stats_queue
+
+queuing statistics
+
+Members
+  qlen
+    queue length
+  backlog
+    backlog size of queue
+  drops
+    number of dropped packets
+  requeues
+    number of requeues
+  overlimits
+    number of enqueues over the limit

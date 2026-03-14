@@ -1,0 +1,7 @@
+Function: u32 ssam_trace_get_request_sid ( const struct ssh_packet * p )
+
+Read the packet’s request source ID.
+
+Parameters
+  const struct ssh_packet *p
+    The packet.

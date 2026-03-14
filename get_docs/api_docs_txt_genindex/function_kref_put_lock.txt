@@ -1,0 +1,15 @@
+Function: int kref_put_lock ( struct kref * kref , void ( * release ) ( struct kref * kref ) , spinlock_t * lock )
+
+Decrement refcount for object
+
+Parameters
+  struct kref *kref
+    Object
+  void (*release)(struct kref *kref)
+    Pointer to the function that will clean up the object when the
+last reference to the object is released.
+  spinlock_t *lock
+    Spinlock which protects the release function.
+
+Description
+  This variant of kref_lock() calls the release function with the lock held.  The release function will release the lock.

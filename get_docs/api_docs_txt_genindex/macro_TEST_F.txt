@@ -1,0 +1,14 @@
+Macro: TEST_F
+
+
+
+Parameters
+  fixture_name
+    fixture name
+  test_name
+    test name
+
+Description
+  Defines a test that depends on a fixture (e.g., is part of a test case).
+Very similar to TEST() except that self is the setup instance of fixture’s
+datatype exposed for use by the implementation.

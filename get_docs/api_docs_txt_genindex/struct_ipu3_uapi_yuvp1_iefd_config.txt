@@ -1,0 +1,19 @@
+Struct: struct ipu3_uapi_yuvp1_iefd_config
+
+IEFd config
+
+Members
+  units
+    configuration unit setting, ipu3_uapi_yuvp1_iefd_cfg_units
+  config
+    configuration, as defined by ipu3_uapi_yuvp1_iefd_config_s
+  control
+    control setting, as defined by ipu3_uapi_yuvp1_iefd_control
+  sharp
+    sharpness setting, as defined by ipu3_uapi_yuvp1_iefd_shrp_cfg
+  unsharp
+    unsharpness setting, as defined by ipu3_uapi_yuvp1_iefd_unshrp_cfg
+  rad
+    radial setting, as defined by ipu3_uapi_yuvp1_iefd_rad_cfg
+  vsslnm
+    vsslnm setting, as defined by ipu3_uapi_yuvp1_iefd_vssnlm_cfg

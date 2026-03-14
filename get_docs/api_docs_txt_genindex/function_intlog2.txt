@@ -1,0 +1,10 @@
+Function: unsigned int intlog2 ( u32 value )
+
+computes log2 of a value; the result is shifted left by 24 bits
+
+Parameters
+  u32 value
+    The value (must be != 0)
+
+Description
+  to use rational values you can use the following method:

@@ -1,0 +1,19 @@
+Function: void dev_coredumpsg ( struct device * dev , struct scatterlist * table , size_t datalen , gfp_t gfp )
+
+create device coredump that uses scatterlist as data parameter
+
+Parameters
+  struct device *dev
+    the struct device for the crashed device
+  struct scatterlist *table
+    the dump data
+  size_t datalen
+    length of the data
+  gfp_t gfp
+    allocation flags
+
+Description
+  Creates a new device coredump for the given device. If a previous one hasn’t
+been read yet, the new coredump is discarded. The data lifetime is determined
+by the device coredump framework and when it is no longer needed
+it will free the data.

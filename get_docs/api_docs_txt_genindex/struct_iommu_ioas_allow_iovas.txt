@@ -1,0 +1,15 @@
+Struct: struct iommu_ioas_allow_iovas
+
+ioctl(IOMMU_IOAS_ALLOW_IOVAS)
+
+Members
+  size
+    sizeof( struct iommu_ioas_allow_iovas )
+  ioas_id
+    IOAS ID to allow IOVAs from
+  num_iovas
+    Input/Output total number of ranges in the IOAS
+  __reserved
+    Must be 0
+  allowed_iovas
+    Pointer to array of struct iommu_iova_range

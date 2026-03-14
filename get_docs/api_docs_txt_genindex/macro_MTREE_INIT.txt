@@ -1,0 +1,9 @@
+Macro: MTREE_INIT
+
+
+
+Parameters
+  name
+    The maple tree name
+  __flags
+    The maple tree flags

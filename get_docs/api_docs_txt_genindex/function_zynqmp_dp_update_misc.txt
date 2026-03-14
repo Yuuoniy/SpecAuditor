@@ -1,0 +1,11 @@
+Function: void zynqmp_dp_update_misc ( struct zynqmp_dp * dp )
+
+Write the misc registers
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure
+
+Description
+  The misc register values are stored in the structure, and this
+function applies the values into the registers.

@@ -1,0 +1,12 @@
+Function: int security_bprm_creds_for_exec ( struct linux_binprm * bprm )
+
+Prepare the credentials for exec()
+
+Parameters
+  struct linux_binprm *bprm
+    binary program information
+
+Description
+  If the setup in prepare_exec_creds did not setup bprm->cred->security properly for executing bprm->file , update the LSM’s portion of bprm->cred->security to be what commit_creds needs to install for the new
+program.  This hook may also optionally check permissions (e.g. for
+transitions between security domains).  The hook must set bprm->secureexec to 1 if AT_SECURE should be set to request libc enable secure mode. bprm contains the linux_binprm structure.

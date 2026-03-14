@@ -1,0 +1,12 @@
+Function: int unregister_filesystem ( struct file_system_type * fs )
+
+unregister a file system
+
+Parameters
+  struct file_system_type * fs
+    filesystem to unregister
+
+Description
+  Remove a file system that was previously successfully registered
+with the kernel. An error is returned if the file system is not found.
+Zero is returned on a success.

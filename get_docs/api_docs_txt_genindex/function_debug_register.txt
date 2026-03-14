@@ -1,0 +1,18 @@
+Function: debug_info_t * debug_register ( const char * name , int pages_per_area , int nr_areas , int buf_size )
+
+creates and initializes debug area with default file mode.
+
+Parameters
+  const char *name
+    Name of debug log (e.g. used for debugfs entry)
+  int pages_per_area
+    Number of pages, which will be allocated per area
+  int nr_areas
+    Number of debug areas
+  int buf_size
+    Size of data area in each debug entry
+
+Description
+  Allocates memory for a debug log.
+The debugfs file mode access permissions are read and write for user.
+Must not be called within an interrupt handler.

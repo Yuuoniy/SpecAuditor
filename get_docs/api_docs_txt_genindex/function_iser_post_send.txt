@@ -1,0 +1,9 @@
+Function: int iser_post_send ( struct ib_conn * ib_conn , struct iser_tx_desc * tx_desc )
+
+Initiate a Send DTO operation
+
+Parameters
+  struct ib_conn *ib_conn
+    connection RDMA resources
+  struct iser_tx_desc *tx_desc
+    iSER TX descriptor

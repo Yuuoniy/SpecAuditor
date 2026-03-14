@@ -1,0 +1,14 @@
+Function: bool napi_complete_done ( struct napi_struct * n , int work_done )
+
+NAPI processing complete
+
+Parameters
+  struct napi_struct *n
+    NAPI context
+  int work_done
+    number of packets processed
+
+Description
+  Mark NAPI processing as complete. Should only be called if poll budget
+has not been completely consumed.
+Prefer over napi_complete() .

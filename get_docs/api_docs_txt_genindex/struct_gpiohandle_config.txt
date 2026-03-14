@@ -1,0 +1,14 @@
+Struct: struct gpiohandle_config
+
+Configuration for a GPIO handle request
+
+Members
+  flags
+    updated flags for the requested GPIO lines, such as GPIOHANDLE_REQUEST_OUTPUT , GPIOHANDLE_REQUEST_ACTIVE_LOW etc, added
+together
+  default_values
+    if the GPIOHANDLE_REQUEST_OUTPUT is set in flags,
+this specifies the default output value, should be 0 (inactive) or
+1 (active).  Anything other than 0 or 1 will be interpreted as active.
+  padding
+    reserved for future use and should be zero filled

@@ -1,0 +1,21 @@
+Struct: int drm_dp_dpcd_write_data ( struct drm_dp_aux * aux , unsigned int offset , void * buffer , size_t size )
+
+write a series of bytes to the DPCD
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel (SST or MST)
+  unsigned int offset
+    address of the (first) register to write
+  void *buffer
+    buffer containing the values to write
+  size_t size
+    number of bytes in buffer
+
+Description
+  Returns zero (0) on success, or a negative error
+code on failure. -EIO is returned if the request was NAKed by the sink or
+if the retry count was exceeded. If not all bytes were transferred, this
+function returns -EPROTO. Errors from the underlying AUX channel transfer
+function, with the exception of -EBUSY (which causes the transaction to
+be retried), are propagated to the caller.

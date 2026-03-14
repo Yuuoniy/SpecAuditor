@@ -1,0 +1,3 @@
+Function: enum damos_filter_type
+
+Type of memory for struct damos_filter

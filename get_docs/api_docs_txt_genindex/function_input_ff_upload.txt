@@ -1,0 +1,11 @@
+Function: int input_ff_upload ( struct input_dev * dev , struct ff_effect * effect , struct file * file )
+
+upload effect into force-feedback device
+
+Parameters
+  struct input_dev *dev
+    input device
+  struct ff_effect *effect
+    effect to be uploaded
+  struct file *file
+    owner of the effect

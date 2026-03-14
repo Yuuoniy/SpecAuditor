@@ -1,0 +1,15 @@
+Function: int drm_fb_helper_ioctl ( struct fb_info * info , unsigned int cmd , unsigned long arg )
+
+legacy ioctl implementation
+
+Parameters
+  struct fb_info *info
+    fbdev registered by the helper
+  unsigned int cmd
+    ioctl command
+  unsigned long arg
+    ioctl argument
+
+Description
+  A helper to implement the standard fbdev ioctl. Only
+FBIO_WAITFORVSYNC is implemented for now.

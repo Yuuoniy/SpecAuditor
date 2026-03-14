@@ -1,0 +1,16 @@
+Function: int media_devnode_register ( struct media_device * mdev , struct media_devnode * devnode , struct module * owner )
+
+register a media device node
+
+Parameters
+  struct media_device *mdev
+    struct media_device we want to register a device node
+  struct media_devnode *devnode
+    media device node structure we want to register
+  struct module *owner
+    should be filled with THIS_MODULE
+
+Description
+  The registration code assigns minor numbers and registers the new device node
+with the kernel. An error is returned if no free minor number can be found,
+or if the registration of the device node fails.

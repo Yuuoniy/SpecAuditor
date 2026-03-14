@@ -1,0 +1,9 @@
+Function: int phy_start_cable_test ( struct phy_device * phydev , struct netlink_ext_ack * extack )
+
+Start a cable test
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+  struct netlink_ext_ack *extack
+    extack for reporting useful error messages

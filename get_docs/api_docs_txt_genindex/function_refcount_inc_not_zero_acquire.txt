@@ -1,0 +1,11 @@
+Function: bool refcount_inc_not_zero_acquire ( refcount_t * r )
+
+increment a refcount with acquire ordering unless it is 0
+
+Parameters
+  refcount_t *r
+    the refcount to increment
+
+Description
+  Similar to refcount_inc_not_zero() , but provides acquire memory ordering on
+success.

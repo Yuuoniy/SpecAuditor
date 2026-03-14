@@ -1,0 +1,18 @@
+Function: struct inode * ilookup5_nowait ( struct super_block * sb , unsigned long hashval , int ( * test ) ( struct inode * , void * ) , void * data )
+
+search for an inode in the inode cache
+
+Parameters
+  struct super_block *sb
+    super block of file system to search
+  unsigned long hashval
+    hash value (usually inode number) to search for
+  int (*test)(struct inode *, void *)
+    callback used for comparisons between inodes
+  void *data
+    opaque data pointer to pass to test
+
+Description
+  Search for the inode specified by hashval and data in the inode cache.
+If the inode is in the cache, the inode is returned with an incremented
+reference count.

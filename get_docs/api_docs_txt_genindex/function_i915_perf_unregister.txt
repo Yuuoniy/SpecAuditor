@@ -1,0 +1,13 @@
+Function: void i915_perf_unregister ( struct drm_i915_private * i915 )
+
+hide i915-perf from userspace
+
+Parameters
+  struct drm_i915_private *i915
+    i915 device instance
+
+Description
+  i915-perf state cleanup is split up into an ‘unregister’ and
+‘deinit’ phase where the interface is first hidden from
+userspace by i915_perf_unregister() before cleaning up
+remaining state in i915_perf_fini() .

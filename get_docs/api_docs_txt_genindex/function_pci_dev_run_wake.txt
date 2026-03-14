@@ -1,0 +1,12 @@
+Function: bool pci_dev_run_wake ( struct pci_dev * dev )
+
+Check if device can generate run-time wake-up events.
+
+Parameters
+  struct pci_dev *dev
+    Device to check.
+
+Description
+  Return true if the device itself is capable of generating wake-up events
+(through the platform or using the native PCIe PME) or if the device supports
+PME and one of its upstream bridges can generate wake-up events.

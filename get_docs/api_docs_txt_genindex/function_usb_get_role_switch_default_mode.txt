@@ -1,0 +1,11 @@
+Function: enum usb_dr_mode usb_get_role_switch_default_mode ( struct device * dev )
+
+Get default mode for given device
+
+Parameters
+  struct device *dev
+    Pointer to the given device
+
+Description
+  The function gets string from property ‘role-switch-default-mode’,
+and returns the corresponding enum usb_dr_mode .

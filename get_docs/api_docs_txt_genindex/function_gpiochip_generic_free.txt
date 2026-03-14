@@ -1,0 +1,9 @@
+Function: void gpiochip_generic_free ( struct gpio_chip * gc , unsigned int offset )
+
+free the gpio function from a pin
+
+Parameters
+  struct gpio_chip *gc
+    the gpiochip to request the gpio function for
+  unsigned int offset
+    the offset of the GPIO to free from GPIO function

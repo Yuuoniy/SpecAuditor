@@ -1,0 +1,9 @@
+Function: void blk_queue_flag_clear ( unsigned int flag , struct request_queue * q )
+
+atomically clear a queue flag
+
+Parameters
+  unsigned int flag
+    flag to be cleared
+  struct request_queue *q
+    request queue

@@ -1,0 +1,9 @@
+Function: bool ktime_to_timespec64_cond ( const ktime_t kt , struct timespec64 * ts )
+
+convert a ktime_t variable to timespec64 format only if the variable contains data
+
+Parameters
+  const ktime_t kt
+    the ktime_t variable to convert
+  struct timespec64 *ts
+    the timespec variable to store the result in

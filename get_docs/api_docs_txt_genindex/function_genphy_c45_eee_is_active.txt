@@ -1,0 +1,13 @@
+Function: int genphy_c45_eee_is_active ( struct phy_device * phydev , unsigned long * lp )
+
+get EEE status
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+  unsigned long *lp
+    variable to store LP advertised linkmodes
+
+Description
+  this function will read link partner PHY advertisement
+and compare it to local advertisement to return current EEE state.

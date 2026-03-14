@@ -1,0 +1,14 @@
+Function: void devm_backlight_device_unregister ( struct device * dev , struct backlight_device * bd )
+
+unregister backlight device
+
+Parameters
+  struct device *dev
+    the device to unregister
+  struct backlight_device *bd
+    the backlight device to unregister
+
+Description
+  Deallocates a backlight allocated with devm_backlight_device_register() .
+Normally this function will not need to be called and the resource management
+code will ensure that the resources are freed.

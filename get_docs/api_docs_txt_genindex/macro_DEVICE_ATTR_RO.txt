@@ -1,0 +1,10 @@
+Macro: DEVICE_ATTR_RO
+
+
+
+Parameters
+  _name
+    Attribute name.
+
+Description
+  Like DEVICE_ATTR() , but _mode is 0444 and _show is <_name>_show.

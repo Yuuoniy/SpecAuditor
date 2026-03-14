@@ -1,0 +1,10 @@
+Function: void srp_rport_del ( struct srp_rport * rport )
+
+remove a SRP remote port
+
+Parameters
+  struct srp_rport *rport
+    SRP remote port to remove
+
+Description
+  Removes the specified SRP remote port.

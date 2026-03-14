@@ -1,0 +1,13 @@
+Function: struct tty_driver * get_tty_driver ( dev_t device , int * index )
+
+find device of a tty
+
+Parameters
+  dev_t device
+    device identifier
+  int *index
+    returns the index of the tty
+
+Description
+  This routine returns a tty driver structure, given a device number and also
+passes back the index number.

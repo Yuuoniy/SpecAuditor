@@ -1,0 +1,13 @@
+Function: u8 crc8 ( const u8 table [ CRC8_TABLE_SIZE ] , const u8 * pdata , size_t nbytes , u8 crc )
+
+calculate a crc8 over the given input data.
+
+Parameters
+  const u8 table[CRC8_TABLE_SIZE]
+    crc table used for calculation.
+  const u8 *pdata
+    pointer to data buffer.
+  size_t nbytes
+    number of bytes in data buffer.
+  u8 crc
+    previous returned crc8 value.

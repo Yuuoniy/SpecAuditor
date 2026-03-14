@@ -1,0 +1,17 @@
+Function: unsigned int ata_eh_speed_down ( struct ata_device * dev , unsigned int eflags , unsigned int err_mask )
+
+record error and speed down if necessary
+
+Parameters
+  struct ata_device *dev
+    Failed device
+  unsigned int eflags
+    mask of ATA_EFLAG_* flags
+  unsigned int err_mask
+    err_mask of the error
+
+Description
+  Record error and examine error history to determine whether
+adjusting transmission speed is necessary.  It also sets
+transmission limits appropriately if such adjustment is
+necessary.

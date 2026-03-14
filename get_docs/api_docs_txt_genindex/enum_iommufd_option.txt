@@ -1,0 +1,3 @@
+Enum: enum iommufd_option
+
+ioctl(IOMMU_OPTION_RLIMIT_MODE) and ioctl(IOMMU_OPTION_HUGE_PAGES)

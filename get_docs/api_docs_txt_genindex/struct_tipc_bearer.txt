@@ -1,0 +1,43 @@
+Struct: struct tipc_bearer
+
+Generic TIPC bearer structure
+
+Members
+  media_ptr
+    pointer to additional media-specific information about bearer
+  mtu
+    max packet size bearer can support
+  addr
+    media-specific address associated with bearer
+  name
+    bearer name (format = media:interface)
+  media
+    ptr to media structure associated with bearer
+  bcast_addr
+    media address used in broadcasting
+  pt
+    packet type for bearer
+  rcu
+    rcu struct for tipc_bearer
+  priority
+    default link priority for bearer
+  min_win
+    minimum window (in packets) before declaring link congestion
+  max_win
+    maximum window (in packets) before declaring link congestion
+  tolerance
+    default link tolerance for bearer
+  domain
+    network domain to which links can be established
+  identity
+    array index of this bearer within TIPC bearer array
+  disc
+    ptr to link setup request
+  net_plane
+    network plane (‘A’ through ‘H’) currently associated with bearer
+  encap_hlen
+    encap headers length
+  up
+    bearer up flag (bit 0)
+  refcnt
+    tipc_bearer reference counter

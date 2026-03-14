@@ -1,0 +1,14 @@
+Function: int xe_ggtt_node_insert ( struct xe_ggtt_node * node , u32 size , u32 align )
+
+Insert a xe_ggtt_node into the GGTT
+
+Parameters
+  struct xe_ggtt_node *node
+    the xe_ggtt_node to be inserted
+  u32 size
+    size of the node
+  u32 align
+    alignment constrain of the node
+
+Description
+  It cannot be called without first having called xe_ggtt_init() once.

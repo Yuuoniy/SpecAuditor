@@ -1,0 +1,11 @@
+Function: struct media_pad * media_pad_remote_pad_first ( const struct media_pad * pad )
+
+Find the first pad at the remote end of a link
+
+Parameters
+  const struct media_pad *pad
+    Pad at the local end of the link
+
+Description
+  Search for a remote pad connected to the given pad by iterating over all
+links originating or terminating at that pad until an enabled link is found.

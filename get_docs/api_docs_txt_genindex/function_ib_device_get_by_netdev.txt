@@ -1,0 +1,13 @@
+Function: struct ib_device * ib_device_get_by_netdev ( struct net_device * ndev , enum rdma_driver_id driver_id )
+
+Find an IB device associated with a netdev
+
+Parameters
+  struct net_device *ndev
+    netdev to locate
+  enum rdma_driver_id driver_id
+    The driver ID that must match (RDMA_DRIVER_UNKNOWN matches all)
+
+Description
+  Find and hold an ib_device that is associated with a netdev via ib_device_set_netdev() . The caller must call ib_device_put() on the
+returned pointer.

@@ -1,0 +1,21 @@
+Function: struct page * alloc_contig_pages ( unsigned long nr_pages , gfp_t gfp_mask , int nid , nodemask_t * nodemask )
+
+tries to find and allocate contiguous range of pages
+
+Parameters
+  unsigned long nr_pages
+    Number of contiguous pages to allocate
+  gfp_t gfp_mask
+    GFP mask. Node/zone/placement hints limit the search; only some
+action and reclaim modifiers are supported. Reclaim modifiers
+control allocation behavior during compaction/migration/reclaim.
+  int nid
+    Target node
+  nodemask_t *nodemask
+    Mask for other possible nodes
+
+Description
+  This routine is a wrapper around alloc_contig_range() . It scans over zones
+on an applicable zonelist to find a contiguous pfn range which can then be
+tried for allocation with alloc_contig_range() . This routine is intended
+for allocation requests which can not be fulfilled with the buddy allocator.

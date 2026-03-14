@@ -1,0 +1,16 @@
+Function: int fixup_pi_owner ( u32 __user * uaddr , struct futex_q * q , int locked )
+
+Post lock pi_state and corner case management
+
+Parameters
+  u32 __user *uaddr
+    user address of the futex
+  struct futex_q *q
+    futex_q (contains pi_state and access to the rt_mutex)
+  int locked
+    if the attempt to take the rt_mutex succeeded (1) or not (0)
+
+Description
+  After attempting to lock an rt_mutex, this function is called to cleanup
+the pi_state owner as well as handle race conditions that may allow us to
+acquire the lock. Must be called with the hb lock held.

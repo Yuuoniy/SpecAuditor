@@ -1,0 +1,12 @@
+Function: void pcpu_dump_alloc_info ( const char * lvl , const struct pcpu_alloc_info * ai )
+
+print out information about pcpu_alloc_info
+
+Parameters
+  const char *lvl
+    loglevel
+  const struct pcpu_alloc_info *ai
+    allocation info to dump
+
+Description
+  Print out information about ai using loglevel lvl .

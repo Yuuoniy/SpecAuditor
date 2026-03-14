@@ -1,0 +1,12 @@
+Function: void drm_gem_fb_vunmap ( struct drm_framebuffer * fb , struct iosys_map * map )
+
+unmaps framebuffer BOs from kernel address space
+
+Parameters
+  struct drm_framebuffer *fb
+    the framebuffer
+  struct iosys_map *map
+    mapping addresses as returned by drm_gem_fb_vmap()
+
+Description
+  This function unmaps all buffer objects of the given framebuffer.

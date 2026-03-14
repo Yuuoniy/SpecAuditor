@@ -1,0 +1,15 @@
+Function: struct drm_atomic_state * drm_atomic_helper_duplicate_state ( struct drm_device * dev , struct drm_modeset_acquire_ctx * ctx )
+
+duplicate an atomic state object
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_modeset_acquire_ctx *ctx
+    lock acquisition context
+
+Description
+  Makes a copy of the current atomic state by looping over all objects and
+duplicating their respective states. This is used for example by suspend/
+resume support code to save the state prior to suspend such that it can
+be restored upon resume.

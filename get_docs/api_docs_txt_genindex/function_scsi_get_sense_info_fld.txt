@@ -1,0 +1,15 @@
+Function: bool scsi_get_sense_info_fld ( const u8 * sense_buffer , int sb_len , u64 * info_out )
+
+get information field from sense data (either fixed or descriptor format)
+
+Parameters
+  const u8 *sense_buffer
+    byte array of sense data
+  int sb_len
+    number of valid bytes in sense_buffer
+  u64 *info_out
+    pointer to 64 integer where 8 or 4 byte information
+field will be placed if found.
+
+Description
+  true if information field found, false if not found.

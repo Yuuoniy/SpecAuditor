@@ -1,0 +1,10 @@
+Macro: XE_RTP_RULE_ENGINE_CLASS
+
+
+
+Parameters
+  cls_
+    Engine class to match
+
+Description
+  Refer to XE_RTP_RULES() for expected usage.

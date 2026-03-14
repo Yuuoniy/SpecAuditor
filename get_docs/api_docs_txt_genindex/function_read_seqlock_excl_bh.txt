@@ -1,0 +1,12 @@
+Function: void read_seqlock_excl_bh ( seqlock_t * sl )
+
+start a seqlock_t locking reader section with softirqs disabled
+
+Parameters
+  seqlock_t *sl
+    Pointer to seqlock_t
+
+Description
+  _bh variant of read_seqlock_excl() . Use this variant only if the
+seqlock_t write side section, or other read sections , can be invoked
+from softirq contexts.

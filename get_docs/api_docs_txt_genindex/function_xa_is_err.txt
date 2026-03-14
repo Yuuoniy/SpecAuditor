@@ -1,0 +1,12 @@
+Function: bool xa_is_err ( const void * entry )
+
+Report whether an XArray operation returned an error
+
+Parameters
+  const void *entry
+    Result from calling an XArray function
+
+Description
+  If an XArray operation cannot complete an operation, it will return
+a special value indicating an error.  This function tells you
+whether an error occurred; xa_err() tells you which error occurred.

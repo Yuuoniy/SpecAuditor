@@ -1,0 +1,12 @@
+Function: void drm_gpuva_link ( struct drm_gpuva * va , struct drm_gpuvm_bo * vm_bo )
+
+link a drm_gpuva
+
+Parameters
+  struct drm_gpuva *va
+    the drm_gpuva to link
+  struct drm_gpuvm_bo *vm_bo
+    the drm_gpuvm_bo to add the drm_gpuva to
+
+Description
+  This adds the given va to the GPU VA list of the drm_gpuvm_bo and the drm_gpuvm_bo to the drm_gem_object it is associated with.

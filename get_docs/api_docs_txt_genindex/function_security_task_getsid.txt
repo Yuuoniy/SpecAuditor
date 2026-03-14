@@ -1,0 +1,10 @@
+Function: int security_task_getsid ( struct task_struct * p )
+
+Check if getting the session id is allowed
+
+Parameters
+  struct task_struct *p
+    task
+
+Description
+  Check permission before getting the session identifier of the process p .

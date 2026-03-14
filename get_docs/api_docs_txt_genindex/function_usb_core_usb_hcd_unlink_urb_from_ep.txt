@@ -1,0 +1,14 @@
+Function: void usb_hcd_unlink_urb_from_ep ( struct usb_hcd * hcd , struct urb * urb )
+
+remove an URB from its endpoint queue
+
+Parameters
+  struct usb_hcd *hcd
+    host controller to which urb was submitted
+  struct urb *urb
+    URB being unlinked
+
+Description
+  Host controller drivers should call this routine before calling usb_hcd_giveback_urb() .  The HCD’s private spinlock must be held and
+interrupts must be disabled.  The actions carried out here are required
+for URB completion.

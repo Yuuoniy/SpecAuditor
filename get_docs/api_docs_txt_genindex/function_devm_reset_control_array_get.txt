@@ -1,0 +1,14 @@
+Function: struct reset_control * devm_reset_control_array_get ( struct device * dev , enum reset_control_flags flags )
+
+Resource managed reset control array get
+
+Parameters
+  struct device *dev
+    device that requests the list of reset controls
+  enum reset_control_flags flags
+    whether reset controls are shared, optional, acquired
+
+Description
+  The reset control array APIs are intended for a list of resets
+that just have to be asserted or deasserted, without any
+requirements on the order.

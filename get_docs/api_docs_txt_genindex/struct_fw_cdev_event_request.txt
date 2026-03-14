@@ -1,0 +1,19 @@
+Struct: struct fw_cdev_event_request
+
+Old version of fw_cdev_event_request2
+
+Members
+  closure
+    See fw_cdev_event_common ; set by FW_CDEV_IOC_ALLOCATE ioctl
+  type
+    See fw_cdev_event_common ; always FW_CDEV_EVENT_REQUEST
+  tcode
+    Transaction code of the incoming request
+  offset
+    The offset into the 48-bit per-node address space
+  handle
+    Reference to the kernel-side pending request
+  length
+    Data length, i.e. the request’s payload size in bytes
+  data
+    Incoming data, if any

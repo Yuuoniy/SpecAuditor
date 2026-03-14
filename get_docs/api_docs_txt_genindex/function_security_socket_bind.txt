@@ -1,0 +1,15 @@
+Function: int security_socket_bind ( struct socket * sock , struct sockaddr * address , int addrlen )
+
+Check if a socket bind operation is allowed
+
+Parameters
+  struct socket *sock
+    socket
+  struct sockaddr *address
+    requested bind address
+  int addrlen
+    length of address
+
+Description
+  Check permission before socket protocol layer bind operation is performed
+and the socket sock is bound to the address specified in the address parameter.

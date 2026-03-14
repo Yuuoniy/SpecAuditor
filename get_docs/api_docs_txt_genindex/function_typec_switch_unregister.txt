@@ -1,0 +1,10 @@
+Function: void typec_switch_unregister ( struct typec_switch_dev * sw_dev )
+
+Unregister USB Type-C orientation switch
+
+Parameters
+  struct typec_switch_dev *sw_dev
+    USB Type-C orientation switch
+
+Description
+  Unregister switch that was registered with typec_switch_register() .

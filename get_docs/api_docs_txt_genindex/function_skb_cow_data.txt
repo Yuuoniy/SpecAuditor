@@ -1,0 +1,16 @@
+Function: int skb_cow_data ( struct sk_buff * skb , int tailbits , struct sk_buff * * trailer )
+
+Check that a socket buffer’s data buffers are writable
+
+Parameters
+  struct sk_buff *skb
+    The socket buffer to check.
+  int tailbits
+    Amount of trailing space to be added
+  struct sk_buff **trailer
+    Returned pointer to the skb where the tailbits space begins
+
+Description
+  Make sure that the data buffers attached to a socket buffer are
+writable. If they are not, private copies are made of the data buffers
+and the socket buffer is set to use these instead.

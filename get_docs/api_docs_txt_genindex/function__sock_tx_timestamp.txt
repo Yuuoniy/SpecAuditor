@@ -1,0 +1,13 @@
+Function: void _sock_tx_timestamp ( struct sock * sk , const struct sockcm_cookie * sockc , __u8 * tx_flags , __u32 * tskey )
+
+checks whether the outgoing packet is to be time stamped
+
+Parameters
+  struct sock *sk
+    socket sending this packet
+  const struct sockcm_cookie *sockc
+    pointer to socket cmsg cookie to get timestamping info
+  __u8 *tx_flags
+    completed with instructions for time stamping
+  __u32 *tskey
+    filled in with next sk_tskey (not for TCP, which uses seqno)

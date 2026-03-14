@@ -1,0 +1,7 @@
+Function: int nvmem_unregister_notifier ( struct notifier_block * nb )
+
+Unregister a notifier block for nvmem events.
+
+Parameters
+  struct notifier_block *nb
+    notifier block to be unregistered.

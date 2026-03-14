@@ -1,0 +1,3 @@
+Enum: enum device_removable
+
+Whether the device is removable. The criteria for a device to be classified as removable is determined by its subsystem or bus.

@@ -1,0 +1,9 @@
+Function: struct device_node * of_get_next_child ( const struct device_node * node , struct device_node * prev )
+
+Iterate a node childs
+
+Parameters
+  const struct device_node *node
+    parent node
+  struct device_node *prev
+    previous child of the parent node, or NULL to get first

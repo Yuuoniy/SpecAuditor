@@ -1,0 +1,11 @@
+Function: int genphy_c45_an_disable_aneg ( struct phy_device * phydev )
+
+disable auto-negotiation
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  Disable auto-negotiation in the Clause 45 PHY. The link parameters
+are controlled through the PMA/PMD MMD registers.

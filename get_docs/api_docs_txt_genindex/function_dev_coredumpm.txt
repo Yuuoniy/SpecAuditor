@@ -1,0 +1,24 @@
+Function: void dev_coredumpm ( struct device * dev , struct module * owner , void * data , size_t datalen , gfp_t gfp , ssize_t ( * read ) ( char * buffer , loff_t offset , size_t count , void * data , size_t datalen ) , void ( * free ) ( void * data ) )
+
+create device coredump with read/free methods
+
+Parameters
+  struct device *dev
+    the struct device for the crashed device
+  struct module *owner
+    the module that contains the read/free functions, use THIS_MODULE
+  void *data
+    data cookie for the read / free functions
+  size_t datalen
+    length of the data
+  gfp_t gfp
+    allocation flags
+  ssize_t (*read)(char *buffer, loff_t offset, size_t count, void *data, size_t datalen)
+    function to read from the given buffer
+  void (*free)(void *data)
+    function to free the given buffer
+
+Description
+  Creates a new device coredump for the given device. If a previous one hasn’t
+been read yet, the new coredump is discarded. The data lifetime is determined
+by the device coredump framework and when it is no longer needed the free function will be called to free the data.

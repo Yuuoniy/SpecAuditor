@@ -1,0 +1,28 @@
+Struct: struct drm_sched_init_args
+
+parameters for initializing a DRM GPU scheduler
+
+Members
+  ops
+    backend operations provided by the driver
+  submit_wq
+    workqueue to use for submission. If NULL, an ordered wq is
+allocated and used.
+  timeout_wq
+    workqueue to use for timeout work. If NULL, the system_wq is used.
+  num_rqs
+    Number of run-queues. This may be at most DRM_SCHED_PRIORITY_COUNT,
+as there’s usually one run-queue per priority, but may be less.
+  credit_limit
+    the number of credits this scheduler can hold from all jobs
+  hang_limit
+    number of times to allow a job to hang before dropping it.
+This mechanism is DEPRECATED. Set it to 0.
+  timeout
+    timeout value in jiffies for submitted jobs.
+  score
+    score atomic shared with other schedulers. May be NULL.
+  name
+    name (typically the driver’s name). Used for debugging
+  dev
+    associated device. Used for debugging

@@ -1,0 +1,11 @@
+Function: int rawnand_dt_parse_gpio_cs ( struct device * dev , struct gpio_desc * * * cs_array , unsigned int * ncs_array )
+
+Parse the gpio-cs property of a controller
+
+Parameters
+  struct device *dev
+    Device that will be parsed. Also used for managed allocations.
+  struct gpio_desc ***cs_array
+    Array of GPIO desc pointers allocated on success
+  unsigned int *ncs_array
+    Number of entries in cs_array updated on success. return 0 on success, an error otherwise.

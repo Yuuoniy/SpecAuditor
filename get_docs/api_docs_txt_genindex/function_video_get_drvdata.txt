@@ -1,0 +1,10 @@
+Function: void * video_get_drvdata ( struct video_device * vdev )
+
+gets private data from struct video_device .
+
+Parameters
+  struct video_device *vdev
+    pointer to struct video_device
+
+Description
+  returns a pointer to the private data

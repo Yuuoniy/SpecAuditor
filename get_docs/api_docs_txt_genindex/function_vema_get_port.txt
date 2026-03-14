@@ -1,0 +1,14 @@
+Function: struct opa_vnic_vema_port * vema_get_port ( struct opa_vnic_ctrl_port * cport , u8 port_num )
+
+Gets the opa_vnic_vema_port
+
+Parameters
+  struct opa_vnic_ctrl_port *cport
+    pointer to control dev
+  u8 port_num
+    Port number
+
+Description
+  This function loops through the ports and returns
+the opa_vnic_vema port structure that is associated
+with the OPA port number

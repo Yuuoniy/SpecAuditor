@@ -1,0 +1,15 @@
+Function: void ieee80211_scan_completed ( struct ieee80211_hw * hw , struct cfg80211_scan_info * info )
+
+completed hardware scan
+
+Parameters
+  struct ieee80211_hw *hw
+    the hardware that finished the scan
+  struct cfg80211_scan_info *info
+    information about the completed scan
+
+Description
+  When hardware scan offload is used (i.e. the hw_scan() callback is
+assigned) this function needs to be called by the driver to notify
+mac80211 that the scan finished. This function can be called from
+any context, including hardirq context.

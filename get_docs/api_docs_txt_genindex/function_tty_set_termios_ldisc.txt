@@ -1,0 +1,13 @@
+Function: void tty_set_termios_ldisc ( struct tty_struct * tty , int disc )
+
+set ldisc field
+
+Parameters
+  struct tty_struct *tty
+    tty structure
+  int disc
+    line discipline number
+
+Description
+  This is probably overkill for real world processors but they are not on hot
+paths so a little discipline won’t do any harm.

@@ -1,0 +1,18 @@
+Function: int acpi_dev_gpio_irq_wake_get_by ( struct acpi_device * adev , const char * con_id , int index , bool * wake_capable )
+
+Find GpioInt and translate it to Linux IRQ number
+
+Parameters
+  struct acpi_device *adev
+    pointer to a ACPI device to get IRQ from
+  const char *con_id
+    optional name of GpioInt resource
+  int index
+    index of GpioInt resource (starting from 0 )
+  bool *wake_capable
+    Set to true if the IRQ is wake capable
+
+Description
+  If the device has one or more GpioInt resources, this function can be
+used to translate from the GPIO offset in the resource to the Linux IRQ
+number.

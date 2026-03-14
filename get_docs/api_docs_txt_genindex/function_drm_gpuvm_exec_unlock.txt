@@ -1,0 +1,11 @@
+Function: void drm_gpuvm_exec_unlock ( struct drm_gpuvm_exec * vm_exec )
+
+lock all dma-resv of all assoiciated BOs
+
+Parameters
+  struct drm_gpuvm_exec *vm_exec
+    the drm_gpuvm_exec wrapper
+
+Description
+  Releases all dma-resv locks of all drm_gem_objects previously acquired
+through drm_gpuvm_exec_lock() or its variants.

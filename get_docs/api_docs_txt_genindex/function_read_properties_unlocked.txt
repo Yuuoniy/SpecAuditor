@@ -1,0 +1,18 @@
+Function: int read_properties_unlocked ( struct i915_perf * perf , u64 __user * uprops , u32 n_props , struct perf_open_properties * props )
+
+validate + copy userspace stream open properties
+
+Parameters
+  struct i915_perf *perf
+    i915 perf instance
+  u64 __user *uprops
+    The array of u64 key value pairs given by userspace
+  u32 n_props
+    The number of key value pairs expected in uprops
+  struct perf_open_properties *props
+    The stream configuration built up while validating properties
+
+Description
+  Note this function only validates properties in isolation it doesn’t
+validate that the combination of properties makes sense or that all
+properties necessary for a particular kind of stream have been set.

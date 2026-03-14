@@ -1,0 +1,7 @@
+Function: int ssam_nf_init ( struct ssam_nf * nf )
+
+Initialize the notifier system.
+
+Parameters
+  struct ssam_nf *nf
+    The notifier system to initialize.

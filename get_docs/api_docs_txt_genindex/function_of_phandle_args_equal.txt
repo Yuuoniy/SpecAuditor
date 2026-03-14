@@ -1,0 +1,9 @@
+Function: bool of_phandle_args_equal ( const struct of_phandle_args * a1 , const struct of_phandle_args * a2 )
+
+Compare two of_phandle_args
+
+Parameters
+  const struct of_phandle_args *a1
+    First of_phandle_args to compare
+  const struct of_phandle_args *a2
+    Second of_phandle_args to compare

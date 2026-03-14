@@ -1,0 +1,11 @@
+Function: int drm_edid_connector_add_modes ( struct drm_connector * connector )
+
+Update probed modes from the EDID property
+
+Parameters
+  struct drm_connector *connector
+    Connector
+
+Description
+  Add the modes from the previously updated EDID property to the connector
+probed modes list.

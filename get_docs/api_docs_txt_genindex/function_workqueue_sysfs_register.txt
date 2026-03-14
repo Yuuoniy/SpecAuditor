@@ -1,0 +1,12 @@
+Function: int workqueue_sysfs_register ( struct workqueue_struct * wq )
+
+make a workqueue visible in sysfs
+
+Parameters
+  struct workqueue_struct *wq
+    the workqueue to register
+
+Description
+  Expose wq in sysfs under /sys/bus/workqueue/devices.
+alloc_workqueue*() automatically calls this function if WQ_SYSFS is set
+which is the preferred method.

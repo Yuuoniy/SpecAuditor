@@ -1,0 +1,11 @@
+Function: void dvb_module_release ( struct i2c_client * client )
+
+releases an I2C device allocated with dvb_module_probe() .
+
+Parameters
+  struct i2c_client *client
+    pointer to struct i2c_client with the I2C client to be released.
+can be NULL .
+
+Description
+  This function should be used to free all resources reserved by dvb_module_probe() and unbinding the I2C hardware.

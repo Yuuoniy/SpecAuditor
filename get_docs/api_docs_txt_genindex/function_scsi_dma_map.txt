@@ -1,0 +1,11 @@
+Function: int scsi_dma_map ( struct scsi_cmnd * cmd )
+
+perform DMA mapping against command’s sg lists
+
+Parameters
+  struct scsi_cmnd *cmd
+    scsi command
+
+Description
+  Returns the number of sg lists actually used, zero if the sg lists
+is NULL, or -ENOMEM if the mapping failed.

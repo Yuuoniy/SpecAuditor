@@ -1,0 +1,13 @@
+Function: int genphy_c45_ethtool_get_eee ( struct phy_device * phydev , struct ethtool_keee * data )
+
+get EEE supported and status
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+  struct ethtool_keee *data
+    ethtool_keee data
+
+Description
+  it reports the Supported/Advertisement/LP Advertisement
+capabilities.

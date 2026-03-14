@@ -1,0 +1,10 @@
+Function: u8 drm_eld_get_spk_alloc ( const u8 * eld )
+
+Get speaker allocation
+
+Parameters
+  const u8 *eld
+    pointer to an ELD memory structure
+
+Description
+  The returned value is the speakers mask. User has to use DRM_ELD_SPEAKER field definitions to identify speakers.

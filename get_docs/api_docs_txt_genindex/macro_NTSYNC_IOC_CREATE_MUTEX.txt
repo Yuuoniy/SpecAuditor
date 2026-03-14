@@ -1,0 +1,5 @@
+Macro: NTSYNC_IOC_CREATE_MUTEX
+
+Create a mutex object. Takes a pointer to struct ntsync_mutex_args , which is used as follows: count Initial recursion count of the mutex. owner Initial owner of the mutex. If owner is nonzero and count is zero, or if owner is
+zero and count is nonzero, the function fails with EINVAL .
+On success, returns a file descriptor the created mutex.

@@ -1,0 +1,14 @@
+Function: struct tty_ldisc * tty_ldisc_get ( struct tty_struct * tty , int disc )
+
+take a reference to an ldisc
+
+Parameters
+  struct tty_struct *tty
+    tty device
+  int disc
+    ldisc number
+
+Description
+  Takes a reference to a line discipline. Deals with refcounts and module
+locking counts. If the discipline is not available, its module loaded, if
+possible.

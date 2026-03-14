@@ -1,0 +1,16 @@
+Function: ssize_t xdr_stream_decode_string_dup ( struct xdr_stream * xdr , char * * str , size_t maxlen , gfp_t gfp_flags )
+
+Decode and duplicate variable length string
+
+Parameters
+  struct xdr_stream *xdr
+    pointer to xdr_stream
+  char **str
+    location to store pointer to string
+  size_t maxlen
+    maximum acceptable string length
+  gfp_t gfp_flags
+    GFP mask to use
+
+Description
+  On success, returns length of NUL-terminated string stored in *ptr -EBADMSG on XDR buffer overflow -EMSGSIZE if the size of the string would exceed maxlen -ENOMEM on memory allocation failure

@@ -1,0 +1,22 @@
+Function: struct platform_device * platform_device_register_data ( struct device * parent , const char * name , int id , const void * data , size_t size )
+
+add a platform-level device with platform-specific data
+
+Parameters
+  struct device *parent
+    parent device for the device we’re adding
+  const char *name
+    base name of the device we’re adding
+  int id
+    instance id
+  const void *data
+    platform specific data for this platform device
+  size_t size
+    size of platform specific data
+
+Description
+  This function creates a simple platform device that requires minimal
+resource and memory management. Canned release function freeing memory
+allocated for the device allows drivers using such devices to be
+unloaded without waiting for the last reference to the device to be
+dropped.

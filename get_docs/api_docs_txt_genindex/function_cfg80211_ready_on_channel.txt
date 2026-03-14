@@ -1,0 +1,16 @@
+Function: void cfg80211_ready_on_channel ( struct wireless_dev * wdev , u64 cookie , struct ieee80211_channel * chan , unsigned int duration , gfp_t gfp )
+
+notification of remain_on_channel start
+
+Parameters
+  struct wireless_dev *wdev
+    wireless device
+  u64 cookie
+    the request cookie
+  struct ieee80211_channel *chan
+    The current channel (from remain_on_channel request)
+  unsigned int duration
+    Duration in milliseconds that the driver intents to remain on the
+channel
+  gfp_t gfp
+    allocation flags

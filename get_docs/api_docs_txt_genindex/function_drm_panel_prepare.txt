@@ -1,0 +1,13 @@
+Function: void drm_panel_prepare ( struct drm_panel * panel )
+
+power on a panel
+
+Parameters
+  struct drm_panel *panel
+    DRM panel
+
+Description
+  Calling this function will enable power and deassert any reset signals to
+the panel. After this has completed it is possible to communicate with any
+integrated circuitry via a command bus. This function cannot fail (as it is
+called from the pre_enable call chain). There will always be a call to drm_panel_disable() afterwards.

@@ -1,0 +1,14 @@
+Struct: struct usb_class_driver
+
+identifies a USB driver that wants to use the USB major number
+
+Members
+  name
+    the usb class device name for this driver.  Will show up in sysfs.
+  devnode
+    Callback to provide a naming hint for a possible
+device node to create.
+  fops
+    pointer to the struct file_operations of this driver.
+  minor_base
+    the start of the minor range for this driver.

@@ -1,0 +1,9 @@
+Function: void mei_cldev_set_drvdata ( struct mei_cl_device * cldev , void * data )
+
+driver data setter
+
+Parameters
+  struct mei_cl_device *cldev
+    mei client device
+  void *data
+    data to store

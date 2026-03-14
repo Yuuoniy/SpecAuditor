@@ -1,0 +1,11 @@
+Function: int v4l2_device_register_subdev_nodes ( struct v4l2_device * v4l2_dev )
+
+Registers subdevices device nodes with unrestricted access to the subdevice userspace operations
+
+Parameters
+  struct v4l2_device *v4l2_dev
+    pointer to struct v4l2_device
+
+Description
+  Internally calls __v4l2_device_register_subdev_nodes() . See its documentation
+for more details.

@@ -1,0 +1,79 @@
+Struct: struct iio_info
+
+constant information about device
+
+Members
+  event_attrs
+    event control attributes
+  attrs
+    general purpose device attributes
+  read_raw
+    function to request a value from the device.
+mask specifies which value. Note 0 means a reading of
+the channel in question.  Return value will specify the
+type of value returned by the device. val and val2 will
+contain the elements making up the returned value.
+  read_raw_multi
+    function to return values from the device.
+mask specifies which value. Note 0 means a reading of
+the channel in question.  Return value will specify the
+type of value returned by the device. vals pointer
+contain the elements making up the returned value.
+max_len specifies maximum number of elements
+vals pointer can contain. val_len is used to return
+length of valid elements in vals.
+  read_avail
+    function to return the available values from the device.
+mask specifies which value. Note 0 means the available
+values for the channel in question.  Return value
+specifies if a IIO_AVAIL_LIST or a IIO_AVAIL_RANGE is
+returned in vals. The type of the vals are returned in
+type and the number of vals is returned in length. For
+ranges, there are always three vals returned; min, step
+and max. For lists, all possible values are enumerated.
+  write_raw
+    function to write a value to the device.
+Parameters are the same as for read_raw.
+  read_label
+    function to request label name for a specified label,
+for better channel identification.
+  write_raw_get_fmt
+    callback function to query the expected
+format/precision. If not set by the driver, write_raw
+returns IIO_VAL_INT_PLUS_MICRO.
+  read_event_config
+    find out if the event is enabled.
+  write_event_config
+    set if the event is enabled.
+  read_event_value
+    read a configuration value associated with the event.
+  write_event_value
+    write a configuration value for the event.
+  read_event_label
+    function to request label name for a specified label,
+for better event identification.
+  validate_trigger
+    function to validate the trigger when the
+current trigger gets changed.
+  get_current_scan_type
+    must be implemented by drivers that use ext_scan_type
+in the channel spec to return the index of the currently
+active ext_scan type for a channel.
+  update_scan_mode
+    function to configure device and scan buffer when
+channels have changed
+  debugfs_reg_access
+    function to read or write register value of device
+  fwnode_xlate
+    fwnode based function pointer to obtain channel specifier index.
+  hwfifo_set_watermark
+    function pointer to set the current hardware
+fifo watermark level; see hwfifo_* entries in ABI file testing/sysfs-bus-iio for details on
+how the hardware fifo operates
+  hwfifo_flush_to_buffer
+    function pointer to flush the samples stored
+in the hardware fifo to the device buffer. The driver
+should not flush more than count samples. The function
+must return the number of samples flushed, 0 if no
+samples were flushed or a negative integer if no samples
+were flushed and there was an error.

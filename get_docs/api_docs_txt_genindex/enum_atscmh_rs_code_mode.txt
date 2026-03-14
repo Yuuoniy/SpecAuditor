@@ -1,0 +1,3 @@
+Enum: enum atscmh_rs_code_mode
+
+ATSC-M/H Reed Solomon modes

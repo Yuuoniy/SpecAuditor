@@ -1,0 +1,18 @@
+Function: void list_sort ( void * priv , struct list_head * head , list_cmp_func_t cmp )
+
+sort a list
+
+Parameters
+  void *priv
+    private data, opaque to list_sort() , passed to cmp
+  struct list_head *head
+    the list to sort
+  list_cmp_func_t cmp
+    the elements comparison function
+
+Description
+  The comparison function cmp must return > 0 if a should sort after b (” a > b ” if you want an ascending sort), and <= 0 if a should
+sort before b or their original order should be preserved.  It is
+always called with the element that came first in the input in a ,
+and list_sort is a stable sort, so it is not necessary to distinguish
+the a < b and a == b cases.

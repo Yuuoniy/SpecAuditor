@@ -1,0 +1,22 @@
+Function: int snd_card_new ( struct device * parent , int idx , const char * xid , struct module * module , int extra_size , struct snd_card * * card_ret )
+
+create and initialize a soundcard structure
+
+Parameters
+  struct device *parent
+    the parent device object
+  int idx
+    card index (address) [0 ... (SNDRV_CARDS-1)]
+  const char *xid
+    card identification (ASCII string)
+  struct module *module
+    top level module for locking
+  int extra_size
+    allocate this extra size after the main soundcard structure
+  struct snd_card **card_ret
+    the pointer to store the created card instance
+
+Description
+  The function allocates snd_card instance via kzalloc with the given
+space for the driver to use freely.  The allocated struct is stored
+in the given card_ret pointer.

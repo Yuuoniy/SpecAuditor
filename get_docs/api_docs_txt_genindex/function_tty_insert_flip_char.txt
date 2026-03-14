@@ -1,0 +1,14 @@
+Function: size_t tty_insert_flip_char ( struct tty_port * port , u8 ch , u8 flag )
+
+add one character to the tty buffer
+
+Parameters
+  struct tty_port *port
+    tty port
+  u8 ch
+    character
+  u8 flag
+    flag byte
+
+Description
+  Queue a single byte ch to the tty buffering, with an optional flag.

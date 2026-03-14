@@ -1,0 +1,15 @@
+Function: int phy_select_page ( struct phy_device * phydev , int page )
+
+take the bus lock, save the current page, and set a page
+
+Parameters
+  struct phy_device *phydev
+    a pointer to a struct phy_device
+  int page
+    desired page
+
+Description
+  Take the MDIO bus lock to protect against concurrent access, save the
+current PHY page, and set the current page.  On error, returns a
+negative errno, otherwise returns the previous page number. phy_restore_page() must always be called after this, irrespective
+of success or failure of this call.

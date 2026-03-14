@@ -1,0 +1,3 @@
+Macro: enum v4l2_subdev_pre_streamon_flags
+
+Flags for pre_streamon subdev core op

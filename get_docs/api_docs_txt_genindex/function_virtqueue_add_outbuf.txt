@@ -1,0 +1,19 @@
+Function: int virtqueue_add_outbuf ( struct virtqueue * vq , struct scatterlist * sg , unsigned int num , void * data , gfp_t gfp )
+
+expose output buffers to other end
+
+Parameters
+  struct virtqueue *vq
+    the struct virtqueue we’re talking about.
+  struct scatterlist *sg
+    scatterlist (must be well-formed and terminated!)
+  unsigned int num
+    the number of entries in sg readable by other side
+  void *data
+    the token identifying the buffer.
+  gfp_t gfp
+    how to do memory allocations (if necessary).
+
+Description
+  Caller must ensure we don’t call this with other virtqueue operations
+at the same time (except where noted).

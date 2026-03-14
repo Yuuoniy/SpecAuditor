@@ -1,0 +1,12 @@
+Function: long raw_atomic_long_xchg ( atomic_long_t * v , long new )
+
+atomic exchange with full ordering
+
+Parameters
+  atomic_long_t *v
+    pointer to atomic_long_t
+  long new
+    long value to assign
+
+Description
+  Atomically updates v to new with full ordering.

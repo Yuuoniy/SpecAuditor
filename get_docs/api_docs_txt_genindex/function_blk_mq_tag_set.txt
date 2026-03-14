@@ -1,0 +1,55 @@
+Function: struct blk_mq_tag_set
+
+tag set that can be shared between request queues
+
+Members
+  ops
+    Pointers to functions that implement block driver behavior.
+  map
+    One or more ctx -> hctx mappings. One map exists for each
+hardware queue type ( enum hctx_type ) that the driver wishes
+to support. There are no restrictions on maps being of the
+same size, and it’s perfectly legal to share maps between
+types.
+  nr_maps
+    Number of elements in the map array. A number in the range
+[1, HCTX_MAX_TYPES].
+  nr_hw_queues
+    Number of hardware queues supported by the block driver that
+owns this data structure.
+  queue_depth
+    Number of tags per hardware queue, reserved tags included.
+  reserved_tags
+    Number of tags to set aside for BLK_MQ_REQ_RESERVED tag
+allocations.
+  cmd_size
+    Number of additional bytes to allocate per request. The block
+driver owns these additional bytes.
+  numa_node
+    NUMA node the storage adapter has been connected to.
+  timeout
+    Request processing timeout in jiffies.
+  flags
+    Zero or more BLK_MQ_F_* flags.
+  driver_data
+    Pointer to data owned by the block driver that created this
+tag set.
+  tags
+    Tag sets. One tag set per hardware queue. Has nr_hw_queues elements.
+  shared_tags
+    Shared set of tags. Has nr_hw_queues elements. If set,
+shared by all tags .
+  tag_list_lock
+    Serializes tag_list accesses.
+  tag_list
+    List of the request queues that use this tag set. See also
+request_queue.tag_set_list.
+  srcu
+    Use as lock when type of the request queue is blocking
+(BLK_MQ_F_BLOCKING).
+  tags_srcu
+    SRCU used to defer freeing of tags page_list to prevent
+use-after-free when iterating tags.
+  update_nr_hwq_lock
+    Synchronize updating nr_hw_queues with add/del disk &
+switching elevator.

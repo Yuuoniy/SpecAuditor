@@ -1,0 +1,23 @@
+Function: int security_sb_mount ( const char * dev_name , const struct path * path , const char * type , unsigned long flags , void * data )
+
+Check permission for mounting a filesystem
+
+Parameters
+  const char *dev_name
+    filesystem backing device
+  const struct path *path
+    mount point
+  const char *type
+    filesystem type
+  unsigned long flags
+    mount flags
+  void *data
+    filesystem specific data
+
+Description
+  Check permission before an object specified by dev_name is mounted on the
+mount point named by nd .  For an ordinary mount, dev_name identifies a
+device if the file system type requires a device.  For a remount
+( flags & MS_REMOUNT), dev_name is irrelevant.  For a loopback/bind mount
+( flags & MS_BIND), dev_name identifies the pathname of the object being
+mounted.

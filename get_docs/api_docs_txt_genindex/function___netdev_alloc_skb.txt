@@ -1,0 +1,17 @@
+Function: struct sk_buff * __netdev_alloc_skb ( struct net_device * dev , unsigned int len , gfp_t gfp_mask )
+
+allocate an skbuff for rx on a specific device
+
+Parameters
+  struct net_device *dev
+    network device to receive on
+  unsigned int len
+    length to allocate
+  gfp_t gfp_mask
+    get_free_pages mask, passed to alloc_skb
+
+Description
+  Allocate a new sk_buff and assign it a usage count of one. The
+buffer has NET_SKB_PAD headroom built in. Users should allocate
+the headroom they think they need without accounting for the
+built in space. The built in space is used for optimisations.

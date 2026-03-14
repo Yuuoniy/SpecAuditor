@@ -1,0 +1,12 @@
+Function: int ata_port_freeze ( struct ata_port * ap )
+
+abort & freeze port
+
+Parameters
+  struct ata_port *ap
+    ATA port to freeze
+
+Description
+  Abort and freeze ap .  The freeze operation must be called
+first, because some hardware requires special operations
+before the taskfile registers are accessible.

@@ -1,0 +1,11 @@
+Function: void iscsi_conn_teardown ( struct iscsi_cls_conn * cls_conn )
+
+teardown iscsi connection
+
+Parameters
+  struct iscsi_cls_conn *cls_conn
+    iscsi class connection
+
+Description
+  TODO: we may need to make this into a two step process
+like scsi-mls remove + put host

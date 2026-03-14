@@ -1,0 +1,12 @@
+Function: int clk_set_max_rate ( struct clk * clk , unsigned long rate )
+
+set a maximum clock rate for a clock source
+
+Parameters
+  struct clk *clk
+    clock source
+  unsigned long rate
+    desired maximum clock rate in Hz, inclusive
+
+Description
+  Returns success (0) or negative errno.

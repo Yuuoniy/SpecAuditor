@@ -1,0 +1,11 @@
+Function: list_for_each_prev_safe
+
+
+
+Parameters
+  pos
+    the struct list_head to use as a loop cursor.
+  n
+    another struct list_head to use as temporary storage
+  head
+    the head for your list.

@@ -1,0 +1,14 @@
+Function: int security_path_mkdir ( const struct path * dir , struct dentry * dentry , umode_t mode )
+
+Check if creating a new directory is allowed
+
+Parameters
+  const struct path *dir
+    parent directory
+  struct dentry *dentry
+    new directory
+  umode_t mode
+    new directory mode
+
+Description
+  Check permissions to create a new directory in the existing directory.

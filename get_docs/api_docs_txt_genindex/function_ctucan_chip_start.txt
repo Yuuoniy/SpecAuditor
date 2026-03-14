@@ -1,0 +1,13 @@
+Function: int ctucan_chip_start ( struct net_device * ndev )
+
+This routine starts the driver
+
+Parameters
+  struct net_device *ndev
+    Pointer to net_device structure
+
+Description
+  Routine expects that chip is in reset state. It setups initial
+Tx buffers for FIFO priorities, sets bittiming, enables interrupts,
+switches core to operational mode and changes controller
+state to CAN_STATE_STOPPED .

@@ -1,0 +1,9 @@
+Function: struct device * class_find_device_by_devt ( const struct class * class , dev_t devt )
+
+device iterator for locating a particular device matching the device type.
+
+Parameters
+  const struct class *class
+    class type
+  dev_t devt
+    device type of the device to match.

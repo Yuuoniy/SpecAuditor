@@ -1,0 +1,11 @@
+Function: int tipc_getname ( struct socket * sock , struct sockaddr * uaddr , int peer )
+
+get port ID of socket or peer socket
+
+Parameters
+  struct socket *sock
+    socket structure
+  struct sockaddr *uaddr
+    area for returned socket address
+  int peer
+    0 = own ID, 1 = current peer ID, 2 = current/former peer ID

@@ -1,0 +1,12 @@
+Function: int media_request_alloc ( struct media_device * mdev , int * alloc_fd )
+
+Allocate the media request
+
+Parameters
+  struct media_device *mdev
+    Media device this request belongs to
+  int *alloc_fd
+    Store the request’s file descriptor in this int
+
+Description
+  Allocated the media request and put the fd in alloc_fd .

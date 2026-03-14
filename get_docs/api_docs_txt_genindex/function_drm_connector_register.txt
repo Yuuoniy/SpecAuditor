@@ -1,0 +1,13 @@
+Function: int drm_connector_register ( struct drm_connector * connector )
+
+register a connector
+
+Parameters
+  struct drm_connector *connector
+    the connector to register
+
+Description
+  Register userspace interfaces for a connector. Drivers shouldn’t call this
+function. Static connectors will be registered automatically by DRM core
+from drm_dev_register() , dynamic connectors (MST) should be registered by
+drivers calling drm_connector_dynamic_register() .

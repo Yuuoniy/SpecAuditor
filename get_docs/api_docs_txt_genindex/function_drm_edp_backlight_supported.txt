@@ -1,0 +1,12 @@
+Function: bool drm_edp_backlight_supported ( const u8 edp_dpcd [ EDP_DISPLAY_CTL_CAP_SIZE ] )
+
+Check an eDP DPCD for VESA backlight support
+
+Parameters
+  const u8 edp_dpcd[EDP_DISPLAY_CTL_CAP_SIZE]
+    The DPCD to check
+
+Description
+  Note that currently this function will return false for panels which support various DPCD
+backlight features but which require the brightness be set through PWM, and don’t support setting
+the brightness level via the DPCD.

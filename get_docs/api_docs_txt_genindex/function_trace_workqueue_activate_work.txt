@@ -1,0 +1,12 @@
+Function: void trace_workqueue_activate_work ( struct work_struct * work )
+
+called when a work gets activated
+
+Parameters
+  struct work_struct *work
+    pointer to struct work_struct
+
+Description
+  This event occurs when a queued work is put on the active queue,
+which happens immediately after queueing unless max_active limit
+is reached.

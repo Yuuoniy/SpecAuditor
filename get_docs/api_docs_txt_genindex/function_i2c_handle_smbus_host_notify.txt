@@ -1,0 +1,13 @@
+Function: int i2c_handle_smbus_host_notify ( struct i2c_adapter * adap , unsigned short addr )
+
+Forward a Host Notify event to the correct I2C client.
+
+Parameters
+  struct i2c_adapter *adap
+    the adapter
+  unsigned short addr
+    the I2C address of the notifying device
+
+Description
+  Helper function to be called from an I2C bus driver’s interrupt
+handler. It will schedule the Host Notify IRQ.

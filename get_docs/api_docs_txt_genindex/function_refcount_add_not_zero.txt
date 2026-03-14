@@ -1,0 +1,12 @@
+Function: bool refcount_add_not_zero ( int i , refcount_t * r )
+
+add a value to a refcount unless it is 0
+
+Parameters
+  int i
+    the value to add to the refcount
+  refcount_t *r
+    the refcount
+
+Description
+  Will saturate at REFCOUNT_SATURATED and WARN.

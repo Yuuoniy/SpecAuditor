@@ -1,0 +1,12 @@
+Function: struct sg_table * dma_buf_map_attachment_unlocked ( struct dma_buf_attachment * attach , enum dma_data_direction direction )
+
+Returns the scatterlist table of the attachment; mapped into _device_ address space. Is a wrapper for map_dma_buf() of the dma_buf_ops.
+
+Parameters
+  struct dma_buf_attachment *attach
+    [in]    attachment whose scatterlist is to be returned
+  enum dma_data_direction direction
+    [in]    direction of DMA transfer
+
+Description
+  Unlocked variant of dma_buf_map_attachment() .

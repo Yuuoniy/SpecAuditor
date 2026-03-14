@@ -1,0 +1,14 @@
+Function: int spi_sync_transfer ( struct spi_device * spi , struct spi_transfer * xfers , unsigned int num_xfers )
+
+synchronous SPI data transfer
+
+Parameters
+  struct spi_device *spi
+    device with which data will be exchanged
+  struct spi_transfer *xfers
+    An array of spi_transfers
+  unsigned int num_xfers
+    Number of items in the xfer array
+
+Description
+  Does a synchronous SPI data transfer of the given spi_transfer array.

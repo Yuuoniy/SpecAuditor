@@ -1,0 +1,12 @@
+Function: void vpanic ( const char * fmt , va_list args )
+
+halt the system
+
+Parameters
+  const char *fmt
+    The text string to print
+  va_list args
+    Arguments for the format string
+
+Description
+  Display a message, then perform cleanups. This function never returns.

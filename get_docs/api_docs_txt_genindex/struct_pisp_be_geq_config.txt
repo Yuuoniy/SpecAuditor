@@ -1,0 +1,13 @@
+Struct: struct pisp_be_geq_config
+
+PiSP Back End GEQ config
+
+Members
+  offset
+    Offset value for threshold calculation
+  slope_sharper
+    Slope/Sharper configuration
+  min
+    Minimum value the threshold may have
+  max
+    Maximum value the threshold may have

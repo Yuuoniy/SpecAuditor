@@ -1,0 +1,10 @@
+Function: unsigned int ata_scsi_verify_xlat ( struct ata_queued_cmd * qc )
+
+Translate SCSI VERIFY command into an ATA one
+
+Parameters
+  struct ata_queued_cmd *qc
+    Storage for translated ATA taskfile
+
+Description
+  Converts SCSI VERIFY command to an ATA READ VERIFY command.

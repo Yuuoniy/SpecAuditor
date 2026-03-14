@@ -1,0 +1,3 @@
+Function: int v4l2_munmap ( void * _start , size_t length ) ;
+
+operates like the munmap() function.

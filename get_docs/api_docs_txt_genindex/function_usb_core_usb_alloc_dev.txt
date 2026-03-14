@@ -1,0 +1,15 @@
+Function: struct usb_device * usb_alloc_dev ( struct usb_device * parent , struct usb_bus * bus , unsigned port1 )
+
+usb device constructor (usbcore-internal)
+
+Parameters
+  struct usb_device *parent
+    hub to which device is connected; null to allocate a root hub
+  struct usb_bus *bus
+    bus used to access the device
+  unsigned port1
+    one-based index of port; ignored for root hubs
+
+Description
+  Only hub drivers (including virtual root hub drivers for host
+controllers) should ever call this.

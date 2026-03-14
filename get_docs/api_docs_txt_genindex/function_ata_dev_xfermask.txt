@@ -1,0 +1,12 @@
+Function: void ata_dev_xfermask ( struct ata_device * dev )
+
+Compute supported xfermask of the given device
+
+Parameters
+  struct ata_device *dev
+    Device to compute xfermask for
+
+Description
+  Compute supported xfermask of dev and store it in
+dev->*_mask.  This function is responsible for applying all
+known limits including host controller limits, device quirks, etc...

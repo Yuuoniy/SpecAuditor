@@ -1,0 +1,22 @@
+Function: ssize_t sysfs_bin_attr_simple_read ( struct file * file , struct kobject * kobj , const struct bin_attribute * attr , char * buf , loff_t off , size_t count )
+
+read callback to simply copy from memory.
+
+Parameters
+  struct file *file
+    attribute file which is being read.
+  struct kobject *kobj
+    object to which the attribute belongs.
+  const struct bin_attribute *attr
+    attribute descriptor.
+  char *buf
+    destination buffer.
+  loff_t off
+    offset in bytes from which to read.
+  size_t count
+    maximum number of bytes to read.
+
+Description
+  Simple ->read() callback for bin_attributes backed by a buffer in memory.
+The private and size members in struct bin_attribute must be set to the
+buffer’s location and size before the bin_attribute is created in sysfs.

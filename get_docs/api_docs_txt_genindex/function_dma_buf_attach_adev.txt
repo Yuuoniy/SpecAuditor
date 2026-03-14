@@ -1,0 +1,7 @@
+Function: struct amdgpu_device * dma_buf_attach_adev ( struct dma_buf_attachment * attach )
+
+Helper to get adev of an attachment
+
+Parameters
+  struct dma_buf_attachment *attach
+    attachment

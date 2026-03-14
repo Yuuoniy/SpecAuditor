@@ -1,0 +1,13 @@
+Function: void cdev_device_del ( struct cdev * cdev , struct device * dev )
+
+inverse of cdev_device_add
+
+Parameters
+  struct cdev *cdev
+    the cdev structure
+  struct device *dev
+    the device structure
+
+Description
+  cdev_device_del() is a helper function to call cdev_del and device_del.
+It should be used whenever cdev_device_add is used.

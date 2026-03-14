@@ -1,0 +1,10 @@
+Function: struct page * page_pool_dev_alloc_pages ( struct page_pool * pool )
+
+allocate a page.
+
+Parameters
+  struct page_pool *pool
+    pool from which to allocate
+
+Description
+  Get a page from the page allocator or page_pool caches.

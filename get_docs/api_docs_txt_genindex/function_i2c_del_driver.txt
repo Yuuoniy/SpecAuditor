@@ -1,0 +1,7 @@
+Function: void i2c_del_driver ( struct i2c_driver * driver )
+
+unregister I2C driver
+
+Parameters
+  struct i2c_driver *driver
+    the driver being unregistered

@@ -1,0 +1,16 @@
+Macro: list_next_or_null_rcu
+
+
+
+Parameters
+  head
+    the head for the list.
+  ptr
+    the list head to take the next element from.
+  type
+    the type of the struct this is embedded in.
+  member
+    the name of the list_head within the struct.
+
+Description
+  Note that if the ptr is at the end of the list, NULL is returned.

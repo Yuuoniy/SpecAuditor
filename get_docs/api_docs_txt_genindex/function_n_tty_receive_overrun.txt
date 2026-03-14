@@ -1,0 +1,11 @@
+Function: void n_tty_receive_overrun ( const struct tty_struct * tty )
+
+handle overrun reporting
+
+Parameters
+  const struct tty_struct *tty
+    terminal
+
+Description
+  Data arrived faster than we could process it. While the tty driver has
+flagged this the bits that were missed are gone forever.

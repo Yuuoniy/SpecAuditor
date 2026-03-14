@@ -1,0 +1,14 @@
+Function: int drm_prime_sg_to_page_array ( struct sg_table * sgt , struct page * * pages , int max_entries )
+
+convert an sg table into a page array
+
+Parameters
+  struct sg_table *sgt
+    scatter-gather table to convert
+  struct page **pages
+    array of page pointers to store the pages in
+  int max_entries
+    size of the passed-in array
+
+Description
+  Exports an sg table into an array of pages.

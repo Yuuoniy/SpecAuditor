@@ -1,0 +1,14 @@
+Function: void setattr_copy ( struct mnt_idmap * idmap , struct inode * inode , const struct iattr * attr )
+
+copy simple metadata updates into the generic inode
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount the inode was found from
+  struct inode *inode
+    the inode to be updated
+  const struct iattr *attr
+    the new attributes
+
+Description
+  setattr_copy must be called with i_rwsem held exclusively.

@@ -1,0 +1,14 @@
+Function: void net_dim ( struct dim * dim , const struct dim_sample * end_sample )
+
+main DIM algorithm entry point
+
+Parameters
+  struct dim *dim
+    DIM instance information
+  const struct dim_sample *end_sample
+    Current data measurement
+
+Description
+  Called by the consumer.
+This is the main logic of the algorithm, where data is processed in order
+to decide on next required action.

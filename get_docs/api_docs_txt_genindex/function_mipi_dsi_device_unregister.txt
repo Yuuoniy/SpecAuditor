@@ -1,0 +1,7 @@
+Function: void mipi_dsi_device_unregister ( struct mipi_dsi_device * dsi )
+
+unregister MIPI DSI device
+
+Parameters
+  struct mipi_dsi_device *dsi
+    DSI peripheral device

@@ -1,0 +1,15 @@
+Function: u32 rio_mport_get_physefb ( struct rio_mport * port , int local , u16 destid , u8 hopcount , u32 * rmap )
+
+Helper function that returns register offset for Physical Layer Extended Features Block.
+
+Parameters
+  struct rio_mport *port
+    Master port to issue transaction
+  int local
+    Indicate a local master port or remote device access
+  u16 destid
+    Destination ID of the device
+  u8 hopcount
+    Number of switch hops to the device
+  u32 *rmap
+    pointer to location to store register map type info

@@ -1,0 +1,9 @@
+Struct: struct cxl_root
+
+logical collection of root cxl_port items
+
+Members
+  port
+    cxl_port member
+  ops
+    cxl root operations

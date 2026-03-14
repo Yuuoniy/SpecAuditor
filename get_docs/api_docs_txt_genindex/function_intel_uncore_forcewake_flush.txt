@@ -1,0 +1,9 @@
+Function: void intel_uncore_forcewake_flush ( struct intel_uncore * uncore , enum forcewake_domains fw_domains )
+
+flush the delayed release
+
+Parameters
+  struct intel_uncore *uncore
+    the intel_uncore structure
+  enum forcewake_domains fw_domains
+    forcewake domains to flush

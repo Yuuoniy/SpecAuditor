@@ -1,0 +1,17 @@
+Function: int drm_atomic_add_affected_connectors ( struct drm_atomic_state * state , struct drm_crtc * crtc )
+
+add connectors for CRTC
+
+Parameters
+  struct drm_atomic_state *state
+    atomic state
+  struct drm_crtc *crtc
+    DRM CRTC
+
+Description
+  This function walks the current configuration and adds all connectors
+currently using crtc to the atomic configuration state . Note that this
+function must acquire the connection mutex. This can potentially cause
+unneeded serialization if the update is just for the planes on one CRTC. Hence
+drivers and helpers should only call this when really needed (e.g. when a
+full modeset needs to happen due to some change).

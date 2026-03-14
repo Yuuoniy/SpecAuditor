@@ -1,0 +1,13 @@
+Function: void phy_advertise_eee_all ( struct phy_device * phydev )
+
+Advertise all supported EEE modes
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  Per default phylib preserves the EEE advertising at the time of
+phy probing, which might be a subset of the supported EEE modes. Use this
+function when all supported EEE modes should be advertised. This does not
+trigger auto-negotiation, so must be called before phy_start() / phylink_start() which will start auto-negotiation.

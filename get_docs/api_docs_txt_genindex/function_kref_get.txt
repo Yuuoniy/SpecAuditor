@@ -1,0 +1,7 @@
+Function: void kref_get ( struct kref * kref )
+
+increment refcount for object.
+
+Parameters
+  struct kref *kref
+    object.

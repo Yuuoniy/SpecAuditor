@@ -1,0 +1,9 @@
+Function: struct vm_area_struct * find_vma ( struct mm_struct * mm , unsigned long addr )
+
+Find the VMA for a given address, or the next VMA.
+
+Parameters
+  struct mm_struct *mm
+    The mm_struct to check
+  unsigned long addr
+    The address

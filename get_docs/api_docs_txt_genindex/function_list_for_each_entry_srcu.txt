@@ -1,0 +1,19 @@
+Function: list_for_each_entry_srcu
+
+
+
+Parameters
+  pos
+    the type * to use as a loop cursor.
+  head
+    the head for your list.
+  member
+    the name of the list_head within the struct.
+  cond
+    lockdep expression for the lock required to traverse the list.
+
+Description
+  This list-traversal primitive may safely run concurrently with
+the _rcu list-mutation primitives such as list_add_rcu() as long as the traversal is guarded by srcu_read_lock() .
+The lockdep expression srcu_read_lock_held() can be passed as the
+cond argument from read side.

@@ -1,0 +1,9 @@
+Function: struct page * snd_sgbuf_get_page ( struct snd_dma_buffer * dmab , size_t offset )
+
+return the physical page at the corresponding offset
+
+Parameters
+  struct snd_dma_buffer *dmab
+    buffer allocation information
+  size_t offset
+    offset in the ring buffer

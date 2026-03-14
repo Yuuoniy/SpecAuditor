@@ -1,0 +1,9 @@
+Struct: struct v4l2_subdev_stream_configs
+
+A collection of stream configs.
+
+Members
+  num_configs
+    number of entries in config .
+  configs
+    an array of struct v4l2_subdev_stream_configs .

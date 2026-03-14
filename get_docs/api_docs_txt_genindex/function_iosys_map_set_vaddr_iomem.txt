@@ -1,0 +1,12 @@
+Function: void iosys_map_set_vaddr_iomem ( struct iosys_map * map , void __iomem * vaddr_iomem )
+
+Sets a iosys mapping structure to an address in I/O memory
+
+Parameters
+  struct iosys_map *map
+    The iosys_map structure
+  void __iomem *vaddr_iomem
+    An I/O-memory address
+
+Description
+  Sets the address and the I/O-memory flag.

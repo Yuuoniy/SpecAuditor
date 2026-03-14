@@ -1,0 +1,17 @@
+Function: int ssam_controller_event_disable ( struct ssam_controller * ctrl , struct ssam_event_registry reg , struct ssam_event_id id , u8 flags )
+
+Disable the specified event.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller to disable the event for.
+  struct ssam_event_registry reg
+    The event registry to use for disabling the event.
+  struct ssam_event_id id
+    The event ID specifying the event to be disabled.
+  u8 flags
+    The flags used when enabling the event.
+
+Description
+  Decrement the reference count of the specified event. If the reference count
+reaches zero, the event will be disabled.

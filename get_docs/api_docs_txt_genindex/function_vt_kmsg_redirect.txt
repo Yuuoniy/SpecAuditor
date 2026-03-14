@@ -1,0 +1,12 @@
+Function: int vt_kmsg_redirect ( int new )
+
+sets/gets the kernel message console
+
+Parameters
+  int new
+    the new virtual terminal number or -1 if the console should stay
+unchanged
+
+Description
+  By default, the kernel messages are always printed on the current virtual
+console. However, the user may modify that default with the TIOCL_SETKMSGREDIRECT ioctl call.

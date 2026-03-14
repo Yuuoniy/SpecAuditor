@@ -1,0 +1,15 @@
+Function: int drm_bridge_get_modes ( struct drm_bridge * bridge , struct drm_connector * connector )
+
+fill all modes currently valid for the sink into the connector
+
+Parameters
+  struct drm_bridge *bridge
+    bridge control structure
+  struct drm_connector *connector
+    the connector to fill with modes
+
+Description
+  If the bridge supports output modes retrieval, as reported by the
+DRM_BRIDGE_OP_MODES bridge ops flag, call drm_bridge_funcs.get_modes to
+fill the connector with all valid modes and return the number of modes
+added. Otherwise return 0.

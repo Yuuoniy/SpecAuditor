@@ -1,0 +1,7 @@
+Function: struct dim_cq_moder net_dim_get_def_rx_moderation ( u8 cq_period_mode )
+
+provide the default RX moderation
+
+Parameters
+  u8 cq_period_mode
+    CQ period mode

@@ -1,0 +1,13 @@
+Function: void phy_start_machine ( struct phy_device * phydev )
+
+start PHY state machine tracking
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+
+Description
+  which tracks whether the PHY is starting up, negotiating,
+etc.  This function starts the delayed workqueue which tracks
+the state of the PHY. If you want to maintain your own state machine,
+do not call this function.

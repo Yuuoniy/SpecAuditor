@@ -1,0 +1,11 @@
+Function: struct device * drm_dev_dma_dev ( struct drm_device * dev )
+
+returns the DMA device for a DRM device
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  Returns the DMA device of the given DRM device. By default, this
+the DRM device’s parent. See drm_dev_set_dma_dev() .

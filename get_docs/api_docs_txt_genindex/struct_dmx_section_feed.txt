@@ -1,0 +1,31 @@
+Struct: struct dmx_section_feed
+
+Structure that contains a section feed filter
+
+Members
+  is_filtering
+    Set to non-zero when filtering in progress
+  parent
+    pointer to struct dmx_demux
+  priv
+    pointer to private data of the API client
+  check_crc
+    If non-zero, check the CRC values of filtered sections.
+  set
+    sets the section filter
+  allocate_filter
+    This function is used to allocate a section filter on
+the demux. It should only be called when no filtering
+is in progress on this section feed. If a filter cannot
+be allocated, the function fails with -ENOSPC.
+  release_filter
+    This function releases all the resources of a
+previously allocated section filter. The function
+should not be called while filtering is in progress
+on this section feed. After calling this function,
+the caller should not try to dereference the filter
+pointer.
+  start_filtering
+    starts section filtering
+  stop_filtering
+    stops section filtering

@@ -1,0 +1,12 @@
+Function: struct dma_chan * snd_dmaengine_pcm_request_channel ( dma_filter_fn filter_fn , void * filter_data )
+
+Request channel for the dmaengine PCM
+
+Parameters
+  dma_filter_fn filter_fn
+    Filter function used to request the DMA channel
+  void *filter_data
+    Data passed to the DMA filter function
+
+Description
+  This function request a DMA channel for usage with dmaengine PCM.

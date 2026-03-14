@@ -1,0 +1,9 @@
+Function: char * strndup_user ( const char __user * s , long n )
+
+duplicate an existing string from user space
+
+Parameters
+  const char __user *s
+    The string to duplicate
+  long n
+    Maximum number of bytes to copy, including the trailing NUL.

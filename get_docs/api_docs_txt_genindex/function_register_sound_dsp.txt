@@ -1,0 +1,13 @@
+Function: int register_sound_dsp ( const struct file_operations * fops , int dev )
+
+register a DSP device
+
+Parameters
+  const struct file_operations *fops
+    File operations for the driver
+  int dev
+    Unit number to allocate
+
+Description
+  Allocate a DSP device. Unit is the number of the DSP requested.
+Pass -1 to request the next free DSP unit.

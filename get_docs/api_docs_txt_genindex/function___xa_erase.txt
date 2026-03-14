@@ -1,0 +1,14 @@
+Function: void * __xa_erase ( struct xarray * xa , unsigned long index )
+
+Erase this entry from the XArray while locked.
+
+Parameters
+  struct xarray *xa
+    XArray.
+  unsigned long index
+    Index into array.
+
+Description
+  After this function returns, loading from index will return NULL .
+If the index is part of a multi-index entry, all indices will be erased
+and none of the entries will be part of a multi-index entry.

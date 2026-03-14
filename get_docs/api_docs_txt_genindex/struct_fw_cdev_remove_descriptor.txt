@@ -1,0 +1,8 @@
+Struct: struct fw_cdev_remove_descriptor
+
+Remove contents from the Configuration ROM
+
+Members
+  handle
+    Handle to the descriptor, as returned by the kernel when the
+descriptor was added

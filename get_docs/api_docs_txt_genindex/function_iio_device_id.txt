@@ -1,0 +1,11 @@
+Function: int iio_device_id ( struct iio_dev * indio_dev )
+
+query the unique ID for the device
+
+Parameters
+  struct iio_dev *indio_dev
+    Device structure whose ID is being queried
+
+Description
+  The IIO device ID is a unique index used for example for the naming
+of the character device /dev/iio:device[ID].

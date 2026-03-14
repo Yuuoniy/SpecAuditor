@@ -1,0 +1,19 @@
+Function: int iommufd_access_pin_pages ( struct iommufd_access * access , unsigned long iova , unsigned long length , struct page * * out_pages , unsigned int flags )
+
+Return a list of pages under the iova
+
+Parameters
+  struct iommufd_access *access
+    IOAS access to act on
+  unsigned long iova
+    Starting IOVA
+  unsigned long length
+    Number of bytes to access
+  struct page **out_pages
+    Output page list
+  unsigned int flags
+    IOPMMUFD_ACCESS_RW_* flags
+
+Description
+  Reads length bytes starting at iova and returns the struct page * pointers.
+These can be kmap’d by the caller for CPU access.

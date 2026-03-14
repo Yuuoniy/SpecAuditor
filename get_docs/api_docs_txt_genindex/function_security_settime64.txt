@@ -1,0 +1,13 @@
+Function: int security_settime64 ( const struct timespec64 * ts , const struct timezone * tz )
+
+Check if changing the system time is allowed
+
+Parameters
+  const struct timespec64 *ts
+    new time
+  const struct timezone *tz
+    timezone
+
+Description
+  Check permission to change the system time, struct timespec64 is defined in
+<include/linux/time64.h> and timezone is defined in <include/linux/time.h>.

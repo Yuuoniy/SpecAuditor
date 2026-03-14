@@ -1,0 +1,13 @@
+Function: void iommufd_device_detach ( struct iommufd_device * idev , ioasid_t pasid )
+
+Disconnect a device/device to an iommu_domain
+
+Parameters
+  struct iommufd_device *idev
+    device to detach
+  ioasid_t pasid
+    pasid to detach
+
+Description
+  Undo iommufd_device_attach() . This disconnects the idev from the previously
+attached pt_id. The device returns back to a blocked DMA translation. pasid is IOMMU_NO_PASID for no pasid usage.

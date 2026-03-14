@@ -1,0 +1,13 @@
+Function: int ttm_tt_create ( struct ttm_buffer_object * bo , bool zero_alloc )
+
+
+
+Parameters
+  struct ttm_buffer_object *bo
+    pointer to a struct ttm_buffer_object
+  bool zero_alloc
+    true if allocated pages needs to be zeroed
+
+Description
+  Make sure we have a TTM structure allocated for the given BO.
+No pages are actually allocated.

@@ -1,0 +1,12 @@
+Function: bool drm_dev_has_vblank ( const struct drm_device * dev )
+
+test if vblanking has been initialized for a device
+
+Parameters
+  const struct drm_device *dev
+    the device
+
+Description
+  Drivers may call this function to test if vblank support is
+initialized for a device. For most hardware this means that vblanking
+can also be enabled.

@@ -1,0 +1,12 @@
+Macro: KUNIT_CASE_PARAM
+
+
+
+Parameters
+  test_name
+    a reference to a test case function.
+  gen_params
+    a reference to a parameter generator function.
+
+Description
+  The generator function:

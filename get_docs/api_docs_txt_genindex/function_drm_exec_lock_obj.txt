@@ -1,0 +1,12 @@
+Function: int drm_exec_lock_obj ( struct drm_exec * exec , struct drm_gem_object * obj )
+
+lock a GEM object for use
+
+Parameters
+  struct drm_exec *exec
+    the drm_exec object with the state
+  struct drm_gem_object *obj
+    the GEM object to lock
+
+Description
+  Lock a GEM object for use and grab a reference to it.

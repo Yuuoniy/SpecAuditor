@@ -1,0 +1,21 @@
+Function: int snd_rawmidi_new ( struct snd_card * card , char * id , int device , int output_count , int input_count , struct snd_rawmidi * * rrawmidi )
+
+create a rawmidi instance
+
+Parameters
+  struct snd_card *card
+    the card instance
+  char *id
+    the id string
+  int device
+    the device index
+  int output_count
+    the number of output streams
+  int input_count
+    the number of input streams
+  struct snd_rawmidi **rrawmidi
+    the pointer to store the new rawmidi instance
+
+Description
+  Creates a new rawmidi instance.
+Use snd_rawmidi_set_ops() to set the operators to the new instance.

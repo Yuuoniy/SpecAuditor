@@ -1,0 +1,20 @@
+Function: void folio_add_new_anon_rmap ( struct folio * folio , struct vm_area_struct * vma , unsigned long address , rmap_t flags )
+
+Add mapping to a new anonymous folio.
+
+Parameters
+  struct folio *folio
+    The folio to add the mapping to.
+  struct vm_area_struct *vma
+    the vm area in which the mapping is added
+  unsigned long address
+    the user virtual address mapped
+  rmap_t flags
+    The rmap flags
+
+Description
+  Like folio_add_anon_rmap_*() but must only be called on new folios.
+This means the inc-and-test can be bypassed.
+The folio doesn’t necessarily need to be locked while it’s exclusive
+unless two threads map it concurrently. However, the folio must be
+locked if it’s shared.

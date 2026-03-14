@@ -1,0 +1,12 @@
+Function: int reset_control_assert ( struct reset_control * rstc )
+
+asserts the reset line
+
+Parameters
+  struct reset_control *rstc
+    reset controller
+
+Description
+  Calling this on an exclusive reset controller guarantees that the reset
+will be asserted. When called on a shared reset controller the line may
+still be deasserted, as long as other users keep it so.

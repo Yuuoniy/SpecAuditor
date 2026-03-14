@@ -1,0 +1,10 @@
+Function: void drm_mode_debug_printmodeline ( const struct drm_display_mode * mode )
+
+print a mode to dmesg
+
+Parameters
+  const struct drm_display_mode *mode
+    mode to print
+
+Description
+  Describe mode using DRM_DEBUG.

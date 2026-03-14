@@ -1,0 +1,10 @@
+Function: struct tty_struct * tty_kopen_shared ( dev_t device )
+
+open a tty device for shared in-kernel use
+
+Parameters
+  dev_t device
+    dev_t of device to open
+
+Description
+  Opens an already existing tty for in-kernel use. Compared to tty_kopen_exclusive() above it doesn’t ensure to be the only user.

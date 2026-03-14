@@ -1,0 +1,21 @@
+Struct: struct ipu3_uapi_sharp_cfg
+
+Sharpening config
+
+Members
+  nega_lmt_txt
+    Sharpening limit for negative overshoots for texture.
+  reserved0
+    reserved
+  posi_lmt_txt
+    Sharpening limit for positive overshoots for texture.
+  reserved1
+    reserved
+  nega_lmt_dir
+    Sharpening limit for negative overshoots for direction (edge).
+  reserved2
+    reserved
+  posi_lmt_dir
+    Sharpening limit for positive overshoots for direction (edge).
+  reserved3
+    reserved

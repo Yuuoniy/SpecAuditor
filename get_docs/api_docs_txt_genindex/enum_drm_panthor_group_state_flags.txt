@@ -1,0 +1,3 @@
+Enum: enum drm_panthor_group_state_flags
+
+Group state flags

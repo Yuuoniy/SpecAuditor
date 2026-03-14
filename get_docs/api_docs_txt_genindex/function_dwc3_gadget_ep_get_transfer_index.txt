@@ -1,0 +1,11 @@
+Function: void dwc3_gadget_ep_get_transfer_index ( struct dwc3_ep * dep )
+
+Gets transfer index from HW
+
+Parameters
+  struct dwc3_ep *dep
+    dwc3 endpoint
+
+Description
+  Caller should take care of locking. Returns the transfer resource
+index for a given endpoint.

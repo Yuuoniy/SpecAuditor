@@ -1,0 +1,3 @@
+Macro: enum fault_flag
+
+Fault flag definitions.

@@ -1,0 +1,7 @@
+Function: int slim_unregister_controller ( struct slim_controller * ctrl )
+
+Controller tear-down.
+
+Parameters
+  struct slim_controller *ctrl
+    Controller to tear-down.

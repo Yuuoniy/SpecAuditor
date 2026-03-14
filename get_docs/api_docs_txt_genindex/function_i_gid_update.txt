@@ -1,0 +1,15 @@
+Function: void i_gid_update ( struct mnt_idmap * idmap , const struct iattr * attr , struct inode * inode )
+
+update inode ’s i_gid field
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount the inode was found from
+  const struct iattr *attr
+    the new attributes of inode
+  struct inode *inode
+    the inode to update
+
+Description
+  Safely update inode ’s i_gid field translating the vfsgid of any idmapped
+mount into the filesystem kgid.

@@ -1,0 +1,7 @@
+Struct: struct ipu3_uapi_yuvp2_tcc_r_sqr_lut_static_config
+
+Total color correction lookup table for r square root
+
+Members
+  entries
+    lookup table for r square root estimation

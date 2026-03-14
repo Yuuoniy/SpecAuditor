@@ -1,0 +1,13 @@
+Function: int ata_eh_worth_retry ( struct ata_queued_cmd * qc )
+
+analyze error and decide whether to retry
+
+Parameters
+  struct ata_queued_cmd *qc
+    qc to possibly retry
+
+Description
+  Look at the cause of the error and decide if a retry
+might be useful or not.  We don’t want to retry media errors
+because the drive itself has probably already taken 10-30 seconds
+doing its own internal retries before reporting the failure.

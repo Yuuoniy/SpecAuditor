@@ -1,0 +1,17 @@
+Function: int security_inode_setattr ( struct mnt_idmap * idmap , struct dentry * dentry , struct iattr * attr )
+
+Check if setting file attributes is allowed
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount
+  struct dentry *dentry
+    file
+  struct iattr *attr
+    new attributes
+
+Description
+  Check permission before setting file attributes.  Note that the kernel call
+to notify_change is performed from several locations, whenever file
+attributes change (such as when a file is truncated, chown/chmod operations,
+transferring disk quotas, etc).

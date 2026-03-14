@@ -1,0 +1,15 @@
+Function: int of_property_read_u64 ( const struct device_node * np , const char * propname , u64 * out_value )
+
+Find and read a 64 bit integer from a property
+
+Parameters
+  const struct device_node *np
+    device node from which the property value is to be read.
+  const char *propname
+    name of the property to be searched.
+  u64 *out_value
+    pointer to return value, modified only if return value is 0.
+
+Description
+  Search for a property in a device node and read a 64-bit value from
+it.

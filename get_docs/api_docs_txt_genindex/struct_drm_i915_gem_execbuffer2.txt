@@ -1,0 +1,35 @@
+Struct: struct drm_i915_gem_execbuffer2
+
+Structure for DRM_I915_GEM_EXECBUFFER2 ioctl.
+
+Members
+  buffers_ptr
+    Pointer to a list of gem_exec_object2 structs
+  buffer_count
+    Number of elements in buffers_ptr array
+  batch_start_offset
+    Offset in the batchbuffer to start execution
+from.
+  batch_len
+    Length in bytes of the batch buffer, starting from the batch_start_offset . If 0, length is assumed to be the batch buffer
+object size.
+  DR1
+    deprecated
+  DR4
+    deprecated
+  num_cliprects
+    See cliprects_ptr
+  cliprects_ptr
+    Kernel clipping was a DRI1 misfeature. It is invalid to use this field if I915_EXEC_FENCE_ARRAY or
+I915_EXEC_USE_EXTENSIONS flags are not set. If I915_EXEC_FENCE_ARRAY is set, then this is a pointer to an array
+of drm_i915_gem_exec_fence and num_cliprects is the length of the
+array. If I915_EXEC_USE_EXTENSIONS is set, then this is a pointer to a
+single i915_user_extension and num_cliprects is 0.
+  flags
+    Execbuf flags
+  rsvd1
+    Context id
+  rsvd2
+    in and out sync_file file descriptors. When I915_EXEC_FENCE_IN or I915_EXEC_FENCE_SUBMIT flag is set, the
+lower 32 bits of this field will have the in sync_file fd (input). When I915_EXEC_FENCE_OUT flag is set, the upper 32 bits of this
+field will have the out sync_file fd (output).

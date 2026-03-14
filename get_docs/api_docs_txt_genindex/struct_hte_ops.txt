@@ -1,0 +1,21 @@
+Struct: struct hte_ops
+
+HTE operations set by providers.
+
+Members
+  request
+    Hook for requesting a HTE timestamp. Returns 0 on success,
+non-zero for failures.
+  release
+    Hook for releasing a HTE timestamp. Returns 0 on success,
+non-zero for failures.
+  enable
+    Hook to enable the specified timestamp. Returns 0 on success,
+non-zero for failures.
+  disable
+    Hook to disable specified timestamp. Returns 0 on success,
+non-zero for failures.
+  get_clk_src_info
+    Hook to get the clock information the provider uses
+to timestamp. Returns 0 for success and negative error code for failure. On
+success HTE subsystem fills up provided struct hte_clk_info .

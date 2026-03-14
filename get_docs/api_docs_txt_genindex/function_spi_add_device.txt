@@ -1,0 +1,11 @@
+Function: int spi_add_device ( struct spi_device * spi )
+
+Add spi_device allocated with spi_alloc_device
+
+Parameters
+  struct spi_device *spi
+    spi_device to register
+
+Description
+  Companion function to spi_alloc_device.  Devices allocated with
+spi_alloc_device can be added onto the SPI bus with this function.

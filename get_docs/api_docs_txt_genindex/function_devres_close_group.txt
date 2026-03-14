@@ -1,0 +1,13 @@
+Function: void devres_close_group ( struct device * dev , void * id )
+
+Close a devres group
+
+Parameters
+  struct device *dev
+    Device to close devres group for
+  void *id
+    ID of target group, can be NULL
+
+Description
+  Close the group identified by id .  If id is NULL, the latest open
+group is selected.

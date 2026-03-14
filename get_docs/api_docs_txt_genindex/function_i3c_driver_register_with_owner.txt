@@ -1,0 +1,12 @@
+Function: int i3c_driver_register_with_owner ( struct i3c_driver * drv , struct module * owner )
+
+register an I3C device driver
+
+Parameters
+  struct i3c_driver *drv
+    driver to register
+  struct module *owner
+    module that owns this driver
+
+Description
+  Register drv to the core.

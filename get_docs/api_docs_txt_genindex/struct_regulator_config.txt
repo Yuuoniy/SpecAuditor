@@ -1,0 +1,19 @@
+Struct: struct regulator_config
+
+Dynamic regulator descriptor
+
+Members
+  dev
+    struct device for the regulator
+  init_data
+    platform provided init data, passed through by driver
+  driver_data
+    private regulator data
+  of_node
+    OpenFirmware node to parse for device tree bindings (may be
+NULL).
+  regmap
+    regmap to use for core regmap helpers if dev_get_regmap() is
+insufficient.
+  ena_gpiod
+    GPIO controlling regulator enable.

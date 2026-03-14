@@ -1,0 +1,16 @@
+Function: int dmem_cgroup_try_charge ( struct dmem_cgroup_region * region , u64 size , struct dmem_cgroup_pool_state * * ret_pool , struct dmem_cgroup_pool_state * * ret_limit_pool )
+
+Try charging a new allocation to a region.
+
+Parameters
+  struct dmem_cgroup_region *region
+    dmem region to charge
+  u64 size
+    Size (in bytes) to charge.
+  struct dmem_cgroup_pool_state **ret_pool
+    On succesfull allocation, the pool that is charged.
+  struct dmem_cgroup_pool_state **ret_limit_pool
+    On a failed allocation, the limiting pool.
+
+Description
+  This function charges the region region for a size of size bytes.

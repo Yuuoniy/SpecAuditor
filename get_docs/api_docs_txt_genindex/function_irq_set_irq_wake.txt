@@ -1,0 +1,14 @@
+Function: int irq_set_irq_wake ( unsigned int irq , unsigned int on )
+
+control irq power management wakeup
+
+Parameters
+  unsigned int irq
+    interrupt to control
+  unsigned int on
+    enable/disable power management wakeup
+
+Description
+  Enable/disable power management wakeup mode, which is disabled by
+default.  Enables and disables must match, just as they match for
+non-wakeup mode support.

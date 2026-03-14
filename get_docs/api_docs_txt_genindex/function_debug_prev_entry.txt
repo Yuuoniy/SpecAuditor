@@ -1,0 +1,12 @@
+Function: bool debug_prev_entry ( file_private_info_t * p_info )
+
+Go to the previous entry
+
+Parameters
+  file_private_info_t *p_info
+    Private info that is manipulated
+
+Description
+  Sets the current position in p_info to the previous entry. If no previous entry
+exists the current position is set left as DEBUG_PROLOG_ENTRY and the return value
+indicates that no previous entries exist.

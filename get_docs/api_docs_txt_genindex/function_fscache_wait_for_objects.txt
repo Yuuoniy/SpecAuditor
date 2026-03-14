@@ -1,0 +1,11 @@
+Function: void fscache_wait_for_objects ( struct fscache_cache * cache )
+
+Wait for all objects to be withdrawn
+
+Parameters
+  struct fscache_cache *cache
+    The cache to query
+
+Description
+  Wait for all extant objects in a cache to finish being withdrawn
+and go away.

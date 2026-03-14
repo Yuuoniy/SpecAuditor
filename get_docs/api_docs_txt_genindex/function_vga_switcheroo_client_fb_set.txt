@@ -1,0 +1,13 @@
+Function: void vga_switcheroo_client_fb_set ( struct pci_dev * pdev , struct fb_info * info )
+
+set framebuffer of a given client
+
+Parameters
+  struct pci_dev *pdev
+    client pci device
+  struct fb_info *info
+    framebuffer
+
+Description
+  Set framebuffer of a given client. The console will be remapped to this
+on switching.

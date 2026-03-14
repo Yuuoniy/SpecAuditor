@@ -1,0 +1,13 @@
+Function: int relay_file_release ( struct inode * inode , struct file * filp )
+
+release file op for relay files
+
+Parameters
+  struct inode *inode
+    the inode
+  struct file *filp
+    the file
+
+Description
+  Decrements the channel refcount, as the filesystem is
+no longer using it.

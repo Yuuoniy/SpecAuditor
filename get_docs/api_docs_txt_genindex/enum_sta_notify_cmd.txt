@@ -1,0 +1,3 @@
+Enum: enum sta_notify_cmd
+
+sta notify command

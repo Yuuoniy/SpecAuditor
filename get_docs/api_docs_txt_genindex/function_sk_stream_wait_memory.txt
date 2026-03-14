@@ -1,0 +1,9 @@
+Function: int sk_stream_wait_memory ( struct sock * sk , long * timeo_p )
+
+Wait for more memory for a socket
+
+Parameters
+  struct sock *sk
+    socket to wait for memory
+  long *timeo_p
+    for how long

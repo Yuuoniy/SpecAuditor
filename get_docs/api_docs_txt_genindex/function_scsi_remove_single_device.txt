@@ -1,0 +1,17 @@
+Function: int scsi_remove_single_device ( uint host , uint channel , uint id , uint lun )
+
+Respond to user request to remove a device
+
+Parameters
+  uint host
+    user-supplied decimal integer
+  uint channel
+    user-supplied decimal integer
+  uint id
+    user-supplied decimal integer
+  uint lun
+    user-supplied decimal integer
+
+Description
+  called by writing “scsi remove-single-device” to
+/proc/scsi/scsi.  Does a scsi_device_lookup() and scsi_remove_device()

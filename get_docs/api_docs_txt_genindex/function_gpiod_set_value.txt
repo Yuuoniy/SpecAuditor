@@ -1,0 +1,13 @@
+Function: int gpiod_set_value ( struct gpio_desc * desc , int value )
+
+assign a gpio’s value
+
+Parameters
+  struct gpio_desc *desc
+    gpio whose value will be assigned
+  int value
+    value to assign
+
+Description
+  Set the logical value of the GPIO, i.e. taking its ACTIVE_LOW,
+OPEN_DRAIN and OPEN_SOURCE flags into account.

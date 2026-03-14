@@ -1,0 +1,11 @@
+Function: unsigned char tty_get_frame_size ( unsigned int cflag )
+
+get size of a frame
+
+Parameters
+  unsigned int cflag
+    termios cflag value
+
+Description
+  Get the size (in bits) of a frame depending on cflag ’s CSIZE , CSTOPB , and PARENB setting. The result is a sum of character size, start and stop bits
+-- one bit each -- second stop bit (if set), and parity bit (if set).

@@ -1,0 +1,15 @@
+Function: struct fw_cdev_add_descriptor
+
+Add contents to the local node’s config ROM
+
+Members
+  immediate
+    If non-zero, immediate key to insert before pointer
+  key
+    Upper 8 bits of root directory pointer
+  data
+    Userspace pointer to contents of descriptor block
+  length
+    Length of descriptor block data, in quadlets
+  handle
+    Handle to the descriptor, written by the kernel

@@ -1,0 +1,10 @@
+Function: void drm_vblank_work_flush_all ( struct drm_crtc * crtc )
+
+flush all currently pending vblank work on crtc.
+
+Parameters
+  struct drm_crtc *crtc
+    crtc for which vblank work to flush
+
+Description
+  Wait until all currently queued vblank work on crtc has finished executing once.

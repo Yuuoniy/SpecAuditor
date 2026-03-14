@@ -1,0 +1,7 @@
+Function: bool ssam_notifier_is_empty ( struct ssam_controller * ctrl )
+
+Check if there are any registered notifiers.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller to check on.

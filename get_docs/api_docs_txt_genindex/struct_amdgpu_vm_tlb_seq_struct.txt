@@ -1,0 +1,9 @@
+Struct: struct amdgpu_vm_tlb_seq_struct
+
+Helper to increment the TLB flush sequence
+
+Members
+  vm
+    pointer to the amdgpu_vm structure to set the fence sequence on
+  cb
+    callback

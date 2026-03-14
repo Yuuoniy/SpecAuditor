@@ -1,0 +1,17 @@
+Function: void mem_cgroup_update_lru_size ( struct lruvec * lruvec , enum lru_list lru , int zid , int nr_pages )
+
+account for adding or removing an lru page
+
+Parameters
+  struct lruvec *lruvec
+    mem_cgroup per zone lru vector
+  enum lru_list lru
+    index of lru list the page is sitting on
+  int zid
+    zone id of the accounted pages
+  int nr_pages
+    positive when adding or negative when removing
+
+Description
+  This function must be called under lru_lock, just before a page is added
+to or just after a page is removed from an lru list.

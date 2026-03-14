@@ -1,0 +1,18 @@
+Function: void phy_set_sym_pause ( struct phy_device * phydev , bool rx , bool tx , bool autoneg )
+
+Configure symmetric Pause
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+  bool rx
+    Receiver Pause is supported
+  bool tx
+    Transmit Pause is supported
+  bool autoneg
+    Auto neg should be used
+
+Description
+  Configure advertised Pause support depending on if
+receiver pause and pause auto neg is supported. Generally called
+from the set_pauseparam .ndo.

@@ -1,0 +1,10 @@
+Function: void xprt_release_rqst_cong ( struct rpc_task * task )
+
+housekeeping when request is complete
+
+Parameters
+  struct rpc_task *task
+    RPC request that recently completed
+
+Description
+  Useful for transports that require congestion control.

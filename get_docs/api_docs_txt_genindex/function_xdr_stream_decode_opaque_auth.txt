@@ -1,0 +1,16 @@
+Function: ssize_t xdr_stream_decode_opaque_auth ( struct xdr_stream * xdr , u32 * flavor , void * * body , unsigned int * body_len )
+
+Decode struct opaque_auth (RFC5531 S8.2)
+
+Parameters
+  struct xdr_stream *xdr
+    pointer to xdr_stream
+  u32 *flavor
+    location to store decoded flavor
+  void **body
+    location to store decode body
+  unsigned int *body_len
+    location to store length of decoded body
+
+Description
+  On success, returns the number of buffer bytes consumed -EBADMSG on XDR buffer overflow -EMSGSIZE if the decoded size of the body field exceeds 400 octets

@@ -1,0 +1,15 @@
+Function: struct gpio_desc * gpio_device_get_desc ( struct gpio_device * gdev , unsigned int hwnum )
+
+get the GPIO descriptor corresponding to the given hardware number for this GPIO device
+
+Parameters
+  struct gpio_device *gdev
+    GPIO device to get the descriptor from
+  unsigned int hwnum
+    hardware number of the GPIO for this chip
+
+Description
+  The reference count of struct gpio_device is NOT increased like when the
+GPIO is being requested for exclusive usage. It’s up to the caller to make
+sure the GPIO device will stay alive together with the descriptor returned
+by this function.

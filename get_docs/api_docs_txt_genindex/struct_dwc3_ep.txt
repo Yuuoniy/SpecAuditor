@@ -1,0 +1,53 @@
+Struct: struct dwc3_ep
+
+device side endpoint representation
+
+Members
+  endpoint
+    usb endpoint
+  nostream_work
+    work for handling bulk NoStream
+  cancelled_list
+    list of cancelled requests for this endpoint
+  pending_list
+    list of pending requests for this endpoint
+  started_list
+    list of started requests on this endpoint
+  regs
+    pointer to first endpoint register
+  trb_pool
+    array of transaction buffers
+  trb_pool_dma
+    dma address of trb_pool
+  dwc
+    pointer to DWC controller
+  saved_state
+    ep state saved during hibernation
+  flags
+    endpoint flags (wedged, stalled, ...)
+  trb_enqueue
+    enqueue ‘pointer’ into TRB array
+  trb_dequeue
+    dequeue ‘pointer’ into TRB array
+  number
+    endpoint number (1 - 15)
+  type
+    set to bmAttributes & USB_ENDPOINT_XFERTYPE_MASK
+  resource_index
+    Resource transfer index
+  frame_number
+    set to the frame number we want this transfer to start (ISOC)
+  interval
+    the interval on which the ISOC transfer is started
+  name
+    a human readable name e.g. ep1out-bulk
+  direction
+    true for TX, false for RX
+  stream_capable
+    true when streams are enabled
+  combo_num
+    the test combination BIT[15:14] of the frame number to test
+isochronous START TRANSFER command failure workaround
+  start_cmd_status
+    the status of testing START TRANSFER command with
+combo_num = ‘b00

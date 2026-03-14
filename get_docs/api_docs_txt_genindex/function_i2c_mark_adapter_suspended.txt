@@ -1,0 +1,14 @@
+Function: void i2c_mark_adapter_suspended ( struct i2c_adapter * adap )
+
+Report suspended state of the adapter to the core
+
+Parameters
+  struct i2c_adapter *adap
+    Adapter to mark as suspended
+
+Description
+  When using this helper to mark an adapter as suspended, the core will reject
+further transfers to this adapter. The usage of this helper is optional but
+recommended for devices having distinct handlers for system suspend and
+runtime suspend. More complex devices are free to implement custom solutions
+to reject transfers when suspended.

@@ -1,0 +1,13 @@
+Function: bool bio_is_zone_append ( struct bio * bio )
+
+is this a zone append bio?
+
+Parameters
+  struct bio *bio
+    bio to check
+
+Description
+  Check if bio is a zone append operation.  Core block layer code and end_io
+handlers must use this instead of an open coded REQ_OP_ZONE_APPEND check
+because the block layer can rewrite REQ_OP_ZONE_APPEND to REQ_OP_WRITE if
+it is not natively supported.

@@ -1,0 +1,10 @@
+Function: void eth_broadcast_addr ( u8 * addr )
+
+Assign broadcast address
+
+Parameters
+  u8 *addr
+    Pointer to a six-byte array containing the Ethernet address
+
+Description
+  Assign the broadcast address to the given address array.

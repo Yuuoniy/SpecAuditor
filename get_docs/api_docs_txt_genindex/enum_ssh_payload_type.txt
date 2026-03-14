@@ -1,0 +1,3 @@
+Enum: enum ssh_payload_type
+
+Type indicator for the SSH payload.

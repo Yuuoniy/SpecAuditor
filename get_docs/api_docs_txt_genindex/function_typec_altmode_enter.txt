@@ -1,0 +1,15 @@
+Function: int typec_altmode_enter ( struct typec_altmode * adev , u32 * vdo )
+
+Enter Mode
+
+Parameters
+  struct typec_altmode *adev
+    The alternate mode
+  u32 *vdo
+    VDO for the Enter Mode command
+
+Description
+  The alternate mode drivers use this function to enter mode. The port drivers
+use this to inform the alternate mode drivers that the partner has initiated
+Enter Mode command. If the alternate mode does not require VDO, vdo must be
+NULL.

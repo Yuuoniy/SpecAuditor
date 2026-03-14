@@ -1,0 +1,15 @@
+Function: void amdgpu_dma_buf_unmap ( struct dma_buf_attachment * attach , struct sg_table * sgt , enum dma_data_direction dir )
+
+dma_buf_ops.unmap_dma_buf implementation
+
+Parameters
+  struct dma_buf_attachment *attach
+    DMA-buf attachment
+  struct sg_table *sgt
+    sg_table to unmap
+  enum dma_data_direction dir
+    DMA direction
+
+Description
+  This is called when a shared DMA buffer no longer needs to be accessible by
+another device. For now, simply unpins the buffer from GTT.

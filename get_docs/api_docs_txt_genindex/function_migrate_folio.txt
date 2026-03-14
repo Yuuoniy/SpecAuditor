@@ -1,0 +1,17 @@
+Function: int migrate_folio ( struct address_space * mapping , struct folio * dst , struct folio * src , enum migrate_mode mode )
+
+Simple folio migration.
+
+Parameters
+  struct address_space *mapping
+    The address_space containing the folio.
+  struct folio *dst
+    The folio to migrate the data to.
+  struct folio *src
+    The folio containing the current data.
+  enum migrate_mode mode
+    How to migrate the page.
+
+Description
+  Common logic to directly migrate a single LRU folio suitable for
+folios that do not have private data.

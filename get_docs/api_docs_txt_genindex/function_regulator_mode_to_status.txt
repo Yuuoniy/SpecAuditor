@@ -1,0 +1,10 @@
+Function: int regulator_mode_to_status ( unsigned int mode )
+
+convert a regulator mode into a status
+
+Parameters
+  unsigned int mode
+    Mode to convert
+
+Description
+  Convert a regulator mode into a status.

@@ -1,0 +1,18 @@
+Function: int nand_write_data_op ( struct nand_chip * chip , const void * buf , unsigned int len , bool force_8bit )
+
+Write data from the NAND
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+  const void *buf
+    buffer containing the data to send on the bus
+  unsigned int len
+    length of the buffer
+  bool force_8bit
+    force 8-bit bus access
+
+Description
+  This function does a raw data write on the bus. Usually used after launching
+another NAND operation like nand_write_page_begin_op() .
+This function does not select/unselect the CS line.

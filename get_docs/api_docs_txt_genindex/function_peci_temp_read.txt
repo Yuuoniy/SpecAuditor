@@ -1,0 +1,12 @@
+Function: int peci_temp_read ( struct peci_device * device , s16 * temp_raw )
+
+read the maximum die temperature from PECI target device
+
+Parameters
+  struct peci_device *device
+    PECI device to which request is going to be sent
+  s16 *temp_raw
+    where to store the read temperature
+
+Description
+  It uses GetTemp PECI command.

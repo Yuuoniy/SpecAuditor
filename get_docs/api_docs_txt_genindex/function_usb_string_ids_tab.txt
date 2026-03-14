@@ -1,0 +1,15 @@
+Function: int usb_string_ids_tab ( struct usb_composite_dev * cdev , struct usb_string * str )
+
+allocate unused string IDs in batch
+
+Parameters
+  struct usb_composite_dev *cdev
+    the device whose string descriptor IDs are being allocated
+  struct usb_string *str
+    an array of usb_string objects to assign numbers to
+
+Description
+  usb_string_ids() is called from bind() callbacks to allocate
+string IDs.  Drivers for functions, configurations, or gadgets will
+then copy IDs from the string table to the appropriate descriptors
+and string table for other languages.

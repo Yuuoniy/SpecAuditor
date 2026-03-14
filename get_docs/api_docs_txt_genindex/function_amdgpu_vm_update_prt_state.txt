@@ -1,0 +1,7 @@
+Function: void amdgpu_vm_update_prt_state ( struct amdgpu_device * adev )
+
+update the global PRT state
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer

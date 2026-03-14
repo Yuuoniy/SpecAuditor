@@ -1,0 +1,22 @@
+Function: int amdgpu_bo_create_kernel ( struct amdgpu_device * adev , unsigned long size , int align , u32 domain , struct amdgpu_bo * * bo_ptr , u64 * gpu_addr , void * * cpu_addr )
+
+create BO for kernel use
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device object
+  unsigned long size
+    size for the new BO
+  int align
+    alignment for the new BO
+  u32 domain
+    where to place it
+  struct amdgpu_bo **bo_ptr
+    used to initialize BOs in structures
+  u64 *gpu_addr
+    GPU addr of the pinned BO
+  void **cpu_addr
+    optional CPU address mapping
+
+Description
+  Allocates and pins a BO for kernel internal use.

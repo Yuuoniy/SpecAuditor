@@ -1,0 +1,9 @@
+Function: int gpiod_set_config ( struct gpio_desc * desc , unsigned long config )
+
+sets config for a GPIO
+
+Parameters
+  struct gpio_desc *desc
+    descriptor of the GPIO for which to set the configuration
+  unsigned long config
+    Same packed config format as generic pinconf

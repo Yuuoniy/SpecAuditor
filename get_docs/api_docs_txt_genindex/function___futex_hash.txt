@@ -1,0 +1,16 @@
+Function: struct futex_hash_bucket * __futex_hash ( union futex_key * key , struct futex_private_hash * fph )
+
+Return the hash bucket
+
+Parameters
+  union futex_key *key
+    Pointer to the futex key for which the hash is calculated
+  struct futex_private_hash *fph
+    Pointer to private hash if known
+
+Description
+  We hash on the keys returned from get_futex_key (see below) and return the
+corresponding hash bucket.
+If the FUTEX is PROCESS_PRIVATE then a per-process hash bucket (from the
+private hash) is returned if existing. Otherwise a hash bucket from the
+global hash is returned.

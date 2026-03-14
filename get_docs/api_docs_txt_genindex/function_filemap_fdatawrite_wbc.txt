@@ -1,0 +1,13 @@
+Function: int filemap_fdatawrite_wbc ( struct address_space * mapping , struct writeback_control * wbc )
+
+start writeback on mapping dirty pages in range
+
+Parameters
+  struct address_space *mapping
+    address space structure to write
+  struct writeback_control *wbc
+    the writeback_control controlling the writeout
+
+Description
+  Call writepages on the mapping using the provided wbc to control the
+writeout.

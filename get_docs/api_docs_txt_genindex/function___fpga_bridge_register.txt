@@ -1,0 +1,15 @@
+Function: struct fpga_bridge * __fpga_bridge_register ( struct device * parent , const char * name , const struct fpga_bridge_ops * br_ops , void * priv , struct module * owner )
+
+create and register an FPGA Bridge device
+
+Parameters
+  struct device *parent
+    FPGA bridge device from pdev
+  const char *name
+    FPGA bridge name
+  const struct fpga_bridge_ops *br_ops
+    pointer to structure of fpga bridge ops
+  void *priv
+    FPGA bridge private data
+  struct module *owner
+    owner module containing the br_ops

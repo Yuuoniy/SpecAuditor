@@ -1,0 +1,15 @@
+Struct: struct page_pool_recycle_stats
+
+recycling (freeing) statistics
+
+Members
+  cached
+    recycling placed page in the page pool cache
+  cache_full
+    page pool cache was full
+  ring
+    page placed into the ptr ring
+  ring_full
+    page released from page pool because the ptr ring was full
+  released_refcnt
+    page released (and not recycled) because refcnt > 1

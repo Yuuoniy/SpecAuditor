@@ -1,0 +1,15 @@
+Function: void drm_gem_dma_object_print_info ( struct drm_printer * p , unsigned int indent , const struct drm_gem_object * obj )
+
+Print drm_gem_dma_object info for debugfs
+
+Parameters
+  struct drm_printer *p
+    DRM printer
+  unsigned int indent
+    Tab indentation level
+  const struct drm_gem_object *obj
+    GEM object
+
+Description
+  This function wraps drm_gem_dma_print_info() . Drivers that employ the DMA helpers
+should use this function as their drm_gem_object_funcs.print_info handler.

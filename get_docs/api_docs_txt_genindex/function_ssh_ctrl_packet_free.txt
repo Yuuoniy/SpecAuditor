@@ -1,0 +1,7 @@
+Function: void ssh_ctrl_packet_free ( struct ssh_packet * p )
+
+Free packet allocated from control packet cache.
+
+Parameters
+  struct ssh_packet *p
+    The packet to free.

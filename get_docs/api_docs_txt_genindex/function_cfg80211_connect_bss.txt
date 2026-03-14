@@ -1,0 +1,44 @@
+Function: void cfg80211_connect_bss ( struct net_device * dev , const u8 * bssid , struct cfg80211_bss * bss , const u8 * req_ie , size_t req_ie_len , const u8 * resp_ie , size_t resp_ie_len , int status , gfp_t gfp , enum nl80211_timeout_reason timeout_reason )
+
+notify cfg80211 of connection result
+
+Parameters
+  struct net_device *dev
+    network device
+  const u8 *bssid
+    the BSSID of the AP
+  struct cfg80211_bss *bss
+    Entry of bss to which STA got connected to, can be obtained through cfg80211_get_bss() (may be NULL ). But it is recommended to store the
+bss from the connect_request and hold a reference to it and return
+through this param to avoid a warning if the bss is expired during the
+connection, esp. for those drivers implementing connect op.
+Only one parameter among bssid and bss needs to be specified.
+  const u8 *req_ie
+    association request IEs (maybe be NULL )
+  size_t req_ie_len
+    association request IEs length
+  const u8 *resp_ie
+    association response IEs (may be NULL )
+  size_t resp_ie_len
+    assoc response IEs length
+  int status
+    status code, WLAN_STATUS_SUCCESS for successful connection, use WLAN_STATUS_UNSPECIFIED_FAILURE if your device cannot give you
+the real status code for failures. If this call is used to report a
+failure due to a timeout (e.g., not receiving an Authentication frame
+from the AP) instead of an explicit rejection by the AP, -1 is used to
+indicate that this is a failure, but without a status code. timeout_reason is used to report the reason for the timeout in that
+case.
+  gfp_t gfp
+    allocation flags
+  enum nl80211_timeout_reason timeout_reason
+    reason for connection timeout. This is used when the
+connection fails due to a timeout instead of an explicit rejection from
+the AP. NL80211_TIMEOUT_UNSPECIFIED is used when the timeout reason is
+not known. This value is used only if status < 0 to indicate that the
+failure is due to a timeout and not due to explicit rejection by the AP.
+This value is ignored in other cases ( status >= 0).
+
+Description
+  It should be called by the underlying driver once execution of the connection
+request from connect() has been completed. This is similar to cfg80211_connect_result() , but with the option of identifying the exact bss
+entry for the connection. Only one of the functions among cfg80211_connect_bss() , cfg80211_connect_result() , cfg80211_connect_timeout() , and cfg80211_connect_done() should be called.

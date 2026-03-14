@@ -1,0 +1,15 @@
+Function: void netdev_completed_queue ( struct net_device * dev , unsigned int pkts , unsigned int bytes )
+
+report bytes and packets completed by device
+
+Parameters
+  struct net_device *dev
+    network device
+  unsigned int pkts
+    actual number of packets sent over the medium
+  unsigned int bytes
+    actual number of bytes sent over the medium
+
+Description
+  Report the number of bytes and packets transmitted by the network device
+hardware queue over the physical medium, bytes must exactly match the bytes amount passed to netdev_sent_queue()

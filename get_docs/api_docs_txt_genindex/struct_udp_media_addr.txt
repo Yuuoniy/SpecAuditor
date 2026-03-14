@@ -1,0 +1,15 @@
+Struct: struct udp_media_addr
+
+IP/UDP addressing information
+
+Members
+  proto
+    Ethernet protocol in use
+  port
+    port being used
+  {unnamed_union}
+    anonymous
+  ipv4
+    IPv4 address of neighbor
+  ipv6
+    IPv6 address of neighbor

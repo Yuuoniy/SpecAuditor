@@ -1,0 +1,37 @@
+Function: struct pes_write_args
+
+Arguments for the packetizer.
+
+Members
+  dest_buf
+    The buffer to write into.
+  from
+    A pointer to the encoder buffer containing one access unit.
+  access_unit_len
+    The size of _one_ access unit (with any headers it might need)
+  dest_offset
+    where to start writing in the dest_buffer.
+  dest_buf_sz
+    The size of the dest_buffer
+  pid
+    The PID to use for the TS packets.
+  encoder_id
+    Encoder id (see vidtv_encoder.h)
+  continuity_counter
+    Incremented on every new TS packet.
+  stream_id
+    The stream id to use. Ex: Audio streams (0xc0-0xdf), Video
+streams (0xe0-0xef).
+  send_pts
+    Should we send PTS?
+  pts
+    PTS value to send.
+  send_dts
+    Should we send DTS?
+  dts
+    DTS value to send.
+  n_pes_h_s_bytes
+    Padding bytes. Might be used by an encoder if needed, gets
+discarded by the decoder.
+  pcr
+    counter driven by a 27Mhz clock.

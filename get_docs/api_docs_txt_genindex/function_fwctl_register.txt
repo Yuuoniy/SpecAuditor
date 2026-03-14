@@ -1,0 +1,11 @@
+Function: int fwctl_register ( struct fwctl_device * fwctl )
+
+Register a new device to the subsystem
+
+Parameters
+  struct fwctl_device *fwctl
+    Previously allocated fwctl_device
+
+Description
+  On return the device is visible through sysfs and /dev, driver ops may be
+called.

@@ -1,0 +1,12 @@
+Function: struct amdgpu_bo_va_mapping * amdgpu_vm_bo_lookup_mapping ( struct amdgpu_vm * vm , uint64_t addr )
+
+find mapping by address
+
+Parameters
+  struct amdgpu_vm *vm
+    the requested VM
+  uint64_t addr
+    the address
+
+Description
+  Find a mapping by it’s address.

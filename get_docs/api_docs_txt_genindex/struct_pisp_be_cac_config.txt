@@ -1,0 +1,11 @@
+Struct: struct pisp_be_cac_config
+
+PiSP Back End CAC config
+
+Members
+  grid_step_x
+    Reciprocal of cell size width
+  grid_step_y
+    Reciprocal of cell size height
+  lut
+    Pixel shift for the CAC grid

@@ -1,0 +1,12 @@
+Function: int hlist_unhashed_lockless ( const struct hlist_node * h )
+
+Version of hlist_unhashed for lockless use
+
+Parameters
+  const struct hlist_node *h
+    Node to be checked
+
+Description
+  This variant of hlist_unhashed() must be used in lockless contexts
+to avoid potential load-tearing.  The READ_ONCE() is paired with the
+various WRITE_ONCE() in hlist helpers that are defined below.

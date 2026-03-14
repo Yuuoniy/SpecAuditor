@@ -1,0 +1,12 @@
+Function: int typec_altmode_attention ( struct typec_altmode * adev , u32 vdo )
+
+Attention command
+
+Parameters
+  struct typec_altmode *adev
+    The alternate mode
+  u32 vdo
+    VDO for the Attention command
+
+Description
+  Notifies the partner of adev about Attention command.

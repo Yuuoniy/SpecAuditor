@@ -1,0 +1,11 @@
+Function: bool intel_cdclk_can_cd2x_update ( struct intel_display * display , const struct intel_cdclk_config * a , const struct intel_cdclk_config * b )
+
+Determine if changing between the two CDCLK configurations requires only a cd2x divider update
+
+Parameters
+  struct intel_display *display
+    display instance
+  const struct intel_cdclk_config *a
+    first CDCLK configuration
+  const struct intel_cdclk_config *b
+    second CDCLK configuration

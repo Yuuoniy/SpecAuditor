@@ -1,0 +1,14 @@
+Struct: struct i3c_driver
+
+I3C device driver
+
+Members
+  driver
+    inherit from device_driver
+  probe
+    I3C device probe method
+  remove
+    I3C device remove method
+  id_table
+    I3C device match table. Will be used by the framework to decide
+which device to bind to this driver

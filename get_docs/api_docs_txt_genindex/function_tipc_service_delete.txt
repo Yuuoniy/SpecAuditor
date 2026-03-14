@@ -1,0 +1,9 @@
+Function: void tipc_service_delete ( struct net * net , struct tipc_service * sc )
+
+purge all publications for a service and delete it
+
+Parameters
+  struct net *net
+    the associated network namespace
+  struct tipc_service *sc
+    tipc_service to delete

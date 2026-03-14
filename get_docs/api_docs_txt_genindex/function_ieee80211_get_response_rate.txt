@@ -1,0 +1,11 @@
+Function: const struct ieee80211_rate * ieee80211_get_response_rate ( struct ieee80211_supported_band * sband , u32 basic_rates , int bitrate )
+
+get basic rate for a given rate
+
+Parameters
+  struct ieee80211_supported_band *sband
+    the band to look for rates in
+  u32 basic_rates
+    bitmap of basic rates
+  int bitrate
+    the bitrate for which to find the basic rate

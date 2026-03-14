@@ -1,0 +1,21 @@
+Struct: struct drm_writeback_job
+
+DRM writeback job
+
+Members
+  connector
+    Back-pointer to the writeback connector associated with the job
+  prepared
+    Set when the job has been prepared with drm_writeback_prepare_job()
+  cleanup_work
+    Used to allow drm_writeback_signal_completion to defer dropping the
+framebuffer reference to a workqueue
+  list_entry
+    List item for the writeback connector’s job_queue
+  fb
+    Framebuffer to be written to by the writeback connector. Do not set
+directly, use drm_writeback_set_fb()
+  out_fence
+    Fence which will signal once the writeback has completed
+  priv
+    Driver-private data

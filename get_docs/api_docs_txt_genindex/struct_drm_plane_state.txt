@@ -1,0 +1,96 @@
+Struct: struct drm_plane_state
+
+mutable plane state
+
+Members
+  plane
+    backpointer to the plane
+  crtc
+    Currently bound CRTC, NULL if disabled. Do not write this directly,
+use drm_atomic_set_crtc_for_plane()
+  fb
+    Currently bound framebuffer. Do not write this directly, use drm_atomic_set_fb_for_plane()
+  fence
+    Optional fence to wait for before scanning out fb . The core atomic
+code will set this when userspace is using explicit fencing. Do not
+write this field directly for a driver’s implicit fence. Drivers should store any implicit fence in this from their drm_plane_helper_funcs.prepare_fb callback. See drm_gem_plane_helper_prepare_fb() for a suitable helper.
+  crtc_x
+    Left position of visible portion of plane on crtc, signed dest
+location allows it to be partially off screen.
+  crtc_y
+    Upper position of visible portion of plane on crtc, signed dest
+location allows it to be partially off screen.
+  crtc_w
+    width of visible portion of plane on crtc
+  crtc_h
+    height of visible portion of plane on crtc
+  src_x
+    left position of visible portion of plane within plane (in
+16.16 fixed point).
+  src_y
+    upper position of visible portion of plane within plane (in
+16.16 fixed point).
+  src_h
+    height of visible portion of plane (in 16.16)
+  src_w
+    width of visible portion of plane (in 16.16)
+  hotspot_x
+    x offset to mouse cursor hotspot
+  hotspot_y
+    y offset to mouse cursor hotspot
+  alpha
+    Opacity of the plane with 0 as completely transparent and 0xffff as
+completely opaque. See drm_plane_create_alpha_property() for more
+details.
+  pixel_blend_mode
+    The alpha blending equation selection, describing how the pixels from
+the current plane are composited with the background. Value can be
+one of DRM_MODE_BLEND_*
+  rotation
+    Rotation of the plane. See drm_plane_create_rotation_property() for
+more details.
+  zpos
+    Priority of the given plane on crtc (optional). User-space may set mutable zpos properties so that multiple active
+planes on the same CRTC have identical zpos values. This is a
+user-space bug, but drivers can solve the conflict by comparing the
+plane object IDs; the plane with a higher ID is stacked on top of a
+plane with a lower ID. See drm_plane_create_zpos_property() and drm_plane_create_zpos_immutable_property() for more details.
+  normalized_zpos
+    Normalized value of zpos: unique, range from 0 to N-1 where N is the
+number of active planes for given crtc. Note that the driver must set drm_mode_config.normalize_zpos or call drm_atomic_normalize_zpos() to
+update this before it can be trusted.
+  color_encoding
+    Color encoding for non RGB formats
+  color_range
+    Color range for non RGB formats
+  fb_damage_clips
+    Blob representing damage (area in plane framebuffer that changed
+since last plane update) as an array of drm_mode_rect in framebuffer
+coodinates of the attached framebuffer. Note that unlike plane src,
+damage clips are not in 16.16 fixed point. See drm_plane_get_damage_clips() and drm_plane_get_damage_clips_count() for accessing these.
+  ignore_damage_clips
+    Set by drivers to indicate the drm_atomic_helper_damage_iter_init() helper that the fb_damage_clips blob property should be ignored. See Damage Tracking Properties for more information.
+  src
+    source coordinates of the plane (in 16.16). When using drm_atomic_helper_check_plane_state() ,
+the coordinates are clipped, but the driver may choose
+to use unclipped coordinates instead when the hardware
+performs the clipping automatically.
+  dst
+    clipped destination coordinates of the plane. When using drm_atomic_helper_check_plane_state() ,
+the coordinates are clipped, but the driver may choose
+to use unclipped coordinates instead when the hardware
+performs the clipping automatically.
+  visible
+    Visibility of the plane. This can be false even if fb!=NULL and
+crtc!=NULL, due to clipping.
+  scaling_filter
+    Scaling filter to be applied
+  commit
+    Tracks the pending commit to prevent use-after-free conditions,
+and for async plane updates. May be NULL.
+  state
+    backpointer to global drm_atomic_state
+  color_mgmt_changed
+    Color management properties have changed. Used
+by the atomic helpers and drivers to steer the atomic commit control
+flow.

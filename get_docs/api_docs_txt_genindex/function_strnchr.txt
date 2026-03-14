@@ -1,0 +1,15 @@
+Function: char * strnchr ( const char * s , size_t count , int c )
+
+Find a character in a length limited string
+
+Parameters
+  const char *s
+    The string to be searched
+  size_t count
+    The number of characters to be searched
+  int c
+    The character to search for
+
+Description
+  Note that the NUL-terminator is considered part of the string, and can
+be searched for.

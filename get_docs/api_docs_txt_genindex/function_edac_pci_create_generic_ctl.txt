@@ -1,0 +1,15 @@
+Function: struct edac_pci_ctl_info * edac_pci_create_generic_ctl ( struct device * dev , const char * mod_name )
+
+
+
+Parameters
+  struct device *dev
+    pointer to struct device ;
+  const char *mod_name
+    name of the PCI device
+
+Description
+  A generic constructor for a PCI parity polling device
+Some systems have more than one domain of PCI busses.
+For systems with one domain, then this API will
+provide for a generic poller.

@@ -1,0 +1,11 @@
+Function: void input_mt_destroy_slots ( struct input_dev * dev )
+
+frees the MT slots of the input device
+
+Parameters
+  struct input_dev *dev
+    input device with allocated MT slots
+
+Description
+  This function is only needed in error path as the input core will
+automatically free the MT slots when the device is destroyed.

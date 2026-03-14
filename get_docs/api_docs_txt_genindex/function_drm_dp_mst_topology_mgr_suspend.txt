@@ -1,0 +1,11 @@
+Function: void drm_dp_mst_topology_mgr_suspend ( struct drm_dp_mst_topology_mgr * mgr )
+
+suspend the MST manager
+
+Parameters
+  struct drm_dp_mst_topology_mgr *mgr
+    manager to suspend
+
+Description
+  This function tells the MST device that we can’t handle UP messages
+anymore. This should stop it from sending any since we are suspended.

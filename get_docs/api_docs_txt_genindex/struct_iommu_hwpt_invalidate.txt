@@ -1,0 +1,23 @@
+Struct: struct iommu_hwpt_invalidate
+
+ioctl(IOMMU_HWPT_INVALIDATE)
+
+Members
+  size
+    sizeof( struct iommu_hwpt_invalidate )
+  hwpt_id
+    ID of a nested HWPT or a vIOMMU, for cache invalidation
+  data_uptr
+    User pointer to an array of driver-specific cache invalidation
+data.
+  data_type
+    One of enum iommu_hwpt_invalidate_data_type , defining the data
+type of all the entries in the invalidation request array. It
+should be a type supported by the hwpt pointed by hwpt_id .
+  entry_len
+    Length (in bytes) of a request entry in the request array
+  entry_num
+    Input the number of cache invalidation requests in the array.
+Output the number of requests successfully handled by kernel.
+  __reserved
+    Must be 0.

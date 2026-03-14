@@ -1,0 +1,10 @@
+Function: __bpf_kfunc u32 bpf_cpumask_any_distribute ( const struct cpumask * cpumask )
+
+Return a random set CPU from a cpumask.
+
+Parameters
+  const struct cpumask *cpumask
+    The cpumask being queried.
+
+Description
+  A struct bpf_cpumask pointer may be safely passed to src .

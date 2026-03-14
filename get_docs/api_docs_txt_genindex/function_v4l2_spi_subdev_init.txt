@@ -1,0 +1,11 @@
+Function: void v4l2_spi_subdev_init ( struct v4l2_subdev * sd , struct spi_device * spi , const struct v4l2_subdev_ops * ops )
+
+Initialize a v4l2_subdev with data from an spi_device struct.
+
+Parameters
+  struct v4l2_subdev *sd
+    pointer to struct v4l2_subdev
+  struct spi_device *spi
+    pointer to struct spi_device .
+  const struct v4l2_subdev_ops *ops
+    pointer to struct v4l2_subdev_ops

@@ -1,0 +1,30 @@
+Struct: struct komeda_component_state
+
+
+
+Members
+  obj
+    tracking component_state by drm_atomic_state
+  component
+    backpointer to the component
+  {unnamed_union}
+    anonymous
+  crtc
+    backpointer for user crtc
+  plane
+    backpointer for user plane
+  wb_conn
+    backpointer for user wb_connector
+  binding_user
+    currently bound user, the user can be crtc , plane or wb_conn ,
+which is valid decided by component and inputs Layer: its user always is plane. compiz/improc/timing_ctrlr: the user is crtc. wb_layer: wb_conn; scaler: plane when input is layer, wb_conn if input is compiz.
+  active_inputs
+    active_inputs is bitmask of inputs index active_inputs = changed_active_inputs | unchanged_active_inputs affected_inputs = old->active_inputs | new->active_inputs; disabling_inputs = affected_inputs ^ active_inputs; changed_inputs = disabling_inputs | changed_active_inputs; NOTE:
+changed_inputs doesn’t include all active_input but only changed_active_inputs , and this bitmask can be used in chip
+level for dirty update.
+  changed_active_inputs
+    bitmask of the changed active_inputs
+  affected_inputs
+    bitmask for affected inputs
+  inputs
+    the specific inputs[i] only valid on BIT(i) has been set in active_inputs , if not the inputs[i] is undefined.

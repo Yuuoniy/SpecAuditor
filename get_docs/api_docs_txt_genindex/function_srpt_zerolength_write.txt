@@ -1,0 +1,13 @@
+Function: int srpt_zerolength_write ( struct srpt_rdma_ch * ch )
+
+perform a zero-length RDMA write
+
+Parameters
+  struct srpt_rdma_ch *ch
+    SRPT RDMA channel.
+
+Description
+  A quote from the InfiniBand specification: C9-88: For an HCA responder
+using Reliable Connection service, for each zero-length RDMA READ or WRITE
+request, the R_Key shall not be validated, even if the request includes
+Immediate data.

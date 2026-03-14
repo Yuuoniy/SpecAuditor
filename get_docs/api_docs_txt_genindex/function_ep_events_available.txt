@@ -1,0 +1,7 @@
+Function: int ep_events_available ( struct eventpoll * ep )
+
+Checks if ready events might be available.
+
+Parameters
+  struct eventpoll *ep
+    Pointer to the eventpoll context.

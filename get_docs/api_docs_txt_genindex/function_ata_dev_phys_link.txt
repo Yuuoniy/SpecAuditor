@@ -1,0 +1,12 @@
+Function: struct ata_link * ata_dev_phys_link ( struct ata_device * dev )
+
+find physical link for a device
+
+Parameters
+  struct ata_device *dev
+    ATA device to look up physical link for
+
+Description
+  Look up physical link which dev is attached to.  Note that
+this is different from dev->link only when dev is on slave
+link.  For all other cases, it’s the same as dev->link .

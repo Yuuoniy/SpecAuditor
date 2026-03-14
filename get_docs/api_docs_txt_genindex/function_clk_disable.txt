@@ -1,0 +1,11 @@
+Function: void clk_disable ( struct clk * clk )
+
+inform the system when the clock source is no longer required.
+
+Parameters
+  struct clk *clk
+    clock source
+
+Description
+  Inform the system that a clock source is no longer required by
+a driver and may be shut down.

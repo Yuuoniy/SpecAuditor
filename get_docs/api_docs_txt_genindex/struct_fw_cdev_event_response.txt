@@ -1,0 +1,15 @@
+Struct: struct fw_cdev_event_response
+
+Sent when a response packet was received
+
+Members
+  closure
+    See fw_cdev_event_common ; set by FW_CDEV_IOC_SEND_REQUEST or FW_CDEV_IOC_SEND_BROADCAST_REQUEST or FW_CDEV_IOC_SEND_STREAM_PACKET ioctl
+  type
+    See fw_cdev_event_common ; always FW_CDEV_EVENT_RESPONSE
+  rcode
+    Response code returned by the remote node
+  length
+    Data length, i.e. the response’s payload size in bytes
+  data
+    Payload data, if any

@@ -1,0 +1,11 @@
+Macro: slab_page
+
+
+
+Parameters
+  s
+    The slab.
+
+Description
+  A convenience wrapper for converting slab to the first struct page of the
+underlying folio, to communicate with code not yet converted to folio or struct slab .

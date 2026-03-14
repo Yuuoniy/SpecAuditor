@@ -1,0 +1,14 @@
+Function: void xe_ggtt_shift_nodes_locked ( struct xe_ggtt * ggtt , s64 shift )
+
+Shift GGTT nodes to adjust for a change in usable address range.
+
+Parameters
+  struct xe_ggtt *ggtt
+    the xe_ggtt struct instance
+  s64 shift
+    change to the location of area provisioned for current VF
+
+Description
+  This function moves all nodes from the GGTT VM, to a temp list. These nodes are expected
+to represent allocations in range formerly assigned to current VF, before the range changed.
+When the GGTT VM is completely clear of any nodes, they are re-added with shifted offsets.

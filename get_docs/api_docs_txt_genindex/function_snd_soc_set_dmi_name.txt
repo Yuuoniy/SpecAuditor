@@ -1,0 +1,19 @@
+Function: int snd_soc_set_dmi_name ( struct snd_soc_card * card )
+
+Register DMI names to card
+
+Parameters
+  struct snd_soc_card *card
+    The card to register DMI names
+
+Description
+  An Intel machine driver may be used by many different devices but are
+difficult for userspace to differentiate, since machine drivers usually
+use their own name as the card short name and leave the card long name
+blank. To differentiate such devices and fix bugs due to lack of
+device-specific configurations, this function allows DMI info to be used
+as the sound card long name, in the format of
+“vendor-product-version-board”
+(Character ‘-’ is used to separate different DMI fields here).
+This will help the user space to load the device-specific Use Case Manager
+(UCM) configurations for the card.

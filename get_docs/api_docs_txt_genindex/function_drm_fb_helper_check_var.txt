@@ -1,0 +1,9 @@
+Function: int drm_fb_helper_check_var ( struct fb_var_screeninfo * var , struct fb_info * info )
+
+implementation for fb_ops.fb_check_var
+
+Parameters
+  struct fb_var_screeninfo *var
+    screeninfo to check
+  struct fb_info *info
+    fbdev registered by the helper

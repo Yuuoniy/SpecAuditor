@@ -1,0 +1,10 @@
+Struct: struct matrix_keymap_data
+
+keymap for matrix keyboards
+
+Members
+  keymap
+    pointer to array of uint32 values encoded with KEY() macro
+representing keymap
+  keymap_size
+    number of entries (initialized) in this keymap

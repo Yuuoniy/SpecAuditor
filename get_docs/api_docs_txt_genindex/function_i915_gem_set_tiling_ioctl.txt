@@ -1,0 +1,15 @@
+Function: int i915_gem_set_tiling_ioctl ( struct drm_device * dev , void * data , struct drm_file * file )
+
+IOCTL handler to set tiling mode
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  void *data
+    data pointer for the ioctl
+  struct drm_file *file
+    DRM file for the ioctl call
+
+Description
+  Sets the tiling mode of an object, returning the required swizzling of
+bit 6 of addresses in the object.

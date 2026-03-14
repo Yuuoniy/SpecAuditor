@@ -1,0 +1,11 @@
+Struct: struct drm_xe_exec_queue_destroy
+
+Input of DRM_IOCTL_XE_EXEC_QUEUE_DESTROY
+
+Members
+  exec_queue_id
+    Exec queue ID
+  pad
+    MBZ
+  reserved
+    Reserved

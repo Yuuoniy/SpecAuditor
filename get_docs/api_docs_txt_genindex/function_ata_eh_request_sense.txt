@@ -1,0 +1,11 @@
+Function: bool ata_eh_request_sense ( struct ata_queued_cmd * qc )
+
+perform REQUEST_SENSE_DATA_EXT
+
+Parameters
+  struct ata_queued_cmd *qc
+    qc to perform REQUEST_SENSE_SENSE_DATA_EXT to
+
+Description
+  Perform REQUEST_SENSE_DATA_EXT after the device reported CHECK
+SENSE.  This function is an EH helper.

@@ -1,0 +1,14 @@
+Function: int add_cxl_resources ( struct resource * cxl_res )
+
+reflect CXL fixed memory windows in iomem_resource
+
+Parameters
+  struct resource *cxl_res
+    A standalone resource tree where each CXL window is a sibling
+
+Description
+  Walk each CXL window in cxl_res and add it to iomem_resource potentially
+expanding its boundaries to ensure that any conflicting resources become
+children. If a window is expanded it may then conflict with a another window
+entry and require the window to be truncated or trimmed. Consider this
+situation:

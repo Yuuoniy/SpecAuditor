@@ -1,0 +1,9 @@
+Function: void rpc_count_iostats_metrics ( const struct rpc_task * task , struct rpc_iostats * op_metrics )
+
+tally up per-task stats
+
+Parameters
+  const struct rpc_task *task
+    completed rpc_task
+  struct rpc_iostats *op_metrics
+    stat structure for OP that will accumulate stats from task

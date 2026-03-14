@@ -1,0 +1,12 @@
+Macro: ASSERT_EQ
+
+
+
+Parameters
+  expected
+    expected value
+  seen
+    measured value
+
+Description
+  ASSERT_EQ(expected, measured): expected == measured

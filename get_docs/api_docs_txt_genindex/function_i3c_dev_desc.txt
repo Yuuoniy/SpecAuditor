@@ -1,0 +1,21 @@
+Function: struct i3c_dev_desc
+
+I3C device descriptor
+
+Members
+  common
+    common part of the I3C device descriptor
+  info
+    I3C device information. Will be automatically filled when you create
+your device with i3c_master_add_i3c_dev_locked()
+  ibi_lock
+    lock used to protect the struct_i3c_device->ibi
+  ibi
+    IBI info attached to a device. Should be NULL until i3c_device_request_ibi() is called
+  dev
+    pointer to the I3C device object exposed to I3C device drivers. This
+should never be accessed from I3C master controller drivers. Only core
+code should manipulate it in when updating the dev <-> desc link or
+when propagating IBI events to the driver
+  boardinfo
+    pointer to the boardinfo attached to this I3C device

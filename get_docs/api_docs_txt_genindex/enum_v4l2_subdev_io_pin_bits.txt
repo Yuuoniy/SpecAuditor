@@ -1,0 +1,3 @@
+Enum: enum v4l2_subdev_io_pin_bits
+
+Subdevice external IO pin configuration bits

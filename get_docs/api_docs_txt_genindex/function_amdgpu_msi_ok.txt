@@ -1,0 +1,11 @@
+Function: bool amdgpu_msi_ok ( struct amdgpu_device * adev )
+
+check whether MSI functionality is enabled
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device pointer (unused)
+
+Description
+  Checks whether MSI functionality has been disabled via module parameter
+(all ASICs).

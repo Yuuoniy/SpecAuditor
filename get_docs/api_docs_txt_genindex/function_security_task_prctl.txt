@@ -1,0 +1,19 @@
+Function: int security_task_prctl ( int option , unsigned long arg2 , unsigned long arg3 , unsigned long arg4 , unsigned long arg5 )
+
+Check if a prctl op is allowed
+
+Parameters
+  int option
+    operation
+  unsigned long arg2
+    argument
+  unsigned long arg3
+    argument
+  unsigned long arg4
+    argument
+  unsigned long arg5
+    argument
+
+Description
+  Check permission before performing a process control operation on the
+current process.

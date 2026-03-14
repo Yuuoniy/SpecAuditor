@@ -1,0 +1,58 @@
+Function: struct usb_interface
+
+what usb device drivers talk to
+
+Members
+  altsetting
+    array of interface structures, one for each alternate
+setting that may be selected.  Each one includes a set of
+endpoint configurations.  They will be in no particular order.
+  cur_altsetting
+    the current altsetting.
+  num_altsetting
+    number of altsettings defined.
+  intf_assoc
+    interface association descriptor
+  minor
+    the minor number assigned to this interface, if this
+interface is bound to a driver that uses the USB major number.
+If this interface does not use the USB major, this field should
+be unused.  The driver should set this value in the probe() function of the driver, after it has been assigned a minor
+number from the USB core by calling usb_register_dev() .
+  condition
+    binding state of the interface: not bound, binding
+(in probe() ), bound to a driver, or unbinding (in disconnect() )
+  sysfs_files_created
+    sysfs attributes exist
+  ep_devs_created
+    endpoint child pseudo-devices exist
+  unregistering
+    flag set when the interface is being unregistered
+  needs_remote_wakeup
+    flag set when the driver requires remote-wakeup
+capability during autosuspend.
+  needs_altsetting0
+    flag set when a set-interface request for altsetting 0
+has been deferred.
+  needs_binding
+    flag set when the driver should be re-probed or unbound
+following a reset or suspend operation it doesn’t support.
+  resetting_device
+    USB core reset the device, so use alt setting 0 as
+current; needs bandwidth alloc after reset.
+  authorized
+    This allows to (de)authorize individual interfaces instead
+a whole device in contrast to the device authorization.
+  wireless_status
+    if the USB device uses a receiver/emitter combo, whether
+the emitter is connected.
+  wireless_status_work
+    Used for scheduling wireless status changes
+from atomic context.
+  dev
+    driver model’s view of this device
+  usb_dev
+    if an interface is bound to the USB major, this will point
+to the sysfs representation for that device.
+  reset_ws
+    Used for scheduling resets from atomic context.

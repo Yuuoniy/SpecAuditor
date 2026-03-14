@@ -1,0 +1,14 @@
+Function: bool drm_gpuvm_range_valid ( struct drm_gpuvm * gpuvm , u64 addr , u64 range )
+
+checks whether the given range is valid for the given drm_gpuvm
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the GPUVM to check the range for
+  u64 addr
+    the base address
+  u64 range
+    the range starting from the base address
+
+Description
+  Checks whether the range is within the GPUVM’s managed boundaries.

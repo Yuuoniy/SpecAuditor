@@ -1,0 +1,20 @@
+Struct: struct v4l2_async_notifier
+
+v4l2_device notifier data
+
+Members
+  ops
+    notifier operations
+  v4l2_dev
+    v4l2_device of the root notifier, NULL otherwise
+  sd
+    sub-device that registered the notifier, NULL otherwise
+  parent
+    parent notifier
+  waiting_list
+    list of struct v4l2_async_connection , waiting for their
+drivers
+  done_list
+    list of struct v4l2_subdev , already probed
+  notifier_entry
+    member in a global list of notifiers

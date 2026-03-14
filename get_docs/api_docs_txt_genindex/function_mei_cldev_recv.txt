@@ -1,0 +1,11 @@
+Function: ssize_t mei_cldev_recv ( struct mei_cl_device * cldev , u8 * buf , size_t length )
+
+client receive (read)
+
+Parameters
+  struct mei_cl_device *cldev
+    me client device
+  u8 *buf
+    buffer to receive
+  size_t length
+    buffer length

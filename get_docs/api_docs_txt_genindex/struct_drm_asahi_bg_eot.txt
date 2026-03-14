@@ -1,0 +1,15 @@
+Struct: struct drm_asahi_bg_eot
+
+Describe a background or end-of-tile program.
+
+Members
+  usc
+    USC address of the hardware USC words binding resources
+(including images and uniforms) and the program itself. Note this is
+an additional layer of indirection compared to the helper program,
+avoiding the need for a sideband for data. This is a tagged pointer
+with additional configuration in the bottom bits.
+  rsrc_spec
+    Resource specifier for the program. This is a packed
+hardware data structure describing the required number of registers,
+uniforms, bound textures, and bound samplers.

@@ -1,0 +1,11 @@
+Function: int mas_store_gfp ( struct ma_state * mas , void * entry , gfp_t gfp )
+
+Store a value into the tree.
+
+Parameters
+  struct ma_state *mas
+    The maple state
+  void *entry
+    The entry to store
+  gfp_t gfp
+    The GFP_FLAGS to use for allocations if necessary.

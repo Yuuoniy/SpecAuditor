@@ -1,0 +1,7 @@
+Function: u8 drm_dsc_initial_scale_value ( const struct drm_dsc_config * dsc )
+
+Calculate the initial scale value for the given DSC config
+
+Parameters
+  const struct drm_dsc_config *dsc
+    Pointer to DRM DSC config struct

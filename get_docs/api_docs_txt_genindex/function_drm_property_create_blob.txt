@@ -1,0 +1,16 @@
+Function: struct drm_property_blob * drm_property_create_blob ( struct drm_device * dev , size_t length , const void * data )
+
+Create new blob property
+
+Parameters
+  struct drm_device *dev
+    DRM device to create property for
+  size_t length
+    Length to allocate for blob data
+  const void *data
+    If specified, copies data into blob
+
+Description
+  Creates a new blob property for a specified DRM device, optionally
+copying data. Note that blob properties are meant to be invariant, hence the
+data must be filled out before the blob is used as the value of any property.

@@ -1,0 +1,12 @@
+Function: void drm_plane_helper_destroy ( struct drm_plane * plane )
+
+Helper for primary plane destruction
+
+Parameters
+  struct drm_plane *plane
+    plane to destroy
+
+Description
+  Provides a default plane destroy handler for primary planes.  This handler
+is called during CRTC destruction.  We disable the primary plane, remove
+it from the DRM plane list, and deallocate the plane structure.

@@ -1,0 +1,7 @@
+Struct: struct pisp_be_tdn_input_buffer_config
+
+PiSP Back End TDN input buffer
+
+Members
+  addr
+    TDN input buffer address

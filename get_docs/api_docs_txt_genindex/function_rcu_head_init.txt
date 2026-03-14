@@ -1,0 +1,14 @@
+Function: void rcu_head_init ( struct rcu_head * rhp )
+
+Initialize rcu_head for rcu_head_after_call_rcu()
+
+Parameters
+  struct rcu_head *rhp
+    The rcu_head structure to initialize.
+
+Description
+  If you intend to invoke rcu_head_after_call_rcu() to test whether a
+given rcu_head structure has already been passed to call_rcu() , then
+you must also invoke this rcu_head_init() function on it just after
+allocating that structure.  Calls to this function must not race with
+calls to call_rcu() , rcu_head_after_call_rcu() , or callback invocation.

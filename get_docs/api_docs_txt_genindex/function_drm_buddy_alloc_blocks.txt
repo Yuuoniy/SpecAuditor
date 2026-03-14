@@ -1,0 +1,23 @@
+Function: int drm_buddy_alloc_blocks ( struct drm_buddy * mm , u64 start , u64 end , u64 size , u64 min_block_size , struct list_head * blocks , unsigned long flags )
+
+allocate power-of-two blocks
+
+Parameters
+  struct drm_buddy *mm
+    DRM buddy manager to allocate from
+  u64 start
+    start of the allowed range for this block
+  u64 end
+    end of the allowed range for this block
+  u64 size
+    size of the allocation in bytes
+  u64 min_block_size
+    alignment of the allocation
+  struct list_head *blocks
+    output list head to add allocated blocks
+  unsigned long flags
+    DRM_BUDDY_*_ALLOCATION flags
+
+Description
+  alloc_range_bias() called on range limitations, which traverses
+the tree and returns the desired block.

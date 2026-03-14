@@ -1,0 +1,21 @@
+Struct: struct vbt_header
+
+VBT Header structure
+
+Members
+  signature
+    VBT signature, always starts with “$VBT”
+  version
+    Version of this structure
+  header_size
+    Size of this structure
+  vbt_size
+    Size of VBT (VBT Header, BDB Header and data blocks)
+  vbt_checksum
+    Checksum
+  reserved0
+    Reserved
+  bdb_offset
+    Offset of struct bdb_header from beginning of VBT
+  aim_offset
+    Offsets of add-in data blocks from beginning of VBT

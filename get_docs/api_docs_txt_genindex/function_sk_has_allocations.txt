@@ -1,0 +1,7 @@
+Function: bool sk_has_allocations ( const struct sock * sk )
+
+check if allocations are outstanding
+
+Parameters
+  const struct sock *sk
+    socket

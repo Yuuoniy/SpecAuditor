@@ -1,0 +1,7 @@
+Function: const char * drm_get_connector_type_name ( unsigned int type )
+
+return a string for connector type
+
+Parameters
+  unsigned int type
+    The connector type (DRM_MODE_CONNECTOR_*)

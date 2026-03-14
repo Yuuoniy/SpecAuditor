@@ -1,0 +1,12 @@
+Function: int rio_enum_host ( struct rio_mport * port )
+
+Set host lock and initialize host destination ID
+
+Parameters
+  struct rio_mport *port
+    Master port to issue transaction
+
+Description
+  Sets the local host master port lock and destination ID register
+with the host device ID value. The host device ID value is provided
+by the platform. Returns 0 on success or -1 on failure.

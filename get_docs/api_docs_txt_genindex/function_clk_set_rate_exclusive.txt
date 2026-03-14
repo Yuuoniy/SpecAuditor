@@ -1,0 +1,13 @@
+Function: int clk_set_rate_exclusive ( struct clk * clk , unsigned long rate )
+
+set the clock rate and claim exclusivity over clock source
+
+Parameters
+  struct clk *clk
+    clock source
+  unsigned long rate
+    desired clock rate in Hz
+
+Description
+  This helper function allows drivers to atomically set the rate of a producer
+and claim exclusivity over the rate control of the producer.

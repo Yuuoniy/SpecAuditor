@@ -1,0 +1,14 @@
+Function: int dwc3_send_gadget_generic_command ( struct dwc3 * dwc , unsigned int cmd , u32 param )
+
+issue a generic command for the controller
+
+Parameters
+  struct dwc3 *dwc
+    pointer to the controller context
+  unsigned int cmd
+    the command to be issued
+  u32 param
+    command parameter
+
+Description
+  Caller should take care of locking. Issue cmd with a given param to dwc and wait for its completion.

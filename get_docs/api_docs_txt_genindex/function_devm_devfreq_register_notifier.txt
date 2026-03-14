@@ -1,0 +1,16 @@
+Function: int devm_devfreq_register_notifier ( struct device * dev , struct devfreq * devfreq , struct notifier_block * nb , unsigned int list )
+
+
+
+Parameters
+  struct device *dev
+    The devfreq user device. (parent of devfreq)
+  struct devfreq *devfreq
+    The devfreq object.
+  struct notifier_block *nb
+    The notifier block to be unregistered.
+  unsigned int list
+    DEVFREQ_TRANSITION_NOTIFIER.
+
+Description
+  Resource-managed devfreq_register_notifier()

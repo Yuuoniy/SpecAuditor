@@ -1,0 +1,16 @@
+Function: int of_changeset_update_prop_string ( struct of_changeset * ocs , struct device_node * np , const char * prop_name , const char * str )
+
+Add a string property update to a changeset
+
+Parameters
+  struct of_changeset *ocs
+    changeset pointer
+  struct device_node *np
+    device node pointer
+  const char *prop_name
+    name of the property to be updated
+  const char *str
+    pointer to null terminated string
+
+Description
+  Create a string property to be updated and add it to a changeset.

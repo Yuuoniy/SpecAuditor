@@ -1,0 +1,11 @@
+Function: void usb_unpoison_anchored_urbs ( struct usb_anchor * anchor )
+
+let an anchor be used successfully again
+
+Parameters
+  struct usb_anchor *anchor
+    anchor the requests are bound to
+
+Description
+  Reverses the effect of usb_poison_anchored_urbs
+the anchor can be used normally after it returns

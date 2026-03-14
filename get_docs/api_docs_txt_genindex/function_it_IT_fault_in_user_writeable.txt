@@ -1,0 +1,11 @@
+Function: int fault_in_user_writeable ( u32 __user * uaddr )
+
+Fault in user address and verify RW access
+
+Parameters
+  u32 __user *uaddr
+    pointer to faulting user space address
+
+Description
+  Slow path to fixup the fault we just took in the atomic write
+access to uaddr .

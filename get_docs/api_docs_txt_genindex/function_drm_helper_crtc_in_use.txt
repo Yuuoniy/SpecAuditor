@@ -1,0 +1,12 @@
+Function: bool drm_helper_crtc_in_use ( struct drm_crtc * crtc )
+
+check if a given CRTC is in a mode_config
+
+Parameters
+  struct drm_crtc *crtc
+    CRTC to check
+
+Description
+  Checks whether crtc is with the current mode setting output configuration
+in use by any connector. This doesn’t mean that it is actually enabled since
+the DPMS state is tracked separately.

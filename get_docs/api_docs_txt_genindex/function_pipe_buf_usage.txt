@@ -1,0 +1,7 @@
+Function: unsigned int pipe_buf_usage ( const struct pipe_inode_info * pipe )
+
+Return how many pipe buffers are in use
+
+Parameters
+  const struct pipe_inode_info *pipe
+    the pipe

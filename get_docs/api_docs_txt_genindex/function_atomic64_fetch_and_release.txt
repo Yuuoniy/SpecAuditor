@@ -1,0 +1,12 @@
+Function: s64 atomic64_fetch_and_release ( s64 i , atomic64_t * v )
+
+atomic bitwise AND with release ordering
+
+Parameters
+  s64 i
+    s64 value
+  atomic64_t *v
+    pointer to atomic64_t
+
+Description
+  Atomically updates v to ( v & i ) with release ordering.

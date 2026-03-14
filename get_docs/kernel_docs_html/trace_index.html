@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Linux Tracing Technologies Guide &#8212; The Linux Kernel  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using the tracer for debugging" href="debugging.html" />
+    <link rel="prev" title="False Sharing" href="../kernel-hacking/false-sharing.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../index.html">The Linux Kernel</a></h1>
+
+
+
+<p class="blurb">6.18.0-rc1</p>
+
+
+
+
+
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+<p>
+<h3 class="kernel-toc-contents">Contents</h3>
+<input type="checkbox" class="kernel-toc-toggle" id = "kernel-toc-toggle" checked>
+<label class="kernel-toc-title" for="kernel-toc-toggle"></label>
+
+<div class="kerneltoc" id="kerneltoc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../process/development-process.html">Development process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/submitting-patches.html">Submitting patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/code-of-conduct.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Maintainer handbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/index.html">All development-process docs</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core-api/index.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver-api/index.html">Driver APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subsystem-apis.html">Subsystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../locking/index.html">Locking</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../process/license-rules.html">Licensing rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-guide/index.html">Writing documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-tools/index.html">Development tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-tools/testing-overview.html">Testing guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kernel-hacking/index.html">Hacking guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tracing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction-to-tracing">Introduction to Tracing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="debugging.html">Using the tracer for debugging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tracepoints.html">Using the Linux Kernel Tracepoints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tracepoint-analysis.html">Notes on Analysing Behaviour Using Events and Tracepoints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ring-buffer-map.html">Tracefs ring-buffer memory mapping</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#core-tracing-frameworks">Core Tracing Frameworks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ftrace.html">ftrace - Function Tracer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ftrace-design.html">Function Tracer Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ftrace-uses.html">Using ftrace to hook to functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kprobes.html">Kernel Probes (Kprobes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kprobetrace.html">Kprobe-based Event Tracing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fprobetrace.html">Fprobe-based Event Tracing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eprobetrace.html">Eprobe - Event-based Probe Tracing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fprobe.html">Fprobe - Function entry/exit probe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ring-buffer-design.html">Lockless Ring Buffer Design</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#event-tracing-and-analysis">Event Tracing and Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="events.html">Event Tracing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events-kmem.html">Subsystem Trace Points: kmem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events-power.html">Subsystem Trace Points: power</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events-nmi.html">NMI Trace Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events-msr.html">MSR Trace Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boottime-trace.html">Boot-time tracing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="histogram.html">Event Histograms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="histogram-design.html">Histogram Design Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-and-performance-tracing">Hardware and Performance Tracing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="intel_th.html">Intel(R) Trace Hub (TH)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stm.html">System Trace Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sys-t.html">MIPI SyS-T over STP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="coresight/index.html">CoreSight - ARM Hardware Trace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rv/index.html">Runtime Verification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hisi-ptt.html">HiSilicon PCIe Tune and Trace device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mmiotrace.html">In-kernel memory-mapped I/O tracing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hwlat_detector.html">Hardware Latency Detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="osnoise-tracer.html">OSNOISE Tracer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timerlat-tracer.html">Timerlat tracer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#user-space-tracing">User-Space Tracing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_events.html">user_events: User-based Event Tracing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uprobetracer.html">Uprobe-tracer: Uprobe-based Event Tracing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-resources">Additional Resources</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fault-injection/index.html">Fault injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../livepatch/index.html">Livepatching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">Rust</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kbuild/index.html">Build system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/reporting-issues.html">Reporting issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Userspace tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userspace-api/index.html">Userspace API</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../firmware-guide/index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devicetree/index.html">Firmware and Devicetree</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../arch/index.html">CPU architectures</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging/index.html">Unsorted documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../translations/index.html">Translations</a></li>
+</ul>
+
+</div>
+
+<script type="text/javascript"> <!--
+  var sbar = document.getElementsByClassName("sphinxsidebar")[0];
+  let currents = document.getElementsByClassName("current")
+  if (currents.length) {
+    sbar.scrollTop = currents[currents.length - 1].offsetTop;
+  }
+  --> </script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/trace/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+
+
+
+<section id="linux-tracing-technologies-guide">
+<h1>Linux Tracing Technologies Guide<a class="headerlink" href="#linux-tracing-technologies-guide" title="Permalink to this heading">¶</a></h1>
+<p>Tracing in the Linux kernel is a powerful mechanism that allows
+developers and system administrators to analyze and debug system
+behavior. This guide provides documentation on various tracing
+frameworks and tools available in the Linux kernel.</p>
+<section id="introduction-to-tracing">
+<h2>Introduction to Tracing<a class="headerlink" href="#introduction-to-tracing" title="Permalink to this heading">¶</a></h2>
+<p>This section provides an overview of Linux tracing mechanisms
+and debugging approaches.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">Using the tracer for debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracepoints.html">Using the Linux Kernel Tracepoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracepoint-analysis.html">Notes on Analysing Behaviour Using Events and Tracepoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ring-buffer-map.html">Tracefs ring-buffer memory mapping</a></li>
+</ul>
+</div>
+</section>
+<section id="core-tracing-frameworks">
+<h2>Core Tracing Frameworks<a class="headerlink" href="#core-tracing-frameworks" title="Permalink to this heading">¶</a></h2>
+<p>The following are the primary tracing frameworks integrated into
+the Linux kernel.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ftrace.html">ftrace - Function Tracer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ftrace-design.html">Function Tracer Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ftrace-uses.html">Using ftrace to hook to functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kprobes.html">Kernel Probes (Kprobes)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kprobetrace.html">Kprobe-based Event Tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fprobetrace.html">Fprobe-based Event Tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eprobetrace.html">Eprobe - Event-based Probe Tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fprobe.html">Fprobe - Function entry/exit probe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ring-buffer-design.html">Lockless Ring Buffer Design</a></li>
+</ul>
+</div>
+</section>
+<section id="event-tracing-and-analysis">
+<h2>Event Tracing and Analysis<a class="headerlink" href="#event-tracing-and-analysis" title="Permalink to this heading">¶</a></h2>
+<p>A detailed explanation of event tracing mechanisms and their
+applications.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Event Tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events-kmem.html">Subsystem Trace Points: kmem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events-power.html">Subsystem Trace Points: power</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events-nmi.html">NMI Trace Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events-msr.html">MSR Trace Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boottime-trace.html">Boot-time tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="histogram.html">Event Histograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="histogram-design.html">Histogram Design Notes</a></li>
+</ul>
+</div>
+</section>
+<section id="hardware-and-performance-tracing">
+<h2>Hardware and Performance Tracing<a class="headerlink" href="#hardware-and-performance-tracing" title="Permalink to this heading">¶</a></h2>
+<p>This section covers tracing features that monitor hardware
+interactions and system performance.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intel_th.html">Intel(R) Trace Hub (TH)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stm.html">System Trace Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sys-t.html">MIPI SyS-T over STP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coresight/index.html">CoreSight - ARM Hardware Trace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rv/index.html">Runtime Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hisi-ptt.html">HiSilicon PCIe Tune and Trace device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mmiotrace.html">In-kernel memory-mapped I/O tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hwlat_detector.html">Hardware Latency Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="osnoise-tracer.html">OSNOISE Tracer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timerlat-tracer.html">Timerlat tracer</a></li>
+</ul>
+</div>
+</section>
+<section id="user-space-tracing">
+<h2>User-Space Tracing<a class="headerlink" href="#user-space-tracing" title="Permalink to this heading">¶</a></h2>
+<p>These tools allow tracing user-space applications and
+interactions.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user_events.html">user_events: User-based Event Tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uprobetracer.html">Uprobe-tracer: Uprobe-based Event Tracing</a></li>
+</ul>
+</div>
+</section>
+<section id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">¶</a></h2>
+<p>For more details, refer to the respective documentation of each
+tracing tool and framework.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;The kernel development community.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/trace/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

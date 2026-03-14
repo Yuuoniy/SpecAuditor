@@ -1,0 +1,20 @@
+Struct: struct drm_pvr_dev_query_quirks
+
+Container used to fetch information about hardware fixes for which the device may require support in the user mode driver.
+
+Members
+  quirks
+    A userspace address for the hardware quirks __u32 array. The first musthave_count items in the list are quirks that the
+client must support for this device. If userspace does not support
+all these quirks then functionality is not guaranteed and client
+initialisation must fail.
+The remaining quirks in the list affect userspace and the kernel or
+firmware. They are disabled by default and require userspace to
+opt-in. The opt-in mechanism depends on the quirk.
+  count
+    Length of quirks (number of __u32).
+  musthave_count
+    The number of entries in quirks that are
+mandatory, starting at index 0.
+  _padding_c
+    Reserved. This field must be zeroed.

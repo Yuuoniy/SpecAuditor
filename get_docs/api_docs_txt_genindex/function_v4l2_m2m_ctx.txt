@@ -1,0 +1,42 @@
+Function: struct v4l2_m2m_ctx
+
+Memory to memory context structure
+
+Members
+  q_lock
+    struct mutex lock
+  new_frame
+    valid in the device_run callback: if true, then this
+starts a new frame; if false, then this is a new slice
+for an existing frame. This is always true unless
+V4L2_BUF_CAP_SUPPORTS_M2M_HOLD_CAPTURE_BUF is set, which
+indicates slicing support.
+  is_draining
+    indicates device is in draining phase
+  last_src_buf
+    indicate the last source buffer for draining
+  next_buf_last
+    next capture queud buffer will be tagged as last
+  has_stopped
+    indicate the device has been stopped
+  ignore_cap_streaming
+    If true, job_ready can be called even if the CAPTURE
+queue is not streaming. This allows firmware to
+analyze the bitstream header which arrives on the
+OUTPUT queue. The driver must implement the job_ready
+callback correctly to make sure that the requirements
+for actual decoding are met.
+  m2m_dev
+    opaque pointer to the internal data to handle M2M context
+  cap_q_ctx
+    Capture (output to memory) queue context
+  out_q_ctx
+    Output (input from memory) queue context
+  queue
+    List of memory to memory contexts
+  job_flags
+    Job queue flags, used internally by v4l2-mem2mem.c: TRANS_QUEUED , TRANS_RUNNING and TRANS_ABORT .
+  finished
+    Wait queue used to signalize when a job queue finished.
+  priv
+    Instance private data

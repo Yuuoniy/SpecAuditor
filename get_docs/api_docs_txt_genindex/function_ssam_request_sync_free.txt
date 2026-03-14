@@ -1,0 +1,11 @@
+Function: void ssam_request_sync_free ( struct ssam_request_sync * rqst )
+
+Free a synchronous request.
+
+Parameters
+  struct ssam_request_sync *rqst
+    The request to be freed.
+
+Description
+  Free a synchronous request and its corresponding buffer allocated with ssam_request_sync_alloc() . Do not use for requests allocated on the stack
+or via any other function.

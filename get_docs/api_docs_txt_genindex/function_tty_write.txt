@@ -1,0 +1,12 @@
+Function: ssize_t tty_write ( struct kiocb * iocb , struct iov_iter * from )
+
+write method for tty device file
+
+Parameters
+  struct kiocb *iocb
+    kernel I/O control block
+  struct iov_iter *from
+    iov_iter with data to write
+
+Description
+  Write data to a tty device via the line discipline.

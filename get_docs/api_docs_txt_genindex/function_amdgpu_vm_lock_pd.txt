@@ -1,0 +1,14 @@
+Function: int amdgpu_vm_lock_pd ( struct amdgpu_vm * vm , struct drm_exec * exec , unsigned int num_fences )
+
+lock PD in drm_exec
+
+Parameters
+  struct amdgpu_vm *vm
+    vm providing the BOs
+  struct drm_exec *exec
+    drm execution context
+  unsigned int num_fences
+    number of extra fences to reserve
+
+Description
+  Lock the VM root PD in the DRM execution context.

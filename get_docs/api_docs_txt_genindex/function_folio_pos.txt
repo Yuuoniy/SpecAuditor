@@ -1,0 +1,7 @@
+Function: loff_t folio_pos ( const struct folio * folio )
+
+Returns the byte position of this folio in its file.
+
+Parameters
+  const struct folio *folio
+    The folio.

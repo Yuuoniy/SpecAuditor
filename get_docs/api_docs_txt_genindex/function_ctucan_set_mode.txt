@@ -1,0 +1,9 @@
+Function: void ctucan_set_mode ( struct ctucan_priv * priv , const struct can_ctrlmode * mode )
+
+Sets CTU CAN FDs mode
+
+Parameters
+  struct ctucan_priv *priv
+    Pointer to private data
+  const struct can_ctrlmode *mode
+    Pointer to controller modes to be set

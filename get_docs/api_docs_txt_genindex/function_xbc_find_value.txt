@@ -1,0 +1,15 @@
+Function: const char * xbc_find_value ( const char * key , struct xbc_node * * vnode )
+
+Find a value which matches the key
+
+Parameters
+  const char *key
+    Search key
+  struct xbc_node **vnode
+    A container pointer of XBC value node.
+
+Description
+  Search a value whose key matches key from whole of XBC tree and return
+the value if found. Found value node is stored in *vnode .
+Note that this can return 0-length string and store NULL in *vnode for
+key-only (non-value) entry.

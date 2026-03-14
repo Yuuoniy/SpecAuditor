@@ -1,0 +1,12 @@
+Function: void opa_vnic_vema_report_event ( struct opa_vnic_adapter * adapter , u8 event )
+
+sent trap to report the specified event
+
+Parameters
+  struct opa_vnic_adapter *adapter
+    vnic port adapter
+  u8 event
+    event to be reported
+
+Description
+  This function calls vema api to sent a trap for the given event.

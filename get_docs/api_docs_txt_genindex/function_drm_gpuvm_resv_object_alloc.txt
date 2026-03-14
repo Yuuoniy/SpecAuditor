@@ -1,0 +1,11 @@
+Function: struct drm_gem_object * drm_gpuvm_resv_object_alloc ( struct drm_device * drm )
+
+allocate a dummy drm_gem_object
+
+Parameters
+  struct drm_device *drm
+    the drivers drm_device
+
+Description
+  Allocates a dummy drm_gem_object which can be passed to drm_gpuvm_init() in
+order to serve as root GEM object providing the drm_resv shared across drm_gem_objects local to a single GPUVM.

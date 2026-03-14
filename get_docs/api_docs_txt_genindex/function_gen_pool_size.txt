@@ -1,0 +1,10 @@
+Function: size_t gen_pool_size ( struct gen_pool * pool )
+
+get size in bytes of memory managed by the pool
+
+Parameters
+  struct gen_pool *pool
+    pool to get size
+
+Description
+  Return size in bytes of memory managed by the pool.

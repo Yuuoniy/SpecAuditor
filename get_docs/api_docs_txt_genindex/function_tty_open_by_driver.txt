@@ -1,0 +1,13 @@
+Function: struct tty_struct * tty_open_by_driver ( dev_t device , struct file * filp )
+
+open a tty device
+
+Parameters
+  dev_t device
+    dev_t of device to open
+  struct file *filp
+    file pointer to tty
+
+Description
+  Performs the driver lookup, checks for a reopen, or otherwise performs the
+first-time tty initialization.

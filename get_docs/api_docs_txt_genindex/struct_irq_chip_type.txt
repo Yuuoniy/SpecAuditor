@@ -1,0 +1,17 @@
+Struct: struct irq_chip_type
+
+Generic interrupt chip instance for a flow type
+
+Members
+  chip
+    The real interrupt chip which provides the callbacks
+  regs
+    Register offsets for this chip
+  handler
+    Flow handler associated with this chip
+  type
+    Chip can handle these flow types
+  mask_cache_priv
+    Cached mask register private to the chip type
+  mask_cache
+    Pointer to cached mask register

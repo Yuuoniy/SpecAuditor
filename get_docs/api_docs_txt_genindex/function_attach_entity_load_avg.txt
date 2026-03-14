@@ -1,0 +1,13 @@
+Function: void attach_entity_load_avg ( struct cfs_rq * cfs_rq , struct sched_entity * se )
+
+attach this entity to its cfs_rq load avg
+
+Parameters
+  struct cfs_rq *cfs_rq
+    cfs_rq to attach to
+  struct sched_entity *se
+    sched_entity to attach
+
+Description
+  Must call update_cfs_rq_load_avg() before this, since we rely on
+cfs_rq->avg.last_update_time being current.

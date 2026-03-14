@@ -1,0 +1,11 @@
+Function: void dim_turn ( struct dim * dim )
+
+change profile altering direction
+
+Parameters
+  struct dim *dim
+    DIM context
+
+Description
+  Go left if we were going right and vice-versa.
+Do nothing if currently parking.

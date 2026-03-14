@@ -1,0 +1,13 @@
+Function: void drm_format_conv_state_copy ( struct drm_format_conv_state * state , const struct drm_format_conv_state * old_state )
+
+Copy format-conversion state
+
+Parameters
+  struct drm_format_conv_state *state
+    Destination state
+  const struct drm_format_conv_state *old_state
+    Source state
+
+Description
+  Copies format-conversion state from old_state to state ; except for
+temporary storage.

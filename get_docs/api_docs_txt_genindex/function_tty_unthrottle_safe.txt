@@ -1,0 +1,12 @@
+Function: bool tty_unthrottle_safe ( struct tty_struct * tty )
+
+flow control
+
+Parameters
+  struct tty_struct *tty
+    terminal
+
+Description
+  Similar to tty_unthrottle() but will only attempt unthrottle if tty->flow_change is TTY_UNTHROTTLE_SAFE . Prevents an accidental unthrottle
+due to race conditions when unthrottling is conditional on factors evaluated
+prior to unthrottling.

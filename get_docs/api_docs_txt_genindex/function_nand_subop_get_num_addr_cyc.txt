@@ -1,0 +1,14 @@
+Function: unsigned int nand_subop_get_num_addr_cyc ( const struct nand_subop * subop , unsigned int instr_idx )
+
+Get the remaining address cycles to assert
+
+Parameters
+  const struct nand_subop *subop
+    The entire sub-operation
+  unsigned int instr_idx
+    Index of the instruction inside the sub-operation
+
+Description
+  During driver development, one could be tempted to directly use the
+->addr->naddrs field of a data instruction. This is wrong as instructions
+might be split.

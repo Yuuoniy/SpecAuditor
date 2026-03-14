@@ -1,0 +1,16 @@
+Function: struct iscsi_bus_flash_conn * iscsi_create_flashnode_conn ( struct Scsi_Host * shost , struct iscsi_bus_flash_session * fnode_sess , struct iscsi_transport * transport , int dd_size )
+
+Add flashnode conn entry in sysfs
+
+Parameters
+  struct Scsi_Host *shost
+    pointer to host data
+  struct iscsi_bus_flash_session *fnode_sess
+    pointer to the parent flashnode session entry
+  struct iscsi_transport *transport
+    pointer to transport data
+  int dd_size
+    total size to allocate
+
+Description
+  Adds a sysfs entry for the flashnode connection attributes

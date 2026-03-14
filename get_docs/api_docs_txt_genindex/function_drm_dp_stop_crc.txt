@@ -1,0 +1,10 @@
+Function: int drm_dp_stop_crc ( struct drm_dp_aux * aux )
+
+stop capture of frame CRCs
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+
+Description
+  Returns 0 on success or a negative error code on failure.

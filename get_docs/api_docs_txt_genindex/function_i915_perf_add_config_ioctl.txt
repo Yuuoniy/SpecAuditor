@@ -1,0 +1,16 @@
+Function: int i915_perf_add_config_ioctl ( struct drm_device * dev , void * data , struct drm_file * file )
+
+DRM ioctl() for userspace to add a new OA config
+
+Parameters
+  struct drm_device *dev
+    drm device
+  void *data
+    ioctl data (pointer to struct drm_i915_perf_oa_config ) copied from
+userspace (unvalidated)
+  struct drm_file *file
+    drm file
+
+Description
+  Validates the submitted OA register to be saved into a new OA config that
+can then be used for programming the OA unit and its NOA network.

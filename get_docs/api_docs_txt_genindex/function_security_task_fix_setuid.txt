@@ -1,0 +1,18 @@
+Function: int security_task_fix_setuid ( struct cred * new , const struct cred * old , int flags )
+
+Update LSM with new user id attributes
+
+Parameters
+  struct cred *new
+    updated credentials
+  const struct cred *old
+    credentials being replaced
+  int flags
+    LSM_SETID_* flag values
+
+Description
+  Update the module’s state after setting one or more of the user identity
+attributes of the current process.  The flags parameter indicates which of
+the set*uid system calls invoked this hook.  If new is the set of
+credentials that will be installed.  Modifications should be made to this
+rather than to current->cred .

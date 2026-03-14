@@ -1,0 +1,10 @@
+Function: void pci_clear_mwi ( struct pci_dev * dev )
+
+disables Memory-Write-Invalidate for device dev
+
+Parameters
+  struct pci_dev *dev
+    the PCI device to disable
+
+Description
+  Disables PCI Memory-Write-Invalidate transaction on the device

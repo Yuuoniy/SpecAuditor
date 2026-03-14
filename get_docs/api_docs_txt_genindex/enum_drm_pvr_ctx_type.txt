@@ -1,0 +1,3 @@
+Enum: enum drm_pvr_ctx_type
+
+Arguments for struct drm_pvr_ioctl_create_context_args .type

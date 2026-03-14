@@ -1,0 +1,17 @@
+Macro: mt_for_each
+
+
+
+Parameters
+  __tree
+    The Maple Tree
+  __entry
+    The current entry
+  __index
+    The index to start the search from. Subsequently used as iterator.
+  __max
+    The maximum limit for index
+
+Description
+  This iterator skips all entries, which resolve to a NULL pointer,
+e.g. entries which has been reserved with XA_ZERO_ENTRY.

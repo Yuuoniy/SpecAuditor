@@ -1,0 +1,11 @@
+Function: ssize_t dvb_ringbuffer_pkt_write ( struct dvb_ringbuffer * rbuf , u8 * buf , size_t len )
+
+Write a packet into the ringbuffer.
+
+Parameters
+  struct dvb_ringbuffer *rbuf
+    Ringbuffer to write to.
+  u8 *buf
+    Buffer to write.
+  size_t len
+    Length of buffer (currently limited to 65535 bytes max).

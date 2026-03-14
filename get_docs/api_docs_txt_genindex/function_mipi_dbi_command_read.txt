@@ -1,0 +1,14 @@
+Function: int mipi_dbi_command_read ( struct mipi_dbi * dbi , u8 cmd , u8 * val )
+
+MIPI DCS read command
+
+Parameters
+  struct mipi_dbi *dbi
+    MIPI DBI structure
+  u8 cmd
+    Command
+  u8 *val
+    Value read
+
+Description
+  Send MIPI DCS read command to the controller.

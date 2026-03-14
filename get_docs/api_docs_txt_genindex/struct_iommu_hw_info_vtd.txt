@@ -1,0 +1,15 @@
+Struct: struct iommu_hw_info_vtd
+
+Intel VT-d hardware information
+
+Members
+  flags
+    Combination of enum iommu_hw_info_vtd_flags
+  __reserved
+    Must be 0
+  cap_reg
+    Value of Intel VT-d capability register defined in VT-d spec
+section 11.4.2 Capability Register.
+  ecap_reg
+    Value of Intel VT-d capability register defined in VT-d spec
+section 11.4.3 Extended Capability Register.

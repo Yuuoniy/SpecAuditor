@@ -1,0 +1,7 @@
+Macro: LIST_HEAD_INIT
+
+
+
+Parameters
+  name
+    name of the list_head

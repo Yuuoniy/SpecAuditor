@@ -1,0 +1,9 @@
+Function: DRM_IOCTL_MODE_CREATE_DUMB
+
+
+
+Members
+  type
+    event type.
+  length
+    total number of payload bytes (including header).

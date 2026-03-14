@@ -1,0 +1,7 @@
+Function: int snd_soc_register_card ( struct snd_soc_card * card )
+
+Register a card with the ASoC core
+
+Parameters
+  struct snd_soc_card *card
+    Card to register

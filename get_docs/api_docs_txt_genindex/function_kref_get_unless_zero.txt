@@ -1,0 +1,17 @@
+Function: int kref_get_unless_zero ( struct kref * kref )
+
+Increment refcount for object unless it is zero.
+
+Parameters
+  struct kref *kref
+    object.
+
+Description
+  This function is intended to simplify locking around refcounting for
+objects that can be looked up from a lookup structure, and which are
+removed from that lookup structure in the object destructor.
+Operations on such objects require at least a read lock around
+lookup + kref_get, and a write lock around kref_put + remove from lookup
+structure. Furthermore, RCU implementations become extremely tricky.
+With a lookup followed by a kref_get_unless_zero with return value check locking in the kref_put path can be deferred to the actual removal from
+the lookup structure and RCU lookups become trivial.

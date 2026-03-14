@@ -1,0 +1,12 @@
+Function: int drm_gem_simple_kms_begin_shadow_fb_access ( struct drm_simple_display_pipe * pipe , struct drm_plane_state * plane_state )
+
+prepares shadow framebuffers for CPU access
+
+Parameters
+  struct drm_simple_display_pipe *pipe
+    the simple display pipe
+  struct drm_plane_state *plane_state
+    the plane state of type struct drm_shadow_plane_state
+
+Description
+  This function implements struct drm_simple_display_funcs .begin_fb_access.

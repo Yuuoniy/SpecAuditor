@@ -1,0 +1,9 @@
+Function: int list_is_last ( const struct list_head * list , const struct list_head * head )
+
+tests whether list is the last entry in list head
+
+Parameters
+  const struct list_head *list
+    the entry to test
+  const struct list_head *head
+    the head of the list

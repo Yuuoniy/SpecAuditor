@@ -1,0 +1,3 @@
+Enum: enum ssam_notif_flags
+
+Flags used in return values from SSAM notifier callback functions.

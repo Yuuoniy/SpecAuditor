@@ -1,0 +1,12 @@
+Function: int input_register_handle ( struct input_handle * handle )
+
+register a new input handle
+
+Parameters
+  struct input_handle *handle
+    handle to register
+
+Description
+  This function puts a new input handle onto device’s
+and handler’s lists so that events can flow through
+it once it is opened using input_open_device() .

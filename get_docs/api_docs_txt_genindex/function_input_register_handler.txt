@@ -1,0 +1,12 @@
+Function: int input_register_handler ( struct input_handler * handler )
+
+register a new input handler
+
+Parameters
+  struct input_handler *handler
+    handler to be registered
+
+Description
+  This function registers a new input handler (interface) for input
+devices in the system and attaches it to all input devices that
+are compatible with the handler.

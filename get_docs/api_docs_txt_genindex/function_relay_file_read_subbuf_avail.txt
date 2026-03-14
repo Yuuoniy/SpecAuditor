@@ -1,0 +1,9 @@
+Function: size_t relay_file_read_subbuf_avail ( size_t read_pos , struct rchan_buf * buf )
+
+return bytes available in sub-buffer
+
+Parameters
+  size_t read_pos
+    file read position
+  struct rchan_buf *buf
+    relay channel buffer

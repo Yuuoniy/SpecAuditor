@@ -1,0 +1,11 @@
+Function: int timer_shutdown ( struct timer_list * timer )
+
+Deactivate a timer and prevent rearming
+
+Parameters
+  struct timer_list *timer
+    The timer to be deactivated
+
+Description
+  The function does not wait for an eventually running timer callback on a
+different CPU but it prevents rearming of the timer. Any attempt to arm timer after this function returns will be silently ignored.

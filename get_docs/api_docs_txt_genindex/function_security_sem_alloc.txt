@@ -1,0 +1,11 @@
+Function: int security_sem_alloc ( struct kern_ipc_perm * sma )
+
+Allocate a sysv semaphore LSM blob
+
+Parameters
+  struct kern_ipc_perm *sma
+    sysv ipc permission structure
+
+Description
+  Allocate and attach a security structure to the sma security field. The
+security field is initialized to NULL when the structure is first created.

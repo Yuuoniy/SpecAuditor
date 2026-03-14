@@ -1,0 +1,9 @@
+Function: void v4l2_set_subdev_hostdata ( struct v4l2_subdev * sd , void * p )
+
+Sets V4L2 dev private host data
+
+Parameters
+  struct v4l2_subdev *sd
+    pointer to struct v4l2_subdev
+  void *p
+    pointer to the private data to be stored.

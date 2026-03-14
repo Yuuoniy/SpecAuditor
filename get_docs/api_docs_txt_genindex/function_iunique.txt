@@ -1,0 +1,15 @@
+Function: ino_t iunique ( struct super_block * sb , ino_t max_reserved )
+
+get a unique inode number
+
+Parameters
+  struct super_block *sb
+    superblock
+  ino_t max_reserved
+    highest reserved inode number
+
+Description
+  Obtain an inode number that is unique on the system for a given
+superblock. This is used by file systems that have no natural
+permanent inode numbering system. An inode number is returned that
+is higher than the reserved limit but unique.

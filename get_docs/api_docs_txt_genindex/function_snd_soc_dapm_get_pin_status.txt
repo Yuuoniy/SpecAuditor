@@ -1,0 +1,12 @@
+Function: int snd_soc_dapm_get_pin_status ( struct snd_soc_dapm_context * dapm , const char * pin )
+
+get audio pin status
+
+Parameters
+  struct snd_soc_dapm_context *dapm
+    DAPM context
+  const char *pin
+    audio signal pin endpoint (or start point)
+
+Description
+  Get audio pin status - connected or disconnected.

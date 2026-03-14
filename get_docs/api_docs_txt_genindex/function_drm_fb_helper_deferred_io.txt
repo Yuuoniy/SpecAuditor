@@ -1,0 +1,12 @@
+Function: void drm_fb_helper_deferred_io ( struct fb_info * info , struct list_head * pagereflist )
+
+fbdev deferred_io callback function
+
+Parameters
+  struct fb_info *info
+    fb_info struct pointer
+  struct list_head *pagereflist
+    list of mmap framebuffer pages that have to be flushed
+
+Description
+  This function is used as the fb_deferred_io.deferred_io callback function for flushing the fbdev mmap writes.

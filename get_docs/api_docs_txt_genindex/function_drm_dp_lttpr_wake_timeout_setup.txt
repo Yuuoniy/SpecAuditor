@@ -1,0 +1,16 @@
+Function: void drm_dp_lttpr_wake_timeout_setup ( struct drm_dp_aux * aux , bool transparent_mode )
+
+Grant extended time for sink to wake up
+
+Parameters
+  struct drm_dp_aux *aux
+    The DP AUX channel to use
+  bool transparent_mode
+    This is true if lttpr is in transparent mode
+
+Description
+  This function checks if the sink needs any extended wake time, if it does
+it grants this request. Post this setup the source device can keep trying
+the Aux transaction till the granted wake timeout.
+If this function is not called all Aux transactions are expected to take
+a default of 1ms before they throw an error.

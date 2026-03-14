@@ -1,0 +1,10 @@
+Function: int drm_dp_dpcd_clear_payload ( struct drm_dp_aux * aux )
+
+Clear the entire VC Payload ID table
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+
+Description
+  Clear the entire VC Payload ID table.

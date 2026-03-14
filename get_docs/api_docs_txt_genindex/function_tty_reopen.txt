@@ -1,0 +1,10 @@
+Function: int tty_reopen ( struct tty_struct * tty )
+
+fast re-open of an open tty
+
+Parameters
+  struct tty_struct *tty
+    the tty to open
+
+Description
+  Re-opens on master ptys are not allowed and return - EIO .

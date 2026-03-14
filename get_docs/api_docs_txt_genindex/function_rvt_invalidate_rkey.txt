@@ -1,0 +1,12 @@
+Function: int rvt_invalidate_rkey ( struct rvt_qp * qp , u32 rkey )
+
+invalidate an MR rkey
+
+Parameters
+  struct rvt_qp *qp
+    queue pair associated with the invalidate op
+  u32 rkey
+    rkey to invalidate
+
+Description
+  Returns 0 on success.

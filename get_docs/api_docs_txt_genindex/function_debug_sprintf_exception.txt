@@ -1,0 +1,16 @@
+Function: debug_sprintf_exception
+
+
+
+Parameters
+  _id
+    handle for debug log
+  _level
+    debug level
+  _fmt
+    format string for debug entry
+  ...
+    varargs used as in sprintf()
+
+Description
+  floats and long long datatypes cannot be used as varargs.

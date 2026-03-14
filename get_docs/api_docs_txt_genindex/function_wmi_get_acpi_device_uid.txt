@@ -1,0 +1,10 @@
+Function: char * wmi_get_acpi_device_uid ( const char * guid_string )
+
+Get _UID name of ACPI device that defines GUID (deprecated)
+
+Parameters
+  const char *guid_string
+    36 char string of the form fa50ff2b-f2e8-45de-83fa-65417f2f49ba
+
+Description
+  Find the _UID of ACPI device associated with this WMI GUID.

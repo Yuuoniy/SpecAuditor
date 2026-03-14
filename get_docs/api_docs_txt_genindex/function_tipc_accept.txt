@@ -1,0 +1,11 @@
+Function: int tipc_accept ( struct socket * sock , struct socket * new_sock , struct proto_accept_arg * arg )
+
+wait for connection request
+
+Parameters
+  struct socket *sock
+    listening socket
+  struct socket *new_sock
+    new socket that is to be connected
+  struct proto_accept_arg *arg
+    arguments for accept

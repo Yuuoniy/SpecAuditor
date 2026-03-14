@@ -1,0 +1,9 @@
+Function: int get_tree_bdev ( struct fs_context * fc , int ( * fill_super ) ( struct super_block * , struct fs_context * ) )
+
+Get a superblock based on a single block device
+
+Parameters
+  struct fs_context *fc
+    The filesystem context holding the parameters
+  int (*fill_super)(struct super_block *, struct fs_context *)
+    Helper to initialise a new superblock

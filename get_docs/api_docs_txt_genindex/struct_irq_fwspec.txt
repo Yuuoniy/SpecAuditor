@@ -1,0 +1,11 @@
+Struct: struct irq_fwspec
+
+generic IRQ specifier structure
+
+Members
+  fwnode
+    Pointer to a firmware-specific descriptor
+  param_count
+    Number of device-specific parameters
+  param
+    Device-specific parameters

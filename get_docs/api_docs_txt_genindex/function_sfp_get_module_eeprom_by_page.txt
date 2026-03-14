@@ -1,0 +1,15 @@
+Function: int sfp_get_module_eeprom_by_page ( struct sfp_bus * bus , const struct ethtool_module_eeprom * page , struct netlink_ext_ack * extack )
+
+Read a page from the SFP module EEPROM
+
+Parameters
+  struct sfp_bus *bus
+    a pointer to the struct sfp_bus structure for the sfp module
+  const struct ethtool_module_eeprom *page
+    a struct ethtool_module_eeprom
+  struct netlink_ext_ack *extack
+    extack for reporting problems
+
+Description
+  Read an EEPROM page as specified by the supplied page . See the
+documentation for struct ethtool_module_eeprom for the page to be read.

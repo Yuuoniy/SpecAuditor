@@ -1,0 +1,12 @@
+Function: int tiocsetd ( struct tty_struct * tty , int __user * p )
+
+set line discipline
+
+Parameters
+  struct tty_struct *tty
+    tty device
+  int __user *p
+    pointer to user data
+
+Description
+  Set the line discipline according to user request.

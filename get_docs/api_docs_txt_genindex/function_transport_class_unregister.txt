@@ -1,0 +1,11 @@
+Function: void transport_class_unregister ( struct transport_class * tclass )
+
+unregister a previously registered class
+
+Parameters
+  struct transport_class *tclass
+    The transport class to unregister
+
+Description
+  Must be called prior to deallocating the memory for the transport
+class.

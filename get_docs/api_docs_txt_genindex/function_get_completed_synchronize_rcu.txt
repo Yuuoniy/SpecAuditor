@@ -1,0 +1,11 @@
+Function: unsigned long get_completed_synchronize_rcu ( void )
+
+Return a pre-completed polled state cookie
+
+Parameters
+  void
+    no arguments
+
+Description
+  Returns a value that will always be treated by functions like poll_state_synchronize_rcu() as a cookie whose grace period has already
+completed.

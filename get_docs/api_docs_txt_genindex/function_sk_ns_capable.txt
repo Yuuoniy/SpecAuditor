@@ -1,0 +1,16 @@
+Function: bool sk_ns_capable ( const struct sock * sk , struct user_namespace * user_ns , int cap )
+
+General socket capability test
+
+Parameters
+  const struct sock *sk
+    Socket to use a capability on or through
+  struct user_namespace *user_ns
+    The user namespace of the capability to use
+  int cap
+    The capability to use
+
+Description
+  Test to see if the opener of the socket had when the socket was
+created and the current process has the capability cap in the user
+namespace user_ns .

@@ -1,0 +1,11 @@
+Function: void counter_push_event ( struct counter_device * const counter , const u8 event , const u8 channel )
+
+queue event for userspace reading
+
+Parameters
+  struct counter_device *const counter
+    pointer to Counter structure
+  const u8 event
+    triggered event
+  const u8 channel
+    event channel

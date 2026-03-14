@@ -1,0 +1,19 @@
+Function: int get_user_pages_fast ( unsigned long start , int nr_pages , unsigned int gup_flags , struct page * * pages )
+
+pin user pages in memory
+
+Parameters
+  unsigned long start
+    starting user address
+  int nr_pages
+    number of pages from start to pin
+  unsigned int gup_flags
+    flags modifying pin behaviour
+  struct page **pages
+    array that receives pointers to the pages pinned.
+Should be at least nr_pages long.
+
+Description
+  Attempt to pin user pages in memory without taking mm->mmap_lock.
+If not successful, it will fall back to taking the lock and
+calling get_user_pages() .

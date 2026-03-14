@@ -1,0 +1,10 @@
+Function: void handle_bad_irq ( struct irq_desc * desc )
+
+handle spurious and unhandled irqs
+
+Parameters
+  struct irq_desc *desc
+    description of the interrupt
+
+Description
+  Handles spurious and unhandled IRQ’s. It also prints a debugmessage.

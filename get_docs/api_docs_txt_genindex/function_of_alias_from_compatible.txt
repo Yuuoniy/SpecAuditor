@@ -1,0 +1,17 @@
+Function: int of_alias_from_compatible ( const struct device_node * node , char * alias , int len )
+
+Lookup appropriate alias for a device node depending on compatible
+
+Parameters
+  const struct device_node *node
+    pointer to a device tree node
+  char *alias
+    Pointer to buffer that alias value will be copied into
+  int len
+    Length of alias value
+
+Description
+  Based on the value of the compatible property, this routine will attempt
+to choose an appropriate alias value for a particular device tree node.
+It does this by stripping the manufacturer prefix (as delimited by a ‘,’)
+from the first entry in the compatible list property.

@@ -1,0 +1,22 @@
+Function: ssize_t xe_devcoredump_read ( char * buffer , loff_t offset , size_t count , void * data , size_t datalen )
+
+Read data from the Xe device coredump snapshot
+
+Parameters
+  char *buffer
+    Destination buffer to copy the coredump data into
+  loff_t offset
+    Offset in the coredump data to start reading from
+  size_t count
+    Number of bytes to read
+  void *data
+    Pointer to the xe_devcoredump structure
+  size_t datalen
+    Length of the data (unused)
+
+Description
+  Reads a chunk of the coredump snapshot data into the provided buffer.
+If the devcoredump is smaller than 1.5 GB (XE_DEVCOREDUMP_CHUNK_MAX),
+it is read directly from a pre-written buffer. For larger devcoredumps,
+the pre-written buffer must be periodically repopulated from the snapshot
+state due to kmalloc size limitations.

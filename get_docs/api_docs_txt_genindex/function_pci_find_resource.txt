@@ -1,0 +1,14 @@
+Function: struct resource * pci_find_resource ( struct pci_dev * dev , struct resource * res )
+
+Return matching PCI device resource
+
+Parameters
+  struct pci_dev *dev
+    PCI device to query
+  struct resource *res
+    Resource to look for
+
+Description
+  Goes over standard PCI resources (BARs) and checks if the given resource
+is partially or fully contained in any of them. In that case the
+matching resource is returned, NULL otherwise.

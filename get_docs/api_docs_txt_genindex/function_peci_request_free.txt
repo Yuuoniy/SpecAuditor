@@ -1,0 +1,7 @@
+Function: void peci_request_free ( struct peci_request * req )
+
+free peci_request
+
+Parameters
+  struct peci_request *req
+    the PECI request to be freed

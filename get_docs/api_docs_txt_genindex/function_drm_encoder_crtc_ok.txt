@@ -1,0 +1,12 @@
+Function: bool drm_encoder_crtc_ok ( struct drm_encoder * encoder , struct drm_crtc * crtc )
+
+can a given crtc drive a given encoder?
+
+Parameters
+  struct drm_encoder *encoder
+    encoder to test
+  struct drm_crtc *crtc
+    crtc to test
+
+Description
+  Returns false if encoder can’t be driven by crtc , true otherwise.

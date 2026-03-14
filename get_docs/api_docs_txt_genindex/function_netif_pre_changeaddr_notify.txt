@@ -1,0 +1,11 @@
+Function: int netif_pre_changeaddr_notify ( struct net_device * dev , const char * addr , struct netlink_ext_ack * extack )
+
+Call NETDEV_PRE_CHANGEADDR.
+
+Parameters
+  struct net_device *dev
+    device
+  const char *addr
+    new address
+  struct netlink_ext_ack *extack
+    netlink extended ack

@@ -1,0 +1,29 @@
+Struct: struct reset_controller_dev
+
+reset controller entity that might provide multiple reset controls
+
+Members
+  ops
+    a pointer to device specific struct reset_control_ops
+  owner
+    kernel module of the reset controller driver
+  list
+    internal list of reset controller devices
+  reset_control_head
+    head of internal list of requested reset controls
+  dev
+    corresponding driver model device struct
+  of_node
+    corresponding device tree node as phandle target
+  of_args
+    for reset-gpios controllers: corresponding phandle args with
+of_node and GPIO number complementing of_node; either this or
+of_node should be present
+  of_reset_n_cells
+    number of cells in reset line specifiers
+  of_xlate
+    translation function to translate from specifier as found in the
+device tree to id as given to the reset control ops, defaults
+to of_reset_simple_xlate() .
+  nr_resets
+    number of reset controls in this reset controller device

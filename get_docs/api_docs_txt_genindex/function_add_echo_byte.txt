@@ -1,0 +1,12 @@
+Function: void add_echo_byte ( u8 c , struct n_tty_data * ldata )
+
+add a byte to the echo buffer
+
+Parameters
+  u8 c
+    unicode byte to echo
+  struct n_tty_data *ldata
+    n_tty data
+
+Description
+  Add a character or operation byte to the echo buffer.

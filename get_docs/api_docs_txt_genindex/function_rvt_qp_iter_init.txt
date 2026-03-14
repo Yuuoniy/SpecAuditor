@@ -1,0 +1,15 @@
+Function: struct rvt_qp_iter * rvt_qp_iter_init ( struct rvt_dev_info * rdi , u64 v , void ( * cb ) ( struct rvt_qp * qp , u64 v ) )
+
+initial for QP iteration
+
+Parameters
+  struct rvt_dev_info *rdi
+    rvt devinfo
+  u64 v
+    u64 value
+  void (*cb)(struct rvt_qp *qp, u64 v)
+    user-defined callback
+
+Description
+  This returns an iterator suitable for iterating QPs
+in the system.

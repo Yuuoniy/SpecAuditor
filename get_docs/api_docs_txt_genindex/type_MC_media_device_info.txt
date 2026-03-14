@@ -1,0 +1,2 @@
+Type: type media_device_info
+

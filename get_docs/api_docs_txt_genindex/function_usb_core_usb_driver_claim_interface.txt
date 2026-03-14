@@ -1,0 +1,18 @@
+Function: int usb_driver_claim_interface ( struct usb_driver * driver , struct usb_interface * iface , void * data )
+
+bind a driver to an interface
+
+Parameters
+  struct usb_driver *driver
+    the driver to be bound
+  struct usb_interface *iface
+    the interface to which it will be bound; must be in the
+usb device’s active configuration
+  void *data
+    driver data associated with that interface
+
+Description
+  This is used by usb device drivers that need to claim more than one
+interface on a device when probing (audio and acm are current examples).
+No device driver should directly modify internal usb_interface or
+usb_device structure members.

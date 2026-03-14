@@ -1,0 +1,19 @@
+Function: int net_dim_init_irq_moder ( struct net_device * dev , u8 profile_flags , u8 coal_flags , u8 rx_mode , u8 tx_mode , void ( * rx_dim_work ) ( struct work_struct * work ) , void ( * tx_dim_work ) ( struct work_struct * work ) )
+
+collect information to initialize irq moderation
+
+Parameters
+  struct net_device *dev
+    target network device
+  u8 profile_flags
+    Rx or Tx profile modification capability
+  u8 coal_flags
+    irq moderation params flags
+  u8 rx_mode
+    CQ period mode for Rx
+  u8 tx_mode
+    CQ period mode for Tx
+  void (*rx_dim_work)(struct work_struct *work)
+    Rx worker called after dim decision
+  void (*tx_dim_work)(struct work_struct *work)
+    Tx worker called after dim decision

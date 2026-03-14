@@ -1,0 +1,7 @@
+Function: int backlight_disable ( struct backlight_device * bd )
+
+Disable backlight
+
+Parameters
+  struct backlight_device *bd
+    the backlight device to disable

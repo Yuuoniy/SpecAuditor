@@ -1,0 +1,9 @@
+Function: struct fc_rport * fc_find_rport_by_wwpn ( struct Scsi_Host * shost , u64 wwpn )
+
+find the fc_rport pointer for a given wwpn
+
+Parameters
+  struct Scsi_Host *shost
+    host the fc_rport is associated with
+  u64 wwpn
+    wwpn of the fc_rport device

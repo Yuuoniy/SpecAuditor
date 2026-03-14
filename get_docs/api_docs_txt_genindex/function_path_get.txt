@@ -1,0 +1,10 @@
+Function: void path_get ( const struct path * path )
+
+get a reference to a path
+
+Parameters
+  const struct path *path
+    path to get the reference to
+
+Description
+  Given a path increment the reference count to the dentry and the vfsmount.

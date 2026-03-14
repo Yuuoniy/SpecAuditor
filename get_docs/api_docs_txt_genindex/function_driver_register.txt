@@ -1,0 +1,12 @@
+Function: int driver_register ( struct device_driver * drv )
+
+register driver with bus
+
+Parameters
+  struct device_driver *drv
+    driver to register
+
+Description
+  We pass off most of the work to the bus_add_driver() call,
+since most of the things we have to do deal with the bus
+structures.

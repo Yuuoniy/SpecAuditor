@@ -1,0 +1,13 @@
+Function: bool pwq_activate_first_inactive ( struct pool_workqueue * pwq , bool fill )
+
+Activate the first inactive work item on a pwq
+
+Parameters
+  struct pool_workqueue *pwq
+    pool_workqueue of interest
+  bool fill
+    max_active may have increased, try to increase concurrency level
+
+Description
+  Activate the first inactive work item of pwq if available and allowed by
+max_active limit.

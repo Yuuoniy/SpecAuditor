@@ -1,0 +1,15 @@
+Function: struct ata_device * ata_dev_next ( struct ata_device * dev , struct ata_link * link , enum ata_dev_iter_mode mode )
+
+device iteration helper
+
+Parameters
+  struct ata_device *dev
+    the previous device, NULL to start
+  struct ata_link *link
+    ATA link containing devices to iterate
+  enum ata_dev_iter_mode mode
+    iteration mode, one of ATA_DITER_*
+
+Description
+  LOCKING:
+Host lock or EH context.

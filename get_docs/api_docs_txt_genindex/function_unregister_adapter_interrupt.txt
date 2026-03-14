@@ -1,0 +1,7 @@
+Function: void unregister_adapter_interrupt ( struct airq_struct * airq )
+
+unregister adapter interrupt handler
+
+Parameters
+  struct airq_struct *airq
+    pointer to adapter interrupt descriptor

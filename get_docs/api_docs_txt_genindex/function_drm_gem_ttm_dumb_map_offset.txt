@@ -1,0 +1,17 @@
+Function: int drm_gem_ttm_dumb_map_offset ( struct drm_file * file , struct drm_device * dev , uint32_t handle , uint64_t * offset )
+
+Implements struct drm_driver.dumb_map_offset
+
+Parameters
+  struct drm_file *file
+    DRM file pointer.
+  struct drm_device *dev
+    DRM device.
+  uint32_t handle
+    GEM handle
+  uint64_t *offset
+    Returns the mapping’s memory offset on success
+
+Description
+  Provides an implementation of struct drm_driver.dumb_map_offset for
+TTM-based GEM drivers. TTM allocates the offset internally and drm_gem_ttm_dumb_map_offset() returns it for dumb-buffer implementations.

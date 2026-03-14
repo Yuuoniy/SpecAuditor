@@ -1,0 +1,11 @@
+Function: int slim_stream_enable ( struct slim_stream_runtime * stream )
+
+Enable a prepared SLIMbus Stream
+
+Parameters
+  struct slim_stream_runtime *stream
+    instance of slim stream runtime to enable
+
+Description
+  This API will enable all the ports and channels associated with
+SLIMbus stream

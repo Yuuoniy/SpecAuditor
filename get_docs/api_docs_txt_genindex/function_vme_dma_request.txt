@@ -1,0 +1,13 @@
+Function: struct vme_resource * vme_dma_request ( struct vme_dev * vdev , u32 route )
+
+Request a DMA controller.
+
+Parameters
+  struct vme_dev *vdev
+    Pointer to VME device struct vme_dev assigned to driver instance.
+  u32 route
+    Required src/destination combination.
+
+Description
+  Request a VME DMA controller with capability to perform transfers between
+requested source/destination combination.

@@ -1,0 +1,20 @@
+Function: int sysfs_change_owner ( struct kobject * kobj , kuid_t kuid , kgid_t kgid )
+
+change owner of the given object.
+
+Parameters
+  struct kobject *kobj
+    object.
+  kuid_t kuid
+    new owner’s kuid
+  kgid_t kgid
+    new owner’s kgid
+
+Description
+  Change the owner of the default directory, files, groups, and attributes of kobj to kuid / kgid . Note that sysfs_change_owner mirrors how the sysfs
+entries for a kobject are added by driver core. In summary, sysfs_change_owner() takes care of the default directory entry for kobj ,
+the default attributes associated with the ktype of kobj and the default
+attributes associated with the ktype of kobj .
+Additional properties not added by driver core have to be changed by the
+driver or subsystem which created them. This is similar to how
+driver/subsystem specific entries are removed.

@@ -1,0 +1,16 @@
+Function: struct cec_notifier * cec_notifier_cec_adap_register ( struct device * hdmi_dev , const char * port_name , struct cec_adapter * adap )
+
+find or create a new cec_notifier for the given device.
+
+Parameters
+  struct device *hdmi_dev
+    HDMI device that sends the events.
+  const char *port_name
+    the connector name from which the event occurs. May be NULL
+if there is always only one HDMI connector created by the HDMI device.
+  struct cec_adapter *adap
+    the cec adapter that registered this notifier.
+
+Description
+  If a notifier for device dev and connector port_name already exists, then
+increase the refcount and return that notifier.

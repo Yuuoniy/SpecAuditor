@@ -1,0 +1,9 @@
+Function: int __init_memblock memblock_mark_hotplug ( phys_addr_t base , phys_addr_t size )
+
+Mark hotpluggable memory with flag MEMBLOCK_HOTPLUG.
+
+Parameters
+  phys_addr_t base
+    the base phys addr of the region
+  phys_addr_t size
+    the size of the region

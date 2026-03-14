@@ -1,0 +1,9 @@
+Struct: struct usb_string
+
+wraps a C string and its USB id
+
+Members
+  id
+    the (nonzero) ID for this string
+  s
+    the string, in UTF-8 encoding

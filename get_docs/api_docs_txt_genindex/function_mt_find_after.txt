@@ -1,0 +1,16 @@
+Function: void * mt_find_after ( struct maple_tree * mt , unsigned long * index , unsigned long max )
+
+Search from the start up until an entry is found.
+
+Parameters
+  struct maple_tree *mt
+    The maple tree
+  unsigned long *index
+    Pointer which contains the start location of the search
+  unsigned long max
+    The maximum value to check
+
+Description
+  Same as mt_find() except that it checks index for 0 before
+searching. If index == 0, the search is aborted. This covers a wrap
+around of index to 0 in an iterator loop.

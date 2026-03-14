@@ -1,0 +1,20 @@
+Function: struct device_link * device_link_add ( struct device * consumer , struct device * supplier , u32 flags )
+
+Create a link between two devices.
+
+Parameters
+  struct device *consumer
+    Consumer end of the link.
+  struct device *supplier
+    Supplier end of the link.
+  u32 flags
+    Link flags.
+
+Description
+  The caller is responsible for the proper synchronization of the link creation
+with runtime PM.  First, setting the DL_FLAG_PM_RUNTIME flag will cause the
+runtime PM framework to take the link into account.  Second, if the
+DL_FLAG_RPM_ACTIVE flag is set in addition to it, the supplier devices will
+be forced into the active meta state and reference-counted upon the creation
+of the link.  If DL_FLAG_PM_RUNTIME is not set, DL_FLAG_RPM_ACTIVE will be
+ignored.

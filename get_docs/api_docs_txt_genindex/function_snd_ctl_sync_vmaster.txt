@@ -1,0 +1,14 @@
+Function: void snd_ctl_sync_vmaster ( struct snd_kcontrol * kcontrol , bool hook_only )
+
+Sync the vmaster followers and hook
+
+Parameters
+  struct snd_kcontrol *kcontrol
+    vmaster kctl element
+  bool hook_only
+    sync only the hook
+
+Description
+  Forcibly call the put callback of each follower and call the hook function
+to synchronize with the current value of the given vmaster element.
+NOP when NULL is passed to kcontrol .

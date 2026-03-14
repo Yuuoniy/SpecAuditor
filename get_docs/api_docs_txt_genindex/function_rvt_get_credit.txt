@@ -1,0 +1,12 @@
+Function: void rvt_get_credit ( struct rvt_qp * qp , u32 aeth )
+
+flush the send work queue of a QP
+
+Parameters
+  struct rvt_qp *qp
+    the qp who’s send work queue to flush
+  u32 aeth
+    the Acknowledge Extended Transport Header
+
+Description
+  The QP s_lock should be held.

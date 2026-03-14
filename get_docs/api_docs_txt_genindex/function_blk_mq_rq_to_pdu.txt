@@ -1,0 +1,11 @@
+Function: void * blk_mq_rq_to_pdu ( struct request * rq )
+
+cast a request to a PDU
+
+Parameters
+  struct request *rq
+    the request to be casted
+
+Description
+  Driver command data is immediately after the request. So add request to get
+the PDU.

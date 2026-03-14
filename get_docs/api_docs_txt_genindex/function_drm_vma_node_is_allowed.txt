@@ -1,0 +1,13 @@
+Function: bool drm_vma_node_is_allowed ( struct drm_vma_offset_node * node , struct drm_file * tag )
+
+Check whether an open-file is granted access
+
+Parameters
+  struct drm_vma_offset_node *node
+    Node to check
+  struct drm_file *tag
+    Tag of file to remove
+
+Description
+  Search the list in node whether tag is currently on the list of allowed
+open-files (see drm_vma_node_allow() ).

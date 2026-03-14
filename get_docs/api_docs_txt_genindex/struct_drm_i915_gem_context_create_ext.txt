@@ -1,0 +1,16 @@
+Struct: struct drm_i915_gem_context_create_ext
+
+Structure for creating contexts.
+
+Members
+  ctx_id
+    Id of the created context (output)
+  flags
+    Supported flags are: I915_CONTEXT_CREATE_FLAGS_USE_EXTENSIONS: Extensions may be appended to this structure and driver must check
+for those. See extensions . I915_CONTEXT_CREATE_FLAGS_SINGLE_TIMELINE Created context will have single timeline.
+  extensions
+    Zero-terminated chain of extensions. I915_CONTEXT_CREATE_EXT_SETPARAM:
+Context parameter to set or query during context creation.
+See struct drm_i915_gem_context_create_ext_setparam . I915_CONTEXT_CREATE_EXT_CLONE:
+This extension has been removed. On the off chance someone somewhere
+has attempted to use it, never re-use this extension number.

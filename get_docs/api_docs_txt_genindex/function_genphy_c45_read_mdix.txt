@@ -1,0 +1,7 @@
+Function: int genphy_c45_read_mdix ( struct phy_device * phydev )
+
+read mdix status from PMA
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct

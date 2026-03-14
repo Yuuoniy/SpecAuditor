@@ -1,0 +1,7 @@
+Function: unsigned int xdr_page_pos ( const struct xdr_stream * xdr )
+
+Return the current offset from the start of the xdr pages
+
+Parameters
+  const struct xdr_stream *xdr
+    pointer to struct xdr_stream

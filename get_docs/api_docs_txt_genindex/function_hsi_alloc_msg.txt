@@ -1,0 +1,14 @@
+Function: struct hsi_msg * hsi_alloc_msg ( unsigned int nents , gfp_t flags )
+
+Allocate an HSI message
+
+Parameters
+  unsigned int nents
+    Number of memory entries
+  gfp_t flags
+    Kernel allocation flags
+
+Description
+  nents can be 0. This mainly makes sense for read transfer.
+In that case, HSI drivers will call the complete callback when
+there is data to be read without consuming it.

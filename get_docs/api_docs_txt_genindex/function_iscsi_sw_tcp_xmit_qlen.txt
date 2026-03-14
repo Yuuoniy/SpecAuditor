@@ -1,0 +1,7 @@
+Function: int iscsi_sw_tcp_xmit_qlen ( struct iscsi_conn * conn )
+
+return the number of bytes queued for xmit
+
+Parameters
+  struct iscsi_conn *conn
+    iscsi connection

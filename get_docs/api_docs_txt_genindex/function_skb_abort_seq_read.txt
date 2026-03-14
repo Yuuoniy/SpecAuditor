@@ -1,0 +1,11 @@
+Function: void skb_abort_seq_read ( struct skb_seq_state * st )
+
+Abort a sequential read of skb data
+
+Parameters
+  struct skb_seq_state *st
+    state variable
+
+Description
+  Must be called if skb_seq_read() was not called until it
+returned 0.

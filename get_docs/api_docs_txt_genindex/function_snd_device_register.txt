@@ -1,0 +1,14 @@
+Function: int snd_device_register ( struct snd_card * card , void * device_data )
+
+register the device
+
+Parameters
+  struct snd_card *card
+    the card instance
+  void *device_data
+    the data pointer to register
+
+Description
+  Registers the device which was already created via snd_device_new() .  Usually this is called from snd_card_register() ,
+but it can be called later if any new devices are created after
+invocation of snd_card_register() .

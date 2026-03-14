@@ -1,0 +1,7 @@
+Function: void dvb_unregister_device ( struct dvb_device * dvbdev )
+
+Unregisters a DVB device
+
+Parameters
+  struct dvb_device *dvbdev
+    pointer to struct dvb_device

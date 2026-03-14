@@ -1,0 +1,10 @@
+Function: void * counter_priv ( const struct counter_device * const counter )
+
+access counter device private data
+
+Parameters
+  const struct counter_device *const counter
+    counter device
+
+Description
+  Get the counter device private data

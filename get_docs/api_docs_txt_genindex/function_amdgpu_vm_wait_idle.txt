@@ -1,0 +1,9 @@
+Function: long amdgpu_vm_wait_idle ( struct amdgpu_vm * vm , long timeout )
+
+wait for the VM to become idle
+
+Parameters
+  struct amdgpu_vm *vm
+    VM object to wait for
+  long timeout
+    timeout to wait for VM to become idle

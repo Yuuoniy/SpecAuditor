@@ -1,0 +1,11 @@
+Macro: device_lock_reset_class
+
+
+
+Parameters
+  dev
+    device to modify
+
+Description
+  This must be called with the device_lock() already held, for example
+from driver -> remove() .

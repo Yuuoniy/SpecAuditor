@@ -1,0 +1,10 @@
+Function: void security_sem_free ( struct kern_ipc_perm * sma )
+
+Free a sysv semaphore LSM blob
+
+Parameters
+  struct kern_ipc_perm *sma
+    sysv ipc permission structure
+
+Description
+  Deallocate security structure sma->security for the semaphore.

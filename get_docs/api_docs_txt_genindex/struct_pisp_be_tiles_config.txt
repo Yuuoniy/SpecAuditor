@@ -1,0 +1,11 @@
+Struct: struct pisp_be_tiles_config
+
+Raspberry Pi PiSP Back End configuration
+
+Members
+  config
+    PiSP Back End configuration
+  tiles
+    Tile descriptors
+  num_tiles
+    Number of tiles

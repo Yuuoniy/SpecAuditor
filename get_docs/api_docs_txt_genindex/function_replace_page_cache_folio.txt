@@ -1,0 +1,16 @@
+Function: void replace_page_cache_folio ( struct folio * old , struct folio * new )
+
+replace a pagecache folio with a new one
+
+Parameters
+  struct folio *old
+    folio to be replaced
+  struct folio *new
+    folio to replace with
+
+Description
+  This function replaces a folio in the pagecache with a new one.  On
+success it acquires the pagecache reference for the new folio and
+drops it for the old folio.  Both the old and new folios must be
+locked.  This function does not add the new folio to the LRU, the
+caller must do that.

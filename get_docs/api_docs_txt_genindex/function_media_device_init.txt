@@ -1,0 +1,13 @@
+Function: void media_device_init ( struct media_device * mdev )
+
+Initializes a media device element
+
+Parameters
+  struct media_device *mdev
+    pointer to struct media_device
+
+Description
+  This function initializes the media device prior to its registration.
+The media device initialization and registration is split in two functions
+to avoid race conditions and make the media device available to user-space
+before the media graph has been completed.

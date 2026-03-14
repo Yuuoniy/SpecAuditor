@@ -1,0 +1,13 @@
+Function: int get_option ( char * * str , int * pint )
+
+Parse integer from an option string
+
+Parameters
+  char **str
+    option string
+  int *pint
+    (optional output) integer value parsed from str
+
+Description
+  Read an int from an option string; if available accept a subsequent
+comma as well.

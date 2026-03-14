@@ -1,0 +1,15 @@
+Function: int sg_alloc_table ( struct sg_table * table , unsigned int nents , gfp_t gfp_mask )
+
+Allocate and initialize an sg table
+
+Parameters
+  struct sg_table *table
+    The sg table header to use
+  unsigned int nents
+    Number of entries in sg list
+  gfp_t gfp_mask
+    GFP allocation mask
+
+Description
+  Allocate and initialize an sg table. If nents is larger than
+SG_MAX_SINGLE_ALLOC a chained sg table will be setup.

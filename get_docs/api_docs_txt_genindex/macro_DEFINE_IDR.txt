@@ -1,0 +1,11 @@
+Macro: DEFINE_IDR
+
+
+
+Parameters
+  name
+    Name of IDR.
+
+Description
+  An IDR defined using this macro is ready for use with no additional
+initialisation required.  It contains no IDs.

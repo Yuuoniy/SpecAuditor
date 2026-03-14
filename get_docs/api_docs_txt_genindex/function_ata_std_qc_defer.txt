@@ -1,0 +1,13 @@
+Function: int ata_std_qc_defer ( struct ata_queued_cmd * qc )
+
+Check whether a qc needs to be deferred
+
+Parameters
+  struct ata_queued_cmd *qc
+    ATA command in question
+
+Description
+  Non-NCQ commands cannot run with any other command, NCQ or
+not.  As upper layer only knows the queue depth, we are
+responsible for maintaining exclusion.  This function checks
+whether a new command qc can be issued.

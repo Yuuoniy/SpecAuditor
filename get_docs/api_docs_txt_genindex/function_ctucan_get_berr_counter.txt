@@ -1,0 +1,12 @@
+Function: int ctucan_get_berr_counter ( const struct net_device * ndev , struct can_berr_counter * bec )
+
+error counter routine
+
+Parameters
+  const struct net_device *ndev
+    Pointer to net_device structure
+  struct can_berr_counter *bec
+    Pointer to can_berr_counter structure
+
+Description
+  This is the driver error counter routine.

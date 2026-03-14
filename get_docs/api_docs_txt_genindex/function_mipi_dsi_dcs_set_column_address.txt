@@ -1,0 +1,14 @@
+Function: int mipi_dsi_dcs_set_column_address ( struct mipi_dsi_device * dsi , u16 start , u16 end )
+
+define the column extent of the frame memory accessed by the host processor
+
+Parameters
+  struct mipi_dsi_device *dsi
+    DSI peripheral device
+  u16 start
+    first column of frame memory
+  u16 end
+    last column of frame memory
+
+Description
+  This function is deprecated. Use mipi_dsi_dcs_set_column_address_multi() instead.

@@ -1,0 +1,11 @@
+Function: int scsi_host_block ( struct Scsi_Host * shost )
+
+Try to transition all logical units to the SDEV_BLOCK state
+
+Parameters
+  struct Scsi_Host *shost
+    device to block
+
+Description
+  Pause SCSI command processing for all logical units associated with the SCSI
+host and wait until pending scsi_queue_rq() calls have finished.

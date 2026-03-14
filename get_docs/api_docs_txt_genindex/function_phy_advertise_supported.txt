@@ -1,0 +1,11 @@
+Function: void phy_advertise_supported ( struct phy_device * phydev )
+
+Advertise all supported modes
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  Called to advertise all supported modes, doesn’t touch
+pause mode advertising.

@@ -1,0 +1,7 @@
+Function: enum lru_list folio_lru_list ( const struct folio * folio )
+
+Which LRU list should a folio be on?
+
+Parameters
+  const struct folio *folio
+    The folio to test.

@@ -1,0 +1,10 @@
+Function: int skb_tailroom ( const struct sk_buff * skb )
+
+bytes at buffer end
+
+Parameters
+  const struct sk_buff *skb
+    buffer to check
+
+Description
+  Return the number of bytes of free space at the tail of an sk_buff

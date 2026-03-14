@@ -1,0 +1,9 @@
+Function: int __init_memblock memblock_mark_mirror ( phys_addr_t base , phys_addr_t size )
+
+Mark mirrored memory with flag MEMBLOCK_MIRROR.
+
+Parameters
+  phys_addr_t base
+    the base phys addr of the region
+  phys_addr_t size
+    the size of the region

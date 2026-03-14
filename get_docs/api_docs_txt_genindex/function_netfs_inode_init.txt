@@ -1,0 +1,15 @@
+Function: void netfs_inode_init ( struct netfs_inode * ctx , const struct netfs_request_ops * ops , bool use_zero_point )
+
+Initialise a netfslib inode context
+
+Parameters
+  struct netfs_inode *ctx
+    The netfs inode to initialise
+  const struct netfs_request_ops *ops
+    The netfs’s operations list
+  bool use_zero_point
+    True to use the zero_point read optimisation
+
+Description
+  Initialise the netfs library context struct.  This is expected to follow on
+directly from the VFS inode struct.

@@ -1,0 +1,12 @@
+Function: int n_tty_open ( struct tty_struct * tty )
+
+open an ldisc
+
+Parameters
+  struct tty_struct *tty
+    terminal to open
+
+Description
+  Called when this line discipline is being attached to the terminal device.
+Can sleep. Called serialized so that no other events will occur in parallel.
+No further open will occur until a close.

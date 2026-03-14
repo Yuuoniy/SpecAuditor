@@ -1,0 +1,28 @@
+Struct: struct ipu3_uapi_bnr_static_config_dn_detect_ctrl_config
+
+Denoising config
+
+Members
+  alpha
+    Weight of central element of smoothing filter.
+  beta
+    Weight of peripheral elements of smoothing filter, default 4.
+  gamma
+    Weight of diagonal elements of smoothing filter, default 4.
+  reserved0
+    reserved
+  max_inf
+    Maximum increase of peripheral or diagonal element influence
+relative to the pre-defined value range: [0x5, 0xa]
+  reserved1
+    reserved
+  gd_enable
+    Green disparity enable control, 0 - disable, 1 - enable.
+  bpc_enable
+    Bad pixel correction enable control, 0 - disable, 1 - enable.
+  bnr_enable
+    Bayer noise removal enable control, 0 - disable, 1 - enable.
+  ff_enable
+    Fixed function enable, 0 - disable, 1 - enable.
+  reserved2
+    reserved

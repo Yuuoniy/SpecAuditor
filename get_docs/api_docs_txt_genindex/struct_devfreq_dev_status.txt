@@ -1,0 +1,19 @@
+Struct: struct devfreq_dev_status
+
+Data given from devfreq user device to governors. Represents the performance statistics.
+
+Members
+  total_time
+    The total time represented by this instance of
+devfreq_dev_status
+  busy_time
+    The time that the device was working among the
+total_time.
+  current_frequency
+    The operating frequency.
+  private_data
+    An entry not specified by the devfreq framework.
+A device and a specific governor may have their
+own protocol with private_data. However, because
+this is governor-specific, a governor using this
+will be only compatible with devices aware of it.

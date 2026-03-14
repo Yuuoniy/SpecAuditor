@@ -1,0 +1,19 @@
+Function: int typec_altmode_notify ( struct typec_altmode * adev , unsigned long conf , void * data )
+
+Communication between the OS and alternate mode driver
+
+Parameters
+  struct typec_altmode *adev
+    Handle to the alternate mode
+  unsigned long conf
+    Alternate mode specific configuration value
+  void *data
+    Alternate mode specific data
+
+Description
+  The primary purpose for this function is to allow the alternate mode drivers
+to tell which pin configuration has been negotiated with the partner. That
+information will then be used for example to configure the muxes.
+Communication to the other direction is also possible, and low level device
+drivers can also send notifications to the alternate mode drivers. The actual
+communication will be specific for every SVID.

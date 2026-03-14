@@ -1,0 +1,13 @@
+Function: int input_mt_get_slot_by_key ( struct input_dev * dev , int key )
+
+return slot matching key
+
+Parameters
+  struct input_dev *dev
+    input device with allocated MT slots
+  int key
+    the key of the sought slot
+
+Description
+  Returns the slot of the given key, if it exists, otherwise
+set the key on the first unused slot and return.

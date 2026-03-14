@@ -1,0 +1,13 @@
+Function: unsigned long round_jiffies_relative ( unsigned long j )
+
+function to round jiffies to a full second
+
+Parameters
+  unsigned long j
+    the time in (relative) jiffies that should be rounded
+
+Description
+  round_jiffies_relative() rounds a time delta  in the future (in jiffies)
+up or down to (approximately) full seconds. This is useful for timers
+for which the exact time they fire does not matter too much, as long as
+they fire approximately every X seconds.

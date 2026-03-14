@@ -1,0 +1,13 @@
+Function: void cfg80211_remain_on_channel_expired ( struct wireless_dev * wdev , u64 cookie , struct ieee80211_channel * chan , gfp_t gfp )
+
+remain_on_channel duration expired
+
+Parameters
+  struct wireless_dev *wdev
+    wireless device
+  u64 cookie
+    the request cookie
+  struct ieee80211_channel *chan
+    The current channel (from remain_on_channel request)
+  gfp_t gfp
+    allocation flags

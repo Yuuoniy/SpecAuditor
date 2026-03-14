@@ -1,0 +1,14 @@
+Function: int v4l2_ctrl_s_ctrl_int64 ( struct v4l2_ctrl * ctrl , s64 val )
+
+Helper function to set a 64-bit control’s value from within a driver.
+
+Parameters
+  struct v4l2_ctrl *ctrl
+    The control.
+  s64 val
+    The new value.
+
+Description
+  This sets the control’s new value safely by going through the control
+framework. This function will lock the control’s handler, so it cannot be
+used from within the v4l2_ctrl_ops functions.

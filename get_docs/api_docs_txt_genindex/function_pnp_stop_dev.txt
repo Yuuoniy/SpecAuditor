@@ -1,0 +1,10 @@
+Function: int pnp_stop_dev ( struct pnp_dev * dev )
+
+low-level disable of the PnP device
+
+Parameters
+  struct pnp_dev *dev
+    pointer to the desired device
+
+Description
+  does not free resources

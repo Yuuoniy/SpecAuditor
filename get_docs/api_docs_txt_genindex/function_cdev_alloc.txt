@@ -1,0 +1,10 @@
+Function: struct cdev * cdev_alloc ( void )
+
+allocate a cdev structure
+
+Parameters
+  void
+    no arguments
+
+Description
+  Allocates and returns a cdev structure, or NULL on failure.

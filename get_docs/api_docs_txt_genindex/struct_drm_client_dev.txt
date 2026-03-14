@@ -1,0 +1,27 @@
+Struct: struct drm_client_dev
+
+DRM client instance
+
+Members
+  dev
+    DRM device
+  name
+    Name of the client.
+  list
+    List of all clients of a DRM device, linked into drm_device.clientlist . Protected by drm_device.clientlist_mutex .
+  funcs
+    DRM client functions (optional)
+  file
+    DRM file
+  modeset_mutex
+    Protects modesets .
+  modesets
+    CRTC configurations
+  suspended
+    The client has been suspended.
+  hotplug_pending
+    A hotplug event has been received while the client was suspended.
+Try again on resume.
+  hotplug_failed
+    Set by client hotplug helpers if the hotplugging failed
+before. It is usually not tried again.

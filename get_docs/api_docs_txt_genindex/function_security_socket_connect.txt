@@ -1,0 +1,15 @@
+Function: int security_socket_connect ( struct socket * sock , struct sockaddr * address , int addrlen )
+
+Check if a socket connect operation is allowed
+
+Parameters
+  struct socket *sock
+    socket
+  struct sockaddr *address
+    address of remote connection point
+  int addrlen
+    length of address
+
+Description
+  Check permission before socket protocol layer connect operation attempts to
+connect socket sock to a remote address, address .

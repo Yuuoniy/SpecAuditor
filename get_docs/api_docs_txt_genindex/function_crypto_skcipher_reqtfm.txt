@@ -1,0 +1,11 @@
+Function: struct crypto_skcipher * crypto_skcipher_reqtfm ( struct skcipher_request * req )
+
+obtain cipher handle from request
+
+Parameters
+  struct skcipher_request *req
+    skcipher_request out of which the cipher handle is to be obtained
+
+Description
+  Return the crypto_skcipher handle when furnishing an skcipher_request
+data structure.

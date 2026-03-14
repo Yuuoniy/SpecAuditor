@@ -1,0 +1,13 @@
+Function: bool usb_check_bulk_endpoints ( const struct usb_interface * intf , const u8 * ep_addrs )
+
+Check whether an interface’s current altsetting contains a set of bulk endpoints with the given addresses.
+
+Parameters
+  const struct usb_interface *intf
+    the interface whose current altsetting should be searched
+  const u8 *ep_addrs
+    0-terminated array of the endpoint addresses (number and
+direction) to look for
+
+Description
+  Search for endpoints with the specified addresses and check their types.

@@ -1,0 +1,13 @@
+Function: unsigned int uart_get_divisor ( struct uart_port * port , unsigned int baud )
+
+return uart clock divisor
+
+Parameters
+  struct uart_port *port
+    uart_port structure describing the port
+  unsigned int baud
+    desired baud rate
+
+Description
+  Calculate the divisor (baud_base / baud) for the specified baud ,
+appropriately rounded.

@@ -1,0 +1,12 @@
+Struct: struct c3_isp_params_ccm
+
+ISP CCM configuration
+
+Members
+  header
+    the C3 ISP parameters block header
+  matrix
+    a 3 x 3 matrix used for color correction,
+the value of matrix[x][y] is orig_value x 256. [-4096..4095]
+  reserved
+    applications must zero this array

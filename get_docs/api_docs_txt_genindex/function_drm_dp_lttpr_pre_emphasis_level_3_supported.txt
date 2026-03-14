@@ -1,0 +1,11 @@
+Function: bool drm_dp_lttpr_pre_emphasis_level_3_supported ( const u8 caps [ DP_LTTPR_PHY_CAP_SIZE ] )
+
+check for LTTPR preemph3 support
+
+Parameters
+  const u8 caps[DP_LTTPR_PHY_CAP_SIZE]
+    LTTPR PHY capabilities
+
+Description
+  Returns true if the caps for an LTTPR TX PHY indicate support for
+pre-emphasis level 3.

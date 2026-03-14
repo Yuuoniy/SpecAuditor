@@ -1,0 +1,13 @@
+Function: void drm_bridge_hpd_disable ( struct drm_bridge * bridge )
+
+disable hot plug detection for the bridge
+
+Parameters
+  struct drm_bridge *bridge
+    bridge control structure
+
+Description
+  Call drm_bridge_funcs.hpd_disable if implemented and unregister the hot
+plug detection callback previously registered with drm_bridge_hpd_enable() .
+Once this function returns the callback will not be called by the bridge
+when an output status change occurs.

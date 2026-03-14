@@ -1,0 +1,15 @@
+Function: void __ref kmemleak_vmalloc ( const struct vm_struct * area , size_t size , gfp_t gfp )
+
+register a newly vmalloc’ed object
+
+Parameters
+  const struct vm_struct *area
+    pointer to vm_struct
+  size_t size
+    size of the object
+  gfp_t gfp
+    __vmalloc() flags used for kmemleak internal memory allocations
+
+Description
+  This function is called from the vmalloc() kernel allocator when a new
+object (memory block) is allocated.

@@ -1,0 +1,11 @@
+Function: void cleanup_srcu_struct ( struct srcu_struct * ssp )
+
+deconstruct a sleep-RCU structure
+
+Parameters
+  struct srcu_struct *ssp
+    structure to clean up.
+
+Description
+  Must invoke this after you are finished using a given srcu_struct that
+was initialized via init_srcu_struct() , else you leak memory.

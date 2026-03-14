@@ -1,0 +1,15 @@
+Function: struct rxrpc_peer * rxrpc_kernel_lookup_peer ( struct socket * sock , struct sockaddr_rxrpc * srx , gfp_t gfp )
+
+Obtain remote transport endpoint for an address
+
+Parameters
+  struct socket *sock
+    The socket through which it will be accessed
+  struct sockaddr_rxrpc *srx
+    The network address
+  gfp_t gfp
+    Allocation flags
+
+Description
+  Lookup or create a remote transport endpoint record for the specified
+address.

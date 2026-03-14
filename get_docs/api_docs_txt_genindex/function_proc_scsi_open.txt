@@ -1,0 +1,12 @@
+Function: int proc_scsi_open ( struct inode * inode , struct file * file )
+
+glue function
+
+Parameters
+  struct inode *inode
+    not used
+  struct file *file
+    passed to single_open()
+
+Description
+  Associates proc_scsi_show with this file

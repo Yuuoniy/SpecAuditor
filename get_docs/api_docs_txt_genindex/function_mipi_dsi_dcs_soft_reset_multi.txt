@@ -1,0 +1,11 @@
+Function: void mipi_dsi_dcs_soft_reset_multi ( struct mipi_dsi_multi_context * ctx )
+
+perform a software reset of the display module
+
+Parameters
+  struct mipi_dsi_multi_context *ctx
+    Context for multiple DSI transactions
+
+Description
+  Like mipi_dsi_dcs_soft_reset() but deals with errors in a way that
+makes it convenient to make several calls in a row.

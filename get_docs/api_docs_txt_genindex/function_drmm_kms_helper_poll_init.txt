@@ -1,0 +1,11 @@
+Function: void drmm_kms_helper_poll_init ( struct drm_device * dev )
+
+initialize and enable output polling
+
+Parameters
+  struct drm_device *dev
+    drm_device
+
+Description
+  This function initializes and then also enables output polling support for dev similar to drm_kms_helper_poll_init() . Polling will automatically be
+cleaned up when the DRM device goes away.

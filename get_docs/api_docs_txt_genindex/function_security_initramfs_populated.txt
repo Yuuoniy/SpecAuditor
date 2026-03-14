@@ -1,0 +1,10 @@
+Function: void security_initramfs_populated ( void )
+
+Notify LSMs that initramfs has been loaded
+
+Parameters
+  void
+    no arguments
+
+Description
+  Tells the LSMs the initramfs has been unpacked into the rootfs.

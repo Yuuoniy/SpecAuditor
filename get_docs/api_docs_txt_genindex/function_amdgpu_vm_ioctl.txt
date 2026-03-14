@@ -1,0 +1,11 @@
+Function: int amdgpu_vm_ioctl ( struct drm_device * dev , void * data , struct drm_file * filp )
+
+Manages VMID reservation for vm hubs.
+
+Parameters
+  struct drm_device *dev
+    drm device pointer
+  void *data
+    drm_amdgpu_vm
+  struct drm_file *filp
+    drm file pointer

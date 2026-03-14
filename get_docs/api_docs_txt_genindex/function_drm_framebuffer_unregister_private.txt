@@ -1,0 +1,13 @@
+Function: void drm_framebuffer_unregister_private ( struct drm_framebuffer * fb )
+
+unregister a private fb from the lookup idr
+
+Parameters
+  struct drm_framebuffer *fb
+    fb to unregister
+
+Description
+  Drivers need to call this when cleaning up driver-private framebuffers, e.g.
+those used for fbdev. Note that the caller must hold a reference of its own,
+i.e. the object may not be destroyed through this call (since it’ll lead to a
+locking inversion).

@@ -1,0 +1,9 @@
+Function: void drm_mm_print ( const struct drm_mm * mm , struct drm_printer * p )
+
+print allocator state
+
+Parameters
+  const struct drm_mm *mm
+    drm_mm allocator to print
+  struct drm_printer *p
+    DRM printer to use

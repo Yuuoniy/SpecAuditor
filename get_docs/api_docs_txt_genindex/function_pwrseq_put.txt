@@ -1,0 +1,7 @@
+Function: void pwrseq_put ( struct pwrseq_desc * desc )
+
+Release the power sequencer descriptor.
+
+Parameters
+  struct pwrseq_desc *desc
+    Descriptor to release.

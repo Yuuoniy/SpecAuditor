@@ -1,0 +1,16 @@
+Function: void * devm_kmemdup ( struct device * dev , const void * src , size_t len , gfp_t gfp )
+
+Resource-managed kmemdup
+
+Parameters
+  struct device *dev
+    Device this memory belongs to
+  const void *src
+    Memory region to duplicate
+  size_t len
+    Memory region length
+  gfp_t gfp
+    GFP mask to use
+
+Description
+  Duplicate region of a memory using resource managed kmalloc

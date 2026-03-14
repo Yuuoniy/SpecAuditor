@@ -1,0 +1,11 @@
+Struct: struct c3_isp_stats_info
+
+V4L2_META_FMT_C3ISP_STATS
+
+Members
+  awb
+    auto white balance stats
+  ae
+    auto exposure stats
+  af
+    auto focus stats

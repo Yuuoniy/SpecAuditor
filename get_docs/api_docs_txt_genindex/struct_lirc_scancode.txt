@@ -1,0 +1,18 @@
+Struct: struct lirc_scancode
+
+decoded scancode with protocol for use with LIRC_MODE_SCANCODE
+
+Members
+  timestamp
+    Timestamp in nanoseconds using CLOCK_MONOTONIC when IR
+was decoded.
+  flags
+    should be 0 for transmit. When receiving scancodes,
+LIRC_SCANCODE_FLAG_TOGGLE or LIRC_SCANCODE_FLAG_REPEAT can be set
+depending on the protocol
+  rc_proto
+    see enum rc_proto
+  keycode
+    the translated keycode. Set to 0 for transmit.
+  scancode
+    the scancode received or to be sent

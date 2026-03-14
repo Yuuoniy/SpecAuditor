@@ -1,0 +1,12 @@
+Function: void spi_display_xfer_agreement ( struct scsi_target * starget )
+
+Print the current target transfer agreement
+
+Parameters
+  struct scsi_target *starget
+    The target for which to display the agreement
+
+Description
+  Each SPI port is required to maintain a transfer agreement for each
+other port on the bus.  This function prints a one-line summary of
+the current agreement; more detailed information is available in sysfs.

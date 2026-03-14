@@ -1,0 +1,14 @@
+Function: int pci_msi_vec_count ( struct pci_dev * dev )
+
+Return the number of MSI vectors a device can send
+
+Parameters
+  struct pci_dev *dev
+    device to report about
+
+Description
+  This function returns the number of MSI vectors a device requested via
+Multiple Message Capable register. It returns a negative errno if the
+device is not capable sending MSI interrupts. Otherwise, the call succeeds
+and returns a power of two, up to a maximum of 2^5 (32), according to the
+MSI specification.

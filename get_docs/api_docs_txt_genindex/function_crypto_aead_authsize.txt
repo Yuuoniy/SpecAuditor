@@ -1,0 +1,12 @@
+Function: unsigned int crypto_aead_authsize ( struct crypto_aead * tfm )
+
+obtain maximum authentication data size
+
+Parameters
+  struct crypto_aead *tfm
+    cipher handle
+
+Description
+  The maximum size of the authentication data for the AEAD cipher referenced
+by the AEAD cipher handle is returned. The authentication data size may be
+zero if the cipher implements a hard-coded maximum.

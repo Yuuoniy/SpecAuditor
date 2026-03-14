@@ -1,0 +1,10 @@
+Function: void amdgpu_dm_irq_fini ( struct amdgpu_device * adev )
+
+Tear down DM IRQ management
+
+Parameters
+  struct amdgpu_device *adev
+    The base driver device containing the DM device
+
+Description
+  Flush all work within the low context IRQ table.

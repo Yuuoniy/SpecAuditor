@@ -1,0 +1,14 @@
+Function: void memblock_free_late ( phys_addr_t base , phys_addr_t size )
+
+free pages directly to buddy allocator
+
+Parameters
+  phys_addr_t base
+    phys starting address of the  boot memory block
+  phys_addr_t size
+    size of the boot memory block in bytes
+
+Description
+  This is only useful when the memblock allocator has already been torn
+down, but we are still initializing the system.  Pages are released directly
+to the buddy allocator.

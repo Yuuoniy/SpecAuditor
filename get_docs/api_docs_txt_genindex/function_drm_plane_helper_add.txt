@@ -1,0 +1,9 @@
+Function: void drm_plane_helper_add ( struct drm_plane * plane , const struct drm_plane_helper_funcs * funcs )
+
+sets the helper vtable for a plane
+
+Parameters
+  struct drm_plane *plane
+    DRM plane
+  const struct drm_plane_helper_funcs *funcs
+    helper vtable to set for plane

@@ -1,0 +1,11 @@
+Function: int ctucan_platform_probe ( struct platform_device * pdev )
+
+Platform registration call
+
+Parameters
+  struct platform_device *pdev
+    Handle to the platform device structure
+
+Description
+  This function does all the memory allocation and registration for the CAN
+device.

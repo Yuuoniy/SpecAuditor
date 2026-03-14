@@ -1,0 +1,15 @@
+Function: s32 i2c_smbus_write_word_data ( const struct i2c_client * client , u8 command , u16 value )
+
+SMBus “write word” protocol
+
+Parameters
+  const struct i2c_client *client
+    Handle to slave device
+  u8 command
+    Byte interpreted by slave
+  u16 value
+    16-bit “word” being written
+
+Description
+  This executes the SMBus “write word” protocol, returning negative errno
+else zero on success.

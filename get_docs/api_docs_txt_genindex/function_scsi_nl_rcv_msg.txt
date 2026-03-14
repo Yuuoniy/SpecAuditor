@@ -1,0 +1,10 @@
+Function: void scsi_nl_rcv_msg ( struct sk_buff * skb )
+
+Receive message handler.
+
+Parameters
+  struct sk_buff *skb
+    socket receive buffer
+
+Description
+  Validates message header and calls appropriate transport message handler

@@ -1,0 +1,14 @@
+Struct: struct hte_line_attr
+
+Line attributes.
+
+Members
+  line_id
+    The logical ID understood by the consumers and providers.
+  line_data
+    Line data related to line_id.
+  edge_flags
+    Edge setup flags.
+  name
+    Descriptive name of the entity that is being monitored for the
+hardware timestamping. If null, HTE core will construct the name.

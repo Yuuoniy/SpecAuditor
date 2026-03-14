@@ -1,0 +1,7 @@
+Function: void preempt_notifier_register ( struct preempt_notifier * notifier )
+
+tell me when current is being preempted & rescheduled
+
+Parameters
+  struct preempt_notifier *notifier
+    notifier struct to register

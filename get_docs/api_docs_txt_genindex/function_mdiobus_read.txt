@@ -1,0 +1,11 @@
+Function: int mdiobus_read ( struct mii_bus * bus , int addr , u32 regnum )
+
+Convenience function for reading a given MII mgmt register
+
+Parameters
+  struct mii_bus *bus
+    the mii_bus struct
+  int addr
+    the phy address
+  u32 regnum
+    register number to read

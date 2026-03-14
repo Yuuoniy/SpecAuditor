@@ -1,0 +1,14 @@
+Function: size_t copy_to_iter_fromio ( const void __iomem * src , size_t count , struct iov_iter * dst )
+
+copy data from mmio-space to iov_iter
+
+Parameters
+  const void __iomem *src
+    the source pointer on mmio
+  size_t count
+    the data size to copy in bytes
+  struct iov_iter *dst
+    the destination iov_iter
+
+Description
+  Copies the data from mmio-space to iov_iter.

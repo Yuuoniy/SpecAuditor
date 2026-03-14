@@ -1,0 +1,9 @@
+Function: void debug_object_init_on_stack ( void * addr , const struct debug_obj_descr * descr )
+
+debug checks when an object on stack is initialized
+
+Parameters
+  void *addr
+    address of the object
+  const struct debug_obj_descr *descr
+    pointer to an object specific debug description structure

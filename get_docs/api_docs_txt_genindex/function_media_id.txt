@@ -1,0 +1,7 @@
+Function: u32 media_id ( struct media_gobj * gobj )
+
+return the media object ID
+
+Parameters
+  struct media_gobj *gobj
+    Pointer to the struct media_gobj graph object

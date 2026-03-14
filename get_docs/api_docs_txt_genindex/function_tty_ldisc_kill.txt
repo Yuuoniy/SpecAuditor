@@ -1,0 +1,10 @@
+Function: void tty_ldisc_kill ( struct tty_struct * tty )
+
+teardown ldisc
+
+Parameters
+  struct tty_struct *tty
+    tty being released
+
+Description
+  Perform final close of the ldisc and reset tty->ldisc

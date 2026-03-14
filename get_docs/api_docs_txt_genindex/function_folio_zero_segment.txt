@@ -1,0 +1,11 @@
+Function: void folio_zero_segment ( struct folio * folio , size_t start , size_t xend )
+
+Zero a byte range in a folio.
+
+Parameters
+  struct folio *folio
+    The folio to write to.
+  size_t start
+    The first byte to zero.
+  size_t xend
+    One more than the last byte to zero.

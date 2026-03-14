@@ -1,0 +1,16 @@
+Function: void irq_remove_generic_chip ( struct irq_chip_generic * gc , u32 msk , unsigned int clr , unsigned int set )
+
+Remove a chip
+
+Parameters
+  struct irq_chip_generic *gc
+    Generic irq chip holding all data
+  u32 msk
+    Bitmask holding the irqs to initialize relative to gc->irq_base
+  unsigned int clr
+    IRQ_* bits to clear
+  unsigned int set
+    IRQ_* bits to set
+
+Description
+  Remove up to 32 interrupts starting from gc->irq_base.

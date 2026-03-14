@@ -1,0 +1,11 @@
+Function: void phy_detach ( struct phy_device * phydev )
+
+detach a PHY device from its network device
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  This detaches the phy device from its network device and the phy
+driver, and drops the reference count taken in phy_attach_direct() .

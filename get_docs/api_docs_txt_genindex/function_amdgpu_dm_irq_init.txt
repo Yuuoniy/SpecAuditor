@@ -1,0 +1,10 @@
+Function: int amdgpu_dm_irq_init ( struct amdgpu_device * adev )
+
+Initialize DM IRQ management
+
+Parameters
+  struct amdgpu_device *adev
+    The base driver device containing the DM device
+
+Description
+  Initialize DM’s high and low context IRQ tables.

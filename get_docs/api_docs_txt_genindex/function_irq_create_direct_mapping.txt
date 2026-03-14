@@ -1,0 +1,14 @@
+Function: unsigned int irq_create_direct_mapping ( struct irq_domain * domain )
+
+Allocate an irq for direct mapping
+
+Parameters
+  struct irq_domain *domain
+    domain to allocate the irq for or NULL for default domain
+
+Description
+  This routine is used for irq controllers which can choose the hardware
+interrupt numbers they generate. In such a case it’s simplest to use
+the linux irq as the hardware interrupt number. It still uses the linear
+or radix tree to store the mapping, but the irq controller can optimize
+the revmap path by using the hwirq directly.

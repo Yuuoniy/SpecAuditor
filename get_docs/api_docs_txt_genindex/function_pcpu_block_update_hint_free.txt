@@ -1,0 +1,17 @@
+Function: void pcpu_block_update_hint_free ( struct pcpu_chunk * chunk , int bit_off , int bits )
+
+updates the block hints on the free path
+
+Parameters
+  struct pcpu_chunk *chunk
+    chunk of interest
+  int bit_off
+    chunk offset
+  int bits
+    size of request
+
+Description
+  Updates metadata for the allocation path.  This avoids a blind block
+refresh by making use of the block contig hints.  If this fails, it scans
+forward and backward to determine the extent of the free area.  This is
+capped at the boundary of blocks.

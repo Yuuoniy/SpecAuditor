@@ -1,0 +1,101 @@
+Struct: struct ipu3_uapi_af_filter_config
+
+AF 2D filter for contrast measurements
+
+Members
+  y1_coeff_0
+    filter Y1, structure: 3x11, support both symmetry and
+anti-symmetry type. A12 is center, A1-A11 are neighbours.
+for analyzing low frequency content, used to calculate sum
+of gradients in x direction.
+  y1_coeff_0.a1
+    filter1 coefficients A1, u8, default 0.
+  y1_coeff_0.a2
+    filter1 coefficients A2, u8, default 0.
+  y1_coeff_0.a3
+    filter1 coefficients A3, u8, default 0.
+  y1_coeff_0.a4
+    filter1 coefficients A4, u8, default 0.
+  y1_coeff_1
+    Struct
+  y1_coeff_1.a5
+    filter1 coefficients A5, u8, default 0.
+  y1_coeff_1.a6
+    filter1 coefficients A6, u8, default 0.
+  y1_coeff_1.a7
+    filter1 coefficients A7, u8, default 0.
+  y1_coeff_1.a8
+    filter1 coefficients A8, u8, default 0.
+  y1_coeff_2
+    Struct
+  y1_coeff_2.a9
+    filter1 coefficients A9, u8, default 0.
+  y1_coeff_2.a10
+    filter1 coefficients A10, u8, default 0.
+  y1_coeff_2.a11
+    filter1 coefficients A11, u8, default 0.
+  y1_coeff_2.a12
+    filter1 coefficients A12, u8, default 128.
+  y1_sign_vec
+    Each bit corresponds to one coefficient sign bit,
+0: positive, 1: negative, default 0.
+  y2_coeff_0
+    Y2, same structure as Y1. For analyzing high frequency content.
+  y2_coeff_0.a1
+    filter2 coefficients A1, u8, default 0.
+  y2_coeff_0.a2
+    filter2 coefficients A2, u8, default 0.
+  y2_coeff_0.a3
+    filter2 coefficients A3, u8, default 0.
+  y2_coeff_0.a4
+    filter2 coefficients A4, u8, default 0.
+  y2_coeff_1
+    Struct
+  y2_coeff_1.a5
+    filter2 coefficients A5, u8, default 0.
+  y2_coeff_1.a6
+    filter2 coefficients A6, u8, default 0.
+  y2_coeff_1.a7
+    filter2 coefficients A7, u8, default 0.
+  y2_coeff_1.a8
+    filter2 coefficients A8, u8, default 0.
+  y2_coeff_2
+    Struct
+  y2_coeff_2.a9
+    filter1 coefficients A9, u8, default 0.
+  y2_coeff_2.a10
+    filter1 coefficients A10, u8, default 0.
+  y2_coeff_2.a11
+    filter1 coefficients A11, u8, default 0.
+  y2_coeff_2.a12
+    filter1 coefficients A12, u8, default 128.
+  y2_sign_vec
+    Each bit corresponds to one coefficient sign bit,
+0: positive, 1: negative, default 0.
+  y_calc
+    Pre-processing that converts Bayer quad to RGB+Y values to be
+used for building histogram. Range [0, 32], default 8.
+  y_calc.y_gen_rate_gr
+    Contribution ratio Gr for Y
+  y_calc.y_gen_rate_r
+    Contribution ratio R for Y
+  y_calc.y_gen_rate_b
+    Contribution ratio B for Y
+  y_calc.y_gen_rate_gb
+    Contribution ratio Gb for Y
+  nf
+    The shift right value that should be applied during the Y1/Y2 filter to
+make sure the total memory needed is 2 bytes per grid cell.
+  nf.reserved0
+    reserved
+  nf.y1_nf
+    Normalization factor for the convolution coeffs of y1,
+should be log2 of the sum of the abs values of the filter
+coeffs, default 7 (2^7 = 128).
+  nf.reserved1
+    reserved
+  nf.y2_nf
+    Normalization factor for y2, should be log2 of the sum of the
+abs values of the filter coeffs.
+  nf.reserved2
+    reserved

@@ -1,0 +1,17 @@
+Function: int ib_modify_qp_with_udata ( struct ib_qp * ib_qp , struct ib_qp_attr * attr , int attr_mask , struct ib_udata * udata )
+
+Modifies the attributes for the specified QP.
+
+Parameters
+  struct ib_qp *ib_qp
+    The QP to modify.
+  struct ib_qp_attr *attr
+    On input, specifies the QP attributes to modify.  On output,
+the current values of selected QP attributes are returned.
+  int attr_mask
+    A bit-mask used to specify which attributes of the QP
+are being modified.
+  struct ib_udata *udata
+    pointer to user’s input output buffer information
+are being modified.
+It returns 0 on success and returns appropriate error code on error.

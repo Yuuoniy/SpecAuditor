@@ -1,0 +1,11 @@
+Function: int hdmi_drm_infoframe_check ( struct hdmi_drm_infoframe * frame )
+
+check a HDMI DRM infoframe
+
+Parameters
+  struct hdmi_drm_infoframe *frame
+    HDMI DRM infoframe
+
+Description
+  Validates that the infoframe is consistent.
+Returns 0 on success or a negative error code on failure.

@@ -1,0 +1,14 @@
+Function: int ata_wait_after_reset ( struct ata_link * link , unsigned long deadline , int ( * check_ready ) ( struct ata_link * link ) )
+
+wait for link to become ready after reset
+
+Parameters
+  struct ata_link *link
+    link to be waited on
+  unsigned long deadline
+    deadline jiffies for the operation
+  int (*check_ready)(struct ata_link *link)
+    callback to check link readiness
+
+Description
+  Wait for link to become ready after reset.

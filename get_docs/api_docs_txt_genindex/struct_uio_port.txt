@@ -1,0 +1,15 @@
+Struct: struct uio_port
+
+description of a UIO port region
+
+Members
+  name
+    name of the port region for identification
+  start
+    start of port region
+  size
+    size of port region
+  porttype
+    type of port (see UIO_PORT_* below)
+  portio
+    for use by the UIO core only.

@@ -1,0 +1,11 @@
+Function: int gpiod_get_raw_value ( const struct gpio_desc * desc )
+
+return a gpio’s raw value
+
+Parameters
+  const struct gpio_desc *desc
+    gpio whose value will be returned
+
+Description
+  This function can be called from contexts where we cannot sleep, and will
+complain if the GPIO chip functions potentially sleep.

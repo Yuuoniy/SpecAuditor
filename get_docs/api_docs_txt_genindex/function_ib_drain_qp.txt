@@ -1,0 +1,10 @@
+Function: void ib_drain_qp ( struct ib_qp * qp )
+
+Block until all CQEs have been consumed by the application on both the RQ and SQ.
+
+Parameters
+  struct ib_qp *qp
+    queue pair to drain
+
+Description
+  The caller must:

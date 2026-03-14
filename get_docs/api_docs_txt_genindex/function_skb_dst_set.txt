@@ -1,0 +1,13 @@
+Function: void skb_dst_set ( struct sk_buff * skb , struct dst_entry * dst )
+
+sets skb dst
+
+Parameters
+  struct sk_buff *skb
+    buffer
+  struct dst_entry *dst
+    dst entry
+
+Description
+  Sets skb dst, assuming a reference was taken on dst and should
+be released by skb_dst_drop()

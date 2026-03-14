@@ -1,0 +1,31 @@
+Struct: struct sfp_upstream_ops
+
+upstream operations structure
+
+Members
+  attach
+    called when the sfp socket driver is bound to the upstream
+(mandatory).
+  detach
+    called when the sfp socket driver is unbound from the upstream
+(mandatory).
+  module_insert
+    called after a module has been detected to determine
+whether the module is supported for the upstream device.
+  module_remove
+    called after the module has been removed.
+  module_start
+    called after the PHY probe step
+  module_stop
+    called before the PHY is removed
+  link_down
+    called when the link is non-operational for whatever
+reason.
+  link_up
+    called when the link is operational.
+  connect_phy
+    called when an I2C accessible PHY has been detected
+on the module.
+  disconnect_phy
+    called when a module with an I2C accessible PHY has
+been removed.

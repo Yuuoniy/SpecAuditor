@@ -1,0 +1,17 @@
+Struct: struct san_dgpu_event
+
+Discrete GPU ACPI event.
+
+Members
+  category
+    Category of the event.
+  target
+    Target ID of the event source.
+  command
+    Command ID of the event.
+  instance
+    Instance ID of the event source.
+  length
+    Length of the event’s payload data (in bytes).
+  payload
+    Pointer to the event’s payload data.

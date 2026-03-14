@@ -1,0 +1,10 @@
+Function: void folio_end_writeback ( struct folio * folio )
+
+End writeback against a folio.
+
+Parameters
+  struct folio *folio
+    The folio.
+
+Description
+  The folio must actually be under writeback.

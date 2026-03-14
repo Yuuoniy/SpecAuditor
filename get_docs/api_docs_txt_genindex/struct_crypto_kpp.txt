@@ -1,0 +1,10 @@
+Struct: struct crypto_kpp
+
+user-instantiated object which encapsulate algorithms and core processing logic
+
+Members
+  reqsize
+    Request context size required by algorithm
+implementation
+  base
+    Common crypto API algorithm data structure

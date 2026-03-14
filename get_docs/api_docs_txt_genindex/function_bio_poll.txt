@@ -1,0 +1,15 @@
+Function: int bio_poll ( struct bio * bio , struct io_comp_batch * iob , unsigned int flags )
+
+poll for BIO completions
+
+Parameters
+  struct bio *bio
+    bio to poll for
+  struct io_comp_batch *iob
+    batches of IO
+  unsigned int flags
+    BLK_POLL_* flags that control the behavior
+
+Description
+  Poll for completions on queue associated with the bio. Returns number of
+completed entries found.

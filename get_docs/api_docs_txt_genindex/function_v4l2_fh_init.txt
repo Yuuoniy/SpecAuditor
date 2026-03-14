@@ -1,0 +1,15 @@
+Function: void v4l2_fh_init ( struct v4l2_fh * fh , struct video_device * vdev )
+
+Initialise the file handle.
+
+Parameters
+  struct v4l2_fh *fh
+    pointer to struct v4l2_fh
+  struct video_device *vdev
+    pointer to struct video_device
+
+Description
+  Parts of the V4L2 framework using the
+file handles should be initialised in this function. Must be called
+from driver’s v4l2_file_operations->open() handler if the driver
+uses struct v4l2_fh .

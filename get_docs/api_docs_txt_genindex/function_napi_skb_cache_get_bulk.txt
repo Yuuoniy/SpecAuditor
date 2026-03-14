@@ -1,0 +1,18 @@
+Function: u32 napi_skb_cache_get_bulk ( void * * skbs , u32 n )
+
+obtain a number of zeroed skb heads from the cache
+
+Parameters
+  void **skbs
+    pointer to an at least n -sized array to fill with skb pointers
+  u32 n
+    number of entries to provide
+
+Description
+  Tries to obtain n sk_buff entries from the NAPI percpu cache and writes
+the pointers into the provided array skbs . If there are less entries
+available, tries to replenish the cache and bulk-allocates the diff from
+the MM layer if needed.
+The heads are being zeroed with either memset() or __GFP_ZERO , so they are
+ready for {,__} build_skb_around() and don’t have any data buffers attached.
+Must be called only from the BH context.

@@ -1,0 +1,18 @@
+Function: struct cec_adapter * cec_pin_allocate_adapter ( const struct cec_pin_ops * pin_ops , void * priv , const char * name , u32 caps )
+
+allocate a pin-based cec adapter
+
+Parameters
+  const struct cec_pin_ops *pin_ops
+    low-level pin operations
+  void *priv
+    will be stored in adap->priv and can be used by the adapter ops.
+Use cec_get_drvdata(adap) to get the priv pointer.
+  const char *name
+    the name of the CEC adapter. Note: this name will be copied.
+  u32 caps
+    capabilities of the CEC adapter. This will be ORed with
+CEC_CAP_MONITOR_ALL and CEC_CAP_MONITOR_PIN.
+
+Description
+  Allocate a cec adapter using the cec pin framework.

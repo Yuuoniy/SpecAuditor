@@ -1,0 +1,12 @@
+Function: int security_socket_socketpair ( struct socket * socka , struct socket * sockb )
+
+Check if creating a socketpair is allowed
+
+Parameters
+  struct socket *socka
+    first socket
+  struct socket *sockb
+    second socket
+
+Description
+  Check permissions before creating a fresh pair of sockets.

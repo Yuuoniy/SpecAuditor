@@ -1,0 +1,13 @@
+Function: struct timespec64 current_time ( struct inode * inode )
+
+Return FS time (possibly fine-grained)
+
+Parameters
+  struct inode *inode
+    inode.
+
+Description
+  Return the current time truncated to the time granularity supported by
+the fs, as suitable for a ctime/mtime change. If the ctime is flagged
+as having been QUERIED, get a fine-grained timestamp, but don’t update
+the floor.

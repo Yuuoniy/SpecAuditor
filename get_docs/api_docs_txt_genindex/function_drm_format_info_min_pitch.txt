@@ -1,0 +1,11 @@
+Function: uint64_t drm_format_info_min_pitch ( const struct drm_format_info * info , int plane , unsigned int buffer_width )
+
+computes the minimum required pitch in bytes
+
+Parameters
+  const struct drm_format_info *info
+    pixel format info
+  int plane
+    plane index
+  unsigned int buffer_width
+    buffer width in pixels

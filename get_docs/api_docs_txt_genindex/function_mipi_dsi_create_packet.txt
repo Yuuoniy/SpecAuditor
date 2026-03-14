@@ -1,0 +1,9 @@
+Function: int mipi_dsi_create_packet ( struct mipi_dsi_packet * packet , const struct mipi_dsi_msg * msg )
+
+create a packet from a message according to the DSI protocol
+
+Parameters
+  struct mipi_dsi_packet *packet
+    pointer to a DSI packet structure
+  const struct mipi_dsi_msg *msg
+    message to translate into a packet

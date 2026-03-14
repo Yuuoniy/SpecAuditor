@@ -1,0 +1,11 @@
+Function: int reset_control_rearm ( struct reset_control * rstc )
+
+allow shared reset line to be re-triggered”
+
+Parameters
+  struct reset_control *rstc
+    reset controller
+
+Description
+  On a shared reset line the actual reset pulse is only triggered once for the
+lifetime of the reset_control instance, except if this call is used.

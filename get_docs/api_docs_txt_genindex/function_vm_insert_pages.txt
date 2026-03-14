@@ -1,0 +1,16 @@
+Function: int vm_insert_pages ( struct vm_area_struct * vma , unsigned long addr , struct page * * pages , unsigned long * num )
+
+insert multiple pages into user vma, batching the pmd lock.
+
+Parameters
+  struct vm_area_struct *vma
+    user vma to map to
+  unsigned long addr
+    target start user address of these pages
+  struct page **pages
+    source kernel pages
+  unsigned long *num
+    in: number of pages to map. out: number of pages that were not mapped. (0 means all pages were successfully mapped).
+
+Description
+  Preferred over vm_insert_page() when inserting multiple pages.

@@ -1,0 +1,13 @@
+Function: struct sk_buff * napi_build_skb ( void * data , unsigned int frag_size )
+
+build a network buffer
+
+Parameters
+  void *data
+    data buffer provided by caller
+  unsigned int frag_size
+    size of data
+
+Description
+  Version of __napi_build_skb() that takes care of skb->head_frag
+and skb->pfmemalloc when the data is a page or page fragment.

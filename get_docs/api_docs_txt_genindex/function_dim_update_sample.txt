@@ -1,0 +1,13 @@
+Function: void dim_update_sample ( u16 event_ctr , u64 packets , u64 bytes , struct dim_sample * s )
+
+set a sample’s fields with given values
+
+Parameters
+  u16 event_ctr
+    number of events to set
+  u64 packets
+    number of packets to set
+  u64 bytes
+    number of bytes to set
+  struct dim_sample *s
+    DIM sample

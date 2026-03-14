@@ -1,0 +1,17 @@
+Function: int slim_device_report_present ( struct slim_controller * ctrl , struct slim_eaddr * e_addr , u8 * laddr )
+
+Report enumerated device.
+
+Parameters
+  struct slim_controller *ctrl
+    Controller with which device is enumerated.
+  struct slim_eaddr *e_addr
+    Enumeration address of the device.
+  u8 *laddr
+    Return logical address (if valid flag is false)
+
+Description
+  Called by controller in response to REPORT_PRESENT. Framework will assign
+a logical address to this enumeration address.
+Function returns -EXFULL to indicate that all logical addresses are already
+taken.

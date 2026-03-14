@@ -1,0 +1,13 @@
+Function: int sock_sendmsg ( struct socket * sock , struct msghdr * msg )
+
+send a message through sock
+
+Parameters
+  struct socket *sock
+    socket
+  struct msghdr *msg
+    message to send
+
+Description
+  Sends msg through sock , passing through LSM.
+Returns the number of bytes sent, or an error code.

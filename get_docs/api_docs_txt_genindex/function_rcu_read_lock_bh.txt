@@ -1,0 +1,13 @@
+Function: void rcu_read_lock_bh ( void )
+
+mark the beginning of an RCU-bh critical section
+
+Parameters
+  void
+    no arguments
+
+Description
+  This is equivalent to rcu_read_lock() , but also disables softirqs.
+Note that anything else that disables softirqs can also serve as an RCU
+read-side critical section.  However, please note that this equivalence
+applies only to v5.0 and later.  Before v5.0, rcu_read_lock() and rcu_read_lock_bh() were unrelated.

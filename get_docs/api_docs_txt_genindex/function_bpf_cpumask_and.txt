@@ -1,0 +1,14 @@
+Function: __bpf_kfunc bool bpf_cpumask_and ( struct bpf_cpumask * dst , const struct cpumask * src1 , const struct cpumask * src2 )
+
+AND two cpumasks and store the result.
+
+Parameters
+  struct bpf_cpumask *dst
+    The BPF cpumask where the result is being stored.
+  const struct cpumask *src1
+    The first input.
+  const struct cpumask *src2
+    The second input.
+
+Description
+  struct bpf_cpumask pointers may be safely passed to src1 and src2 .

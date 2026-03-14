@@ -1,0 +1,210 @@
+Function: struct journal_s
+
+The journal_s type is the concrete type associated with journal_t.
+
+Members
+  j_flags
+    General journaling state flags [j_state_lock,
+no lock for quick racy checks]
+  j_errno
+    Is there an outstanding uncleared error on the journal (from a prior
+abort)? [j_state_lock]
+  j_abort_mutex
+    Lock the whole aborting procedure.
+  j_sb_buffer
+    The first part of the superblock buffer.
+  j_superblock
+    The second part of the superblock buffer.
+  j_state_lock
+    Protect the various scalars in the journal.
+  j_barrier_count
+    Number of processes waiting to create a barrier lock [j_state_lock,
+no lock for quick racy checks]
+  j_barrier
+    The barrier lock itself.
+  j_running_transaction
+    Transactions: The current running transaction...
+[j_state_lock, no lock for quick racy checks] [caller holding
+open handle]
+  j_committing_transaction
+    the transaction we are pushing to disk
+[j_state_lock] [caller holding open handle]
+  j_checkpoint_transactions
+    ... and a linked circular list of all transactions waiting for
+checkpointing. [j_list_lock]
+  j_wait_transaction_locked
+    Wait queue for waiting for a locked transaction to start committing,
+or for a barrier lock to be released.
+  j_wait_done_commit
+    Wait queue for waiting for commit to complete.
+  j_wait_commit
+    Wait queue to trigger commit.
+  j_wait_updates
+    Wait queue to wait for updates to complete.
+  j_wait_reserved
+    Wait queue to wait for reserved buffer credits to drop.
+  j_fc_wait
+    Wait queue to wait for completion of async fast commits.
+  j_checkpoint_mutex
+    Semaphore for locking against concurrent checkpoints.
+  j_chkpt_bhs
+    List of buffer heads used by the checkpoint routine.  This
+was moved from jbd2_log_do_checkpoint() to reduce stack
+usage.  Access to this array is controlled by the j_checkpoint_mutex .  [j_checkpoint_mutex]
+  j_shrinker
+    Journal head shrinker, reclaim buffer’s journal head which
+has been written back.
+  j_checkpoint_jh_count
+    Number of journal buffers on the checkpoint list. [j_list_lock]
+  j_shrink_transaction
+    Record next transaction will shrink on the checkpoint list.
+[j_list_lock]
+  j_head
+    Journal head: identifies the first unused block in the journal.
+[j_state_lock]
+  j_tail
+    Journal tail: identifies the oldest still-used block in the journal.
+[j_state_lock]
+  j_free
+    Journal free: how many free blocks are there in the journal?
+[j_state_lock]
+  j_first
+    The block number of the first usable block in the journal
+[j_state_lock].
+  j_last
+    The block number one beyond the last usable block in the journal
+[j_state_lock].
+  j_fc_first
+    The block number of the first fast commit block in the journal
+[j_state_lock].
+  j_fc_off
+    Number of fast commit blocks currently allocated. Accessed only
+during fast commit. Currently only process can do fast commit, so
+this field is not protected by any lock.
+  j_fc_last
+    The block number one beyond the last fast commit block in the journal
+[j_state_lock].
+  j_dev
+    Device where we store the journal.
+  j_blocksize
+    Block size for the location where we store the journal.
+  j_blk_offset
+    Starting block offset into the device where we store the journal.
+  j_devname
+    Journal device name.
+  j_fs_dev
+    Device which holds the client fs.  For internal journal this will be
+equal to j_dev.
+  j_fs_dev_wb_err
+    Records the errseq of the client fs’s backing block device.
+  j_total_len
+    Total maximum capacity of the journal region on disk.
+  j_reserved_credits
+    Number of buffers reserved from the running transaction.
+  j_list_lock
+    Protects the buffer lists and internal buffer state.
+  j_inode
+    Optional inode where we store the journal.  If present, all
+journal block numbers are mapped into this inode via bmap() .
+  j_tail_sequence
+    Sequence number of the oldest transaction in the log [j_state_lock]
+  j_transaction_sequence
+    Sequence number of the next transaction to grant [j_state_lock]
+  j_commit_sequence
+    Sequence number of the most recently committed transaction
+[j_state_lock, no lock for quick racy checks]
+  j_commit_request
+    Sequence number of the most recent transaction wanting commit
+[j_state_lock, no lock for quick racy checks]
+  j_uuid
+    Journal uuid: identifies the object (filesystem, LVM volume etc)
+backed by this journal.  This will eventually be replaced by an array
+of uuids, allowing us to index multiple devices within a single
+journal and to perform atomic updates across them.
+  j_task
+    Pointer to the current commit thread for this journal.
+  j_max_transaction_buffers
+    Maximum number of metadata buffers to allow in a single compound
+commit transaction.
+  j_revoke_records_per_block
+    Number of revoke records that fit in one descriptor block.
+  j_transaction_overhead_buffers
+    Number of blocks each transaction needs for its own bookkeeping
+  j_commit_interval
+    What is the maximum transaction lifetime before we begin a commit?
+  j_commit_timer
+    The timer used to wakeup the commit thread.
+  j_revoke_lock
+    Protect the revoke table.
+  j_revoke
+    The revoke table - maintains the list of revoked blocks in the
+current transaction.
+  j_revoke_table
+    Alternate revoke tables for j_revoke.
+  j_wbuf
+    Array of bhs for jbd2_journal_commit_transaction.
+  j_fc_wbuf
+    Array of fast commit bhs for fast commit. Accessed only
+during a fast commit. Currently only process can do fast commit, so
+this field is not protected by any lock.
+  j_wbufsize
+    Size of j_wbuf array.
+  j_fc_wbufsize
+    Size of j_fc_wbuf array.
+  j_last_sync_writer
+    The pid of the last person to run a synchronous operation
+through the journal.
+  j_average_commit_time
+    The average amount of time in nanoseconds it takes to commit a
+transaction to disk. [j_state_lock]
+  j_min_batch_time
+    Minimum time that we should wait for additional filesystem operations
+to get batched into a synchronous handle in microseconds.
+  j_max_batch_time
+    Maximum time that we should wait for additional filesystem operations
+to get batched into a synchronous handle in microseconds.
+  j_commit_callback
+    This function is called when a transaction is closed.
+  j_submit_inode_data_buffers
+    This function is called for all inodes associated with the
+committing transaction marked with JI_WRITE_DATA flag
+before we start to write out the transaction to the journal.
+  j_finish_inode_data_buffers
+    This function is called for all inodes associated with the
+committing transaction marked with JI_WAIT_DATA flag
+after we have written the transaction to the journal
+but before we write out the commit block.
+  j_history_lock
+    Protect the transactions statistics history.
+  j_proc_entry
+    procfs entry for the jbd statistics directory.
+  j_stats
+    Overall statistics.
+  j_failed_commit
+    Failed journal commit ID.
+  j_private
+    An opaque pointer to fs-private information.  ext3 puts its
+superblock pointer here.
+  j_csum_seed
+    Precomputed journal UUID checksum for seeding other checksums.
+  j_trans_commit_map
+    Lockdep entity to track transaction commit dependencies. Handles
+hold this “lock” for read, when we wait for commit, we acquire the
+“lock” for writing. This matches the properties of jbd2 journalling
+where the running transaction has to wait for all handles to be
+dropped to commit that transaction and also acquiring a handle may
+require transaction commit to finish.
+  j_fc_cleanup_callback
+    Clean-up after fast commit or full commit. JBD2 calls this function
+after every commit operation.
+  j_fc_replay_callback
+    File-system specific function that performs replay of a fast
+commit. JBD2 calls this function for each fast commit block found in
+the journal. This function should return JBD2_FC_REPLAY_CONTINUE
+to indicate that the block was processed correctly and more fast
+commit replay should continue. Return value of JBD2_FC_REPLAY_STOP
+indicates the end of replay (no more blocks remaining). A negative
+return value indicates error.
+  j_bmap
+    Bmap function that should be used instead of the generic
+VFS bmap function.

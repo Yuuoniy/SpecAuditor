@@ -1,0 +1,17 @@
+Function: void intel_psr_invalidate ( struct intel_display * display , unsigned frontbuffer_bits , enum fb_op_origin origin )
+
+Invalidate PSR
+
+Parameters
+  struct intel_display *display
+    display device
+  unsigned frontbuffer_bits
+    frontbuffer plane tracking bits
+  enum fb_op_origin origin
+    which operation caused the invalidate
+
+Description
+  Since the hardware frontbuffer tracking has gaps we need to integrate
+with the software frontbuffer tracking. This function gets called every
+time frontbuffer rendering starts and a buffer gets dirtied. PSR must be
+disabled if the frontbuffer mask contains a buffer relevant to PSR.

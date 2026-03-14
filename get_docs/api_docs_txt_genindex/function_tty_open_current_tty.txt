@@ -1,0 +1,12 @@
+Function: struct tty_struct * tty_open_current_tty ( dev_t device , struct file * filp )
+
+get locked tty of current task
+
+Parameters
+  dev_t device
+    device number
+  struct file *filp
+    file pointer to tty
+
+Description
+  Performs a re-open of the current task’s controlling tty.

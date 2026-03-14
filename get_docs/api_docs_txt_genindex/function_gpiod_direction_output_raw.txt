@@ -1,0 +1,14 @@
+Function: int gpiod_direction_output_raw ( struct gpio_desc * desc , int value )
+
+set the GPIO direction to output
+
+Parameters
+  struct gpio_desc *desc
+    GPIO to set to output
+  int value
+    initial output value of the GPIO
+
+Description
+  Set the direction of the passed GPIO to output, such as gpiod_set_value() can
+be called safely on it. The initial value of the output must be specified
+as raw value on the physical line without regard for the ACTIVE_LOW status.

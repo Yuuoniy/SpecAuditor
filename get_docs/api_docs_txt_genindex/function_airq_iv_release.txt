@@ -1,0 +1,7 @@
+Function: void airq_iv_release ( struct airq_iv * iv )
+
+release an interrupt vector
+
+Parameters
+  struct airq_iv *iv
+    pointer to interrupt vector structure

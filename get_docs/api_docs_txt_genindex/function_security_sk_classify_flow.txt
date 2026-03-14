@@ -1,0 +1,12 @@
+Function: void security_sk_classify_flow ( const struct sock * sk , struct flowi_common * flic )
+
+Set a flow’s secid based on socket
+
+Parameters
+  const struct sock *sk
+    original socket
+  struct flowi_common *flic
+    target flow
+
+Description
+  Set the target flow’s secid to socket’s secid.

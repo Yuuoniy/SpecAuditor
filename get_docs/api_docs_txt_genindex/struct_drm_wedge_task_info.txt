@@ -1,0 +1,9 @@
+Struct: struct drm_wedge_task_info
+
+information about the guilty task of a wedge dev
+
+Members
+  pid
+    pid of the task
+  comm
+    command name of the task

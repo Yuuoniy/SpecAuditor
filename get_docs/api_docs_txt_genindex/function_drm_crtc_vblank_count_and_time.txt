@@ -1,0 +1,15 @@
+Function: u64 drm_crtc_vblank_count_and_time ( struct drm_crtc * crtc , ktime_t * vblanktime )
+
+retrieve “cooked” vblank counter value and the system timestamp corresponding to that vblank counter value
+
+Parameters
+  struct drm_crtc *crtc
+    which counter to retrieve
+  ktime_t *vblanktime
+    Pointer to time to receive the vblank timestamp.
+
+Description
+  Fetches the “cooked” vblank count value that represents the number of
+vblank events since the system was booted, including lost events due to
+modesetting activity. Returns corresponding system timestamp of the time
+of the vblank interval that corresponds to the current vblank counter value.

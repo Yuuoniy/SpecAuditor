@@ -1,0 +1,9 @@
+Function: void xprt_wake_pending_tasks ( struct rpc_xprt * xprt , int status )
+
+wake all tasks on a transport’s pending queue
+
+Parameters
+  struct rpc_xprt *xprt
+    transport with waiting tasks
+  int status
+    result code to plant in each task before waking it

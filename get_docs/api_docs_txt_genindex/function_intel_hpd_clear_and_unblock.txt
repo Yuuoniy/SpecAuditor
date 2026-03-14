@@ -1,0 +1,12 @@
+Function: void intel_hpd_clear_and_unblock ( struct intel_encoder * encoder )
+
+Unblock handling of new HPD IRQs on an HPD pin
+
+Parameters
+  struct intel_encoder *encoder
+    Encoder to unblock the HPD handling for
+
+Description
+  Unblock the handling of HPD IRQs on the HPD pin of encoder , which was
+previously blocked by intel_hpd_block() . Any HPD IRQ raised on the
+HPD pin while it was blocked will be cleared, handling only new IRQs.

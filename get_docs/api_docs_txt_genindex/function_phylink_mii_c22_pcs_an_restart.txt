@@ -1,0 +1,11 @@
+Function: void phylink_mii_c22_pcs_an_restart ( struct mdio_device * pcs )
+
+restart 802.3z autonegotiation
+
+Parameters
+  struct mdio_device *pcs
+    a pointer to a struct mdio_device .
+
+Description
+  Helper for MAC PCS supporting the 802.3 clause 22 register set for
+clause 37 negotiation.

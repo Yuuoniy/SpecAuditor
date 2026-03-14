@@ -1,0 +1,13 @@
+Function: int devm_drm_bridge_add ( struct device * dev , struct drm_bridge * bridge )
+
+devm managed version of drm_bridge_add()
+
+Parameters
+  struct device *dev
+    device to tie the bridge lifetime to
+  struct drm_bridge *bridge
+    bridge control structure
+
+Description
+  This is the managed version of drm_bridge_add() which automatically
+calls drm_bridge_remove() when dev is unbound.

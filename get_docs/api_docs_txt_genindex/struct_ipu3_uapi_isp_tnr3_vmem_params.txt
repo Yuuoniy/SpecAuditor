@@ -1,0 +1,14 @@
+Struct: struct ipu3_uapi_isp_tnr3_vmem_params
+
+Temporal noise reduction vector memory parameters
+
+Members
+  slope
+    slope setting in interpolation curve for temporal noise reduction.
+  reserved1
+    reserved
+  sigma
+    knee point setting in interpolation curve for temporal
+noise reduction.
+  reserved2
+    reserved

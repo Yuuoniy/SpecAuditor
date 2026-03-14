@@ -1,0 +1,7 @@
+Function: void iio_device_put ( struct iio_dev * indio_dev )
+
+reference counted deallocation of struct device
+
+Parameters
+  struct iio_dev *indio_dev
+    IIO device structure containing the device

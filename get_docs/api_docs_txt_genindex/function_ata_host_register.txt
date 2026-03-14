@@ -1,0 +1,14 @@
+Function: int ata_host_register ( struct ata_host * host , const struct scsi_host_template * sht )
+
+register initialized ATA host
+
+Parameters
+  struct ata_host *host
+    ATA host to register
+  const struct scsi_host_template *sht
+    template for SCSI host
+
+Description
+  Register initialized ATA host. host is allocated using ata_host_alloc() and fully initialized by LLD.  This function
+starts ports, registers host with ATA and SCSI layers and
+probe registered devices.

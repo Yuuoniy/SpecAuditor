@@ -1,0 +1,13 @@
+Function: int piix_init_one ( struct pci_dev * pdev , const struct pci_device_id * ent )
+
+Register PIIX ATA PCI device with kernel services
+
+Parameters
+  struct pci_dev *pdev
+    PCI device to register
+  const struct pci_device_id *ent
+    Entry in piix_pci_tbl matching with pdev
+
+Description
+  Called from kernel PCI layer.  We probe for combined mode (sigh),
+and then hand over control to libata, for it to do the rest.

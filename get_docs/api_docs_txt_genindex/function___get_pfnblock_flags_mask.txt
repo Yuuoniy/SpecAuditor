@@ -1,0 +1,11 @@
+Function: unsigned long __get_pfnblock_flags_mask ( const struct page * page , unsigned long pfn , unsigned long mask )
+
+Return the requested group of flags for a pageblock_nr_pages block of pages
+
+Parameters
+  const struct page *page
+    The page within the block of interest
+  unsigned long pfn
+    The target page frame number
+  unsigned long mask
+    mask of bits that the caller is interested in

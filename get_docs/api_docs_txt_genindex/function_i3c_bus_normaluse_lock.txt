@@ -1,0 +1,14 @@
+Function: void i3c_bus_normaluse_lock ( struct i3c_bus * bus )
+
+Lock the bus for a normal operation
+
+Parameters
+  struct i3c_bus *bus
+    I3C bus to take the lock on
+
+Description
+  This function takes the bus lock for any operation that is not a maintenance
+operation (see i3c_bus_maintenance_lock() for a non-exhaustive list of
+maintenance operations). Basically all communications with I3C devices are
+normal operations (HDR, SDR transfers or CCC commands that do not change bus
+state or I3C dynamic address).

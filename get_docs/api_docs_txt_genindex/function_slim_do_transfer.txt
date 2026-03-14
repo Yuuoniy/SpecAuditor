@@ -1,0 +1,14 @@
+Function: int slim_do_transfer ( struct slim_controller * ctrl , struct slim_msg_txn * txn )
+
+Process a SLIMbus-messaging transaction
+
+Parameters
+  struct slim_controller *ctrl
+    Controller handle
+  struct slim_msg_txn *txn
+    Transaction to be sent over SLIMbus
+
+Description
+  Called by controller to transmit messaging transactions not dealing with
+Interface/Value elements. (e.g. transmitting a message to assign logical
+address to a slave device

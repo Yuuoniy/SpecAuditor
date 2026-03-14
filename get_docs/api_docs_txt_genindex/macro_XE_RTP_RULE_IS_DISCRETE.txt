@@ -1,0 +1,14 @@
+Macro: XE_RTP_RULE_IS_DISCRETE
+
+
+
+Parameters
+  reg_
+    Register
+  val_
+    Value to set
+  ...
+    Additional fields to override in the struct xe_rtp_action entry
+
+Description
+  The correspondent notation in bspec is:

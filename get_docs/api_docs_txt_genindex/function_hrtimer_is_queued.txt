@@ -1,0 +1,10 @@
+Function: bool hrtimer_is_queued ( struct hrtimer * timer )
+
+check, whether the timer is on one of the queues
+
+Parameters
+  struct hrtimer *timer
+    Timer to check
+
+Description
+  The function can be used lockless, but it gives only a current snapshot.

@@ -1,0 +1,10 @@
+Function: void hcd_buffer_destroy ( struct usb_hcd * hcd )
+
+deallocate buffer pools
+
+Parameters
+  struct usb_hcd *hcd
+    the bus whose buffer pools are to be destroyed
+
+Description
+  This frees the buffer pools created by hcd_buffer_create() .

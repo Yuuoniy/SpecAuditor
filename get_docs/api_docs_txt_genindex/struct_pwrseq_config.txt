@@ -1,0 +1,15 @@
+Struct: struct pwrseq_config
+
+Configuration used for registering a new provider.
+
+Members
+  parent
+    Parent device for the sequencer. Must be set.
+  owner
+    Module providing this device.
+  drvdata
+    Private driver data.
+  match
+    Provider callback used to match the consumer device to the sequencer.
+  targets
+    Array of targets for this power sequencer. Must be NULL-terminated.

@@ -1,0 +1,12 @@
+Function: struct dma_buf * dma_buf_get ( int fd )
+
+returns the struct dma_buf related to an fd
+
+Parameters
+  int fd
+    [in]    fd associated with the struct dma_buf to be returned
+
+Description
+  On success, returns the struct dma_buf associated with an fd; uses
+file’s refcounting done by fget to increase refcount. returns ERR_PTR
+otherwise.

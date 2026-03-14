@@ -1,0 +1,11 @@
+Function: int folio_lock_killable ( struct folio * folio )
+
+Lock this folio, interruptible by a fatal signal.
+
+Parameters
+  struct folio *folio
+    The folio to lock.
+
+Description
+  Attempts to lock the folio, like folio_lock() , except that the sleep
+to acquire the lock is interruptible by a fatal signal.

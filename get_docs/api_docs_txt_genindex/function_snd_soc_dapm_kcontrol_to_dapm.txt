@@ -1,0 +1,7 @@
+Function: struct snd_soc_dapm_context * snd_soc_dapm_kcontrol_to_dapm ( struct snd_kcontrol * kcontrol )
+
+Returns the dapm context associated to a kcontrol
+
+Parameters
+  struct snd_kcontrol *kcontrol
+    The kcontrol

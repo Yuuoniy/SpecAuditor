@@ -1,0 +1,12 @@
+Function: void video_device_pipeline_stop ( struct video_device * vdev )
+
+Mark a pipeline as not streaming
+
+Parameters
+  struct video_device *vdev
+    Starting video device
+
+Description
+  Mark all entities connected to a given video device through enabled links,
+either directly or indirectly, as not streaming. The media_pad pipe field
+is reset to NULL .

@@ -1,0 +1,11 @@
+Function: bool phylink_mac_implements_lpi ( const struct phylink_mac_ops * ops )
+
+determine if MAC implements LPI ops
+
+Parameters
+  const struct phylink_mac_ops *ops
+    phylink_mac_ops structure
+
+Description
+  Returns true if the phylink MAC operations structure indicates that the
+LPI operations have been implemented, false otherwise.

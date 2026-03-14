@@ -1,0 +1,3 @@
+Function: enum dev_type
+
+describe the type of memory DRAM chips used at the stick

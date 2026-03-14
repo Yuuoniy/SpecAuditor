@@ -1,0 +1,19 @@
+Function: int nand_prog_page_begin_op ( struct nand_chip * chip , unsigned int page , unsigned int offset_in_page , const void * buf , unsigned int len )
+
+starts a PROG PAGE operation
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+  unsigned int page
+    page to write
+  unsigned int offset_in_page
+    offset within the page
+  const void *buf
+    buffer containing the data to write to the page
+  unsigned int len
+    length of the buffer
+
+Description
+  This function issues the first half of a PROG PAGE operation.
+This function does not select/unselect the CS line.

@@ -1,0 +1,7 @@
+Function: long PTR_ERR ( __force const void * ptr )
+
+Extract the error code from an error pointer.
+
+Parameters
+  __force const void *ptr
+    An error pointer.

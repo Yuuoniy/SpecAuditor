@@ -1,0 +1,13 @@
+Function: void ssh_ptl_destroy ( struct ssh_ptl * ptl )
+
+Deinitialize packet transport layer.
+
+Parameters
+  struct ssh_ptl *ptl
+    The packet transport layer to deinitialize.
+
+Description
+  Deinitializes the given packet transport layer and frees resources
+associated with it. If receiver and/or transmitter threads have been
+started, the layer must first be shut down via ssh_ptl_shutdown() before
+this function can be called.

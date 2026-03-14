@@ -1,0 +1,27 @@
+Struct: struct klp_patch
+
+patch structure for live patching
+
+Members
+  mod
+    reference to the live patch module
+  objs
+    object entries for kernel objects to be patched
+  states
+    system states that can get modified
+  replace
+    replace all actively used patches
+  list
+    list node for global list of actively used patches
+  kobj
+    kobject for sysfs resources
+  obj_list
+    dynamic list of the object entries
+  enabled
+    the patch is enabled (but operation may be incomplete)
+  forced
+    was involved in a forced transition
+  free_work
+    patch cleanup from workqueue-context
+  finish
+    for waiting till it is safe to remove the patch module

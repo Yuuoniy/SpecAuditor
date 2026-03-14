@@ -1,0 +1,20 @@
+Function: void irq_setup_generic_chip ( struct irq_chip_generic * gc , u32 msk , enum irq_gc_flags flags , unsigned int clr , unsigned int set )
+
+Setup a range of interrupts with a generic chip
+
+Parameters
+  struct irq_chip_generic *gc
+    Generic irq chip holding all data
+  u32 msk
+    Bitmask holding the irqs to initialize relative to gc->irq_base
+  enum irq_gc_flags flags
+    Flags for initialization
+  unsigned int clr
+    IRQ_* bits to clear
+  unsigned int set
+    IRQ_* bits to set
+
+Description
+  Set up max. 32 interrupts starting from gc->irq_base. Note, this
+initializes all interrupts to the primary irq_chip_type and its
+associated handler.

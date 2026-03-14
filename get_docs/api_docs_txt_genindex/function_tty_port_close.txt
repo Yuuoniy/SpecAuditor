@@ -1,0 +1,16 @@
+Function: void tty_port_close ( struct tty_port * port , struct tty_struct * tty , struct file * filp )
+
+generic tty->ops->close handler
+
+Parameters
+  struct tty_port *port
+    tty_port of the device
+  struct tty_struct *tty
+    tty being closed
+  struct file *filp
+    passed file pointer
+
+Description
+  It is a generic helper to be used in driver’s tty->ops->close . It wraps a
+sequence of tty_port_close_start() , tty_port_shutdown() , and tty_port_close_end() . The latter two are called only if this is the last
+close. See the respective functions for the details.

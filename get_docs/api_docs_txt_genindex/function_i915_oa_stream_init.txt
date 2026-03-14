@@ -1,0 +1,15 @@
+Function: int i915_oa_stream_init ( struct i915_perf_stream * stream , struct drm_i915_perf_open_param * param , struct perf_open_properties * props )
+
+validate combined props for OA stream and init
+
+Parameters
+  struct i915_perf_stream *stream
+    An i915 perf stream
+  struct drm_i915_perf_open_param *param
+    The open parameters passed to DRM_I915_PERF_OPEN
+  struct perf_open_properties *props
+    The property state that configures stream (individually validated)
+
+Description
+  While read_properties_unlocked() validates properties in isolation it
+doesn’t ensure that the combination necessarily makes sense.

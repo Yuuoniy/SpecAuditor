@@ -1,0 +1,13 @@
+Function: void scsi_report_bus_reset ( struct Scsi_Host * shost , int channel )
+
+report bus reset observed
+
+Parameters
+  struct Scsi_Host *shost
+    Host in question
+  int channel
+    channel on which reset was observed.
+
+Description
+  Utility function used by low-level drivers to report that
+they have observed a bus reset on the bus being handled.

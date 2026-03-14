@@ -1,0 +1,12 @@
+Function: void __iomem * of_iomap ( struct device_node * np , int index )
+
+Maps the memory mapped IO for a given device_node
+
+Parameters
+  struct device_node *np
+    the device whose io range will be mapped
+  int index
+    index of the io range
+
+Description
+  Returns a pointer to the mapped memory

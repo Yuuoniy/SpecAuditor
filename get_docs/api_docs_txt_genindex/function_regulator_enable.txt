@@ -1,0 +1,11 @@
+Function: int regulator_enable ( struct regulator * regulator )
+
+enable regulator output
+
+Parameters
+  struct regulator *regulator
+    regulator source
+
+Description
+  Request that the regulator be enabled with the regulator output at
+the predefined voltage or current value.  Calls to regulator_enable() must be balanced with calls to regulator_disable() .

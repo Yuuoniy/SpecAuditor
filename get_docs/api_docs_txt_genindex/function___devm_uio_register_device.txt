@@ -1,0 +1,14 @@
+Function: int __devm_uio_register_device ( struct module * owner , struct device * parent , struct uio_info * info )
+
+Resource managed uio_register_device()
+
+Parameters
+  struct module *owner
+    module that creates the new device
+  struct device *parent
+    parent device
+  struct uio_info *info
+    UIO device capabilities
+
+Description
+  returns zero on success or a negative error code.

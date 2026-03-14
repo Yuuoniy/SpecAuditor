@@ -1,0 +1,44 @@
+Struct: struct tid_ampdu_rx
+
+TID aggregation information (Rx).
+
+Members
+  rcu_head
+    RCU head used for freeing this struct
+  reorder_lock
+    serializes access to reorder buffer, see below.
+  reorder_buf_filtered
+    bitmap indicating where there are filtered frames in
+the reorder buffer that should be ignored when releasing frames
+  reorder_buf
+    buffer to reorder incoming aggregated MPDUs. An MPDU may be an
+A-MSDU with individually reported subframes.
+  reorder_time
+    jiffies when skb was added
+  sta
+    station we are attached to
+  session_timer
+    check if peer keeps Tx-ing on the TID (by timeout value)
+  reorder_timer
+    releases expired frames from the reorder buffer.
+  last_rx
+    jiffies of last rx activity
+  head_seq_num
+    head sequence number in reordering buffer.
+  stored_mpdu_num
+    number of MPDUs in reordering buffer
+  ssn
+    Starting Sequence Number expected to be aggregated.
+  buf_size
+    buffer size for incoming A-MPDUs
+  timeout
+    reset timer value (in TUs).
+  tid
+    TID number
+  auto_seq
+    used for offloaded BA sessions to automatically pick head_seq_and
+and ssn.
+  removed
+    this session is removed (but might have been found due to RCU)
+  started
+    this session has started (head ssn or higher was received)

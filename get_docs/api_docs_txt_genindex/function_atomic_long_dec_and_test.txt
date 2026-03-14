@@ -1,0 +1,10 @@
+Function: bool atomic_long_dec_and_test ( atomic_long_t * v )
+
+atomic decrement and test if zero with full ordering
+
+Parameters
+  atomic_long_t *v
+    pointer to atomic_long_t
+
+Description
+  Atomically updates v to ( v - 1) with full ordering.

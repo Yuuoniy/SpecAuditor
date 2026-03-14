@@ -1,0 +1,11 @@
+Function: bool dev_page_is_reusable ( const struct page * page )
+
+check whether a page can be reused for network Rx
+
+Parameters
+  const struct page *page
+    the page to test
+
+Description
+  A page shouldn’t be considered for reusing/recycling if it was allocated
+under memory pressure or at a distant memory node.

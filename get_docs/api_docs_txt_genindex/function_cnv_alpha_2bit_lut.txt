@@ -1,0 +1,13 @@
+Function: struct cnv_alpha_2bit_lut
+
+Set the 8bit alpha values based on the 2 bit alpha
+
+Members
+  lut0
+    ALPHA_2BIT_LUT. ALPHA_2BIT_LUT0. Default: 0b00000000
+  lut1
+    ALPHA_2BIT_LUT. ALPHA_2BIT_LUT1. Default: 0b01010101
+  lut2
+    ALPHA_2BIT_LUT. ALPHA_2BIT_LUT2. Default: 0b10101010
+  lut3
+    ALPHA_2BIT_LUT. ALPHA_2BIT_LUT3. Default: 0b11111111

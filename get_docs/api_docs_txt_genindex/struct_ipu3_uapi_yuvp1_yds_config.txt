@@ -1,0 +1,35 @@
+Struct: struct ipu3_uapi_yuvp1_yds_config
+
+Y Down-Sampling config
+
+Members
+  c00
+    range [0, 3], default 0x0
+  c01
+    range [0, 3], default 0x1
+  c02
+    range [0, 3], default 0x1
+  c03
+    range [0, 3], default 0x0
+  c10
+    range [0, 3], default 0x0
+  c11
+    range [0, 3], default 0x1
+  c12
+    range [0, 3], default 0x1
+  c13
+    range [0, 3], default 0x0
+  norm_factor
+    Normalization factor, range [0, 4], default 2
+0 - divide by 1
+1 - divide by 2
+2 - divide by 4
+3 - divide by 8
+4 - divide by 16
+  reserved0
+    reserved
+  bin_output
+    Down sampling on Luma channel in two optional modes
+0 - Bin output 4.2.0 (default), 1 output 4.2.2.
+  reserved1
+    reserved

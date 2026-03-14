@@ -1,0 +1,9 @@
+Function: void srpt_mad_send_handler ( struct ib_mad_agent * mad_agent , struct ib_mad_send_wc * mad_wc )
+
+MAD send completion callback
+
+Parameters
+  struct ib_mad_agent *mad_agent
+    Return value of ib_register_mad_agent() .
+  struct ib_mad_send_wc *mad_wc
+    Work completion reporting that the MAD has been sent.

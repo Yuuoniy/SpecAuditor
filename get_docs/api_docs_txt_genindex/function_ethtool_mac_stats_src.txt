@@ -1,0 +1,3 @@
+Function: enum ethtool_mac_stats_src
+
+source of ethtool MAC statistics

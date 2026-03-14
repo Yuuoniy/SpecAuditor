@@ -1,0 +1,15 @@
+Struct: struct hsi_controller
+
+HSI controller device
+
+Members
+  device
+    Driver model representation of the device
+  owner
+    Pointer to the module owning the controller
+  id
+    HSI controller ID
+  num_ports
+    Number of ports in the HSI controller
+  port
+    Array of HSI ports

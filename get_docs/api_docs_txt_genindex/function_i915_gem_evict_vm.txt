@@ -1,0 +1,19 @@
+Function: int i915_gem_evict_vm ( struct i915_address_space * vm , struct i915_gem_ww_ctx * ww , struct drm_i915_gem_object * * busy_bo )
+
+Evict all idle vmas from a vm
+
+Parameters
+  struct i915_address_space *vm
+    Address space to cleanse
+  struct i915_gem_ww_ctx *ww
+    An optional struct i915_gem_ww_ctx . If not NULL, i915_gem_evict_vm
+will be able to evict vma’s locked by the ww as well.
+  struct drm_i915_gem_object **busy_bo
+    Optional pointer to struct drm_i915_gem_object . If not NULL, then
+in the event i915_gem_evict_vm() is unable to trylock an object for eviction,
+then busy_bo will point to it. -EBUSY is also returned. The caller must drop
+the vm->mutex, before trying again to acquire the contended lock. The caller
+also owns a reference to the object.
+
+Description
+  This function evicts all vmas from a vm.

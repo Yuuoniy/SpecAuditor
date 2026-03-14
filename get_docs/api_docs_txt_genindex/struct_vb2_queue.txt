@@ -1,0 +1,111 @@
+Struct: struct vb2_queue
+
+a videobuf2 queue.
+
+Members
+  type
+    private buffer type whose content is defined by the vb2-core
+caller. For example, for V4L2, it should match
+the types defined on enum v4l2_buf_type .
+  io_modes
+    supported io methods (see enum vb2_io_modes ).
+  dev
+    device to use for the default allocation context if the driver
+doesn’t fill in the alloc_devs array.
+  dma_attrs
+    DMA attributes to use for the DMA.
+  bidirectional
+    when this flag is set the DMA direction for the buffers of
+this queue will be overridden with DMA_BIDIRECTIONAL direction.
+This is useful in cases where the hardware (firmware) writes to
+a buffer which is mapped as read ( DMA_TO_DEVICE ), or reads from
+buffer which is mapped for write ( DMA_FROM_DEVICE ) in order
+to satisfy some internal hardware restrictions or adds a padding
+needed by the processing algorithm. In case the DMA mapping is
+not bidirectional but the hardware (firmware) trying to access
+the buffer (in the opposite direction) this could lead to an
+IOMMU protection faults.
+  fileio_read_once
+    report EOF after reading the first buffer
+  fileio_write_immediately
+    queue buffer after each write() call
+  allow_zero_bytesused
+    allow bytesused == 0 to be passed to the driver
+  quirk_poll_must_check_waiting_for_buffers
+    Return EPOLLERR at poll when QBUF
+has not been called. This is a vb1 idiom that has been adopted
+also by vb2.
+  supports_requests
+    this queue supports the Request API.
+  requires_requests
+    this queue requires the Request API. If this is set to 1,
+then supports_requests must be set to 1 as well.
+  uses_qbuf
+    qbuf was used directly for this queue. Set to 1 the first
+time this is called. Set to 0 when the queue is canceled.
+If this is 1, then you cannot queue buffers from a request.
+  uses_requests
+    requests are used for this queue. Set to 1 the first time
+a request is queued. Set to 0 when the queue is canceled.
+If this is 1, then you cannot queue buffers directly.
+  allow_cache_hints
+    when set user-space can pass cache management hints in
+order to skip cache flush/invalidation on -> prepare() or/and
+-> finish() .
+  non_coherent_mem
+    when set queue will attempt to allocate buffers using
+non-coherent memory.
+  lock
+    pointer to a mutex that protects the struct vb2_queue . The
+driver can set this to a mutex to let the v4l2 core serialize
+the queuing ioctls. If the driver wants to handle locking
+itself, then this should be set to NULL. This lock is not used
+by the videobuf2 core API.
+  owner
+    The filehandle that ‘owns’ the buffers, i.e. the filehandle
+that called reqbufs, create_buffers or started fileio.
+This field is not used by the videobuf2 core API, but it allows
+drivers to easily associate an owner filehandle with the queue.
+  ops
+    driver-specific callbacks
+  mem_ops
+    memory allocator specific callbacks
+  buf_ops
+    callbacks to deliver buffer information.
+between user-space and kernel-space.
+  drv_priv
+    driver private data.
+  subsystem_flags
+    Flags specific to the subsystem (V4L2/DVB/etc.). Not used
+by the vb2 core.
+  buf_struct_size
+    size of the driver-specific buffer structure;
+“0” indicates the driver doesn’t want to use a custom buffer
+structure type. In that case a subsystem-specific struct will be used (in the case of V4L2 that is sizeof(struct vb2_v4l2_buffer) ). The first field of the
+driver-specific buffer structure must be the subsystem-specific
+struct (vb2_v4l2_buffer in the case of V4L2).
+  timestamp_flags
+    Timestamp flags; V4L2_BUF_FLAG_TIMESTAMP_* and V4L2_BUF_FLAG_TSTAMP_SRC_*
+  gfp_flags
+    additional gfp flags used when allocating the buffers.
+Typically this is 0, but it may be e.g. GFP_DMA or __GFP_DMA32 to force the buffer allocation to a specific memory zone.
+  min_queued_buffers
+    the minimum number of queued buffers needed before start_streaming can be called. Used when a DMA engine
+cannot be started unless at least this number of buffers
+have been queued into the driver.
+VIDIOC_REQBUFS will ensure at least min_queued_buffers + 1
+buffers will be allocated. Note that VIDIOC_CREATE_BUFS will not
+modify the requested buffer count.
+  min_reqbufs_allocation
+    the minimum number of buffers to be allocated when
+calling VIDIOC_REQBUFS. Note that VIDIOC_CREATE_BUFS will not modify the requested buffer count and does not use this field.
+Drivers can set this if there has to be a certain number of
+buffers available for the hardware to work effectively.
+This allows calling VIDIOC_REQBUFS with a buffer count of 1 and
+it will be automatically adjusted to a workable buffer count.
+If set, then min_reqbufs_allocation must be larger than min_queued_buffers + 1.
+If this field is > 3, then it is highly recommended that the
+driver implements the V4L2_CID_MIN_BUFFERS_FOR_CAPTURE/OUTPUT
+control.
+  alloc_devs
+    struct device memory type/allocator-specific per-plane device

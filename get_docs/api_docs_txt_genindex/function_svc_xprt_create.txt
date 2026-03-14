@@ -1,0 +1,22 @@
+Function: int svc_xprt_create ( struct svc_serv * serv , const char * xprt_name , struct net * net , const int family , const unsigned short port , int flags , const struct cred * cred )
+
+Add a new listener to serv
+
+Parameters
+  struct svc_serv *serv
+    target RPC service
+  const char *xprt_name
+    transport class name
+  struct net *net
+    network namespace
+  const int family
+    network address family
+  const unsigned short port
+    listener port
+  int flags
+    SVC_SOCK flags
+  const struct cred *cred
+    credential to bind to this transport
+
+Description
+  Return local xprt port on success or -EPROTONOSUPPORT on failure

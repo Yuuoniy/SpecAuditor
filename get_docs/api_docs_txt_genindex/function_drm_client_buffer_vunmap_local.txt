@@ -1,0 +1,12 @@
+Function: void drm_client_buffer_vunmap_local ( struct drm_client_buffer * buffer )
+
+Unmap DRM client buffer
+
+Parameters
+  struct drm_client_buffer *buffer
+    DRM client buffer
+
+Description
+  This function removes a client buffer’s memory mapping established
+with drm_client_buffer_vunmap_local() . Calling this function is only
+required by clients that manage their buffer mappings by themselves.

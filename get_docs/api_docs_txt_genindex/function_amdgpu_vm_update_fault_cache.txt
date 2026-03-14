@@ -1,0 +1,18 @@
+Function: void amdgpu_vm_update_fault_cache ( struct amdgpu_device * adev , unsigned int pasid , uint64_t addr , uint32_t status , unsigned int vmhub )
+
+update cached fault into.
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device pointer
+  unsigned int pasid
+    PASID of the VM
+  uint64_t addr
+    Address of the fault
+  uint32_t status
+    GPUVM fault status register
+  unsigned int vmhub
+    which vmhub got the fault
+
+Description
+  Cache the fault info for later use by userspace in debugging.

@@ -1,0 +1,11 @@
+Function: int fc_vport_terminate ( struct fc_vport * vport )
+
+Admin App or LLDD requests termination of a vport
+
+Parameters
+  struct fc_vport *vport
+    fc_vport to be terminated
+
+Description
+  Calls the LLDD vport_delete() function, then deallocates and removes
+the vport from the shost and object tree.

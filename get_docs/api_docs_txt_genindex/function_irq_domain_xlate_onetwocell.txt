@@ -1,0 +1,22 @@
+Function: int irq_domain_xlate_onetwocell ( struct irq_domain * d , struct device_node * ctrlr , const u32 * intspec , unsigned int intsize , unsigned long * out_hwirq , unsigned int * out_type )
+
+Generic xlate for one or two cell bindings
+
+Parameters
+  struct irq_domain *d
+    Interrupt domain involved in the translation
+  struct device_node *ctrlr
+    The device tree node for the device whose interrupt is translated
+  const u32 *intspec
+    The interrupt specifier data from the device tree
+  unsigned int intsize
+    The number of entries in intspec
+  unsigned long *out_hwirq
+    Pointer to storage for the hardware interrupt number
+  unsigned int *out_type
+    Pointer to storage for the interrupt type
+
+Description
+  Device Tree IRQ specifier translation function which works with either one
+or two cell bindings where the cell values map directly to the hwirq number
+and linux irq flags.

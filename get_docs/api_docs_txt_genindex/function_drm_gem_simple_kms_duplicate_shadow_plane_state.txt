@@ -1,0 +1,13 @@
+Function: struct drm_plane_state * drm_gem_simple_kms_duplicate_shadow_plane_state ( struct drm_simple_display_pipe * pipe )
+
+duplicates shadow-buffered plane state
+
+Parameters
+  struct drm_simple_display_pipe *pipe
+    the simple display pipe
+
+Description
+  This function implements struct drm_simple_display_funcs .duplicate_plane_state
+for shadow-buffered planes. It does not duplicate existing mappings of the shadow
+buffers. Mappings are maintained during the atomic commit by the plane’s prepare_fb
+and cleanup_fb helpers.

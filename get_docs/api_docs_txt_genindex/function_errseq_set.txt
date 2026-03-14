@@ -1,0 +1,13 @@
+Function: errseq_t errseq_set ( errseq_t * eseq , int err )
+
+set a errseq_t for later reporting
+
+Parameters
+  errseq_t *eseq
+    errseq_t field that should be set
+  int err
+    error to set (must be between -1 and -MAX_ERRNO)
+
+Description
+  This function sets the error in eseq , and increments the sequence counter
+if the last sequence was sampled at some point in the past.

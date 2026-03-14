@@ -1,0 +1,13 @@
+Function: int drm_connector_set_panel_orientation ( struct drm_connector * connector , enum drm_panel_orientation panel_orientation )
+
+sets the connector’s panel_orientation
+
+Parameters
+  struct drm_connector *connector
+    connector for which to set the panel-orientation property.
+  enum drm_panel_orientation panel_orientation
+    drm_panel_orientation value to set
+
+Description
+  This function sets the connector’s panel_orientation and attaches
+a “panel orientation” property to the connector.

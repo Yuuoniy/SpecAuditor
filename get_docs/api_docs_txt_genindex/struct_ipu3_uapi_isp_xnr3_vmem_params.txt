@@ -1,0 +1,13 @@
+Struct: struct ipu3_uapi_isp_xnr3_vmem_params
+
+Extreme noise reduction v3 vector memory parameters
+
+Members
+  x
+    xnr3 parameters.
+  a
+    xnr3 parameters.
+  b
+    xnr3 parameters.
+  c
+    xnr3 parameters.

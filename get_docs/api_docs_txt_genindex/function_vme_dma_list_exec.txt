@@ -1,0 +1,11 @@
+Function: int vme_dma_list_exec ( struct vme_dma_list * list )
+
+Queue a VME DMA list for execution.
+
+Parameters
+  struct vme_dma_list *list
+    Pointer to VME list.
+
+Description
+  Queue the provided VME DMA list for execution. The call will return once the
+list has been executed.

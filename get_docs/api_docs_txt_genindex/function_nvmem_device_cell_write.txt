@@ -1,0 +1,11 @@
+Function: int nvmem_device_cell_write ( struct nvmem_device * nvmem , struct nvmem_cell_info * info , void * buf )
+
+Write cell to a given nvmem device
+
+Parameters
+  struct nvmem_device *nvmem
+    nvmem device to be written to.
+  struct nvmem_cell_info *info
+    nvmem cell info to be written.
+  void *buf
+    buffer to be written to cell.

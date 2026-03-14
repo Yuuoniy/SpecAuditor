@@ -1,0 +1,7 @@
+Function: bool phy_has_hwtstamp ( struct phy_device * phydev )
+
+Tests whether a PHY time stamp configuration.
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct

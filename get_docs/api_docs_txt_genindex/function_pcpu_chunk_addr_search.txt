@@ -1,0 +1,11 @@
+Function: struct pcpu_chunk * pcpu_chunk_addr_search ( void * addr )
+
+determine chunk containing specified address
+
+Parameters
+  void *addr
+    address for which the chunk needs to be determined.
+
+Description
+  This is an internal function that handles all but static allocations.
+Static percpu address values should never be passed into the allocator.

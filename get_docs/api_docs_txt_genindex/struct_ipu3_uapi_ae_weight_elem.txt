@@ -1,0 +1,21 @@
+Struct: struct ipu3_uapi_ae_weight_elem
+
+AE weights LUT
+
+Members
+  cell0
+    weighted histogram grid value.
+  cell1
+    weighted histogram grid value.
+  cell2
+    weighted histogram grid value.
+  cell3
+    weighted histogram grid value.
+  cell4
+    weighted histogram grid value.
+  cell5
+    weighted histogram grid value.
+  cell6
+    weighted histogram grid value.
+  cell7
+    weighted histogram grid value.

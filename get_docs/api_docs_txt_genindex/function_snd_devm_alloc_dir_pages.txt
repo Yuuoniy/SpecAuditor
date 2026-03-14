@@ -1,0 +1,17 @@
+Function: struct snd_dma_buffer * snd_devm_alloc_dir_pages ( struct device * dev , int type , enum dma_data_direction dir , size_t size )
+
+allocate the buffer and manage with devres
+
+Parameters
+  struct device *dev
+    the device pointer
+  int type
+    the DMA buffer type
+  enum dma_data_direction dir
+    DMA direction
+  size_t size
+    the buffer size to allocate
+
+Description
+  Allocate buffer pages depending on the given type and manage using devres.
+The pages will be released automatically at the device removal.

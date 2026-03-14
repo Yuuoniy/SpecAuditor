@@ -1,0 +1,13 @@
+Function: ssize_t dvb_ringbuffer_pkt_next ( struct dvb_ringbuffer * rbuf , size_t idx , size_t * pktlen )
+
+Get the index of the next packet in a ringbuffer.
+
+Parameters
+  struct dvb_ringbuffer *rbuf
+    Ringbuffer concerned.
+  size_t idx
+    Previous packet index, or -1 to return the first packet index.
+  size_t *pktlen
+    On success, will be updated to contain the length of the packet
+in bytes.
+returns Packet index (if >=0), or -1 if no packets available.

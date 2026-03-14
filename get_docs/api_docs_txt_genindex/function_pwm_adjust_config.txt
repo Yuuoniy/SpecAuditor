@@ -1,0 +1,12 @@
+Function: int pwm_adjust_config ( struct pwm_device * pwm )
+
+adjust the current PWM config to the PWM arguments
+
+Parameters
+  struct pwm_device *pwm
+    PWM device
+
+Description
+  This function will adjust the PWM config to the PWM arguments provided
+by the DT or PWM lookup table. This is particularly useful to adapt
+the bootloader config to the Linux one.

@@ -1,0 +1,14 @@
+Function: void phylink_decode_usxgmii_word ( struct phylink_link_state * state , uint16_t lpa )
+
+decode the USXGMII word from a MAC PCS
+
+Parameters
+  struct phylink_link_state *state
+    a pointer to a struct phylink_link_state .
+  uint16_t lpa
+    a 16 bit value which stores the USXGMII auto-negotiation word
+
+Description
+  Helper for MAC PCS supporting the USXGMII protocol and the auto-negotiation
+code word.  Decode the USXGMII code word and populate the corresponding fields
+(speed, duplex) into the phylink_link_state structure.

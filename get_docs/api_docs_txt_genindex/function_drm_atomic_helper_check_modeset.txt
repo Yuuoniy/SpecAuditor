@@ -1,0 +1,15 @@
+Function: int drm_atomic_helper_check_modeset ( struct drm_device * dev , struct drm_atomic_state * state )
+
+validate state object for modeset changes
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_atomic_state *state
+    the driver state object
+
+Description
+  Check the state object to see if the requested state is physically possible.
+This does all the CRTC and connector related computations for an atomic
+update and adds any additional connectors needed for full modesets. It calls
+the various per-object callbacks in the follow order:

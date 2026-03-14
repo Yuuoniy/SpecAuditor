@@ -1,0 +1,10 @@
+Function: void ata_std_error_handler ( struct ata_port * ap )
+
+standard error handler
+
+Parameters
+  struct ata_port *ap
+    host port to handle error for
+
+Description
+  Perform standard error handling sequence.

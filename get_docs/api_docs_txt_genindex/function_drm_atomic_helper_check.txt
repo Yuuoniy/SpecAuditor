@@ -1,0 +1,15 @@
+Function: int drm_atomic_helper_check ( struct drm_device * dev , struct drm_atomic_state * state )
+
+validate state object
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_atomic_state *state
+    the driver state object
+
+Description
+  Check the state object to see if the requested state is physically possible.
+Only CRTCs and planes have check callbacks, so for any additional (global)
+checking that a driver needs it can simply wrap that around this function.
+Drivers without such needs can directly use this as their drm_mode_config_funcs.atomic_check callback.

@@ -1,0 +1,12 @@
+Function: void submit_bio ( struct bio * bio )
+
+submit a bio to the block device layer for I/O
+
+Parameters
+  struct bio *bio
+    The struct bio which describes the I/O
+
+Description
+  submit_bio() is used to submit I/O requests to block devices.  It is passed a
+fully set up struct bio that describes the I/O that needs to be done.  The
+bio will be send to the device described by the bi_bdev field.

@@ -1,0 +1,13 @@
+Function: void __set_pfnblock_flags_mask ( struct page * page , unsigned long pfn , unsigned long flags , unsigned long mask )
+
+Set the requested group of flags for a pageblock_nr_pages block of pages
+
+Parameters
+  struct page *page
+    The page within the block of interest
+  unsigned long pfn
+    The target page frame number
+  unsigned long flags
+    The flags to set
+  unsigned long mask
+    mask of bits that the caller is interested in

@@ -1,0 +1,15 @@
+Function: int snd_hwparams_to_dma_slave_config ( const struct snd_pcm_substream * substream , const struct snd_pcm_hw_params * params , struct dma_slave_config * slave_config )
+
+Convert hw_params to dma_slave_config
+
+Parameters
+  const struct snd_pcm_substream *substream
+    PCM substream
+  const struct snd_pcm_hw_params *params
+    hw_params
+  struct dma_slave_config *slave_config
+    DMA slave config
+
+Description
+  This function can be used to initialize a dma_slave_config from a substream
+and hw_params in a dmaengine based PCM driver implementation.

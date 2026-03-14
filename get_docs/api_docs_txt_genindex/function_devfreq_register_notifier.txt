@@ -1,0 +1,11 @@
+Function: int devfreq_register_notifier ( struct devfreq * devfreq , struct notifier_block * nb , unsigned int list )
+
+Register a driver with devfreq
+
+Parameters
+  struct devfreq *devfreq
+    The devfreq object.
+  struct notifier_block *nb
+    The notifier block to register.
+  unsigned int list
+    DEVFREQ_TRANSITION_NOTIFIER.

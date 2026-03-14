@@ -1,0 +1,9 @@
+Function: bool busy_loop_ep_timeout ( unsigned long start_time , struct eventpoll * ep )
+
+check if busy poll has timed out. The timeout value from the epoll instance ep is preferred, but if it is not set fallback to the system-wide global via busy_loop_timeout.
+
+Parameters
+  unsigned long start_time
+    The start time used to compute the remaining time until timeout.
+  struct eventpoll *ep
+    Pointer to the eventpoll context.

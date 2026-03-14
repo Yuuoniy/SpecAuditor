@@ -1,0 +1,19 @@
+Struct: int security_kernel_post_load_data ( char * buf , loff_t size , enum kernel_load_data_id id , char * description )
+
+Load userspace data from a non-file source
+
+Parameters
+  char *buf
+    data
+  loff_t size
+    size of data
+  enum kernel_load_data_id id
+    data identifier
+  char *description
+    text description of data, specific to the id value
+
+Description
+  Load data provided by a non-file source (usually userspace buffer).  This
+must be paired with a prior security_kernel_load_data() call that indicated
+this hook would also be called, see security_kernel_load_data() for more
+information.

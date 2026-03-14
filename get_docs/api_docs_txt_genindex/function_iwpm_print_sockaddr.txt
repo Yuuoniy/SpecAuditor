@@ -1,0 +1,9 @@
+Function: void iwpm_print_sockaddr ( struct sockaddr_storage * sockaddr , char * msg )
+
+Print IPv4/IPv6 address and TCP port
+
+Parameters
+  struct sockaddr_storage *sockaddr
+    Socket address to print
+  char *msg
+    Message to print

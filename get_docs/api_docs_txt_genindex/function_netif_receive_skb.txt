@@ -1,0 +1,12 @@
+Function: int netif_receive_skb ( struct sk_buff * skb )
+
+process receive buffer from network
+
+Parameters
+  struct sk_buff *skb
+    buffer to process
+
+Description
+  netif_receive_skb() is the main receive data processing function.
+It always succeeds. The buffer may be dropped during processing
+for congestion control or by the protocol layers.

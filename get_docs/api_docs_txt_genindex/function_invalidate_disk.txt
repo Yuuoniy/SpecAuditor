@@ -1,0 +1,12 @@
+Function: void invalidate_disk ( struct gendisk * disk )
+
+invalidate the disk
+
+Parameters
+  struct gendisk *disk
+    the struct gendisk to invalidate
+
+Description
+  A helper to invalidates the disk. It will clean the disk’s associated
+buffer/page caches and reset its internal states so that the disk
+can be reused by the drivers.

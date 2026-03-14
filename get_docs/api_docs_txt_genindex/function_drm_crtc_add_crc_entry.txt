@@ -1,0 +1,17 @@
+Function: int drm_crtc_add_crc_entry ( struct drm_crtc * crtc , bool has_frame , uint32_t frame , uint32_t * crcs )
+
+Add entry with CRC information for a frame
+
+Parameters
+  struct drm_crtc *crtc
+    CRTC to which the frame belongs
+  bool has_frame
+    whether this entry has a frame number to go with
+  uint32_t frame
+    number of the frame these CRCs are about
+  uint32_t *crcs
+    array of CRC values, with length matching #drm_crtc_crc.values_cnt
+
+Description
+  For each frame, the driver polls the source of CRCs for new data and calls
+this function to add them to the buffer from where userspace reads.

@@ -1,0 +1,11 @@
+Struct: struct mipi_dsi_device_info
+
+template for creating a mipi_dsi_device
+
+Members
+  type
+    DSI peripheral chip type
+  channel
+    DSI virtual channel assigned to peripheral
+  node
+    pointer to OF device node or NULL

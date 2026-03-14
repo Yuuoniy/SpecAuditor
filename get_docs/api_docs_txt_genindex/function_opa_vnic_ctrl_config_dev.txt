@@ -1,0 +1,9 @@
+Function: void opa_vnic_ctrl_config_dev ( struct opa_vnic_ctrl_port * cport , bool en )
+
+This function sends a trap to the EM by way of ib_modify_port to indicate support for ethernet on the fabric.
+
+Parameters
+  struct opa_vnic_ctrl_port *cport
+    pointer to control port
+  bool en
+    enable or disable ethernet on fabric support

@@ -1,0 +1,13 @@
+Function: void mipi_dsi_compression_mode_multi ( struct mipi_dsi_multi_context * ctx , bool enable )
+
+enable/disable DSC on the peripheral
+
+Parameters
+  struct mipi_dsi_multi_context *ctx
+    Context for multiple DSI transactions
+  bool enable
+    Whether to enable or disable the DSC
+
+Description
+  Enable or disable Display Stream Compression on the peripheral using the
+default Picture Parameter Set and VESA DSC 1.1 algorithm.

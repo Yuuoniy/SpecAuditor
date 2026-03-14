@@ -1,0 +1,10 @@
+Function: int wmi_instance_count ( const char * guid_string )
+
+Get number of WMI object instances
+
+Parameters
+  const char *guid_string
+    36 char string of the form fa50ff2b-f2e8-45de-83fa-65417f2f49ba
+
+Description
+  Get the number of WMI object instances.

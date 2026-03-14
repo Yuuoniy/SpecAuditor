@@ -1,0 +1,9 @@
+Function: void snd_pcm_limit_isa_dma_size ( int dma , size_t * max )
+
+Get the max size fitting with ISA DMA transfer
+
+Parameters
+  int dma
+    DMA number
+  size_t *max
+    pointer to store the max size

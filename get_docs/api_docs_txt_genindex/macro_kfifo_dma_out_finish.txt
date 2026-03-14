@@ -1,0 +1,13 @@
+Macro: kfifo_dma_out_finish
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used
+  len
+    number of bytes transferred
+
+Description
+  This macro finishes a DMA OUT operation. The out counter will be updated by
+the len parameter. No error checking will be done.

@@ -1,0 +1,12 @@
+Function: int snd_pcm_hw_constraint_integer ( struct snd_pcm_runtime * runtime , snd_pcm_hw_param_t var )
+
+apply an integer constraint to an interval
+
+Parameters
+  struct snd_pcm_runtime *runtime
+    PCM runtime instance
+  snd_pcm_hw_param_t var
+    hw_params variable to apply the integer constraint
+
+Description
+  Apply the constraint of integer to an interval parameter.

@@ -1,0 +1,20 @@
+Function: int xa_alloc_irq ( struct xarray * xa , u32 * id , void * entry , struct xa_limit limit , gfp_t gfp )
+
+Find somewhere to store this entry in the XArray.
+
+Parameters
+  struct xarray *xa
+    XArray.
+  u32 *id
+    Pointer to ID.
+  void *entry
+    New entry.
+  struct xa_limit limit
+    Range of ID to allocate.
+  gfp_t gfp
+    Memory allocation flags.
+
+Description
+  Finds an empty entry in xa between limit.min and limit.max ,
+stores the index into the id pointer, then stores the entry at
+that index.  A concurrent lookup will not see an uninitialised id .

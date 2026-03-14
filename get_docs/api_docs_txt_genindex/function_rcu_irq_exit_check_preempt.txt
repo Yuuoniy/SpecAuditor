@@ -1,0 +1,7 @@
+Function: void rcu_irq_exit_check_preempt ( void )
+
+Validate that scheduling is possible
+
+Parameters
+  void
+    no arguments

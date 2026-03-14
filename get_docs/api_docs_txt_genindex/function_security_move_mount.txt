@@ -1,0 +1,12 @@
+Function: int security_move_mount ( const struct path * from_path , const struct path * to_path )
+
+Check permissions for moving a mount
+
+Parameters
+  const struct path *from_path
+    source mount point
+  const struct path *to_path
+    destination mount point
+
+Description
+  Check permission before a mount is moved.

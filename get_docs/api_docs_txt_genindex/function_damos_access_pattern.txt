@@ -1,0 +1,17 @@
+Function: struct damos_access_pattern
+
+Target access pattern of the given scheme.
+
+Members
+  min_sz_region
+    Minimum size of target regions.
+  max_sz_region
+    Maximum size of target regions.
+  min_nr_accesses
+    Minimum ->nr_accesses of target regions.
+  max_nr_accesses
+    Maximum ->nr_accesses of target regions.
+  min_age_region
+    Minimum age of target regions.
+  max_age_region
+    Maximum age of target regions.

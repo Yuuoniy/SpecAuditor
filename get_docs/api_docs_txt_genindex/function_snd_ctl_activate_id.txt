@@ -1,0 +1,16 @@
+Function: int snd_ctl_activate_id ( struct snd_card * card , struct snd_ctl_elem_id * id , int active )
+
+activate/inactivate the control of the given id
+
+Parameters
+  struct snd_card *card
+    the card instance
+  struct snd_ctl_elem_id *id
+    the control id to activate/inactivate
+  int active
+    non-zero to activate
+
+Description
+  Finds the control instance with the given id, and activate or
+inactivate the control together with notification, if changed.
+The given ID data is filled with full information.

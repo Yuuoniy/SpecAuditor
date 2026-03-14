@@ -1,0 +1,10 @@
+Function: const struct fb_cmap * fb_default_cmap ( int len )
+
+get default colormap
+
+Parameters
+  int len
+    size of palette for a depth
+
+Description
+  Gets the default colormap for a specific screen depth. len is the size of the palette for a particular screen depth.

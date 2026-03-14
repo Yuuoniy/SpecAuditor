@@ -1,0 +1,11 @@
+Function: void netdev_reset_queue ( struct net_device * dev_queue )
+
+reset the packets and bytes count of a network device
+
+Parameters
+  struct net_device *dev_queue
+    network device
+
+Description
+  Reset the bytes and packet count of a network device and clear the
+software flow control OFF bit for this network device

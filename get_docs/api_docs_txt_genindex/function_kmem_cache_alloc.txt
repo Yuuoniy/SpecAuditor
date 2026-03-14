@@ -1,0 +1,13 @@
+Function: void * kmem_cache_alloc ( struct kmem_cache * cachep , gfp_t flags )
+
+Allocate an object
+
+Parameters
+  struct kmem_cache *cachep
+    The cache to allocate from.
+  gfp_t flags
+    See kmalloc() .
+
+Description
+  Allocate an object from this cache.
+See kmem_cache_zalloc() for a shortcut of adding __GFP_ZERO to flags.

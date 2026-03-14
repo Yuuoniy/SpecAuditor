@@ -1,0 +1,10 @@
+Function: struct v4l2_m2m_dev * v4l2_m2m_init ( const struct v4l2_m2m_ops * m2m_ops )
+
+initialize per-driver m2m data
+
+Parameters
+  const struct v4l2_m2m_ops *m2m_ops
+    pointer to struct v4l2_m2m_ops
+
+Description
+  Usually called from driver’s probe() function.

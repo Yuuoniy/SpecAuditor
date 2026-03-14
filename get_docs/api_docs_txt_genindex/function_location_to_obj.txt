@@ -1,0 +1,9 @@
+Function: unsigned long location_to_obj ( struct zpdesc * zpdesc , unsigned int obj_idx )
+
+get obj value encoded from (<zpdesc>, <obj_idx>)
+
+Parameters
+  struct zpdesc *zpdesc
+    zpdesc object resides in zspage
+  unsigned int obj_idx
+    object index

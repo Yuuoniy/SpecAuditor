@@ -1,0 +1,7 @@
+Function: u16 ssh_rqid_to_event ( u16 rqid )
+
+Convert request ID to its corresponding event ID.
+
+Parameters
+  u16 rqid
+    The request ID to convert.

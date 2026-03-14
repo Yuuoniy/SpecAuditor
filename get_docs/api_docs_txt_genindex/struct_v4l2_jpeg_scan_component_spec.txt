@@ -1,0 +1,11 @@
+Struct: struct v4l2_jpeg_scan_component_spec
+
+scan component-specification
+
+Members
+  component_selector
+    Cs[j]
+  dc_entropy_coding_table_selector
+    Td[j]
+  ac_entropy_coding_table_selector
+    Ta[j]

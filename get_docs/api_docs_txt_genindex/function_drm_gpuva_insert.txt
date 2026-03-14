@@ -1,0 +1,12 @@
+Function: int drm_gpuva_insert ( struct drm_gpuvm * gpuvm , struct drm_gpuva * va )
+
+insert a drm_gpuva
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm to insert the drm_gpuva in
+  struct drm_gpuva *va
+    the drm_gpuva to insert
+
+Description
+  Insert a drm_gpuva with a given address and range into a drm_gpuvm .

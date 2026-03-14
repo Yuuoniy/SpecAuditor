@@ -1,0 +1,11 @@
+Function: void list_bidir_del_rcu ( struct list_head * entry )
+
+deletes entry from list without re-initialization
+
+Parameters
+  struct list_head *entry
+    the element to delete from the list.
+
+Description
+  In contrast to list_del_rcu() doesn’t poison the prev pointer thus
+allowing backwards traversal via list_bidir_prev_rcu() .

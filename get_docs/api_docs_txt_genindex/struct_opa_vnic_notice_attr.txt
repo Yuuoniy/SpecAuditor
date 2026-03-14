@@ -1,0 +1,25 @@
+Struct: struct opa_vnic_notice_attr
+
+Generic Notice MAD
+
+Members
+  gen_type
+    Generic/Specific bit and type of notice
+  oui_1
+    Vendor ID byte 1
+  oui_2
+    Vendor ID byte 2
+  oui_3
+    Vendor ID byte 3
+  trap_num
+    Trap number
+  toggle_count
+    Notice toggle bit and count value
+  issuer_lid
+    Trap issuer’s lid
+  reserved
+    reserved bytes
+  issuer_gid
+    Issuer GID (only if Report method)
+  raw_data
+    Trap message body

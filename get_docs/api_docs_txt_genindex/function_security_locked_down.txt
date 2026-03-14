@@ -1,0 +1,11 @@
+Function: int security_locked_down ( enum lockdown_reason what )
+
+Check if a kernel feature is allowed
+
+Parameters
+  enum lockdown_reason what
+    requested kernel feature
+
+Description
+  Determine whether a kernel feature that potentially enables arbitrary code
+execution in kernel space should be permitted.

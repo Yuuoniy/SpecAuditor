@@ -1,0 +1,13 @@
+Struct: struct ssam_device
+
+SSAM client device.
+
+Members
+  dev
+    Driver model representation of the device.
+  ctrl
+    SSAM controller managing this device.
+  uid
+    UID identifying the device.
+  flags
+    Device state flags, see enum ssam_device_flags .

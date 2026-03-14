@@ -1,0 +1,10 @@
+Function: void snd_card_unref ( struct snd_card * card )
+
+Unreference the card object
+
+Parameters
+  struct snd_card *card
+    the card object to unreference
+
+Description
+  Call this function for the card object that was obtained via snd_card_ref() or snd_lookup_minor_data() .

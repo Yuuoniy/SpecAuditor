@@ -1,0 +1,5 @@
+Function: int v4l2_set_control ( int fd , int cid , int value )
+
+This function takes a value of 0 - 65535, and then scales that range to the
+actual range of the given v4l control id, and then if the cid exists and is
+not locked sets the cid to the scaled value.

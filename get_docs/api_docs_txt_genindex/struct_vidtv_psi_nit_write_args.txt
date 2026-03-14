@@ -1,0 +1,15 @@
+Struct: struct vidtv_psi_nit_write_args
+
+Arguments for writing a NIT section
+
+Members
+  buf
+    The destination buffer.
+  offset
+    The offset into the destination buffer.
+  nit
+    A pointer to the NIT
+  buf_sz
+    The size of the destination buffer.
+  continuity_counter
+    A pointer to the CC. Incremented on every new packet.

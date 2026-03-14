@@ -1,0 +1,25 @@
+Struct: struct drm_xe_query_engine_cycles
+
+correlate CPU and GPU timestamps
+
+Members
+  eci
+    This is input by the user and is the engine for which command
+streamer cycles is queried.
+  clockid
+    This is input by the user and is the reference clock id for
+CPU timestamp. For definition, see clock_gettime(2) and
+perf_event_open(2). Supported clock ids are CLOCK_MONOTONIC,
+CLOCK_MONOTONIC_RAW, CLOCK_REALTIME, CLOCK_BOOTTIME, CLOCK_TAI.
+  width
+    Width of the engine cycle counter in bits.
+  engine_cycles
+    Engine cycles as read from its register
+at 0x358 offset.
+  cpu_timestamp
+    CPU timestamp in ns. The timestamp is captured before
+reading the engine_cycles register using the reference clockid set by the
+user.
+  cpu_delta
+    Time delta in ns captured around reading the lower dword
+of the engine_cycles register.

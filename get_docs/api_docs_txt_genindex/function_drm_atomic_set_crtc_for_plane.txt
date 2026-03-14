@@ -1,0 +1,14 @@
+Function: int drm_atomic_set_crtc_for_plane ( struct drm_plane_state * plane_state , struct drm_crtc * crtc )
+
+set CRTC for plane
+
+Parameters
+  struct drm_plane_state *plane_state
+    the plane whose incoming state to update
+  struct drm_crtc *crtc
+    CRTC to use for the plane
+
+Description
+  Changing the assigned CRTC for a plane requires us to grab the lock and state
+for the new CRTC, as needed. This function takes care of all these details
+besides updating the pointer in the state object itself.

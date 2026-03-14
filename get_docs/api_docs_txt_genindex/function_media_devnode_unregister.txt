@@ -1,0 +1,11 @@
+Function: void media_devnode_unregister ( struct media_devnode * devnode )
+
+unregister a media device node
+
+Parameters
+  struct media_devnode *devnode
+    the device node to unregister
+
+Description
+  This unregisters the passed device. Future open calls will be met with
+errors.

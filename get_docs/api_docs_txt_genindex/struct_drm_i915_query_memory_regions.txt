@@ -1,0 +1,11 @@
+Struct: struct drm_i915_query_memory_regions
+
+
+
+Members
+  num_regions
+    Number of supported regions
+  rsvd
+    MBZ
+  regions
+    Info about each supported region

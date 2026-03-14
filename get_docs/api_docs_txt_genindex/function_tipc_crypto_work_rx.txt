@@ -1,0 +1,11 @@
+Function: void tipc_crypto_work_rx ( struct work_struct * work )
+
+Scheduled RX works handler
+
+Parameters
+  struct work_struct *work
+    the struct RX work
+
+Description
+  The function processes the previous scheduled works i.e. distributing TX key
+or attaching a received session key on RX crypto.

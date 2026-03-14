@@ -1,0 +1,14 @@
+Macro: DRM_DEV_ERROR_RATELIMITED
+
+
+
+Parameters
+  dev
+    device pointer
+  fmt
+    printf() like format string.
+  ...
+    variable arguments
+
+Description
+  Like DRM_ERROR() but won’t flood the log.

@@ -1,0 +1,11 @@
+Function: void inode_dio_wait ( struct inode * inode )
+
+wait for outstanding DIO requests to finish
+
+Parameters
+  struct inode *inode
+    inode to wait for
+
+Description
+  Waits for all pending direct I/O requests to finish so that we can
+proceed with a truncate or equivalent operation.

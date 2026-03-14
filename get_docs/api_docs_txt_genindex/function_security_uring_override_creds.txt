@@ -1,0 +1,11 @@
+Function: int security_uring_override_creds ( const struct cred * new )
+
+Check if overriding creds is allowed
+
+Parameters
+  const struct cred *new
+    new credentials
+
+Description
+  Check if the current task, executing an io_uring operation, is allowed to
+override it’s credentials with new .

@@ -1,0 +1,15 @@
+Function: bool of_console_check ( const struct device_node * dn , char * name , int index )
+
+Test and setup console for DT setup
+
+Parameters
+  const struct device_node *dn
+    Pointer to device node
+  char *name
+    Name to use for preferred console without index. ex. “ttyS”
+  int index
+    Index to use for preferred console.
+
+Description
+  Check if the given device node matches the stdout-path property in the
+/chosen node. If it does then register it as the preferred console.

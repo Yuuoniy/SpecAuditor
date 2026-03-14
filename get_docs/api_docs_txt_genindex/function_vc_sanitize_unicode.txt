@@ -1,0 +1,7 @@
+Function: int vc_sanitize_unicode ( const int c )
+
+Replace invalid Unicode code points with U+FFFD
+
+Parameters
+  const int c
+    the received code point

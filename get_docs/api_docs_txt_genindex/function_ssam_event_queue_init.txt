@@ -1,0 +1,9 @@
+Function: void ssam_event_queue_init ( struct ssam_cplt * cplt , struct ssam_event_queue * evq )
+
+Initialize an event queue.
+
+Parameters
+  struct ssam_cplt *cplt
+    The completion system on which the queue resides.
+  struct ssam_event_queue *evq
+    The event queue to initialize.

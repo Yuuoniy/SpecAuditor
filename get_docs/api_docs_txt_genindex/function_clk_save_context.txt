@@ -1,0 +1,12 @@
+Function: int clk_save_context ( void )
+
+save clock context for poweroff
+
+Parameters
+  void
+    no arguments
+
+Description
+  Saves the context of the clock register for powerstates in which the
+contents of the registers will be lost. Occurs deep within the suspend
+code so locking is not necessary.

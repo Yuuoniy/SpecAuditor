@@ -1,0 +1,11 @@
+Function: int v4l2_src_change_event_subdev_subscribe ( struct v4l2_subdev * sd , struct v4l2_fh * fh , struct v4l2_event_subscription * sub )
+
+Variant of v4l2_event_subscribe() , meant to subscribe only events of the type V4L2_EVENT_SOURCE_CHANGE .
+
+Parameters
+  struct v4l2_subdev *sd
+    pointer to struct v4l2_subdev
+  struct v4l2_fh *fh
+    pointer to struct v4l2_fh
+  struct v4l2_event_subscription *sub
+    pointer to struct v4l2_event_subscription

@@ -1,0 +1,12 @@
+Function: void uart_handle_dcd_change ( struct uart_port * uport , bool active )
+
+handle a change of carrier detect state
+
+Parameters
+  struct uart_port *uport
+    uart_port structure for the open port
+  bool active
+    new carrier detect status
+
+Description
+  Caller must hold uport->lock.

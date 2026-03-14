@@ -1,0 +1,10 @@
+Function: void v4l2_fwnode_connector_free ( struct v4l2_fwnode_connector * connector )
+
+free the V4L2 connector acquired memory
+
+Parameters
+  struct v4l2_fwnode_connector *connector
+    the V4L2 connector resources of which are to be released
+
+Description
+  Free all allocated memory and put all links acquired by v4l2_fwnode_connector_parse() and v4l2_fwnode_connector_add_link() .

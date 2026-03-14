@@ -1,0 +1,2 @@
+Function: struct cec_adapter * cec_allocate_adapter ( const struct cec_adap_ops * ops , void * priv , const char * name , u32 caps , u8 available_las ) ;
+

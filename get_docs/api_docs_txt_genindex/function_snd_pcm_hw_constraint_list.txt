@@ -1,0 +1,16 @@
+Function: int snd_pcm_hw_constraint_list ( struct snd_pcm_runtime * runtime , unsigned int cond , snd_pcm_hw_param_t var , const struct snd_pcm_hw_constraint_list * l )
+
+apply a list of constraints to a parameter
+
+Parameters
+  struct snd_pcm_runtime *runtime
+    PCM runtime instance
+  unsigned int cond
+    condition bits
+  snd_pcm_hw_param_t var
+    hw_params variable to apply the list constraint
+  const struct snd_pcm_hw_constraint_list *l
+    list
+
+Description
+  Apply the list of constraints to an interval parameter.

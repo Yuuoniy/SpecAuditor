@@ -1,0 +1,17 @@
+Function: struct host1x_driver
+
+host1x logical device driver
+
+Members
+  driver
+    core driver
+  subdevs
+    table of OF device IDs matching subdevices for this driver
+  list
+    list node for the driver
+  probe
+    called when the host1x logical device is probed
+  remove
+    called when the host1x logical device is removed
+  shutdown
+    called when the host1x logical device is shut down

@@ -1,0 +1,10 @@
+Function: void ata_host_resume ( struct ata_host * host )
+
+resume host
+
+Parameters
+  struct ata_host *host
+    host to resume
+
+Description
+  Resume host .  Actual operation is performed by port resume.

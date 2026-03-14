@@ -1,0 +1,15 @@
+Struct: struct mdio_bus_stats
+
+Statistics counters for MDIO busses
+
+Members
+  transfers
+    Total number of transfers, i.e. writes + reads
+  errors
+    Number of MDIO transfers that returned an error
+  writes
+    Number of write transfers
+  reads
+    Number of read transfers
+  syncp
+    Synchronisation for incrementing statistics

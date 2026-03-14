@@ -1,0 +1,12 @@
+Function: int snd_soc_component_get_jack_type ( struct snd_soc_component * component )
+
+
+
+Parameters
+  struct snd_soc_component *component
+    COMPONENTs
+
+Description
+  Returns the jack type of the component
+This can either be the supported type or one read from
+devicetree with the property: jack-type.

@@ -1,0 +1,11 @@
+Function: int phy_write ( struct phy_device * phydev , u32 regnum , u16 val )
+
+Convenience function for writing a given PHY register
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+  u32 regnum
+    register number to write
+  u16 val
+    value to write to regnum

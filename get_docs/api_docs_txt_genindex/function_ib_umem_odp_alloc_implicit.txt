@@ -1,0 +1,14 @@
+Function: struct ib_umem_odp * ib_umem_odp_alloc_implicit ( struct ib_device * device , int access )
+
+Allocate a parent implicit ODP umem
+
+Parameters
+  struct ib_device *device
+    IB device to create UMEM
+  int access
+    ib_reg_mr access flags
+
+Description
+  Implicit ODP umems do not have a VA range and do not have any page lists.
+They exist only to hold the per_mm reference to help the driver create
+children umems.

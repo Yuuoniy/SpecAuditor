@@ -1,0 +1,27 @@
+Struct: struct media_entity_operations
+
+Media entity operations
+
+Members
+  get_fwnode_pad
+    Return the pad number based on a fwnode endpoint or
+a negative value on error. This operation can be used
+to map a fwnode to a media pad number. Optional.
+  link_setup
+    Notify the entity of link changes. The operation can
+return an error, in which case link setup will be
+cancelled. Optional.
+  link_validate
+    Return whether a link is valid from the entity point of
+view. The media_pipeline_start() function
+validates all links by calling this operation. Optional.
+  has_pad_interdep
+    Return whether two pads of the entity are
+interdependent. If two pads are interdependent they are
+part of the same pipeline and enabling one of the pads
+means that the other pad will become “locked” and
+doesn’t allow configuration changes. pad0 and pad1 are
+guaranteed to not both be sinks or sources. Never call
+the . has_pad_interdep() operation directly, always use media_entity_has_pad_interdep() .
+Optional: If the operation isn’t implemented all pads
+will be considered as interdependent.

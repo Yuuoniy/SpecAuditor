@@ -1,0 +1,10 @@
+Function: int security_inode_readlink ( struct dentry * dentry )
+
+Check if reading a symbolic link is allowed
+
+Parameters
+  struct dentry *dentry
+    link
+
+Description
+  Check the permission to read the symbolic link.

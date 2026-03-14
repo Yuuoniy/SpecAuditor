@@ -1,0 +1,16 @@
+Function: void amdgpu_vm_free_mapping ( struct amdgpu_device * adev , struct amdgpu_vm * vm , struct amdgpu_bo_va_mapping * mapping , struct dma_fence * fence )
+
+free a mapping
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+  struct amdgpu_vm *vm
+    requested vm
+  struct amdgpu_bo_va_mapping *mapping
+    mapping to be freed
+  struct dma_fence *fence
+    fence of the unmap operation
+
+Description
+  Free a mapping and make sure we decrease the PRT usage count if applicable.

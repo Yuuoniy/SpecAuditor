@@ -1,0 +1,14 @@
+Function: int vfs_readlink ( struct dentry * dentry , char __user * buffer , int buflen )
+
+copy symlink body into userspace buffer
+
+Parameters
+  struct dentry *dentry
+    dentry on which to get symbolic link
+  char __user *buffer
+    user memory pointer
+  int buflen
+    size of buffer
+
+Description
+  Does not touch atime.  That’s up to the caller if necessary

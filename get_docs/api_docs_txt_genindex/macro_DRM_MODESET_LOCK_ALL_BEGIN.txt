@@ -1,0 +1,18 @@
+Macro: DRM_MODESET_LOCK_ALL_BEGIN
+
+
+
+Parameters
+  dev
+    drm device
+  ctx
+    local modeset acquire context, will be dereferenced
+  flags
+    DRM_MODESET_ACQUIRE_* flags to pass to drm_modeset_acquire_init()
+  ret
+    local ret/err/etc variable to track error status
+
+Description
+  Use these macros to simplify grabbing all modeset locks using a local
+context. This has the advantage of reducing boilerplate, but also properly
+checking return values where appropriate.

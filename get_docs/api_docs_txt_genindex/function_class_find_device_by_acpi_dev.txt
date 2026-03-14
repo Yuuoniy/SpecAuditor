@@ -1,0 +1,9 @@
+Function: struct device * class_find_device_by_acpi_dev ( const struct class * class , const struct acpi_device * adev )
+
+device iterator for locating a particular device matching the ACPI_COMPANION device.
+
+Parameters
+  const struct class *class
+    class type
+  const struct acpi_device *adev
+    ACPI_COMPANION device to match.

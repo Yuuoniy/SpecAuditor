@@ -1,0 +1,14 @@
+Function: struct ssam_controller * ssam_client_bind ( struct device * client )
+
+Bind an arbitrary client device to the controller.
+
+Parameters
+  struct device *client
+    The client device.
+
+Description
+  Link an arbitrary client device to the controller by creating a device link
+between it as consumer and the main controller device as provider. This
+function can be used for non-SSAM devices to guarantee that the controller
+returned by this function is valid for as long as the driver of the client
+device is bound, and that proper suspend and resume ordering is guaranteed.

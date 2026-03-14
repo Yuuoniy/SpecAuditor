@@ -1,0 +1,12 @@
+Macro: drm_exec_until_all_locked
+
+
+
+Parameters
+  exec
+    drm_exec object
+
+Description
+  Core functionality of the drm_exec object. Loops until all GEM objects are
+locked and no more contention exists. At the beginning of the loop it is
+guaranteed that no GEM object is locked.

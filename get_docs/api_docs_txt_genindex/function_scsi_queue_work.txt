@@ -1,0 +1,14 @@
+Function: int scsi_queue_work ( struct Scsi_Host * shost , struct work_struct * work )
+
+Queue work to the Scsi_Host workqueue.
+
+Parameters
+  struct Scsi_Host *shost
+    Pointer to Scsi_Host.
+  struct work_struct *work
+    Work to queue for execution.
+
+Description
+  1 - work queued for execution
+0 - work is already queued
+-EINVAL - work queue doesn’t exist

@@ -1,0 +1,13 @@
+Struct: struct fw_cdev_queue_iso
+
+Queue isochronous packets for I/O
+
+Members
+  packets
+    Userspace pointer to an array of fw_cdev_iso_packet
+  data
+    Pointer into mmap()’ed payload buffer
+  size
+    Size of the packets array, in bytes
+  handle
+    Isochronous context handle

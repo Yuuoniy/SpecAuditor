@@ -1,0 +1,21 @@
+Function: vm_fault_t dax_iomap_fault ( struct vm_fault * vmf , unsigned int order , unsigned long * pfnp , int * iomap_errp , const struct iomap_ops * ops )
+
+handle a page fault on a DAX file
+
+Parameters
+  struct vm_fault *vmf
+    The description of the fault
+  unsigned int order
+    Order of the page to fault in
+  unsigned long *pfnp
+    PFN to insert for synchronous faults if fsync is required
+  int *iomap_errp
+    Storage for detailed error code in case of error
+  const struct iomap_ops *ops
+    Iomap ops passed from the file system
+
+Description
+  When a page fault occurs, filesystems may call this helper in
+their fault handler for DAX files. dax_iomap_fault() assumes the caller
+has done all the necessary locking for page fault to proceed
+successfully.

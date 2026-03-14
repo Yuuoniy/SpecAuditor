@@ -1,0 +1,7 @@
+Struct: struct drm_gpuva_op_prefetch
+
+GPU VA prefetch operation
+
+Members
+  va
+    the drm_gpuva to prefetch

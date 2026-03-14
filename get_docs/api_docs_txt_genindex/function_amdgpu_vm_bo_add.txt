@@ -1,0 +1,15 @@
+Function: struct amdgpu_bo_va * amdgpu_vm_bo_add ( struct amdgpu_device * adev , struct amdgpu_vm * vm , struct amdgpu_bo * bo )
+
+add a bo to a specific vm
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+  struct amdgpu_vm *vm
+    requested vm
+  struct amdgpu_bo *bo
+    amdgpu buffer object
+
+Description
+  Add bo into the requested vm.
+Add bo to the list of bos associated with the vm

@@ -1,0 +1,10 @@
+Function: void d_rehash ( struct dentry * entry )
+
+add an entry back to the hash
+
+Parameters
+  struct dentry * entry
+    dentry to add to the hash
+
+Description
+  Adds a dentry to the hash according to its name.

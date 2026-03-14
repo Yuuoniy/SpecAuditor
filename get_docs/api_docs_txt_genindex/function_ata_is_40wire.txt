@@ -1,0 +1,11 @@
+Function: int ata_is_40wire ( struct ata_device * dev )
+
+check drive side detection
+
+Parameters
+  struct ata_device *dev
+    device
+
+Description
+  Perform drive side detection decoding, allowing for device vendors
+who can’t follow the documentation.

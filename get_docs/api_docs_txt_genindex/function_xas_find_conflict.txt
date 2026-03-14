@@ -1,0 +1,10 @@
+Function: void * xas_find_conflict ( struct xa_state * xas )
+
+Find the next present entry in a range.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+
+Description
+  The xas describes both a range and a position within that range.

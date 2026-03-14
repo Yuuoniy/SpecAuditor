@@ -1,0 +1,11 @@
+Function: int i3c_master_bus_init ( struct i3c_master_controller * master )
+
+initialize an I3C bus
+
+Parameters
+  struct i3c_master_controller *master
+    main master initializing the bus
+
+Description
+  This function is following all initialisation steps described in the I3C
+specification:

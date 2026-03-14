@@ -1,0 +1,21 @@
+Struct: struct ccs_pll_limits
+
+CCS PLL limits
+
+Members
+  min_ext_clk_freq_hz
+    Minimum external clock frequency
+  max_ext_clk_freq_hz
+    Maximum external clock frequency
+  vt_fr
+    Video timing front-end limits
+  vt_bk
+    Video timing back-end limits
+  op_fr
+    Operational timing front-end limits
+  op_bk
+    Operational timing back-end limits
+  min_line_length_pck_bin
+    Minimum line length in pixels, with binning
+  min_line_length_pck
+    Minimum line length in pixels without binning

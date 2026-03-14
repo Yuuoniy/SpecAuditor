@@ -1,0 +1,29 @@
+Struct: struct iser_tx_desc
+
+iSER TX descriptor
+
+Members
+  iser_header
+    iser header
+  iscsi_header
+    iscsi header
+  type
+    command/control/dataout
+  dma_addr
+    header buffer dma_address
+  tx_sg
+    sg[0] points to iser/iscsi headers
+sg[1] optionally points to either of immediate data
+unsolicited data-out or control
+  num_sge
+    number sges used on this TX task
+  cqe
+    completion handler
+  mapped
+    Is the task header mapped
+  reg_wr
+    registration WR
+  send_wr
+    send WR
+  inv_wr
+    invalidate WR

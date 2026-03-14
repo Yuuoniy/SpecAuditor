@@ -1,0 +1,17 @@
+Function: int vfs_lock_file ( struct file * filp , unsigned int cmd , struct file_lock * fl , struct file_lock * conf )
+
+file byte range lock
+
+Parameters
+  struct file *filp
+    The file to apply the lock to
+  unsigned int cmd
+    type of locking operation (F_SETLK, F_GETLK, etc.)
+  struct file_lock *fl
+    The lock to be applied
+  struct file_lock *conf
+    Place to return a copy of the conflicting lock, if found.
+
+Description
+  A caller that doesn’t care about the conflicting lock may pass NULL
+as the final argument.

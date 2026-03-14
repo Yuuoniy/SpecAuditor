@@ -1,0 +1,13 @@
+Function: int ssh_ptl_submit ( struct ssh_ptl * ptl , struct ssh_packet * p )
+
+Submit a packet to the transport layer.
+
+Parameters
+  struct ssh_ptl *ptl
+    The packet transport layer to submit the packet to.
+  struct ssh_packet *p
+    The packet to submit.
+
+Description
+  Submits a new packet to the transport layer, queuing it to be sent. This
+function should not be used for re-submission.

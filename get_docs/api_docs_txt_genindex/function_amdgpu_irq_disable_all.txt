@@ -1,0 +1,10 @@
+Function: void amdgpu_irq_disable_all ( struct amdgpu_device * adev )
+
+disable all interrupts
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device pointer
+
+Description
+  Disable all types of interrupts from all sources.

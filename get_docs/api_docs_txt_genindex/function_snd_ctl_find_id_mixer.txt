@@ -1,0 +1,12 @@
+Function: struct snd_kcontrol * snd_ctl_find_id_mixer ( struct snd_card * card , const char * name )
+
+find the control instance with the given name string
+
+Parameters
+  struct snd_card *card
+    the card instance
+  const char *name
+    the name string
+
+Description
+  Finds the control instance with the given name and SNDRV_CTL_ELEM_IFACE_MIXER . Other fields are set to zero.

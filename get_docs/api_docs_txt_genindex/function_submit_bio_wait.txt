@@ -1,0 +1,10 @@
+Function: int submit_bio_wait ( struct bio * bio )
+
+submit a bio, and wait until it completes
+
+Parameters
+  struct bio *bio
+    The struct bio which describes the I/O
+
+Description
+  Simple wrapper around submit_bio() . Returns 0 on success, or the error from bio_endio() on failure.

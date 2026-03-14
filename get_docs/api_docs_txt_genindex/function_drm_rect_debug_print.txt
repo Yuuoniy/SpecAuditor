@@ -1,0 +1,11 @@
+Function: void drm_rect_debug_print ( const char * prefix , const struct drm_rect * r , bool fixed_point )
+
+print the rectangle information
+
+Parameters
+  const char *prefix
+    prefix string
+  const struct drm_rect *r
+    rectangle to print
+  bool fixed_point
+    rectangle is in 16.16 fixed point format

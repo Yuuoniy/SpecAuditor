@@ -1,0 +1,10 @@
+Function: bool dev_nit_active_rcu ( const struct net_device * dev )
+
+return true if any network interface taps are in use
+
+Parameters
+  const struct net_device *dev
+    network device to check for the presence of taps
+
+Description
+  The caller must hold the RCU lock

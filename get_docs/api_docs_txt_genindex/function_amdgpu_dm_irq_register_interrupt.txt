@@ -1,0 +1,19 @@
+Function: void * amdgpu_dm_irq_register_interrupt ( struct amdgpu_device * adev , struct dc_interrupt_params * int_params , void ( * ih ) ( void * ) , void * handler_args )
+
+Register a handler within DM.
+
+Parameters
+  struct amdgpu_device *adev
+    The base driver device containing the DM device.
+  struct dc_interrupt_params *int_params
+    Interrupt parameters containing the source, and handler context
+  void (*ih)(void *)
+    Function pointer to the interrupt handler to register
+  void *handler_args
+    Arguments passed to the handler when the interrupt occurs
+
+Description
+  Register an interrupt handler for the given IRQ source, under the given
+context. The context can either be high or low. High context handlers are
+executed directly within ISR context, while low context is executed within a
+workqueue, thereby allowing operations that sleep.

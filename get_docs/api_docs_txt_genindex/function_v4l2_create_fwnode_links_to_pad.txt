@@ -1,0 +1,18 @@
+Function: int v4l2_create_fwnode_links_to_pad ( struct v4l2_subdev * src_sd , struct media_pad * sink , u32 flags )
+
+Create fwnode-based links from a source subdev to a sink pad.
+
+Parameters
+  struct v4l2_subdev *src_sd
+    pointer to a source subdev
+  struct media_pad *sink
+    pointer to a sink pad
+  u32 flags
+    the link flags
+
+Description
+  This function searches for fwnode endpoint connections from a source
+subdevice to a single sink pad, and if suitable connections are found,
+translates them into media links to that pad. The function can be
+called by the sink, in its v4l2-async notifier bound callback, to create
+links from a bound source subdevice.

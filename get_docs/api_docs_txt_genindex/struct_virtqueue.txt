@@ -1,0 +1,23 @@
+Struct: struct virtqueue
+
+a queue to register buffers for sending or receiving.
+
+Members
+  list
+    the chain of virtqueues for this device
+  callback
+    the function to call when buffers are consumed (can be NULL).
+  name
+    the name of this virtqueue (mainly for debugging)
+  vdev
+    the virtio device this queue was created for.
+  index
+    the zero-based ordinal number for this queue.
+  num_free
+    number of elements we expect to be able to fit.
+  num_max
+    the maximum number of elements supported by the device.
+  reset
+    vq is in reset state or not.
+  priv
+    a pointer for the virtqueue implementation to use.

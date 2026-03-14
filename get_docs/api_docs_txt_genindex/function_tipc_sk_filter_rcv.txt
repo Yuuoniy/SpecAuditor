@@ -1,0 +1,15 @@
+Function: void tipc_sk_filter_rcv ( struct sock * sk , struct sk_buff * skb , struct sk_buff_head * xmitq )
+
+validate incoming message
+
+Parameters
+  struct sock *sk
+    socket
+  struct sk_buff *skb
+    pointer to message.
+  struct sk_buff_head *xmitq
+    output message area (FIXME)
+
+Description
+  Enqueues message on receive queue if acceptable; optionally handles
+disconnect indication for a connected socket.

@@ -1,0 +1,12 @@
+Function: void * mas_store ( struct ma_state * mas , void * entry )
+
+Store an entry .
+
+Parameters
+  struct ma_state *mas
+    The maple state.
+  void *entry
+    The entry to store.
+
+Description
+  The mas->index and mas->last is used to set the range for the entry .

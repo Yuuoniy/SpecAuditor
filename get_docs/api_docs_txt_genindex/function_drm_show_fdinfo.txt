@@ -1,0 +1,13 @@
+Function: void drm_show_fdinfo ( struct seq_file * m , struct file * f )
+
+helper for drm file fops
+
+Parameters
+  struct seq_file *m
+    output stream
+  struct file *f
+    the device file instance
+
+Description
+  Helper to implement fdinfo, for userspace to query usage stats, etc, of a
+process using the GPU.  See also drm_driver.show_fdinfo .

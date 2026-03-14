@@ -1,0 +1,9 @@
+Function: int drm_dsc_dp_rc_buffer_size ( u8 rc_buffer_block_size , u8 rc_buffer_size )
+
+get rc buffer size in bytes
+
+Parameters
+  u8 rc_buffer_block_size
+    block size code, according to DPCD offset 62h
+  u8 rc_buffer_size
+    number of blocks - 1, according to DPCD offset 63h

@@ -1,0 +1,18 @@
+Function: int srpt_build_cmd_rsp ( struct srpt_rdma_ch * ch , struct srpt_send_ioctx * ioctx , u64 tag , int status )
+
+build a SRP_RSP response
+
+Parameters
+  struct srpt_rdma_ch *ch
+    RDMA channel through which the request has been received.
+  struct srpt_send_ioctx *ioctx
+    I/O context associated with the SRP_CMD request. The response will
+be built in the buffer ioctx->buf points at and hence this function will
+overwrite the request data.
+  u64 tag
+    tag of the request for which this response is being generated.
+  int status
+    value for the STATUS field of the SRP_RSP information unit.
+
+Description
+  Returns the size in bytes of the SRP_RSP response.

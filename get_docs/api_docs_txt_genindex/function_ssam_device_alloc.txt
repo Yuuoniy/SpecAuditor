@@ -1,0 +1,15 @@
+Function: struct ssam_device * ssam_device_alloc ( struct ssam_controller * ctrl , struct ssam_device_uid uid )
+
+Allocate and initialize a SSAM client device.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller under which the device should be added.
+  struct ssam_device_uid uid
+    The UID of the device to be added.
+
+Description
+  Allocates and initializes a new client device. The parent of the device
+will be set to the controller device and the name will be set based on the
+UID. Note that the device still has to be added via ssam_device_add() .
+Refer to that function for more details.

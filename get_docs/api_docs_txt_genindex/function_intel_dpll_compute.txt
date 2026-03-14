@@ -1,0 +1,14 @@
+Function: int intel_dpll_compute ( struct intel_atomic_state * state , struct intel_crtc * crtc , struct intel_encoder * encoder )
+
+compute DPLL state CRTC and encoder combination
+
+Parameters
+  struct intel_atomic_state *state
+    atomic state
+  struct intel_crtc *crtc
+    CRTC to compute DPLLs for
+  struct intel_encoder *encoder
+    encoder
+
+Description
+  This function computes the DPLL state for the given CRTC and encoder.

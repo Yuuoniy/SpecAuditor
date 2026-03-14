@@ -1,0 +1,7 @@
+Function: void v4l2_device_unregister ( struct v4l2_device * v4l2_dev )
+
+Unregister all sub-devices and any other resources related to v4l2_dev .
+
+Parameters
+  struct v4l2_device *v4l2_dev
+    pointer to struct v4l2_device

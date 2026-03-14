@@ -1,0 +1,10 @@
+Function: struct sas_rphy * sas_end_device_alloc ( struct sas_port * parent )
+
+allocate an rphy for an end device
+
+Parameters
+  struct sas_port *parent
+    which port
+
+Description
+  Allocates an SAS remote PHY structure, connected to parent .

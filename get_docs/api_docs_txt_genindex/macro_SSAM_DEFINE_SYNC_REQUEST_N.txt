@@ -1,0 +1,16 @@
+Macro: SSAM_DEFINE_SYNC_REQUEST_N
+
+
+
+Parameters
+  name
+    Name of the generated function.
+  spec...
+    Specification ( struct ssam_request_spec ) defining the request.
+
+Description
+  Defines a function executing the synchronous SAM request specified by spec , with the request having neither argument nor return value. The
+generated function takes care of setting up the request struct and buffer
+allocation, as well as execution of the request itself, returning once the
+request has been fully completed. The required transport buffer will be
+allocated on the stack.

@@ -1,0 +1,7 @@
+Function: void eth_addr_dec ( u8 * addr )
+
+Decrement the given MAC address
+
+Parameters
+  u8 *addr
+    Pointer to a six-byte array containing Ethernet address to decrement

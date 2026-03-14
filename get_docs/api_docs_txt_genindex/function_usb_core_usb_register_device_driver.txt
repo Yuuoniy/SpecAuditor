@@ -1,0 +1,14 @@
+Function: int usb_register_device_driver ( struct usb_device_driver * new_udriver , struct module * owner )
+
+register a USB device (not interface) driver
+
+Parameters
+  struct usb_device_driver *new_udriver
+    USB operations for the device driver
+  struct module *owner
+    module owner of this driver.
+
+Description
+  Registers a USB device driver with the USB core.  The list of
+unattached devices will be rescanned whenever a new driver is
+added, allowing the new driver to attach to any recognized devices.

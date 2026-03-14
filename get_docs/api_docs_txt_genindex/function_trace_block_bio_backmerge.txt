@@ -1,0 +1,10 @@
+Function: void trace_block_bio_backmerge ( struct bio * bio )
+
+merging block operation to the end of an existing operation
+
+Parameters
+  struct bio *bio
+    new block operation to merge
+
+Description
+  Merging block request bio to the end of an existing block request.

@@ -1,0 +1,21 @@
+Function: int idr_alloc_u32 ( struct idr * idr , void * ptr , u32 * nextid , unsigned long max , gfp_t gfp )
+
+Allocate an ID.
+
+Parameters
+  struct idr *idr
+    IDR handle.
+  void *ptr
+    Pointer to be associated with the new ID.
+  u32 *nextid
+    Pointer to an ID.
+  unsigned long max
+    The maximum ID to allocate (inclusive).
+  gfp_t gfp
+    Memory allocation flags.
+
+Description
+  Allocates an unused ID in the range specified by nextid and max .
+Note that max is inclusive whereas the end parameter to idr_alloc() is exclusive.  The new ID is assigned to nextid before the pointer
+is inserted into the IDR, so if nextid points into the object pointed
+to by ptr , a concurrent lookup will not find an uninitialised ID.

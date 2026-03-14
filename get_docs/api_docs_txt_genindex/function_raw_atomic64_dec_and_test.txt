@@ -1,0 +1,10 @@
+Function: bool raw_atomic64_dec_and_test ( atomic64_t * v )
+
+atomic decrement and test if zero with full ordering
+
+Parameters
+  atomic64_t *v
+    pointer to atomic64_t
+
+Description
+  Atomically updates v to ( v - 1) with full ordering.

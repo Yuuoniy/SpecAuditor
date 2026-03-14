@@ -1,0 +1,11 @@
+Function: void blk_mark_disk_dead ( struct gendisk * disk )
+
+mark a disk as dead
+
+Parameters
+  struct gendisk *disk
+    disk to mark as dead
+
+Description
+  Mark as disk as dead (e.g. surprise removed) and don’t accept any new I/O
+to this disk.

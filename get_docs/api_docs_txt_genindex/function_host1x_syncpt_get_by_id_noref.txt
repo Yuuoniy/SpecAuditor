@@ -1,0 +1,9 @@
+Function: struct host1x_syncpt * host1x_syncpt_get_by_id_noref ( struct host1x * host , unsigned int id )
+
+obtain a syncpoint by ID but don’t increase the refcount.
+
+Parameters
+  struct host1x *host
+    host1x controller
+  unsigned int id
+    syncpoint ID

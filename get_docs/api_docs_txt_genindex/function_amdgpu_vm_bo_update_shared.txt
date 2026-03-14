@@ -1,0 +1,11 @@
+Function: void amdgpu_vm_bo_update_shared ( struct amdgpu_bo * bo )
+
+callback when bo gets shared/unshared
+
+Parameters
+  struct amdgpu_bo *bo
+    amdgpu buffer object
+
+Description
+  Update the per VM stats for all the vm if needed from private to shared or
+vice versa.

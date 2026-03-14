@@ -1,0 +1,16 @@
+Function: int tty_mode_ioctl ( struct tty_struct * tty , unsigned int cmd , unsigned long arg )
+
+mode related ioctls
+
+Parameters
+  struct tty_struct *tty
+    tty for the ioctl
+  unsigned int cmd
+    command
+  unsigned long arg
+    ioctl argument
+
+Description
+  Perform non-line discipline specific mode control ioctls. This is designed
+to be called by line disciplines to ensure they provide consistent mode
+setting.

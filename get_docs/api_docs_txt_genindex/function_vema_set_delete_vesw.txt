@@ -1,0 +1,16 @@
+Function: void vema_set_delete_vesw ( struct opa_vnic_vema_port * port , struct opa_vnic_vema_mad * recvd_mad , struct opa_vnic_vema_mad * rsp_mad )
+
+Reset VESW info to POD values
+
+Parameters
+  struct opa_vnic_vema_port *port
+    source port on which MAD was received
+  struct opa_vnic_vema_mad *recvd_mad
+    pointer to the received mad
+  struct opa_vnic_vema_mad *rsp_mad
+    pointer to respose mad
+
+Description
+  This function clears all the fields of veswport info for the requested vesw
+and sets them back to the power-on default values. It does not delete the
+vesw.

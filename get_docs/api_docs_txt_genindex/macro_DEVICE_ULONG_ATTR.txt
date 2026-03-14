@@ -1,0 +1,15 @@
+Macro: DEVICE_ULONG_ATTR
+
+
+
+Parameters
+  _name
+    Attribute name.
+  _mode
+    File mode.
+  _var
+    Identifier of unsigned long.
+
+Description
+  Like DEVICE_ATTR() , but _show and _store are automatically provided
+such that reads and writes to the attribute from userspace affect _var .

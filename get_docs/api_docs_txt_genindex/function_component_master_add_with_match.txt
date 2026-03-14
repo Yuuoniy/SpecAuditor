@@ -1,0 +1,14 @@
+Function: int component_master_add_with_match ( struct device * parent , const struct component_master_ops * ops , struct component_match * match )
+
+register an aggregate driver
+
+Parameters
+  struct device *parent
+    parent device of the aggregate driver
+  const struct component_master_ops *ops
+    callbacks for the aggregate driver
+  struct component_match *match
+    component match list for the aggregate driver
+
+Description
+  Registers a new aggregate driver consisting of the components added to match by calling one of the component_match_add() functions. Once all components in match are available, it will be assembled by calling component_master_ops.bind from ops . Must be unregistered by calling component_master_del() .

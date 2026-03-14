@@ -1,0 +1,13 @@
+Function: u8 * ccw_device_get_util_str ( struct ccw_device * cdev , int chp_idx )
+
+return newly allocated utility strings
+
+Parameters
+  struct ccw_device *cdev
+    device to obtain the utility strings for
+  int chp_idx
+    index of the channel path
+
+Description
+  On success return a newly allocated copy of the utility strings
+associated with the given channel path. Return NULL on error.

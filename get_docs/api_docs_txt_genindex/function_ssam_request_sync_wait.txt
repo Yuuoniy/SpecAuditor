@@ -1,0 +1,14 @@
+Function: int ssam_request_sync_wait ( struct ssam_request_sync * rqst )
+
+Wait for completion of a synchronous request.
+
+Parameters
+  struct ssam_request_sync *rqst
+    The request to wait for.
+
+Description
+  Wait for completion and release of a synchronous request. After this
+function terminates, the request is guaranteed to have left the transport
+system. After successful submission of a request, this function must be
+called before accessing the response of the request, freeing the request,
+or freeing any of the buffers associated with the request.

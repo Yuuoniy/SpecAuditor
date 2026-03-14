@@ -1,0 +1,22 @@
+Function: int gen_replace_estimator ( struct gnet_stats_basic_sync * bstats , struct gnet_stats_basic_sync __percpu * cpu_bstats , struct net_rate_estimator __rcu * * rate_est , spinlock_t * lock , bool running , struct nlattr * opt )
+
+replace rate estimator configuration
+
+Parameters
+  struct gnet_stats_basic_sync *bstats
+    basic statistics
+  struct gnet_stats_basic_sync __percpu *cpu_bstats
+    bstats per cpu
+  struct net_rate_estimator __rcu **rate_est
+    rate estimator statistics
+  spinlock_t *lock
+    lock for statistics and control path
+  bool running
+    true if bstats represents a running qdisc, thus bstats ’
+internal values might change during basic reads. Only used
+if cpu_bstats is NULL
+  struct nlattr *opt
+    rate estimator configuration TLV
+
+Description
+  Replaces the configuration of a rate estimator by calling gen_kill_estimator() and gen_new_estimator() .

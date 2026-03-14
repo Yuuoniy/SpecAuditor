@@ -1,0 +1,17 @@
+Function: int jbd2_journal_extend ( handle_t * handle , int nblocks , int revoke_records )
+
+extend buffer credits.
+
+Parameters
+  handle_t *handle
+    handle to ‘extend’
+  int nblocks
+    nr blocks to try to extend by.
+  int revoke_records
+    number of revoke records to try to extend by.
+
+Description
+  Some transactions, such as large extends and truncates, can be done
+atomically all at once or in several stages.  The operation requests
+a credit for a number of buffer modifications in advance, but can
+extend its credit if it needs more.

@@ -1,0 +1,12 @@
+Function: int nand_reset_interface ( struct nand_chip * chip , int chipnr )
+
+Reset data interface and timings
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+  int chipnr
+    Internal die id
+
+Description
+  Reset the Data interface and timings to ONFI mode 0.

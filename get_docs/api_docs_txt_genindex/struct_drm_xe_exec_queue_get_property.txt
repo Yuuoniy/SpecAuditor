@@ -1,0 +1,15 @@
+Struct: struct drm_xe_exec_queue_get_property
+
+Input of DRM_IOCTL_XE_EXEC_QUEUE_GET_PROPERTY
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  exec_queue_id
+    Exec queue ID
+  property
+    property to get
+  value
+    property value
+  reserved
+    Reserved

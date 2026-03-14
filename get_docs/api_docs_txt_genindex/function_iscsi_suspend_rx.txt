@@ -1,0 +1,7 @@
+Function: void iscsi_suspend_rx ( struct iscsi_conn * conn )
+
+Prevent recvwork from running again.
+
+Parameters
+  struct iscsi_conn *conn
+    iscsi conn to stop.

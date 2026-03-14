@@ -1,0 +1,21 @@
+Function: int virtqueue_add_sgs ( struct virtqueue * _vq , struct scatterlist * sgs [ ] , unsigned int out_sgs , unsigned int in_sgs , void * data , gfp_t gfp )
+
+expose buffers to other end
+
+Parameters
+  struct virtqueue *_vq
+    the struct virtqueue we’re talking about.
+  struct scatterlist *sgs[]
+    array of terminated scatterlists.
+  unsigned int out_sgs
+    the number of scatterlists readable by other side
+  unsigned int in_sgs
+    the number of scatterlists which are writable (after readable ones)
+  void *data
+    the token identifying the buffer.
+  gfp_t gfp
+    how to do memory allocations (if necessary).
+
+Description
+  Caller must ensure we don’t call this with other virtqueue operations
+at the same time (except where noted).

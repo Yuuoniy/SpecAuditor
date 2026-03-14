@@ -1,0 +1,12 @@
+Function: struct fc_vport * fc_vport_create ( struct Scsi_Host * shost , int channel , struct fc_vport_identifiers * ids )
+
+Admin App or LLDD requests creation of a vport
+
+Parameters
+  struct Scsi_Host *shost
+    scsi host the virtual port is connected to.
+  int channel
+    channel on shost port connected to.
+  struct fc_vport_identifiers *ids
+    The world wide names, FC4 port roles, etc for
+the virtual port.

@@ -1,0 +1,17 @@
+Struct: struct v4l2_fwnode_link
+
+a link between two endpoints
+
+Members
+  local_node
+    pointer to device_node of this endpoint
+  local_port
+    identifier of the port this endpoint belongs to
+  local_id
+    identifier of the id this endpoint belongs to
+  remote_node
+    pointer to device_node of the remote endpoint
+  remote_port
+    identifier of the port the remote endpoint belongs to
+  remote_id
+    identifier of the id the remote endpoint belongs to

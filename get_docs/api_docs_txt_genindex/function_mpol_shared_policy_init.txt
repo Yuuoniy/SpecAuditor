@@ -1,0 +1,15 @@
+Function: void mpol_shared_policy_init ( struct shared_policy * sp , struct mempolicy * mpol )
+
+initialize shared policy for inode
+
+Parameters
+  struct shared_policy *sp
+    pointer to inode shared policy
+  struct mempolicy *mpol
+    struct mempolicy to install
+
+Description
+  Install non-NULL mpol in inode’s shared policy rb-tree.
+On entry, the current task has a reference on a non-NULL mpol .
+This must be released on exit.
+This is called at get_inode() calls and we can use GFP_KERNEL.

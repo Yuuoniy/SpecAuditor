@@ -1,0 +1,11 @@
+Function: void ata_qc_free ( struct ata_queued_cmd * qc )
+
+free unused ata_queued_cmd
+
+Parameters
+  struct ata_queued_cmd *qc
+    Command to complete
+
+Description
+  Designed to free unused ata_queued_cmd object
+in case something prevents using it.

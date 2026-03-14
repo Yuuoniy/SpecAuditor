@@ -1,0 +1,9 @@
+Function: void * devm_memremap_pages ( struct device * dev , struct dev_pagemap * pgmap )
+
+remap and provide memmap backing for the given resource
+
+Parameters
+  struct device *dev
+    hosting device for res
+  struct dev_pagemap *pgmap
+    pointer to a struct dev_pagemap

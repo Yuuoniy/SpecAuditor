@@ -1,0 +1,14 @@
+Function: int __bh_read ( struct buffer_head * bh , blk_opf_t op_flags , bool wait )
+
+Submit read for a locked buffer
+
+Parameters
+  struct buffer_head *bh
+    struct buffer_head
+  blk_opf_t op_flags
+    appending REQ_OP_* flags besides REQ_OP_READ
+  bool wait
+    wait until reading finish
+
+Description
+  Returns zero on success or don’t wait, and -EIO on error.

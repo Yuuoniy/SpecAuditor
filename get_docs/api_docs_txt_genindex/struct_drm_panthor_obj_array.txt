@@ -1,0 +1,11 @@
+Struct: struct drm_panthor_obj_array
+
+Object array.
+
+Members
+  stride
+    Stride of object struct. Used for versioning.
+  count
+    Number of objects in the array.
+  array
+    User pointer to an array of objects.

@@ -1,0 +1,26 @@
+Struct: struct backlight_device
+
+backlight device data
+
+Members
+  props
+    Backlight properties
+  update_lock
+    The lock used when calling the update_status() operation. update_lock is an internal backlight lock that serialise access
+to the update_status() operation. The backlight core holds the update_lock
+when calling the update_status() operation. The update_lock shall not
+be used by backlight drivers.
+  ops_lock
+    The lock used around everything related to backlight_ops. ops_lock is an internal backlight lock that protects the ops pointer
+and is used around all accesses to ops and when the operations are
+invoked. The ops_lock shall not be used by backlight drivers.
+  ops
+    Pointer to the backlight operations. If ops is NULL, the driver that registered this device has been unloaded,
+and if class_get_devdata() points to something in the body of that driver,
+it is also invalid.
+  entry
+    List entry of all registered backlight devices
+  dev
+    Parent device.
+  use_count
+    The number of unblanked displays.

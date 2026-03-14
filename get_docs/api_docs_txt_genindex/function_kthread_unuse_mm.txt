@@ -1,0 +1,7 @@
+Function: void kthread_unuse_mm ( struct mm_struct * mm )
+
+reverse the effect of kthread_use_mm()
+
+Parameters
+  struct mm_struct *mm
+    address space to operate on

@@ -1,0 +1,14 @@
+Function: int job_control ( struct tty_struct * tty , struct file * file )
+
+check job control
+
+Parameters
+  struct tty_struct *tty
+    tty
+  struct file *file
+    file handle
+
+Description
+  Perform job control management checks on this file / tty descriptor and if
+appropriate send any needed signals and return a negative error code if
+action should be taken.

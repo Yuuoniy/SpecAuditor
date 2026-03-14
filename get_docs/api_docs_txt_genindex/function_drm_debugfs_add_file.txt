@@ -1,0 +1,17 @@
+Function: void drm_debugfs_add_file ( struct drm_device * dev , const char * name , int ( * show ) ( struct seq_file * , void * ) , void * data )
+
+Add a given file to the DRM device debugfs file list
+
+Parameters
+  struct drm_device *dev
+    drm device for the ioctl
+  const char *name
+    debugfs file name
+  int (*show)(struct seq_file*, void*)
+    show callback
+  void *data
+    driver-private data, should not be device-specific
+
+Description
+  Add a given file entry to the DRM device debugfs file list to be created on
+drm_debugfs_init.

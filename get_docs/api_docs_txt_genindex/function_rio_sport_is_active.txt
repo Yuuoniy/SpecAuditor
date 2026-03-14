@@ -1,0 +1,14 @@
+Function: int rio_sport_is_active ( struct rio_dev * rdev , int sp )
+
+Tests if a switch port has an active connection.
+
+Parameters
+  struct rio_dev *rdev
+    RapidIO device object
+  int sp
+    Switch port number
+
+Description
+  Reads the port error status CSR for a particular switch port to
+determine if the port has an active link.  Returns RIO_PORT_N_ERR_STS_PORT_OK if the port is active or 0 if it is
+inactive.

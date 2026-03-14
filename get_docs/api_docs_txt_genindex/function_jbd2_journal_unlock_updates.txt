@@ -1,0 +1,10 @@
+Function: void jbd2_journal_unlock_updates ( journal_t * journal )
+
+release barrier
+
+Parameters
+  journal_t *journal
+    Journal to release the barrier on.
+
+Description
+  Release a transaction barrier obtained with jbd2_journal_lock_updates() .

@@ -1,0 +1,13 @@
+Function: void rxrpc_kernel_shutdown_call ( struct socket * sock , struct rxrpc_call * call )
+
+Allow a kernel service to shut down a call it was using
+
+Parameters
+  struct socket *sock
+    The socket the call is on
+  struct rxrpc_call *call
+    The call to end
+
+Description
+  Allow a kernel service to shut down a call it was using.  The call must be
+complete before this is called (the call should be aborted if necessary).

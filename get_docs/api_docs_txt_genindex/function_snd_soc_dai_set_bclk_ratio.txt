@@ -1,0 +1,12 @@
+Function: int snd_soc_dai_set_bclk_ratio ( struct snd_soc_dai * dai , unsigned int ratio )
+
+configure BCLK to sample rate ratio.
+
+Parameters
+  struct snd_soc_dai *dai
+    DAI
+  unsigned int ratio
+    Ratio of BCLK to Sample rate.
+
+Description
+  Configures the DAI for a preset BCLK to sample rate ratio.

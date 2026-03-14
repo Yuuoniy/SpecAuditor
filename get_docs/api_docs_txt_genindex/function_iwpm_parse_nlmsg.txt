@@ -1,0 +1,18 @@
+Function: int iwpm_parse_nlmsg ( struct netlink_callback * cb , int policy_max , const struct nla_policy * nlmsg_policy , struct nlattr * nltb [ ] , const char * msg_type )
+
+Validate and parse the received netlink message
+
+Parameters
+  struct netlink_callback *cb
+    Netlink callback structure
+  int policy_max
+    Maximum attribute type to be expected
+  const struct nla_policy *nlmsg_policy
+    Validation policy
+  struct nlattr *nltb[]
+    Array to store policy_max parsed elements
+  const char *msg_type
+    Type of netlink message
+
+Description
+  Returns 0 on success or a negative error code

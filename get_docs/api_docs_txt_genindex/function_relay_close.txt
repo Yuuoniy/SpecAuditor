@@ -1,0 +1,10 @@
+Function: void relay_close ( struct rchan * chan )
+
+close the channel
+
+Parameters
+  struct rchan *chan
+    the channel
+
+Description
+  Closes all channel buffers and frees the channel.

@@ -1,0 +1,15 @@
+Function: void usb_deregister_dev ( struct usb_interface * intf , struct usb_class_driver * class_driver )
+
+deregister a USB device’s dynamic minor.
+
+Parameters
+  struct usb_interface *intf
+    pointer to the usb_interface that is being deregistered
+  struct usb_class_driver *class_driver
+    pointer to the usb_class_driver for this device
+
+Description
+  Used in conjunction with usb_register_dev() .  This function is called
+when the USB driver is finished with the minor numbers gotten from a
+call to usb_register_dev() (usually when the device is disconnected
+from the system.)

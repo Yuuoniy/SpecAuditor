@@ -1,0 +1,12 @@
+Function: unsigned long clear_user ( void __user * to , unsigned long n )
+
+Zero a block of memory in user space.
+
+Parameters
+  void __user *to
+    Destination address, in user space.
+  unsigned long n
+    Number of bytes to zero.
+
+Description
+  Zero a block of memory in user space.

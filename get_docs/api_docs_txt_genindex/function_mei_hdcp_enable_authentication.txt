@@ -1,0 +1,9 @@
+Function: int mei_hdcp_enable_authentication ( struct device * dev , struct hdcp_port_data * data )
+
+Mark a port as authenticated through ME FW
+
+Parameters
+  struct device *dev
+    device corresponding to the mei_cl_device
+  struct hdcp_port_data *data
+    Intel HW specific hdcp data

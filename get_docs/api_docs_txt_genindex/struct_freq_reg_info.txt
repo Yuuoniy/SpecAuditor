@@ -1,0 +1,15 @@
+Struct: const struct ieee80211_reg_rule * freq_reg_info ( struct wiphy * wiphy , u32 center_freq )
+
+get regulatory information for the given frequency
+
+Parameters
+  struct wiphy *wiphy
+    the wiphy for which we want to process this rule for
+  u32 center_freq
+    Frequency in KHz for which we want regulatory information for
+
+Description
+  Use this function to get the regulatory rule for a specific frequency on
+a given wireless device. If the device has a specific regulatory domain
+it wants to follow we respect that unless a country IE has been received
+and processed already.

@@ -1,0 +1,12 @@
+Function: int drm_edp_backlight_disable ( struct drm_dp_aux * aux , const struct drm_edp_backlight_info * bl )
+
+Disable an eDP backlight using DPCD, if supported
+
+Parameters
+  struct drm_dp_aux *aux
+    The DP AUX channel to use
+  const struct drm_edp_backlight_info *bl
+    Backlight capability info from drm_edp_backlight_init()
+
+Description
+  This function handles disabling DPCD backlight controls on a panel over AUX.

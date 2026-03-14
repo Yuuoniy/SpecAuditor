@@ -1,0 +1,10 @@
+Function: void snd_pcm_lib_preallocate_free_for_all ( struct snd_pcm * pcm )
+
+release all pre-allocated buffers on the pcm
+
+Parameters
+  struct snd_pcm *pcm
+    the pcm instance
+
+Description
+  Releases all the pre-allocated buffers on the given pcm.

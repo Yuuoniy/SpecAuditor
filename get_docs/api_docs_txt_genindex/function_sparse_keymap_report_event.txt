@@ -1,0 +1,19 @@
+Function: bool sparse_keymap_report_event ( struct input_dev * dev , unsigned int code , unsigned int value , bool autorelease )
+
+report event corresponding to given scancode
+
+Parameters
+  struct input_dev *dev
+    Input device using sparse keymap
+  unsigned int code
+    Scan code
+  unsigned int value
+    Value that should be reported (ignored by KE_SW entries)
+  bool autorelease
+    Signals whether release event should be emitted for KE_KEY entries right after reporting press event, ignored by all other
+entries
+
+Description
+  This function is used to perform lookup in an input device using sparse
+keymap and report corresponding event. Returns true if lookup was
+successful and false otherwise.

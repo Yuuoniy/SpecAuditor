@@ -1,0 +1,13 @@
+Struct: struct fpga_manager_info
+
+collection of parameters for an FPGA Manager
+
+Members
+  name
+    fpga manager name
+  compat_id
+    FPGA manager id for compatibility check.
+  mops
+    pointer to structure of fpga manager ops
+  priv
+    fpga manager private data

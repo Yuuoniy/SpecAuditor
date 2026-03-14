@@ -1,0 +1,12 @@
+Function: void __kfree_skb ( struct sk_buff * skb )
+
+private function
+
+Parameters
+  struct sk_buff *skb
+    buffer
+
+Description
+  Free an sk_buff. Release anything attached to the buffer.
+Clean the state. This is an internal helper function. Users should
+always call kfree_skb

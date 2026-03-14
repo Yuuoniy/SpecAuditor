@@ -1,0 +1,10 @@
+Function: struct dma_chan * rio_request_mport_dma ( struct rio_mport * mport )
+
+request RapidIO capable DMA channel associated with specified local RapidIO mport device.
+
+Parameters
+  struct rio_mport *mport
+    RIO mport to perform DMA data transfers
+
+Description
+  Returns pointer to allocated DMA channel or NULL if failed.

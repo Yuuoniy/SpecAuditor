@@ -1,0 +1,19 @@
+Function: int alloc_contig_range ( unsigned long start , unsigned long end , acr_flags_t alloc_flags , gfp_t gfp_mask )
+
+tries to allocate given range of pages
+
+Parameters
+  unsigned long start
+    start PFN to allocate
+  unsigned long end
+    one-past-the-last PFN to allocate
+  acr_flags_t alloc_flags
+    allocation information
+  gfp_t gfp_mask
+    GFP mask. Node/zone/placement hints are ignored; only some
+action and reclaim modifiers are supported. Reclaim modifiers
+control allocation behavior during compaction/migration/reclaim.
+
+Description
+  The PFN range does not have to be pageblock aligned. The PFN range must
+belong to a single zone.

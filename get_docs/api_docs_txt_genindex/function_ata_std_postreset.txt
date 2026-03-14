@@ -1,0 +1,14 @@
+Function: void ata_std_postreset ( struct ata_link * link , unsigned int * classes )
+
+standard postreset callback
+
+Parameters
+  struct ata_link *link
+    the target ata_link
+  unsigned int *classes
+    classes of attached devices
+
+Description
+  This function is invoked after a successful reset.  Note that
+the device might have been reset more than once using
+different reset methods before postreset is invoked.

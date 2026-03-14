@@ -1,0 +1,12 @@
+Function: int rvt_error_qp ( struct rvt_qp * qp , enum ib_wc_status err )
+
+put a QP into the error state
+
+Parameters
+  struct rvt_qp *qp
+    the QP to put into the error state
+  enum ib_wc_status err
+    the receive completion error to signal if a RWQE is active
+
+Description
+  Flushes both send and receive work queues.

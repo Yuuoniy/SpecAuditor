@@ -1,0 +1,3 @@
+Enum: enum drm_pvr_static_data_area_usage
+
+Array index for static data area info returned by DRM_PVR_DEV_QUERY_STATIC_DATA_AREAS_GET .

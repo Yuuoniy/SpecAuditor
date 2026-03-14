@@ -1,0 +1,17 @@
+Struct: struct fw_cdev_start_iso
+
+Start an isochronous transmission or reception
+
+Members
+  cycle
+    Cycle in which to start I/O.  If cycle is greater than or
+equal to 0, the I/O will start on that cycle.
+  sync
+    Determines the value to wait for receive packets that have
+the FW_CDEV_ISO_SYNC bit set
+  tags
+    Tag filter bit mask.  Only valid for isochronous reception.
+Determines the tag values for which packets will be accepted.
+Use FW_CDEV_ISO_CONTEXT_MATCH_* macros to set tags .
+  handle
+    Isochronous context handle within which to transmit or receive

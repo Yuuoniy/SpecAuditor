@@ -1,0 +1,13 @@
+Function: int drm_atomic_helper_check_wb_connector_state ( struct drm_connector * connector , struct drm_atomic_state * state )
+
+Check writeback connector state
+
+Parameters
+  struct drm_connector *connector
+    corresponding connector
+  struct drm_atomic_state *state
+    the driver state object
+
+Description
+  Checks if the writeback connector state is valid, and returns an error if it
+isn’t.

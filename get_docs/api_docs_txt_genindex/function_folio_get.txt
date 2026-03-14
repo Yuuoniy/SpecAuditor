@@ -1,0 +1,7 @@
+Function: void folio_get ( struct folio * folio )
+
+Increment the reference count on a folio.
+
+Parameters
+  struct folio *folio
+    The folio.

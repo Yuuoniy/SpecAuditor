@@ -1,0 +1,13 @@
+Function: bool folio_trylock ( struct folio * folio )
+
+Attempt to lock a folio.
+
+Parameters
+  struct folio *folio
+    The folio to attempt to lock.
+
+Description
+  Sometimes it is undesirable to wait for a folio to be unlocked (eg
+when the locks are being taken in the wrong order, or if making
+progress through a batch of folios is more important than processing
+them in order).  Usually folio_lock() is the correct function to call.

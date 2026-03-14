@@ -1,0 +1,7 @@
+Struct: struct analog_demod_info
+
+Information struct for analog TV part of the demod
+
+Members
+  name
+    Name of the analog TV demodulator

@@ -1,0 +1,11 @@
+Struct: struct snd_compr_codec_caps
+
+query capability of codec
+
+Members
+  codec
+    codec for which capability is queried
+  num_descriptors
+    number of codec descriptors
+  descriptor
+    array of codec capability descriptor

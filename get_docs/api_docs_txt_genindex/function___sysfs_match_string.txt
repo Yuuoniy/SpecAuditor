@@ -1,0 +1,15 @@
+Function: int __sysfs_match_string ( const char * const * array , size_t n , const char * str )
+
+matches given string in an array
+
+Parameters
+  const char * const *array
+    array of strings
+  size_t n
+    number of strings in the array or -1 for NULL terminated arrays
+  const char *str
+    string to match with
+
+Description
+  Returns index of str in the array or -EINVAL, just like match_string() .
+Uses sysfs_streq instead of strcmp for matching.

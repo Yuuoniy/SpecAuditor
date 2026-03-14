@@ -1,0 +1,17 @@
+Function: int __devm_add_action ( struct device * dev , void ( * action ) ( void * ) , void * data , const char * name )
+
+add a custom action to list of managed resources
+
+Parameters
+  struct device *dev
+    Device that owns the action
+  void (*action)(void *)
+    Function that should be called
+  void *data
+    Pointer to data passed to action implementation
+  const char *name
+    Name of the resource (for debugging purposes)
+
+Description
+  This adds a custom action to the list of managed resources so that
+it gets executed as part of standard resource unwinding.

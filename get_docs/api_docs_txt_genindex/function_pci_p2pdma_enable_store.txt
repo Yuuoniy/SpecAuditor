@@ -1,0 +1,20 @@
+Function: int pci_p2pdma_enable_store ( const char * page , struct pci_dev * * p2p_dev , bool * use_p2pdma )
+
+parse a configfs/sysfs attribute store to enable p2pdma
+
+Parameters
+  const char *page
+    contents of the value to be stored
+  struct pci_dev **p2p_dev
+    returns the PCI device that was selected to be used
+(if one was specified in the stored value)
+  bool *use_p2pdma
+    returns whether to enable p2pdma or not
+
+Description
+  Parses an attribute value to decide whether to enable p2pdma.
+The value can select a PCI device (using its full BDF device
+name) or a boolean (in any format kstrtobool() accepts). A false
+value disables p2pdma, a true value expects the caller
+to automatically find a compatible device and specifying a PCI device
+expects the caller to use the specific provider.

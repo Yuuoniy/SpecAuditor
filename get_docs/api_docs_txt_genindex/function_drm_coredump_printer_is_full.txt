@@ -1,0 +1,11 @@
+Function: bool drm_coredump_printer_is_full ( struct drm_printer * p )
+
+DRM coredump printer output is full
+
+Parameters
+  struct drm_printer *p
+    DRM coredump printer
+
+Description
+  DRM printer output is full, useful to short circuit coredump printing once
+printer is full.

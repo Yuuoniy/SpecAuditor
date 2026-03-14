@@ -1,0 +1,18 @@
+Function: void zynqmp_disp_avbuf_set_clocks_sources ( struct zynqmp_disp * disp , bool video_from_ps , bool audio_from_ps , bool timings_internal )
+
+Set the clocks sources
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller
+  bool video_from_ps
+    True if the video clock originates from the PS
+  bool audio_from_ps
+    True if the audio clock originates from the PS
+  bool timings_internal
+    True if video timings are generated internally
+
+Description
+  Set the source for the video and audio clocks, as well as for the video
+timings. Clocks can originate from the PS or PL, and timings can be
+generated internally or externally.

@@ -1,0 +1,7 @@
+Function: void nvmem_device_put ( struct nvmem_device * nvmem )
+
+put already got nvmem device
+
+Parameters
+  struct nvmem_device *nvmem
+    pointer to nvmem device that needs to be released.

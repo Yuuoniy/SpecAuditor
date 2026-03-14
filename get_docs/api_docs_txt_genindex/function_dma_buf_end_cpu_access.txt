@@ -1,0 +1,12 @@
+Function: int dma_buf_end_cpu_access ( struct dma_buf * dmabuf , enum dma_data_direction direction )
+
+Must be called after accessing a dma_buf from the cpu in the kernel context. Calls end_cpu_access to allow exporter-specific actions. Coherency is only guaranteed in the specified range for the specified access direction.
+
+Parameters
+  struct dma_buf *dmabuf
+    [in]    buffer to complete cpu access for.
+  enum dma_data_direction direction
+    [in]    direction of access.
+
+Description
+  This terminates CPU access started with dma_buf_begin_cpu_access() .

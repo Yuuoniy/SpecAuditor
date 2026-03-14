@@ -1,0 +1,7 @@
+Function: const char * phy_duplex_to_str ( unsigned int duplex )
+
+Return string describing the duplex
+
+Parameters
+  unsigned int duplex
+    Duplex setting to describe

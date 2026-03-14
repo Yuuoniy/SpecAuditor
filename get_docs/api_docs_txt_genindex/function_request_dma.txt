@@ -1,0 +1,9 @@
+Function: int request_dma ( unsigned int dmanr , const char * device_id )
+
+request and reserve a system DMA channel
+
+Parameters
+  unsigned int dmanr
+    DMA channel number
+  const char * device_id
+    reserving device ID string, used in /proc/dma

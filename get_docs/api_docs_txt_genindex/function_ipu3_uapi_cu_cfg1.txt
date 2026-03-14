@@ -1,0 +1,14 @@
+Function: struct ipu3_uapi_cu_cfg1
+
+Radius Config Unit cfg1 register
+
+Members
+  rad_cu6_x1
+    X1 point of Config Unit 6, precision u9.0.
+  reserved0
+    reserved
+  rad_cu_unsharp_x1
+    X1 point for Config Unit unsharp for radial/corner point
+precision u9.0.
+  reserved1
+    reserved

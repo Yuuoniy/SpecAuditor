@@ -1,0 +1,12 @@
+Function: int cxl_calc_interleave_pos ( struct cxl_endpoint_decoder * cxled )
+
+calculate an endpoint position in a region
+
+Parameters
+  struct cxl_endpoint_decoder *cxled
+    endpoint decoder member of given region
+
+Description
+  The endpoint position is calculated by traversing the topology from
+the endpoint to the root decoder and iteratively applying this
+calculation:

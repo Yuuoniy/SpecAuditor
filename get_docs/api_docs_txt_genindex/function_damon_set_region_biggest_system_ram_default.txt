@@ -1,0 +1,18 @@
+Function: int damon_set_region_biggest_system_ram_default ( struct damon_target * t , unsigned long * start , unsigned long * end )
+
+Set the region of the given monitoring target as requested, or biggest ‘System RAM’.
+
+Parameters
+  struct damon_target *t
+    The monitoring target to set the region.
+  unsigned long *start
+    The pointer to the start address of the region.
+  unsigned long *end
+    The pointer to the end address of the region.
+
+Description
+  This function sets the region of t as requested by start and end .  If the
+values of start and end are zero, however, this function finds the biggest
+‘System RAM’ resource and sets the region to cover the resource.  In the
+latter case, this function saves the start and end addresses of the resource
+in start and end , respectively.

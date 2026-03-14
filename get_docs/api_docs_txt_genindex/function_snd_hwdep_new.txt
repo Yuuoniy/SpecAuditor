@@ -1,0 +1,18 @@
+Function: int snd_hwdep_new ( struct snd_card * card , char * id , int device , struct snd_hwdep * * rhwdep )
+
+create a new hwdep instance
+
+Parameters
+  struct snd_card *card
+    the card instance
+  char *id
+    the id string
+  int device
+    the device index (zero-based)
+  struct snd_hwdep **rhwdep
+    the pointer to store the new hwdep instance
+
+Description
+  Creates a new hwdep instance with the given index on the card.
+The callbacks (hwdep->ops) must be set on the returned instance
+after this call manually by the caller.

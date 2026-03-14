@@ -1,0 +1,13 @@
+Function: void fc_remote_port_delete ( struct fc_rport * rport )
+
+notifies the fc transport that a remote port is no longer in existence.
+
+Parameters
+  struct fc_rport *rport
+    The remote port that no longer exists
+
+Description
+  The LLDD calls this routine to notify the transport that a remote
+port is no longer part of the topology. Note: Although a port
+may no longer be part of the topology, it may persist in the remote
+ports displayed by the fc_host. We do this under 2 conditions:

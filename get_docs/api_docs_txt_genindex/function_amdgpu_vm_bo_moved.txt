@@ -1,0 +1,11 @@
+Function: void amdgpu_vm_bo_moved ( struct amdgpu_vm_bo_base * vm_bo )
+
+vm_bo is moved
+
+Parameters
+  struct amdgpu_vm_bo_base *vm_bo
+    vm_bo which is moved
+
+Description
+  State for per VM BOs which are moved, but that change is not yet reflected
+in the page tables.

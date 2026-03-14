@@ -1,0 +1,14 @@
+Function: void cxl_probe_device_regs ( struct device * dev , void __iomem * base , struct cxl_device_reg_map * map )
+
+Detect CXL Device register blocks
+
+Parameters
+  struct device *dev
+    Host device of the base mapping
+  void __iomem *base
+    Mapping of CXL 2.0 8.2.8 CXL Device Register Interface
+  struct cxl_device_reg_map *map
+    Map object describing the register block information found
+
+Description
+  Probe for device register information and return it in map object.

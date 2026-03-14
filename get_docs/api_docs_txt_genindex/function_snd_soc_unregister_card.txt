@@ -1,0 +1,7 @@
+Function: void snd_soc_unregister_card ( struct snd_soc_card * card )
+
+Unregister a card with the ASoC core
+
+Parameters
+  struct snd_soc_card *card
+    Card to unregister

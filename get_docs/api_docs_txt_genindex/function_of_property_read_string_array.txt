@@ -1,0 +1,17 @@
+Function: int of_property_read_string_array ( const struct device_node * np , const char * propname , const char * * out_strs , size_t sz )
+
+Read an array of strings from a multiple strings property.
+
+Parameters
+  const struct device_node *np
+    device node from which the property value is to be read.
+  const char *propname
+    name of the property to be searched.
+  const char **out_strs
+    output array of string pointers.
+  size_t sz
+    number of array elements to read.
+
+Description
+  Search for a property in a device tree node and retrieve a list of
+terminated string values (pointer to data, not a copy) in that property.

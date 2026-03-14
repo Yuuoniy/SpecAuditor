@@ -1,0 +1,9 @@
+Function: struct dc_color_caps
+
+color pipes capabilities for DPP and MPC hw blocks
+
+Members
+  dpp
+    color pipes caps for DPP
+  mpc
+    color pipes caps for MPC

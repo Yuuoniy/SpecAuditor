@@ -1,0 +1,11 @@
+Function: void snd_soc_component_async_complete ( struct snd_soc_component * component )
+
+Ensure asynchronous I/O has completed
+
+Parameters
+  struct snd_soc_component *component
+    Component for which to wait
+
+Description
+  This function blocks until all asynchronous I/O which has previously been
+scheduled using snd_soc_component_update_bits_async() has completed.

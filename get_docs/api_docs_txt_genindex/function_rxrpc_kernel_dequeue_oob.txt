@@ -1,0 +1,13 @@
+Function: struct sk_buff * rxrpc_kernel_dequeue_oob ( struct socket * sock , enum rxrpc_oob_type * _type )
+
+Dequeue and return the front OOB message
+
+Parameters
+  struct socket *sock
+    The socket to query
+  enum rxrpc_oob_type *_type
+    Where to return the message type
+
+Description
+  Dequeue the front OOB message, if there is one, and return it and
+its type.

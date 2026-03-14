@@ -1,0 +1,16 @@
+Function: void ps2_init ( struct ps2dev * ps2dev , struct serio * serio , ps2_pre_receive_handler_t pre_receive_handler , ps2_receive_handler_t receive_handler )
+
+initializes ps2dev structure
+
+Parameters
+  struct ps2dev *ps2dev
+    structure to be initialized
+  struct serio *serio
+    serio port associated with the PS/2 device
+  ps2_pre_receive_handler_t pre_receive_handler
+    validation handler to check basic communication state
+  ps2_receive_handler_t receive_handler
+    main protocol handler
+
+Description
+  Prepares ps2dev structure for use in drivers for PS/2 devices.

@@ -1,0 +1,13 @@
+Function: irqreturn_t usb_hcd_irq ( int irq , void * __hcd )
+
+hook IRQs to HCD framework (bus glue)
+
+Parameters
+  int irq
+    the IRQ being raised
+  void *__hcd
+    pointer to the HCD whose IRQ is being signaled
+
+Description
+  If the controller isn’t HALTed, calls the driver’s irq handler.
+Checks whether the controller is now dead.

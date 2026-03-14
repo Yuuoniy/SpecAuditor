@@ -1,0 +1,11 @@
+Function: bool try_to_free_buffers ( struct folio * folio )
+
+Release buffers attached to this folio.
+
+Parameters
+  struct folio *folio
+    The folio.
+
+Description
+  If any buffers are in use (dirty, under writeback, elevated refcount),
+no buffers will be freed.

@@ -1,0 +1,5 @@
+Macro: NTSYNC_IOC_READ_MUTEX
+
+Read the current state of a mutex object. Takes a pointer to struct ntsync_mutex_args , which is used as follows: owner On output, contains the current owner of the mutex, or zero
+if the mutex is not currently owned. count On output, contains the current recursion count of the mutex. If the mutex is marked as abandoned, the function fails with EOWNERDEAD . In this case, count and owner are set to
+zero.

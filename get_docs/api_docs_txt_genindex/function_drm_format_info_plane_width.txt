@@ -1,0 +1,11 @@
+Function: int drm_format_info_plane_width ( const struct drm_format_info * info , int width , int plane )
+
+width of the plane given the first plane
+
+Parameters
+  const struct drm_format_info *info
+    pixel format info
+  int width
+    width of the first plane
+  int plane
+    plane index

@@ -1,0 +1,16 @@
+Function: void folio_end_read ( struct folio * folio , bool success )
+
+End read on a folio.
+
+Parameters
+  struct folio *folio
+    The folio.
+  bool success
+    True if all reads completed successfully.
+
+Description
+  When all reads against a folio have completed, filesystems should
+call this function to let the pagecache know that no more reads
+are outstanding.  This will unlock the folio and wake up any thread
+sleeping on the lock.  The folio will also be marked uptodate if all
+reads succeeded.

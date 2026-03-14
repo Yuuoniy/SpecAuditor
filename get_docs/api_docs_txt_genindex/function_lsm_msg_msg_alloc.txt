@@ -1,0 +1,10 @@
+Function: int lsm_msg_msg_alloc ( struct msg_msg * mp )
+
+allocate a composite msg_msg blob
+
+Parameters
+  struct msg_msg *mp
+    the msg_msg that needs a blob
+
+Description
+  Allocate the ipc blob for all the modules

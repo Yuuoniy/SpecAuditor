@@ -1,0 +1,11 @@
+Macro: typec_altmode_register_driver
+
+
+
+Parameters
+  drv
+    pointer to struct typec_altmode_driver
+
+Description
+  These drivers will be bind to the partner alternate mode devices. They will
+handle all SVID specific communication.

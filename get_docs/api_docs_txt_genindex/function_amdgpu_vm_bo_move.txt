@@ -1,0 +1,14 @@
+Function: void amdgpu_vm_bo_move ( struct amdgpu_bo * bo , struct ttm_resource * new_mem , bool evicted )
+
+handle BO move
+
+Parameters
+  struct amdgpu_bo *bo
+    amdgpu buffer object
+  struct ttm_resource *new_mem
+    the new placement of the BO move
+  bool evicted
+    is the BO evicted
+
+Description
+  Update the memory stats for the new placement and mark bo as invalid.

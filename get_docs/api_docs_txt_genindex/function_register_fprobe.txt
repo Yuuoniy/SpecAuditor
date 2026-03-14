@@ -1,0 +1,15 @@
+Function: int register_fprobe ( struct fprobe * fp , const char * filter , const char * notfilter )
+
+Register fprobe to ftrace by pattern.
+
+Parameters
+  struct fprobe *fp
+    A fprobe data structure to be registered.
+  const char *filter
+    A wildcard pattern of probed symbols.
+  const char *notfilter
+    A wildcard pattern of NOT probed symbols.
+
+Description
+  Register fp to ftrace for enabling the probe on the symbols matched to filter .
+If notfilter is not NULL, the symbols matched the notfilter are not probed.

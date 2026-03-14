@@ -1,0 +1,31 @@
+Function: int drm_universal_plane_init ( struct drm_device * dev , struct drm_plane * plane , uint32_t possible_crtcs , const struct drm_plane_funcs * funcs , const uint32_t * formats , unsigned int format_count , const uint64_t * format_modifiers , enum drm_plane_type type , const char * name , ... )
+
+Initialize a new universal plane object
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_plane *plane
+    plane object to init
+  uint32_t possible_crtcs
+    bitmask of possible CRTCs
+  const struct drm_plane_funcs *funcs
+    callbacks for the new plane
+  const uint32_t *formats
+    array of supported formats (DRM_FORMAT_*)
+  unsigned int format_count
+    number of elements in formats
+  const uint64_t *format_modifiers
+    array of struct drm_format modifiers terminated by
+DRM_FORMAT_MOD_INVALID
+  enum drm_plane_type type
+    type of plane (overlay, primary, cursor)
+  const char *name
+    printf style format string for the plane name, or NULL for default name
+  ...
+    variable arguments
+
+Description
+  Initializes a plane object of type type . The drm_plane_funcs.destroy hook
+should call drm_plane_cleanup() and kfree() the plane structure. The plane
+structure should not be allocated with devm_kzalloc() .

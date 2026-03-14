@@ -1,0 +1,12 @@
+Struct: struct drm_nouveau_sync
+
+sync object
+
+Members
+  flags
+    the flags for a sync object The first 8 bits are used to determine the type of the sync object.
+  handle
+    the handle of the sync object
+  timeline_value
+    The timeline point of the sync object in case the syncobj is of
+type DRM_NOUVEAU_SYNC_TIMELINE_SYNCOBJ.

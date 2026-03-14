@@ -1,0 +1,7 @@
+Function: bool phy_is_pseudo_fixed_link ( struct phy_device * phydev )
+
+Convenience function for testing if this PHY is the CPU port facing side of an Ethernet switch, or similar.
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct

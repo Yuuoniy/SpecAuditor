@@ -1,0 +1,3 @@
+Enum: enum drm_xe_memory_class
+
+Supported memory classes.

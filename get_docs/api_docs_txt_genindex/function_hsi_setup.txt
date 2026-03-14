@@ -1,0 +1,11 @@
+Function: int hsi_setup ( struct hsi_client * cl )
+
+Configure the client’s port
+
+Parameters
+  struct hsi_client *cl
+    Pointer to the HSI client
+
+Description
+  When sharing ports, clients should either relay on a single
+client setup or have the same setup for all of them.

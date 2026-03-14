@@ -1,0 +1,10 @@
+Function: void drm_fb_helper_lastclose ( struct drm_device * dev )
+
+DRM driver lastclose helper for fbdev emulation
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  This function is obsolete. Call drm_fb_helper_restore_fbdev_mode_unlocked() instead.

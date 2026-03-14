@@ -1,0 +1,107 @@
+Struct: struct drm_plane_funcs
+
+driver plane control functions
+
+Members
+  update_plane
+    This is the legacy entry point to enable and configure the plane for
+the given CRTC and framebuffer. It is never called to disable the
+plane, i.e. the passed-in crtc and fb paramters are never NULL. The source rectangle in frame buffer memory coordinates is given by
+the src_x, src_y, src_w and src_h parameters (as 16.16 fixed point
+values). Devices that don’t support subpixel plane coordinates can
+ignore the fractional part. The destination rectangle in CRTC coordinates is given by the
+crtc_x, crtc_y, crtc_w and crtc_h parameters (as integer values).
+Devices scale the source rectangle to the destination rectangle. If
+scaling is not supported, and the source rectangle size doesn’t match
+the destination rectangle size, the driver must return a
+-<errorname>EINVAL</errorname> error. Drivers implementing atomic modeset should use drm_atomic_helper_update_plane() to implement this hook. RETURNS: 0 on success or a negative error code on failure.
+  disable_plane
+    This is the legacy entry point to disable the plane. The DRM core
+calls this method in response to a DRM_IOCTL_MODE_SETPLANE IOCTL call
+with the frame buffer ID set to 0.  Disabled planes must not be
+processed by the CRTC. Drivers implementing atomic modeset should use drm_atomic_helper_disable_plane() to implement this hook. RETURNS: 0 on success or a negative error code on failure.
+  destroy
+    Clean up plane resources. This is only called at driver unload time
+through drm_mode_config_cleanup() since a plane cannot be hotplugged
+in DRM.
+  reset
+    Reset plane hardware and software state to off. This function isn’t
+called by the core directly, only through drm_mode_config_reset() .
+It’s not a helper hook only for historical reasons. Atomic drivers can use drm_atomic_helper_plane_reset() to reset
+atomic state using this hook.
+  set_property
+    This is the legacy entry point to update a property attached to the
+plane. This callback is optional if the driver does not support any legacy
+driver-private properties. For atomic drivers it is not used because
+property handling is done entirely in the DRM core. RETURNS: 0 on success or a negative error code on failure.
+  atomic_duplicate_state
+    Duplicate the current atomic state for this plane and return it.
+The core and helpers guarantee that any atomic state duplicated with
+this hook and still owned by the caller (i.e. not transferred to the
+driver by calling drm_mode_config_funcs.atomic_commit ) will be
+cleaned up by calling the atomic_destroy_state hook in this
+structure. This callback is mandatory for atomic drivers. Atomic drivers which don’t subclass struct drm_plane_state should use drm_atomic_helper_plane_duplicate_state() . Drivers that subclass the
+state structure to extend it with driver-private state should use __drm_atomic_helper_plane_duplicate_state() to make sure shared state is
+duplicated in a consistent fashion across drivers. It is an error to call this hook before drm_plane.state has been
+initialized correctly. NOTE: If the duplicate state references refcounted resources this hook must
+acquire a reference for each of them. The driver must release these
+references again in atomic_destroy_state . RETURNS: Duplicated atomic state or NULL when the allocation failed.
+  atomic_destroy_state
+    Destroy a state duplicated with atomic_duplicate_state and release
+or unreference all resources it references This callback is mandatory for atomic drivers.
+  atomic_set_property
+    Decode a driver-private property value and store the decoded value
+into the passed-in state structure. Since the atomic core decodes all
+standardized properties (even for extensions beyond the core set of
+properties which might not be implemented by all drivers) this
+requires drivers to subclass the state structure. Such driver-private properties should really only be implemented for
+truly hardware/vendor specific state. Instead it is preferred to
+standardize atomic extension and decode the properties used to expose
+such an extension in the core. Do not call this function directly, use drm_atomic_plane_set_property() instead. This callback is optional if the driver does not support any
+driver-private atomic properties. NOTE: This function is called in the state assembly phase of atomic
+modesets, which can be aborted for any reason (including on
+userspace’s request to just check whether a configuration would be
+possible). Drivers MUST NOT touch any persistent state (hardware or
+software) or data structures except the passed in state parameter. Also since userspace controls in which order properties are set this
+function must not do any input validation (since the state update is
+incomplete and hence likely inconsistent). Instead any such input
+validation must be done in the various atomic_check callbacks. RETURNS: 0 if the property has been found, -EINVAL if the property isn’t
+implemented by the driver (which shouldn’t ever happen, the core only
+asks for properties attached to this plane). No other validation is
+allowed by the driver. The core already checks that the property
+value is within the range (integer, valid enum value , ...) the driver
+set when registering the property.
+  atomic_get_property
+    Reads out the decoded driver-private property. This is used to
+implement the GETPLANE IOCTL. Do not call this function directly, use drm_atomic_plane_get_property() instead. This callback is optional if the driver does not support any
+driver-private atomic properties. RETURNS: 0 on success, -EINVAL if the property isn’t implemented by the
+driver (which should never happen, the core only asks for
+properties attached to this plane).
+  late_register
+    This optional hook can be used to register additional userspace
+interfaces attached to the plane like debugfs interfaces.
+It is called late in the driver load sequence from drm_dev_register() .
+Everything added from this callback should be unregistered in
+the early_unregister callback. Returns: 0 on success, or a negative error code on failure.
+  early_unregister
+    This optional hook should be used to unregister the additional
+userspace interfaces attached to the plane from late_register . It is called from drm_dev_unregister() ,
+early in the driver unload sequence to disable userspace access
+before data structures are torndown.
+  atomic_print_state
+    If driver subclasses struct drm_plane_state , it should implement
+this optional hook for printing additional driver specific state. Do not call this directly, use drm_atomic_plane_print_state() instead.
+  format_mod_supported
+    This optional hook is used for the DRM to determine if the given
+format/modifier combination is valid for the plane. This allows the
+DRM to generate the correct format bitmask (which formats apply to
+which modifier), and to validate modifiers at atomic_check time. If not present, then any modifier in the plane’s modifier
+list is allowed with any of the plane’s formats. Returns: True if the given modifier is valid for that format on the plane.
+False otherwise.
+  format_mod_supported_async
+    This optional hook is used for the DRM to determine if for
+asynchronous flip the given format/modifier combination is valid for
+the plane. This allows the DRM to generate the correct format
+bitmask (which formats apply to which modifier), and to validate
+modifiers at atomic_check time. Returns: True if the given modifier is valid for that format on the plane.
+False otherwise.

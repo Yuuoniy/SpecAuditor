@@ -1,0 +1,9 @@
+Function: void zynqmp_disp_layer_set_live_format ( struct zynqmp_disp_layer * layer , u32 media_bus_format )
+
+Set the live video layer format
+
+Parameters
+  struct zynqmp_disp_layer *layer
+    The layer
+  u32 media_bus_format
+    Media bus format to set

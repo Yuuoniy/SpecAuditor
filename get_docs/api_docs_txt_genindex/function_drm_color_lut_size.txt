@@ -1,0 +1,7 @@
+Function: int drm_color_lut_size ( const struct drm_property_blob * blob )
+
+calculate the number of entries in the LUT
+
+Parameters
+  const struct drm_property_blob *blob
+    blob containing the LUT

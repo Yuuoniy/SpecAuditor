@@ -1,0 +1,7 @@
+Struct: struct mips_cdmm_device_id
+
+identifies devices in MIPS CDMM bus
+
+Members
+  type
+    Device type identifier.

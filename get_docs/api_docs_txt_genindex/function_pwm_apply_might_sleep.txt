@@ -1,0 +1,9 @@
+Function: int pwm_apply_might_sleep ( struct pwm_device * pwm , const struct pwm_state * state )
+
+atomically apply a new state to a PWM device Cannot be used in atomic context.
+
+Parameters
+  struct pwm_device *pwm
+    PWM device
+  const struct pwm_state *state
+    new state to apply

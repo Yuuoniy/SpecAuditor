@@ -1,0 +1,11 @@
+Function: void drm_dp_remote_aux_init ( struct drm_dp_aux * aux )
+
+minimally initialise a remote aux channel
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+
+Description
+  Used for remote aux channel in general. Merely initialize the crc work
+struct.

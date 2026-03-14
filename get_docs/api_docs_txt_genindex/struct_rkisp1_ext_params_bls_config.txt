@@ -1,0 +1,9 @@
+Struct: struct rkisp1_ext_params_bls_config
+
+RkISP1 extensible params BLS config
+
+Members
+  header
+    The RkISP1 extensible parameters header, see rkisp1_ext_params_block_header
+  config
+    Black Level Subtraction configuration, see rkisp1_cif_isp_bls_config

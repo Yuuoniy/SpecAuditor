@@ -1,0 +1,15 @@
+Function: int i915_perf_open_ioctl ( struct drm_device * dev , void * data , struct drm_file * file )
+
+DRM ioctl() for userspace to open a stream FD
+
+Parameters
+  struct drm_device *dev
+    drm device
+  void *data
+    ioctl data copied from userspace (unvalidated)
+  struct drm_file *file
+    drm file
+
+Description
+  Validates the stream open parameters given by userspace including flags
+and an array of u64 key, value pair properties.

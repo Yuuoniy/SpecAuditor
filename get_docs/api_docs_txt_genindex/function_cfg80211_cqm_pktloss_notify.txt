@@ -1,0 +1,15 @@
+Function: void cfg80211_cqm_pktloss_notify ( struct net_device * dev , const u8 * peer , u32 num_packets , gfp_t gfp )
+
+notify userspace about packetloss to peer
+
+Parameters
+  struct net_device *dev
+    network device
+  const u8 *peer
+    peer’s MAC address
+  u32 num_packets
+    how many packets were lost -- should be a fixed threshold
+but probably no less than maybe 50, or maybe a throughput dependent
+threshold (to account for temporary interference)
+  gfp_t gfp
+    context flags

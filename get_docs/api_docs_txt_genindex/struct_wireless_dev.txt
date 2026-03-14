@@ -1,0 +1,120 @@
+Struct: struct wireless_dev
+
+wireless device state
+
+Members
+  wiphy
+    pointer to hardware description
+  iftype
+    interface type
+  list
+    (private) Used to collect the interfaces
+  netdev
+    (private) Used to reference back to the netdev, may be NULL
+  identifier
+    (private) Identifier used in nl80211 to identify this
+wireless device if it has no netdev
+  mgmt_registrations
+    list of registrations for management frames
+  mgmt_registrations_need_update
+    mgmt registrations were updated,
+need to propagate the update to the driver
+  use_4addr
+    indicates 4addr mode is used on this interface, must be
+set by driver (if supported) on add_interface BEFORE registering the
+netdev and may otherwise be used by driver read-only, will be update
+by cfg80211 on change_interface
+  is_running
+    true if this is a non-netdev device that has been started, e.g.
+the P2P Device.
+  registered
+    is this wdev already registered with cfg80211
+  registering
+    indicates we’re doing registration under wiphy lock
+for the notifier
+  address
+    The address for this device, valid only if netdev is NULL
+  conn
+    (private) cfg80211 software SME connection state machine data
+  connect_keys
+    (private) keys to set after connection is established
+  conn_bss_type
+    connecting/connected BSS type
+  conn_owner_nlportid
+    (private) connection owner socket port ID
+  disconnect_wk
+    (private) auto-disconnect work
+  disconnect_bssid
+    (private) the BSSID to use for auto-disconnect
+  event_list
+    (private) list for internal event processing
+  event_lock
+    (private) lock for event list
+  connected
+    indicates if connected or not (STA mode)
+  ps
+    powersave mode is enabled
+  ps_timeout
+    dynamic powersave timeout
+  ap_unexpected_nlportid
+    (private) netlink port ID of application
+registered for unexpected class 3 frames (AP mode)
+  owner_nlportid
+    (private) owner socket port ID
+  nl_owner_dead
+    (private) owner socket went away
+  wext
+    (private) Used by the internal wireless extensions compat code
+  wext.ibss
+    (private) IBSS data part of wext handling
+  wext.connect
+    (private) connection handling data
+  wext.keys
+    (private) (WEP) key data
+  wext.ie
+    (private) extra elements for association
+  wext.ie_len
+    (private) length of extra elements
+  wext.bssid
+    (private) selected network BSSID
+  wext.prev_bssid
+    (private) previous BSSID for reassociation
+  wext.ssid
+    (private) selected network SSID
+  wext.default_key
+    (private) selected default key index
+  wext.default_mgmt_key
+    (private) selected default management key index
+  wext.prev_bssid_valid
+    (private) previous BSSID validity
+  cqm_rssi_work
+    (private) CQM RSSI reporting work
+  cqm_config
+    (private) nl80211 RSSI monitor state
+  pmsr_list
+    (private) peer measurement requests
+  pmsr_lock
+    (private) peer measurements requests/results lock
+  pmsr_free_wk
+    (private) peer measurements cleanup work
+  unprot_beacon_reported
+    (private) timestamp of last
+unprotected beacon report
+  u
+    union containing data specific to iftype
+  links
+    array of IEEE80211_MLD_MAX_NUM_LINKS elements containing addr ap and client for each link
+  {unnamed_union}
+    anonymous
+  links.cac_started
+    true if DFS channel availability check has been
+started
+  links.cac_start_time
+    timestamp (jiffies) when the dfs state was
+entered.
+  links.cac_time_ms
+    CAC time in ms
+  valid_links
+    bitmap describing what elements of links are valid
+  radio_mask
+    Bitmask of radios that this interface is allowed to operate on.

@@ -1,0 +1,10 @@
+Function: int d_unhashed ( const struct dentry * dentry )
+
+is dentry hashed
+
+Parameters
+  const struct dentry *dentry
+    entry to check
+
+Description
+  Returns true if the dentry passed is not currently hashed.

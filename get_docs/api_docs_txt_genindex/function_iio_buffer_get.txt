@@ -1,0 +1,10 @@
+Function: struct iio_buffer * iio_buffer_get ( struct iio_buffer * buffer )
+
+Grab a reference to the buffer
+
+Parameters
+  struct iio_buffer *buffer
+    The buffer to grab a reference for, may be NULL
+
+Description
+  Returns the pointer to the buffer that was passed into the function.

@@ -1,0 +1,15 @@
+Function: void tipc_publ_purge ( struct net * net , struct publication * p , u32 addr )
+
+remove publication associated with a failed node
+
+Parameters
+  struct net *net
+    the associated network namespace
+  struct publication *p
+    the publication to remove
+  u32 addr
+    failed node’s address
+
+Description
+  Invoked for each publication issued by a newly failed node.
+Removes publication structure from name table & deletes it.

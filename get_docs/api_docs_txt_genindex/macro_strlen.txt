@@ -1,0 +1,13 @@
+Macro: strlen
+
+
+
+Parameters
+  p
+    pointer to NUL-terminated string to count.
+
+Description
+  Do not use this function unless the string length is known at
+compile-time. When p is unterminated, this function may crash
+or return unexpected counts that could lead to memory content
+exposures. Prefer strnlen() .

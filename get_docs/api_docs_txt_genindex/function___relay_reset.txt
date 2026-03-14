@@ -1,0 +1,12 @@
+Function: void __relay_reset ( struct rchan_buf * buf , unsigned int init )
+
+reset a channel buffer
+
+Parameters
+  struct rchan_buf *buf
+    the channel buffer
+  unsigned int init
+    1 if this is a first-time initialization
+
+Description
+  See relay_reset() for description of effect.

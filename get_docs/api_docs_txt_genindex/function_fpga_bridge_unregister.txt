@@ -1,0 +1,10 @@
+Function: void fpga_bridge_unregister ( struct fpga_bridge * bridge )
+
+unregister an FPGA bridge
+
+Parameters
+  struct fpga_bridge *bridge
+    FPGA bridge struct
+
+Description
+  This function is intended for use in an FPGA bridge driver’s remove function.

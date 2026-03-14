@@ -1,0 +1,9 @@
+Struct: struct ieee80211_iface_limit
+
+limit on certain interface types
+
+Members
+  max
+    maximum number of interfaces of these types
+  types
+    interface types (bits)

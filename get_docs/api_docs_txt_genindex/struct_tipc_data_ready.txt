@@ -1,0 +1,7 @@
+Struct: void tipc_data_ready ( struct sock * sk )
+
+wake up threads to indicate messages have been received
+
+Parameters
+  struct sock *sk
+    socket

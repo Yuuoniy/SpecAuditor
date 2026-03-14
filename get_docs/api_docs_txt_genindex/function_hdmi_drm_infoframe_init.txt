@@ -1,0 +1,10 @@
+Function: int hdmi_drm_infoframe_init ( struct hdmi_drm_infoframe * frame )
+
+initialize an HDMI Dynaminc Range and mastering infoframe
+
+Parameters
+  struct hdmi_drm_infoframe *frame
+    HDMI DRM infoframe
+
+Description
+  Returns 0 on success or a negative error code on failure.

@@ -1,0 +1,10 @@
+Function: void wakeup_readers ( struct irq_work * work )
+
+wake up readers waiting on a channel
+
+Parameters
+  struct irq_work *work
+    contains the channel buffer
+
+Description
+  This is the function used to defer reader waking

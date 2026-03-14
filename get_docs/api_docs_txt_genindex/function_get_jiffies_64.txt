@@ -1,0 +1,11 @@
+Function: u64 get_jiffies_64 ( void )
+
+read the 64-bit non-atomic jiffies_64 value
+
+Parameters
+  void
+    no arguments
+
+Description
+  When BITS_PER_LONG < 64, this uses sequence number sampling using
+jiffies_lock to protect the 64-bit read.

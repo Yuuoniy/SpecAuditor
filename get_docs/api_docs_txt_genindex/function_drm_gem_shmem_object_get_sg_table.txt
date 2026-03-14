@@ -1,0 +1,11 @@
+Function: struct sg_table * drm_gem_shmem_object_get_sg_table ( struct drm_gem_object * obj )
+
+GEM object function for drm_gem_shmem_get_sg_table()
+
+Parameters
+  struct drm_gem_object *obj
+    GEM object
+
+Description
+  This function wraps drm_gem_shmem_get_sg_table() . Drivers that employ the shmem helpers should
+use it as their drm_gem_object_funcs.get_sg_table handler.

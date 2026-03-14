@@ -1,0 +1,13 @@
+Function: int security_xfrm_policy_clone ( struct xfrm_sec_ctx * old_ctx , struct xfrm_sec_ctx * * new_ctxp )
+
+Clone xfrm policy LSM state
+
+Parameters
+  struct xfrm_sec_ctx *old_ctx
+    xfrm security context
+  struct xfrm_sec_ctx **new_ctxp
+    target xfrm security context
+
+Description
+  Allocate a security structure in new_ctxp that contains the information from
+the old_ctx structure.

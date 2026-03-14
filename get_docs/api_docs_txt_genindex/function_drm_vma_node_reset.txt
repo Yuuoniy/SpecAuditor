@@ -1,0 +1,11 @@
+Function: void drm_vma_node_reset ( struct drm_vma_offset_node * node )
+
+Initialize or reset node object
+
+Parameters
+  struct drm_vma_offset_node *node
+    Node to initialize or reset
+
+Description
+  Reset a node to its initial state. This must be called before using it with
+any VMA offset manager.

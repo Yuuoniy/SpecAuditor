@@ -1,0 +1,12 @@
+Function: void * kmap_atomic ( const struct page * page )
+
+Atomically map a page for temporary usage - Deprecated!
+
+Parameters
+  const struct page *page
+    Pointer to the page to be mapped
+
+Description
+  In fact a wrapper around kmap_local_page() which also disables pagefaults
+and, depending on PREEMPT_RT configuration, also CPU migration and
+preemption. Therefore users should not count on the latter two side effects.

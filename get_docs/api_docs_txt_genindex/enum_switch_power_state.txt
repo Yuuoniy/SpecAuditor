@@ -1,0 +1,3 @@
+Enum: enum switch_power_state
+
+power state of drm device

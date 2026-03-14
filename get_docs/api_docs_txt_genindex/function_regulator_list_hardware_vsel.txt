@@ -1,0 +1,14 @@
+Function: int regulator_list_hardware_vsel ( struct regulator * regulator , unsigned selector )
+
+get the HW-specific register value for a selector
+
+Parameters
+  struct regulator *regulator
+    regulator source
+  unsigned selector
+    identify voltage to list
+
+Description
+  Converts the selector to a hardware-specific voltage selector that can be
+directly written to the regulator registers. The address of the voltage
+register can be determined by calling regulator_get_hardware_vsel_register .

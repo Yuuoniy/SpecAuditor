@@ -1,0 +1,14 @@
+Function: int snd_ctl_apply_vmaster_followers ( struct snd_kcontrol * kctl , int ( * func ) ( struct snd_kcontrol * vfollower , struct snd_kcontrol * follower , void * arg ) , void * arg )
+
+Apply function to each vmaster follower
+
+Parameters
+  struct snd_kcontrol *kctl
+    vmaster kctl element
+  int (*func)(struct snd_kcontrol *vfollower, struct snd_kcontrol *follower, void *arg)
+    function to apply
+  void *arg
+    optional function argument
+
+Description
+  Apply the function func to each follower kctl of the given vmaster kctl.

@@ -1,0 +1,14 @@
+Function: int usb_hcd_pci_probe ( struct pci_dev * dev , const struct hc_driver * driver )
+
+initialize PCI-based HCDs
+
+Parameters
+  struct pci_dev *dev
+    USB Host Controller being probed
+  const struct hc_driver *driver
+    USB HC driver handle
+
+Description
+  Allocates basic PCI resources for this USB host controller, and
+then invokes the start() method for the HCD associated with it
+through the hotplug entry’s driver_data.

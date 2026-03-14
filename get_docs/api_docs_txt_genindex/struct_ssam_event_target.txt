@@ -1,0 +1,7 @@
+Struct: struct ssam_event_target
+
+Set of queues for a single SSH target ID.
+
+Members
+  queue
+    The array of queues, one queue per event ID.

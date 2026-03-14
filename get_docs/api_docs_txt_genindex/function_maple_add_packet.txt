@@ -1,0 +1,15 @@
+Function: int maple_add_packet ( struct maple_device * mdev , u32 function , u32 command , size_t length , void * data )
+
+add a single instruction to the maple bus queue
+
+Parameters
+  struct maple_device *mdev
+    maple device
+  u32 function
+    function on device being queried
+  u32 command
+    maple command to add
+  size_t length
+    length of command string (in 32 bit words)
+  void *data
+    remainder of command string

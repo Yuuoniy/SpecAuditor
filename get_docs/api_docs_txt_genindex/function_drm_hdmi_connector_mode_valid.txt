@@ -1,0 +1,12 @@
+Function: enum drm_mode_status drm_hdmi_connector_mode_valid ( struct drm_connector * connector , const struct drm_display_mode * mode )
+
+Check if mode is valid for HDMI connector
+
+Parameters
+  struct drm_connector *connector
+    DRM connector to validate the mode
+  const struct drm_display_mode *mode
+    Display mode to validate
+
+Description
+  Generic .mode_valid implementation for HDMI connectors.

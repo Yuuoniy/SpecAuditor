@@ -1,0 +1,9 @@
+Function: void blk_queue_flag_set ( unsigned int flag , struct request_queue * q )
+
+atomically set a queue flag
+
+Parameters
+  unsigned int flag
+    flag to be set
+  struct request_queue *q
+    request queue

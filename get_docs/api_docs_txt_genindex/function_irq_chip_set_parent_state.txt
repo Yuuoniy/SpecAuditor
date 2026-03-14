@@ -1,0 +1,14 @@
+Function: int irq_chip_set_parent_state ( struct irq_data * data , enum irqchip_irq_state which , bool val )
+
+set the state of a parent interrupt.
+
+Parameters
+  struct irq_data *data
+    Pointer to interrupt specific data
+  enum irqchip_irq_state which
+    State to be restored (one of IRQCHIP_STATE_*)
+  bool val
+    Value corresponding to which
+
+Description
+  Conditional success, if the underlying irqchip does not implement it.

@@ -1,0 +1,10 @@
+Function: void phy_free_interrupt ( struct phy_device * phydev )
+
+disable and free interrupt for a PHY device
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  This should only be called with a valid IRQ number.

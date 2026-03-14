@@ -1,0 +1,9 @@
+Struct: struct mhi_device_id
+
+MHI device identification
+
+Members
+  chan
+    MHI channel name
+  driver_data
+    driver data;

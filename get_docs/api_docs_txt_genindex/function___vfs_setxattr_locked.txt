@@ -1,0 +1,20 @@
+Function: int __vfs_setxattr_locked ( struct mnt_idmap * idmap , struct dentry * dentry , const char * name , const void * value , size_t size , int flags , struct inode * * delegated_inode )
+
+set an extended attribute while holding the inode lock
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount of the target inode
+  struct dentry *dentry
+    object to perform setxattr on
+  const char *name
+    xattr name to set
+  const void *value
+    value to set name to
+  size_t size
+    size of value
+  int flags
+    flags to pass into filesystem operations
+  struct inode **delegated_inode
+    on return, will contain an inode pointer that
+a delegation was broken on, NULL if none.

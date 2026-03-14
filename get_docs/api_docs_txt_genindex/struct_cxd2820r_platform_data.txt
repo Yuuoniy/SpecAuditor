@@ -1,0 +1,17 @@
+Struct: struct cxd2820r_platform_data
+
+Platform data for the cxd2820r driver
+
+Members
+  ts_mode
+    TS mode.
+  ts_clk_inv
+    TS clock inverted.
+  if_agc_polarity
+    IF AGC polarity.
+  spec_inv
+    Input spectrum inverted.
+  gpio_chip_base
+    GPIO.
+  get_dvb_frontend
+    Get DVB frontend.

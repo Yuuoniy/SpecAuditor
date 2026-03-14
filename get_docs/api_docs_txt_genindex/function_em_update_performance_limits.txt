@@ -1,0 +1,17 @@
+Function: int em_update_performance_limits ( struct em_perf_domain * pd , unsigned long freq_min_khz , unsigned long freq_max_khz )
+
+Update Energy Model with performance limits information.
+
+Parameters
+  struct em_perf_domain *pd
+    Performance Domain with EM that has to be updated.
+  unsigned long freq_min_khz
+    New minimum allowed frequency for this device.
+  unsigned long freq_max_khz
+    New maximum allowed frequency for this device.
+
+Description
+  This function allows to update the EM with information about available
+performance levels. It takes the minimum and maximum frequency in kHz
+and does internal translation to performance levels.
+Returns 0 on success or -EINVAL when failed.

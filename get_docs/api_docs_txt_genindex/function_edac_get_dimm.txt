@@ -1,0 +1,16 @@
+Function: struct dimm_info * edac_get_dimm ( struct mem_ctl_info * mci , int layer0 , int layer1 , int layer2 )
+
+Get DIMM info from a memory controller given by [layer0,layer1,layer2] position
+
+Parameters
+  struct mem_ctl_info *mci
+    MC descriptor struct mem_ctl_info
+  int layer0
+    layer0 position
+  int layer1
+    layer1 position. Unused if n_layers < 2
+  int layer2
+    layer2 position. Unused if n_layers < 3
+
+Description
+  For 1 layer, this function returns “dimms[layer0]”;

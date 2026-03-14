@@ -1,0 +1,14 @@
+Function: struct tty_struct * tty_driver_lookup_tty ( struct tty_driver * driver , struct file * file , int idx )
+
+find an existing tty, if any
+
+Parameters
+  struct tty_driver *driver
+    the driver for the tty
+  struct file *file
+    file object
+  int idx
+    the minor number
+
+Description
+  Locking: tty_mutex must be held. If the tty is found, bump the tty kref.

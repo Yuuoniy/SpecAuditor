@@ -1,0 +1,7 @@
+Function: void scsi_failures_reset_retries ( struct scsi_failures * failures )
+
+reset all failures to zero
+
+Parameters
+  struct scsi_failures *failures
+    struct scsi_failures with specific failure modes set

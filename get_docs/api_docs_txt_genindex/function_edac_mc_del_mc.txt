@@ -1,0 +1,7 @@
+Function: struct mem_ctl_info * edac_mc_del_mc ( struct device * dev )
+
+Remove sysfs entries for mci structure associated with dev and remove mci structure from global list.
+
+Parameters
+  struct device *dev
+    Pointer to struct device representing mci structure to remove.

@@ -1,0 +1,9 @@
+Function: enum drm_dp_mst_mode drm_dp_read_mst_cap ( struct drm_dp_aux * aux , const u8 dpcd [ DP_RECEIVER_CAP_SIZE ] )
+
+Read the sink’s MST mode capability
+
+Parameters
+  struct drm_dp_aux *aux
+    The DP AUX channel to use
+  const u8 dpcd[DP_RECEIVER_CAP_SIZE]
+    A cached copy of the DPCD capabilities for this sink

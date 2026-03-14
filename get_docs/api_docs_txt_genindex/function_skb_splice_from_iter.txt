@@ -1,0 +1,17 @@
+Function: ssize_t skb_splice_from_iter ( struct sk_buff * skb , struct iov_iter * iter , ssize_t maxsize )
+
+Splice (or copy) pages to skbuff
+
+Parameters
+  struct sk_buff *skb
+    The buffer to add pages to
+  struct iov_iter *iter
+    Iterator representing the pages to be added
+  ssize_t maxsize
+    Maximum amount of pages to be added
+
+Description
+  This is a common helper function for supporting MSG_SPLICE_PAGES.  It
+extracts pages from an iterator and adds them to the socket buffer if
+possible, copying them to fragments if not possible (such as if they’re slab
+pages).

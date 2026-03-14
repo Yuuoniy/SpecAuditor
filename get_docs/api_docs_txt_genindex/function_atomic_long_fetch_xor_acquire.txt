@@ -1,0 +1,12 @@
+Function: long atomic_long_fetch_xor_acquire ( long i , atomic_long_t * v )
+
+atomic bitwise XOR with acquire ordering
+
+Parameters
+  long i
+    long value
+  atomic_long_t *v
+    pointer to atomic_long_t
+
+Description
+  Atomically updates v to ( v ^ i ) with acquire ordering.

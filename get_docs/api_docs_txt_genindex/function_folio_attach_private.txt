@@ -1,0 +1,13 @@
+Function: void folio_attach_private ( struct folio * folio , void * data )
+
+Attach private data to a folio.
+
+Parameters
+  struct folio *folio
+    Folio to attach data to.
+  void *data
+    Data to attach to folio.
+
+Description
+  Attaching private data to a folio increments the page’s reference count.
+The data must be detached before the folio will be freed.

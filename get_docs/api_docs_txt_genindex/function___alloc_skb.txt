@@ -1,0 +1,21 @@
+Function: struct sk_buff * __alloc_skb ( unsigned int size , gfp_t gfp_mask , int flags , int node )
+
+allocate a network buffer
+
+Parameters
+  unsigned int size
+    size to allocate
+  gfp_t gfp_mask
+    allocation mask
+  int flags
+    If SKB_ALLOC_FCLONE is set, allocate from fclone cache
+instead of head cache and allocate a cloned (child) skb.
+If SKB_ALLOC_RX is set, __GFP_MEMALLOC will be used for
+allocations in case the data is required for writeback
+  int node
+    numa node to allocate memory on
+
+Description
+  Allocate a new sk_buff . The returned buffer has no headroom and a
+tail room of at least size bytes. The object has a reference count
+of one. The return is the buffer. On a failure the return is NULL .

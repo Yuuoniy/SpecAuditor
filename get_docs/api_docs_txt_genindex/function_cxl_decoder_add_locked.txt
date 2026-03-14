@@ -1,0 +1,12 @@
+Function: int cxl_decoder_add_locked ( struct cxl_decoder * cxld )
+
+Add a decoder with targets
+
+Parameters
+  struct cxl_decoder *cxld
+    The cxl decoder allocated by cxl_<type> _decoder_alloc()
+
+Description
+  Certain types of decoders may not have any targets. The main example of this
+is an endpoint device. A more awkward example is a hostbridge whose root
+ports get hot added (technically possible, though unlikely).

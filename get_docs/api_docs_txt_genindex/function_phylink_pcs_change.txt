@@ -1,0 +1,16 @@
+Function: void phylink_pcs_change ( struct phylink_pcs * pcs , bool up )
+
+notify phylink of a change to PCS link state
+
+Parameters
+  struct phylink_pcs *pcs
+    pointer to struct phylink_pcs
+  bool up
+    indicates whether the link is currently up.
+
+Description
+  The PCS driver should call this when the state of its link changes
+(e.g. link failure, new negotiation results, etc.) Note: it should
+not determine “up” by reading the BMSR. If in doubt about the link
+state at interrupt time, then pass true if pcs_get_state() returns
+the latched link-down state, otherwise pass false.

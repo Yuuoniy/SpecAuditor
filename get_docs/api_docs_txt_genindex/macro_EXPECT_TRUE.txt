@@ -1,0 +1,10 @@
+Macro: EXPECT_TRUE
+
+
+
+Parameters
+  seen
+    measured value
+
+Description
+  EXPECT_TRUE(measured): 0 != measured

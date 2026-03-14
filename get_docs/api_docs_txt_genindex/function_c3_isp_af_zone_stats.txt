@@ -1,0 +1,17 @@
+Function: struct c3_isp_af_zone_stats
+
+AF statistics of a zone
+
+Members
+  i2_mat
+    the mantissa of zonal squared image pixel sum
+  i4_mat
+    the mantissa of zonal quartic image pixel sum
+  e4_mat
+    the mantissa of zonal multi-directional quartic edge sum
+  e4_exp
+    the exponent of zonal multi-directional quartic edge sum
+  i2_exp
+    the exponent of zonal squared image pixel sum
+  i4_exp
+    the exponent of zonal quartic image pixel sum

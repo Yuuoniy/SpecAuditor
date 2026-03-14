@@ -1,0 +1,12 @@
+Function: void xprt_complete_rqst ( struct rpc_task * task , int copied )
+
+called when reply processing is complete
+
+Parameters
+  struct rpc_task *task
+    RPC request that recently completed
+  int copied
+    actual number of bytes received from the transport
+
+Description
+  Caller holds xprt->queue_lock.

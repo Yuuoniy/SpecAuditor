@@ -1,0 +1,9 @@
+Function: void * __rcu_dereference_sk_user_data_with_flags ( const struct sock * sk , uintptr_t flags )
+
+return the pointer only if argument flags all has been set in sk_user_data. Otherwise return NULL
+
+Parameters
+  const struct sock *sk
+    socket
+  uintptr_t flags
+    flag bits

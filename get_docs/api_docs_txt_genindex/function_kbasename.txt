@@ -1,0 +1,7 @@
+Function: const char * kbasename ( const char * path )
+
+return the last part of a pathname.
+
+Parameters
+  const char *path
+    path to extract the filename from.

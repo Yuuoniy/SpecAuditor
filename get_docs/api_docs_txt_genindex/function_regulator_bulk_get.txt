@@ -1,0 +1,17 @@
+Function: int regulator_bulk_get ( struct device * dev , int num_consumers , struct regulator_bulk_data * consumers )
+
+get multiple regulator consumers
+
+Parameters
+  struct device *dev
+    Device to supply
+  int num_consumers
+    Number of consumers to register
+  struct regulator_bulk_data *consumers
+    Configuration of consumers; clients are stored here.
+
+Description
+  This helper function allows drivers to get several regulator
+consumers in one operation.  If any of the regulators cannot be
+acquired then any regulators that were allocated will be freed
+before returning to the caller.

@@ -1,0 +1,7 @@
+Function: int gpio_device_get_base ( struct gpio_device * gdev )
+
+Get the base GPIO number allocated by this device
+
+Parameters
+  struct gpio_device *gdev
+    GPIO device

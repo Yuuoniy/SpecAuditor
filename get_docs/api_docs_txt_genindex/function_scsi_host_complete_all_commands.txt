@@ -1,0 +1,15 @@
+Function: void scsi_host_complete_all_commands ( struct Scsi_Host * shost , enum scsi_host_status status )
+
+Terminate all running commands
+
+Parameters
+  struct Scsi_Host *shost
+    Scsi Host on which commands should be terminated
+  enum scsi_host_status status
+    Status to be set for the terminated commands
+
+Description
+  There is no protection against modification of the number
+of outstanding commands. It is the responsibility of the
+caller to ensure that concurrent I/O submission and/or
+completion is stopped when calling this function.

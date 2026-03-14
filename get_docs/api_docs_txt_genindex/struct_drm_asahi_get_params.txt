@@ -1,0 +1,15 @@
+Struct: struct drm_asahi_get_params
+
+Arguments passed to DRM_IOCTL_ASAHI_GET_PARAMS
+
+Members
+  param_group
+    Parameter group to fetch (MBZ)
+  pad
+    MBZ
+  pointer
+    User pointer to write parameter struct
+  size
+    Size of the user buffer. In case of older userspace, this may
+be less than sizeof( struct drm_asahi_params_global ). The kernel will
+not write past the length specified here, allowing extensibility.

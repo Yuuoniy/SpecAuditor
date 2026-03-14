@@ -1,0 +1,12 @@
+Function: void amdgpu_vm_bo_trace_cs ( struct amdgpu_vm * vm , struct ww_acquire_ctx * ticket )
+
+trace all reserved mappings
+
+Parameters
+  struct amdgpu_vm *vm
+    the requested vm
+  struct ww_acquire_ctx *ticket
+    CS ticket
+
+Description
+  Trace all mappings of BOs reserved during a command submission.

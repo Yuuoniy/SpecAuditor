@@ -1,0 +1,13 @@
+Function: int regulator_disable_deferred ( struct regulator * regulator , int ms )
+
+disable regulator output with delay
+
+Parameters
+  struct regulator *regulator
+    regulator source
+  int ms
+    milliseconds until the regulator is disabled
+
+Description
+  Execute regulator_disable() on the regulator after a delay.  This
+is intended for use with devices that require some time to quiesce.

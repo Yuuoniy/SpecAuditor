@@ -1,0 +1,14 @@
+Function: void * memmove ( void * dest , const void * src , size_t count )
+
+Copy one area of memory to another
+
+Parameters
+  void *dest
+    Where to copy to
+  const void *src
+    Where to copy from
+  size_t count
+    The size of the area.
+
+Description
+  Unlike memcpy() , memmove() copes with overlapping areas.

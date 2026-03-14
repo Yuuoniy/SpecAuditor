@@ -1,0 +1,12 @@
+Function: int vga_get_interruptible ( struct pci_dev * pdev , unsigned int rsrc )
+
+
+
+Parameters
+  struct pci_dev *pdev
+    pci device of the VGA card or NULL for the system default
+  unsigned int rsrc
+    bit mask of resources to acquire and lock
+
+Description
+  Shortcut to vga_get with interruptible set to true.

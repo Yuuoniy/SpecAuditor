@@ -1,0 +1,11 @@
+Function: void xe_pm_d3cold_allowed_toggle ( struct xe_device * xe )
+
+Check conditions to toggle d3cold.allowed
+
+Parameters
+  struct xe_device *xe
+    xe device instance
+
+Description
+  To be called during runtime_pm idle callback.
+Check for all the D3Cold conditions ahead of runtime suspend.

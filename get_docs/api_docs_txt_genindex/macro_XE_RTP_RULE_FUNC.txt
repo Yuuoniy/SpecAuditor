@@ -1,0 +1,11 @@
+Macro: XE_RTP_RULE_FUNC
+
+
+
+Parameters
+  func__
+    Function to call to decide if rule matches
+
+Description
+  This allows more complex checks to be performed. The XE_RTP infrastructure will simply call the function func_ passed to decide if this
+rule matches the device.

@@ -1,0 +1,12 @@
+Function: bool drm_exec_cleanup ( struct drm_exec * exec )
+
+cleanup when contention is detected
+
+Parameters
+  struct drm_exec *exec
+    the drm_exec object to cleanup
+
+Description
+  Cleanup the current state and return true if we should stay inside the retry
+loop, false if there wasn’t any contention detected and we can keep the
+objects locked.

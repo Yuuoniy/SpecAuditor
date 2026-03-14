@@ -1,0 +1,9 @@
+Function: void kunit_kfree ( struct kunit * test , const void * ptr )
+
+Like kfree except for allocations managed by KUnit.
+
+Parameters
+  struct kunit *test
+    The test case to which the resource belongs.
+  const void *ptr
+    The memory allocation to free.

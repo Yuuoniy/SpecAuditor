@@ -1,0 +1,16 @@
+Function: int v4l2_event_subscribe ( struct v4l2_fh * fh , const struct v4l2_event_subscription * sub , unsigned int elems , const struct v4l2_subscribed_event_ops * ops )
+
+Subscribes to an event
+
+Parameters
+  struct v4l2_fh *fh
+    pointer to struct v4l2_fh
+  const struct v4l2_event_subscription *sub
+    pointer to struct v4l2_event_subscription
+  unsigned int elems
+    size of the events queue
+  const struct v4l2_subscribed_event_ops *ops
+    pointer to v4l2_subscribed_event_ops
+
+Description
+  Note

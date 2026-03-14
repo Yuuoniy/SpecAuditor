@@ -1,0 +1,13 @@
+Struct: struct v4l2_subdev_fh
+
+Used for storing subdev information per file handle
+
+Members
+  vfh
+    pointer to struct v4l2_fh
+  owner
+    module pointer to the owner of this file handle
+  state
+    pointer to struct v4l2_subdev_state
+  client_caps
+    bitmask of V4L2_SUBDEV_CLIENT_CAP_*

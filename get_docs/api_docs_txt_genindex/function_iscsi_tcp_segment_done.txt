@@ -1,0 +1,18 @@
+Function: int iscsi_tcp_segment_done ( struct iscsi_tcp_conn * tcp_conn , struct iscsi_segment * segment , int recv , unsigned copied )
+
+check whether the segment is complete
+
+Parameters
+  struct iscsi_tcp_conn *tcp_conn
+    iscsi tcp connection
+  struct iscsi_segment *segment
+    iscsi segment to check
+  int recv
+    set to one of this is called from the recv path
+  unsigned copied
+    number of bytes copied
+
+Description
+  Check if we’re done receiving this segment. If the receive
+buffer is full but we expect more data, move on to the
+next entry in the scatterlist.

@@ -1,0 +1,15 @@
+Function: void memcpy_and_pad ( void * dest , size_t dest_len , const void * src , size_t count , int pad )
+
+Copy one buffer to another with padding
+
+Parameters
+  void *dest
+    Where to copy to
+  size_t dest_len
+    The destination buffer size
+  const void *src
+    Where to copy from
+  size_t count
+    The number of bytes to copy
+  int pad
+    Character to use for padding if space is left in destination.

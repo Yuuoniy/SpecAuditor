@@ -1,0 +1,7 @@
+Function: struct srpt_send_ioctx * srpt_get_send_ioctx ( struct srpt_rdma_ch * ch )
+
+obtain an I/O context for sending to the initiator
+
+Parameters
+  struct srpt_rdma_ch *ch
+    SRPT RDMA channel.

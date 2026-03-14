@@ -1,0 +1,16 @@
+Function: struct hlist_node * seq_hlist_next_percpu ( void * v , struct hlist_head __percpu * head , int * cpu , loff_t * pos )
+
+move to the next position of the percpu hlist array
+
+Parameters
+  void *v
+    pointer to current hlist_node
+  struct hlist_head __percpu *head
+    pointer to percpu array of struct hlist_heads
+  int *cpu
+    pointer to cpu “cursor”
+  loff_t *pos
+    start position of sequence
+
+Description
+  Called at seq_file->op-> next() .

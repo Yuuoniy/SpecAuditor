@@ -1,0 +1,13 @@
+Function: int v4l2_ctrl_log_status ( struct file * file , void * priv )
+
+helper function to implement VIDIOC_LOG_STATUS ioctl
+
+Parameters
+  struct file *file
+    pointer to struct file
+  void *priv
+    unused. Kept just to be compatible to the arguments expected by struct v4l2_ioctl_ops .vidioc_log_status.
+
+Description
+  Can be used as a vidioc_log_status function that just dumps all controls
+associated with the filehandle.

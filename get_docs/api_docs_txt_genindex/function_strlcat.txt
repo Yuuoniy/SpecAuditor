@@ -1,0 +1,17 @@
+Function: size_t strlcat ( char * const p , const char * const q , size_t avail )
+
+Append a string to an existing string
+
+Parameters
+  char * const p
+    pointer to NUL-terminated string to append to
+  const char * const q
+    pointer to NUL-terminated string to append from
+  size_t avail
+    Maximum bytes available in p
+
+Description
+  Appends NUL-terminated string q after the NUL-terminated string at p , but will not write beyond avail bytes total,
+potentially truncating the copy from q . p will stay NUL-terminated only if a NUL already existed within
+the avail bytes of p . If so, the resulting number of
+bytes copied from q will be at most “ avail - strlen( p ) - 1”.

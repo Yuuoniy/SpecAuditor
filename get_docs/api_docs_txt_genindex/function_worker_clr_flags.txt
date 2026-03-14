@@ -1,0 +1,12 @@
+Function: void worker_clr_flags ( struct worker * worker , unsigned int flags )
+
+clear worker flags and adjust nr_running accordingly
+
+Parameters
+  struct worker *worker
+    self
+  unsigned int flags
+    flags to clear
+
+Description
+  Clear flags in worker->flags and adjust nr_running accordingly.

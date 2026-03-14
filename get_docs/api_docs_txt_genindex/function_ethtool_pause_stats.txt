@@ -1,0 +1,14 @@
+Function: struct ethtool_pause_stats
+
+statistics for IEEE 802.3x pause frames
+
+Members
+  src
+    input field denoting whether stats should be queried from the eMAC or
+pMAC (if the MM layer is supported). To be ignored otherwise.
+  tx_pause_frames
+    transmitted pause frame count. Reported to user space
+as ETHTOOL_A_PAUSE_STAT_TX_FRAMES .
+  rx_pause_frames
+    received pause frame count. Reported to user space
+as ETHTOOL_A_PAUSE_STAT_RX_FRAMES . Equivalent to:

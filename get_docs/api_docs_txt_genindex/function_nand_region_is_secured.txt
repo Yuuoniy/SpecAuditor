@@ -1,0 +1,16 @@
+Function: bool nand_region_is_secured ( struct nand_chip * chip , loff_t offset , u64 size )
+
+Check if the region is secured
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+  loff_t offset
+    Offset of the region to check
+  u64 size
+    Size of the region to check
+
+Description
+  Checks if the region is secured by comparing the offset and size with the
+list of secure regions obtained from DT. Returns true if the region is
+secured else false.

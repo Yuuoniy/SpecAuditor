@@ -1,0 +1,13 @@
+Function: bool ___test_and_change_bit ( unsigned long nr , volatile unsigned long * addr )
+
+Change a bit and return its old value
+
+Parameters
+  unsigned long nr
+    Bit to change
+  volatile unsigned long *addr
+    Address to count from
+
+Description
+  This operation is non-atomic. If two instances of this operation race, one
+can appear to succeed but actually fail.

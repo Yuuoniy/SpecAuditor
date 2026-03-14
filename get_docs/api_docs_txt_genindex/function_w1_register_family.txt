@@ -1,0 +1,7 @@
+Function: int w1_register_family ( struct w1_family * newf )
+
+register a device family driver
+
+Parameters
+  struct w1_family *newf
+    family to register

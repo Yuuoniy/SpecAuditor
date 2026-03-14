@@ -1,0 +1,10 @@
+Function: bool can_use_dio_link_hwss ( const struct dc_link * link , const struct link_resource * link_res )
+
+Check if the link_hwss is accessible
+
+Parameters
+  const struct dc_link *link
+    Reference a link struct containing one or more sinks and the
+connective status.
+  const struct link_resource *link_res
+    Mappable hardware resource used to enable a link.

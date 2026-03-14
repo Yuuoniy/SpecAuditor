@@ -1,0 +1,9 @@
+Function: struct device * bus_find_device_by_fwnode ( const struct bus_type * bus , const struct fwnode_handle * fwnode )
+
+device iterator for locating a particular device matching the fwnode.
+
+Parameters
+  const struct bus_type *bus
+    bus type
+  const struct fwnode_handle *fwnode
+    fwnode of the device to match.

@@ -1,0 +1,7 @@
+Function: int regulator_get_current_limit ( struct regulator * regulator )
+
+get regulator output current
+
+Parameters
+  struct regulator *regulator
+    regulator source

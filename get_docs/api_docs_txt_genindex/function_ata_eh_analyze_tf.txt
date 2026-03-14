@@ -1,0 +1,12 @@
+Function: unsigned int ata_eh_analyze_tf ( struct ata_queued_cmd * qc )
+
+analyze taskfile of a failed qc
+
+Parameters
+  struct ata_queued_cmd *qc
+    qc to analyze
+
+Description
+  Analyze taskfile of qc and further determine cause of
+failure.  This function also requests ATAPI sense data if
+available.

@@ -1,0 +1,15 @@
+Function: int drm_syncobj_create ( struct drm_syncobj * * out_syncobj , uint32_t flags , struct dma_fence * fence )
+
+create a new syncobj
+
+Parameters
+  struct drm_syncobj **out_syncobj
+    returned syncobj
+  uint32_t flags
+    DRM_SYNCOBJ_* flags
+  struct dma_fence *fence
+    if non-NULL, the syncobj will represent this fence
+
+Description
+  This is the first function to create a sync object. After creating, drivers
+probably want to make it available to userspace, either through drm_syncobj_get_handle() or drm_syncobj_get_fd() .

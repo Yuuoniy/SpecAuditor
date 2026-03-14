@@ -1,0 +1,9 @@
+Function: int clk_notifier_unregister ( struct clk * clk , struct notifier_block * nb )
+
+unregister a clock rate-change notifier callback
+
+Parameters
+  struct clk *clk
+    clock whose rate we are no longer interested in
+  struct notifier_block *nb
+    notifier block which will be unregistered

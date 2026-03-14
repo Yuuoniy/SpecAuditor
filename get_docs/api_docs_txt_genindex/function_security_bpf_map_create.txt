@@ -1,0 +1,17 @@
+Function: int security_bpf_map_create ( struct bpf_map * map , union bpf_attr * attr , struct bpf_token * token , bool kernel )
+
+Check if BPF map creation is allowed
+
+Parameters
+  struct bpf_map *map
+    BPF map object
+  union bpf_attr *attr
+    BPF syscall attributes used to create BPF map
+  struct bpf_token *token
+    BPF token used to grant user access
+  bool kernel
+    whether or not call originated from kernel
+
+Description
+  Do a check when the kernel creates a new BPF map. This is also the
+point where LSM blob is allocated for LSMs that need them.

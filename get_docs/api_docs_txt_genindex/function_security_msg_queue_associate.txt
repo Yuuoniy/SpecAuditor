@@ -1,0 +1,14 @@
+Function: int security_msg_queue_associate ( struct kern_ipc_perm * msq , int msqflg )
+
+Check if a msg queue operation is allowed
+
+Parameters
+  struct kern_ipc_perm *msq
+    sysv ipc permission structure
+  int msqflg
+    operation flags
+
+Description
+  Check permission when a message queue is requested through the msgget system
+call. This hook is only called when returning the message queue identifier
+for an existing message queue, not when a new message queue is created.

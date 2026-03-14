@@ -1,0 +1,14 @@
+Function: int security_xfrm_policy_lookup ( struct xfrm_sec_ctx * ctx , u32 fl_secid )
+
+Check if using a xfrm policy is allowed
+
+Parameters
+  struct xfrm_sec_ctx *ctx
+    target xfrm security context
+  u32 fl_secid
+    flow secid used to authorize access
+
+Description
+  Check permission when a flow selects a xfrm_policy for processing XFRMs on a
+packet.  The hook is called when selecting either a per-socket policy or a
+generic xfrm policy.

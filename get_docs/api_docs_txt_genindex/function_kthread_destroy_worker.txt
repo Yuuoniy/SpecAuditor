@@ -1,0 +1,12 @@
+Function: void kthread_destroy_worker ( struct kthread_worker * worker )
+
+destroy a kthread worker
+
+Parameters
+  struct kthread_worker *worker
+    worker to be destroyed
+
+Description
+  Flush and destroy worker .  The simple flush is enough because the kthread
+worker API is used only in trivial scenarios.  There are no multi-step state
+machines needed.

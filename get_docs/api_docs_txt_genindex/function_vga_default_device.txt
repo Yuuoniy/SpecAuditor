@@ -1,0 +1,12 @@
+Function: struct pci_dev * vga_default_device ( void )
+
+return the default VGA device, for vgacon
+
+Parameters
+  void
+    no arguments
+
+Description
+  This can be defined by the platform. The default implementation is
+rather dumb and will probably only work properly on single VGA card
+setups and/or x86 platforms.

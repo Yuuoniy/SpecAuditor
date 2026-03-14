@@ -1,0 +1,12 @@
+Function: bool scsi_normalize_sense ( const u8 * sense_buffer , int sb_len , struct scsi_sense_hdr * sshdr )
+
+normalize main elements from either fixed or descriptor sense data format into a common format.
+
+Parameters
+  const u8 *sense_buffer
+    byte array containing sense data returned by device
+  int sb_len
+    number of valid bytes in sense_buffer
+  struct scsi_sense_hdr *sshdr
+    pointer to instance of structure that common
+elements are written to.

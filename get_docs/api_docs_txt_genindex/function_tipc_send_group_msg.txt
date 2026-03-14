@@ -1,0 +1,19 @@
+Function: int tipc_send_group_msg ( struct net * net , struct tipc_sock * tsk , struct msghdr * m , struct tipc_member * mb , u32 dnode , u32 dport , int dlen )
+
+send a message to a member in the group
+
+Parameters
+  struct net *net
+    network namespace
+  struct tipc_sock *tsk
+    tipc socket
+  struct msghdr *m
+    message to send
+  struct tipc_member *mb
+    group member
+  u32 dnode
+    destination node
+  u32 dport
+    destination port
+  int dlen
+    total length of message data

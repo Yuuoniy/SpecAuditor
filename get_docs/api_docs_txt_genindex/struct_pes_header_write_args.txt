@@ -1,0 +1,29 @@
+Struct: struct pes_header_write_args
+
+Arguments to write a PES header.
+
+Members
+  dest_buf
+    The buffer to write into.
+  dest_offset
+    where to start writing in the dest_buffer.
+  dest_buf_sz
+    The size of the dest_buffer
+  encoder_id
+    Encoder id (see vidtv_encoder.h)
+  send_pts
+    Should we send PTS?
+  pts
+    PTS value to send.
+  send_dts
+    Should we send DTS?
+  dts
+    DTS value to send.
+  stream_id
+    The stream id to use. Ex: Audio streams (0xc0-0xdf), Video
+streams (0xe0-0xef).
+  n_pes_h_s_bytes
+    Padding bytes. Might be used by an encoder if needed, gets
+discarded by the decoder.
+  access_unit_len
+    The size of _one_ access unit (with any headers it might need)

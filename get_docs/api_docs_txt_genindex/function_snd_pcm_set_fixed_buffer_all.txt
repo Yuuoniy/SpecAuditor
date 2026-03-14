@@ -1,0 +1,18 @@
+Function: int snd_pcm_set_fixed_buffer_all ( struct snd_pcm * pcm , int type , struct device * data , size_t size )
+
+Preallocate and set up the fixed size PCM buffer
+
+Parameters
+  struct snd_pcm *pcm
+    the pcm instance
+  int type
+    DMA type (SNDRV_DMA_TYPE_*)
+  struct device *data
+    DMA type dependent data
+  size_t size
+    the requested pre-allocation size in bytes
+
+Description
+  Apply the set up of the fixed buffer via snd_pcm_set_fixed_buffer() for
+all substream.  If any of allocation fails, it returns -ENOMEM, hence the
+caller must check the return value.

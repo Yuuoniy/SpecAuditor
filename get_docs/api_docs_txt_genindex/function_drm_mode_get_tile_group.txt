@@ -1,0 +1,12 @@
+Function: struct drm_tile_group * drm_mode_get_tile_group ( struct drm_device * dev , const char topology [ 8 ] )
+
+get a reference to an existing tile group
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  const char topology[8]
+    8-bytes unique per monitor.
+
+Description
+  Use the unique bytes to get a reference to an existing tile group.

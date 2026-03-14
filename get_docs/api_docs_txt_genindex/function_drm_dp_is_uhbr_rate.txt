@@ -1,0 +1,10 @@
+Function: bool drm_dp_is_uhbr_rate ( int link_rate )
+
+Determine if a link rate is UHBR
+
+Parameters
+  int link_rate
+    link rate in 10kbits/s units
+
+Description
+  Determine if the provided link rate is an UHBR rate.

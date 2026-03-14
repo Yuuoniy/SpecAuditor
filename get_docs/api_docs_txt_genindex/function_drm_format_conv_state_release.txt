@@ -1,0 +1,11 @@
+Function: void drm_format_conv_state_release ( struct drm_format_conv_state * state )
+
+Releases an format-conversion storage
+
+Parameters
+  struct drm_format_conv_state *state
+    The format-conversion state
+
+Description
+  Releases the memory range references by the format-conversion state.
+After this call, all pointers to the memory are invalid. Prefer drm_format_conv_state_init() for cleaning up and unloading a driver.

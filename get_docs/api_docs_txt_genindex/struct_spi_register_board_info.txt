@@ -1,0 +1,16 @@
+Struct: int spi_register_board_info ( struct spi_board_info const * info , unsigned n )
+
+register SPI devices for a given board
+
+Parameters
+  struct spi_board_info const *info
+    array of chip descriptors
+  unsigned n
+    how many descriptors are provided
+
+Description
+  Board-specific early init code calls this (probably during arch_initcall)
+with segments of the SPI device table.  Any device nodes are created later,
+after the relevant parent SPI controller (bus_num) is defined.  We keep
+this table of devices forever, so that reloading a controller driver will
+not make Linux forget about these hard-wired devices.

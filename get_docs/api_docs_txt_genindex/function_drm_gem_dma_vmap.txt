@@ -1,0 +1,15 @@
+Function: int drm_gem_dma_vmap ( struct drm_gem_dma_object * dma_obj , struct iosys_map * map )
+
+map a DMA GEM object into the kernel’s virtual address space
+
+Parameters
+  struct drm_gem_dma_object *dma_obj
+    DMA GEM object
+  struct iosys_map *map
+    Returns the kernel virtual address of the DMA GEM object’s backing
+store.
+
+Description
+  This function maps a buffer into the kernel’s virtual address space.
+Since the DMA buffers are already mapped into the kernel virtual address
+space this simply returns the cached virtual address.

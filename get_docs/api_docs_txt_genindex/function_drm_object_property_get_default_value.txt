@@ -1,0 +1,15 @@
+Function: int drm_object_property_get_default_value ( struct drm_mode_object * obj , struct drm_property * property , uint64_t * val )
+
+retrieve the default value of a property when in atomic mode.
+
+Parameters
+  struct drm_mode_object *obj
+    drm mode object to get property value from
+  struct drm_property *property
+    property to retrieve
+  uint64_t *val
+    storage for the property value
+
+Description
+  This function retrieves the default state of the given property as passed in
+to drm_object_attach_property

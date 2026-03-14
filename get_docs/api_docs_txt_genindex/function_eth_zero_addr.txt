@@ -1,0 +1,10 @@
+Function: void eth_zero_addr ( u8 * addr )
+
+Assign zero address
+
+Parameters
+  u8 *addr
+    Pointer to a six-byte array containing the Ethernet address
+
+Description
+  Assign the zero address to the given address array.

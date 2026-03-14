@@ -1,0 +1,7 @@
+Function: u64 ether_addr_to_u64 ( const u8 * addr )
+
+Convert an Ethernet address into a u64 value.
+
+Parameters
+  const u8 *addr
+    Pointer to a six-byte array containing the Ethernet address

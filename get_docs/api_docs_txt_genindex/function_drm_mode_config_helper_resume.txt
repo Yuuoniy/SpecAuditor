@@ -1,0 +1,11 @@
+Function: int drm_mode_config_helper_resume ( struct drm_device * dev )
+
+Modeset resume helper
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  This helper function takes care of resuming the modeset side. It calls drm_atomic_helper_resume() , resumes fbdev if used and enables output polling
+if initiaized.

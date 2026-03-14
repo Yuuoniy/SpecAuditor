@@ -1,0 +1,7 @@
+Function: int drm_rect_height ( const struct drm_rect * r )
+
+determine the rectangle height
+
+Parameters
+  const struct drm_rect *r
+    rectangle whose height is returned

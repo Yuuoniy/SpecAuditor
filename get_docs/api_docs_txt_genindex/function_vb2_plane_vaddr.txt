@@ -1,0 +1,14 @@
+Function: void * vb2_plane_vaddr ( struct vb2_buffer * vb , unsigned int plane_no )
+
+Return a kernel virtual address of a given plane.
+
+Parameters
+  struct vb2_buffer *vb
+    pointer to struct vb2_buffer to which the plane in
+question belongs to.
+  unsigned int plane_no
+    plane number for which the address is to be returned.
+
+Description
+  This function returns a kernel virtual address of a given plane if
+such a mapping exist, NULL otherwise.

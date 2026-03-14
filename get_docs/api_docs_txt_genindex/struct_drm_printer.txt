@@ -1,0 +1,7 @@
+Struct: struct drm_printer
+
+drm output “stream”
+
+Members
+  void drm_vprintf ( struct drm_printer * p , const char * fmt , va_list * va ) ¶
+    print to a drm_printer stream

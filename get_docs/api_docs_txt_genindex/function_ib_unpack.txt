@@ -1,0 +1,17 @@
+Function: void ib_unpack ( const struct ib_field * desc , int desc_len , void * buf , void * structure )
+
+Unpack a buffer into a structure
+
+Parameters
+  const struct ib_field *desc
+    Array of structure field descriptions
+  int desc_len
+    Number of entries in desc
+  void *buf
+    Buffer to unpack from
+  void *structure
+    Structure to unpack into
+
+Description
+  ib_pack() unpacks a list of structure fields from a buffer,
+controlled by the array of fields in desc .

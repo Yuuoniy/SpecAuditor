@@ -1,0 +1,27 @@
+Struct: struct phylink_link_state
+
+link state structure
+
+Members
+  advertising
+    ethtool bitmask containing advertised link modes
+  lp_advertising
+    ethtool bitmask containing link partner advertised link
+modes
+  interface
+    link typedef phy_interface_t mode
+  speed
+    link speed, one of the SPEED_* constants.
+  duplex
+    link duplex mode, one of DUPLEX_* constants.
+  pause
+    link pause state, described by MLO_PAUSE_* constants.
+  rate_matching
+    rate matching being performed, one of the RATE_MATCH_*
+constants. If rate matching is taking place, then the speed/duplex of
+the medium link mode ( speed and duplex ) and the speed/duplex of the phy
+interface mode ( interface ) are different.
+  link
+    true if the link is up.
+  an_complete
+    true if autonegotiation has completed.

@@ -1,0 +1,13 @@
+Macro: drm_printf_indent
+
+
+
+Parameters
+  printer
+    DRM printer
+  indent
+    Tab indentation level (max 5)
+  fmt
+    Format string
+  ...
+    variable arguments

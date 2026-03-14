@@ -1,0 +1,9 @@
+Function: struct rkisp1_ext_params_dpcc_config
+
+RkISP1 extensible params DPCC config
+
+Members
+  header
+    The RkISP1 extensible parameters header, see rkisp1_ext_params_block_header
+  config
+    Defective Pixel Cluster Correction configuration, see rkisp1_cif_isp_dpcc_config

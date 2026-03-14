@@ -1,0 +1,11 @@
+Function: void snd_ac97_resume ( struct snd_ac97 * ac97 )
+
+General resume function for AC97 codec
+
+Parameters
+  struct snd_ac97 *ac97
+    the ac97 instance
+
+Description
+  Do the standard resume procedure, power up and restoring the
+old register values.

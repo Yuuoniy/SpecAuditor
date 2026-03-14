@@ -1,0 +1,16 @@
+Function: int of_overlay_fdt_apply ( const void * overlay_fdt , u32 overlay_fdt_size , int * ret_ovcs_id , const struct device_node * base )
+
+Create and apply an overlay changeset
+
+Parameters
+  const void *overlay_fdt
+    pointer to overlay FDT
+  u32 overlay_fdt_size
+    number of bytes in overlay_fdt
+  int *ret_ovcs_id
+    pointer for returning created changeset id
+  const struct device_node *base
+    pointer for the target node to apply overlay
+
+Description
+  Creates and applies an overlay changeset.

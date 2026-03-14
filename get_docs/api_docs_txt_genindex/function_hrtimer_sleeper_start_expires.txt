@@ -1,0 +1,13 @@
+Function: void hrtimer_sleeper_start_expires ( struct hrtimer_sleeper * sl , enum hrtimer_mode mode )
+
+Start a hrtimer sleeper timer
+
+Parameters
+  struct hrtimer_sleeper *sl
+    sleeper to be started
+  enum hrtimer_mode mode
+    timer mode abs/rel
+
+Description
+  Wrapper around hrtimer_start_expires() for hrtimer_sleeper based timers
+to allow PREEMPT_RT to tweak the delivery mode (soft/hardirq context)

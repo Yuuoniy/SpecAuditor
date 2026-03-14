@@ -1,0 +1,11 @@
+Function: void v4l2_m2m_resume ( struct v4l2_m2m_dev * m2m_dev )
+
+resume job running and try to run a queued job
+
+Parameters
+  struct v4l2_m2m_dev *m2m_dev
+    opaque pointer to the internal data to handle M2M context
+
+Description
+  Called by a driver in the resume hook. This reverts the operation of v4l2_m2m_suspend() and allows job to be run. Also try to run a queued job if
+there is any.

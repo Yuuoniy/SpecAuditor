@@ -1,0 +1,12 @@
+Function: int hcd_buffer_create ( struct usb_hcd * hcd )
+
+initialize buffer pools
+
+Parameters
+  struct usb_hcd *hcd
+    the bus whose buffer pools are to be initialized
+
+Description
+  Call this as part of initializing a host controller that uses the dma
+memory allocators.  It initializes some pools of dma-coherent memory that
+will be shared by all drivers using that controller.

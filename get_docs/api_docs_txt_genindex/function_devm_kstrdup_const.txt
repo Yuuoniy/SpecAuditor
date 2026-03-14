@@ -1,0 +1,15 @@
+Function: const char * devm_kstrdup_const ( struct device * dev , const char * s , gfp_t gfp )
+
+resource managed conditional string duplication
+
+Parameters
+  struct device *dev
+    device for which to duplicate the string
+  const char *s
+    the string to duplicate
+  gfp_t gfp
+    the GFP mask used in the kmalloc() call when allocating memory
+
+Description
+  Strings allocated by devm_kstrdup_const will be automatically freed when
+the associated device is detached.

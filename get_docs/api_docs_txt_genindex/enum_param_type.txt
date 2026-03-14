@@ -1,0 +1,3 @@
+Enum: enum param_type
+
+type of the tuner pameters

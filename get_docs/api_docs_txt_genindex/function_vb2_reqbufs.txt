@@ -1,0 +1,9 @@
+Function: int vb2_reqbufs ( struct vb2_queue * q , struct v4l2_requestbuffers * req )
+
+Wrapper for vb2_core_reqbufs() that also verifies the memory and type values.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  struct v4l2_requestbuffers *req
+    struct v4l2_requestbuffers passed from userspace to v4l2_ioctl_ops->vidioc_reqbufs handler in driver.

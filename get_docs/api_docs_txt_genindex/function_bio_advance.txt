@@ -1,0 +1,14 @@
+Function: void bio_advance ( struct bio * bio , unsigned int nbytes )
+
+increment/complete a bio by some number of bytes
+
+Parameters
+  struct bio *bio
+    bio to advance
+  unsigned int nbytes
+    number of bytes to complete
+
+Description
+  This updates bi_sector, bi_size and bi_idx; if the number of bytes to
+complete doesn’t align with a bvec boundary, then bv_len and bv_offset will
+be updated on the last bvec as well.

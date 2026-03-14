@@ -1,0 +1,14 @@
+Function: int slim_xfer_msg ( struct slim_device * sbdev , struct slim_val_inf * msg , u8 mc )
+
+Transfer a value info message on slim device
+
+Parameters
+  struct slim_device *sbdev
+    slim device to which this msg has to be transferred
+  struct slim_val_inf *msg
+    value info message pointer
+  u8 mc
+    message code of the message
+
+Description
+  Called by drivers which want to transfer a vlaue or info elements.

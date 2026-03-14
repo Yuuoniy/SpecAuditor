@@ -1,0 +1,11 @@
+Function: int kiocb_modified ( struct kiocb * iocb )
+
+handle mandated vfs changes when modifying a file
+
+Parameters
+  struct kiocb *iocb
+    iocb that was modified
+
+Description
+  When file has been modified ensure that special
+file privileges are removed and time settings are updated.

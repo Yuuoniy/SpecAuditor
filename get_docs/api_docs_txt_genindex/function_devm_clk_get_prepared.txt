@@ -1,0 +1,13 @@
+Function: struct clk * devm_clk_get_prepared ( struct device * dev , const char * id )
+
+devm_clk_get() + clk_prepare()
+
+Parameters
+  struct device *dev
+    device for clock “consumer”
+  const char *id
+    clock consumer ID
+
+Description
+  The returned clk (if valid) is prepared. Drivers must however assume
+that the clock is not enabled.

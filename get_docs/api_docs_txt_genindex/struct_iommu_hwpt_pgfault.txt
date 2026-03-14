@@ -1,0 +1,28 @@
+Struct: struct iommu_hwpt_pgfault
+
+iommu page fault data
+
+Members
+  flags
+    Combination of enum iommu_hwpt_pgfault_flags
+  dev_id
+    id of the originated device
+  pasid
+    Process Address Space ID
+  grpid
+    Page Request Group Index
+  perm
+    Combination of enum iommu_hwpt_pgfault_perm
+  __reserved
+    Must be 0.
+  addr
+    Fault address
+  length
+    a hint of how much data the requestor is expecting to fetch. For
+example, if the PRI initiator knows it is going to do a 10MB
+transfer, it could fill in 10MB and the OS could pre-fault in
+10MB of IOVA. It’s default to 0 if there’s no such hint.
+  cookie
+    kernel-managed cookie identifying a group of fault messages. The
+cookie number encoded in the last page fault of the group should
+be echoed back in the response message.

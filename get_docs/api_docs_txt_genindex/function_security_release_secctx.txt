@@ -1,0 +1,10 @@
+Function: void security_release_secctx ( struct lsm_context * cp )
+
+Free a secctx buffer
+
+Parameters
+  struct lsm_context *cp
+    the security context
+
+Description
+  Release the security context.

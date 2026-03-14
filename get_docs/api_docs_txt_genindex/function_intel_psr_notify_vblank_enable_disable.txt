@@ -1,0 +1,13 @@
+Function: void intel_psr_notify_vblank_enable_disable ( struct intel_display * display , bool enable )
+
+Notify PSR about enable/disable of vblank
+
+Parameters
+  struct intel_display *display
+    intel display struct
+  bool enable
+    enable/disable
+
+Description
+  This is targeted for underrun on idle PSR HW bug (Wa_16025596647) to apply
+remove the workaround when vblank is getting enabled/disabled

@@ -1,0 +1,10 @@
+Function: u32 dwc3_mdwidth ( struct dwc3 * dwc )
+
+get MDWIDTH value in bits
+
+Parameters
+  struct dwc3 *dwc
+    pointer to our context structure
+
+Description
+  Return MDWIDTH configuration value in bits.

@@ -1,0 +1,14 @@
+Function: int transport_class_register ( struct transport_class * tclass )
+
+register an initial transport class
+
+Parameters
+  struct transport_class *tclass
+    a pointer to the transport class structure to be initialised
+
+Description
+  The transport class contains an embedded class which is used to
+identify it.  The caller should initialise this structure with
+zeros and then generic class must have been initialised with the
+actual transport class unique name.  There’s a macro DECLARE_TRANSPORT_CLASS() to do this (declared classes still must
+be registered).

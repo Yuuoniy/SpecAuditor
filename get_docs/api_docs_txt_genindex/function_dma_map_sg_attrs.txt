@@ -1,0 +1,19 @@
+Function: unsigned int dma_map_sg_attrs ( struct device * dev , struct scatterlist * sg , int nents , enum dma_data_direction dir , unsigned long attrs )
+
+Map the given buffer for DMA
+
+Parameters
+  struct device *dev
+    The device for which to perform the DMA operation
+  struct scatterlist *sg
+    The sg_table object describing the buffer
+  int nents
+    Number of entries to map
+  enum dma_data_direction dir
+    DMA direction
+  unsigned long attrs
+    Optional DMA attributes for the map operation
+
+Description
+  Maps a buffer described by a scatterlist passed in the sg argument with
+nents segments for the dir DMA operation by the dev device.

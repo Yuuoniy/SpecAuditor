@@ -1,0 +1,14 @@
+Function: int bitmap_allocate_region ( unsigned long * bitmap , unsigned int pos , int order )
+
+allocate bitmap region
+
+Parameters
+  unsigned long *bitmap
+    array of unsigned longs corresponding to the bitmap
+  unsigned int pos
+    beginning of bit region to allocate
+  int order
+    region size (log base 2 of number of bits) to allocate
+
+Description
+  Allocate (set bits in) a specified region of a bitmap.

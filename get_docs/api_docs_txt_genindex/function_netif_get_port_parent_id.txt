@@ -1,0 +1,14 @@
+Function: int netif_get_port_parent_id ( struct net_device * dev , struct netdev_phys_item_id * ppid , bool recurse )
+
+Get the device’s port parent identifier
+
+Parameters
+  struct net_device *dev
+    network device
+  struct netdev_phys_item_id *ppid
+    pointer to a storage for the port’s parent identifier
+  bool recurse
+    allow/disallow recursion to lower devices
+
+Description
+  Get the devices’s port parent identifier.

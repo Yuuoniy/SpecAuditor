@@ -1,0 +1,9 @@
+Function: int edac_mc_find_csrow_by_page ( struct mem_ctl_info * mci , unsigned long page )
+
+Ancillary routine to identify what csrow contains a memory page.
+
+Parameters
+  struct mem_ctl_info *mci
+    pointer to a struct mem_ctl_info structure
+  unsigned long page
+    memory page to find

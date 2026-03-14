@@ -1,0 +1,9 @@
+Struct: ssize_t edd_show_raw_data ( struct edd_device * edev , char * buf )
+
+copies raw data to buffer for userspace to parse
+
+Parameters
+  struct edd_device *edev
+    target edd_device
+  char *buf
+    output buffer

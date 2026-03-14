@@ -1,0 +1,10 @@
+Function: struct drm_plane_state * mipi_dbi_pipe_duplicate_plane_state ( struct drm_simple_display_pipe * pipe )
+
+duplicates MIPI DBI plane state
+
+Parameters
+  struct drm_simple_display_pipe *pipe
+    Display pipe
+
+Description
+  This function implements struct drm_simple_display_funcs.duplicate_plane_state for MIPI DBI planes.

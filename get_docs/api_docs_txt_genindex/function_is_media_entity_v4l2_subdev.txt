@@ -1,0 +1,7 @@
+Function: bool is_media_entity_v4l2_subdev ( struct media_entity * entity )
+
+Check if the entity is a v4l2_subdev
+
+Parameters
+  struct media_entity *entity
+    pointer to entity

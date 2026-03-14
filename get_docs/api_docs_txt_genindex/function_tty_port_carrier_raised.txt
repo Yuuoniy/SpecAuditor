@@ -1,0 +1,12 @@
+Function: bool tty_port_carrier_raised ( struct tty_port * port )
+
+carrier raised check
+
+Parameters
+  struct tty_port *port
+    tty port
+
+Description
+  Wrapper for the carrier detect logic. For the moment this is used
+to hide some internal details. This will eventually become entirely
+internal to the tty port.

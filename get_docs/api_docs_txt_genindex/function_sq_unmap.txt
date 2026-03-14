@@ -1,0 +1,11 @@
+Function: void sq_unmap ( unsigned long vaddr )
+
+Unmap a Store Queue allocation
+
+Parameters
+  unsigned long vaddr
+    Pre-allocated Store Queue mapping.
+
+Description
+  Unmaps the store queue allocation map that was previously created by sq_remap() . Also frees up the pte that was previously inserted into
+the kernel page table and discards the UTLB translation.

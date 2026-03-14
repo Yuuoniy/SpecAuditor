@@ -1,0 +1,9 @@
+Function: bool phy_id_compare_vendor ( u32 id , u32 vendor_mask )
+
+compare id with vendor mask
+
+Parameters
+  u32 id
+    PHY ID
+  u32 vendor_mask
+    PHY Vendor mask

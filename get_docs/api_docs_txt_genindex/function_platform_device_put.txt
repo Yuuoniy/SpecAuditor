@@ -1,0 +1,11 @@
+Function: void platform_device_put ( struct platform_device * pdev )
+
+destroy a platform device
+
+Parameters
+  struct platform_device *pdev
+    platform device to free
+
+Description
+  Free all memory associated with a platform device.  This function must
+_only_ be externally called in error cases.  All other usage is a bug.

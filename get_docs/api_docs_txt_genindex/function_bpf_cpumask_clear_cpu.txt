@@ -1,0 +1,9 @@
+Function: __bpf_kfunc void bpf_cpumask_clear_cpu ( u32 cpu , struct bpf_cpumask * cpumask )
+
+Clear a bit for a CPU in a BPF cpumask.
+
+Parameters
+  u32 cpu
+    The CPU to be cleared from the cpumask.
+  struct bpf_cpumask *cpumask
+    The BPF cpumask in which a bit is being cleared.

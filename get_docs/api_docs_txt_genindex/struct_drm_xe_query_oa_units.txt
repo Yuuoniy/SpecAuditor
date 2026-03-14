@@ -1,0 +1,15 @@
+Struct: struct drm_xe_query_oa_units
+
+describe OA units
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  num_oa_units
+    number of OA units returned in oau[]
+  pad
+    MBZ
+  oa_units
+    struct drm_xe_oa_unit array returned for this device.
+Written below as a u64 array to avoid problems with nested flexible
+arrays with some compilers

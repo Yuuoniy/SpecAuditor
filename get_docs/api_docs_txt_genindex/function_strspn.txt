@@ -1,0 +1,9 @@
+Function: size_t strspn ( const char * s , const char * accept )
+
+Calculate the length of the initial substring of s which only contain letters in accept
+
+Parameters
+  const char *s
+    The string to be searched
+  const char *accept
+    The string to search for

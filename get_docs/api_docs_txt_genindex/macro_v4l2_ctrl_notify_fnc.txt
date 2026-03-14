@@ -1,0 +1,12 @@
+Macro: v4l2_ctrl_notify_fnc
+
+Typedef : typedef for a notify argument with a function that should be called when a control value has changed.
+
+Parameters
+  struct v4l2_ctrl *ctrl
+    pointer to struct v4l2_ctrl
+  void *priv
+    control private data
+
+Description
+  This typedef definition is used as an argument to v4l2_ctrl_notify() and as an argument at struct v4l2_ctrl_handler .

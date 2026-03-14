@@ -1,0 +1,10 @@
+Function: void ata_eh_report ( struct ata_port * ap )
+
+report error handling to user
+
+Parameters
+  struct ata_port *ap
+    ATA port to report EH about
+
+Description
+  Report EH to user.

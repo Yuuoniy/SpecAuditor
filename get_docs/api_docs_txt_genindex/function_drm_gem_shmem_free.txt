@@ -1,0 +1,11 @@
+Function: void drm_gem_shmem_free ( struct drm_gem_shmem_object * shmem )
+
+Free resources associated with a shmem GEM object
+
+Parameters
+  struct drm_gem_shmem_object *shmem
+    shmem GEM object to free
+
+Description
+  This function cleans up the GEM object state and frees the memory used to
+store the object itself.

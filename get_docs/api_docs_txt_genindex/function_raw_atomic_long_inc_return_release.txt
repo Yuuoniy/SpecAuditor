@@ -1,0 +1,10 @@
+Function: long raw_atomic_long_inc_return_release ( atomic_long_t * v )
+
+atomic increment with release ordering
+
+Parameters
+  atomic_long_t *v
+    pointer to atomic_long_t
+
+Description
+  Atomically updates v to ( v + 1) with release ordering.

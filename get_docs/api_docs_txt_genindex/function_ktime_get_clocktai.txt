@@ -1,0 +1,5 @@
+Function: ktime_t ktime_get_clocktai ( void )
+
+CLOCK_TAI Like ktime_get_real() , but uses the International Atomic Time (TAI)
+reference instead of UTC to avoid jumping on leap second updates.
+This is rarely useful in the kernel.

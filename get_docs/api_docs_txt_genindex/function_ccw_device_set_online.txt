@@ -1,0 +1,11 @@
+Function: int ccw_device_set_online ( struct ccw_device * cdev )
+
+enable a ccw device for I/O
+
+Parameters
+  struct ccw_device *cdev
+    target ccw device
+
+Description
+  This function first enables cdev and then calls the driver’s set_online() function for cdev , if given. If set_online() returns an error, cdev is
+disabled again.

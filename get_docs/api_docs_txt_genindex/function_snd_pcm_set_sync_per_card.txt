@@ -1,0 +1,16 @@
+Function: void snd_pcm_set_sync_per_card ( struct snd_pcm_substream * substream , struct snd_pcm_hw_params * params , const unsigned char * id , unsigned int len )
+
+set the PCM sync id with card number
+
+Parameters
+  struct snd_pcm_substream *substream
+    the pcm substream
+  struct snd_pcm_hw_params *params
+    modified hardware parameters
+  const unsigned char *id
+    identifier (max 12 bytes)
+  unsigned int len
+    identifier length (max 12 bytes)
+
+Description
+  Sets the PCM sync identifier for the card with zero padding.

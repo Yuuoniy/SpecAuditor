@@ -1,0 +1,15 @@
+Function: int usb_add_config ( struct usb_composite_dev * cdev , struct usb_configuration * config , int ( * bind ) ( struct usb_configuration * ) )
+
+add a configuration to a device.
+
+Parameters
+  struct usb_composite_dev *cdev
+    wraps the USB gadget
+  struct usb_configuration *config
+    the configuration, with bConfigurationValue assigned
+  int (*bind)(struct usb_configuration *)
+    the configuration’s bind function
+
+Description
+  One of the main tasks of a composite bind() routine is to
+add each of the configurations it supports, using this routine.

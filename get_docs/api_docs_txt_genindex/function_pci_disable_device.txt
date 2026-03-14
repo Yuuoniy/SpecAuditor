@@ -1,0 +1,11 @@
+Function: void pci_disable_device ( struct pci_dev * dev )
+
+Disable PCI device after use
+
+Parameters
+  struct pci_dev *dev
+    PCI device to be disabled
+
+Description
+  Signal to the system that the PCI device is not in use by the system
+anymore.  This only involves disabling PCI bus-mastering, if active.

@@ -1,0 +1,15 @@
+Function: struct xz_dec_microlzma * xz_dec_microlzma_alloc ( enum xz_mode mode , uint32_t dict_size )
+
+Allocate memory for the MicroLZMA decoder
+
+Parameters
+  enum xz_mode mode
+    XZ_SINGLE or XZ_PREALLOC
+  uint32_t dict_size
+    LZMA dictionary size. This must be at least 4 KiB and
+at most 3 GiB.
+
+Description
+  In contrast to xz_dec_init() , this function only allocates the memory
+and remembers the dictionary size. xz_dec_microlzma_reset() must be used
+before calling xz_dec_microlzma_run() .

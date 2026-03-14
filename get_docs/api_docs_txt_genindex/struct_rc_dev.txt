@@ -1,0 +1,136 @@
+Struct: struct rc_dev
+
+represents a remote control device
+
+Members
+  dev
+    driver model’s view of this device
+  managed_alloc
+    devm_rc_allocate_device was used to create rc_dev
+  registered
+    set to true by rc_register_device() , false by
+rc_unregister_device
+  idle
+    used to keep track of RX state
+  encode_wakeup
+    wakeup filtering uses IR encode API, therefore the allowed
+wakeup protocols is the set of all raw encoders
+  minor
+    unique minor remote control device number
+  sysfs_groups
+    sysfs attribute groups
+  device_name
+    name of the rc child device
+  input_phys
+    physical path to the input child device
+  input_id
+    id of the input child device ( struct input_id )
+  driver_name
+    name of the hardware driver which registered this device
+  map_name
+    name of the default keymap
+  rc_map
+    current scan/key table
+  lock
+    used to ensure we’ve filled in all protocol details before
+anyone can call show_protocols or store_protocols
+  raw
+    additional data for raw pulse/space devices
+  input_dev
+    the input child device used to communicate events to userspace
+  driver_type
+    specifies if protocol decoding is done in hardware or software
+  users
+    number of current users of the device
+  allowed_protocols
+    bitmask with the supported RC_PROTO_BIT_* protocols
+  enabled_protocols
+    bitmask with the enabled RC_PROTO_BIT_* protocols
+  allowed_wakeup_protocols
+    bitmask with the supported RC_PROTO_BIT_* wakeup
+protocols
+  wakeup_protocol
+    the enabled RC_PROTO_* wakeup protocol or
+RC_PROTO_UNKNOWN if disabled.
+  scancode_filter
+    scancode filter
+  scancode_wakeup_filter
+    scancode wakeup filters
+  scancode_mask
+    some hardware decoders are not capable of providing the full
+scancode to the application. As this is a hardware limit, we can’t do
+anything with it. Yet, as the same keycode table can be used with other
+devices, a mask is provided to allow its usage. Drivers should generally
+leave this field in blank
+  priv
+    driver-specific data
+  keylock
+    protects the remaining members of the struct
+  keypressed
+    whether a key is currently pressed
+  last_toggle
+    toggle value of last command
+  last_keycode
+    keycode of last keypress
+  last_protocol
+    protocol of last keypress
+  last_scancode
+    scancode of last keypress
+  keyup_jiffies
+    time (in jiffies) when the current keypress should be released
+  timer_keyup
+    timer for releasing a keypress
+  timer_repeat
+    timer for autorepeat events. This is needed for CEC, which
+has non-standard repeats.
+  timeout
+    optional time after which device stops sending data
+  min_timeout
+    minimum timeout supported by device
+  max_timeout
+    maximum timeout supported by device
+  rx_resolution
+    resolution (in us) of input sampler
+  lirc_dev
+    lirc device
+  lirc_cdev
+    lirc char cdev
+  gap_start
+    start time for gap after timeout if non-zero
+  lirc_fh_lock
+    protects lirc_fh list
+  lirc_fh
+    list of open files
+  change_protocol
+    allow changing the protocol used on hardware decoders
+  open
+    callback to allow drivers to enable polling/irq when IR input device
+is opened.
+  close
+    callback to allow drivers to disable polling/irq when IR input device
+is opened.
+  s_tx_mask
+    set transmitter mask (for devices with multiple tx outputs)
+  s_tx_carrier
+    set transmit carrier frequency
+  s_tx_duty_cycle
+    set transmit duty cycle (0% - 100%)
+  s_rx_carrier_range
+    inform driver about carrier it is expected to handle
+  tx_ir
+    transmit IR
+  s_idle
+    enable/disable hardware idle mode, upon which,
+device doesn’t interrupt host until it sees IR pulses
+  s_wideband_receiver
+    enable wide band receiver used for learning
+  s_carrier_report
+    enable carrier reports
+  s_filter
+    set the scancode filter
+  s_wakeup_filter
+    set the wakeup scancode filter. If the mask is zero
+then wakeup should be disabled. wakeup_protocol will be set to
+a valid protocol if mask is nonzero.
+  s_timeout
+    set hardware timeout in us

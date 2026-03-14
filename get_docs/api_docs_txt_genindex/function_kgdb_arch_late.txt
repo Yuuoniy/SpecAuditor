@@ -1,0 +1,13 @@
+Function: void kgdb_arch_late ( void )
+
+Perform any architecture specific initialization.
+
+Parameters
+  void
+    no arguments
+
+Description
+  This function will handle the late initialization of any
+architecture specific callbacks.  This is an optional function for
+handling things like late initialization of hw breakpoints.  The
+default implementation does nothing.

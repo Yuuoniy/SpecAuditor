@@ -1,0 +1,10 @@
+Function: void gen_kill_estimator ( struct net_rate_estimator __rcu * * rate_est )
+
+remove a rate estimator
+
+Parameters
+  struct net_rate_estimator __rcu **rate_est
+    rate estimator
+
+Description
+  Removes the rate estimator.

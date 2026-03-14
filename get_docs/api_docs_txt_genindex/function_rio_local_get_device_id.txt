@@ -1,0 +1,12 @@
+Function: u16 rio_local_get_device_id ( struct rio_mport * port )
+
+Get the base/extended device id for a port
+
+Parameters
+  struct rio_mport *port
+    RIO master port from which to get the deviceid
+
+Description
+  Reads the base/extended device id from the local device
+implementing the master port. Returns the 8/16-bit device
+id.

@@ -1,0 +1,11 @@
+Function: void amdgpu_vm_bo_idle ( struct amdgpu_vm_bo_base * vm_bo )
+
+vm_bo is idle
+
+Parameters
+  struct amdgpu_vm_bo_base *vm_bo
+    vm_bo which is now idle
+
+Description
+  State for PDs/PTs and per VM BOs which have gone through the state machine
+and are now idle.

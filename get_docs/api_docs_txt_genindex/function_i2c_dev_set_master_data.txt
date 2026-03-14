@@ -1,0 +1,13 @@
+Function: void i2c_dev_set_master_data ( struct i2c_dev_desc * dev , void * data )
+
+attach master private data to an I2C device descriptor
+
+Parameters
+  struct i2c_dev_desc *dev
+    the I2C device descriptor to attach private data to
+  void *data
+    private data
+
+Description
+  This functions allows a master controller to attach per-device private data
+which can then be retrieved with i2c_device_get_master_data() .

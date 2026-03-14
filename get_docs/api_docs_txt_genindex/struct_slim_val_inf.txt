@@ -1,0 +1,18 @@
+Struct: struct slim_val_inf
+
+Slimbus value or information element
+
+Members
+  start_offset
+    Specifies starting offset in information/value element map
+  num_bytes
+    upto 16. This ensures that the message will fit the slicesize
+per SLIMbus spec
+  rbuf
+    buffer to read the values
+  wbuf
+    buffer to write
+  comp
+    completion for asynchronous operations, valid only if TID is
+required for transaction, like REQUEST operations.
+Rest of the transactions are synchronous anyway.

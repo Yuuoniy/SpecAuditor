@@ -1,0 +1,11 @@
+Function: struct media_intf_devnode
+
+A media interface via a device node.
+
+Members
+  intf
+    embedded interface object
+  major
+    Major number of a device node
+  minor
+    Minor number of a device node

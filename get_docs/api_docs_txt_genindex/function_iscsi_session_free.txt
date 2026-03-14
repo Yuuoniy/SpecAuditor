@@ -1,0 +1,7 @@
+Function: void iscsi_session_free ( struct iscsi_cls_session * cls_session )
+
+Free iscsi session and it’s resources
+
+Parameters
+  struct iscsi_cls_session *cls_session
+    iscsi session

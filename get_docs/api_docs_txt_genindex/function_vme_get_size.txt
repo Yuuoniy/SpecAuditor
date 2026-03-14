@@ -1,0 +1,12 @@
+Function: size_t vme_get_size ( struct vme_resource * resource )
+
+Helper function returning size of a VME window
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME slave or master resource.
+
+Description
+  Determine the size of the VME window provided. This is a helper
+function, wrappering the call to vme_master_get or vme_slave_get
+depending on the type of window resource handed to it.

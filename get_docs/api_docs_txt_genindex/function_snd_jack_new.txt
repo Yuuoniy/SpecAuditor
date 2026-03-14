@@ -1,0 +1,21 @@
+Function: int snd_jack_new ( struct snd_card * card , const char * id , int type , struct snd_jack * * jjack , bool initial_kctl , bool phantom_jack )
+
+Create a new jack
+
+Parameters
+  struct snd_card *card
+    the card instance
+  const char *id
+    an identifying string for this jack
+  int type
+    a bitmask of enum snd_jack_type values that can be detected by
+this jack
+  struct snd_jack **jjack
+    Used to provide the allocated jack object to the caller.
+  bool initial_kctl
+    if true, create a kcontrol and add it to the jack list.
+  bool phantom_jack
+    Don’t create a input device for phantom jacks.
+
+Description
+  Creates a new jack object.

@@ -1,0 +1,19 @@
+Function: void mem_cgroup_wb_stats ( struct bdi_writeback * wb , unsigned long * pfilepages , unsigned long * pheadroom , unsigned long * pdirty , unsigned long * pwriteback )
+
+retrieve writeback related stats from its memcg
+
+Parameters
+  struct bdi_writeback *wb
+    bdi_writeback in question
+  unsigned long *pfilepages
+    out parameter for number of file pages
+  unsigned long *pheadroom
+    out parameter for number of allocatable pages according to memcg
+  unsigned long *pdirty
+    out parameter for number of dirty pages
+  unsigned long *pwriteback
+    out parameter for number of pages under writeback
+
+Description
+  Determine the numbers of file, headroom, dirty, and writeback pages in wb ’s memcg.  File, dirty and writeback are self-explanatory.  Headroom
+is a bit more involved.

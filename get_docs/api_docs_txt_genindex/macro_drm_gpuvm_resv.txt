@@ -1,0 +1,7 @@
+Macro: drm_gpuvm_resv
+
+
+
+Parameters
+  gpuvm__
+    the drm_gpuvm

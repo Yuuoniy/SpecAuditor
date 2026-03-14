@@ -1,0 +1,15 @@
+Struct: struct ipu3_uapi_awb_config_s
+
+AWB config
+
+Members
+  rgbs_thr_gr
+    gr threshold value.
+  rgbs_thr_r
+    Red threshold value.
+  rgbs_thr_gb
+    gb threshold value.
+  rgbs_thr_b
+    Blue threshold value.
+  grid
+    ipu3_uapi_grid_config , the default grid resolution is 16x16 cells.

@@ -1,0 +1,14 @@
+Function: void fw_send_response ( struct fw_card * card , struct fw_request * request , int rcode )
+
+send response packet for asynchronous transaction.
+
+Parameters
+  struct fw_card *card
+    interface to send the response at.
+  struct fw_request *request
+    firewire request data for the transaction.
+  int rcode
+    response code to send.
+
+Description
+  Submit a response packet into the asynchronous response transmission queue. The request is going to be released when the transmission successfully finishes later.

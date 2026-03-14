@@ -1,0 +1,32 @@
+Struct: struct snd_dmaengine_dai_dma_data
+
+DAI DMA configuration data
+
+Members
+  addr
+    Address of the DAI data source or destination register.
+  addr_width
+    Width of the DAI data source or destination register.
+  maxburst
+    Maximum number of words(note: words, as in units of the
+src_addr_width member, not bytes) that can be send to or received from the
+DAI in one burst.
+  filter_data
+    Custom DMA channel filter data, this will usually be used when
+requesting the DMA channel.
+  chan_name
+    Custom channel name to use when requesting DMA channel.
+  fifo_size
+    FIFO size of the DAI controller in bytes
+  flags
+    PCM_DAI flags, only SND_DMAENGINE_PCM_DAI_FLAG_PACK for now
+  peripheral_config
+    peripheral configuration for programming peripheral
+for dmaengine transfer
+  peripheral_size
+    peripheral configuration buffer size
+  port_window_size
+    The length of the register area in words the data need
+to be accessed on the device side. It is only used for devices which is using
+an area instead of a single register to send/receive the data. Typically the
+DMA loops in this area in order to transfer the data.

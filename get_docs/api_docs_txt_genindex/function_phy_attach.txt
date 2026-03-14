@@ -1,0 +1,14 @@
+Function: struct phy_device * phy_attach ( struct net_device * dev , const char * bus_id , phy_interface_t interface )
+
+attach a network device to a particular PHY device
+
+Parameters
+  struct net_device *dev
+    network device to attach
+  const char *bus_id
+    Bus ID of PHY device to attach
+  phy_interface_t interface
+    PHY device’s interface
+
+Description
+  string is passed instead of a pointer to a struct phy_device .

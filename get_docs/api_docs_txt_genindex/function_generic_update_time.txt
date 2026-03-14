@@ -1,0 +1,15 @@
+Function: int generic_update_time ( struct inode * inode , int flags )
+
+update the timestamps on the inode
+
+Parameters
+  struct inode *inode
+    inode to be updated
+  int flags
+    S_* flags that needed to be updated
+
+Description
+  The update_time function is called when an inode’s timestamps need to be
+updated for a read or write operation. In the case where any of S_MTIME, S_CTIME,
+or S_VERSION need to be updated we attempt to update all three of them. S_ATIME
+updates can be handled done independently of the rest.

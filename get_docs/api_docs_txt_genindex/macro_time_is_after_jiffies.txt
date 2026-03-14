@@ -1,0 +1,7 @@
+Macro: time_is_after_jiffies
+
+
+
+Parameters
+  a
+    time (unsigned long) to compare to jiffies

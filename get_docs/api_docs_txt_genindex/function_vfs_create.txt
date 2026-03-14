@@ -1,0 +1,18 @@
+Function: int vfs_create ( struct mnt_idmap * idmap , struct inode * dir , struct dentry * dentry , umode_t mode , bool want_excl )
+
+create new file
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount the inode was found from
+  struct inode *dir
+    inode of the parent directory
+  struct dentry *dentry
+    dentry of the child file
+  umode_t mode
+    mode of the child file
+  bool want_excl
+    whether the file must not yet exist
+
+Description
+  Create a new file.

@@ -1,0 +1,12 @@
+Function: const struct drm_edid * drm_edid_read_ddc ( struct drm_connector * connector , struct i2c_adapter * adapter )
+
+Read EDID data using given I2C adapter
+
+Parameters
+  struct drm_connector *connector
+    Connector to use
+  struct i2c_adapter *adapter
+    I2C adapter to use for DDC
+
+Description
+  Read EDID using the given I2C adapter.

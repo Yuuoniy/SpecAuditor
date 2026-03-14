@@ -1,0 +1,12 @@
+Function: int i915_perf_release ( struct inode * inode , struct file * file )
+
+handles userspace close() of a stream file
+
+Parameters
+  struct inode *inode
+    anonymous inode associated with file
+  struct file *file
+    An i915 perf stream file
+
+Description
+  Cleans up any resources associated with an open i915 perf stream file.

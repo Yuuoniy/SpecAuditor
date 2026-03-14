@@ -1,0 +1,14 @@
+Function: u32 mipi_dbi_spi_cmd_max_speed ( struct spi_device * spi , size_t len )
+
+get the maximum SPI bus speed
+
+Parameters
+  struct spi_device *spi
+    SPI device
+  size_t len
+    The transfer buffer length.
+
+Description
+  Many controllers have a max speed of 10MHz, but can be pushed way beyond
+that. Increase reliability by running pixel data at max speed and the rest
+at 10MHz, preventing transfer glitches from messing up the init settings.

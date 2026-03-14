@@ -1,0 +1,12 @@
+Function: void devfreq_monitor_resume ( struct devfreq * devfreq )
+
+Resume load monitoring of a devfreq instance
+
+Parameters
+  struct devfreq *devfreq
+    the devfreq instance.
+
+Description
+  Helper function to resume devfreq device load monitoring. Function
+to be called from governor in response to DEVFREQ_GOV_RESUME
+event or when polling interval is set to non-zero.

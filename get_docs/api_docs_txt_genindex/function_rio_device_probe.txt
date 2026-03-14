@@ -1,0 +1,10 @@
+Function: int rio_device_probe ( struct device * dev )
+
+Tell if a RIO device structure has a matching RIO device id structure
+
+Parameters
+  struct device *dev
+    the RIO device structure to match against
+
+Description
+  return 0 and set rio_dev->driver when drv claims rio_dev, else error

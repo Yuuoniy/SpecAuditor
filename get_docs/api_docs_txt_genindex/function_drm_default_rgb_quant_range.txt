@@ -1,0 +1,11 @@
+Function: enum hdmi_quantization_range drm_default_rgb_quant_range ( const struct drm_display_mode * mode )
+
+default RGB quantization range
+
+Parameters
+  const struct drm_display_mode *mode
+    display mode
+
+Description
+  Determine the default RGB quantization range for the mode,
+as specified in CEA-861.

@@ -1,0 +1,3 @@
+Enum: enum probe_type
+
+device driver probe type to try Device drivers may opt in for special handling of their respective probe routines. This tells the core what to expect and prefer.

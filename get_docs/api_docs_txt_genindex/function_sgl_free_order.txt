@@ -1,0 +1,9 @@
+Function: void sgl_free_order ( struct scatterlist * sgl , int order )
+
+free a scatterlist and its pages
+
+Parameters
+  struct scatterlist *sgl
+    Scatterlist with one or more elements
+  int order
+    Second argument for __free_pages()

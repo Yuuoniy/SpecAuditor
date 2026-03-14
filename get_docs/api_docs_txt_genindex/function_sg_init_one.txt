@@ -1,0 +1,11 @@
+Function: void sg_init_one ( struct scatterlist * sg , const void * buf , unsigned int buflen )
+
+Initialize a single entry sg list
+
+Parameters
+  struct scatterlist *sg
+    SG entry
+  const void *buf
+    Virtual address for IO
+  unsigned int buflen
+    IO length

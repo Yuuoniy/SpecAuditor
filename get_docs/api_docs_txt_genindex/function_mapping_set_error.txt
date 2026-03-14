@@ -1,0 +1,15 @@
+Function: void mapping_set_error ( struct address_space * mapping , int error )
+
+record a writeback error in the address_space
+
+Parameters
+  struct address_space *mapping
+    the mapping in which an error should be set
+  int error
+    the error to set in the mapping
+
+Description
+  When writeback fails in some way, we must record that error so that
+userspace can be informed when fsync and the like are called.  We endeavor
+to report errors on any file that was open at the time of the error.  Some
+internal callers also need to know when writeback errors have occurred.

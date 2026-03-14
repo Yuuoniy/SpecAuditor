@@ -1,0 +1,19 @@
+Function: int drm_gpuvm_prepare_range ( struct drm_gpuvm * gpuvm , struct drm_exec * exec , u64 addr , u64 range , unsigned int num_fences )
+
+prepare all BOs mapped within a given range
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm
+  struct drm_exec *exec
+    the drm_exec locking context
+  u64 addr
+    the start address within the VA space
+  u64 range
+    the range to iterate within the VA space
+  unsigned int num_fences
+    the amount of dma_fences to reserve
+
+Description
+  Calls drm_exec_prepare_obj() for all drm_gem_objects mapped between addr and addr + range ; if num_fences is zero drm_exec_lock_obj() is called
+instead.

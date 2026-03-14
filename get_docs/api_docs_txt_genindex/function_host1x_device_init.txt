@@ -1,0 +1,13 @@
+Function: int host1x_device_init ( struct host1x_device * device )
+
+initialize a host1x logical device
+
+Parameters
+  struct host1x_device *device
+    host1x logical device
+
+Description
+  The driver for the host1x logical device can call this during execution of
+its host1x_driver.probe implementation to initialize each of its clients.
+The client drivers access the subsystem specific driver data using the host1x_client.parent field and driver data associated with it (usually by
+calling dev_get_drvdata() ).

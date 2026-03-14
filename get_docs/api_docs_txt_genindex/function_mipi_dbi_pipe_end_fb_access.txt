@@ -1,0 +1,12 @@
+Function: void mipi_dbi_pipe_end_fb_access ( struct drm_simple_display_pipe * pipe , struct drm_plane_state * plane_state )
+
+MIPI DBI pipe end-access helper
+
+Parameters
+  struct drm_simple_display_pipe *pipe
+    Display pipe
+  struct drm_plane_state *plane_state
+    Plane state
+
+Description
+  This function implements struct drm_simple_display_funcs.end_fb_access .

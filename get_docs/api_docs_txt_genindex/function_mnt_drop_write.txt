@@ -1,0 +1,11 @@
+Function: void mnt_drop_write ( struct vfsmount * mnt )
+
+give up write access to a mount
+
+Parameters
+  struct vfsmount *mnt
+    the mount on which to give up write access
+
+Description
+  Tells the low-level filesystem that we are done performing writes to it and
+also allows filesystem to be frozen again.  Must be matched with mnt_want_write() call above.

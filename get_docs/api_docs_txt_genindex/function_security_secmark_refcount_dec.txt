@@ -1,0 +1,10 @@
+Function: void security_secmark_refcount_dec ( void )
+
+Decrement the secmark labeling rule count
+
+Parameters
+  void
+    no arguments
+
+Description
+  Tells the LSM to decrement the number of secmark labeling rules loaded.

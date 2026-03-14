@@ -1,0 +1,15 @@
+Function: int v4l2_ctrl_request_setup ( struct media_request * req , struct v4l2_ctrl_handler * parent )
+
+helper function to apply control values in a request
+
+Parameters
+  struct media_request *req
+    The request
+  struct v4l2_ctrl_handler *parent
+    The parent control handler (‘priv’ in media_request_object_find() )
+
+Description
+  This is a helper function to call the control handler’s s_ctrl callback with
+the control values contained in the request. Do note that this approach of
+applying control values in a request is only applicable to memory-to-memory
+devices.

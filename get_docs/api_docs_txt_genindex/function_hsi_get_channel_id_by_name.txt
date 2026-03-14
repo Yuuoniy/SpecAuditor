@@ -1,0 +1,14 @@
+Function: int hsi_get_channel_id_by_name ( struct hsi_client * cl , char * name )
+
+acquire channel id by channel name
+
+Parameters
+  struct hsi_client *cl
+    HSI client, which uses the channel
+  char *name
+    name the channel is known under
+
+Description
+  Clients can call this function to get the hsi channel ids similar to
+requesting IRQs or GPIOs by name. This function assumes the same
+channel configuration is used for RX and TX.

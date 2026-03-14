@@ -1,0 +1,16 @@
+Function: int intel_dpll_reserve ( struct intel_atomic_state * state , struct intel_crtc * crtc , struct intel_encoder * encoder )
+
+reserve DPLLs for CRTC and encoder combination
+
+Parameters
+  struct intel_atomic_state *state
+    atomic state
+  struct intel_crtc *crtc
+    CRTC to reserve DPLLs for
+  struct intel_encoder *encoder
+    encoder
+
+Description
+  This function reserves all required DPLLs for the given CRTC and encoder
+combination in the current atomic commit state and the new crtc atomic
+state.

@@ -1,0 +1,14 @@
+Function: int security_inode_link ( struct dentry * old_dentry , struct inode * dir , struct dentry * new_dentry )
+
+Check if creating a hard link is allowed
+
+Parameters
+  struct dentry *old_dentry
+    existing file
+  struct inode *dir
+    new parent directory
+  struct dentry *new_dentry
+    new link
+
+Description
+  Check permission before creating a new hard link to a file.

@@ -1,0 +1,11 @@
+Function: int drm_sched_entity_error ( struct drm_sched_entity * entity )
+
+return error of last scheduled job
+
+Parameters
+  struct drm_sched_entity *entity
+    scheduler entity to check
+
+Description
+  Opportunistically return the error of the last scheduled job. Result can
+change any time when new jobs are pushed to the hw.

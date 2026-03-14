@@ -1,0 +1,14 @@
+Function: int damos_walk ( struct damon_ctx * ctx , struct damos_walk_control * control )
+
+Invoke a given functions while DAMOS walk regions.
+
+Parameters
+  struct damon_ctx *ctx
+    DAMON context to call the functions for.
+  struct damos_walk_control *control
+    Control variable of the walk request.
+
+Description
+  Ask DAMON worker thread (kdamond) of ctx to call a function for each region
+that the kdamond will apply DAMOS action to, and wait until the kdamond
+finishes handling of the request.

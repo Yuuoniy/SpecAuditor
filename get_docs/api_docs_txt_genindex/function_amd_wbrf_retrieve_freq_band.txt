@@ -1,0 +1,15 @@
+Function: int amd_wbrf_retrieve_freq_band ( struct device * dev , struct wbrf_ranges_in_out * out )
+
+retrieve current active frequency bands
+
+Parameters
+  struct device *dev
+    device pointer
+  struct wbrf_ranges_in_out *out
+    output structure containing all the active frequency bands
+
+Description
+  Retrieve the current active frequency bands which were broadcasted
+by other producers. The consumer who calls this API should take
+proper actions if any of the frequency band may cause RFI with its
+own frequency band used.

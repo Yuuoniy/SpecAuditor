@@ -1,0 +1,11 @@
+Function: struct work_struct * current_work ( void )
+
+retrieve current task’s work struct
+
+Parameters
+  void
+    no arguments
+
+Description
+  Determine if current task is a workqueue worker and what it’s working on.
+Useful to find out the context that the current task is running in.

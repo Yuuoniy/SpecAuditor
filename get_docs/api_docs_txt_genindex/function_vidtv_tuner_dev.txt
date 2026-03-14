@@ -1,0 +1,14 @@
+Function: struct vidtv_tuner_dev
+
+The tuner struct
+
+Members
+  fe
+    A pointer to the dvb_frontend structure allocated by vidtv_demod
+  hw_state
+    A struct to simulate the tuner’s hardware state as if we had a
+physical tuner hardware.
+  config
+    The configuration used to start the tuner module, usually filled
+by a bridge driver. For vidtv, this is filled by vidtv_bridge before the
+tuner module is probed.

@@ -1,0 +1,15 @@
+Function: void drm_dp_downstream_debug ( struct seq_file * m , const u8 dpcd [ DP_RECEIVER_CAP_SIZE ] , const u8 port_cap [ 4 ] , const struct drm_edid * drm_edid , struct drm_dp_aux * aux )
+
+debug DP branch devices
+
+Parameters
+  struct seq_file *m
+    pointer for debugfs file
+  const u8 dpcd[DP_RECEIVER_CAP_SIZE]
+    DisplayPort configuration data
+  const u8 port_cap[4]
+    port capabilities
+  const struct drm_edid *drm_edid
+    EDID
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel

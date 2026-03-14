@@ -1,0 +1,12 @@
+Function: void ssam_remove_clients ( struct device * dev )
+
+Remove SSAM client devices registered as direct children under the given parent device.
+
+Parameters
+  struct device *dev
+    The (parent) device to remove all direct clients for.
+
+Description
+  Remove all SSAM client devices registered as direct children under the given
+device. Note that this only accounts for direct children of the device.
+Refer to ssam_device_add() / ssam_device_remove() for more details.

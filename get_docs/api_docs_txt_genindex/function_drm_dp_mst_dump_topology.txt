@@ -1,0 +1,12 @@
+Function: void drm_dp_mst_dump_topology ( struct seq_file * m , struct drm_dp_mst_topology_mgr * mgr )
+
+dump topology to seq file.
+
+Parameters
+  struct seq_file *m
+    seq_file to dump output to
+  struct drm_dp_mst_topology_mgr *mgr
+    manager to dump current topology for.
+
+Description
+  helper to dump MST topology to a seq file for debugfs.

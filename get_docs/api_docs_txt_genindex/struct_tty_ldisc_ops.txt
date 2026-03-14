@@ -1,0 +1,41 @@
+Struct: struct tty_ldisc_ops
+
+ldisc operations
+
+Members
+  name
+    name of this ldisc rendered in /proc/tty/ldiscs
+  num
+    N_* number ( N_TTY , N_HDLC , ...) reserved to this ldisc
+  open
+    [TTY] int ()(struct tty_struct *tty)
+  close
+    [TTY] void ()(struct tty_struct *tty)
+  flush_buffer
+    [TTY] void ()(struct tty_struct *tty)
+  read
+    [TTY] ssize_t ()(struct tty_struct *tty, struct file *file, u8 *buf, size_t nr)
+  write
+    [TTY] ssize_t ()(struct tty_struct *tty, struct file *file, const u8 *buf, size_t nr)
+  ioctl
+    [TTY] int ()(struct tty_struct *tty, unsigned int cmd, unsigned long arg)
+  compat_ioctl
+    [TTY] int ()(struct tty_struct *tty, unsigned int cmd, unsigned long arg)
+  set_termios
+    [TTY] void ()(struct tty_struct *tty, const struct ktermios *old)
+  poll
+    [TTY] int ()(struct tty_struct *tty, struct file *file, struct poll_table_struct *wait)
+  hangup
+    [TTY] void ()(struct tty_struct *tty)
+  receive_buf
+    [DRV] void ()(struct tty_struct *tty, const u8 *cp, const u8 *fp, size_t count)
+  write_wakeup
+    [DRV] void ()(struct tty_struct *tty)
+  dcd_change
+    [DRV] void ()(struct tty_struct *tty, bool active)
+  receive_buf2
+    [DRV] ssize_t ()(struct tty_struct *tty, const u8 *cp, const u8 *fp, size_t count)
+  lookahead_buf
+    [DRV] void ()(struct tty_struct *tty, const u8 *cp, const u8 *fp, size_t count)
+  owner
+    module containting this ldisc (for reference counting)

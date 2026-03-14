@@ -1,0 +1,9 @@
+Function: void __memcg_kmem_uncharge_page ( struct page * page , int order )
+
+uncharge a kmem page
+
+Parameters
+  struct page *page
+    page to uncharge
+  int order
+    allocation order

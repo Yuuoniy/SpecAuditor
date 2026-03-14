@@ -1,0 +1,11 @@
+Function: void rcu_barrier_tasks ( void )
+
+Wait for in-flight call_rcu_tasks() callbacks.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Although the current implementation is guaranteed to wait, it is not
+obligated to, for example, if there are no pending callbacks.

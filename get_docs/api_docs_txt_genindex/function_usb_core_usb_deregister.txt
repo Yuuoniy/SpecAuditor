@@ -1,0 +1,10 @@
+Function: void usb_deregister ( struct usb_driver * driver )
+
+unregister a USB interface driver
+
+Parameters
+  struct usb_driver *driver
+    USB operations of the interface driver to unregister
+
+Description
+  Unlinks the specified driver from the internal USB driver list.

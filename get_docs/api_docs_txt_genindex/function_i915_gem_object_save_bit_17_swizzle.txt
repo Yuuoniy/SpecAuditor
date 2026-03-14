@@ -1,0 +1,14 @@
+Function: void i915_gem_object_save_bit_17_swizzle ( struct drm_i915_gem_object * obj , struct sg_table * pages )
+
+save bit 17 swizzling
+
+Parameters
+  struct drm_i915_gem_object *obj
+    i915 GEM buffer object
+  struct sg_table *pages
+    the scattergather list of physical pages
+
+Description
+  This function saves the bit 17 of each page frame number so that swizzling
+can be fixed up later on with i915_gem_object_do_bit_17_swizzle() . This must
+be called before the backing storage can be unpinned.

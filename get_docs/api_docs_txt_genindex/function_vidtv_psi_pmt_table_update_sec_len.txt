@@ -1,0 +1,11 @@
+Function: void vidtv_psi_pmt_table_update_sec_len ( struct vidtv_psi_table_pmt * pmt )
+
+Recompute and update the PMT section length.
+
+Parameters
+  struct vidtv_psi_table_pmt *pmt
+    The PMT whose length is to be updated.
+
+Description
+  This will traverse the table and accumulate the length of its components,
+which is then used to replace the ‘section_length’ field.

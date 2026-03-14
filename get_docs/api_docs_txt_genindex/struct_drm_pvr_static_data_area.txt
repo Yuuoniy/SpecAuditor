@@ -1,0 +1,15 @@
+Struct: struct drm_pvr_static_data_area
+
+Container holding information about a single static data area.
+
+Members
+  area_usage
+    Usage of static data area.
+See enum drm_pvr_static_data_area_usage .
+  location_heap_id
+    Array index of heap where this of static data
+area is located. This array is fetched using DRM_PVR_DEV_QUERY_HEAP_INFO_GET .
+  size
+    Size of static data area. Not present if set to zero.
+  offset
+    Offset of static data area from start of heap.

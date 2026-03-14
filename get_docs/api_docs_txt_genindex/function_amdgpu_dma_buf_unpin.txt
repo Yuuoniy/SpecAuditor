@@ -1,0 +1,10 @@
+Function: void amdgpu_dma_buf_unpin ( struct dma_buf_attachment * attach )
+
+dma_buf_ops.unpin implementation
+
+Parameters
+  struct dma_buf_attachment *attach
+    attachment to unpin
+
+Description
+  Unpin a previously pinned BO to make it movable again.

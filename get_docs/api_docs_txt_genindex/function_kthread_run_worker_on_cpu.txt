@@ -1,0 +1,16 @@
+Function: struct kthread_worker * kthread_run_worker_on_cpu ( int cpu , unsigned int flags , const char namefmt [ ] )
+
+create and wake a cpu bound kthread worker.
+
+Parameters
+  int cpu
+    CPU number
+  unsigned int flags
+    flags modifying the default behavior of the worker
+  const char namefmt[]
+    printf-style name for the thread. Format is restricted
+to “name.*``u``”. Code fills in cpu number.
+
+Description
+  Convenient wrapper for kthread_create_worker_on_cpu() followed by wake_up_process() .  Returns the kthread_worker or
+ERR_PTR(-ENOMEM).

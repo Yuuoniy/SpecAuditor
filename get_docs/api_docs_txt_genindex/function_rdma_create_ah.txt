@@ -1,0 +1,16 @@
+Function: struct ib_ah * rdma_create_ah ( struct ib_pd * pd , struct rdma_ah_attr * ah_attr , u32 flags )
+
+Creates an address handle for the given address vector.
+
+Parameters
+  struct ib_pd *pd
+    The protection domain associated with the address handle.
+  struct rdma_ah_attr *ah_attr
+    The attributes of the address vector.
+  u32 flags
+    Create address handle flags (see enum rdma_create_ah_flags ).
+
+Description
+  It returns 0 on success and returns appropriate error code on error.
+The address handle is used to reference a local or global destination
+in all UD QP post sends.

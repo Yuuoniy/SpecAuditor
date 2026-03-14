@@ -1,0 +1,16 @@
+Function: int vm_insert_page ( struct vm_area_struct * vma , unsigned long addr , struct page * page )
+
+insert single page into user vma
+
+Parameters
+  struct vm_area_struct *vma
+    user vma to map to
+  unsigned long addr
+    target user address of this page
+  struct page *page
+    source kernel page
+
+Description
+  This allows drivers to insert individual pages they’ve allocated
+into a user vma. The zeropage is supported in some VMAs,
+see vm_mixed_zeropage_allowed() .

@@ -1,0 +1,11 @@
+Function: void d_delete ( struct dentry * dentry )
+
+delete a dentry
+
+Parameters
+  struct dentry * dentry
+    The dentry to delete
+
+Description
+  Turn the dentry into a negative dentry if possible, otherwise
+remove it from the hash queues so it can be deleted later

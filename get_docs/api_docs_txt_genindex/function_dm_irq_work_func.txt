@@ -1,0 +1,7 @@
+Function: void dm_irq_work_func ( struct work_struct * work )
+
+Handle an IRQ outside of the interrupt handler proper.
+
+Parameters
+  struct work_struct *work
+    work struct

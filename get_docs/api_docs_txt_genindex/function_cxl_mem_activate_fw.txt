@@ -1,0 +1,12 @@
+Function: int cxl_mem_activate_fw ( struct cxl_memdev_state * mds , int slot )
+
+Activate Firmware
+
+Parameters
+  struct cxl_memdev_state *mds
+    The device data for the operation
+  int slot
+    slot number to activate
+
+Description
+  Activate firmware in a given slot for the device specified.

@@ -1,0 +1,10 @@
+Function: void fb_invert_cmaps ( void )
+
+invert all defaults colormaps
+
+Parameters
+  void
+    no arguments
+
+Description
+  Invert all default colormaps.

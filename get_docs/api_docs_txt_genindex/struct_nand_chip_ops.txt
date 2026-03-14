@@ -1,0 +1,17 @@
+Struct: struct nand_chip_ops
+
+NAND chip operations
+
+Members
+  suspend
+    Suspend operation
+  resume
+    Resume operation
+  lock_area
+    Lock operation
+  unlock_area
+    Unlock operation
+  setup_read_retry
+    Set the read-retry mode (mostly needed for MLC NANDs)
+  choose_interface_config
+    Choose the best interface configuration

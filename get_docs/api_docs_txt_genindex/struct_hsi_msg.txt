@@ -1,0 +1,28 @@
+Struct: struct hsi_msg
+
+HSI message descriptor
+
+Members
+  link
+    Free to use by the current descriptor owner
+  cl
+    HSI device client that issues the transfer
+  sgt
+    Head of the scatterlist array
+  context
+    Client context data associated to the transfer
+  complete
+    Transfer completion callback
+  destructor
+    Destructor to free resources when flushing
+  status
+    Status of the transfer when completed
+  actual_len
+    Actual length of data transferred on completion
+  channel
+    Channel were to TX/RX the message
+  ttype
+    Transfer type (TX if set, RX otherwise)
+  break_frame
+    if true HSI will send/receive a break frame. Data buffers are
+ignored in the request.

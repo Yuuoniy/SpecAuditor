@@ -1,0 +1,13 @@
+Struct: struct pisp_be_dpc_config
+
+PiSP Back End DPC config
+
+Members
+  coeff_level
+    Coefficient for the darkest neighbouring pixel value
+  coeff_range
+    Coefficient for the range of pixels for this Bayer channel
+  pad
+    Padding byte
+  flags
+    DPC configuration flags

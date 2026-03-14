@@ -1,0 +1,9 @@
+Function: struct media_link * media_entity_find_link ( struct media_pad * source , struct media_pad * sink )
+
+Find a link between two pads
+
+Parameters
+  struct media_pad *source
+    Source pad
+  struct media_pad *sink
+    Sink pad

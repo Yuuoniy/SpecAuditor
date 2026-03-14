@@ -1,0 +1,12 @@
+Function: void obj_cgroup_uncharge_zswap ( struct obj_cgroup * objcg , size_t size )
+
+uncharge compression backend memory
+
+Parameters
+  struct obj_cgroup *objcg
+    the object cgroup
+  size_t size
+    size of compressed object
+
+Description
+  Uncharges zswap memory on page in.

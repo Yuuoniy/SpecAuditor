@@ -1,0 +1,7 @@
+Function: void rio_release_dma ( struct dma_chan * dchan )
+
+release specified DMA channel
+
+Parameters
+  struct dma_chan *dchan
+    DMA channel to release

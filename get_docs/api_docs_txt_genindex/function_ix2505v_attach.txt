@@ -1,0 +1,11 @@
+Function: struct dvb_frontend * ix2505v_attach ( struct dvb_frontend * fe , const struct ix2505v_config * config , struct i2c_adapter * i2c )
+
+Attach a ix2505v tuner to the supplied frontend structure.
+
+Parameters
+  struct dvb_frontend *fe
+    Frontend to attach to.
+  const struct ix2505v_config *config
+    pointer to struct ix2505v_config
+  struct i2c_adapter *i2c
+    pointer to struct i2c_adapter .

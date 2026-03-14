@@ -1,0 +1,14 @@
+Function: int devm_reset_controller_register ( struct device * dev , struct reset_controller_dev * rcdev )
+
+resource managed reset_controller_register()
+
+Parameters
+  struct device *dev
+    device that is registering this reset controller
+  struct reset_controller_dev *rcdev
+    a pointer to the initialized reset controller device
+
+Description
+  Managed reset_controller_register() . For reset controllers registered by
+this function, reset_controller_unregister() is automatically called on
+driver detach. See reset_controller_register() for more information.

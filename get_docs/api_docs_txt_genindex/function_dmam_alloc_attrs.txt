@@ -1,0 +1,19 @@
+Function: void * dmam_alloc_attrs ( struct device * dev , size_t size , dma_addr_t * dma_handle , gfp_t gfp , unsigned long attrs )
+
+Managed dma_alloc_attrs()
+
+Parameters
+  struct device *dev
+    Device to allocate non_coherent memory for
+  size_t size
+    Size of allocation
+  dma_addr_t *dma_handle
+    Out argument for allocated DMA handle
+  gfp_t gfp
+    Allocation flags
+  unsigned long attrs
+    Flags in the DMA_ATTR_* namespace.
+
+Description
+  Managed dma_alloc_attrs() .  Memory allocated using this function will be
+automatically released on driver detach.

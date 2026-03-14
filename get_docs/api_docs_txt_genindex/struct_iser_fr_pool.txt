@@ -1,0 +1,13 @@
+Struct: struct iser_fr_pool
+
+connection fast registration pool
+
+Members
+  list
+    list of fastreg descriptors
+  lock
+    protects fastreg pool
+  size
+    size of the pool
+  all_list
+    first and last list members

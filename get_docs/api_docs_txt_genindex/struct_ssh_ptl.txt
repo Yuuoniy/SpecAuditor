@@ -1,0 +1,63 @@
+Struct: struct ssh_ptl
+
+SSH packet transport layer.
+
+Members
+  serdev
+    Serial device providing the underlying data transport.
+  state
+    State(-flags) of the transport layer.
+  queue
+    Packet submission queue.
+  queue.lock
+    Lock for modifying the packet submission queue.
+  queue.head
+    List-head of the packet submission queue.
+  pending
+    Set/list of pending packets.
+  pending.lock
+    Lock for modifying the pending set.
+  pending.head
+    List-head of the pending set/list.
+  pending.count
+    Number of currently pending packets.
+  tx
+    Transmitter subsystem.
+  tx.running
+    Flag indicating (desired) transmitter thread state.
+  tx.thread
+    Transmitter thread.
+  tx.thread_cplt_tx
+    Completion for transmitter thread waiting on transfer.
+  tx.thread_cplt_pkt
+    Completion for transmitter thread waiting on packets.
+  tx.packet_wq
+    Waitqueue-head for packet transmit completion.
+  rx
+    Receiver subsystem.
+  rx.thread
+    Receiver thread.
+  rx.wq
+    Waitqueue-head for receiver thread.
+  rx.fifo
+    Buffer for receiving data/pushing data to receiver thread.
+  rx.buf
+    Buffer for evaluating data on receiver thread.
+  rx.blocked
+    List of recent/blocked sequence IDs to detect retransmission.
+  rx.blocked.seqs
+    Array of blocked sequence IDs.
+  rx.blocked.offset
+    Offset indicating where a new ID should be inserted.
+  rtx_timeout
+    Retransmission timeout subsystem.
+  rtx_timeout.lock
+    Lock for modifying the retransmission timeout reaper.
+  rtx_timeout.timeout
+    Timeout interval for retransmission.
+  rtx_timeout.expires
+    Time specifying when the reaper work is next scheduled.
+  rtx_timeout.reaper
+    Work performing timeout checks and subsequent actions.
+  ops
+    Packet layer operations.

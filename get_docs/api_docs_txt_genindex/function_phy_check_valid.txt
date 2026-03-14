@@ -1,0 +1,14 @@
+Function: bool phy_check_valid ( int speed , int duplex , unsigned long * features )
+
+check if there is a valid PHY setting which matches speed, duplex, and feature mask
+
+Parameters
+  int speed
+    speed to match
+  int duplex
+    duplex to match
+  unsigned long *features
+    A mask of the valid settings
+
+Description
+  Returns true if there is a valid setting, false otherwise.

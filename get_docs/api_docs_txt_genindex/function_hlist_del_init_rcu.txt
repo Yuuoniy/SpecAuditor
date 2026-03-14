@@ -1,0 +1,7 @@
+Function: void hlist_del_init_rcu ( struct hlist_node * n )
+
+deletes entry from hash list with re-initialization
+
+Parameters
+  struct hlist_node *n
+    the element to delete from the hash list.

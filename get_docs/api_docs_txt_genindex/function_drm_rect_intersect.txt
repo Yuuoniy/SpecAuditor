@@ -1,0 +1,12 @@
+Function: bool drm_rect_intersect ( struct drm_rect * r1 , const struct drm_rect * r2 )
+
+intersect two rectangles
+
+Parameters
+  struct drm_rect *r1
+    first rectangle
+  const struct drm_rect *r2
+    second rectangle
+
+Description
+  Calculate the intersection of rectangles r1 and r2 . r1 will be overwritten with the intersection.

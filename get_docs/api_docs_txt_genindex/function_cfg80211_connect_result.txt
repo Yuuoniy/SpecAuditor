@@ -1,0 +1,27 @@
+Function: void cfg80211_connect_result ( struct net_device * dev , const u8 * bssid , const u8 * req_ie , size_t req_ie_len , const u8 * resp_ie , size_t resp_ie_len , u16 status , gfp_t gfp )
+
+notify cfg80211 of connection result
+
+Parameters
+  struct net_device *dev
+    network device
+  const u8 *bssid
+    the BSSID of the AP
+  const u8 *req_ie
+    association request IEs (maybe be NULL )
+  size_t req_ie_len
+    association request IEs length
+  const u8 *resp_ie
+    association response IEs (may be NULL )
+  size_t resp_ie_len
+    assoc response IEs length
+  u16 status
+    status code, WLAN_STATUS_SUCCESS for successful connection, use WLAN_STATUS_UNSPECIFIED_FAILURE if your device cannot give you
+the real status code for failures.
+  gfp_t gfp
+    allocation flags
+
+Description
+  It should be called by the underlying driver once execution of the connection
+request from connect() has been completed. This is similar to cfg80211_connect_bss() which allows the exact bss entry to be specified. Only
+one of the functions among cfg80211_connect_bss() , cfg80211_connect_result() , cfg80211_connect_timeout() , and cfg80211_connect_done() should be called.

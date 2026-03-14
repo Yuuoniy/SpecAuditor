@@ -1,0 +1,10 @@
+Function: int sas_phy_add ( struct sas_phy * phy )
+
+add a SAS PHY to the device hierarchy
+
+Parameters
+  struct sas_phy *phy
+    The PHY to be added
+
+Description
+  Publishes a SAS PHY to the rest of the system.

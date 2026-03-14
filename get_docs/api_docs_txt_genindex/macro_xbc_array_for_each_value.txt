@@ -1,0 +1,14 @@
+Macro: xbc_array_for_each_value
+
+
+
+Parameters
+  anode
+    An XBC arraied value node
+  value
+    A value
+
+Description
+  Iterate array value nodes and values starts from anode . This is expected to
+be used with xbc_find_value() and xbc_node_find_value() , so that user can
+process each array entry node.

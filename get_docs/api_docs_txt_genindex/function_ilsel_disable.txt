@@ -1,0 +1,10 @@
+Function: void ilsel_disable ( unsigned int irq )
+
+Disable an ILSEL set
+
+Parameters
+  unsigned int irq
+    Bit position for ILSEL set value (retval from enable routines)
+
+Description
+  Disable a previously enabled ILSEL set.

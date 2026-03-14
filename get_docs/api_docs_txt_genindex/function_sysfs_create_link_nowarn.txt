@@ -1,0 +1,15 @@
+Function: int sysfs_create_link_nowarn ( struct kobject * kobj , struct kobject * target , const char * name )
+
+create symlink between two objects.
+
+Parameters
+  struct kobject *kobj
+    object whose directory we’re creating the link in.
+  struct kobject *target
+    object we’re pointing to.
+  const char *name
+    name of the symlink.
+
+Description
+  This function does the same as sysfs_create_link() , but it
+doesn’t warn if the link already exists.

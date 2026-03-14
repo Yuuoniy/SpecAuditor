@@ -1,0 +1,17 @@
+Function: void mpol_to_str ( char * buffer , int maxlen , struct mempolicy * pol )
+
+format a mempolicy structure for printing
+
+Parameters
+  char *buffer
+    to contain formatted mempolicy string
+  int maxlen
+    length of buffer
+  struct mempolicy *pol
+    pointer to mempolicy to be formatted
+
+Description
+  Convert pol into a string.  If buffer is too short, truncate the string.
+Recommend a maxlen of at least 51 for the longest mode, “weighted
+interleave”, plus the longest flag flags, “relative|balancing”, and to
+display at least a few node ids.

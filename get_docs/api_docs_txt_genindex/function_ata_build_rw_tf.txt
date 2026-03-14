@@ -1,0 +1,21 @@
+Function: int ata_build_rw_tf ( struct ata_queued_cmd * qc , u64 block , u32 n_block , unsigned int tf_flags , int cdl , int class )
+
+Build ATA taskfile for given read/write request
+
+Parameters
+  struct ata_queued_cmd *qc
+    Metadata associated with the taskfile to build
+  u64 block
+    Block address
+  u32 n_block
+    Number of blocks
+  unsigned int tf_flags
+    RW/FUA etc...
+  int cdl
+    Command duration limit index
+  int class
+    IO priority class
+
+Description
+  LOCKING:
+None.

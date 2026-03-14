@@ -1,0 +1,15 @@
+Struct: struct c3_isp_params_awb_gains
+
+Gains for auto-white balance
+
+Members
+  header
+    The C3 ISP parameters block header
+  gr_gain
+    Multiplier for Gr channel (Q4.8 format)
+  r_gain
+    Multiplier for R channel (Q4.8 format)
+  b_gain
+    Multiplier for B channel (Q4.8 format)
+  gb_gain
+    Multiplier for Gb channel (Q4.8 format)

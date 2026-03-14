@@ -1,0 +1,9 @@
+Function: unsigned int zs_lookup_class_index ( struct zs_pool * pool , unsigned int size )
+
+Returns index of the zsmalloc size_class that hold objects of the provided size.
+
+Parameters
+  struct zs_pool *pool
+    zsmalloc pool to use
+  unsigned int size
+    object size

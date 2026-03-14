@@ -1,0 +1,7 @@
+Function: void net_dim_free_irq_moder ( struct net_device * dev )
+
+free fields for irq moderation
+
+Parameters
+  struct net_device *dev
+    target network device

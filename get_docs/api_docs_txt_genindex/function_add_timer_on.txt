@@ -1,0 +1,15 @@
+Function: void add_timer_on ( struct timer_list * timer , int cpu )
+
+Start a timer on a particular CPU
+
+Parameters
+  struct timer_list *timer
+    The timer to be started
+  int cpu
+    The CPU to start it on
+
+Description
+  Same as add_timer() except that it starts the timer on the given CPU and
+the TIMER_PINNED flag is set. When timer shouldn’t be a pinned timer in
+the next round, add_timer_global() should be used instead as it unsets
+the TIMER_PINNED flag.

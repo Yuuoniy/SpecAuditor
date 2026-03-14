@@ -1,0 +1,9 @@
+Function: int phy_ethtool_get_strings ( struct phy_device * phydev , u8 * data )
+
+Get the statistic counter names
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+  u8 *data
+    Where to put the strings

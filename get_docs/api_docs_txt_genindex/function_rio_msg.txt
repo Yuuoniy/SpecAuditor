@@ -1,0 +1,9 @@
+Function: struct rio_msg
+
+RIO message event
+
+Members
+  res
+    Mailbox resource
+  mcback
+    Message event callback

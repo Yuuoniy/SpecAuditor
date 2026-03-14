@@ -1,0 +1,14 @@
+Function: void drm_gem_dma_print_info ( const struct drm_gem_dma_object * dma_obj , struct drm_printer * p , unsigned int indent )
+
+Print drm_gem_dma_object info for debugfs
+
+Parameters
+  const struct drm_gem_dma_object *dma_obj
+    DMA GEM object
+  struct drm_printer *p
+    DRM printer
+  unsigned int indent
+    Tab indentation level
+
+Description
+  This function prints dma_addr and vaddr for use in e.g. debugfs output.

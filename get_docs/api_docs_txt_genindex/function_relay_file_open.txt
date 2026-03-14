@@ -1,0 +1,12 @@
+Function: int relay_file_open ( struct inode * inode , struct file * filp )
+
+open file op for relay files
+
+Parameters
+  struct inode *inode
+    the inode
+  struct file *filp
+    the file
+
+Description
+  Increments the channel buffer refcount.

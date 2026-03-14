@@ -1,0 +1,19 @@
+Function: struct ib_qp * ib_create_qp_user ( struct ib_device * dev , struct ib_pd * pd , struct ib_qp_init_attr * attr , struct ib_udata * udata , struct ib_uqp_object * uobj , const char * caller )
+
+Creates a QP associated with the specified protection domain.
+
+Parameters
+  struct ib_device *dev
+    IB device
+  struct ib_pd *pd
+    The protection domain associated with the QP.
+  struct ib_qp_init_attr *attr
+    A list of initial attributes required to create the
+QP.  If QP creation succeeds, then the attributes are updated to
+the actual capabilities of the created QP.
+  struct ib_udata *udata
+    User data
+  struct ib_uqp_object *uobj
+    uverbs obect
+  const char *caller
+    caller’s build-time module name

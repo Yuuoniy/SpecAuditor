@@ -1,0 +1,10 @@
+Function: void amdgpu_vm_put_task_info ( struct amdgpu_task_info * task_info )
+
+reference down the vm task_info ptr
+
+Parameters
+  struct amdgpu_task_info *task_info
+    task_info struct under discussion.
+
+Description
+  frees the vm task_info ptr at the last put

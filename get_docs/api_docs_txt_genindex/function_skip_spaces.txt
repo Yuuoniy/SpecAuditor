@@ -1,0 +1,10 @@
+Function: char * skip_spaces ( const char * str )
+
+Removes leading whitespace from str .
+
+Parameters
+  const char *str
+    The string to be stripped.
+
+Description
+  Returns a pointer to the first non-whitespace character in str .

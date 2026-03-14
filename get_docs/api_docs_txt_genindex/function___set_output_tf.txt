@@ -1,0 +1,13 @@
+Function: int __set_output_tf ( struct dc_transfer_func * func , const struct drm_color_lut * lut , uint32_t lut_size , bool has_rom )
+
+calculates the output transfer function based on expected input space.
+
+Parameters
+  struct dc_transfer_func *func
+    transfer function
+  const struct drm_color_lut *lut
+    lookup table that defines the color space
+  uint32_t lut_size
+    size of respective lut
+  bool has_rom
+    if ROM can be used for hardcoded curve

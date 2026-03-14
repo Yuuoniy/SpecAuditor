@@ -1,0 +1,7 @@
+Function: int drm_rect_width ( const struct drm_rect * r )
+
+determine the rectangle width
+
+Parameters
+  const struct drm_rect *r
+    rectangle whose width is returned

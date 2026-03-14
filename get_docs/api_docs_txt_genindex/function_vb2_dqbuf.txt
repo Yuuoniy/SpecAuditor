@@ -1,0 +1,17 @@
+Function: int vb2_dqbuf ( struct vb2_queue * q , struct v4l2_buffer * b , bool nonblocking )
+
+Dequeue a buffer to the userspace
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  struct v4l2_buffer *b
+    buffer structure passed from userspace to v4l2_ioctl_ops->vidioc_dqbuf handler in driver
+  bool nonblocking
+    if true, this call will not sleep waiting for a buffer if no
+buffers ready for dequeuing are present. Normally the driver
+would be passing ( file->f_flags & O_NONBLOCK ) here
+
+Description
+  Should be called from v4l2_ioctl_ops->vidioc_dqbuf ioctl handler
+of a driver.

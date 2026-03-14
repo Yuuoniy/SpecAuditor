@@ -1,0 +1,9 @@
+Function: struct sk_buff * tipc_buf_acquire ( u32 size , gfp_t gfp )
+
+creates a TIPC message buffer
+
+Parameters
+  u32 size
+    message size (including TIPC header)
+  gfp_t gfp
+    memory allocation flags

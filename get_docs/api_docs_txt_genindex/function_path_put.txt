@@ -1,0 +1,10 @@
+Function: void path_put ( const struct path * path )
+
+put a reference to a path
+
+Parameters
+  const struct path *path
+    path to put the reference to
+
+Description
+  Given a path decrement the reference count to the dentry and the vfsmount.

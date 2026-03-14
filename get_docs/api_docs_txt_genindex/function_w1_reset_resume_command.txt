@@ -1,0 +1,14 @@
+Function: int w1_reset_resume_command ( struct w1_master * dev )
+
+resume instead of another match ROM
+
+Parameters
+  struct w1_master *dev
+    the master device
+
+Description
+  When the workflow with a slave amongst many requires several
+successive commands a reset between each, this function is similar
+to doing a reset then a match ROM for the last matched ROM. The
+advantage being that the matched ROM step is skipped in favor of the
+resume command. The slave must support the command of course.

@@ -1,0 +1,12 @@
+Function: bool ether_addr_equal_64bits ( const u8 * addr1 , const u8 * addr2 )
+
+Compare two Ethernet addresses
+
+Parameters
+  const u8 *addr1
+    Pointer to an array of 8 bytes
+  const u8 *addr2
+    Pointer to an other array of 8 bytes
+
+Description
+  Compare two Ethernet addresses, returns true if equal, false otherwise.

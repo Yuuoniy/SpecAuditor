@@ -1,0 +1,12 @@
+Function: bool dmi_match ( enum dmi_field f , const char * str )
+
+compare a string to the dmi field (if exists)
+
+Parameters
+  enum dmi_field f
+    DMI field identifier
+  const char *str
+    string to compare the DMI field to
+
+Description
+  Returns true if the requested field equals to the str (including NULL).

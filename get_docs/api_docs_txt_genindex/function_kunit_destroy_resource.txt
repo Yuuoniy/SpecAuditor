@@ -1,0 +1,11 @@
+Function: int kunit_destroy_resource ( struct kunit * test , kunit_resource_match_t match , void * match_data )
+
+Find a kunit_resource and destroy it.
+
+Parameters
+  struct kunit *test
+    Test case to which the resource belongs.
+  kunit_resource_match_t match
+    Match function. Returns whether a given resource matches match_data .
+  void *match_data
+    Data passed into match .

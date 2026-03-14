@@ -1,0 +1,10 @@
+Macro: FIXTURE_TEARDOWN
+
+
+
+Parameters
+  fixture_name
+    fixture name
+
+Description
+  _metadata is included so that EXPECT_*, ASSERT_* etc. work correctly.

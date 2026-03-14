@@ -1,0 +1,7 @@
+Function: ssize_t dvb_ringbuffer_free ( struct dvb_ringbuffer * rbuf )
+
+returns the number of free bytes in the buffer
+
+Parameters
+  struct dvb_ringbuffer *rbuf
+    pointer to struct dvb_ringbuffer

@@ -1,0 +1,7 @@
+Function: void v4l2_event_unsubscribe_all ( struct v4l2_fh * fh )
+
+Unsubscribes to all events
+
+Parameters
+  struct v4l2_fh *fh
+    pointer to struct v4l2_fh

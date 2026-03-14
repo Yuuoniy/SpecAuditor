@@ -1,0 +1,12 @@
+Function: int mipi_dbi_pipe_begin_fb_access ( struct drm_simple_display_pipe * pipe , struct drm_plane_state * plane_state )
+
+MIPI DBI pipe begin-access helper
+
+Parameters
+  struct drm_simple_display_pipe *pipe
+    Display pipe
+  struct drm_plane_state *plane_state
+    Plane state
+
+Description
+  This function implements struct drm_simple_display_funcs.begin_fb_access .

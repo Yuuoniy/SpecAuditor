@@ -1,0 +1,128 @@
+Struct: struct ieee80211_hw
+
+hardware information and state
+
+Members
+  conf
+    struct ieee80211_conf , device configuration, don’t use.
+  wiphy
+    This points to the struct wiphy allocated for this
+802.11 PHY. You must fill in the perm_addr and dev members of this structure using SET_IEEE80211_DEV() and SET_IEEE80211_PERM_ADDR() . Additionally, all supported
+bands (with channels, bitrates) are registered here.
+  rate_control_algorithm
+    rate control algorithm for this hardware.
+If unset (NULL), the default algorithm will be used. Must be
+set before calling ieee80211_register_hw() .
+  priv
+    pointer to private area that was allocated for driver use
+along with this structure.
+  flags
+    hardware flags, see enum ieee80211_hw_flags .
+  extra_tx_headroom
+    headroom to reserve in each transmit skb
+for use by the driver (e.g. for transmit headers.)
+  extra_beacon_tailroom
+    tailroom to reserve in each beacon tx skb.
+Can be used by drivers to add extra IEs.
+  vif_data_size
+    size (in bytes) of the drv_priv data area
+within struct ieee80211_vif .
+  sta_data_size
+    size (in bytes) of the drv_priv data area
+within struct ieee80211_sta .
+  chanctx_data_size
+    size (in bytes) of the drv_priv data area
+within struct ieee80211_chanctx_conf .
+  txq_data_size
+    size (in bytes) of the drv_priv data area
+within struct ieee80211_txq.
+  queues
+    number of available hardware transmit queues for
+data packets. WMM/QoS requires at least four, these
+queues need to have configurable access parameters.
+  max_listen_interval
+    max listen interval in units of beacon interval
+that HW supports
+  max_signal
+    Maximum value for signal (rssi) in RX information, used
+only when IEEE80211_HW_SIGNAL_UNSPEC or IEEE80211_HW_SIGNAL_DB
+  max_rates
+    maximum number of alternate rate retry stages the hw
+can handle.
+  max_report_rates
+    maximum number of alternate rate retry stages
+the hw can report back.
+  max_rate_tries
+    maximum number of tries for each stage
+  max_rx_aggregation_subframes
+    maximum buffer size (number of
+sub-frames) to be used for A-MPDU block ack receiver
+aggregation.
+This is only relevant if the device has restrictions on the
+number of subframes, if it relies on mac80211 to do reordering
+it shouldn’t be set.
+  max_tx_aggregation_subframes
+    maximum number of subframes in an
+aggregate an HT/HE device will transmit. In HT AddBA we’ll
+advertise a constant value of 64 as some older APs crash if
+the window size is smaller (an example is LinkSys WRT120N
+with FW v1.0.07 build 002 Jun 18 2012).
+For AddBA to HE capable peers this value will be used.
+  max_tx_fragments
+    maximum number of tx buffers per (A)-MSDU, sum
+of 1 + skb_shinfo(skb)->nr_frags for each skb in the frag_list.
+  offchannel_tx_hw_queue
+    HW queue ID to use for offchannel TX
+(if IEEE80211_HW_QUEUE_CONTROL is set)
+  radiotap_mcs_details
+    lists which MCS information can the HW
+reports, by default it is set to _MCS, _GI and _BW but doesn’t
+include _FMT. Use IEEE80211_RADIOTAP_MCS_HAVE_ * values, only
+adding _BW is supported today.
+  radiotap_vht_details
+    lists which VHT MCS information the HW reports,
+the default is _GI | _BANDWIDTH.
+Use the IEEE80211_RADIOTAP_VHT_KNOWN_ * values.
+  radiotap_timestamp
+    Information for the radiotap timestamp field; if the units_pos member is set to a non-negative value then the timestamp
+field will be added and populated from the struct ieee80211_rx_status device_timestamp.
+  radiotap_timestamp.units_pos
+    Must be set to a combination of a
+IEEE80211_RADIOTAP_TIMESTAMP_UNIT_* and a
+IEEE80211_RADIOTAP_TIMESTAMP_SPOS_* value.
+  radiotap_timestamp.accuracy
+    If non-negative, fills the accuracy in the
+radiotap field and the accuracy known flag will be set.
+  netdev_features
+    netdev features to be set in each netdev created
+from this HW. Note that not all features are usable with mac80211,
+other features will be rejected during HW registration.
+  uapsd_queues
+    This bitmap is included in (re)association frame to indicate
+for each access category if it is uAPSD trigger-enabled and delivery-
+enabled. Use IEEE80211_WMM_IE_STA_QOSINFO_AC_* to set this bitmap.
+Each bit corresponds to different AC. Value ‘1’ in specific bit means
+that corresponding AC is both trigger- and delivery-enabled. ‘0’ means
+neither enabled.
+  uapsd_max_sp_len
+    maximum number of total buffered frames the WMM AP may
+deliver to a WMM STA during any Service Period triggered by the WMM STA.
+Use IEEE80211_WMM_IE_STA_QOSINFO_SP_* for correct values.
+  max_nan_de_entries
+    maximum number of NAN DE functions supported by the
+device.
+  tx_sk_pacing_shift
+    Pacing shift to set on TCP sockets when frames from
+them are encountered. The default should typically not be changed,
+unless the driver has good reasons for needing more buffers.
+  weight_multiplier
+    Driver specific airtime weight multiplier used while
+refilling deficit of each TXQ.
+  max_mtu
+    the max mtu could be set.
+  tx_power_levels
+    a list of power levels supported by the wifi hardware.
+The power levels can be specified either as integer or fractions.
+The power level at idx 0 shall be the maximum positive power level.
+  max_txpwr_levels_idx
+    the maximum valid idx of ‘tx_power_levels’ list.

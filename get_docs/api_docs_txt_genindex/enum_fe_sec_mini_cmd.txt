@@ -1,0 +1,3 @@
+Enum: enum fe_sec_mini_cmd
+
+Type of mini burst to be sent

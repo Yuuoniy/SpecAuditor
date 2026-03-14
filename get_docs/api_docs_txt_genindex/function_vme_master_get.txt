@@ -1,0 +1,22 @@
+Function: int vme_master_get ( struct vme_resource * resource , int * enabled , unsigned long long * vme_base , unsigned long long * size , u32 * aspace , u32 * cycle , u32 * dwidth )
+
+Retrieve VME master window configuration.
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME master resource.
+  int *enabled
+    Pointer to variable for storing state.
+  unsigned long long *vme_base
+    Pointer to variable for storing window base address.
+  unsigned long long *size
+    Pointer to variable for storing window size.
+  u32 *aspace
+    Pointer to variable for storing VME address space.
+  u32 *cycle
+    Pointer to variable for storing VME data transfer cycle type.
+  u32 *dwidth
+    Pointer to variable for storing VME data transfer width.
+
+Description
+  Return configuration for provided VME master window.

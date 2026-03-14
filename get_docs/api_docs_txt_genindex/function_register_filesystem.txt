@@ -1,0 +1,12 @@
+Function: int register_filesystem ( struct file_system_type * fs )
+
+register a new filesystem
+
+Parameters
+  struct file_system_type * fs
+    the file system structure
+
+Description
+  Adds the file system passed to the list of file systems the kernel
+is aware of for mount and other syscalls. Returns 0 on success,
+or a negative errno code on an error.

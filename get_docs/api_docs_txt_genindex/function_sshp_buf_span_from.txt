@@ -1,0 +1,17 @@
+Function: void sshp_buf_span_from ( struct sshp_buf * buf , size_t offset , struct ssam_span * span )
+
+Initialize a span from the given buffer and offset.
+
+Parameters
+  struct sshp_buf *buf
+    The buffer to create the span from.
+  size_t offset
+    The offset in the buffer at which the span should start.
+  struct ssam_span *span
+    The span to initialize (output).
+
+Description
+  Initializes the provided span to point to the memory at the given offset in
+the buffer, with the length of the span being capped by the number of bytes
+used in the buffer after the offset (i.e. bytes remaining after the
+offset).

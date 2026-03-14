@@ -1,0 +1,10 @@
+Function: void read_cdat_data ( struct cxl_port * port )
+
+Read the CDAT data on this port
+
+Parameters
+  struct cxl_port *port
+    Port to read data from
+
+Description
+  This call will sleep waiting for responses from the DOE mailbox.

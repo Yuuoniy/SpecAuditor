@@ -1,0 +1,16 @@
+Function: bool dim_calc_stats ( const struct dim_sample * start , const struct dim_sample * end , struct dim_stats * curr_stats )
+
+calculate the difference between two samples
+
+Parameters
+  const struct dim_sample *start
+    start sample
+  const struct dim_sample *end
+    end sample
+  struct dim_stats *curr_stats
+    delta between samples
+
+Description
+  Calculate the delta between two samples (in data rates).
+Takes into consideration counter wrap-around.
+Returned boolean indicates whether curr_stats are reliable.

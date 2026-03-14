@@ -1,0 +1,11 @@
+Function: int hsi_flush ( struct hsi_client * cl )
+
+Flush all pending transactions on the client’s port
+
+Parameters
+  struct hsi_client *cl
+    Pointer to the HSI client
+
+Description
+  This function will destroy all pending hsi_msg in the port and reset
+the HW port so it is ready to receive and transmit from a clean state.

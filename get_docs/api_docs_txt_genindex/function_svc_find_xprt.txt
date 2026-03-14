@@ -1,0 +1,20 @@
+Function: struct svc_xprt * svc_find_xprt ( struct svc_serv * serv , const char * xcl_name , struct net * net , const sa_family_t af , const unsigned short port )
+
+find an RPC transport instance
+
+Parameters
+  struct svc_serv *serv
+    pointer to svc_serv to search
+  const char *xcl_name
+    C string containing transport’s class name
+  struct net *net
+    owner net pointer
+  const sa_family_t af
+    Address family of transport’s local address
+  const unsigned short port
+    transport’s IP port number
+
+Description
+  Return the transport instance pointer for the endpoint accepting
+connections/peer traffic from the specified transport class,
+address family and port.

@@ -1,0 +1,7 @@
+Function: size_t msgb_bytes_used ( const struct msgbuf * msgb )
+
+Return the current number of bytes used in the buffer.
+
+Parameters
+  const struct msgbuf *msgb
+    The message buffer.

@@ -1,0 +1,21 @@
+Function: struct v4l2_ctrl * v4l2_ctrl_new_int_menu ( struct v4l2_ctrl_handler * hdl , const struct v4l2_ctrl_ops * ops , u32 id , u8 max , u8 def , const s64 * qmenu_int )
+
+Create a new standard V4L2 integer menu control.
+
+Parameters
+  struct v4l2_ctrl_handler *hdl
+    The control handler.
+  const struct v4l2_ctrl_ops *ops
+    The control ops.
+  u32 id
+    The control ID.
+  u8 max
+    The control’s maximum value.
+  u8 def
+    The control’s default value.
+  const s64 *qmenu_int
+    The control’s menu entries.
+
+Description
+  Same as v4l2_ctrl_new_std_menu() , but mask is set to 0 and it additionally
+takes as an argument an array of integers determining the menu items.

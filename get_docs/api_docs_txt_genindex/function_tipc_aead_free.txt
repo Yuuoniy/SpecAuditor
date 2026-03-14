@@ -1,0 +1,7 @@
+Function: void tipc_aead_free ( struct rcu_head * rp )
+
+Release AEAD key incl. all the TFMs in the list
+
+Parameters
+  struct rcu_head *rp
+    rcu head pointer

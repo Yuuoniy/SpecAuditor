@@ -1,0 +1,13 @@
+Function: int device_reprobe ( struct device * dev )
+
+remove driver for a device and probe for a new driver
+
+Parameters
+  struct device *dev
+    the device to reprobe
+
+Description
+  This function detaches the attached driver (if any) for the given
+device and restarts the driver probing process.  It is intended
+to use if probing criteria changed during a devices lifetime and
+driver attachment should change accordingly.

@@ -1,0 +1,13 @@
+Function: int scsi_internal_device_unblock_nowait ( struct scsi_device * sdev , enum scsi_device_state new_state )
+
+resume a device after a block request
+
+Parameters
+  struct scsi_device *sdev
+    device to resume
+  enum scsi_device_state new_state
+    state to set the device to after unblocking
+
+Description
+  Restart the device queue for a previously suspended SCSI device. Does not
+sleep.

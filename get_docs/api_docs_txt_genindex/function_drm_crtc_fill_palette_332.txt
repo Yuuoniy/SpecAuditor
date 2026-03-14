@@ -1,0 +1,12 @@
+Function: void drm_crtc_fill_palette_332 ( struct drm_crtc * crtc , drm_crtc_set_lut_func set_palette )
+
+Programs a default palette for R332-like formats
+
+Parameters
+  struct drm_crtc *crtc
+    The displaying CRTC
+  drm_crtc_set_lut_func set_palette
+    Callback for programming the hardware gamma LUT
+
+Description
+  Programs an RGB332 palette to hardware.

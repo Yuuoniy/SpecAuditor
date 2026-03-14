@@ -1,0 +1,9 @@
+Function: void * klp_shadow_get ( void * obj , unsigned long id )
+
+retrieve a shadow variable data pointer
+
+Parameters
+  void *obj
+    pointer to parent object
+  unsigned long id
+    data identifier

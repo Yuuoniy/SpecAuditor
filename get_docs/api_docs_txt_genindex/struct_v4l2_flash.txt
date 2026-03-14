@@ -1,0 +1,19 @@
+Struct: struct v4l2_flash
+
+Flash sub-device context
+
+Members
+  fled_cdev
+    LED flash class device controlled by this sub-device
+  iled_cdev
+    LED class device representing indicator LED associated
+with the LED flash class device
+  ops
+    V4L2 specific flash ops
+  sd
+    V4L2 sub-device
+  hdl
+    flash controls handler
+  ctrls
+    array of pointers to controls, whose values define
+the sub-device state

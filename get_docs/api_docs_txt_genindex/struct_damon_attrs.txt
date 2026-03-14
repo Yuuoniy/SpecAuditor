@@ -1,0 +1,19 @@
+Struct: struct damon_attrs
+
+Monitoring attributes for accuracy/overhead control.
+
+Members
+  sample_interval
+    The time between access samplings.
+  aggr_interval
+    The time between monitor results aggregations.
+  ops_update_interval
+    The time between monitoring operations updates.
+  intervals_goal
+    Intervals auto-tuning goal.
+  min_nr_regions
+    The minimum number of adaptive monitoring
+regions.
+  max_nr_regions
+    The maximum number of adaptive monitoring
+regions.

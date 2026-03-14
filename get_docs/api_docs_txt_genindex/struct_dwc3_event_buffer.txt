@@ -1,0 +1,21 @@
+Struct: struct dwc3_event_buffer
+
+Software event buffer representation
+
+Members
+  buf
+    _THE_ buffer
+  cache
+    The buffer cache used in the threaded interrupt
+  length
+    size of this buffer
+  lpos
+    event offset
+  count
+    cache of last read event count register
+  flags
+    flags related to this event buffer
+  dma
+    dma_addr_t
+  dwc
+    pointer to DWC controller

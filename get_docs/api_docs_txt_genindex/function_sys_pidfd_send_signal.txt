@@ -1,0 +1,19 @@
+Function: long sys_pidfd_send_signal ( int pidfd , int sig , siginfo_t __user * info , unsigned int flags )
+
+Signal a process through a pidfd
+
+Parameters
+  int pidfd
+    file descriptor of the process
+  int sig
+    signal to send
+  siginfo_t __user * info
+    signal info
+  unsigned int flags
+    future flags
+
+Description
+  Send the signal to the thread group or to the individual thread depending
+on PIDFD_THREAD.
+In the future extension to flags may be used to override the default scope
+of pidfd .

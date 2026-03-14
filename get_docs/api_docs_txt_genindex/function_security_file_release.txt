@@ -1,0 +1,10 @@
+Function: void security_file_release ( struct file * file )
+
+Perform actions before releasing the file ref
+
+Parameters
+  struct file *file
+    the file
+
+Description
+  Perform actions before releasing the last reference to a file.

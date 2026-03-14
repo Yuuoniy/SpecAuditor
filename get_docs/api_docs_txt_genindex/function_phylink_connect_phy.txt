@@ -1,0 +1,14 @@
+Function: int phylink_connect_phy ( struct phylink * pl , struct phy_device * phy )
+
+connect a PHY to the phylink instance
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+  struct phy_device *phy
+    a pointer to a struct phy_device .
+
+Description
+  Connect phy to the phylink instance specified by pl by calling phy_attach_direct() . Configure the phy according to the MAC driver’s
+capabilities, start the PHYLIB state machine and enable any interrupts
+that the PHY supports.

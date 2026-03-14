@@ -1,0 +1,17 @@
+Function: int security_capget ( const struct task_struct * target , kernel_cap_t * effective , kernel_cap_t * inheritable , kernel_cap_t * permitted )
+
+Get the capability sets for a process
+
+Parameters
+  const struct task_struct *target
+    target process
+  kernel_cap_t *effective
+    effective capability set
+  kernel_cap_t *inheritable
+    inheritable capability set
+  kernel_cap_t *permitted
+    permitted capability set
+
+Description
+  Get the effective , inheritable , and permitted capability sets for the target process.  The hook may also perform permission checking to determine
+if the current process is allowed to see the capability sets of the target process.

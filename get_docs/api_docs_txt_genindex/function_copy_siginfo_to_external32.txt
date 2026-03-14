@@ -1,0 +1,9 @@
+Function: void copy_siginfo_to_external32 ( struct compat_siginfo * to , const struct kernel_siginfo * from )
+
+copy a kernel siginfo into a compat user siginfo
+
+Parameters
+  struct compat_siginfo *to
+    compat siginfo destination
+  const struct kernel_siginfo *from
+    kernel siginfo source

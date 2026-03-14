@@ -1,0 +1,19 @@
+Struct: struct ipu3_uapi_yuvp1_iefd_rad_cfg
+
+IEFd parameters changed radially over the picture plane.
+
+Members
+  reset_xy
+    reset xy value in radial calculation. ipu3_uapi_radial_reset_xy
+  reset_x2
+    reset x square value in radial calculation. See struct ipu3_uapi_radial_reset_x2
+  reset_y2
+    reset y square value in radial calculation. See struct ipu3_uapi_radial_reset_y2
+  cfg
+    radial config defined in ipu3_uapi_radial_cfg
+  rad_far_w
+    weight for wide range radial. ipu3_uapi_rad_far_w
+  cu_cfg0
+    configuration unit 0. See ipu3_uapi_cu_cfg0
+  cu_cfg1
+    configuration unit 1. See ipu3_uapi_cu_cfg1

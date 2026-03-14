@@ -1,0 +1,11 @@
+Function: int security_shm_alloc ( struct kern_ipc_perm * shp )
+
+Allocate a sysv shm LSM blob
+
+Parameters
+  struct kern_ipc_perm *shp
+    sysv ipc permission structure
+
+Description
+  Allocate and attach a security structure to the shp security field.  The
+security field is initialized to NULL when the structure is first created.

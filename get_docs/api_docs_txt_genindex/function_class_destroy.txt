@@ -1,0 +1,11 @@
+Function: void class_destroy ( const struct class * cls )
+
+destroys a struct class structure
+
+Parameters
+  const struct class *cls
+    pointer to the struct class that is to be destroyed
+
+Description
+  Note, the pointer to be destroyed must have been created with a call
+to class_create() .

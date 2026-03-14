@@ -1,0 +1,25 @@
+Struct: struct damon_operations
+
+Monitoring operations for given use cases.
+
+Members
+  id
+    Identifier of this operations set.
+  init
+    Initialize operations-related data structures.
+  update
+    Update operations-related data structures.
+  prepare_access_checks
+    Prepare next access check of target regions.
+  check_accesses
+    Check the accesses to target regions.
+  get_scheme_score
+    Get the score of a region for a scheme.
+  apply_scheme
+    Apply a DAMON-based operation scheme.
+  target_valid
+    Determine if the target is valid.
+  cleanup_target
+    Clean up each target before deallocation.
+  cleanup
+    Clean up the context.

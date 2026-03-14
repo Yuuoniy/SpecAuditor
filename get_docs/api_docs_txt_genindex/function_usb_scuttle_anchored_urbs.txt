@@ -1,0 +1,10 @@
+Function: void usb_scuttle_anchored_urbs ( struct usb_anchor * anchor )
+
+unanchor all an anchor’s urbs
+
+Parameters
+  struct usb_anchor *anchor
+    the anchor whose urbs you want to unanchor
+
+Description
+  use this to get rid of all an anchor’s urbs

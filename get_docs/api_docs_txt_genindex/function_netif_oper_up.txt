@@ -1,0 +1,10 @@
+Function: bool netif_oper_up ( const struct net_device * dev )
+
+test if device is operational
+
+Parameters
+  const struct net_device *dev
+    network device
+
+Description
+  Check if carrier is operational

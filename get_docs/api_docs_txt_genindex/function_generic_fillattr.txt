@@ -1,0 +1,18 @@
+Function: void generic_fillattr ( struct mnt_idmap * idmap , u32 request_mask , struct inode * inode , struct kstat * stat )
+
+Fill in the basic attributes from the inode struct
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount the inode was found from
+  u32 request_mask
+    statx request_mask
+  struct inode *inode
+    Inode to use as the source
+  struct kstat *stat
+    Where to fill in the attributes
+
+Description
+  Fill in the basic attributes in the kstat structure from data that’s to be
+found on the VFS inode structure.  This is the default if no getattr inode
+operation is supplied.

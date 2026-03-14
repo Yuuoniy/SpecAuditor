@@ -1,0 +1,7 @@
+Function: bool pwmchip_supports_waveform ( struct pwm_chip * chip )
+
+checks if the given chip supports waveform callbacks
+
+Parameters
+  struct pwm_chip *chip
+    The pwm_chip to test

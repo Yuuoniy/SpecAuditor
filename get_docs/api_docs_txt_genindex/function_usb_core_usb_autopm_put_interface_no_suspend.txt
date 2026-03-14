@@ -1,0 +1,11 @@
+Function: void usb_autopm_put_interface_no_suspend ( struct usb_interface * intf )
+
+decrement a USB interface’s PM-usage counter
+
+Parameters
+  struct usb_interface *intf
+    the usb_interface whose counter should be decremented
+
+Description
+  This routine decrements intf ’s usage counter but does not carry out an
+autosuspend.

@@ -1,0 +1,17 @@
+Function: struct intel_dsb * intel_dsb_prepare ( struct intel_atomic_state * state , struct intel_crtc * crtc , enum intel_dsb_id dsb_id , unsigned int max_cmds )
+
+Allocate, pin and map the DSB command buffer.
+
+Parameters
+  struct intel_atomic_state *state
+    the atomic state
+  struct intel_crtc *crtc
+    the CRTC
+  enum intel_dsb_id dsb_id
+    the DSB engine to use
+  unsigned int max_cmds
+    number of commands we need to fit into command buffer
+
+Description
+  This function prepare the command buffer which is used to store dsb
+instructions with data.

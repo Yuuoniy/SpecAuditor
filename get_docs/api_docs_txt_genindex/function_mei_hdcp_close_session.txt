@@ -1,0 +1,9 @@
+Function: int mei_hdcp_close_session ( struct device * dev , struct hdcp_port_data * data )
+
+Close the Wired HDCP Tx session of ME FW per port. This also disables the authenticated state of the port.
+
+Parameters
+  struct device *dev
+    device corresponding to the mei_cl_device
+  struct hdcp_port_data *data
+    Intel HW specific hdcp data

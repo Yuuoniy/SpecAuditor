@@ -1,0 +1,12 @@
+Function: int nand_block_isreserved ( struct mtd_info * mtd , loff_t ofs )
+
+[GENERIC] Check if a block is marked reserved.
+
+Parameters
+  struct mtd_info *mtd
+    MTD device structure
+  loff_t ofs
+    offset from device start
+
+Description
+  Check if the block is marked as reserved.

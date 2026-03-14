@@ -1,0 +1,14 @@
+Function: void cfg80211_testmode_event ( struct sk_buff * skb , gfp_t gfp )
+
+send the event
+
+Parameters
+  struct sk_buff *skb
+    The skb, must have been allocated with cfg80211_testmode_alloc_event_skb()
+  gfp_t gfp
+    allocation flags
+
+Description
+  This function sends the given skb , which must have been allocated
+by cfg80211_testmode_alloc_event_skb() , as an event. It always
+consumes it.

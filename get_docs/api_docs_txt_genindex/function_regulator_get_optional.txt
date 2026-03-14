@@ -1,0 +1,17 @@
+Function: struct regulator * regulator_get_optional ( struct device * dev , const char * id )
+
+obtain optional access to a regulator.
+
+Parameters
+  struct device *dev
+    device for regulator “consumer”
+  const char *id
+    Supply name or regulator ID.
+
+Description
+  This is intended for use by consumers for devices which can have
+some supplies unconnected in normal use, such as some MMC devices.
+It can allow the regulator core to provide stub supplies for other
+supplies requested using normal regulator_get() calls without
+disrupting the operation of drivers that can handle absent
+supplies.

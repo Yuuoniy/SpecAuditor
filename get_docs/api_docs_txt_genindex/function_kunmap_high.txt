@@ -1,0 +1,11 @@
+Function: void kunmap_high ( const struct page * page )
+
+unmap a highmem page into memory
+
+Parameters
+  const struct page *page
+    struct page to unmap
+
+Description
+  If ARCH_NEEDS_KMAP_HIGH_GET is not defined then this may be called
+only from user context.

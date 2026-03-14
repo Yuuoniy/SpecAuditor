@@ -1,0 +1,14 @@
+Struct: struct ipu3_uapi_yuvp1_iefd_shrp_cfg
+
+IEFd sharpness config
+
+Members
+  cfg
+    sharpness config ipu3_uapi_sharp_cfg
+  far_w
+    wide range config, value as specified by ipu3_uapi_far_w :
+The 5x5 environment is separated into 2 sub-groups, the 3x3 nearest
+neighbors (8 pixels called Near), and the second order neighborhood
+around them (16 pixels called Far).
+  unshrp_cfg
+    unsharpness config. ipu3_uapi_unsharp_cfg

@@ -1,0 +1,14 @@
+Struct: struct vidtv_demod_cnr_to_qual_s
+
+Map CNR values to a given combination of modulation and fec_inner
+
+Members
+  modulation
+    see enum fe_modulation
+  fec
+    see enum fe_fec_rate
+  cnr_ok
+    S/N threshold to consider the signal as OK. Below that, there’s
+a chance of losing sync.
+  cnr_good
+    S/N threshold to consider the signal strong.

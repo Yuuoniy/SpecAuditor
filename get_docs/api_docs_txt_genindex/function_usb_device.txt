@@ -1,0 +1,141 @@
+Function: struct usb_device
+
+kernel’s representation of a USB device
+
+Members
+  devnum
+    device number; address on a USB bus
+  devpath
+    device ID string for use in messages (e.g., /port/...)
+  route
+    tree topology hex string for use with xHCI
+  state
+    device state: configured, not attached, etc.
+  speed
+    device speed: high/full/low (or error)
+  rx_lanes
+    number of rx lanes in use, USB 3.2 adds dual-lane support
+  tx_lanes
+    number of tx lanes in use, USB 3.2 adds dual-lane support
+  ssp_rate
+    SuperSpeed Plus phy signaling rate and lane count
+  tt
+    Transaction Translator info; used with low/full speed dev, highspeed hub
+  ttport
+    device port on that tt hub
+  toggle
+    one bit for each endpoint, with ([0] = IN, [1] = OUT) endpoints
+  parent
+    our hub, unless we’re the root
+  bus
+    bus we’re part of
+  ep0
+    endpoint 0 data (default control pipe)
+  dev
+    generic device interface
+  descriptor
+    USB device descriptor
+  bos
+    USB device BOS descriptor set
+  config
+    all of the device’s configs
+  actconfig
+    the active configuration
+  ep_in
+    array of IN endpoints
+  ep_out
+    array of OUT endpoints
+  rawdescriptors
+    raw descriptors for each config
+  bus_mA
+    Current available from the bus
+  portnum
+    parent port number (origin 1)
+  level
+    number of USB hub ancestors
+  devaddr
+    device address, XHCI: assigned by HW, others: same as devnum
+  can_submit
+    URBs may be submitted
+  persist_enabled
+    USB_PERSIST enabled for this device
+  reset_in_progress
+    the device is being reset
+  have_langid
+    whether string_langid is valid
+  authorized
+    policy has said we can use it;
+(user space) policy determines if we authorize this device to be
+used or not. By default, wired USB devices are authorized.
+WUSB devices are not, until we authorize them from user space.
+FIXME -- complete doc
+  authenticated
+    Crypto authentication passed
+  lpm_capable
+    device supports LPM
+  lpm_devinit_allow
+    Allow USB3 device initiated LPM, exit latency is in range
+  usb2_hw_lpm_capable
+    device can perform USB2 hardware LPM
+  usb2_hw_lpm_besl_capable
+    device can perform USB2 hardware BESL LPM
+  usb2_hw_lpm_enabled
+    USB2 hardware LPM is enabled
+  usb2_hw_lpm_allowed
+    Userspace allows USB 2.0 LPM to be enabled
+  usb3_lpm_u1_enabled
+    USB3 hardware U1 LPM enabled
+  usb3_lpm_u2_enabled
+    USB3 hardware U2 LPM enabled
+  string_langid
+    language ID for strings
+  product
+    iProduct string, if present (static)
+  manufacturer
+    iManufacturer string, if present (static)
+  serial
+    iSerialNumber string, if present (static)
+  filelist
+    usbfs files that are open to this device
+  maxchild
+    number of ports if hub
+  quirks
+    quirks of the whole device
+  urbnum
+    number of URBs submitted for the whole device
+  active_duration
+    total time device is not suspended
+  connect_time
+    time device was first connected
+  do_remote_wakeup
+    remote wakeup should be enabled
+  reset_resume
+    needs reset instead of resume
+  port_is_suspended
+    the upstream port is suspended (L2 or U3)
+  offload_at_suspend
+    offload activities during suspend is enabled.
+  offload_usage
+    number of offload activities happening on this usb device.
+  tunnel_mode
+    Connection native or tunneled over USB4
+  usb4_link
+    device link to the USB4 host interface
+  slot_id
+    Slot ID assigned by xHCI
+  l1_params
+    best effor service latency for USB2 L1 LPM state, and L1 timeout.
+  u1_params
+    exit latencies for USB3 U1 LPM state, and hub-initiated timeout.
+  u2_params
+    exit latencies for USB3 U2 LPM state, and hub-initiated timeout.
+  lpm_disable_count
+    Ref count used by usb_disable_lpm() and usb_enable_lpm() to keep track of the number of functions that require USB 3.0 Link Power
+Management to be disabled for this usb_device.  This count should only
+be manipulated by those functions, with the bandwidth_mutex is held.
+  hub_delay
+    cached value consisting of:
+parent->hub_delay + wHubDelay + tTPTransmissionDelay (40ns)
+Will be used as wValue for SetIsochDelay requests.
+  use_generic_driver
+    ask driver core to reprobe using the generic driver.

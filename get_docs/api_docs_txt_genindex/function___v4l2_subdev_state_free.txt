@@ -1,0 +1,10 @@
+Function: void __v4l2_subdev_state_free ( struct v4l2_subdev_state * state )
+
+free a v4l2_subdev_state
+
+Parameters
+  struct v4l2_subdev_state *state
+    v4l2_subdev_state to be freed.
+
+Description
+  Not to be called directly by the drivers.

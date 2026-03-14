@@ -1,0 +1,11 @@
+Function: void folio_start_private_2 ( struct folio * folio )
+
+Start an fscache write on a folio. [DEPRECATED]
+
+Parameters
+  struct folio *folio
+    The folio.
+
+Description
+  Call this function before writing a folio to a local cache.  Starting a
+second write before the first one finishes is not allowed.

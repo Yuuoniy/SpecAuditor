@@ -1,0 +1,13 @@
+Function: void i915_oa_stream_enable ( struct i915_perf_stream * stream )
+
+handle I915_PERF_IOCTL_ENABLE for OA stream
+
+Parameters
+  struct i915_perf_stream *stream
+    An i915 perf stream opened for OA metrics
+
+Description
+  [Re]enables hardware periodic sampling according to the period configured
+when opening the stream. This also starts a hrtimer that will periodically
+check for data in the circular OA buffer for notifying userspace (e.g.
+during a read() or poll()).

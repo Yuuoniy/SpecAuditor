@@ -1,0 +1,11 @@
+Function: struct sk_buff * build_skb_around ( struct sk_buff * skb , void * data , unsigned int frag_size )
+
+build a network buffer around provided skb
+
+Parameters
+  struct sk_buff *skb
+    sk_buff provide by caller, must be memset cleared
+  void *data
+    data buffer provided by caller
+  unsigned int frag_size
+    size of data

@@ -1,0 +1,12 @@
+Function: void drm_gem_dmabuf_vunmap ( struct dma_buf * dma_buf , struct iosys_map * map )
+
+dma_buf vunmap implementation for GEM
+
+Parameters
+  struct dma_buf *dma_buf
+    buffer to be unmapped
+  struct iosys_map *map
+    the virtual address of the buffer
+
+Description
+  Releases a kernel virtual mapping. This can be used as the dma_buf_ops.vunmap callback. Calls into drm_gem_object_funcs.vunmap for device specific handling.

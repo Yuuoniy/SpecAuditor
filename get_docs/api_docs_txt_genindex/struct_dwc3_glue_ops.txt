@@ -1,0 +1,9 @@
+Struct: struct dwc3_glue_ops
+
+The ops indicate the notifications that need to be passed on to glue layer
+
+Members
+  pre_set_role
+    Notify glue of role switch notifications
+  pre_run_stop
+    Notify run stop enable/disable information to glue

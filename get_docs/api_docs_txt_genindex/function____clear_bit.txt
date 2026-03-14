@@ -1,0 +1,14 @@
+Function: void ___clear_bit ( unsigned long nr , volatile unsigned long * addr )
+
+Clears a bit in memory
+
+Parameters
+  unsigned long nr
+    the bit to clear
+  volatile unsigned long *addr
+    the address to start counting from
+
+Description
+  Unlike clear_bit() , this function is non-atomic. If it is called on the same
+region of memory concurrently, the effect may be that only one operation
+succeeds.

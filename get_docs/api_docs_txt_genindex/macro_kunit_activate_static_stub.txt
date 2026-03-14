@@ -1,0 +1,17 @@
+Macro: kunit_activate_static_stub
+
+
+
+Parameters
+  test
+    A pointer to the ‘ struct kunit ’ test context for the current test.
+  real_fn_addr
+    The address of the function to replace.
+  replacement_addr
+    The address of the function to replace it with.
+
+Description
+  When activated, calls to real_fn_addr from within this test (even if called
+indirectly) will instead call replacement_addr. The function pointed to by
+real_fn_addr must begin with the static stub prologue in KUNIT_STATIC_STUB_REDIRECT() for this to work. real_fn_addr and
+replacement_addr must have the same type.

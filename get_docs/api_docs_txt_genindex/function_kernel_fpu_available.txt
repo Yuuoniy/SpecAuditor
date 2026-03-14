@@ -1,0 +1,6 @@
+Function: bool kernel_fpu_available ( void )
+
+This function reports if floating-point code can be used on this CPU or
+platform. The value returned by this function is not expected to change
+at runtime, so it only needs to be called once, not before every
+critical section.

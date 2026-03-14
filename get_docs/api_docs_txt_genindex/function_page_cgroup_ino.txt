@@ -1,0 +1,12 @@
+Function: ino_t page_cgroup_ino ( struct page * page )
+
+return inode number of the memcg a page is charged to
+
+Parameters
+  struct page *page
+    the page
+
+Description
+  Look up the closest online ancestor of the memory cgroup page is charged to
+and return its inode number or 0 if page is not charged to any cgroup. It
+is safe to call this function without holding a reference to page .

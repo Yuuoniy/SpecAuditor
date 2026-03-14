@@ -1,0 +1,15 @@
+Function: void security_inode_post_set_acl ( struct dentry * dentry , const char * acl_name , struct posix_acl * kacl )
+
+Update inode security from posix acls set
+
+Parameters
+  struct dentry *dentry
+    file
+  const char *acl_name
+    acl name
+  struct posix_acl *kacl
+    acl struct
+
+Description
+  Update inode security data after successfully setting posix acls on dentry .
+The posix acls in kacl are identified by acl_name .

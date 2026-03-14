@@ -1,0 +1,13 @@
+Function: int srcu_read_lock_held ( const struct srcu_struct * ssp )
+
+might we be in SRCU read-side critical section?
+
+Parameters
+  const struct srcu_struct *ssp
+    The srcu_struct structure to check
+
+Description
+  If CONFIG_DEBUG_LOCK_ALLOC is selected, returns nonzero iff in an SRCU
+read-side critical section.  In absence of CONFIG_DEBUG_LOCK_ALLOC,
+this assumes we are in an SRCU read-side critical section unless it can
+prove otherwise.

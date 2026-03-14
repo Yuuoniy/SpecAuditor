@@ -1,0 +1,9 @@
+Function: ssize_t snd_pcm_format_size ( snd_pcm_format_t format , size_t samples )
+
+return the byte size of samples on the given format
+
+Parameters
+  snd_pcm_format_t format
+    the format to check
+  size_t samples
+    sampling rate

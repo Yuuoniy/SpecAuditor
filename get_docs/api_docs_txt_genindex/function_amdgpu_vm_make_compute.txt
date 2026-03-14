@@ -1,0 +1,13 @@
+Function: int amdgpu_vm_make_compute ( struct amdgpu_device * adev , struct amdgpu_vm * vm )
+
+Turn a GFX VM into a compute VM
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+  struct amdgpu_vm *vm
+    requested vm
+
+Description
+  This only works on GFX VMs that don’t have any BOs added and no
+page tables allocated yet.

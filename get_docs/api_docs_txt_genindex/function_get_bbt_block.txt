@@ -1,0 +1,20 @@
+Function: int get_bbt_block ( struct nand_chip * this , struct nand_bbt_descr * td , struct nand_bbt_descr * md , int chip )
+
+Get the first valid eraseblock suitable to store a BBT
+
+Parameters
+  struct nand_chip *this
+    the NAND device
+  struct nand_bbt_descr *td
+    the BBT description
+  struct nand_bbt_descr *md
+    the mirror BBT descriptor
+  int chip
+    the CHIP selector
+
+Description
+  This functions returns a positive block number pointing a valid eraseblock
+suitable to store a BBT (i.e. in the range reserved for BBT), or -ENOSPC if
+all blocks are already used of marked bad. If td->pages[chip] was already
+pointing to a valid block we re-use it, otherwise we search for the next
+valid one.

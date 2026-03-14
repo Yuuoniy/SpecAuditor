@@ -1,0 +1,14 @@
+Struct: struct v4l2_async_notifier_operations
+
+Asynchronous V4L2 notifier operations
+
+Members
+  bound
+    a sub-device has been bound by the given connection
+  complete
+    All connections have been bound successfully. The complete
+callback is only executed for the root notifier.
+  unbind
+    a subdevice is leaving
+  destroy
+    the asc is about to be freed

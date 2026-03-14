@@ -1,0 +1,14 @@
+Macro: KUNIT_ARRAY_PARAM_DESC
+
+
+
+Parameters
+  name
+    prefix for the test parameter generator function.
+  array
+    array of test parameters.
+  desc_member
+    structure member from array element to use as description
+
+Description
+  Define function name_gen_params which uses array to generate parameters.

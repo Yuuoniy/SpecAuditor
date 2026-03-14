@@ -1,0 +1,14 @@
+Function: void netif_stacked_transfer_operstate ( const struct net_device * rootdev , struct net_device * dev )
+
+transfer operstate
+
+Parameters
+  const struct net_device *rootdev
+    the root or lower level device to transfer state from
+  struct net_device *dev
+    the device to transfer operstate to
+
+Description
+  Transfer operational state from root to device. This is normally
+called when a stacking relationship exists between the root
+device and the device(a leaf device).

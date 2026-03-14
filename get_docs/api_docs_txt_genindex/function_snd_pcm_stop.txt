@@ -1,0 +1,12 @@
+Function: int snd_pcm_stop ( struct snd_pcm_substream * substream , snd_pcm_state_t state )
+
+try to stop all running streams in the substream group
+
+Parameters
+  struct snd_pcm_substream *substream
+    the PCM substream instance
+  snd_pcm_state_t state
+    PCM state after stopping the stream
+
+Description
+  The state of each stream is then changed to the given state unconditionally.

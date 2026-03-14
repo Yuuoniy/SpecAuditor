@@ -1,0 +1,13 @@
+Function: int security_inode_file_setattr ( struct dentry * dentry , struct file_kattr * fa )
+
+check if setting fsxattr is allowed
+
+Parameters
+  struct dentry *dentry
+    file to set filesystem extended attributes on
+  struct file_kattr *fa
+    extended attributes to set on the inode
+
+Description
+  Called when file_setattr() syscall or FS_IOC_FSSETXATTR ioctl() is called on
+inode

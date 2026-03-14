@@ -1,0 +1,16 @@
+Function: void frontbuffer_flush ( struct intel_display * display , unsigned int frontbuffer_bits , enum fb_op_origin origin )
+
+flush frontbuffer
+
+Parameters
+  struct intel_display *display
+    display device
+  unsigned int frontbuffer_bits
+    frontbuffer plane tracking bits
+  enum fb_op_origin origin
+    which operation caused the flush
+
+Description
+  This function gets called every time rendering on the given planes has
+completed and frontbuffer caching can be started again. Flushes will get
+delayed if they’re blocked by some outstanding asynchronous rendering.

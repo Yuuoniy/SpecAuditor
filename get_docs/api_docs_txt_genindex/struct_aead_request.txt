@@ -1,0 +1,19 @@
+Struct: struct aead_request
+
+AEAD request
+
+Members
+  base
+    Common attributes for async crypto requests
+  assoclen
+    Length in bytes of associated data for authentication
+  cryptlen
+    Length of data to be encrypted or decrypted
+  iv
+    Initialisation vector
+  src
+    Source data
+  dst
+    Destination data
+  __ctx
+    Start of private context data

@@ -1,0 +1,11 @@
+Function: int snd_pcm_hw_limit_rates ( struct snd_pcm_hardware * hw )
+
+determine rate_min/rate_max fields
+
+Parameters
+  struct snd_pcm_hardware *hw
+    the pcm hw instance
+
+Description
+  Determines the rate_min and rate_max fields from the rates bits of
+the given hw.

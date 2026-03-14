@@ -1,0 +1,15 @@
+Function: void host1x_syncpt_release_vblank_reservation ( struct host1x_client * client , u32 syncpt_id )
+
+Make VBLANK syncpoint available for allocation
+
+Parameters
+  struct host1x_client *client
+    host1x bus client
+  u32 syncpt_id
+    syncpoint ID to make available
+
+Description
+  Makes VBLANK<i> syncpoint available for allocatation if it was
+reserved at initialization time. This should be called by the display
+driver after it has ensured that any VBLANK increment programming configured
+by the boot chain has been disabled.

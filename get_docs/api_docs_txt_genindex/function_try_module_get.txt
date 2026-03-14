@@ -1,0 +1,11 @@
+Function: bool try_module_get ( struct module * module )
+
+take module refcount unless module is being removed
+
+Parameters
+  struct module *module
+    the module we should check for
+
+Description
+  Only try to get a module reference count if the module is not being removed.
+This call will fail if the module is in the process of being removed.

@@ -1,0 +1,15 @@
+Function: bool tipc_nametbl_lookup_anycast ( struct net * net , struct tipc_uaddr * ua , struct tipc_socket_addr * sk )
+
+perform service instance to socket translation
+
+Parameters
+  struct net *net
+    network namespace
+  struct tipc_uaddr *ua
+    service address to look up
+  struct tipc_socket_addr *sk
+    address to socket we want to find
+
+Description
+  On entry, a non-zero ‘sk->node’ indicates the node where we want lookup to be
+performed, which may not be this one.

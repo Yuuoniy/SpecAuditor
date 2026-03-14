@@ -1,0 +1,15 @@
+Struct: struct ssam_request_spec
+
+Blue-print specification of SAM request.
+
+Members
+  target_category
+    Category of the request’s target. See enum ssam_ssh_tc .
+  target_id
+    ID of the request’s target.
+  command_id
+    Command ID of the request.
+  instance_id
+    Instance ID of the request’s target.
+  flags
+    Flags for the request. See enum ssam_request_flags .

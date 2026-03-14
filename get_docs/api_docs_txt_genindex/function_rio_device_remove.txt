@@ -1,0 +1,12 @@
+Function: void rio_device_remove ( struct device * dev )
+
+Remove a RIO device from the system
+
+Parameters
+  struct device *dev
+    the RIO device structure to match against
+
+Description
+  Remove a RIO device from the system. If it has an associated
+driver, then run the driver remove() method.  Then update
+the reference count.

@@ -1,0 +1,15 @@
+Function: int tipc_aead_clone ( struct tipc_aead * * dst , struct tipc_aead * src )
+
+Clone a TIPC AEAD key
+
+Parameters
+  struct tipc_aead **dst
+    dest key for the cloning
+  struct tipc_aead *src
+    source key to clone from
+
+Description
+  Make a “copy” of the source AEAD key data to the dest, the TFMs list is
+common for the keys.
+A reference to the source is hold in the “cloned” pointer for the later
+freeing purposes.

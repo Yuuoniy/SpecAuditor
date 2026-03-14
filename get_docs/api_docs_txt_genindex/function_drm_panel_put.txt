@@ -1,0 +1,11 @@
+Function: void drm_panel_put ( struct drm_panel * panel )
+
+Release a panel reference
+
+Parameters
+  struct drm_panel *panel
+    DRM panel
+
+Description
+  This function decrements the panel’s reference count and frees the
+object if the reference count drops to zero.

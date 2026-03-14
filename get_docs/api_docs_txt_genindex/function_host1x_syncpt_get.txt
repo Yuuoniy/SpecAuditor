@@ -1,0 +1,7 @@
+Function: struct host1x_syncpt * host1x_syncpt_get ( struct host1x_syncpt * sp )
+
+increment syncpoint refcount
+
+Parameters
+  struct host1x_syncpt *sp
+    syncpoint

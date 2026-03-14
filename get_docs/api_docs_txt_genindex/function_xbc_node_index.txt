@@ -1,0 +1,10 @@
+Function: int xbc_node_index ( struct xbc_node * node )
+
+Get the index of XBC node
+
+Parameters
+  struct xbc_node *node
+    A target node of getting index.
+
+Description
+  Return the index number of node in XBC node list.

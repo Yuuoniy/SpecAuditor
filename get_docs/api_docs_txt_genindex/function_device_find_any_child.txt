@@ -1,0 +1,11 @@
+Function: struct device * device_find_any_child ( struct device * parent )
+
+device iterator for locating a child device, if any.
+
+Parameters
+  struct device *parent
+    parent struct device
+
+Description
+  This is similar to the device_find_child() function above, but it
+returns a reference to a child device, if any.

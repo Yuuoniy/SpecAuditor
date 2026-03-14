@@ -1,0 +1,11 @@
+Function: void pci_disable_rom ( struct pci_dev * pdev )
+
+disable ROM decoding for a PCI device
+
+Parameters
+  struct pci_dev *pdev
+    PCI device to disable
+
+Description
+  Disable ROM decoding on a PCI device by turning off the last bit in the
+ROM BAR.

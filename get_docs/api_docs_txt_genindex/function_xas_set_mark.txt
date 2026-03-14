@@ -1,0 +1,14 @@
+Function: void xas_set_mark ( const struct xa_state * xas , xa_mark_t mark )
+
+Sets the mark on this entry and its parents.
+
+Parameters
+  const struct xa_state *xas
+    XArray operation state.
+  xa_mark_t mark
+    Mark number.
+
+Description
+  Sets the specified mark on this entry, and walks up the tree setting it
+on all the ancestor entries.  Does nothing if xas has not been walked to
+an entry, or is in an error state.

@@ -1,0 +1,11 @@
+Function: bool of_machine_compatible_match ( const char * const * compats )
+
+Test root of device tree against a compatible array
+
+Parameters
+  const char *const *compats
+    NULL terminated array of compatible strings to look for in root node’s compatible property.
+
+Description
+  Returns true if the root node has any of the given compatible values in its
+compatible property.

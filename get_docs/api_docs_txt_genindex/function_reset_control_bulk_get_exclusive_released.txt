@@ -1,0 +1,17 @@
+Function: int reset_control_bulk_get_exclusive_released ( struct device * dev , int num_rstcs , struct reset_control_bulk_data * rstcs )
+
+Lookup and obtain temporarily exclusive references to multiple reset controllers.
+
+Parameters
+  struct device *dev
+    device to be reset by the controller
+  int num_rstcs
+    number of entries in rstcs array
+  struct reset_control_bulk_data *rstcs
+    array of struct reset_control_bulk_data with reset line names set
+
+Description
+  Fills the rstcs array with pointers to exclusive reset controls and
+returns 0, or an IS_ERR() condition containing errno.
+reset-controls returned by this function must be acquired via reset_control_bulk_acquire() before they can be used and should be released
+via reset_control_bulk_release() afterwards.

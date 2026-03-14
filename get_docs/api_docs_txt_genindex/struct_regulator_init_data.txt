@@ -1,0 +1,18 @@
+Struct: struct regulator_init_data
+
+regulator platform initialisation data.
+
+Members
+  supply_regulator
+    Parent regulator.  Specified using the regulator name
+as it appears in the name field in sysfs, which can
+be explicitly set using the constraints field ‘name’.
+  constraints
+    Constraints.  These must be specified for the regulator to
+be usable.
+  num_consumer_supplies
+    Number of consumer device supplies.
+  consumer_supplies
+    Consumer device supply configuration.
+  driver_data
+    Data passed to regulator_init.

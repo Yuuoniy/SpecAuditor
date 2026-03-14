@@ -1,0 +1,17 @@
+Macro: XE_RTP_ACTION_FIELD_SET
+
+
+
+Parameters
+  reg_
+    Register
+  mask_bits_
+    Mask of bits to be changed in the register, forming a field
+  val_
+    Value to set in the field denoted by mask_bits_
+  ...
+    Additional fields to override in the struct xe_rtp_action entry
+
+Description
+  For masked registers this translates to a single write, while for other
+registers it’s a RMW. The correspondent bspec notation is:

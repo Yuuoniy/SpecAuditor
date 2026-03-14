@@ -1,0 +1,10 @@
+Struct: struct drm_vblank_crtc_config
+
+vblank configuration for a CRTC
+
+Members
+  offdelay_ms
+    Vblank off delay in ms, used to determine how long drm_vblank_crtc.disable_timer waits before disabling. Defaults to the value of drm_vblank_offdelay in drm_crtc_vblank_on() .
+  disable_immediate
+    See drm_device.vblank_disable_immediate for the exact semantics of immediate vblank disabling. Additionally, this tracks the disable immediate value per crtc, just
+in case it needs to differ from the default value for a given device. Defaults to the value of drm_device.vblank_disable_immediate in drm_crtc_vblank_on() .

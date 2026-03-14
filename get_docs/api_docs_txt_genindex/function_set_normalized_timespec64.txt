@@ -1,0 +1,15 @@
+Function: void set_normalized_timespec64 ( struct timespec64 * ts , time64_t sec , s64 nsec )
+
+set timespec sec and nsec parts and normalize
+
+Parameters
+  struct timespec64 *ts
+    pointer to timespec variable to be set
+  time64_t sec
+    seconds to set
+  s64 nsec
+    nanoseconds to set
+
+Description
+  Set seconds and nanoseconds field of a timespec variable and
+normalize to the timespec storage format

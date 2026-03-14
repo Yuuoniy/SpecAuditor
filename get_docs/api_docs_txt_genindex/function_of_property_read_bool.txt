@@ -1,0 +1,13 @@
+Function: bool of_property_read_bool ( const struct device_node * np , const char * propname )
+
+Find a property
+
+Parameters
+  const struct device_node *np
+    device node from which the property value is to be read.
+  const char *propname
+    name of the property to be searched.
+
+Description
+  Search for a boolean property in a device node. Usage on non-boolean
+property types is deprecated.

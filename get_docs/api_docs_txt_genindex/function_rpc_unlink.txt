@@ -1,0 +1,12 @@
+Function: void rpc_unlink ( struct rpc_pipe * pipe )
+
+remove a pipe
+
+Parameters
+  struct rpc_pipe *pipe
+    the pipe to be removed
+
+Description
+  After this call, lookups will no longer find the pipe, and any
+attempts to read or write using preexisting opens of the pipe will
+return -EPIPE.

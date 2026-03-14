@@ -1,0 +1,7 @@
+Function: bool mtree_empty ( const struct maple_tree * mt )
+
+Determine if a tree has any present entries.
+
+Parameters
+  const struct maple_tree *mt
+    Maple Tree.

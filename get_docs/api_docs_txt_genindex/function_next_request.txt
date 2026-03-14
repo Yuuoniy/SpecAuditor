@@ -1,0 +1,11 @@
+Function: struct dwc3_request * next_request ( struct list_head * list )
+
+gets the next request on the given list
+
+Parameters
+  struct list_head *list
+    the request list to operate on
+
+Description
+  Caller should take care of locking. This function return NULL or the first
+request available on list .

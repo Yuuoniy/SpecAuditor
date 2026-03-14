@@ -1,0 +1,13 @@
+Function: void ssh_ptl_shutdown ( struct ssh_ptl * ptl )
+
+Shut down the packet transport layer.
+
+Parameters
+  struct ssh_ptl *ptl
+    The packet transport layer.
+
+Description
+  Shuts down the packet transport layer, removing and canceling all queued
+and pending packets. Packets canceled by this operation will be completed
+with -ESHUTDOWN as status. Receiver and transmitter threads will be
+stopped.

@@ -1,0 +1,12 @@
+Function: bool srcu_readers_active ( struct srcu_struct * ssp )
+
+returns true if there are readers. and false otherwise
+
+Parameters
+  struct srcu_struct *ssp
+    which srcu_struct to count active readers (holding srcu_read_lock).
+
+Description
+  Note that this is not an atomic primitive, and can therefore suffer
+severe errors when invoked on an active srcu_struct.  That said, it
+can be useful as an error check at cleanup time.

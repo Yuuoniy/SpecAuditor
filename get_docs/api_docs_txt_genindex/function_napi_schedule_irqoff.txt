@@ -1,0 +1,10 @@
+Function: void napi_schedule_irqoff ( struct napi_struct * n )
+
+schedule NAPI poll
+
+Parameters
+  struct napi_struct *n
+    NAPI context
+
+Description
+  Variant of napi_schedule() , assuming hard irqs are masked.

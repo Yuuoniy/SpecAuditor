@@ -1,0 +1,37 @@
+Struct: struct cfg80211_inform_bss
+
+BSS inform data
+
+Members
+  chan
+    channel the frame was received on
+  signal
+    signal strength value, according to the wiphy’s
+signal type
+  boottime_ns
+    timestamp (CLOCK_BOOTTIME) when the information was
+received; should match the time when the frame was actually
+received by the device (not just by the host, in case it was
+buffered on the device) and be accurate to about 10ms.
+If the frame isn’t buffered, just passing the return value of ktime_get_boottime_ns() is likely appropriate.
+  parent_tsf
+    the time at the start of reception of the first octet of the
+timestamp field of the frame. The time is the TSF of the BSS specified
+by parent_bssid .
+  parent_bssid
+    the BSS according to which parent_tsf is set. This is set to
+the BSS that requested the scan in which the beacon/probe was received.
+  chains
+    bitmask for filled values in chain_signal .
+  chain_signal
+    per-chain signal strength of last received BSS in dBm.
+  restrict_use
+    restrict usage, if not set, assume use_for is NL80211_BSS_USE_FOR_NORMAL .
+  use_for
+    bitmap of possible usage for this BSS, see enum nl80211_bss_use_for
+  cannot_use_reasons
+    the reasons (bitmap) for not being able to connect,
+if restrict_use is set and use_for is zero (empty); may be 0 for
+unspecified reasons; see enum nl80211_bss_cannot_use_reasons
+  drv_data
+    Data to be passed through to inform_bss

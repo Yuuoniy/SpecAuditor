@@ -1,0 +1,11 @@
+Function: void skb_tx_error ( struct sk_buff * skb )
+
+report an sk_buff xmit error
+
+Parameters
+  struct sk_buff *skb
+    buffer that triggered an error
+
+Description
+  Report xmit error if a device callback is tracking this skb.
+skb must be freed afterwards.

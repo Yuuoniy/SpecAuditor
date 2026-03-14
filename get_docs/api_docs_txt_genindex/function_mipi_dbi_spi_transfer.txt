@@ -1,0 +1,20 @@
+Function: int mipi_dbi_spi_transfer ( struct spi_device * spi , u32 speed_hz , u8 bpw , const void * buf , size_t len )
+
+SPI transfer helper
+
+Parameters
+  struct spi_device *spi
+    SPI device
+  u32 speed_hz
+    Override speed (optional)
+  u8 bpw
+    Bits per word
+  const void *buf
+    Buffer to transfer
+  size_t len
+    Buffer length
+
+Description
+  This SPI transfer helper breaks up the transfer of buf into chunks which
+the SPI controller driver can handle. The SPI bus must be locked when
+calling this.

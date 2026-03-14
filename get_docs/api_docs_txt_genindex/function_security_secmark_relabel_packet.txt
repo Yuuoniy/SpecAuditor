@@ -1,0 +1,10 @@
+Function: int security_secmark_relabel_packet ( u32 secid )
+
+Check if setting a secmark is allowed
+
+Parameters
+  u32 secid
+    new secmark value
+
+Description
+  Check if the process should be allowed to relabel packets to secid .

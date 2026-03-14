@@ -1,0 +1,7 @@
+Function: int drm_dp_psr_setup_time ( const u8 psr_cap [ EDP_PSR_RECEIVER_CAP_SIZE ] )
+
+PSR setup in time usec
+
+Parameters
+  const u8 psr_cap[EDP_PSR_RECEIVER_CAP_SIZE]
+    PSR capabilities from DPCD

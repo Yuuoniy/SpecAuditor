@@ -1,0 +1,13 @@
+Function: int tipc_disc_create ( struct net * net , struct tipc_bearer * b , struct tipc_media_addr * dest , struct sk_buff * * skb )
+
+create object to send periodic link setup requests
+
+Parameters
+  struct net *net
+    the applicable net namespace
+  struct tipc_bearer *b
+    ptr to bearer issuing requests
+  struct tipc_media_addr *dest
+    destination address for request messages
+  struct sk_buff **skb
+    pointer to created frame

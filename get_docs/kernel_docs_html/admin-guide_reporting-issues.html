@@ -1,0 +1,1784 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Reporting issues &#8212; The Linux Kernel  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Reporting regressions" href="reporting-regressions.html" />
+    <link rel="prev" title="Using the initial RAM disk (initrd)" href="initrd.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../index.html">The Linux Kernel</a></h1>
+
+
+
+<p class="blurb">6.18.0-rc1</p>
+
+
+
+
+
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+<p>
+<h3 class="kernel-toc-contents">Contents</h3>
+<input type="checkbox" class="kernel-toc-toggle" id = "kernel-toc-toggle" checked>
+<label class="kernel-toc-title" for="kernel-toc-toggle"></label>
+
+<div class="kerneltoc" id="kerneltoc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../process/development-process.html">Development process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/submitting-patches.html">Submitting patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/code-of-conduct.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Maintainer handbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/index.html">All development-process docs</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core-api/index.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver-api/index.html">Driver APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subsystem-apis.html">Subsystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../locking/index.html">Locking</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../process/license-rules.html">Licensing rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-guide/index.html">Writing documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-tools/index.html">Development tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-tools/testing-overview.html">Testing guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kernel-hacking/index.html">Hacking guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trace/index.html">Tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fault-injection/index.html">Fault injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../livepatch/index.html">Livepatching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">Rust</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kbuild/index.html">Build system</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reporting issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-short-guide-aka-tl-dr">The short guide (aka TL;DR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-by-step-guide-how-to-report-issues-to-the-kernel-maintainers">Step-by-step guide how to report issues to the kernel maintainers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reporting-regressions-within-a-stable-and-longterm-kernel-line">Reporting regressions within a stable and longterm kernel line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reporting-issues-only-occurring-in-older-kernel-version-lines">Reporting issues only occurring in older kernel version lines</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#reference-section-reporting-issues-to-the-kernel-maintainers">Reference section: Reporting issues to the kernel maintainers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#make-sure-you-re-using-the-upstream-linux-kernel">Make sure you’re using the upstream Linux kernel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#search-for-existing-reports-first-run">Search for existing reports, first run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#issue-of-high-priority">Issue of high priority?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ensure-a-healthy-environment">Ensure a healthy environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prepare-for-emergencies">Prepare for emergencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#make-sure-your-kernel-doesn-t-get-enhanced">Make sure your kernel doesn’t get enhanced</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-taint-flag">Check ‘taint’ flag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#document-how-to-reproduce-issue">Document how to reproduce issue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#regression-in-stable-or-longterm-kernel">Regression in stable or longterm kernel?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-where-you-need-to-report-your-issue">Check where you need to report your issue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#search-for-existing-reports-second-run">Search for existing reports, second run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-a-fresh-kernel-for-testing">Install a fresh kernel for testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Check ‘taint’ flag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reproduce-issue-with-the-fresh-kernel">Reproduce issue with the fresh kernel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optimize-description-to-reproduce-issue">Optimize description to reproduce issue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#decode-failure-messages">Decode failure messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#special-care-for-regressions">Special care for regressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#write-and-send-the-report">Write and send the report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#duties-after-the-report-went-out">Duties after the report went out</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reference-for-reporting-regressions-within-a-stable-and-longterm-kernel-line">Reference for “Reporting regressions within a stable and longterm kernel line”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reference-for-reporting-issues-only-occurring-in-older-kernel-version-lines">Reference for “Reporting issues only occurring in older kernel version lines”</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#why-some-issues-won-t-get-any-reaction-or-remain-unfixed-after-being-reported">Why some issues won’t get any reaction or remain unfixed after being reported</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#closing-words">Closing words</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Userspace tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userspace-api/index.html">Userspace API</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../firmware-guide/index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devicetree/index.html">Firmware and Devicetree</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../arch/index.html">CPU architectures</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging/index.html">Unsorted documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../translations/index.html">Translations</a></li>
+</ul>
+
+</div>
+
+<script type="text/javascript"> <!--
+  var sbar = document.getElementsByClassName("sphinxsidebar")[0];
+  let currents = document.getElementsByClassName("current")
+  if (currents.length) {
+    sbar.scrollTop = currents[currents.length - 1].offsetTop;
+  }
+  --> </script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/admin-guide/reporting-issues.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+
+
+
+
+<div class="language-selection">
+English
+
+<ul>
+
+<li><a href="../translations/zh_CN/admin-guide/reporting-issues.html">Chinese (Simplified)</a></li>
+
+<li><a href="../translations/zh_TW/admin-guide/reporting-issues.html">Chinese (Traditional)</a></li>
+
+</ul>
+</div>
+<section id="reporting-issues">
+<h1>Reporting issues<a class="headerlink" href="#reporting-issues" title="Permalink to this heading">¶</a></h1>
+<section id="the-short-guide-aka-tl-dr">
+<h2>The short guide (aka TL;DR)<a class="headerlink" href="#the-short-guide-aka-tl-dr" title="Permalink to this heading">¶</a></h2>
+<p>Are you facing a regression with vanilla kernels from the same stable or
+longterm series? One still supported? Then search the <a class="reference external" href="https://lore.kernel.org/lkml/">LKML</a> and the <a class="reference external" href="https://lore.kernel.org/stable/">Linux stable mailing list</a> archives for matching reports to join. If
+you don’t find any, install <a class="reference external" href="https://kernel.org/">the latest release from that series</a>. If it still shows the issue, report it to the stable
+mailing list (<a class="reference external" href="mailto:stable&#37;&#52;&#48;vger&#46;kernel&#46;org">stable<span>&#64;</span>vger<span>&#46;</span>kernel<span>&#46;</span>org</a>) and CC the regressions list
+(<a class="reference external" href="mailto:regressions&#37;&#52;&#48;lists&#46;linux&#46;dev">regressions<span>&#64;</span>lists<span>&#46;</span>linux<span>&#46;</span>dev</a>); ideally also CC the maintainer and the mailing
+list for the subsystem in question.</p>
+<p>In all other cases try your best guess which kernel part might be causing the
+issue. Check the <a class="reference internal" href="../process/maintainers.html#maintainers"><span class="std std-ref">MAINTAINERS</span></a> file for how its developers
+expect to be told about problems, which most of the time will be by email with a
+mailing list in CC. Check the destination’s archives for matching reports;
+search the <a class="reference external" href="https://lore.kernel.org/lkml/">LKML</a> and the web, too. If you
+don’t find any to join, install <a class="reference external" href="https://kernel.org/">the latest mainline kernel</a>. If the issue is present there, send a report.</p>
+<p>The issue was fixed there, but you would like to see it resolved in a still
+supported stable or longterm series as well? Then install its latest release.
+If it shows the problem, search for the change that fixed it in mainline and
+check if backporting is in the works or was discarded; if it’s neither, ask
+those who handled the change for it.</p>
+<p><strong>General remarks</strong>: When installing and testing a kernel as outlined above,
+ensure it’s vanilla (IOW: not patched and not using add-on modules). Also make
+sure it’s built and running in a healthy environment and not already tainted
+before the issue occurs.</p>
+<p>If you are facing multiple issues with the Linux kernel at once, report each
+separately. While writing your report, include all information relevant to the
+issue, like the kernel and the distro used. In case of a regression, CC the
+regressions mailing list (<a class="reference external" href="mailto:regressions&#37;&#52;&#48;lists&#46;linux&#46;dev">regressions<span>&#64;</span>lists<span>&#46;</span>linux<span>&#46;</span>dev</a>) to your report. Also try
+to pinpoint the culprit with a bisection; if you succeed, include its
+commit-id and CC everyone in the sign-off-by chain.</p>
+<p>Once the report is out, answer any questions that come up and help where you
+can. That includes keeping the ball rolling by occasionally retesting with newer
+releases and sending a status update afterwards.</p>
+</section>
+<section id="step-by-step-guide-how-to-report-issues-to-the-kernel-maintainers">
+<h2>Step-by-step guide how to report issues to the kernel maintainers<a class="headerlink" href="#step-by-step-guide-how-to-report-issues-to-the-kernel-maintainers" title="Permalink to this heading">¶</a></h2>
+<p>The above TL;DR outlines roughly how to report issues to the Linux kernel
+developers. It might be all that’s needed for people already familiar with
+reporting issues to Free/Libre &amp; Open Source Software (FLOSS) projects. For
+everyone else there is this section. It is more detailed and uses a
+step-by-step approach. It still tries to be brief for readability and leaves
+out a lot of details; those are described below the step-by-step guide in a
+reference section, which explains each of the steps in more detail.</p>
+<p>Note: this section covers a few more aspects than the TL;DR and does things in
+a slightly different order. That’s in your interest, to make sure you notice
+early if an issue that looks like a Linux kernel problem is actually caused by
+something else. These steps thus help to ensure the time you invest in this
+process won’t feel wasted in the end:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Are you facing an issue with a Linux kernel a hardware or software vendor
+provided? Then in almost all cases you are better off to stop reading this
+document and reporting the issue to your vendor instead, unless you are
+willing to install the latest Linux version yourself. Be aware the latter
+will often be needed anyway to hunt down and fix issues.</p></li>
+<li><p>Perform a rough search for existing reports with your favorite internet
+search engine; additionally, check the archives of the <a class="reference external" href="https://lore.kernel.org/lkml/">Linux Kernel Mailing
+List (LKML)</a>. If you find matching reports,
+join the discussion instead of sending a new one.</p></li>
+<li><p>See if the issue you are dealing with qualifies as regression, security
+issue, or a really severe problem: those are ‘issues of high priority’ that
+need special handling in some steps that are about to follow.</p></li>
+<li><p>Make sure it’s not the kernel’s surroundings that are causing the issue
+you face.</p></li>
+<li><p>Create a fresh backup and put system repair and restore tools at hand.</p></li>
+<li><p>Ensure your system does not enhance its kernels by building additional
+kernel modules on-the-fly, which solutions like DKMS might be doing locally
+without your knowledge.</p></li>
+<li><p>Check if your kernel was ‘tainted’ when the issue occurred, as the event
+that made the kernel set this flag might be causing the issue you face.</p></li>
+<li><p>Write down coarsely how to reproduce the issue. If you deal with multiple
+issues at once, create separate notes for each of them and make sure they
+work independently on a freshly booted system. That’s needed, as each issue
+needs to get reported to the kernel developers separately, unless they are
+strongly entangled.</p></li>
+<li><p>If you are facing a regression within a stable or longterm version line
+(say something broke when updating from 5.10.4 to 5.10.5), scroll down to
+‘Dealing with regressions within a stable and longterm kernel line’.</p></li>
+<li><p>Locate the driver or kernel subsystem that seems to be causing the issue.
+Find out how and where its developers expect reports. Note: most of the
+time this won’t be bugzilla.kernel.org, as issues typically need to be sent
+by mail to a maintainer and a public mailing list.</p></li>
+<li><p>Search the archives of the bug tracker or mailing list in question
+thoroughly for reports that might match your issue. If you find anything,
+join the discussion instead of sending a new report.</p></li>
+</ul>
+</div></blockquote>
+<p>After these preparations you’ll now enter the main part:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Unless you are already running the latest ‘mainline’ Linux kernel, better
+go and install it for the reporting process. Testing and reporting with
+the latest ‘stable’ Linux can be an acceptable alternative in some
+situations; during the merge window that actually might be even the best
+approach, but in that development phase it can be an even better idea to
+suspend your efforts for a few days anyway. Whatever version you choose,
+ideally use a ‘vanilla’ build. Ignoring these advices will dramatically
+increase the risk your report will be rejected or ignored.</p></li>
+<li><p>Ensure the kernel you just installed does not ‘taint’ itself when
+running.</p></li>
+<li><p>Reproduce the issue with the kernel you just installed. If it doesn’t show
+up there, scroll down to the instructions for issues only happening with
+stable and longterm kernels.</p></li>
+<li><p>Optimize your notes: try to find and write the most straightforward way to
+reproduce your issue. Make sure the end result has all the important
+details, and at the same time is easy to read and understand for others
+that hear about it for the first time. And if you learned something in this
+process, consider searching again for existing reports about the issue.</p></li>
+<li><p>If your failure involves a ‘panic’, ‘Oops’, ‘warning’, or ‘BUG’, consider
+decoding the kernel log to find the line of code that triggered the error.</p></li>
+<li><p>If your problem is a regression, try to narrow down when the issue was
+introduced as much as possible.</p></li>
+<li><p>Start to compile the report by writing a detailed description about the
+issue. Always mention a few things: the latest kernel version you installed
+for reproducing, the Linux Distribution used, and your notes on how to
+reproduce the issue. Ideally, make the kernel’s build configuration
+(.config) and the output from <code class="docutils literal notranslate"><span class="pre">dmesg</span></code> available somewhere on the net and
+link to it. Include or upload all other information that might be relevant,
+like the output/screenshot of an Oops or the output from <code class="docutils literal notranslate"><span class="pre">lspci</span></code>. Once
+you wrote this main part, insert a normal length paragraph on top of it
+outlining the issue and the impact quickly. On top of this add one sentence
+that briefly describes the problem and gets people to read on. Now give the
+thing a descriptive title or subject that yet again is shorter. Then you’re
+ready to send or file the report like the MAINTAINERS file told you, unless
+you are dealing with one of those ‘issues of high priority’: they need
+special care which is explained in ‘Special handling for high priority
+issues’ below.</p></li>
+<li><p>Wait for reactions and keep the thing rolling until you can accept the
+outcome in one way or the other. Thus react publicly and in a timely manner
+to any inquiries. Test proposed fixes. Do proactive testing: retest with at
+least every first release candidate (RC) of a new mainline version and
+report your results. Send friendly reminders if things stall. And try to
+help yourself, if you don’t get any help or if it’s unsatisfying.</p></li>
+</ul>
+</div></blockquote>
+<section id="reporting-regressions-within-a-stable-and-longterm-kernel-line">
+<h3>Reporting regressions within a stable and longterm kernel line<a class="headerlink" href="#reporting-regressions-within-a-stable-and-longterm-kernel-line" title="Permalink to this heading">¶</a></h3>
+<p>This subsection is for you, if you followed above process and got sent here at
+the point about regression within a stable or longterm kernel version line. You
+face one of those if something breaks when updating from 5.10.4 to 5.10.5 (a
+switch from 5.9.15 to 5.10.5 does not qualify). The developers want to fix such
+regressions as quickly as possible, hence there is a streamlined process to
+report them:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Check if the kernel developers still maintain the Linux kernel version
+line you care about: go to the  <a class="reference external" href="https://kernel.org/">front page of kernel.org</a> and make sure it mentions
+the latest release of the particular version line without an ‘[EOL]’ tag.</p></li>
+<li><p>Check the archives of the <a class="reference external" href="https://lore.kernel.org/stable/">Linux stable mailing list</a> for existing reports.</p></li>
+<li><p>Install the latest release from the particular version line as a vanilla
+kernel. Ensure this kernel is not tainted and still shows the problem, as
+the issue might have already been fixed there. If you first noticed the
+problem with a vendor kernel, check a vanilla build of the last version
+known to work performs fine as well.</p></li>
+<li><p>Send a short problem report to the Linux stable mailing list
+(<a class="reference external" href="mailto:stable&#37;&#52;&#48;vger&#46;kernel&#46;org">stable<span>&#64;</span>vger<span>&#46;</span>kernel<span>&#46;</span>org</a>) and CC the Linux regressions mailing list
+(<a class="reference external" href="mailto:regressions&#37;&#52;&#48;lists&#46;linux&#46;dev">regressions<span>&#64;</span>lists<span>&#46;</span>linux<span>&#46;</span>dev</a>); if you suspect the cause in a particular
+subsystem, CC its maintainer and its mailing list. Roughly describe the
+issue and ideally explain how to reproduce it. Mention the first version
+that shows the problem and the last version that’s working fine. Then
+wait for further instructions.</p></li>
+</ul>
+</div></blockquote>
+<p>The reference section below explains each of these steps in more detail.</p>
+</section>
+<section id="reporting-issues-only-occurring-in-older-kernel-version-lines">
+<h3>Reporting issues only occurring in older kernel version lines<a class="headerlink" href="#reporting-issues-only-occurring-in-older-kernel-version-lines" title="Permalink to this heading">¶</a></h3>
+<p>This subsection is for you, if you tried the latest mainline kernel as outlined
+above, but failed to reproduce your issue there; at the same time you want to
+see the issue fixed in a still supported stable or longterm series or vendor
+kernels regularly rebased on those. If that is the case, follow these steps:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Prepare yourself for the possibility that going through the next few steps
+might not get the issue solved in older releases: the fix might be too big
+or risky to get backported there.</p></li>
+<li><p>Perform the first three steps in the section “Dealing with regressions
+within a stable and longterm kernel line” above.</p></li>
+<li><p>Search the Linux kernel version control system for the change that fixed
+the issue in mainline, as its commit message might tell you if the fix is
+scheduled for backporting already. If you don’t find anything that way,
+search the appropriate mailing lists for posts that discuss such an issue
+or peer-review possible fixes; then check the discussions if the fix was
+deemed unsuitable for backporting. If backporting was not considered at
+all, join the newest discussion, asking if it’s in the cards.</p></li>
+<li><p>One of the former steps should lead to a solution. If that doesn’t work
+out, ask the maintainers for the subsystem that seems to be causing the
+issue for advice; CC the mailing list for the particular subsystem as well
+as the stable mailing list.</p></li>
+</ul>
+</div></blockquote>
+<p>The reference section below explains each of these steps in more detail.</p>
+</section>
+</section>
+<section id="reference-section-reporting-issues-to-the-kernel-maintainers">
+<h2>Reference section: Reporting issues to the kernel maintainers<a class="headerlink" href="#reference-section-reporting-issues-to-the-kernel-maintainers" title="Permalink to this heading">¶</a></h2>
+<p>The detailed guides above outline all the major steps in brief fashion, which
+should be enough for most people. But sometimes there are situations where even
+experienced users might wonder how to actually do one of those steps. That’s
+what this section is for, as it will provide a lot more details on each of the
+above steps. Consider this as reference documentation: it’s possible to read it
+from top to bottom. But it’s mainly meant to skim over and a place to look up
+details how to actually perform those steps.</p>
+<p>A few words of general advice before digging into the details:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The Linux kernel developers are well aware this process is complicated and
+demands more than other FLOSS projects. We’d love to make it simpler. But
+that would require work in various places as well as some infrastructure,
+which would need constant maintenance; nobody has stepped up to do that
+work, so that’s just how things are for now.</p></li>
+<li><p>A warranty or support contract with some vendor doesn’t entitle you to
+request fixes from developers in the upstream Linux kernel community: such
+contracts are completely outside the scope of the Linux kernel, its
+development community, and this document. That’s why you can’t demand
+anything such a contract guarantees in this context, not even if the
+developer handling the issue works for the vendor in question. If you want
+to claim your rights, use the vendor’s support channel instead. When doing
+so, you might want to mention you’d like to see the issue fixed in the
+upstream Linux kernel; motivate them by saying it’s the only way to ensure
+the fix in the end will get incorporated in all Linux distributions.</p></li>
+<li><p>If you never reported an issue to a FLOSS project before you should consider
+reading <a class="reference external" href="https://www.chiark.greenend.org.uk/~sgtatham/bugs.html">How to Report Bugs Effectively</a>, <a class="reference external" href="http://www.catb.org/esr/faqs/smart-questions.html">How To Ask
+Questions The Smart Way</a>, and <a class="reference external" href="https://jvns.ca/blog/good-questions/">How to ask good
+questions</a>.</p></li>
+</ul>
+</div></blockquote>
+<p>With that off the table, find below the details on how to properly report
+issues to the Linux kernel developers.</p>
+<section id="make-sure-you-re-using-the-upstream-linux-kernel">
+<h3>Make sure you’re using the upstream Linux kernel<a class="headerlink" href="#make-sure-you-re-using-the-upstream-linux-kernel" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>Are you facing an issue with a Linux kernel a hardware or software vendor
+provided? Then in almost all cases you are better off to stop reading this
+document and reporting the issue to your vendor instead, unless you are
+willing to install the latest Linux version yourself. Be aware the latter
+will often be needed anyway to hunt down and fix issues.</em></p>
+</div></blockquote>
+<p>Like most programmers, Linux kernel developers don’t like to spend time dealing
+with reports for issues that don’t even happen with their current code. It’s
+just a waste everybody’s time, especially yours. Unfortunately such situations
+easily happen when it comes to the kernel and often leads to frustration on both
+sides. That’s because almost all Linux-based kernels pre-installed on devices
+(Computers, Laptops, Smartphones, Routers, …) and most shipped by Linux
+distributors are quite distant from the official Linux kernel as distributed by
+kernel.org: these kernels from these vendors are often ancient from the point of
+Linux development or heavily modified, often both.</p>
+<p>Most of these vendor kernels are quite unsuitable for reporting issues to the
+Linux kernel developers: an issue you face with one of them might have been
+fixed by the Linux kernel developers months or years ago already; additionally,
+the modifications and enhancements by the vendor might be causing the issue you
+face, even if they look small or totally unrelated. That’s why you should report
+issues with these kernels to the vendor. Its developers should look into the
+report and, in case it turns out to be an upstream issue, fix it directly
+upstream or forward the report there. In practice that often does not work out
+or might not what you want. You thus might want to consider circumventing the
+vendor by installing the very latest Linux kernel core yourself. If that’s an
+option for you move ahead in this process, as a later step in this guide will
+explain how to do that once it rules out other potential causes for your issue.</p>
+<p>Note, the previous paragraph is starting with the word ‘most’, as sometimes
+developers in fact are willing to handle reports about issues occurring with
+vendor kernels. If they do in the end highly depends on the developers and the
+issue in question. Your chances are quite good if the distributor applied only
+small modifications to a kernel based on a recent Linux version; that for
+example often holds true for the mainline kernels shipped by Debian GNU/Linux
+Sid or Fedora Rawhide. Some developers will also accept reports about issues
+with kernels from distributions shipping the latest stable kernel, as long as
+it’s only slightly modified; that for example is often the case for Arch Linux,
+regular Fedora releases, and openSUSE Tumbleweed. But keep in mind, you better
+want to use a mainline Linux and avoid using a stable kernel for this
+process, as outlined in the section ‘Install a fresh kernel for testing’ in more
+detail.</p>
+<p>Obviously you are free to ignore all this advice and report problems with an old
+or heavily modified vendor kernel to the upstream Linux developers. But note,
+those often get rejected or ignored, so consider yourself warned. But it’s still
+better than not reporting the issue at all: sometimes such reports directly or
+indirectly will help to get the issue fixed over time.</p>
+</section>
+<section id="search-for-existing-reports-first-run">
+<h3>Search for existing reports, first run<a class="headerlink" href="#search-for-existing-reports-first-run" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>Perform a rough search for existing reports with your favorite internet
+search engine; additionally, check the archives of the Linux Kernel Mailing
+List (LKML). If you find matching reports, join the discussion instead of
+sending a new one.</em></p>
+</div></blockquote>
+<p>Reporting an issue that someone else already brought forward is often a waste of
+time for everyone involved, especially you as the reporter. So it’s in your own
+interest to thoroughly check if somebody reported the issue already. At this
+step of the process it’s okay to just perform a rough search: a later step will
+tell you to perform a more detailed search once you know where your issue needs
+to be reported to. Nevertheless, do not hurry with this step of the reporting
+process, it can save you time and trouble.</p>
+<p>Simply search the internet with your favorite search engine first. Afterwards,
+search the <a class="reference external" href="https://lore.kernel.org/lkml/">Linux Kernel Mailing List (LKML) archives</a>.</p>
+<p>If you get flooded with results consider telling your search engine to limit
+search timeframe to the past month or year. And wherever you search, make sure
+to use good search terms; vary them a few times, too. While doing so try to
+look at the issue from the perspective of someone else: that will help you to
+come up with other words to use as search terms. Also make sure not to use too
+many search terms at once. Remember to search with and without information like
+the name of the kernel driver or the name of the affected hardware component.
+But its exact brand name (say ‘ASUS Red Devil Radeon RX 5700 XT Gaming OC’)
+often is not much helpful, as it is too specific. Instead try search terms like
+the model line (Radeon 5700 or Radeon 5000) and the code name of the main chip
+(‘Navi’ or ‘Navi10’) with and without its manufacturer (‘AMD’).</p>
+<p>In case you find an existing report about your issue, join the discussion, as
+you might be able to provide valuable additional information. That can be
+important even when a fix is prepared or in its final stages already, as
+developers might look for people that can provide additional information or
+test a proposed fix. Jump to the section ‘Duties after the report went out’ for
+details on how to get properly involved.</p>
+<p>Note, searching <a class="reference external" href="https://bugzilla.kernel.org/">bugzilla.kernel.org</a> might also
+be a good idea, as that might provide valuable insights or turn up matching
+reports. If you find the latter, just keep in mind: most subsystems expect
+reports in different places, as described below in the section “Check where you
+need to report your issue”. The developers that should take care of the issue
+thus might not even be aware of the bugzilla ticket. Hence, check the ticket if
+the issue already got reported as outlined in this document and if not consider
+doing so.</p>
+</section>
+<section id="issue-of-high-priority">
+<h3>Issue of high priority?<a class="headerlink" href="#issue-of-high-priority" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>See if the issue you are dealing with qualifies as regression, security
+issue, or a really severe problem: those are ‘issues of high priority’ that
+need special handling in some steps that are about to follow.</em></p>
+</div></blockquote>
+<p>Linus Torvalds and the leading Linux kernel developers want to see some issues
+fixed as soon as possible, hence there are ‘issues of high priority’ that get
+handled slightly differently in the reporting process. Three type of cases
+qualify: regressions, security issues, and really severe problems.</p>
+<p>You deal with a regression if some application or practical use case running
+fine with one Linux kernel works worse or not at all with a newer version
+compiled using a similar configuration. The document
+<a class="reference internal" href="reporting-regressions.html"><span class="doc">Reporting regressions</span></a> explains this in more
+detail. It also provides a good deal of other information about regressions you
+might want to be aware of; it for example explains how to add your issue to the
+list of tracked regressions, to ensure it won’t fall through the cracks.</p>
+<p>What qualifies as security issue is left to your judgment. Consider reading
+<a class="reference internal" href="../process/security-bugs.html"><span class="doc">Security bugs</span></a> before proceeding, as it
+provides additional details how to best handle security issues.</p>
+<p>An issue is a ‘really severe problem’ when something totally unacceptably bad
+happens. That’s for example the case when a Linux kernel corrupts the data it’s
+handling or damages hardware it’s running on. You’re also dealing with a severe
+issue when the kernel suddenly stops working with an error message (‘kernel
+panic’) or without any farewell note at all. Note: do not confuse a ‘panic’ (a
+fatal error where the kernel stop itself) with a ‘Oops’ (a recoverable error),
+as the kernel remains running after the latter.</p>
+</section>
+<section id="ensure-a-healthy-environment">
+<h3>Ensure a healthy environment<a class="headerlink" href="#ensure-a-healthy-environment" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>Make sure it’s not the kernel’s surroundings that are causing the issue
+you face.</em></p>
+</div></blockquote>
+<p>Problems that look a lot like a kernel issue are sometimes caused by build or
+runtime environment. It’s hard to rule out that problem completely, but you
+should minimize it:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Use proven tools when building your kernel, as bugs in the compiler or the
+binutils can cause the resulting kernel to misbehave.</p></li>
+<li><p>Ensure your computer components run within their design specifications;
+that’s especially important for the main processor, the main memory, and the
+motherboard. Therefore, stop undervolting or overclocking when facing a
+potential kernel issue.</p></li>
+<li><p>Try to make sure it’s not faulty hardware that is causing your issue. Bad
+main memory for example can result in a multitude of issues that will
+manifest itself in problems looking like kernel issues.</p></li>
+<li><p>If you’re dealing with a filesystem issue, you might want to check the file
+system in question with <code class="docutils literal notranslate"><span class="pre">fsck</span></code>, as it might be damaged in a way that leads
+to unexpected kernel behavior.</p></li>
+<li><p>When dealing with a regression, make sure it’s not something else that
+changed in parallel to updating the kernel. The problem for example might be
+caused by other software that was updated at the same time. It can also
+happen that a hardware component coincidentally just broke when you rebooted
+into a new kernel for the first time. Updating the systems BIOS or changing
+something in the BIOS Setup can also lead to problems that on look a lot
+like a kernel regression.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="prepare-for-emergencies">
+<h3>Prepare for emergencies<a class="headerlink" href="#prepare-for-emergencies" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>Create a fresh backup and put system repair and restore tools at hand.</em></p>
+</div></blockquote>
+<p>Reminder, you are dealing with computers, which sometimes do unexpected things,
+especially if you fiddle with crucial parts like the kernel of its operating
+system. That’s what you are about to do in this process. Thus, make sure to
+create a fresh backup; also ensure you have all tools at hand to repair or
+reinstall the operating system as well as everything you need to restore the
+backup.</p>
+</section>
+<section id="make-sure-your-kernel-doesn-t-get-enhanced">
+<h3>Make sure your kernel doesn’t get enhanced<a class="headerlink" href="#make-sure-your-kernel-doesn-t-get-enhanced" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>Ensure your system does not enhance its kernels by building additional
+kernel modules on-the-fly, which solutions like DKMS might be doing locally
+without your knowledge.</em></p>
+</div></blockquote>
+<p>The risk your issue report gets ignored or rejected dramatically increases if
+your kernel gets enhanced in any way. That’s why you should remove or disable
+mechanisms like akmods and DKMS: those build add-on kernel modules
+automatically, for example when you install a new Linux kernel or boot it for
+the first time. Also remove any modules they might have installed. Then reboot
+before proceeding.</p>
+<p>Note, you might not be aware that your system is using one of these solutions:
+they often get set up silently when you install Nvidia’s proprietary graphics
+driver, VirtualBox, or other software that requires a some support from a
+module not part of the Linux kernel. That why your might need to uninstall the
+packages with such software to get rid of any 3rd party kernel module.</p>
+</section>
+<section id="check-taint-flag">
+<h3>Check ‘taint’ flag<a class="headerlink" href="#check-taint-flag" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>Check if your kernel was ‘tainted’ when the issue occurred, as the event
+that made the kernel set this flag might be causing the issue you face.</em></p>
+</div></blockquote>
+<p>The kernel marks itself with a ‘taint’ flag when something happens that might
+lead to follow-up errors that look totally unrelated. The issue you face might
+be such an error if your kernel is tainted. That’s why it’s in your interest to
+rule this out early before investing more time into this process. This is the
+only reason why this step is here, as this process later will tell you to
+install the latest mainline kernel; you will need to check the taint flag again
+then, as that’s when it matters because it’s the kernel the report will focus
+on.</p>
+<p>On a running system is easy to check if the kernel tainted itself: if <code class="docutils literal notranslate"><span class="pre">cat</span>
+<span class="pre">/proc/sys/kernel/tainted</span></code> returns ‘0’ then the kernel is not tainted and
+everything is fine. Checking that file is impossible in some situations; that’s
+why the kernel also mentions the taint status when it reports an internal
+problem (a ‘kernel bug’), a recoverable error (a ‘kernel Oops’) or a
+non-recoverable error before halting operation (a ‘kernel panic’). Look near
+the top of the error messages printed when one of these occurs and search for a
+line starting with ‘CPU:’. It should end with ‘Not tainted’ if the kernel was
+not tainted when it noticed the problem; it was tainted if you see ‘Tainted:’
+followed by a few spaces and some letters.</p>
+<p>If your kernel is tainted, study <a class="reference internal" href="tainted-kernels.html"><span class="doc">Tainted kernels</span></a>
+to find out why. Try to eliminate the reason. Often it’s caused by one these
+three things:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>A recoverable error (a ‘kernel Oops’) occurred and the kernel tainted
+itself, as the kernel knows it might misbehave in strange ways after that
+point. In that case check your kernel or system log and look for a section
+that starts with this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Oops: 0000 [#1] SMP
+</pre></div>
+</div>
+<p>That’s the first Oops since boot-up, as the ‘#1’ between the brackets shows.
+Every Oops and any other problem that happens after that point might be a
+follow-up problem to that first Oops, even if both look totally unrelated.
+Rule this out by getting rid of the cause for the first Oops and reproducing
+the issue afterwards. Sometimes simply restarting will be enough, sometimes
+a change to the configuration followed by a reboot can eliminate the Oops.
+But don’t invest too much time into this at this point of the process, as
+the cause for the Oops might already be fixed in the newer Linux kernel
+version you are going to install later in this process.</p>
+</li>
+<li><p>Your system uses a software that installs its own kernel modules, for
+example Nvidia’s proprietary graphics driver or VirtualBox. The kernel
+taints itself when it loads such module from external sources (even if
+they are Open Source): they sometimes cause errors in unrelated kernel
+areas and thus might be causing the issue you face. You therefore have to
+prevent those modules from loading when you want to report an issue to the
+Linux kernel developers. Most of the time the easiest way to do that is:
+temporarily uninstall such software including any modules they might have
+installed. Afterwards reboot.</p></li>
+<li><p>The kernel also taints itself when it’s loading a module that resides in
+the staging tree of the Linux kernel source. That’s a special area for
+code (mostly drivers) that does not yet fulfill the normal Linux kernel
+quality standards. When you report an issue with such a module it’s
+obviously okay if the kernel is tainted; just make sure the module in
+question is the only reason for the taint. If the issue happens in an
+unrelated area reboot and temporarily block the module from being loaded
+by specifying <code class="docutils literal notranslate"><span class="pre">foo.blacklist=1</span></code> as kernel parameter (replace ‘foo’ with
+the name of the module in question).</p></li>
+</ol>
+</div></blockquote>
+</section>
+<section id="document-how-to-reproduce-issue">
+<h3>Document how to reproduce issue<a class="headerlink" href="#document-how-to-reproduce-issue" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>Write down coarsely how to reproduce the issue. If you deal with multiple
+issues at once, create separate notes for each of them and make sure they
+work independently on a freshly booted system. That’s needed, as each issue
+needs to get reported to the kernel developers separately, unless they are
+strongly entangled.</em></p>
+</div></blockquote>
+<p>If you deal with multiple issues at once, you’ll have to report each of them
+separately, as they might be handled by different developers. Describing
+various issues in one report also makes it quite difficult for others to tear
+it apart. Hence, only combine issues in one report if they are very strongly
+entangled.</p>
+<p>Additionally, during the reporting process you will have to test if the issue
+happens with other kernel versions. Therefore, it will make your work easier if
+you know exactly how to reproduce an issue quickly on a freshly booted system.</p>
+<p>Note: it’s often fruitless to report issues that only happened once, as they
+might be caused by a bit flip due to cosmic radiation. That’s why you should
+try to rule that out by reproducing the issue before going further. Feel free
+to ignore this advice if you are experienced enough to tell a one-time error
+due to faulty hardware apart from a kernel issue that rarely happens and thus
+is hard to reproduce.</p>
+</section>
+<section id="regression-in-stable-or-longterm-kernel">
+<h3>Regression in stable or longterm kernel?<a class="headerlink" href="#regression-in-stable-or-longterm-kernel" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>If you are facing a regression within a stable or longterm version line
+(say something broke when updating from 5.10.4 to 5.10.5), scroll down to
+‘Dealing with regressions within a stable and longterm kernel line’.</em></p>
+</div></blockquote>
+<p>Regression within a stable and longterm kernel version line are something the
+Linux developers want to fix badly, as such issues are even more unwanted than
+regression in the main development branch, as they can quickly affect a lot of
+people. The developers thus want to learn about such issues as quickly as
+possible, hence there is a streamlined process to report them. Note,
+regressions with newer kernel version line (say something broke when switching
+from 5.9.15 to 5.10.5) do not qualify.</p>
+</section>
+<section id="check-where-you-need-to-report-your-issue">
+<h3>Check where you need to report your issue<a class="headerlink" href="#check-where-you-need-to-report-your-issue" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>Locate the driver or kernel subsystem that seems to be causing the issue.
+Find out how and where its developers expect reports. Note: most of the
+time this won’t be bugzilla.kernel.org, as issues typically need to be sent
+by mail to a maintainer and a public mailing list.</em></p>
+</div></blockquote>
+<p>It’s crucial to send your report to the right people, as the Linux kernel is a
+big project and most of its developers are only familiar with a small subset of
+it. Quite a few programmers for example only care for just one driver, for
+example one for a WiFi chip; its developer likely will only have small or no
+knowledge about the internals of remote or unrelated “subsystems”, like the TCP
+stack, the PCIe/PCI subsystem, memory management or file systems.</p>
+<p>Problem is: the Linux kernel lacks a central bug tracker where you can simply
+file your issue and make it reach the developers that need to know about it.
+That’s why you have to find the right place and way to report issues yourself.
+You can do that with the help of a script (see below), but it mainly targets
+kernel developers and experts. For everybody else the MAINTAINERS file is the
+better place.</p>
+<section id="how-to-read-the-maintainers-file">
+<h4>How to read the MAINTAINERS file<a class="headerlink" href="#how-to-read-the-maintainers-file" title="Permalink to this heading">¶</a></h4>
+<p>To illustrate how to use the <a class="reference internal" href="../process/maintainers.html#maintainers"><span class="std std-ref">MAINTAINERS</span></a> file, let’s assume
+the WiFi in your Laptop suddenly misbehaves after updating the kernel. In that
+case it’s likely an issue in the WiFi driver. Obviously it could also be some
+code it builds upon, but unless you suspect something like that stick to the
+driver. If it’s really something else, the driver’s developers will get the
+right people involved.</p>
+<p>Sadly, there is no way to check which code is driving a particular hardware
+component that is both universal and easy.</p>
+<p>In case of a problem with the WiFi driver you for example might want to look at
+the output of <code class="docutils literal notranslate"><span class="pre">lspci</span> <span class="pre">-k</span></code>, as it lists devices on the PCI/PCIe bus and the
+kernel module driving it:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[user@something ~]$ lspci -k
+[...]
+3a:00.0 Network controller: Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter (rev 32)
+  Subsystem: Bigfoot Networks, Inc. Device 1535
+  Kernel driver in use: ath10k_pci
+  Kernel modules: ath10k_pci
+[...]
+</pre></div>
+</div>
+<p>But this approach won’t work if your WiFi chip is connected over USB or some
+other internal bus. In those cases you might want to check your WiFi manager or
+the output of <code class="docutils literal notranslate"><span class="pre">ip</span> <span class="pre">link</span></code>. Look for the name of the problematic network
+interface, which might be something like ‘wlp58s0’. This name can be used like
+this to find the module driving it:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[user@something ~]$ realpath --relative-to=/sys/module/ /sys/class/net/wlp58s0/device/driver/module
+ath10k_pci
+</pre></div>
+</div>
+<p>In case tricks like these don’t bring you any further, try to search the
+internet on how to narrow down the driver or subsystem in question. And if you
+are unsure which it is: just try your best guess, somebody will help you if you
+guessed poorly.</p>
+<p>Once you know the driver or subsystem, you want to search for it in the
+MAINTAINERS file. In the case of ‘ath10k_pci’ you won’t find anything, as the
+name is too specific. Sometimes you will need to search on the net for help;
+but before doing so, try a somewhat shorted or modified name when searching the
+MAINTAINERS file, as then you might find something like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>QUALCOMM ATHEROS ATH10K WIRELESS DRIVER
+Mail:          A. Some Human &lt;shuman@example.com&gt;
+Mailing list:  ath10k@lists.infradead.org
+Status:        Supported
+Web-page:      https://wireless.wiki.kernel.org/en/users/Drivers/ath10k
+SCM:           git git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git
+Files:         drivers/net/wireless/ath/ath10k/
+</pre></div>
+</div>
+<p>Note: the line description will be abbreviations, if you read the plain
+MAINTAINERS file found in the root of the Linux source tree. ‘Mail:’ for
+example will be ‘M:’, ‘Mailing list:’ will be ‘L’, and ‘Status:’ will be ‘S:’.
+A section near the top of the file explains these and other abbreviations.</p>
+<p>First look at the line ‘Status’. Ideally it should be ‘Supported’ or
+‘Maintained’. If it states ‘Obsolete’ then you are using some outdated approach
+that was replaced by a newer solution you need to switch to. Sometimes the code
+only has someone who provides ‘Odd Fixes’ when feeling motivated. And with
+‘Orphan’ you are totally out of luck, as nobody takes care of the code anymore.
+That only leaves these options: arrange yourself to live with the issue, fix it
+yourself, or find a programmer somewhere willing to fix it.</p>
+<p>After checking the status, look for a line starting with ‘bugs:’: it will tell
+you where to find a subsystem specific bug tracker to file your issue. The
+example above does not have such a line. That is the case for most sections, as
+Linux kernel development is completely driven by mail. Very few subsystems use
+a bug tracker, and only some of those rely on bugzilla.kernel.org.</p>
+<p>In this and many other cases you thus have to look for lines starting with
+‘Mail:’ instead. Those mention the name and the email addresses for the
+maintainers of the particular code. Also look for a line starting with ‘Mailing
+list:’, which tells you the public mailing list where the code is developed.
+Your report later needs to go by mail to those addresses. Additionally, for all
+issue reports sent by email, make sure to add the Linux Kernel Mailing List
+(LKML) &lt;<a class="reference external" href="mailto:linux-kernel&#37;&#52;&#48;vger&#46;kernel&#46;org">linux-kernel<span>&#64;</span>vger<span>&#46;</span>kernel<span>&#46;</span>org</a>&gt; to CC. Don’t omit either of the mailing
+lists when sending your issue report by mail later! Maintainers are busy people
+and might leave some work for other developers on the subsystem specific list;
+and LKML is important to have one place where all issue reports can be found.</p>
+</section>
+<section id="finding-the-maintainers-with-the-help-of-a-script">
+<h4>Finding the maintainers with the help of a script<a class="headerlink" href="#finding-the-maintainers-with-the-help-of-a-script" title="Permalink to this heading">¶</a></h4>
+<p>For people that have the Linux sources at hand there is a second option to find
+the proper place to report: the script ‘scripts/get_maintainer.pl’ which tries
+to find all people to contact. It queries the MAINTAINERS file and needs to be
+called with a path to the source code in question. For drivers compiled as
+module if often can be found with a command like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ modinfo ath10k_pci | grep filename | sed &#39;s!/lib/modules/.*/kernel/!!; s!filename:!!; s!\.ko\(\|\.xz\)!!&#39;
+drivers/net/wireless/ath/ath10k/ath10k_pci.ko
+</pre></div>
+</div>
+<p>Pass parts of this to the script:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ./scripts/get_maintainer.pl -f drivers/net/wireless/ath/ath10k*
+Some Human &lt;shuman@example.com&gt; (supporter:QUALCOMM ATHEROS ATH10K WIRELESS DRIVER)
+Another S. Human &lt;asomehuman@example.com&gt; (maintainer:NETWORKING DRIVERS)
+ath10k@lists.infradead.org (open list:QUALCOMM ATHEROS ATH10K WIRELESS DRIVER)
+linux-wireless@vger.kernel.org (open list:NETWORKING DRIVERS (WIRELESS))
+netdev@vger.kernel.org (open list:NETWORKING DRIVERS)
+linux-kernel@vger.kernel.org (open list)
+</pre></div>
+</div>
+<p>Don’t sent your report to all of them. Send it to the maintainers, which the
+script calls “supporter:”; additionally CC the most specific mailing list for
+the code as well as the Linux Kernel Mailing List (LKML). In this case you thus
+would need to send the report to ‘Some Human &lt;<a class="reference external" href="mailto:shuman&#37;&#52;&#48;example&#46;com">shuman<span>&#64;</span>example<span>&#46;</span>com</a>&gt;’ with
+<a class="reference external" href="mailto:'ath10k&#37;&#52;&#48;lists&#46;infradead&#46;org">‘ath10k<span>&#64;</span>lists<span>&#46;</span>infradead<span>&#46;</span>org</a>’ and <a class="reference external" href="mailto:'linux-kernel&#37;&#52;&#48;vger&#46;kernel&#46;org">‘linux-kernel<span>&#64;</span>vger<span>&#46;</span>kernel<span>&#46;</span>org</a>’ in CC.</p>
+<p>Note: in case you cloned the Linux sources with git you might want to call
+<code class="docutils literal notranslate"><span class="pre">get_maintainer.pl</span></code> a second time with <code class="docutils literal notranslate"><span class="pre">--git</span></code>. The script then will look
+at the commit history to find which people recently worked on the code in
+question, as they might be able to help. But use these results with care, as it
+can easily send you in a wrong direction. That for example happens quickly in
+areas rarely changed (like old or unmaintained drivers): sometimes such code is
+modified during tree-wide cleanups by developers that do not care about the
+particular driver at all.</p>
+</section>
+</section>
+<section id="search-for-existing-reports-second-run">
+<h3>Search for existing reports, second run<a class="headerlink" href="#search-for-existing-reports-second-run" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>Search the archives of the bug tracker or mailing list in question
+thoroughly for reports that might match your issue. If you find anything,
+join the discussion instead of sending a new report.</em></p>
+</div></blockquote>
+<p>As mentioned earlier already: reporting an issue that someone else already
+brought forward is often a waste of time for everyone involved, especially you
+as the reporter. That’s why you should search for existing report again, now
+that you know where they need to be reported to. If it’s mailing list, you will
+often find its archives on <a class="reference external" href="https://lore.kernel.org/">lore.kernel.org</a>.</p>
+<p>But some list are hosted in different places. That for example is the case for
+the ath10k WiFi driver used as example in the previous step. But you’ll often
+find the archives for these lists easily on the net. Searching for ‘archive
+<a class="reference external" href="mailto:ath10k&#37;&#52;&#48;lists&#46;infradead&#46;org">ath10k<span>&#64;</span>lists<span>&#46;</span>infradead<span>&#46;</span>org</a>’ for example will lead you to the <a class="reference external" href="https://lists.infradead.org/mailman/listinfo/ath10k">Info page for the
+ath10k mailing list</a>,
+which at the top links to its
+<a class="reference external" href="https://lists.infradead.org/pipermail/ath10k/">list archives</a>. Sadly this and
+quite a few other lists miss a way to search the archives. In those cases use a
+regular internet search engine and add something like
+‘site:lists.infradead.org/pipermail/ath10k/’ to your search terms, which limits
+the results to the archives at that URL.</p>
+<p>It’s also wise to check the internet, LKML and maybe bugzilla.kernel.org again
+at this point. If your report needs to be filed in a bug tracker, you may want
+to check the mailing list archives for the subsystem as well, as someone might
+have reported it only there.</p>
+<p>For details how to search and what to do if you find matching reports see
+“Search for existing reports, first run” above.</p>
+<p>Do not hurry with this step of the reporting process: spending 30 to 60 minutes
+or even more time can save you and others quite a lot of time and trouble.</p>
+</section>
+<section id="install-a-fresh-kernel-for-testing">
+<h3>Install a fresh kernel for testing<a class="headerlink" href="#install-a-fresh-kernel-for-testing" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>Unless you are already running the latest ‘mainline’ Linux kernel, better
+go and install it for the reporting process. Testing and reporting with
+the latest ‘stable’ Linux can be an acceptable alternative in some
+situations; during the merge window that actually might be even the best
+approach, but in that development phase it can be an even better idea to
+suspend your efforts for a few days anyway. Whatever version you choose,
+ideally use a ‘vanilla’ built. Ignoring these advices will dramatically
+increase the risk your report will be rejected or ignored.</em></p>
+</div></blockquote>
+<p>As mentioned in the detailed explanation for the first step already: Like most
+programmers, Linux kernel developers don’t like to spend time dealing with
+reports for issues that don’t even happen with the current code. It’s just a
+waste everybody’s time, especially yours. That’s why it’s in everybody’s
+interest that you confirm the issue still exists with the latest upstream code
+before reporting it. You are free to ignore this advice, but as outlined
+earlier: doing so dramatically increases the risk that your issue report might
+get rejected or simply ignored.</p>
+<p>In the scope of the kernel “latest upstream” normally means:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Install a mainline kernel; the latest stable kernel can be an option, but
+most of the time is better avoided. Longterm kernels (sometimes called ‘LTS
+kernels’) are unsuitable at this point of the process. The next subsection
+explains all of this in more detail.</p></li>
+<li><p>The over next subsection describes way to obtain and install such a kernel.
+It also outlines that using a pre-compiled kernel are fine, but better are
+vanilla, which means: it was built using Linux sources taken straight <a class="reference external" href="https://kernel.org/">from
+kernel.org</a> and not modified or enhanced in any way.</p></li>
+</ul>
+</div></blockquote>
+<section id="choosing-the-right-version-for-testing">
+<h4>Choosing the right version for testing<a class="headerlink" href="#choosing-the-right-version-for-testing" title="Permalink to this heading">¶</a></h4>
+<p>Head over to <a class="reference external" href="https://kernel.org/">kernel.org</a> to find out which version you
+want to use for testing. Ignore the big yellow button that says ‘Latest release’
+and look a little lower at the table. At its top you’ll see a line starting with
+mainline, which most of the time will point to a pre-release with a version
+number like ‘5.8-rc2’. If that’s the case, you’ll want to use this mainline
+kernel for testing, as that where all fixes have to be applied first. Do not let
+that ‘rc’ scare you, these ‘development kernels’ are pretty reliable — and you
+made a backup, as you were instructed above, didn’t you?</p>
+<p>In about two out of every nine to ten weeks, mainline might point you to a
+proper release with a version number like ‘5.7’. If that happens, consider
+suspending the reporting process until the first pre-release of the next
+version (5.8-rc1) shows up on kernel.org. That’s because the Linux development
+cycle then is in its two-week long ‘merge window’. The bulk of the changes and
+all intrusive ones get merged for the next release during this time. It’s a bit
+more risky to use mainline during this period. Kernel developers are also often
+quite busy then and might have no spare time to deal with issue reports. It’s
+also quite possible that one of the many changes applied during the merge
+window fixes the issue you face; that’s why you soon would have to retest with
+a newer kernel version anyway, as outlined below in the section ‘Duties after
+the report went out’.</p>
+<p>That’s why it might make sense to wait till the merge window is over. But don’t
+to that if you’re dealing with something that shouldn’t wait. In that case
+consider obtaining the latest mainline kernel via git (see below) or use the
+latest stable version offered on kernel.org. Using that is also acceptable in
+case mainline for some reason does currently not work for you. An in general:
+using it for reproducing the issue is also better than not reporting it issue
+at all.</p>
+<p>Better avoid using the latest stable kernel outside merge windows, as all fixes
+must be applied to mainline first. That’s why checking the latest mainline
+kernel is so important: any issue you want to see fixed in older version lines
+needs to be fixed in mainline first before it can get backported, which can
+take a few days or weeks. Another reason: the fix you hope for might be too
+hard or risky for backporting; reporting the issue again hence is unlikely to
+change anything.</p>
+<p>These aspects are also why longterm kernels (sometimes called “LTS kernels”)
+are unsuitable for this part of the reporting process: they are to distant from
+the current code. Hence go and test mainline first and follow the process
+further: if the issue doesn’t occur with mainline it will guide you how to get
+it fixed in older version lines, if that’s in the cards for the fix in question.</p>
+</section>
+<section id="how-to-obtain-a-fresh-linux-kernel">
+<h4>How to obtain a fresh Linux kernel<a class="headerlink" href="#how-to-obtain-a-fresh-linux-kernel" title="Permalink to this heading">¶</a></h4>
+<p><strong>Using a pre-compiled kernel</strong>: This is often the quickest, easiest, and safest
+way for testing — especially is you are unfamiliar with the Linux kernel. The
+problem: most of those shipped by distributors or add-on repositories are build
+from modified Linux sources. They are thus not vanilla and therefore often
+unsuitable for testing and issue reporting: the changes might cause the issue
+you face or influence it somehow.</p>
+<p>But you are in luck if you are using a popular Linux distribution: for quite a
+few of them you’ll find repositories on the net that contain packages with the
+latest mainline or stable Linux built as vanilla kernel. It’s totally okay to
+use these, just make sure from the repository’s description they are vanilla or
+at least close to it. Additionally ensure the packages contain the latest
+versions as offered on kernel.org. The packages are likely unsuitable if they
+are older than a week, as new mainline and stable kernels typically get released
+at least once a week.</p>
+<p>Please note that you might need to build your own kernel manually later: that’s
+sometimes needed for debugging or testing fixes, as described later in this
+document. Also be aware that pre-compiled kernels might lack debug symbols that
+are needed to decode messages the kernel prints when a panic, Oops, warning, or
+BUG occurs; if you plan to decode those, you might be better off compiling a
+kernel yourself (see the end of this subsection and the section titled ‘Decode
+failure messages’ for details).</p>
+<p><strong>Using git</strong>: Developers and experienced Linux users familiar with git are
+often best served by obtaining the latest Linux kernel sources straight from the
+<a class="reference external" href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/">official development repository on kernel.org</a>.
+Those are likely a bit ahead of the latest mainline pre-release. Don’t worry
+about it: they are as reliable as a proper pre-release, unless the kernel’s
+development cycle is currently in the middle of a merge window. But even then
+they are quite reliable.</p>
+<p><strong>Conventional</strong>: People unfamiliar with git are often best served by
+downloading the sources as tarball from <a class="reference external" href="https://kernel.org/">kernel.org</a>.</p>
+<p>How to actually build a kernel is not described here, as many websites explain
+the necessary steps already. If you are new to it, consider following one of
+those how-to’s that suggest to use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">localmodconfig</span></code>, as that tries to
+pick up the configuration of your current kernel and then tries to adjust it
+somewhat for your system. That does not make the resulting kernel any better,
+but quicker to compile.</p>
+<p>Note: If you are dealing with a panic, Oops, warning, or BUG from the kernel,
+please try to enable CONFIG_KALLSYMS when configuring your kernel.
+Additionally, enable CONFIG_DEBUG_KERNEL and CONFIG_DEBUG_INFO, too; the
+latter is the relevant one of those two, but can only be reached if you enable
+the former. Be aware CONFIG_DEBUG_INFO increases the storage space required to
+build a kernel by quite a bit. But that’s worth it, as these options will allow
+you later to pinpoint the exact line of code that triggers your issue. The
+section ‘Decode failure messages’ below explains this in more detail.</p>
+<p>But keep in mind: Always keep a record of the issue encountered in case it is
+hard to reproduce. Sending an undecoded report is better than not reporting
+the issue at all.</p>
+</section>
+</section>
+<section id="id4">
+<h3>Check ‘taint’ flag<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>Ensure the kernel you just installed does not ‘taint’ itself when
+running.</em></p>
+</div></blockquote>
+<p>As outlined above in more detail already: the kernel sets a ‘taint’ flag when
+something happens that can lead to follow-up errors that look totally
+unrelated. That’s why you need to check if the kernel you just installed does
+not set this flag. And if it does, you in almost all the cases needs to
+eliminate the reason for it before you reporting issues that occur with it. See
+the section above for details how to do that.</p>
+</section>
+<section id="reproduce-issue-with-the-fresh-kernel">
+<h3>Reproduce issue with the fresh kernel<a class="headerlink" href="#reproduce-issue-with-the-fresh-kernel" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>Reproduce the issue with the kernel you just installed. If it doesn’t show
+up there, scroll down to the instructions for issues only happening with
+stable and longterm kernels.</em></p>
+</div></blockquote>
+<p>Check if the issue occurs with the fresh Linux kernel version you just
+installed. If it was fixed there already, consider sticking with this version
+line and abandoning your plan to report the issue. But keep in mind that other
+users might still be plagued by it, as long as it’s not fixed in either stable
+and longterm version from kernel.org (and thus vendor kernels derived from
+those). If you prefer to use one of those or just want to help their users,
+head over to the section “Details about reporting issues only occurring in
+older kernel version lines” below.</p>
+</section>
+<section id="optimize-description-to-reproduce-issue">
+<h3>Optimize description to reproduce issue<a class="headerlink" href="#optimize-description-to-reproduce-issue" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>Optimize your notes: try to find and write the most straightforward way to
+reproduce your issue. Make sure the end result has all the important
+details, and at the same time is easy to read and understand for others
+that hear about it for the first time. And if you learned something in this
+process, consider searching again for existing reports about the issue.</em></p>
+</div></blockquote>
+<p>An unnecessarily complex report will make it hard for others to understand your
+report. Thus try to find a reproducer that’s straight forward to describe and
+thus easy to understand in written form. Include all important details, but at
+the same time try to keep it as short as possible.</p>
+<p>In this in the previous steps you likely have learned a thing or two about the
+issue you face. Use this knowledge and search again for existing reports
+instead you can join.</p>
+</section>
+<section id="decode-failure-messages">
+<h3>Decode failure messages<a class="headerlink" href="#decode-failure-messages" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>If your failure involves a ‘panic’, ‘Oops’, ‘warning’, or ‘BUG’, consider
+decoding the kernel log to find the line of code that triggered the error.</em></p>
+</div></blockquote>
+<p>When the kernel detects an internal problem, it will log some information about
+the executed code. This makes it possible to pinpoint the exact line in the
+source code that triggered the issue and shows how it was called. But that only
+works if you enabled CONFIG_DEBUG_INFO and CONFIG_KALLSYMS when configuring
+your kernel. If you did so, consider to decode the information from the
+kernel’s log. That will make it a lot easier to understand what lead to the
+‘panic’, ‘Oops’, ‘warning’, or ‘BUG’, which increases the chances that someone
+can provide a fix.</p>
+<p>Decoding can be done with a script you find in the Linux source tree. If you
+are running a kernel you compiled yourself earlier, call it like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[user@something ~]$ sudo dmesg | ./linux-5.10.5/scripts/decode_stacktrace.sh ./linux-5.10.5/vmlinux
+</pre></div>
+</div>
+<p>If you are running a packaged vanilla kernel, you will likely have to install
+the corresponding packages with debug symbols. Then call the script (which you
+might need to get from the Linux sources if your distro does not package it)
+like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[user@something ~]$ sudo dmesg | ./linux-5.10.5/scripts/decode_stacktrace.sh \
+ /usr/lib/debug/lib/modules/5.10.10-4.1.x86_64/vmlinux /usr/src/kernels/5.10.10-4.1.x86_64/
+</pre></div>
+</div>
+<p>The script will work on log lines like the following, which show the address of
+the code the kernel was executing when the error occurred:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[   68.387301] RIP: 0010:test_module_init+0x5/0xffa [test_module]
+</pre></div>
+</div>
+<p>Once decoded, these lines will look like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[   68.387301] RIP: 0010:test_module_init (/home/username/linux-5.10.5/test-module/test-module.c:16) test_module
+</pre></div>
+</div>
+<p>In this case the executed code was built from the file
+‘~/linux-5.10.5/test-module/test-module.c’ and the error occurred by the
+instructions found in line ‘16’.</p>
+<p>The script will similarly decode the addresses mentioned in the section
+starting with ‘Call trace’, which show the path to the function where the
+problem occurred. Additionally, the script will show the assembler output for
+the code section the kernel was executing.</p>
+<p>Note, if you can’t get this to work, simply skip this step and mention the
+reason for it in the report. If you’re lucky, it might not be needed. And if it
+is, someone might help you to get things going. Also be aware this is just one
+of several ways to decode kernel stack traces. Sometimes different steps will
+be required to retrieve the relevant details. Don’t worry about that, if that’s
+needed in your case, developers will tell you what to do.</p>
+</section>
+<section id="special-care-for-regressions">
+<h3>Special care for regressions<a class="headerlink" href="#special-care-for-regressions" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>If your problem is a regression, try to narrow down when the issue was
+introduced as much as possible.</em></p>
+</div></blockquote>
+<p>Linux lead developer Linus Torvalds insists that the Linux kernel never
+worsens, that’s why he deems regressions as unacceptable and wants to see them
+fixed quickly. That’s why changes that introduced a regression are often
+promptly reverted if the issue they cause can’t get solved quickly any other
+way. Reporting a regression is thus a bit like playing a kind of trump card to
+get something quickly fixed. But for that to happen the change that’s causing
+the regression needs to be known. Normally it’s up to the reporter to track
+down the culprit, as maintainers often won’t have the time or setup at hand to
+reproduce it themselves.</p>
+<p>To find the change there is a process called ‘bisection’ which the document
+<a class="reference internal" href="bug-bisect.html"><span class="doc">Bisecting a regression</span></a> describes in detail. That process
+will often require you to build about ten to twenty kernel images, trying to
+reproduce the issue with each of them before building the next. Yes, that takes
+some time, but don’t worry, it works a lot quicker than most people assume.
+Thanks to a ‘binary search’ this will lead you to the one commit in the source
+code management system that’s causing the regression. Once you find it, search
+the net for the subject of the change, its commit id and the shortened commit id
+(the first 12 characters of the commit id). This will lead you to existing
+reports about it, if there are any.</p>
+<p>Note, a bisection needs a bit of know-how, which not everyone has, and quite a
+bit of effort, which not everyone is willing to invest. Nevertheless, it’s
+highly recommended performing a bisection yourself. If you really can’t or
+don’t want to go down that route at least find out which mainline kernel
+introduced the regression. If something for example breaks when switching from
+5.5.15 to 5.8.4, then try at least all the mainline releases in that area (5.6,
+5.7 and 5.8) to check when it first showed up. Unless you’re trying to find a
+regression in a stable or longterm kernel, avoid testing versions which number
+has three sections (5.6.12, 5.7.8), as that makes the outcome hard to
+interpret, which might render your testing useless. Once you found the major
+version which introduced the regression, feel free to move on in the reporting
+process. But keep in mind: it depends on the issue at hand if the developers
+will be able to help without knowing the culprit. Sometimes they might
+recognize from the report want went wrong and can fix it; other times they will
+be unable to help unless you perform a bisection.</p>
+<p>When dealing with regressions make sure the issue you face is really caused by
+the kernel and not by something else, as outlined above already.</p>
+<p>In the whole process keep in mind: an issue only qualifies as regression if the
+older and the newer kernel got built with a similar configuration. This can be
+achieved by using <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">olddefconfig</span></code>, as explained in more detail by
+<a class="reference internal" href="reporting-regressions.html"><span class="doc">Reporting regressions</span></a>; that document also
+provides a good deal of other information about regressions you might want to be
+aware of.</p>
+</section>
+<section id="write-and-send-the-report">
+<h3>Write and send the report<a class="headerlink" href="#write-and-send-the-report" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>Start to compile the report by writing a detailed description about the
+issue. Always mention a few things: the latest kernel version you installed
+for reproducing, the Linux Distribution used, and your notes on how to
+reproduce the issue. Ideally, make the kernel’s build configuration
+(.config) and the output from ``dmesg`` available somewhere on the net and
+link to it. Include or upload all other information that might be relevant,
+like the output/screenshot of an Oops or the output from ``lspci``. Once
+you wrote this main part, insert a normal length paragraph on top of it
+outlining the issue and the impact quickly. On top of this add one sentence
+that briefly describes the problem and gets people to read on. Now give the
+thing a descriptive title or subject that yet again is shorter. Then you’re
+ready to send or file the report like the MAINTAINERS file told you, unless
+you are dealing with one of those ‘issues of high priority’: they need
+special care which is explained in ‘Special handling for high priority
+issues’ below.</em></p>
+</div></blockquote>
+<p>Now that you have prepared everything it’s time to write your report. How to do
+that is partly explained by the three documents linked to in the preface above.
+That’s why this text will only mention a few of the essentials as well as
+things specific to the Linux kernel.</p>
+<p>There is one thing that fits both categories: the most crucial parts of your
+report are the title/subject, the first sentence, and the first paragraph.
+Developers often get quite a lot of mail. They thus often just take a few
+seconds to skim a mail before deciding to move on or look closer. Thus: the
+better the top section of your report, the higher are the chances that someone
+will look into it and help you. And that is why you should ignore them for now
+and write the detailed report first. ;-)</p>
+<section id="things-each-report-should-mention">
+<h4>Things each report should mention<a class="headerlink" href="#things-each-report-should-mention" title="Permalink to this heading">¶</a></h4>
+<p>Describe in detail how your issue happens with the fresh vanilla kernel you
+installed. Try to include the step-by-step instructions you wrote and optimized
+earlier that outline how you and ideally others can reproduce the issue; in
+those rare cases where that’s impossible try to describe what you did to
+trigger it.</p>
+<p>Also include all the relevant information others might need to understand the
+issue and its environment. What’s actually needed depends a lot on the issue,
+but there are some things you should include always:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the output from <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">/proc/version</span></code>, which contains the Linux kernel
+version number and the compiler it was built with.</p></li>
+<li><p>the Linux distribution the machine is running (<code class="docutils literal notranslate"><span class="pre">hostnamectl</span> <span class="pre">|</span> <span class="pre">grep</span>
+<span class="pre">&quot;Operating</span> <span class="pre">System&quot;</span></code>)</p></li>
+<li><p>the architecture of the CPU and the operating system (<code class="docutils literal notranslate"><span class="pre">uname</span> <span class="pre">-mi</span></code>)</p></li>
+<li><p>if you are dealing with a regression and performed a bisection, mention the
+subject and the commit-id of the change that is causing it.</p></li>
+</ul>
+</div></blockquote>
+<p>In a lot of cases it’s also wise to make two more things available to those
+that read your report:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the configuration used for building your Linux kernel (the ‘.config’ file)</p></li>
+<li><p>the kernel’s messages that you get from <code class="docutils literal notranslate"><span class="pre">dmesg</span></code> written to a file. Make
+sure that it starts with a line like ‘Linux version 5.8-1
+(<a class="reference external" href="mailto:foobar&#37;&#52;&#48;example&#46;com">foobar<span>&#64;</span>example<span>&#46;</span>com</a>) (gcc (GCC) 10.2.1, GNU ld version 2.34) #1 SMP Mon Aug
+3 14:54:37 UTC 2020’ If it’s missing, then important messages from the first
+boot phase already got discarded. In this case instead consider using
+<code class="docutils literal notranslate"><span class="pre">journalctl</span> <span class="pre">-b</span> <span class="pre">0</span> <span class="pre">-k</span></code>; alternatively you can also reboot, reproduce the
+issue and call <code class="docutils literal notranslate"><span class="pre">dmesg</span></code> right afterwards.</p></li>
+</ul>
+</div></blockquote>
+<p>These two files are big, that’s why it’s a bad idea to put them directly into
+your report. If you are filing the issue in a bug tracker then attach them to
+the ticket. If you report the issue by mail do not attach them, as that makes
+the mail too large; instead do one of these things:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Upload the files somewhere public (your website, a public file paste
+service, a ticket created just for this purpose on <a class="reference external" href="https://bugzilla.kernel.org/">bugzilla.kernel.org</a>, ...) and include a link to them in your
+report. Ideally use something where the files stay available for years, as
+they could be useful to someone many years from now; this for example can
+happen if five or ten years from now a developer works on some code that was
+changed just to fix your issue.</p></li>
+<li><p>Put the files aside and mention you will send them later in individual
+replies to your own mail. Just remember to actually do that once the report
+went out. ;-)</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="things-that-might-be-wise-to-provide">
+<h4>Things that might be wise to provide<a class="headerlink" href="#things-that-might-be-wise-to-provide" title="Permalink to this heading">¶</a></h4>
+<p>Depending on the issue you might need to add more background data. Here are a
+few suggestions what often is good to provide:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If you are dealing with a ‘warning’, an ‘OOPS’ or a ‘panic’ from the kernel,
+include it. If you can’t copy’n’paste it, try to capture a netconsole trace
+or at least take a picture of the screen.</p></li>
+<li><p>If the issue might be related to your computer hardware, mention what kind
+of system you use. If you for example have problems with your graphics card,
+mention its manufacturer, the card’s model, and what chip is uses. If it’s a
+laptop mention its name, but try to make sure it’s meaningful. ‘Dell XPS 13’
+for example is not, because it might be the one from 2012; that one looks
+not that different from the one sold today, but apart from that the two have
+nothing in common. Hence, in such cases add the exact model number, which
+for example are ‘9380’ or ‘7390’ for XPS 13 models introduced during 2019.
+Names like ‘Lenovo Thinkpad T590’ are also somewhat ambiguous: there are
+variants of this laptop with and without a dedicated graphics chip, so try
+to find the exact model name or specify the main components.</p></li>
+<li><p>Mention the relevant software in use. If you have problems with loading
+modules, you want to mention the versions of kmod, systemd, and udev in use.
+If one of the DRM drivers misbehaves, you want to state the versions of
+libdrm and Mesa; also specify your Wayland compositor or the X-Server and
+its driver. If you have a filesystem issue, mention the version of
+corresponding filesystem utilities (e2fsprogs, btrfs-progs, xfsprogs, ...).</p></li>
+<li><p>Gather additional information from the kernel that might be of interest. The
+output from <code class="docutils literal notranslate"><span class="pre">lspci</span> <span class="pre">-nn</span></code> will for example help others to identify what
+hardware you use. If you have a problem with hardware you even might want to
+make the output from <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">lspci</span> <span class="pre">-vvv</span></code> available, as that provides
+insights how the components were configured. For some issues it might be
+good to include the contents of files like <code class="docutils literal notranslate"><span class="pre">/proc/cpuinfo</span></code>,
+<code class="docutils literal notranslate"><span class="pre">/proc/ioports</span></code>, <code class="docutils literal notranslate"><span class="pre">/proc/iomem</span></code>, <code class="docutils literal notranslate"><span class="pre">/proc/modules</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">/proc/scsi/scsi</span></code>. Some subsystem also offer tools to collect relevant
+information. One such tool is <code class="docutils literal notranslate"><span class="pre">alsa-info.sh</span></code> <a class="reference external" href="https://www.alsa-project.org/wiki/AlsaInfo">which the audio/sound
+subsystem developers provide</a>.</p></li>
+</ul>
+</div></blockquote>
+<p>Those examples should give your some ideas of what data might be wise to
+attach, but you have to think yourself what will be helpful for others to know.
+Don’t worry too much about forgetting something, as developers will ask for
+additional details they need. But making everything important available from
+the start increases the chance someone will take a closer look.</p>
+</section>
+<section id="the-important-part-the-head-of-your-report">
+<h4>The important part: the head of your report<a class="headerlink" href="#the-important-part-the-head-of-your-report" title="Permalink to this heading">¶</a></h4>
+<p>Now that you have the detailed part of the report prepared let’s get to the
+most important section: the first few sentences. Thus go to the top, add
+something like ‘The detailed description:’ before the part you just wrote and
+insert two newlines at the top. Now write one normal length paragraph that
+describes the issue roughly. Leave out all boring details and focus on the
+crucial parts readers need to know to understand what this is all about; if you
+think this bug affects a lot of users, mention this to get people interested.</p>
+<p>Once you did that insert two more lines at the top and write a one sentence
+summary that explains quickly what the report is about. After that you have to
+get even more abstract and write an even shorter subject/title for the report.</p>
+<p>Now that you have written this part take some time to optimize it, as it is the
+most important parts of your report: a lot of people will only read this before
+they decide if reading the rest is time well spent.</p>
+<p>Now send or file the report like the <a class="reference internal" href="../process/maintainers.html#maintainers"><span class="std std-ref">MAINTAINERS</span></a> file told
+you, unless it’s one of those ‘issues of high priority’ outlined earlier: in
+that case please read the next subsection first before sending the report on
+its way.</p>
+</section>
+<section id="special-handling-for-high-priority-issues">
+<h4>Special handling for high priority issues<a class="headerlink" href="#special-handling-for-high-priority-issues" title="Permalink to this heading">¶</a></h4>
+<p>Reports for high priority issues need special handling.</p>
+<p><strong>Severe issues</strong>: make sure the subject or ticket title as well as the first
+paragraph makes the severeness obvious.</p>
+<p><strong>Regressions</strong>: make the report’s subject start with ‘[REGRESSION]’.</p>
+<p>In case you performed a successful bisection, use the title of the change that
+introduced the regression as the second part of your subject. Make the report
+also mention the commit id of the culprit. In case of an unsuccessful bisection,
+make your report mention the latest tested version that’s working fine (say 5.7)
+and the oldest where the issue occurs (say 5.8-rc1).</p>
+<p>When sending the report by mail, CC the Linux regressions mailing list
+(<a class="reference external" href="mailto:regressions&#37;&#52;&#48;lists&#46;linux&#46;dev">regressions<span>&#64;</span>lists<span>&#46;</span>linux<span>&#46;</span>dev</a>). In case the report needs to be filed to some web
+tracker, proceed to do so. Once filed, forward the report by mail to the
+regressions list; CC the maintainer and the mailing list for the subsystem in
+question. Make sure to inline the forwarded report, hence do not attach it.
+Also add a short note at the top where you mention the URL to the ticket.</p>
+<p>When mailing or forwarding the report, in case of a successful bisection add the
+author of the culprit to the recipients; also CC everyone in the signed-off-by
+chain, which you find at the end of its commit message.</p>
+<p><strong>Security issues</strong>: for these issues your will have to evaluate if a
+short-term risk to other users would arise if details were publicly disclosed.
+If that’s not the case simply proceed with reporting the issue as described.
+For issues that bear such a risk you will need to adjust the reporting process
+slightly:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If the MAINTAINERS file instructed you to report the issue by mail, do not
+CC any public mailing lists.</p></li>
+<li><p>If you were supposed to file the issue in a bug tracker make sure to mark
+the ticket as ‘private’ or ‘security issue’. If the bug tracker does not
+offer a way to keep reports private, forget about it and send your report as
+a private mail to the maintainers instead.</p></li>
+</ul>
+</div></blockquote>
+<p>In both cases make sure to also mail your report to the addresses the
+MAINTAINERS file lists in the section ‘security contact’. Ideally directly CC
+them when sending the report by mail. If you filed it in a bug tracker, forward
+the report’s text to these addresses; but on top of it put a small note where
+you mention that you filed it with a link to the ticket.</p>
+<p>See <a class="reference internal" href="../process/security-bugs.html"><span class="doc">Security bugs</span></a> for more information.</p>
+</section>
+</section>
+<section id="duties-after-the-report-went-out">
+<h3>Duties after the report went out<a class="headerlink" href="#duties-after-the-report-went-out" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>Wait for reactions and keep the thing rolling until you can accept the
+outcome in one way or the other. Thus react publicly and in a timely manner
+to any inquiries. Test proposed fixes. Do proactive testing: retest with at
+least every first release candidate (RC) of a new mainline version and
+report your results. Send friendly reminders if things stall. And try to
+help yourself, if you don’t get any help or if it’s unsatisfying.</em></p>
+</div></blockquote>
+<p>If your report was good and you are really lucky then one of the developers
+might immediately spot what’s causing the issue; they then might write a patch
+to fix it, test it, and send it straight for integration in mainline while
+tagging it for later backport to stable and longterm kernels that need it. Then
+all you need to do is reply with a ‘Thank you very much’ and switch to a version
+with the fix once it gets released.</p>
+<p>But this ideal scenario rarely happens. That’s why the job is only starting
+once you got the report out. What you’ll have to do depends on the situations,
+but often it will be the things listed below. But before digging into the
+details, here are a few important things you need to keep in mind for this part
+of the process.</p>
+<section id="general-advice-for-further-interactions">
+<h4>General advice for further interactions<a class="headerlink" href="#general-advice-for-further-interactions" title="Permalink to this heading">¶</a></h4>
+<p><strong>Always reply in public</strong>: When you filed the issue in a bug tracker, always
+reply there and do not contact any of the developers privately about it. For
+mailed reports always use the ‘Reply-all’ function when replying to any mails
+you receive. That includes mails with any additional data you might want to add
+to your report: go to your mail applications ‘Sent’ folder and use ‘reply-all’
+on your mail with the report. This approach will make sure the public mailing
+list(s) and everyone else that gets involved over time stays in the loop; it
+also keeps the mail thread intact, which among others is really important for
+mailing lists to group all related mails together.</p>
+<p>There are just two situations where a comment in a bug tracker or a ‘Reply-all’
+is unsuitable:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Someone tells you to send something privately.</p></li>
+<li><p>You were told to send something, but noticed it contains sensitive
+information that needs to be kept private. In that case it’s okay to send it
+in private to the developer that asked for it. But note in the ticket or a
+mail that you did that, so everyone else knows you honored the request.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Do research before asking for clarifications or help</strong>: In this part of the
+process someone might tell you to do something that requires a skill you might
+not have mastered yet. For example, you might be asked to use some test tools
+you never have heard of yet; or you might be asked to apply a patch to the
+Linux kernel sources to test if it helps. In some cases it will be fine sending
+a reply asking for instructions how to do that. But before going that route try
+to find the answer own your own by searching the internet; alternatively
+consider asking in other places for advice. For example ask a friend or post
+about it to a chatroom or forum you normally hang out.</p>
+<p><strong>Be patient</strong>: If you are really lucky you might get a reply to your report
+within a few hours. But most of the time it will take longer, as maintainers
+are scattered around the globe and thus might be in a different time zone – one
+where they already enjoy their night away from keyboard.</p>
+<p>In general, kernel developers will take one to five business days to respond to
+reports. Sometimes it will take longer, as they might be busy with the merge
+windows, other work, visiting developer conferences, or simply enjoying a long
+summer holiday.</p>
+<p>The ‘issues of high priority’ (see above for an explanation) are an exception
+here: maintainers should address them as soon as possible; that’s why you
+should wait a week at maximum (or just two days if it’s something urgent)
+before sending a friendly reminder.</p>
+<p>Sometimes the maintainer might not be responding in a timely manner; other
+times there might be disagreements, for example if an issue qualifies as
+regression or not. In such cases raise your concerns on the mailing list and
+ask others for public or private replies how to move on. If that fails, it
+might be appropriate to get a higher authority involved. In case of a WiFi
+driver that would be the wireless maintainers; if there are no higher level
+maintainers or all else fails, it might be one of those rare situations where
+it’s okay to get Linus Torvalds involved.</p>
+<p><strong>Proactive testing</strong>: Every time the first pre-release (the ‘rc1’) of a new
+mainline kernel version gets released, go and check if the issue is fixed there
+or if anything of importance changed. Mention the outcome in the ticket or in a
+mail you sent as reply to your report (make sure it has all those in the CC
+that up to that point participated in the discussion). This will show your
+commitment and that you are willing to help. It also tells developers if the
+issue persists and makes sure they do not forget about it. A few other
+occasional retests (for example with rc3, rc5 and the final) are also a good
+idea, but only report your results if something relevant changed or if you are
+writing something anyway.</p>
+<p>With all these general things off the table let’s get into the details of how
+to help to get issues resolved once they were reported.</p>
+</section>
+<section id="inquires-and-testing-request">
+<h4>Inquires and testing request<a class="headerlink" href="#inquires-and-testing-request" title="Permalink to this heading">¶</a></h4>
+<p>Here are your duties in case you got replies to your report:</p>
+<p><strong>Check who you deal with</strong>: Most of the time it will be the maintainer or a
+developer of the particular code area that will respond to your report. But as
+issues are normally reported in public it could be anyone that’s replying —
+including people that want to help, but in the end might guide you totally off
+track with their questions or requests. That rarely happens, but it’s one of
+many reasons why it’s wise to quickly run an internet search to see who you’re
+interacting with. By doing this you also get aware if your report was heard by
+the right people, as a reminder to the maintainer (see below) might be in order
+later if discussion fades out without leading to a satisfying solution for the
+issue.</p>
+<p><strong>Inquiries for data</strong>: Often you will be asked to test something or provide
+additional details. Try to provide the requested information soon, as you have
+the attention of someone that might help and risk losing it the longer you
+wait; that outcome is even likely if you do not provide the information within
+a few business days.</p>
+<p><strong>Requests for testing</strong>: When you are asked to test a diagnostic patch or a
+possible fix, try to test it in timely manner, too. But do it properly and make
+sure to not rush it: mixing things up can happen easily and can lead to a lot
+of confusion for everyone involved. A common mistake for example is thinking a
+proposed patch with a fix was applied, but in fact wasn’t. Things like that
+happen even to experienced testers occasionally, but they most of the time will
+notice when the kernel with the fix behaves just as one without it.</p>
+</section>
+<section id="what-to-do-when-nothing-of-substance-happens">
+<h4>What to do when nothing of substance happens<a class="headerlink" href="#what-to-do-when-nothing-of-substance-happens" title="Permalink to this heading">¶</a></h4>
+<p>Some reports will not get any reaction from the responsible Linux kernel
+developers; or a discussion around the issue evolved, but faded out with
+nothing of substance coming out of it.</p>
+<p>In these cases wait two (better: three) weeks before sending a friendly
+reminder: maybe the maintainer was just away from keyboard for a while when
+your report arrived or had something more important to take care of. When
+writing the reminder, kindly ask if anything else from your side is needed to
+get the ball running somehow. If the report got out by mail, do that in the
+first lines of a mail that is a reply to your initial mail (see above) which
+includes a full quote of the original report below: that’s on of those few
+situations where such a ‘TOFU’ (Text Over, Fullquote Under) is the right
+approach, as then all the recipients will have the details at hand immediately
+in the proper order.</p>
+<p>After the reminder wait three more weeks for replies. If you still don’t get a
+proper reaction, you first should reconsider your approach. Did you maybe try
+to reach out to the wrong people? Was the report maybe offensive or so
+confusing that people decided to completely stay away from it? The best way to
+rule out such factors: show the report to one or two people familiar with FLOSS
+issue reporting and ask for their opinion. Also ask them for their advice how
+to move forward. That might mean: prepare a better report and make those people
+review it before you send it out. Such an approach is totally fine; just
+mention that this is the second and improved report on the issue and include a
+link to the first report.</p>
+<p>If the report was proper you can send a second reminder; in it ask for advice
+why the report did not get any replies. A good moment for this second reminder
+mail is shortly after the first pre-release (the ‘rc1’) of a new Linux kernel
+version got published, as you should retest and provide a status update at that
+point anyway (see above).</p>
+<p>If the second reminder again results in no reaction within a week, try to
+contact a higher-level maintainer asking for advice: even busy maintainers by
+then should at least have sent some kind of acknowledgment.</p>
+<p>Remember to prepare yourself for a disappointment: maintainers ideally should
+react somehow to every issue report, but they are only obliged to fix those
+‘issues of high priority’ outlined earlier. So don’t be too devastating if you
+get a reply along the lines of ‘thanks for the report, I have more important
+issues to deal with currently and won’t have time to look into this for the
+foreseeable future’.</p>
+<p>It’s also possible that after some discussion in the bug tracker or on a list
+nothing happens anymore and reminders don’t help to motivate anyone to work out
+a fix. Such situations can be devastating, but is within the cards when it
+comes to Linux kernel development. This and several other reasons for not
+getting help are explained in ‘Why some issues won’t get any reaction or remain
+unfixed after being reported’ near the end of this document.</p>
+<p>Don’t get devastated if you don’t find any help or if the issue in the end does
+not get solved: the Linux kernel is FLOSS and thus you can still help yourself.
+You for example could try to find others that are affected and team up with
+them to get the issue resolved. Such a team could prepare a fresh report
+together that mentions how many you are and why this is something that in your
+option should get fixed. Maybe together you can also narrow down the root cause
+or the change that introduced a regression, which often makes developing a fix
+easier. And with a bit of luck there might be someone in the team that knows a
+bit about programming and might be able to write a fix.</p>
+</section>
+</section>
+<section id="reference-for-reporting-regressions-within-a-stable-and-longterm-kernel-line">
+<h3>Reference for “Reporting regressions within a stable and longterm kernel line”<a class="headerlink" href="#reference-for-reporting-regressions-within-a-stable-and-longterm-kernel-line" title="Permalink to this heading">¶</a></h3>
+<p>This subsection provides details for the steps you need to perform if you face
+a regression within a stable and longterm kernel line.</p>
+<section id="make-sure-the-particular-version-line-still-gets-support">
+<h4>Make sure the particular version line still gets support<a class="headerlink" href="#make-sure-the-particular-version-line-still-gets-support" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><p><em>Check if the kernel developers still maintain the Linux kernel version
+line you care about: go to the front page of kernel.org and make sure it
+mentions the latest release of the particular version line without an
+‘[EOL]’ tag.</em></p>
+</div></blockquote>
+<p>Most kernel version lines only get supported for about three months, as
+maintaining them longer is quite a lot of work. Hence, only one per year is
+chosen and gets supported for at least two years (often six). That’s why you
+need to check if the kernel developers still support the version line you care
+for.</p>
+<p>Note, if kernel.org lists two stable version lines on the front page, you
+should consider switching to the newer one and forget about the older one:
+support for it is likely to be abandoned soon. Then it will get a “end-of-life”
+(EOL) stamp. Version lines that reached that point still get mentioned on the
+kernel.org front page for a week or two, but are unsuitable for testing and
+reporting.</p>
+</section>
+<section id="search-stable-mailing-list">
+<h4>Search stable mailing list<a class="headerlink" href="#search-stable-mailing-list" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><p><em>Check the archives of the Linux stable mailing list for existing reports.</em></p>
+</div></blockquote>
+<p>Maybe the issue you face is already known and was fixed or is about to. Hence,
+<a class="reference external" href="https://lore.kernel.org/stable/">search the archives of the Linux stable mailing list</a> for reports about an issue like yours. If
+you find any matches, consider joining the discussion, unless the fix is
+already finished and scheduled to get applied soon.</p>
+</section>
+<section id="reproduce-issue-with-the-newest-release">
+<h4>Reproduce issue with the newest release<a class="headerlink" href="#reproduce-issue-with-the-newest-release" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><p><em>Install the latest release from the particular version line as a vanilla
+kernel. Ensure this kernel is not tainted and still shows the problem, as
+the issue might have already been fixed there. If you first noticed the
+problem with a vendor kernel, check a vanilla build of the last version
+known to work performs fine as well.</em></p>
+</div></blockquote>
+<p>Before investing any more time in this process you want to check if the issue
+was already fixed in the latest release of version line you’re interested in.
+This kernel needs to be vanilla and shouldn’t be tainted before the issue
+happens, as detailed outlined already above in the section “Install a fresh
+kernel for testing”.</p>
+<p>Did you first notice the regression with a vendor kernel? Then changes the
+vendor applied might be interfering. You need to rule that out by performing
+a recheck. Say something broke when you updated from 5.10.4-vendor.42 to
+5.10.5-vendor.43. Then after testing the latest 5.10 release as outlined in
+the previous paragraph check if a vanilla build of Linux 5.10.4 works fine as
+well. If things are broken there, the issue does not qualify as upstream
+regression and you need switch back to the main step-by-step guide to report
+the issue.</p>
+</section>
+<section id="report-the-regression">
+<h4>Report the regression<a class="headerlink" href="#report-the-regression" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><p><em>Send a short problem report to the Linux stable mailing list
+(stable&#64;vger.kernel.org) and CC the Linux regressions mailing list
+(regressions&#64;lists.linux.dev); if you suspect the cause in a particular
+subsystem, CC its maintainer and its mailing list. Roughly describe the
+issue and ideally explain how to reproduce it. Mention the first version
+that shows the problem and the last version that’s working fine. Then
+wait for further instructions.</em></p>
+</div></blockquote>
+<p>When reporting a regression that happens within a stable or longterm kernel
+line (say when updating from 5.10.4 to 5.10.5) a brief report is enough for
+the start to get the issue reported quickly. Hence a rough description to the
+stable and regressions mailing list is all it takes; but in case you suspect
+the cause in a particular subsystem, CC its maintainers and its mailing list
+as well, because that will speed things up.</p>
+<p>And note, it helps developers a great deal if you can specify the exact version
+that introduced the problem. Hence if possible within a reasonable time frame,
+try to find that version using vanilla kernels. Let’s assume something broke when
+your distributor released a update from Linux kernel 5.10.5 to 5.10.8. Then as
+instructed above go and check the latest kernel from that version line, say
+5.10.9. If it shows the problem, try a vanilla 5.10.5 to ensure that no patches
+the distributor applied interfere. If the issue doesn’t manifest itself there,
+try 5.10.7 and then (depending on the outcome) 5.10.8 or 5.10.6 to find the
+first version where things broke. Mention it in the report and state that 5.10.9
+is still broken.</p>
+<p>What the previous paragraph outlines is basically a rough manual ‘bisection’.
+Once your report is out your might get asked to do a proper one, as it allows to
+pinpoint the exact change that causes the issue (which then can easily get
+reverted to fix the issue quickly). Hence consider to do a proper bisection
+right away if time permits. See the section ‘Special care for regressions’ and
+the document <a class="reference internal" href="bug-bisect.html"><span class="doc">Bisecting a regression</span></a> for details how to
+perform one. In case of a successful bisection add the author of the culprit to
+the recipients; also CC everyone in the signed-off-by chain, which you find at
+the end of its commit message.</p>
+</section>
+</section>
+<section id="reference-for-reporting-issues-only-occurring-in-older-kernel-version-lines">
+<h3>Reference for “Reporting issues only occurring in older kernel version lines”<a class="headerlink" href="#reference-for-reporting-issues-only-occurring-in-older-kernel-version-lines" title="Permalink to this heading">¶</a></h3>
+<p>This section provides details for the steps you need to take if you could not
+reproduce your issue with a mainline kernel, but want to see it fixed in older
+version lines (aka stable and longterm kernels).</p>
+<section id="some-fixes-are-too-complex">
+<h4>Some fixes are too complex<a class="headerlink" href="#some-fixes-are-too-complex" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><p><em>Prepare yourself for the possibility that going through the next few steps
+might not get the issue solved in older releases: the fix might be too big
+or risky to get backported there.</em></p>
+</div></blockquote>
+<p>Even small and seemingly obvious code-changes sometimes introduce new and
+totally unexpected problems. The maintainers of the stable and longterm kernels
+are very aware of that and thus only apply changes to these kernels that are
+within rules outlined in <a class="reference internal" href="../process/stable-kernel-rules.html"><span class="doc">Everything you ever wanted to know about Linux -stable releases</span></a>.</p>
+<p>Complex or risky changes for example do not qualify and thus only get applied
+to mainline. Other fixes are easy to get backported to the newest stable and
+longterm kernels, but too risky to integrate into older ones. So be aware the
+fix you are hoping for might be one of those that won’t be backported to the
+version line your care about. In that case you’ll have no other choice then to
+live with the issue or switch to a newer Linux version, unless you want to
+patch the fix into your kernels yourself.</p>
+</section>
+<section id="common-preparations">
+<h4>Common preparations<a class="headerlink" href="#common-preparations" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><p><em>Perform the first three steps in the section “Reporting issues only
+occurring in older kernel version lines” above.</em></p>
+</div></blockquote>
+<p>You need to carry out a few steps already described in another section of this
+guide. Those steps will let you:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Check if the kernel developers still maintain the Linux kernel version line
+you care about.</p></li>
+<li><p>Search the Linux stable mailing list for exiting reports.</p></li>
+<li><p>Check with the latest release.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="check-code-history-and-search-for-existing-discussions">
+<h4>Check code history and search for existing discussions<a class="headerlink" href="#check-code-history-and-search-for-existing-discussions" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><p><em>Search the Linux kernel version control system for the change that fixed
+the issue in mainline, as its commit message might tell you if the fix is
+scheduled for backporting already. If you don’t find anything that way,
+search the appropriate mailing lists for posts that discuss such an issue
+or peer-review possible fixes; then check the discussions if the fix was
+deemed unsuitable for backporting. If backporting was not considered at
+all, join the newest discussion, asking if it’s in the cards.</em></p>
+</div></blockquote>
+<p>In a lot of cases the issue you deal with will have happened with mainline, but
+got fixed there. The commit that fixed it would need to get backported as well
+to get the issue solved. That’s why you want to search for it or any
+discussions abound it.</p>
+<blockquote>
+<div><ul>
+<li><p>First try to find the fix in the Git repository that holds the Linux kernel
+sources. You can do this with the web interfaces <a class="reference external" href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/">on kernel.org</a>
+or its mirror <a class="reference external" href="https://github.com/torvalds/linux">on GitHub</a>; if you have
+a local clone you alternatively can search on the command line with <code class="docutils literal notranslate"><span class="pre">git</span>
+<span class="pre">log</span> <span class="pre">--grep=&lt;pattern&gt;</span></code>.</p>
+<p>If you find the fix, look if the commit message near the end contains a
+‘stable tag’ that looks like this:</p>
+<blockquote>
+<div><p>Cc: &lt;<a class="reference external" href="mailto:stable&#37;&#52;&#48;vger&#46;kernel&#46;org">stable<span>&#64;</span>vger<span>&#46;</span>kernel<span>&#46;</span>org</a>&gt; # 5.4+</p>
+</div></blockquote>
+<p>If that’s case the developer marked the fix safe for backporting to version
+line 5.4 and later. Most of the time it’s getting applied there within two
+weeks, but sometimes it takes a bit longer.</p>
+</li>
+<li><p>If the commit doesn’t tell you anything or if you can’t find the fix, look
+again for discussions about the issue. Search the net with your favorite
+internet search engine as well as the archives for the <a class="reference external" href="https://lore.kernel.org/lkml/">Linux kernel
+developers mailing list</a>. Also read the
+section <cite>Locate kernel area that causes the issue</cite> above and follow the
+instructions to find the subsystem in question: its bug tracker or mailing
+list archive might have the answer you are looking for.</p></li>
+<li><p>If you see a proposed fix, search for it in the version control system as
+outlined above, as the commit might tell you if a backport can be expected.</p>
+<ul class="simple">
+<li><p>Check the discussions for any indicators the fix might be too risky to get
+backported to the version line you care about. If that’s the case you have
+to live with the issue or switch to the kernel version line where the fix
+got applied.</p></li>
+<li><p>If the fix doesn’t contain a stable tag and backporting was not discussed,
+join the discussion: mention the version where you face the issue and that
+you would like to see it fixed, if suitable.</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="ask-for-advice">
+<h4>Ask for advice<a class="headerlink" href="#ask-for-advice" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><p><em>One of the former steps should lead to a solution. If that doesn’t work
+out, ask the maintainers for the subsystem that seems to be causing the
+issue for advice; CC the mailing list for the particular subsystem as well
+as the stable mailing list.</em></p>
+</div></blockquote>
+<p>If the previous three steps didn’t get you closer to a solution there is only
+one option left: ask for advice. Do that in a mail you sent to the maintainers
+for the subsystem where the issue seems to have its roots; CC the mailing list
+for the subsystem as well as the stable mailing list (<a class="reference external" href="mailto:stable&#37;&#52;&#48;vger&#46;kernel&#46;org">stable<span>&#64;</span>vger<span>&#46;</span>kernel<span>&#46;</span>org</a>).</p>
+</section>
+</section>
+</section>
+<section id="why-some-issues-won-t-get-any-reaction-or-remain-unfixed-after-being-reported">
+<h2>Why some issues won’t get any reaction or remain unfixed after being reported<a class="headerlink" href="#why-some-issues-won-t-get-any-reaction-or-remain-unfixed-after-being-reported" title="Permalink to this heading">¶</a></h2>
+<p>When reporting a problem to the Linux developers, be aware only ‘issues of high
+priority’ (regressions, security issues, severe problems) are definitely going
+to get resolved. The maintainers or if all else fails Linus Torvalds himself
+will make sure of that. They and the other kernel developers will fix a lot of
+other issues as well. But be aware that sometimes they can’t or won’t help; and
+sometimes there isn’t even anyone to send a report to.</p>
+<p>This is best explained with kernel developers that contribute to the Linux
+kernel in their spare time. Quite a few of the drivers in the kernel were
+written by such programmers, often because they simply wanted to make their
+hardware usable on their favorite operating system.</p>
+<p>These programmers most of the time will happily fix problems other people
+report. But nobody can force them to do, as they are contributing voluntarily.</p>
+<p>Then there are situations where such developers really want to fix an issue,
+but can’t: sometimes they lack hardware programming documentation to do so.
+This often happens when the publicly available docs are superficial or the
+driver was written with the help of reverse engineering.</p>
+<p>Sooner or later spare time developers will also stop caring for the driver.
+Maybe their test hardware broke, got replaced by something more fancy, or is so
+old that it’s something you don’t find much outside of computer museums
+anymore. Sometimes developer stops caring for their code and Linux at all, as
+something different in their life became way more important. In some cases
+nobody is willing to take over the job as maintainer – and nobody can be forced
+to, as contributing to the Linux kernel is done on a voluntary basis. Abandoned
+drivers nevertheless remain in the kernel: they are still useful for people and
+removing would be a regression.</p>
+<p>The situation is not that different with developers that are paid for their
+work on the Linux kernel. Those contribute most changes these days. But their
+employers sooner or later also stop caring for their code or make its
+programmer focus on other things. Hardware vendors for example earn their money
+mainly by selling new hardware; quite a few of them hence are not investing
+much time and energy in maintaining a Linux kernel driver for something they
+stopped selling years ago. Enterprise Linux distributors often care for a
+longer time period, but in new versions often leave support for old and rare
+hardware aside to limit the scope. Often spare time contributors take over once
+a company orphans some code, but as mentioned above: sooner or later they will
+leave the code behind, too.</p>
+<p>Priorities are another reason why some issues are not fixed, as maintainers
+quite often are forced to set those, as time to work on Linux is limited.
+That’s true for spare time or the time employers grant their developers to
+spend on maintenance work on the upstream kernel. Sometimes maintainers also
+get overwhelmed with reports, even if a driver is working nearly perfectly. To
+not get completely stuck, the programmer thus might have no other choice than
+to prioritize issue reports and reject some of them.</p>
+<p>But don’t worry too much about all of this, a lot of drivers have active
+maintainers who are quite interested in fixing as many issues as possible.</p>
+</section>
+<section id="closing-words">
+<h2>Closing words<a class="headerlink" href="#closing-words" title="Permalink to this heading">¶</a></h2>
+<p>Compared with other Free/Libre &amp; Open Source Software it’s hard to report
+issues to the Linux kernel developers: the length and complexity of this
+document and the implications between the lines illustrate that. But that’s how
+it is for now. The main author of this text hopes documenting the state of the
+art will lay some groundwork to improve the situation over time.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;The kernel development community.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/admin-guide/reporting-issues.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

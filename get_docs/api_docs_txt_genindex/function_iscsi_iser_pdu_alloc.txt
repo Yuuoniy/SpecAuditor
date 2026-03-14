@@ -1,0 +1,12 @@
+Function: int iscsi_iser_pdu_alloc ( struct iscsi_task * task , uint8_t opcode )
+
+allocate an iscsi-iser PDU
+
+Parameters
+  struct iscsi_task *task
+    iscsi task
+  uint8_t opcode
+    iscsi command opcode
+
+Description
+  hdr and max hdr size.

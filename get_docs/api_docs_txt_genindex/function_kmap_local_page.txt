@@ -1,0 +1,10 @@
+Function: void * kmap_local_page ( const struct page * page )
+
+Map a page for temporary usage
+
+Parameters
+  const struct page *page
+    Pointer to the page to be mapped
+
+Description
+  Can be invoked from any context, including interrupts.

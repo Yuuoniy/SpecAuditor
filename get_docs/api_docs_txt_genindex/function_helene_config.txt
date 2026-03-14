@@ -1,0 +1,18 @@
+Function: struct helene_config
+
+the configuration of ‘Helene’ tuner driver
+
+Members
+  i2c_address
+    I2C address of the tuner
+  xtal_freq_mhz
+    Oscillator frequency, MHz
+  set_tuner_priv
+    Callback function private context
+  set_tuner_callback
+    Callback function that notifies the parent driver
+which tuner is active now
+  xtal
+    Cristal frequency as described by enum helene_xtal
+  fe
+    Frontend for which connects this tuner

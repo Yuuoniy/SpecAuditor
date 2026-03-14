@@ -1,0 +1,16 @@
+Function: int zynqmp_dp_mode_configure ( struct zynqmp_dp * dp , int pclock , u8 current_bw )
+
+Configure the link values
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure
+  int pclock
+    pixel clock for requested display mode
+  u8 current_bw
+    current link rate
+
+Description
+  Find the link configuration values, rate and lane count for requested pixel
+clock pclock . The pclock is stored in the mode to be used in other
+functions later. The returned rate is downshifted from the current rate current_bw .

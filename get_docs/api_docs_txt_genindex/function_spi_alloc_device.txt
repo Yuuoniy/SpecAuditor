@@ -1,0 +1,12 @@
+Function: struct spi_device * spi_alloc_device ( struct spi_controller * ctlr )
+
+Allocate a new SPI device
+
+Parameters
+  struct spi_controller *ctlr
+    Controller to which device is connected
+
+Description
+  Allows a driver to allocate and initialize a spi_device without
+registering it immediately.  This allows a driver to directly
+fill the spi_device with device parameters before calling spi_add_device() on it.

@@ -1,0 +1,15 @@
+Function: void * xas_find ( struct xa_state * xas , unsigned long max )
+
+Find the next present entry in the XArray.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+  unsigned long max
+    Highest index to return.
+
+Description
+  If the xas has not yet been walked to an entry, return the entry
+which has an index >= xas.xa_index.  If it has been walked, the entry
+currently being pointed at has been processed, and so we move to the
+next entry.

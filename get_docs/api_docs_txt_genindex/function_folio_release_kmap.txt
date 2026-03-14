@@ -1,0 +1,14 @@
+Function: void folio_release_kmap ( struct folio * folio , void * addr )
+
+Unmap a folio and drop a refcount.
+
+Parameters
+  struct folio *folio
+    The folio to release.
+  void *addr
+    The address previously returned by a call to kmap_local_folio() .
+
+Description
+  It is common, eg in directory handling to kmap a folio.  This function
+unmaps the folio and drops the refcount that was being held to keep the
+folio alive while we accessed it.

@@ -1,0 +1,13 @@
+Function: int xe_ggtt_init_early ( struct xe_ggtt * ggtt )
+
+Early GGTT initialization
+
+Parameters
+  struct xe_ggtt *ggtt
+    the xe_ggtt to be initialized
+
+Description
+  It allows to create new mappings usable by the GuC.
+Mappings are not usable by the HW engines, as it doesn’t have scratch nor
+initial clear done to it yet. That will happen in the regular, non-early
+GGTT initialization.

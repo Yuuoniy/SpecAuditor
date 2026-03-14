@@ -1,0 +1,10 @@
+Function: void trace_block_bio_queue ( struct bio * bio )
+
+putting new block IO operation in queue
+
+Parameters
+  struct bio *bio
+    new block operation
+
+Description
+  About to place the block IO operation bio into queue q .

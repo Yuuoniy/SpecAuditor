@@ -1,0 +1,11 @@
+Function: int console_trylock ( void )
+
+try to block the console subsystem from printing
+
+Parameters
+  void
+    no arguments
+
+Description
+  Try to acquire a lock which guarantees that no consoles will
+be in or enter their write() callback.

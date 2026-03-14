@@ -1,0 +1,12 @@
+Function: void pci_restore_msi_state ( struct pci_dev * dev )
+
+Restore cached MSI(-X) state on device
+
+Parameters
+  struct pci_dev *dev
+    the PCI device to operate on
+
+Description
+  Write the Linux-cached MSI(-X) state back on device. This is
+typically useful upon system resume, or after an error-recovery PCI
+adapter reset.

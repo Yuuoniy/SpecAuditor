@@ -1,0 +1,13 @@
+Macro: wait_event_interruptible_locked
+
+
+
+Parameters
+  wq
+    the waitqueue to wait on
+  condition
+    a C expression for the event to wait for
+
+Description
+  The process is put to sleep (TASK_INTERRUPTIBLE) until the condition evaluates to true or a signal is received.
+The condition is checked each time the waitqueue wq is woken up.

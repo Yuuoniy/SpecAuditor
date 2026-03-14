@@ -1,0 +1,12 @@
+Function: struct device_node * of_get_next_parent ( struct device_node * node )
+
+Iterate to a node’s parent
+
+Parameters
+  struct device_node *node
+    Node to get parent of
+
+Description
+  This is like of_get_parent() except that it drops the
+refcount on the passed node, making it suitable for iterating
+through a node’s parents.

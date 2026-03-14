@@ -1,0 +1,10 @@
+Function: void drm_gem_object_put ( struct drm_gem_object * obj )
+
+drop a GEM buffer object reference
+
+Parameters
+  struct drm_gem_object *obj
+    GEM buffer object
+
+Description
+  This releases a reference to obj .

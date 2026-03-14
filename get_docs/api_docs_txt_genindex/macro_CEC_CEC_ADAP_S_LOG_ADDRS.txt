@@ -1,0 +1,2 @@
+Macro: CEC_ADAP_S_LOG_ADDRS
+

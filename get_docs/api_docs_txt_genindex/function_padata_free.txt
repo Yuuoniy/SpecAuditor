@@ -1,0 +1,7 @@
+Function: void padata_free ( struct padata_instance * pinst )
+
+free a padata instance
+
+Parameters
+  struct padata_instance *pinst
+    padata instance to free

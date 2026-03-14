@@ -1,0 +1,14 @@
+Function: bool nand_op_parser_match_pat ( const struct nand_op_parser_pattern * pat , struct nand_op_parser_ctx * ctx )
+
+Checks if a pattern matches the instructions remaining in the parser context
+
+Parameters
+  const struct nand_op_parser_pattern *pat
+    the pattern to test
+  struct nand_op_parser_ctx *ctx
+    the parser context structure to match with the pattern pat
+
+Description
+  Check if pat matches the set or a sub-set of instructions remaining in ctx .
+Returns true if this is the case, false ortherwise. When true is returned, ctx->subop is updated with the set of instructions to be passed to the
+controller driver.

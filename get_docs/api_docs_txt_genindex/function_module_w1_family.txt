@@ -1,0 +1,12 @@
+Function: module_w1_family
+
+
+
+Parameters
+  __w1_family
+    w1_family struct
+
+Description
+  Helper macro for 1-Wire families which do not do anything special in module
+init/exit. This eliminates a lot of boilerplate. Each module may only
+use this macro once, and calling it replaces module_init() and module_exit()

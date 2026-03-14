@@ -1,0 +1,21 @@
+Function: int dma_map_sgtable ( struct device * dev , struct sg_table * sgt , enum dma_data_direction dir , unsigned long attrs )
+
+Map the given buffer for DMA
+
+Parameters
+  struct device *dev
+    The device for which to perform the DMA operation
+  struct sg_table *sgt
+    The sg_table object describing the buffer
+  enum dma_data_direction dir
+    DMA direction
+  unsigned long attrs
+    Optional DMA attributes for the map operation
+
+Description
+  Maps a buffer described by a scatterlist stored in the given sg_table
+object for the dir DMA operation by the dev device. After success, the
+ownership for the buffer is transferred to the DMA domain.  One has to
+call dma_sync_sgtable_for_cpu() or dma_unmap_sgtable() to move the
+ownership of the buffer back to the CPU domain before touching the
+buffer by the CPU.

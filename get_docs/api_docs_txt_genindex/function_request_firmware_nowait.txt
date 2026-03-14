@@ -1,0 +1,24 @@
+Function: int request_firmware_nowait ( struct module * module , bool uevent , const char * name , struct device * device , gfp_t gfp , void * context , void ( * cont ) ( const struct firmware * fw , void * context ) )
+
+asynchronous version of request_firmware
+
+Parameters
+  struct module *module
+    module requesting the firmware
+  bool uevent
+    sends uevent to copy the firmware image if this flag
+is non-zero else the firmware copy must be done manually.
+  const char *name
+    name of firmware file
+  struct device *device
+    device for which firmware is being loaded
+  gfp_t gfp
+    allocation flags
+  void *context
+    will be passed over to cont , and fw may be NULL if firmware request fails.
+  void (*cont)(const struct firmware *fw, void *context)
+    function will be called asynchronously when the firmware
+request is over.
+
+Description
+  Caller must hold the reference count of device .

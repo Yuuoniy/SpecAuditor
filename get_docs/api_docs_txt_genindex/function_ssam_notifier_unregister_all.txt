@@ -1,0 +1,12 @@
+Function: void ssam_notifier_unregister_all ( struct ssam_controller * ctrl )
+
+Unregister all currently registered notifiers.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller to unregister the notifiers on.
+
+Description
+  Unregisters all currently registered notifiers. This function is used to
+ensure that all notifiers will be unregistered and associated
+entries/resources freed when the controller is being shut down.

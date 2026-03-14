@@ -1,0 +1,9 @@
+Function: int nand_markbad_bbt ( struct nand_chip * this , loff_t offs )
+
+[NAND Interface] Mark a block bad in the BBT
+
+Parameters
+  struct nand_chip *this
+    NAND chip object
+  loff_t offs
+    offset of the bad block

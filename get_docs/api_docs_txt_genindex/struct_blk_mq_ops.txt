@@ -1,0 +1,58 @@
+Struct: struct blk_mq_ops
+
+Callback functions that implements block driver behaviour.
+
+Members
+  queue_rq
+    Queue a new request from block IO.
+  commit_rqs
+    If a driver uses bd->last to judge when to submit
+requests to hardware, it must define this function. In case of errors
+that make us stop issuing further requests, this hook serves the
+purpose of kicking the hardware (which the last request otherwise
+would have done).
+  queue_rqs
+    Queue a list of new requests. Driver is guaranteed
+that each request belongs to the same queue. If the driver doesn’t
+empty the rqlist completely, then the rest will be queued
+individually by the block layer upon return.
+  get_budget
+    Reserve budget before queue request, once .queue_rq is
+run, it is driver’s responsibility to release the
+reserved budget. Also we have to handle failure case
+of .get_budget for avoiding I/O deadlock.
+  put_budget
+    Release the reserved budget.
+  set_rq_budget_token
+    store rq’s budget token
+  get_rq_budget_token
+    retrieve rq’s budget token
+  timeout
+    Called on request timeout.
+  poll
+    Called to poll for completion of a specific tag.
+  complete
+    Mark the request as complete.
+  init_hctx
+    Called when the block layer side of a hardware queue has
+been set up, allowing the driver to allocate/init matching
+structures.
+  exit_hctx
+    Ditto for exit/teardown.
+  init_request
+    Called for every command allocated by the block layer
+to allow the driver to set up driver specific data. Tag greater than or equal to queue_depth is for setting up
+flush request.
+  exit_request
+    Ditto for exit/teardown.
+  cleanup_rq
+    Called before freeing one request which isn’t completed
+yet, and usually for freeing the driver private data.
+  busy
+    If set, returns whether or not this queue currently is busy.
+  map_queues
+    This allows drivers specify their own queue mapping by
+overriding the setup-time function that builds the mq_map.
+  show_rq
+    Used by the debugfs implementation to show driver-specific
+information about a request.

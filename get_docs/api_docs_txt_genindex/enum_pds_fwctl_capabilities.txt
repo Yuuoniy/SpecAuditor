@@ -1,0 +1,2 @@
+Enum: enum pds_fwctl_capabilities
+

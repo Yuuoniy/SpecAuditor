@@ -1,0 +1,19 @@
+Struct: struct ssam_notifier_block
+
+Base notifier block for SSAM event notifications.
+
+Members
+  node
+    The node for the list of notifiers.
+  fn
+    The callback function of this notifier. This function takes the
+respective notifier block and event as input and should return
+a notifier value, which can either be obtained from the flags
+provided in enum ssam_notif_flags , converted from a standard
+error value via ssam_notifier_from_errno() , or a combination of
+both (e.g. ssam_notifier_from_errno(e) | SSAM_NOTIF_HANDLED ).
+  priority
+    Priority value determining the order in which notifier callbacks
+will be called. A higher value means higher priority, i.e. the
+associated callback will be executed earlier than other (lower
+priority) callbacks.

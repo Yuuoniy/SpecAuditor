@@ -1,0 +1,9 @@
+Function: unsigned int snd_dma_pointer ( unsigned long dma , unsigned int size )
+
+return the current pointer to DMA transfer buffer in bytes
+
+Parameters
+  unsigned long dma
+    the dma number
+  unsigned int size
+    the dma transfer size

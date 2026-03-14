@@ -1,0 +1,7 @@
+Function: struct pisp_be_stitch_input_buffer_config
+
+PiSP Back End Stitch input
+
+Members
+  addr
+    Stitch input buffer address

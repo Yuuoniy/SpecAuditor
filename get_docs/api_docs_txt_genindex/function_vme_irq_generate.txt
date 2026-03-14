@@ -1,0 +1,15 @@
+Function: int vme_irq_generate ( struct vme_dev * vdev , int level , int statid )
+
+Generate VME interrupt.
+
+Parameters
+  struct vme_dev *vdev
+    Pointer to VME device struct vme_dev assigned to driver instance.
+  int level
+    Interrupt priority at which to assert the interrupt.
+  int statid
+    Interrupt vector to associate with the interrupt.
+
+Description
+  Generate a VME interrupt of the provided level and with the provided
+statid.

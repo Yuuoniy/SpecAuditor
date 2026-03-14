@@ -1,0 +1,15 @@
+Function: int iommufd_device_replace ( struct iommufd_device * idev , ioasid_t pasid , u32 * pt_id )
+
+Change the device/pasid’s iommu_domain
+
+Parameters
+  struct iommufd_device *idev
+    device to change
+  ioasid_t pasid
+    pasid to change
+  u32 *pt_id
+    Input a IOMMUFD_OBJ_IOAS, or IOMMUFD_OBJ_HWPT_PAGING
+Output the IOMMUFD_OBJ_HWPT_PAGING ID
+
+Description
+  This is the same as:

@@ -1,0 +1,11 @@
+Function: void pci_hp_deregister ( struct hotplug_slot * slot )
+
+deregister a hotplug_slot with the PCI hotplug subsystem
+
+Parameters
+  struct hotplug_slot *slot
+    pointer to the struct hotplug_slot to deregister
+
+Description
+  The slot must have been registered with the pci hotplug subsystem
+previously with a call to pci_hp_register() .

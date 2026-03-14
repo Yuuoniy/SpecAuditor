@@ -1,0 +1,15 @@
+Function: struct ccwgroup_device
+
+ccw group device
+
+Members
+  state
+    online/offline state
+  count
+    number of attached slave devices
+  dev
+    embedded device structure
+  ungroup_work
+    used to ungroup the ccwgroup device
+  cdev
+    variable number of slave devices, allocated as needed

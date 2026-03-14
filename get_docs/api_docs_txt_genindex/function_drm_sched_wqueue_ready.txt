@@ -1,0 +1,10 @@
+Function: bool drm_sched_wqueue_ready ( struct drm_gpu_scheduler * sched )
+
+Is the scheduler ready for submission
+
+Parameters
+  struct drm_gpu_scheduler *sched
+    scheduler instance
+
+Description
+  Returns true if submission is ready

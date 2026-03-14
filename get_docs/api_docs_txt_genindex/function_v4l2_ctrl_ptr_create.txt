@@ -1,0 +1,7 @@
+Function: union v4l2_ctrl_ptr v4l2_ctrl_ptr_create ( void * ptr )
+
+Helper function to return a v4l2_ctrl_ptr from a void pointer
+
+Parameters
+  void *ptr
+    The void pointer

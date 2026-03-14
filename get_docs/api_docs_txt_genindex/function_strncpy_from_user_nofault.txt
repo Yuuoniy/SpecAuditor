@@ -1,0 +1,15 @@
+Function: long strncpy_from_user_nofault ( char * dst , const void __user * unsafe_addr , long count )
+
+Copy a NUL terminated string from unsafe user address.
+
+Parameters
+  char *dst
+    Destination address, in kernel space.  This buffer must be at
+least count bytes long.
+  const void __user *unsafe_addr
+    Unsafe user address.
+  long count
+    Maximum number of bytes to copy, including the trailing NUL.
+
+Description
+  Copies a NUL-terminated string from unsafe user address to kernel buffer.

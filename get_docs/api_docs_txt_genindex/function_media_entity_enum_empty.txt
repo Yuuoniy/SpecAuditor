@@ -1,0 +1,7 @@
+Function: bool media_entity_enum_empty ( struct media_entity_enum * ent_enum )
+
+Test whether the entire enum is empty
+
+Parameters
+  struct media_entity_enum *ent_enum
+    Entity enumeration

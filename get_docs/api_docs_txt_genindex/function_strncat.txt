@@ -1,0 +1,16 @@
+Function: char * strncat ( char * const p , const char * const q , __kernel_size_t count )
+
+Append a string to an existing string
+
+Parameters
+  char * const p
+    pointer to NUL-terminated string to append to
+  const char * const q
+    pointer to source string to append from
+  __kernel_size_t count
+    Maximum bytes to read from q
+
+Description
+  Appends at most count bytes from q (stopping at the first
+NUL byte) after the NUL-terminated string at p . p will be
+NUL-terminated.

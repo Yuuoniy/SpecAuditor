@@ -1,0 +1,11 @@
+Function: long int v4l2_compat_ioctl32 ( struct file * file , unsigned int cmd , unsigned long arg )
+
+32 Bits compatibility layer for 64 bits processors
+
+Parameters
+  struct file *file
+    Pointer to struct file .
+  unsigned int cmd
+    Ioctl name.
+  unsigned long arg
+    Ioctl argument.

@@ -1,0 +1,14 @@
+Function: unsigned int folioq_folio_order ( const struct folio_queue * folioq , unsigned int slot )
+
+Get the order of a folio from a folio queue segment
+
+Parameters
+  const struct folio_queue *folioq
+    The segment to access
+  unsigned int slot
+    The folio slot to access
+
+Description
+  Retrieve the order of the folio in the specified slot from a folio queue
+segment.  Note that no bounds check is made and if the slot hasn’t been
+added into yet, the order returned will be 0.

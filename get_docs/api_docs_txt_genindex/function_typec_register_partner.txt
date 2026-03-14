@@ -1,0 +1,12 @@
+Function: struct typec_partner * typec_register_partner ( struct typec_port * port , struct typec_partner_desc * desc )
+
+Register a USB Type-C Partner
+
+Parameters
+  struct typec_port *port
+    The USB Type-C Port the partner is connected to
+  struct typec_partner_desc *desc
+    Description of the partner
+
+Description
+  Registers a device for USB Type-C Partner described in desc .

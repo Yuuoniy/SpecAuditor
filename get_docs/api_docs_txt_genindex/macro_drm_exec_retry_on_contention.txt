@@ -1,0 +1,11 @@
+Macro: drm_exec_retry_on_contention
+
+
+
+Parameters
+  exec
+    drm_exec object
+
+Description
+  Control flow helper to continue when a contention was detected and we need to
+clean up and re-start the loop to prepare all GEM objects.

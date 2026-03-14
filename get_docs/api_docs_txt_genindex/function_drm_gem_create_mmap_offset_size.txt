@@ -1,0 +1,15 @@
+Function: int drm_gem_create_mmap_offset_size ( struct drm_gem_object * obj , size_t size )
+
+create a fake mmap offset for an object
+
+Parameters
+  struct drm_gem_object *obj
+    obj in question
+  size_t size
+    the virtual size
+
+Description
+  GEM memory mapping works by handing back to userspace a fake mmap offset
+it can use in a subsequent mmap(2) call.  The DRM core code then looks
+up the object based on the offset and sets up the various memory mapping
+structures.

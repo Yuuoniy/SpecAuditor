@@ -1,0 +1,9 @@
+Struct: struct media_entity_enum
+
+An enumeration of media entities.
+
+Members
+  bmap
+    Bit map in which each bit represents one entity at struct media_entity ->internal_idx.
+  idx_max
+    Number of bits in bmap

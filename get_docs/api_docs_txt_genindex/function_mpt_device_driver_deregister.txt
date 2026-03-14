@@ -1,0 +1,7 @@
+Function: void mpt_device_driver_deregister ( u8 cb_idx )
+
+DeRegister device driver hooks
+
+Parameters
+  u8 cb_idx
+    MPT protocol driver index

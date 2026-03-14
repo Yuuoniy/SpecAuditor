@@ -1,0 +1,20 @@
+Struct: struct dvb_ringbuffer
+
+Describes a ring buffer used at DVB framework
+
+Members
+  data
+    Area were the ringbuffer data is written
+  size
+    size of the ringbuffer
+  pread
+    next position to read
+  pwrite
+    next position to write
+  error
+    used by ringbuffer clients to indicate that an error happened.
+  queue
+    Wait queue used by ringbuffer clients to indicate when buffer
+was filled
+  lock
+    Spinlock used to protect the ringbuffer

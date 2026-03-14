@@ -1,0 +1,13 @@
+Function: int srpt_init_ch_qp ( struct srpt_rdma_ch * ch , struct ib_qp * qp )
+
+initialize queue pair attributes
+
+Parameters
+  struct srpt_rdma_ch *ch
+    SRPT RDMA channel.
+  struct ib_qp *qp
+    Queue pair pointer.
+
+Description
+  Initialized the attributes of queue pair ‘qp’ by allowing local write,
+remote read and remote write. Also transitions ‘qp’ to state IB_QPS_INIT.

@@ -1,0 +1,14 @@
+Function: u8 w1_triplet ( struct w1_master * dev , int bdir )
+
+Does a triplet - used for searching ROM addresses.
+
+Parameters
+  struct w1_master *dev
+    the master device
+  int bdir
+    the bit to write if both id_bit and comp_bit are 0
+
+Description
+  bit 0 = id_bit
+bit 1 = comp_bit
+bit 2 = dir_taken

@@ -1,0 +1,11 @@
+Function: void tty_vhangup_session ( struct tty_struct * tty )
+
+hangup session leader exit
+
+Parameters
+  struct tty_struct *tty
+    tty to hangup
+
+Description
+  The session leader is exiting and hanging up its controlling terminal.
+Every process in the foreground process group is signalled SIGHUP .

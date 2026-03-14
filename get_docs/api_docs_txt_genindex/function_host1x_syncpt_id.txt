@@ -1,0 +1,12 @@
+Function: u32 host1x_syncpt_id ( struct host1x_syncpt * sp )
+
+retrieve syncpoint ID
+
+Parameters
+  struct host1x_syncpt *sp
+    host1x syncpoint
+
+Description
+  Given a pointer to a struct host1x_syncpt , retrieves its ID. This ID is
+often used as a value to program into registers that control how hardware
+blocks interact with syncpoints.

@@ -1,0 +1,9 @@
+Struct: struct dma_fence_array_cb
+
+callback helper for fence array
+
+Members
+  cb
+    fence callback structure for signaling
+  array
+    reference to the parent fence array object

@@ -1,0 +1,9 @@
+Struct: struct drm_event
+
+Header for DRM events
+
+Members
+  type
+    event type.
+  length
+    total number of payload bytes (including header).

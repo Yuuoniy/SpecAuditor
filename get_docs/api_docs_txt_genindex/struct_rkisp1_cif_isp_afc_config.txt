@@ -1,0 +1,14 @@
+Struct: struct rkisp1_cif_isp_afc_config
+
+Configuration for the Auto Focus statistics
+
+Members
+  num_afm_win
+    max RKISP1_CIF_ISP_AFM_MAX_WINDOWS
+  afm_win
+    coordinates of the meas window
+  thres
+    threshold used for minimizing the influence of noise
+  var_shift
+    the number of bits for the shift operation at the end of the
+calculation chain.

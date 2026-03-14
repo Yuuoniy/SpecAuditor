@@ -1,0 +1,14 @@
+Function: int xprt_reserve_xprt ( struct rpc_xprt * xprt , struct rpc_task * task )
+
+serialize write access to transports
+
+Parameters
+  struct rpc_xprt *xprt
+    pointer to the target transport
+  struct rpc_task *task
+    task that is requesting access to the transport
+
+Description
+  This prevents mixing the payload of separate requests, and prevents
+transport connects from colliding with writes.  No congestion control
+is provided.

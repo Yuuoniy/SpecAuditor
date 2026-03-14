@@ -1,0 +1,16 @@
+Function: void drm_rect_rotate ( struct drm_rect * r , int width , int height , unsigned int rotation )
+
+Rotate the rectangle
+
+Parameters
+  struct drm_rect *r
+    rectangle to be rotated
+  int width
+    Width of the coordinate space
+  int height
+    Height of the coordinate space
+  unsigned int rotation
+    Transformation to be applied
+
+Description
+  Apply rotation to the coordinates of rectangle r .

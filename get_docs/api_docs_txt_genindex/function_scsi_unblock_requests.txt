@@ -1,0 +1,13 @@
+Function: void scsi_unblock_requests ( struct Scsi_Host * shost )
+
+Utility function used by low-level drivers to allow further commands to be queued to the device.
+
+Parameters
+  struct Scsi_Host *shost
+    host in question
+
+Description
+  There is no timer nor any other means by which the requests get unblocked
+other than the low-level driver calling scsi_unblock_requests() . This is done
+as an API function so that changes to the internals of the scsi mid-layer
+won’t require wholesale changes to drivers that use this feature.

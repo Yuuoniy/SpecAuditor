@@ -1,0 +1,9 @@
+Function: void devm_devfreq_unregister_opp_notifier ( struct device * dev , struct devfreq * devfreq )
+
+Resource-managed devfreq_unregister_opp_notifier()
+
+Parameters
+  struct device *dev
+    The devfreq user device. (parent of devfreq)
+  struct devfreq *devfreq
+    The devfreq object.

@@ -1,0 +1,11 @@
+Function: int reset_control_get_count ( struct device * dev )
+
+Count number of resets available with a device
+
+Parameters
+  struct device *dev
+    device for which to return the number of resets
+
+Description
+  Returns positive reset count on success, or error number on failure and
+on count being zero.

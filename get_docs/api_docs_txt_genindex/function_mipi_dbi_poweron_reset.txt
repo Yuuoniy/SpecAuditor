@@ -1,0 +1,11 @@
+Function: int mipi_dbi_poweron_reset ( struct mipi_dbi_dev * dbidev )
+
+MIPI DBI poweron and reset
+
+Parameters
+  struct mipi_dbi_dev *dbidev
+    MIPI DBI device structure
+
+Description
+  This function enables the regulator if used and does a hardware and software
+reset.

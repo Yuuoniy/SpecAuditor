@@ -1,0 +1,14 @@
+Function: struct sas_port * sas_port_alloc ( struct device * parent , int port_id )
+
+allocate and initialize a SAS port structure
+
+Parameters
+  struct device *parent
+    parent device
+  int port_id
+    port number
+
+Description
+  Allocates a SAS port structure.  It will be added to the device tree
+below the device specified by parent which must be either a Scsi_Host
+or a sas_expander_device.

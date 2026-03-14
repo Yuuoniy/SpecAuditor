@@ -1,0 +1,9 @@
+Function: __bpf_kfunc bool bpf_cpumask_test_cpu ( u32 cpu , const struct cpumask * cpumask )
+
+Test whether a CPU is set in a cpumask.
+
+Parameters
+  u32 cpu
+    The CPU being queried for.
+  const struct cpumask *cpumask
+    The cpumask being queried for containing a CPU.

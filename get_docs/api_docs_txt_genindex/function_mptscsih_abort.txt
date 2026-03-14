@@ -1,0 +1,10 @@
+Function: int mptscsih_abort ( struct scsi_cmnd * SCpnt )
+
+Abort linux scsi_cmnd routine, new_eh variant
+
+Parameters
+  struct scsi_cmnd * SCpnt
+    Pointer to scsi_cmnd structure, IO to be aborted
+
+Description
+  (linux scsi_host_template.eh_abort_handler routine)

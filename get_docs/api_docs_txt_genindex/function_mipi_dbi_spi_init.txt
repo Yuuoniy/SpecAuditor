@@ -1,0 +1,16 @@
+Function: int mipi_dbi_spi_init ( struct spi_device * spi , struct mipi_dbi * dbi , struct gpio_desc * dc )
+
+Initialize MIPI DBI SPI interface
+
+Parameters
+  struct spi_device *spi
+    SPI device
+  struct mipi_dbi *dbi
+    MIPI DBI structure to initialize
+  struct gpio_desc *dc
+    D/C gpio (optional)
+
+Description
+  This function sets mipi_dbi->command , enables mipi_dbi->read_commands for the
+usual read commands. It should be followed by a call to mipi_dbi_dev_init() or
+a driver-specific init.

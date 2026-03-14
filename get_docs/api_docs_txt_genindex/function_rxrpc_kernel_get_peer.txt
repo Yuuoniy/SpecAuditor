@@ -1,0 +1,10 @@
+Function: struct rxrpc_peer * rxrpc_kernel_get_peer ( struct rxrpc_peer * peer )
+
+Get a reference on a peer
+
+Parameters
+  struct rxrpc_peer *peer
+    The peer to get a reference on (may be NULL).
+
+Description
+  Get a reference for a remote peer record (if not NULL).

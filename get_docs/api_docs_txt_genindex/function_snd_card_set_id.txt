@@ -1,0 +1,13 @@
+Function: void snd_card_set_id ( struct snd_card * card , const char * nid )
+
+set card identification name
+
+Parameters
+  struct snd_card *card
+    soundcard structure
+  const char *nid
+    new identification string
+
+Description
+  This function sets the card identification and checks for name
+collisions.

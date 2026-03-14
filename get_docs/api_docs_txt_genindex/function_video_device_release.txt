@@ -1,0 +1,10 @@
+Function: void video_device_release ( struct video_device * vdev )
+
+helper function to release struct video_device
+
+Parameters
+  struct video_device *vdev
+    pointer to struct video_device
+
+Description
+  Can also be used for video_device-> release() .

@@ -1,0 +1,13 @@
+Function: bool inode_maybe_inc_iversion ( struct inode * inode , bool force )
+
+increments i_version
+
+Parameters
+  struct inode *inode
+    inode with the i_version that should be updated
+  bool force
+    increment the counter even if it’s not necessary?
+
+Description
+  Every time the inode is modified, the i_version field must be seen to have
+changed by any observer.

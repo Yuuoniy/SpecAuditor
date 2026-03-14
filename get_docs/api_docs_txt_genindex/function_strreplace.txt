@@ -1,0 +1,14 @@
+Function: char * strreplace ( char * str , char old , char new )
+
+Replace all occurrences of character in string.
+
+Parameters
+  char *str
+    The string to operate on.
+  char old
+    The character being replaced.
+  char new
+    The character old is replaced with.
+
+Description
+  Replaces the each old character with a new one in the given string str .

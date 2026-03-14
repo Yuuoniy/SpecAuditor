@@ -1,0 +1,11 @@
+Function: bool tty_throttle_safe ( struct tty_struct * tty )
+
+flow control
+
+Parameters
+  struct tty_struct *tty
+    terminal
+
+Description
+  Indicate that a tty should stop transmitting data down the stack. tty_throttle_safe() will only attempt throttle if tty->flow_change is TTY_THROTTLE_SAFE . Prevents an accidental throttle due to race conditions
+when throttling is conditional on factors evaluated prior to throttling.

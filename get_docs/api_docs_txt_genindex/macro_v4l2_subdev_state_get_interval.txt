@@ -1,0 +1,15 @@
+Macro: v4l2_subdev_state_get_interval
+
+
+
+Parameters
+  state
+    subdevice state
+  pad
+    pad id
+  ...
+    stream id (optional argument)
+
+Description
+  This returns a pointer to the frame interval for the given pad + stream in
+the subdev state.

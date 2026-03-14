@@ -1,0 +1,14 @@
+Function: void folio_remove_rmap_pmd ( struct folio * folio , struct page * page , struct vm_area_struct * vma )
+
+remove a PMD mapping from a page range of a folio
+
+Parameters
+  struct folio *folio
+    The folio to remove the mapping from
+  struct page *page
+    The first page to remove
+  struct vm_area_struct *vma
+    The vm area from which the mapping is removed
+
+Description
+  The page range of the folio is defined by [page, page + HPAGE_PMD_NR)

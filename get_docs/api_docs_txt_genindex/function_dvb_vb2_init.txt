@@ -1,0 +1,11 @@
+Function: int dvb_vb2_init ( struct dvb_vb2_ctx * ctx , const char * name , int non_blocking )
+
+initializes VB2 handler
+
+Parameters
+  struct dvb_vb2_ctx *ctx
+    control struct for VB2 handler
+  const char *name
+    name for the VB2 handler
+  int non_blocking
+    if not zero, it means that the device is at non-blocking mode

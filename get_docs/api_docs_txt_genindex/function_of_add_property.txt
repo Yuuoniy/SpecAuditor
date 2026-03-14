@@ -1,0 +1,9 @@
+Function: int of_add_property ( struct device_node * np , struct property * prop )
+
+Add a property to a node
+
+Parameters
+  struct device_node *np
+    Caller’s Device Node
+  struct property *prop
+    Property to add

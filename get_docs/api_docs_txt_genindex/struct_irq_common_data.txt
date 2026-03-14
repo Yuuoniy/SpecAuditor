@@ -1,0 +1,24 @@
+Struct: struct irq_common_data
+
+per irq data shared by all irqchips
+
+Members
+  state_use_accessors
+    status information for irq chip functions.
+Use accessor functions to deal with it
+  node
+    node index useful for balancing
+  handler_data
+    per-IRQ data for the irq_chip methods
+  msi_desc
+    MSI descriptor
+  affinity
+    IRQ affinity on SMP. If this is an IPI
+related irq, then this is the mask of the
+CPUs to which an IPI can be sent.
+  effective_affinity
+    The effective IRQ affinity on SMP as some irq
+chips do not allow multi CPU destinations.
+A subset of affinity .
+  ipi_offset
+    Offset of first IPI target cpu in affinity . Optional.

@@ -1,0 +1,11 @@
+Function: void udelay ( unsigned long usec )
+
+Inserting a delay based on microseconds with busy waiting
+
+Parameters
+  unsigned long usec
+    requested delay in microseconds
+
+Description
+  When delaying in an atomic context ndelay() , udelay() and mdelay() are the
+only valid variants of delaying/sleeping to go with.

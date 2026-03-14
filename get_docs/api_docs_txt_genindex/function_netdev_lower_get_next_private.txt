@@ -1,0 +1,15 @@
+Function: void * netdev_lower_get_next_private ( struct net_device * dev , struct list_head * * iter )
+
+Get the next ->private from the lower neighbour list
+
+Parameters
+  struct net_device *dev
+    device
+  struct list_head **iter
+    list_head ** of the current position
+
+Description
+  Gets the next netdev_adjacent->private from the dev’s lower neighbour
+list, starting from iter position. The caller must hold either hold the
+RTNL lock or its own locking that guarantees that the neighbour lower
+list will remain unchanged.

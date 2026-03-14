@@ -1,0 +1,21 @@
+Struct: struct ipu3_uapi_cu_cfg0
+
+Radius Config Unit cfg0 register
+
+Members
+  cu6_pow
+    Power of CU6. Power of non-direct sharpening, u3.4.
+  reserved0
+    reserved
+  cu_unsharp_pow
+    Power of unsharp mask, u2.4.
+  reserved1
+    reserved
+  rad_cu6_pow
+    Radial/corner CU6. Directed sharpening power, u3.4.
+  reserved2
+    reserved
+  rad_cu_unsharp_pow
+    Radial power of unsharp mask, u2.4.
+  reserved3
+    reserved

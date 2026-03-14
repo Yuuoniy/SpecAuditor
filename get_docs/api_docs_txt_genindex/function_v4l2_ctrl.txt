@@ -1,0 +1,145 @@
+Function: struct v4l2_ctrl
+
+The control structure.
+
+Members
+  node
+    The list node.
+  ev_subs
+    The list of control event subscriptions.
+  handler
+    The handler that owns the control.
+  cluster
+    Point to start of cluster array.
+  ncontrols
+    Number of controls in cluster array.
+  done
+    Internal flag: set for each processed control.
+  is_new
+    Set when the user specified a new value for this control. It
+is also set when called from v4l2_ctrl_handler_setup() . Drivers
+should never set this flag.
+  has_changed
+    Set when the current value differs from the new value. Drivers
+should never use this flag.
+  is_private
+    If set, then this control is private to its handler and it
+will not be added to any other handlers. Drivers can set
+this flag.
+  is_auto
+    If set, then this control selects whether the other cluster
+members are in ‘automatic’ mode or ‘manual’ mode. This is
+used for autogain/gain type clusters. Drivers should never
+set this flag directly.
+  is_int
+    If set, then this control has a simple integer value (i.e. it
+uses ctrl->val).
+  is_string
+    If set, then this control has type V4L2_CTRL_TYPE_STRING .
+  is_ptr
+    If set, then this control is an array and/or has type >= V4L2_CTRL_COMPOUND_TYPES and/or has type V4L2_CTRL_TYPE_STRING . In other words, struct v4l2_ext_control uses field p to point to the data.
+  is_array
+    If set, then this control contains an N-dimensional array.
+  is_dyn_array
+    If set, then this control contains a dynamically sized 1-dimensional array.
+If this is set, then is_array is also set.
+  has_volatiles
+    If set, then one or more members of the cluster are volatile.
+Drivers should never touch this flag.
+  call_notify
+    If set, then call the handler’s notify function whenever the
+control’s value changes.
+  manual_mode_value
+    If the is_auto flag is set, then this is the value
+of the auto control that determines if that control is in
+manual mode. So if the value of the auto control equals this
+value, then the whole cluster is in manual mode. Drivers should
+never set this flag directly.
+  ops
+    The control ops.
+  type_ops
+    The control type ops.
+  id
+    The control ID.
+  name
+    The control name.
+  type
+    The control type.
+  minimum
+    The control’s minimum value.
+  maximum
+    The control’s maximum value.
+  default_value
+    The control’s default value.
+  elems
+    The number of elements in the N-dimensional array.
+  elem_size
+    The size in bytes of the control.
+  new_elems
+    The number of elements in p_new. This is the same as elems ,
+except for dynamic arrays. In that case it is in the range of
+1 to p_array_alloc_elems .
+  dims
+    The size of each dimension.
+  nr_of_dims
+    The number of dimensions in dims .
+  {unnamed_union}
+    anonymous
+  step
+    The control’s step value for non-menu controls.
+  menu_skip_mask
+    The control’s skip mask for menu controls. This makes it
+easy to skip menu items that are not valid. If bit X is set,
+then menu item X is skipped. Of course, this only works for
+menus with <= 32 menu items. There are no menus that come
+close to that number, so this is OK. Should we ever need more,
+then this will have to be extended to a u64 or a bit array.
+  {unnamed_union}
+    anonymous
+  qmenu
+    A const char * array for all menu items. Array entries that are
+empty strings (“”) correspond to non-existing menu items (this
+is in addition to the menu_skip_mask above). The last entry
+must be NULL.
+Used only if the type is V4L2_CTRL_TYPE_MENU .
+  qmenu_int
+    A 64-bit integer array for with integer menu items.
+The size of array must be equal to the menu size, e. g.: .
+Used only if the type is V4L2_CTRL_TYPE_INTEGER_MENU .
+  flags
+    The control’s flags.
+  priv
+    The control’s private pointer. For use by the driver. It is
+untouched by the control framework. Note that this pointer is
+not freed when the control is deleted. Should this be needed
+then a new internal bitfield can be added to tell the framework
+to free this pointer.
+  p_array
+    Pointer to the allocated array. Only valid if is_array is true.
+  p_array_alloc_elems
+    The number of elements in the allocated
+array for both the cur and new values. So p_array is actually
+sized for 2 * p_array_alloc_elems * elem_size . Only valid if is_array is true.
+  val
+    The control’s new s32 value.
+  cur
+    Structure to store the current value.
+  cur.val
+    The control’s current value, if the type is represented via
+a u32 integer (see enum v4l2_ctrl_type ).
+  p_def
+    The control’s default value represented via a union which provides a standard way of accessing control types
+through a pointer (for compound controls only).
+  p_min
+    The control’s minimum value represented via a union which provides a standard way of accessing control types
+through a pointer (for compound controls only).
+  p_max
+    The control’s maximum value represented via a union which provides a standard way of accessing control types
+through a pointer (for compound controls only).
+  p_new
+    The control’s new value represented via a union which provides
+a standard way of accessing control types
+through a pointer.
+  p_cur
+    The control’s current value represented via a union which provides a standard way of accessing control types
+through a pointer.

@@ -1,0 +1,22 @@
+Struct: struct drm_mode_get_property
+
+Get property metadata.
+
+Members
+  values_ptr
+    Pointer to a __u64 array.
+  enum_blob_ptr
+    Pointer to a struct drm_mode_property_enum array.
+  prop_id
+    Object ID of the property which should be retrieved. Set
+by the caller.
+  flags
+    DRM_MODE_PROP_* bitfield. See drm_property.flags for
+a definition of the flags.
+  name
+    Symbolic property name. User-space should use this field to
+recognize properties.
+  count_values
+    Number of elements in values_ptr .
+  count_enum_blobs
+    Number of elements in enum_blob_ptr .

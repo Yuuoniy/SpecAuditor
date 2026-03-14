@@ -1,0 +1,14 @@
+Function: void xe_ggtt_assign ( const struct xe_ggtt_node * node , u16 vfid )
+
+assign a GGTT region to the VF
+
+Parameters
+  const struct xe_ggtt_node *node
+    the xe_ggtt_node to update
+  u16 vfid
+    the VF identifier
+
+Description
+  This function is used by the PF driver to assign a GGTT region to the VF.
+In addition to PTE’s VFID bits 11:2 also PRESENT bit 0 is set as on some
+platforms VFs can’t modify that either.

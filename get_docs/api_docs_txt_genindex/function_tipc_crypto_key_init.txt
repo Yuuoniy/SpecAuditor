@@ -1,0 +1,17 @@
+Function: int tipc_crypto_key_init ( struct tipc_crypto * c , struct tipc_aead_key * ukey , u8 mode , bool master_key )
+
+Initiate a new user / AEAD key
+
+Parameters
+  struct tipc_crypto *c
+    TIPC crypto to which new key is attached
+  struct tipc_aead_key *ukey
+    the user key
+  u8 mode
+    the key mode (CLUSTER_KEY or PER_NODE_KEY)
+  bool master_key
+    specify this is a cluster master key
+
+Description
+  A new TIPC AEAD key will be allocated and initiated with the specified user
+key, then attached to the TIPC crypto.

@@ -1,0 +1,19 @@
+Function: void * krealloc_array ( void * p , size_t new_n , size_t new_size , gfp_t flags )
+
+reallocate memory for an array.
+
+Parameters
+  void *p
+    pointer to the memory chunk to reallocate
+  size_t new_n
+    new number of elements to alloc
+  size_t new_size
+    new size of a single member of the array
+  gfp_t flags
+    the type of memory to allocate (see kmalloc)
+
+Description
+  If __GFP_ZERO logic is requested, callers must ensure that, starting with the
+initial memory allocation, every subsequent call to this API for the same
+memory allocation is flagged with __GFP_ZERO. Otherwise, it is possible that
+__GFP_ZERO is not fully honored by this API.

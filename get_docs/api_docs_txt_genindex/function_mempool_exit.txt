@@ -1,0 +1,11 @@
+Function: void mempool_exit ( mempool_t * pool )
+
+exit a mempool initialized with mempool_init()
+
+Parameters
+  mempool_t *pool
+    pointer to the memory pool which was initialized with mempool_init() .
+
+Description
+  Free all reserved elements in pool and pool itself.  This function
+only sleeps if the free_fn() function sleeps.

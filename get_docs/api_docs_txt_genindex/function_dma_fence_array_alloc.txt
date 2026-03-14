@@ -1,0 +1,10 @@
+Function: struct dma_fence_array * dma_fence_array_alloc ( int num_fences )
+
+Allocate a custom fence array
+
+Parameters
+  int num_fences
+    [in]    number of fences to add in the array
+
+Description
+  Return dma fence array on success, NULL on failure

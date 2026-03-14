@@ -1,0 +1,12 @@
+Function: int dwc3_gadget_calc_tx_fifo_size ( struct dwc3 * dwc , int mult )
+
+calculates the txfifo size value
+
+Parameters
+  struct dwc3 *dwc
+    pointer to the DWC3 context
+  int mult
+    multiplier to be used when calculating the fifo_size
+
+Description
+  Calculates the size value based on the equation below:

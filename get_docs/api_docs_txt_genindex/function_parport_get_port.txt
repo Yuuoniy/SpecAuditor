@@ -1,0 +1,11 @@
+Function: struct parport * parport_get_port ( struct parport * port )
+
+increment a port’s reference count
+
+Parameters
+  struct parport *port
+    the port
+
+Description
+  This ensures that a struct parport pointer remains valid
+until the matching parport_put_port() call.

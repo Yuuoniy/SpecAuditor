@@ -1,0 +1,13 @@
+Function: int drm_dp_add_payload_part2 ( struct drm_dp_mst_topology_mgr * mgr , struct drm_dp_mst_atomic_payload * payload )
+
+Execute payload update part 2
+
+Parameters
+  struct drm_dp_mst_topology_mgr *mgr
+    Manager to use.
+  struct drm_dp_mst_atomic_payload *payload
+    The payload to update
+
+Description
+  If payload was successfully assigned a starting time slot by drm_dp_add_payload_part1() , this
+function will send the sideband messages to finish allocating this payload.

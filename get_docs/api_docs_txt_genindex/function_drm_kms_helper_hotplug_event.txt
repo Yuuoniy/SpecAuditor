@@ -1,0 +1,12 @@
+Function: void drm_kms_helper_hotplug_event ( struct drm_device * dev )
+
+fire off KMS hotplug events
+
+Parameters
+  struct drm_device *dev
+    drm_device whose connector state changed
+
+Description
+  This function fires off the uevent for userspace and also calls the
+client hotplug function, which is most commonly used to inform the fbdev
+emulation code and allow it to update the fbcon output configuration.

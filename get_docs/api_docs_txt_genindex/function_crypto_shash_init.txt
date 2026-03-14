@@ -1,0 +1,12 @@
+Function: int crypto_shash_init ( struct shash_desc * desc )
+
+(re)initialize message digest
+
+Parameters
+  struct shash_desc *desc
+    operational state handle that is already filled
+
+Description
+  The call (re-)initializes the message digest referenced by the
+operational state handle. Any potentially existing state created by
+previous operations is discarded.

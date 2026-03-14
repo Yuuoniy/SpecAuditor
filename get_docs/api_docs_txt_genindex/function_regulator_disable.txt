@@ -1,0 +1,10 @@
+Function: int regulator_disable ( struct regulator * regulator )
+
+disable regulator output
+
+Parameters
+  struct regulator *regulator
+    regulator source
+
+Description
+  Disable the regulator output voltage or current.  Calls to regulator_enable() must be balanced with calls to regulator_disable() .

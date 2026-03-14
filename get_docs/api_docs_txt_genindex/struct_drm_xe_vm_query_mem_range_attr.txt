@@ -1,0 +1,21 @@
+Struct: struct drm_xe_vm_query_mem_range_attr
+
+Input of DRM_IOCTL_XE_VM_QUERY_MEM_ATTRIBUTES
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  vm_id
+    vm_id of the virtual range
+  num_mem_ranges
+    number of mem_ranges in range
+  start
+    start of the virtual address range
+  range
+    size of the virtual address range
+  sizeof_mem_range_attr
+    size of struct drm_xe_mem_range_attr
+  vector_of_mem_attr
+    userptr to array of struct drm_xe_mem_range_attr
+  reserved
+    Reserved

@@ -1,0 +1,10 @@
+Function: void tty_unregister_driver ( struct tty_driver * driver )
+
+unregister a tty driver
+
+Parameters
+  struct tty_driver *driver
+    driver to unregister
+
+Description
+  Called by a tty driver to unregister itself.

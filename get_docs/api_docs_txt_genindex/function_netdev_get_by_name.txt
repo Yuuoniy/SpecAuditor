@@ -1,0 +1,20 @@
+Function: struct net_device * netdev_get_by_name ( struct net * net , const char * name , netdevice_tracker * tracker , gfp_t gfp )
+
+find a device by its name
+
+Parameters
+  struct net *net
+    the applicable net namespace
+  const char *name
+    name to find
+  netdevice_tracker *tracker
+    tracking object for the acquired reference
+  gfp_t gfp
+    allocation flags for the tracker
+
+Description
+  Find an interface by name. This can be called from any
+context and does its own locking. The returned handle has
+the usage count incremented and the caller must use netdev_put() to
+release it when it is no longer needed. NULL is returned if no
+matching device is found.

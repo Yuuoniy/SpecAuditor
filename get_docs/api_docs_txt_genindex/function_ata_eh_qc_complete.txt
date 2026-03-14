@@ -1,0 +1,11 @@
+Function: void ata_eh_qc_complete ( struct ata_queued_cmd * qc )
+
+Complete an active ATA command from EH
+
+Parameters
+  struct ata_queued_cmd *qc
+    Command to complete
+
+Description
+  Indicate to the mid and upper layers that an ATA command has
+completed.  To be used from EH.

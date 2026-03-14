@@ -1,0 +1,11 @@
+Function: void v4l2_ctrl_merge ( const struct v4l2_event * old , struct v4l2_event * new )
+
+Function to be used as a callback to struct v4l2_subscribed_event_ops merge()
+
+Parameters
+  const struct v4l2_event *old
+    pointer to struct v4l2_event with the reported
+event;
+  struct v4l2_event *new
+    pointer to struct v4l2_event with the merged
+event;

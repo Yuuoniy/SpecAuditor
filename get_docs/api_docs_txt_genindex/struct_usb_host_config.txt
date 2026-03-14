@@ -1,0 +1,27 @@
+Struct: struct usb_host_config
+
+representation of a device’s configuration
+
+Members
+  desc
+    the device’s configuration descriptor.
+  string
+    pointer to the cached version of the iConfiguration string, if
+present for this configuration.
+  intf_assoc
+    list of any interface association descriptors in this config
+  interface
+    array of pointers to usb_interface structures, one for each
+interface in the configuration.  The number of interfaces is stored
+in desc.bNumInterfaces.  These pointers are valid only while the
+configuration is active.
+  intf_cache
+    array of pointers to usb_interface_cache structures, one
+for each interface in the configuration.  These structures exist
+for the entire life of the device.
+  extra
+    pointer to buffer containing all extra descriptors associated
+with this configuration (those preceding the first interface
+descriptor).
+  extralen
+    length of the extra descriptors buffer.

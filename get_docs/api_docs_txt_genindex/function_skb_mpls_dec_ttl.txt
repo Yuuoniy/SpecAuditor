@@ -1,0 +1,10 @@
+Function: int skb_mpls_dec_ttl ( struct sk_buff * skb )
+
+decrement the TTL of the outermost MPLS header
+
+Parameters
+  struct sk_buff *skb
+    buffer
+
+Description
+  Expects skb->data at mac header.

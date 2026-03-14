@@ -1,0 +1,11 @@
+Function: void ipc_init_ids ( struct ipc_ids * ids )
+
+initialise ipc identifiers
+
+Parameters
+  struct ipc_ids *ids
+    ipc identifier set
+
+Description
+  Set up the sequence range to use for the ipc identifier range (limited
+below ipc_mni) then initialise the keys hashtable and ids idr.

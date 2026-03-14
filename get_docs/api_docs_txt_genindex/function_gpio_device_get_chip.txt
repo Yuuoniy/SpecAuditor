@@ -1,0 +1,13 @@
+Function: struct gpio_chip * gpio_device_get_chip ( struct gpio_device * gdev )
+
+Get the gpio_chip implementation of this GPIO device
+
+Parameters
+  struct gpio_device *gdev
+    GPIO device
+
+Description
+  DEPRECATED Until we can get rid of all non-driver users of struct gpio_chip , we must
+provide a way of retrieving the pointer to it from struct gpio_device . This
+is NOT safe as the GPIO API is considered to be hot-unpluggable and the
+chip can dissapear at any moment (unlike reference-counted struct gpio_device ).

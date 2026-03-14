@@ -1,0 +1,9 @@
+Function: void xdr_terminate_string ( const struct xdr_buf * buf , const u32 len )
+
+‘0’-terminate a string residing in an xdr_buf
+
+Parameters
+  const struct xdr_buf *buf
+    XDR buffer where string resides
+  const u32 len
+    length of string, in bytes

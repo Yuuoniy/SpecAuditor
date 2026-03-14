@@ -1,0 +1,11 @@
+Function: struct counter_device * counter_alloc ( size_t sizeof_priv )
+
+allocate a counter_device
+
+Parameters
+  size_t sizeof_priv
+    size of the driver private data
+
+Description
+  This is part one of counter registration. The structure is allocated
+dynamically to ensure the right lifetime for the embedded struct device .

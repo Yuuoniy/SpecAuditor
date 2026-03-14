@@ -1,0 +1,16 @@
+Function: struct snd_kcontrol * snd_soc_cnew ( const struct snd_kcontrol_new * _template , void * data , const char * long_name , const char * prefix )
+
+create new control
+
+Parameters
+  const struct snd_kcontrol_new *_template
+    control template
+  void *data
+    control private data
+  const char *long_name
+    control long name
+  const char *prefix
+    control name prefix
+
+Description
+  Create a new mixer control from a template control.

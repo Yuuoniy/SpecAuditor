@@ -1,0 +1,11 @@
+Function: struct drm_dp_aux * drm_dp_mst_dsc_aux_for_port ( struct drm_dp_mst_port * port )
+
+Find the correct aux for DSC
+
+Parameters
+  struct drm_dp_mst_port *port
+    The port to check. A leaf of the MST tree with an attached display.
+
+Description
+  Depending on the situation, DSC may be enabled via the endpoint aux,
+the immediately upstream aux, or the connector’s physical aux.

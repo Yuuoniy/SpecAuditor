@@ -1,0 +1,17 @@
+Struct: struct dmx_ts_feed
+
+Structure that contains a TS feed filter
+
+Members
+  is_filtering
+    Set to non-zero when filtering in progress
+  parent
+    pointer to struct dmx_demux
+  priv
+    pointer to private data of the API client
+  set
+    sets the TS filter
+  start_filtering
+    starts TS filtering
+  stop_filtering
+    stops TS filtering

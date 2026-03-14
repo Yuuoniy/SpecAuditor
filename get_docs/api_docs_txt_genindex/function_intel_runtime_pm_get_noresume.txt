@@ -1,0 +1,10 @@
+Function: intel_wakeref_t intel_runtime_pm_get_noresume ( struct intel_runtime_pm * rpm )
+
+grab a runtime pm reference
+
+Parameters
+  struct intel_runtime_pm *rpm
+    the intel_runtime_pm structure
+
+Description
+  This function grabs a device-level runtime pm reference.

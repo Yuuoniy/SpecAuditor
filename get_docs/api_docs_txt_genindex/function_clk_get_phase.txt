@@ -1,0 +1,11 @@
+Function: int clk_get_phase ( struct clk * clk )
+
+return the phase shift of a clock signal
+
+Parameters
+  struct clk *clk
+    clock signal source
+
+Description
+  Returns the phase shift of a clock node in degrees, otherwise returns
+-EERROR.

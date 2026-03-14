@@ -1,0 +1,13 @@
+Function: void deactivate_locked_super ( struct super_block * s )
+
+drop an active reference to superblock
+
+Parameters
+  struct super_block *s
+    superblock to deactivate
+
+Description
+  Drops an active reference to superblock, converting it into a temporary
+one if there is no other active references left.  In that case we
+tell fs driver to shut it down and drop the temporary reference we
+had just acquired.

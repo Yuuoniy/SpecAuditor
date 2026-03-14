@@ -1,0 +1,13 @@
+Function: ssize_t drm_dp_vsc_sdp_pack ( const struct drm_dp_vsc_sdp * vsc , struct dp_sdp * sdp )
+
+pack a given vsc sdp into generic dp_sdp
+
+Parameters
+  const struct drm_dp_vsc_sdp *vsc
+    vsc sdp initialized according to its purpose as defined in
+table 2-118 - table 2-120 in DP 1.4a specification
+  struct dp_sdp *sdp
+    valid handle to the generic dp_sdp which will be packed
+
+Description
+  Returns length of sdp on success and error code on failure

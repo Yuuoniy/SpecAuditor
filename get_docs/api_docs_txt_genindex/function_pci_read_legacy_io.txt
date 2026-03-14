@@ -1,0 +1,21 @@
+Function: ssize_t pci_read_legacy_io ( struct file * filp , struct kobject * kobj , const struct bin_attribute * bin_attr , char * buf , loff_t off , size_t count )
+
+read byte(s) from legacy I/O port space
+
+Parameters
+  struct file *filp
+    open sysfs file
+  struct kobject *kobj
+    kobject corresponding to file to read from
+  const struct bin_attribute *bin_attr
+    struct bin_attribute for this file
+  char *buf
+    buffer to store results
+  loff_t off
+    offset into legacy I/O port space
+  size_t count
+    number of bytes to read
+
+Description
+  Reads 1, 2, or 4 bytes from legacy I/O port space using an arch specific
+callback routine (pci_legacy_read).

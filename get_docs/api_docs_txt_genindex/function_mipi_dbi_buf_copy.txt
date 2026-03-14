@@ -1,0 +1,17 @@
+Function: int mipi_dbi_buf_copy ( void * dst , struct iosys_map * src , struct drm_framebuffer * fb , struct drm_rect * clip , bool swap , struct drm_format_conv_state * fmtcnv_state )
+
+Copy a framebuffer, transforming it if necessary
+
+Parameters
+  void *dst
+    The destination buffer
+  struct iosys_map *src
+    The source buffer
+  struct drm_framebuffer *fb
+    The source framebuffer
+  struct drm_rect *clip
+    Clipping rectangle of the area to be copied
+  bool swap
+    When true, swap MSB/LSB of 16-bit values
+  struct drm_format_conv_state *fmtcnv_state
+    Format-conversion state

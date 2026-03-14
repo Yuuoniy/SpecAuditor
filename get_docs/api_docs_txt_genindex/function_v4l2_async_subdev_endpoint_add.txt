@@ -1,0 +1,13 @@
+Function: int v4l2_async_subdev_endpoint_add ( struct v4l2_subdev * sd , struct fwnode_handle * fwnode )
+
+Add an endpoint fwnode to async sub-device matching list
+
+Parameters
+  struct v4l2_subdev *sd
+    the sub-device
+  struct fwnode_handle *fwnode
+    the endpoint fwnode to match
+
+Description
+  Add a fwnode to the async sub-device’s matching list. This allows registering
+multiple async sub-devices from a single device.

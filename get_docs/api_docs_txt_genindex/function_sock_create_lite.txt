@@ -1,0 +1,19 @@
+Function: int sock_create_lite ( int family , int type , int protocol , struct socket * * res )
+
+creates a socket
+
+Parameters
+  int family
+    protocol family (AF_INET, ...)
+  int type
+    communication type (SOCK_STREAM, ...)
+  int protocol
+    protocol (0, ...)
+  struct socket **res
+    new socket
+
+Description
+  Creates a new socket and assigns it to res , passing through LSM.
+The new socket initialization is not complete, see kernel_accept() .
+Returns 0 or an error. On failure res is set to NULL .
+This function internally uses GFP_KERNEL.

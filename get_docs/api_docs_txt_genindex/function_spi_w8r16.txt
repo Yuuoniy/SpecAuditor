@@ -1,0 +1,13 @@
+Function: ssize_t spi_w8r16 ( struct spi_device * spi , u8 cmd )
+
+SPI synchronous 8 bit write followed by 16 bit read
+
+Parameters
+  struct spi_device *spi
+    device with which data will be exchanged
+  u8 cmd
+    command to be written before data is read back
+
+Description
+  The number is returned in wire-order, which is at least sometimes
+big-endian.

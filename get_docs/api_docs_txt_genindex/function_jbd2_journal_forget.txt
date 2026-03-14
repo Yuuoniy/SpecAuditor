@@ -1,0 +1,14 @@
+Function: int jbd2_journal_forget ( handle_t * handle , struct buffer_head * bh )
+
+bforget() for potentially-journaled buffers.
+
+Parameters
+  handle_t *handle
+    transaction handle
+  struct buffer_head *bh
+    bh to ‘forget’
+
+Description
+  We can only do the bforget if there are no commits pending against the
+buffer.  If the buffer is dirty in the current running transaction we
+can safely unlink it.

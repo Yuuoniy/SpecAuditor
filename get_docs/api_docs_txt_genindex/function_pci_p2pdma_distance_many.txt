@@ -1,0 +1,19 @@
+Function: int pci_p2pdma_distance_many ( struct pci_dev * provider , struct device * * clients , int num_clients , bool verbose )
+
+Determine the cumulative distance between a p2pdma provider and the clients in use.
+
+Parameters
+  struct pci_dev *provider
+    p2pdma provider to check against the client list
+  struct device **clients
+    array of devices to check (NULL-terminated)
+  int num_clients
+    number of clients in the array
+  bool verbose
+    if true, print warnings for devices when we return -1
+
+Description
+  Returns -1 if any of the clients are not compatible, otherwise returns a
+positive number where a lower number is the preferable choice. (If there’s
+one client that’s the same as the provider it will return 0, which is best
+choice).

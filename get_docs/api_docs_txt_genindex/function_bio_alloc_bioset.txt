@@ -1,0 +1,18 @@
+Function: struct bio * bio_alloc_bioset ( struct block_device * bdev , unsigned short nr_vecs , blk_opf_t opf , gfp_t gfp_mask , struct bio_set * bs )
+
+allocate a bio for I/O
+
+Parameters
+  struct block_device *bdev
+    block device to allocate the bio for (can be NULL )
+  unsigned short nr_vecs
+    number of bvecs to pre-allocate
+  blk_opf_t opf
+    operation and flags for bio
+  gfp_t gfp_mask
+    the GFP_* mask given to the slab allocator
+  struct bio_set *bs
+    the bio_set to allocate from.
+
+Description
+  Allocate a bio from the mempools in bs .

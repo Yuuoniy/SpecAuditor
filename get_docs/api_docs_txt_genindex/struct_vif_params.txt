@@ -1,0 +1,21 @@
+Struct: struct vif_params
+
+describes virtual interface parameters
+
+Members
+  flags
+    monitor interface flags, unchanged if 0, otherwise MONITOR_FLAG_CHANGED will be set
+  use_4addr
+    use 4-address frames
+  macaddr
+    address to use for this virtual interface.
+If this parameter is set to zero address the driver may
+determine the address as needed.
+This feature is only fully supported by drivers that enable the NL80211_FEATURE_MAC_ON_CREATE flag.  Others may support creating
+*     only p2p devices with specified MAC.
+  vht_mumimo_groups
+    MU-MIMO groupID, used for monitoring MU-MIMO packets
+belonging to that MU-MIMO groupID; NULL if not changed
+  vht_mumimo_follow_addr
+    MU-MIMO follow address, used for monitoring
+MU-MIMO packets going to the specified station; NULL if not changed

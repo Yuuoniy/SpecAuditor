@@ -1,0 +1,57 @@
+Struct: struct w1_master
+
+one per bus master
+
+Members
+  w1_master_entry
+    master linked list
+  owner
+    module owner
+  name
+    dynamically allocate bus name
+  list_mutex
+    protect slist and async_list
+  slist
+    linked list of slaves
+  async_list
+    linked list of netlink commands to execute
+  max_slave_count
+    maximum number of slaves to search for at a time
+  slave_count
+    current number of slaves known
+  attempts
+    number of searches ran
+  slave_ttl
+    number of searches before a slave is timed out
+  initialized
+    prevent init/removal race conditions
+  id
+    w1 bus number
+  search_count
+    number of automatic searches to run, -1 unlimited
+  search_id
+    allows continuing a search
+  refcnt
+    reference count
+  priv
+    private data storage
+  enable_pullup
+    allows a strong pullup
+  pullup_duration
+    time for the next strong pullup
+  flags
+    one of w1_master_flags
+  thread
+    thread for bus search and netlink commands
+  mutex
+    protect most of w1_master
+  bus_mutex
+    pretect concurrent bus access
+  driver
+    sysfs driver
+  dev
+    sysfs device
+  bus_master
+    io operations available
+  seq
+    sequence number used for netlink broadcasts

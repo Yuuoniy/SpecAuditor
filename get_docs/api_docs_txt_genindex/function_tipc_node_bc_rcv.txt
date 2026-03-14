@@ -1,0 +1,14 @@
+Function: void tipc_node_bc_rcv ( struct net * net , struct sk_buff * skb , int bearer_id )
+
+process TIPC broadcast packet arriving from off-node
+
+Parameters
+  struct net *net
+    the applicable net namespace
+  struct sk_buff *skb
+    TIPC packet
+  int bearer_id
+    id of bearer message arrived on
+
+Description
+  Invoked with no locks held.

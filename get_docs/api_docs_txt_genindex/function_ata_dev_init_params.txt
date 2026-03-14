@@ -1,0 +1,15 @@
+Function: unsigned int ata_dev_init_params ( struct ata_device * dev , u16 heads , u16 sectors )
+
+Issue INIT DEV PARAMS command
+
+Parameters
+  struct ata_device *dev
+    Device to which command will be sent
+  u16 heads
+    Number of heads (taskfile parameter)
+  u16 sectors
+    Number of sectors (taskfile parameter)
+
+Description
+  LOCKING:
+Kernel thread context (may sleep)

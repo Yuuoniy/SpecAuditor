@@ -1,0 +1,13 @@
+Function: int __pwmchip_add ( struct pwm_chip * chip , struct module * owner )
+
+register a new PWM chip
+
+Parameters
+  struct pwm_chip *chip
+    the PWM chip to add
+  struct module *owner
+    reference to the module providing the chip.
+
+Description
+  Register a new PWM chip. owner is supposed to be THIS_MODULE, use the
+pwmchip_add wrapper to do this right.

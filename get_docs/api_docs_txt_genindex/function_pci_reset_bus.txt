@@ -1,0 +1,10 @@
+Function: int pci_reset_bus ( struct pci_dev * pdev )
+
+Try to reset a PCI bus
+
+Parameters
+  struct pci_dev *pdev
+    top level PCI device to reset via slot/bus
+
+Description
+  Same as above except return -EAGAIN if the bus cannot be locked

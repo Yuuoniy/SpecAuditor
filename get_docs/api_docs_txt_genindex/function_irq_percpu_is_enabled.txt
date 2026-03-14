@@ -1,0 +1,11 @@
+Function: bool irq_percpu_is_enabled ( unsigned int irq )
+
+Check whether the per cpu irq is enabled
+
+Parameters
+  unsigned int irq
+    Linux irq number to check for
+
+Description
+  Must be called from a non migratable context. Returns the enable
+state of a per cpu interrupt on the current cpu.

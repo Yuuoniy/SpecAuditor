@@ -1,0 +1,13 @@
+Function: int security_file_lock ( struct file * file , unsigned int cmd )
+
+Check if a file lock is allowed
+
+Parameters
+  struct file *file
+    file
+  unsigned int cmd
+    lock operation (e.g. F_RDLCK, F_WRLCK)
+
+Description
+  Check permission before performing file locking operations.  Note the hook
+mediates both flock and fcntl style locks.

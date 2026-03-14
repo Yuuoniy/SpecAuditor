@@ -1,0 +1,14 @@
+Function: int devm_clk_bulk_get_all ( struct device * dev , struct clk_bulk_data * * clks )
+
+managed get multiple clk consumers
+
+Parameters
+  struct device *dev
+    device for clock “consumer”
+  struct clk_bulk_data **clks
+    pointer to the clk_bulk_data table of consumer
+
+Description
+  Returns a positive value for the number of clocks obtained while the
+clock references are stored in the clk_bulk_data table in clks field.
+Returns 0 if there’re none and a negative value if something failed.

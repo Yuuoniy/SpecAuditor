@@ -1,0 +1,13 @@
+Function: void drm_dp_mst_topology_get_port ( struct drm_dp_mst_port * port )
+
+Increment the topology refcount of a port
+
+Parameters
+  struct drm_dp_mst_port *port
+    The struct drm_dp_mst_port to increment the topology refcount of
+
+Description
+  Increments drm_dp_mst_port.topology_refcount without checking whether or
+not it’s already reached 0. This is only valid to use in scenarios where
+you are already guaranteed to have at least one active topology reference
+to port . Otherwise, drm_dp_mst_topology_try_get_port() must be used.

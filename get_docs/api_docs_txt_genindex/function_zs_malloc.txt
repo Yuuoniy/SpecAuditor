@@ -1,0 +1,18 @@
+Function: unsigned long zs_malloc ( struct zs_pool * pool , size_t size , gfp_t gfp , const int nid )
+
+Allocate block of given size from pool.
+
+Parameters
+  struct zs_pool *pool
+    pool to allocate from
+  size_t size
+    size of block to allocate
+  gfp_t gfp
+    gfp flags when allocating object
+  const int nid
+    The preferred node id to allocate new zspage (if needed)
+
+Description
+  On success, handle to the allocated object is returned,
+otherwise an ERR_PTR() .
+Allocation requests with size > ZS_MAX_ALLOC_SIZE will fail.

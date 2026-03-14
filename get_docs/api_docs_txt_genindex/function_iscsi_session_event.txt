@@ -1,0 +1,9 @@
+Function: int iscsi_session_event ( struct iscsi_cls_session * session , enum iscsi_uevent_e event )
+
+send session destr. completion event
+
+Parameters
+  struct iscsi_cls_session *session
+    iscsi class session
+  enum iscsi_uevent_e event
+    type of event

@@ -1,0 +1,17 @@
+Struct: struct rio_switch
+
+RIO switch info
+
+Members
+  node
+    Node in global list of switches
+  route_table
+    Copy of switch routing table
+  port_ok
+    Status of each port (one bit per port) - OK=1 or UNINIT=0
+  ops
+    pointer to switch-specific operations
+  lock
+    lock to serialize operations updates
+  nextdev
+    Array of per-port pointers to the next attached device

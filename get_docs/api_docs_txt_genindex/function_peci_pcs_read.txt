@@ -1,0 +1,16 @@
+Function: int peci_pcs_read ( struct peci_device * device , u8 index , u16 param , u32 * data )
+
+read PCS register
+
+Parameters
+  struct peci_device *device
+    PECI device to which request is going to be sent
+  u8 index
+    PCS index
+  u16 param
+    PCS parameter
+  u32 *data
+    where to store the read data
+
+Description
+  It uses RdPkgConfig PECI command.

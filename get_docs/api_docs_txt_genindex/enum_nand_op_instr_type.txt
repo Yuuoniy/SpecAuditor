@@ -1,0 +1,3 @@
+Enum: enum nand_op_instr_type
+
+Definition of all instruction types

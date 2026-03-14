@@ -1,0 +1,10 @@
+Function: unsigned short v4l2_i2c_subdev_addr ( struct v4l2_subdev * sd )
+
+returns i2c client address of struct v4l2_subdev .
+
+Parameters
+  struct v4l2_subdev *sd
+    pointer to struct v4l2_subdev
+
+Description
+  Returns the address of an I2C sub-device

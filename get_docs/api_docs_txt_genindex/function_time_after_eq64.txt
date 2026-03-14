@@ -1,0 +1,12 @@
+Function: time_after_eq64
+
+
+
+Parameters
+  a
+    first comparable as __u64
+  b
+    second comparable as __u64
+
+Description
+  This must be used when utilizing jiffies_64 (i.e. return value of get_jiffies_64() ).

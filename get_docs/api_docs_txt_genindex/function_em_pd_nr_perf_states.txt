@@ -1,0 +1,7 @@
+Function: int em_pd_nr_perf_states ( struct em_perf_domain * pd )
+
+Get the number of performance states of a perf. domain
+
+Parameters
+  struct em_perf_domain *pd
+    performance domain for which this must be done

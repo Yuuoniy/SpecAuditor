@@ -1,0 +1,13 @@
+Function: int dma_buf_pin ( struct dma_buf_attachment * attach )
+
+Lock down the DMA-buf
+
+Parameters
+  struct dma_buf_attachment *attach
+    [in]    attachment which should be pinned
+
+Description
+  Only dynamic importers (who set up attach with dma_buf_dynamic_attach() ) may
+call this, and only for limited use cases like scanout and not for temporary
+pin operations. It is not permitted to allow userspace to pin arbitrary
+amounts of buffers through this interface.

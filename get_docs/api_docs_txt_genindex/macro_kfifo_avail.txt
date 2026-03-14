@@ -1,0 +1,7 @@
+Macro: kfifo_avail
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used

@@ -1,0 +1,7 @@
+Struct: struct drm_gpuvm_map_req
+
+arguments passed to drm_gpuvm_sm_map[_ops_create]()
+
+Members
+  struct drm_gpuvm_ops ¶
+    callbacks for split/merge steps

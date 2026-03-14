@@ -1,0 +1,7 @@
+Function: void amdgpu_vm_prt_get ( struct amdgpu_device * adev )
+
+add a PRT user
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer

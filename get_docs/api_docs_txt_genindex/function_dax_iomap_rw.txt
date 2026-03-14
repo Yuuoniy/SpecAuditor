@@ -1,0 +1,16 @@
+Function: ssize_t dax_iomap_rw ( struct kiocb * iocb , struct iov_iter * iter , const struct iomap_ops * ops )
+
+Perform I/O to a DAX file
+
+Parameters
+  struct kiocb *iocb
+    The control block for this I/O
+  struct iov_iter *iter
+    The addresses to do I/O from or to
+  const struct iomap_ops *ops
+    iomap ops passed from the file system
+
+Description
+  This function performs read and write operations to directly mapped
+persistent memory.  The callers needs to take care of read/write exclusion
+and evicting any page cache pages in the region under I/O.

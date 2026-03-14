@@ -1,0 +1,17 @@
+Struct: struct psz_kmsg_header
+
+kmsg dump-specific header to flush to storage
+
+Members
+  magic
+    magic num for kmsg dump header
+  time
+    kmsg dump trigger time
+  compressed
+    whether compressed
+  counter
+    kmsg dump counter
+  reason
+    the kmsg dump reason (e.g. oops, panic, etc)
+  data
+    pointer to log data

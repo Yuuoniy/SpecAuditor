@@ -1,0 +1,18 @@
+Function: __bpf_kfunc int hid_bpf_hw_request ( struct hid_bpf_ctx * ctx , __u8 * buf , size_t buf__sz , enum hid_report_type rtype , enum hid_class_request reqtype )
+
+Communicate with a HID device
+
+Parameters
+  struct hid_bpf_ctx *ctx
+    the HID-BPF context previously allocated in hid_bpf_allocate_context()
+  __u8 *buf
+    a PTR_TO_MEM buffer
+  size_t buf__sz
+    the size of the data to transfer
+  enum hid_report_type rtype
+    the type of the report ( HID_INPUT_REPORT , HID_FEATURE_REPORT , HID_OUTPUT_REPORT )
+  enum hid_class_request reqtype
+    the type of the request ( HID_REQ_GET_REPORT , HID_REQ_SET_REPORT , ...)
+
+Description
+  returns 0 on success, a negative error code otherwise.

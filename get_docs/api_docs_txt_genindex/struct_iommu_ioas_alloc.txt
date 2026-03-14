@@ -1,0 +1,11 @@
+Struct: struct iommu_ioas_alloc
+
+ioctl(IOMMU_IOAS_ALLOC)
+
+Members
+  size
+    sizeof( struct iommu_ioas_alloc )
+  flags
+    Must be 0
+  out_ioas_id
+    Output IOAS ID for the allocated object

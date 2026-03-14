@@ -1,0 +1,12 @@
+Function: int snd_compr_stop_error ( struct snd_compr_stream * stream , snd_pcm_state_t state )
+
+Report a fatal error on a stream
+
+Parameters
+  struct snd_compr_stream *stream
+    pointer to stream
+  snd_pcm_state_t state
+    state to transition the stream to
+
+Description
+  Stop the stream and set its state.

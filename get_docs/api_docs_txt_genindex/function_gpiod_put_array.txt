@@ -1,0 +1,7 @@
+Function: void gpiod_put_array ( struct gpio_descs * descs )
+
+dispose of multiple GPIO descriptors
+
+Parameters
+  struct gpio_descs *descs
+    struct gpio_descs containing an array of descriptors

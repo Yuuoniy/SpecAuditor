@@ -1,0 +1,5 @@
+Function: int v4l2_get_control ( int fd , int cid )
+
+This function returns a value of 0 - 65535, scaled to from the actual range
+of the given v4l control id. when the cid does not exist, could not be
+accessed for some reason, or some error occurred 0 is returned.

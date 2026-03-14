@@ -1,0 +1,13 @@
+Function: const struct of_device_id * of_match_device ( const struct of_device_id * matches , const struct device * dev )
+
+Tell if a struct device matches an of_device_id list
+
+Parameters
+  const struct of_device_id *matches
+    array of of_device_id match structures to search in
+  const struct device *dev
+    the OF device structure to match against
+
+Description
+  Used by a driver to check whether an platform_device present in the
+system is in its list of supported devices.

@@ -1,0 +1,29 @@
+Struct: struct dma_fence
+
+software synchronization primitive
+
+Members
+  lock
+    spin_lock_irqsave used for locking
+  ops
+    dma_fence_ops associated with this fence
+  {unnamed_union}
+    anonymous
+  cb_list
+    list of all callbacks to call
+  timestamp
+    Timestamp when the fence was signaled.
+  rcu
+    used for releasing fence with kfree_rcu
+  context
+    execution context this fence belongs to, returned by dma_fence_context_alloc()
+  seqno
+    the sequence number of this fence inside the execution context,
+can be compared to decide which fence would be signaled later.
+  flags
+    A mask of DMA_FENCE_FLAG_* defined below
+  refcount
+    refcount for this fence
+  error
+    Optional, only valid if < 0, must be set before calling
+dma_fence_signal, indicates that the fence has completed with an error.

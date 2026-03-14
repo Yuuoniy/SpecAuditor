@@ -1,0 +1,12 @@
+Function: int mipi_dbi_poweron_conditional_reset ( struct mipi_dbi_dev * dbidev )
+
+MIPI DBI poweron and conditional reset
+
+Parameters
+  struct mipi_dbi_dev *dbidev
+    MIPI DBI device structure
+
+Description
+  This function enables the regulator if used and if the display is off, it
+does a hardware and software reset. If mipi_dbi_display_is_on() determines
+that the display is on, no reset is performed.

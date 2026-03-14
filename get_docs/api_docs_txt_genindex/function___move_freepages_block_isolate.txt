@@ -1,0 +1,16 @@
+Function: bool __move_freepages_block_isolate ( struct zone * zone , struct page * page , bool isolate )
+
+move free pages in block for page isolation
+
+Parameters
+  struct zone *zone
+    the zone
+  struct page *page
+    the pageblock page
+  bool isolate
+    to isolate the given pageblock or unisolate it
+
+Description
+  This is similar to move_freepages_block() , but handles the special
+case encountered in page isolation, where the block of interest
+might be part of a larger buddy spanning multiple pageblocks.

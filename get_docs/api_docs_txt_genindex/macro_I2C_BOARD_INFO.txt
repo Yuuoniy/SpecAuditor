@@ -1,0 +1,15 @@
+Macro: I2C_BOARD_INFO
+
+
+
+Parameters
+  dev_type
+    identifies the device type
+  dev_addr
+    the device’s address on the bus.
+
+Description
+  This macro initializes essential fields of a struct i2c_board_info ,
+declaring what has been provided on a particular board.  Optional
+fields (such as associated irq, or device-specific platform_data)
+are provided using conventional syntax.

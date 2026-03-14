@@ -1,0 +1,11 @@
+Function: int security_file_alloc ( struct file * file )
+
+Allocate and init a file’s LSM blob
+
+Parameters
+  struct file *file
+    the file
+
+Description
+  Allocate and attach a security structure to the file->f_security field.  The
+security field is initialized to NULL when the structure is first created.

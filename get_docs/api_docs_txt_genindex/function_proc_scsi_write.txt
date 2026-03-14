@@ -1,0 +1,20 @@
+Function: ssize_t proc_scsi_write ( struct file * file , const char __user * buf , size_t length , loff_t * ppos )
+
+handle writes to /proc/scsi/scsi
+
+Parameters
+  struct file *file
+    not used
+  const char __user *buf
+    buffer to write
+  size_t length
+    length of buf, at most PAGE_SIZE
+  loff_t *ppos
+    not used
+
+Description
+  this provides a legacy mechanism to add or remove devices by
+Host, Channel, ID, and Lun.  To use,
+“echo ‘scsi add-single-device 0 1 2 3’ > /proc/scsi/scsi” or
+“echo ‘scsi remove-single-device 0 1 2 3’ > /proc/scsi/scsi” with
+“0 1 2 3” replaced by the Host, Channel, Id, and Lun.

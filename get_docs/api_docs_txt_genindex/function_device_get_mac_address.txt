@@ -1,0 +1,9 @@
+Function: int device_get_mac_address ( struct device * dev , char * addr )
+
+Get the MAC for a given device
+
+Parameters
+  struct device *dev
+    Pointer to the device
+  char *addr
+    Address of buffer to store the MAC in

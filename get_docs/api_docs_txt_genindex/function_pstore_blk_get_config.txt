@@ -1,0 +1,10 @@
+Function: int pstore_blk_get_config ( struct pstore_blk_config * info )
+
+get a copy of the pstore_blk backend configuration
+
+Parameters
+  struct pstore_blk_config *info
+    The sturct pstore_blk_config to be filled in
+
+Description
+  Failure returns negative error code, and success returns 0.

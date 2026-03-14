@@ -1,0 +1,9 @@
+Function: void drm_encoder_helper_add ( struct drm_encoder * encoder , const struct drm_encoder_helper_funcs * funcs )
+
+sets the helper vtable for an encoder
+
+Parameters
+  struct drm_encoder *encoder
+    DRM encoder
+  const struct drm_encoder_helper_funcs *funcs
+    helper vtable to set for encoder

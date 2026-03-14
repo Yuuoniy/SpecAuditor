@@ -1,0 +1,40 @@
+Struct: struct drm_mode_get_connector
+
+Get connector metadata.
+
+Members
+  encoders_ptr
+    Pointer to __u32 array of object IDs.
+  modes_ptr
+    Pointer to struct drm_mode_modeinfo array.
+  props_ptr
+    Pointer to __u32 array of property IDs.
+  prop_values_ptr
+    Pointer to __u64 array of property values.
+  count_modes
+    Number of modes.
+  count_props
+    Number of properties.
+  count_encoders
+    Number of encoders.
+  encoder_id
+    Object ID of the current encoder.
+  connector_id
+    Object ID of the connector.
+  connector_type
+    Type of the connector. See DRM_MODE_CONNECTOR_* defines.
+  connector_type_id
+    Type-specific connector number. This is not an object ID. This is a per-type connector number. Each
+(type, type_id) combination is unique across all connectors of a DRM
+device. The (type, type_id) combination is not a stable identifier: the
+type_id can change depending on the driver probe order.
+  connection
+    Status of the connector. See enum drm_connector_status .
+  mm_width
+    Width of the connected sink in millimeters.
+  mm_height
+    Height of the connected sink in millimeters.
+  subpixel
+    Subpixel order of the connected sink. See enum subpixel_order .
+  pad
+    Padding, must be zero.

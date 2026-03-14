@@ -1,0 +1,13 @@
+Function: int dma_fence_chain_find_seqno ( struct dma_fence * * pfence , uint64_t seqno )
+
+find fence chain node by seqno
+
+Parameters
+  struct dma_fence **pfence
+    pointer to the chain node where to start
+  uint64_t seqno
+    the sequence number to search for
+
+Description
+  Advance the fence pointer to the chain node which will signal this sequence
+number. If no sequence number is provided then this is a no-op.

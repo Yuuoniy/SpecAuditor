@@ -1,0 +1,15 @@
+Macro: mas_for_each_rev
+
+
+
+Parameters
+  __mas
+    Maple Tree operation state (maple_state)
+  __entry
+    Entry retrieved from the tree
+  __min
+    minimum index to retrieve from the tree
+
+Description
+  When returned, mas->index and mas->last will hold the entire range for the
+entry.

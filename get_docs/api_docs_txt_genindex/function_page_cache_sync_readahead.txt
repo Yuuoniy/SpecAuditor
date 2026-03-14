@@ -1,0 +1,21 @@
+Function: void page_cache_sync_readahead ( struct address_space * mapping , struct file_ra_state * ra , struct file * file , pgoff_t index , unsigned long req_count )
+
+generic file readahead
+
+Parameters
+  struct address_space *mapping
+    address_space which holds the pagecache and I/O vectors
+  struct file_ra_state *ra
+    file_ra_state which holds the readahead state
+  struct file *file
+    Used by the filesystem for authentication.
+  pgoff_t index
+    Index of first page to be read.
+  unsigned long req_count
+    Total number of pages being read by the caller.
+
+Description
+  page_cache_sync_readahead() should be called when a cache miss happened:
+it will submit the read.  The readahead logic may decide to piggyback more
+pages onto the read request if access patterns suggest it will improve
+performance.

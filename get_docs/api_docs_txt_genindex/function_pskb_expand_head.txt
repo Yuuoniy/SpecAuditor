@@ -1,0 +1,19 @@
+Function: int pskb_expand_head ( struct sk_buff * skb , int nhead , int ntail , gfp_t gfp_mask )
+
+reallocate header of sk_buff
+
+Parameters
+  struct sk_buff *skb
+    buffer to reallocate
+  int nhead
+    room to add at head
+  int ntail
+    room to add at tail
+  gfp_t gfp_mask
+    allocation priority
+
+Description
+  Expands (or creates identical copy, if nhead and ntail are zero)
+header of skb . sk_buff itself is not changed. sk_buff MUST have
+reference count of 1. Returns zero in the case of success or error,
+if expansion failed. In the last case, sk_buff is not changed.

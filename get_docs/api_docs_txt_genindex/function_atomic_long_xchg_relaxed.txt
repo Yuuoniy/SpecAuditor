@@ -1,0 +1,12 @@
+Function: long atomic_long_xchg_relaxed ( atomic_long_t * v , long new )
+
+atomic exchange with relaxed ordering
+
+Parameters
+  atomic_long_t *v
+    pointer to atomic_long_t
+  long new
+    long value to assign
+
+Description
+  Atomically updates v to new with relaxed ordering.

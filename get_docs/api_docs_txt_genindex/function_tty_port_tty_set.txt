@@ -1,0 +1,12 @@
+Function: void tty_port_tty_set ( struct tty_port * port , struct tty_struct * tty )
+
+set the tty of a port
+
+Parameters
+  struct tty_port *port
+    tty port
+  struct tty_struct *tty
+    the tty
+
+Description
+  Associate the port and tty pair. Manages any internal refcounts. Pass NULL to deassociate a port.

@@ -1,0 +1,68 @@
+Struct: struct v4l2_subdev
+
+describes a V4L2 sub-device
+
+Members
+  entity
+    pointer to struct media_entity
+  list
+    List of sub-devices
+  owner
+    The owner is the same as the driver’s struct device owner.
+  owner_v4l2_dev
+    true if the sd->owner matches the owner of v4l2_dev->dev owner. Initialized by v4l2_device_register_subdev() .
+  flags
+    subdev flags. Can be: V4L2_SUBDEV_FL_IS_I2C - Set this flag if this subdev is a i2c device; V4L2_SUBDEV_FL_IS_SPI - Set this flag if this subdev is a spi device; V4L2_SUBDEV_FL_HAS_DEVNODE - Set this flag if this subdev needs a
+device node; V4L2_SUBDEV_FL_HAS_EVENTS -  Set this flag if this subdev generates
+events.
+  v4l2_dev
+    pointer to struct v4l2_device
+  ops
+    pointer to struct v4l2_subdev_ops
+  internal_ops
+    pointer to struct v4l2_subdev_internal_ops .
+Never call these internal ops from within a driver!
+  ctrl_handler
+    The control handler of this subdev. May be NULL.
+  name
+    Name of the sub-device. Please notice that the name must be unique.
+  grp_id
+    can be used to group similar subdevs. Value is driver-specific
+  dev_priv
+    pointer to private data
+  host_priv
+    pointer to private data used by the device where the subdev
+is attached.
+  devnode
+    subdev device node
+  dev
+    pointer to the physical device, if any
+  fwnode
+    The fwnode_handle of the subdev, usually the same as
+either dev->of_node->fwnode or dev->fwnode (whichever is non-NULL).
+  async_list
+    Links this subdev to a global subdev_list or notifier->done_list list.
+  async_subdev_endpoint_list
+    List entry in async_subdev_endpoint_entry of struct v4l2_async_subdev_endpoint .
+  subdev_notifier
+    A sub-device notifier implicitly registered for the sub-
+device using v4l2_async_register_subdev_sensor() .
+  asc_list
+    Async connection list, of struct v4l2_async_connection .subdev_entry.
+  pdata
+    common part of subdevice platform data
+  state_lock
+    A pointer to a lock used for all the subdev’s states, set by the
+driver. This is optional. If NULL, each state instance will get
+a lock of its own.
+  privacy_led
+    Optional pointer to a LED classdev for the privacy LED for sensors.
+  active_state
+    Active state for the subdev (NULL for subdevs tracking the
+state internally). Initialized by calling v4l2_subdev_init_finalize() .
+  enabled_pads
+    Bitmask of enabled pads used by v4l2_subdev_enable_streams() and v4l2_subdev_disable_streams() helper functions for
+fallback cases.
+  s_stream_enabled
+    Tracks whether streaming has been enabled with s_stream.
+This is only for call_s_stream() internal use.

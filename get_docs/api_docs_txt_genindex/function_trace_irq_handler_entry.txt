@@ -1,0 +1,15 @@
+Function: void trace_irq_handler_entry ( int irq , struct irqaction * action )
+
+called immediately before the irq action handler
+
+Parameters
+  int irq
+    irq number
+  struct irqaction *action
+    pointer to struct irqaction
+
+Description
+  The struct irqaction pointed to by action contains various
+information about the handler, including the device name, action->name , and the device id, action->dev_id . When used in
+conjunction with the irq_handler_exit tracepoint, we can figure
+out irq handler latencies.

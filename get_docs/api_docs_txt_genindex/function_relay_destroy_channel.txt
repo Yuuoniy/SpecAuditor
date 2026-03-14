@@ -1,0 +1,10 @@
+Function: void relay_destroy_channel ( struct kref * kref )
+
+free the channel struct
+
+Parameters
+  struct kref *kref
+    target kernel reference that contains the relay channel
+
+Description
+  Should only be called from kref_put() .

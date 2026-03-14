@@ -1,0 +1,9 @@
+Struct: struct snd_compr_metadata
+
+compressed stream metadata
+
+Members
+  key
+    key id
+  value
+    key value

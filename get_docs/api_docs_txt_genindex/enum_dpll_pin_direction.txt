@@ -1,0 +1,3 @@
+Enum: enum dpll_pin_direction
+
+defines possible direction of a pin, valid values for DPLL_A_PIN_DIRECTION attribute

@@ -1,0 +1,14 @@
+Function: int drm_property_add_enum ( struct drm_property * property , uint64_t value , const char * name )
+
+add a possible value to an enumeration property
+
+Parameters
+  struct drm_property *property
+    enumeration property to change
+  uint64_t value
+    value of the new enumeration
+  const char *name
+    symbolic name of the new enumeration
+
+Description
+  This functions adds enumerations to a property.

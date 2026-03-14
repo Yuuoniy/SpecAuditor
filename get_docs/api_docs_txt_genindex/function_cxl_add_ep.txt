@@ -1,0 +1,14 @@
+Function: int cxl_add_ep ( struct cxl_dport * dport , struct device * ep_dev )
+
+register an endpoint’s interest in a port
+
+Parameters
+  struct cxl_dport *dport
+    the dport that routes to ep_dev
+  struct device *ep_dev
+    device representing the endpoint
+
+Description
+  Intermediate CXL ports are scanned based on the arrival of endpoints.
+When those endpoints depart the port can be destroyed once all
+endpoints that care about that port have been removed.

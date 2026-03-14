@@ -1,0 +1,11 @@
+Function: int iscsi_eh_recover_target ( struct scsi_cmnd * sc )
+
+reset target and possibly the session
+
+Parameters
+  struct scsi_cmnd *sc
+    scsi command
+
+Description
+  This will attempt to send a warm target reset. If that fails,
+we will escalate to ERL0 session recovery.

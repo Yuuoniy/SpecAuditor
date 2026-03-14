@@ -1,0 +1,9 @@
+Function: ktime_t __hrtimer_get_remaining ( const struct hrtimer * timer , bool adjust )
+
+get remaining time for the timer
+
+Parameters
+  const struct hrtimer *timer
+    the timer to read
+  bool adjust
+    adjust relative timers when CONFIG_TIME_LOW_RES=y

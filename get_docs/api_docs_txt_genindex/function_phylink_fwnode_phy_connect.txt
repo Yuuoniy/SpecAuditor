@@ -1,0 +1,15 @@
+Function: int phylink_fwnode_phy_connect ( struct phylink * pl , const struct fwnode_handle * fwnode , u32 flags )
+
+connect the PHY specified in the fwnode.
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+  const struct fwnode_handle *fwnode
+    a pointer to a struct fwnode_handle .
+  u32 flags
+    PHY-specific flags to communicate to the PHY device driver
+
+Description
+  Connect the phy specified fwnode to the phylink instance specified
+by pl .

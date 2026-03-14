@@ -1,0 +1,11 @@
+Function: void fc_remove_host ( struct Scsi_Host * shost )
+
+called to terminate any fc_transport-related elements for a scsi host.
+
+Parameters
+  struct Scsi_Host *shost
+    Which Scsi_Host
+
+Description
+  This routine is expected to be called immediately preceding the
+a driver’s call to scsi_remove_host() .

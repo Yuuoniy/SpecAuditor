@@ -1,0 +1,12 @@
+Function: u64 drm_mm_hole_node_start ( const struct drm_mm_node * hole_node )
+
+computes the start of the hole following node
+
+Parameters
+  const struct drm_mm_node *hole_node
+    drm_mm_node which implicitly tracks the following hole
+
+Description
+  This is useful for driver-specific debug dumpers. Otherwise drivers should
+not inspect holes themselves. Drivers must check first whether a hole indeed
+follows by looking at drm_mm_hole_follows()

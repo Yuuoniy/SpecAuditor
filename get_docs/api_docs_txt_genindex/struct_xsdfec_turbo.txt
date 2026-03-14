@@ -1,0 +1,10 @@
+Struct: struct xsdfec_turbo
+
+User data for Turbo codes.
+
+Members
+  alg
+    Specifies which Turbo decode algorithm to use
+  scale
+    Specifies the extrinsic scaling to apply when the Max Scale algorithm
+has been selected

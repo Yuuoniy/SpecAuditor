@@ -1,0 +1,21 @@
+Function: int of_changeset_action ( struct of_changeset * ocs , unsigned long action , struct device_node * np , struct property * prop )
+
+Add an action to the tail of the changeset list
+
+Parameters
+  struct of_changeset *ocs
+    changeset pointer
+  unsigned long action
+    action to perform
+  struct device_node *np
+    Pointer to device node
+  struct property *prop
+    Pointer to property
+
+Description
+  On action being one of:
++ OF_RECONFIG_ATTACH_NODE
++ OF_RECONFIG_DETACH_NODE,
++ OF_RECONFIG_ADD_PROPERTY
++ OF_RECONFIG_REMOVE_PROPERTY,
++ OF_RECONFIG_UPDATE_PROPERTY

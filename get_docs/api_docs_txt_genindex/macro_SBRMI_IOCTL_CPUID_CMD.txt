@@ -1,0 +1,2 @@
+Macro: SBRMI_IOCTL_CPUID_CMD
+

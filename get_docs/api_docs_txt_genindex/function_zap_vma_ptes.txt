@@ -1,0 +1,14 @@
+Function: void zap_vma_ptes ( struct vm_area_struct * vma , unsigned long address , unsigned long size )
+
+remove ptes mapping the vma
+
+Parameters
+  struct vm_area_struct *vma
+    vm_area_struct holding ptes to be zapped
+  unsigned long address
+    starting address of pages to zap
+  unsigned long size
+    number of bytes to zap
+
+Description
+  This function only unmaps ptes assigned to VM_PFNMAP vmas.

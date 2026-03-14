@@ -1,0 +1,16 @@
+Function: void * scsi_kmap_atomic_sg ( struct scatterlist * sgl , int sg_count , size_t * offset , size_t * len )
+
+find and atomically map an sg-elemnt
+
+Parameters
+  struct scatterlist *sgl
+    scatter-gather list
+  int sg_count
+    number of segments in sg
+  size_t *offset
+    offset in bytes into sg, on return offset into the mapped area
+  size_t *len
+    bytes to map, on return number of bytes mapped
+
+Description
+  Returns virtual address of the start of the mapped page

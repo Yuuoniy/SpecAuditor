@@ -1,0 +1,12 @@
+Function: u32 vidtv_psi_sdt_write_into ( struct vidtv_psi_sdt_write_args * args )
+
+Write SDT as MPEG-TS packets into a buffer.
+
+Parameters
+  struct vidtv_psi_sdt_write_args *args
+    an instance of struct vidtv_psi_sdt_write_args
+
+Description
+  This function writes the MPEG TS packets for a SDT table into a buffer.
+Calling code will usually generate the SDT via a call to its init function
+and thus is responsible for freeing it.

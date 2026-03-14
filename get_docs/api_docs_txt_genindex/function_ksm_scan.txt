@@ -1,0 +1,13 @@
+Function: struct ksm_scan
+
+cursor for scanning
+
+Members
+  mm_slot
+    the current mm_slot we are scanning
+  address
+    the next address inside that to be scanned
+  rmap_list
+    link to the next rmap to be scanned in the rmap_list
+  seqnr
+    count of completed full scans (needed when removing unstable node)

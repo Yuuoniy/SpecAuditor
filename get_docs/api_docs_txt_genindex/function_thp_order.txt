@@ -1,0 +1,7 @@
+Function: unsigned int thp_order ( struct page * page )
+
+Order of a transparent huge page.
+
+Parameters
+  struct page *page
+    Head page of a transparent huge page.

@@ -1,0 +1,15 @@
+Function: int security_bpf_token_create ( struct bpf_token * token , union bpf_attr * attr , const struct path * path )
+
+Check if creating of BPF token is allowed
+
+Parameters
+  struct bpf_token *token
+    BPF token object
+  union bpf_attr *attr
+    BPF syscall attributes used to create BPF token
+  const struct path *path
+    path pointing to BPF FS mount point from which BPF token is created
+
+Description
+  Do a check when the kernel instantiates a new BPF token object from BPF FS
+instance. This is also the point where LSM blob can be allocated for LSMs.

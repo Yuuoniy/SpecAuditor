@@ -1,0 +1,11 @@
+Function: void irq_domain_free_irqs_parent ( struct irq_domain * domain , unsigned int irq_base , unsigned int nr_irqs )
+
+Free interrupts from parent domain
+
+Parameters
+  struct irq_domain *domain
+    Domain below which interrupts must be freed
+  unsigned int irq_base
+    Base IRQ number
+  unsigned int nr_irqs
+    Number of IRQs to free

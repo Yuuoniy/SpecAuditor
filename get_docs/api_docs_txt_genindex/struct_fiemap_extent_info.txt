@@ -1,0 +1,13 @@
+Struct: struct fiemap_extent_info
+
+fiemap request to a filesystem
+
+Members
+  fi_flags
+    Flags as passed from user
+  fi_extents_mapped
+    Number of mapped extents
+  fi_extents_max
+    Size of fiemap_extent array
+  fi_extents_start
+    Start of fiemap_extent array

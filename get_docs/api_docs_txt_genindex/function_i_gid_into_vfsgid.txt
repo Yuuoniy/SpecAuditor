@@ -1,0 +1,9 @@
+Function: vfsgid_t i_gid_into_vfsgid ( struct mnt_idmap * idmap , const struct inode * inode )
+
+map an inode’s i_gid down according to an idmapping
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount the inode was found from
+  const struct inode *inode
+    inode to map

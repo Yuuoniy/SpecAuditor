@@ -1,0 +1,15 @@
+Function: struct sk_buff * skb_checksum_trimmed ( struct sk_buff * skb , unsigned int transport_len , __sum16 ( * skb_chkf ) ( struct sk_buff * skb ) )
+
+validate checksum of an skb
+
+Parameters
+  struct sk_buff *skb
+    the skb to check
+  unsigned int transport_len
+    the data length beyond the network header
+  __sum16(*skb_chkf)(struct sk_buff *skb)
+    checksum function to use
+
+Description
+  Applies the given checksum function skb_chkf to the provided skb.
+Returns a checked and maybe trimmed skb. Returns NULL on error.

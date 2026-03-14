@@ -1,0 +1,3 @@
+Enum: enum vga_switcheroo_state
+
+client power state

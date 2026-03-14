@@ -1,0 +1,10 @@
+Function: bool backlight_is_blank ( const struct backlight_device * bd )
+
+Return true if display is expected to be blank
+
+Parameters
+  const struct backlight_device *bd
+    the backlight device
+
+Description
+  Display is expected to be blank if any of these is true:

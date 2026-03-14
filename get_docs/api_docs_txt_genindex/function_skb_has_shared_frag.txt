@@ -1,0 +1,7 @@
+Function: bool skb_has_shared_frag ( const struct sk_buff * skb )
+
+can any frag be overwritten
+
+Parameters
+  const struct sk_buff *skb
+    buffer to test

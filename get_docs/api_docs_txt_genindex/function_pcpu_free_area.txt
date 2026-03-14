@@ -1,0 +1,13 @@
+Function: int pcpu_free_area ( struct pcpu_chunk * chunk , int off )
+
+frees the corresponding offset
+
+Parameters
+  struct pcpu_chunk *chunk
+    chunk of interest
+  int off
+    addr offset into chunk
+
+Description
+  This function determines the size of an allocation to free using
+the boundary bitmap and clears the allocation map.

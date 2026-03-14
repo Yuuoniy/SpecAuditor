@@ -1,0 +1,11 @@
+Function: struct port_and_port_id srpt_lookup_port ( const char * name )
+
+Look up an RDMA port by name
+
+Parameters
+  const char *name
+    ASCII port name
+
+Description
+  Increments the RDMA port reference count if an RDMA port pointer is returned.
+The caller must drop that reference count by calling srpt_port_put_ref() .

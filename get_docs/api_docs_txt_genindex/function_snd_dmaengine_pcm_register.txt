@@ -1,0 +1,11 @@
+Function: int snd_dmaengine_pcm_register ( struct device * dev , const struct snd_dmaengine_pcm_config * config , unsigned int flags )
+
+Register a dmaengine based PCM device
+
+Parameters
+  struct device *dev
+    The parent device for the PCM device
+  const struct snd_dmaengine_pcm_config *config
+    Platform specific PCM configuration
+  unsigned int flags
+    Platform specific quirks

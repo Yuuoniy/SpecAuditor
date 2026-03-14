@@ -1,0 +1,23 @@
+Function: struct iscsi_cls_session * iscsi_session_setup ( struct iscsi_transport * iscsit , struct Scsi_Host * shost , uint16_t cmds_max , int dd_size , int cmd_task_size , uint32_t initial_cmdsn , unsigned int id )
+
+create iscsi cls session and host and session
+
+Parameters
+  struct iscsi_transport *iscsit
+    iscsi transport template
+  struct Scsi_Host *shost
+    scsi host
+  uint16_t cmds_max
+    session can queue
+  int dd_size
+    private driver data size, added to session allocation size
+  int cmd_task_size
+    LLD task private data size
+  uint32_t initial_cmdsn
+    initial CmdSN
+  unsigned int id
+    target ID to add to this session
+
+Description
+  This can be used by software iscsi_transports that allocate
+a session per scsi host.

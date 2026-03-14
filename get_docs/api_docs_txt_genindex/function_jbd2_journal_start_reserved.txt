@@ -1,0 +1,18 @@
+Function: int jbd2_journal_start_reserved ( handle_t * handle , unsigned int type , unsigned int line_no )
+
+start reserved handle
+
+Parameters
+  handle_t *handle
+    handle to start
+  unsigned int type
+    for handle statistics
+  unsigned int line_no
+    for handle statistics
+
+Description
+  Start handle that has been previously reserved with jbd2_journal_reserve() .
+This attaches handle to the running transaction (or creates one if there’s
+not transaction running). Unlike jbd2_journal_start() this function cannot
+block on journal commit, checkpointing, or similar stuff. It can block on
+memory allocation or frozen journal though.

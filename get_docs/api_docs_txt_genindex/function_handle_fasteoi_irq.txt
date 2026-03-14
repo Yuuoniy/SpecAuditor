@@ -1,0 +1,13 @@
+Function: void handle_fasteoi_irq ( struct irq_desc * desc )
+
+irq handler for transparent controllers
+
+Parameters
+  struct irq_desc *desc
+    the interrupt description structure for this irq
+
+Description
+  Only a single callback will be issued to the chip: an -> eoi() call when
+the interrupt has been serviced. This enables support for modern forms
+of interrupt handlers, which handle the flow details in hardware,
+transparently.

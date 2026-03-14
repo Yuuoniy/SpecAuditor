@@ -1,0 +1,20 @@
+Function: int rvt_rkey_ok ( struct rvt_qp * qp , struct rvt_sge * sge , u32 len , u64 vaddr , u32 rkey , int acc )
+
+check the IB virtual address, length, and RKEY
+
+Parameters
+  struct rvt_qp *qp
+    qp for validation
+  struct rvt_sge *sge
+    SGE state
+  u32 len
+    length of data
+  u64 vaddr
+    virtual address to place data
+  u32 rkey
+    rkey to check
+  int acc
+    access flags
+
+Description
+  increments the reference count upon success

@@ -1,0 +1,12 @@
+Function: union acpi_object * wmidev_block_query ( struct wmi_device * wdev , u8 instance )
+
+Return contents of a WMI block
+
+Parameters
+  struct wmi_device *wdev
+    A wmi bus device from a driver
+  u8 instance
+    Instance index
+
+Description
+  Query an ACPI-WMI block, the caller must free the result.

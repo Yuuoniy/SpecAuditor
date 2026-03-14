@@ -1,0 +1,11 @@
+Function: int jbd2_journal_clear_err ( journal_t * journal )
+
+clears the journal’s error state
+
+Parameters
+  journal_t *journal
+    journal to act on.
+
+Description
+  An error must be cleared or acked to take a FS out of readonly
+mode.

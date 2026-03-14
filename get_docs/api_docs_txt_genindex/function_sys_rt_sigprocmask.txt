@@ -1,0 +1,13 @@
+Function: long sys_rt_sigprocmask ( int how , sigset_t __user * nset , sigset_t __user * oset , size_t sigsetsize )
+
+change the list of currently blocked signals
+
+Parameters
+  int how
+    whether to add, remove, or set signals
+  sigset_t __user * nset
+    stores pending signals
+  sigset_t __user * oset
+    previous value of signal mask if non-null
+  size_t sigsetsize
+    size of sigset_t type

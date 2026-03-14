@@ -1,0 +1,7 @@
+Function: void v4l2_async_nf_unregister ( struct v4l2_async_notifier * notifier )
+
+unregisters a subdevice asynchronous notifier
+
+Parameters
+  struct v4l2_async_notifier *notifier
+    pointer to struct v4l2_async_notifier

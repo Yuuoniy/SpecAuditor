@@ -1,0 +1,17 @@
+Struct: struct v4l2_jpeg_frame_header
+
+JPEG frame header
+
+Members
+  height
+    Y
+  width
+    X
+  precision
+    P
+  num_components
+    Nf
+  component
+    component-specification, see v4l2_jpeg_frame_component_spec
+  subsampling
+    decoded subsampling from component-specification

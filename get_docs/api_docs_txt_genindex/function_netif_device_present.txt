@@ -1,0 +1,10 @@
+Function: bool netif_device_present ( const struct net_device * dev )
+
+is device available or removed
+
+Parameters
+  const struct net_device *dev
+    network device
+
+Description
+  Check if device has not been removed from system.

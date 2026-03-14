@@ -1,0 +1,20 @@
+Function: void * xa_find ( struct xarray * xa , unsigned long * indexp , unsigned long max , xa_mark_t filter )
+
+Search the XArray for an entry.
+
+Parameters
+  struct xarray *xa
+    XArray.
+  unsigned long *indexp
+    Pointer to an index.
+  unsigned long max
+    Maximum index to search to.
+  xa_mark_t filter
+    Selection criterion.
+
+Description
+  Finds the entry in xa which matches the filter , and has the lowest
+index that is at least indexp and no more than max .
+If an entry is found, indexp is updated to be the index of the entry.
+This function is protected by the RCU read lock, so it may not find
+entries which are being simultaneously added.  It will not return an XA_RETRY_ENTRY ; if you need to see retry entries, use xas_find() .

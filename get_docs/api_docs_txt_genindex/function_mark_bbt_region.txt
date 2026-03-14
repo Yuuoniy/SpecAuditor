@@ -1,0 +1,13 @@
+Function: void mark_bbt_region ( struct nand_chip * this , struct nand_bbt_descr * td )
+
+[GENERIC] mark the bad block table regions
+
+Parameters
+  struct nand_chip *this
+    the NAND device
+  struct nand_bbt_descr *td
+    bad block table descriptor
+
+Description
+  The bad block table regions are marked as “bad” to prevent accidental
+erasures / writes. The regions are identified by the mark 0x02.

@@ -1,0 +1,10 @@
+Function: void drm_flip_work_cleanup ( struct drm_flip_work * work )
+
+cleans up flip-work
+
+Parameters
+  struct drm_flip_work *work
+    the flip-work to cleanup
+
+Description
+  Destroy resources allocated for the flip-work

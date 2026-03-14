@@ -1,0 +1,9 @@
+Function: void w1_write_8 ( struct w1_master * dev , u8 byte )
+
+Writes 8 bits.
+
+Parameters
+  struct w1_master *dev
+    the master device
+  u8 byte
+    the byte to write

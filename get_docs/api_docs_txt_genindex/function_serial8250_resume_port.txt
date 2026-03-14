@@ -1,0 +1,10 @@
+Function: void serial8250_resume_port ( int line )
+
+resume one serial port
+
+Parameters
+  int line
+    serial line number
+
+Description
+  Resume one serial port.

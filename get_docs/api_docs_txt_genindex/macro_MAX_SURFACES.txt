@@ -1,0 +1,15 @@
+Macro: MAX_SURFACES
+
+
+
+Members
+  srgb
+    RGB color space transfer func
+  bt2020
+    BT.2020 transfer func
+  gamma2_2
+    standard gamma
+  pq
+    perceptual quantizer transfer function
+  hlg
+    hybrid log–gamma transfer function

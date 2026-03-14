@@ -1,0 +1,11 @@
+Function: struct xbc_node * xbc_find_node ( const char * key )
+
+Find a node which matches the key
+
+Parameters
+  const char *key
+    Search key
+
+Description
+  Search a (key) node whose key matches key from whole of XBC tree and
+return the node if found. If not found, returns NULL.

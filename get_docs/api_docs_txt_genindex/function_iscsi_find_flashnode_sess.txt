@@ -1,0 +1,15 @@
+Function: struct device * iscsi_find_flashnode_sess ( struct Scsi_Host * shost , const void * data , device_match_t fn )
+
+finds flashnode session entry
+
+Parameters
+  struct Scsi_Host *shost
+    pointer to host data
+  const void *data
+    pointer to data containing value to use for comparison
+  device_match_t fn
+    function pointer that does actual comparison
+
+Description
+  Finds the flashnode session object comparing the data passed using logic
+defined in passed function pointer

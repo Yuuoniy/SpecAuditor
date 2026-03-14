@@ -1,0 +1,7 @@
+Function: bool vb2_is_streaming ( struct vb2_queue * q )
+
+return streaming status of the queue.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.

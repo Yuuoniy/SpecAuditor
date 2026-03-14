@@ -1,0 +1,7 @@
+Function: bool drm_mm_clean ( const struct drm_mm * mm )
+
+checks whether an allocator is clean
+
+Parameters
+  const struct drm_mm *mm
+    drm_mm allocator to check

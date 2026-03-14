@@ -1,0 +1,12 @@
+Function: void process_scheduled_works ( struct worker * worker )
+
+process scheduled works
+
+Parameters
+  struct worker *worker
+    self
+
+Description
+  Process all scheduled works.  Please note that the scheduled list
+may change while processing a work, so this function repeatedly
+fetches a work from the top and executes it.

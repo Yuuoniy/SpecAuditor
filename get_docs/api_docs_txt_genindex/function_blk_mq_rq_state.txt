@@ -1,0 +1,7 @@
+Function: enum mq_rq_state blk_mq_rq_state ( struct request * rq )
+
+read the current MQ_RQ_* state of a request
+
+Parameters
+  struct request *rq
+    target request.

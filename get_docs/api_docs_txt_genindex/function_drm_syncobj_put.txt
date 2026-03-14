@@ -1,0 +1,7 @@
+Function: void drm_syncobj_put ( struct drm_syncobj * obj )
+
+release a reference to a sync object.
+
+Parameters
+  struct drm_syncobj *obj
+    sync object.

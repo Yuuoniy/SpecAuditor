@@ -1,0 +1,7 @@
+Function: void padata_free_shell ( struct padata_shell * ps )
+
+free a padata shell
+
+Parameters
+  struct padata_shell *ps
+    padata shell to free

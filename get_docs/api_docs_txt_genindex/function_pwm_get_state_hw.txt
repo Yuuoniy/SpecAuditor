@@ -1,0 +1,13 @@
+Function: int pwm_get_state_hw ( struct pwm_device * pwm , struct pwm_state * state )
+
+get the current PWM state from hardware
+
+Parameters
+  struct pwm_device *pwm
+    PWM device
+  struct pwm_state *state
+    state to fill with the current PWM state
+
+Description
+  Similar to pwm_get_state() but reads the current PWM state from hardware
+instead of the requested state.

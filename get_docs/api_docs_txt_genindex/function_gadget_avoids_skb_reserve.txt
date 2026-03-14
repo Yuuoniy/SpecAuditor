@@ -1,0 +1,7 @@
+Function: int gadget_avoids_skb_reserve ( struct usb_gadget * g )
+
+return true iff the hardware would like to avoid skb_reserve to improve performance.
+
+Parameters
+  struct usb_gadget *g
+    controller to check for quirk

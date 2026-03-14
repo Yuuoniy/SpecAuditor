@@ -1,0 +1,7 @@
+Function: bool mipi_dsi_packet_format_is_short ( u8 type )
+
+check if a packet is of the short format
+
+Parameters
+  u8 type
+    MIPI DSI data type of the packet

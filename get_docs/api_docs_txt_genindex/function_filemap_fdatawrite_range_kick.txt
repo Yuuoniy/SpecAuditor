@@ -1,0 +1,15 @@
+Function: int filemap_fdatawrite_range_kick ( struct address_space * mapping , loff_t start , loff_t end )
+
+start writeback on a range
+
+Parameters
+  struct address_space *mapping
+    target address_space
+  loff_t start
+    index to start writeback on
+  loff_t end
+    last (inclusive) index for writeback
+
+Description
+  This is a non-integrity writeback helper, to start writing back folios
+for the indicated range.

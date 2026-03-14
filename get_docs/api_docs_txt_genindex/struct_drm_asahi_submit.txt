@@ -1,0 +1,29 @@
+Struct: struct drm_asahi_submit
+
+Arguments passed to DRM_IOCTL_ASAHI_SUBMIT
+
+Members
+  syncs
+    An optional pointer to an array of drm_asahi_sync. The first in_sync_count elements are in-syncs, then the remaining out_sync_count elements are out-syncs. Using a single array with
+explicit partitioning simplifies handling.
+  cmdbuf
+    Pointer to the command buffer to submit. This is a flat command buffer. By design, it contains no CPU
+pointers, which makes it suitable for a virtgpu wire protocol without
+requiring any serializing/deserializing step. It consists of a series of commands. Each command begins with a
+fixed-size drm_asahi_cmd_header header and is followed by a
+variable-length payload according to the type and size in the header. The combined count of “real” hardware commands must be nonzero and at
+most drm_asahi_params_global::max_commands_per_submission.
+  flags
+    Flags for command submission (MBZ)
+  queue_id
+    The queue ID to be submitted to
+  in_sync_count
+    Number of sync objects to wait on before starting
+this job.
+  out_sync_count
+    Number of sync objects to signal upon completion of
+this job.
+  cmdbuf_size
+    Command buffer size in bytes
+  pad
+    MBZ

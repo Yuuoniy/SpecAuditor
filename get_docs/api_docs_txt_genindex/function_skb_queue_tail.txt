@@ -1,0 +1,14 @@
+Function: void skb_queue_tail ( struct sk_buff_head * list , struct sk_buff * newsk )
+
+queue a buffer at the list tail
+
+Parameters
+  struct sk_buff_head *list
+    list to use
+  struct sk_buff *newsk
+    buffer to queue
+
+Description
+  Queue a buffer at the tail of the list. This function takes the
+list lock and can be used safely with other locking sk_buff functions
+safely.

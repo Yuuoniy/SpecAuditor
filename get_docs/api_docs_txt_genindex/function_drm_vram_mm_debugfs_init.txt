@@ -1,0 +1,7 @@
+Function: void drm_vram_mm_debugfs_init ( struct drm_minor * minor )
+
+Register VRAM MM debugfs file.
+
+Parameters
+  struct drm_minor *minor
+    drm minor device.

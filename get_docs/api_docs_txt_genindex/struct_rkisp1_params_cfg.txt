@@ -1,0 +1,16 @@
+Struct: struct rkisp1_params_cfg
+
+Rockchip ISP1 Input Parameters Meta Data
+
+Members
+  module_en_update
+    mask the enable bits of which module should be updated
+  module_ens
+    mask the enable value of each module, only update the module
+which correspond bit was set in module_en_update
+  module_cfg_update
+    mask the config bits of which module should be updated
+  meas
+    measurement config
+  others
+    other config

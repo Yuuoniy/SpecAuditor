@@ -1,0 +1,12 @@
+Function: void module_put ( struct module * module )
+
+release a reference count to a module
+
+Parameters
+  struct module *module
+    the module we should release a reference count for
+
+Description
+  If you successfully bump a reference count to a module with try_module_get() ,
+when you are finished you must call module_put() to release that reference
+count.

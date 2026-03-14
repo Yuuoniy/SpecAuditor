@@ -1,0 +1,13 @@
+Function: ssize_t tty_read ( struct kiocb * iocb , struct iov_iter * to )
+
+read method for tty device files
+
+Parameters
+  struct kiocb *iocb
+    kernel I/O control block
+  struct iov_iter *to
+    destination for the data read
+
+Description
+  Perform the read system call function on this terminal device. Checks
+for hung up devices before calling the line discipline method.

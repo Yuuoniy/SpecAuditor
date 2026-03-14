@@ -1,0 +1,7 @@
+Function: int zynqmp_disp_create_layers ( struct zynqmp_disp * disp )
+
+Create and initialize all layers
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller

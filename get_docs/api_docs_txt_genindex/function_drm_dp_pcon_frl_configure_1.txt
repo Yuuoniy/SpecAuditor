@@ -1,0 +1,17 @@
+Function: int drm_dp_pcon_frl_configure_1 ( struct drm_dp_aux * aux , int max_frl_gbps , u8 frl_mode )
+
+Set HDMI LINK Configuration-Step1
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  int max_frl_gbps
+    maximum frl bw to be configured between PCON and HDMI sink
+  u8 frl_mode
+    FRL Training mode, it can be either Concurrent or Sequential.
+In Concurrent Mode, the FRL link bring up can be done along with
+DP Link training. In Sequential mode, the FRL link bring up is done prior to
+the DP Link training.
+
+Description
+  Returns 0 if success, else returns negative error code.

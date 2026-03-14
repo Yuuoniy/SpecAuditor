@@ -1,0 +1,63 @@
+Struct: struct dvb_demux
+
+represents a digital TV demux
+
+Members
+  dmx
+    embedded struct dmx_demux with demux capabilities
+and callbacks.
+  priv
+    private data that can optionally be used by
+a DVB driver.
+  filternum
+    maximum amount of DVB filters.
+  feednum
+    maximum amount of DVB feeds.
+  start_feed
+    callback routine to be called in order to start
+a DVB feed.
+  stop_feed
+    callback routine to be called in order to stop
+a DVB feed.
+  write_to_decoder
+    callback routine to be called if the feed is TS and
+it is routed to an A/V decoder, when a new TS packet
+is received.
+Used only on av7110-av.c.
+  check_crc32
+    callback routine to check CRC. If not initialized,
+dvb_demux will use an internal one.
+  memcopy
+    callback routine to memcopy received data.
+If not initialized, dvb_demux will default to memcpy() .
+  users
+    counter for the number of demux opened file descriptors.
+Currently, it is limited to 10 users.
+  filter
+    pointer to struct dvb_demux_filter .
+  feed
+    pointer to struct dvb_demux_feed .
+  frontend_list
+    struct list_head with frontends used by the demux.
+  pesfilter
+    array of struct dvb_demux_feed with the PES types
+that will be filtered.
+  pids
+    list of filtered program IDs.
+  feed_list
+    struct list_head with feeds.
+  tsbuf
+    temporary buffer used internally to store TS packets.
+  tsbufp
+    temporary buffer index used internally.
+  mutex
+    pointer to struct mutex used to protect feed set
+logic.
+  lock
+    pointer to spinlock_t , used to protect buffer handling.
+  cnt_storage
+    buffer used for TS/TEI continuity check.
+  speed_last_time
+    ktime_t used for TS speed check.
+  speed_pkts_cnt
+    packets count used for TS speed check.

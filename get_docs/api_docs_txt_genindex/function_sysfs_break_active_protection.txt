@@ -1,0 +1,15 @@
+Function: struct kernfs_node * sysfs_break_active_protection ( struct kobject * kobj , const struct attribute * attr )
+
+break “active” protection
+
+Parameters
+  struct kobject *kobj
+    The kernel object attr is associated with.
+  const struct attribute *attr
+    The attribute to break the “active” protection for.
+
+Description
+  With sysfs, just like kernfs, deletion of an attribute is postponed until
+all active . show() and . store() callbacks have finished unless this function
+is called. Hence this function is useful in methods that implement self
+deletion.

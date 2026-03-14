@@ -1,0 +1,17 @@
+Function: int security_lsmprop_to_secctx ( struct lsm_prop * prop , struct lsm_context * cp , int lsmid )
+
+Convert a lsm_prop to a secctx
+
+Parameters
+  struct lsm_prop *prop
+    lsm specific information
+  struct lsm_context *cp
+    the LSM context
+  int lsmid
+    which security module to report
+
+Description
+  Convert a prop entry to security context.  If cp is NULL the
+length of the result will be returned. This does mean that the
+length could change between calls to check the length and the
+next call which actually allocates and returns the cp .

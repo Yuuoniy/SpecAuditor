@@ -1,0 +1,17 @@
+Function: int ipc_check_perms ( struct ipc_namespace * ns , struct kern_ipc_perm * ipcp , const struct ipc_ops * ops , struct ipc_params * params )
+
+check security and permissions for an ipc object
+
+Parameters
+  struct ipc_namespace *ns
+    ipc namespace
+  struct kern_ipc_perm *ipcp
+    ipc permission set
+  const struct ipc_ops *ops
+    the actual security routine to call
+  struct ipc_params *params
+    its parameters
+
+Description
+  This routine is called by sys_msgget() , sys_semget() and sys_shmget() when the key is not IPC_PRIVATE and that key already exists in the
+ds IDR.

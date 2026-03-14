@@ -1,0 +1,9 @@
+Function: int nand_block_isbad ( struct mtd_info * mtd , loff_t offs )
+
+[MTD Interface] Check if block at offset is bad
+
+Parameters
+  struct mtd_info *mtd
+    MTD device structure
+  loff_t offs
+    offset relative to mtd start

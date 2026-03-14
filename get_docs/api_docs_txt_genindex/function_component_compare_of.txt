@@ -1,0 +1,14 @@
+Function: int component_compare_of ( struct device * dev , void * data )
+
+A common component compare function for of_node
+
+Parameters
+  struct device *dev
+    component device
+  void *data
+    compare_data from component_match_add_release()
+
+Description
+  A common compare function when compare_data is device of_node. e.g.
+component_match_add_release(masterdev, match , component_release_of,
+component_compare_of, component_dev_of_node)

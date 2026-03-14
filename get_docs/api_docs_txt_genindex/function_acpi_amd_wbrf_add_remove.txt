@@ -1,0 +1,20 @@
+Function: int acpi_amd_wbrf_add_remove ( struct device * dev , uint8_t action , struct wbrf_ranges_in_out * in )
+
+add or remove the frequency band the device is using
+
+Parameters
+  struct device *dev
+    device pointer
+  uint8_t action
+    remove or add the frequency band into bios
+  struct wbrf_ranges_in_out *in
+    input structure containing the frequency band the device is using
+
+Description
+  Broadcast to other consumers the frequency band the device starts
+to use. Underneath the surface the information is cached into an
+internal buffer first. Then a notification is sent to all those
+registered consumers. So then they can retrieve that buffer to
+know the latest active frequency bands. Consumers that haven’t
+yet been registered can retrieve the information from the cache
+when they register.

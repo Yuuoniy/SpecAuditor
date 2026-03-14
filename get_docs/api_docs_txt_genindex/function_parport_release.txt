@@ -1,0 +1,12 @@
+Function: void parport_release ( struct pardevice * dev )
+
+give up access to a parallel port device
+
+Parameters
+  struct pardevice *dev
+    pointer to structure representing parallel port device
+
+Description
+  This function cannot fail, but it should not be called without
+the port claimed.  Similarly, if the port is already claimed
+you should not try claiming it again.

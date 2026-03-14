@@ -1,0 +1,15 @@
+Function: void workqueue_set_min_active ( struct workqueue_struct * wq , int min_active )
+
+adjust min_active of an unbound workqueue
+
+Parameters
+  struct workqueue_struct *wq
+    target unbound workqueue
+  int min_active
+    new min_active value
+
+Description
+  Set min_active of an unbound workqueue. Unlike other types of workqueues, an
+unbound workqueue is not guaranteed to be able to process max_active
+interdependent work items. Instead, an unbound workqueue is guaranteed to be
+able to process min_active number of interdependent work items which is WQ_DFL_MIN_ACTIVE by default.

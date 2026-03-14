@@ -1,0 +1,10 @@
+Function: size_t gen_pool_avail ( struct gen_pool * pool )
+
+get available free space of the pool
+
+Parameters
+  struct gen_pool *pool
+    pool to get available free space
+
+Description
+  Return available free space of the specified pool.

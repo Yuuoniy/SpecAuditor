@@ -1,0 +1,7 @@
+Function: int iscsi_sw_tcp_xmit ( struct iscsi_conn * conn )
+
+TCP transmit
+
+Parameters
+  struct iscsi_conn *conn
+    iscsi connection

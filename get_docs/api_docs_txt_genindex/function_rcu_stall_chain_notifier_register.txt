@@ -1,0 +1,13 @@
+Function: int rcu_stall_chain_notifier_register ( struct notifier_block * n )
+
+Add an RCU CPU stall notifier
+
+Parameters
+  struct notifier_block *n
+    Entry to add.
+
+Description
+  Adds an RCU CPU stall notifier to an atomic notifier chain.
+The action passed to a notifier will be RCU_STALL_NOTIFY_NORM or
+friends.  The data will be the duration of the stalled grace period,
+in jiffies, coerced to a void* pointer.

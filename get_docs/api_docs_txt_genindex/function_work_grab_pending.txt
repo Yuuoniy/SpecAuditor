@@ -1,0 +1,15 @@
+Function: bool work_grab_pending ( struct work_struct * work , u32 cflags , unsigned long * irq_flags )
+
+steal work item from worklist and disable irq
+
+Parameters
+  struct work_struct *work
+    work item to steal
+  u32 cflags
+    WORK_CANCEL_ flags
+  unsigned long *irq_flags
+    place to store IRQ state
+
+Description
+  Grab PENDING bit of work . work can be in any stable state - idle, on timer
+or on worklist.

@@ -1,0 +1,23 @@
+Function: int mtree_alloc_cyclic ( struct maple_tree * mt , unsigned long * startp , void * entry , unsigned long range_lo , unsigned long range_hi , unsigned long * next , gfp_t gfp )
+
+Find somewhere to store this entry in the tree.
+
+Parameters
+  struct maple_tree *mt
+    The maple tree.
+  unsigned long *startp
+    Pointer to ID.
+  void *entry
+    The entry to store.
+  unsigned long range_lo
+    Lower bound of range to search.
+  unsigned long range_hi
+    Upper bound of range to search.
+  unsigned long *next
+    Pointer to next ID to allocate.
+  gfp_t gfp
+    The GFP_FLAGS to use for allocations.
+
+Description
+  Finds an empty entry in mt after next , stores the new index into
+the id pointer, stores the entry at that index, then updates next .

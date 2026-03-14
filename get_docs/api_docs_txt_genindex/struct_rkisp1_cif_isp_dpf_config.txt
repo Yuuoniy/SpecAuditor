@@ -1,0 +1,13 @@
+Struct: struct rkisp1_cif_isp_dpf_config
+
+Configuration used by De-noising pre-filter
+
+Members
+  gain
+    noise function gain
+  g_flt
+    green filter config
+  rb_flt
+    red blue filter config
+  nll
+    noise level lookup

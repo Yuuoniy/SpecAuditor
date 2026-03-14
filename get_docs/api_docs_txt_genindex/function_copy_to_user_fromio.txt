@@ -1,0 +1,14 @@
+Function: int copy_to_user_fromio ( void __user * dst , volatile const void __iomem * src , size_t count )
+
+copy data from mmio-space to user-space
+
+Parameters
+  void __user *dst
+    the destination pointer on user-space
+  const volatile void __iomem *src
+    the source pointer on mmio
+  size_t count
+    the data size to copy in bytes
+
+Description
+  Copies the data from mmio-space to user-space.

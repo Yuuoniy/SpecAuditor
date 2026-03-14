@@ -1,0 +1,11 @@
+Macro: DRM_PVR_SUBMIT_JOB_TRANSFER_CMD_FLAGS_MASK
+
+Logical OR of all the transfer cmd flags.
+
+Members
+  handle
+    Handle of sync object.
+  flags
+    Combination of DRM_PVR_SYNC_OP_FLAG_ flags.
+  value
+    Timeline value for this drm_syncobj. MBZ for a binary syncobj.

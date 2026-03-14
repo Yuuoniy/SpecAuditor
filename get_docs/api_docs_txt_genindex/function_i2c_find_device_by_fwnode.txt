@@ -1,0 +1,11 @@
+Function: struct i2c_client * i2c_find_device_by_fwnode ( struct fwnode_handle * fwnode )
+
+find an i2c_client for the fwnode
+
+Parameters
+  struct fwnode_handle *fwnode
+    struct fwnode_handle corresponding to the struct i2c_client
+
+Description
+  Look up and return the struct i2c_client corresponding to the fwnode .
+If no client can be found, or fwnode is NULL, this returns NULL.

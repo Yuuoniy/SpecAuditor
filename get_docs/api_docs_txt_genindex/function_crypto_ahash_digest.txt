@@ -1,0 +1,13 @@
+Function: int crypto_ahash_digest ( struct ahash_request * req )
+
+calculate message digest for a buffer
+
+Parameters
+  struct ahash_request *req
+    reference to the ahash_request handle that holds all information
+needed to perform the cipher operation
+
+Description
+  This function is a “short-hand” for the function calls of crypto_ahash_init,
+crypto_ahash_update and crypto_ahash_final. The parameters have the same
+meaning as discussed for those separate three functions.

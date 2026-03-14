@@ -1,0 +1,9 @@
+Struct: struct cxl_rd_ops
+
+CXL root decoder callback operations
+
+Members
+  hpa_to_spa
+    Convert host physical address to system physical address
+  spa_to_hpa
+    Convert system physical address to host physical address

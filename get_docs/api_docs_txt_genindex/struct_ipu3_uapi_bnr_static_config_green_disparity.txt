@@ -1,0 +1,40 @@
+Struct: struct ipu3_uapi_bnr_static_config_green_disparity
+
+Correct green disparity
+
+Members
+  gd_red
+    Shading gain coeff for gr disparity level in bright red region.
+Precision u0.6, default 4(0.0625).
+  reserved0
+    reserved
+  gd_green
+    Shading gain coeff for gr disparity level in bright green
+region. Precision u0.6, default 4(0.0625).
+  reserved1
+    reserved
+  gd_blue
+    Shading gain coeff for gr disparity level in bright blue region.
+Precision u0.6, default 4(0.0625).
+  reserved2
+    reserved
+  gd_black
+    Maximal green disparity level in dark region (stronger disparity
+assumed to be image detail). Precision u14, default 80.
+  reserved3
+    reserved
+  gd_shading
+    Change maximal green disparity level according to square
+distance from image center.
+  reserved4
+    reserved
+  gd_support
+    Lower bound for the number of second green color pixels in
+current pixel neighborhood with less than threshold difference
+from it.
+  reserved5
+    reserved
+  gd_clip
+    Turn green disparity clip on/off, [0, 1], default 1.
+  gd_central_weight
+    Central pixel weight in 9 pixels weighted sum.

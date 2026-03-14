@@ -1,0 +1,19 @@
+Struct: struct iommu_ioas_map_file
+
+ioctl(IOMMU_IOAS_MAP_FILE)
+
+Members
+  size
+    sizeof( struct iommu_ioas_map_file )
+  flags
+    same as for iommu_ioas_map
+  ioas_id
+    same as for iommu_ioas_map
+  fd
+    the memfd to map
+  start
+    byte offset from start of file to map from
+  length
+    same as for iommu_ioas_map
+  iova
+    same as for iommu_ioas_map

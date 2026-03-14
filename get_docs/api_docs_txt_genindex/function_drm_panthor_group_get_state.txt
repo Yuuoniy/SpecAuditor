@@ -1,0 +1,14 @@
+Function: struct drm_panthor_group_get_state
+
+Arguments passed to DRM_IOCTL_PANTHOR_GROUP_GET_STATE
+
+Members
+  group_handle
+    Handle of the group to query state on
+  state
+    Combination of DRM_PANTHOR_GROUP_STATE_* flags encoding the
+group state.
+  fatal_queues
+    Bitmask of queues that faced fatal faults.
+  pad
+    MBZ

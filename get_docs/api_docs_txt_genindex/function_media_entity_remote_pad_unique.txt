@@ -1,0 +1,14 @@
+Function: struct media_pad * media_entity_remote_pad_unique ( const struct media_entity * entity , unsigned int type )
+
+Find a remote pad connected to an entity
+
+Parameters
+  const struct media_entity *entity
+    The entity
+  unsigned int type
+    The type of pad to find (MEDIA_PAD_FL_SINK or MEDIA_PAD_FL_SOURCE)
+
+Description
+  Search for and return a remote pad of type connected to entity through an
+enabled link. If multiple (or no) remote pads match these criteria, an error
+is returned.

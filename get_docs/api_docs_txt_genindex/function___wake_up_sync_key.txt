@@ -1,0 +1,17 @@
+Function: void __wake_up_sync_key ( struct wait_queue_head * wq_head , unsigned int mode , void * key )
+
+wake up threads blocked on a waitqueue.
+
+Parameters
+  struct wait_queue_head *wq_head
+    the waitqueue
+  unsigned int mode
+    which threads
+  void *key
+    opaque value to be passed to wakeup targets
+
+Description
+  The sync wakeup differs that the waker knows that it will schedule
+away soon, so while the target thread will be woken up, it will not
+be migrated to another CPU - ie. the two threads are ‘synchronized’
+with each other. This can prevent needless bouncing between CPUs.

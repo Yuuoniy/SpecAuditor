@@ -1,0 +1,15 @@
+Function: ssize_t generic_listxattr ( struct dentry * dentry , char * buffer , size_t buffer_size )
+
+run through a dentry’s xattr list() operations
+
+Parameters
+  struct dentry *dentry
+    dentry to list the xattrs
+  char *buffer
+    result buffer
+  size_t buffer_size
+    size of buffer
+
+Description
+  Combine the results of the list() operation from every xattr_handler in the
+xattr_handler stack.

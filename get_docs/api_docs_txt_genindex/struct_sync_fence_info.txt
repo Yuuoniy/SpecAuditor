@@ -1,0 +1,15 @@
+Struct: struct sync_fence_info
+
+detailed fence information
+
+Members
+  obj_name
+    name of parent sync_timeline
+  driver_name
+    name of driver implementing the parent
+  status
+    status of the fence 0:active 1:signaled <0:error
+  flags
+    fence_info flags
+  timestamp_ns
+    timestamp of status change in nanoseconds

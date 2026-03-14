@@ -1,0 +1,13 @@
+Function: int ilsel_enable ( ilsel_source_t set )
+
+Enable an ILSEL set.
+
+Parameters
+  ilsel_source_t set
+    ILSEL source (see ilsel_source_t enum in include/asm-sh/ilsel.h).
+
+Description
+  Enables a given non-aliased ILSEL source (<= ILSEL_KEY) at the highest
+available interrupt level. Callers should take care to order callsites
+noting descending interrupt levels. Aliasing FPGA and external board
+IRQs need to use ilsel_enable_fixed() .

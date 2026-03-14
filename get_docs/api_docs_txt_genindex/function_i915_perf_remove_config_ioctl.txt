@@ -1,0 +1,15 @@
+Function: int i915_perf_remove_config_ioctl ( struct drm_device * dev , void * data , struct drm_file * file )
+
+DRM ioctl() for userspace to remove an OA config
+
+Parameters
+  struct drm_device *dev
+    drm device
+  void *data
+    ioctl data (pointer to u64 integer) copied from userspace
+  struct drm_file *file
+    drm file
+
+Description
+  Configs can be removed while being used, the will stop appearing in sysfs
+and their content will be freed when the stream using the config is closed.

@@ -1,0 +1,10 @@
+Function: void pci_bus_add_device ( struct pci_dev * dev )
+
+start driver for a single device
+
+Parameters
+  struct pci_dev *dev
+    device to add
+
+Description
+  This adds add sysfs entries and start device drivers

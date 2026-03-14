@@ -1,0 +1,14 @@
+Function: __be32 * xdr_reserve_space ( struct xdr_stream * xdr , size_t nbytes )
+
+Reserve buffer space for sending
+
+Parameters
+  struct xdr_stream *xdr
+    pointer to xdr_stream
+  size_t nbytes
+    number of bytes to reserve
+
+Description
+  Checks that we have enough buffer space to encode ‘nbytes’ more
+bytes of data. If so, update the total xdr_buf length, and
+adjust the length of the current kvec.

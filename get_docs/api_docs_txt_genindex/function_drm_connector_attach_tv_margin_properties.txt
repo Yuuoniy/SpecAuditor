@@ -1,0 +1,11 @@
+Function: void drm_connector_attach_tv_margin_properties ( struct drm_connector * connector )
+
+attach TV connector margin properties
+
+Parameters
+  struct drm_connector *connector
+    DRM connector
+
+Description
+  Called by a driver when it needs to attach TV margin props to a connector.
+Typically used on SDTV and HDMI connectors.

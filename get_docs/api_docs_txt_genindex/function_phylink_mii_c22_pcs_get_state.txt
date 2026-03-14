@@ -1,0 +1,15 @@
+Function: void phylink_mii_c22_pcs_get_state ( struct mdio_device * pcs , unsigned int neg_mode , struct phylink_link_state * state )
+
+read the MAC PCS state
+
+Parameters
+  struct mdio_device *pcs
+    a pointer to a struct mdio_device .
+  unsigned int neg_mode
+    link negotiation mode (PHYLINK_PCS_NEG_xxx)
+  struct phylink_link_state *state
+    a pointer to a struct phylink_link_state .
+
+Description
+  Helper for MAC PCS supporting the 802.3 clause 22 register set for
+clause 37 negotiation and/or SGMII control.

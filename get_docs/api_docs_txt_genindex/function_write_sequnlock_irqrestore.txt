@@ -1,0 +1,13 @@
+Function: void write_sequnlock_irqrestore ( seqlock_t * sl , unsigned long flags )
+
+end non-interruptible seqlock_t write section
+
+Parameters
+  seqlock_t *sl
+    Pointer to seqlock_t
+  unsigned long flags
+    Caller’s saved interrupt state, from write_seqlock_irqsave()
+
+Description
+  write_sequnlock_irqrestore closes the serialized and non-interruptible
+seqlock_t write section previously opened with write_seqlock_irqsave() .

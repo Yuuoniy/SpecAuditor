@@ -1,0 +1,31 @@
+Struct: struct mipi_dsi_device
+
+DSI peripheral device
+
+Members
+  host
+    DSI host for this peripheral
+  dev
+    driver model device node for this peripheral
+  attached
+    the DSI device has been successfully attached
+  name
+    DSI peripheral chip type
+  channel
+    virtual channel assigned to the peripheral
+  lanes
+    number of active data lanes
+  format
+    pixel format for video mode
+  mode_flags
+    DSI operation mode related flags
+  hs_rate
+    maximum lane frequency for high speed mode in hertz, this should
+be set to the real limits of the hardware, zero is only accepted for
+legacy drivers
+  lp_rate
+    maximum lane frequency for low power mode in hertz, this should
+be set to the real limits of the hardware, zero is only accepted for
+legacy drivers
+  dsc
+    panel/bridge DSC pps payload to be sent

@@ -1,0 +1,11 @@
+Function: void amdgpu_dm_hpd_init ( struct amdgpu_device * adev )
+
+hpd setup callback.
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+
+Description
+  Setup the hpd pins used by the card (evergreen+).
+Enable the pin, set the polarity, and enable the hpd interrupts.

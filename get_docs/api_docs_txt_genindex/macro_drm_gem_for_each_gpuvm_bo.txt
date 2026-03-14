@@ -1,0 +1,12 @@
+Macro: drm_gem_for_each_gpuvm_bo
+
+
+
+Parameters
+  entry__
+    drm_gpuvm_bo structure to assign to in each iteration step
+  obj__
+    the drm_gem_object the drm_gpuvm_bo to walk are associated with
+
+Description
+  This iterator walks over all drm_gpuvm_bo structures associated with the drm_gem_object .

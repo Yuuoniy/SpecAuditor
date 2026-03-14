@@ -1,0 +1,9 @@
+Function: void ttm_resource_manager_debug ( struct ttm_resource_manager * man , struct drm_printer * p )
+
+
+
+Parameters
+  struct ttm_resource_manager *man
+    manager type to dump.
+  struct drm_printer *p
+    printer to use for debug.

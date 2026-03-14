@@ -1,0 +1,12 @@
+Function: void security_inode_getlsmprop ( struct inode * inode , struct lsm_prop * prop )
+
+Get an inode’s LSM data
+
+Parameters
+  struct inode *inode
+    inode
+  struct lsm_prop *prop
+    lsm specific information to return
+
+Description
+  Get the lsm specific information associated with the node.

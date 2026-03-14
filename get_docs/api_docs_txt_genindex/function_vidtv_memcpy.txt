@@ -1,0 +1,17 @@
+Function: u32 vidtv_memcpy ( void * to , size_t to_offset , size_t to_size , const void * from , size_t len )
+
+wrapper routine to be used by MPEG-TS generator, in order to avoid going past the output buffer.
+
+Parameters
+  void *to
+    Starting element to where a MPEG-TS packet will
+be copied.
+  size_t to_offset
+    Starting position of the to buffer to be filled.
+  size_t to_size
+    Size of the to buffer.
+  const void *from
+    Starting element of the buffer to be copied.
+  size_t len
+    Number of elements to be copy from from buffer
+into to**+ **to_offset buffer.

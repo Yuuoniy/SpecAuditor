@@ -1,0 +1,21 @@
+Struct: struct drm_gpuvm_exec
+
+drm_gpuvm abstraction of drm_exec
+
+Members
+  exec
+    the drm_exec structure
+  flags
+    the flags for the struct drm_exec
+  vm
+    the drm_gpuvm to lock its DMA reservations
+  num_fences
+    the number of fences to reserve for the dma_resv of the
+locked drm_gem_objects
+  extra
+    Callback and corresponding private data for the driver to
+lock arbitrary additional drm_gem_objects .
+  extra.fn
+    The driver callback to lock additional drm_gem_objects .
+  extra.priv
+    driver private data for the fn callback

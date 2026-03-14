@@ -1,0 +1,16 @@
+Function: void pci_walk_bus ( struct pci_bus * top , int ( * cb ) ( struct pci_dev * , void * ) , void * userdata )
+
+walk devices on/under bus, calling callback.
+
+Parameters
+  struct pci_bus *top
+    bus whose devices should be walked
+  int (*cb)(struct pci_dev *, void *)
+    callback to be called for each device found
+  void *userdata
+    arbitrary pointer to be passed to callback
+
+Description
+  Walk the given bus, including any bridged devices
+on buses under this bus.  Call the provided callback
+on each device found.

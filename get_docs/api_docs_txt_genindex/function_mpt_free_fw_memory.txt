@@ -1,0 +1,11 @@
+Function: void mpt_free_fw_memory ( MPT_ADAPTER * ioc )
+
+free firmware memory
+
+Parameters
+  MPT_ADAPTER *ioc
+    Pointer to MPT_ADAPTER structure
+
+Description
+  If alt_img is NULL, delete from ioc structure.
+Else, delete a secondary image in same format.

@@ -1,0 +1,11 @@
+Function: void drm_sched_job_arm ( struct drm_sched_job * job )
+
+arm a scheduler job for execution
+
+Parameters
+  struct drm_sched_job *job
+    scheduler job to arm
+
+Description
+  This arms a scheduler job for execution. Specifically it initializes the drm_sched_job.s_fence of job , so that it can be attached to struct dma_resv or other places that need to track the completion of this job. It also
+initializes sequence numbers, which are fundamental for fence ordering.

@@ -1,0 +1,9 @@
+Function: struct device * driver_find_device_by_acpi_dev ( const struct device_driver * drv , const struct acpi_device * adev )
+
+device iterator for locating a particular device matching the ACPI_COMPANION device.
+
+Parameters
+  const struct device_driver *drv
+    the driver we’re iterating
+  const struct acpi_device *adev
+    ACPI_COMPANION device to match.

@@ -1,0 +1,12 @@
+Function: int media_request_lock_for_access ( struct media_request * req )
+
+Lock the request to access its objects
+
+Parameters
+  struct media_request *req
+    The media request
+
+Description
+  Use before accessing a completed request. A reference to the request must
+be held during the access. This usually takes place automatically through
+a file handle. Use media_request_unlock_for_access when done.

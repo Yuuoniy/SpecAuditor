@@ -1,0 +1,12 @@
+Function: int futex_unqueue_multiple ( struct futex_vector * v , int count )
+
+Remove various futexes from their hash bucket
+
+Parameters
+  struct futex_vector *v
+    The list of futexes to unqueue
+  int count
+    Number of futexes in the list
+
+Description
+  Helper to unqueue a list of futexes. This can’t fail.

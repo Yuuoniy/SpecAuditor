@@ -1,0 +1,15 @@
+Function: struct v4l2_mbus_framefmt * v4l2_subdev_state_get_opposite_stream_format ( struct v4l2_subdev_state * state , u32 pad , u32 stream )
+
+Get pointer to opposite stream format
+
+Parameters
+  struct v4l2_subdev_state *state
+    subdevice state
+  u32 pad
+    pad id
+  u32 stream
+    stream id
+
+Description
+  This returns a pointer to struct v4l2_mbus_framefmt for the pad + stream
+that is opposite the given pad + stream in the subdev state.

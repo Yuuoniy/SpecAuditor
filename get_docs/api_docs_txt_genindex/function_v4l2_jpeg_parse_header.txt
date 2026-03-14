@@ -1,0 +1,17 @@
+Function: int v4l2_jpeg_parse_header ( void * buf , size_t len , struct v4l2_jpeg_header * out )
+
+locate marker segments and optionally parse headers
+
+Parameters
+  void *buf
+    address of the JPEG buffer, should start with a SOI marker
+  size_t len
+    length of the JPEG buffer
+  struct v4l2_jpeg_header *out
+    returns marker segment positions and optionally parsed headers
+
+Description
+  The out->scan_header pointer must be initialized to NULL or point to a valid
+v4l2_jpeg_scan_header structure. The out->huffman_tables and
+out->quantization_tables pointers must be initialized to NULL or point to a
+valid array of 4 v4l2_jpeg_reference structures each.

@@ -1,0 +1,12 @@
+Function: void v4l2_subdev_unlock_states ( struct v4l2_subdev_state * state1 , struct v4l2_subdev_state * state2 )
+
+Unlock two sub-device states
+
+Parameters
+  struct v4l2_subdev_state *state1
+    One subdevice state
+  struct v4l2_subdev_state *state2
+    The other subdevice state
+
+Description
+  Unlocks the state of two sub-devices.

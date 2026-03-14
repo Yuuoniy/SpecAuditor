@@ -1,0 +1,15 @@
+Function: int spi_optimize_message ( struct spi_device * spi , struct spi_message * msg )
+
+do any one-time validation and setup for a SPI message
+
+Parameters
+  struct spi_device *spi
+    the device that will be used for the message
+  struct spi_message *msg
+    the message to optimize
+
+Description
+  Peripheral drivers that reuse the same message repeatedly may call this to
+perform as much message prep as possible once, rather than repeating it each
+time a message transfer is performed to improve throughput and reduce CPU
+usage.

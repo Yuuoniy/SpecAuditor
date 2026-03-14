@@ -1,0 +1,12 @@
+Function: int tipc_sk_backlog_rcv ( struct sock * sk , struct sk_buff * skb )
+
+handle incoming message from backlog queue
+
+Parameters
+  struct sock *sk
+    socket
+  struct sk_buff *skb
+    message
+
+Description
+  Caller must hold socket lock

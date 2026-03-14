@@ -1,0 +1,9 @@
+Struct: struct iommu_hwpt_page_response
+
+IOMMU page fault response
+
+Members
+  cookie
+    The kernel-managed cookie reported in the fault message.
+  code
+    One of response code in enum iommufd_page_response_code .

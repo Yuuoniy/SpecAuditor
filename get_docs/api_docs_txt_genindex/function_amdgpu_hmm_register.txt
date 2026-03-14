@@ -1,0 +1,13 @@
+Function: int amdgpu_hmm_register ( struct amdgpu_bo * bo , unsigned long addr )
+
+register a BO for notifier updates
+
+Parameters
+  struct amdgpu_bo *bo
+    amdgpu buffer object
+  unsigned long addr
+    userptr addr we should monitor
+
+Description
+  Registers a mmu_notifier for the given BO at the specified address.
+Returns 0 on success, -ERRNO if anything goes wrong.

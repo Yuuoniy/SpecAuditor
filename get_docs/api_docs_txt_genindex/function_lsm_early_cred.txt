@@ -1,0 +1,10 @@
+Function: void lsm_early_cred ( struct cred * cred )
+
+during initialization allocate a composite cred blob
+
+Parameters
+  struct cred *cred
+    the cred that needs a blob
+
+Description
+  Allocate the cred blob for all the modules

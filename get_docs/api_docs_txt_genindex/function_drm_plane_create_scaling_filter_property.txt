@@ -1,0 +1,14 @@
+Function: int drm_plane_create_scaling_filter_property ( struct drm_plane * plane , unsigned int supported_filters )
+
+create a new scaling filter property
+
+Parameters
+  struct drm_plane *plane
+    drm plane
+  unsigned int supported_filters
+    bitmask of supported scaling filters, must include
+BIT(DRM_SCALING_FILTER_DEFAULT).
+
+Description
+  This function lets driver to enable the scaling filter property on a given
+plane.

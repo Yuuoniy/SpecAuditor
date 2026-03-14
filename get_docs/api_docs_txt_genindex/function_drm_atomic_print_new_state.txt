@@ -1,0 +1,13 @@
+Function: void drm_atomic_print_new_state ( const struct drm_atomic_state * state , struct drm_printer * p )
+
+prints drm atomic state
+
+Parameters
+  const struct drm_atomic_state *state
+    atomic configuration to check
+  struct drm_printer *p
+    drm printer
+
+Description
+  This functions prints the drm atomic state snapshot using the drm printer
+which is passed to it. This snapshot can be used for debugging purposes.

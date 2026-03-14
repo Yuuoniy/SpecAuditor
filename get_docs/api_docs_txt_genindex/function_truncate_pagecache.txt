@@ -1,0 +1,13 @@
+Function: void truncate_pagecache ( struct inode * inode , loff_t newsize )
+
+unmap and remove pagecache that has been truncated
+
+Parameters
+  struct inode *inode
+    inode
+  loff_t newsize
+    new file size
+
+Description
+  inode’s new i_size must already be written before truncate_pagecache
+is called.

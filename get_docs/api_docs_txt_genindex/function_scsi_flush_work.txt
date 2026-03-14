@@ -1,0 +1,7 @@
+Function: void scsi_flush_work ( struct Scsi_Host * shost )
+
+Flush a Scsi_Host’s workqueue.
+
+Parameters
+  struct Scsi_Host *shost
+    Pointer to Scsi_Host.

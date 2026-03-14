@@ -1,0 +1,11 @@
+Function: struct kunit_resource * kunit_find_resource ( struct kunit * test , kunit_resource_match_t match , void * match_data )
+
+Find a resource using match function/data.
+
+Parameters
+  struct kunit *test
+    Test case to which the resource belongs.
+  kunit_resource_match_t match
+    match function to be applied to resources/match data.
+  void *match_data
+    data to be used in matching.

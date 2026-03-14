@@ -1,0 +1,11 @@
+Function: int rio_release_inb_pwrite ( struct rio_dev * rdev )
+
+release inbound port-write message service associated with specific RapidIO device
+
+Parameters
+  struct rio_dev *rdev
+    RIO device which registered for inbound port-write callback
+
+Description
+  Removes callback from the rio_dev structure. Returns 0 if the request
+has been satisfied.

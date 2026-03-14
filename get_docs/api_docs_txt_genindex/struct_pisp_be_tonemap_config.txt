@@ -1,0 +1,15 @@
+Struct: struct pisp_be_tonemap_config
+
+PiSP Back End Tonemap config
+
+Members
+  detail_constant
+    Constant value for threshold calculation
+  detail_slope
+    Slope value for threshold calculation
+  iir_strength
+    Relative strength of the IIR fiter
+  strength
+    Strength factor
+  lut
+    Look-up table for tonemap curve

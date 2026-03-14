@@ -1,0 +1,11 @@
+Function: void ata_scsi_set_passthru_sense_fields ( struct ata_queued_cmd * qc )
+
+Set ATA fields in sense buffer
+
+Parameters
+  struct ata_queued_cmd *qc
+    ATA PASS-THROUGH command.
+
+Description
+  Populates “ATA Status Return sense data descriptor” / “Fixed format
+sense data” with ATA taskfile fields.

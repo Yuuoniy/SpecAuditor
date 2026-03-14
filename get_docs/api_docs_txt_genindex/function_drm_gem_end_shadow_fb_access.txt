@@ -1,0 +1,13 @@
+Function: void drm_gem_end_shadow_fb_access ( struct drm_plane * plane , struct drm_plane_state * plane_state )
+
+releases shadow framebuffers from CPU access
+
+Parameters
+  struct drm_plane *plane
+    the plane
+  struct drm_plane_state *plane_state
+    the plane state of type struct drm_shadow_plane_state
+
+Description
+  This function implements struct drm_plane_helper_funcs.end_fb_access . It
+undoes all effects of drm_gem_begin_shadow_fb_access() in reverse order.

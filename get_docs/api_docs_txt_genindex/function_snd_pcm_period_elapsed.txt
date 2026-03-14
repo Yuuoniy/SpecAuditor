@@ -1,0 +1,11 @@
+Function: void snd_pcm_period_elapsed ( struct snd_pcm_substream * substream )
+
+update the status of runtime for the next period by acquiring lock of PCM substream.
+
+Parameters
+  struct snd_pcm_substream *substream
+    the instance of PCM substream.
+
+Description
+  This function is mostly similar to snd_pcm_period_elapsed_under_stream_lock() except for
+acquiring lock of PCM substream voluntarily.

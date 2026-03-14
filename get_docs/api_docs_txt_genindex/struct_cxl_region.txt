@@ -1,0 +1,27 @@
+Struct: struct cxl_region
+
+CXL region
+
+Members
+  dev
+    This region’s device
+  id
+    This region’s id. Id is globally unique across all regions
+  mode
+    Operational mode of the mapped capacity
+  type
+    Endpoint decoder target type
+  cxl_nvb
+    nvdimm bridge for coordinating cxlr_pmem setup / shutdown
+  cxlr_pmem
+    (for pmem regions) cached copy of the nvdimm bridge
+  flags
+    Region state flags
+  params
+    active + config params for the region
+  coord
+    QoS access coordinates for the region
+  node_notifier
+    notifier for setting the access coordinates to node
+  adist_notifier
+    notifier for calculating the abstract distance of node

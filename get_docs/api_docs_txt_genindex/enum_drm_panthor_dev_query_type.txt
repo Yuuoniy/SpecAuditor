@@ -1,0 +1,3 @@
+Enum: enum drm_panthor_dev_query_type
+
+Query type

@@ -1,0 +1,9 @@
+Function: void skb_complete_wifi_ack ( struct sk_buff * skb , bool acked )
+
+deliver skb with wifi status
+
+Parameters
+  struct sk_buff *skb
+    the original outgoing packet
+  bool acked
+    ack status

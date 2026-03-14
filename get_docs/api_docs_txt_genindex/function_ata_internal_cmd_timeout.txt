@@ -1,0 +1,12 @@
+Function: unsigned int ata_internal_cmd_timeout ( struct ata_device * dev , u8 cmd )
+
+determine timeout for an internal command
+
+Parameters
+  struct ata_device *dev
+    target device
+  u8 cmd
+    internal command to be issued
+
+Description
+  Determine timeout for internal command cmd for dev .

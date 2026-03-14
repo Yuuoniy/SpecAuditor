@@ -1,0 +1,7 @@
+Function: struct phy_device * phy_find_first ( struct mii_bus * bus )
+
+finds the first PHY device on the bus
+
+Parameters
+  struct mii_bus *bus
+    the target MII bus

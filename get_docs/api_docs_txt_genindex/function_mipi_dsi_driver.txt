@@ -1,0 +1,13 @@
+Function: struct mipi_dsi_driver
+
+DSI driver
+
+Members
+  driver
+    device driver model driver
+  probe
+    callback for device binding
+  remove
+    callback for device unbinding
+  shutdown
+    called at shutdown time to quiesce the device

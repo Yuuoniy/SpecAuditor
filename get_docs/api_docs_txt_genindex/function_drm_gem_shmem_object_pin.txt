@@ -1,0 +1,11 @@
+Function: int drm_gem_shmem_object_pin ( struct drm_gem_object * obj )
+
+GEM object function for drm_gem_shmem_pin()
+
+Parameters
+  struct drm_gem_object *obj
+    GEM object
+
+Description
+  This function wraps drm_gem_shmem_pin() . Drivers that employ the shmem helpers should
+use it as their drm_gem_object_funcs.pin handler.

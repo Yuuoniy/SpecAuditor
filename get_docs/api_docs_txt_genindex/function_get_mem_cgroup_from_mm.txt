@@ -1,0 +1,15 @@
+Function: struct mem_cgroup * get_mem_cgroup_from_mm ( struct mm_struct * mm )
+
+Obtain a reference on given mm_struct’s memcg.
+
+Parameters
+  struct mm_struct *mm
+    mm from which memcg should be extracted. It can be NULL.
+
+Description
+  Obtain a reference on mm->memcg and returns it if successful. If mm
+is NULL, then the memcg is chosen as follows:
+1) The active memcg, if set.
+2) current->mm->memcg, if available
+3) root memcg
+If mem_cgroup is disabled, NULL is returned.

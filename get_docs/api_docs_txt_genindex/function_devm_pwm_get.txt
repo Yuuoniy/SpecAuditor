@@ -1,0 +1,13 @@
+Function: struct pwm_device * devm_pwm_get ( struct device * dev , const char * con_id )
+
+resource managed pwm_get()
+
+Parameters
+  struct device *dev
+    device for PWM consumer
+  const char *con_id
+    consumer name
+
+Description
+  This function performs like pwm_get() but the acquired PWM device will
+automatically be released on driver detach.

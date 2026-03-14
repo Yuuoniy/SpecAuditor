@@ -1,0 +1,9 @@
+Function: void __audit_mq_getsetattr ( mqd_t mqdes , struct mq_attr * mqstat )
+
+record audit data for a POSIX MQ get/set attribute
+
+Parameters
+  mqd_t mqdes
+    MQ descriptor
+  struct mq_attr *mqstat
+    MQ flags

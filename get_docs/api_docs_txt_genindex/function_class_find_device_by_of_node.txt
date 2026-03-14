@@ -1,0 +1,9 @@
+Function: struct device * class_find_device_by_of_node ( const struct class * class , const struct device_node * np )
+
+device iterator for locating a particular device matching the of_node.
+
+Parameters
+  const struct class *class
+    class type
+  const struct device_node *np
+    of_node of the device to match.

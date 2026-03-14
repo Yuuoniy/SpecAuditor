@@ -1,0 +1,13 @@
+Function: enum drm_mode_status drm_mode_validate_ycbcr420 ( const struct drm_display_mode * mode , struct drm_connector * connector )
+
+add ‘ycbcr420-only’ modes only when allowed
+
+Parameters
+  const struct drm_display_mode *mode
+    mode to check
+  struct drm_connector *connector
+    drm connector under action
+
+Description
+  This function is a helper which can be used to filter out any YCBCR420
+only mode, when the source doesn’t support it.

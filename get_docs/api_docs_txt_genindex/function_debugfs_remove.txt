@@ -1,0 +1,13 @@
+Function: void debugfs_remove ( struct dentry * dentry )
+
+recursively removes a directory
+
+Parameters
+  struct dentry *dentry
+    a pointer to a the dentry of the directory to be removed.  If this
+parameter is NULL or an error value, nothing will be done.
+
+Description
+  This function recursively removes a directory tree in debugfs that
+was previously created with a call to another debugfs function
+(like debugfs_create_file() or variants thereof.)

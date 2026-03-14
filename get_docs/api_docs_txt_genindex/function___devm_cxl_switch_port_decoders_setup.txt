@@ -1,0 +1,10 @@
+Function: int __devm_cxl_switch_port_decoders_setup ( struct cxl_port * port )
+
+allocate and setup switch decoders
+
+Parameters
+  struct cxl_port *port
+    CXL port context
+
+Description
+  Return 0 or -errno on error

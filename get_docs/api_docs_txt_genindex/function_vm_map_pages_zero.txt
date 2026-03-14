@@ -1,0 +1,16 @@
+Function: int vm_map_pages_zero ( struct vm_area_struct * vma , struct page * * pages , unsigned long num )
+
+map range of kernel pages starts with zero offset
+
+Parameters
+  struct vm_area_struct *vma
+    user vma to map to
+  struct page **pages
+    pointer to array of source kernel pages
+  unsigned long num
+    number of pages in page array
+
+Description
+  Similar to vm_map_pages() , except that it explicitly sets the offset
+to 0. This function is intended for the drivers that did not consider
+vm_pgoff.

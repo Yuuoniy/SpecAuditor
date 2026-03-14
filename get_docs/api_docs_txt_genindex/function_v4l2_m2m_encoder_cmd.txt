@@ -1,0 +1,11 @@
+Function: int v4l2_m2m_encoder_cmd ( struct file * file , struct v4l2_m2m_ctx * m2m_ctx , struct v4l2_encoder_cmd * ec )
+
+execute an encoder command
+
+Parameters
+  struct file *file
+    pointer to struct file
+  struct v4l2_m2m_ctx *m2m_ctx
+    m2m context assigned to the instance given by struct v4l2_m2m_ctx
+  struct v4l2_encoder_cmd *ec
+    pointer to the encoder command

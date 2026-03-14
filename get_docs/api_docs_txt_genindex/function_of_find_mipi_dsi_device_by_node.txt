@@ -1,0 +1,7 @@
+Function: struct mipi_dsi_device * of_find_mipi_dsi_device_by_node ( struct device_node * np )
+
+find the MIPI DSI device matching a device tree node
+
+Parameters
+  struct device_node *np
+    device tree node

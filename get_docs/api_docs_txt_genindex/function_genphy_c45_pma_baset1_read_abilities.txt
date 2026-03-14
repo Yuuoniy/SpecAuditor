@@ -1,0 +1,10 @@
+Function: int genphy_c45_pma_baset1_read_abilities ( struct phy_device * phydev )
+
+read supported baset1 link modes from PMA
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  Read the supported link modes from the extended BASE-T1 ability register

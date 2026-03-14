@@ -1,0 +1,7 @@
+Function: void blk_mq_wait_quiesce_done ( struct blk_mq_tag_set * set )
+
+wait until in-progress quiesce is done
+
+Parameters
+  struct blk_mq_tag_set *set
+    tag_set to wait on

@@ -1,0 +1,7 @@
+Function: bool folio_mapped ( const struct folio * folio )
+
+Is this folio mapped into userspace?
+
+Parameters
+  const struct folio *folio
+    The folio.

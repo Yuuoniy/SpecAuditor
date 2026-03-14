@@ -1,0 +1,10 @@
+Function: void vb2_video_unregister_device ( struct video_device * vdev )
+
+unregister the video device and release queue
+
+Parameters
+  struct video_device *vdev
+    pointer to struct video_device
+
+Description
+  If the driver uses vb2_fop_release() / _vb2_fop_release() , then it should use vb2_video_unregister_device() instead of video_unregister_device() .

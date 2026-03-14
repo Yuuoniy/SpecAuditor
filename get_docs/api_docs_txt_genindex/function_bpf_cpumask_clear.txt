@@ -1,0 +1,7 @@
+Function: __bpf_kfunc void bpf_cpumask_clear ( struct bpf_cpumask * cpumask )
+
+Clear all of the bits in a BPF cpumask.
+
+Parameters
+  struct bpf_cpumask *cpumask
+    The BPF cpumask being cleared.

@@ -1,0 +1,10 @@
+Function: void amdgpu_hmm_unregister ( struct amdgpu_bo * bo )
+
+unregister a BO for notifier updates
+
+Parameters
+  struct amdgpu_bo *bo
+    amdgpu buffer object
+
+Description
+  Remove any registration of mmu notifier updates from the buffer object.

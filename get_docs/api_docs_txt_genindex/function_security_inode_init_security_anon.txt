@@ -1,0 +1,15 @@
+Function: int security_inode_init_security_anon ( struct inode * inode , const struct qstr * name , const struct inode * context_inode )
+
+Initialize an anonymous inode
+
+Parameters
+  struct inode *inode
+    the inode
+  const struct qstr *name
+    the anonymous inode class
+  const struct inode *context_inode
+    an optional related inode
+
+Description
+  Set up the incore security field for the new anonymous inode and return
+whether the inode creation is permitted by the security module or not.

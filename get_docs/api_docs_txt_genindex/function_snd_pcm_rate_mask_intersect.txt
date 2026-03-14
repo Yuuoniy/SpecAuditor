@@ -1,0 +1,14 @@
+Function: unsigned int snd_pcm_rate_mask_intersect ( unsigned int rates_a , unsigned int rates_b )
+
+computes the intersection between two rate masks
+
+Parameters
+  unsigned int rates_a
+    The first rate mask
+  unsigned int rates_b
+    The second rate mask
+
+Description
+  This function computes the rates that are supported by both rate masks passed
+to the function. It will take care of the special handling of
+SNDRV_PCM_RATE_CONTINUOUS and SNDRV_PCM_RATE_KNOT.

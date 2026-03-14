@@ -1,0 +1,15 @@
+Function: void intel_dsb_reg_write_indexed ( struct intel_dsb * dsb , i915_reg_t reg , u32 val )
+
+Emit indexed register write to the DSB context
+
+Parameters
+  struct intel_dsb *dsb
+    DSB context
+  i915_reg_t reg
+    register address.
+  u32 val
+    value.
+
+Description
+  This function is used for writing register-value pair in command
+buffer of DSB.

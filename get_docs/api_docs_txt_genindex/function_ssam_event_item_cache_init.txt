@@ -1,0 +1,7 @@
+Function: int ssam_event_item_cache_init ( void )
+
+Initialize the event item cache.
+
+Parameters
+  void
+    no arguments

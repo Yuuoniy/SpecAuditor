@@ -1,0 +1,23 @@
+Function: s32 i2c_smbus_xfer ( struct i2c_adapter * adapter , u16 addr , unsigned short flags , char read_write , u8 command , int protocol , union i2c_smbus_data * data )
+
+execute SMBus protocol operations
+
+Parameters
+  struct i2c_adapter *adapter
+    Handle to I2C bus
+  u16 addr
+    Address of SMBus slave on that bus
+  unsigned short flags
+    I2C_CLIENT_* flags (usually zero or I2C_CLIENT_PEC)
+  char read_write
+    I2C_SMBUS_READ or I2C_SMBUS_WRITE
+  u8 command
+    Byte interpreted by slave, for protocols which use such bytes
+  int protocol
+    SMBus protocol operation to execute, such as I2C_SMBUS_PROC_CALL
+  union i2c_smbus_data *data
+    Data to be read or written
+
+Description
+  This executes an SMBus protocol operation, and returns a negative
+errno code else zero on success.

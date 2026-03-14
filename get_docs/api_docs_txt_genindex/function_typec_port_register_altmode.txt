@@ -1,0 +1,13 @@
+Function: struct typec_altmode * typec_port_register_altmode ( struct typec_port * port , const struct typec_altmode_desc * desc )
+
+Register USB Type-C Port Alternate Mode
+
+Parameters
+  struct typec_port *port
+    USB Type-C Port that supports the alternate mode
+  const struct typec_altmode_desc *desc
+    Description of the alternate mode
+
+Description
+  This routine is used to register an alternate mode that port is capable of
+supporting.

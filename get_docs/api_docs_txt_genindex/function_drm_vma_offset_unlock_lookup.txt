@@ -1,0 +1,10 @@
+Function: void drm_vma_offset_unlock_lookup ( struct drm_vma_offset_manager * mgr )
+
+Unlock lookup for extended private use
+
+Parameters
+  struct drm_vma_offset_manager *mgr
+    Manager object
+
+Description
+  Release lookup-lock. See drm_vma_offset_lock_lookup() for more information.

@@ -1,0 +1,12 @@
+Function: size_t usb_ep_align ( struct usb_ep * ep , size_t len )
+
+returns len aligned to ep’s maxpacketsize.
+
+Parameters
+  struct usb_ep *ep
+    the endpoint whose maxpacketsize is used to align len
+  size_t len
+    buffer size’s length to align to ep ’s maxpacketsize
+
+Description
+  This helper is used to align buffer’s size to an ep’s maxpacketsize.

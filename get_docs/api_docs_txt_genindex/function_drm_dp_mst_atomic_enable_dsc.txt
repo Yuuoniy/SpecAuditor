@@ -1,0 +1,19 @@
+Function: int drm_dp_mst_atomic_enable_dsc ( struct drm_atomic_state * state , struct drm_dp_mst_port * port , int pbn , bool enable )
+
+Set DSC Enable Flag to On/Off
+
+Parameters
+  struct drm_atomic_state *state
+    Pointer to the new drm_atomic_state
+  struct drm_dp_mst_port *port
+    Pointer to the affected MST Port
+  int pbn
+    Newly recalculated bw required for link with DSC enabled
+  bool enable
+    Boolean flag to enable or disable DSC on the port
+
+Description
+  This function enables DSC on the given Port
+by recalculating its vcpi from pbn provided
+and sets dsc_enable flag to keep track of which
+ports have DSC enabled

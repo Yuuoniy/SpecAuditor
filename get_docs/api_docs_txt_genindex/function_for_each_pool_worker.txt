@@ -1,0 +1,12 @@
+Function: for_each_pool_worker
+
+
+
+Parameters
+  worker
+    iteration cursor
+  pool
+    worker_pool to iterate workers of
+
+Description
+  This must be called with wq_pool_attach_mutex.

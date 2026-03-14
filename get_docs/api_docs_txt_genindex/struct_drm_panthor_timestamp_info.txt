@@ -1,0 +1,12 @@
+Struct: struct drm_panthor_timestamp_info
+
+Timestamp information
+
+Members
+  timestamp_frequency
+    The frequency of the timestamp timer or 0 if
+unknown.
+  current_timestamp
+    The current timestamp.
+  timestamp_offset
+    The offset of the timestamp timer.

@@ -1,0 +1,13 @@
+Function: void requeue_futex ( struct futex_q * q , struct futex_hash_bucket * hb1 , struct futex_hash_bucket * hb2 , union futex_key * key2 )
+
+Requeue a futex_q from one hb to another
+
+Parameters
+  struct futex_q *q
+    the futex_q to requeue
+  struct futex_hash_bucket *hb1
+    the source hash_bucket
+  struct futex_hash_bucket *hb2
+    the target hash_bucket
+  union futex_key *key2
+    the new key for the requeued futex_q

@@ -1,0 +1,17 @@
+Function: int ssh_request_init ( struct ssh_request * rqst , enum ssam_request_flags flags , const struct ssh_request_ops * ops )
+
+Initialize SSH request.
+
+Parameters
+  struct ssh_request *rqst
+    The request to initialize.
+  enum ssam_request_flags flags
+    Request flags, determining the type of the request.
+  const struct ssh_request_ops *ops
+    Request operations.
+
+Description
+  Initializes the given SSH request and underlying packet. Sets the message
+buffer pointer to NULL and the message buffer length to zero. This buffer
+has to be set separately via ssh_request_set_data() before submission and
+must contain a valid SSH request message.

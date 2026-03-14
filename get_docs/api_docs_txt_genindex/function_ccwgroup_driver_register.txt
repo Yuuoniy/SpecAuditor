@@ -1,0 +1,10 @@
+Function: int ccwgroup_driver_register ( struct ccwgroup_driver * cdriver )
+
+register a ccw group driver
+
+Parameters
+  struct ccwgroup_driver *cdriver
+    driver to be registered
+
+Description
+  This function is mainly a wrapper around driver_register() .

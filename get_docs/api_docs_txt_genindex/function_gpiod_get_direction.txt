@@ -1,0 +1,10 @@
+Function: int gpiod_get_direction ( struct gpio_desc * desc )
+
+return the current direction of a GPIO
+
+Parameters
+  struct gpio_desc *desc
+    GPIO to get the direction of
+
+Description
+  This function may sleep if gpiod_cansleep() is true.

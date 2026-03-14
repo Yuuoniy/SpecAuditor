@@ -1,0 +1,16 @@
+Function: int of_property_read_string ( const struct device_node * np , const char * propname , const char * * out_string )
+
+Find and read a string from a property
+
+Parameters
+  const struct device_node *np
+    device node from which the property value is to be read.
+  const char *propname
+    name of the property to be searched.
+  const char **out_string
+    pointer to null terminated return string, modified only if
+return value is 0.
+
+Description
+  Search for a property in a device tree node and retrieve a null
+terminated string value (pointer to data, not a copy).

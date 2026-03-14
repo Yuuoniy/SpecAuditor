@@ -1,0 +1,22 @@
+Function: int __video_register_device ( struct video_device * vdev , enum vfl_devnode_type type , int nr , int warn_if_nr_in_use , struct module * owner )
+
+register video4linux devices
+
+Parameters
+  struct video_device *vdev
+    struct video_device to register
+  enum vfl_devnode_type type
+    type of device to register, as defined by enum vfl_devnode_type
+  int nr
+    which device node number is desired:
+(0 == /dev/video0, 1 == /dev/video1, ..., -1 == first free)
+  int warn_if_nr_in_use
+    warn if the desired device node number
+was already in use and another number was chosen instead.
+  struct module *owner
+    module that owns the video device node
+
+Description
+  The registration code assigns minor numbers and device node numbers
+based on the requested type and registers the new device node with
+the kernel.

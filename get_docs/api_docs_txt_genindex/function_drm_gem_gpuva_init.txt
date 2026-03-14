@@ -1,0 +1,10 @@
+Function: void drm_gem_gpuva_init ( struct drm_gem_object * obj )
+
+initialize the gpuva list of a GEM object
+
+Parameters
+  struct drm_gem_object *obj
+    the drm_gem_object
+
+Description
+  This initializes the drm_gem_object ’s drm_gpuvm_bo list.

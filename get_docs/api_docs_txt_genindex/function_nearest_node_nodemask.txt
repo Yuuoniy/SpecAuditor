@@ -1,0 +1,14 @@
+Function: int nearest_node_nodemask ( int node , nodemask_t * mask )
+
+Find the node in mask at the nearest distance from node .
+
+Parameters
+  int node
+    a valid node ID to start the search from.
+  nodemask_t *mask
+    a pointer to a nodemask representing the allowed nodes.
+
+Description
+  This function iterates over all nodes in mask and calculates the
+distance from the starting node , then it returns the node ID that is
+the closest to node , or MAX_NUMNODES if no node is found.

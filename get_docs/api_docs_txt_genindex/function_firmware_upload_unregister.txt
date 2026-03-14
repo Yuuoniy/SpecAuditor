@@ -1,0 +1,7 @@
+Function: void firmware_upload_unregister ( struct fw_upload * fw_upload )
+
+Unregister firmware upload interface
+
+Parameters
+  struct fw_upload *fw_upload
+    pointer to struct fw_upload

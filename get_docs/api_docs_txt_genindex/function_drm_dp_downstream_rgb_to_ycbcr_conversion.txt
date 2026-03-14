@@ -1,0 +1,11 @@
+Function: bool drm_dp_downstream_rgb_to_ycbcr_conversion ( const u8 dpcd [ DP_RECEIVER_CAP_SIZE ] , const u8 port_cap [ 4 ] , u8 color_spc )
+
+determine downstream facing port RGB->YCbCr conversion capability
+
+Parameters
+  const u8 dpcd[DP_RECEIVER_CAP_SIZE]
+    DisplayPort configuration data
+  const u8 port_cap[4]
+    downstream facing port capabilities
+  u8 color_spc
+    Colorspace for which conversion cap is sought

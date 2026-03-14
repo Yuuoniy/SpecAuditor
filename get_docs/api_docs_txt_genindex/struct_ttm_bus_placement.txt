@@ -1,0 +1,13 @@
+Struct: struct ttm_bus_placement
+
+
+
+Members
+  addr
+    mapped virtual address
+  offset
+    physical addr
+  is_iomem
+    is this io memory ?
+  caching
+    See enum ttm_caching

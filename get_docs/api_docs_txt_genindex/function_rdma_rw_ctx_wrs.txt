@@ -1,0 +1,20 @@
+Function: struct ib_send_wr * rdma_rw_ctx_wrs ( struct rdma_rw_ctx * ctx , struct ib_qp * qp , u32 port_num , struct ib_cqe * cqe , struct ib_send_wr * chain_wr )
+
+return chain of WRs for a RDMA READ or WRITE operation
+
+Parameters
+  struct rdma_rw_ctx *ctx
+    context to operate on
+  struct ib_qp *qp
+    queue pair to operate on
+  u32 port_num
+    port num to which the connection is bound
+  struct ib_cqe *cqe
+    completion queue entry for the last WR
+  struct ib_send_wr *chain_wr
+    WR to append to the posted chain
+
+Description
+  Return the WR chain for the set of RDMA READ/WRITE operations described by ctx , as well as any memory registration operations needed.  If chain_wr is non-NULL the WR it points to will be appended to the chain of WRs posted.
+If chain_wr is not set cqe must be set so that the caller gets a
+completion notification.

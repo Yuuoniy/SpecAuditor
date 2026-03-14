@@ -1,0 +1,19 @@
+Function: int tipc_crypto_key_xmit ( struct net * net , struct tipc_aead_key * skey , u16 gen , u8 mode , u32 dnode )
+
+Send a session key
+
+Parameters
+  struct net *net
+    the struct net
+  struct tipc_aead_key *skey
+    the session key to be sent
+  u16 gen
+    the key’s generation
+  u8 mode
+    the key’s mode
+  u32 dnode
+    the destination node address, = 0 if broadcasting to all nodes
+
+Description
+  The session key ‘skey’ is packed in a TIPC v2 ‘MSG_CRYPTO/KEY_DISTR_MSG’
+as its data section, then xmit-ed through the uc/bc link.

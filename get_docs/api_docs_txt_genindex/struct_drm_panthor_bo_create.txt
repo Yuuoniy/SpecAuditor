@@ -1,0 +1,17 @@
+Struct: struct drm_panthor_bo_create
+
+Arguments passed to DRM_IOCTL_PANTHOR_BO_CREATE.
+
+Members
+  size
+    Requested size for the object The (page-aligned) allocated size for the object will be returned.
+  flags
+    Flags. Must be a combination of drm_panthor_bo_flags flags.
+  exclusive_vm_id
+    Exclusive VM this buffer object will be mapped to. If not zero, the field must refer to a valid VM ID, and implies that: the buffer object will only ever be bound to that VM cannot be exported as a PRIME fd
+  If not zero, the field must refer to a valid VM ID, and implies that:
+    the buffer object will only ever be bound to that VM cannot be exported as a PRIME fd
+  handle
+    Returned handle for the object. Object handles are nonzero.
+  pad
+    MBZ.

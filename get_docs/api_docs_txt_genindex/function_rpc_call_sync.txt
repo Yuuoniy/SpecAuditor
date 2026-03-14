@@ -1,0 +1,11 @@
+Function: int rpc_call_sync ( struct rpc_clnt * clnt , const struct rpc_message * msg , int flags )
+
+Perform a synchronous RPC call
+
+Parameters
+  struct rpc_clnt *clnt
+    pointer to RPC client
+  const struct rpc_message *msg
+    RPC call parameters
+  int flags
+    RPC call flags

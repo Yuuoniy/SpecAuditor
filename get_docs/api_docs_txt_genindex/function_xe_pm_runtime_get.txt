@@ -1,0 +1,7 @@
+Function: void xe_pm_runtime_get ( struct xe_device * xe )
+
+Get a runtime_pm reference and resume synchronously
+
+Parameters
+  struct xe_device *xe
+    xe device instance

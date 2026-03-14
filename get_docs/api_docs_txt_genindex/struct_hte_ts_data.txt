@@ -1,0 +1,12 @@
+Struct: struct hte_ts_data
+
+HTE timestamp data.
+
+Members
+  tsc
+    Timestamp value.
+  seq
+    Sequence counter of the timestamps.
+  raw_level
+    Level of the line at the timestamp if provider supports it,
+-1 otherwise.

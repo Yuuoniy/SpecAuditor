@@ -1,0 +1,11 @@
+Function: void tty_flip_buffer_push ( struct tty_port * port )
+
+push terminal buffers
+
+Parameters
+  struct tty_port *port
+    tty port to push
+
+Description
+  Queue a push of the terminal flip buffers to the line discipline. Can be
+called from IRQ/atomic context.

@@ -1,0 +1,19 @@
+Struct: struct i3c_dma
+
+DMA transfer and mapping descriptor
+
+Members
+  dev
+    device object of a device doing DMA
+  buf
+    destination/source buffer for DMA
+  len
+    length of transfer
+  map_len
+    length of DMA mapping
+  addr
+    mapped DMA address for a Host Controller Driver
+  dir
+    DMA direction
+  bounce_buf
+    an allocated bounce buffer if transfer needs it or NULL

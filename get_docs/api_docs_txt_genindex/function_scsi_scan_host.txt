@@ -1,0 +1,7 @@
+Function: void scsi_scan_host ( struct Scsi_Host * shost )
+
+scan the given adapter
+
+Parameters
+  struct Scsi_Host *shost
+    adapter to scan

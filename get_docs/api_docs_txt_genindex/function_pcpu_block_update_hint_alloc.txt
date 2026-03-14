@@ -1,0 +1,16 @@
+Function: void pcpu_block_update_hint_alloc ( struct pcpu_chunk * chunk , int bit_off , int bits )
+
+update hint on allocation path
+
+Parameters
+  struct pcpu_chunk *chunk
+    chunk of interest
+  int bit_off
+    chunk offset
+  int bits
+    size of request
+
+Description
+  Updates metadata for the allocation path.  The metadata only has to be
+refreshed by a full scan iff the chunk’s contig hint is broken.  Block level
+scans are required if the block’s contig hint is broken.

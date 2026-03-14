@@ -1,0 +1,13 @@
+Struct: struct idle_workqueue
+
+Work data for periodic action in idle
+
+Members
+  work
+    Kernel work data for the work event
+  dm
+    amdgpu display manager device
+  enable
+    true if idle worker is enabled
+  running
+    true if idle worker is running

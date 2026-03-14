@@ -1,0 +1,17 @@
+Function: ssize_t vme_master_read ( struct vme_resource * resource , void * buf , size_t count , loff_t offset )
+
+Read data from VME space into a buffer.
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME master resource.
+  void *buf
+    Pointer to buffer where data should be transferred.
+  size_t count
+    Number of bytes to transfer.
+  loff_t offset
+    Offset into VME master window at which to start transfer.
+
+Description
+  Perform read of count bytes of data from location on VME bus which maps into
+the VME master window at offset to buf.

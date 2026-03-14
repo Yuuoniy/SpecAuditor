@@ -1,0 +1,13 @@
+Macro: XE_RTP_RULE_GRAPHICS_VERSION_RANGE
+
+
+
+Parameters
+  ver_start__
+    First graphics IP version to match
+  ver_end__
+    Last graphics IP version to match
+
+Description
+  Note that the range matching this rule is [ ver_start__ , ver_end__ ], i.e.
+inclusive on both sides

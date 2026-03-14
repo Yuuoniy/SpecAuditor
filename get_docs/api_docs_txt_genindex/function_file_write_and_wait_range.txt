@@ -1,0 +1,14 @@
+Function: int file_write_and_wait_range ( struct file * file , loff_t lstart , loff_t lend )
+
+write out & wait on a file range
+
+Parameters
+  struct file *file
+    file pointing to address_space with pages
+  loff_t lstart
+    offset in bytes where the range starts
+  loff_t lend
+    offset in bytes where the range ends (inclusive)
+
+Description
+  Write out and wait upon file offsets lstart->lend, inclusive.

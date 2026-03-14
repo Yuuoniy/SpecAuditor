@@ -1,0 +1,16 @@
+Function: int i915_perf_open_ioctl_locked ( struct i915_perf * perf , struct drm_i915_perf_open_param * param , struct perf_open_properties * props , struct drm_file * file )
+
+DRM ioctl() for userspace to open a stream FD
+
+Parameters
+  struct i915_perf *perf
+    i915 perf instance
+  struct drm_i915_perf_open_param *param
+    The open parameters passed to ‘DRM_I915_PERF_OPEN`
+  struct perf_open_properties *props
+    individually validated u64 property value pairs
+  struct drm_file *file
+    drm file
+
+Description
+  See i915_perf_ioctl_open() for interface details.

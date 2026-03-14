@@ -1,0 +1,10 @@
+Function: void generate_random_uuid ( unsigned char uuid [ 16 ] )
+
+generate a random UUID
+
+Parameters
+  unsigned char uuid[16]
+    where to put the generated UUID
+
+Description
+  Random UUID interface

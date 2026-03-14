@@ -1,0 +1,14 @@
+Function: int phy_get_rate_matching ( struct phy_device * phydev , phy_interface_t iface )
+
+determine if rate matching is supported
+
+Parameters
+  struct phy_device *phydev
+    The phy device to return rate matching for
+  phy_interface_t iface
+    The interface mode to use
+
+Description
+  This determines the type of rate matching (if any) that phy supports
+using iface . iface may be PHY_INTERFACE_MODE_NA to determine if any
+interface supports rate matching.

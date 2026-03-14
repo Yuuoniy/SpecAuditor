@@ -1,0 +1,7 @@
+Function: void isert_conn_terminate ( struct isert_conn * isert_conn )
+
+Initiate connection termination
+
+Parameters
+  struct isert_conn *isert_conn
+    isert connection struct

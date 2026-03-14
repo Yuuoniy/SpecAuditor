@@ -1,0 +1,11 @@
+Function: void v4l2_fh_exit ( struct v4l2_fh * fh )
+
+Release resources related to a file handle.
+
+Parameters
+  struct v4l2_fh *fh
+    pointer to struct v4l2_fh
+
+Description
+  Parts of the V4L2 framework using the v4l2_fh must release their
+resources here, too.

@@ -1,0 +1,10 @@
+Function: int lsm_key_alloc ( struct key * key )
+
+allocate a composite key blob
+
+Parameters
+  struct key *key
+    the key that needs a blob
+
+Description
+  Allocate the key blob for all the modules

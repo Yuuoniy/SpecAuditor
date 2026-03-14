@@ -1,0 +1,3 @@
+Enum: enum edac_type
+
+Error Detection and Correction capabilities and mode

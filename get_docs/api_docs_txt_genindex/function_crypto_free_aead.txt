@@ -1,0 +1,10 @@
+Function: void crypto_free_aead ( struct crypto_aead * tfm )
+
+zeroize and free aead handle
+
+Parameters
+  struct crypto_aead *tfm
+    cipher handle to be freed
+
+Description
+  If tfm is a NULL or error pointer, this function does nothing.

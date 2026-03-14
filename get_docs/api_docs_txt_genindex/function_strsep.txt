@@ -1,0 +1,12 @@
+Function: char * strsep ( char * * s , const char * ct )
+
+Split a string into tokens
+
+Parameters
+  char **s
+    The string to be searched
+  const char *ct
+    The characters to search for
+
+Description
+  strsep() updates s to point after the token, ready for the next call.

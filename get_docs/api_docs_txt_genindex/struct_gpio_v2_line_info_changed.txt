@@ -1,0 +1,13 @@
+Struct: struct gpio_v2_line_info_changed
+
+Information about a change in status of a GPIO line
+
+Members
+  info
+    updated line information
+  timestamp_ns
+    estimate of time of status change occurrence, in nanoseconds
+  event_type
+    the type of change with a value from enum gpio_v2_line_changed_type
+  padding
+    reserved for future use

@@ -1,0 +1,7 @@
+Function: int devm_cxl_add_pmem_region ( struct cxl_region * cxlr )
+
+add a cxl_region-to-nd_region bridge
+
+Parameters
+  struct cxl_region *cxlr
+    parent CXL region for this pmem region bridge device

@@ -1,0 +1,12 @@
+Function: bool flush_delayed_work ( struct delayed_work * dwork )
+
+wait for a dwork to finish executing the last queueing
+
+Parameters
+  struct delayed_work *dwork
+    the delayed work to flush
+
+Description
+  Delayed timer is cancelled and the pending work is queued for
+immediate execution.  Like flush_work() , this function only
+considers the last queueing instance of dwork .

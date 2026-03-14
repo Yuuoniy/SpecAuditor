@@ -1,0 +1,7 @@
+Function: int ssh_ptl_tx_start ( struct ssh_ptl * ptl )
+
+Start packet transmitter thread.
+
+Parameters
+  struct ssh_ptl *ptl
+    The packet transport layer.

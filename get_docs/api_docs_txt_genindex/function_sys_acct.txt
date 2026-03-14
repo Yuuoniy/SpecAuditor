@@ -1,0 +1,13 @@
+Function: long sys_acct ( const char __user * name )
+
+enable/disable process accounting
+
+Parameters
+  const char __user * name
+    file name for accounting records or NULL to shutdown accounting
+
+Description
+  sys_acct() is the only system call needed to implement process
+accounting. It takes the name of the file where accounting records
+should be written. If the filename is NULL, accounting will be
+shutdown.

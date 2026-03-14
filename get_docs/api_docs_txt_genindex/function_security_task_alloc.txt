@@ -1,0 +1,12 @@
+Function: int security_task_alloc ( struct task_struct * task , u64 clone_flags )
+
+Allocate a task’s LSM blob
+
+Parameters
+  struct task_struct *task
+    the task
+  u64 clone_flags
+    flags indicating what is being shared
+
+Description
+  Handle allocation of task-related resources.

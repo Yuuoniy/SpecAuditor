@@ -1,0 +1,16 @@
+Function: void intel_dpll_update_active ( struct intel_atomic_state * state , struct intel_crtc * crtc , struct intel_encoder * encoder )
+
+update the active DPLL for a CRTC/encoder
+
+Parameters
+  struct intel_atomic_state *state
+    atomic state
+  struct intel_crtc *crtc
+    the CRTC for which to update the active DPLL
+  struct intel_encoder *encoder
+    encoder determining the type of port DPLL
+
+Description
+  Update the active DPLL for the given crtc / encoder in crtc ’s atomic state,
+from the port DPLLs reserved previously by intel_dpll_reserve() . The
+DPLL selected will be based on the current mode of the encoder’s port.

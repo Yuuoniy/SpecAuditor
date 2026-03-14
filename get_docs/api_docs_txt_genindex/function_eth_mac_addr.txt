@@ -1,0 +1,12 @@
+Function: int eth_mac_addr ( struct net_device * dev , void * p )
+
+set new Ethernet hardware address
+
+Parameters
+  struct net_device *dev
+    network device
+  void *p
+    socket address
+
+Description
+  Change hardware address of device.

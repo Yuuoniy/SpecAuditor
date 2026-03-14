@@ -1,0 +1,10 @@
+Function: void netif_tx_lock ( struct net_device * dev )
+
+grab network device transmit lock
+
+Parameters
+  struct net_device *dev
+    network device
+
+Description
+  Get network device transmit lock

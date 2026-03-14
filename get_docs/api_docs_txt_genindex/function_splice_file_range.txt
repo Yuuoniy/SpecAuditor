@@ -1,0 +1,19 @@
+Function: ssize_t splice_file_range ( struct file * in , loff_t * ppos , struct file * out , loff_t * opos , size_t len )
+
+splices data between two files for copy_file_range()
+
+Parameters
+  struct file *in
+    file to splice from
+  loff_t *ppos
+    input file offset
+  struct file *out
+    file to splice to
+  loff_t *opos
+    output file offset
+  size_t len
+    number of bytes to splice
+
+Description
+  For use by -> copy_file_range() methods.
+Like do_splice_direct() , but vfs_copy_file_range() already holds start_file_write() on out file.

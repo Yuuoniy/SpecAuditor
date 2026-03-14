@@ -1,0 +1,12 @@
+Function: void node_activate_pending_pwq ( struct wq_node_nr_active * nna , struct worker_pool * caller_pool )
+
+Activate a pending pwq on a wq_node_nr_active
+
+Parameters
+  struct wq_node_nr_active *nna
+    wq_node_nr_active to activate a pending pwq for
+  struct worker_pool *caller_pool
+    worker_pool the caller is locking
+
+Description
+  Activate a pwq in nna->pending_pwqs . Called with caller_pool locked. caller_pool may be unlocked and relocked to lock other worker_pools.

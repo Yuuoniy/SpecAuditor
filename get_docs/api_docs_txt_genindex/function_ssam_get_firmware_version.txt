@@ -1,0 +1,9 @@
+Function: int ssam_get_firmware_version ( struct ssam_controller * ctrl , u32 * version )
+
+Get the SAM/EC firmware version.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller.
+  u32 *version
+    Where to store the version number.

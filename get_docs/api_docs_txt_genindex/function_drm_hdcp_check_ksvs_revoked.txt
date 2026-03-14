@@ -1,0 +1,18 @@
+Function: int drm_hdcp_check_ksvs_revoked ( struct drm_device * drm_dev , u8 * ksvs , u32 ksv_count )
+
+Check the revoked status of the IDs
+
+Parameters
+  struct drm_device *drm_dev
+    drm_device for which HDCP revocation check is requested
+  u8 *ksvs
+    List of KSVs (HDCP receiver IDs)
+  u32 ksv_count
+    KSV count passed in through ksvs
+
+Description
+  This function reads the HDCP System renewability Message(SRM Table)
+from userspace as a firmware and parses it for the revoked HDCP
+KSVs(Receiver IDs) detected by DCP LLC. Once the revoked KSVs are known,
+revoked state of the KSVs in the list passed in by display drivers are
+decided and response is sent.

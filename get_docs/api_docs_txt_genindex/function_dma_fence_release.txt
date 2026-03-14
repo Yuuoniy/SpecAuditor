@@ -1,0 +1,11 @@
+Function: void dma_fence_release ( struct kref * kref )
+
+default release function for fences
+
+Parameters
+  struct kref *kref
+    dma_fence.recfount
+
+Description
+  This is the default release functions for dma_fence . Drivers shouldn’t call
+this directly, but instead call dma_fence_put() .

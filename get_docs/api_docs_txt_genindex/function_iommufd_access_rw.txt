@@ -1,0 +1,20 @@
+Function: int iommufd_access_rw ( struct iommufd_access * access , unsigned long iova , void * data , size_t length , unsigned int flags )
+
+Read or write data under the iova
+
+Parameters
+  struct iommufd_access *access
+    IOAS access to act on
+  unsigned long iova
+    Starting IOVA
+  void *data
+    Kernel buffer to copy to/from
+  size_t length
+    Number of bytes to access
+  unsigned int flags
+    IOMMUFD_ACCESS_RW_* flags
+
+Description
+  Copy kernel to/from data into the range given by IOVA/length. If flags
+indicates IOMMUFD_ACCESS_RW_KTHREAD then a large copy can be optimized
+by changing it into copy_to/ from_user() .

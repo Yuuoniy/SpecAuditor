@@ -1,0 +1,16 @@
+Function: int __tipc_bind ( struct socket * sock , struct sockaddr * skaddr , int alen )
+
+associate or disassociate TIPC name(s) with a socket
+
+Parameters
+  struct socket *sock
+    socket structure
+  struct sockaddr *skaddr
+    socket address describing name(s) and desired operation
+  int alen
+    size of socket address data structure
+
+Description
+  Name and name sequence binding are indicated using a positive scope value;
+a negative scope value unbinds the specified name.  Specifying no name
+(i.e. a socket address length of 0) unbinds all names from the socket.

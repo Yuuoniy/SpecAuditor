@@ -1,0 +1,9 @@
+Function: void tipc_link_set_skb_retransmit_time ( struct sk_buff * skb , struct tipc_link * l )
+
+set the time at which retransmission of the given skb should be next attempted
+
+Parameters
+  struct sk_buff *skb
+    skb to set a future retransmission time for
+  struct tipc_link *l
+    link the skb will be transmitted on

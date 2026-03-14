@@ -1,0 +1,15 @@
+Function: int spi_write ( struct spi_device * spi , const void * buf , size_t len )
+
+SPI synchronous write
+
+Parameters
+  struct spi_device *spi
+    device to which data will be written
+  const void *buf
+    data buffer
+  size_t len
+    data buffer size
+
+Description
+  This function writes the buffer buf .
+Callable only from contexts that can sleep.

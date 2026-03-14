@@ -1,0 +1,17 @@
+Function: void phylink_mii_c22_pcs_decode_state ( struct phylink_link_state * state , unsigned int neg_mode , u16 bmsr , u16 lpa )
+
+Decode MAC PCS state from MII registers
+
+Parameters
+  struct phylink_link_state *state
+    a pointer to a struct phylink_link_state .
+  unsigned int neg_mode
+    link negotiation mode (PHYLINK_PCS_NEG_xxx)
+  u16 bmsr
+    The value of the MII_BMSR register
+  u16 lpa
+    The value of the MII_LPA register
+
+Description
+  Helper for MAC PCS supporting the 802.3 clause 22 register set for
+clause 37 negotiation and/or SGMII control.

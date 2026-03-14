@@ -1,0 +1,15 @@
+Function: int v4l2_device_set_name ( struct v4l2_device * v4l2_dev , const char * basename , atomic_t * instance )
+
+Optional function to initialize the name field of struct v4l2_device
+
+Parameters
+  struct v4l2_device *v4l2_dev
+    pointer to struct v4l2_device
+  const char *basename
+    base name for the device name
+  atomic_t *instance
+    pointer to a static atomic_t var with the instance usage for
+the device driver.
+
+Description
+  v4l2_device_set_name() initializes the name field of struct v4l2_device using the driver name and a driver-global atomic_t instance.

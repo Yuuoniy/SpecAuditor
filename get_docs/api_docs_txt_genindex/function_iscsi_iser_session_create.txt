@@ -1,0 +1,17 @@
+Function: struct iscsi_cls_session * iscsi_iser_session_create ( struct iscsi_endpoint * ep , uint16_t cmds_max , uint16_t qdepth , uint32_t initial_cmdsn )
+
+create an iscsi-iser session
+
+Parameters
+  struct iscsi_endpoint *ep
+    iscsi end-point handle
+  uint16_t cmds_max
+    maximum commands in this session
+  uint16_t qdepth
+    session command queue depth
+  uint32_t initial_cmdsn
+    initiator command sequnce number
+
+Description
+  Allocates and adds a scsi host, expose DIF supprot if
+exists, and sets up an iscsi session.

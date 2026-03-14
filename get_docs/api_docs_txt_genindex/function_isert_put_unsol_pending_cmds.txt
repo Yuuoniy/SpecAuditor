@@ -1,0 +1,12 @@
+Function: void isert_put_unsol_pending_cmds ( struct iscsit_conn * conn )
+
+Drop commands waiting for unsolicitate dataout
+
+Parameters
+  struct iscsit_conn *conn
+    iscsi connection
+
+Description
+  We might still have commands that are waiting for unsolicited
+dataouts messages. We must put the extra reference on those
+before blocking on the target_wait_for_session_cmds

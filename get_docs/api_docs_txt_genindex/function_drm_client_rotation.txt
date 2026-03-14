@@ -1,0 +1,13 @@
+Function: bool drm_client_rotation ( struct drm_mode_set * modeset , unsigned int * rotation )
+
+Check the initial rotation value
+
+Parameters
+  struct drm_mode_set *modeset
+    DRM modeset
+  unsigned int *rotation
+    Returned rotation value
+
+Description
+  This function checks if the primary plane in modeset can hw rotate
+to match the rotation needed on its connector.

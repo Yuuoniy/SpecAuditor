@@ -1,0 +1,12 @@
+Struct: struct landlock_path_beneath_attr
+
+Path hierarchy definition
+
+Members
+  allowed_access
+    Bitmask of allowed actions for this file hierarchy
+(cf. Filesystem flags ).
+  parent_fd
+    File descriptor, preferably opened with O_PATH ,
+which identifies the parent directory of a file hierarchy, or just a
+file.

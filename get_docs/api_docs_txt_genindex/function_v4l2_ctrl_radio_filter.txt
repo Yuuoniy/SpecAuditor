@@ -1,0 +1,12 @@
+Function: bool v4l2_ctrl_radio_filter ( const struct v4l2_ctrl * ctrl )
+
+Standard filter for radio controls.
+
+Parameters
+  const struct v4l2_ctrl *ctrl
+    The control that is filtered.
+
+Description
+  This will return true for any controls that are valid for radio device
+nodes. Those are all of the V4L2_CID_AUDIO_* user controls and all FM
+transmitter class controls.

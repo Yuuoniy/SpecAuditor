@@ -1,0 +1,15 @@
+Function: unsigned long ib_umem_find_best_pgsz ( struct ib_umem * umem , unsigned long pgsz_bitmap , unsigned long virt )
+
+Find best HW page size to use for this MR
+
+Parameters
+  struct ib_umem *umem
+    umem struct
+  unsigned long pgsz_bitmap
+    bitmap of HW supported page sizes
+  unsigned long virt
+    IOVA
+
+Description
+  This helper is intended for HW that support multiple page
+sizes but can do only a single page size in an MR.

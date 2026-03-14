@@ -1,0 +1,10 @@
+Function: unsigned long msecs_to_jiffies ( const unsigned int m )
+
+convert milliseconds to jiffies
+
+Parameters
+  const unsigned int m
+    time in milliseconds
+
+Description
+  conversion is done as follows:

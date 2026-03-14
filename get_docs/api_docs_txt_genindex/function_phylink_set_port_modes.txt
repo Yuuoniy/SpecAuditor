@@ -1,0 +1,11 @@
+Function: void phylink_set_port_modes ( unsigned long * mask )
+
+set the port type modes in the ethtool mask
+
+Parameters
+  unsigned long *mask
+    ethtool link mode mask
+
+Description
+  Sets all the port type modes in the ethtool mask.  MAC drivers should
+use this in their ‘validate’ callback.

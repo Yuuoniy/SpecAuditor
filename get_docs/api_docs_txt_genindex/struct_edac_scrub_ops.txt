@@ -1,0 +1,25 @@
+Struct: struct edac_scrub_ops
+
+scrub device operations (all elements optional)
+
+Members
+  read_addr
+    read base address of scrubbing range.
+  read_size
+    read offset of scrubbing range.
+  write_addr
+    set base address of the scrubbing range.
+  write_size
+    set offset of the scrubbing range.
+  get_enabled_bg
+    check if currently performing background scrub.
+  set_enabled_bg
+    start or stop a bg-scrub.
+  get_min_cycle
+    get minimum supported scrub cycle duration in seconds.
+  get_max_cycle
+    get maximum supported scrub cycle duration in seconds.
+  get_cycle_duration
+    get current scrub cycle duration in seconds.
+  set_cycle_duration
+    set current scrub cycle duration in seconds.

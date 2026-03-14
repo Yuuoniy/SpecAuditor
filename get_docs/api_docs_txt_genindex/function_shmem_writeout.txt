@@ -1,0 +1,14 @@
+Function: int shmem_writeout ( struct folio * folio , struct swap_iocb * * plug , struct list_head * folio_list )
+
+Write the folio to swap
+
+Parameters
+  struct folio *folio
+    The folio to write
+  struct swap_iocb **plug
+    swap plug
+  struct list_head *folio_list
+    list to put back folios on split
+
+Description
+  Move the folio from the page cache to the swap cache.

@@ -1,0 +1,11 @@
+Macro: KUNIT_SUCCEED
+
+
+
+Parameters
+  test
+    The test context object.
+
+Description
+  The opposite of KUNIT_FAIL() , it is an expectation that cannot fail. In other
+words, it does nothing and only exists for code clarity. See KUNIT_EXPECT_TRUE() for more information.

@@ -1,0 +1,15 @@
+Function: void drm_atomic_helper_check_plane_damage ( struct drm_atomic_state * state , struct drm_plane_state * plane_state )
+
+Verify plane damage on atomic_check.
+
+Parameters
+  struct drm_atomic_state *state
+    The driver state object.
+  struct drm_plane_state *plane_state
+    Plane state for which to verify damage.
+
+Description
+  This helper function makes sure that damage from plane state is discarded
+for full modeset. If there are more reasons a driver would want to do a full
+plane update rather than processing individual damage regions, then those
+cases should be taken care of here.

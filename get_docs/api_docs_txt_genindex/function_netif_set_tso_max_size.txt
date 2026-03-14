@@ -1,0 +1,13 @@
+Function: void netif_set_tso_max_size ( struct net_device * dev , unsigned int size )
+
+set the max size of TSO frames supported
+
+Parameters
+  struct net_device *dev
+    netdev to update
+  unsigned int size
+    max skb->len of a TSO frame
+
+Description
+  Set the limit on the size of TSO super-frames the device can handle.
+Unless explicitly set the stack will assume the value of GSO_LEGACY_MAX_SIZE .

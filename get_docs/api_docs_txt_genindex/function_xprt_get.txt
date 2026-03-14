@@ -1,0 +1,7 @@
+Function: struct rpc_xprt * xprt_get ( struct rpc_xprt * xprt )
+
+return a reference to an RPC transport.
+
+Parameters
+  struct rpc_xprt *xprt
+    pointer to the transport

@@ -1,0 +1,10 @@
+Function: int i3c_master_entdaa_locked ( struct i3c_master_controller * master )
+
+start a DAA (Dynamic Address Assignment) procedure
+
+Parameters
+  struct i3c_master_controller *master
+    master used to send frames on the bus
+
+Description
+  Send a ENTDAA CCC command to start a DAA procedure.

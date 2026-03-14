@@ -1,0 +1,21 @@
+Macro: v4l2_subdev_call_state_try
+
+
+
+Parameters
+  sd
+    pointer to the struct v4l2_subdev
+  o
+    name of the element at struct v4l2_subdev_ops that contains f .
+Each element there groups a set of callbacks functions.
+  f
+    callback function to be called.
+The callback functions are defined in groups, according to
+each element at struct v4l2_subdev_ops .
+  args...
+    arguments for f .
+
+Description
+  This is similar to v4l2_subdev_call_state_active() , except that as this
+version allocates a new state, this is only usable for
+V4L2_SUBDEV_FORMAT_TRY use cases.

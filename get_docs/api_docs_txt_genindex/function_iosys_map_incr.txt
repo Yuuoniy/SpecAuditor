@@ -1,0 +1,13 @@
+Function: void iosys_map_incr ( struct iosys_map * map , size_t incr )
+
+Increments the address stored in a iosys mapping
+
+Parameters
+  struct iosys_map *map
+    The iosys_map structure
+  size_t incr
+    The number of bytes to increment
+
+Description
+  Increments the address stored in a iosys mapping. Depending on the
+buffer’s location, the correct value will be updated.

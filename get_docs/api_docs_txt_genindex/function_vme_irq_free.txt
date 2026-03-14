@@ -1,0 +1,14 @@
+Function: void vme_irq_free ( struct vme_dev * vdev , int level , int statid )
+
+Free a VME interrupt.
+
+Parameters
+  struct vme_dev *vdev
+    Pointer to VME device struct vme_dev assigned to driver instance.
+  int level
+    Interrupt priority of interrupt being freed.
+  int statid
+    Interrupt vector of interrupt being freed.
+
+Description
+  Remove previously attached callback from VME interrupt priority/vector.

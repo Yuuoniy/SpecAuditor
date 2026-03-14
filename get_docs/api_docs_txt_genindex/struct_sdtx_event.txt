@@ -1,0 +1,11 @@
+Struct: struct sdtx_event
+
+Event provided by reading from the DTX device file.
+
+Members
+  length
+    Length of the event payload, in bytes.
+  code
+    Event code, detailing what type of event this is.
+  data
+    Payload of the event, containing length bytes.

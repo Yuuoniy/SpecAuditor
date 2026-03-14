@@ -1,0 +1,12 @@
+Function: void pci_unmap_iospace ( struct resource * res )
+
+Unmap the memory mapped I/O space
+
+Parameters
+  struct resource *res
+    resource to be unmapped
+
+Description
+  Unmap the CPU virtual address res from virtual address space.  Only
+architectures that have memory mapped IO functions defined (and the
+PCI_IOBASE value defined) should call this function.

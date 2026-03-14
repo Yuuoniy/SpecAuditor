@@ -1,0 +1,12 @@
+Macro: kunmap_atomic
+
+
+
+Parameters
+  __addr
+    Virtual address to be unmapped
+
+Description
+  Unmaps an address previously mapped by kmap_atomic() and re-enables
+pagefaults. Depending on PREEMP_RT configuration, re-enables also
+migration and preemption. Users should not count on these side effects.

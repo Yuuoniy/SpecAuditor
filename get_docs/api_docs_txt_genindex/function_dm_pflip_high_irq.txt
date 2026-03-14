@@ -1,0 +1,11 @@
+Function: void dm_pflip_high_irq ( void * interrupt_params )
+
+Handle pageflip interrupt
+
+Parameters
+  void *interrupt_params
+    ignored
+
+Description
+  Handles the pageflip interrupt by notifying all interested parties
+that the pageflip has been completed.

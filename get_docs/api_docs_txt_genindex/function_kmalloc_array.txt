@@ -1,0 +1,11 @@
+Function: void * kmalloc_array ( size_t n , size_t size , gfp_t flags )
+
+allocate memory for an array.
+
+Parameters
+  size_t n
+    number of elements.
+  size_t size
+    element size.
+  gfp_t flags
+    the type of memory to allocate (see kmalloc).

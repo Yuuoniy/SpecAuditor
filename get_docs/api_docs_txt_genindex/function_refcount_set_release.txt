@@ -1,0 +1,13 @@
+Function: void refcount_set_release ( refcount_t * r , int n )
+
+set a refcount’s value with release ordering
+
+Parameters
+  refcount_t *r
+    the refcount
+  int n
+    value to which the refcount will be set
+
+Description
+  This function should be used when memory occupied by the object might be
+reused to store another object -- consider SLAB_TYPESAFE_BY_RCU.

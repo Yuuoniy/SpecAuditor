@@ -1,0 +1,14 @@
+Struct: struct iommu_vfio_ioas
+
+ioctl(IOMMU_VFIO_IOAS)
+
+Members
+  size
+    sizeof( struct iommu_vfio_ioas )
+  ioas_id
+    For IOMMU_VFIO_IOAS_SET the input IOAS ID to set
+For IOMMU_VFIO_IOAS_GET will output the IOAS ID
+  op
+    One of enum iommufd_vfio_ioas_op
+  __reserved
+    Must be 0

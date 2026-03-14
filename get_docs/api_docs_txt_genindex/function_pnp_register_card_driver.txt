@@ -1,0 +1,7 @@
+Function: int pnp_register_card_driver ( struct pnp_card_driver * drv )
+
+registers a PnP card driver with the PnP Layer
+
+Parameters
+  struct pnp_card_driver *drv
+    pointer to the driver to register

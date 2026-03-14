@@ -1,0 +1,15 @@
+Function: void input_set_capability ( struct input_dev * dev , unsigned int type , unsigned int code )
+
+mark device as capable of a certain event
+
+Parameters
+  struct input_dev *dev
+    device that is capable of emitting or accepting event
+  unsigned int type
+    type of the event (EV_KEY, EV_REL, etc...)
+  unsigned int code
+    event code
+
+Description
+  In addition to setting up corresponding bit in appropriate capability
+bitmap the function also adjusts dev->evbit.

@@ -1,0 +1,12 @@
+Function: bool v4l2_rect_enclosed ( struct v4l2_rect * r1 , struct v4l2_rect * r2 )
+
+is r1 enclosed in r2?
+
+Parameters
+  struct v4l2_rect *r1
+    rectangle.
+  struct v4l2_rect *r2
+    rectangle.
+
+Description
+  Returns true if r1 is enclosed in r2 .

@@ -1,0 +1,11 @@
+Function: void dev_coredump_put ( struct device * dev )
+
+remove device coredump
+
+Parameters
+  struct device *dev
+    the struct device for the crashed device
+
+Description
+  dev_coredump_put() removes coredump, if exists, for a given device from
+the file system and free its associated data otherwise, does nothing.

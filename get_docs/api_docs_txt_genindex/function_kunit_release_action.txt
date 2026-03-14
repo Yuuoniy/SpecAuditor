@@ -1,0 +1,15 @@
+Function: void kunit_release_action ( struct kunit * test , kunit_action_t * action , void * ctx )
+
+Run a matching action call immediately.
+
+Parameters
+  struct kunit *test
+    Test case the action is associated with.
+  kunit_action_t *action
+    The deferred function to trigger.
+  void *ctx
+    The context passed to the deferred function to trigger.
+
+Description
+  Execute a function deferred via kunit_add_action() ) immediately, rather than
+when the test ends.

@@ -1,0 +1,18 @@
+Function: int drm_gpuvm_sm_map_exec_lock ( struct drm_gpuvm * gpuvm , struct drm_exec * exec , unsigned int num_fences , struct drm_gpuvm_map_req * req )
+
+locks the objects touched by a drm_gpuvm_sm_map()
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm representing the GPU VA space
+  struct drm_exec *exec
+    the drm_exec locking context
+  unsigned int num_fences
+    for newly mapped objects, the # of fences to reserve
+  struct drm_gpuvm_map_req *req
+    ptr to drm_gpuvm_map_req struct
+
+Description
+  This function locks ( drm_exec_lock_obj() ) objects that will be unmapped/
+remapped, and locks+prepares ( drm_exec_prepare_object() ) objects that
+will be newly mapped.

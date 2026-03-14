@@ -1,0 +1,11 @@
+Function: int workqueue_set_unbound_cpumask ( cpumask_var_t cpumask )
+
+Set the low-level unbound cpumask
+
+Parameters
+  cpumask_var_t cpumask
+    the cpumask to set
+
+Description
+  The low-level workqueues cpumask is a global cpumask that limits
+the affinity of all unbound workqueues.  This function check the cpumask and apply it to all unbound workqueues and updates all pwqs of them.

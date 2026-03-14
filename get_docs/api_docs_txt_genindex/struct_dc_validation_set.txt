@@ -1,0 +1,11 @@
+Struct: struct dc_validation_set
+
+Struct to store surface/stream associations for validation
+
+Members
+  stream
+    Stream state properties
+  plane_states
+    Surface state
+  plane_count
+    Total of active planes

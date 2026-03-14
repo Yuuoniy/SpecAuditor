@@ -1,0 +1,13 @@
+Function: void uart_write_wakeup ( struct uart_port * port )
+
+schedule write processing
+
+Parameters
+  struct uart_port *port
+    port to be processed
+
+Description
+  This routine is used by the interrupt handler to schedule processing in the
+software interrupt portion of the driver. A driver is expected to call this
+function when the number of characters in the transmit buffer have dropped
+below a threshold.

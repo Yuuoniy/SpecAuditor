@@ -1,0 +1,18 @@
+Struct: struct fwctl_info
+
+ioctl(FWCTL_INFO)
+
+Members
+  size
+    sizeof( struct fwctl_info )
+  flags
+    Must be 0
+  out_device_type
+    Returns the type of the device from enum fwctl_device_type
+  device_data_len
+    On input the length of the out_device_data memory. On
+output the size of the kernel’s device_data which may be larger or
+smaller than the input. Maybe 0 on input.
+  out_device_data
+    Pointer to a memory of device_data_len bytes. Kernel will
+fill the entire memory, zeroing as required.

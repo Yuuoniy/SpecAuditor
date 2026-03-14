@@ -1,0 +1,10 @@
+Function: bool is_bad_inode ( struct inode * inode )
+
+is an inode errored
+
+Parameters
+  struct inode *inode
+    inode to test
+
+Description
+  Returns true if the inode in question has been marked as bad.

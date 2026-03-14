@@ -1,0 +1,14 @@
+Function: int wait_task_stopped ( struct wait_opts * wo , int ptrace , struct task_struct * p )
+
+Wait for TASK_STOPPED or TASK_TRACED
+
+Parameters
+  struct wait_opts *wo
+    wait options
+  int ptrace
+    is the wait for ptrace
+  struct task_struct *p
+    task to wait for
+
+Description
+  Handle sys_wait4() work for p in state TASK_STOPPED or TASK_TRACED .

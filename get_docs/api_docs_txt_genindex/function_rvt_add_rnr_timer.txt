@@ -1,0 +1,9 @@
+Function: void rvt_add_rnr_timer ( struct rvt_qp * qp , u32 aeth )
+
+add/start an rnr timer on the QP
+
+Parameters
+  struct rvt_qp *qp
+    the QP
+  u32 aeth
+    aeth of RNR timeout, simulated aeth for loopback

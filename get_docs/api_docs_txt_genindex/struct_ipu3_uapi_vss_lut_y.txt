@@ -1,0 +1,17 @@
+Struct: struct ipu3_uapi_vss_lut_y
+
+Vssnlm LUT y0/y1/y2
+
+Members
+  vs_y1
+    Vssnlm LUT y1, precision u4, range [0, 8], default 1.
+  reserved0
+    reserved
+  vs_y2
+    Vssnlm LUT y2, precision u4, range [0, 8], default 3.
+  reserved1
+    reserved
+  vs_y3
+    Vssnlm LUT y3, precision u4, range [0, 8], default 8.
+  reserved2
+    reserved

@@ -1,0 +1,11 @@
+Function: int ccw_device_set_offline ( struct ccw_device * cdev )
+
+disable a ccw device for I/O
+
+Parameters
+  struct ccw_device *cdev
+    target ccw device
+
+Description
+  This function calls the driver’s set_offline() function for cdev , if
+given, and then disables cdev .

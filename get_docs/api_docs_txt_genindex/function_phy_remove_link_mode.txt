@@ -1,0 +1,14 @@
+Function: void phy_remove_link_mode ( struct phy_device * phydev , u32 link_mode )
+
+Remove a supported link mode
+
+Parameters
+  struct phy_device *phydev
+    phy_device structure to remove link mode from
+  u32 link_mode
+    Link mode to be removed
+
+Description
+  Some MACs don’t support all link modes which the PHY
+does.  e.g. a 1G MAC often does not support 1000Half. Add a helper
+to remove a link mode.

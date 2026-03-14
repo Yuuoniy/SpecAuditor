@@ -1,0 +1,14 @@
+Function: void fb_set_suspend ( struct fb_info * info , int state )
+
+low level driver signals suspend
+
+Parameters
+  struct fb_info *info
+    framebuffer affected
+  int state
+    0 = resuming, !=0 = suspending
+
+Description
+  This is meant to be used by low level drivers to
+signal suspend/resume to the core & clients.
+It must be called with the console semaphore held

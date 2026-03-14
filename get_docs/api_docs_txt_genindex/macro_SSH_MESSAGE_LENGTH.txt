@@ -1,0 +1,7 @@
+Macro: SSH_MESSAGE_LENGTH
+
+
+
+Parameters
+  payload_size
+    Length of the payload inside the SSH frame.

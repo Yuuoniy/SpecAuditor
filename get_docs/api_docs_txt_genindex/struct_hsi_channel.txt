@@ -1,0 +1,9 @@
+Struct: struct hsi_channel
+
+channel resource used by the hsi clients
+
+Members
+  id
+    Channel number
+  name
+    Channel name

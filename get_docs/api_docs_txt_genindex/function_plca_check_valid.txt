@@ -1,0 +1,16 @@
+Function: int plca_check_valid ( struct phy_device * phydev , const struct phy_plca_cfg * plca_cfg , struct netlink_ext_ack * extack )
+
+Check PLCA configuration before enabling
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+  const struct phy_plca_cfg *plca_cfg
+    current PLCA configuration
+  struct netlink_ext_ack *extack
+    extack for reporting useful error messages
+
+Description
+  Checks whether the PLCA and PHY configuration are consistent and it is safe
+to enable PLCA. Returns 0 on success or a negative value if the PLCA or PHY
+configuration is not consistent.

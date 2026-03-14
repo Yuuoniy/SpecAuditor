@@ -1,0 +1,15 @@
+Function: int drm_edp_backlight_set_level ( struct drm_dp_aux * aux , const struct drm_edp_backlight_info * bl , u32 level )
+
+Set the backlight level of an eDP panel via AUX
+
+Parameters
+  struct drm_dp_aux *aux
+    The DP AUX channel to use
+  const struct drm_edp_backlight_info *bl
+    Backlight capability info from drm_edp_backlight_init()
+  u32 level
+    The brightness level to set
+
+Description
+  Sets the brightness level of an eDP panel’s backlight. Note that the panel’s backlight must
+already have been enabled by the driver by calling drm_edp_backlight_enable() .

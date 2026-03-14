@@ -1,0 +1,22 @@
+Struct: struct drm_xe_exec_queue_create
+
+Input of DRM_IOCTL_XE_EXEC_QUEUE_CREATE
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  width
+    submission width (number BB per exec) for this exec queue
+  num_placements
+    number of valid placements for this exec queue
+  vm_id
+    VM to use for this exec queue
+  flags
+    flags to use for this exec queue
+  exec_queue_id
+    Returned exec queue ID
+  instances
+    user pointer to a 2-d array of struct drm_xe_engine_class_instance length = width (i) * num_placements (j)
+index = j + i * width
+  reserved
+    Reserved

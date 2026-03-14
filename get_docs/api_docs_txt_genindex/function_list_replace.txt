@@ -1,0 +1,12 @@
+Function: void list_replace ( struct list_head * old , struct list_head * new )
+
+replace old entry by new one
+
+Parameters
+  struct list_head *old
+    the element to be replaced
+  struct list_head *new
+    the new element to insert
+
+Description
+  If old was empty, it will be overwritten.

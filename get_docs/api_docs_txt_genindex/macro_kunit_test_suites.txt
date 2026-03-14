@@ -1,0 +1,12 @@
+Macro: kunit_test_suites
+
+
+
+Parameters
+  __suites...
+    a statically allocated list of struct kunit_suite .
+
+Description
+  Registers suites with the test framework.
+This is done by placing the array of struct kunit_suite * in the
+.kunit_test_suites ELF section.

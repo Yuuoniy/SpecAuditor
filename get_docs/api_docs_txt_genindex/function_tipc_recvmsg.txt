@@ -1,0 +1,17 @@
+Function: int tipc_recvmsg ( struct socket * sock , struct msghdr * m , size_t buflen , int flags )
+
+receive packet-oriented message
+
+Parameters
+  struct socket *sock
+    network socket
+  struct msghdr *m
+    descriptor for message info
+  size_t buflen
+    length of user buffer area
+  int flags
+    receive flags
+
+Description
+  Used for SOCK_DGRAM, SOCK_RDM, and SOCK_SEQPACKET messages.
+If the complete message doesn’t fit in user area, truncate it.

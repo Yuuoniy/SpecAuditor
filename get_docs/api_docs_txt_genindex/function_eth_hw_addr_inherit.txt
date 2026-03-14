@@ -1,0 +1,13 @@
+Function: void eth_hw_addr_inherit ( struct net_device * dst , struct net_device * src )
+
+Copy dev_addr from another net_device
+
+Parameters
+  struct net_device *dst
+    pointer to net_device to copy dev_addr to
+  struct net_device *src
+    pointer to net_device to copy dev_addr from
+
+Description
+  Copy the Ethernet address from one net_device to another along with
+the address attributes (addr_assign_type).

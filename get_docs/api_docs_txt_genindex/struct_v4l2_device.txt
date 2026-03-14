@@ -1,0 +1,27 @@
+Struct: struct v4l2_device
+
+main struct to for V4L2 device drivers
+
+Members
+  dev
+    pointer to struct device .
+  mdev
+    pointer to struct media_device , may be NULL.
+  subdevs
+    used to keep track of the registered subdevs
+  lock
+    lock this struct; can be used by the driver as well
+if this struct is embedded into a larger struct.
+  name
+    unique device name, by default the driver name + bus ID
+  notify
+    notify operation called by some sub-devices.
+  ctrl_handler
+    The control handler. May be NULL .
+  prio
+    Device’s priority state
+  ref
+    Keep track of the references to this struct.
+  release
+    Release function that is called when the ref count
+goes to 0.

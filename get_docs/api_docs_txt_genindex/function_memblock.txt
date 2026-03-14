@@ -1,0 +1,13 @@
+Function: struct memblock
+
+memblock allocator metadata
+
+Members
+  bottom_up
+    is bottom up direction?
+  current_limit
+    physical address of the current allocation limit
+  memory
+    usable memory regions
+  reserved
+    reserved memory regions

@@ -1,0 +1,17 @@
+Function: int jbd2__journal_restart ( handle_t * handle , int nblocks , int revoke_records , gfp_t gfp_mask )
+
+restart a handle .
+
+Parameters
+  handle_t *handle
+    handle to restart
+  int nblocks
+    nr credits requested
+  int revoke_records
+    number of revoke record credits requested
+  gfp_t gfp_mask
+    memory allocation flags (for start_this_handle)
+
+Description
+  Restart a handle for a multi-transaction filesystem
+operation.

@@ -1,0 +1,12 @@
+Function: void xas_reset ( struct xa_state * xas )
+
+Reset an XArray operation state.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+
+Description
+  Resets the error or walk state of the xas so future walks of the
+array will start from the root.  Use this if you have dropped the
+xarray lock and want to reuse the xa_state.

@@ -1,0 +1,13 @@
+Function: int phylink_ethtool_nway_reset ( struct phylink * pl )
+
+restart negotiation
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+
+Description
+  Restart negotiation for the phylink instance specified by pl . This will
+cause any attached phy to restart negotiation with the link partner, and
+if the MAC is in a BaseX mode, the MAC will also be requested to restart
+negotiation.

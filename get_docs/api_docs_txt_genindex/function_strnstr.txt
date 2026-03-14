@@ -1,0 +1,11 @@
+Function: char * strnstr ( const char * s1 , const char * s2 , size_t len )
+
+Find the first substring in a length-limited string
+
+Parameters
+  const char *s1
+    The string to be searched
+  const char *s2
+    The string to search for
+  size_t len
+    the maximum number of characters to search

@@ -1,0 +1,15 @@
+Macro: drm_gpuvm_bo_for_each_va_safe
+
+
+
+Parameters
+  va__
+    drm_gpuva structure to assign to in each iteration step
+  next__
+    next drm_gpuva to store the next step
+  vm_bo__
+    the drm_gpuvm_bo the drm_gpuva to walk are associated with
+
+Description
+  This iterator walks over all drm_gpuva structures associated with the drm_gpuvm_bo . It is implemented with list_for_each_entry_safe() , hence
+it is save against removal of elements.

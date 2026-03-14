@@ -1,0 +1,9 @@
+Function: void snd_soc_unregister_component_by_driver ( struct device * dev , const struct snd_soc_component_driver * component_driver )
+
+Unregister component using a given driver from the ASoC core
+
+Parameters
+  struct device *dev
+    The device to unregister
+  const struct snd_soc_component_driver *component_driver
+    The component driver to unregister

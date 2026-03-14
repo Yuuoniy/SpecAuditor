@@ -1,0 +1,7 @@
+Macro: dev_to_i3cdev
+
+
+
+Parameters
+  __dev
+    device object

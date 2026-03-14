@@ -1,0 +1,13 @@
+Function: int irq_domain_activate_irq ( struct irq_data * irq_data , bool reserve )
+
+Call domain_ops->activate recursively to activate interrupt
+
+Parameters
+  struct irq_data *irq_data
+    Outermost irq_data associated with interrupt
+  bool reserve
+    If set only reserve an interrupt vector instead of assigning one
+
+Description
+  This is the second step to call domain_ops->activate to program interrupt
+controllers, so the interrupt could actually get delivered.

@@ -1,0 +1,12 @@
+Function: int drm_mode_config_helper_suspend ( struct drm_device * dev )
+
+Modeset suspend helper
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  This helper function takes care of suspending the modeset side. It disables
+output polling if initialized, suspends fbdev if used and finally calls drm_atomic_helper_suspend() .
+If suspending fails, fbdev and polling is re-enabled.

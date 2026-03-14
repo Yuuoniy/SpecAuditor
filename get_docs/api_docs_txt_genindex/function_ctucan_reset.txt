@@ -1,0 +1,7 @@
+Function: int ctucan_reset ( struct net_device * ndev )
+
+Issues software reset request to CTU CAN FD
+
+Parameters
+  struct net_device *ndev
+    Pointer to net_device structure

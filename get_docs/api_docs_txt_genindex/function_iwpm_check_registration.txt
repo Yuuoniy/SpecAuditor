@@ -1,0 +1,14 @@
+Function: u32 iwpm_check_registration ( u8 nl_client , u32 reg )
+
+Check if the client registration matches the given one
+
+Parameters
+  u8 nl_client
+    The index of the netlink client
+  u32 reg
+    The given registration type to compare with
+
+Description
+  Call iwpm_register_pid() to register a client
+Returns true if the client registration matches reg,
+otherwise returns false

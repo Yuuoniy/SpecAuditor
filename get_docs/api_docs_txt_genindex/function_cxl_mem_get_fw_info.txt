@@ -1,0 +1,10 @@
+Function: int cxl_mem_get_fw_info ( struct cxl_memdev_state * mds )
+
+Get Firmware info
+
+Parameters
+  struct cxl_memdev_state *mds
+    The device data for the operation
+
+Description
+  Retrieve firmware info for the device specified.

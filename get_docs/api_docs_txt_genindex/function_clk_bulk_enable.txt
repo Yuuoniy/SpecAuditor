@@ -1,0 +1,12 @@
+Function: int clk_bulk_enable ( int num_clks , const struct clk_bulk_data * clks )
+
+inform the system when the set of clks should be running.
+
+Parameters
+  int num_clks
+    the number of clk_bulk_data
+  const struct clk_bulk_data *clks
+    the clk_bulk_data table of consumer
+
+Description
+  May be called from atomic contexts.

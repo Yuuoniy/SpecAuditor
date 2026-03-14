@@ -1,0 +1,10 @@
+Function: void faux_device_destroy ( struct faux_device * faux_dev )
+
+destroy a faux device
+
+Parameters
+  struct faux_device *faux_dev
+    faux device to destroy
+
+Description
+  Unregisters and cleans up a device that was created with a call to faux_device_create()

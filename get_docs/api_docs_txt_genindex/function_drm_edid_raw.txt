@@ -1,0 +1,10 @@
+Function: const struct edid * drm_edid_raw ( const struct drm_edid * drm_edid )
+
+Get a pointer to the raw EDID data.
+
+Parameters
+  const struct drm_edid *drm_edid
+    drm_edid container
+
+Description
+  Get a pointer to the raw EDID data.

@@ -1,0 +1,9 @@
+Struct: struct gpioevent_data
+
+The actual event being pushed to userspace
+
+Members
+  timestamp
+    best estimate of time of event occurrence, in nanoseconds
+  id
+    event identifier, one of GPIOEVENT_EVENT_RISING_EDGE or GPIOEVENT_EVENT_FALLING_EDGE

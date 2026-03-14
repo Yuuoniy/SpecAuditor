@@ -1,0 +1,19 @@
+Function: int tipc_crypto_rcv ( struct net * net , struct tipc_crypto * rx , struct sk_buff * * skb , struct tipc_bearer * b )
+
+Decrypt an encrypted TIPC message from peer
+
+Parameters
+  struct net *net
+    struct net
+  struct tipc_crypto *rx
+    RX crypto handle
+  struct sk_buff **skb
+    input/output message skb pointer
+  struct tipc_bearer *b
+    bearer where the message has been received
+
+Description
+  If the decryption is successful, the decrypted skb is returned directly or
+as the callback, the encryption header and auth tag will be trimmed out
+before forwarding to tipc_rcv() via the tipc_crypto_rcv_complete() .
+Otherwise, the skb will be freed!

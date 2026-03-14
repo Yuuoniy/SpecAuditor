@@ -1,0 +1,15 @@
+Function: ssize_t filemap_read ( struct kiocb * iocb , struct iov_iter * iter , ssize_t already_read )
+
+Read data from the page cache.
+
+Parameters
+  struct kiocb *iocb
+    The iocb to read.
+  struct iov_iter *iter
+    Destination for the data.
+  ssize_t already_read
+    Number of bytes already read by the caller.
+
+Description
+  Copies data from the page cache.  If the data is not currently present,
+uses the readahead and read_folio address_space operations to fetch it.

@@ -1,0 +1,14 @@
+Function: int __v4l2_ctrl_s_ctrl_string ( struct v4l2_ctrl * ctrl , const char * s )
+
+Unlocked variant of v4l2_ctrl_s_ctrl_string() .
+
+Parameters
+  struct v4l2_ctrl *ctrl
+    The control.
+  const char *s
+    The new string.
+
+Description
+  This sets the control’s new string safely by going through the control
+framework. This function assumes the control’s handler is already locked,
+allowing it to be used from within the v4l2_ctrl_ops functions.

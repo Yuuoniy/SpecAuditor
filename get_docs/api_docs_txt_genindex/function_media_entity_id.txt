@@ -1,0 +1,7 @@
+Function: u32 media_entity_id ( struct media_entity * entity )
+
+return the media entity graph object id
+
+Parameters
+  struct media_entity *entity
+    pointer to media_entity

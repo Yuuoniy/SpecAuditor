@@ -1,0 +1,14 @@
+Function: void snd_soc_jack_free_gpios ( struct snd_soc_jack * jack , int count , struct snd_soc_jack_gpio * gpios )
+
+Release GPIO pins’ resources of an ASoC jack
+
+Parameters
+  struct snd_soc_jack *jack
+    ASoC jack
+  int count
+    number of pins
+  struct snd_soc_jack_gpio *gpios
+    array of gpio pins
+
+Description
+  Release gpio and irq resources for gpio pins associated with an ASoC jack.

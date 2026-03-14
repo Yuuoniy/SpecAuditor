@@ -1,0 +1,16 @@
+Function: void process_one_work ( struct worker * worker , struct work_struct * work )
+
+process single work
+
+Parameters
+  struct worker *worker
+    self
+  struct work_struct *work
+    work to process
+
+Description
+  Process work .  This function contains all the logics necessary to
+process a single work including synchronization against and
+interaction with other workers on the same cpu, queueing and
+flushing.  As long as context requirement is met, any worker can
+call this function to process a work.

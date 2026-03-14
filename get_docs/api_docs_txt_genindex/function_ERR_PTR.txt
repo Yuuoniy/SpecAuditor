@@ -1,0 +1,11 @@
+Function: void * ERR_PTR ( long error )
+
+Create an error pointer.
+
+Parameters
+  long error
+    A negative error code.
+
+Description
+  Encodes error into a pointer value. Users should consider the result
+opaque and not assume anything about how the error is encoded.

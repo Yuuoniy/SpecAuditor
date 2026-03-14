@@ -1,0 +1,16 @@
+Function: vm_fault_t dax_finish_sync_fault ( struct vm_fault * vmf , unsigned int order , unsigned long pfn )
+
+finish synchronous page fault
+
+Parameters
+  struct vm_fault *vmf
+    The description of the fault
+  unsigned int order
+    Order of entry to be inserted
+  unsigned long pfn
+    PFN to insert
+
+Description
+  This function ensures that the file range touched by the page fault is
+stored persistently on the media and handles inserting of appropriate page
+table entry.

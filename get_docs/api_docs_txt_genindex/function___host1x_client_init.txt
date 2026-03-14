@@ -1,0 +1,9 @@
+Function: void __host1x_client_init ( struct host1x_client * client , struct lock_class_key * key )
+
+initialize a host1x client
+
+Parameters
+  struct host1x_client *client
+    host1x client
+  struct lock_class_key *key
+    lock class key for the client-specific mutex

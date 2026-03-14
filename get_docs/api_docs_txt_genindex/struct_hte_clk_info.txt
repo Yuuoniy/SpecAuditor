@@ -1,0 +1,9 @@
+Struct: struct hte_clk_info
+
+Clock source info that HTE provider uses to timestamp.
+
+Members
+  hz
+    Supported clock rate in HZ, for example 1KHz clock = 1000.
+  type
+    Supported clock type.

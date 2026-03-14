@@ -1,0 +1,20 @@
+Function: struct dma_async_tx_descriptor * rio_dma_prep_xfer ( struct dma_chan * dchan , u16 destid , struct rio_dma_data * data , enum dma_transfer_direction direction , unsigned long flags )
+
+RapidIO specific wrapper for device_prep_slave_sg callback defined by DMAENGINE.
+
+Parameters
+  struct dma_chan *dchan
+    DMA channel to configure
+  u16 destid
+    target RapidIO device destination ID
+  struct rio_dma_data *data
+    RIO specific data descriptor
+  enum dma_transfer_direction direction
+    DMA data transfer direction (TO or FROM the device)
+  unsigned long flags
+    dmaengine defined flags
+
+Description
+  Initializes RapidIO capable DMA channel for the specified data transfer.
+Uses DMA channel private extension to pass information related to remote
+target RIO device.

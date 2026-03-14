@@ -1,0 +1,12 @@
+Function: bool dma_resv_test_signaled ( struct dma_resv * obj , enum dma_resv_usage usage )
+
+Test if a reservation object’s fences have been signaled.
+
+Parameters
+  struct dma_resv *obj
+    the reservation object
+  enum dma_resv_usage usage
+    controls which fences to include, see enum dma_resv_usage .
+
+Description
+  Callers are not required to hold specific locks, but maybe hold dma_resv_lock() already.

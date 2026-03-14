@@ -1,0 +1,12 @@
+Function: int __phy_hwtstamp_get ( struct phy_device * phydev , struct kernel_hwtstamp_config * config )
+
+Get hardware timestamping configuration from PHY
+
+Parameters
+  struct phy_device *phydev
+    the PHY device structure
+  struct kernel_hwtstamp_config *config
+    structure holding the timestamping configuration
+
+Description
+  Query the PHY device for its current hardware timestamping configuration.

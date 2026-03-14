@@ -1,0 +1,13 @@
+Function: int scsi_eh_get_sense ( struct list_head * work_q , struct list_head * done_q )
+
+Get device sense data.
+
+Parameters
+  struct list_head *work_q
+    Queue of commands to process.
+  struct list_head *done_q
+    Queue of processed commands.
+
+Description
+  See if we need to request sense information.  if so, then get it
+now, so we have a better idea of what to do.

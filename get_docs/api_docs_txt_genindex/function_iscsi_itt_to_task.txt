@@ -1,0 +1,13 @@
+Function: struct iscsi_task * iscsi_itt_to_task ( struct iscsi_conn * conn , itt_t itt )
+
+look up task by itt
+
+Parameters
+  struct iscsi_conn *conn
+    iscsi connection
+  itt_t itt
+    itt
+
+Description
+  This should be used for mgmt tasks like login and nops, or if
+the LDD’s itt space does not include the session age.

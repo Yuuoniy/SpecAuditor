@@ -1,0 +1,12 @@
+Function: int ata_hpa_resize ( struct ata_device * dev )
+
+Resize a device with an HPA set
+
+Parameters
+  struct ata_device *dev
+    Device to resize
+
+Description
+  Read the size of an LBA28 or LBA48 disk with HPA features and resize
+it if required to the full size of the media. The caller must check
+the drive has the HPA feature set enabled.

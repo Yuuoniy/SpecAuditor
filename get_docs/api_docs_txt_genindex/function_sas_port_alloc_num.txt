@@ -1,0 +1,14 @@
+Function: struct sas_port * sas_port_alloc_num ( struct device * parent )
+
+allocate and initialize a SAS port structure
+
+Parameters
+  struct device *parent
+    parent device
+
+Description
+  Allocates a SAS port structure and a number to go with it.  This
+interface is really for adapters where the port number has no
+meansing, so the sas class should manage them.  It will be added to
+the device tree below the device specified by parent which must be
+either a Scsi_Host or a sas_expander_device.

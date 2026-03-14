@@ -1,0 +1,13 @@
+Function: void idr_set_cursor ( struct idr * idr , unsigned int val )
+
+Set the current position of the cyclic allocator
+
+Parameters
+  struct idr *idr
+    idr handle
+  unsigned int val
+    new position
+
+Description
+  The next call to idr_alloc_cyclic() will return val if it is free
+(otherwise the search will start from this position).

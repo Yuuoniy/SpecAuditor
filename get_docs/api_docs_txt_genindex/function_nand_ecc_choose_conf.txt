@@ -1,0 +1,14 @@
+Function: int nand_ecc_choose_conf ( struct nand_chip * chip , const struct nand_ecc_caps * caps , int oobavail )
+
+Set the ECC strength and ECC step size
+
+Parameters
+  struct nand_chip *chip
+    nand chip info structure
+  const struct nand_ecc_caps *caps
+    ECC engine caps info structure
+  int oobavail
+    OOB size that the ECC engine can use
+
+Description
+  Choose the ECC configuration according to following logic.

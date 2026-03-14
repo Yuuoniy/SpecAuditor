@@ -1,0 +1,111 @@
+Struct: struct tipc_link
+
+TIPC link data structure
+
+Members
+  addr
+    network address of link’s peer node
+  name
+    link name character string
+  net
+    pointer to namespace struct
+  peer_session
+    link session # being used by peer end of link
+  session
+    session to be used by link
+  snd_nxt_state
+    next send seq number
+  rcv_nxt_state
+    next rcv seq number
+  peer_bearer_id
+    bearer id used by link’s peer endpoint
+  bearer_id
+    local bearer id used by link
+  tolerance
+    minimum link continuity loss needed to reset link [in ms]
+  abort_limit
+    # of unacknowledged continuity probes needed to reset link
+  state
+    current state of link FSM
+  peer_caps
+    bitmap describing capabilities of peer node
+  in_session
+    have received ACTIVATE_MSG from peer
+  active
+    link is active
+  silent_intv_cnt
+    # of timer intervals without any reception from peer
+  if_name
+    associated interface name
+  priority
+    current link priority
+  net_plane
+    current link network plane (‘A’ through ‘H’)
+  mon_state
+    cookie with information needed by link monitor
+  rst_cnt
+    link reset counter
+  drop_point
+    seq number for failover handling (FIXME)
+  failover_reasm_skb
+    saved failover msg ptr (FIXME)
+  failover_deferdq
+    deferred message queue for failover processing (FIXME)
+  mtu
+    current maximum packet size for this link
+  advertised_mtu
+    advertised own mtu when link is being established
+  transmq
+    the link’s transmit queue
+  backlogq
+    queue for messages waiting to be sent
+  backlog
+    link’s backlog by priority (importance)
+  snd_nxt
+    next sequence number to be used
+  rcv_nxt
+    next sequence number to expect for inbound messages
+  rcv_unacked
+    # messages read by user, but not yet acked back to peer
+  deferdq
+    deferred receive queue
+  inputq
+    buffer queue for messages to be delivered upwards
+  namedq
+    buffer queue for name table messages to be delivered upwards
+  wakeupq
+    linked list of wakeup msgs waiting for link congestion to abate
+  window
+    sliding window size for congestion handling
+  min_win
+    minimal send window to be used by link
+  ssthresh
+    slow start threshold for congestion handling
+  max_win
+    maximal send window to be used by link
+  cong_acks
+    congestion acks for congestion avoidance (FIXME)
+  checkpoint
+    seq number for congestion window size handling
+  reasm_buf
+    head of partially reassembled inbound message fragments
+  reasm_tnlmsg
+    fragmentation/reassembly area for tunnel protocol message
+  ackers
+    # of peers that needs to ack each packet before it can be released
+  acked
+    # last packet acked by a certain peer. Used for broadcast.
+  last_gap
+    last gap ack blocks for bcast (FIXME)
+  last_ga
+    ptr to gap ack blocks
+  bc_rcvlink
+    the peer specific link used for broadcast reception
+  bc_sndlink
+    the namespace global link used for broadcast sending
+  nack_state
+    bcast nack state
+  bc_peer_is_up
+    peer has acked the bcast init msg
+  stats
+    collects statistics regarding link activity

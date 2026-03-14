@@ -1,0 +1,18 @@
+Function: int vga_get ( struct pci_dev * pdev , unsigned int rsrc , int interruptible )
+
+acquire & lock VGA resources
+
+Parameters
+  struct pci_dev *pdev
+    PCI device of the VGA card or NULL for the system default
+  unsigned int rsrc
+    bit mask of resources to acquire and lock
+  int interruptible
+    blocking should be interruptible by signals ?
+
+Description
+  Acquire VGA resources for the given card and mark those resources
+locked. If the resources requested are “normal” (and not legacy)
+resources, the arbiter will first check whether the card is doing legacy
+decoding for that type of resource. If yes, the lock is “converted” into
+a legacy resource lock.

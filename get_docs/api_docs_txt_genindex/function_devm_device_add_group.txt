@@ -1,0 +1,13 @@
+Function: int devm_device_add_group ( struct device * dev , const struct attribute_group * grp )
+
+given a device, create a managed attribute group
+
+Parameters
+  struct device *dev
+    The device to create the group for
+  const struct attribute_group *grp
+    The attribute group to create
+
+Description
+  This function creates a group for the first time.  It will explicitly
+warn and error if any of the attribute files being created already exist.

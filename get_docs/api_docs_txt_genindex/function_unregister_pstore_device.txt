@@ -1,0 +1,7 @@
+Function: void unregister_pstore_device ( struct pstore_device_info * dev )
+
+unregister non-block device from pstore/blk
+
+Parameters
+  struct pstore_device_info *dev
+    non-block device information

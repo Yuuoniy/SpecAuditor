@@ -1,0 +1,15 @@
+Function: const char * kunit_kstrdup_const ( struct kunit * test , const char * str , gfp_t gfp )
+
+Conditionally duplicates a string into a test managed allocation.
+
+Parameters
+  struct kunit *test
+    The test context object.
+  const char *str
+    The NULL-terminated string to duplicate.
+  gfp_t gfp
+    flags passed to underlying kmalloc() .
+
+Description
+  Calls kunit_kstrdup() only if str is not in the rodata section. Must be freed with kunit_kfree_const() -- not kunit_kfree() .
+See kstrdup_const() and kunit_kmalloc_array() for more information.

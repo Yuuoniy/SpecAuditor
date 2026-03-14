@@ -1,0 +1,13 @@
+Function: void tipc_disc_init_msg ( struct net * net , struct sk_buff * skb , u32 mtyp , struct tipc_bearer * b )
+
+initialize a link setup message
+
+Parameters
+  struct net *net
+    the applicable net namespace
+  struct sk_buff *skb
+    buffer containing message
+  u32 mtyp
+    message type (request or response)
+  struct tipc_bearer *b
+    ptr to bearer issuing message

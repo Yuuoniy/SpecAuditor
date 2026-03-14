@@ -1,0 +1,12 @@
+Function: int i3c_master_do_daa ( struct i3c_master_controller * master )
+
+do a DAA (Dynamic Address Assignment)
+
+Parameters
+  struct i3c_master_controller *master
+    master doing the DAA
+
+Description
+  This function is instantiating an I3C device object and adding it to the
+I3C device list. All device information are automatically retrieved using
+standard CCC commands.

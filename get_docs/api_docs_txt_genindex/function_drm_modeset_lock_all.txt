@@ -1,0 +1,11 @@
+Function: void drm_modeset_lock_all ( struct drm_device * dev )
+
+take all modeset locks
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  This function takes all modeset locks, suitable where a more fine-grained
+scheme isn’t (yet) implemented. Locks must be dropped by calling the drm_modeset_unlock_all() function.

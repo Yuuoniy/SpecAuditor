@@ -1,0 +1,16 @@
+Function: int usb_lock_device_for_reset ( struct usb_device * udev , const struct usb_interface * iface )
+
+cautiously acquire the lock for a usb device structure
+
+Parameters
+  struct usb_device *udev
+    device that’s being locked
+  const struct usb_interface *iface
+    interface bound to the driver making the request (optional)
+
+Description
+  Attempts to acquire the device lock, but fails if the device is
+NOTATTACHED or SUSPENDED, or if iface is specified and the interface
+is neither BINDING nor BOUND.  Rather than sleeping to wait for the
+lock, the routine polls repeatedly.  This is to prevent deadlock with
+disconnect; in some drivers (such as usb-storage) the disconnect() or suspend() method will block waiting for a device reset to complete.

@@ -1,0 +1,19 @@
+Function: int security_sctp_bind_connect ( struct sock * sk , int optname , struct sockaddr * address , int addrlen )
+
+Validate a list of addrs for a SCTP option
+
+Parameters
+  struct sock *sk
+    socket
+  int optname
+    SCTP option to validate
+  struct sockaddr *address
+    list of IP addresses to validate
+  int addrlen
+    length of the address list
+
+Description
+  Validiate permissions required for each address associated with sock sk .
+Depending on optname , the addresses will be treated as either a connect or
+bind service. The addrlen is calculated on each IPv4 and IPv6 address using
+sizeof( struct sockaddr_in ) or sizeof( struct sockaddr_in6 ).

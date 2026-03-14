@@ -1,0 +1,12 @@
+Function: struct gpio_chip * gpiod_to_chip ( const struct gpio_desc * desc )
+
+Return the GPIO chip to which a GPIO descriptor belongs
+
+Parameters
+  const struct gpio_desc *desc
+    descriptor to return the chip of
+
+Description
+  DEPRECATED This function is unsafe and should not be used. Using the chip address
+without taking the SRCU read lock may result in dereferencing a dangling
+pointer.

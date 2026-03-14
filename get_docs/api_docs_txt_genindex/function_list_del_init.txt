@@ -1,0 +1,7 @@
+Function: void list_del_init ( struct list_head * entry )
+
+deletes entry from list and reinitialize it.
+
+Parameters
+  struct list_head *entry
+    the element to delete from the list.

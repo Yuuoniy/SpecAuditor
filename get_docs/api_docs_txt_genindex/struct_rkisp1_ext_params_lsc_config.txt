@@ -1,0 +1,9 @@
+Struct: struct rkisp1_ext_params_lsc_config
+
+RkISP1 extensible params LSC config
+
+Members
+  header
+    The RkISP1 extensible parameters header, see rkisp1_ext_params_block_header
+  config
+    Lens Shading Correction configuration, see rkisp1_cif_isp_lsc_config

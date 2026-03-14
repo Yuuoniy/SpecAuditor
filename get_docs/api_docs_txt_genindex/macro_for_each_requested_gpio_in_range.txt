@@ -1,0 +1,15 @@
+Macro: for_each_requested_gpio_in_range
+
+
+
+Parameters
+  _chip
+    the chip to query
+  _i
+    loop variable
+  _base
+    first GPIO in the range
+  _size
+    amount of GPIOs to check starting from base
+  _label
+    label of current GPIO

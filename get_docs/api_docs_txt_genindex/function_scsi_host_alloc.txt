@@ -1,0 +1,9 @@
+Function: struct Scsi_Host * scsi_host_alloc ( const struct scsi_host_template * sht , int privsize )
+
+register a scsi host adapter instance.
+
+Parameters
+  const struct scsi_host_template *sht
+    pointer to scsi host template
+  int privsize
+    extra bytes to allocate for driver

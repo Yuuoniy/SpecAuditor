@@ -1,0 +1,14 @@
+Function: int skb_orphan_frags ( struct sk_buff * skb , gfp_t gfp_mask )
+
+orphan the frags contained in a buffer
+
+Parameters
+  struct sk_buff *skb
+    buffer to orphan frags from
+  gfp_t gfp_mask
+    allocation mask for replacement pages
+
+Description
+  For each frag in the SKB which needs a destructor (i.e. has an
+owner) create a copy of that frag and release the original
+page by calling the destructor.

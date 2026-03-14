@@ -1,0 +1,13 @@
+Struct: struct drm_xe_vm_create
+
+Input of DRM_IOCTL_XE_VM_CREATE
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  flags
+    Flags
+  vm_id
+    Returned VM ID
+  reserved
+    Reserved

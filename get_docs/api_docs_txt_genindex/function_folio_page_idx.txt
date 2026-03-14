@@ -1,0 +1,13 @@
+Function: unsigned long folio_page_idx ( const struct folio * folio , const struct page * page )
+
+Return the number of a page in a folio.
+
+Parameters
+  const struct folio *folio
+    The folio.
+  const struct page *page
+    The folio page.
+
+Description
+  This function expects that the page is actually part of the folio.
+The returned number is relative to the start of the folio.

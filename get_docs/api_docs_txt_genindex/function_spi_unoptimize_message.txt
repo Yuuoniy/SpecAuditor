@@ -1,0 +1,10 @@
+Function: void spi_unoptimize_message ( struct spi_message * msg )
+
+releases any resources allocated by spi_optimize_message()
+
+Parameters
+  struct spi_message *msg
+    the message to unoptimize
+
+Description
+  Calls to this function must be balanced with calls to spi_optimize_message() .

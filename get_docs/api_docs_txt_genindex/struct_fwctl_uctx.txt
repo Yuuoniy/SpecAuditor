@@ -1,0 +1,7 @@
+Struct: struct fwctl_uctx
+
+Per user FD context
+
+Members
+  fwctl
+    fwctl instance that owns the context

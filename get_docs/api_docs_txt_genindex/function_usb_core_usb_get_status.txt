@@ -1,0 +1,21 @@
+Function: int usb_get_status ( struct usb_device * dev , int recip , int type , int target , void * data )
+
+issues a GET_STATUS call
+
+Parameters
+  struct usb_device *dev
+    the device whose status is being checked
+  int recip
+    USB_RECIP_*; for device, interface, or endpoint
+  int type
+    USB_STATUS_TYPE_*; for standard or PTM status types
+  int target
+    zero (for device), else interface or endpoint number
+  void *data
+    pointer to two bytes of bitmap data
+
+Description
+  Returns device, interface, or endpoint status.  Normally only of
+interest to see if the device is self powered, or has enabled the
+remote wakeup facility; or whether a bulk or interrupt endpoint
+is halted (“stalled”).

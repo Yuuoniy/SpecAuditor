@@ -1,0 +1,23 @@
+Function: struct rio_dev * rio_setup_device ( struct rio_net * net , struct rio_mport * port , u16 destid , u8 hopcount , int do_enum )
+
+Allocates and sets up a RIO device
+
+Parameters
+  struct rio_net *net
+    RIO network
+  struct rio_mport *port
+    Master port to send transactions
+  u16 destid
+    Current destination ID
+  u8 hopcount
+    Current hopcount
+  int do_enum
+    Enumeration/Discovery mode flag
+
+Description
+  Allocates a RIO device and configures fields based on configuration
+space contents. If device has a destination ID register, a destination
+ID is either assigned in enumeration mode or read from configuration
+space in discovery mode.  If the device has switch capabilities, then
+a switch is allocated and configured appropriately. Returns a pointer
+to a RIO device on success or NULL on failure.

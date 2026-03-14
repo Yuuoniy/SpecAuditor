@@ -1,0 +1,7 @@
+Function: int scsi_is_sas_rphy ( const struct device * dev )
+
+check if a struct device represents a SAS remote PHY
+
+Parameters
+  const struct device *dev
+    device to check

@@ -1,0 +1,11 @@
+Function: void tty_buffer_init ( struct tty_port * port )
+
+prepare a tty buffer structure
+
+Parameters
+  struct tty_port *port
+    tty port to initialise
+
+Description
+  Set up the initial state of the buffer management for a tty device. Must be
+called before the other tty buffer functions are used.

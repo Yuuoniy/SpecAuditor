@@ -1,0 +1,10 @@
+Function: int drm_of_lvds_get_data_mapping ( const struct device_node * port )
+
+Get LVDS data mapping
+
+Parameters
+  const struct device_node *port
+    DT port node of the LVDS source or sink
+
+Description
+  Convert DT “data-mapping” property string value into media bus format value.

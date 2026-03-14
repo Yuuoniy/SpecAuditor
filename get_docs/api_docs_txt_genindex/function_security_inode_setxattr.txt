@@ -1,0 +1,23 @@
+Function: int security_inode_setxattr ( struct mnt_idmap * idmap , struct dentry * dentry , const char * name , const void * value , size_t size , int flags )
+
+Check if setting file xattrs is allowed
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount
+  struct dentry *dentry
+    file
+  const char *name
+    xattr name
+  const void *value
+    xattr value
+  size_t size
+    size of xattr value
+  int flags
+    flags
+
+Description
+  This hook performs the desired permission checks before setting the extended
+attributes (xattrs) on dentry .  It is important to note that we have some
+additional logic before the main LSM implementation calls to detect if we
+need to perform an additional capability check at the LSM layer.

@@ -1,0 +1,17 @@
+Function: vm_fault_t vmf_insert_pfn_prot ( struct vm_area_struct * vma , unsigned long addr , unsigned long pfn , pgprot_t pgprot )
+
+insert single pfn into user vma with specified pgprot
+
+Parameters
+  struct vm_area_struct *vma
+    user vma to map to
+  unsigned long addr
+    target user address of this page
+  unsigned long pfn
+    source kernel pfn
+  pgprot_t pgprot
+    pgprot flags for the inserted page
+
+Description
+  This is exactly like vmf_insert_pfn() , except that it allows drivers
+to override pgprot on a per-page basis.

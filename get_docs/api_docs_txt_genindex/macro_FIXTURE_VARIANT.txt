@@ -1,0 +1,12 @@
+Macro: FIXTURE_VARIANT
+
+
+
+Parameters
+  fixture_name
+    fixture name
+
+Description
+  Defines type of constant parameters provided to FIXTURE_SETUP() , TEST_F() and
+FIXTURE_TEARDOWN as variant . Variants allow the same tests to be run with
+different arguments.

@@ -1,0 +1,12 @@
+Function: int hsi_async_write ( struct hsi_client * cl , struct hsi_msg * msg )
+
+Submit a write transfer
+
+Parameters
+  struct hsi_client *cl
+    Pointer to the HSI client
+  struct hsi_msg *msg
+    HSI message descriptor of the transfer
+
+Description
+  Return -errno on failure, 0 on success

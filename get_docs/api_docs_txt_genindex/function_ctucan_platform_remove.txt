@@ -1,0 +1,10 @@
+Function: void ctucan_platform_remove ( struct platform_device * pdev )
+
+Unregister the device after releasing the resources
+
+Parameters
+  struct platform_device *pdev
+    Handle to the platform device structure
+
+Description
+  This function frees all the resources allocated to the device.

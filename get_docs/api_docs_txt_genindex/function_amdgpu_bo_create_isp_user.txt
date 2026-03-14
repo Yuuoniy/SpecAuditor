@@ -1,0 +1,20 @@
+Function: int amdgpu_bo_create_isp_user ( struct amdgpu_device * adev , struct dma_buf * dma_buf , u32 domain , struct amdgpu_bo * * bo , u64 * gpu_addr )
+
+create user BO for isp
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device object
+  struct dma_buf *dma_buf
+    DMABUF handle for isp buffer
+  u32 domain
+    where to place it
+  struct amdgpu_bo **bo
+    used to initialize BOs in structures
+  u64 *gpu_addr
+    GPU addr of the pinned BO
+
+Description
+  Imports isp DMABUF to allocate and pin a user BO for isp internal use. It does
+GART alloc to generate gpu_addr for BO to make it accessible through the
+GART aperture for ISP HW.

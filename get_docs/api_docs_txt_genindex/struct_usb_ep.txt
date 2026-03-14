@@ -1,0 +1,43 @@
+Struct: struct usb_ep
+
+device side representation of USB endpoint
+
+Members
+  driver_data
+    for use by the gadget driver.
+  name
+    identifier for the endpoint, such as “ep-a” or “ep9in-bulk”
+  ops
+    Function pointers used to access hardware-specific operations.
+  desc
+    endpoint descriptor.  This pointer is set before the endpoint is
+enabled and remains valid until the endpoint is disabled.
+  comp_desc
+    In case of SuperSpeed support, this is the endpoint companion
+descriptor that is used to configure the endpoint
+  ep_list
+    the gadget’s ep_list holds all of its endpoints
+  caps
+    The structure describing types and directions supported by endpoint.
+  claimed
+    True if this endpoint is claimed by a function.
+  enabled
+    The current endpoint enabled/disabled state.
+  mult
+    multiplier, ‘mult’ value for SS Isoc EPs
+  maxburst
+    the maximum number of bursts supported by this EP (for usb3)
+  address
+    used to identify the endpoint when finding descriptor that
+matches connection speed
+  maxpacket
+    The maximum packet size used on this endpoint.  The initial
+value can sometimes be reduced (hardware allowing), according to
+the endpoint descriptor used to configure the endpoint.
+  maxpacket_limit
+    The maximum packet size value which can be handled by this
+endpoint. It’s set once by UDC driver when endpoint is initialized, and
+should not be changed. Should not be confused with maxpacket.
+  max_streams
+    The maximum number of streams supported
+by this EP (0 - 16, actual number is 2^n)

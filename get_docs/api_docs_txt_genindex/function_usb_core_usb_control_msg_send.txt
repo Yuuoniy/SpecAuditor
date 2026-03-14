@@ -1,0 +1,31 @@
+Function: int usb_control_msg_send ( struct usb_device * dev , __u8 endpoint , __u8 request , __u8 requesttype , __u16 value , __u16 index , const void * driver_data , __u16 size , int timeout , gfp_t memflags )
+
+Builds a control “send” message, sends it off and waits for completion
+
+Parameters
+  struct usb_device *dev
+    pointer to the usb device to send the message to
+  __u8 endpoint
+    endpoint to send the message to
+  __u8 request
+    USB message request value
+  __u8 requesttype
+    USB message request type value
+  __u16 value
+    USB message value
+  __u16 index
+    USB message index value
+  const void *driver_data
+    pointer to the data to send
+  __u16 size
+    length in bytes of the data to send
+  int timeout
+    time in msecs to wait for the message to complete before timing
+out (if 0 the wait is forever)
+  gfp_t memflags
+    the flags for memory allocation for buffers
+
+Description
+  This function sends a control message to a specified endpoint that is not
+expected to fill in a response (i.e. a “send message”) and waits for the
+message to complete, or timeout.

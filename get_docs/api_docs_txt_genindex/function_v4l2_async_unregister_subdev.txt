@@ -1,0 +1,7 @@
+Function: void v4l2_async_unregister_subdev ( struct v4l2_subdev * sd )
+
+unregisters a sub-device to the asynchronous subdevice framework
+
+Parameters
+  struct v4l2_subdev *sd
+    pointer to struct v4l2_subdev

@@ -1,0 +1,7 @@
+Function: void ctucan_rotate_txb_prio ( struct net_device * ndev )
+
+Rotates priorities of TXT Buffers
+
+Parameters
+  struct net_device *ndev
+    net_device pointer

@@ -1,0 +1,8 @@
+Struct: struct nand_op_parser_addr_constraints
+
+Constraints for address instructions
+
+Members
+  maxcycles
+    maximum number of address cycles the controller can issue in a
+single step

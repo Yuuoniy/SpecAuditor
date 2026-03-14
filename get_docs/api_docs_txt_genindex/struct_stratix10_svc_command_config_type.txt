@@ -1,0 +1,7 @@
+Struct: struct stratix10_svc_command_config_type
+
+config type
+
+Members
+  flags
+    flag bit for the type of FPGA configuration

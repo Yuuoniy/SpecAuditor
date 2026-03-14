@@ -1,0 +1,11 @@
+Struct: struct drm_vram_mm
+
+An instance of VRAM MM
+
+Members
+  vram_base
+    Base address of the managed video memory
+  vram_size
+    Size of the managed video memory in bytes
+  bdev
+    The TTM BO device.

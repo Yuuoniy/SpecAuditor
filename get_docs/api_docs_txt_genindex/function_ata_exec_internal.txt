@@ -1,0 +1,26 @@
+Function: unsigned int ata_exec_internal ( struct ata_device * dev , struct ata_taskfile * tf , const u8 * cdb , enum dma_data_direction dma_dir , void * buf , unsigned int buflen , unsigned int timeout )
+
+execute libata internal command
+
+Parameters
+  struct ata_device *dev
+    Device to which the command is sent
+  struct ata_taskfile *tf
+    Taskfile registers for the command and the result
+  const u8 *cdb
+    CDB for packet command
+  enum dma_data_direction dma_dir
+    Data transfer direction of the command
+  void *buf
+    Data buffer of the command
+  unsigned int buflen
+    Length of data buffer
+  unsigned int timeout
+    Timeout in msecs (0 for default)
+
+Description
+  Executes libata internal command with timeout. tf contains
+the command on entry and the result on return. Timeout and error
+conditions are reported via the return value. No recovery action
+is taken after a command times out. It is the caller’s duty to
+clean up after timeout.

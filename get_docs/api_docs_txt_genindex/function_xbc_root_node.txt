@@ -1,0 +1,11 @@
+Function: struct xbc_node * xbc_root_node ( void )
+
+Get the root node of extended boot config
+
+Parameters
+  void
+    no arguments
+
+Description
+  Return the address of root node of extended boot config. If the
+extended boot config is not initiized, return NULL.

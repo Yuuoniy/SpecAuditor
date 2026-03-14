@@ -1,0 +1,11 @@
+Struct: struct scsi_vpd
+
+SCSI Vital Product Data
+
+Members
+  rcu
+    For kfree_rcu() .
+  len
+    Length in bytes of data .
+  data
+    VPD data as defined in various T10 SCSI standard documents.

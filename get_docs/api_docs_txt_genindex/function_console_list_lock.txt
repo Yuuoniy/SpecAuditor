@@ -1,0 +1,10 @@
+Function: void console_list_lock ( void )
+
+Lock the console list
+
+Parameters
+  void
+    no arguments
+
+Description
+  For console list or console->flags updates

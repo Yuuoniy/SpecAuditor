@@ -1,0 +1,11 @@
+Function: void phy_mac_interrupt ( struct phy_device * phydev )
+
+MAC says the link has changed
+
+Parameters
+  struct phy_device *phydev
+    phy_device struct with changed link
+
+Description
+  The MAC layer is able to indicate there has been a change in the PHY link
+status. Trigger the state machine and work a work queue.

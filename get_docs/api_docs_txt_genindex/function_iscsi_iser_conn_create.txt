@@ -1,0 +1,9 @@
+Function: struct iscsi_cls_conn * iscsi_iser_conn_create ( struct iscsi_cls_session * cls_session , uint32_t conn_idx )
+
+create a new iscsi-iser connection
+
+Parameters
+  struct iscsi_cls_session *cls_session
+    iscsi class connection
+  uint32_t conn_idx
+    connection index within the session (for MCS)

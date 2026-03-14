@@ -1,0 +1,14 @@
+Function: int seq_write ( struct seq_file * seq , const void * data , size_t len )
+
+write arbitrary data to buffer
+
+Parameters
+  struct seq_file *seq
+    seq_file identifying the buffer to which data should be written
+  const void *data
+    data address
+  size_t len
+    number of bytes
+
+Description
+  Return 0 on success, non-zero otherwise.

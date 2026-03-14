@@ -1,0 +1,12 @@
+Function: struct i3c_generic_ibi_pool * i3c_generic_ibi_alloc_pool ( struct i3c_dev_desc * dev , const struct i3c_ibi_setup * req )
+
+Create a generic IBI pool
+
+Parameters
+  struct i3c_dev_desc *dev
+    the device this pool will be used for
+  const struct i3c_ibi_setup *req
+    IBI setup request describing what the device driver expects
+
+Description
+  Create a generic IBI pool based on the information provided in req .

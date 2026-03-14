@@ -1,0 +1,11 @@
+Macro: const_ilog2
+
+
+
+Parameters
+  n
+    parameter
+
+Description
+  Use this where sparse expects a true constant expression, e.g. for array
+indices.

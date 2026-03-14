@@ -1,0 +1,11 @@
+Function: void __xa_clear_mark ( struct xarray * xa , unsigned long index , xa_mark_t mark )
+
+Clear this mark on this entry while locked.
+
+Parameters
+  struct xarray *xa
+    XArray.
+  unsigned long index
+    Index of entry.
+  xa_mark_t mark
+    Mark number.

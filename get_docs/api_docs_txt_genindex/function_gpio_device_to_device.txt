@@ -1,0 +1,11 @@
+Function: struct device * gpio_device_to_device ( struct gpio_device * gdev )
+
+Retrieve the address of the underlying struct device .
+
+Parameters
+  struct gpio_device *gdev
+    GPIO device for which to return the address.
+
+Description
+  This does not increase the reference count of the GPIO device nor the
+underlying struct device .

@@ -1,0 +1,7 @@
+Macro: write_seqcount_end
+
+
+
+Parameters
+  s
+    Pointer to seqcount_t or any of the seqcount_LOCKNAME_t variants

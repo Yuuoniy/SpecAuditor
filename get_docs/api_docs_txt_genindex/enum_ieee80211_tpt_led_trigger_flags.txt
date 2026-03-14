@@ -1,0 +1,3 @@
+Enum: enum ieee80211_tpt_led_trigger_flags
+
+throughput trigger flags

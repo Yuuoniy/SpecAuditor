@@ -1,0 +1,9 @@
+Function: void clear_exclusive_cxl_commands ( struct cxl_memdev_state * mds , unsigned long * cmds )
+
+atomically enable user cxl commands
+
+Parameters
+  struct cxl_memdev_state *mds
+    The device state to modify
+  unsigned long *cmds
+    bitmap of commands to mark available for userspace

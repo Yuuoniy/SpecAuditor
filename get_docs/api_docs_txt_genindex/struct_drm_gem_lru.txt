@@ -1,0 +1,14 @@
+Struct: struct drm_gem_lru
+
+A simple LRU helper
+
+Members
+  lock
+    Lock protecting movement of GEM objects between LRUs.  All
+LRUs that the object can move between should be protected
+by the same lock.
+  count
+    The total number of backing pages of the GEM objects in
+this LRU.
+  list
+    The LRU list.

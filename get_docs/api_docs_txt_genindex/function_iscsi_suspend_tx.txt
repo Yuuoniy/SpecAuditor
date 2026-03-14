@@ -1,0 +1,12 @@
+Function: void iscsi_suspend_tx ( struct iscsi_conn * conn )
+
+suspend iscsi_data_xmit
+
+Parameters
+  struct iscsi_conn *conn
+    iscsi conn to stop processing IO on.
+
+Description
+  This function sets the suspend bit to prevent iscsi_data_xmit
+from sending new IO, and if work is queued on the xmit thread
+it will wait for it to be completed.

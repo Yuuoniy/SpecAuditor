@@ -1,0 +1,19 @@
+Struct: struct service_range
+
+container for all bindings of a service range
+
+Members
+  lower
+    service range lower bound
+  upper
+    service range upper bound
+  tree_node
+    member of service range RB tree
+  max
+    largest ‘upper’ in this node subtree
+  local_publ
+    list of identical publications made from this node
+Used by closest_first lookup and multicast lookup algorithm
+  all_publ
+    all publications identical to this one, whatever node and scope
+Used by round-robin lookup algorithm

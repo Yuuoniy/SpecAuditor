@@ -1,0 +1,5 @@
+Function: ktime_t ktime_get_boottime ( void )
+
+CLOCK_BOOTTIME Like ktime_get() , but does not stop when suspended. This can be
+used e.g. for key expiration times that need to be synchronized
+with other machines across a suspend operation.

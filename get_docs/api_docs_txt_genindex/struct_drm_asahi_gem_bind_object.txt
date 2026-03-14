@@ -1,0 +1,21 @@
+Struct: struct drm_asahi_gem_bind_object
+
+Arguments passed to DRM_IOCTL_ASAHI_GEM_BIND_OBJECT
+
+Members
+  op
+    Bind operation ( enum drm_asahi_bind_object_op )
+  flags
+    Combination of drm_asahi_bind_object_flags flags.
+  handle
+    GEM object to bind/unbind (BIND)
+  vm_id
+    The ID of the VM to operate on (MBZ currently)
+  offset
+    Offset into the object (BIND only)
+  range
+    Number of bytes to bind/unbind (BIND only)
+  object_handle
+    Object handle (out for BIND, in for UNBIND)
+  pad
+    MBZ

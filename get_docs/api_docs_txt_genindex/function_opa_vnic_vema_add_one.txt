@@ -1,0 +1,10 @@
+Function: int opa_vnic_vema_add_one ( struct ib_device * device )
+
+Handle new ib device
+
+Parameters
+  struct ib_device *device
+    ib device pointer
+
+Description
+  Allocate the vnic control port and initialize it.

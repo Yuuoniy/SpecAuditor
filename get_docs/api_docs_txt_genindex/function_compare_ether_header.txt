@@ -1,0 +1,16 @@
+Function: unsigned long compare_ether_header ( const void * a , const void * b )
+
+Compare two Ethernet headers
+
+Parameters
+  const void *a
+    Pointer to Ethernet header
+  const void *b
+    Pointer to Ethernet header
+
+Description
+  Compare two Ethernet headers, returns 0 if equal.
+This assumes that the network header (i.e., IP header) is 4-byte
+aligned OR the platform can handle unaligned access.  This is the
+case for all packets coming into netif_receive_skb or similar
+entry points.

@@ -1,0 +1,10 @@
+Function: const struct drm_edid * drm_edid_dup ( const struct drm_edid * drm_edid )
+
+Duplicate a drm_edid container
+
+Parameters
+  const struct drm_edid *drm_edid
+    EDID to duplicate
+
+Description
+  The returned pointer must be freed using drm_edid_free() .

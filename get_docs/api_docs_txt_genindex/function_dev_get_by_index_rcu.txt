@@ -1,0 +1,15 @@
+Function: struct net_device * dev_get_by_index_rcu ( struct net * net , int ifindex )
+
+find a device by its ifindex
+
+Parameters
+  struct net *net
+    the applicable net namespace
+  int ifindex
+    index of device
+
+Description
+  Search for an interface by index. Returns NULL if the device
+is not found or a pointer to the device. The device has not
+had its reference counter increased so the caller must be careful
+about locking. The caller must hold RCU lock.

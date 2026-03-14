@@ -1,0 +1,11 @@
+Function: void intel_psr_dc5_dc6_wa_init ( struct intel_display * display )
+
+Init work for underrun on idle PSR HW bug wa
+
+Parameters
+  struct intel_display *display
+    intel atomic state
+
+Description
+  This is targeted for underrun on idle PSR HW bug (Wa_16025596647) to init
+psr_dc5_dc6_wa_work used for applying the workaround.

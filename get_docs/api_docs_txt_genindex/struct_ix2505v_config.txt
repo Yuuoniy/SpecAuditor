@@ -1,0 +1,15 @@
+Struct: struct ix2505v_config
+
+ix2505 attachment configuration
+
+Members
+  tuner_address
+    tuner address
+  tuner_gain
+    Baseband AMP gain control 0/1=0dB(default) 2=-2bB 3=-4dB
+  tuner_chargepump
+    Charge pump output +/- 0=120 1=260 2=555 3=1200(default)
+  min_delay_ms
+    delay after tune
+  tuner_write_only
+    disables reads

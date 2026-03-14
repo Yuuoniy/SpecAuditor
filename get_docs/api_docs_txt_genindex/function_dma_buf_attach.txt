@@ -1,0 +1,13 @@
+Function: struct dma_buf_attachment * dma_buf_attach ( struct dma_buf * dmabuf , struct device * dev )
+
+Wrapper for dma_buf_dynamic_attach
+
+Parameters
+  struct dma_buf *dmabuf
+    [in]    buffer to attach device to.
+  struct device *dev
+    [in]    device to be attached.
+
+Description
+  Wrapper to call dma_buf_dynamic_attach() for drivers which still use a static
+mapping.

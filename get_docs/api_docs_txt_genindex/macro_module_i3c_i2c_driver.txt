@@ -1,0 +1,16 @@
+Macro: module_i3c_i2c_driver
+
+
+
+Parameters
+  __i3cdrv
+    the I3C driver to register
+  __i2cdrv
+    the I2C driver to register
+
+Description
+  Provide generic init/exit functions that simply register/unregister an I3C
+and an I2C driver.
+This macro can be used even if CONFIG_I3C is disabled, in this case, only
+the I2C driver will be registered.
+Should be used by any driver that does not require extra init/cleanup steps.

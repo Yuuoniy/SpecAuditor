@@ -1,0 +1,7 @@
+Function: struct vb2_v4l2_buffer * v4l2_m2m_last_buf ( struct v4l2_m2m_queue_ctx * q_ctx )
+
+return last buffer from the list of ready buffers
+
+Parameters
+  struct v4l2_m2m_queue_ctx *q_ctx
+    pointer to struct v4l2_m2m_queue_ctx

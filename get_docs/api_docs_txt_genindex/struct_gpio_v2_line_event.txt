@@ -1,0 +1,19 @@
+Struct: struct gpio_v2_line_event
+
+The actual event being pushed to userspace
+
+Members
+  timestamp_ns
+    best estimate of time of event occurrence, in nanoseconds
+  id
+    event identifier with value from enum gpio_v2_line_event_id
+  offset
+    the offset of the line that triggered the event
+  seqno
+    the sequence number for this event in the sequence of events for
+all the lines in this line request
+  line_seqno
+    the sequence number for this event in the sequence of
+events on this particular line
+  padding
+    reserved for future use

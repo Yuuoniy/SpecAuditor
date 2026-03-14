@@ -1,0 +1,12 @@
+Function: bool dma_addressing_limited ( struct device * dev )
+
+return if the device is addressing limited
+
+Parameters
+  struct device *dev
+    device to check
+
+Description
+  Return true if the devices DMA mask is too small to address all memory in
+the system, else false .  Lack of addressing bits is the prime reason for
+bounce buffering, but might not be the only one.

@@ -1,0 +1,12 @@
+Function: int security_fs_context_submount ( struct fs_context * fc , struct super_block * reference )
+
+Initialise fc->security
+
+Parameters
+  struct fs_context *fc
+    new filesystem context
+  struct super_block *reference
+    dentry reference for submount/remount
+
+Description
+  Fill out the ->security field for a new fs_context.

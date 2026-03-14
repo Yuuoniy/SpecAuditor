@@ -1,0 +1,11 @@
+Function: int gadget_is_otg ( struct usb_gadget * g )
+
+return true iff the hardware is OTG-ready
+
+Parameters
+  struct usb_gadget *g
+    controller that might have a Mini-AB connector
+
+Description
+  This is a runtime test, since kernels with a USB-OTG stack sometimes
+run on boards which only have a Mini-B (or Mini-A) connector.

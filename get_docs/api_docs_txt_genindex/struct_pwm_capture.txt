@@ -1,0 +1,9 @@
+Struct: struct pwm_capture
+
+PWM capture data
+
+Members
+  period
+    period of the PWM signal (in nanoseconds)
+  duty_cycle
+    duty cycle of the PWM signal (in nanoseconds)

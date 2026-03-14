@@ -1,0 +1,19 @@
+Function: int fscache_write ( struct netfs_cache_resources * cres , loff_t start_pos , struct iov_iter * iter , netfs_io_terminated_t term_func , void * term_func_priv )
+
+Start a write to the cache.
+
+Parameters
+  struct netfs_cache_resources *cres
+    The cache resources to use
+  loff_t start_pos
+    The beginning file offset in the cache file
+  struct iov_iter *iter
+    The data to write - and also the length
+  netfs_io_terminated_t term_func
+    The function to call upon completion
+  void *term_func_priv
+    The private data for term_func
+
+Description
+  Start a write to the cache. cres indicates the cache object to write to and
+must be obtained by a call to fscache_begin_operation() beforehand.

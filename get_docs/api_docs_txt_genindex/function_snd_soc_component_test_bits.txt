@@ -1,0 +1,17 @@
+Function: int snd_soc_component_test_bits ( struct snd_soc_component * component , unsigned int reg , unsigned int mask , unsigned int value )
+
+Test register for change
+
+Parameters
+  struct snd_soc_component *component
+    component
+  unsigned int reg
+    Register to test
+  unsigned int mask
+    Mask that specifies which bits to test
+  unsigned int value
+    Value to test against
+
+Description
+  Tests a register with a new value and checks if the new value is
+different from the old value.

@@ -1,0 +1,24 @@
+Function: struct xz_dec * xz_dec_init ( enum xz_mode mode , uint32_t dict_max )
+
+Allocate and initialize a XZ decoder state
+
+Parameters
+  enum xz_mode mode
+    Operation mode
+  uint32_t dict_max
+    Maximum size of the LZMA2 dictionary (history buffer) for
+multi-call decoding. This is ignored in single-call mode
+(mode == XZ_SINGLE). LZMA2 dictionary is always 2^n bytes
+or 2^n + 2^(n-1) bytes (the latter sizes are less common
+in practice), so other values for dict_max don’t make sense.
+In the kernel, dictionary sizes of 64 KiB, 128 KiB, 256 KiB,
+512 KiB, and 1 MiB are probably the only reasonable values,
+except for kernel and initramfs images where a bigger
+dictionary can be fine and useful.
+
+Description
+  Single-call mode (XZ_SINGLE): xz_dec_run() decodes the whole stream at
+once. The caller must provide enough output space or the decoding will
+fail. The output space is used as the dictionary buffer, which is why
+there is no need to allocate the dictionary as part of the decoder’s
+internal state.

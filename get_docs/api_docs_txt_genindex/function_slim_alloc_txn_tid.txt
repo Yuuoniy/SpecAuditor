@@ -1,0 +1,9 @@
+Function: int slim_alloc_txn_tid ( struct slim_controller * ctrl , struct slim_msg_txn * txn )
+
+Allocate a tid to txn
+
+Parameters
+  struct slim_controller *ctrl
+    Controller handle
+  struct slim_msg_txn *txn
+    transaction to be allocated with tid.

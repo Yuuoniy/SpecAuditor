@@ -1,0 +1,13 @@
+Function: bool hlist_is_singular_node ( struct hlist_node * n , struct hlist_head * h )
+
+is node the only element of the specified hlist?
+
+Parameters
+  struct hlist_node *n
+    Node to check for singularity.
+  struct hlist_head *h
+    Header for potentially singular list.
+
+Description
+  Check whether the node is the only node of the head without
+accessing head, thus avoiding unnecessary cache misses.

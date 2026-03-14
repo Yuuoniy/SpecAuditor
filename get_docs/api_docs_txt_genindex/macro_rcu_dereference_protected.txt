@@ -1,0 +1,17 @@
+Macro: rcu_dereference_protected
+
+
+
+Parameters
+  p
+    The pointer to read, prior to dereferencing
+  c
+    The conditions under which the dereference will take place
+
+Description
+  Return the value of the specified RCU-protected pointer, but omit
+the READ_ONCE() .  This is useful in cases where update-side locks
+prevent the value of the pointer from changing.  Please note that this
+primitive does not prevent the compiler from repeating this reference
+or combining it with other references, so it should not be used without
+protection of appropriate locks.

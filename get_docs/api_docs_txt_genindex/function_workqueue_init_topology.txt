@@ -1,0 +1,12 @@
+Function: void workqueue_init_topology ( void )
+
+initialize CPU pods for unbound workqueues
+
+Parameters
+  void
+    no arguments
+
+Description
+  This is the third step of three-staged workqueue subsystem initialization and
+invoked after SMP and topology information are fully initialized. It
+initializes the unbound CPU pods accordingly.

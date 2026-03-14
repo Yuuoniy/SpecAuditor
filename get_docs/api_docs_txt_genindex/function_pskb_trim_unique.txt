@@ -1,0 +1,14 @@
+Function: void pskb_trim_unique ( struct sk_buff * skb , unsigned int len )
+
+remove end from a paged unique (not cloned) buffer
+
+Parameters
+  struct sk_buff *skb
+    buffer to alter
+  unsigned int len
+    new length
+
+Description
+  This is identical to pskb_trim except that the caller knows that
+the skb is not cloned so we should never get an error due to out-
+of-memory.

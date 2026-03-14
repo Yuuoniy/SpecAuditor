@@ -1,0 +1,19 @@
+Function: void seq_escape_mem ( struct seq_file * m , const char * src , size_t len , unsigned int flags , const char * esc )
+
+print data into buffer, escaping some characters
+
+Parameters
+  struct seq_file *m
+    target buffer
+  const char *src
+    source buffer
+  size_t len
+    size of source buffer
+  unsigned int flags
+    flags to pass to string_escape_mem()
+  const char *esc
+    set of characters that need escaping
+
+Description
+  Puts data into buffer, replacing each occurrence of character from
+given class (defined by flags and esc ) with printable escaped sequence.

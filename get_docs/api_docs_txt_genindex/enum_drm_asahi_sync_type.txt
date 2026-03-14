@@ -1,0 +1,3 @@
+Enum: enum drm_asahi_sync_type
+
+Sync item type

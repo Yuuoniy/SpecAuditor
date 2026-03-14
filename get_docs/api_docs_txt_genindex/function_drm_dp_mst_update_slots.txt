@@ -1,0 +1,9 @@
+Function: void drm_dp_mst_update_slots ( struct drm_dp_mst_topology_state * mst_state , uint8_t link_encoding_cap )
+
+updates the slot info depending on the DP ecoding format
+
+Parameters
+  struct drm_dp_mst_topology_state *mst_state
+    mst_state to update
+  uint8_t link_encoding_cap
+    the ecoding format on the link

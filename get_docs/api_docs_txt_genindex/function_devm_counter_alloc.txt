@@ -1,0 +1,13 @@
+Function: struct counter_device * devm_counter_alloc ( struct device * dev , size_t sizeof_priv )
+
+allocate a counter_device
+
+Parameters
+  struct device *dev
+    the device to register the release callback for
+  size_t sizeof_priv
+    size of the driver private data
+
+Description
+  This is the device managed version of counter_add() . It registers a cleanup
+callback to care for calling counter_put() .

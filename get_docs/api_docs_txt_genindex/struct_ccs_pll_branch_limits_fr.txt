@@ -1,0 +1,21 @@
+Struct: struct ccs_pll_branch_limits_fr
+
+CCS PLL front-end limits
+
+Members
+  min_pre_pll_clk_div
+    Minimum pre-PLL clock divider
+  max_pre_pll_clk_div
+    Maximum pre-PLL clock divider
+  min_pll_ip_clk_freq_hz
+    Minimum PLL input clock frequency
+  max_pll_ip_clk_freq_hz
+    Maximum PLL input clock frequency
+  min_pll_multiplier
+    Minimum PLL multiplier
+  max_pll_multiplier
+    Maximum PLL multiplier
+  min_pll_op_clk_freq_hz
+    Minimum PLL output clock frequency
+  max_pll_op_clk_freq_hz
+    Maximum PLL output clock frequency

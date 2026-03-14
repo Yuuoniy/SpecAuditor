@@ -1,0 +1,10 @@
+Function: void * iio_device_get_drvdata ( const struct iio_dev * indio_dev )
+
+Get device driver data
+
+Parameters
+  const struct iio_dev *indio_dev
+    IIO device structure
+
+Description
+  Returns the data previously set with iio_device_set_drvdata()

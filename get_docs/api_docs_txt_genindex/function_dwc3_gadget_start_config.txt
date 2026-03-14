@@ -1,0 +1,13 @@
+Function: int dwc3_gadget_start_config ( struct dwc3 * dwc , unsigned int resource_index )
+
+reset endpoint resources
+
+Parameters
+  struct dwc3 *dwc
+    pointer to the DWC3 context
+  unsigned int resource_index
+    DEPSTARTCFG.XferRscIdx value (must be 0 or 2)
+
+Description
+  Set resource_index=0 to reset all endpoints’ resources allocation. Do this as
+part of the power-on/soft-reset initialization.

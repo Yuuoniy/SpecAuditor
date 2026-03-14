@@ -1,0 +1,14 @@
+Function: struct sg_table * drm_gem_map_dma_buf ( struct dma_buf_attachment * attach , enum dma_data_direction dir )
+
+map_dma_buf implementation for GEM
+
+Parameters
+  struct dma_buf_attachment *attach
+    attachment whose scatterlist is to be returned
+  enum dma_data_direction dir
+    direction of DMA transfer
+
+Description
+  Calls drm_gem_object_funcs.get_sg_table and then maps the scatterlist. This
+can be used as the dma_buf_ops.map_dma_buf callback. Should be used together
+with drm_gem_unmap_dma_buf() .

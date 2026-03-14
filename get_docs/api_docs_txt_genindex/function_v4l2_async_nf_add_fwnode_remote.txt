@@ -1,0 +1,19 @@
+Function: v4l2_async_nf_add_fwnode_remote
+
+
+
+Parameters
+  notifier
+    pointer to struct v4l2_async_notifier
+  ep
+    local endpoint pointing to the remote connection to be matched,
+pointer to struct fwnode_handle
+  type
+    Type of the driver’s async connection struct. The struct v4l2_async_connection shall be the first member of the driver’s async
+connection struct, i.e. both begin at the same memory address.
+
+Description
+  Gets the remote endpoint of a given local endpoint, set it up for fwnode
+matching and adds the async connection to the notifier’s asc_list . The
+function also gets a reference of the fwnode which is released later at
+notifier cleanup time.

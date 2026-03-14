@@ -1,0 +1,13 @@
+Function: void print_worker_info ( const char * log_lvl , struct task_struct * task )
+
+print out worker information and description
+
+Parameters
+  const char *log_lvl
+    the log level to use when printing
+  struct task_struct *task
+    target task
+
+Description
+  If task is a worker and currently executing a work item, print out the
+name of the workqueue being serviced and worker description set with set_worker_desc() by the currently executing work item.

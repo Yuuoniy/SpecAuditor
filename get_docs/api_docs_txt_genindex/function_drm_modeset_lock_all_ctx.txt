@@ -1,0 +1,13 @@
+Function: int drm_modeset_lock_all_ctx ( struct drm_device * dev , struct drm_modeset_acquire_ctx * ctx )
+
+take all modeset locks
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_modeset_acquire_ctx *ctx
+    lock acquisition context
+
+Description
+  This function takes all modeset locks, suitable where a more fine-grained
+scheme isn’t (yet) implemented.

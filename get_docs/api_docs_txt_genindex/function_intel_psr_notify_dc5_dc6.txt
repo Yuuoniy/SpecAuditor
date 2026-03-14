@@ -1,0 +1,11 @@
+Function: void intel_psr_notify_dc5_dc6 ( struct intel_display * display )
+
+Notify PSR about enable/disable dc5/dc6
+
+Parameters
+  struct intel_display *display
+    intel atomic state
+
+Description
+  This is targeted for underrun on idle PSR HW bug (Wa_16025596647) to schedule
+psr_dc5_dc6_wa_work used for applying/removing the workaround.

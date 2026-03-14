@@ -1,0 +1,11 @@
+Struct: struct media_entity_notify
+
+Media Entity Notify
+
+Members
+  list
+    List head
+  notify_data
+    Input data to invoke the callback
+  notify
+    Callback function pointer

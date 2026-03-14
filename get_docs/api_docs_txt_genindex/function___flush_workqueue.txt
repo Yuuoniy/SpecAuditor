@@ -1,0 +1,11 @@
+Function: void __flush_workqueue ( struct workqueue_struct * wq )
+
+ensure that any scheduled work has run to completion.
+
+Parameters
+  struct workqueue_struct *wq
+    workqueue to flush
+
+Description
+  This function sleeps until all work items which were queued on entry
+have finished execution, but it is not livelocked by new incoming ones.

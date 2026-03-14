@@ -1,0 +1,27 @@
+Function: int drm_writeback_connector_init ( struct drm_device * dev , struct drm_writeback_connector * wb_connector , const struct drm_connector_funcs * con_funcs , const struct drm_encoder_helper_funcs * enc_helper_funcs , const u32 * formats , int n_formats , u32 possible_crtcs )
+
+Initialize a writeback connector and its properties
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_writeback_connector *wb_connector
+    Writeback connector to initialize
+  const struct drm_connector_funcs *con_funcs
+    Connector funcs vtable
+  const struct drm_encoder_helper_funcs *enc_helper_funcs
+    Encoder helper funcs vtable to be used by the internal encoder
+  const u32 *formats
+    Array of supported pixel formats for the writeback engine
+  int n_formats
+    Length of the formats array
+  u32 possible_crtcs
+    possible crtcs for the internal writeback encoder
+
+Description
+  This function creates the writeback-connector-specific properties if they
+have not been already created, initializes the connector as
+type DRM_MODE_CONNECTOR_WRITEBACK, and correctly initializes the property
+values. It will also create an internal encoder associated with the
+drm_writeback_connector and set it to use the enc_helper_funcs vtable for
+the encoder helper.

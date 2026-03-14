@@ -1,0 +1,7 @@
+Function: int zynqmp_dp_link_train_ce ( struct zynqmp_dp * dp )
+
+Train channel equalization
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure

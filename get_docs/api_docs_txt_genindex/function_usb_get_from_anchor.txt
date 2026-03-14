@@ -1,0 +1,11 @@
+Function: struct urb * usb_get_from_anchor ( struct usb_anchor * anchor )
+
+get an anchor’s oldest urb
+
+Parameters
+  struct usb_anchor *anchor
+    the anchor whose urb you want
+
+Description
+  This will take the oldest urb from an anchor,
+unanchor and return it

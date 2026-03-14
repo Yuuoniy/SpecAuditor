@@ -1,0 +1,9 @@
+Function: int phylink_ethtool_ksettings_set ( struct phylink * pl , const struct ethtool_link_ksettings * kset )
+
+set the link settings
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+  const struct ethtool_link_ksettings *kset
+    a pointer to a struct ethtool_link_ksettings for the desired modes

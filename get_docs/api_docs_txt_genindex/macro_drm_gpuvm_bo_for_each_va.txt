@@ -1,0 +1,12 @@
+Macro: drm_gpuvm_bo_for_each_va
+
+
+
+Parameters
+  va__
+    drm_gpuva structure to assign to in each iteration step
+  vm_bo__
+    the drm_gpuvm_bo the drm_gpuva to walk are associated with
+
+Description
+  This iterator walks over all drm_gpuva structures associated with the drm_gpuvm_bo .

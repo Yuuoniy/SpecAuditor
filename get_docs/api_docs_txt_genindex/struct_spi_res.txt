@@ -1,0 +1,11 @@
+Struct: struct spi_res
+
+SPI resource management structure
+
+Members
+  entry
+    list entry
+  release
+    release code called prior to freeing this resource
+  data
+    extra data allocated for the specific use-case

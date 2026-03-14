@@ -1,0 +1,26 @@
+Function: void __rmap_walk_file ( struct folio * folio , struct address_space * mapping , pgoff_t pgoff_start , unsigned long nr_pages , struct rmap_walk_control * rwc , bool locked )
+
+Traverse the reverse mapping for a file-backed mapping of a page mapped within a specified page cache object at a specified offset.
+
+Parameters
+  struct folio *folio
+    Either the folio whose mappings to traverse, or if NULL,
+the callbacks specified in rwc will be configured such
+as to be able to look up mappings correctly.
+  struct address_space *mapping
+    The page cache object whose mapping VMAs we intend to
+traverse. If folio is non-NULL, this should be equal to
+folio_mapping(folio).
+  pgoff_t pgoff_start
+    The offset within mapping of the page which we are
+looking up. If folio is non-NULL, this should be equal
+to folio_pgoff(folio).
+  unsigned long nr_pages
+    The number of pages mapped by the mapping. If folio is
+non-NULL, this should be equal to folio_nr_pages(folio).
+  struct rmap_walk_control *rwc
+    The reverse mapping walk control object describing how
+the traversal should proceed.
+  bool locked
+    Is the mapping already locked? If not, we acquire the
+lock.

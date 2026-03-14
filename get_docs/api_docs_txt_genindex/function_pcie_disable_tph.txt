@@ -1,0 +1,7 @@
+Function: void pcie_disable_tph ( struct pci_dev * pdev )
+
+Turn off TPH support for device
+
+Parameters
+  struct pci_dev *pdev
+    PCI device

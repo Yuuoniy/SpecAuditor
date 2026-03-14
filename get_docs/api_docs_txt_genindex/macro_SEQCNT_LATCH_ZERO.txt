@@ -1,0 +1,7 @@
+Macro: SEQCNT_LATCH_ZERO
+
+
+
+Parameters
+  seq_name
+    Name of the seqcount_latch_t instance

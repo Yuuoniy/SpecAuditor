@@ -1,0 +1,11 @@
+Macro: hte_ts_sec_cb_t
+
+Typedef : HTE timestamp data processing secondary callback.
+
+Parameters
+  void *data
+    Client supplied data.
+
+Description
+  This is used when the client needs further processing where it is
+allowed to sleep.

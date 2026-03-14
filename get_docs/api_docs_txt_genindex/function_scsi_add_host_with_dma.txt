@@ -1,0 +1,11 @@
+Function: int scsi_add_host_with_dma ( struct Scsi_Host * shost , struct device * dev , struct device * dma_dev )
+
+add a scsi host with dma device
+
+Parameters
+  struct Scsi_Host *shost
+    scsi host pointer to add
+  struct device *dev
+    a struct device of type scsi class
+  struct device *dma_dev
+    dma device for the host

@@ -1,0 +1,11 @@
+Function: long sys_rt_sigqueueinfo ( pid_t pid , int sig , siginfo_t __user * uinfo )
+
+send signal information to a signal
+
+Parameters
+  pid_t pid
+    the PID of the thread
+  int sig
+    signal to be sent
+  siginfo_t __user * uinfo
+    signal info to be sent

@@ -1,0 +1,10 @@
+Macro: IIO_RAD_TO_DEGREE
+
+
+
+Parameters
+  rad
+    A value in rad
+
+Description
+  Returns the given value converted from rad to degree

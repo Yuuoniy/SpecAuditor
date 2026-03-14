@@ -1,0 +1,14 @@
+Function: int drm_atomic_helper_async_check ( struct drm_device * dev , struct drm_atomic_state * state )
+
+check if state can be committed asynchronously
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_atomic_state *state
+    the driver state object
+
+Description
+  This helper will check if it is possible to commit the state asynchronously.
+Async commits are not supposed to swap the states like normal sync commits
+but just do in-place changes on the current state.

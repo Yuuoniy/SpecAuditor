@@ -1,0 +1,9 @@
+Function: int regulator_list_voltage ( struct regulator * regulator , unsigned selector )
+
+enumerate supported voltages
+
+Parameters
+  struct regulator *regulator
+    regulator source
+  unsigned selector
+    identify voltage to list

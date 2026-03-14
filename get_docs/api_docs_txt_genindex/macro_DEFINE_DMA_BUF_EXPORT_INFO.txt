@@ -1,0 +1,11 @@
+Macro: DEFINE_DMA_BUF_EXPORT_INFO
+
+
+
+Parameters
+  name
+    export-info name
+
+Description
+  DEFINE_DMA_BUF_EXPORT_INFO macro defines the struct dma_buf_export_info ,
+zeroes it out and pre-populates exp_name in it.

@@ -1,0 +1,14 @@
+Function: int __vfs_removexattr_locked ( struct mnt_idmap * idmap , struct dentry * dentry , const char * name , struct inode * * delegated_inode )
+
+set an extended attribute while holding the inode lock
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount of the target inode
+  struct dentry *dentry
+    object to perform setxattr on
+  const char *name
+    name of xattr to remove
+  struct inode **delegated_inode
+    on return, will contain an inode pointer that
+a delegation was broken on, NULL if none.

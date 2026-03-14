@@ -1,0 +1,15 @@
+Struct: struct dma_resv
+
+a reservation object manages fences for a buffer
+
+Members
+  lock
+    Update side lock. Don’t use directly, instead use the wrapper
+functions like dma_resv_lock() and dma_resv_unlock() . Drivers which use the reservation object to manage memory dynamically
+also use this lock to protect buffer object state like placement,
+allocation policies or throughout command submission.
+  fences
+    Array of fences which where added to the dma_resv object A new fence is added by calling dma_resv_add_fence() . Since this
+often needs to be done past the point of no return in command
+submission it cannot fail, and therefore sufficient slots need to be
+reserved by calling dma_resv_reserve_fences() .

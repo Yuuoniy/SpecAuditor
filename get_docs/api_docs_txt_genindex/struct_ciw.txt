@@ -1,0 +1,15 @@
+Struct: struct ciw
+
+command information word (CIW) layout
+
+Members
+  et
+    entry type
+  reserved
+    reserved bits
+  ct
+    command type
+  cmd
+    command code
+  count
+    command count

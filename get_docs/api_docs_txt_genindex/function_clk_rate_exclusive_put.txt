@@ -1,0 +1,11 @@
+Function: void clk_rate_exclusive_put ( struct clk * clk )
+
+release exclusivity over the rate control of a producer
+
+Parameters
+  struct clk *clk
+    clock source
+
+Description
+  This function allows drivers to release the exclusivity it previously got
+from clk_rate_exclusive_get()

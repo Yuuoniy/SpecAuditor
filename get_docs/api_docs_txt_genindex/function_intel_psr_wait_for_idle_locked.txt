@@ -1,0 +1,11 @@
+Function: void intel_psr_wait_for_idle_locked ( const struct intel_crtc_state * new_crtc_state )
+
+wait for PSR be ready for a pipe update
+
+Parameters
+  const struct intel_crtc_state *new_crtc_state
+    new CRTC state
+
+Description
+  This function is expected to be called from pipe_update_start() where it is
+not expected to race with PSR enable or disable.

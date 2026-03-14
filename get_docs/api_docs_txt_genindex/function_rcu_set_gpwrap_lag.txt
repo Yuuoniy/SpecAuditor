@@ -1,0 +1,8 @@
+Function: void rcu_set_gpwrap_lag ( unsigned long lag_gps )
+
+Set RCU GP sequence overflow lag value.
+
+Parameters
+  unsigned long lag_gps
+    Set overflow lag to this many grace period worth of counters
+which is used by rcutorture to quickly force a gpwrap situation. lag_gps = 0 means we reset it back to the boot-time value.

@@ -1,0 +1,15 @@
+Struct: struct esw1
+
+Format 1 Extended Status Word (ESW)
+
+Members
+  zero0
+    reserved zeros
+  lpum
+    last path used mask
+  zero16
+    reserved zeros
+  erw
+    extended report word
+  zeros
+    three fullwords of zeros

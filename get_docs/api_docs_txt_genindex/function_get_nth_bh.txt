@@ -1,0 +1,16 @@
+Function: struct buffer_head * get_nth_bh ( struct buffer_head * bh , unsigned int count )
+
+Get a reference on the n’th buffer after this one.
+
+Parameters
+  struct buffer_head *bh
+    The buffer to start counting from.
+  unsigned int count
+    How many buffers to skip.
+
+Description
+  This is primarily useful for finding the nth buffer in a folio; in
+that case you pass the head buffer and the byte offset in the folio
+divided by the block size.  It can be used for other purposes, but
+it will wrap at the end of the folio rather than returning NULL or
+proceeding to the next folio for you.

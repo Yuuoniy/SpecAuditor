@@ -1,0 +1,13 @@
+Function: unsigned long round_jiffies_up_relative ( unsigned long j )
+
+function to round jiffies up to a full second
+
+Parameters
+  unsigned long j
+    the time in (relative) jiffies that should be rounded
+
+Description
+  This is the same as round_jiffies_relative() except that it will never
+round down.  This is useful for timeouts for which the exact time
+of firing does not matter too much, as long as they don’t fire too
+early.

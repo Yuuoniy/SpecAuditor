@@ -1,0 +1,20 @@
+Struct: struct dma_buf_attachment
+
+holds device-buffer attachment data
+
+Members
+  dmabuf
+    buffer for this attachment.
+  dev
+    device attached to the buffer.
+  node
+    list of dma_buf_attachment, protected by dma_resv lock of the dmabuf.
+  peer2peer
+    true if the importer can handle peer resources without pages.
+  importer_ops
+    importer operations for this attachment, if provided
+dma_buf_map/ unmap_attachment() must be called with the dma_resv lock held.
+  importer_priv
+    importer specific attachment data.
+  priv
+    exporter specific attachment data.

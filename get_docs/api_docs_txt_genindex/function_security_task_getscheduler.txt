@@ -1,0 +1,10 @@
+Function: int security_task_getscheduler ( struct task_struct * p )
+
+Check if getting scheduling info is allowed
+
+Parameters
+  struct task_struct *p
+    target task
+
+Description
+  Check permission before obtaining scheduling information for process p .

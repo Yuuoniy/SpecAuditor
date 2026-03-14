@@ -1,0 +1,16 @@
+Function: int remap_vmalloc_range ( struct vm_area_struct * vma , void * addr , unsigned long pgoff )
+
+map vmalloc pages to userspace
+
+Parameters
+  struct vm_area_struct *vma
+    vma to cover (map full range of vma)
+  void *addr
+    vmalloc memory
+  unsigned long pgoff
+    number of pages into addr before first page to map
+
+Description
+  This function checks that addr is a valid vmalloc’ed area, and
+that it is big enough to cover the vma. Will return failure if
+that criteria isn’t met.

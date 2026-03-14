@@ -1,0 +1,15 @@
+Function: void wbc_account_cgroup_owner ( struct writeback_control * wbc , struct folio * folio , size_t bytes )
+
+account writeback to update inode cgroup ownership
+
+Parameters
+  struct writeback_control *wbc
+    writeback_control of the writeback in progress
+  struct folio *folio
+    folio being written out
+  size_t bytes
+    number of bytes being written out
+
+Description
+  bytes from folio are about to written out during the writeback
+controlled by wbc .  Keep the book for foreign inode detection.  See wbc_detach_inode() .

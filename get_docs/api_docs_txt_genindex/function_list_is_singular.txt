@@ -1,0 +1,7 @@
+Function: int list_is_singular ( const struct list_head * head )
+
+tests whether a list has just one entry.
+
+Parameters
+  const struct list_head *head
+    the list to test.

@@ -1,0 +1,13 @@
+Function: void drm_dp_mst_topology_get_mstb ( struct drm_dp_mst_branch * mstb )
+
+Increment the topology refcount of a branch device
+
+Parameters
+  struct drm_dp_mst_branch *mstb
+    The struct drm_dp_mst_branch to increment the topology refcount of
+
+Description
+  Increments drm_dp_mst_branch.topology_refcount without checking whether or
+not it’s already reached 0. This is only valid to use in scenarios where
+you are already guaranteed to have at least one active topology reference
+to mstb . Otherwise, drm_dp_mst_topology_try_get_mstb() must be used.

@@ -1,0 +1,10 @@
+Function: void pcs_disable_eee ( struct phylink_pcs * pcs )
+
+Disable EEE at the PCS
+
+Parameters
+  struct phylink_pcs *pcs
+    a pointer to a struct phylink_pcs
+
+Description
+  Optional method informing the PCS that EEE has been disabled at the MAC.

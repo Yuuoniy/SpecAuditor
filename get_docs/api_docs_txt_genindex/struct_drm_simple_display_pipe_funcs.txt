@@ -1,0 +1,90 @@
+Struct: struct drm_simple_display_pipe_funcs
+
+helper operations for a simple display pipeline
+
+Members
+  mode_valid
+    This callback is used to check if a specific mode is valid in the
+crtc used in this simple display pipe. This should be implemented
+if the display pipe has some sort of restriction in the modes
+it can display. For example, a given display pipe may be responsible
+to set a clock value. If the clock can not produce all the values
+for the available modes then this callback can be used to restrict
+the number of modes to only the ones that can be displayed. Another
+reason can be bandwidth mitigation: the memory port on the display
+controller can have bandwidth limitations not allowing pixel data
+to be fetched at any rate. This hook is used by the probe helpers to filter the mode list in drm_helper_probe_single_connector_modes() , and it is used by the
+atomic helpers to validate modes supplied by userspace in drm_atomic_helper_check_modeset() . This function is optional. NOTE: Since this function is both called from the check phase of an atomic
+commit, and the mode validation in the probe paths it is not allowed
+to look at anything else but the passed-in mode, and validate it
+against configuration-invariant hardware constraints. RETURNS: drm_mode_status Enum
+  enable
+    This function should be used to enable the pipeline.
+It is called when the underlying crtc is enabled.
+This hook is optional.
+  disable
+    This function should be used to disable the pipeline.
+It is called when the underlying crtc is disabled.
+This hook is optional.
+  check
+    This function is called in the check phase of an atomic update,
+specifically when the underlying plane is checked.
+The simple display pipeline helpers already check that the plane is
+not scaled, fills the entire visible area and is always enabled
+when the crtc is also enabled.
+This hook is optional. RETURNS: 0 on success, -EINVAL if the state or the transition can’t be
+supported, -ENOMEM on memory allocation failure and -EDEADLK if an
+attempt to obtain another state object ran into a drm_modeset_lock deadlock.
+  update
+    This function is called when the underlying plane state is updated.
+This hook is optional. This is the function drivers should submit the drm_pending_vblank_event from. Using either drm_crtc_arm_vblank_event() , when the driver supports vblank
+interrupt handling, or drm_crtc_send_vblank_event() for more
+complex case. In case the hardware lacks vblank support entirely,
+drivers can set struct drm_crtc_state .no_vblank in struct drm_simple_display_pipe_funcs .check and let DRM’s
+atomic helper fake a vblank event.
+  prepare_fb
+    Optional, called by drm_plane_helper_funcs.prepare_fb .  Please read
+the documentation for the drm_plane_helper_funcs.prepare_fb hook for
+more details. For GEM drivers who neither have a prepare_fb nor cleanup_fb hook
+set, drm_gem_plane_helper_prepare_fb() is called automatically
+to implement this. Other drivers which need additional plane
+processing can call drm_gem_plane_helper_prepare_fb() from
+their prepare_fb hook.
+  cleanup_fb
+    Optional, called by drm_plane_helper_funcs.cleanup_fb .  Please read
+the documentation for the drm_plane_helper_funcs.cleanup_fb hook for
+more details.
+  begin_fb_access
+    Optional, called by drm_plane_helper_funcs.begin_fb_access . Please read
+the documentation for the drm_plane_helper_funcs.begin_fb_access hook for
+more details.
+  end_fb_access
+    Optional, called by drm_plane_helper_funcs.end_fb_access . Please read
+the documentation for the drm_plane_helper_funcs.end_fb_access hook for
+more details.
+  enable_vblank
+    Optional, called by drm_crtc_funcs.enable_vblank . Please read
+the documentation for the drm_crtc_funcs.enable_vblank hook for
+more details.
+  disable_vblank
+    Optional, called by drm_crtc_funcs.disable_vblank . Please read
+the documentation for the drm_crtc_funcs.disable_vblank hook for
+more details.
+  reset_crtc
+    Optional, called by drm_crtc_funcs.reset . Please read the
+documentation for the drm_crtc_funcs.reset hook for more details.
+  duplicate_crtc_state
+    Optional, called by drm_crtc_funcs.atomic_duplicate_state . Please
+read the documentation for the drm_crtc_funcs.atomic_duplicate_state hook for more details.
+  destroy_crtc_state
+    Optional, called by drm_crtc_funcs.atomic_destroy_state . Please
+read the documentation for the drm_crtc_funcs.atomic_destroy_state hook for more details.
+  reset_plane
+    Optional, called by drm_plane_funcs.reset . Please read the
+documentation for the drm_plane_funcs.reset hook for more details.
+  duplicate_plane_state
+    Optional, called by drm_plane_funcs.atomic_duplicate_state .  Please
+read the documentation for the drm_plane_funcs.atomic_duplicate_state hook for more details.
+  destroy_plane_state
+    Optional, called by drm_plane_funcs.atomic_destroy_state .  Please
+read the documentation for the drm_plane_funcs.atomic_destroy_state hook for more details.

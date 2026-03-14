@@ -1,0 +1,17 @@
+Function: void drm_fb_helper_prepare ( struct drm_device * dev , struct drm_fb_helper * helper , unsigned int preferred_bpp , const struct drm_fb_helper_funcs * funcs )
+
+setup a drm_fb_helper structure
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_fb_helper *helper
+    driver-allocated fbdev helper structure to set up
+  unsigned int preferred_bpp
+    Preferred bits per pixel for the device.
+  const struct drm_fb_helper_funcs *funcs
+    pointer to structure of functions associate with this helper
+
+Description
+  Sets up the bare minimum to make the framebuffer helper usable. This is
+useful to implement race-free initialization of the polling helpers.

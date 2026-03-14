@@ -1,0 +1,17 @@
+Function: int __skb_put_padto ( struct sk_buff * skb , unsigned int len , bool free_on_error )
+
+increase size and pad an skbuff up to a minimal size
+
+Parameters
+  struct sk_buff *skb
+    buffer to pad
+  unsigned int len
+    minimal length
+  bool free_on_error
+    free buffer on error
+
+Description
+  Pads up a buffer to ensure the trailing bytes exist and are
+blanked. If the buffer already contains sufficient data it
+is untouched. Otherwise it is extended. Returns zero on
+success. The skb is freed on error if free_on_error is true.

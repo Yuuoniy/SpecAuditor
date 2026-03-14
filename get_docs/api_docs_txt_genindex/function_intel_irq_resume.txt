@@ -1,0 +1,10 @@
+Function: void intel_irq_resume ( struct drm_i915_private * i915 )
+
+Resume interrupts
+
+Parameters
+  struct drm_i915_private *i915
+    i915 device instance
+
+Description
+  This function is used to enable interrupts at runtime.

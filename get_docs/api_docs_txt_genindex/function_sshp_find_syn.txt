@@ -1,0 +1,16 @@
+Function: bool sshp_find_syn ( const struct ssam_span * src , struct ssam_span * rem )
+
+Find SSH SYN bytes in the given data span.
+
+Parameters
+  const struct ssam_span *src
+    The data span to search in.
+  struct ssam_span *rem
+    The span (output) indicating the remaining data, starting with SSH
+SYN bytes, if found.
+
+Description
+  Search for SSH SYN bytes in the given source span. If found, set the rem span to the remaining data, starting with the first SYN bytes and capped by
+the source span length, and return true . This function does not copy any
+data, but rather only sets pointers to the respective start addresses and
+length values.

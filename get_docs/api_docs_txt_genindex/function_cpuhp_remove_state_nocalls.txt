@@ -1,0 +1,7 @@
+Function: void cpuhp_remove_state_nocalls ( enum cpuhp_state state )
+
+Remove hotplug state callbacks without invoking the teardown callback
+
+Parameters
+  enum cpuhp_state state
+    The state for which the calls are removed

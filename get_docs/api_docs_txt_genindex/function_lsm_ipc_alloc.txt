@@ -1,0 +1,10 @@
+Function: int lsm_ipc_alloc ( struct kern_ipc_perm * kip )
+
+allocate a composite ipc blob
+
+Parameters
+  struct kern_ipc_perm *kip
+    the ipc that needs a blob
+
+Description
+  Allocate the ipc blob for all the modules

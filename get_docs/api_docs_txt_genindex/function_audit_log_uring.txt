@@ -1,0 +1,7 @@
+Function: void audit_log_uring ( struct audit_context * ctx )
+
+generate a AUDIT_URINGOP record
+
+Parameters
+  struct audit_context *ctx
+    the audit context

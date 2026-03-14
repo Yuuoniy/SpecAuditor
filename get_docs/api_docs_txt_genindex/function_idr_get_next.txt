@@ -1,0 +1,15 @@
+Function: void * idr_get_next ( struct idr * idr , int * nextid )
+
+Find next populated entry.
+
+Parameters
+  struct idr *idr
+    IDR handle.
+  int *nextid
+    Pointer to an ID.
+
+Description
+  Returns the next populated entry in the tree with an ID greater than
+or equal to the value pointed to by nextid .  On exit, nextid is updated
+to the ID of the found value.  To use in a loop, the value pointed to by
+nextid must be incremented by the user.

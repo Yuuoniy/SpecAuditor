@@ -1,0 +1,13 @@
+Function: int tty_change_softcar ( struct tty_struct * tty , bool enable )
+
+carrier change ioctl helper
+
+Parameters
+  struct tty_struct *tty
+    tty to update
+  bool enable
+    enable/disable CLOCAL
+
+Description
+  Perform a change to the CLOCAL state and call into the driver layer to make
+it visible.

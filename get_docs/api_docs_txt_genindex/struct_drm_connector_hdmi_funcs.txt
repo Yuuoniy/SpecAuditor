@@ -1,0 +1,28 @@
+Struct: struct drm_connector_hdmi_funcs
+
+drm_hdmi_connector control functions
+
+Members
+  tmds_char_rate_valid
+    This callback is invoked at atomic_check time to figure out
+whether a particular TMDS character rate is supported by the
+driver. The tmds_char_rate_valid callback is optional. Returns: Either drm_mode_status.MODE_OK or one of the failure reasons
+in enum drm_mode_status .
+  clear_infoframe
+    This callback is invoked through drm_atomic_helper_connector_hdmi_update_infoframes during a
+commit to clear the infoframes into the hardware. It will be
+called multiple times, once for every disabled infoframe
+type. The clear_infoframe callback is optional. Returns:
+0 on success, a negative error code otherwise
+  write_infoframe
+    This callback is invoked through drm_atomic_helper_connector_hdmi_update_infoframes during a
+commit to program the infoframes into the hardware. It will
+be called multiple times, once for every updated infoframe
+type. The write_infoframe callback is mandatory. Returns:
+0 on success, a negative error code otherwise
+  read_edid
+    This callback is used by the framework as a replacement for reading
+the EDID from connector->ddc. It is still recommended to provide
+connector->ddc instead of implementing this callback. Returned EDID
+should be freed via the drm_edid_free() . The read_edid callback is optional. Returns:
+Valid EDID on success, NULL in case of failure.

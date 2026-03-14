@@ -1,0 +1,9 @@
+Function: int frame_aligned ( struct snd_pcm_runtime * runtime , ssize_t bytes )
+
+Check whether the byte size is aligned to frames
+
+Parameters
+  struct snd_pcm_runtime *runtime
+    PCM runtime instance
+  ssize_t bytes
+    size in bytes

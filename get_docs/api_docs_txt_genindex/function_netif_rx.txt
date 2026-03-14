@@ -1,0 +1,18 @@
+Function: int netif_rx ( struct sk_buff * skb )
+
+post buffer to the network code
+
+Parameters
+  struct sk_buff *skb
+    buffer to post
+
+Description
+  This function receives a packet from a device driver and queues it for
+the upper (protocol) levels to process via the backlog NAPI device. It
+always succeeds. The buffer may be dropped during processing for
+congestion control or by the protocol layers.
+The network buffer is passed via the backlog NAPI device. Modern NIC
+driver should use NAPI and GRO.
+This function can used from interrupt and from process context. The
+caller from process context must not disable interrupts before invoking
+this function.

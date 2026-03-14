@@ -1,0 +1,11 @@
+Function: void disable_fprobe ( struct fprobe * fp )
+
+Disable fprobe
+
+Parameters
+  struct fprobe *fp
+    The fprobe to be disabled.
+
+Description
+  This will soft-disable fp . Note that this doesn’t remove the ftrace
+hooks from the function entry.

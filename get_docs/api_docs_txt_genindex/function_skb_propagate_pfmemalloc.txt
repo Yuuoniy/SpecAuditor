@@ -1,0 +1,9 @@
+Function: void skb_propagate_pfmemalloc ( const struct page * page , struct sk_buff * skb )
+
+Propagate pfmemalloc if skb is allocated after RX page
+
+Parameters
+  const struct page *page
+    The page that was allocated from skb_alloc_page
+  struct sk_buff *skb
+    The skb that may need pfmemalloc set

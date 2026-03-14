@@ -1,0 +1,17 @@
+Function: ssize_t ssam_request_write_data ( struct ssam_span * buf , struct ssam_controller * ctrl , const struct ssam_request * spec )
+
+Construct and write SAM request message to buffer.
+
+Parameters
+  struct ssam_span *buf
+    The buffer to write the data to.
+  struct ssam_controller *ctrl
+    The controller via which the request will be sent.
+  const struct ssam_request *spec
+    The request data and specification.
+
+Description
+  Constructs a SAM/SSH request message and writes it to the provided buffer.
+The request and transport counters, specifically RQID and SEQ, will be set
+in this call. These counters are obtained from the controller. It is thus
+only valid to send the resulting message via the controller specified here.

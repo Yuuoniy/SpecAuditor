@@ -1,0 +1,10 @@
+Function: void edac_pci_release_generic_ctl ( struct edac_pci_ctl_info * pci )
+
+
+
+Parameters
+  struct edac_pci_ctl_info *pci
+    pointer to struct edac_pci_ctl_info
+
+Description
+  The release function of a generic EDAC PCI polling device

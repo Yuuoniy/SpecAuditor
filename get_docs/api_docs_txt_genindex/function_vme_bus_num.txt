@@ -1,0 +1,10 @@
+Function: int vme_bus_num ( struct vme_dev * vdev )
+
+Retrieve bus number
+
+Parameters
+  struct vme_dev *vdev
+    Pointer to VME device struct vme_dev assigned to driver instance.
+
+Description
+  Retrieve the bus enumeration associated with the provided VME device.

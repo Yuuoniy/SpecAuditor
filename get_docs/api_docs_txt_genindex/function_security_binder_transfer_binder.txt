@@ -1,0 +1,12 @@
+Function: int security_binder_transfer_binder ( const struct cred * from , const struct cred * to )
+
+Check if a binder transfer is allowed
+
+Parameters
+  const struct cred *from
+    sending process
+  const struct cred *to
+    receiving process
+
+Description
+  Check whether from is allowed to transfer a binder reference to to .

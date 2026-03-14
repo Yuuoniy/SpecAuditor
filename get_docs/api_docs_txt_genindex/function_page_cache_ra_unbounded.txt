@@ -1,0 +1,16 @@
+Function: void page_cache_ra_unbounded ( struct readahead_control * ractl , unsigned long nr_to_read , unsigned long lookahead_size )
+
+Start unchecked readahead.
+
+Parameters
+  struct readahead_control *ractl
+    Readahead control.
+  unsigned long nr_to_read
+    The number of pages to read.
+  unsigned long lookahead_size
+    Where to start the next readahead.
+
+Description
+  This function is for filesystems to call when they want to start
+readahead beyond a file’s stated i_size.  This is almost certainly
+not the function you want to call.  Use page_cache_async_readahead() or page_cache_sync_readahead() instead.

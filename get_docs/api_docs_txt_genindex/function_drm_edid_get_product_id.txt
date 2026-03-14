@@ -1,0 +1,9 @@
+Function: void drm_edid_get_product_id ( const struct drm_edid * drm_edid , struct drm_edid_product_id * id )
+
+Get the vendor and product identification
+
+Parameters
+  const struct drm_edid *drm_edid
+    EDID
+  struct drm_edid_product_id *id
+    Where to place the product id

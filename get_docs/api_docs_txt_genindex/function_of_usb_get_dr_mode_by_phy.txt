@@ -1,0 +1,15 @@
+Function: enum usb_dr_mode of_usb_get_dr_mode_by_phy ( struct device_node * np , int arg0 )
+
+Get dual role mode for the controller device which is associated with the given phy device_node
+
+Parameters
+  struct device_node *np
+    Pointer to the given phy device_node
+  int arg0
+    phandle args[0] for phy’s with #phy-cells >= 1, or -1 for
+phys which do not have phy-cells
+
+Description
+  In dts a usb controller associates with phy devices.  The function gets
+the string from property ‘dr_mode’ of the controller associated with the
+given phy device node, and returns the correspondig enum usb_dr_mode .

@@ -1,0 +1,11 @@
+Function: bool drm_is_panel_follower ( struct device * dev )
+
+Check if the device is a panel follower
+
+Parameters
+  struct device *dev
+    The ‘ struct device ’ to check
+
+Description
+  This checks to see if a device needs to be power sequenced together with
+a panel using the panel follower API.

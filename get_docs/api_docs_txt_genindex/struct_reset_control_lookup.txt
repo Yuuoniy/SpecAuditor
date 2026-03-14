@@ -1,0 +1,15 @@
+Struct: struct reset_control_lookup
+
+represents a single lookup entry
+
+Members
+  list
+    internal list of all reset lookup entries
+  provider
+    name of the reset controller device controlling this reset line
+  index
+    ID of the reset controller in the reset controller device
+  dev_id
+    name of the device associated with this reset line
+  con_id
+    name of the reset line (can be NULL)

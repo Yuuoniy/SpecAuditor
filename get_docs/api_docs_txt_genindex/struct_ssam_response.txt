@@ -1,0 +1,11 @@
+Struct: struct ssam_response
+
+Response buffer for SAM request.
+
+Members
+  capacity
+    Capacity of the buffer, in bytes.
+  length
+    Length of the actual data stored in the memory pointed to by pointer , in bytes. Set by the transport system.
+  pointer
+    Pointer to the buffer’s memory, storing the response payload data.

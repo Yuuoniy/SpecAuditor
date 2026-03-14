@@ -1,0 +1,12 @@
+Function: int irq_update_affinity_hint ( unsigned int irq , const struct cpumask * m )
+
+Update the affinity hint
+
+Parameters
+  unsigned int irq
+    Interrupt to update
+  const struct cpumask *m
+    cpumask pointer (NULL to clear the hint)
+
+Description
+  Updates the affinity hint, but does not change the affinity of the interrupt.

@@ -1,0 +1,7 @@
+Function: struct vb2_v4l2_buffer * v4l2_m2m_next_buf ( struct v4l2_m2m_queue_ctx * q_ctx )
+
+return next buffer from the list of ready buffers
+
+Parameters
+  struct v4l2_m2m_queue_ctx *q_ctx
+    pointer to struct v4l2_m2m_queue_ctx

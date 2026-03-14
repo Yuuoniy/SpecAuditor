@@ -1,0 +1,3 @@
+Enum: enum drm_panthor_group_priority
+
+Scheduling group priority

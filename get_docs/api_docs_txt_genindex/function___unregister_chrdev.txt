@@ -1,0 +1,16 @@
+Function: void __unregister_chrdev ( unsigned int major , unsigned int baseminor , unsigned int count , const char * name )
+
+unregister and destroy a cdev
+
+Parameters
+  unsigned int major
+    major device number
+  unsigned int baseminor
+    first of the range of minor numbers
+  unsigned int count
+    the number of minor numbers this cdev is occupying
+  const char *name
+    name of this range of devices
+
+Description
+  Unregister and destroy the cdev occupying the region described by major , baseminor and count .  This function undoes what __register_chrdev() did.

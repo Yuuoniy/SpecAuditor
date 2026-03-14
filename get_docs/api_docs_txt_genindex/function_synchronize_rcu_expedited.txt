@@ -1,0 +1,16 @@
+Function: void synchronize_rcu_expedited ( void )
+
+Brute-force RCU grace period
+
+Parameters
+  void
+    no arguments
+
+Description
+  Wait for an RCU grace period, but expedite it.  The basic idea is to
+IPI all non-idle non-nohz online CPUs.  The IPI handler checks whether
+the CPU is in an RCU critical section, and if so, it sets a flag that
+causes the outermost rcu_read_unlock() to report the quiescent state
+for RCU-preempt or asks the scheduler for help for RCU-sched.  On the
+other hand, if the CPU is not in an RCU read-side critical section,
+the IPI handler reports the quiescent state immediately.

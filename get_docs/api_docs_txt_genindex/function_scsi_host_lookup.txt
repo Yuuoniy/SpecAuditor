@@ -1,0 +1,10 @@
+Function: struct Scsi_Host * scsi_host_lookup ( unsigned int hostnum )
+
+get a reference to a Scsi_Host by host no
+
+Parameters
+  unsigned int hostnum
+    host number to locate
+
+Description
+  A pointer to located Scsi_Host or NULL.

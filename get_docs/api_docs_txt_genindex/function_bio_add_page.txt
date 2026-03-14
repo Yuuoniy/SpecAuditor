@@ -1,0 +1,17 @@
+Function: int bio_add_page ( struct bio * bio , struct page * page , unsigned int len , unsigned int offset )
+
+attempt to add page(s) to bio
+
+Parameters
+  struct bio *bio
+    destination bio
+  struct page *page
+    start page to add
+  unsigned int len
+    vec entry length, may cross pages
+  unsigned int offset
+    vec entry offset relative to page , may cross pages
+
+Description
+  Attempt to add page(s) to the bio_vec maplist. This will only fail
+if either bio->bi_vcnt == bio->bi_max_vecs or it’s a cloned bio.

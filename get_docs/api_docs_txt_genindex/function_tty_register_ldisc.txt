@@ -1,0 +1,11 @@
+Function: int tty_register_ldisc ( struct tty_ldisc_ops * new_ldisc )
+
+install a line discipline
+
+Parameters
+  struct tty_ldisc_ops *new_ldisc
+    pointer to the ldisc object
+
+Description
+  Installs a new line discipline into the kernel. The discipline is set up as
+unreferenced and then made available to the kernel from this point onwards.

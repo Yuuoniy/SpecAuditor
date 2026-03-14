@@ -1,0 +1,16 @@
+Function: int cpuhp_setup_state_cpuslocked ( enum cpuhp_state state , const char * name , int ( * startup ) ( unsigned int cpu ) , int ( * teardown ) ( unsigned int cpu ) )
+
+Setup hotplug state callbacks with calling startup callback from a cpus_read_lock() held region
+
+Parameters
+  enum cpuhp_state state
+    The state for which the calls are installed
+  const char *name
+    Name of the callback (will be used in debug output)
+  int (*startup)(unsigned int cpu)
+    startup callback function or NULL if not required
+  int (*teardown)(unsigned int cpu)
+    teardown callback function or NULL if not required
+
+Description
+  Same as cpuhp_setup_state() except that it must be invoked from within a cpus_read_lock() held region.

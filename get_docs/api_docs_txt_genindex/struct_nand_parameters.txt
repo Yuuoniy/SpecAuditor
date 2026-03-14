@@ -1,0 +1,17 @@
+Struct: struct nand_parameters
+
+NAND generic parameters from the parameter page
+
+Members
+  model
+    Model name
+  supports_set_get_features
+    The NAND chip supports setting/getting features
+  supports_read_cache
+    The NAND chip supports read cache operations
+  set_feature_list
+    Bitmap of features that can be set
+  get_feature_list
+    Bitmap of features that can be get
+  onfi
+    ONFI specific parameters

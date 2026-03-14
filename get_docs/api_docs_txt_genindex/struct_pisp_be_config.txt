@@ -1,0 +1,115 @@
+Struct: struct pisp_be_config
+
+RaspberryPi PiSP Back End Processing configuration
+
+Members
+  input_buffer
+    Input buffer addresses
+  tdn_input_buffer
+    TDN input buffer addresses
+  stitch_input_buffer
+    Stitch input buffer addresses
+  tdn_output_buffer
+    TDN output buffer addresses
+  stitch_output_buffer
+    Stitch output buffer addresses
+  output_buffer
+    Output buffers addresses
+  hog_buffer
+    HOG buffer addresses
+  global
+    Global PiSP configuration
+  input_format
+    Input image format
+  decompress
+    Decompress configuration
+  dpc
+    Defective Pixel Correction configuration
+  geq
+    Green Equalisation configuration
+  tdn_input_format
+    Temporal Denoise input format
+  tdn_decompress
+    Temporal Denoise decompress configuration
+  tdn
+    Temporal Denoise configuration
+  tdn_compress
+    Temporal Denoise compress configuration
+  tdn_output_format
+    Temporal Denoise output format
+  sdn
+    Spatial Denoise configuration
+  blc
+    Black Level Correction configuration
+  stitch_compress
+    Stitch compress configuration
+  stitch_output_format
+    Stitch output format
+  stitch_input_format
+    Stitch input format
+  stitch_decompress
+    Stitch decompress configuration
+  stitch
+    Stitch configuration
+  lsc
+    Lens Shading Correction configuration
+  wbg
+    White Balance Gain configuration
+  cdn
+    Colour Denoise configuration
+  cac
+    Colour Aberration Correction configuration
+  debin
+    Debinning configuration
+  tonemap
+    Tonemapping configuration
+  demosaic
+    Demosaicing configuration
+  ccm
+    Colour Correction Matrix configuration
+  sat_control
+    Saturation Control configuration
+  ycbcr
+    YCbCr colour correction configuration
+  sharpen
+    Sharpening configuration
+  false_colour
+    False colour correction
+  sh_fc_combine
+    Sharpening and False Colour correction
+  ycbcr_inverse
+    Inverse YCbCr colour correction
+  gamma
+    Gamma curve configuration
+  csc
+    Color Space Conversion configuration
+  downscale
+    Downscale configuration
+  resample
+    Resampling configuration
+  output_format
+    Output format configuration
+  hog
+    HOG configuration
+  axi
+    AXI bus configuration
+  lsc_extra
+    LSC extra info
+  cac_extra
+    CAC extra info
+  downscale_extra
+    Downscaler extra info
+  resample_extra
+    Resample extra info
+  crop
+    Crop configuration
+  hog_format
+    HOG format info
+  dirty_flags_bayer
+    Bayer enable dirty flags
+( pisp_be_bayer_enable )
+  dirty_flags_rgb
+    RGB enable dirty flags
+( pisp_be_rgb_enable )
+  dirty_flags_extra
+    Extra dirty flags

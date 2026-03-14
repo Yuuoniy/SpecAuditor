@@ -1,0 +1,7 @@
+Function: void target_wait_for_cmds ( struct target_cmd_counter * cmd_cnt )
+
+Wait for outstanding cmds.
+
+Parameters
+  struct target_cmd_counter *cmd_cnt
+    counter to wait for active I/O for.

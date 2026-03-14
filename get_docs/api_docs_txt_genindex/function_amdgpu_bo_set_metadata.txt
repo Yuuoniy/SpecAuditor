@@ -1,0 +1,17 @@
+Function: int amdgpu_bo_set_metadata ( struct amdgpu_bo * bo , void * metadata , u32 metadata_size , uint64_t flags )
+
+set metadata
+
+Parameters
+  struct amdgpu_bo *bo
+    amdgpu_bo buffer object
+  void *metadata
+    new metadata
+  u32 metadata_size
+    size of the new metadata
+  uint64_t flags
+    flags of the new metadata
+
+Description
+  Sets buffer object’s metadata, its size and flags.
+Used via GEM ioctl.

@@ -1,0 +1,9 @@
+Function: void skb_dstref_restore ( struct sk_buff * skb , unsigned long refdst )
+
+restore skb dst_entry removed via skb_dstref_steal()
+
+Parameters
+  struct sk_buff *skb
+    buffer
+  unsigned long refdst
+    dst entry from a call to skb_dstref_steal()

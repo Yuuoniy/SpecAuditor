@@ -1,0 +1,10 @@
+Function: void intel_dpll_disable ( const struct intel_crtc_state * crtc_state )
+
+disable a CRTC’s shared DPLL
+
+Parameters
+  const struct intel_crtc_state *crtc_state
+    CRTC, and its state, which has a shared DPLL
+
+Description
+  Disable DPLL used by crtc .

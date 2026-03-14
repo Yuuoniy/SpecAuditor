@@ -1,0 +1,14 @@
+Function: void echo_erase_tab ( unsigned int num_chars , int after_tab , struct n_tty_data * ldata )
+
+add operation to erase a tab
+
+Parameters
+  unsigned int num_chars
+    number of character columns already used
+  int after_tab
+    true if num_chars starts after a previous tab
+  struct n_tty_data *ldata
+    n_tty data
+
+Description
+  Add an operation to the echo buffer to erase a tab.

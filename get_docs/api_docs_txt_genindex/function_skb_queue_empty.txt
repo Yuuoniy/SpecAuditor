@@ -1,0 +1,10 @@
+Function: int skb_queue_empty ( const struct sk_buff_head * list )
+
+check if a queue is empty
+
+Parameters
+  const struct sk_buff_head *list
+    queue head
+
+Description
+  Returns true if the queue is empty, false otherwise.

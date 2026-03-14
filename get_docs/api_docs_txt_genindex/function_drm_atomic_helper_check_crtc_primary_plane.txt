@@ -1,0 +1,14 @@
+Function: int drm_atomic_helper_check_crtc_primary_plane ( struct drm_crtc_state * crtc_state )
+
+Check CRTC state for primary plane
+
+Parameters
+  struct drm_crtc_state *crtc_state
+    CRTC state to check
+
+Description
+  Checks that a CRTC has at least one primary plane attached to it, which is
+a requirement on some hardware. Note that this only involves the CRTC side
+of the test. To test if the primary plane is visible or if it can be updated
+without the CRTC being enabled, use drm_atomic_helper_check_plane_state() in
+the plane’s atomic check.

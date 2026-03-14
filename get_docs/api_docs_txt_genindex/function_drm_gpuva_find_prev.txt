@@ -1,0 +1,12 @@
+Function: struct drm_gpuva * drm_gpuva_find_prev ( struct drm_gpuvm * gpuvm , u64 start )
+
+find the drm_gpuva before the given address
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm to search in
+  u64 start
+    the given GPU VA’s start address
+
+Description
+  Find the adjacent drm_gpuva before the GPU VA with given start address.

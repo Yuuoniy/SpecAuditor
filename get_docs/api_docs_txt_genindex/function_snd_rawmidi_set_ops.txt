@@ -1,0 +1,14 @@
+Function: void snd_rawmidi_set_ops ( struct snd_rawmidi * rmidi , int stream , const struct snd_rawmidi_ops * ops )
+
+set the rawmidi operators
+
+Parameters
+  struct snd_rawmidi *rmidi
+    the rawmidi instance
+  int stream
+    the stream direction, SNDRV_RAWMIDI_STREAM_XXX
+  const struct snd_rawmidi_ops *ops
+    the operator table
+
+Description
+  Sets the rawmidi operators for the given stream direction.

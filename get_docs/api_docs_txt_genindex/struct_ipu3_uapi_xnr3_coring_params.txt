@@ -1,0 +1,13 @@
+Struct: struct ipu3_uapi_xnr3_coring_params
+
+Extreme noise reduction v3 coring parameters
+
+Members
+  u0
+    Coring Threshold of U channel in dark area.
+  v0
+    Coring Threshold of V channel in dark area.
+  udiff
+    Threshold difference of U channel between bright and dark area.
+  vdiff
+    Threshold difference of V channel between bright and dark area.

@@ -1,0 +1,20 @@
+Function: int sk_filter_trim_cap ( struct sock * sk , struct sk_buff * skb , unsigned int cap , enum skb_drop_reason * reason )
+
+run a packet through a socket filter
+
+Parameters
+  struct sock *sk
+    sock associated with sk_buff
+  struct sk_buff *skb
+    buffer to filter
+  unsigned int cap
+    limit on how short the eBPF program may trim the packet
+  enum skb_drop_reason *reason
+    record drop reason on errors (negative return value)
+
+Description
+  Run the eBPF program and then cut skb->data to correct size returned by
+the program. If pkt_len is 0 we toss packet. If skb->len is smaller
+than pkt_len we keep whole skb->data. This is the socket level
+wrapper to bpf_prog_run. It returns 0 if the packet should
+be accepted or -EPERM if the packet should be tossed.

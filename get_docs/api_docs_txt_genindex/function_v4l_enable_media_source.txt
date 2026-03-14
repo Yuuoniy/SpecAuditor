@@ -1,0 +1,16 @@
+Function: int v4l_enable_media_source ( struct video_device * vdev )
+
+Hold media source for exclusive use if free
+
+Parameters
+  struct video_device *vdev
+    pointer to struct video_device
+
+Description
+  This interface calls enable_source handler to determine if
+media source is free for use. The enable_source handler is
+responsible for checking is the media source is free and
+start a pipeline between the media source and the media
+entity associated with the video device. This interface
+should be called from v4l2-core and dvb-core interfaces
+that change the source configuration.

@@ -1,0 +1,9 @@
+Function: int drm_fb_helper_pan_display ( struct fb_var_screeninfo * var , struct fb_info * info )
+
+implementation for fb_ops.fb_pan_display
+
+Parameters
+  struct fb_var_screeninfo *var
+    updated screen information
+  struct fb_info *info
+    fbdev registered by the helper

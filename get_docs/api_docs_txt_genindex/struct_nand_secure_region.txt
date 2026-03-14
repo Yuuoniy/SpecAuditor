@@ -1,0 +1,9 @@
+Struct: struct nand_secure_region
+
+NAND secure region structure
+
+Members
+  offset
+    Offset of the start of the secure region
+  size
+    Size of the secure region

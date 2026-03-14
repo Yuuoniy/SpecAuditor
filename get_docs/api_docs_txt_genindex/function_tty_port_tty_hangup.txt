@@ -1,0 +1,9 @@
+Function: void tty_port_tty_hangup ( struct tty_port * port , bool check_clocal )
+
+helper to hang up a tty asynchronously
+
+Parameters
+  struct tty_port *port
+    tty port
+  bool check_clocal
+    hang only ttys with CLOCAL unset?

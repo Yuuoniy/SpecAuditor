@@ -1,0 +1,12 @@
+Function: void mipi_dbi_debugfs_init ( struct drm_minor * minor )
+
+Create debugfs entries
+
+Parameters
+  struct drm_minor *minor
+    DRM minor
+
+Description
+  This function creates a ‘command’ debugfs file for sending commands to the
+controller or getting the read command values.
+Drivers can use this as their drm_driver->debugfs_init callback.

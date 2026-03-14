@@ -1,0 +1,14 @@
+Function: void * memchr ( const void * s , int c , size_t n )
+
+Find a character in an area of memory.
+
+Parameters
+  const void *s
+    The memory area
+  int c
+    The byte to search for
+  size_t n
+    The size of the area.
+
+Description
+  returns the address of the first occurrence of c , or NULL if c is not found

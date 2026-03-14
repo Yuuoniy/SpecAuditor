@@ -1,0 +1,11 @@
+Function: void snd_dmaengine_pcm_unregister ( struct device * dev )
+
+Removes a dmaengine based PCM device
+
+Parameters
+  struct device *dev
+    Parent device the PCM was register with
+
+Description
+  Removes a dmaengine based PCM device previously registered with
+snd_dmaengine_pcm_register.

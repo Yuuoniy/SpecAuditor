@@ -1,0 +1,12 @@
+Function: void i3c_device_get_info ( const struct i3c_device * dev , struct i3c_device_info * info )
+
+get I3C device information
+
+Parameters
+  const struct i3c_device *dev
+    device we want information on
+  struct i3c_device_info *info
+    the information object to fill in
+
+Description
+  Retrieve I3C dev info.

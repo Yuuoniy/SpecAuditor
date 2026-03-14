@@ -1,0 +1,108 @@
+Struct: struct nand_chip
+
+NAND Private Flash Chip Data
+
+Members
+  base
+    Inherit from the generic NAND device
+  id
+    Holds NAND ID
+  parameters
+    Holds generic parameters under an easily readable form
+  manufacturer
+    Manufacturer information
+  ops
+    NAND chip operations
+  legacy
+    All legacy fields/hooks. If you develop a new driver, don’t even try
+to use any of these fields/hooks, and if you’re modifying an
+existing driver that is using those fields/hooks, you should
+consider reworking the driver and avoid using them.
+  options
+    Various chip options. They can partly be set to inform nand_scan
+about special functionality. See the defines for further
+explanation.
+  current_interface_config
+    The currently used NAND interface configuration
+  best_interface_config
+    The best NAND interface configuration which fits both
+the NAND chip and NAND controller constraints. If
+unset, the default reset interface configuration must
+be used.
+  bbt_erase_shift
+    Number of address bits in a bbt entry
+  bbt_options
+    Bad block table specific options. All options used here must
+come from bbm.h. By default, these options will be copied to
+the appropriate nand_bbt_descr’s.
+  badblockpos
+    Bad block marker position in the oob area
+  badblockbits
+    Minimum number of set bits in a good block’s bad block marker
+position; i.e., BBM = 11110111b is good when badblockbits = 7
+  bbt_td
+    Bad block table descriptor for flash lookup
+  bbt_md
+    Bad block table mirror descriptor
+  badblock_pattern
+    Bad block scan pattern used for initial bad block scan
+  bbt
+    Bad block table pointer
+  page_shift
+    Number of address bits in a page (column address bits)
+  phys_erase_shift
+    Number of address bits in a physical eraseblock
+  chip_shift
+    Number of address bits in one chip
+  pagemask
+    Page number mask = number of (pages / chip) - 1
+  subpagesize
+    Holds the subpagesize
+  data_buf
+    Buffer for data, size is (page size + oobsize)
+  oob_poi
+    pointer on the OOB area covered by data_buf
+  pagecache
+    Structure containing page cache related fields
+  pagecache.bitflips
+    Number of bitflips of the cached page
+  pagecache.page
+    Page number currently in the cache. -1 means no page is
+currently cached
+  buf_align
+    Minimum buffer alignment required by a platform
+  lock
+    Lock protecting the suspended field. Also used to serialize accesses
+to the NAND device
+  suspended
+    Set to 1 when the device is suspended, 0 when it’s not
+  resume_wq
+    wait queue to sleep if rawnand is in suspended state.
+  cur_cs
+    Currently selected target. -1 means no target selected, otherwise we
+should always have cur_cs >= 0 && cur_cs < nanddev_ntargets() .
+NAND Controller drivers should not modify this value, but they’re
+allowed to read it.
+  read_retries
+    The number of read retry modes supported
+  secure_regions
+    Structure containing the secure regions info
+  nr_secure_regions
+    Number of secure regions
+  cont_read
+    Sequential page read internals
+  cont_read.ongoing
+    Whether a continuous read is ongoing or not
+  cont_read.first_page
+    Start of the continuous read operation
+  cont_read.pause_page
+    End of the current sequential cache read operation
+  cont_read.last_page
+    End of the continuous read operation
+  controller
+    The hardware controller structure which is shared among multiple
+independent devices
+  ecc
+    The ECC controller structure
+  priv
+    Chip private data

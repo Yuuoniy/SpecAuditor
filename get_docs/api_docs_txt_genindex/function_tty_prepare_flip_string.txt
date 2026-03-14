@@ -1,0 +1,14 @@
+Function: size_t tty_prepare_flip_string ( struct tty_port * port , u8 * * chars , size_t size )
+
+make room for characters
+
+Parameters
+  struct tty_port *port
+    tty port
+  u8 **chars
+    return pointer for character write area
+  size_t size
+    desired size
+
+Description
+  Prepare a block of space in the buffer for data.

@@ -1,0 +1,3 @@
+Function: enum v4l2_mbus_frame_desc_type
+
+media bus frame description type

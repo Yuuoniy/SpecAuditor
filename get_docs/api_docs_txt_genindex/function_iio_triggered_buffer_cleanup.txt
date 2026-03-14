@@ -1,0 +1,7 @@
+Function: void iio_triggered_buffer_cleanup ( struct iio_dev * indio_dev )
+
+Free resources allocated by iio_triggered_buffer_setup_ext()
+
+Parameters
+  struct iio_dev *indio_dev
+    IIO device structure

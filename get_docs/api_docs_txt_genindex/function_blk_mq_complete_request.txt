@@ -1,0 +1,10 @@
+Function: void blk_mq_complete_request ( struct request * rq )
+
+end I/O on a request
+
+Parameters
+  struct request *rq
+    the request being processed
+
+Description
+  Complete a request by scheduling the ->complete_rq operation.

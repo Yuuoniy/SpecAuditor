@@ -1,0 +1,14 @@
+Function: int ata_scsi_sdev_configure ( struct scsi_device * sdev , struct queue_limits * lim )
+
+Set SCSI device attributes
+
+Parameters
+  struct scsi_device *sdev
+    SCSI device to examine
+  struct queue_limits *lim
+    queue limits
+
+Description
+  This is called before we actually start reading
+and writing to the device, to configure certain
+SCSI mid-layer behaviors.

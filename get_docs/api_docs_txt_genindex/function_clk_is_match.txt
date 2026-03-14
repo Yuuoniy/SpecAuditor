@@ -1,0 +1,13 @@
+Function: bool clk_is_match ( const struct clk * p , const struct clk * q )
+
+check if two clk’s point to the same hardware clock
+
+Parameters
+  const struct clk *p
+    clk compared against q
+  const struct clk *q
+    clk compared against p
+
+Description
+  Returns true if the two struct clk pointers both point to the same hardware
+clock node. Put differently, returns true if p and q share the same struct clk_core object.

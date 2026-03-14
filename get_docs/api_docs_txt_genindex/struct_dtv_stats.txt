@@ -1,0 +1,16 @@
+Struct: struct dtv_stats
+
+Used for reading a DTV status property
+
+Members
+  scale
+    Filled with enum fecap_scale_params - the scale in usage
+for that parameter
+  {unnamed_union}
+    anonymous
+  uvalue
+    unsigned integer value of the measure, used when scale is
+either FE_SCALE_RELATIVE or FE_SCALE_COUNTER .
+  svalue
+    integer value of the measure, for FE_SCALE_DECIBEL ,
+used for dB measures. The unit is 0.001 dB.

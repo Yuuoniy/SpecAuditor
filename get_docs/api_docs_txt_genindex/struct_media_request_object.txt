@@ -1,0 +1,17 @@
+Struct: struct media_request_object
+
+An opaque object that belongs to a media request
+
+Members
+  ops
+    object’s operations
+  priv
+    object’s priv pointer
+  req
+    the request this object belongs to (can be NULL)
+  list
+    List entry of the object for struct media_request
+  kref
+    Reference count of the object, acquire before releasing req->lock
+  completed
+    If true, then this object was completed.

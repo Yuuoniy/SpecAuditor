@@ -1,0 +1,7 @@
+Function: bool ssam_nf_refcount_empty ( struct ssam_nf * nf )
+
+Test if the notification system has any enabled/active events.
+
+Parameters
+  struct ssam_nf *nf
+    The notification system.

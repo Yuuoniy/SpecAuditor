@@ -1,0 +1,12 @@
+Function: struct page * kho_restore_pages ( phys_addr_t phys , unsigned int nr_pages )
+
+restore list of contiguous order 0 pages.
+
+Parameters
+  phys_addr_t phys
+    physical address of the first page.
+  unsigned int nr_pages
+    number of pages.
+
+Description
+  Restore a contiguous list of order 0 pages that was preserved with kho_preserve_pages() .

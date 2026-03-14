@@ -1,0 +1,12 @@
+Function: int sk_stream_wait_connect ( struct sock * sk , long * timeo_p )
+
+Wait for a socket to get into the connected state
+
+Parameters
+  struct sock *sk
+    sock to wait on
+  long *timeo_p
+    for how long to wait
+
+Description
+  Must be called with the socket locked.

@@ -1,0 +1,20 @@
+Struct: struct vidtv_psi_pmt_write_args
+
+Arguments for writing a PMT section
+
+Members
+  buf
+    The destination buffer.
+  offset
+    The offset into the destination buffer.
+  pmt
+    A pointer to the PMT.
+  pid
+    Program ID
+  buf_sz
+    The size of the destination buffer.
+  continuity_counter
+    A pointer to the CC. Incremented on every new packet.
+  pcr_pid
+    The TS PID used for the PSI packets. All channels will share the
+same PCR.

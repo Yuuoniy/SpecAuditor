@@ -1,0 +1,14 @@
+Function: bool drm_dev_enter ( struct drm_device * dev , int * idx )
+
+Enter device critical section
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  int *idx
+    Pointer to index that will be passed to the matching drm_dev_exit()
+
+Description
+  This function marks and protects the beginning of a section that should not
+be entered after the device has been unplugged. The section end is marked
+with drm_dev_exit() . Calls to this function can be nested.

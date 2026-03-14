@@ -1,0 +1,12 @@
+Function: struct drm_gem_object * drm_gem_object_lookup ( struct drm_file * filp , u32 handle )
+
+look up a GEM object from its handle
+
+Parameters
+  struct drm_file *filp
+    DRM file private date
+  u32 handle
+    userspace handle
+
+Description
+  If looking up an array of handles, use drm_gem_objects_lookup() .

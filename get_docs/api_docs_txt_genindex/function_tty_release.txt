@@ -1,0 +1,13 @@
+Function: int tty_release ( struct inode * inode , struct file * filp )
+
+vfs callback for close
+
+Parameters
+  struct inode *inode
+    inode of tty
+  struct file *filp
+    file pointer for handle to tty
+
+Description
+  Called the last time each file handle is closed that references this tty.
+There may however be several such references.

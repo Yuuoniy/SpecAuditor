@@ -1,0 +1,15 @@
+Macro: RCU_LOCKDEP_WARN
+
+
+
+Parameters
+  c
+    condition to check
+  s
+    informative message
+
+Description
+  This checks debug_lockdep_rcu_enabled() before checking (c) to
+prevent early boot splats due to lockdep not yet being initialized,
+and rechecks it after checking (c) to prevent false-positive splats
+due to races with lockdep being disabled.  See commit 3066820034b5dd (“rcu: Reject RCU_LOCKDEP_WARN() false positives”) for more detail.

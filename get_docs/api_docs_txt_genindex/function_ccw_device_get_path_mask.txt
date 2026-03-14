@@ -1,0 +1,7 @@
+Function: __u8 ccw_device_get_path_mask ( struct ccw_device * cdev )
+
+get currently available paths
+
+Parameters
+  struct ccw_device *cdev
+    ccw device to be queried

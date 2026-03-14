@@ -1,0 +1,16 @@
+Function: struct dentry * vfs_mkdir ( struct mnt_idmap * idmap , struct inode * dir , struct dentry * dentry , umode_t mode )
+
+create directory returning correct dentry if possible
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount the inode was found from
+  struct inode *dir
+    inode of the parent directory
+  struct dentry *dentry
+    dentry of the child directory
+  umode_t mode
+    mode of the child directory
+
+Description
+  Create a directory.

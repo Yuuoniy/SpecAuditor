@@ -1,0 +1,14 @@
+Struct: struct fw_cdev_allocate_iso_resource
+
+(De)allocate a channel or bandwidth
+
+Members
+  closure
+    Passed back to userspace in corresponding iso resource events
+  channels
+    Isochronous channels of which one is to be (de)allocated
+  bandwidth
+    Isochronous bandwidth units to be (de)allocated
+  handle
+    Handle to the allocation, written by the kernel (only valid in
+case of FW_CDEV_IOC_ALLOCATE_ISO_RESOURCE ioctls)

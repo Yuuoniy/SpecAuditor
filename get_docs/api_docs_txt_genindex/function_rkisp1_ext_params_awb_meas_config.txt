@@ -1,0 +1,9 @@
+Function: struct rkisp1_ext_params_awb_meas_config
+
+RkISP1 extensible params AWB Meas config
+
+Members
+  header
+    The RkISP1 extensible parameters header, see rkisp1_ext_params_block_header
+  config
+    Auto-White Balance measure configuration, see rkisp1_cif_isp_awb_meas_config

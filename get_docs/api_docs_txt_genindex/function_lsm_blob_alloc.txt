@@ -1,0 +1,14 @@
+Function: int lsm_blob_alloc ( void * * dest , size_t size , gfp_t gfp )
+
+allocate a composite blob
+
+Parameters
+  void **dest
+    the destination for the blob
+  size_t size
+    the size of the blob
+  gfp_t gfp
+    allocation type
+
+Description
+  Allocate a blob for all the modules

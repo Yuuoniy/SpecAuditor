@@ -1,0 +1,27 @@
+Struct: struct dwc3_event_depevt
+
+Device Endpoint Events
+
+Members
+  one_bit
+    indicates this is an endpoint event (not used)
+  endpoint_number
+    number of the endpoint
+  endpoint_event
+    The event we have:
+0x00    - Reserved
+0x01    - XferComplete
+0x02    - XferInProgress
+0x03    - XferNotReady
+0x04    - RxTxFifoEvt (IN->Underrun, OUT->Overrun)
+0x05    - Reserved
+0x06    - StreamEvt
+0x07    - EPCmdCmplt
+  reserved11_10
+    Reserved, don’t use.
+  status
+    Indicates the status of the event. Refer to databook for
+more information.
+  parameters
+    Parameters of the current event. Refer to databook for
+more information.

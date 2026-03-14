@@ -1,0 +1,13 @@
+Struct: struct hpd_rx_irq_offload_work
+
+hpd_rx_irq offload work structure
+
+Members
+  work
+    offload work
+  data
+    reference irq data which is used while handling offload work
+  offload_wq
+    offload work queue that this work is queued to
+  adev
+    amdgpu_device pointer

@@ -1,0 +1,12 @@
+Function: void vb2_discard_done ( struct vb2_queue * q )
+
+discard all buffers marked as DONE.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+
+Description
+  This function is intended to be used with suspend/resume operations. It
+discards all ‘done’ buffers as they would be too old to be requested after
+resume.

@@ -1,0 +1,13 @@
+Function: void mipi_dsi_dcs_set_tear_on_multi ( struct mipi_dsi_multi_context * ctx , enum mipi_dsi_dcs_tear_mode mode )
+
+send DCS SET_TEAR_ON packet
+
+Parameters
+  struct mipi_dsi_multi_context *ctx
+    Context for multiple DSI transactions
+  enum mipi_dsi_dcs_tear_mode mode
+    the Tearing Effect Output Line mode
+
+Description
+  Like mipi_dsi_dcs_set_tear_on() but deals with errors in a way that
+makes it convenient to make several calls in a row.

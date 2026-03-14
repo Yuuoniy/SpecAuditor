@@ -1,0 +1,14 @@
+Function: int ata_down_xfermask_limit ( struct ata_device * dev , unsigned int sel )
+
+adjust dev xfer masks downward
+
+Parameters
+  struct ata_device *dev
+    Device to adjust xfer masks
+  unsigned int sel
+    ATA_DNXFER_* selector
+
+Description
+  Adjust xfer masks of dev downward.  Note that this function
+does not apply the change.  Invoking ata_set_mode() afterwards
+will apply the limit.

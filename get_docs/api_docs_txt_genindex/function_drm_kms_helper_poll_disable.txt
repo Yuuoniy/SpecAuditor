@@ -1,0 +1,10 @@
+Function: void drm_kms_helper_poll_disable ( struct drm_device * dev )
+
+disable output polling
+
+Parameters
+  struct drm_device *dev
+    drm_device
+
+Description
+  This function disables the output polling work.

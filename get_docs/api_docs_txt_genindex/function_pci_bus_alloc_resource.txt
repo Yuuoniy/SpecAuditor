@@ -1,0 +1,26 @@
+Function: int pci_bus_alloc_resource ( struct pci_bus * bus , struct resource * res , resource_size_t size , resource_size_t align , resource_size_t min , unsigned long type_mask , resource_alignf alignf , void * alignf_data )
+
+allocate a resource from a parent bus
+
+Parameters
+  struct pci_bus *bus
+    PCI bus
+  struct resource *res
+    resource to allocate
+  resource_size_t size
+    size of resource to allocate
+  resource_size_t align
+    alignment of resource to allocate
+  resource_size_t min
+    minimum /proc/iomem address to allocate
+  unsigned long type_mask
+    IORESOURCE_* type flags
+  resource_alignf alignf
+    resource alignment function
+  void *alignf_data
+    data argument for resource alignment function
+
+Description
+  Given the PCI bus a device resides on, the size, minimum address,
+alignment and type, try to find an acceptable resource allocation
+for a specific device resource.

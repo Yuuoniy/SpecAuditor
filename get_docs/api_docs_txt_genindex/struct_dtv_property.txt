@@ -1,0 +1,28 @@
+Struct: struct dtv_property
+
+store one of frontend command and its value
+
+Members
+  cmd
+    Digital TV command.
+  reserved
+    Not used.
+  u
+    Union with the values for the command.
+  u.data
+    A unsigned 32 bits integer with command value.
+  u.st
+    a struct dtv_fe_stats array of statistics.
+  u.buffer
+    Struct to store bigger properties.
+Currently unused.
+  u.buffer.data
+    an unsigned 32-bits array.
+  u.buffer.len
+    number of elements of the buffer.
+  u.buffer.reserved1
+    Reserved.
+  u.buffer.reserved2
+    Reserved.
+  result
+    Currently unused.

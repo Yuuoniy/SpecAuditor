@@ -1,0 +1,23 @@
+Function: unsigned int vme_master_rmw ( struct vme_resource * resource , unsigned int mask , unsigned int compare , unsigned int swap , loff_t offset )
+
+Perform read-modify-write cycle.
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME master resource.
+  unsigned int mask
+    Bits to be compared and swapped in operation.
+  unsigned int compare
+    Bits to be compared with data read from offset.
+  unsigned int swap
+    Bits to be swapped in data read from offset.
+  loff_t offset
+    Offset into VME master window at which to perform operation.
+
+Description
+  Perform read-modify-write cycle on provided location:
+- Location on VME bus is read.
+- Bits selected by mask are compared with compare.
+- Where a selected bit matches that in compare and are selected in swap,
+the bit is swapped.
+- Result written back to location on VME bus.

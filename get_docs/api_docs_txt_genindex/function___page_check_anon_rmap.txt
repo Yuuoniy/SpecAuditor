@@ -1,0 +1,13 @@
+Function: void __page_check_anon_rmap ( const struct folio * folio , const struct page * page , struct vm_area_struct * vma , unsigned long address )
+
+sanity check anonymous rmap addition
+
+Parameters
+  const struct folio *folio
+    The folio containing page .
+  const struct page *page
+    the page to check the mapping of
+  struct vm_area_struct *vma
+    the vm area in which the mapping is added
+  unsigned long address
+    the user virtual address mapped

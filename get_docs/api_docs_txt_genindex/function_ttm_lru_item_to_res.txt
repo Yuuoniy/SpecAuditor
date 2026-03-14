@@ -1,0 +1,7 @@
+Function: struct ttm_resource * ttm_lru_item_to_res ( struct ttm_lru_item * item )
+
+Downcast a struct ttm_lru_item to a struct ttm_resource
+
+Parameters
+  struct ttm_lru_item *item
+    The struct ttm_lru_item to downcast

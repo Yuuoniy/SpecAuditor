@@ -1,0 +1,7 @@
+Function: u8 drm_match_cea_mode ( const struct drm_display_mode * to_match )
+
+look for a CEA mode matching given mode
+
+Parameters
+  const struct drm_display_mode *to_match
+    display mode

@@ -1,0 +1,12 @@
+Function: ssize_t spi_w8r8 ( struct spi_device * spi , u8 cmd )
+
+SPI synchronous 8 bit write followed by 8 bit read
+
+Parameters
+  struct spi_device *spi
+    device with which data will be exchanged
+  u8 cmd
+    command to be written before data is read back
+
+Description
+  Callable only from contexts that can sleep.

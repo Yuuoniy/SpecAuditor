@@ -1,0 +1,14 @@
+Function: int drm_scdc_writeb ( struct i2c_adapter * adapter , u8 offset , u8 value )
+
+write a single byte to SCDC
+
+Parameters
+  struct i2c_adapter *adapter
+    I2C adapter
+  u8 offset
+    offset of register to read
+  u8 value
+    return location for the register value
+
+Description
+  Writes a single byte to SCDC. This is a convenience wrapper around the drm_scdc_write() function.

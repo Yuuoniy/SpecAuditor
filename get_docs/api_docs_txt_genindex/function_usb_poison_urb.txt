@@ -1,0 +1,16 @@
+Function: void usb_poison_urb ( struct urb * urb )
+
+reliably kill a transfer and prevent further use of an URB
+
+Parameters
+  struct urb *urb
+    pointer to URB describing a previously submitted request,
+may be NULL
+
+Description
+  This routine cancels an in-progress request.  It is guaranteed that
+upon return all completion handlers will have finished and the URB
+will be totally idle and cannot be reused.  These features make
+this an ideal way to stop I/O in a disconnect() callback.
+If the request has not already finished or been unlinked
+the completion handler will see urb->status == -ENOENT.

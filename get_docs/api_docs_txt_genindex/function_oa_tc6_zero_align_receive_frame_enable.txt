@@ -1,0 +1,2 @@
+Function: int oa_tc6_zero_align_receive_frame_enable ( struct oa_tc6 * tc6 ) ;
+

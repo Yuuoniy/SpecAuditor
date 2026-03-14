@@ -1,0 +1,22 @@
+Struct: struct iio_event_spec
+
+specification for a channel event
+
+Members
+  type
+    Type of the event
+  dir
+    Direction of the event
+  mask_separate
+    Bit mask of enum iio_event_info values. Attributes
+set in this mask will be registered per channel.
+  mask_shared_by_type
+    Bit mask of enum iio_event_info values. Attributes
+set in this mask will be shared by channel type.
+  mask_shared_by_dir
+    Bit mask of enum iio_event_info values. Attributes
+set in this mask will be shared by channel type and
+direction.
+  mask_shared_by_all
+    Bit mask of enum iio_event_info values. Attributes
+set in this mask will be shared by all channels.

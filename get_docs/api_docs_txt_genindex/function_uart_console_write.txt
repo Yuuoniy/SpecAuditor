@@ -1,0 +1,13 @@
+Function: void uart_console_write ( struct uart_port * port , const char * s , unsigned int count , void ( * putchar ) ( struct uart_port * , unsigned char ) )
+
+write a console message to a serial port
+
+Parameters
+  struct uart_port *port
+    the port to write the message
+  const char *s
+    array of characters
+  unsigned int count
+    number of characters in string to write
+  void (*putchar)(struct uart_port *, unsigned char)
+    function to write character to port

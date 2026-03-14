@@ -1,0 +1,7 @@
+Macro: media_entity_to_v4l2_subdev
+
+
+
+Parameters
+  ent
+    pointer to struct media_entity .

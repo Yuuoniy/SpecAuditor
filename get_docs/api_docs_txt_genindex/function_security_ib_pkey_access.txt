@@ -1,0 +1,14 @@
+Function: int security_ib_pkey_access ( void * sec , u64 subnet_prefix , u16 pkey )
+
+Check if access to an IB pkey is allowed
+
+Parameters
+  void *sec
+    LSM blob
+  u64 subnet_prefix
+    subnet prefix of the port
+  u16 pkey
+    IB pkey
+
+Description
+  Check permission to access a pkey when modifying a QP.

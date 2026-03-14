@@ -1,0 +1,10 @@
+Function: void trace_block_bio_frontmerge ( struct bio * bio )
+
+merging block operation to the beginning of an existing operation
+
+Parameters
+  struct bio *bio
+    new block operation to merge
+
+Description
+  Merging block IO operation bio to the beginning of an existing block request.

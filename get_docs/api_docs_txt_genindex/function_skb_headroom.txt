@@ -1,0 +1,10 @@
+Function: unsigned int skb_headroom ( const struct sk_buff * skb )
+
+bytes at buffer head
+
+Parameters
+  const struct sk_buff *skb
+    buffer to check
+
+Description
+  Return the number of bytes of free space at the head of an sk_buff .

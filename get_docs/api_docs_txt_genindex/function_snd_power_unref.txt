@@ -1,0 +1,7 @@
+Function: void snd_power_unref ( struct snd_card * card )
+
+Release the reference count for power control
+
+Parameters
+  struct snd_card *card
+    sound card object

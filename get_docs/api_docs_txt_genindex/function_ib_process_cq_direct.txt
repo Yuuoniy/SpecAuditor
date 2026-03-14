@@ -1,0 +1,16 @@
+Function: int ib_process_cq_direct ( struct ib_cq * cq , int budget )
+
+process a CQ in caller context
+
+Parameters
+  struct ib_cq *cq
+    CQ to process
+  int budget
+    number of CQEs to poll for
+
+Description
+  This function is used to process all outstanding CQ entries.
+It does not offload CQ processing to a different context and does
+not ask for completion interrupts from the HCA.
+Using direct processing on CQ with non IB_POLL_DIRECT type may trigger
+concurrent processing.

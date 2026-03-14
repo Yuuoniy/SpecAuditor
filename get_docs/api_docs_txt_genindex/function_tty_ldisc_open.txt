@@ -1,0 +1,12 @@
+Function: int tty_ldisc_open ( struct tty_struct * tty , struct tty_ldisc * ld )
+
+open a line discipline
+
+Parameters
+  struct tty_struct *tty
+    tty we are opening the ldisc on
+  struct tty_ldisc *ld
+    discipline to open
+
+Description
+  A helper opening method. Also a convenient debugging and check point.

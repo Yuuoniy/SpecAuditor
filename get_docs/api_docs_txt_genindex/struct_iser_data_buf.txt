@@ -1,0 +1,13 @@
+Struct: struct iser_data_buf
+
+iSER data buffer
+
+Members
+  sg
+    pointer to the sg list
+  size
+    num entries of this sg
+  data_len
+    total buffer byte len
+  dma_nents
+    returned by dma_map_sg

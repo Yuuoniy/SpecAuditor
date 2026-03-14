@@ -1,0 +1,14 @@
+Function: void tty_port_close_end ( struct tty_port * port , struct tty_struct * tty )
+
+helper for tty->ops->close, part 2/2
+
+Parameters
+  struct tty_port *port
+    tty_port of the device
+  struct tty_struct *tty
+    tty being closed
+
+Description
+  This is a continuation of the first part: tty_port_close_start() . This
+should be called after turning off the device. It flushes the data from the
+line discipline and delays the close by port->close_delay .

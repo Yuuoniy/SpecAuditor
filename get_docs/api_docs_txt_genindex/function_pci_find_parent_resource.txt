@@ -1,0 +1,13 @@
+Function: struct resource * pci_find_parent_resource ( const struct pci_dev * dev , struct resource * res )
+
+return resource region of parent bus of given region
+
+Parameters
+  const struct pci_dev *dev
+    PCI device structure contains resources to be searched
+  struct resource *res
+    child resource record for which parent is sought
+
+Description
+  For given resource region of given device, return the resource region of
+parent bus the given region is contained in.

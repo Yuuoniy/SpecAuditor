@@ -1,0 +1,10 @@
+Function: void snd_dma_free_pages ( struct snd_dma_buffer * dmab )
+
+release the allocated buffer
+
+Parameters
+  struct snd_dma_buffer *dmab
+    the buffer allocation record to release
+
+Description
+  Releases the allocated buffer via snd_dma_alloc_pages() .

@@ -1,0 +1,9 @@
+Struct: struct drm_panthor_group_priorities_info
+
+Group priorities information
+
+Members
+  allowed_mask
+    Bitmask of the allowed group priorities. Each bit represents a variant of the enum drm_panthor_group_priority .
+  pad
+    Padding fields, MBZ.

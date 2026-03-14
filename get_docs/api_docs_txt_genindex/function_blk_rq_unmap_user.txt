@@ -1,0 +1,12 @@
+Function: int blk_rq_unmap_user ( struct bio * bio )
+
+unmap a request with user data
+
+Parameters
+  struct bio *bio
+    start of bio list
+
+Description
+  Unmap a rq previously mapped by blk_rq_map_user() . The caller must
+supply the original rq->bio from the blk_rq_map_user() return, since
+the I/O completion may have changed rq->bio.

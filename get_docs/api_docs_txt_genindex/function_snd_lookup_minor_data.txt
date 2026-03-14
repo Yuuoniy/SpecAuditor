@@ -1,0 +1,13 @@
+Function: void * snd_lookup_minor_data ( unsigned int minor , int type )
+
+get user data of a registered device
+
+Parameters
+  unsigned int minor
+    the minor number
+  int type
+    device type (SNDRV_DEVICE_TYPE_XXX)
+
+Description
+  Checks that a minor device with the specified type is registered, and returns
+its user data pointer.

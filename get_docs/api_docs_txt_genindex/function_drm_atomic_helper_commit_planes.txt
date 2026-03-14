@@ -1,0 +1,17 @@
+Function: void drm_atomic_helper_commit_planes ( struct drm_device * dev , struct drm_atomic_state * state , uint32_t flags )
+
+commit plane state
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_atomic_state *state
+    atomic state object being committed
+  uint32_t flags
+    flags for committing plane state
+
+Description
+  This function commits the new plane state using the plane and atomic helper
+functions for planes and CRTCs. It assumes that the atomic state has already
+been pushed into the relevant object state pointers, since this step can no
+longer fail.

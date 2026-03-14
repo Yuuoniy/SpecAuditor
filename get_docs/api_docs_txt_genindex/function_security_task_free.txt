@@ -1,0 +1,11 @@
+Function: void security_task_free ( struct task_struct * task )
+
+Free a task’s LSM blob and related resources
+
+Parameters
+  struct task_struct *task
+    task
+
+Description
+  Handle release of task-related resources.  Note that this can be called from
+interrupt context.

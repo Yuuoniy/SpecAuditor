@@ -1,0 +1,11 @@
+Struct: struct drm_i915_gem_exec_fence
+
+An input or output fence for the execbuf ioctl.
+
+Members
+  handle
+    User’s handle for a drm_syncobj to wait on or signal.
+  flags
+    Supported flags are: I915_EXEC_FENCE_WAIT:
+Wait for the input fence before request submission. I915_EXEC_FENCE_SIGNAL:
+Return request completion fence as output

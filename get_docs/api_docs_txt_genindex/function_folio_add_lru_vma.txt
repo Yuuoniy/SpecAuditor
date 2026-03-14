@@ -1,0 +1,13 @@
+Function: void folio_add_lru_vma ( struct folio * folio , struct vm_area_struct * vma )
+
+Add a folio to the appropate LRU list for this VMA.
+
+Parameters
+  struct folio *folio
+    The folio to be added to the LRU.
+  struct vm_area_struct *vma
+    VMA in which the folio is mapped.
+
+Description
+  If the VMA is mlocked, folio is added to the unevictable list.
+Otherwise, it is treated the same way as folio_add_lru() .

@@ -1,0 +1,19 @@
+Function: int nand_change_read_column_op ( struct nand_chip * chip , unsigned int offset_in_page , void * buf , unsigned int len , bool force_8bit )
+
+Do a CHANGE READ COLUMN operation
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+  unsigned int offset_in_page
+    offset within the page
+  void *buf
+    buffer used to store the data
+  unsigned int len
+    length of the buffer
+  bool force_8bit
+    force 8-bit bus access
+
+Description
+  This function issues a CHANGE READ COLUMN operation.
+This function does not select/unselect the CS line.

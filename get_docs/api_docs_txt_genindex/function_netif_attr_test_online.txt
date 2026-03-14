@@ -1,0 +1,11 @@
+Function: bool netif_attr_test_online ( unsigned long j , const unsigned long * online_mask , unsigned int nr_bits )
+
+Test for online CPU/Rx queue
+
+Parameters
+  unsigned long j
+    CPU/Rx queue index
+  const unsigned long *online_mask
+    bitmask for CPUs/Rx queues that are online
+  unsigned int nr_bits
+    number of bits in the bitmask

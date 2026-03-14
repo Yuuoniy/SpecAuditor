@@ -1,0 +1,7 @@
+Function: int iscsi_tcp_task_init ( struct iscsi_task * task )
+
+Initialize iSCSI SCSI_READ or SCSI_WRITE commands
+
+Parameters
+  struct iscsi_task *task
+    scsi command task

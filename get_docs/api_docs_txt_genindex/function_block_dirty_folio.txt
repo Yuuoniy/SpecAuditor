@@ -1,0 +1,15 @@
+Function: bool block_dirty_folio ( struct address_space * mapping , struct folio * folio )
+
+Mark a folio as dirty.
+
+Parameters
+  struct address_space *mapping
+    The address space containing this folio.
+  struct folio *folio
+    The folio to mark dirty.
+
+Description
+  Filesystems which use buffer_heads can use this function as their
+->dirty_folio implementation.  Some filesystems need to do a little
+work before calling this function.  Filesystems which do not use
+buffer_heads should call filemap_dirty_folio() instead.

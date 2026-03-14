@@ -1,0 +1,16 @@
+Macro: DRM_CAP_ATOMIC_ASYNC_PAGE_FLIP
+
+
+
+Members
+  handle
+    syncobj handle.
+  flags
+    Zero to wait for the point to be signalled, or DRM_SYNCOBJ_WAIT_FLAGS_WAIT_AVAILABLE to wait for a fence to be
+available for the point.
+  point
+    syncobj timeline point (set to zero for binary syncobjs).
+  fd
+    Existing eventfd to sent events to.
+  pad
+    Must be zero.

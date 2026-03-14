@@ -1,0 +1,13 @@
+Function: struct sync_file * sync_file_create ( struct dma_fence * fence )
+
+creates a sync file
+
+Parameters
+  struct dma_fence *fence
+    fence to add to the sync_fence
+
+Description
+  Creates a sync_file containg fence . This function acquires and additional
+reference of fence for the newly-created sync_file , if it succeeds. The
+sync_file can be released with fput(sync_file->file). Returns the
+sync_file or NULL in case of error.

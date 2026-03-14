@@ -1,0 +1,7 @@
+Struct: struct nand_op_parser_data_constraints
+
+Constraints for data instructions
+
+Members
+  maxlen
+    maximum data length that the controller can handle in a single step

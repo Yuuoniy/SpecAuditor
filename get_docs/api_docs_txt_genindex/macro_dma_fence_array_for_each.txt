@@ -1,0 +1,15 @@
+Macro: dma_fence_array_for_each
+
+
+
+Parameters
+  fence
+    current fence
+  index
+    index into the array
+  head
+    potential dma_fence_array object
+
+Description
+  Test if array is a dma_fence_array object and if yes iterate over all fences
+in the array. If not just iterate over the fence in array itself.

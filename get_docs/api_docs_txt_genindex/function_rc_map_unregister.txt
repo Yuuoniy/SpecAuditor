@@ -1,0 +1,7 @@
+Function: void rc_map_unregister ( struct rc_map_list * map )
+
+Unregisters a Remote Controller scancode map
+
+Parameters
+  struct rc_map_list *map
+    pointer to struct rc_map_list

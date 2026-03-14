@@ -1,0 +1,15 @@
+Struct: struct blk_mq_queue_map
+
+Map software queues to hardware queues
+
+Members
+  mq_map
+    CPU ID to hardware queue index map. This is an array
+with nr_cpu_ids elements. Each element has a value in the range
+[ queue_offset , queue_offset + nr_queues ).
+  nr_queues
+    Number of hardware queues to map CPU IDs onto.
+  queue_offset
+    First hardware queue to map onto. Used by the PCIe NVMe
+driver to map each hardware queue type ( enum hctx_type ) onto a distinct
+set of hardware queues.

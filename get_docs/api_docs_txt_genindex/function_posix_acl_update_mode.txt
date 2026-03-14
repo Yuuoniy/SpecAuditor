@@ -1,0 +1,18 @@
+Function: int posix_acl_update_mode ( struct mnt_idmap * idmap , struct inode * inode , umode_t * mode_p , struct posix_acl * * acl )
+
+update mode in set_acl
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount inode was found from
+  struct inode *inode
+    target inode
+  umode_t *mode_p
+    mode (pointer) for update
+  struct posix_acl **acl
+    acl pointer
+
+Description
+  Update the file mode when setting an ACL: compute the new file permission
+bits based on the ACL.  In addition, if the ACL is equivalent to the new
+file mode, set *acl to NULL to indicate that no ACL should be set.

@@ -1,0 +1,11 @@
+Function: void relay_remove_buf ( struct kref * kref )
+
+remove a channel buffer
+
+Parameters
+  struct kref *kref
+    target kernel reference that contains the relay buffer
+
+Description
+  Removes the file from the filesystem, which also frees the
+rchan_buf_struct and the channel buffer.  Should only be called from kref_put() .

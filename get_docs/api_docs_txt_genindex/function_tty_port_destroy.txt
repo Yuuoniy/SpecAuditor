@@ -1,0 +1,12 @@
+Function: void tty_port_destroy ( struct tty_port * port )
+
+destroy inited port
+
+Parameters
+  struct tty_port *port
+    tty port to be destroyed
+
+Description
+  When a port was initialized using tty_port_init() , one has to destroy the
+port by this function. Either indirectly by using tty_port refcounting
+( tty_port_put() ) or directly if refcounting is not used.

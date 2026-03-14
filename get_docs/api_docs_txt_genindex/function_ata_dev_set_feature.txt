@@ -1,0 +1,14 @@
+Function: unsigned int ata_dev_set_feature ( struct ata_device * dev , u8 subcmd , u8 action )
+
+Issue SET FEATURES
+
+Parameters
+  struct ata_device *dev
+    Device to which command will be sent
+  u8 subcmd
+    The SET FEATURES subcommand to be sent
+  u8 action
+    The sector count represents a subcommand specific action
+
+Description
+  Issue SET FEATURES command to device dev on port ap with sector count

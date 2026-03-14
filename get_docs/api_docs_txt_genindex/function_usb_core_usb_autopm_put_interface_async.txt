@@ -1,0 +1,14 @@
+Function: void usb_autopm_put_interface_async ( struct usb_interface * intf )
+
+decrement a USB interface’s PM-usage counter
+
+Parameters
+  struct usb_interface *intf
+    the usb_interface whose counter should be decremented
+
+Description
+  This routine does much the same thing as usb_autopm_put_interface() :
+It decrements intf ’s usage counter and schedules a delayed
+autosuspend request if the counter is <= 0.  The difference is that it
+does not perform any synchronization; callers should hold a private
+lock and handle all synchronization issues themselves.

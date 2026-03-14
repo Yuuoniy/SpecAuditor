@@ -1,0 +1,10 @@
+Function: void media_entity_remove_links ( struct media_entity * entity )
+
+remove all links associated with an entity
+
+Parameters
+  struct media_entity *entity
+    pointer to media_entity
+
+Description
+  Note

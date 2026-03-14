@@ -1,0 +1,7 @@
+Function: bool ps2_is_keyboard_id ( u8 id_byte )
+
+checks received ID byte against the list of known keyboard IDs
+
+Parameters
+  u8 id_byte
+    data byte that should be checked

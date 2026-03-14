@@ -1,0 +1,3 @@
+Enum: enum hte_edge
+
+HTE line edge flags.

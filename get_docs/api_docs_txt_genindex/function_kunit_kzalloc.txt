@@ -1,0 +1,14 @@
+Function: void * kunit_kzalloc ( struct kunit * test , size_t size , gfp_t gfp )
+
+Just like kunit_kmalloc() , but zeroes the allocation.
+
+Parameters
+  struct kunit *test
+    The test context object.
+  size_t size
+    The size in bytes of the desired memory.
+  gfp_t gfp
+    flags passed to underlying kmalloc() .
+
+Description
+  See kzalloc() and kunit_kmalloc_array() for more information.

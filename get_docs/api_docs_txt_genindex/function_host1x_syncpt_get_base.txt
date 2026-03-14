@@ -1,0 +1,7 @@
+Function: struct host1x_syncpt_base * host1x_syncpt_get_base ( struct host1x_syncpt * sp )
+
+obtain the wait base associated with a syncpoint
+
+Parameters
+  struct host1x_syncpt *sp
+    host1x syncpoint

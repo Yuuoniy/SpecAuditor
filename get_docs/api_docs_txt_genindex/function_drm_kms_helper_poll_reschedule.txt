@@ -1,0 +1,11 @@
+Function: void drm_kms_helper_poll_reschedule ( struct drm_device * dev )
+
+reschedule the output polling work
+
+Parameters
+  struct drm_device *dev
+    drm_device
+
+Description
+  This function reschedules the output polling work, after polling for a
+connector has been enabled.

@@ -1,0 +1,12 @@
+Function: void sfp_upstream_start ( struct sfp_bus * bus )
+
+Inform the SFP that the network device is up
+
+Parameters
+  struct sfp_bus *bus
+    a pointer to the struct sfp_bus structure for the sfp module
+
+Description
+  Inform the SFP socket that the network device is now up, so that the
+module can be enabled by allowing TX_DISABLE to be deasserted. This
+should be called from the network device driver’s struct net_device_ops ndo_open() method.

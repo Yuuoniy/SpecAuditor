@@ -1,0 +1,15 @@
+Macro: DRM_GEM_SHADOW_PLANE_HELPER_FUNCS
+
+
+
+Parameters
+  struct drm_plane *plane
+    Plane
+  struct drm_plane_state *state
+    Plane state the fence will be attached to
+
+Description
+  This function extracts the exclusive fence from drm_gem_object.resv and
+attaches it to plane state for the atomic helper to wait on. This is
+necessary to correctly implement implicit synchronization for any buffers
+shared as a struct dma_buf . This function can be used as the drm_plane_helper_funcs.prepare_fb callback.

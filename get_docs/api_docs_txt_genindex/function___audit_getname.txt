@@ -1,0 +1,11 @@
+Function: void __audit_getname ( struct filename * name )
+
+add a name to the list
+
+Parameters
+  struct filename *name
+    name to add
+
+Description
+  Add a name to the list of audit names for this context.
+Called from fs/namei.c: getname() .

@@ -1,0 +1,10 @@
+Function: int cxl_enumerate_cmds ( struct cxl_memdev_state * mds )
+
+Enumerate commands for a device.
+
+Parameters
+  struct cxl_memdev_state *mds
+    The driver data for the operation
+
+Description
+  Returns 0 if enumerate completed successfully.

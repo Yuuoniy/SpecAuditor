@@ -1,0 +1,15 @@
+Function: int sshp_buf_alloc ( struct sshp_buf * buf , size_t cap , gfp_t flags )
+
+Allocate and initialize a SSH parser buffer.
+
+Parameters
+  struct sshp_buf *buf
+    The buffer to initialize/allocate to.
+  size_t cap
+    The desired capacity of the buffer.
+  gfp_t flags
+    The flags used for allocating the memory.
+
+Description
+  Allocates cap bytes and initializes the provided buffer struct with the
+allocated memory.

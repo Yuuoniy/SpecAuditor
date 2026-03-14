@@ -1,0 +1,9 @@
+Struct: struct dma_fence_cb
+
+callback for dma_fence_add_callback()
+
+Members
+  node
+    used by dma_fence_add_callback() to append this struct to fence::cb_list
+  func
+    dma_fence_func_t to call

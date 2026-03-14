@@ -1,0 +1,14 @@
+Function: void jbd2_journal_set_triggers ( struct buffer_head * bh , struct jbd2_buffer_trigger_type * type )
+
+Add triggers for commit writeout
+
+Parameters
+  struct buffer_head *bh
+    buffer to trigger on
+  struct jbd2_buffer_trigger_type *type
+    struct jbd2_buffer_trigger_type containing the trigger(s).
+
+Description
+  Set any triggers on this journal_head.  This is always safe, because
+triggers for a committing buffer will be saved off, and triggers for
+a running transaction will match the buffer in that transaction.

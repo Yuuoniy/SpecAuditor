@@ -1,0 +1,12 @@
+Function: int crypto_has_cipher ( const char * alg_name , u32 type , u32 mask )
+
+Search for the availability of a single block cipher
+
+Parameters
+  const char *alg_name
+    is the cra_name / name or cra_driver_name / driver name of the
+single block cipher
+  u32 type
+    specifies the type of the cipher
+  u32 mask
+    specifies the mask for the cipher

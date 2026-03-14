@@ -1,0 +1,3 @@
+Enum: enum dim_stats_state
+
+DIM algorithm statistics states

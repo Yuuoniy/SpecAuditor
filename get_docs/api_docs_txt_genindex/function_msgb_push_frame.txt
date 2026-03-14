@@ -1,0 +1,13 @@
+Function: void msgb_push_frame ( struct msgbuf * msgb , u8 ty , u16 len , u8 seq )
+
+Push a SSH message frame header to the buffer.
+
+Parameters
+  struct msgbuf *msgb
+    The message buffer
+  u8 ty
+    The type of the frame.
+  u16 len
+    The length of the payload of the frame.
+  u8 seq
+    The sequence ID of the frame/packet.

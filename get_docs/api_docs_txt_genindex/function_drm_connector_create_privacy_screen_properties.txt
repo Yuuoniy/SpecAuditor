@@ -1,0 +1,11 @@
+Function: void drm_connector_create_privacy_screen_properties ( struct drm_connector * connector )
+
+create the drm connecter’s privacy-screen properties.
+
+Parameters
+  struct drm_connector *connector
+    connector for which to create the privacy-screen properties
+
+Description
+  This function creates the “privacy-screen sw-state” and “privacy-screen
+hw-state” properties for the connector. They are not attached.

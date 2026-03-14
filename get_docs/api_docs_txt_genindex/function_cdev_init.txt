@@ -1,0 +1,13 @@
+Function: void cdev_init ( struct cdev * cdev , const struct file_operations * fops )
+
+initialize a cdev structure
+
+Parameters
+  struct cdev *cdev
+    the structure to initialize
+  const struct file_operations *fops
+    the file_operations for this device
+
+Description
+  Initializes cdev , remembering fops , making it ready to add to the
+system with cdev_add() .

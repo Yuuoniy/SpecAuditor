@@ -1,0 +1,14 @@
+Function: u64 div_u64 ( u64 dividend , u32 divisor )
+
+unsigned 64bit divide with 32bit divisor
+
+Parameters
+  u64 dividend
+    unsigned 64bit dividend
+  u32 divisor
+    unsigned 32bit divisor
+
+Description
+  This is the most common 64bit divide and should be used if possible,
+as many 32bit archs can optimize this variant better than a full 64bit
+divide.

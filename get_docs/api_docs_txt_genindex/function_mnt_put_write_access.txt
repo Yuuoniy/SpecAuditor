@@ -1,0 +1,11 @@
+Function: void mnt_put_write_access ( struct vfsmount * mnt )
+
+give up write access to a mount
+
+Parameters
+  struct vfsmount *mnt
+    the mount on which to give up write access
+
+Description
+  Tells the low-level filesystem that we are done
+performing writes to it.  Must be matched with mnt_get_write_access() call above.

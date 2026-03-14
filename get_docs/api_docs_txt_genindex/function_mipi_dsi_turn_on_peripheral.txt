@@ -1,0 +1,10 @@
+Function: int mipi_dsi_turn_on_peripheral ( struct mipi_dsi_device * dsi )
+
+sends a Turn On Peripheral command
+
+Parameters
+  struct mipi_dsi_device *dsi
+    DSI peripheral device
+
+Description
+  This function is deprecated. Use mipi_dsi_turn_on_peripheral_multi() instead.

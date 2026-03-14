@@ -1,0 +1,10 @@
+Function: u64 sas_get_address ( struct scsi_device * sdev )
+
+return the SAS address of the device
+
+Parameters
+  struct scsi_device *sdev
+    scsi device
+
+Description
+  Returns the SAS address of the scsi device

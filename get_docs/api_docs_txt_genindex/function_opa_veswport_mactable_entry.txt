@@ -1,0 +1,11 @@
+Function: struct opa_veswport_mactable_entry
+
+single entry in the forwarding table
+
+Members
+  mac_addr
+    MAC address
+  mac_addr_mask
+    MAC address bit mask
+  dlid_sd
+    Matching DLID and side data

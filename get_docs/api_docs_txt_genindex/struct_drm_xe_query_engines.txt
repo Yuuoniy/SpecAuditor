@@ -1,0 +1,11 @@
+Struct: struct drm_xe_query_engines
+
+describe engines
+
+Members
+  num_engines
+    number of engines returned in engines
+  pad
+    MBZ
+  engines
+    The returned engines for this device

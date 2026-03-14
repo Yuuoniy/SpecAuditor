@@ -1,0 +1,17 @@
+Struct: struct iio_buffer_setup_ops
+
+buffer setup related callbacks
+
+Members
+  preenable
+    [DRIVER] function to run prior to marking buffer enabled
+  postenable
+    [DRIVER] function to run after marking buffer enabled
+  predisable
+    [DRIVER] function to run prior to marking buffer
+disabled
+  postdisable
+    [DRIVER] function to run after marking buffer disabled
+  validate_scan_mask
+    [DRIVER] function callback to check whether a given
+scan mask is valid for the device.

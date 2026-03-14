@@ -1,0 +1,14 @@
+Function: void xa_init_flags ( struct xarray * xa , gfp_t flags )
+
+Initialise an empty XArray with flags.
+
+Parameters
+  struct xarray *xa
+    XArray.
+  gfp_t flags
+    XA_FLAG values.
+
+Description
+  If you need to initialise an XArray with special flags (eg you need
+to take the lock from interrupt context), use this function instead
+of xa_init() .

@@ -1,0 +1,11 @@
+Function: struct iscsi_cls_conn * iscsi_conn_setup ( struct iscsi_cls_session * cls_session , int dd_size , uint32_t conn_idx )
+
+create iscsi_cls_conn and iscsi_conn
+
+Parameters
+  struct iscsi_cls_session *cls_session
+    iscsi_cls_session
+  int dd_size
+    private driver data size
+  uint32_t conn_idx
+    cid

@@ -1,0 +1,10 @@
+Function: void __audit_free ( struct task_struct * tsk )
+
+free a per-task audit context
+
+Parameters
+  struct task_struct *tsk
+    task whose audit context block to free
+
+Description
+  Called from copy_process, do_exit, and the io_uring code

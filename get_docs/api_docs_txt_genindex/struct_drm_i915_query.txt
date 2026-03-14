@@ -1,0 +1,12 @@
+Struct: struct drm_i915_query
+
+Supply an array of struct drm_i915_query_item for the kernel to fill out.
+
+Members
+  num_items
+    The number of elements in the items_ptr array
+  flags
+    Unused for now. Must be cleared to zero.
+  items_ptr
+    Pointer to an array of struct drm_i915_query_item . The number of
+array elements is num_items .

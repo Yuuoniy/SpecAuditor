@@ -1,0 +1,16 @@
+Function: void snd_interval_mulkdiv ( const struct snd_interval * a , unsigned int k , const struct snd_interval * b , struct snd_interval * c )
+
+refine the interval value
+
+Parameters
+  const struct snd_interval *a
+    dividend 1
+  unsigned int k
+    dividend 2 (as integer)
+  const struct snd_interval *b
+    divisor
+  struct snd_interval *c
+    result
+
+Description
+  c = a * k / b

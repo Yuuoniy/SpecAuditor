@@ -1,0 +1,13 @@
+Function: int input_set_keycode ( struct input_dev * dev , const struct input_keymap_entry * ke )
+
+attribute a keycode to a given scancode
+
+Parameters
+  struct input_dev *dev
+    input device which keymap is being updated
+  const struct input_keymap_entry *ke
+    new keymap entry
+
+Description
+  This function should be called by anyone needing to update current
+keymap. Presently keyboard and evdev handlers use it.

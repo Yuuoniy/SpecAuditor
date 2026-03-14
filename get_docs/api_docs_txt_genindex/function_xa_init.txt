@@ -1,0 +1,10 @@
+Function: void xa_init ( struct xarray * xa )
+
+Initialise an empty XArray.
+
+Parameters
+  struct xarray *xa
+    XArray.
+
+Description
+  An empty XArray is full of NULL entries.

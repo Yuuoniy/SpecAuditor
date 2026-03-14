@@ -1,0 +1,7 @@
+Function: int phy_device_register ( struct phy_device * phydev )
+
+Register the phy device on the MDIO bus
+
+Parameters
+  struct phy_device *phydev
+    phy_device structure to be added to the MDIO bus

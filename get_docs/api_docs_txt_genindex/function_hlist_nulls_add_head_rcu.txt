@@ -1,0 +1,13 @@
+Function: void hlist_nulls_add_head_rcu ( struct hlist_nulls_node * n , struct hlist_nulls_head * h )
+
+
+
+Parameters
+  struct hlist_nulls_node *n
+    the element to add to the hash list.
+  struct hlist_nulls_head *h
+    the list to add to.
+
+Description
+  Adds the specified element to the specified hlist_nulls,
+while permitting racing traversals.

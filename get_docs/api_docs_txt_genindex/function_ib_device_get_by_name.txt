@@ -1,0 +1,12 @@
+Function: struct ib_device * ib_device_get_by_name ( const char * name , enum rdma_driver_id driver_id )
+
+Find an IB device by name
+
+Parameters
+  const char *name
+    The name to look for
+  enum rdma_driver_id driver_id
+    The driver ID that must match (RDMA_DRIVER_UNKNOWN matches all)
+
+Description
+  Find and hold an ib_device by its name. The caller must call ib_device_put() on the returned pointer.

@@ -1,0 +1,14 @@
+Function: struct ata_queued_cmd * ata_scsi_qc_new ( struct ata_device * dev , struct scsi_cmnd * cmd )
+
+acquire new ata_queued_cmd reference
+
+Parameters
+  struct ata_device *dev
+    ATA device to which the new command is attached
+  struct scsi_cmnd *cmd
+    SCSI command that originated this ATA command
+
+Description
+  Obtain a reference to an unused ata_queued_cmd structure,
+which is the basic libata structure representing a single
+ATA command sent to the hardware.

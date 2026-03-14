@@ -1,0 +1,14 @@
+Function: struct drm_privacy_screen * drm_privacy_screen_register ( struct device * parent , const struct drm_privacy_screen_ops * ops , void * data )
+
+register a privacy-screen
+
+Parameters
+  struct device *parent
+    parent-device for the privacy-screen
+  const struct drm_privacy_screen_ops *ops
+    struct drm_privacy_screen_ops pointer with ops for the privacy-screen
+  void *data
+    Private data owned by the privacy screen provider
+
+Description
+  Create and register a privacy-screen.

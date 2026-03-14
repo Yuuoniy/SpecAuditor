@@ -1,0 +1,13 @@
+Struct: struct drm_bridge_state
+
+Atomic bridge state object
+
+Members
+  base
+    inherit from drm_private_state
+  bridge
+    the bridge this state refers to
+  input_bus_cfg
+    input bus configuration
+  output_bus_cfg
+    output bus configuration

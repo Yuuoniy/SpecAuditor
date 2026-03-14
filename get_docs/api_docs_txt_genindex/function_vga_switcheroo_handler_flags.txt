@@ -1,0 +1,10 @@
+Function: enum vga_switcheroo_handler_flags_t vga_switcheroo_handler_flags ( void )
+
+obtain handler flags
+
+Parameters
+  void
+    no arguments
+
+Description
+  Helper for clients to obtain the handler flags bitmask.

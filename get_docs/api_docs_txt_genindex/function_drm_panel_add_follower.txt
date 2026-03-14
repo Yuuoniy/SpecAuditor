@@ -1,0 +1,15 @@
+Function: int drm_panel_add_follower ( struct device * follower_dev , struct drm_panel_follower * follower )
+
+Register something to follow panel state.
+
+Parameters
+  struct device *follower_dev
+    The ‘ struct device ’ for the follower.
+  struct drm_panel_follower *follower
+    The panel follower descriptor for the follower.
+
+Description
+  A panel follower is called right after preparing/enabling the panel and right
+before unpreparing/disabling the panel. It’s primary intention is to power on
+an associated touchscreen, though it could be used for any similar devices.
+Multiple devices are allowed the follow the same panel.

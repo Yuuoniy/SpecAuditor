@@ -1,0 +1,7 @@
+Function: enum can_state ctucan_read_fault_state ( struct ctucan_priv * priv )
+
+Reads CTU CAN FDs fault confinement state.
+
+Parameters
+  struct ctucan_priv *priv
+    Pointer to private data

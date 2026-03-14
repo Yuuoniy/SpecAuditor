@@ -1,0 +1,11 @@
+Function: struct vm_area_struct * find_vma_intersection ( struct mm_struct * mm , unsigned long start_addr , unsigned long end_addr )
+
+Look up the first VMA which intersects the interval
+
+Parameters
+  struct mm_struct *mm
+    The process address space.
+  unsigned long start_addr
+    The inclusive start user address.
+  unsigned long end_addr
+    The exclusive end user address.

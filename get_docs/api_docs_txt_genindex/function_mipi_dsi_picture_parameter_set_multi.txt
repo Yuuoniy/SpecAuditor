@@ -1,0 +1,13 @@
+Function: void mipi_dsi_picture_parameter_set_multi ( struct mipi_dsi_multi_context * ctx , const struct drm_dsc_picture_parameter_set * pps )
+
+transmit the DSC PPS to the peripheral
+
+Parameters
+  struct mipi_dsi_multi_context *ctx
+    Context for multiple DSI transactions
+  const struct drm_dsc_picture_parameter_set *pps
+    VESA DSC 1.1 Picture Parameter Set
+
+Description
+  Like mipi_dsi_picture_parameter_set() but deals with errors in a way that
+makes it convenient to make several calls in a row.

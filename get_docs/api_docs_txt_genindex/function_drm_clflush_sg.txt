@@ -1,0 +1,11 @@
+Function: void drm_clflush_sg ( struct sg_table * st )
+
+Flush dcache lines pointing to a scather-gather.
+
+Parameters
+  struct sg_table *st
+    struct sg_table .
+
+Description
+  Flush every data cache line entry that points to an address in the
+sg.

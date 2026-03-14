@@ -1,0 +1,14 @@
+Macro: KUNIT_ASSERT_FALSE
+
+
+
+Parameters
+  test
+    The test context object.
+  condition
+    an arbitrary boolean expression.
+
+Description
+  Sets an assertion that the value that condition evaluates to is false. This
+is the same as KUNIT_EXPECT_FALSE() , except it causes an assertion failure
+(see KUNIT_ASSERT_TRUE() ) when the assertion is not met.

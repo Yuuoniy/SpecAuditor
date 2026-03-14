@@ -1,0 +1,11 @@
+Function: bool amdgpu_bo_is_amdgpu_bo ( struct ttm_buffer_object * bo )
+
+check if the buffer object is an amdgpu_bo
+
+Parameters
+  struct ttm_buffer_object *bo
+    buffer object to be checked
+
+Description
+  Uses destroy function associated with the object to determine if this is
+an amdgpu_bo .

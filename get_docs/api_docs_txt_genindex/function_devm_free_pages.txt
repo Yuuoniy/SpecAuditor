@@ -1,0 +1,13 @@
+Function: void devm_free_pages ( struct device * dev , unsigned long addr )
+
+Resource-managed free_pages
+
+Parameters
+  struct device *dev
+    Device this memory belongs to
+  unsigned long addr
+    Memory to free
+
+Description
+  Free memory allocated with devm_get_free_pages() . Unlike free_pages,
+there is no need to supply the order .

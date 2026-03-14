@@ -1,0 +1,16 @@
+Function: int ata_mselect_caching ( struct ata_queued_cmd * qc , const u8 * buf , int len , u16 * fp )
+
+Simulate MODE SELECT for caching info page
+
+Parameters
+  struct ata_queued_cmd *qc
+    Storage for translated ATA taskfile
+  const u8 *buf
+    input buffer
+  int len
+    number of valid bytes in the input buffer
+  u16 *fp
+    out parameter for the failed field on error
+
+Description
+  Prepare a taskfile to modify caching information for the device.

@@ -1,0 +1,29 @@
+Function: struct cxl_decoder
+
+Common CXL HDM Decoder Attributes
+
+Members
+  dev
+    this decoder’s device
+  id
+    kernel device name id
+  hpa_range
+    Host physical address range mapped by this decoder
+  interleave_ways
+    number of cxl_dports in this decode
+  interleave_granularity
+    data stride per dport
+  target_type
+    accelerator vs expander (type2 vs type3) selector
+  region
+    currently assigned region for this decoder
+  flags
+    memory type capabilities and locking
+  target_map
+    cached copy of hardware port-id list, available at init
+before all dport objects have been instantiated. While
+dport id is 8bit, CFMWS interleave targets are 32bits.
+  commit
+    device/decoder-type specific callback to commit settings to hw
+  reset
+    device/decoder-type specific callback to reset hw settings

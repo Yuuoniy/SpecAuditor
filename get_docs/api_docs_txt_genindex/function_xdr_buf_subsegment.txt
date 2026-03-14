@@ -1,0 +1,17 @@
+Function: int xdr_buf_subsegment ( const struct xdr_buf * buf , struct xdr_buf * subbuf , unsigned int base , unsigned int len )
+
+set subbuf to a portion of buf
+
+Parameters
+  const struct xdr_buf *buf
+    an xdr buffer
+  struct xdr_buf *subbuf
+    the result buffer
+  unsigned int base
+    beginning of range in bytes
+  unsigned int len
+    length of range in bytes
+
+Description
+  sets subbuf to an xdr buffer representing the portion of buf of
+length len starting at offset base .

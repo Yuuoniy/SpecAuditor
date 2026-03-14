@@ -1,0 +1,9 @@
+Struct: struct pisp_be_false_colour_config
+
+PiSP Back End False Colour config
+
+Members
+  distance
+    Distance of neighbouring pixels, either 1 or 2
+  pad
+    Padding bytes

@@ -1,0 +1,11 @@
+Function: void dwc3_gadget_clear_tx_fifos ( struct dwc3 * dwc )
+
+Clears txfifo allocation
+
+Parameters
+  struct dwc3 *dwc
+    pointer to the DWC3 context
+
+Description
+  Iterates through all the endpoint registers and clears the previous txfifo
+allocations.

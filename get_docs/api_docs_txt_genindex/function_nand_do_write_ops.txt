@@ -1,0 +1,14 @@
+Function: int nand_do_write_ops ( struct nand_chip * chip , loff_t to , struct mtd_oob_ops * ops )
+
+[INTERN] NAND write with ECC
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+  loff_t to
+    offset to write to
+  struct mtd_oob_ops *ops
+    oob operations description structure
+
+Description
+  NAND write with ECC.

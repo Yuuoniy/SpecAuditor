@@ -1,0 +1,15 @@
+Function: int rxrpc_sock_set_manage_response ( struct sock * sk , bool set )
+
+Set the manage-response flag for a kernel service
+
+Parameters
+  struct sock *sk
+    The socket to set the keyring on
+  bool set
+    True to set, false to clear the flag
+
+Description
+  Set the flag on an rxrpc socket to say that the caller wants to manage the
+RESPONSE packet and the user-defined data it may contain.  Setting this
+means that recvmsg() will return messages with RXRPC_CHALLENGED in the
+control message buffer containing information about the challenge.

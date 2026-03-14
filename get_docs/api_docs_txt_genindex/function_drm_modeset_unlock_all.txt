@@ -1,0 +1,10 @@
+Function: void drm_modeset_unlock_all ( struct drm_device * dev )
+
+drop all modeset locks
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  This function drops all modeset locks taken by a previous call to the drm_modeset_lock_all() function.

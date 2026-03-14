@@ -1,0 +1,11 @@
+Function: void init_completion ( struct completion * x )
+
+Initialize a dynamically allocated completion
+
+Parameters
+  struct completion *x
+    pointer to completion structure that is to be initialized
+
+Description
+  This inline function will initialize a dynamically created completion
+structure.

@@ -1,0 +1,7 @@
+Function: struct snd_soc_component * snd_soc_kcontrol_component ( struct snd_kcontrol * kcontrol )
+
+Returns the component that registered the control
+
+Parameters
+  struct snd_kcontrol *kcontrol
+    The control for which to get the component

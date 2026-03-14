@@ -1,0 +1,12 @@
+Function: int snd_soc_add_pcm_runtime ( struct snd_soc_card * card , struct snd_soc_dai_link * dai_link )
+
+Add a pcm_runtime dynamically via dai_link
+
+Parameters
+  struct snd_soc_card *card
+    The ASoC card to which the pcm_runtime is added
+  struct snd_soc_dai_link *dai_link
+    The DAI link to find pcm_runtime
+
+Description
+  This function adds a pcm_runtime ASoC card by using dai_link.

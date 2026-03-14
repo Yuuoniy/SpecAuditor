@@ -1,0 +1,14 @@
+Function: int platform_get_irq_optional ( struct platform_device * dev , unsigned int num )
+
+get an optional IRQ for a device
+
+Parameters
+  struct platform_device *dev
+    platform device
+  unsigned int num
+    IRQ number index
+
+Description
+  Gets an IRQ for a platform device. Device drivers should check the return
+value for errors so as to not pass a negative integer value to the request_irq() APIs. This is the same as platform_get_irq() , except that it
+does not print an error message if an IRQ can not be obtained.

@@ -1,0 +1,11 @@
+Function: void srp_start_tl_fail_timers ( struct srp_rport * rport )
+
+start the transport layer failure timers
+
+Parameters
+  struct srp_rport *rport
+    SRP target port.
+
+Description
+  Start the transport layer fast I/O failure and device loss timers. Do not
+modify a timer that was already started.

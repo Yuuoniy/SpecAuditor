@@ -1,0 +1,13 @@
+Function: void ssh_rtl_destroy ( struct ssh_rtl * rtl )
+
+Deinitialize request transport layer.
+
+Parameters
+  struct ssh_rtl *rtl
+    The request transport layer to deinitialize.
+
+Description
+  Deinitializes the given request transport layer and frees resources
+associated with it. If receiver and/or transmitter threads have been
+started, the layer must first be shut down via ssh_rtl_shutdown() before
+this function can be called.

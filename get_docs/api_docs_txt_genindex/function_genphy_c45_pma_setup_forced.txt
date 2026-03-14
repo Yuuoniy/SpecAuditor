@@ -1,0 +1,7 @@
+Function: int genphy_c45_pma_setup_forced ( struct phy_device * phydev )
+
+configures a forced speed
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct

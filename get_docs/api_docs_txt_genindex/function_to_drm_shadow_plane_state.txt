@@ -1,0 +1,7 @@
+Function: struct drm_shadow_plane_state * to_drm_shadow_plane_state ( struct drm_plane_state * state )
+
+upcasts from struct drm_plane_state
+
+Parameters
+  struct drm_plane_state *state
+    the plane state

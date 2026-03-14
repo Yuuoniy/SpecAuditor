@@ -1,0 +1,10 @@
+Function: void raw_atomic_dec ( atomic_t * v )
+
+atomic decrement with relaxed ordering
+
+Parameters
+  atomic_t *v
+    pointer to atomic_t
+
+Description
+  Atomically updates v to ( v - 1) with relaxed ordering.

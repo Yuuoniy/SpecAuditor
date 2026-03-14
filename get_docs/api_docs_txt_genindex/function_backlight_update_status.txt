@@ -1,0 +1,7 @@
+Function: int backlight_update_status ( struct backlight_device * bd )
+
+force an update of the backlight device status
+
+Parameters
+  struct backlight_device *bd
+    the backlight device

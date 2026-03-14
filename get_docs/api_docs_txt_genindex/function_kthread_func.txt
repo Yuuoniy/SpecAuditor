@@ -1,0 +1,10 @@
+Function: void * kthread_func ( struct task_struct * task )
+
+return the function specified on kthread creation
+
+Parameters
+  struct task_struct *task
+    kthread task in question
+
+Description
+  Returns NULL if the task is not a kthread.

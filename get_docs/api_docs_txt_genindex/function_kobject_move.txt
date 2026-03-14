@@ -1,0 +1,9 @@
+Function: int kobject_move ( struct kobject * kobj , struct kobject * new_parent )
+
+Move object to another parent.
+
+Parameters
+  struct kobject *kobj
+    object in question.
+  struct kobject *new_parent
+    object’s new parent (can be NULL)

@@ -1,0 +1,13 @@
+Macro: pr_crit
+
+
+
+Parameters
+  fmt
+    format string
+  ...
+    arguments for the format string
+
+Description
+  This macro expands to a printk with KERN_CRIT loglevel. It uses pr_fmt() to
+generate the format string.

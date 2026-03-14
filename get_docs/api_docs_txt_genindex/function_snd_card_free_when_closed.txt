@@ -1,0 +1,13 @@
+Function: void snd_card_free_when_closed ( struct snd_card * card )
+
+Disconnect the card, free it later eventually
+
+Parameters
+  struct snd_card *card
+    soundcard structure
+
+Description
+  Unlike snd_card_free() , this function doesn’t try to release the card
+resource immediately, but tries to disconnect at first.  When the card
+is still in use, the function returns before freeing the resources.
+The card resources will be freed when the refcount gets to zero.

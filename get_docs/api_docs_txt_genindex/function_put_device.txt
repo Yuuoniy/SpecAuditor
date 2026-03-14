@@ -1,0 +1,7 @@
+Function: void put_device ( struct device * dev )
+
+decrement reference count.
+
+Parameters
+  struct device *dev
+    device in question.

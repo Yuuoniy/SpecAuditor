@@ -1,0 +1,7 @@
+Function: struct drm_printer drm_info_printer ( struct device * dev )
+
+construct a drm_printer that outputs to dev_printk()
+
+Parameters
+  struct device *dev
+    the struct device pointer

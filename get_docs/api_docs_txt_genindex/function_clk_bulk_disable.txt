@@ -1,0 +1,13 @@
+Function: void clk_bulk_disable ( int num_clks , const struct clk_bulk_data * clks )
+
+inform the system when the set of clks is no longer required.
+
+Parameters
+  int num_clks
+    the number of clk_bulk_data
+  const struct clk_bulk_data *clks
+    the clk_bulk_data table of consumer
+
+Description
+  Inform the system that a set of clks is no longer required by
+a driver and may be shut down.

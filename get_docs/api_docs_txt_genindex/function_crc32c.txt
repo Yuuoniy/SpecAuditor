@@ -1,0 +1,16 @@
+Function: u32 crc32c ( u32 crc , const void * p , size_t len )
+
+Compute CRC-32C
+
+Parameters
+  u32 crc
+    Initial CRC value.  ~0 (recommended) or 0 for a new CRC computation, or
+the previous CRC value if computing incrementally.
+  const void *p
+    Pointer to the data buffer
+  size_t len
+    Length of data in bytes
+
+Description
+  This implements CRC-32C, i.e. the Castagnoli CRC.  This is the recommended
+CRC variant to use in new applications that want a 32-bit CRC.

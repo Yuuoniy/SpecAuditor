@@ -1,0 +1,17 @@
+Struct: struct w1_reg_num
+
+broken out slave device id
+
+Members
+  family
+    identifies the type of device
+  id
+    along with family is the unique device id
+  crc
+    checksum of the other bytes
+  crc
+    checksum of the other bytes
+  id
+    along with family is the unique device id
+  family
+    identifies the type of device

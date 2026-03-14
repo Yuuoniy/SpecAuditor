@@ -1,0 +1,9 @@
+Struct: struct drm_pvr_hwrt_data_ref
+
+Reference HWRT data
+
+Members
+  set_handle
+    HWRT data set handle.
+  data_index
+    Index of the HWRT data inside the data set.

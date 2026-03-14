@@ -1,0 +1,41 @@
+Struct: struct rio_ops
+
+Low-level RIO configuration space operations
+
+Members
+  lcread
+    Callback to perform local (master port) read of config space.
+  lcwrite
+    Callback to perform local (master port) write of config space.
+  cread
+    Callback to perform network read of config space.
+  cwrite
+    Callback to perform network write of config space.
+  dsend
+    Callback to send a doorbell message.
+  pwenable
+    Callback to enable/disable port-write message handling.
+  open_outb_mbox
+    Callback to initialize outbound mailbox.
+  close_outb_mbox
+    Callback to shut down outbound mailbox.
+  open_inb_mbox
+    Callback to initialize inbound mailbox.
+  close_inb_mbox
+    Callback to shut down inbound mailbox.
+  add_outb_message
+    Callback to add a message to an outbound mailbox queue.
+  add_inb_buffer
+    Callback to add a buffer to an inbound mailbox queue.
+  get_inb_message
+    Callback to get a message from an inbound mailbox queue.
+  map_inb
+    Callback to map RapidIO address region into local memory space.
+  unmap_inb
+    Callback to unmap RapidIO address region mapped with map_inb() .
+  query_mport
+    Callback to query mport device attributes.
+  map_outb
+    Callback to map outbound address region into local memory space.
+  unmap_outb
+    Callback to unmap outbound RapidIO address region.

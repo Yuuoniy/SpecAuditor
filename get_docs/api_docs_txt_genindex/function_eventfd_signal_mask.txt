@@ -1,0 +1,15 @@
+Function: void eventfd_signal_mask ( struct eventfd_ctx * ctx , __poll_t mask )
+
+Increment the event counter
+
+Parameters
+  struct eventfd_ctx *ctx
+    [in] Pointer to the eventfd context.
+  __poll_t mask
+    [in] poll mask
+
+Description
+  This function is supposed to be called by the kernel in paths that do not
+allow sleeping. In this function we allow the counter to reach the ULLONG_MAX
+value, and we signal this as overflow condition by returning a EPOLLERR
+to poll(2).

@@ -1,0 +1,19 @@
+Function: int rio_request_inb_mbox ( struct rio_mport * mport , void * dev_id , int mbox , int entries , void ( * minb ) ( struct rio_mport * mport , void * dev_id , int mbox , int slot ) )
+
+request inbound mailbox service
+
+Parameters
+  struct rio_mport *mport
+    RIO master port from which to allocate the mailbox resource
+  void *dev_id
+    Device specific pointer to pass on event
+  int mbox
+    Mailbox number to claim
+  int entries
+    Number of entries in inbound mailbox queue
+  void (*minb) (struct rio_mport * mport, void *dev_id, int mbox, int slot)
+    Callback to execute when inbound message is received
+
+Description
+  Requests ownership of an inbound mailbox resource and binds
+a callback function to the resource. Returns 0 on success.

@@ -1,0 +1,17 @@
+Function: int __platform_driver_probe ( struct platform_driver * drv , int ( * probe ) ( struct platform_device * ) , struct module * module )
+
+register driver for non-hotpluggable device
+
+Parameters
+  struct platform_driver *drv
+    platform driver structure
+  int (*probe)(struct platform_device *)
+    the driver probe routine, probably from an __init section
+  struct module *module
+    module which will be the owner of the driver
+
+Description
+  Use this instead of platform_driver_register() when you know the device
+is not hotpluggable and has already been registered, and you want to
+remove its run-once probe() infrastructure from memory after the driver
+has bound to the device.

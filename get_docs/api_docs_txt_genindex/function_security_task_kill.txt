@@ -1,0 +1,20 @@
+Function: int security_task_kill ( struct task_struct * p , struct kernel_siginfo * info , int sig , const struct cred * cred )
+
+Check if sending a signal is allowed
+
+Parameters
+  struct task_struct *p
+    target process
+  struct kernel_siginfo *info
+    signal information
+  int sig
+    signal value
+  const struct cred *cred
+    credentials of the signal sender, NULL if current
+
+Description
+  Check permission before sending signal sig to p . info can be NULL, the
+constant 1, or a pointer to a kernel_siginfo structure.  If info is 1 or
+SI_FROMKERNEL(info) is true, then the signal should be viewed as coming from
+the kernel and should typically be permitted.  SIGIO signals are handled
+separately by the send_sigiotask hook in file_security_ops.

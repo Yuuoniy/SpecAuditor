@@ -1,0 +1,11 @@
+Function: struct dvb_frontend * stb6000_attach ( struct dvb_frontend * fe , int addr , struct i2c_adapter * i2c )
+
+Attach a stb6000 tuner to the supplied frontend structure.
+
+Parameters
+  struct dvb_frontend *fe
+    Frontend to attach to.
+  int addr
+    i2c address of the tuner.
+  struct i2c_adapter *i2c
+    i2c adapter to use.

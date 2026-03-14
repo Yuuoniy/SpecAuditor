@@ -1,0 +1,9 @@
+Struct: struct i915_audio_component
+
+Used for direct communication between i915 and hda drivers
+
+Members
+  base
+    the drm_audio_component base class
+  aud_sample_rate
+    the array of audio sample rate per port

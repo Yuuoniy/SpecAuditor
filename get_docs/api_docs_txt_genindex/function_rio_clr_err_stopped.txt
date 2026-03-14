@@ -1,0 +1,19 @@
+Function: int rio_clr_err_stopped ( struct rio_dev * rdev , u32 pnum , u32 err_status )
+
+Clears port Error-stopped states.
+
+Parameters
+  struct rio_dev *rdev
+    Pointer to RIO device control structure
+  u32 pnum
+    Switch port number to clear errors
+  u32 err_status
+    port error status (if 0 reads register from device)
+
+Description
+  TODO: Currently this routine is not compatible with recovery process
+specified for idt_gen3 RapidIO switch devices. It has to be reviewed
+to implement universal recovery process that is compatible full range
+off available devices.
+IDT gen3 switch driver now implements HW-specific error handler that
+issues soft port reset to the port to reset ERR_STOP bits and ackIDs.

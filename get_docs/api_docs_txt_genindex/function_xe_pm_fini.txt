@@ -1,0 +1,7 @@
+Function: void xe_pm_fini ( struct xe_device * xe )
+
+Finalize PM
+
+Parameters
+  struct xe_device *xe
+    xe device instance

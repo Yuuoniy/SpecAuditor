@@ -1,0 +1,7 @@
+Function: bool drm_format_info_is_yuv_packed ( const struct drm_format_info * info )
+
+check that the format info matches a YUV format with data laid in a single plane
+
+Parameters
+  const struct drm_format_info *info
+    format info

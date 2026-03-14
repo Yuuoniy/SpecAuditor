@@ -1,0 +1,11 @@
+Function: void cdev_del ( struct cdev * p )
+
+remove a cdev from the system
+
+Parameters
+  struct cdev *p
+    the cdev structure to be removed
+
+Description
+  cdev_del() removes p from the system, possibly freeing the structure
+itself.

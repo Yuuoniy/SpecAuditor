@@ -1,0 +1,12 @@
+Function: void change_bit ( long nr , volatile unsigned long * addr )
+
+Toggle a bit in memory
+
+Parameters
+  long nr
+    Bit to change
+  volatile unsigned long *addr
+    Address to start counting from
+
+Description
+  This is a relaxed atomic operation (no implied memory barriers).

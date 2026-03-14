@@ -1,0 +1,13 @@
+Function: void mipi_dbi_pipe_update ( struct drm_simple_display_pipe * pipe , struct drm_plane_state * old_state )
+
+Display pipe update helper
+
+Parameters
+  struct drm_simple_display_pipe *pipe
+    Simple display pipe
+  struct drm_plane_state *old_state
+    Old plane state
+
+Description
+  This function handles framebuffer flushing and vblank events. Drivers can use
+this as their drm_simple_display_pipe_funcs->update callback.

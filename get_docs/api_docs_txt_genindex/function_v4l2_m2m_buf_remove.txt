@@ -1,0 +1,7 @@
+Function: struct vb2_v4l2_buffer * v4l2_m2m_buf_remove ( struct v4l2_m2m_queue_ctx * q_ctx )
+
+take off a buffer from the list of ready buffers and return it
+
+Parameters
+  struct v4l2_m2m_queue_ctx *q_ctx
+    pointer to struct v4l2_m2m_queue_ctx

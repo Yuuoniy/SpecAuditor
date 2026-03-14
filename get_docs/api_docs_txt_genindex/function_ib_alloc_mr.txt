@@ -1,0 +1,11 @@
+Function: struct ib_mr * ib_alloc_mr ( struct ib_pd * pd , enum ib_mr_type mr_type , u32 max_num_sg )
+
+Allocates a memory region
+
+Parameters
+  struct ib_pd *pd
+    protection domain associated with the region
+  enum ib_mr_type mr_type
+    memory region type
+  u32 max_num_sg
+    maximum sg entries available for registration.

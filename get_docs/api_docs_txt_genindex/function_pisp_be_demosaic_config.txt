@@ -1,0 +1,11 @@
+Function: struct pisp_be_demosaic_config
+
+PiSP Back End Demosaic config
+
+Members
+  sharper
+    Use other Bayer channels to increase sharpness
+  fc_mode
+    Built-in false colour suppression mode
+  pad
+    Padding bytes

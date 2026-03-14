@@ -1,0 +1,7 @@
+Function: unsigned int crypto_aead_reqsize ( struct crypto_aead * tfm )
+
+obtain size of the request data structure
+
+Parameters
+  struct crypto_aead *tfm
+    cipher handle

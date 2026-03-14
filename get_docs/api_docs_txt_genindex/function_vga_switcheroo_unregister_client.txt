@@ -1,0 +1,10 @@
+Function: void vga_switcheroo_unregister_client ( struct pci_dev * pdev )
+
+unregister client
+
+Parameters
+  struct pci_dev *pdev
+    client pci device
+
+Description
+  Unregister client. Disable vga_switcheroo if this is a vga client (GPU).

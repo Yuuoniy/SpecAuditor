@@ -1,0 +1,10 @@
+Function: struct w1_async_cmd
+
+execute callback from the w1_process kthread
+
+Members
+  async_entry
+    link entry
+  cb
+    callback function, must list_del and destroy this list before
+returning

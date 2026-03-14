@@ -1,0 +1,11 @@
+Function: void dev_add_pack ( struct packet_type * pt )
+
+add packet handler
+
+Parameters
+  struct packet_type *pt
+    packet type declaration
+
+Description
+  Add a protocol handler to the networking stack. The passed packet_type is linked into kernel lists and may not be freed until it has been
+removed from the kernel lists.

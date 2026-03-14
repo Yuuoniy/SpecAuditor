@@ -1,0 +1,15 @@
+Function: void __iomem * pcim_iomap_region ( struct pci_dev * pdev , int bar , const char * name )
+
+Request and iomap a PCI BAR
+
+Parameters
+  struct pci_dev *pdev
+    PCI device to map IO resources for
+  int bar
+    Index of a BAR to map
+  const char *name
+    Name of the driver requesting the resource
+
+Description
+  Mapping and region will get automatically released on driver detach. If
+desired, release manually only with pcim_iounmap_region() .

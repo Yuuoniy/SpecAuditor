@@ -1,0 +1,12 @@
+Struct: void drm_fb_helper_release_info ( struct drm_fb_helper * fb_helper )
+
+release fb_info and its members
+
+Parameters
+  struct drm_fb_helper *fb_helper
+    driver-allocated fbdev helper
+
+Description
+  A helper to release fb_info and the member cmap.  Drivers do not
+need to release the allocated fb_info structure themselves, this is
+automatically done when calling drm_fb_helper_fini() .

@@ -1,0 +1,16 @@
+Function: int futex_wait_multiple ( struct futex_vector * vs , unsigned int count , struct hrtimer_sleeper * to )
+
+Prepare to wait on and enqueue several futexes
+
+Parameters
+  struct futex_vector *vs
+    The list of futexes to wait on
+  unsigned int count
+    The number of objects
+  struct hrtimer_sleeper *to
+    Timeout before giving up and returning to userspace
+
+Description
+  Entry point for the FUTEX_WAIT_MULTIPLE futex operation, this function
+sleeps on a group of futexes and returns on the first futex that is
+wake, or after the timeout has elapsed.

@@ -1,0 +1,18 @@
+Function: int snd_device_new ( struct snd_card * card , enum snd_device_type type , void * device_data , const struct snd_device_ops * ops )
+
+create an ALSA device component
+
+Parameters
+  struct snd_card *card
+    the card instance
+  enum snd_device_type type
+    the device type, SNDRV_DEV_XXX
+  void *device_data
+    the data pointer of this device
+  const struct snd_device_ops *ops
+    the operator table
+
+Description
+  Creates a new device component for the given data pointer.
+The device will be assigned to the card and managed together
+by the card.

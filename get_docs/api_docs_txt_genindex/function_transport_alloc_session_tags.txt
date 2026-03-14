@@ -1,0 +1,12 @@
+Function: int transport_alloc_session_tags ( struct se_session * se_sess , unsigned int tag_num , unsigned int tag_size )
+
+allocate target driver private data
+
+Parameters
+  struct se_session *se_sess
+    Session pointer.
+  unsigned int tag_num
+    Maximum number of in-flight commands between initiator and target.
+  unsigned int tag_size
+    Size in bytes of the private data a target driver associates with
+each command.

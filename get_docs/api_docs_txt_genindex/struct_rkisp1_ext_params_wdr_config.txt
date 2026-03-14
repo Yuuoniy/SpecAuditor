@@ -1,0 +1,9 @@
+Struct: struct rkisp1_ext_params_wdr_config
+
+RkISP1 extensible params Wide dynamic range config
+
+Members
+  header
+    The RkISP1 extensible parameters header, see rkisp1_ext_params_block_header
+  config
+    WDR configuration, see rkisp1_cif_isp_wdr_config

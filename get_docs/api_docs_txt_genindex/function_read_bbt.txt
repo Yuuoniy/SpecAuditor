@@ -1,0 +1,20 @@
+Function: int read_bbt ( struct nand_chip * this , uint8_t * buf , int page , int num , struct nand_bbt_descr * td , int offs )
+
+[GENERIC] Read the bad block table starting from page
+
+Parameters
+  struct nand_chip *this
+    NAND chip object
+  uint8_t *buf
+    temporary buffer
+  int page
+    the starting page
+  int num
+    the number of bbt descriptors to read
+  struct nand_bbt_descr *td
+    the bbt describtion table
+  int offs
+    block number offset in the table
+
+Description
+  Read the bad block table starting from page.

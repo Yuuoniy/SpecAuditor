@@ -1,0 +1,11 @@
+Function: struct publication * tipc_publ_create ( struct tipc_uaddr * ua , struct tipc_socket_addr * sk , u32 key )
+
+create a publication structure
+
+Parameters
+  struct tipc_uaddr *ua
+    the service range the user is binding to
+  struct tipc_socket_addr *sk
+    the address of the socket that is bound
+  u32 key
+    publication key

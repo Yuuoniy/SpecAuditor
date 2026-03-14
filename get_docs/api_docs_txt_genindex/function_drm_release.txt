@@ -1,0 +1,14 @@
+Function: int drm_release ( struct inode * inode , struct file * filp )
+
+release method for DRM file
+
+Parameters
+  struct inode *inode
+    device inode
+  struct file *filp
+    file pointer.
+
+Description
+  This function must be used by drivers as their file_operations.release method. It frees any resources associated with the open file. If this
+is the last open file for the DRM device, it also restores the active
+in-kernel DRM client.

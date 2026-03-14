@@ -1,0 +1,10 @@
+Function: bool disable_delayed_work_sync ( struct delayed_work * dwork )
+
+Disable, cancel and drain a delayed work item
+
+Parameters
+  struct delayed_work *dwork
+    delayed work item to disable
+
+Description
+  disable_work_sync() for delayed work items.

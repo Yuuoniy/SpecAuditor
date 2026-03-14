@@ -1,0 +1,10 @@
+Function: struct drm_bridge * drm_bridge_get ( struct drm_bridge * bridge )
+
+Acquire a bridge reference
+
+Parameters
+  struct drm_bridge *bridge
+    DRM bridge
+
+Description
+  This function increments the bridge’s refcount.

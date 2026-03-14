@@ -1,0 +1,11 @@
+Struct: struct drm_gem_open
+
+Argument for DRM_IOCTL_GEM_OPEN ioctl.
+
+Members
+  name
+    Name of object being opened.
+  handle
+    Returned handle for the object.
+  size
+    Returned size of the object

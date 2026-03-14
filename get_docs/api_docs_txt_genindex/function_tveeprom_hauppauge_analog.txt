@@ -1,0 +1,11 @@
+Function: void tveeprom_hauppauge_analog ( struct tveeprom * tvee , unsigned char * eeprom_data )
+
+Fill struct tveeprom using the contents of the eeprom previously filled at eeprom_data field.
+
+Parameters
+  struct tveeprom *tvee
+    Struct to where the eeprom parsed data will be filled;
+  unsigned char *eeprom_data
+    Array with the contents of the eeprom_data. It should
+contain 256 bytes filled with the contents of the
+eeprom read from the Hauppauge device.

@@ -1,0 +1,10 @@
+Function: void zynqmp_dp_enable_vblank ( struct zynqmp_dp * dp )
+
+Enable vblank
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure
+
+Description
+  Enable vblank interrupt

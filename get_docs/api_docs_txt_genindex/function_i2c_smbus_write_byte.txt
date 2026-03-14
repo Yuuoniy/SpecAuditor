@@ -1,0 +1,13 @@
+Function: s32 i2c_smbus_write_byte ( const struct i2c_client * client , u8 value )
+
+SMBus “send byte” protocol
+
+Parameters
+  const struct i2c_client *client
+    Handle to slave device
+  u8 value
+    Byte to be sent
+
+Description
+  This executes the SMBus “send byte” protocol, returning negative errno
+else zero on success.

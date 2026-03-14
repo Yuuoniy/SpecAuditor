@@ -1,0 +1,9 @@
+Macro: STACK_FLEX_ARRAY_SIZE
+
+
+
+Parameters
+  name
+    Name for a variable defined in DEFINE_RAW_FLEX() / DEFINE_FLEX() .
+  array
+    Name of the array member.

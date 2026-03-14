@@ -1,0 +1,24 @@
+Struct: struct ipu3_uapi_bubble_info
+
+Bubble info for host side debugging
+
+Members
+  num_of_stripes
+    A single frame is divided into several parts called stripes
+due to limitation on line buffer memory.
+The separation between the stripes is vertical. Each such
+stripe is processed as a single frame by the ISP pipe.
+  padding
+    padding bytes.
+  num_sets
+    number of sets.
+  padding1
+    padding bytes.
+  size_of_set
+    set size.
+  padding2
+    padding bytes.
+  bubble_size
+    is the amount of padding in the bubble expressed in “sets”.
+  padding3
+    padding bytes.

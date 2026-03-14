@@ -1,0 +1,13 @@
+Function: bool scsi_cmd_allowed ( unsigned char * cmd , bool open_for_write )
+
+Check if the given command is allowed.
+
+Parameters
+  unsigned char *cmd
+    SCSI command to check
+  bool open_for_write
+    is the file / block device opened for writing?
+
+Description
+  Only a subset of commands are allowed for unprivileged users. Commands used
+to format the media, update the firmware, etc. are not permitted.

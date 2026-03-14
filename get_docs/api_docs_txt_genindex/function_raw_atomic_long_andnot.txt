@@ -1,0 +1,12 @@
+Function: void raw_atomic_long_andnot ( long i , atomic_long_t * v )
+
+atomic bitwise AND NOT with relaxed ordering
+
+Parameters
+  long i
+    long value
+  atomic_long_t *v
+    pointer to atomic_long_t
+
+Description
+  Atomically updates v to ( v & ~i ) with relaxed ordering.

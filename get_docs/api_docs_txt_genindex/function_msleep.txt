@@ -1,0 +1,14 @@
+Function: void msleep ( unsigned int msecs )
+
+sleep safely even with waitqueue interruptions
+
+Parameters
+  unsigned int msecs
+    Requested sleep duration in milliseconds
+
+Description
+  msleep() uses jiffy based timeouts for the sleep duration. Because of the
+design of the timer wheel, the maximum additional percentage delay (slack) is
+12.5%. This is only valid for timers which will end up in level 1 or a higher
+level of the timer wheel. For explanation of those 12.5% please check the
+detailed description about the basics of the timer wheel.

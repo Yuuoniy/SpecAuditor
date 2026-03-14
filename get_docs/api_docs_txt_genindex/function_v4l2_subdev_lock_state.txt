@@ -1,0 +1,10 @@
+Function: void v4l2_subdev_lock_state ( struct v4l2_subdev_state * state )
+
+Locks the subdev state
+
+Parameters
+  struct v4l2_subdev_state *state
+    The subdevice state
+
+Description
+  Locks the given subdev state.

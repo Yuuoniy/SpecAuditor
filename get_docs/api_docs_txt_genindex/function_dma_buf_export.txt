@@ -1,0 +1,14 @@
+Function: struct dma_buf * dma_buf_export ( const struct dma_buf_export_info * exp_info )
+
+Creates a new dma_buf, and associates an anon file with this buffer, so it can be exported. Also connect the allocator specific data and ops to the buffer. Additionally, provide a name string for exporter; useful in debugging.
+
+Parameters
+  const struct dma_buf_export_info *exp_info
+    [in]    holds all the export related information provided
+by the exporter. see struct dma_buf_export_info for further details.
+
+Description
+  Returns, on success, a newly created struct dma_buf object, which wraps the
+supplied private data and operations for struct dma_buf_ops . On either
+missing ops, or error in allocating struct dma_buf , will return negative
+error.

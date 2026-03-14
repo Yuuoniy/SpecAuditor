@@ -1,0 +1,15 @@
+Function: int vfs_path_lookup ( struct dentry * dentry , struct vfsmount * mnt , const char * name , unsigned int flags , struct path * path )
+
+lookup a file path relative to a dentry-vfsmount pair
+
+Parameters
+  struct dentry *dentry
+    pointer to dentry of the base directory
+  struct vfsmount *mnt
+    pointer to vfs mount of the base directory
+  const char *name
+    pointer to file name
+  unsigned int flags
+    lookup flags
+  struct path *path
+    pointer to struct path to fill

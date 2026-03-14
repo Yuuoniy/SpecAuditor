@@ -1,0 +1,12 @@
+Function: int enable_cmf ( struct ccw_device * cdev )
+
+switch on the channel measurement for a specific device
+
+Parameters
+  struct ccw_device *cdev
+    The ccw device to be enabled
+
+Description
+  Enable channel measurements for cdev . If this is called on a device
+for which channel measurement is already enabled a reset of the
+measurement data is triggered.

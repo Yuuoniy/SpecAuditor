@@ -1,0 +1,19 @@
+Struct: struct header_write_args
+
+Arguments in order to write the common table header
+
+Members
+  dest_buf
+    The buffer to write into.
+  dest_offset
+    where to start writing in the dest_buffer.
+  h
+    a pointer to the header.
+  pid
+    TS packet ID.
+  continuity_counter
+    Incremented on every new packet.
+  dest_buf_sz
+    The size of the dest_buffer
+  crc
+    a pointer to store the crc for this chunk

@@ -1,0 +1,15 @@
+Function: int drm_dp_aux_register ( struct drm_dp_aux * aux )
+
+initialise and register aux channel
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+
+Description
+  Automatically calls drm_dp_aux_init() if this hasn’t been done yet. This
+should only be called once the parent of aux , drm_dp_aux.dev , is
+initialized. For devices which are grandparents of their AUX channels, drm_dp_aux.dev will typically be the drm_connector device which
+corresponds to aux . For these devices, it’s advised to call drm_dp_aux_register() in drm_connector_funcs.late_register , and likewise to
+call drm_dp_aux_unregister() in drm_connector_funcs.early_unregister .
+Functions which don’t follow this will likely Oops when CONFIG_DRM_DISPLAY_DP_AUX_CHARDEV is enabled.

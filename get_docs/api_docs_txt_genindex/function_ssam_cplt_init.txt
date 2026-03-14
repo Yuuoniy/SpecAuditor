@@ -1,0 +1,9 @@
+Function: int ssam_cplt_init ( struct ssam_cplt * cplt , struct device * dev )
+
+Initialize completion system.
+
+Parameters
+  struct ssam_cplt *cplt
+    The completion system to initialize.
+  struct device *dev
+    The device used for logging.

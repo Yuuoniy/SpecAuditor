@@ -1,0 +1,11 @@
+Function: struct em_perf_domain * em_cpu_get ( int cpu )
+
+Return the performance domain for a CPU
+
+Parameters
+  int cpu
+    CPU to find the performance domain for
+
+Description
+  Returns the performance domain to which cpu belongs, or NULL if it doesn’t
+exist.

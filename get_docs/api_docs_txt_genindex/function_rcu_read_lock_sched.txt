@@ -1,0 +1,14 @@
+Function: void rcu_read_lock_sched ( void )
+
+mark the beginning of a RCU-sched critical section
+
+Parameters
+  void
+    no arguments
+
+Description
+  This is equivalent to rcu_read_lock() , but also disables preemption.
+Read-side critical sections can also be introduced by anything else that
+disables preemption, including local_irq_disable() and friends.  However,
+please note that the equivalence to rcu_read_lock() applies only to
+v5.0 and later.  Before v5.0, rcu_read_lock() and rcu_read_lock_sched() were unrelated.

@@ -1,0 +1,16 @@
+Function: void search_read_bbts ( struct nand_chip * this , uint8_t * buf , struct nand_bbt_descr * td , struct nand_bbt_descr * md )
+
+[GENERIC] scan the device for bad block table(s)
+
+Parameters
+  struct nand_chip *this
+    NAND chip object
+  uint8_t *buf
+    temporary buffer
+  struct nand_bbt_descr *td
+    descriptor for the bad block table
+  struct nand_bbt_descr *md
+    descriptor for the bad block table mirror
+
+Description
+  Search and read the bad block table(s).

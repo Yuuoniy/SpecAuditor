@@ -1,0 +1,9 @@
+Struct: struct ipu3_uapi_gamma_config
+
+Gamma config
+
+Members
+  gc_ctrl
+    control of gamma correction ipu3_uapi_gamma_corr_ctrl
+  gc_lut
+    lookup table of gamma correction ipu3_uapi_gamma_corr_lut

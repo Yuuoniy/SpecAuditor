@@ -1,0 +1,14 @@
+Function: int security_file_post_open ( struct file * file , int mask )
+
+Evaluate a file after it has been opened
+
+Parameters
+  struct file *file
+    the file
+  int mask
+    access mask
+
+Description
+  Evaluate an opened file and the access mask requested with open(). The hook
+is useful for LSMs that require the file content to be available in order to
+make decisions.

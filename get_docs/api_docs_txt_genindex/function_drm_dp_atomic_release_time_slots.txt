@@ -1,0 +1,20 @@
+Function: int drm_dp_atomic_release_time_slots ( struct drm_atomic_state * state , struct drm_dp_mst_topology_mgr * mgr , struct drm_dp_mst_port * port )
+
+Release allocated time slots
+
+Parameters
+  struct drm_atomic_state *state
+    global atomic state
+  struct drm_dp_mst_topology_mgr *mgr
+    MST topology manager for the port
+  struct drm_dp_mst_port *port
+    The port to release the time slots from
+
+Description
+  Releases any time slots that have been allocated to a port in the atomic
+state. Any atomic drivers which support MST must call this function
+unconditionally in their drm_connector_helper_funcs.atomic_check() callback.
+This helper will check whether time slots would be released by the new state and
+respond accordingly, along with ensuring the MST state is always added to the
+atomic state whenever a new state would modify the state of payloads on the
+topology.

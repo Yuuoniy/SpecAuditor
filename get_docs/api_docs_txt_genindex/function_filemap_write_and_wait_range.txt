@@ -1,0 +1,14 @@
+Function: int filemap_write_and_wait_range ( struct address_space * mapping , loff_t lstart , loff_t lend )
+
+write out & wait on a file range
+
+Parameters
+  struct address_space *mapping
+    the address_space for the pages
+  loff_t lstart
+    offset in bytes where the range starts
+  loff_t lend
+    offset in bytes where the range ends (inclusive)
+
+Description
+  Write out and wait upon file offsets lstart->lend, inclusive.

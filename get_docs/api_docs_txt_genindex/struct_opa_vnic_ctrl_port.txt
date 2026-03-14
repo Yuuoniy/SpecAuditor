@@ -1,0 +1,11 @@
+Struct: struct opa_vnic_ctrl_port
+
+OPA virtual NIC control port
+
+Members
+  ibdev
+    pointer to ib device
+  ops
+    opa vnic control operations
+  num_ports
+    number of opa ports

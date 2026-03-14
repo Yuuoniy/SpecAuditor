@@ -1,0 +1,7 @@
+Function: int hlist_empty ( const struct hlist_head * h )
+
+Is the specified hlist_head structure an empty hlist?
+
+Parameters
+  const struct hlist_head *h
+    Structure to check.

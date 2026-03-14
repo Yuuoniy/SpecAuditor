@@ -1,0 +1,19 @@
+Function: int mas_alloc_cyclic ( struct ma_state * mas , unsigned long * startp , void * entry , unsigned long range_lo , unsigned long range_hi , unsigned long * next , gfp_t gfp )
+
+Internal call to find somewhere to store an entry
+
+Parameters
+  struct ma_state *mas
+    The maple state.
+  unsigned long *startp
+    Pointer to ID.
+  void *entry
+    The entry to store.
+  unsigned long range_lo
+    Lower bound of range to search.
+  unsigned long range_hi
+    Upper bound of range to search.
+  unsigned long *next
+    Pointer to next ID to allocate.
+  gfp_t gfp
+    The GFP_FLAGS to use for allocations.

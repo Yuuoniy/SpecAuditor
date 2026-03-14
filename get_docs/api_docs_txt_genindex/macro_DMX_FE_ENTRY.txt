@@ -1,0 +1,7 @@
+Macro: DMX_FE_ENTRY
+
+
+
+Parameters
+  list
+    list of struct dmx_frontend

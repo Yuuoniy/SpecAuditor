@@ -1,0 +1,17 @@
+Function: struct task_struct * kthread_create_on_cpu ( int ( * threadfn ) ( void * data ) , void * data , unsigned int cpu , const char * namefmt )
+
+Create a cpu bound kthread
+
+Parameters
+  int (*threadfn)(void *data)
+    the function to run until signal_pending(current).
+  void *data
+    data ptr for threadfn .
+  unsigned int cpu
+    The cpu on which the thread should be bound,
+  const char *namefmt
+    printf-style name for the thread. Format is restricted
+to “name.*``u``”. Code fills in cpu number.
+
+Description
+  This helper function creates and names a kernel thread

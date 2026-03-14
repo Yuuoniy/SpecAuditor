@@ -1,0 +1,7 @@
+Function: unsigned read_seqbegin ( const seqlock_t * sl )
+
+start a seqlock_t read side critical section
+
+Parameters
+  const seqlock_t *sl
+    Pointer to seqlock_t

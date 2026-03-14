@@ -1,0 +1,9 @@
+Function: void bearer_disable ( struct net * net , struct tipc_bearer * b )
+
+disable this bearer
+
+Parameters
+  struct net *net
+    the applicable net namespace
+  struct tipc_bearer *b
+    the bearer to disable

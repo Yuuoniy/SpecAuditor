@@ -1,0 +1,11 @@
+Function: int uart_get_lsr_info ( struct tty_struct * tty , struct uart_state * state , unsigned int __user * value )
+
+get line status register info
+
+Parameters
+  struct tty_struct *tty
+    tty associated with the UART
+  struct uart_state *state
+    UART being queried
+  unsigned int __user *value
+    returned modem value

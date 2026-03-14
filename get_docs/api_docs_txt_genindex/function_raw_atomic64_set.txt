@@ -1,0 +1,12 @@
+Function: void raw_atomic64_set ( atomic64_t * v , s64 i )
+
+atomic set with relaxed ordering
+
+Parameters
+  atomic64_t *v
+    pointer to atomic64_t
+  s64 i
+    s64 value to assign
+
+Description
+  Atomically sets v to i with relaxed ordering.

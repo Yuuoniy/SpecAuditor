@@ -1,0 +1,15 @@
+Function: int nand_gpio_waitrdy ( struct nand_chip * chip , struct gpio_desc * gpiod , unsigned long timeout_ms )
+
+Poll R/B GPIO pin until ready
+
+Parameters
+  struct nand_chip *chip
+    NAND chip structure
+  struct gpio_desc *gpiod
+    GPIO descriptor of R/B pin
+  unsigned long timeout_ms
+    Timeout in ms
+
+Description
+  Poll the R/B GPIO pin until it becomes ready. If that does not happen
+whitin the specified timeout, -ETIMEDOUT is returned.

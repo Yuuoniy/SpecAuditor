@@ -1,0 +1,22 @@
+Function: void * klp_shadow_alloc ( void * obj , unsigned long id , size_t size , gfp_t gfp_flags , klp_shadow_ctor_t ctor , void * ctor_data )
+
+allocate and add a new shadow variable
+
+Parameters
+  void *obj
+    pointer to parent object
+  unsigned long id
+    data identifier
+  size_t size
+    size of attached data
+  gfp_t gfp_flags
+    GFP mask for allocation
+  klp_shadow_ctor_t ctor
+    custom constructor to initialize the shadow data (optional)
+  void *ctor_data
+    pointer to any data needed by ctor (optional)
+
+Description
+  Allocates size bytes for new shadow variable data using gfp_flags .
+The data are zeroed by default.  They are further initialized by ctor function if it is not NULL.  The new shadow variable is then added
+to the global hashtable.

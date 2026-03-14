@@ -1,0 +1,11 @@
+Function: int rio_mport_chk_dev_access ( struct rio_mport * mport , u16 destid , u8 hopcount )
+
+Validate access to the specified device.
+
+Parameters
+  struct rio_mport *mport
+    Master port to send transactions
+  u16 destid
+    Device destination ID in network
+  u8 hopcount
+    Number of hops into the network

@@ -1,0 +1,2 @@
+Function: int open ( const char * deviceName , int flags )
+

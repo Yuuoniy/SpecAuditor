@@ -1,0 +1,17 @@
+Function: int ssam_controller_event_enable ( struct ssam_controller * ctrl , struct ssam_event_registry reg , struct ssam_event_id id , u8 flags )
+
+Enable the specified event.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller to enable the event for.
+  struct ssam_event_registry reg
+    The event registry to use for enabling the event.
+  struct ssam_event_id id
+    The event ID specifying the event to be enabled.
+  u8 flags
+    The SAM event flags used for enabling the event.
+
+Description
+  Increment the event reference count of the specified event. If the event has
+not been enabled previously, it will be enabled by this call.

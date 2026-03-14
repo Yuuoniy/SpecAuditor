@@ -1,0 +1,7 @@
+Function: int scsi_init_procfs ( void )
+
+create scsi and scsi/scsi in procfs
+
+Parameters
+  void
+    no arguments

@@ -1,0 +1,13 @@
+Function: int drm_atomic_normalize_zpos ( struct drm_device * dev , struct drm_atomic_state * state )
+
+calculate normalized zpos values for all crtcs
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_atomic_state *state
+    atomic state of DRM device
+
+Description
+  This function calculates normalized zpos value for all modified planes in
+the provided atomic state of DRM device.

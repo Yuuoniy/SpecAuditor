@@ -1,0 +1,12 @@
+Function: int klp_enable_patch ( struct klp_patch * patch )
+
+enable the livepatch
+
+Parameters
+  struct klp_patch *patch
+    patch to be enabled
+
+Description
+  Initializes the data structure associated with the patch, creates the sysfs
+interface, performs the needed symbol lookups and code relocations,
+registers the patched functions with ftrace.

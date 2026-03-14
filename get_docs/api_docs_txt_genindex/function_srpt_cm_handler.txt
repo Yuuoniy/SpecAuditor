@@ -1,0 +1,12 @@
+Function: int srpt_cm_handler ( struct ib_cm_id * cm_id , const struct ib_cm_event * event )
+
+IB connection manager callback function
+
+Parameters
+  struct ib_cm_id *cm_id
+    IB/CM connection identifier.
+  const struct ib_cm_event *event
+    IB/CM event.
+
+Description
+  A non-zero return value will cause the caller destroy the CM ID.

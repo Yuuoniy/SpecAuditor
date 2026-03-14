@@ -1,0 +1,12 @@
+Function: bool dma_fence_is_container ( struct dma_fence * fence )
+
+check if a fence is a container for other fences
+
+Parameters
+  struct dma_fence *fence
+    the fence to test
+
+Description
+  Return true if this fence is a container for other fences, false otherwise.
+This is important since we can’t build up large fence structure or otherwise
+we run into recursion during operation on those fences.

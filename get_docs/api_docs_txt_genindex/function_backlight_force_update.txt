@@ -1,0 +1,15 @@
+Function: void backlight_force_update ( struct backlight_device * bd , enum backlight_update_reason reason )
+
+tell the backlight subsystem that hardware state has changed
+
+Parameters
+  struct backlight_device *bd
+    the backlight device to update
+  enum backlight_update_reason reason
+    reason for update
+
+Description
+  Updates the internal state of the backlight in response to a hardware event,
+and generates an uevent to notify userspace. A backlight driver shall call backlight_force_update() when the backlight is changed using, for example,
+a hot-key. The updated brightness is read using get_brightness() and the
+brightness value is reported using an uevent.

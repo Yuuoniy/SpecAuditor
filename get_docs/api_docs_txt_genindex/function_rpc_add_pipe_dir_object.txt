@@ -1,0 +1,11 @@
+Function: int rpc_add_pipe_dir_object ( struct net * net , struct rpc_pipe_dir_head * pdh , struct rpc_pipe_dir_object * pdo )
+
+associate a rpc_pipe_dir_object to a directory
+
+Parameters
+  struct net *net
+    pointer to struct net
+  struct rpc_pipe_dir_head *pdh
+    pointer to struct rpc_pipe_dir_head
+  struct rpc_pipe_dir_object *pdo
+    pointer to struct rpc_pipe_dir_object

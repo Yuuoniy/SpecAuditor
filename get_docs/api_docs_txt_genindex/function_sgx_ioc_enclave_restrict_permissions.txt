@@ -1,0 +1,14 @@
+Function: long sgx_ioc_enclave_restrict_permissions ( struct sgx_encl * encl , void __user * arg )
+
+handler for SGX_IOC_ENCLAVE_RESTRICT_PERMISSIONS
+
+Parameters
+  struct sgx_encl *encl
+    an enclave pointer
+  void __user *arg
+    userspace pointer to a struct sgx_enclave_restrict_permissions instance
+
+Description
+  SGX2 distinguishes between relaxing and restricting the enclave page
+permissions maintained by the hardware (EPCM permissions) of pages
+belonging to an initialized enclave (after SGX_IOC_ENCLAVE_INIT).

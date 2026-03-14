@@ -1,0 +1,18 @@
+Function: int generic_buffers_fsync_noflush ( struct file * file , loff_t start , loff_t end , bool datasync )
+
+generic buffer fsync implementation for simple filesystems with no inode lock
+
+Parameters
+  struct file *file
+    file to synchronize
+  loff_t start
+    start offset in bytes
+  loff_t end
+    end offset in bytes (inclusive)
+  bool datasync
+    only synchronize essential metadata if true
+
+Description
+  This is a generic implementation of the fsync method for simple
+filesystems which track all non-inode metadata in the buffers list
+hanging off the address_space structure.

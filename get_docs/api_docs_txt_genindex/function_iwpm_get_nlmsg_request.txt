@@ -1,0 +1,15 @@
+Function: struct iwpm_nlmsg_request * iwpm_get_nlmsg_request ( __u32 nlmsg_seq , u8 nl_client , gfp_t gfp )
+
+Allocate and initialize netlink message request
+
+Parameters
+  __u32 nlmsg_seq
+    Sequence number of the netlink message
+  u8 nl_client
+    The index of the netlink client
+  gfp_t gfp
+    Indicates how the memory for the request should be allocated
+
+Description
+  Returns the newly allocated netlink request object if successful,
+otherwise returns NULL

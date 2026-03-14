@@ -1,0 +1,12 @@
+Function: unsigned int irq_of_parse_and_map ( struct device_node * dev , int index )
+
+Parse and map an interrupt into linux virq space
+
+Parameters
+  struct device_node *dev
+    Device node of the device whose interrupt is to be mapped
+  int index
+    Index of the interrupt to map
+
+Description
+  This function is a wrapper that chains of_irq_parse_one() and irq_create_of_mapping() to make things easier to callers

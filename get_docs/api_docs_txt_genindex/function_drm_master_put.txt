@@ -1,0 +1,10 @@
+Function: void drm_master_put ( struct drm_master * * master )
+
+unreference and clear a master pointer
+
+Parameters
+  struct drm_master **master
+    pointer to a pointer of struct drm_master
+
+Description
+  This decrements the drm_master behind master and sets it to NULL.

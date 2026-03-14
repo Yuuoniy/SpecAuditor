@@ -1,0 +1,20 @@
+Function: int amdgpu_vm_validate ( struct amdgpu_device * adev , struct amdgpu_vm * vm , struct ww_acquire_ctx * ticket , int ( * validate ) ( void * p , struct amdgpu_bo * bo ) , void * param )
+
+validate evicted BOs tracked in the VM
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device pointer
+  struct amdgpu_vm *vm
+    vm providing the BOs
+  struct ww_acquire_ctx *ticket
+    optional reservation ticket used to reserve the VM
+  int (*validate)(void *p, struct amdgpu_bo *bo)
+    callback to do the validation
+  void *param
+    parameter for the validation callback
+
+Description
+  Validate the page table BOs and per-VM BOs on command submission if
+necessary. If a ticket is given, also try to validate evicted user queue
+BOs. They must already be reserved with the given ticket.

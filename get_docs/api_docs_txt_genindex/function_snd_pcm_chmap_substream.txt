@@ -1,0 +1,9 @@
+Function: struct snd_pcm_substream * snd_pcm_chmap_substream ( struct snd_pcm_chmap * info , unsigned int idx )
+
+get the PCM substream assigned to the given chmap info
+
+Parameters
+  struct snd_pcm_chmap *info
+    chmap information
+  unsigned int idx
+    the substream number index

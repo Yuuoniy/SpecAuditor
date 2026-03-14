@@ -1,0 +1,15 @@
+Function: bool tipc_msg_try_bundle ( struct sk_buff * tskb , struct sk_buff * * skb , u32 mss , u32 dnode , bool * new_bundle )
+
+Try to bundle a new message to the last one
+
+Parameters
+  struct sk_buff *tskb
+    the last/target message to which the new one will be appended
+  struct sk_buff **skb
+    the new message skb pointer
+  u32 mss
+    max message size (header inclusive)
+  u32 dnode
+    destination node for the message
+  bool *new_bundle
+    if this call made a new bundle or not

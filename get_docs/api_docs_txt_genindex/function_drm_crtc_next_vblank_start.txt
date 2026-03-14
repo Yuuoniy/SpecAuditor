@@ -1,0 +1,13 @@
+Function: int drm_crtc_next_vblank_start ( struct drm_crtc * crtc , ktime_t * vblanktime )
+
+calculate the time of the next vblank
+
+Parameters
+  struct drm_crtc *crtc
+    the crtc for which to calculate next vblank time
+  ktime_t *vblanktime
+    pointer to time to receive the next vblank timestamp.
+
+Description
+  Calculate the expected time of the start of the next vblank period,
+based on time of previous vblank and frame duration

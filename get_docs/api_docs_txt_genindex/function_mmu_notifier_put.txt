@@ -1,0 +1,12 @@
+Function: void mmu_notifier_put ( struct mmu_notifier * subscription )
+
+Release the reference on the notifier
+
+Parameters
+  struct mmu_notifier *subscription
+    The notifier to act on
+
+Description
+  This function must be paired with each mmu_notifier_get() , it releases the
+reference obtained by the get. If this is the last reference then process
+to free the notifier will be run asynchronously.

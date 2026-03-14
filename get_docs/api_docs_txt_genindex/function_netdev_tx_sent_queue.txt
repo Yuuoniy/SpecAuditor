@@ -1,0 +1,15 @@
+Function: void netdev_tx_sent_queue ( struct netdev_queue * dev_queue , unsigned int bytes )
+
+report the number of bytes queued to a given tx queue
+
+Parameters
+  struct netdev_queue *dev_queue
+    network device queue
+  unsigned int bytes
+    number of bytes queued to the device queue
+
+Description
+  Report the number of bytes queued for sending/completion to the network
+device hardware queue. bytes should be a good approximation and should
+exactly match netdev_completed_queue() bytes .
+This is typically called once per packet, from ndo_start_xmit() .

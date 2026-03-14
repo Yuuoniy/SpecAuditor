@@ -1,0 +1,12 @@
+Function: int kunit_attach_mm ( void )
+
+Create and attach a new mm if it doesn’t already exist.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Allocates a struct mm_struct and attaches it to current . In most cases, call kunit_vm_mmap() without calling kunit_attach_mm() directly. Only necessary when
+code under test accesses the mm before executing the mmap (e.g., to perform
+additional initialization beforehand).

@@ -1,0 +1,11 @@
+Function: void sb_end_pagefault ( struct super_block * sb )
+
+drop write access to a superblock from a page fault
+
+Parameters
+  struct super_block *sb
+    the super we wrote to
+
+Description
+  Decrement number of processes handling write page fault to the filesystem.
+Wake up possible waiters wanting to freeze the filesystem.

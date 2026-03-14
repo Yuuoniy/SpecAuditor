@@ -1,0 +1,15 @@
+Function: int video_device_pipeline_start ( struct video_device * vdev , struct media_pipeline * pipe )
+
+Mark a pipeline as streaming
+
+Parameters
+  struct video_device *vdev
+    Starting video device
+  struct media_pipeline *pipe
+    Media pipeline to be assigned to all entities in the pipeline.
+
+Description
+  Mark all entities connected to a given video device through enabled links,
+either directly or indirectly, as streaming. The given pipeline object is
+assigned to every pad in the pipeline and stored in the media_pad pipe
+field.

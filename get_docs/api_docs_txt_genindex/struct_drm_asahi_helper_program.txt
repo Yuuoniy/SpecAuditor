@@ -1,0 +1,16 @@
+Struct: struct drm_asahi_helper_program
+
+Describe helper program configuration.
+
+Members
+  binary
+    USC address to the helper program binary. This is a tagged
+pointer with configuration in the bottom bits.
+  cfg
+    Additional configuration bits for the helper program.
+  data
+    Data passed to the helper program. This value is not
+interpreted by the kernel, firmware, or hardware in any way. It is
+simply a sideband for userspace, set with the submit ioctl and read
+via special registers inside the helper program. In practice, userspace will pass a 64-bit GPU VA here pointing to the
+actual arguments, which presumably don’t fit in 64-bits.

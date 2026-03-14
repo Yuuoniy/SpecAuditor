@@ -1,0 +1,12 @@
+Function: void free_rs ( struct rs_control * rs )
+
+Free the rs control structure
+
+Parameters
+  struct rs_control *rs
+    The control structure which is not longer used by the
+caller
+
+Description
+  Free the control structure. If rs is the last user of the associated
+codec, free the codec as well.

@@ -1,0 +1,13 @@
+Function: struct vme_dma_attr * vme_dma_pattern_attribute ( u32 pattern , u32 type )
+
+Create “Pattern” type VME DMA list attribute.
+
+Parameters
+  u32 pattern
+    Value to use used as pattern
+  u32 type
+    Type of pattern to be written.
+
+Description
+  Create VME DMA list attribute for pattern generation. It is the
+responsibility of the user to free used attributes using vme_dma_free_attribute() .

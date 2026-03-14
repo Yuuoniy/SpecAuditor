@@ -1,0 +1,19 @@
+Function: void * xa_cmpxchg_bh ( struct xarray * xa , unsigned long index , void * old , void * entry , gfp_t gfp )
+
+Conditionally replace an entry in the XArray.
+
+Parameters
+  struct xarray *xa
+    XArray.
+  unsigned long index
+    Index into array.
+  void *old
+    Old value to test against.
+  void *entry
+    New value to place in array.
+  gfp_t gfp
+    Memory allocation flags.
+
+Description
+  This function is like calling xa_cmpxchg() except it disables softirqs
+while holding the array lock.

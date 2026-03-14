@@ -1,0 +1,18 @@
+Macro: KUNIT_DEFINE_ACTION_WRAPPER
+
+
+
+Parameters
+  wrapper
+    The name of the new wrapper function define.
+  orig
+    The original function to wrap.
+  arg_type
+    The type of the argument accepted by orig .
+
+Description
+  Defines a wrapper for a function which accepts a single, pointer-sized
+argument. This wrapper can then be passed to kunit_add_action() and
+similar. This should be used in preference to casting a function
+directly to kunit_action_t, as casting function pointers will break
+control flow integrity (CFI), leading to crashes.

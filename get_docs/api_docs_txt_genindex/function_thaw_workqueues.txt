@@ -1,0 +1,11 @@
+Function: void thaw_workqueues ( void )
+
+thaw workqueues
+
+Parameters
+  void
+    no arguments
+
+Description
+  Thaw workqueues.  Normal queueing is restored and all collected
+frozen works are transferred to their respective pool worklists.

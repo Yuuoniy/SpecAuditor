@@ -1,0 +1,12 @@
+Function: void drm_mode_object_put ( struct drm_mode_object * obj )
+
+release a mode object reference
+
+Parameters
+  struct drm_mode_object *obj
+    DRM mode object
+
+Description
+  This function decrements the object’s refcount if it is a refcounted modeset
+object. It is a no-op on any other object. This is used to drop references
+acquired with drm_mode_object_get() .

@@ -1,0 +1,11 @@
+Macro: kfifo_initialized
+
+
+
+Parameters
+  fifo
+    address of the fifo to check
+
+Description
+  Return true if fifo is initialized, otherwise false .
+Assumes the fifo was 0 before.

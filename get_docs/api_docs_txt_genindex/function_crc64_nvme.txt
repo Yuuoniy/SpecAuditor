@@ -1,0 +1,15 @@
+Function: u64 crc64_nvme ( u64 crc , const void * p , size_t len )
+
+Calculate CRC64-NVME
+
+Parameters
+  u64 crc
+    seed value for computation. 0 for a new CRC calculation, or the
+previous crc64 value if computing incrementally.
+  const void *p
+    pointer to buffer over which CRC64 is run
+  size_t len
+    length of buffer p
+
+Description
+  This computes the CRC64 defined in the NVME NVM Command Set Specification, including the bitwise inversion at the beginning and end .

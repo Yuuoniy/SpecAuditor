@@ -1,0 +1,11 @@
+Function: struct dvb_diseqc_master_cmd
+
+DiSEqC master command
+
+Members
+  msg
+    DiSEqC message to be sent. It contains a 3 bytes header with:
+framing + address + command, and an optional argument
+of up to 3 bytes of data.
+  msg_len
+    Length of the DiSEqC message. Valid values are 3 to 6.

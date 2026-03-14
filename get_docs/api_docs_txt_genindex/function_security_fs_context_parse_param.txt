@@ -1,0 +1,13 @@
+Function: int security_fs_context_parse_param ( struct fs_context * fc , struct fs_parameter * param )
+
+Configure a filesystem context
+
+Parameters
+  struct fs_context *fc
+    filesystem context
+  struct fs_parameter *param
+    filesystem parameter
+
+Description
+  Userspace provided a parameter to configure a superblock.  The LSM can
+consume the parameter or return it to the caller for use elsewhere.

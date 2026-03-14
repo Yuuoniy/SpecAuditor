@@ -1,0 +1,10 @@
+Function: void put_pwq_unlocked ( struct pool_workqueue * pwq )
+
+put_pwq() with surrounding pool lock/unlock
+
+Parameters
+  struct pool_workqueue *pwq
+    pool_workqueue to put (can be NULL )
+
+Description
+  put_pwq() with locking.  This function also allows NULL pwq .

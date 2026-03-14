@@ -1,0 +1,3 @@
+Enum: enum fw_upload_prog
+
+firmware upload progress codes

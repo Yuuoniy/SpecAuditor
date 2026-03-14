@@ -1,0 +1,13 @@
+Function: u64 inode_query_iversion ( struct inode * inode )
+
+read i_version for later use
+
+Parameters
+  struct inode *inode
+    inode from which i_version should be read
+
+Description
+  Read the inode i_version counter. This should be used by callers that wish
+to store the returned i_version for later comparison. This will guarantee
+that a later query of the i_version will result in a different value if
+anything has changed.

@@ -1,0 +1,12 @@
+Function: struct sg_table * drm_gem_shmem_get_pages_sgt ( struct drm_gem_shmem_object * shmem )
+
+Pin pages, dma map them, and return a scatter/gather table for a shmem GEM object.
+
+Parameters
+  struct drm_gem_shmem_object *shmem
+    shmem GEM object
+
+Description
+  This function returns a scatter/gather table suitable for driver usage. If
+the sg table doesn’t exist, the pages are pinned, dma-mapped, and a sg
+table created.

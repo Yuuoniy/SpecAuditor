@@ -1,0 +1,18 @@
+Function: int devm_aperture_acquire_for_platform_device ( struct platform_device * pdev , resource_size_t base , resource_size_t size )
+
+Acquires ownership of an aperture on behalf of a platform device.
+
+Parameters
+  struct platform_device *pdev
+    the platform device to own the aperture
+  resource_size_t base
+    the aperture’s byte offset in physical memory
+  resource_size_t size
+    the aperture size in bytes
+
+Description
+  Installs the given device as the new owner of the aperture. The function
+expects the aperture to be provided by a platform device. If another
+driver takes over ownership of the aperture, aperture helpers will then
+unregister the platform device automatically. All acquired apertures are
+released automatically when the underlying device goes away.

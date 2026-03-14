@@ -1,0 +1,12 @@
+Function: const char * blk_op_str ( enum req_op op )
+
+Return string XXX in the REQ_OP_XXX.
+
+Parameters
+  enum req_op op
+    REQ_OP_XXX.
+
+Description
+  Centralize block layer function to convert REQ_OP_XXX into
+string format. Useful in the debugging and tracing bio or request. For
+invalid REQ_OP_XXX it returns string “UNKNOWN”.

@@ -1,0 +1,17 @@
+Function: int futex_wait_multiple_setup ( struct futex_vector * vs , int count , int * woken )
+
+Prepare to wait and enqueue multiple futexes
+
+Parameters
+  struct futex_vector *vs
+    The futex list to wait on
+  int count
+    The size of the list
+  int *woken
+    Index of the last woken futex, if any. Used to notify the
+caller that it can return this index to userspace (return parameter)
+
+Description
+  Prepare multiple futexes in a single step and enqueue them. This may fail if
+the futex list is invalid or if any futex was already awoken. On success the
+task is ready to interruptible sleep.

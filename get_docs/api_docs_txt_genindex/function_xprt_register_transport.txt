@@ -1,0 +1,11 @@
+Function: int xprt_register_transport ( struct xprt_class * transport )
+
+register a transport implementation
+
+Parameters
+  struct xprt_class *transport
+    transport to register
+
+Description
+  If a transport implementation is loaded as a kernel module, it can
+call this interface to make itself known to the RPC client.

@@ -1,0 +1,10 @@
+Function: const struct ib_port_immutable * ib_port_immutable_read ( struct ib_device * dev , unsigned int port )
+
+Read rdma port’s immutable data
+
+Parameters
+  struct ib_device *dev
+    IB device
+  unsigned int port
+    port number whose immutable data to read. It starts with index 1 and
+valid upto including rdma_end_port() .

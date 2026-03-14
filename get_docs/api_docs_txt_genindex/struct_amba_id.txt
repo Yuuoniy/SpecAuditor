@@ -1,0 +1,13 @@
+Struct: struct amba_id
+
+identifies a device on an AMBA bus
+
+Members
+  id
+    The significant bits if the hardware device ID
+  mask
+    Bitmask specifying which bits of the id field are significant when
+matching.  A driver binds to a device when ((hardware device ID) & mask)
+== id.
+  data
+    Private data used by the driver.

@@ -1,0 +1,9 @@
+Function: int ssam_nfblk_insert ( struct ssam_nf_head * nh , struct ssam_notifier_block * nb )
+
+Insert a new notifier block into the given notifier list.
+
+Parameters
+  struct ssam_nf_head *nh
+    The notifier head into which the block should be inserted.
+  struct ssam_notifier_block *nb
+    The notifier block to add.

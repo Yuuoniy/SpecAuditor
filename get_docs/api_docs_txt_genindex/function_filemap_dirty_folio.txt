@@ -1,0 +1,15 @@
+Function: bool filemap_dirty_folio ( struct address_space * mapping , struct folio * folio )
+
+Mark a folio dirty for filesystems which do not use buffer_heads.
+
+Parameters
+  struct address_space *mapping
+    Address space this folio belongs to.
+  struct folio *folio
+    Folio to be marked as dirty.
+
+Description
+  Filesystems which do not use buffer heads should call this function
+from their dirty_folio address space operation.  It ignores the
+contents of folio_get_private() , so if the filesystem marks individual
+blocks as dirty, the filesystem should handle that itself.

@@ -1,0 +1,12 @@
+Function: void host1x_syncpt_put ( struct host1x_syncpt * sp )
+
+free a requested syncpoint
+
+Parameters
+  struct host1x_syncpt *sp
+    host1x syncpoint
+
+Description
+  Release a syncpoint previously allocated using host1x_syncpt_request() . A
+host1x client driver should call this when the syncpoint is no longer in
+use.

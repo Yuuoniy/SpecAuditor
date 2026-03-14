@@ -1,0 +1,24 @@
+Struct: struct i915_context_engines_parallel_submit
+
+Configure engine for parallel submission.
+
+Members
+  base
+    base user extension.
+  engine_index
+    slot for parallel engine
+  width
+    number of contexts per parallel engine or in other words the
+number of batches in each submission
+  num_siblings
+    number of siblings per context or in other words the
+number of possible placements for each submission
+  mbz16
+    reserved for future use; must be zero
+  flags
+    all undefined flags must be zero, currently not defined flags
+  mbz64
+    reserved for future use; must be zero
+  engines
+    2-d array of engine instances to configure parallel engine length = width (i) * num_siblings (j)
+index = j + i * num_siblings

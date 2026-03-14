@@ -1,0 +1,14 @@
+Function: struct crypto_kpp * crypto_alloc_kpp ( const char * alg_name , u32 type , u32 mask )
+
+allocate KPP tfm handle
+
+Parameters
+  const char *alg_name
+    is the name of the kpp algorithm (e.g. “dh”, “ecdh”)
+  u32 type
+    specifies the type of the algorithm
+  u32 mask
+    specifies the mask for the algorithm
+
+Description
+  Allocate a handle for kpp algorithm. The returned struct crypto_kpp is required for any following API invocation

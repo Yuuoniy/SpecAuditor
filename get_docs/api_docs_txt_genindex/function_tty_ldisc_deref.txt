@@ -1,0 +1,11 @@
+Function: void tty_ldisc_deref ( struct tty_ldisc * ld )
+
+free a tty ldisc reference
+
+Parameters
+  struct tty_ldisc *ld
+    reference to free up
+
+Description
+  Undoes the effect of tty_ldisc_ref() or tty_ldisc_ref_wait() . May be called
+in IRQ context.

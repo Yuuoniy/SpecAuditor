@@ -1,0 +1,16 @@
+Macro: range_end_overflows
+
+
+
+Parameters
+  start
+    Start of the range.
+  size
+    Size of the range.
+  max
+    Exclusive upper boundary.
+
+Description
+  Checks only if the endpoint of a range ( start + size ) exceeds max .
+Unlike range_overflows() , a zero-sized range at the boundary ( start == max )
+is not considered an overflow. Useful for iterator-style checks.

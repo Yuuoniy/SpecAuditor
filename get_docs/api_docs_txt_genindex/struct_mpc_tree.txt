@@ -1,0 +1,9 @@
+Struct: struct mpc_tree
+
+MPC tree represents all MPCC connections for a pipe.
+
+Members
+  opp_id
+    The OPP instance that owns this MPC tree.
+  opp_list
+    the top MPCC layer of the MPC tree that outputs to OPP endpoint

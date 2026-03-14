@@ -1,0 +1,16 @@
+Function: struct pci_dev * pci_p2pmem_find_many ( struct device * * clients , int num_clients )
+
+find a peer-to-peer DMA memory device compatible with the specified list of clients and shortest distance
+
+Parameters
+  struct device **clients
+    array of devices to check (NULL-terminated)
+  int num_clients
+    number of client devices in the list
+
+Description
+  If multiple devices are behind the same switch, the one “closest” to the
+client devices in use will be chosen first. (So if one of the providers is
+the same as one of the clients, that provider will be used ahead of any
+other providers that are unrelated). If multiple providers are an equal
+distance away, one will be chosen at random.

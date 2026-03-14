@@ -1,0 +1,20 @@
+Function: int gen8_append_oa_reports ( struct i915_perf_stream * stream , char __user * buf , size_t count , size_t * offset )
+
+Copies all buffered OA reports into userspace read() buffer.
+
+Parameters
+  struct i915_perf_stream *stream
+    An i915-perf stream opened for OA metrics
+  char __user *buf
+    destination buffer given by userspace
+  size_t count
+    the number of bytes userspace wants to read
+  size_t *offset
+    (inout): the current position for writing into buf
+
+Description
+  Notably any error condition resulting in a short read (- ENOSPC or
+- EFAULT ) will be returned even though one or more records may
+have been successfully copied. In this case it’s up to the caller
+to decide if the error should be squashed before returning to
+userspace.

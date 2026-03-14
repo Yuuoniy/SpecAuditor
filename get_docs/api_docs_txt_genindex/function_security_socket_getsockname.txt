@@ -1,0 +1,11 @@
+Function: int security_socket_getsockname ( struct socket * sock )
+
+Check if reading the socket addr is allowed
+
+Parameters
+  struct socket *sock
+    socket
+
+Description
+  Check permission before reading the local address (name) of the socket
+object.

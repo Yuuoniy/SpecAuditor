@@ -1,0 +1,14 @@
+Function: struct devfreq_event_dev * devfreq_event_add_edev ( struct device * dev , struct devfreq_event_desc * desc )
+
+Add new devfreq-event device.
+
+Parameters
+  struct device *dev
+    the device owning the devfreq-event device being created
+  struct devfreq_event_desc *desc
+    the devfreq-event device’s descriptor which include essential
+data for devfreq-event device.
+
+Description
+  Note that this function add new devfreq-event device to devfreq-event class
+list and register the device of the devfreq-event device.

@@ -1,0 +1,11 @@
+Function: void zynqmp_disp_blend_set_global_alpha ( struct zynqmp_disp * disp , bool enable , u32 alpha )
+
+Configure global alpha blending
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller
+  bool enable
+    True to enable global alpha blending
+  u32 alpha
+    Global alpha value (ignored if enabled is false)

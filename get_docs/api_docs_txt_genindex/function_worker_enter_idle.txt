@@ -1,0 +1,11 @@
+Function: void worker_enter_idle ( struct worker * worker )
+
+enter idle state
+
+Parameters
+  struct worker *worker
+    worker which is entering idle state
+
+Description
+  worker is entering idle state.  Update stats and idle timer if
+necessary.

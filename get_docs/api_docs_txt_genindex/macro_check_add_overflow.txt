@@ -1,0 +1,14 @@
+Macro: check_add_overflow
+
+
+
+Parameters
+  a
+    first addend
+  b
+    second addend
+  d
+    pointer to store sum
+
+Description
+  Returns true on wrap-around, false otherwise.

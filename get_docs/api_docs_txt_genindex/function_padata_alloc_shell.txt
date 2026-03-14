@@ -1,0 +1,7 @@
+Function: struct padata_shell * padata_alloc_shell ( struct padata_instance * pinst )
+
+Allocate and initialize padata shell.
+
+Parameters
+  struct padata_instance *pinst
+    Parent padata_instance object.

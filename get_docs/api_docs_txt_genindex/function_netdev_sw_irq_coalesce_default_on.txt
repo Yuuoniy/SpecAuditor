@@ -1,0 +1,11 @@
+Function: void netdev_sw_irq_coalesce_default_on ( struct net_device * dev )
+
+enable SW IRQ coalescing by default
+
+Parameters
+  struct net_device *dev
+    netdev to enable the IRQ coalescing on
+
+Description
+  Sets a conservative default for SW IRQ coalescing. Users can use
+sysfs attributes to override the default values.

@@ -1,0 +1,16 @@
+Function: int amdgpu_vm_init ( struct amdgpu_device * adev , struct amdgpu_vm * vm , int32_t xcp_id , uint32_t pasid )
+
+initialize a vm instance
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+  struct amdgpu_vm *vm
+    requested vm
+  int32_t xcp_id
+    GPU partition selection id
+  uint32_t pasid
+    the pasid the VM is using on this GPU
+
+Description
+  Init vm fields.

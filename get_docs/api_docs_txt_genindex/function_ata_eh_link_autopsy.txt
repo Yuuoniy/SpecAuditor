@@ -1,0 +1,12 @@
+Function: void ata_eh_link_autopsy ( struct ata_link * link )
+
+analyze error and determine recovery action
+
+Parameters
+  struct ata_link *link
+    host link to perform autopsy on
+
+Description
+  Analyze why link failed and determine which recovery actions
+are needed.  This function also sets more detailed AC_ERR_*
+values and fills sense data for ATAPI CHECK SENSE.

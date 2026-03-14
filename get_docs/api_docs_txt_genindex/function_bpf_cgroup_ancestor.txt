@@ -1,0 +1,9 @@
+Function: __bpf_kfunc struct cgroup * bpf_cgroup_ancestor ( struct cgroup * cgrp , int level )
+
+Perform a lookup on an entry in a cgroup’s ancestor array. A cgroup returned by this kfunc which is not subsequently stored in a map, must be released by calling bpf_cgroup_release() .
+
+Parameters
+  struct cgroup *cgrp
+    The cgroup for which we’re performing a lookup.
+  int level
+    The level of ancestor to look up.

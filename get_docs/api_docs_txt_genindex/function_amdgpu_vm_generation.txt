@@ -1,0 +1,14 @@
+Function: uint64_t amdgpu_vm_generation ( struct amdgpu_device * adev , struct amdgpu_vm * vm )
+
+return the page table re-generation counter
+
+Parameters
+  struct amdgpu_device *adev
+    the amdgpu_device
+  struct amdgpu_vm *vm
+    optional VM to check, might be NULL
+
+Description
+  Returns a page table re-generation token to allow checking if submissions
+are still valid to use this VM. The VM parameter might be NULL in which case
+just the VRAM lost counter will be used.

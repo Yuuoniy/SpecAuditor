@@ -1,0 +1,10 @@
+Function: int pnp_disable_dev ( struct pnp_dev * dev )
+
+disables device
+
+Parameters
+  struct pnp_dev *dev
+    pointer to the desired device
+
+Description
+  inform the correct pnp protocol so that resources can be used by other devices

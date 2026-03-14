@@ -1,0 +1,11 @@
+Function: blk_status_t scsi_alloc_sgtables ( struct scsi_cmnd * cmd )
+
+Allocate and initialize data and integrity scatterlists
+
+Parameters
+  struct scsi_cmnd *cmd
+    SCSI command data structure to initialize.
+
+Description
+  Initializes cmd->sdb and also cmd->prot_sdb if data integrity is enabled
+for cmd .

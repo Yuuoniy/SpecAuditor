@@ -1,0 +1,19 @@
+Function: void unmap_mapping_pages ( struct address_space * mapping , pgoff_t start , pgoff_t nr , bool even_cows )
+
+Unmap pages from processes.
+
+Parameters
+  struct address_space *mapping
+    The address space containing pages to be unmapped.
+  pgoff_t start
+    Index of first page to be unmapped.
+  pgoff_t nr
+    Number of pages to be unmapped.  0 to unmap to end of file.
+  bool even_cows
+    Whether to unmap even private COWed pages.
+
+Description
+  Unmap the pages in this address space from any userspace process which
+has them mmaped.  Generally, you want to remove COWed pages as well when
+a file is being truncated, but not when invalidating pages from the page
+cache.

@@ -1,0 +1,15 @@
+Function: bool kmem_dump_obj ( void * object )
+
+Print available slab provenance information
+
+Parameters
+  void *object
+    slab object for which to find provenance information.
+
+Description
+  This function uses pr_cont() , so that the caller is expected to have
+printed out whatever preamble is appropriate.  The provenance information
+depends on the type of object and on how much debugging is enabled.
+For a slab-cache object, the fact that it is a slab object is printed,
+and, if available, the slab name, return address, and stack trace from
+the allocation and last free path of that object.

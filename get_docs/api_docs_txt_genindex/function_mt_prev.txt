@@ -1,0 +1,16 @@
+Function: void * mt_prev ( struct maple_tree * mt , unsigned long index , unsigned long min )
+
+get the previous value in the maple tree
+
+Parameters
+  struct maple_tree *mt
+    The maple tree
+  unsigned long index
+    The start index
+  unsigned long min
+    The minimum index to check
+
+Description
+  Takes RCU read lock internally to protect the search, which does not
+protect the returned pointer after dropping RCU read lock.
+See also: Maple Tree

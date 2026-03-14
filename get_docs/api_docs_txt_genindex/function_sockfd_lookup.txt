@@ -1,0 +1,15 @@
+Function: struct socket * sockfd_lookup ( int fd , int * err )
+
+Go from a file number to its socket slot
+
+Parameters
+  int fd
+    file handle
+  int *err
+    pointer to an error code return
+
+Description
+  The file handle passed in is locked and the socket it is bound
+to is returned. If an error occurs the err pointer is overwritten
+with a negative errno code and NULL is returned. The function checks
+for both invalid handles and passing a handle which is not a socket.

@@ -1,0 +1,12 @@
+Function: int ttm_pool_debugfs ( struct ttm_pool * pool , struct seq_file * m )
+
+Debugfs dump function for a pool
+
+Parameters
+  struct ttm_pool *pool
+    the pool to dump the information for
+  struct seq_file *m
+    seq_file to dump to
+
+Description
+  Make a debugfs dump with the per pool and global information.

@@ -1,0 +1,11 @@
+Function: int san_dgpu_notifier_register ( struct notifier_block * nb )
+
+Register a SAN dGPU notifier.
+
+Parameters
+  struct notifier_block *nb
+    The notifier-block to register.
+
+Description
+  Registers a SAN dGPU notifier, receiving any new SAN dGPU events sent from
+ACPI. The registered notifier will be called with struct san_dgpu_event as notifier data and the command ID of that event as notifier action.

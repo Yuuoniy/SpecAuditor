@@ -1,0 +1,10 @@
+Function: void dma_fence_end_signalling ( bool cookie )
+
+end a critical DMA fence signalling section
+
+Parameters
+  bool cookie
+    opaque cookie from dma_fence_begin_signalling()
+
+Description
+  Closes a critical section annotation opened by dma_fence_begin_signalling() .

@@ -1,0 +1,13 @@
+Macro: xbc_node_for_each_subkey
+
+
+
+Parameters
+  parent
+    An XBC node.
+  child
+    Iterated XBC node.
+
+Description
+  Iterate subkey nodes of parent . Each child nodes are stored to child .
+The child is only the subkey node.

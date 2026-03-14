@@ -1,0 +1,14 @@
+Function: struct platform_device * kunit_platform_device_alloc ( struct kunit * test , const char * name , int id )
+
+Allocate a KUnit test managed platform device
+
+Parameters
+  struct kunit *test
+    test context
+  const char *name
+    device name of platform device to alloc
+  int id
+    identifier of platform device to alloc.
+
+Description
+  Allocate a test managed platform device. The device is put when the test completes.

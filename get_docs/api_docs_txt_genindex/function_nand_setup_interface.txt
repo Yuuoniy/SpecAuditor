@@ -1,0 +1,13 @@
+Function: int nand_setup_interface ( struct nand_chip * chip , int chipnr )
+
+Setup the best data interface and timings
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+  int chipnr
+    Internal die id
+
+Description
+  Configure what has been reported to be the best data interface and NAND
+timings supported by the chip and the driver.

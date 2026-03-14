@@ -1,0 +1,14 @@
+Function: bool drm_dp_mst_port_downstream_of_parent ( struct drm_dp_mst_topology_mgr * mgr , struct drm_dp_mst_port * port , struct drm_dp_mst_port * parent )
+
+check if a port is downstream of a parent port
+
+Parameters
+  struct drm_dp_mst_topology_mgr *mgr
+    MST topology manager
+  struct drm_dp_mst_port *port
+    the port being looked up
+  struct drm_dp_mst_port *parent
+    the parent port
+
+Description
+  The function returns true if port is downstream of parent . If parent is NULL - denoting the root port - the function returns true if port is in mgr ’s topology.

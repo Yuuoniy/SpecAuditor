@@ -1,0 +1,11 @@
+Struct: struct drm_mm
+
+DRM allocator
+
+Members
+  color_adjust
+    Optional driver callback to further apply restrictions on a hole. The
+node argument points at the node containing the hole from which the
+block would be allocated (see drm_mm_hole_follows() and friends). The
+other arguments are the size of the block to be allocated. The driver
+can adjust the start and end as needed to e.g. insert guard pages.

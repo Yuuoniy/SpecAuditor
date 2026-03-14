@@ -1,0 +1,13 @@
+Function: void task_clear_jobctl_pending ( struct task_struct * task , unsigned long mask )
+
+clear jobctl pending bits
+
+Parameters
+  struct task_struct *task
+    target task
+  unsigned long mask
+    pending bits to clear
+
+Description
+  Clear mask from task->jobctl . mask must be subset of JOBCTL_PENDING_MASK .  If JOBCTL_STOP_PENDING is being cleared, other
+STOP bits are cleared together.

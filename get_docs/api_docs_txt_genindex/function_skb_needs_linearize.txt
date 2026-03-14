@@ -1,0 +1,14 @@
+Function: bool skb_needs_linearize ( struct sk_buff * skb , netdev_features_t features )
+
+check if we need to linearize a given skb depending on the given device features.
+
+Parameters
+  struct sk_buff *skb
+    socket buffer to check
+  netdev_features_t features
+    net device features
+
+Description
+  Returns true if either:
+1. skb has frag_list and the device doesn’t support FRAGLIST, or
+2. skb is fragmented and the device does not support SG.

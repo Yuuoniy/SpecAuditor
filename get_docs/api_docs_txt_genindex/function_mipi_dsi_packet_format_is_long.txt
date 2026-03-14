@@ -1,0 +1,7 @@
+Function: bool mipi_dsi_packet_format_is_long ( u8 type )
+
+check if a packet is of the long format
+
+Parameters
+  u8 type
+    MIPI DSI data type of the packet

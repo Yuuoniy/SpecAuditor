@@ -1,0 +1,17 @@
+Struct: struct ipu3_uapi_xnr3_alpha_params
+
+Extreme noise reduction v3 alpha tuning parameters
+
+Members
+  y0
+    Sigma for Y range similarity in dark area.
+  u0
+    Sigma for U range similarity in dark area.
+  v0
+    Sigma for V range similarity in dark area.
+  ydiff
+    Sigma difference for Y between bright area and dark area.
+  udiff
+    Sigma difference for U between bright area and dark area.
+  vdiff
+    Sigma difference for V between bright area and dark area.

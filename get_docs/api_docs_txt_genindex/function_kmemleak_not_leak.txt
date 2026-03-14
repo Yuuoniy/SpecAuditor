@@ -1,0 +1,11 @@
+Function: void __ref kmemleak_not_leak ( const void * ptr )
+
+mark an allocated object as false positive
+
+Parameters
+  const void *ptr
+    pointer to beginning of the object
+
+Description
+  Calling this function on an object will cause the memory block to no longer
+be reported as leak and always be scanned.

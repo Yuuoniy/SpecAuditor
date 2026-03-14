@@ -1,0 +1,11 @@
+Struct: struct nand_ecc_step_info
+
+ECC step information of ECC engine
+
+Members
+  stepsize
+    data bytes per ECC step
+  strengths
+    array of supported strengths
+  nstrengths
+    number of supported strengths

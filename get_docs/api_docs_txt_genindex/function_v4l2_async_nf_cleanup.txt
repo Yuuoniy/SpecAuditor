@@ -1,0 +1,13 @@
+Function: void v4l2_async_nf_cleanup ( struct v4l2_async_notifier * notifier )
+
+clean up notifier resources
+
+Parameters
+  struct v4l2_async_notifier *notifier
+    the notifier the resources of which are to be cleaned up
+
+Description
+  Release memory resources related to a notifier, including the async
+connections allocated for the purposes of the notifier but not the notifier
+itself. The user is responsible for calling this function to clean up the
+notifier after calling v4l2_async_nf_add_fwnode_remote() , v4l2_async_nf_add_fwnode() or v4l2_async_nf_add_i2c() .

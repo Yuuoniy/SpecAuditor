@@ -1,0 +1,14 @@
+Function: struct v4l2_subdev * v4l2_spi_new_subdev ( struct v4l2_device * v4l2_dev , struct spi_controller * ctlr , struct spi_board_info * info )
+
+Load an spi module and return an initialized struct v4l2_subdev .
+
+Parameters
+  struct v4l2_device *v4l2_dev
+    pointer to struct v4l2_device .
+  struct spi_controller *ctlr
+    pointer to struct spi_controller .
+  struct spi_board_info *info
+    pointer to struct spi_board_info .
+
+Description
+  returns a struct v4l2_subdev pointer.

@@ -1,0 +1,7 @@
+Struct: struct drm_atomic_helper_damage_iter
+
+Closure structure for damage iterator.
+
+Members
+  struct drm_scanout_buffer ¶
+    DRM scanout buffer

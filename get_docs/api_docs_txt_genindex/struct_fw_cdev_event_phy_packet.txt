@@ -1,0 +1,15 @@
+Struct: struct fw_cdev_event_phy_packet
+
+A PHY packet was transmitted or received
+
+Members
+  closure
+    See fw_cdev_event_common ; set by FW_CDEV_IOC_SEND_PHY_PACKET or FW_CDEV_IOC_RECEIVE_PHY_PACKETS ioctl
+  type
+    FW_CDEV_EVENT_PHY_PACKET_SENT or %..._RECEIVED
+  rcode
+    RCODE_ ..., indicates success or failure of transmission
+  length
+    Data length in bytes
+  data
+    Incoming data for FW_CDEV_IOC_RECEIVE_PHY_PACKETS . For FW_CDEV_IOC_SEND_PHY_PACKET the field has the same data in the request, thus the length of 8 bytes.

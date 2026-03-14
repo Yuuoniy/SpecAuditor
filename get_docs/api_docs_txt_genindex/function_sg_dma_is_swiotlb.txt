@@ -1,0 +1,12 @@
+Function: bool sg_dma_is_swiotlb ( struct scatterlist * sg )
+
+Return whether the scatterlist was marked for SWIOTLB bouncing
+
+Parameters
+  struct scatterlist *sg
+    SG entry
+
+Description
+  Returns true if the scatterlist was marked for SWIOTLB bouncing. Not all
+elements may have been bounced, so the caller would have to check
+individual SG entries with swiotlb_find_pool() .

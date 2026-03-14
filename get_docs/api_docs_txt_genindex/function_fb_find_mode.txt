@@ -1,0 +1,24 @@
+Function: int fb_find_mode ( struct fb_var_screeninfo * var , struct fb_info * info , const char * mode_option , const struct fb_videomode * db , unsigned int dbsize , const struct fb_videomode * default_mode , unsigned int default_bpp )
+
+finds a valid video mode
+
+Parameters
+  struct fb_var_screeninfo *var
+    frame buffer user defined part of display
+  struct fb_info *info
+    frame buffer info structure
+  const char *mode_option
+    string video mode to find
+  const struct fb_videomode *db
+    video mode database
+  unsigned int dbsize
+    size of db
+  const struct fb_videomode *default_mode
+    default video mode to fall back to
+  unsigned int default_bpp
+    default color depth in bits per pixel
+
+Description
+  Finds a suitable video mode, starting with the specified mode
+in mode_option with fallback to default_mode .  If default_mode fails, all modes in the video mode database will
+be tried.

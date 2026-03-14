@@ -1,0 +1,17 @@
+Macro: IIO_DECLARE_BUFFER_WITH_TS
+
+
+
+Parameters
+  type
+    element type of the buffer
+  name
+    identifier name of the buffer
+  count
+    number of elements in the buffer
+
+Description
+  Declares a buffer that is safe to use with iio_push_to_buffers_with_ts() . In
+addition to allocating enough space for count elements of type , it also
+allocates space for a s64 timestamp at the end of the buffer and ensures
+proper alignment of the timestamp.

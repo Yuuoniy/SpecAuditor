@@ -1,0 +1,7 @@
+Struct: struct opa_vnic_iface_mac_entry
+
+single entry in the mac list
+
+Members
+  mac_addr
+    MAC address

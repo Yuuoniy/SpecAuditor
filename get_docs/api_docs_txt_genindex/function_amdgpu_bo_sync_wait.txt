@@ -1,0 +1,14 @@
+Function: int amdgpu_bo_sync_wait ( struct amdgpu_bo * bo , void * owner , bool intr )
+
+Wrapper for amdgpu_bo_sync_wait_resv
+
+Parameters
+  struct amdgpu_bo *bo
+    buffer object to wait for
+  void *owner
+    fence owner
+  bool intr
+    Whether the wait is interruptible
+
+Description
+  Wrapper to wait for fences in a BO.

@@ -1,0 +1,16 @@
+Function: int drm_sched_job_add_syncobj_dependency ( struct drm_sched_job * job , struct drm_file * file , u32 handle , u32 point )
+
+adds a syncobj’s fence as a job dependency
+
+Parameters
+  struct drm_sched_job *job
+    scheduler job to add the dependencies to
+  struct drm_file *file
+    drm file private pointer
+  u32 handle
+    syncobj handle to lookup
+  u32 point
+    timeline point
+
+Description
+  This adds the fence matching the given syncobj to job .

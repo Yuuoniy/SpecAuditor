@@ -1,0 +1,7 @@
+Function: int w1_reset_bus ( struct w1_master * dev )
+
+Issues a reset bus sequence.
+
+Parameters
+  struct w1_master *dev
+    the master device

@@ -1,0 +1,17 @@
+Function: int mdiobus_c45_read_nested ( struct mii_bus * bus , int addr , int devad , u32 regnum )
+
+Nested version of the mdiobus_c45_read function
+
+Parameters
+  struct mii_bus *bus
+    the mii_bus struct
+  int addr
+    the phy address
+  int devad
+    device address to read
+  u32 regnum
+    register number to read
+
+Description
+  In case of nested MDIO bus access avoid lockdep false positives by
+using mutex_lock_nested() .

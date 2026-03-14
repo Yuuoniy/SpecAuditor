@@ -1,0 +1,10 @@
+Function: ktime_t * input_get_timestamp ( struct input_dev * dev )
+
+get timestamp for input events
+
+Parameters
+  struct input_dev *dev
+    input device to get timestamp from
+
+Description
+  A valid timestamp is a timestamp of non-zero value.

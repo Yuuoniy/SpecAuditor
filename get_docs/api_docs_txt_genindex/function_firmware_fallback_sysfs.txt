@@ -1,0 +1,28 @@
+Function: int firmware_fallback_sysfs ( struct firmware * fw , const char * name , struct device * device , u32 opt_flags , int ret )
+
+use the fallback mechanism to find firmware
+
+Parameters
+  struct firmware *fw
+    pointer to firmware image
+  const char *name
+    name of firmware file to look for
+  struct device *device
+    device for which firmware is being loaded
+  u32 opt_flags
+    options to control firmware loading behaviour, as defined by enum fw_opt
+  int ret
+    return value from direct lookup which triggered the fallback mechanism
+
+Description
+  This function is called if direct lookup for the firmware failed, it enables
+a fallback mechanism through userspace by exposing a sysfs loading
+interface. Userspace is in charge of loading the firmware through the sysfs
+loading interface. This sysfs fallback mechanism may be disabled completely
+on a system by setting the proc sysctl value ignore_sysfs_fallback to true.
+If this is false we check if the internal API caller set the FW_OPT_NOFALLBACK_SYSFS flag, if so it would also disable the fallback
+mechanism. A system may want to enforce the sysfs fallback mechanism at all
+times, it can do this by setting ignore_sysfs_fallback to false and
+force_sysfs_fallback to true.
+Enabling force_sysfs_fallback is functionally equivalent to build a kernel
+with CONFIG_FW_LOADER_USER_HELPER_FALLBACK.

@@ -1,0 +1,7 @@
+Struct: struct ipu3_uapi_yuvp2_tcc_macc_table_static_config
+
+Total color correction multi-axis color control (MACC) table array
+
+Members
+  entries
+    config for multi axis color correction, as specified by ipu3_uapi_yuvp2_tcc_macc_elem_static_config

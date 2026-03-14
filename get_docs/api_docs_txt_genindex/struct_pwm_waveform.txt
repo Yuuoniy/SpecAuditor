@@ -1,0 +1,11 @@
+Struct: struct pwm_waveform
+
+description of a PWM waveform
+
+Members
+  period_length_ns
+    PWM period
+  duty_length_ns
+    PWM duty cycle
+  duty_offset_ns
+    offset of the rising edge from the period’s start

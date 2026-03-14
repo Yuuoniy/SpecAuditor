@@ -1,0 +1,7 @@
+Function: struct fpga_image_info * fpga_image_info_alloc ( struct device * dev )
+
+Allocate an FPGA image info struct
+
+Parameters
+  struct device *dev
+    owning device

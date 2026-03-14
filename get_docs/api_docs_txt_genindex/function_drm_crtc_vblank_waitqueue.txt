@@ -1,0 +1,12 @@
+Function: wait_queue_head_t * drm_crtc_vblank_waitqueue ( struct drm_crtc * crtc )
+
+get vblank waitqueue for the CRTC
+
+Parameters
+  struct drm_crtc *crtc
+    which CRTC’s vblank waitqueue to retrieve
+
+Description
+  This function returns a pointer to the vblank waitqueue for the CRTC.
+Drivers can use this to implement vblank waits using wait_event() and related
+functions.

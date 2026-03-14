@@ -1,0 +1,11 @@
+Function: int of_alias_get_highest_id ( const char * stem )
+
+Get highest alias id for the given stem
+
+Parameters
+  const char *stem
+    Alias stem to be examined
+
+Description
+  The function travels the lookup table to get the highest alias id for the
+given alias stem.  It returns the alias id if found.

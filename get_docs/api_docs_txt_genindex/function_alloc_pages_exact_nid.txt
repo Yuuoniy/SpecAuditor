@@ -1,0 +1,15 @@
+Function: void * alloc_pages_exact_nid ( int nid , size_t size , gfp_t gfp_mask )
+
+allocate an exact number of physically-contiguous pages on a node.
+
+Parameters
+  int nid
+    the preferred node ID where memory should be allocated
+  size_t size
+    the number of bytes to allocate
+  gfp_t gfp_mask
+    GFP flags for the allocation, must not contain __GFP_COMP
+
+Description
+  Like alloc_pages_exact() , but try to allocate on node nid first before falling
+back.

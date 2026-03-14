@@ -1,0 +1,12 @@
+Function: void phy_device_remove ( struct phy_device * phydev )
+
+Remove a previously registered phy device from the MDIO bus
+
+Parameters
+  struct phy_device *phydev
+    phy_device structure to remove
+
+Description
+  This doesn’t free the phy_device itself, it merely reverses the effects
+of phy_device_register() . Use phy_device_free() to free the device
+after calling this function.

@@ -1,0 +1,10 @@
+Function: int ata_cable_unknown ( struct ata_port * ap )
+
+return unknown PATA cable.
+
+Parameters
+  struct ata_port *ap
+    port
+
+Description
+  Helper method for drivers which have no PATA cable detection.

@@ -1,0 +1,11 @@
+Function: void usb_remove_hcd ( struct usb_hcd * hcd )
+
+shutdown processing for generic HCDs
+
+Parameters
+  struct usb_hcd *hcd
+    the usb_hcd structure to remove
+
+Description
+  Disconnects the root hub, then reverses the effects of usb_add_hcd() ,
+invoking the HCD’s stop() method.

@@ -1,0 +1,7 @@
+Function: void rvt_unregister_device ( struct rvt_dev_info * rdi )
+
+remove a driver
+
+Parameters
+  struct rvt_dev_info *rdi
+    rvt dev struct

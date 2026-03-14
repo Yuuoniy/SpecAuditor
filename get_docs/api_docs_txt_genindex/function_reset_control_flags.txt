@@ -1,0 +1,3 @@
+Function: enum reset_control_flags
+
+Flags that can be passed to the reset_control_get functions to determine the type of reset control. These values cannot be OR’d.

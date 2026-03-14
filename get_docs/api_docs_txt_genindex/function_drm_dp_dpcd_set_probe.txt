@@ -1,0 +1,9 @@
+Function: void drm_dp_dpcd_set_probe ( struct drm_dp_aux * aux , bool enable )
+
+Set whether a probing before DPCD access is done
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  bool enable
+    Enable the probing if required

@@ -1,0 +1,12 @@
+Function: void vb2_queue_release ( struct vb2_queue * q )
+
+stop streaming, release the queue and free memory
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+
+Description
+  This function stops streaming and performs necessary clean ups, including
+freeing video buffer memory. The driver is responsible for freeing
+the vb2_queue structure itself.

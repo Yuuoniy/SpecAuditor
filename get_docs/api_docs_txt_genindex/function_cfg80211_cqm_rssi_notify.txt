@@ -1,0 +1,17 @@
+Function: void cfg80211_cqm_rssi_notify ( struct net_device * dev , enum nl80211_cqm_rssi_threshold_event rssi_event , s32 rssi_level , gfp_t gfp )
+
+connection quality monitoring rssi event
+
+Parameters
+  struct net_device *dev
+    network device
+  enum nl80211_cqm_rssi_threshold_event rssi_event
+    the triggered RSSI event
+  s32 rssi_level
+    new RSSI level value or 0 if not available
+  gfp_t gfp
+    context flags
+
+Description
+  This function is called when a configured connection quality monitoring
+rssi threshold reached event occurs.

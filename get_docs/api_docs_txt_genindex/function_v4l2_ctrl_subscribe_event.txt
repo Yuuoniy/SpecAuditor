@@ -1,0 +1,13 @@
+Function: int v4l2_ctrl_subscribe_event ( struct v4l2_fh * fh , const struct v4l2_event_subscription * sub )
+
+Subscribes to an event
+
+Parameters
+  struct v4l2_fh *fh
+    pointer to struct v4l2_fh
+  const struct v4l2_event_subscription *sub
+    pointer to struct v4l2_event_subscription
+
+Description
+  Can be used as a vidioc_subscribe_event function that just subscribes
+control events.

@@ -1,0 +1,11 @@
+Function: struct rkisp1_cif_isp_dpf_g_flt
+
+Green filter Configuration
+
+Members
+  spatial_coeff
+    Spatial weights
+  gr_enable
+    enable filter processing for green pixels in green/red lines
+  gb_enable
+    enable filter processing for green pixels in green/blue lines

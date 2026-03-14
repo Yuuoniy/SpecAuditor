@@ -1,0 +1,10 @@
+Function: int snd_pcm_playback_data ( struct snd_pcm_substream * substream )
+
+check whether any data exists on the playback buffer
+
+Parameters
+  struct snd_pcm_substream *substream
+    the pcm substream instance
+
+Description
+  Checks whether any data exists on the playback buffer.

@@ -1,0 +1,23 @@
+Function: void debugfs_print_regs32 ( struct seq_file * s , const struct debugfs_reg32 * regs , int nregs , void __iomem * base , char * prefix )
+
+use seq_print to describe a set of registers
+
+Parameters
+  struct seq_file *s
+    the seq_file structure being used to generate output
+  const struct debugfs_reg32 *regs
+    an array if struct debugfs_reg32 structures
+  int nregs
+    the length of the above array
+  void __iomem *base
+    the base address to be used in reading the registers
+  char *prefix
+    a string to be prefixed to every output line
+
+Description
+  This function outputs a text block describing the current values of
+some 32-bit hardware registers. It is meant to be used within debugfs
+files based on seq_file that need to show registers, intermixed with other
+information. The prefix argument may be used to specify a leading string,
+because some peripherals have several blocks of identical registers,
+for example configuration of dma channels

@@ -1,0 +1,21 @@
+Function: size_t n_tty_receive_buf_common ( struct tty_struct * tty , const u8 * cp , const u8 * fp , size_t count , bool flow )
+
+process input
+
+Parameters
+  struct tty_struct *tty
+    device to receive input
+  const u8 *cp
+    input chars
+  const u8 *fp
+    flags for each char (if NULL , all chars are TTY_NORMAL )
+  size_t count
+    number of input chars in cp
+  bool flow
+    enable flow control
+
+Description
+  Called by the terminal driver when a block of characters has been received.
+This function must be called from soft contexts not from interrupt context.
+The driver is responsible for making calls one at a time and in order (or
+using flush_to_ldisc() ).

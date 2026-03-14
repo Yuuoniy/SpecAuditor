@@ -1,0 +1,13 @@
+Macro: dma_fence_chain_for_each
+
+
+
+Parameters
+  iter
+    current fence
+  head
+    starting point
+
+Description
+  Iterate over all fences in the chain. We keep a reference to the current
+fence while inside the loop which must be dropped when breaking out.

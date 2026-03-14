@@ -1,0 +1,11 @@
+Function: void intel_irq_init ( struct drm_i915_private * dev_priv )
+
+initializes irq support
+
+Parameters
+  struct drm_i915_private *dev_priv
+    i915 device instance
+
+Description
+  This function initializes all the irq support including work items, timers
+and all the vtables. It does not setup the interrupt itself though.

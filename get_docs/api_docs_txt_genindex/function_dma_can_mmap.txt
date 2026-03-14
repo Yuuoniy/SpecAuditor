@@ -1,0 +1,11 @@
+Function: bool dma_can_mmap ( struct device * dev )
+
+check if a given device supports dma_mmap_*
+
+Parameters
+  struct device *dev
+    device to check
+
+Description
+  Returns true if dev supports dma_mmap_coherent() and dma_mmap_attrs() to
+map DMA allocations to userspace.

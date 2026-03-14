@@ -1,0 +1,15 @@
+Function: void block_invalidate_folio ( struct folio * folio , size_t offset , size_t length )
+
+Invalidate part or all of a buffer-backed folio.
+
+Parameters
+  struct folio *folio
+    The folio which is affected.
+  size_t offset
+    start of the range to invalidate
+  size_t length
+    length of the range to invalidate
+
+Description
+  block_invalidate_folio() is called when all or part of the folio has been
+invalidated by a truncate operation.

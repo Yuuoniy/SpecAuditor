@@ -1,0 +1,11 @@
+Function: void tty_free_file ( struct file * file )
+
+free file->private_data
+
+Parameters
+  struct file *file
+    to free private_data of
+
+Description
+  This shall be used only for fail path handling when tty_add_file was not
+called yet.

@@ -1,0 +1,17 @@
+Function: struct folio * writeback_iter ( struct address_space * mapping , struct writeback_control * wbc , struct folio * folio , int * error )
+
+iterate folio of a mapping for writeback
+
+Parameters
+  struct address_space *mapping
+    address space structure to write
+  struct writeback_control *wbc
+    writeback context
+  struct folio *folio
+    previously iterated folio ( NULL to start)
+  int *error
+    in-out pointer for writeback errors (see below)
+
+Description
+  This function returns the next folio for the writeback operation described by wbc on mapping and  should be called in a while loop in the ->writepages
+implementation.

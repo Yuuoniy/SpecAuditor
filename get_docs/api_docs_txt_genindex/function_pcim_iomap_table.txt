@@ -1,0 +1,13 @@
+Function: void __iomem * const * pcim_iomap_table ( struct pci_dev * pdev )
+
+access iomap allocation table (DEPRECATED)
+
+Parameters
+  struct pci_dev *pdev
+    PCI device to access iomap table for
+
+Description
+  Access iomap allocation table for dev .  If iomap table doesn’t
+exist and pdev is managed, it will be allocated.  All iomaps
+recorded in the iomap table are automatically unmapped on driver
+detach.

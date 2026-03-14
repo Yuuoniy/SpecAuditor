@@ -1,0 +1,12 @@
+Function: void input_ff_destroy ( struct input_dev * dev )
+
+frees force feedback portion of input device
+
+Parameters
+  struct input_dev *dev
+    input device supporting force feedback
+
+Description
+  This function is only needed in error path as input core will
+automatically free force feedback structures when device is
+destroyed.

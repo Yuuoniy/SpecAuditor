@@ -1,0 +1,14 @@
+Function: unsigned long airq_iv_alloc ( struct airq_iv * iv , unsigned long num )
+
+allocate irq bits from an interrupt vector
+
+Parameters
+  struct airq_iv *iv
+    pointer to an interrupt vector structure
+  unsigned long num
+    number of consecutive irq bits to allocate
+
+Description
+  Returns the bit number of the first irq in the allocated block of irqs,
+or -1UL if no bit is available or the AIRQ_IV_ALLOC flag has not been
+specified

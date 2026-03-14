@@ -1,0 +1,12 @@
+Function: int atomic_fetch_xor_release ( int i , atomic_t * v )
+
+atomic bitwise XOR with release ordering
+
+Parameters
+  int i
+    int value
+  atomic_t *v
+    pointer to atomic_t
+
+Description
+  Atomically updates v to ( v ^ i ) with release ordering.

@@ -1,0 +1,18 @@
+Function: void bitmap_fold ( unsigned long * dst , const unsigned long * orig , unsigned int sz , unsigned int nbits )
+
+fold larger bitmap into smaller, modulo specified size
+
+Parameters
+  unsigned long *dst
+    resulting smaller bitmap
+  const unsigned long *orig
+    original larger bitmap
+  unsigned int sz
+    specified size
+  unsigned int nbits
+    number of bits in each of these bitmaps
+
+Description
+  For each bit oldbit in orig , set bit oldbit mod sz in dst .
+Clear all other bits in dst .  See further the comment and
+Example [2] for bitmap_onto() for why and how to use this.

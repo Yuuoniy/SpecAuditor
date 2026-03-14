@@ -1,0 +1,12 @@
+Function: int drm_gem_dmabuf_mmap ( struct dma_buf * dma_buf , struct vm_area_struct * vma )
+
+dma_buf mmap implementation for GEM
+
+Parameters
+  struct dma_buf *dma_buf
+    buffer to be mapped
+  struct vm_area_struct *vma
+    virtual address range
+
+Description
+  Provides memory mapping for the buffer. This can be used as the dma_buf_ops.mmap callback. It just forwards to drm_gem_prime_mmap() .

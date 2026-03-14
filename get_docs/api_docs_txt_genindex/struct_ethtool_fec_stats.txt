@@ -1,0 +1,16 @@
+Struct: struct ethtool_fec_stats
+
+statistics for IEEE 802.3 FEC
+
+Members
+  corrected_blocks
+    number of received blocks corrected by FEC
+Reported to user space as ETHTOOL_A_FEC_STAT_CORRECTED .
+  uncorrectable_blocks
+    number of received blocks FEC was not able to correct
+Reported to user space as ETHTOOL_A_FEC_STAT_UNCORR .
+  corrected_bits
+    number of bits corrected by FEC
+Similar to corrected_blocks but counts individual bit changes,
+not entire FEC data blocks. This is a non-standard statistic.
+Reported to user space as ETHTOOL_A_FEC_STAT_CORR_BITS .

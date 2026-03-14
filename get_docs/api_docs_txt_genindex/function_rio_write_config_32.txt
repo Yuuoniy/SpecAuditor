@@ -1,0 +1,15 @@
+Function: int rio_write_config_32 ( struct rio_dev * rdev , u32 offset , u32 data )
+
+Write 32 bits to configuration space
+
+Parameters
+  struct rio_dev *rdev
+    RIO device
+  u32 offset
+    Offset into device configuration space
+  u32 data
+    Data to be written
+
+Description
+  Writes 32 bits of data to the specified offset within the
+RIO device’s configuration space.

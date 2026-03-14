@@ -1,0 +1,14 @@
+Function: int mpage_writepages ( struct address_space * mapping , struct writeback_control * wbc , get_block_t get_block )
+
+walk the list of dirty pages of the given address space & writepage() all of them
+
+Parameters
+  struct address_space *mapping
+    address space structure to write
+  struct writeback_control *wbc
+    subtract the number of written pages from *wbc->nr_to_write
+  get_block_t get_block
+    the filesystem’s block mapper function.
+
+Description
+  This is a library function, which implements the writepages() address_space_operation.

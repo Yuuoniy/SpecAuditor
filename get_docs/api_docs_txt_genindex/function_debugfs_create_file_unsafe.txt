@@ -1,0 +1,25 @@
+Function: struct dentry * debugfs_create_file_unsafe ( const char * name , umode_t mode , struct dentry * parent , void * data , const struct file_operations * fops )
+
+create a file in the debugfs filesystem
+
+Parameters
+  const char *name
+    a pointer to a string containing the name of the file to create.
+  umode_t mode
+    the permission that the file should have.
+  struct dentry *parent
+    a pointer to the parent dentry for this file.  This should be a
+directory dentry if set.  If this parameter is NULL, then the
+file will be created in the root of the debugfs filesystem.
+  void *data
+    a pointer to something that the caller will want to get to later
+on.  The inode.i_private pointer will point to this value on
+the open() call.
+  const struct file_operations *fops
+    a pointer to a struct file_operations that should be used for
+this file.
+
+Description
+  debugfs_create_file_unsafe() is completely analogous to debugfs_create_file() , the only difference being that the fops
+handed it will not get protected against file removals by the
+debugfs core.

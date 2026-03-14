@@ -1,0 +1,13 @@
+Function: int __auxiliary_device_add ( struct auxiliary_device * auxdev , const char * modname )
+
+add an auxiliary bus device
+
+Parameters
+  struct auxiliary_device *auxdev
+    auxiliary bus device to add to the bus
+  const char *modname
+    name of the parent device’s driver module
+
+Description
+  This is the third step in the three-step process to register an
+auxiliary_device.

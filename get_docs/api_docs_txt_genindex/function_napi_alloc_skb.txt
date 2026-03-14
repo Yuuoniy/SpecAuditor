@@ -1,0 +1,15 @@
+Function: struct sk_buff * napi_alloc_skb ( struct napi_struct * napi , unsigned int len )
+
+allocate skbuff for rx in a specific NAPI instance
+
+Parameters
+  struct napi_struct *napi
+    napi instance this buffer was allocated for
+  unsigned int len
+    length to allocate
+
+Description
+  Allocate a new sk_buff for use in NAPI receive.  This buffer will
+attempt to allocate the head from a special reserved region used
+only for NAPI Rx allocation.  By doing this we can save several
+CPU cycles by avoiding having to disable and re-enable IRQs.

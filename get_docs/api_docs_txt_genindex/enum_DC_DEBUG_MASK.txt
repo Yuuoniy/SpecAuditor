@@ -1,0 +1,3 @@
+Enum: enum DC_DEBUG_MASK
+
+Bits that are useful for debugging the Display Core IP

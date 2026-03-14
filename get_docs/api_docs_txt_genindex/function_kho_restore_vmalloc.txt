@@ -1,0 +1,11 @@
+Function: void * kho_restore_vmalloc ( const struct kho_vmalloc * preservation )
+
+recreates and populates an area in vmalloc address space from the preserved memory.
+
+Parameters
+  const struct kho_vmalloc *preservation
+    preservation metadata.
+
+Description
+  Recreates an area in vmalloc address space and populates it with memory that
+was preserved using kho_preserve_vmalloc() .

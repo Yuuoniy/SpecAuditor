@@ -1,0 +1,9 @@
+Function: void node_add_cache ( unsigned int nid , struct node_cache_attrs * cache_attrs )
+
+add cache attribute to a memory node
+
+Parameters
+  unsigned int nid
+    Node identifier that has new cache attributes
+  struct node_cache_attrs *cache_attrs
+    Attributes for the cache being added

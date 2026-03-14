@@ -1,0 +1,12 @@
+Function: void intel_ggtt_restore_fences ( struct i915_ggtt * ggtt )
+
+restore fence state
+
+Parameters
+  struct i915_ggtt *ggtt
+    Global GTT
+
+Description
+  Restore the hw fence state to match the software tracking again, to be called
+after a gpu reset and on resume. Note that on runtime suspend we only cancel
+the fences, to be reacquired by the user later.

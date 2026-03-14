@@ -1,0 +1,21 @@
+Function: struct phy_device * phy_connect ( struct net_device * dev , const char * bus_id , void ( * handler ) ( struct net_device * ) , phy_interface_t interface )
+
+connect an ethernet device to a PHY device
+
+Parameters
+  struct net_device *dev
+    the network device to connect
+  const char *bus_id
+    the id string of the PHY device to connect
+  void (*handler)(struct net_device *)
+    callback function for state change notifications
+  phy_interface_t interface
+    PHY device’s interface
+
+Description
+  devices to PHY devices.  The default behavior is for
+the PHY infrastructure to handle everything, and only notify
+the connected driver when the link status changes.  If you
+don’t want, or can’t use the provided functionality, you may
+choose to call only the subset of functions which provide
+the desired functionality.

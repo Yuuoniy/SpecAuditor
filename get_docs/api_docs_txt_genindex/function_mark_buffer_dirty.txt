@@ -1,0 +1,13 @@
+Function: void mark_buffer_dirty ( struct buffer_head * bh )
+
+mark a buffer_head as needing writeout
+
+Parameters
+  struct buffer_head *bh
+    the buffer_head to mark dirty
+
+Description
+  mark_buffer_dirty() will set the dirty bit against the buffer, then set
+its backing page dirty, then tag the page as dirty in the page cache
+and then attach the address_space’s inode to its superblock’s dirty
+inode list.

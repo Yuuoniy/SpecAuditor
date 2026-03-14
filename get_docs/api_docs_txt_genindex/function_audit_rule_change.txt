@@ -1,0 +1,13 @@
+Function: int audit_rule_change ( int type , int seq , void * data , size_t datasz )
+
+apply all rules to the specified message type
+
+Parameters
+  int type
+    audit message type
+  int seq
+    netlink audit message sequence (serial) number
+  void *data
+    payload data
+  size_t datasz
+    size of payload data

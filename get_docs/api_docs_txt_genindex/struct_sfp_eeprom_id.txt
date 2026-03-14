@@ -1,0 +1,9 @@
+Struct: struct sfp_eeprom_id
+
+raw SFP module identification information
+
+Members
+  base
+    base SFP module identification structure
+  ext
+    extended SFP module identification structure

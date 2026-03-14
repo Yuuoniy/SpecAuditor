@@ -1,0 +1,14 @@
+Struct: u64 amdgpu_bo_print_info ( int id , struct amdgpu_bo * bo , struct seq_file * m )
+
+print BO info in debugfs file
+
+Parameters
+  int id
+    Index or Id of the BO
+  struct amdgpu_bo *bo
+    Requested BO for printing info
+  struct seq_file *m
+    debugfs file
+
+Description
+  Print BO information in debugfs file

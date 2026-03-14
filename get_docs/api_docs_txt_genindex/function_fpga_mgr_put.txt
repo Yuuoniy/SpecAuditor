@@ -1,0 +1,7 @@
+Function: void fpga_mgr_put ( struct fpga_manager * mgr )
+
+release a reference to an fpga manager
+
+Parameters
+  struct fpga_manager *mgr
+    fpga manager structure

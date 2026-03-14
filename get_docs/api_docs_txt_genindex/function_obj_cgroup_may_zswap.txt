@@ -1,0 +1,10 @@
+Function: bool obj_cgroup_may_zswap ( struct obj_cgroup * objcg )
+
+check if this cgroup can zswap
+
+Parameters
+  struct obj_cgroup *objcg
+    the object cgroup
+
+Description
+  Check if the hierarchical zswap limit has been reached.

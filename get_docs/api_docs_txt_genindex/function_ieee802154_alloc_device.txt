@@ -1,0 +1,2 @@
+Function: struct ieee802154_dev * ieee802154_alloc_device ( size_t priv_size , struct ieee802154_ops * ops )
+

@@ -1,0 +1,14 @@
+Function: int amdgpu_bo_create ( struct amdgpu_device * adev , struct amdgpu_bo_param * bp , struct amdgpu_bo * * bo_ptr )
+
+create an amdgpu_bo buffer object
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device object
+  struct amdgpu_bo_param *bp
+    parameters to be used for the buffer object
+  struct amdgpu_bo **bo_ptr
+    pointer to the buffer object pointer
+
+Description
+  Creates an amdgpu_bo buffer object.

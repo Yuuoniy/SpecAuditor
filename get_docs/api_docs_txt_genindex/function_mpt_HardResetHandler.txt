@@ -1,0 +1,13 @@
+Function: int mpt_HardResetHandler ( MPT_ADAPTER * ioc , int sleepFlag )
+
+Generic reset handler
+
+Parameters
+  MPT_ADAPTER *ioc
+    Pointer to MPT_ADAPTER structure
+  int sleepFlag
+    Indicates if sleep or schedule must be called.
+
+Description
+  Issues SCSI Task Management call based on input arg values.
+If TaskMgmt fails, returns associated SCSI request.

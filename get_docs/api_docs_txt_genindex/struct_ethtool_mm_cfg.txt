@@ -1,0 +1,15 @@
+Struct: struct ethtool_mm_cfg
+
+802.3 MAC merge layer configuration
+
+Members
+  verify_time
+    see struct ethtool_mm_state
+  verify_enabled
+    see struct ethtool_mm_state
+  tx_enabled
+    see struct ethtool_mm_state
+  pmac_enabled
+    see struct ethtool_mm_state
+  tx_min_frag_size
+    see struct ethtool_mm_state

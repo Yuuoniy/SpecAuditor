@@ -1,0 +1,10 @@
+Function: snd_pcm_uframes_t snd_pcm_capture_avail ( struct snd_pcm_runtime * runtime )
+
+Get the available (readable) space for capture
+
+Parameters
+  struct snd_pcm_runtime *runtime
+    PCM runtime instance
+
+Description
+  Result is between 0 ... (boundary - 1)

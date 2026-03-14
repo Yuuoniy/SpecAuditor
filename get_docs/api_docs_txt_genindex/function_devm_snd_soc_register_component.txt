@@ -1,0 +1,17 @@
+Function: int devm_snd_soc_register_component ( struct device * dev , const struct snd_soc_component_driver * cmpnt_drv , struct snd_soc_dai_driver * dai_drv , int num_dai )
+
+resource managed component registration
+
+Parameters
+  struct device *dev
+    Device used to manage component
+  const struct snd_soc_component_driver *cmpnt_drv
+    Component driver
+  struct snd_soc_dai_driver *dai_drv
+    DAI driver
+  int num_dai
+    Number of DAIs to register
+
+Description
+  Register a component with automatic unregistration when the device is
+unregistered.

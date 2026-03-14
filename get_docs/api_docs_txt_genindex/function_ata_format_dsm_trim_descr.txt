@@ -1,0 +1,17 @@
+Function: size_t ata_format_dsm_trim_descr ( struct scsi_cmnd * cmd , u32 trmax , u64 sector , u32 count )
+
+SATL Write Same to DSM Trim
+
+Parameters
+  struct scsi_cmnd *cmd
+    SCSI command being translated
+  u32 trmax
+    Maximum number of entries that will fit in sector_size bytes.
+  u64 sector
+    Starting sector
+  u32 count
+    Total Range of request in logical sectors
+
+Description
+  Rewrite the WRITE SAME descriptor to be a DSM TRIM little-endian formatted
+descriptor.

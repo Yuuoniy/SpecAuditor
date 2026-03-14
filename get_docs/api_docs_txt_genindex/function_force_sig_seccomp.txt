@@ -1,0 +1,14 @@
+Function: int force_sig_seccomp ( int syscall , int reason , bool force_coredump )
+
+signals the task to allow in-process syscall emulation
+
+Parameters
+  int syscall
+    syscall number to send to userland
+  int reason
+    filter-supplied reason code to send to userland (via si_errno)
+  bool force_coredump
+    true to trigger a coredump
+
+Description
+  Forces a SIGSYS with a code of SYS_SECCOMP and related sigsys info.

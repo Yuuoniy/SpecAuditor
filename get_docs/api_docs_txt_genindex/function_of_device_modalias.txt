@@ -1,0 +1,11 @@
+Function: ssize_t of_device_modalias ( struct device * dev , char * str , ssize_t len )
+
+Fill buffer with newline terminated modalias string
+
+Parameters
+  struct device *dev
+    Calling device
+  char *str
+    Modalias string
+  ssize_t len
+    Size of str

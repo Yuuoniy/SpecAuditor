@@ -1,0 +1,12 @@
+Function: int drm_dp_link_power_down ( struct drm_dp_aux * aux , unsigned char revision )
+
+power down a DisplayPort link
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  unsigned char revision
+    DPCD revision supported on the link
+
+Description
+  Returns 0 on success or a negative error code on failure.

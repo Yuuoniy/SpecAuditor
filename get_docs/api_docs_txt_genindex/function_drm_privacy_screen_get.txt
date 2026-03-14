@@ -1,0 +1,13 @@
+Function: struct drm_privacy_screen * drm_privacy_screen_get ( struct device * dev , const char * con_id )
+
+get a privacy-screen provider
+
+Parameters
+  struct device *dev
+    consumer-device for which to get a privacy-screen provider
+  const char *con_id
+    (video)connector name for which to get a privacy-screen provider
+
+Description
+  Get a privacy-screen provider for a privacy-screen attached to the
+display described by the dev and con_id parameters.

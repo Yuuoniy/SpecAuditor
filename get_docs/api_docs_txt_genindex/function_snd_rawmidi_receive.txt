@@ -1,0 +1,14 @@
+Function: int snd_rawmidi_receive ( struct snd_rawmidi_substream * substream , const unsigned char * buffer , int count )
+
+receive the input data from the device
+
+Parameters
+  struct snd_rawmidi_substream *substream
+    the rawmidi substream
+  const unsigned char *buffer
+    the buffer pointer
+  int count
+    the data size to read
+
+Description
+  Reads the data from the internal buffer.

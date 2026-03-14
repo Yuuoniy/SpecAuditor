@@ -1,0 +1,13 @@
+Function: int vme_lm_detach ( struct vme_resource * resource , int monitor )
+
+Remove callback for location monitor address
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME location monitor resource.
+  int monitor
+    Offset to which callback should be removed.
+
+Description
+  Remove the callback associated with the specified offset into the
+location monitors monitored addresses.

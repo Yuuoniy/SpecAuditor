@@ -1,0 +1,1013 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Submitting patches: the essential guide to getting your code into the kernel &#8212; The Linux Kernel  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Contributor Covenant Code of Conduct" href="code-of-conduct.html" />
+    <link rel="prev" title="8. For more information" href="8.Conclusion.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../index.html">The Linux Kernel</a></h1>
+
+
+
+<p class="blurb">6.18.0-rc1</p>
+
+
+
+
+
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+<p>
+<h3 class="kernel-toc-contents">Contents</h3>
+<input type="checkbox" class="kernel-toc-toggle" id = "kernel-toc-toggle" checked>
+<label class="kernel-toc-title" for="kernel-toc-toggle"></label>
+
+<div class="kerneltoc" id="kerneltoc">
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="development-process.html">Development process</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Submitting patches</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#obtain-a-current-source-tree">Obtain a current source tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#describe-your-changes">Describe your changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#separate-your-changes">Separate your changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#style-check-your-changes">Style-check your changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#select-the-recipients-for-your-patch">Select the recipients for your patch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#no-mime-no-links-no-compression-no-attachments-just-plain-text">No MIME, no links, no compression, no attachments.  Just plain text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#respond-to-review-comments">Respond to review comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-trimmed-interleaved-replies-in-email-discussions">Use trimmed interleaved replies in email discussions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#don-t-get-discouraged-or-impatient">Don’t get discouraged - or impatient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#include-patch-in-the-subject">Include PATCH in the subject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sign-your-work-the-developer-s-certificate-of-origin">Sign your work - the Developer’s Certificate of Origin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#developer-s-certificate-of-origin-1-1">Developer’s Certificate of Origin 1.1</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#when-to-use-acked-by-cc-and-co-developed-by">When to use Acked-by:, Cc:, and Co-developed-by:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-reported-by-tested-by-reviewed-by-suggested-by-and-fixes">Using Reported-by:, Tested-by:, Reviewed-by:, Suggested-by: and Fixes:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reviewer-s-statement-of-oversight">Reviewer’s statement of oversight</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tagging-people-requires-permission">Tagging people requires permission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-canonical-patch-format">The canonical patch format</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subject-line">Subject Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#from-line">From Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#explanation-body">Explanation Body</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commentary">Commentary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#explicit-in-reply-to-headers">Explicit In-Reply-To headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#providing-base-tree-information">Providing base tree information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tooling">Tooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code-of-conduct.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Maintainer handbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">All development-process docs</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core-api/index.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver-api/index.html">Driver APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subsystem-apis.html">Subsystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../locking/index.html">Locking</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license-rules.html">Licensing rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-guide/index.html">Writing documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-tools/index.html">Development tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-tools/testing-overview.html">Testing guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kernel-hacking/index.html">Hacking guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trace/index.html">Tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fault-injection/index.html">Fault injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../livepatch/index.html">Livepatching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">Rust</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kbuild/index.html">Build system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/reporting-issues.html">Reporting issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Userspace tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userspace-api/index.html">Userspace API</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../firmware-guide/index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devicetree/index.html">Firmware and Devicetree</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../arch/index.html">CPU architectures</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging/index.html">Unsorted documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../translations/index.html">Translations</a></li>
+</ul>
+
+</div>
+
+<script type="text/javascript"> <!--
+  var sbar = document.getElementsByClassName("sphinxsidebar")[0];
+  let currents = document.getElementsByClassName("current")
+  if (currents.length) {
+    sbar.scrollTop = currents[currents.length - 1].offsetTop;
+  }
+  --> </script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/process/submitting-patches.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+
+
+
+
+<div class="language-selection">
+English
+
+<ul>
+
+<li><a href="../translations/zh_CN/process/submitting-patches.html">Chinese (Simplified)</a></li>
+
+<li><a href="../translations/zh_TW/process/submitting-patches.html">Chinese (Traditional)</a></li>
+
+<li><a href="../translations/it_IT/process/submitting-patches.html">Italian</a></li>
+
+<li><a href="../translations/sp_SP/process/submitting-patches.html">Spanish</a></li>
+
+</ul>
+</div>
+<section id="submitting-patches-the-essential-guide-to-getting-your-code-into-the-kernel">
+<span id="submittingpatches"></span><h1>Submitting patches: the essential guide to getting your code into the kernel<a class="headerlink" href="#submitting-patches-the-essential-guide-to-getting-your-code-into-the-kernel" title="Permalink to this heading">¶</a></h1>
+<p>For a person or company who wishes to submit a change to the Linux
+kernel, the process can sometimes be daunting if you’re not familiar
+with “the system.”  This text is a collection of suggestions which
+can greatly increase the chances of your change being accepted.</p>
+<p>This document contains a large number of suggestions in a relatively terse
+format.  For detailed information on how the kernel development process
+works, see <a class="reference internal" href="development-process.html"><span class="doc">A guide to the Kernel Development Process</span></a>. Also, read
+<a class="reference internal" href="submit-checklist.html"><span class="doc">Linux Kernel patch submission checklist</span></a>
+for a list of items to check before submitting code.
+For device tree binding patches, read
+<a class="reference internal" href="../devicetree/bindings/submitting-patches.html"><span class="doc">Submitting Devicetree (DT) binding patches</span></a>.</p>
+<p>This documentation assumes that you’re using <code class="docutils literal notranslate"><span class="pre">git</span></code> to prepare your patches.
+If you’re unfamiliar with <code class="docutils literal notranslate"><span class="pre">git</span></code>, you would be well-advised to learn how to
+use it, it will make your life as a kernel developer and in general much
+easier.</p>
+<p>Some subsystems and maintainer trees have additional information about
+their workflow and expectations, see
+<a class="reference internal" href="maintainer-handbooks.html#maintainer-handbooks-main"><span class="std std-ref">Documentation/process/maintainer-handbooks.rst</span></a>.</p>
+<section id="obtain-a-current-source-tree">
+<h2>Obtain a current source tree<a class="headerlink" href="#obtain-a-current-source-tree" title="Permalink to this heading">¶</a></h2>
+<p>If you do not have a repository with the current kernel source handy, use
+<code class="docutils literal notranslate"><span class="pre">git</span></code> to obtain one.  You’ll want to start with the mainline repository,
+which can be grabbed with:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+</pre></div>
+</div>
+<p>Note, however, that you may not want to develop against the mainline tree
+directly.  Most subsystem maintainers run their own trees and want to see
+patches prepared against those trees.  See the <strong>T:</strong> entry for the subsystem
+in the MAINTAINERS file to find that tree, or simply ask the maintainer if
+the tree is not listed there.</p>
+</section>
+<section id="describe-your-changes">
+<span id="describe-changes"></span><h2>Describe your changes<a class="headerlink" href="#describe-your-changes" title="Permalink to this heading">¶</a></h2>
+<p>Describe your problem.  Whether your patch is a one-line bug fix or
+5000 lines of a new feature, there must be an underlying problem that
+motivated you to do this work.  Convince the reviewer that there is a
+problem worth fixing and that it makes sense for them to read past the
+first paragraph.</p>
+<p>Describe user-visible impact.  Straight up crashes and lockups are
+pretty convincing, but not all bugs are that blatant.  Even if the
+problem was spotted during code review, describe the impact you think
+it can have on users.  Keep in mind that the majority of Linux
+installations run kernels from secondary stable trees or
+vendor/product-specific trees that cherry-pick only specific patches
+from upstream, so include anything that could help route your change
+downstream: provoking circumstances, excerpts from dmesg, crash
+descriptions, performance regressions, latency spikes, lockups, etc.</p>
+<p>Quantify optimizations and trade-offs.  If you claim improvements in
+performance, memory consumption, stack footprint, or binary size,
+include numbers that back them up.  But also describe non-obvious
+costs.  Optimizations usually aren’t free but trade-offs between CPU,
+memory, and readability; or, when it comes to heuristics, between
+different workloads.  Describe the expected downsides of your
+optimization so that the reviewer can weigh costs against benefits.</p>
+<p>Once the problem is established, describe what you are actually doing
+about it in technical detail.  It’s important to describe the change
+in plain English for the reviewer to verify that the code is behaving
+as you intend it to.</p>
+<p>The maintainer will thank you if you write your patch description in a
+form which can be easily pulled into Linux’s source code management
+system, <code class="docutils literal notranslate"><span class="pre">git</span></code>, as a “commit log”.  See <a class="reference internal" href="#the-canonical-patch-format"><span class="std std-ref">The canonical patch format</span></a>.</p>
+<p>Solve only one problem per patch.  If your description starts to get
+long, that’s a sign that you probably need to split up your patch.
+See <a class="reference internal" href="#split-changes"><span class="std std-ref">Separate your changes</span></a>.</p>
+<p>When you submit or resubmit a patch or patch series, include the
+complete patch description and justification for it.  Don’t just
+say that this is version N of the patch (series).  Don’t expect the
+subsystem maintainer to refer back to earlier patch versions or referenced
+URLs to find the patch description and put that into the patch.
+I.e., the patch (series) and its description should be self-contained.
+This benefits both the maintainers and reviewers.  Some reviewers
+probably didn’t even receive earlier versions of the patch.</p>
+<p>Describe your changes in imperative mood, e.g. “make xyzzy do frotz”
+instead of “[This patch] makes xyzzy do frotz” or “[I] changed xyzzy
+to do frotz”, as if you are giving orders to the codebase to change
+its behaviour.</p>
+<p>If you want to refer to a specific commit, don’t just refer to the
+SHA-1 ID of the commit. Please also include the oneline summary of
+the commit, to make it easier for reviewers to know what it is about.
+Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Commit e21d2170f36602ae2708 (&quot;video: remove unnecessary
+platform_set_drvdata()&quot;) removed the unnecessary
+platform_set_drvdata(), but left the variable &quot;dev&quot; unused,
+delete it.
+</pre></div>
+</div>
+<p>You should also be sure to use at least the first twelve characters of the
+SHA-1 ID.  The kernel repository holds a <em>lot</em> of objects, making
+collisions with shorter IDs a real possibility.  Bear in mind that, even if
+there is no collision with your six-character ID now, that condition may
+change five years from now.</p>
+<p>If related discussions or any other background information behind the change
+can be found on the web, add ‘Link:’ tags pointing to it. If the patch is a
+result of some earlier mailing list discussions or something documented on the
+web, point to it.</p>
+<p>When linking to mailing list archives, preferably use the lore.kernel.org
+message archiver service. To create the link URL, use the contents of the
+<code class="docutils literal notranslate"><span class="pre">Message-ID</span></code> header of the message without the surrounding angle brackets.
+For example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Link: https://lore.kernel.org/30th.anniversary.repost@klaava.Helsinki.FI
+</pre></div>
+</div>
+<p>Please check the link to make sure that it is actually working and points
+to the relevant message.</p>
+<p>However, try to make your explanation understandable without external
+resources. In addition to giving a URL to a mailing list archive or bug,
+summarize the relevant points of the discussion that led to the
+patch as submitted.</p>
+<p>In case your patch fixes a bug, use the ‘Closes:’ tag with a URL referencing
+the report in the mailing list archives or a public bug tracker. For example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Closes: https://example.com/issues/1234
+</pre></div>
+</div>
+<p>Some bug trackers have the ability to close issues automatically when a
+commit with such a tag is applied. Some bots monitoring mailing lists can
+also track such tags and take certain actions. Private bug trackers and
+invalid URLs are forbidden.</p>
+<p>If your patch fixes a bug in a specific commit, e.g. you found an issue using
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span></code>, please use the ‘Fixes:’ tag with at least the first 12
+characters of the SHA-1 ID, and the one line summary.  Do not split the tag
+across multiple lines, tags are exempt from the “wrap at 75 columns” rule in
+order to simplify parsing scripts.  For example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Fixes: 54a4f0239f2e (&quot;KVM: MMU: make kvm_mmu_zap_page() return the number of pages it actually freed&quot;)
+</pre></div>
+</div>
+<p>The following <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span></code> settings can be used to add a pretty format for
+outputting the above style in the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span></code> commands:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[core]
+        abbrev = 12
+[pretty]
+        fixes = Fixes: %h (\&quot;%s\&quot;)
+</pre></div>
+</div>
+<p>An example call:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git log -1 --pretty=fixes 54a4f0239f2e
+Fixes: 54a4f0239f2e (&quot;KVM: MMU: make kvm_mmu_zap_page() return the number of pages it actually freed&quot;)
+</pre></div>
+</div>
+</section>
+<section id="separate-your-changes">
+<span id="split-changes"></span><h2>Separate your changes<a class="headerlink" href="#separate-your-changes" title="Permalink to this heading">¶</a></h2>
+<p>Separate each <strong>logical change</strong> into a separate patch.</p>
+<p>For example, if your changes include both bug fixes and performance
+enhancements for a single driver, separate those changes into two
+or more patches.  If your changes include an API update, and a new
+driver which uses that new API, separate those into two patches.</p>
+<p>On the other hand, if you make a single change to numerous files,
+group those changes into a single patch.  Thus a single logical change
+is contained within a single patch.</p>
+<p>The point to remember is that each patch should make an easily understood
+change that can be verified by reviewers.  Each patch should be justifiable
+on its own merits.</p>
+<p>If one patch depends on another patch in order for a change to be
+complete, that is OK.  Simply note <strong>“this patch depends on patch X”</strong>
+in your patch description.</p>
+<p>When dividing your change into a series of patches, take special care to
+ensure that the kernel builds and runs properly after each patch in the
+series.  Developers using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span></code> to track down a problem can end up
+splitting your patch series at any point; they will not thank you if you
+introduce bugs in the middle.</p>
+<p>If you cannot condense your patch set into a smaller set of patches,
+then only post say 15 or so at a time and wait for review and integration.</p>
+</section>
+<section id="style-check-your-changes">
+<h2>Style-check your changes<a class="headerlink" href="#style-check-your-changes" title="Permalink to this heading">¶</a></h2>
+<p>Check your patch for basic style violations, details of which can be
+found in <a class="reference internal" href="coding-style.html"><span class="doc">Linux kernel coding style</span></a>.
+Failure to do so simply wastes
+the reviewers time and will get your patch rejected, probably
+without even being read.</p>
+<p>One significant exception is when moving code from one file to
+another -- in this case you should not modify the moved code at all in
+the same patch which moves it.  This clearly delineates the act of
+moving the code and your changes.  This greatly aids review of the
+actual differences and allows tools to better track the history of
+the code itself.</p>
+<p>Check your patches with the patch style checker prior to submission
+(scripts/checkpatch.pl).  Note, though, that the style checker should be
+viewed as a guide, not as a replacement for human judgment.  If your code
+looks better with a violation then its probably best left alone.</p>
+<dl class="simple">
+<dt>The checker reports at three levels:</dt><dd><ul class="simple">
+<li><p>ERROR: things that are very likely to be wrong</p></li>
+<li><p>WARNING: things requiring careful review</p></li>
+<li><p>CHECK: things requiring thought</p></li>
+</ul>
+</dd>
+</dl>
+<p>You should be able to justify all violations that remain in your
+patch.</p>
+</section>
+<section id="select-the-recipients-for-your-patch">
+<h2>Select the recipients for your patch<a class="headerlink" href="#select-the-recipients-for-your-patch" title="Permalink to this heading">¶</a></h2>
+<p>You should always copy the appropriate subsystem maintainer(s) and list(s) on
+any patch to code that they maintain; look through the MAINTAINERS file and the
+source code revision history to see who those maintainers are.  The script
+scripts/get_maintainer.pl can be very useful at this step (pass paths to your
+patches as arguments to scripts/get_maintainer.pl).  If you cannot find a
+maintainer for the subsystem you are working on, Andrew Morton
+(<a class="reference external" href="mailto:akpm&#37;&#52;&#48;linux-foundation&#46;org">akpm<span>&#64;</span>linux-foundation<span>&#46;</span>org</a>) serves as a maintainer of last resort.</p>
+<p><a class="reference external" href="mailto:linux-kernel&#37;&#52;&#48;vger&#46;kernel&#46;org">linux-kernel<span>&#64;</span>vger<span>&#46;</span>kernel<span>&#46;</span>org</a> should be used by default for all patches, but the
+volume on that list has caused a number of developers to tune it out.  Please
+do not spam unrelated lists and unrelated people, though.</p>
+<p>Many kernel-related lists are hosted at kernel.org; you can find a list
+of them at <a class="reference external" href="https://subspace.kernel.org">https://subspace.kernel.org</a>.  There are kernel-related lists
+hosted elsewhere as well, though.</p>
+<p>Linus Torvalds is the final arbiter of all changes accepted into the
+Linux kernel.  His e-mail address is &lt;<a class="reference external" href="mailto:torvalds&#37;&#52;&#48;linux-foundation&#46;org">torvalds<span>&#64;</span>linux-foundation<span>&#46;</span>org</a>&gt;.
+He gets a lot of e-mail, and, at this point, very few patches go through
+Linus directly, so typically you should do your best to -avoid-
+sending him e-mail.</p>
+<p>If you have a patch that fixes an exploitable security bug, send that patch
+to <a class="reference external" href="mailto:security&#37;&#52;&#48;kernel&#46;org">security<span>&#64;</span>kernel<span>&#46;</span>org</a>.  For severe bugs, a short embargo may be considered
+to allow distributors to get the patch out to users; in such cases,
+obviously, the patch should not be sent to any public lists. See also
+<a class="reference internal" href="security-bugs.html"><span class="doc">Security bugs</span></a>.</p>
+<p>Patches that fix a severe bug in a released kernel should be directed
+toward the stable maintainers by putting a line like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Cc: stable@vger.kernel.org
+</pre></div>
+</div>
+<p>into the sign-off area of your patch (note, NOT an email recipient).  You
+should also read <a class="reference internal" href="stable-kernel-rules.html"><span class="doc">Everything you ever wanted to know about Linux -stable releases</span></a>
+in addition to this document.</p>
+<p>If changes affect userland-kernel interfaces, please send the MAN-PAGES
+maintainer (as listed in the MAINTAINERS file) a man-pages patch, or at
+least a notification of the change, so that some information makes its way
+into the manual pages.  User-space API changes should also be copied to
+<a class="reference external" href="mailto:linux-api&#37;&#52;&#48;vger&#46;kernel&#46;org">linux-api<span>&#64;</span>vger<span>&#46;</span>kernel<span>&#46;</span>org</a>.</p>
+</section>
+<section id="no-mime-no-links-no-compression-no-attachments-just-plain-text">
+<h2>No MIME, no links, no compression, no attachments.  Just plain text<a class="headerlink" href="#no-mime-no-links-no-compression-no-attachments-just-plain-text" title="Permalink to this heading">¶</a></h2>
+<p>Linus and other kernel developers need to be able to read and comment
+on the changes you are submitting.  It is important for a kernel
+developer to be able to “quote” your changes, using standard e-mail
+tools, so that they may comment on specific portions of your code.</p>
+<p>For this reason, all patches should be submitted by e-mail “inline”. The
+easiest way to do this is with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">send-email</span></code>, which is strongly
+recommended.  An interactive tutorial for <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">send-email</span></code> is available at
+<a class="reference external" href="https://git-send-email.io">https://git-send-email.io</a>.</p>
+<p>If you choose not to use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">send-email</span></code>:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be wary of your editor’s word-wrap corrupting your patch,
+if you choose to cut-n-paste your patch.</p>
+</div>
+<p>Do not attach the patch as a MIME attachment, compressed or not.
+Many popular e-mail applications will not always transmit a MIME
+attachment as plain text, making it impossible to comment on your
+code.  A MIME attachment also takes Linus a bit more time to process,
+decreasing the likelihood of your MIME-attached change being accepted.</p>
+<p>Exception:  If your mailer is mangling patches then someone may ask
+you to re-send them using MIME.</p>
+<p>See <a class="reference internal" href="email-clients.html"><span class="doc">Email clients info for Linux</span></a> for hints about configuring
+your e-mail client so that it sends your patches untouched.</p>
+</section>
+<section id="respond-to-review-comments">
+<h2>Respond to review comments<a class="headerlink" href="#respond-to-review-comments" title="Permalink to this heading">¶</a></h2>
+<p>Your patch will almost certainly get comments from reviewers on ways in
+which the patch can be improved, in the form of a reply to your email. You must
+respond to those comments; ignoring reviewers is a good way to get ignored in
+return. You can simply reply to their emails to answer their comments. Review
+comments or questions that do not lead to a code change should almost certainly
+bring about a comment or changelog entry so that the next reviewer better
+understands what is going on.</p>
+<p>Be sure to tell the reviewers what changes you are making and to thank them
+for their time.  Code review is a tiring and time-consuming process, and
+reviewers sometimes get grumpy.  Even in that case, though, respond
+politely and address the problems they have pointed out.  When sending a next
+version, add a <code class="docutils literal notranslate"><span class="pre">patch</span> <span class="pre">changelog</span></code> to the cover letter or to individual patches
+explaining difference against previous submission (see
+<a class="reference internal" href="#the-canonical-patch-format"><span class="std std-ref">The canonical patch format</span></a>).
+Notify people that commented on your patch about new versions by adding them to
+the patches CC list.</p>
+<p>See <a class="reference internal" href="email-clients.html"><span class="doc">Email clients info for Linux</span></a> for recommendations on email
+clients and mailing list etiquette.</p>
+</section>
+<section id="use-trimmed-interleaved-replies-in-email-discussions">
+<span id="interleaved-replies"></span><h2>Use trimmed interleaved replies in email discussions<a class="headerlink" href="#use-trimmed-interleaved-replies-in-email-discussions" title="Permalink to this heading">¶</a></h2>
+<p>Top-posting is strongly discouraged in Linux kernel development
+discussions. Interleaved (or “inline”) replies make conversations much
+easier to follow. For more details see:
+<a class="reference external" href="https://en.wikipedia.org/wiki/Posting_style#Interleaved_style">https://en.wikipedia.org/wiki/Posting_style#Interleaved_style</a></p>
+<p>As is frequently quoted on the mailing list:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A: http://en.wikipedia.org/wiki/Top_post
+Q: Where do I find info about this thing called top-posting?
+A: Because it messes up the order in which people normally read text.
+Q: Why is top-posting such a bad thing?
+A: Top-posting.
+Q: What is the most annoying thing in e-mail?
+</pre></div>
+</div>
+<p>Similarly, please trim all unneeded quotations that aren’t relevant
+to your reply. This makes responses easier to find, and saves time and
+space. For more details see: <a class="reference external" href="http://daringfireball.net/2007/07/on_top">http://daringfireball.net/2007/07/on_top</a></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A: No.
+Q: Should I include quotations after my reply?
+</pre></div>
+</div>
+</section>
+<section id="don-t-get-discouraged-or-impatient">
+<span id="resend-reminders"></span><h2>Don’t get discouraged - or impatient<a class="headerlink" href="#don-t-get-discouraged-or-impatient" title="Permalink to this heading">¶</a></h2>
+<p>After you have submitted your change, be patient and wait.  Reviewers are
+busy people and may not get to your patch right away.</p>
+<p>Once upon a time, patches used to disappear into the void without comment,
+but the development process works more smoothly than that now.  You should
+receive comments within a few weeks (typically 2-3); if that does not
+happen, make sure that you have sent your patches to the right place.
+Wait for a minimum of one week before resubmitting or pinging reviewers
+- possibly longer during busy times like merge windows.</p>
+<p>It’s also ok to resend the patch or the patch series after a couple of
+weeks with the word “RESEND” added to the subject line:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[PATCH Vx RESEND] sub/sys: Condensed patch summary
+</pre></div>
+</div>
+<p>Don’t add “RESEND” when you are submitting a modified version of your
+patch or patch series - “RESEND” only applies to resubmission of a
+patch or patch series which have not been modified in any way from the
+previous submission.</p>
+</section>
+<section id="include-patch-in-the-subject">
+<h2>Include PATCH in the subject<a class="headerlink" href="#include-patch-in-the-subject" title="Permalink to this heading">¶</a></h2>
+<p>Due to high e-mail traffic to Linus, and to linux-kernel, it is common
+convention to prefix your subject line with [PATCH].  This lets Linus
+and other kernel developers more easily distinguish patches from other
+e-mail discussions.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">send-email</span></code> will do this for you automatically.</p>
+</section>
+<section id="sign-your-work-the-developer-s-certificate-of-origin">
+<h2>Sign your work - the Developer’s Certificate of Origin<a class="headerlink" href="#sign-your-work-the-developer-s-certificate-of-origin" title="Permalink to this heading">¶</a></h2>
+<p>To improve tracking of who did what, especially with patches that can
+percolate to their final resting place in the kernel through several
+layers of maintainers, we’ve introduced a “sign-off” procedure on
+patches that are being emailed around.</p>
+<p>The sign-off is a simple line at the end of the explanation for the
+patch, which certifies that you wrote it or otherwise have the right to
+pass it on as an open-source patch.  The rules are pretty simple: if you
+can certify the below:</p>
+<section id="developer-s-certificate-of-origin-1-1">
+<h3>Developer’s Certificate of Origin 1.1<a class="headerlink" href="#developer-s-certificate-of-origin-1-1" title="Permalink to this heading">¶</a></h3>
+<p>By making a contribution to this project, I certify that:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>The contribution was created in whole or in part by me and I
+have the right to submit it under the open source license
+indicated in the file; or</p></li>
+<li><p>The contribution is based upon previous work that, to the best
+of my knowledge, is covered under an appropriate open source
+license and I have the right under that license to submit that
+work with modifications, whether created in whole or in part
+by me, under the same open source license (unless I am
+permitted to submit under a different license), as indicated
+in the file; or</p></li>
+<li><p>The contribution was provided directly to me by some other
+person who certified (a), (b) or (c) and I have not modified
+it.</p></li>
+<li><p>I understand and agree that this project and the contribution
+are public and that a record of the contribution (including all
+personal information I submit with it, including my sign-off) is
+maintained indefinitely and may be redistributed consistent with
+this project or the open source license(s) involved.</p></li>
+</ol>
+</div></blockquote>
+<p>then you just add a line saying:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Signed-off-by: Random J Developer &lt;random@developer.example.org&gt;
+</pre></div>
+</div>
+<p>using a known identity (sorry, no anonymous contributions.)
+This will be done for you automatically if you use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-s</span></code>.
+Reverts should also include “Signed-off-by”. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span> <span class="pre">-s</span></code> does that
+for you.</p>
+<p>Some people also put extra tags at the end.  They’ll just be ignored for
+now, but you can do this to mark internal company procedures or just
+point out some special detail about the sign-off.</p>
+<p>Any further SoBs (Signed-off-by:’s) following the author’s SoB are from
+people handling and transporting the patch, but were not involved in its
+development. SoB chains should reflect the <strong>real</strong> route a patch took
+as it was propagated to the maintainers and ultimately to Linus, with
+the first SoB entry signalling primary authorship of a single author.</p>
+</section>
+</section>
+<section id="when-to-use-acked-by-cc-and-co-developed-by">
+<h2>When to use Acked-by:, Cc:, and Co-developed-by:<a class="headerlink" href="#when-to-use-acked-by-cc-and-co-developed-by" title="Permalink to this heading">¶</a></h2>
+<p>The Signed-off-by: tag indicates that the signer was involved in the
+development of the patch, or that he/she was in the patch’s delivery path.</p>
+<p>If a person was not directly involved in the preparation or handling of a
+patch but wishes to signify and record their approval of it then they can
+ask to have an Acked-by: line added to the patch’s changelog.</p>
+<p>Acked-by: is meant to be used by those responsible for or involved with the
+affected code in one way or another.  Most commonly, the maintainer when that
+maintainer neither contributed to nor forwarded the patch.</p>
+<p>Acked-by: may also be used by other stakeholders, such as people with domain
+knowledge (e.g. the original author of the code being modified), userspace-side
+reviewers for a kernel uAPI patch or key users of a feature.  Optionally, in
+these cases, it can be useful to add a “# Suffix” to clarify its meaning:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Acked-by: The Stakeholder &lt;stakeholder@example.org&gt; # As primary user
+</pre></div>
+</div>
+<p>Acked-by: is not as formal as Signed-off-by:.  It is a record that the acker
+has at least reviewed the patch and has indicated acceptance.  Hence patch
+mergers will sometimes manually convert an acker’s “yep, looks good to me”
+into an Acked-by: (but note that it is usually better to ask for an
+explicit ack).</p>
+<p>Acked-by: is also less formal than Reviewed-by:.  For instance, maintainers may
+use it to signify that they are OK with a patch landing, but they may not have
+reviewed it as thoroughly as if a Reviewed-by: was provided.  Similarly, a key
+user may not have carried out a technical review of the patch, yet they may be
+satisfied with the general approach, the feature or the user-facing interface.</p>
+<p>Acked-by: does not necessarily indicate acknowledgement of the entire patch.
+For example, if a patch affects multiple subsystems and has an Acked-by: from
+one subsystem maintainer then this usually indicates acknowledgement of just
+the part which affects that maintainer’s code.  Judgement should be used here.
+When in doubt people should refer to the original discussion in the mailing
+list archives.  A “# Suffix” may also be used in this case to clarify.</p>
+<p>If a person has had the opportunity to comment on a patch, but has not
+provided such comments, you may optionally add a <code class="docutils literal notranslate"><span class="pre">Cc:</span></code> tag to the patch.
+This tag documents that potentially interested parties have been included in
+the discussion. Note, this is one of only three tags you might be able to use
+without explicit permission of the person named (see ‘Tagging people requires
+permission’ below for details).</p>
+<p>Co-developed-by: states that the patch was co-created by multiple developers;
+it is used to give attribution to co-authors (in addition to the author
+attributed by the From: tag) when several people work on a single patch.  Since
+Co-developed-by: denotes authorship, every Co-developed-by: must be immediately
+followed by a Signed-off-by: of the associated co-author.  Standard sign-off
+procedure applies, i.e. the ordering of Signed-off-by: tags should reflect the
+chronological history of the patch insofar as possible, regardless of whether
+the author is attributed via From: or Co-developed-by:.  Notably, the last
+Signed-off-by: must always be that of the developer submitting the patch.</p>
+<p>Note, the From: tag is optional when the From: author is also the person (and
+email) listed in the From: line of the email header.</p>
+<p>Example of a patch submitted by the From: author:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;changelog&gt;
+
+Co-developed-by: First Co-Author &lt;first@coauthor.example.org&gt;
+Signed-off-by: First Co-Author &lt;first@coauthor.example.org&gt;
+Co-developed-by: Second Co-Author &lt;second@coauthor.example.org&gt;
+Signed-off-by: Second Co-Author &lt;second@coauthor.example.org&gt;
+Signed-off-by: From Author &lt;from@author.example.org&gt;
+</pre></div>
+</div>
+<p>Example of a patch submitted by a Co-developed-by: author:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>From: From Author &lt;from@author.example.org&gt;
+
+&lt;changelog&gt;
+
+Co-developed-by: Random Co-Author &lt;random@coauthor.example.org&gt;
+Signed-off-by: Random Co-Author &lt;random@coauthor.example.org&gt;
+Signed-off-by: From Author &lt;from@author.example.org&gt;
+Co-developed-by: Submitting Co-Author &lt;sub@coauthor.example.org&gt;
+Signed-off-by: Submitting Co-Author &lt;sub@coauthor.example.org&gt;
+</pre></div>
+</div>
+</section>
+<section id="using-reported-by-tested-by-reviewed-by-suggested-by-and-fixes">
+<h2>Using Reported-by:, Tested-by:, Reviewed-by:, Suggested-by: and Fixes:<a class="headerlink" href="#using-reported-by-tested-by-reviewed-by-suggested-by-and-fixes" title="Permalink to this heading">¶</a></h2>
+<p>The Reported-by tag gives credit to people who find bugs and report them and it
+hopefully inspires them to help us again in the future. The tag is intended for
+bugs; please do not use it to credit feature requests. The tag should be
+followed by a Closes: tag pointing to the report, unless the report is not
+available on the web. The Link: tag can be used instead of Closes: if the patch
+fixes a part of the issue(s) being reported. Note, the Reported-by tag is one
+of only three tags you might be able to use without explicit permission of the
+person named (see ‘Tagging people requires permission’ below for details).</p>
+<p>A Tested-by: tag indicates that the patch has been successfully tested (in
+some environment) by the person named.  This tag informs maintainers that
+some testing has been performed, provides a means to locate testers for
+future patches, and ensures credit for the testers.</p>
+<p>Reviewed-by:, instead, indicates that the patch has been reviewed and found
+acceptable according to the Reviewer’s Statement:</p>
+<section id="reviewer-s-statement-of-oversight">
+<h3>Reviewer’s statement of oversight<a class="headerlink" href="#reviewer-s-statement-of-oversight" title="Permalink to this heading">¶</a></h3>
+<p>By offering my Reviewed-by: tag, I state that:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>I have carried out a technical review of this patch to
+evaluate its appropriateness and readiness for inclusion into
+the mainline kernel.</p></li>
+<li><p>Any problems, concerns, or questions relating to the patch
+have been communicated back to the submitter.  I am satisfied
+with the submitter’s response to my comments.</p></li>
+<li><p>While there may be things that could be improved with this
+submission, I believe that it is, at this time, (1) a
+worthwhile modification to the kernel, and (2) free of known
+issues which would argue against its inclusion.</p></li>
+<li><p>While I have reviewed the patch and believe it to be sound, I
+do not (unless explicitly stated elsewhere) make any
+warranties or guarantees that it will achieve its stated
+purpose or function properly in any given situation.</p></li>
+</ol>
+</div></blockquote>
+<p>A Reviewed-by tag is a statement of opinion that the patch is an
+appropriate modification of the kernel without any remaining serious
+technical issues.  Any interested reviewer (who has done the work) can
+offer a Reviewed-by tag for a patch.  This tag serves to give credit to
+reviewers and to inform maintainers of the degree of review which has been
+done on the patch.  Reviewed-by: tags, when supplied by reviewers known to
+understand the subject area and to perform thorough reviews, will normally
+increase the likelihood of your patch getting into the kernel.</p>
+<p>Both Tested-by and Reviewed-by tags, once received on mailing list from tester
+or reviewer, should be added by author to the applicable patches when sending
+next versions.  However if the patch has changed substantially in following
+version, these tags might not be applicable anymore and thus should be removed.
+Usually removal of someone’s Tested-by or Reviewed-by tags should be mentioned
+in the patch changelog (after the ‘---’ separator).</p>
+<p>A Suggested-by: tag indicates that the patch idea is suggested by the person
+named and ensures credit to the person for the idea: if we diligently credit
+our idea reporters, they will, hopefully, be inspired to help us again in the
+future. Note, this is one of only three tags you might be able to use without
+explicit permission of the person named (see ‘Tagging people requires
+permission’ below for details).</p>
+<p>A Fixes: tag indicates that the patch fixes a bug in a previous commit. It
+is used to make it easy to determine where an issue originated, which can help
+review a bug fix. This tag also assists the stable kernel team in determining
+which stable kernel versions should receive your fix. This is the preferred
+method for indicating a bug fixed by the patch. See <a class="reference internal" href="#describe-changes"><span class="std std-ref">Describe your changes</span></a>
+for more details.</p>
+<p>Note: Attaching a Fixes: tag does not subvert the stable kernel rules
+process nor the requirement to Cc: <a class="reference external" href="mailto:stable&#37;&#52;&#48;vger&#46;kernel&#46;org">stable<span>&#64;</span>vger<span>&#46;</span>kernel<span>&#46;</span>org</a> on all stable
+patch candidates. For more information, please read
+<a class="reference internal" href="stable-kernel-rules.html"><span class="doc">Everything you ever wanted to know about Linux -stable releases</span></a>.</p>
+<p>Finally, while providing tags is welcome and typically very appreciated, please
+note that signers (i.e. submitters and maintainers) may use their discretion in
+applying offered tags.</p>
+</section>
+</section>
+<section id="tagging-people-requires-permission">
+<span id="tagging-people"></span><h2>Tagging people requires permission<a class="headerlink" href="#tagging-people-requires-permission" title="Permalink to this heading">¶</a></h2>
+<p>Be careful in the addition of the aforementioned tags to your patches, as all
+except for Cc:, Reported-by:, and Suggested-by: need explicit permission of the
+person named. For those three implicit permission is sufficient if the person
+contributed to the Linux kernel using that name and email address according
+to the lore archives or the commit history -- and in case of Reported-by:
+and Suggested-by: did the reporting or suggestion in public. Note,
+bugzilla.kernel.org is a public place in this sense, but email addresses
+used there are private; so do not expose them in tags, unless the person
+used them in earlier contributions.</p>
+</section>
+<section id="the-canonical-patch-format">
+<span id="id1"></span><h2>The canonical patch format<a class="headerlink" href="#the-canonical-patch-format" title="Permalink to this heading">¶</a></h2>
+<p>This section describes how the patch itself should be formatted.  Note
+that, if you have your patches stored in a <code class="docutils literal notranslate"><span class="pre">git</span></code> repository, proper patch
+formatting can be had with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">format-patch</span></code>.  The tools cannot create
+the necessary text, though, so read the instructions below anyway.</p>
+<section id="subject-line">
+<h3>Subject Line<a class="headerlink" href="#subject-line" title="Permalink to this heading">¶</a></h3>
+<p>The canonical patch subject line is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Subject: [PATCH 001/123] subsystem: summary phrase
+</pre></div>
+</div>
+<p>The canonical patch message body contains the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">from</span></code> line specifying the patch author, followed by an empty
+line (only needed if the person sending the patch is not the author).</p></li>
+<li><p>The body of the explanation, line wrapped at 75 columns, which will
+be copied to the permanent changelog to describe this patch.</p></li>
+<li><p>An empty line.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Signed-off-by:</span></code> lines, described above, which will
+also go in the changelog.</p></li>
+<li><p>A marker line containing simply <code class="docutils literal notranslate"><span class="pre">---</span></code>.</p></li>
+<li><p>Any additional comments not suitable for the changelog.</p></li>
+<li><p>The actual patch (<code class="docutils literal notranslate"><span class="pre">diff</span></code> output).</p></li>
+</ul>
+</div></blockquote>
+<p>The Subject line format makes it very easy to sort the emails
+alphabetically by subject line - pretty much any email reader will
+support that - since because the sequence number is zero-padded,
+the numerical and alphabetic sort is the same.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">subsystem</span></code> in the email’s Subject should identify which
+area or subsystem of the kernel is being patched.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">summary</span> <span class="pre">phrase</span></code> in the email’s Subject should concisely
+describe the patch which that email contains.  The <code class="docutils literal notranslate"><span class="pre">summary</span>
+<span class="pre">phrase</span></code> should not be a filename.  Do not use the same <code class="docutils literal notranslate"><span class="pre">summary</span>
+<span class="pre">phrase</span></code> for every patch in a whole patch series (where a <code class="docutils literal notranslate"><span class="pre">patch</span>
+<span class="pre">series</span></code> is an ordered sequence of multiple, related patches).</p>
+<p>Bear in mind that the <code class="docutils literal notranslate"><span class="pre">summary</span> <span class="pre">phrase</span></code> of your email becomes a
+globally-unique identifier for that patch.  It propagates all the way
+into the <code class="docutils literal notranslate"><span class="pre">git</span></code> changelog.  The <code class="docutils literal notranslate"><span class="pre">summary</span> <span class="pre">phrase</span></code> may later be used in
+developer discussions which refer to the patch.  People will want to
+google for the <code class="docutils literal notranslate"><span class="pre">summary</span> <span class="pre">phrase</span></code> to read discussion regarding that
+patch.  It will also be the only thing that people may quickly see
+when, two or three months later, they are going through perhaps
+thousands of patches using tools such as <code class="docutils literal notranslate"><span class="pre">gitk</span></code> or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span>
+<span class="pre">--oneline</span></code>.</p>
+<p>For these reasons, the <code class="docutils literal notranslate"><span class="pre">summary</span></code> must be no more than 70-75
+characters, and it must describe both what the patch changes, as well
+as why the patch might be necessary.  It is challenging to be both
+succinct and descriptive, but that is what a well-written summary
+should do.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">summary</span> <span class="pre">phrase</span></code> may be prefixed by tags enclosed in square
+brackets: “Subject: [PATCH &lt;tag&gt;...] &lt;summary phrase&gt;”.  The tags are
+not considered part of the summary phrase, but describe how the patch
+should be treated.  Common tags might include a version descriptor if
+the multiple versions of the patch have been sent out in response to
+comments (i.e., “v1, v2, v3”), or “RFC” to indicate a request for
+comments.</p>
+<p>If there are four patches in a patch series the individual patches may
+be numbered like this: 1/4, 2/4, 3/4, 4/4. This assures that developers
+understand the order in which the patches should be applied and that
+they have reviewed or applied all of the patches in the patch series.</p>
+<p>Here are some good example Subjects:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Subject: [PATCH 2/5] ext2: improve scalability of bitmap searching
+Subject: [PATCH v2 01/27] x86: fix eflags tracking
+Subject: [PATCH v2] sub/sys: Condensed patch summary
+Subject: [PATCH v2 M/N] sub/sys: Condensed patch summary
+</pre></div>
+</div>
+</section>
+<section id="from-line">
+<h3>From Line<a class="headerlink" href="#from-line" title="Permalink to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">from</span></code> line must be the very first line in the message body,
+and has the form:</p>
+<blockquote>
+<div><p>From: Patch Author &lt;<a class="reference external" href="mailto:author&#37;&#52;&#48;example&#46;com">author<span>&#64;</span>example<span>&#46;</span>com</a>&gt;</p>
+</div></blockquote>
+<p>The <code class="docutils literal notranslate"><span class="pre">from</span></code> line specifies who will be credited as the author of the
+patch in the permanent changelog.  If the <code class="docutils literal notranslate"><span class="pre">from</span></code> line is missing,
+then the <code class="docutils literal notranslate"><span class="pre">From:</span></code> line from the email header will be used to determine
+the patch author in the changelog.</p>
+<p>The author may indicate their affiliation or the sponsor of the work
+by adding the name of an organization to the <code class="docutils literal notranslate"><span class="pre">from</span></code> and <code class="docutils literal notranslate"><span class="pre">SoB</span></code> lines,
+e.g.:</p>
+<blockquote>
+<div><p>From: Patch Author (Company) &lt;<a class="reference external" href="mailto:author&#37;&#52;&#48;example&#46;com">author<span>&#64;</span>example<span>&#46;</span>com</a>&gt;</p>
+</div></blockquote>
+</section>
+<section id="explanation-body">
+<h3>Explanation Body<a class="headerlink" href="#explanation-body" title="Permalink to this heading">¶</a></h3>
+<p>The explanation body will be committed to the permanent source
+changelog, so should make sense to a competent reader who has long since
+forgotten the immediate details of the discussion that might have led to
+this patch. Including symptoms of the failure which the patch addresses
+(kernel log messages, oops messages, etc.) are especially useful for
+people who might be searching the commit logs looking for the applicable
+patch. The text should be written in such detail so that when read
+weeks, months or even years later, it can give the reader the needed
+details to grasp the reasoning for <strong>why</strong> the patch was created.</p>
+<p>If a patch fixes a compile failure, it may not be necessary to include
+_all_ of the compile failures; just enough that it is likely that
+someone searching for the patch can find it. As in the <code class="docutils literal notranslate"><span class="pre">summary</span>
+<span class="pre">phrase</span></code>, it is important to be both succinct as well as descriptive.</p>
+<section id="backtraces-in-commit-messages">
+<span id="backtraces"></span><h4>Backtraces in commit messages<a class="headerlink" href="#backtraces-in-commit-messages" title="Permalink to this heading">¶</a></h4>
+<p>Backtraces help document the call chain leading to a problem. However,
+not all backtraces are helpful. For example, early boot call chains are
+unique and obvious. Copying the full dmesg output verbatim, however,
+adds distracting information like timestamps, module lists, register and
+stack dumps.</p>
+<p>Therefore, the most useful backtraces should distill the relevant
+information from the dump, which makes it easier to focus on the real
+issue. Here is an example of a well-trimmed backtrace:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>unchecked MSR access error: WRMSR to 0xd51 (tried to write 0x0000000000000064)
+at rIP: 0xffffffffae059994 (native_write_msr+0x4/0x20)
+Call Trace:
+mba_wrmsr
+update_domains
+rdtgroup_mkdir
+</pre></div>
+</div>
+</section>
+</section>
+<section id="commentary">
+<h3>Commentary<a class="headerlink" href="#commentary" title="Permalink to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">---</span></code> marker line serves the essential purpose of marking for
+patch handling tools where the changelog message ends.</p>
+<p>One good use for the additional comments after the <code class="docutils literal notranslate"><span class="pre">---</span></code> marker is
+for a <code class="docutils literal notranslate"><span class="pre">diffstat</span></code>, to show what files have changed, and the number of
+inserted and deleted lines per file. A <code class="docutils literal notranslate"><span class="pre">diffstat</span></code> is especially useful
+on bigger patches. If you are going to include a <code class="docutils literal notranslate"><span class="pre">diffstat</span></code> after the
+<code class="docutils literal notranslate"><span class="pre">---</span></code> marker, please use <code class="docutils literal notranslate"><span class="pre">diffstat</span></code> options <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">1</span> <span class="pre">-w</span> <span class="pre">70</span></code> so that
+filenames are listed from the top of the kernel source tree and don’t
+use too much horizontal space (easily fit in 80 columns, maybe with some
+indentation). (<code class="docutils literal notranslate"><span class="pre">git</span></code> generates appropriate diffstats by default.)</p>
+<p>Other comments relevant only to the moment or the maintainer, not
+suitable for the permanent changelog, should also go here. A good
+example of such comments might be <code class="docutils literal notranslate"><span class="pre">patch</span> <span class="pre">changelogs</span></code> which describe
+what has changed between the v1 and v2 version of the patch.</p>
+<p>Please put this information <strong>after</strong> the <code class="docutils literal notranslate"><span class="pre">---</span></code> line which separates
+the changelog from the rest of the patch. The version information is
+not part of the changelog which gets committed to the git tree. It is
+additional information for the reviewers. If it’s placed above the
+commit tags, it needs manual interaction to remove it. If it is below
+the separator line, it gets automatically stripped off when applying the
+patch:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;commit message&gt;
+...
+Signed-off-by: Author &lt;author@mail&gt;
+---
+V2 -&gt; V3: Removed redundant helper function
+V1 -&gt; V2: Cleaned up coding style and addressed review comments
+
+path/to/file | 5+++--
+...
+</pre></div>
+</div>
+<p>See more details on the proper patch format in the following
+references.</p>
+</section>
+</section>
+<section id="explicit-in-reply-to-headers">
+<span id="explicit-in-reply-to"></span><h2>Explicit In-Reply-To headers<a class="headerlink" href="#explicit-in-reply-to-headers" title="Permalink to this heading">¶</a></h2>
+<p>It can be helpful to manually add In-Reply-To: headers to a patch
+(e.g., when using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">send-email</span></code>) to associate the patch with
+previous relevant discussion, e.g. to link a bug fix to the email with
+the bug report.  However, for a multi-patch series, it is generally
+best to avoid using In-Reply-To: to link to older versions of the
+series.  This way multiple versions of the patch don’t become an
+unmanageable forest of references in email clients.  If a link is
+helpful, you can use the <a class="reference external" href="https://lore.kernel.org/">https://lore.kernel.org/</a> redirector (e.g., in
+the cover email text) to link to an earlier version of the patch series.</p>
+</section>
+<section id="providing-base-tree-information">
+<h2>Providing base tree information<a class="headerlink" href="#providing-base-tree-information" title="Permalink to this heading">¶</a></h2>
+<p>When other developers receive your patches and start the review process,
+it is absolutely necessary for them to know what is the base
+commit/branch your work applies on, considering the sheer amount of
+maintainer trees present nowadays. Note again the <strong>T:</strong> entry in the
+MAINTAINERS file explained above.</p>
+<p>This is even more important for automated CI processes that attempt to
+run a series of tests in order to establish the quality of your
+submission before the maintainer starts the review.</p>
+<p>If you are using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">format-patch</span></code> to generate your patches, you can
+automatically include the base tree information in your submission by
+using the <code class="docutils literal notranslate"><span class="pre">--base</span></code> flag. The easiest and most convenient way to use
+this option is with topical branches:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout -t -b my-topical-branch master
+Branch &#39;my-topical-branch&#39; set up to track local branch &#39;master&#39;.
+Switched to a new branch &#39;my-topical-branch&#39;
+
+[perform your edits and commits]
+
+$ git format-patch --base=auto --cover-letter -o outgoing/ master
+outgoing/0000-cover-letter.patch
+outgoing/0001-First-Commit.patch
+outgoing/...
+</pre></div>
+</div>
+<p>When you open <code class="docutils literal notranslate"><span class="pre">outgoing/0000-cover-letter.patch</span></code> for editing, you will
+notice that it will have the <code class="docutils literal notranslate"><span class="pre">base-commit:</span></code> trailer at the very
+bottom, which provides the reviewer and the CI tools enough information
+to properly perform <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">am</span></code> without worrying about conflicts:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout -b patch-review [base-commit-id]
+Switched to a new branch &#39;patch-review&#39;
+$ git am patches.mbox
+Applying: First Commit
+Applying: ...
+</pre></div>
+</div>
+<p>Please see <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">git-format-patch</span></code> for more information about this
+option.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">--base</span></code> feature was introduced in git version 2.9.0.</p>
+</div>
+<p>If you are not using git to format your patches, you can still include
+the same <code class="docutils literal notranslate"><span class="pre">base-commit</span></code> trailer to indicate the commit hash of the tree
+on which your work is based. You should add it either in the cover
+letter or in the first patch of the series and it should be placed
+either below the <code class="docutils literal notranslate"><span class="pre">---</span></code> line or at the very bottom of all other
+content, right before your email signature.</p>
+<p>Make sure that base commit is in an official maintainer/mainline tree
+and not in some internal, accessible only to you tree - otherwise it
+would be worthless.</p>
+</section>
+<section id="tooling">
+<h2>Tooling<a class="headerlink" href="#tooling" title="Permalink to this heading">¶</a></h2>
+<p>Many of the technical aspects of this process can be automated using
+b4, documented at &lt;<a class="reference external" href="https://b4.docs.kernel.org/en/latest/">https://b4.docs.kernel.org/en/latest/</a>&gt;. This can
+help with things like tracking dependencies, running checkpatch and
+with formatting and sending mails.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
+<dl>
+<dt>Andrew Morton, “The perfect patch” (tpp).</dt><dd><p>&lt;<a class="reference external" href="https://www.ozlabs.org/~akpm/stuff/tpp.txt">https://www.ozlabs.org/~akpm/stuff/tpp.txt</a>&gt;</p>
+</dd>
+<dt>Jeff Garzik, “Linux kernel patch submission format”.</dt><dd><p>&lt;<a class="reference external" href="https://web.archive.org/web/20180829112450/http://linux.yyz.us/patch-format.html">https://web.archive.org/web/20180829112450/http://linux.yyz.us/patch-format.html</a>&gt;</p>
+</dd>
+<dt>Greg Kroah-Hartman, “How to piss off a kernel subsystem maintainer”.</dt><dd><p>&lt;<a class="reference external" href="http://www.kroah.com/log/linux/maintainer.html">http://www.kroah.com/log/linux/maintainer.html</a>&gt;</p>
+<p>&lt;<a class="reference external" href="http://www.kroah.com/log/linux/maintainer-02.html">http://www.kroah.com/log/linux/maintainer-02.html</a>&gt;</p>
+<p>&lt;<a class="reference external" href="http://www.kroah.com/log/linux/maintainer-03.html">http://www.kroah.com/log/linux/maintainer-03.html</a>&gt;</p>
+<p>&lt;<a class="reference external" href="http://www.kroah.com/log/linux/maintainer-04.html">http://www.kroah.com/log/linux/maintainer-04.html</a>&gt;</p>
+<p>&lt;<a class="reference external" href="http://www.kroah.com/log/linux/maintainer-05.html">http://www.kroah.com/log/linux/maintainer-05.html</a>&gt;</p>
+<p>&lt;<a class="reference external" href="http://www.kroah.com/log/linux/maintainer-06.html">http://www.kroah.com/log/linux/maintainer-06.html</a>&gt;</p>
+</dd>
+</dl>
+<p>Kernel <a class="reference internal" href="coding-style.html"><span class="doc">Linux kernel coding style</span></a></p>
+<dl>
+<dt>Linus Torvalds’s mail on the canonical patch format:</dt><dd><p>&lt;<a class="reference external" href="https://lore.kernel.org/r/Pine.LNX.4.58.0504071023190.28951&#64;ppc970.osdl.org">https://lore.kernel.org/r/Pine.LNX.4.58.0504071023190.28951&#64;ppc970.osdl.org</a>&gt;</p>
+</dd>
+<dt>Andi Kleen, “On submitting kernel patches”</dt><dd><p>Some strategies to get difficult or controversial changes in.</p>
+<p><a class="reference external" href="http://halobates.de/on-submitting-patches.pdf">http://halobates.de/on-submitting-patches.pdf</a></p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;The kernel development community.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/process/submitting-patches.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

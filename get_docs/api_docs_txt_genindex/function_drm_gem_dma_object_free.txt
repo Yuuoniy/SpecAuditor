@@ -1,0 +1,11 @@
+Function: void drm_gem_dma_object_free ( struct drm_gem_object * obj )
+
+GEM object function for drm_gem_dma_free()
+
+Parameters
+  struct drm_gem_object *obj
+    GEM object to free
+
+Description
+  This function wraps drm_gem_dma_free_object() . Drivers that employ the DMA helpers
+should use it as their drm_gem_object_funcs.free handler.

@@ -1,0 +1,9 @@
+Function: size_t strcspn ( const char * s , const char * reject )
+
+Calculate the length of the initial substring of s which does not contain letters in reject
+
+Parameters
+  const char *s
+    The string to be searched
+  const char *reject
+    The string to avoid

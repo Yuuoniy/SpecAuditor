@@ -1,0 +1,20 @@
+Function: ssize_t iter_file_splice_write ( struct pipe_inode_info * pipe , struct file * out , loff_t * ppos , size_t len , unsigned int flags )
+
+splice data from a pipe to a file
+
+Parameters
+  struct pipe_inode_info *pipe
+    pipe info
+  struct file *out
+    file to write to
+  loff_t *ppos
+    position in out
+  size_t len
+    number of bytes to splice
+  unsigned int flags
+    splice modifier flags
+
+Description
+  Will either move or copy pages (determined by flags options) from
+the given pipe inode to the given file.
+This one is ->write_iter-based.

@@ -1,0 +1,14 @@
+Function: bool iio_validate_scan_mask_onehot ( struct iio_dev * indio_dev , const unsigned long * mask )
+
+Validates that exactly one channel is selected
+
+Parameters
+  struct iio_dev *indio_dev
+    the iio device
+  const unsigned long *mask
+    scan mask to be checked
+
+Description
+  Return true if exactly one bit is set in the scan mask, false otherwise. It
+can be used for devices where only one channel can be active for sampling at
+a time.

@@ -1,0 +1,14 @@
+Function: void intel_frontbuffer_flip ( struct intel_display * display , unsigned frontbuffer_bits )
+
+synchronous frontbuffer flip
+
+Parameters
+  struct intel_display *display
+    display device
+  unsigned frontbuffer_bits
+    frontbuffer plane tracking bits
+
+Description
+  This function gets called after scheduling a flip on obj . This is for
+synchronous plane updates which will happen on the next vblank and which will
+not get delayed by pending gpu rendering.

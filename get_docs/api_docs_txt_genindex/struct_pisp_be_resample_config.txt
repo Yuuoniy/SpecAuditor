@@ -1,0 +1,11 @@
+Struct: struct pisp_be_resample_config
+
+PiSP Back End Resampling config
+
+Members
+  scale_factor_h
+    Horizontal scale factor
+  scale_factor_v
+    Vertical scale factor
+  coef
+    Resample coefficients

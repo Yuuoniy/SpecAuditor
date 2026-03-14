@@ -1,0 +1,9 @@
+Function: int slim_readb ( struct slim_device * sdev , u32 addr )
+
+Read byte from SLIMbus value element
+
+Parameters
+  struct slim_device *sdev
+    client handle.
+  u32 addr
+    address in the value element to read.

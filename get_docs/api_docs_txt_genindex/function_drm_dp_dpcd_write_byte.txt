@@ -1,0 +1,14 @@
+Function: int drm_dp_dpcd_write_byte ( struct drm_dp_aux * aux , unsigned int offset , u8 value )
+
+write a single byte to the DPCD
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  unsigned int offset
+    address of the register to write
+  u8 value
+    value to write to the register
+
+Description
+  Returns zero (0) on success, or a negative error code on failure.

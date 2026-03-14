@@ -1,0 +1,18 @@
+Struct: struct drm_gpuva_op_map
+
+GPU VA map operation
+
+Members
+  va
+    structure containing address and range of a map
+operation
+  va.addr
+    the base address of the new mapping
+  va.range
+    the range of the new mapping
+  gem
+    structure containing the drm_gem_object and its offset
+  gem.offset
+    the offset within the drm_gem_object
+  gem.obj
+    the drm_gem_object to map

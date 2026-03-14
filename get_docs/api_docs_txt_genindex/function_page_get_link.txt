@@ -1,0 +1,15 @@
+Function: const char * page_get_link ( struct dentry * dentry , struct inode * inode , struct delayed_call * callback )
+
+An implementation of the get_link inode_operation.
+
+Parameters
+  struct dentry *dentry
+    The directory entry which is the symlink.
+  struct inode *inode
+    The inode for the symlink.
+  struct delayed_call *callback
+    Used to drop the reference to the symlink.
+
+Description
+  Filesystems which store their symlinks in the page cache should use
+this to implement the get_link() member of their inode_operations.

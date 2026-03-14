@@ -1,0 +1,11 @@
+Function: int iio_device_claim_buffer_mode ( struct iio_dev * indio_dev )
+
+Keep device in buffer mode
+
+Parameters
+  struct iio_dev *indio_dev
+    the iio_dev associated with the device
+
+Description
+  If the device is in buffer mode it is guaranteed to stay
+that way until iio_device_release_buffer_mode() is called.

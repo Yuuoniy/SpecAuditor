@@ -1,0 +1,13 @@
+Function: bool pwq_tryinc_nr_active ( struct pool_workqueue * pwq , bool fill )
+
+Try to increment nr_active for a pwq
+
+Parameters
+  struct pool_workqueue *pwq
+    pool_workqueue of interest
+  bool fill
+    max_active may have increased, try to increase concurrency level
+
+Description
+  Try to increment nr_active for pwq . Returns true if an nr_active count is
+successfully obtained. false otherwise.

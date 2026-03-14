@@ -1,0 +1,7 @@
+Function: void * textsearch_get_pattern ( struct ts_config * conf )
+
+return head of the pattern
+
+Parameters
+  struct ts_config *conf
+    search configuration

@@ -1,0 +1,15 @@
+Function: u16 rio_get_device_id ( struct rio_mport * port , u16 destid , u8 hopcount )
+
+Get the base/extended device id for a device
+
+Parameters
+  struct rio_mport *port
+    RIO master port
+  u16 destid
+    Destination ID of device
+  u8 hopcount
+    Hopcount to device
+
+Description
+  Reads the base/extended device id from a device. Returns the
+8/16-bit device ID.

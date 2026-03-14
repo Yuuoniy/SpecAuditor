@@ -1,0 +1,7 @@
+Function: bool drm_probe_ddc ( struct i2c_adapter * adapter )
+
+probe DDC presence
+
+Parameters
+  struct i2c_adapter *adapter
+    I2C adapter to probe

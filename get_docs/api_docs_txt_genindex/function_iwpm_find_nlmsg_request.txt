@@ -1,0 +1,11 @@
+Function: struct iwpm_nlmsg_request * iwpm_find_nlmsg_request ( __u32 echo_seq )
+
+Find netlink message request in the request list
+
+Parameters
+  __u32 echo_seq
+    Sequence number of the netlink request to find
+
+Description
+  Returns the found netlink message request,
+if not found, returns NULL

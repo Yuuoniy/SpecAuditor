@@ -1,0 +1,7 @@
+Struct: struct ipu3_uapi_yuvp2_tcc_gain_pcwl_lut_static_config
+
+Total color correction lookup table for PCWL
+
+Members
+  entries
+    lookup table for gain piece wise linear transformation (PCWL)

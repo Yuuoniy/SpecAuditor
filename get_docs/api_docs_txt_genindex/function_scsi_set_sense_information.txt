@@ -1,0 +1,14 @@
+Function: int scsi_set_sense_information ( u8 * buf , int buf_len , u64 info )
+
+set the information field in a formatted sense data buffer
+
+Parameters
+  u8 *buf
+    Where to build sense data
+  int buf_len
+    buffer length
+  u64 info
+    64-bit information value to be set
+
+Description
+  0 on success or -EINVAL for invalid sense buffer length

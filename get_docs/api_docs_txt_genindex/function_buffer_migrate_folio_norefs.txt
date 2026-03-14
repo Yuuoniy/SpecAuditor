@@ -1,0 +1,19 @@
+Function: int buffer_migrate_folio_norefs ( struct address_space * mapping , struct folio * dst , struct folio * src , enum migrate_mode mode )
+
+Migration function for folios with buffers.
+
+Parameters
+  struct address_space *mapping
+    The address space containing src .
+  struct folio *dst
+    The folio to migrate to.
+  struct folio *src
+    The folio to migrate from.
+  enum migrate_mode mode
+    How to migrate the folio.
+
+Description
+  Like buffer_migrate_folio() except that this variant is more careful
+and checks that there are also no buffer head references. This function
+is the right one for mappings where buffer heads are directly looked
+up and referenced (such as block device mappings).

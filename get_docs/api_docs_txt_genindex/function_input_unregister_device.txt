@@ -1,0 +1,11 @@
+Function: void input_unregister_device ( struct input_dev * dev )
+
+unregister previously registered device
+
+Parameters
+  struct input_dev *dev
+    device to be unregistered
+
+Description
+  This function unregisters an input device. Once device is unregistered
+the caller should not try to access it as it may get freed at any moment.

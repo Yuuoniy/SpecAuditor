@@ -1,0 +1,15 @@
+Function: int tipc_ehdr_build ( struct net * net , struct tipc_aead * aead , u8 tx_key , struct sk_buff * skb , struct tipc_crypto * __rx )
+
+Build TIPC encryption message header
+
+Parameters
+  struct net *net
+    struct net
+  struct tipc_aead *aead
+    TX AEAD key to be used for the message encryption
+  u8 tx_key
+    key id used for the message encryption
+  struct sk_buff *skb
+    input/output message skb
+  struct tipc_crypto *__rx
+    RX crypto handle if dest is “known”

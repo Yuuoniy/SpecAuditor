@@ -1,0 +1,11 @@
+Function: bool drm_scdc_get_scrambling_status ( struct drm_connector * connector )
+
+what is status of scrambling?
+
+Parameters
+  struct drm_connector *connector
+    connector
+
+Description
+  Reads the scrambler status over SCDC, and checks the
+scrambling status.

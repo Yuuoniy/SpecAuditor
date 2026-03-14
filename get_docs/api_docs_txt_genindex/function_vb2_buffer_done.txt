@@ -1,0 +1,19 @@
+Function: void vb2_buffer_done ( struct vb2_buffer * vb , enum vb2_buffer_state state )
+
+inform videobuf2 that an operation on a buffer is finished.
+
+Parameters
+  struct vb2_buffer *vb
+    pointer to struct vb2_buffer to be used.
+  enum vb2_buffer_state state
+    state of the buffer, as defined by enum vb2_buffer_state .
+Either VB2_BUF_STATE_DONE if the operation finished
+successfully, VB2_BUF_STATE_ERROR if the operation finished
+with an error or VB2_BUF_STATE_QUEUED .
+
+Description
+  This function should be called by the driver after a hardware operation on
+a buffer is finished and the buffer may be returned to userspace. The driver
+cannot use this buffer anymore until it is queued back to it by videobuf
+by the means of vb2_ops->buf_queue callback. Only buffers previously queued
+to the driver by vb2_ops->buf_queue can be passed to this function.

@@ -1,0 +1,9 @@
+Function: bool xas_get_mark ( const struct xa_state * xas , xa_mark_t mark )
+
+Returns the state of this mark.
+
+Parameters
+  const struct xa_state *xas
+    XArray operation state.
+  xa_mark_t mark
+    Mark number.

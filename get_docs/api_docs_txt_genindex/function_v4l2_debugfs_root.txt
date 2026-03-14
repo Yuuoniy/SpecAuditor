@@ -1,0 +1,10 @@
+Function: struct dentry * v4l2_debugfs_root ( void )
+
+returns the dentry of the top-level “v4l2” debugfs dir
+
+Parameters
+  void
+    no arguments
+
+Description
+  If this directory does not yet exist, then it will be created.

@@ -1,0 +1,7 @@
+Function: const char * dev_name ( const struct device * dev )
+
+Return a device’s name.
+
+Parameters
+  const struct device *dev
+    Device with name to get.

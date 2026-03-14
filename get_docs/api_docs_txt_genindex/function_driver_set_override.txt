@@ -1,0 +1,20 @@
+Function: int driver_set_override ( struct device * dev , const char * * override , const char * s , size_t len )
+
+Helper to set or clear driver override.
+
+Parameters
+  struct device *dev
+    Device to change
+  const char **override
+    Address of string to change (e.g. device->driver_override );
+The contents will be freed and hold newly allocated override.
+  const char *s
+    NUL-terminated string, new driver name to force a match, pass empty
+string to clear it (”” or “n”, where the latter is only for sysfs
+interface).
+  size_t len
+    length of s
+
+Description
+  Helper to set or clear driver override in a device, intended for the cases
+when the driver_override field is allocated by driver/bus code.

@@ -1,0 +1,13 @@
+Function: int kunit_platform_driver_register ( struct kunit * test , struct platform_driver * drv )
+
+Register a KUnit test managed platform driver
+
+Parameters
+  struct kunit *test
+    test context
+  struct platform_driver *drv
+    platform driver to register
+
+Description
+  Register a test managed platform driver. This allows callers to embed the drv in a container structure and use container_of() in the probe function
+to pass information to KUnit tests.

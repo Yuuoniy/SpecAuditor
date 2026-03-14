@@ -1,0 +1,12 @@
+Function: struct snd_kcontrol * snd_ctl_find_numid ( struct snd_card * card , unsigned int numid )
+
+find the control instance with the given number-id
+
+Parameters
+  struct snd_card *card
+    the card instance
+  unsigned int numid
+    the number-id to search
+
+Description
+  Finds the control instance with the given number-id from the card.

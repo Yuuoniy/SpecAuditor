@@ -1,0 +1,41 @@
+Struct: struct drm_dp_mst_branch
+
+MST branch device.
+
+Members
+  topology_kref
+    refcount for this branch device’s lifetime in the
+topology, only the DP MST helpers should need to touch this
+  malloc_kref
+    refcount for the memory allocation containing this
+structure. See drm_dp_mst_get_mstb_malloc() and drm_dp_mst_put_mstb_malloc() .
+  topology_ref_history
+    A history of each topology
+reference/dereference. See CONFIG_DRM_DEBUG_DP_MST_TOPOLOGY_REFS.
+  destroy_next
+    linked-list entry used by drm_dp_delayed_destroy_work()
+  rad
+    Relative Address of the MST branch.
+For drm_dp_mst_topology_mgr.mst_primary , it’s rad[8] are all 0,
+unset and unused. For MST branches connected after mst_primary,
+in each element of rad[] the nibbles are ordered by the most
+signifcant 4 bits first and the least significant 4 bits second.
+  lct
+    Link count total to talk to this branch device.
+  num_ports
+    number of ports on the branch.
+  ports
+    the list of ports on this branch device. This should be
+considered protected for reading by drm_dp_mst_topology_mgr.lock .
+There are two exceptions to this: drm_dp_mst_topology_mgr.up_req_work and drm_dp_mst_topology_mgr.work , which do not grab drm_dp_mst_topology_mgr.lock during reads but are the only
+updaters of this list and are protected from updating the list
+concurrently by drm_dp_mst_topology_mgr.probe_lock
+  port_parent
+    pointer to the port parent, NULL if toplevel.
+  mgr
+    topology manager for this branch device.
+  link_address_sent
+    if a link address message has been sent to this device yet.
+  guid
+    guid for DP 1.2 branch device. port under this branch can be
+identified by port #.

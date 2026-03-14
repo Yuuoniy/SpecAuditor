@@ -1,0 +1,17 @@
+Macro: PVR_IOCTL_UNION_PADDING_CHECK
+
+
+
+Parameters
+  struct_instance_
+    An expression which evaluates to a pointer to a UAPI data
+struct.
+  union_
+    The name of the union member of struct_instance_ to check. If the union member is nested within the type of struct_instance_ , this may
+contain the member access operator (“.”).
+  member_
+    The name of the member of union_ to assess.
+
+Description
+  This is a wrapper around pvr_ioctl_union_padding_check() which performs
+alignment checks and simplifies things for the caller.

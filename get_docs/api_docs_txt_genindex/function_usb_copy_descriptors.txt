@@ -1,0 +1,15 @@
+Function: struct usb_descriptor_header * * usb_copy_descriptors ( struct usb_descriptor_header * * src )
+
+copy a vector of USB descriptors
+
+Parameters
+  struct usb_descriptor_header **src
+    null-terminated vector to copy
+
+Description
+  This makes a copy of a vector of USB descriptors.  Its primary use
+is to support usb_function objects which can have multiple copies,
+each needing different descriptors.  Functions may have static
+tables of descriptors, which are used as templates and customized
+with identifiers (for interfaces, strings, endpoints, and more)
+as needed by a given function instance.

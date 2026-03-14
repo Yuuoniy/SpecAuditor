@@ -1,0 +1,13 @@
+Function: bool kthread_freezable_should_stop ( bool * was_frozen )
+
+should this freezable kthread return now?
+
+Parameters
+  bool *was_frozen
+    optional out parameter, indicates whether current was frozen
+
+Description
+  kthread_should_stop() for freezable kthreads, which will enter
+refrigerator if necessary.  This function is safe from kthread_stop() /
+freezer deadlock and freezable kthreads should use this function instead
+of calling try_to_freeze() directly.

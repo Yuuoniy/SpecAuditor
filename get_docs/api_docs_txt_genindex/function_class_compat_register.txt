@@ -1,0 +1,11 @@
+Function: struct class_compat * class_compat_register ( const char * name )
+
+register a compatibility class
+
+Parameters
+  const char *name
+    the name of the class
+
+Description
+  Compatibility class are meant as a temporary user-space compatibility
+workaround when converting a family of class devices to a bus devices.

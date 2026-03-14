@@ -1,0 +1,19 @@
+Function: int drm_client_init ( struct drm_device * dev , struct drm_client_dev * client , const char * name , const struct drm_client_funcs * funcs )
+
+Initialise a DRM client
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_client_dev *client
+    DRM client
+  const char *name
+    Client name
+  const struct drm_client_funcs *funcs
+    DRM client functions (optional)
+
+Description
+  This initialises the client and opens a drm_file .
+Use drm_client_register() to complete the process.
+The caller needs to hold a reference on dev before calling this function.
+The client is freed when the drm_device is unregistered. See drm_client_release() .

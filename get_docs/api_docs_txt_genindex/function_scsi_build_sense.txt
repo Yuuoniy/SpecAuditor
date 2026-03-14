@@ -1,0 +1,16 @@
+Function: void scsi_build_sense ( struct scsi_cmnd * scmd , int desc , u8 key , u8 asc , u8 ascq )
+
+build sense data for a command
+
+Parameters
+  struct scsi_cmnd *scmd
+    scsi command for which the sense should be formatted
+  int desc
+    Sense format (non-zero == descriptor format,
+0 == fixed format)
+  u8 key
+    Sense key
+  u8 asc
+    Additional sense code
+  u8 ascq
+    Additional sense code qualifier

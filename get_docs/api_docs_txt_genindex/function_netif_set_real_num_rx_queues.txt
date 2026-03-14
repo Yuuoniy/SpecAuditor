@@ -1,0 +1,15 @@
+Function: int netif_set_real_num_rx_queues ( struct net_device * dev , unsigned int rxq )
+
+set actual number of RX queues used
+
+Parameters
+  struct net_device *dev
+    Network device
+  unsigned int rxq
+    Actual number of RX queues
+
+Description
+  This must be called either with the rtnl_lock held or before
+registration of the net device.  Returns 0 on success, or a
+negative error code.  If called before registration, it always
+succeeds.

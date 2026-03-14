@@ -1,0 +1,15 @@
+Function: int set_termios ( struct tty_struct * tty , void __user * arg , int opt )
+
+set termios values for a tty
+
+Parameters
+  struct tty_struct *tty
+    terminal device
+  void __user *arg
+    user data
+  int opt
+    option information
+
+Description
+  Helper function to prepare termios data and run necessary other functions
+before using tty_set_termios() to do the actual changes.

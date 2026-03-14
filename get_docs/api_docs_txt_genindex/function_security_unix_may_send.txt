@@ -1,0 +1,12 @@
+Function: int security_unix_may_send ( struct socket * sock , struct socket * other )
+
+Check if AF_UNIX socket can send datagrams
+
+Parameters
+  struct socket *sock
+    originating sock
+  struct socket *other
+    peer sock
+
+Description
+  Check permissions before connecting or sending datagrams from sock to other .

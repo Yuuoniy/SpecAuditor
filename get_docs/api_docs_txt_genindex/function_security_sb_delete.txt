@@ -1,0 +1,11 @@
+Function: void security_sb_delete ( struct super_block * sb )
+
+Release super_block LSM associated objects
+
+Parameters
+  struct super_block *sb
+    filesystem superblock
+
+Description
+  Release objects tied to a superblock (e.g. inodes). sb contains the
+super_block structure being released.

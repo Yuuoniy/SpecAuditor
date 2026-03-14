@@ -1,0 +1,13 @@
+Function: struct dentry * lookup_noperm ( struct qstr * name , struct dentry * base )
+
+filesystem helper to lookup single pathname component
+
+Parameters
+  struct qstr *name
+    qstr storing pathname component to lookup
+  struct dentry *base
+    base directory to lookup from
+
+Description
+  Note that this routine is purely a helper for filesystem usage and should
+not be called by generic code.  It does no permission checking.

@@ -1,0 +1,3 @@
+Enum: enum ethtool_module_fw_flash_status
+
+plug-in module firmware flashing status

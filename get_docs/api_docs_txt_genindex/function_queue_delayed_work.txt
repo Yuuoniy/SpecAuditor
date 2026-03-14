@@ -1,0 +1,14 @@
+Function: bool queue_delayed_work ( struct workqueue_struct * wq , struct delayed_work * dwork , unsigned long delay )
+
+queue work on a workqueue after delay
+
+Parameters
+  struct workqueue_struct *wq
+    workqueue to use
+  struct delayed_work *dwork
+    delayable work to queue
+  unsigned long delay
+    number of jiffies to wait before queueing
+
+Description
+  Equivalent to queue_delayed_work_on() but tries to use the local CPU.

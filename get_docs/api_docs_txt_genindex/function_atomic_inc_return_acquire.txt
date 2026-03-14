@@ -1,0 +1,10 @@
+Function: int atomic_inc_return_acquire ( atomic_t * v )
+
+atomic increment with acquire ordering
+
+Parameters
+  atomic_t *v
+    pointer to atomic_t
+
+Description
+  Atomically updates v to ( v + 1) with acquire ordering.

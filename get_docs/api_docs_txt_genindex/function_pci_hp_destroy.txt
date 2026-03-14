@@ -1,0 +1,13 @@
+Function: void pci_hp_destroy ( struct hotplug_slot * slot )
+
+remove hotplug slot from in-kernel use
+
+Parameters
+  struct hotplug_slot *slot
+    pointer to the struct hotplug_slot to destroy
+
+Description
+  Destroy a PCI slot used by a hotplug driver.  Once this has been called,
+the driver may no longer invoke hotplug_slot_name() to get the slot’s
+unique name.  The driver no longer needs to handle a ->reset_slot callback
+from this point on.

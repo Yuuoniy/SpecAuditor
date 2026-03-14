@@ -1,0 +1,6 @@
+Function: time64_t ktime_get_boottime_seconds ( void )
+
+Return a coarse-grained version of the time as a scalar
+time64_t. This avoids accessing the clock hardware and rounds
+down the seconds to the full seconds of the last timer tick
+using the respective reference.

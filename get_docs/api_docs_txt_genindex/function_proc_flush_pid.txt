@@ -1,0 +1,12 @@
+Function: void proc_flush_pid ( struct pid * pid )
+
+Remove dcache entries for pid from the /proc dcache.
+
+Parameters
+  struct pid *pid
+    pid that should be flushed.
+
+Description
+  This function walks a list of inodes (that belong to any proc
+filesystem) that are attached to the pid and flushes them from
+the dentry cache.

@@ -1,0 +1,7 @@
+Function: int damon_nr_running_ctxs ( void )
+
+Return number of currently running contexts.
+
+Parameters
+  void
+    no arguments

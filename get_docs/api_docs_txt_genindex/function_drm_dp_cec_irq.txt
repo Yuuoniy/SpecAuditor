@@ -1,0 +1,11 @@
+Function: void drm_dp_cec_irq ( struct drm_dp_aux * aux )
+
+handle CEC interrupt, if any
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+
+Description
+  Should be called when handling an IRQ_HPD request. If CEC-tunneling-over-AUX
+is present, then it will check for a CEC_IRQ and handle it accordingly.

@@ -1,0 +1,14 @@
+Function: unsigned int xdr_read_pages ( struct xdr_stream * xdr , unsigned int len )
+
+align page-based XDR data to current pointer position
+
+Parameters
+  struct xdr_stream *xdr
+    pointer to xdr_stream struct
+  unsigned int len
+    number of bytes of page data
+
+Description
+  Moves data beyond the current pointer position from the XDR head[] buffer
+into the page list. Any data that lies beyond current position + len bytes is moved into the XDR tail[]. The xdr_stream current position is
+then advanced past that data to align to the next XDR object in the tail.

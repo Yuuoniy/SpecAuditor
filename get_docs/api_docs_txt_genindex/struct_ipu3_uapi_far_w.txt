@@ -1,0 +1,18 @@
+Struct: struct ipu3_uapi_far_w
+
+Sharpening config for far sub-group
+
+Members
+  dir_shrp
+    Weight of wide direct sharpening, u1.6, range [0, 64], default 64.
+  reserved0
+    reserved
+  dir_dns
+    Weight of wide direct denoising, u1.6, range [0, 64], default 0.
+  reserved1
+    reserved
+  ndir_dns_powr
+    Power of non-direct denoising,
+Precision u1.6, range [0, 64], default 64.
+  reserved2
+    reserved

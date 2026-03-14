@@ -1,0 +1,13 @@
+Macro: FIXTURE_VARIANT_ADD
+
+
+
+Parameters
+  fixture_name
+    fixture name
+  variant_name
+    name of the parameter set
+
+Description
+  Defines a variant of the test fixture, provided to FIXTURE_SETUP() and TEST_F() as variant . Tests of each fixture will be run once for each
+variant.

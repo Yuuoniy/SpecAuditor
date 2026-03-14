@@ -1,0 +1,7 @@
+Function: int xe_pm_suspend ( struct xe_device * xe )
+
+Helper for System suspend, i.e. S0->S3 / S0->S2idle
+
+Parameters
+  struct xe_device *xe
+    xe device instance

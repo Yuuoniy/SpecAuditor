@@ -1,0 +1,7 @@
+Function: int cpupri_init ( struct cpupri * cp )
+
+initialize the cpupri structure
+
+Parameters
+  struct cpupri *cp
+    The cpupri context

@@ -1,0 +1,7 @@
+Function: void tty_port_tty_wakeup ( struct tty_port * port )
+
+helper to wake up a tty
+
+Parameters
+  struct tty_port *port
+    tty port

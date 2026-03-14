@@ -1,0 +1,9 @@
+Function: int mei_cldev_register_notif_cb ( struct mei_cl_device * cldev , mei_cldev_cb_t notif_cb )
+
+register FW notification event callback
+
+Parameters
+  struct mei_cl_device *cldev
+    me client devices
+  mei_cldev_cb_t notif_cb
+    callback function

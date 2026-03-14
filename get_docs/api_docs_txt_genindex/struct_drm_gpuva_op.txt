@@ -1,0 +1,19 @@
+Struct: struct drm_gpuva_op
+
+GPU VA operation
+
+Members
+  entry
+    The list_head used to distribute instances of this struct within drm_gpuva_ops .
+  op
+    the type of the operation
+  {unnamed_union}
+    anonymous
+  map
+    the map operation
+  remap
+    the remap operation
+  unmap
+    the unmap operation
+  prefetch
+    the prefetch operation

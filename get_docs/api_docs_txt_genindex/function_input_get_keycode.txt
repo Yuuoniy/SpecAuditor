@@ -1,0 +1,13 @@
+Function: int input_get_keycode ( struct input_dev * dev , struct input_keymap_entry * ke )
+
+retrieve keycode currently mapped to a given scancode
+
+Parameters
+  struct input_dev *dev
+    input device which keymap is being queried
+  struct input_keymap_entry *ke
+    keymap entry
+
+Description
+  This function should be called by anyone interested in retrieving current
+keymap. Presently evdev handlers use it.

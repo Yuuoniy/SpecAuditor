@@ -1,0 +1,14 @@
+Function: const struct zynqmp_disp_format * zynqmp_disp_layer_find_live_format ( struct zynqmp_disp_layer * layer , u32 media_bus_format )
+
+Find format information for given media bus format
+
+Parameters
+  struct zynqmp_disp_layer *layer
+    The layer
+  u32 media_bus_format
+    Media bus format to search
+
+Description
+  Search display subsystem format information corresponding to the given media
+bus format media_bus_format for the layer , and return a pointer to the
+format descriptor.

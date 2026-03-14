@@ -1,0 +1,12 @@
+Function: int amdgpu_dm_update_crtc_color_mgmt ( struct dm_crtc_state * crtc )
+
+Maps DRM color management to DC stream.
+
+Parameters
+  struct dm_crtc_state *crtc
+    amdgpu_dm crtc state
+
+Description
+  With no plane level color management properties we’re free to use any
+of the HW blocks as long as the CRTC CTM always comes before the
+CRTC RGM and after the CRTC DGM.

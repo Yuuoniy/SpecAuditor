@@ -1,0 +1,12 @@
+Function: int of_overlay_notifier_register ( struct notifier_block * nb )
+
+Register notifier for overlay operations
+
+Parameters
+  struct notifier_block *nb
+    Notifier block to register
+
+Description
+  Register for notification on overlay operations on device tree nodes. The
+reported actions defined by of_reconfig_change . The notifier callback
+furthermore receives a pointer to the affected device tree node.

@@ -1,0 +1,33 @@
+Struct: struct hsi_port
+
+HSI port device
+
+Members
+  device
+    Driver model representation of the device
+  tx_cfg
+    Current TX path configuration
+  rx_cfg
+    Current RX path configuration
+  num
+    Port number
+  shared
+    Set when port can be shared by different clients
+  claimed
+    Reference count of clients which claimed the port
+  lock
+    Serialize port claim
+  async
+    Asynchronous transfer callback
+  setup
+    Callback to set the HSI client configuration
+  flush
+    Callback to clean the HW state and destroy all pending transfers
+  start_tx
+    Callback to inform that a client wants to TX data
+  stop_tx
+    Callback to inform that a client no longer wishes to TX data
+  release
+    Callback to inform that a client no longer uses the port
+  n_head
+    Notifier chain for signaling port events to the clients.

@@ -1,0 +1,23 @@
+Struct: struct snd_compr
+
+Compressed device
+
+Members
+  name
+    DSP device name
+  dev
+    associated device instance
+  ops
+    pointer to DSP callbacks
+  private_data
+    pointer to DSP pvt data
+  card
+    sound card pointer
+  direction
+    Playback or capture direction
+  lock
+    device lock
+  device
+    device id
+  use_pause_in_draining
+    allow pause in draining, true when set

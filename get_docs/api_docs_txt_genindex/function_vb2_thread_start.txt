@@ -1,0 +1,17 @@
+Function: int vb2_thread_start ( struct vb2_queue * q , vb2_thread_fnc fnc , void * priv , const char * thread_name )
+
+start a thread for the given queue.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  vb2_thread_fnc fnc
+    vb2_thread_fnc callback function.
+  void *priv
+    priv pointer passed to the callback function.
+  const char *thread_name
+    the name of the thread. This will be prefixed with “vb2-“.
+
+Description
+  This starts a thread that will queue and dequeue until an error occurs
+or vb2_thread_stop() is called.

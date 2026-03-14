@@ -1,0 +1,11 @@
+Function: struct iommufd_ctx * iommufd_ctx_from_file ( struct file * file )
+
+Acquires a reference to the iommufd context
+
+Parameters
+  struct file *file
+    File to obtain the reference from
+
+Description
+  Returns a pointer to the iommufd_ctx, otherwise ERR_PTR. The struct file remains owned by the caller and the caller must still do fput. On success
+the caller is responsible to call iommufd_ctx_put() .

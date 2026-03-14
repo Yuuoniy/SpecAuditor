@@ -1,0 +1,11 @@
+Function: void ps2_drain ( struct ps2dev * ps2dev , size_t maxbytes , unsigned int timeout )
+
+waits for device to transmit requested number of bytes and discards them
+
+Parameters
+  struct ps2dev *ps2dev
+    the PS/2 device that should be drained
+  size_t maxbytes
+    maximum number of bytes to be drained
+  unsigned int timeout
+    time to drain the device

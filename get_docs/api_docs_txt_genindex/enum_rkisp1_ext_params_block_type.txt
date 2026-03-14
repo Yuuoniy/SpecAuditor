@@ -1,0 +1,3 @@
+Enum: enum rkisp1_ext_params_block_type
+
+RkISP1 extensible params block type

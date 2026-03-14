@@ -1,0 +1,7 @@
+Function: bool device_iommu_mapped ( struct device * dev )
+
+Returns true when the device DMA is translated by an IOMMU
+
+Parameters
+  struct device *dev
+    Device to perform the check on

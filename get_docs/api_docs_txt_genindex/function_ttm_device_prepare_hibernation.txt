@@ -1,0 +1,7 @@
+Function: int ttm_device_prepare_hibernation ( struct ttm_device * bdev )
+
+move GTT BOs to shmem for hibernation.
+
+Parameters
+  struct ttm_device *bdev
+    A pointer to a struct ttm_device to prepare hibernation for.

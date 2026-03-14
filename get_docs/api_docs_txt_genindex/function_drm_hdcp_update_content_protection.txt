@@ -1,0 +1,17 @@
+Function: void drm_hdcp_update_content_protection ( struct drm_connector * connector , u64 val )
+
+Updates the content protection state of a connector
+
+Parameters
+  struct drm_connector *connector
+    drm_connector on which content protection state needs an update
+  u64 val
+    New state of the content protection property
+
+Description
+  This function can be used by display drivers, to update the kernel triggered
+content protection state changes of a drm_connector such as DESIRED->ENABLED
+and ENABLED->DESIRED. No uevent for DESIRED->UNDESIRED or ENABLED->UNDESIRED,
+as userspace is triggering such state change and kernel performs it without
+fail.This function update the new state of the property into the connector’s
+state and generate an uevent to notify the userspace.

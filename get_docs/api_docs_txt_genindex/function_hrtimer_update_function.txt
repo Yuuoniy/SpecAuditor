@@ -1,0 +1,13 @@
+Function: void hrtimer_update_function ( struct hrtimer * timer , enum hrtimer_restart ( * function ) ( struct hrtimer * ) )
+
+Update the timer’s callback function
+
+Parameters
+  struct hrtimer *timer
+    Timer to update
+  enum hrtimer_restart (*function)(struct hrtimer *)
+    New callback function
+
+Description
+  Only safe to call if the timer is not enqueued. Can be called in the callback function if the
+timer is not enqueued at the same time (see the comments above HRTIMER_STATE_ENQUEUED).

@@ -1,0 +1,12 @@
+Function: int irq_chip_set_wake_parent ( struct irq_data * data , unsigned int on )
+
+Set/reset wake-up on the parent interrupt
+
+Parameters
+  struct irq_data *data
+    Pointer to interrupt specific data
+  unsigned int on
+    Whether to set or reset the wake-up capability of this irq
+
+Description
+  Conditional, as the underlying parent chip might not implement it.

@@ -1,0 +1,23 @@
+Function: ssize_t do_splice_direct ( struct file * in , loff_t * ppos , struct file * out , loff_t * opos , size_t len , unsigned int flags )
+
+splices data directly between two files
+
+Parameters
+  struct file *in
+    file to splice from
+  loff_t *ppos
+    input file offset
+  struct file *out
+    file to splice to
+  loff_t *opos
+    output file offset
+  size_t len
+    number of bytes to splice
+  unsigned int flags
+    splice modifier flags
+
+Description
+  For use by do_sendfile() . splice can easily emulate sendfile, but
+doing it in the application would incur an extra system call
+(splice in + splice out, as compared to just sendfile() ). So this helper
+can splice directly through a process-private pipe.

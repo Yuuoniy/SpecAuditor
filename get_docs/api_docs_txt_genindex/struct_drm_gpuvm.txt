@@ -1,0 +1,50 @@
+Struct: struct drm_gpuvm
+
+DRM GPU VA Manager
+
+Members
+  name
+    the name of the DRM GPU VA space
+  flags
+    the drm_gpuvm_flags of this GPUVM
+  drm
+    the drm_device this VM lives in
+  mm_start
+    start of the VA space
+  mm_range
+    length of the VA space
+  rb
+    structures to track drm_gpuva entries
+  rb.tree
+    the rb-tree to track GPU VA mappings
+  rb.list
+    the list_head to track GPU VA mappings
+  kref
+    reference count of this object
+  kernel_alloc_node
+    drm_gpuva representing the address space cutout reserved for
+the kernel
+  ops
+    drm_gpuvm_ops providing the split/merge steps to drivers
+  r_obj
+    Resv GEM object; representing the GPUVM’s common dma_resv .
+  extobj
+    structure holding the extobj list
+  extobj.list
+    list_head storing drm_gpuvm_bos serving as
+external object
+  extobj.local_list
+    pointer to the local list temporarily
+storing entries from the external object list
+  extobj.lock
+    spinlock to protect the extobj list
+  evict
+    structure holding the evict list and evict list lock
+  evict.list
+    list_head storing drm_gpuvm_bos currently
+being evicted
+  evict.local_list
+    pointer to the local list temporarily
+storing entries from the evicted object list
+  evict.lock
+    spinlock to protect the evict list

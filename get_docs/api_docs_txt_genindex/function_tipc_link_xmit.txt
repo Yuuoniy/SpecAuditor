@@ -1,0 +1,15 @@
+Function: int tipc_link_xmit ( struct tipc_link * l , struct sk_buff_head * list , struct sk_buff_head * xmitq )
+
+enqueue buffer list according to queue situation
+
+Parameters
+  struct tipc_link *l
+    link to use
+  struct sk_buff_head *list
+    chain of buffers containing message
+  struct sk_buff_head *xmitq
+    returned list of packets to be sent by caller
+
+Description
+  Consumes the buffer chain.
+Messages at TIPC_SYSTEM_IMPORTANCE are always accepted

@@ -1,0 +1,15 @@
+Function: int v4l2_subdev_get_fwnode_pad_1_to_1 ( struct media_entity * entity , struct fwnode_endpoint * endpoint )
+
+Get pad number from a subdev fwnode endpoint, assuming 1:1 port:pad
+
+Parameters
+  struct media_entity *entity
+    Pointer to the subdev entity
+  struct fwnode_endpoint *endpoint
+    Pointer to a parsed fwnode endpoint
+
+Description
+  This function can be used as the .get_fwnode_pad operation for
+subdevices that map port numbers and pad indexes 1:1. If the endpoint
+is owned by the subdevice, the function returns the endpoint port
+number.

@@ -1,0 +1,15 @@
+Function: int amdgpu_irqdomain_map ( struct irq_domain * d , unsigned int irq , irq_hw_number_t hwirq )
+
+create mapping between virtual and hardware IRQ numbers
+
+Parameters
+  struct irq_domain *d
+    amdgpu IRQ domain pointer (unused)
+  unsigned int irq
+    virtual IRQ number
+  irq_hw_number_t hwirq
+    hardware irq number
+
+Description
+  Current implementation assigns simple interrupt handler to the given virtual
+IRQ.

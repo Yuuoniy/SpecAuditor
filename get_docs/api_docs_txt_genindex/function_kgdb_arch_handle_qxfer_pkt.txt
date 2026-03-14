@@ -1,0 +1,9 @@
+Function: void kgdb_arch_handle_qxfer_pkt ( char * remcom_in_buffer , char * remcom_out_buffer )
+
+Handle architecture specific GDB XML packets.
+
+Parameters
+  char *remcom_in_buffer
+    The buffer of the packet we have read.
+  char *remcom_out_buffer
+    The buffer of BUFMAX bytes to write a packet into.

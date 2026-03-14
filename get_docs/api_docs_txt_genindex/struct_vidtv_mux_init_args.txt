@@ -1,0 +1,28 @@
+Struct: struct vidtv_mux_init_args
+
+Arguments used to inix the muxer.
+
+Members
+  mux_rate_kbytes_sec
+    The bit rate for the TS, in kbytes.
+  on_new_packets_available_cb
+    A callback to inform of new TS packets ready.
+  mux_buf_sz
+    The size for ‘mux_buf’.
+  pcr_period_usecs
+    How often we should send PCR packets.
+  si_period_usecs
+    How often we should send PSI packets.
+  pcr_pid
+    The TS PID used for the PSI packets. All channels will share the
+same PCR.
+  transport_stream_id
+    The transport stream ID
+  channels
+    an optional list of channels to use
+  network_id
+    The network ID
+  network_name
+    The network name
+  priv
+    Private data.

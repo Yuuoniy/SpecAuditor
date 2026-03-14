@@ -1,0 +1,14 @@
+Function: int of_address_to_resource ( struct device_node * dev , int index , struct resource * r )
+
+Translate device tree address and return as resource
+
+Parameters
+  struct device_node *dev
+    Caller’s Device Node
+  int index
+    Index into the array
+  struct resource *r
+    Pointer to resource array
+
+Description
+  Returns -EINVAL if the range cannot be converted to resource.

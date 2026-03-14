@@ -1,0 +1,20 @@
+Function: int splice_from_pipe_feed ( struct pipe_inode_info * pipe , struct splice_desc * sd , splice_actor * actor )
+
+feed available data from a pipe to a file
+
+Parameters
+  struct pipe_inode_info *pipe
+    pipe to splice from
+  struct splice_desc *sd
+    information to actor
+  splice_actor *actor
+    handler that splices the data
+
+Description
+  This function loops over the pipe and calls actor to do the
+actual moving of a single struct pipe_buffer to the desired
+destination.  It returns when there’s no more buffers left in
+the pipe or if the requested number of bytes ( sd->total_len )
+have been copied.  It returns a positive number (one) if the
+pipe needs to be filled with more data, zero if the required
+number of bytes have been copied and -errno on error.

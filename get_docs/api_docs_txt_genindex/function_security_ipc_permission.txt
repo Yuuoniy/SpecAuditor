@@ -1,0 +1,12 @@
+Function: int security_ipc_permission ( struct kern_ipc_perm * ipcp , short flag )
+
+Check if sysv ipc access is allowed
+
+Parameters
+  struct kern_ipc_perm *ipcp
+    ipc permission structure
+  short flag
+    requested permissions
+
+Description
+  Check permissions for access to IPC.

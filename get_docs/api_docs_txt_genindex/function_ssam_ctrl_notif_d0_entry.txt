@@ -1,0 +1,12 @@
+Function: int ssam_ctrl_notif_d0_entry ( struct ssam_controller * ctrl )
+
+Notify EC that the driver/device enters the D0 power state.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller
+
+Description
+  Notifies the EC that the driver has exited a lower-power state and entered
+the D0 power state. Exact effects of this function related to the EC are
+currently unknown.

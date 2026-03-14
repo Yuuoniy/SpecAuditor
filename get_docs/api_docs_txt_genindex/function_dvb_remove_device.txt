@@ -1,0 +1,11 @@
+Function: void dvb_remove_device ( struct dvb_device * dvbdev )
+
+Remove a registered DVB device
+
+Parameters
+  struct dvb_device *dvbdev
+    pointer to struct dvb_device
+
+Description
+  This does not free memory. dvb_free_device() will do that when
+reference counter is empty

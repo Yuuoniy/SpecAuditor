@@ -1,0 +1,16 @@
+Function: int __sk_mem_schedule ( struct sock * sk , int size , int kind )
+
+increase sk_forward_alloc and memory_allocated
+
+Parameters
+  struct sock *sk
+    socket
+  int size
+    memory size to allocate
+  int kind
+    allocation type
+
+Description
+  If kind is SK_MEM_SEND, it means wmem allocation. Otherwise it means
+rmem allocation. This function assumes that protocols which have
+memory_pressure use sk_wmem_queued as write buffer accounting.

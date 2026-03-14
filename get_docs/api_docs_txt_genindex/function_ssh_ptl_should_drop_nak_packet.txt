@@ -1,0 +1,12 @@
+Function: bool ssh_ptl_should_drop_nak_packet ( void )
+
+Error injection hook to drop NAK packets.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Useful to test/force automated (timeout-based) re-transmit by the EC.
+Specifically, packets that have not reached the driver completely/with valid
+checksums. Only useful in combination with receival of (injected) bad data.

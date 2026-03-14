@@ -1,0 +1,14 @@
+Function: int crypto_shash_export ( struct shash_desc * desc , void * out )
+
+extract operational state for message digest
+
+Parameters
+  struct shash_desc *desc
+    reference to the operational state handle whose state is exported
+  void *out
+    output buffer of sufficient size that can hold the hash state
+
+Description
+  This function exports the hash state of the operational state handle into the
+caller-allocated output buffer out which must have sufficient size (e.g. by
+calling crypto_shash_descsize).

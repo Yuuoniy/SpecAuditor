@@ -1,0 +1,12 @@
+Function: unsigned int crypto_dh_key_len ( const struct dh * params )
+
+Obtain the size of the private DH key
+
+Parameters
+  const struct dh *params
+    private DH key
+
+Description
+  This function returns the packet DH key size. A caller can use that
+with the provided DH private key reference to obtain the required
+memory size to hold a packet key.

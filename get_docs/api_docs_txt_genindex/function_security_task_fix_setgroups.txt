@@ -1,0 +1,14 @@
+Function: int security_task_fix_setgroups ( struct cred * new , const struct cred * old )
+
+Update LSM with new supplementary groups
+
+Parameters
+  struct cred *new
+    updated credentials
+  const struct cred *old
+    credentials being replaced
+
+Description
+  Update the module’s state after setting the supplementary group identity
+attributes of the current process. new is the set of credentials that will
+be installed.  Modifications should be made to this rather than to current->cred .

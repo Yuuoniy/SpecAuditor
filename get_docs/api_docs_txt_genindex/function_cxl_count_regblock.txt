@@ -1,0 +1,12 @@
+Function: int cxl_count_regblock ( struct pci_dev * pdev , enum cxl_regloc_type type )
+
+Count instances of a given regblock type.
+
+Parameters
+  struct pci_dev *pdev
+    The CXL PCI device to enumerate.
+  enum cxl_regloc_type type
+    Register Block Indicator id
+
+Description
+  Some regblocks may be repeated. Count how many instances.

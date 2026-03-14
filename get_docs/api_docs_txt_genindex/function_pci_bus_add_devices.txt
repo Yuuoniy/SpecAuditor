@@ -1,0 +1,10 @@
+Function: void pci_bus_add_devices ( const struct pci_bus * bus )
+
+start driver for PCI devices
+
+Parameters
+  const struct pci_bus *bus
+    bus to check for new devices
+
+Description
+  Start driver for PCI devices and add some sysfs entries.

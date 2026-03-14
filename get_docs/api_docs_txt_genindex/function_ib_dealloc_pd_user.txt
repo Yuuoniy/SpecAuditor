@@ -1,0 +1,14 @@
+Function: int ib_dealloc_pd_user ( struct ib_pd * pd , struct ib_udata * udata )
+
+Deallocates a protection domain.
+
+Parameters
+  struct ib_pd *pd
+    The protection domain to deallocate.
+  struct ib_udata *udata
+    Valid user data or NULL for kernel object
+
+Description
+  It is an error to call this function while any resources in the pd still
+exist.  The caller is responsible to synchronously destroy them and
+guarantee no new allocations will happen.

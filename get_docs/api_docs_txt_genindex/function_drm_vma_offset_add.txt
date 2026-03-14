@@ -1,0 +1,18 @@
+Function: int drm_vma_offset_add ( struct drm_vma_offset_manager * mgr , struct drm_vma_offset_node * node , unsigned long pages )
+
+Add offset node to manager
+
+Parameters
+  struct drm_vma_offset_manager *mgr
+    Manager object
+  struct drm_vma_offset_node *node
+    Node to be added
+  unsigned long pages
+    Allocation size visible to user-space (in number of pages)
+
+Description
+  Add a node to the offset-manager. If the node was already added, this does
+nothing and return 0. pages is the size of the object given in number of
+pages.
+After this call succeeds, you can access the offset of the node until it
+is removed again.

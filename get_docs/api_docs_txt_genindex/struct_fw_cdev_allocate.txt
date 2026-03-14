@@ -1,0 +1,15 @@
+Struct: struct fw_cdev_allocate
+
+Allocate a CSR in an address range
+
+Members
+  offset
+    Start offset of the address range
+  closure
+    To be passed back to userspace in request events
+  length
+    Length of the CSR, in bytes
+  handle
+    Handle to the allocation, written by the kernel
+  region_end
+    First address above the address range (added in ABI v4, 2.6.36)

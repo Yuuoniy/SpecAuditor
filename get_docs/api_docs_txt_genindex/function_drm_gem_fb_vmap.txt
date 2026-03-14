@@ -1,0 +1,17 @@
+Function: int drm_gem_fb_vmap ( struct drm_framebuffer * fb , struct iosys_map * map , struct iosys_map * data )
+
+maps all framebuffer BOs into kernel address space
+
+Parameters
+  struct drm_framebuffer *fb
+    the framebuffer
+  struct iosys_map *map
+    returns the mapping’s address for each BO
+  struct iosys_map *data
+    returns the data address for each BO, can be NULL
+
+Description
+  This function maps all buffer objects of the given framebuffer into
+kernel address space and stores them in struct iosys_map . If the
+mapping operation fails for one of the BOs, the function unmaps the
+already established mappings automatically.

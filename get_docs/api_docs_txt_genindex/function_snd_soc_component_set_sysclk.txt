@@ -1,0 +1,18 @@
+Function: int snd_soc_component_set_sysclk ( struct snd_soc_component * component , int clk_id , int source , unsigned int freq , int dir )
+
+configure COMPONENT system or master clock.
+
+Parameters
+  struct snd_soc_component *component
+    COMPONENT
+  int clk_id
+    DAI specific clock ID
+  int source
+    Source for the clock
+  unsigned int freq
+    new clock frequency in Hz
+  int dir
+    new clock direction - input/output.
+
+Description
+  Configures the CODEC master (MCLK) or system (SYSCLK) clocking.

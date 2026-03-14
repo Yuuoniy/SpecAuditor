@@ -1,0 +1,11 @@
+Function: int __cxl_driver_register ( struct cxl_driver * cxl_drv , struct module * owner , const char * modname )
+
+register a driver for the cxl bus
+
+Parameters
+  struct cxl_driver *cxl_drv
+    cxl driver structure to attach
+  struct module *owner
+    owning module/driver
+  const char *modname
+    KBUILD_MODNAME for parent driver

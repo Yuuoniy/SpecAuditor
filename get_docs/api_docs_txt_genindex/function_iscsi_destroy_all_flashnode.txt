@@ -1,0 +1,11 @@
+Function: void iscsi_destroy_all_flashnode ( struct Scsi_Host * shost )
+
+destroy all flashnode session entries
+
+Parameters
+  struct Scsi_Host *shost
+    pointer to host data
+
+Description
+  Destroys all the flashnode session entries and all corresponding children
+flashnode connection entries from sysfs

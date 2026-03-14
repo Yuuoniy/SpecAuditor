@@ -1,0 +1,11 @@
+Function: void folio_zero_range ( struct folio * folio , size_t start , size_t length )
+
+Zero a byte range in a folio.
+
+Parameters
+  struct folio *folio
+    The folio to write to.
+  size_t start
+    The first byte to zero.
+  size_t length
+    The number of bytes to zero.

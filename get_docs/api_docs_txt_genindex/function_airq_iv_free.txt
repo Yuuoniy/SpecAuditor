@@ -1,0 +1,11 @@
+Function: void airq_iv_free ( struct airq_iv * iv , unsigned long bit , unsigned long num )
+
+free irq bits of an interrupt vector
+
+Parameters
+  struct airq_iv *iv
+    pointer to interrupt vector structure
+  unsigned long bit
+    number of the first irq bit to free
+  unsigned long num
+    number of consecutive irq bits to free

@@ -1,0 +1,9 @@
+Function: int xa_get_order ( struct xarray * xa , unsigned long index )
+
+Get the order of an entry.
+
+Parameters
+  struct xarray *xa
+    XArray.
+  unsigned long index
+    Index of the entry.

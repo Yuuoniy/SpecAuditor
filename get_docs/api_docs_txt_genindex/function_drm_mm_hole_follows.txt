@@ -1,0 +1,12 @@
+Function: bool drm_mm_hole_follows ( const struct drm_mm_node * node )
+
+checks whether a hole follows this node
+
+Parameters
+  const struct drm_mm_node *node
+    drm_mm_node to check
+
+Description
+  Holes are embedded into the drm_mm using the tail of a drm_mm_node.
+If you wish to know whether a hole follows this particular node,
+query this function. See also drm_mm_hole_node_start() and drm_mm_hole_node_end() .

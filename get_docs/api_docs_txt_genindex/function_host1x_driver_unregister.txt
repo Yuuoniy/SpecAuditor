@@ -1,0 +1,11 @@
+Function: void host1x_driver_unregister ( struct host1x_driver * driver )
+
+unregister a host1x driver
+
+Parameters
+  struct host1x_driver *driver
+    host1x driver
+
+Description
+  Unbinds the driver from each of the host1x logical devices that it is
+bound to, effectively removing the subsystem devices that they represent.

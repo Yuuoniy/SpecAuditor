@@ -1,0 +1,12 @@
+Function: bool folio_maybe_mapped_shared ( struct folio * folio )
+
+Whether the folio is mapped into the page tables of more than one MM
+
+Parameters
+  struct folio *folio
+    The folio.
+
+Description
+  This function checks if the folio maybe currently mapped into more than one
+MM (“maybe mapped shared”), or if the folio is certainly mapped into a single
+MM (“mapped exclusively”).

@@ -1,0 +1,11 @@
+Function: bool intel_bios_is_tv_present ( struct intel_display * display )
+
+is integrated TV present in VBT
+
+Parameters
+  struct intel_display *display
+    display device instance
+
+Description
+  Return true if TV is present. If no child devices were parsed from VBT,
+assume TV is present.

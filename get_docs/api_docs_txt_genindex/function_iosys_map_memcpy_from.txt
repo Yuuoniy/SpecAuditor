@@ -1,0 +1,18 @@
+Function: void iosys_map_memcpy_from ( void * dst , const struct iosys_map * src , size_t src_offset , size_t len )
+
+Memcpy from iosys_map into system memory
+
+Parameters
+  void *dst
+    Destination in system memory
+  const struct iosys_map *src
+    The iosys_map structure
+  size_t src_offset
+    The offset from which to copy
+  size_t len
+    The number of byte in src
+
+Description
+  Copies data from a iosys_map with an offset. The dest buffer is in
+system memory. Depending on the mapping location, the helper picks the
+correct method of accessing the memory.

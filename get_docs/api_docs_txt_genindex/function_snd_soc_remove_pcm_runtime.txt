@@ -1,0 +1,12 @@
+Function: void snd_soc_remove_pcm_runtime ( struct snd_soc_card * card , struct snd_soc_pcm_runtime * rtd )
+
+Remove a pcm_runtime from card
+
+Parameters
+  struct snd_soc_card *card
+    The ASoC card to which the pcm_runtime has
+  struct snd_soc_pcm_runtime *rtd
+    The pcm_runtime to remove
+
+Description
+  This function removes a pcm_runtime from the ASoC card.

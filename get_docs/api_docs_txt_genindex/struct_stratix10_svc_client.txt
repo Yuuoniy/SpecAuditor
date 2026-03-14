@@ -1,0 +1,11 @@
+Struct: struct stratix10_svc_client
+
+service client structure
+
+Members
+  dev
+    the client device
+  receive_cb
+    callback to provide service client the received data
+  priv
+    client private data

@@ -1,0 +1,10 @@
+Function: struct drm_master * drm_master_get ( struct drm_master * master )
+
+reference a master pointer
+
+Parameters
+  struct drm_master *master
+    struct drm_master
+
+Description
+  Increments the reference count of master and returns a pointer to master .

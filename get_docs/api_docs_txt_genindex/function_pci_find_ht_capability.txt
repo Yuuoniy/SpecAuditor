@@ -1,0 +1,16 @@
+Function: u8 pci_find_ht_capability ( struct pci_dev * dev , int ht_cap )
+
+query a device’s HyperTransport capabilities
+
+Parameters
+  struct pci_dev *dev
+    PCI device to query
+  int ht_cap
+    HyperTransport capability code
+
+Description
+  Tell if a device supports a given HyperTransport capability.
+Returns an address within the device’s PCI configuration space
+or 0 in case the device does not support the request capability.
+The address points to the PCI capability, of type PCI_CAP_ID_HT,
+which has a HyperTransport capability matching ht_cap .

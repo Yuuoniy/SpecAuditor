@@ -1,0 +1,12 @@
+Function: u32 fw_request_get_timestamp ( const struct fw_request * request )
+
+Get timestamp of the request.
+
+Parameters
+  const struct fw_request *request
+    The opaque pointer to request structure.
+
+Description
+  Get timestamp when 1394 OHCI controller receives the asynchronous request subaction. The
+timestamp consists of the low order 3 bits of second field and the full 13 bits of count
+field of isochronous cycle time register.

@@ -1,0 +1,10 @@
+Function: bool gen_estimator_active ( struct net_rate_estimator __rcu * * rate_est )
+
+test if estimator is currently in use
+
+Parameters
+  struct net_rate_estimator __rcu **rate_est
+    rate estimator
+
+Description
+  Returns true if estimator is active, and false if not.

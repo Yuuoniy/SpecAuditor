@@ -1,0 +1,18 @@
+Function: struct drm_bridge_timings
+
+timing information for the bridge
+
+Members
+  input_bus_flags
+    Tells what additional settings for the pixel data on the bus
+this bridge requires (like pixel signal polarity). See also drm_display_info->bus_flags .
+  setup_time_ps
+    Defines the time in picoseconds the input data lines must be
+stable before the clock edge.
+  hold_time_ps
+    Defines the time in picoseconds taken for the bridge to sample the
+input signal after the clock edge.
+  dual_link
+    True if the bus operates in dual-link mode. The exact meaning is
+dependent on the bus type. For LVDS buses, this indicates that even-
+and odd-numbered pixels are received on separate links.

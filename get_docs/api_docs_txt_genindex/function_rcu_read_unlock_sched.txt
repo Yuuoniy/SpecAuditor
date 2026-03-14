@@ -1,0 +1,10 @@
+Function: void rcu_read_unlock_sched ( void )
+
+marks the end of a RCU-classic critical section
+
+Parameters
+  void
+    no arguments
+
+Description
+  See rcu_read_lock_sched() for more information.

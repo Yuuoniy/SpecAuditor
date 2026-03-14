@@ -1,0 +1,19 @@
+Function: int security_dentry_init_security ( struct dentry * dentry , int mode , const struct qstr * name , const char * * xattr_name , struct lsm_context * lsmctx )
+
+Perform dentry initialization
+
+Parameters
+  struct dentry *dentry
+    the dentry to initialize
+  int mode
+    mode used to determine resource type
+  const struct qstr *name
+    name of the last path component
+  const char **xattr_name
+    name of the security/LSM xattr
+  struct lsm_context *lsmctx
+    pointer to the resulting LSM context
+
+Description
+  Compute a context for a dentry as the inode is not yet available since NFSv4
+has no label backed by an EA anyway.  It is important to note that xattr_name does not need to be free’d by the caller, it is a static string.

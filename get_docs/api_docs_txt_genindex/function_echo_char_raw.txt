@@ -1,0 +1,13 @@
+Function: void echo_char_raw ( u8 c , struct n_tty_data * ldata )
+
+echo a character raw
+
+Parameters
+  u8 c
+    unicode byte to echo
+  struct n_tty_data *ldata
+    line disc data
+
+Description
+  Echo user input back onto the screen. This must be called only when
+L_ECHO(tty) is true. Called from the tty_driver.receive_buf() path.

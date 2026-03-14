@@ -1,0 +1,12 @@
+Function: struct tty_struct * alloc_tty_struct ( struct tty_driver * driver , int idx )
+
+allocate a new tty
+
+Parameters
+  struct tty_driver *driver
+    driver which will handle the returned tty
+  int idx
+    minor of the tty
+
+Description
+  This subroutine allocates and initializes a tty structure.

@@ -1,0 +1,13 @@
+Function: void synchronize_rcu_tasks_trace ( void )
+
+wait for a trace rcu-tasks grace period
+
+Parameters
+  void
+    no arguments
+
+Description
+  Control will return to the caller some time after a trace rcu-tasks
+grace period has elapsed, in other words after all currently executing
+trace rcu-tasks read-side critical sections have elapsed. These read-side
+critical sections are delimited by calls to rcu_read_lock_trace() and rcu_read_unlock_trace() .

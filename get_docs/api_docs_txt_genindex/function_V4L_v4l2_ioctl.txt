@@ -1,0 +1,3 @@
+Function: int v4l2_ioctl ( int fd , unsigned long int request , ... )
+
+operates like the ioctl() function.

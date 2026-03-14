@@ -1,0 +1,11 @@
+Struct: struct drm_i915_gem_vm_control
+
+Structure to create or destroy VM.
+
+Members
+  extensions
+    Zero-terminated chain of extensions.
+  flags
+    reserved for future usage, currently MBZ
+  vm_id
+    Id of the VM created or to be destroyed

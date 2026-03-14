@@ -1,0 +1,9 @@
+Function: void devm_nvmem_cell_put ( struct device * dev , struct nvmem_cell * cell )
+
+Release previously allocated nvmem cell from devm_nvmem_cell_get.
+
+Parameters
+  struct device *dev
+    Device that requests the nvmem cell.
+  struct nvmem_cell *cell
+    Previously allocated nvmem cell by devm_nvmem_cell_get() .

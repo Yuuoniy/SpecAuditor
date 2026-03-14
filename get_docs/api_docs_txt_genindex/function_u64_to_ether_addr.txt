@@ -1,0 +1,9 @@
+Function: void u64_to_ether_addr ( u64 u , u8 * addr )
+
+Convert a u64 to an Ethernet address.
+
+Parameters
+  u64 u
+    u64 to convert to an Ethernet MAC address
+  u8 *addr
+    Pointer to a six-byte array to contain the Ethernet address

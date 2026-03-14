@@ -1,0 +1,9 @@
+Macro: trace_printk
+
+
+
+Parameters
+  fmt
+    the printf format for printing
+  ...
+    variable arguments

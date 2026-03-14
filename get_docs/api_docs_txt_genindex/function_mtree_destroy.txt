@@ -1,0 +1,10 @@
+Function: void mtree_destroy ( struct maple_tree * mt )
+
+Destroy a maple tree
+
+Parameters
+  struct maple_tree *mt
+    The maple tree
+
+Description
+  Frees all resources used by the tree.  Handles locking.

@@ -1,0 +1,9 @@
+Function: int device_create_file ( struct device * dev , const struct device_attribute * attr )
+
+create sysfs attribute file for device.
+
+Parameters
+  struct device *dev
+    device.
+  const struct device_attribute *attr
+    device attribute descriptor.

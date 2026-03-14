@@ -1,0 +1,11 @@
+Function: struct scsi_device * scsi_device_from_queue ( struct request_queue * q )
+
+return sdev associated with a request_queue
+
+Parameters
+  struct request_queue *q
+    The request queue to return the sdev from
+
+Description
+  Return the sdev associated with a request queue or NULL if the
+request_queue does not reference a SCSI device.

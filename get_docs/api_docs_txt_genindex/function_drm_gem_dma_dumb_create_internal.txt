@@ -1,0 +1,17 @@
+Function: int drm_gem_dma_dumb_create_internal ( struct drm_file * file_priv , struct drm_device * drm , struct drm_mode_create_dumb * args )
+
+create a dumb buffer object
+
+Parameters
+  struct drm_file *file_priv
+    DRM file-private structure to create the dumb buffer for
+  struct drm_device *drm
+    DRM device
+  struct drm_mode_create_dumb *args
+    IOCTL data
+
+Description
+  This aligns the pitch and size arguments to the minimum required. This is
+an internal helper that can be wrapped by a driver to account for hardware
+with more specific alignment requirements. It should not be used directly
+as their drm_driver.dumb_create callback.

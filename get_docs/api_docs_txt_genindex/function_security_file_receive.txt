@@ -1,0 +1,11 @@
+Function: int security_file_receive ( struct file * file )
+
+Check if receiving a file via IPC is allowed
+
+Parameters
+  struct file *file
+    file being received
+
+Description
+  This hook allows security modules to control the ability of a process to
+receive an open file descriptor via socket IPC.

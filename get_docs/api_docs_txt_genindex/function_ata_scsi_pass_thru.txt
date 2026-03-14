@@ -1,0 +1,10 @@
+Function: unsigned int ata_scsi_pass_thru ( struct ata_queued_cmd * qc )
+
+convert ATA pass-thru CDB to taskfile
+
+Parameters
+  struct ata_queued_cmd *qc
+    command structure to be initialized
+
+Description
+  Handles either 12, 16, or 32-byte versions of the CDB.

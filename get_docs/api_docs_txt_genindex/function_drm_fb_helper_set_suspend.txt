@@ -1,0 +1,14 @@
+Function: void drm_fb_helper_set_suspend ( struct drm_fb_helper * fb_helper , bool suspend )
+
+wrapper around fb_set_suspend
+
+Parameters
+  struct drm_fb_helper *fb_helper
+    driver-allocated fbdev helper, can be NULL
+  bool suspend
+    whether to suspend or resume
+
+Description
+  A wrapper around fb_set_suspend implemented by fbdev core.
+Use drm_fb_helper_set_suspend_unlocked() if you don’t need to take
+the lock yourself

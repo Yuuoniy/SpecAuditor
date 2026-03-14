@@ -1,0 +1,7 @@
+Function: void memblock_free_all ( void )
+
+release free pages to the buddy allocator
+
+Parameters
+  void
+    no arguments

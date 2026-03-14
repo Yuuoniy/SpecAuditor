@@ -1,0 +1,9 @@
+Function: u16 ssh_crc ( const u8 * buf , size_t len )
+
+Compute CRC for SSH messages.
+
+Parameters
+  const u8 *buf
+    The pointer pointing to the data for which the CRC should be computed.
+  size_t len
+    The length of the data for which the CRC should be computed.

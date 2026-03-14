@@ -1,0 +1,15 @@
+Function: bool sched_group_asym ( struct lb_env * env , struct sg_lb_stats * sgs , struct sched_group * group )
+
+Check if the destination CPU can do asym_packing balance
+
+Parameters
+  struct lb_env *env
+    The load balancing environment
+  struct sg_lb_stats *sgs
+    Load-balancing statistics of the candidate busiest group
+  struct sched_group *group
+    The candidate busiest group
+
+Description
+  env ::dst_cpu can do asym_packing if it has higher priority than the
+preferred CPU of group .

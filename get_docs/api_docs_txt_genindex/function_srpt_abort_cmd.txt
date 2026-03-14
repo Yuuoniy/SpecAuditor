@@ -1,0 +1,7 @@
+Function: int srpt_abort_cmd ( struct srpt_send_ioctx * ioctx )
+
+abort a SCSI command
+
+Parameters
+  struct srpt_send_ioctx *ioctx
+    I/O context associated with the SCSI command.

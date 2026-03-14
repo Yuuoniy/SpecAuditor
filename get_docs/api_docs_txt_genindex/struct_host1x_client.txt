@@ -1,0 +1,31 @@
+Struct: struct host1x_client
+
+host1x client structure
+
+Members
+  list
+    list node for the host1x client
+  host
+    pointer to struct device representing the host1x controller
+  dev
+    pointer to struct device backing this host1x client
+  group
+    IOMMU group that this client is a member of
+  ops
+    host1x client operations
+  class
+    host1x class represented by this client
+  channel
+    host1x channel associated with this client
+  syncpts
+    array of syncpoints requested for this client
+  num_syncpts
+    number of syncpoints requested for this client
+  parent
+    pointer to parent structure
+  usecount
+    reference count for this structure
+  lock
+    mutex for mutually exclusive concurrency
+  cache
+    host1x buffer object cache

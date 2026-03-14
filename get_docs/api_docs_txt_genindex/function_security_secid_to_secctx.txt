@@ -1,0 +1,15 @@
+Function: int security_secid_to_secctx ( u32 secid , struct lsm_context * cp )
+
+Convert a secid to a secctx
+
+Parameters
+  u32 secid
+    secid
+  struct lsm_context *cp
+    the LSM context
+
+Description
+  Convert secid to security context.  If cp is NULL the length of the
+result will be returned, but no data will be returned.  This
+does mean that the length could change between calls to check the length and
+the next call which actually allocates and returns the data.

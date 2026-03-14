@@ -1,0 +1,14 @@
+Function: void blk_mq_submit_bio ( struct bio * bio )
+
+Create and send a request to block device.
+
+Parameters
+  struct bio *bio
+    Bio pointer.
+
+Description
+  Builds up a request structure from q and bio and send to the device. The
+request may not be queued directly to hardware if:
+* This request can be merged with another one
+* We want to place request at plug queue for possible future merging
+* There is an IO scheduler active at this queue

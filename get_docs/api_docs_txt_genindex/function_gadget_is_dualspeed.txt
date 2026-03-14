@@ -1,0 +1,7 @@
+Function: int gadget_is_dualspeed ( struct usb_gadget * g )
+
+return true iff the hardware handles high speed
+
+Parameters
+  struct usb_gadget *g
+    controller that might support both high and full speeds

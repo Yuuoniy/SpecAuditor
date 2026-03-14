@@ -1,0 +1,13 @@
+Function: unsigned long memblock_estimated_nr_free_pages ( void )
+
+return estimated number of free pages from memblock point of view
+
+Parameters
+  void
+    no arguments
+
+Description
+  During bootup, subsystems might need a rough estimate of the number of free
+pages in the whole system, before precise numbers are available from the
+buddy. Especially with CONFIG_DEFERRED_STRUCT_PAGE_INIT, the numbers
+obtained from the buddy might be very imprecise during bootup.

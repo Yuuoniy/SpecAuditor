@@ -1,0 +1,13 @@
+Function: void drm_atomic_helper_connector_destroy_state ( struct drm_connector * connector , struct drm_connector_state * state )
+
+default state destroy hook
+
+Parameters
+  struct drm_connector *connector
+    drm connector
+  struct drm_connector_state *state
+    connector state object to release
+
+Description
+  Default connector state destroy hook for drivers which don’t have their own
+subclassed connector state structure.

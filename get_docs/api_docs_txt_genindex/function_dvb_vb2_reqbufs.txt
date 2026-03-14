@@ -1,0 +1,14 @@
+Function: int dvb_vb2_reqbufs ( struct dvb_vb2_ctx * ctx , struct dmx_requestbuffers * req )
+
+Wrapper to vb2_core_reqbufs() for Digital TV buffer handling.
+
+Parameters
+  struct dvb_vb2_ctx *ctx
+    control struct for VB2 handler
+  struct dmx_requestbuffers *req
+    struct dmx_requestbuffers passed from userspace in
+order to handle DMX_REQBUFS .
+
+Description
+  Initiate streaming by requesting a number of buffers. Also used to
+free previously requested buffers, is req->count is zero.

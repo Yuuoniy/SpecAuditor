@@ -1,0 +1,15 @@
+Struct: struct nand_op_parser_pattern_elem
+
+One element of a pattern
+
+Members
+  type
+    the instructuction type
+  optional
+    whether this element of the pattern is optional or mandatory
+  ctx
+    address or data constraint
+  ctx.addr
+    address constraint (number of cycles)
+  ctx.data
+    data constraint (data length)

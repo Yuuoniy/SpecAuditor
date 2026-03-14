@@ -1,0 +1,17 @@
+Struct: struct v4l2_mbus_config_mipi_csi1
+
+CSI-1/CCP2 data bus configuration
+
+Members
+  clock_inv
+    polarity of clock/strobe signal
+false - not inverted, true - inverted
+  strobe
+    false - data/clock, true - data/strobe
+  lane_polarity
+    the polarities of the clock (index 0) and data lanes
+index (1)
+  data_lane
+    the number of the data lane
+  clock_lane
+    the number of the clock lane

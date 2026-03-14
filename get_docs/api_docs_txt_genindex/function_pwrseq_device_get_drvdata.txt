@@ -1,0 +1,7 @@
+Function: void * pwrseq_device_get_drvdata ( struct pwrseq_device * pwrseq )
+
+Get the driver private data associated with this sequencer.
+
+Parameters
+  struct pwrseq_device *pwrseq
+    Power sequencer object.

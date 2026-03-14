@@ -1,0 +1,13 @@
+Struct: struct slim_port
+
+SLIMbus port
+
+Members
+  id
+    Port id
+  direction
+    Port direction, Source or Sink.
+  state
+    state machine of port.
+  ch
+    channel associated with this port.

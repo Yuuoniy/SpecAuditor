@@ -1,0 +1,10 @@
+Function: int lsm_task_alloc ( struct task_struct * task )
+
+allocate a composite task blob
+
+Parameters
+  struct task_struct *task
+    the task that needs a blob
+
+Description
+  Allocate the task blob for all the modules

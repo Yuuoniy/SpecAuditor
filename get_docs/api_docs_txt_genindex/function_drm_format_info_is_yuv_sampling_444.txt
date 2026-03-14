@@ -1,0 +1,7 @@
+Function: bool drm_format_info_is_yuv_sampling_444 ( const struct drm_format_info * info )
+
+check that the format info matches a YUV format with 4:4:4 sub-sampling
+
+Parameters
+  const struct drm_format_info *info
+    format info

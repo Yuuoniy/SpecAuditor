@@ -1,0 +1,15 @@
+Function: int tipc_l2_device_event ( struct notifier_block * nb , unsigned long evt , void * ptr )
+
+handle device events from network device
+
+Parameters
+  struct notifier_block *nb
+    the context of the notification
+  unsigned long evt
+    the type of event
+  void *ptr
+    the net device that the event was on
+
+Description
+  This function is called by the Ethernet driver in case of link
+change event.

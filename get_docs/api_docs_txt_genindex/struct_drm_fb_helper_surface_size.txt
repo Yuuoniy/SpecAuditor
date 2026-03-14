@@ -1,0 +1,17 @@
+Struct: struct drm_fb_helper_surface_size
+
+describes fbdev size and scanout surface size
+
+Members
+  fb_width
+    fbdev width
+  fb_height
+    fbdev height
+  surface_width
+    scanout buffer width
+  surface_height
+    scanout buffer height
+  surface_bpp
+    scanout buffer bpp
+  surface_depth
+    scanout buffer depth

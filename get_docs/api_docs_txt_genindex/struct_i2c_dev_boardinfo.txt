@@ -1,0 +1,12 @@
+Struct: struct i2c_dev_boardinfo
+
+I2C device board information
+
+Members
+  node
+    used to insert the boardinfo object in the I2C boardinfo list
+  base
+    regular I2C board information
+  lvr
+    LVR (Legacy Virtual Register) needed by the I3C core to know about
+the I2C device limitations

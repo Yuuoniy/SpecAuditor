@@ -1,0 +1,11 @@
+Struct: struct nand_op_parser_ctx
+
+Context used by the parser
+
+Members
+  instrs
+    array of all the instructions that must be addressed
+  ninstrs
+    length of the instrs array
+  subop
+    Sub-operation to be passed to the NAND controller

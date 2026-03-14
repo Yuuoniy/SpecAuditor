@@ -1,0 +1,10 @@
+Function: void ctucan_pci_remove ( struct pci_dev * pdev )
+
+Unregister the device after releasing the resources
+
+Parameters
+  struct pci_dev *pdev
+    Handle to the pci device structure
+
+Description
+  This function frees all the resources allocated to the device.

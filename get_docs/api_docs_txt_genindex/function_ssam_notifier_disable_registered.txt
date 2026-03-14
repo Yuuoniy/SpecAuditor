@@ -1,0 +1,12 @@
+Function: int ssam_notifier_disable_registered ( struct ssam_controller * ctrl )
+
+Disable events for all registered notifiers.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller for which to disable the notifiers/events.
+
+Description
+  Disables events for all currently registered notifiers. In case of an error
+(EC command failing), all previously disabled events will be restored and
+the error code returned.

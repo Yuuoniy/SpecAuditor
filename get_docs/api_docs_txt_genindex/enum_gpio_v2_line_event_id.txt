@@ -1,0 +1,3 @@
+Enum: enum gpio_v2_line_event_id
+
+struct gpio_v2_line_event .id values

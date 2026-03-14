@@ -1,0 +1,15 @@
+Struct: struct ipu3_uapi_yuvp1_chnr_enable_config
+
+Chroma noise reduction enable
+
+Members
+  enable
+    enable/disable chroma noise reduction
+  yuv_mode
+    0 - YUV420, 1 - YUV422
+  reserved0
+    reserved
+  col_size
+    number of columns in the frame, max width is 2560
+  reserved1
+    reserved

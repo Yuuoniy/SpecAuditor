@@ -1,0 +1,8 @@
+Function: void xz_dec_end ( struct xz_dec * s )
+
+Free the memory allocated for the decoder state
+
+Parameters
+  struct xz_dec *s
+    Decoder state allocated using xz_dec_init() . If s is NULL,
+this function does nothing.

@@ -1,0 +1,9 @@
+Function: int pci_load_and_free_saved_state ( struct pci_dev * dev , struct pci_saved_state * * state )
+
+Reload the save state pointed to by state, and free the memory allocated for it.
+
+Parameters
+  struct pci_dev *dev
+    PCI device that we’re dealing with
+  struct pci_saved_state **state
+    Pointer to saved state returned from pci_store_saved_state()

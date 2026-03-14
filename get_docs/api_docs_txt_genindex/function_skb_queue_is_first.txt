@@ -1,0 +1,12 @@
+Function: bool skb_queue_is_first ( const struct sk_buff_head * list , const struct sk_buff * skb )
+
+check if skb is the first entry in the queue
+
+Parameters
+  const struct sk_buff_head *list
+    queue head
+  const struct sk_buff *skb
+    buffer
+
+Description
+  Returns true if skb is the first buffer on the list.

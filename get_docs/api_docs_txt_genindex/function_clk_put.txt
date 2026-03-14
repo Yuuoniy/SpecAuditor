@@ -1,0 +1,7 @@
+Function: void clk_put ( struct clk * clk )
+
+“free” the clock source
+
+Parameters
+  struct clk *clk
+    clock source

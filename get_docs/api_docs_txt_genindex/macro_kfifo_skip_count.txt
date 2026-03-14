@@ -1,0 +1,9 @@
+Macro: kfifo_skip_count
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used
+  count
+    count of data to skip

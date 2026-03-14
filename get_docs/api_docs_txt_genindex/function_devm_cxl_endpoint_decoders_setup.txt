@@ -1,0 +1,10 @@
+Function: int devm_cxl_endpoint_decoders_setup ( struct cxl_port * port )
+
+allocate and setup endpoint decoders
+
+Parameters
+  struct cxl_port *port
+    CXL port context
+
+Description
+  Return 0 or -errno on error

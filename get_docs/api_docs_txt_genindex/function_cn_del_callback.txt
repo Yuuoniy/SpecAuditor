@@ -1,0 +1,7 @@
+Function: void cn_del_callback ( const struct cb_id * id )
+
+Unregisters new callback with connector core.
+
+Parameters
+  const struct cb_id *id
+    unique connector’s user identifier.

@@ -1,0 +1,14 @@
+Function: struct devfreq_event_dev * devfreq_event_get_edev_by_phandle ( struct device * dev , const char * phandle_name , int index )
+
+Get the devfreq-event dev from devicetree.
+
+Parameters
+  struct device *dev
+    the pointer to the given device
+  const char *phandle_name
+    name of property holding a phandle value
+  int index
+    the index into list of devfreq-event device
+
+Description
+  Note that this function return the pointer of devfreq-event device.

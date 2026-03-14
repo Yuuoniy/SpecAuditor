@@ -1,0 +1,17 @@
+Function: void _copy_from_pages ( char * p , struct page * * pages , size_t pgbase , size_t len )
+
+
+
+Parameters
+  char *p
+    pointer to destination
+  struct page **pages
+    array of pages
+  size_t pgbase
+    offset of source data
+  size_t len
+    length
+
+Description
+  Copies data into an arbitrary memory location from an array of pages
+The copy is assumed to be non-overlapping.

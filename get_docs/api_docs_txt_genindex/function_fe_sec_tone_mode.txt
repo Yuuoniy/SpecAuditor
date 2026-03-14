@@ -1,0 +1,3 @@
+Function: enum fe_sec_tone_mode
+
+Type of tone to be send to the LNBf.

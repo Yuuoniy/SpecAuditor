@@ -1,0 +1,11 @@
+Function: void drm_mm_takedown ( struct drm_mm * mm )
+
+clean up a drm_mm allocator
+
+Parameters
+  struct drm_mm *mm
+    drm_mm allocator to clean up
+
+Description
+  Note that it is a bug to call this function on an allocator which is not
+clean.

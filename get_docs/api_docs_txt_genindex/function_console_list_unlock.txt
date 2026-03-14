@@ -1,0 +1,10 @@
+Function: void console_list_unlock ( void )
+
+Unlock the console list
+
+Parameters
+  void
+    no arguments
+
+Description
+  Counterpart to console_list_lock()

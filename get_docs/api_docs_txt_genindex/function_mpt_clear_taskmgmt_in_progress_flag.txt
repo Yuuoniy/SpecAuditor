@@ -1,0 +1,7 @@
+Function: void mpt_clear_taskmgmt_in_progress_flag ( MPT_ADAPTER * ioc )
+
+clear flags associated with task management
+
+Parameters
+  MPT_ADAPTER *ioc
+    Pointer to MPT_ADAPTER structure

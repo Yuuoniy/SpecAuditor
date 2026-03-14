@@ -1,0 +1,18 @@
+Function: void skb_tailroom_reserve ( struct sk_buff * skb , unsigned int mtu , unsigned int needed_tailroom )
+
+adjust reserved_tailroom
+
+Parameters
+  struct sk_buff *skb
+    buffer to alter
+  unsigned int mtu
+    maximum amount of headlen permitted
+  unsigned int needed_tailroom
+    minimum amount of reserved_tailroom
+
+Description
+  Set reserved_tailroom so that headlen can be as large as possible but
+not larger than mtu and tailroom cannot be smaller than
+needed_tailroom.
+The required headroom should already have been reserved before using
+this function.

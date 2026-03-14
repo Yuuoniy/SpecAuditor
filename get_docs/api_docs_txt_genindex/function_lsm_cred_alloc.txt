@@ -1,0 +1,12 @@
+Function: int lsm_cred_alloc ( struct cred * cred , gfp_t gfp )
+
+allocate a composite cred blob
+
+Parameters
+  struct cred *cred
+    the cred that needs a blob
+  gfp_t gfp
+    allocation type
+
+Description
+  Allocate the cred blob for all the modules

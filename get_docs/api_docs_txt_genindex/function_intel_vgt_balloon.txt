@@ -1,0 +1,14 @@
+Function: int intel_vgt_balloon ( struct i915_ggtt * ggtt )
+
+balloon out reserved graphics address trunks
+
+Parameters
+  struct i915_ggtt *ggtt
+    the global GGTT from which to reserve
+
+Description
+  This function is called at the initialization stage, to balloon out the
+graphic address space allocated to other vGPUs, by marking these spaces as
+reserved. The ballooning related knowledge(starting address and size of
+the mappable/unmappable graphic memory) is described in the vgt_if structure
+in a reserved mmio range.

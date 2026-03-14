@@ -1,0 +1,13 @@
+Function: int vfs_test_lock ( struct file * filp , struct file_lock * fl )
+
+test file byte range lock
+
+Parameters
+  struct file *filp
+    The file to test lock for
+  struct file_lock *fl
+    The lock to test; also used to hold result
+
+Description
+  Returns -ERRNO on failure.  Indicates presence of conflicting lock by
+setting conf->fl_type to something other than F_UNLCK.

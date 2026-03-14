@@ -1,0 +1,83 @@
+Struct: struct ieee80211_tx_info
+
+skb transmit information
+
+Members
+  flags
+    transmit info flags, defined above
+  band
+    the band to transmit on (use e.g. for checking for races),
+not valid if the interface is an MLD since we won’t know which
+link the frame will be transmitted on
+  status_data_idr
+    indicates status data is IDR allocated ID for ack frame
+  status_data
+    internal data for TX status handling, assigned privately,
+see also enum ieee80211_status_data for the internal documentation
+  hw_queue
+    HW queue to put the frame on, skb_get_queue_mapping() gives the AC
+  tx_time_est
+    TX time estimate in units of 4us, used internally
+  {unnamed_union}
+    anonymous
+  control
+    union part for control data
+  {unnamed_union}
+    anonymous
+  {unnamed_struct}
+    anonymous
+  control.rates
+    TX rates array to try
+  control.rts_cts_rate_idx
+    rate for RTS or CTS
+  control.use_rts
+    use RTS
+  control.use_cts_prot
+    use RTS/CTS
+  control.short_preamble
+    use short preamble (CCK only)
+  control.skip_table
+    skip externally configured rate table
+  control.jiffies
+    timestamp for expiry on powersave clients
+  control.vif
+    virtual interface (may be NULL)
+  control.hw_key
+    key to encrypt with (may be NULL)
+  control.flags
+    control flags, see enum mac80211_tx_control_flags
+  control.enqueue_time
+    enqueue time (for iTXQs)
+  ack
+    union part for pure ACK data
+  ack.cookie
+    cookie for the ACK
+  status
+    union part for status data
+  status.rates
+    attempted rates
+  status.ack_signal
+    ACK signal
+  status.ampdu_ack_len
+    AMPDU ack length
+  status.ampdu_len
+    AMPDU length
+  status.antenna
+    (legacy, kept only for iwlegacy)
+  status.tx_time
+    airtime consumed for transmission; note this is only
+used for WMM AC, not for airtime fairness
+  status.flags
+    status flags, see enum mac80211_tx_status_flags
+  status.status_driver_data
+    driver use area
+  {unnamed_struct}
+    anonymous
+  driver_rates
+    alias to control.rates to reserve space
+  pad
+    padding
+  rate_driver_data
+    driver use area if driver needs control.rates
+  driver_data
+    array of driver_data pointers

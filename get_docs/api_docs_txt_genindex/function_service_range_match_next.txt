@@ -1,0 +1,11 @@
+Function: struct service_range * service_range_match_next ( struct rb_node * n , u32 start , u32 end )
+
+find next service range matching a range
+
+Parameters
+  struct rb_node *n
+    a node in service range rbtree from which the searching starts
+  u32 start
+    beginning of the search range (end >= start) for matching
+  u32 end
+    end of the search range (end >= start) for matching

@@ -1,0 +1,3 @@
+Enum: enum rkisp1_cif_isp_dpf_gain_usage
+
+dpf gain usage

@@ -1,0 +1,13 @@
+Struct: struct cxl_mem_query_commands
+
+Query supported commands.
+
+Members
+  n_commands
+    In/out parameter. When n_commands is > 0, the driver will
+return min(num_support_commands, n_commands). When n_commands is 0, driver will return the number of total supported commands.
+  rsvd
+    Reserved for future use.
+  commands
+    Output array of supported commands. This array must be allocated
+by userspace to be at least min(num_support_commands, n_commands )

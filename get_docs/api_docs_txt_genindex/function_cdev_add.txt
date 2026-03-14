@@ -1,0 +1,16 @@
+Function: int cdev_add ( struct cdev * p , dev_t dev , unsigned count )
+
+add a char device to the system
+
+Parameters
+  struct cdev *p
+    the cdev structure for the device
+  dev_t dev
+    the first device number for which this device is responsible
+  unsigned count
+    the number of consecutive minor numbers corresponding to this
+device
+
+Description
+  cdev_add() adds the device represented by p to the system, making it
+live immediately.  A negative error code is returned on failure.

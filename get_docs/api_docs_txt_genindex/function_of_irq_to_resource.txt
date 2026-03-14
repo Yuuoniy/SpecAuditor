@@ -1,0 +1,11 @@
+Function: int of_irq_to_resource ( struct device_node * dev , int index , struct resource * r )
+
+Decode a node’s IRQ and return it as a resource
+
+Parameters
+  struct device_node *dev
+    pointer to device tree node
+  int index
+    zero-based index of the irq
+  struct resource *r
+    pointer to resource structure to return result into.

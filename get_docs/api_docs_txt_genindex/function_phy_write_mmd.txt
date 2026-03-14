@@ -1,0 +1,16 @@
+Function: int phy_write_mmd ( struct phy_device * phydev , int devad , u32 regnum , u16 val )
+
+Convenience function for writing a register on an MMD on a given PHY.
+
+Parameters
+  struct phy_device *phydev
+    The phy_device struct
+  int devad
+    The MMD to read from
+  u32 regnum
+    The register on the MMD to read
+  u16 val
+    value to write to regnum
+
+Description
+  Same rules as for phy_write() ;

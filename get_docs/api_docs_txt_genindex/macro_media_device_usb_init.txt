@@ -1,0 +1,15 @@
+Macro: media_device_usb_init
+
+
+
+Parameters
+  mdev
+    pointer to struct media_device
+  udev
+    pointer to struct usb_device
+  name
+    media device name. If NULL , the routine will use the usb
+product name, if available.
+
+Description
+  This macro calls media_device_usb_init() passing the media_device_usb_init() driver_name parameter filled with KBUILD_MODNAME .

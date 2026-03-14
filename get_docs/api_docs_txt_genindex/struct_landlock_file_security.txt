@@ -1,0 +1,22 @@
+Struct: struct landlock_file_security
+
+File security blob
+
+Members
+  allowed_access
+    Access rights that were available at the time of
+opening the file. This is not necessarily the full set of access
+rights available at that time, but it’s the necessary subset as
+needed to authorize later operations on the open file.
+  deny_masks
+    Domain layer levels that deny an optional access (see
+_LANDLOCK_ACCESS_FS_OPTIONAL).
+  fown_layer
+    Layer level of fown_subject->domain with
+LANDLOCK_SCOPE_SIGNAL.
+  fown_subject
+    Landlock credential of the task that set the PID that
+may receive a signal e.g., SIGURG when writing MSG_OOB to the
+related socket.  This pointer is protected by the related
+file->f_owner->lock, as for fown_struct’s members: pid, uid, and
+euid.

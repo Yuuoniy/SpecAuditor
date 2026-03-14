@@ -1,0 +1,17 @@
+Macro: devm_drm_bridge_alloc
+
+
+
+Parameters
+  dev
+    struct device of the bridge device
+  type
+    the type of the struct which contains struct drm_bridge
+  member
+    the name of the drm_bridge within type
+  funcs
+    callbacks for this bridge
+
+Description
+  The reference count of the returned bridge is initialized to 1. This
+reference will be automatically dropped via devm (by calling drm_bridge_put() ) when dev is removed.

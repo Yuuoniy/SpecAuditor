@@ -1,0 +1,10 @@
+Function: void vme_lm_free ( struct vme_resource * resource )
+
+Free allocated VME location monitor
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME location monitor resource.
+
+Description
+  Free allocation of a VME location monitor.

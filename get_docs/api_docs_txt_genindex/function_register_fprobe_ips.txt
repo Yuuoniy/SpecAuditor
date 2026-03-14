@@ -1,0 +1,17 @@
+Function: int register_fprobe_ips ( struct fprobe * fp , unsigned long * addrs , int num )
+
+Register fprobe to ftrace by address.
+
+Parameters
+  struct fprobe *fp
+    A fprobe data structure to be registered.
+  unsigned long *addrs
+    An array of target function address.
+  int num
+    The number of entries of addrs .
+
+Description
+  Register fp to ftrace for enabling the probe on the address given by addrs .
+The addrs must be the addresses of ftrace location address, which may be
+the symbol address + arch-dependent offset.
+If you unsure what this mean, please use other registration functions.

@@ -1,0 +1,20 @@
+Function: int drm_gem_fb_afbc_init ( struct drm_device * dev , const struct drm_format_info * info , const struct drm_mode_fb_cmd2 * mode_cmd , struct drm_afbc_framebuffer * afbc_fb )
+
+Helper function for drivers using afbc to fill and validate all the afbc-specific struct drm_afbc_framebuffer members
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  const struct drm_format_info *info
+    pixel format information
+  const struct drm_mode_fb_cmd2 *mode_cmd
+    Metadata from the userspace framebuffer creation request
+  struct drm_afbc_framebuffer *afbc_fb
+    afbc framebuffer
+
+Description
+  This function can be used by drivers which support afbc to complete
+the preparation of struct drm_afbc_framebuffer . It must be called after
+allocating the said struct and calling drm_gem_fb_init_with_funcs() .
+It is caller’s responsibility to put afbc_fb->base.obj objects in case
+the call is unsuccessful.

@@ -1,0 +1,15 @@
+Macro: __DEFINE_FLEX
+
+
+
+Parameters
+  type
+    structure type name, including “struct” keyword.
+  name
+    Name for a variable to define.
+  member
+    Name of the array member.
+  count
+    Number of elements in the array; must be compile-time const.
+  trailer...
+    Trailing expressions for attributes and/or initializers.

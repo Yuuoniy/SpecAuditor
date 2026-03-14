@@ -1,0 +1,7 @@
+Function: void snd_soc_unregister_dais ( struct snd_soc_component * component )
+
+Unregister DAIs from the ASoC core
+
+Parameters
+  struct snd_soc_component *component
+    The component for which the DAIs should be unregistered

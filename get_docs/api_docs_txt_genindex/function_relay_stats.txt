@@ -1,0 +1,12 @@
+Function: size_t relay_stats ( struct rchan * chan , int flags )
+
+get channel buffer statistics
+
+Parameters
+  struct rchan *chan
+    the channel
+  int flags
+    select particular information to get
+
+Description
+  Returns the count of certain field that caller specifies.

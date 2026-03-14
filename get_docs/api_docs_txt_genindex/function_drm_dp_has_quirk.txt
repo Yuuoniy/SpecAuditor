@@ -1,0 +1,12 @@
+Function: bool drm_dp_has_quirk ( const struct drm_dp_desc * desc , enum drm_dp_quirk quirk )
+
+does the DP device have a specific quirk
+
+Parameters
+  const struct drm_dp_desc *desc
+    Device descriptor filled by drm_dp_read_desc()
+  enum drm_dp_quirk quirk
+    Quirk to query for
+
+Description
+  Return true if DP device identified by desc has quirk .

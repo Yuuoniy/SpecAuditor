@@ -1,0 +1,18 @@
+Function: acpi_status wmidev_evaluate_method ( struct wmi_device * wdev , u8 instance , u32 method_id , const struct acpi_buffer * in , struct acpi_buffer * out )
+
+Evaluate a WMI method
+
+Parameters
+  struct wmi_device *wdev
+    A wmi bus device from a driver
+  u8 instance
+    Instance index
+  u32 method_id
+    Method ID to call
+  const struct acpi_buffer *in
+    Mandatory buffer containing input for the method call
+  struct acpi_buffer *out
+    Empty buffer to return the method results
+
+Description
+  Call an ACPI-WMI method, the caller must free out .

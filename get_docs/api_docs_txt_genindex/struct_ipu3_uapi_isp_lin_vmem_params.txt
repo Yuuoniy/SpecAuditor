@@ -1,0 +1,23 @@
+Struct: struct ipu3_uapi_isp_lin_vmem_params
+
+Linearization parameters
+
+Members
+  lin_lutlow_gr
+    linearization look-up table for GR channel interpolation.
+  lin_lutlow_r
+    linearization look-up table for R channel interpolation.
+  lin_lutlow_b
+    linearization look-up table for B channel interpolation.
+  lin_lutlow_gb
+    linearization look-up table for GB channel interpolation.
+lin_lutlow_gr / lin_lutlow_r / lin_lutlow_b /
+lin_lutlow_gb <= LIN_MAX_VALUE - 1.
+  lin_lutdif_gr
+    lin_lutlow_gr[i+1] - lin_lutlow_gr[i].
+  lin_lutdif_r
+    lin_lutlow_r[i+1] - lin_lutlow_r[i].
+  lin_lutdif_b
+    lin_lutlow_b[i+1] - lin_lutlow_b[i].
+  lin_lutdif_gb
+    lin_lutlow_gb[i+1] - lin_lutlow_gb[i].

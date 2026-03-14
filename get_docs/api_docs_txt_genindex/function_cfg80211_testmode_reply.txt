@@ -1,0 +1,13 @@
+Function: int cfg80211_testmode_reply ( struct sk_buff * skb )
+
+send the reply skb
+
+Parameters
+  struct sk_buff *skb
+    The skb, must have been allocated with cfg80211_testmode_alloc_reply_skb()
+
+Description
+  Since calling this function will usually be the last thing
+before returning from the testmode_cmd you should return
+the error code.  Note that this function consumes the skb
+regardless of the return value.

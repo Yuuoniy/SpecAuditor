@@ -1,0 +1,12 @@
+Function: struct srp_rport * srp_rport_add ( struct Scsi_Host * shost , struct srp_rport_identifiers * ids )
+
+add a SRP remote port to the device hierarchy
+
+Parameters
+  struct Scsi_Host *shost
+    scsi host the remote port is connected to.
+  struct srp_rport_identifiers *ids
+    The port id for the remote port.
+
+Description
+  Publishes a port to the rest of the system.

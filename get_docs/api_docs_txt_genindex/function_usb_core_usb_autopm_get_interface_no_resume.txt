@@ -1,0 +1,11 @@
+Function: void usb_autopm_get_interface_no_resume ( struct usb_interface * intf )
+
+increment a USB interface’s PM-usage counter
+
+Parameters
+  struct usb_interface *intf
+    the usb_interface whose counter should be incremented
+
+Description
+  This routine increments intf ’s usage counter but does not carry out an
+autoresume.

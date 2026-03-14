@@ -1,0 +1,10 @@
+Function: bool is_zero_folio ( const struct folio * folio )
+
+Query if a folio is a zero page
+
+Parameters
+  const struct folio *folio
+    The folio to query
+
+Description
+  This returns true if folio is one of the permanent zero pages.

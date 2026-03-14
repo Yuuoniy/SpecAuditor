@@ -1,0 +1,22 @@
+Function: int vme_master_set ( struct vme_resource * resource , int enabled , unsigned long long vme_base , unsigned long long size , u32 aspace , u32 cycle , u32 dwidth )
+
+Set VME master window configuration.
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME master resource.
+  int enabled
+    State to which the window should be configured.
+  unsigned long long vme_base
+    Base address for the window.
+  unsigned long long size
+    Size of the VME window.
+  u32 aspace
+    VME address space for the VME window.
+  u32 cycle
+    VME data transfer cycle type for the VME window.
+  u32 dwidth
+    VME data transfer width for the VME window.
+
+Description
+  Set configuration for provided VME master window.

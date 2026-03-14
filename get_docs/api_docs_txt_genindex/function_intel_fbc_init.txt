@@ -1,0 +1,10 @@
+Function: void intel_fbc_init ( struct intel_display * display )
+
+Initialize FBC
+
+Parameters
+  struct intel_display *display
+    display
+
+Description
+  This function might be called during PM init process.

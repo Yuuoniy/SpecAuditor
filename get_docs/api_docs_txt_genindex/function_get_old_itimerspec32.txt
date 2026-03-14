@@ -1,0 +1,9 @@
+Function: int get_old_itimerspec32 ( struct itimerspec64 * its , const struct old_itimerspec32 __user * uits )
+
+get user’s struct old_itimerspec32 into kernel space
+
+Parameters
+  struct itimerspec64 *its
+    destination struct itimerspec64
+  const struct old_itimerspec32 __user *uits
+    user’s struct old_itimerspec32

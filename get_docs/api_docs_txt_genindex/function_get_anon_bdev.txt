@@ -1,0 +1,11 @@
+Function: int get_anon_bdev ( dev_t * p )
+
+Allocate a block device for filesystems which don’t have one.
+
+Parameters
+  dev_t *p
+    Pointer to a dev_t.
+
+Description
+  Filesystems which don’t use real block devices can call this function
+to allocate a virtual block device.

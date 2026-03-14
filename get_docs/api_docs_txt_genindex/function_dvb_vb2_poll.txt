@@ -1,0 +1,16 @@
+Function: __poll_t dvb_vb2_poll ( struct dvb_vb2_ctx * ctx , struct file * file , poll_table * wait )
+
+Wrapper to vb2_core_streamon() for Digital TV buffer handling.
+
+Parameters
+  struct dvb_vb2_ctx *ctx
+    control struct for VB2 handler
+  struct file *file
+    struct file argument passed to the poll
+file operation handler.
+  poll_table *wait
+    poll_table wait argument passed to the poll
+file operation handler.
+
+Description
+  Implements poll syscall() logic.

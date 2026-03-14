@@ -1,0 +1,12 @@
+Function: int pci_select_bars ( struct pci_dev * dev , unsigned long flags )
+
+Make BAR mask from the type of resource
+
+Parameters
+  struct pci_dev *dev
+    the PCI device for which BAR mask is made
+  unsigned long flags
+    resource type mask to be selected
+
+Description
+  This helper routine makes bar mask from the type of resource.

@@ -1,0 +1,10 @@
+Function: void tty_flush_works ( struct tty_struct * tty )
+
+flush all works of a tty/pty pair
+
+Parameters
+  struct tty_struct *tty
+    tty device to flush works for (or either end of a pty pair)
+
+Description
+  Sync flush all works belonging to tty (and the ‘other’ tty).

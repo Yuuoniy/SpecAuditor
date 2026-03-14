@@ -1,0 +1,16 @@
+Function: int usb_set_interface ( struct usb_device * dev , int interface , int alternate )
+
+Makes a particular alternate setting be current
+
+Parameters
+  struct usb_device *dev
+    the device whose interface is being updated
+  int interface
+    the interface being updated
+  int alternate
+    the setting being chosen.
+
+Description
+  This is used to enable data transfers on interfaces that may not
+be enabled by default.  Not all devices support such configurability.
+Only the driver bound to an interface may change its setting.

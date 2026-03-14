@@ -1,0 +1,17 @@
+Function: long drm_compat_ioctl ( struct file * filp , unsigned int cmd , unsigned long arg )
+
+32bit IOCTL compatibility handler for DRM drivers
+
+Parameters
+  struct file *filp
+    file this ioctl is called on
+  unsigned int cmd
+    ioctl cmd number
+  unsigned long arg
+    user argument
+
+Description
+  Compatibility handler for 32 bit userspace running on 64 kernels. All actual
+IOCTL handling is forwarded to drm_ioctl() , while marshalling structures as
+appropriate. Note that this only handles DRM core IOCTLs, if the driver has
+botched IOCTL itself, it must handle those by wrapping this function.

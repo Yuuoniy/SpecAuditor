@@ -1,0 +1,37 @@
+Struct: struct iommu_hw_info
+
+ioctl(IOMMU_GET_HW_INFO)
+
+Members
+  size
+    sizeof( struct iommu_hw_info )
+  flags
+    Must be 0
+  dev_id
+    The device bound to the iommufd
+  data_len
+    Input the length of a user buffer in bytes. Output the length of
+data that kernel supports
+  data_uptr
+    User pointer to a user-space buffer used by the kernel to fill
+the iommu type specific hardware information data
+  {unnamed_union}
+    anonymous
+  in_data_type
+    This shares the same field with out_data_type , making it be
+a bidirectional field. When IOMMU_HW_INFO_FLAG_INPUT_TYPE is
+set, an input type carried via this in_data_type field will
+be valid, requesting for the info data to the given type. If
+IOMMU_HW_INFO_FLAG_INPUT_TYPE is unset, any input value will
+be seen as IOMMU_HW_INFO_TYPE_DEFAULT
+  out_data_type
+    Output the iommu hardware info type as defined in the enum iommu_hw_info_type .
+  out_max_pasid_log2
+    Output the width of PASIDs. 0 means no PASID support.
+PCI devices turn to out_capabilities to check if the
+specific capabilities is supported or not.
+  __reserved
+    Must be 0
+  out_capabilities
+    Output the generic iommu capability info type as defined
+in the enum iommu_hw_capabilities .

@@ -1,0 +1,13 @@
+Function: int iio_str_to_fixpoint ( const char * str , int fract_mult , int * integer , int * fract )
+
+Parse a fixed-point number from a string
+
+Parameters
+  const char *str
+    The string to parse
+  int fract_mult
+    Multiplier for the first decimal place, should be a power of 10
+  int *integer
+    The integer part of the number
+  int *fract
+    The fractional part of the number

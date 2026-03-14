@@ -1,0 +1,7 @@
+Function: int srpt_init_module ( void )
+
+kernel module initialization
+
+Parameters
+  void
+    no arguments

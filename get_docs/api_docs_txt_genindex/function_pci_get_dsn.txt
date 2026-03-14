@@ -1,0 +1,11 @@
+Function: u64 pci_get_dsn ( struct pci_dev * dev )
+
+Read and return the 8-byte Device Serial Number
+
+Parameters
+  struct pci_dev *dev
+    PCI device to query
+
+Description
+  Looks up the PCI_EXT_CAP_ID_DSN and reads the 8 bytes of the Device Serial
+Number.

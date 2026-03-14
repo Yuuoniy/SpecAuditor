@@ -1,0 +1,17 @@
+Function: void * xas_find_marked ( struct xa_state * xas , unsigned long max , xa_mark_t mark )
+
+Find the next marked entry in the XArray.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+  unsigned long max
+    Highest index to return.
+  xa_mark_t mark
+    Mark number to search for.
+
+Description
+  If the xas has not yet been walked to an entry, return the marked entry
+which has an index >= xas.xa_index.  If it has been walked, the entry
+currently being pointed at has been processed, and so we return the
+first marked entry with an index > xas.xa_index.

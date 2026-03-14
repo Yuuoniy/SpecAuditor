@@ -1,0 +1,19 @@
+Struct: struct drm_asahi_vm_create
+
+Arguments passed to DRM_IOCTL_ASAHI_VM_CREATE
+
+Members
+  kernel_start
+    Start of the kernel-reserved address range. See
+drm_asahi_params_global::vm_kernel_min_size. Both kernel_start and kernel_end must be within the range of
+valid VAs given by drm_asahi_params_global::vm_start and
+drm_asahi_params_global::vm_end. The size of the kernel range
+( kernel_end - kernel_start ) must be at least
+drm_asahi_params_global::vm_kernel_min_size. Userspace must not bind any memory on this VM into this reserved
+range, it is for kernel use only.
+  kernel_end
+    End of the kernel-reserved address range. See kernel_start .
+  vm_id
+    Returned VM ID
+  pad
+    MBZ

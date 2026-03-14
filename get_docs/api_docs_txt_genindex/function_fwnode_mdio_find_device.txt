@@ -1,0 +1,11 @@
+Function: struct mdio_device * fwnode_mdio_find_device ( struct fwnode_handle * fwnode )
+
+Given a fwnode, find the mdio_device
+
+Parameters
+  struct fwnode_handle *fwnode
+    pointer to the mdio_device’s fwnode
+
+Description
+  If successful, returns a pointer to the mdio_device with the embedded struct device refcount incremented by one, or NULL on failure.
+The caller should call put_device() on the mdio_device after its use.

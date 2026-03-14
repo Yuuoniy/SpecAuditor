@@ -1,0 +1,12 @@
+Function: int snd_pcm_lib_malloc_pages ( struct snd_pcm_substream * substream , size_t size )
+
+allocate the DMA buffer
+
+Parameters
+  struct snd_pcm_substream *substream
+    the substream to allocate the DMA buffer to
+  size_t size
+    the requested buffer size in bytes
+
+Description
+  Allocates the DMA buffer on the BUS type given earlier to snd_pcm_lib_preallocate_xxx_pages() .

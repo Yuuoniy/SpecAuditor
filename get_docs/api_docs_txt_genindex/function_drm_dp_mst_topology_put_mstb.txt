@@ -1,0 +1,10 @@
+Function: void drm_dp_mst_topology_put_mstb ( struct drm_dp_mst_branch * mstb )
+
+release a topology reference to a branch device
+
+Parameters
+  struct drm_dp_mst_branch *mstb
+    The struct drm_dp_mst_branch to release the topology reference from
+
+Description
+  Releases a topology reference from mstb by decrementing drm_dp_mst_branch.topology_kref .

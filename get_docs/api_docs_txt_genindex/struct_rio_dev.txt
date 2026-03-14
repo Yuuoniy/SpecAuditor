@@ -1,0 +1,63 @@
+Struct: struct rio_dev
+
+RIO device info
+
+Members
+  global_list
+    Node in list of all RIO devices
+  net_list
+    Node in list of RIO devices in a network
+  net
+    Network this device is a part of
+  do_enum
+    Enumeration flag
+  did
+    Device ID
+  vid
+    Vendor ID
+  device_rev
+    Device revision
+  asm_did
+    Assembly device ID
+  asm_vid
+    Assembly vendor ID
+  asm_rev
+    Assembly revision
+  efptr
+    Extended feature pointer
+  pef
+    Processing element features
+  swpinfo
+    Switch port info
+  src_ops
+    Source operation capabilities
+  dst_ops
+    Destination operation capabilities
+  comp_tag
+    RIO component tag
+  phys_efptr
+    RIO device extended features pointer
+  phys_rmap
+    LP-Serial Register Map Type (1 or 2)
+  em_efptr
+    RIO Error Management features pointer
+  dma_mask
+    Mask of bits of RIO address this device implements
+  driver
+    Driver claiming this device
+  dev
+    Device model device
+  riores
+    RIO resources this device owns
+  pwcback
+    port-write callback function for this device
+  destid
+    Network destination ID (or associated destid for switch)
+  hopcount
+    Hopcount to this device
+  prev
+    Previous RIO device connected to the current one
+  state
+    device state
+  rswitch
+    struct rio_switch (if valid for this device)

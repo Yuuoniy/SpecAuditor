@@ -1,0 +1,18 @@
+Function: int drm_gem_object_init_with_mnt ( struct drm_device * dev , struct drm_gem_object * obj , size_t size , struct vfsmount * gemfs )
+
+initialize an allocated shmem-backed GEM object in a given shmfs mountpoint
+
+Parameters
+  struct drm_device *dev
+    drm_device the object should be initialized for
+  struct drm_gem_object *obj
+    drm_gem_object to initialize
+  size_t size
+    object size
+  struct vfsmount *gemfs
+    tmpfs mount where the GEM object will be created. If NULL, use
+the usual tmpfs mountpoint ( shm_mnt ).
+
+Description
+  Initialize an already allocated GEM object of the specified size with
+shmfs backing store.

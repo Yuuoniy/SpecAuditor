@@ -1,0 +1,15 @@
+Function: struct drm_xe_ext_set_property
+
+Generic set property extension
+
+Members
+  base
+    base user extension
+  property
+    property to set
+  pad
+    MBZ
+  value
+    property value
+  reserved
+    Reserved

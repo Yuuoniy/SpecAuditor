@@ -1,0 +1,3 @@
+Enum: enum dma_resv_usage
+
+how the fences from a dma_resv obj are used

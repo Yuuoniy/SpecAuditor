@@ -1,0 +1,7 @@
+Function: void blk_set_pm_only ( struct request_queue * q )
+
+increment pm_only counter
+
+Parameters
+  struct request_queue *q
+    request queue pointer

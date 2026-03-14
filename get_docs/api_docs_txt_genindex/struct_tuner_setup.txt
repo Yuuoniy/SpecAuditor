@@ -1,0 +1,26 @@
+Struct: struct tuner_setup
+
+setup the tuner chipsets
+
+Members
+  addr
+    I2C address used to control the tuner device/chipset
+  type
+    Type of the tuner, as defined at the TUNER_* macros.
+Each different tuner model should have an unique
+identifier.
+  mode_mask
+    Mask with the allowed tuner modes: V4L2_TUNER_RADIO,
+V4L2_TUNER_ANALOG_TV and/or V4L2_TUNER_DIGITAL_TV,
+describing if the tuner should be used to support
+Radio, analog TV and/or digital TV.
+  config
+    Used to send tuner-specific configuration for complex
+tuners that require extra parameters to be set.
+Only a very few tuners require it and its usage on
+newer tuners should be avoided.
+  tuner_callback
+    Some tuners require to call back the bridge driver,
+in order to do some tasks like rising a GPIO at the
+bridge chipset, in order to do things like resetting
+the device.

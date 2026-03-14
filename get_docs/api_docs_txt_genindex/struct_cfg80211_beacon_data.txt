@@ -1,0 +1,57 @@
+Struct: struct cfg80211_beacon_data
+
+beacon data
+
+Members
+  link_id
+    the link ID for the AP MLD link sending this beacon
+  head
+    head portion of beacon (before TIM IE)
+or NULL if not changed
+  tail
+    tail portion of beacon (after TIM IE)
+or NULL if not changed
+  beacon_ies
+    extra information element(s) to add into Beacon frames or NULL
+  proberesp_ies
+    extra information element(s) to add into Probe Response
+frames or NULL
+  assocresp_ies
+    extra information element(s) to add into (Re)Association
+Response frames or NULL
+  probe_resp
+    probe response template (AP mode only)
+  lci
+    Measurement Report element content, starting with Measurement Token
+(measurement type 8)
+  civicloc
+    Measurement Report element content, starting with Measurement
+Token (measurement type 11)
+  mbssid_ies
+    multiple BSSID elements
+  rnr_ies
+    reduced neighbor report elements
+  ftm_responder
+    enable FTM responder functionality; -1 for no change
+(which also implies no change in LCI/civic location data)
+  head_len
+    length of head
+  tail_len
+    length of tail
+  beacon_ies_len
+    length of beacon_ies in octets
+  proberesp_ies_len
+    length of proberesp_ies in octets
+  assocresp_ies_len
+    length of assocresp_ies in octets
+  probe_resp_len
+    length of probe response template ( probe_resp )
+  lci_len
+    LCI data length
+  civicloc_len
+    Civic location data length
+  he_bss_color
+    BSS Color settings
+  he_bss_color_valid
+    indicates whether bss color
+attribute is present in beacon data or not.

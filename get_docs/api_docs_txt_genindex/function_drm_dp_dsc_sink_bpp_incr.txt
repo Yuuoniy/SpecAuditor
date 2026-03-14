@@ -1,0 +1,10 @@
+Function: u8 drm_dp_dsc_sink_bpp_incr ( const u8 dsc_dpcd [ DP_DSC_RECEIVER_CAP_SIZE ] )
+
+Get bits per pixel increment
+
+Parameters
+  const u8 dsc_dpcd[DP_DSC_RECEIVER_CAP_SIZE]
+    DSC capabilities from DPCD
+
+Description
+  Returns the bpp precision supported by the DP sink.

@@ -1,0 +1,11 @@
+Function: int rcu_is_cpu_rrupt_from_idle ( void )
+
+see if ‘interrupted’ from idle
+
+Parameters
+  void
+    no arguments
+
+Description
+  If the current CPU is idle and running at a first-level (not nested)
+interrupt, or directly, from idle, return true.

@@ -1,0 +1,11 @@
+Function: int regulator_count_voltages ( struct regulator * regulator )
+
+count regulator_list_voltage() selectors
+
+Parameters
+  struct regulator *regulator
+    regulator source
+
+Description
+  Selectors are numbered starting at zero, and typically correspond to
+bitfields in hardware registers.

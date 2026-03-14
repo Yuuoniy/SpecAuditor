@@ -1,0 +1,12 @@
+Function: void * mas_erase ( struct ma_state * mas )
+
+Find the range in which index resides and erase the entire range.
+
+Parameters
+  struct ma_state *mas
+    The maple state
+
+Description
+  Must hold the write lock.
+Searches for mas->index , sets mas->index and mas->last to the range and
+erases that range.

@@ -1,0 +1,18 @@
+Struct: struct page_pool_alloc_stats
+
+allocation statistics
+
+Members
+  fast
+    successful fast path allocations
+  slow
+    slow path order-0 allocations
+  slow_high_order
+    slow path high order allocations
+  empty
+    ptr ring is empty, so a slow path allocation was forced
+  refill
+    an allocation which triggered a refill of the cache
+  waive
+    pages obtained from the ptr ring that cannot be added to
+the cache due to a NUMA mismatch

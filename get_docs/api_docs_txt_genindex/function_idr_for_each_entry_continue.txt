@@ -1,0 +1,14 @@
+Function: idr_for_each_entry_continue
+
+
+
+Parameters
+  idr
+    IDR handle.
+  entry
+    The type * to use as a cursor.
+  id
+    Entry ID.
+
+Description
+  Continue to iterate over entries, continuing after the current position.

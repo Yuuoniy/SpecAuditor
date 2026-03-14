@@ -1,0 +1,3 @@
+Enum: enum backlight_type
+
+the type of backlight control

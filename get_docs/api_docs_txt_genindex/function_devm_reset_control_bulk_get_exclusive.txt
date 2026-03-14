@@ -1,0 +1,16 @@
+Function: int devm_reset_control_bulk_get_exclusive ( struct device * dev , int num_rstcs , struct reset_control_bulk_data * rstcs )
+
+resource managed reset_control_bulk_get_exclusive()
+
+Parameters
+  struct device *dev
+    device to be reset by the controller
+  int num_rstcs
+    number of entries in rstcs array
+  struct reset_control_bulk_data *rstcs
+    array of struct reset_control_bulk_data with reset line names set
+
+Description
+  Managed reset_control_bulk_get_exclusive() . For reset controllers returned
+from this function, reset_control_put() is called automatically on driver
+detach.

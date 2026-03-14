@@ -1,0 +1,77 @@
+Struct: struct folio
+
+Represents a contiguous set of bytes.
+
+Members
+  flags
+    Identical to the page flags.
+  {unnamed_union}
+    anonymous
+  lru
+    Least Recently Used list; tracks how recently this folio was used.
+  mlock_count
+    Number of times this folio has been pinned by mlock() .
+  pgmap
+    Metadata for ZONE_DEVICE mappings
+  mapping
+    The file this page belongs to, or refers to the anon_vma for
+anonymous memory.
+  {unnamed_union}
+    anonymous
+  index
+    Offset within the file, in units of pages.  For anonymous memory,
+this is the index from the beginning of the mmap.
+  share
+    number of DAX mappings that reference this folio. See
+dax_associate_entry.
+  {unnamed_union}
+    anonymous
+  private
+    Filesystem per-folio data (see folio_attach_private() ).
+  swap
+    Used for swp_entry_t if folio_test_swapcache() .
+  _mapcount
+    Do not access this member directly.  Use folio_mapcount() to
+find out how many times this folio is mapped by userspace.
+  _refcount
+    Do not access this member directly.  Use folio_ref_count() to find how many references there are to this folio.
+  memcg_data
+    Memory Control Group data.
+  _unused_slab_obj_exts
+    Placeholder to match obj_exts in struct slab .
+  virtual
+    Virtual address in the kernel direct map.
+  _last_cpupid
+    IDs of last CPU and last process that accessed the folio.
+  _large_mapcount
+    Do not use directly, call folio_mapcount() .
+  _nr_pages_mapped
+    Do not use outside of rmap and debug code.
+  _entire_mapcount
+    Do not use directly, call folio_entire_mapcount() .
+  _pincount
+    Do not use directly, call folio_maybe_dma_pinned() .
+  _mm_id_mapcount
+    Do not use outside of rmap code.
+  {unnamed_union}
+    anonymous
+  _mm_id
+    Do not use outside of rmap code.
+  _mm_ids
+    Do not use outside of rmap code.
+  _nr_pages
+    Do not use directly, call folio_nr_pages() .
+  _deferred_list
+    Folios to be split under memory pressure.
+  _entire_mapcount
+    Do not use directly, call folio_entire_mapcount() .
+  _pincount
+    Do not use directly, call folio_maybe_dma_pinned() .
+  _hugetlb_subpool
+    Do not use directly, use accessor in hugetlb.h.
+  _hugetlb_cgroup
+    Do not use directly, use accessor in hugetlb_cgroup.h.
+  _hugetlb_cgroup_rsvd
+    Do not use directly, use accessor in hugetlb_cgroup.h.
+  _hugetlb_hwpoison
+    Do not use directly, call raw_hwp_list_head() .

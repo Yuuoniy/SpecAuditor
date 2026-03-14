@@ -1,0 +1,7 @@
+Function: u64 xe_configfs_get_engines_allowed ( struct pci_dev * pdev )
+
+get engine allowed mask from configfs
+
+Parameters
+  struct pci_dev *pdev
+    pci device

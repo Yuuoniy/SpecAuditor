@@ -1,0 +1,14 @@
+Function: void drm_atomic_helper_unprepare_planes ( struct drm_device * dev , struct drm_atomic_state * state )
+
+release plane resources on aborts
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_atomic_state *state
+    atomic state object with old state structures
+
+Description
+  This function cleans up plane state, specifically framebuffers, from the
+atomic state. It undoes the effects of drm_atomic_helper_prepare_planes() when aborting an atomic commit. For cleaning up after a successful commit
+use drm_atomic_helper_cleanup_planes() .

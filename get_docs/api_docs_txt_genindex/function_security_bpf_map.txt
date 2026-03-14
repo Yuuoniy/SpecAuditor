@@ -1,0 +1,13 @@
+Function: int security_bpf_map ( struct bpf_map * map , fmode_t fmode )
+
+Check if access to a bpf map is allowed
+
+Parameters
+  struct bpf_map *map
+    bpf map
+  fmode_t fmode
+    mode
+
+Description
+  Do a check when the kernel generates and returns a file descriptor for eBPF
+maps.

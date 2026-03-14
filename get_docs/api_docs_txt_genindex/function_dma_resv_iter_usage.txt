@@ -1,0 +1,10 @@
+Function: enum dma_resv_usage dma_resv_iter_usage ( struct dma_resv_iter * cursor )
+
+Return the usage of the current fence
+
+Parameters
+  struct dma_resv_iter *cursor
+    the cursor of the current position
+
+Description
+  Returns the usage of the currently processed fence.

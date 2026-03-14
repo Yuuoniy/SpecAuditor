@@ -1,0 +1,11 @@
+Function: s64 raw_atomic64_dec_if_positive ( atomic64_t * v )
+
+atomic decrement if positive with full ordering
+
+Parameters
+  atomic64_t *v
+    pointer to atomic64_t
+
+Description
+  If ( v > 0), atomically updates v to ( v - 1) with full ordering.
+Otherwise, v is not modified and relaxed ordering is provided.

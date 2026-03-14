@@ -1,0 +1,16 @@
+Function: struct spi_device * spi_new_device ( struct spi_controller * ctlr , struct spi_board_info * chip )
+
+instantiate one new SPI device
+
+Parameters
+  struct spi_controller *ctlr
+    Controller to which device is connected
+  struct spi_board_info *chip
+    Describes the SPI device
+
+Description
+  On typical mainboards, this is purely internal; and it’s not needed
+after board init creates the hard-wired devices.  Some development
+platforms may not be able to use spi_register_board_info though, and
+this is exported so that for example a USB or parport based adapter
+driver could add devices (which it would learn about out-of-band).

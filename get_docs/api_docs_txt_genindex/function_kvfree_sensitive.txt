@@ -1,0 +1,14 @@
+Function: void kvfree_sensitive ( const void * addr , size_t len )
+
+Free a data object containing sensitive information.
+
+Parameters
+  const void *addr
+    address of the data object to be freed.
+  size_t len
+    length of the data object.
+
+Description
+  Use the special memzero_explicit() function to clear the content of a
+kvmalloc’ed object containing sensitive data to make sure that the
+compiler won’t optimize out the data clearing.

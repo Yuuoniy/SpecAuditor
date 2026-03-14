@@ -1,0 +1,16 @@
+Function: void input_set_timestamp ( struct input_dev * dev , ktime_t timestamp )
+
+set timestamp for input events
+
+Parameters
+  struct input_dev *dev
+    input device to set timestamp for
+  ktime_t timestamp
+    the time at which the event has occurred
+in CLOCK_MONOTONIC
+
+Description
+  This function is intended to provide to the input system a more
+accurate time of when an event actually occurred. The driver should
+call this function as soon as a timestamp is acquired ensuring
+clock conversions in input_set_timestamp are done correctly.

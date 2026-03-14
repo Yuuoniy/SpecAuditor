@@ -1,0 +1,14 @@
+Function: void v4l2_ctrl_request_complete ( struct media_request * req , struct v4l2_ctrl_handler * parent )
+
+Complete a control handler request object
+
+Parameters
+  struct media_request *req
+    The request
+  struct v4l2_ctrl_handler *parent
+    The parent control handler (‘priv’ in media_request_object_find() )
+
+Description
+  This function is to be called on each control handler that may have had a
+request object associated with it, i.e. control handlers of a driver that
+supports requests.

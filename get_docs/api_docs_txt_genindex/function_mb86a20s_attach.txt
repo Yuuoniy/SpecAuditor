@@ -1,0 +1,9 @@
+Function: struct dvb_frontend * mb86a20s_attach ( const struct mb86a20s_config * config , struct i2c_adapter * i2c )
+
+Attach a mb86a20s demod
+
+Parameters
+  const struct mb86a20s_config *config
+    pointer to struct mb86a20s_config with demod configuration.
+  struct i2c_adapter *i2c
+    i2c adapter to use.

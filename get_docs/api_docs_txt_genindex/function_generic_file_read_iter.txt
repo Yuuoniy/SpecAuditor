@@ -1,0 +1,13 @@
+Function: ssize_t generic_file_read_iter ( struct kiocb * iocb , struct iov_iter * iter )
+
+generic filesystem read routine
+
+Parameters
+  struct kiocb *iocb
+    kernel I/O control block
+  struct iov_iter *iter
+    destination for the data read
+
+Description
+  This is the “ read_iter() ” routine for all filesystems
+that can use the page cache directly.

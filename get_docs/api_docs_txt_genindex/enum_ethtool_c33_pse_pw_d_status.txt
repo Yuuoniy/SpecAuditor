@@ -1,0 +1,3 @@
+Enum: enum ethtool_c33_pse_pw_d_status
+
+power detection status of the PSE. IEEE 802.3-2022 30.9.1.1.3 aPoDLPSEPowerDetectionStatus:

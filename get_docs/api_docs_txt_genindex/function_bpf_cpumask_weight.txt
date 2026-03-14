@@ -1,0 +1,10 @@
+Function: __bpf_kfunc u32 bpf_cpumask_weight ( const struct cpumask * cpumask )
+
+Return the number of bits in cpumask .
+
+Parameters
+  const struct cpumask *cpumask
+    The cpumask being queried.
+
+Description
+  Count the number of set bits in the given cpumask.

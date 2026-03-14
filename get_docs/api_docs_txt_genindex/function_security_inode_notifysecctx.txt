@@ -1,0 +1,19 @@
+Function: int security_inode_notifysecctx ( struct inode * inode , void * ctx , u32 ctxlen )
+
+Notify the LSM of an inode’s security label
+
+Parameters
+  struct inode *inode
+    inode
+  void *ctx
+    secctx
+  u32 ctxlen
+    length of secctx
+
+Description
+  Notify the security module of what the security context of an inode should
+be.  Initializes the incore security context managed by the security module
+for this inode.  Example usage: NFS client invokes this hook to initialize
+the security context in its incore inode to the value provided by the server
+for the file when the server returned the file’s attributes to the client.
+Must be called with inode->i_mutex locked.

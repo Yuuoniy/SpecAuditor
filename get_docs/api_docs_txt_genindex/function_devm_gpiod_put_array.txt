@@ -1,0 +1,14 @@
+Function: void devm_gpiod_put_array ( struct device * dev , struct gpio_descs * descs )
+
+Resource-managed gpiod_put_array()
+
+Parameters
+  struct device *dev
+    GPIO consumer
+  struct gpio_descs *descs
+    GPIO descriptor array to dispose of
+
+Description
+  Dispose of an array of GPIO descriptors obtained with devm_gpiod_get_array() .
+Normally this function will not be called as the GPIOs will be disposed of
+by the resource management code.

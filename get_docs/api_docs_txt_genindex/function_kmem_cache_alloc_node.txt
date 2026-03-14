@@ -1,0 +1,15 @@
+Function: void * kmem_cache_alloc_node ( struct kmem_cache * s , gfp_t gfpflags , int node )
+
+Allocate an object on the specified node
+
+Parameters
+  struct kmem_cache *s
+    The cache to allocate from.
+  gfp_t gfpflags
+    See kmalloc() .
+  int node
+    node number of the target node.
+
+Description
+  Identical to kmem_cache_alloc but it will allocate memory on the given
+node, which can improve the performance for cpu bound structures.

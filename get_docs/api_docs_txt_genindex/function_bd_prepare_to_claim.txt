@@ -1,0 +1,16 @@
+Function: int bd_prepare_to_claim ( struct block_device * bdev , void * holder , const struct blk_holder_ops * hops )
+
+claim a block device
+
+Parameters
+  struct block_device *bdev
+    block device of interest
+  void *holder
+    holder trying to claim bdev
+  const struct blk_holder_ops *hops
+    holder ops.
+
+Description
+  Claim bdev .  This function fails if bdev is already claimed by another
+holder and waits if another claiming is in progress. return, the caller
+has ownership of bd_claiming and bd_holder[s].

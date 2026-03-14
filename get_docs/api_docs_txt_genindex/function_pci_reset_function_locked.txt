@@ -1,0 +1,12 @@
+Function: int pci_reset_function_locked ( struct pci_dev * dev )
+
+quiesce and reset a PCI device function
+
+Parameters
+  struct pci_dev *dev
+    PCI device to reset
+
+Description
+  Some devices allow an individual function to be reset without affecting
+other functions in the same device.  The PCI device must be responsive
+to PCI config space in order to use this function.

@@ -1,0 +1,11 @@
+Function: u8 dmi_memdev_type ( u16 handle )
+
+get the memory type
+
+Parameters
+  u16 handle
+    DMI structure handle
+
+Description
+  Return the DMI memory type of the module in the slot associated with the
+given DMI handle, or 0x0 if no such DMI handle exists.

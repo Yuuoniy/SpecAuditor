@@ -1,0 +1,12 @@
+Function: void phylink_rx_clk_stop_unblock ( struct phylink * pl )
+
+unblock PHY ability to stop receive clock
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+
+Description
+  All calls to phylink_rx_clk_stop_block() must be balanced with a
+corresponding call to phylink_rx_clk_stop_unblock() to restore the PHYs
+ability to stop the receive clock when the receive path is in EEE LPI mode.

@@ -1,0 +1,16 @@
+Function: int i2c_transfer_buffer_flags ( const struct i2c_client * client , char * buf , int count , u16 flags )
+
+issue a single I2C message transferring data to/from a buffer
+
+Parameters
+  const struct i2c_client *client
+    Handle to slave device
+  char *buf
+    Where the data is stored
+  int count
+    How many bytes to transfer, must be less than 64k since msg.len is u16
+  u16 flags
+    The flags to be used for the message, e.g. I2C_M_RD for reads
+
+Description
+  Returns negative errno, or else the number of bytes transferred.

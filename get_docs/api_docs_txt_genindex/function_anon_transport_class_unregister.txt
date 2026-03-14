@@ -1,0 +1,11 @@
+Function: void anon_transport_class_unregister ( struct anon_transport_class * atc )
+
+unregister an anon class
+
+Parameters
+  struct anon_transport_class *atc
+    Pointer to the anon transport class to unregister
+
+Description
+  Must be called prior to deallocating the memory for the anon
+transport class.

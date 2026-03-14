@@ -1,0 +1,7 @@
+Function: int reset_control_status ( struct reset_control * rstc )
+
+returns a negative errno if not supported, a positive value if the reset line is asserted, or zero if the reset line is not asserted or if the desc is NULL (optional reset).
+
+Parameters
+  struct reset_control *rstc
+    reset controller

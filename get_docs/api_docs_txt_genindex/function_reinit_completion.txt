@@ -1,0 +1,11 @@
+Function: void reinit_completion ( struct completion * x )
+
+reinitialize a completion structure
+
+Parameters
+  struct completion *x
+    pointer to completion structure that is to be reinitialized
+
+Description
+  This inline function should be used to reinitialize a completion structure so it can
+be reused. This is especially important after complete_all() is used.

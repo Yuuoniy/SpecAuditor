@@ -1,0 +1,9 @@
+Function: int mpt_device_driver_register ( struct mpt_pci_driver * dd_cbfunc , u8 cb_idx )
+
+Register device driver hooks
+
+Parameters
+  struct mpt_pci_driver * dd_cbfunc
+    driver callbacks struct
+  u8 cb_idx
+    MPT protocol driver index

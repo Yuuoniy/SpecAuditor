@@ -1,0 +1,10 @@
+Function: int nand_suspend ( struct mtd_info * mtd )
+
+[MTD Interface] Suspend the NAND flash
+
+Parameters
+  struct mtd_info *mtd
+    MTD device structure
+
+Description
+  Returns 0 for success or negative error code otherwise.

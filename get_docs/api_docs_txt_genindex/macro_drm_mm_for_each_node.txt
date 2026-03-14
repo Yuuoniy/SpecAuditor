@@ -1,0 +1,13 @@
+Macro: drm_mm_for_each_node
+
+
+
+Parameters
+  entry
+    struct drm_mm_node to assign to in each iteration step
+  mm
+    drm_mm allocator to walk
+
+Description
+  This iterator walks over all nodes in the range allocator. It is implemented
+with list_for_each() , so not save against removal of elements.

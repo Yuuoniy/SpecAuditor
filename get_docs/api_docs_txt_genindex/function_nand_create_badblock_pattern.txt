@@ -1,0 +1,13 @@
+Function: int nand_create_badblock_pattern ( struct nand_chip * this )
+
+[INTERN] Creates a BBT descriptor structure
+
+Parameters
+  struct nand_chip *this
+    NAND chip to create descriptor for
+
+Description
+  This function allocates and initializes a nand_bbt_descr for BBM detection
+based on the properties of this . The new descriptor is stored in
+this->badblock_pattern. Thus, this->badblock_pattern should be NULL when
+passed to this function.

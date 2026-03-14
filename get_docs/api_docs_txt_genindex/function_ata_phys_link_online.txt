@@ -1,0 +1,12 @@
+Function: bool ata_phys_link_online ( struct ata_link * link )
+
+test whether the given link is online
+
+Parameters
+  struct ata_link *link
+    ATA link to test
+
+Description
+  Test whether link is online.  Note that this function returns
+0 if online status of link cannot be obtained, so
+ata_link_online(link) != !ata_link_offline(link).

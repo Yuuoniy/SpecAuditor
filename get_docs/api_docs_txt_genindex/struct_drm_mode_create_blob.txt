@@ -1,0 +1,11 @@
+Struct: struct drm_mode_create_blob
+
+Create New blob property
+
+Members
+  data
+    Pointer to data to copy.
+  length
+    Length of data to copy.
+  blob_id
+    Return: new property ID.

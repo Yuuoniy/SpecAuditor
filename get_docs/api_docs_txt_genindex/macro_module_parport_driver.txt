@@ -1,0 +1,12 @@
+Macro: module_parport_driver
+
+
+
+Parameters
+  __parport_driver
+    struct parport_driver to be used
+
+Description
+  Helper macro for parport drivers which do not do anything special in module
+init and exit. This eliminates a lot of boilerplate. Each module may only
+use this macro once, and calling it replaces module_init() and module_exit() .

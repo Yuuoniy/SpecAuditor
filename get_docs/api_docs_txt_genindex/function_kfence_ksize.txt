@@ -1,0 +1,12 @@
+Function: size_t kfence_ksize ( const void * addr )
+
+get actual amount of memory allocated for a KFENCE object
+
+Parameters
+  const void *addr
+    pointer to a heap object
+
+Description
+  kfence_ksize() returns the number of bytes requested for a KFENCE object at
+allocation time. This number may be less than the object size of the
+corresponding struct kmem_cache .

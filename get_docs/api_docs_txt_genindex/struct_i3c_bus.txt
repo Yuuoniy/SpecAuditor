@@ -1,0 +1,45 @@
+Struct: struct i3c_bus
+
+I3C bus object
+
+Members
+  cur_master
+    I3C master currently driving the bus. Since I3C is multi-master
+this can change over the time. Will be used to let a master
+know whether it needs to request bus ownership before sending
+a frame or not
+  id
+    bus ID. Assigned by the framework when register the bus
+  addrslots
+    a bitmap with 2-bits per-slot to encode the address status and
+ease the DAA (Dynamic Address Assignment) procedure (see enum i3c_addr_slot_status )
+  mode
+    bus mode (see enum i3c_bus_mode )
+  scl_rate
+    SCL signal rate for I3C and I2C mode
+  scl_rate.i3c
+    maximum rate for the clock signal when doing I3C SDR/priv
+transfers
+  scl_rate.i2c
+    maximum rate for the clock signal when doing I2C transfers
+  devs
+    2 lists containing all I3C/I2C devices connected to the bus
+  devs.i3c
+    contains a list of I3C device descriptors representing I3C
+devices connected on the bus and successfully attached to the
+I3C master
+  devs.i2c
+    contains a list of I2C device descriptors representing I2C
+devices connected on the bus and successfully attached to the
+I3C master
+  lock
+    read/write lock on the bus. This is needed to protect against
+operations that have an impact on the whole bus and the devices
+connected to it. For example, when asking slaves to drop their
+dynamic address (RSTDAA CCC), we need to make sure no one is trying
+to send I3C frames to these devices.
+Note that this lock does not protect against concurrency between
+devices: several drivers can send different I3C/I2C frames through
+the same master in parallel. This is the responsibility of the
+master to guarantee that frames are actually sent sequentially and
+not interlaced

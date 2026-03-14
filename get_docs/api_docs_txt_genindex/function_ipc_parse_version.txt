@@ -1,0 +1,12 @@
+Function: int ipc_parse_version ( int * cmd )
+
+ipc call version
+
+Parameters
+  int *cmd
+    pointer to command
+
+Description
+  Return IPC_64 for new style IPC and IPC_OLD for old style IPC.
+The cmd value is turned from an encoding command and version into
+just the command code.

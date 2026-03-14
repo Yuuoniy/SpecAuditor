@@ -1,0 +1,19 @@
+Function: int snd_soc_dapm_dai_get_connected_widgets ( struct snd_soc_dai * dai , int stream , struct snd_soc_dapm_widget_list * * list , bool ( * custom_stop_condition ) ( struct snd_soc_dapm_widget * , enum snd_soc_dapm_direction ) )
+
+query audio path and it’s widgets.
+
+Parameters
+  struct snd_soc_dai *dai
+    the soc DAI.
+  int stream
+    stream direction.
+  struct snd_soc_dapm_widget_list **list
+    list of active widgets for this stream.
+  bool (*custom_stop_condition)(struct snd_soc_dapm_widget *, enum snd_soc_dapm_direction)
+    (optional) a function meant to stop the widget graph
+walk based on custom logic.
+
+Description
+  Queries DAPM graph as to whether a valid audio stream path exists for
+the initial stream specified by name. This takes into account
+current mixer and mux kcontrol settings. Creates list of valid widgets.

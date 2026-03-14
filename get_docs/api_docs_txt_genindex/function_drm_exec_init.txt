@@ -1,0 +1,14 @@
+Function: void drm_exec_init ( struct drm_exec * exec , u32 flags , unsigned nr )
+
+initialize a drm_exec object
+
+Parameters
+  struct drm_exec *exec
+    the drm_exec object to initialize
+  u32 flags
+    controls locking behavior, see DRM_EXEC_* defines
+  unsigned nr
+    the initial # of objects
+
+Description
+  Initialize the object and make sure that we can track locked objects.

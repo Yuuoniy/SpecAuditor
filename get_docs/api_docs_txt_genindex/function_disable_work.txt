@@ -1,0 +1,12 @@
+Function: bool disable_work ( struct work_struct * work )
+
+Disable and cancel a work item
+
+Parameters
+  struct work_struct *work
+    work item to disable
+
+Description
+  Disable work by incrementing its disable count and cancel it if currently
+pending. As long as the disable count is non-zero, any attempt to queue work will fail and return false . The maximum supported disable depth is 2 to the
+power of WORK_OFFQ_DISABLE_BITS , currently 65536.

@@ -1,0 +1,10 @@
+Function: void scsi_schedule_eh ( struct Scsi_Host * shost )
+
+schedule EH for SCSI host
+
+Parameters
+  struct Scsi_Host *shost
+    SCSI host to invoke error handling on.
+
+Description
+  Schedule SCSI EH without scmd.

@@ -1,0 +1,21 @@
+Macro: SSAM_DEVICE
+
+
+
+Parameters
+  d
+    Domain of the device.
+  cat
+    Target category of the device.
+  tid
+    Target ID of the device.
+  iid
+    Instance ID of the device.
+  fun
+    Sub-function of the device.
+
+Description
+  Initializes a struct ssam_device_id with the given parameters. See struct ssam_device_uid for details regarding the parameters. The special values SSAM_SSH_TID_ANY , SSAM_SSH_IID_ANY , and SSAM_SSH_FUN_ANY can be used to specify that
+matching should ignore target ID, instance ID, and/or sub-function,
+respectively. This macro initializes the match_flags field based on the
+given parameters.

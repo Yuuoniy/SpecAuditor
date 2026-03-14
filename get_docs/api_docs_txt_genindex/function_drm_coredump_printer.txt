@@ -1,0 +1,12 @@
+Function: struct drm_printer drm_coredump_printer ( struct drm_print_iterator * iter )
+
+construct a drm_printer that can output to a buffer from the read function for devcoredump
+
+Parameters
+  struct drm_print_iterator *iter
+    A pointer to a struct drm_print_iterator for the read instance
+
+Description
+  This wrapper extends drm_printf() to work with a dev_coredumpm() callback
+function. The passed in drm_print_iterator struct contains the buffer
+pointer, size and offset as passed in from devcoredump.

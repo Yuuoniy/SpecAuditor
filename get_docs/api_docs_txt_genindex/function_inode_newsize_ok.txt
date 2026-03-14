@@ -1,0 +1,12 @@
+Function: int inode_newsize_ok ( const struct inode * inode , loff_t offset )
+
+may this inode be truncated to a given size
+
+Parameters
+  const struct inode *inode
+    the inode to be truncated
+  loff_t offset
+    the new size to assign to the inode
+
+Description
+  inode_newsize_ok must be called with i_rwsem held exclusively.

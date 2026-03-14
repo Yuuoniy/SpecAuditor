@@ -1,0 +1,7 @@
+Function: bool skb_dst_is_noref ( const struct sk_buff * skb )
+
+Test if skb dst isn’t refcounted
+
+Parameters
+  const struct sk_buff *skb
+    buffer

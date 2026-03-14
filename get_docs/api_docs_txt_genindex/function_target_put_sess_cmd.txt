@@ -1,0 +1,11 @@
+Function: int target_put_sess_cmd ( struct se_cmd * se_cmd )
+
+decrease the command reference count
+
+Parameters
+  struct se_cmd *se_cmd
+    command to drop a reference from
+
+Description
+  Returns 1 if and only if this target_put_sess_cmd() call caused the
+refcount to drop to zero. Returns zero otherwise.

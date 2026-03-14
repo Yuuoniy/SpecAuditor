@@ -1,0 +1,14 @@
+Function: void pty_line_name ( struct tty_driver * driver , int index , char * p )
+
+generate name for a pty
+
+Parameters
+  struct tty_driver *driver
+    the tty driver in use
+  int index
+    the minor number
+  char *p
+    output buffer of at least 6 bytes
+
+Description
+  Generate a name from a driver reference and write it to the output buffer p .

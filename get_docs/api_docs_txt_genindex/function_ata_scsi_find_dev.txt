@@ -1,0 +1,15 @@
+Function: struct ata_device * ata_scsi_find_dev ( struct ata_port * ap , const struct scsi_device * scsidev )
+
+lookup ata_device from scsi_cmnd
+
+Parameters
+  struct ata_port *ap
+    ATA port to which the device is attached
+  const struct scsi_device *scsidev
+    SCSI device from which we derive the ATA device
+
+Description
+  Given various information provided in struct scsi_cmnd ,
+map that onto an ATA bus, and using that mapping
+determine which ata_device is associated with the
+SCSI command to be sent.

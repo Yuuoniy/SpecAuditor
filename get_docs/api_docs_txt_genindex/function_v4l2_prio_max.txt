@@ -1,0 +1,10 @@
+Function: enum v4l2_priority v4l2_prio_max ( struct v4l2_prio_state * global )
+
+Return the maximum priority, as stored at the global array.
+
+Parameters
+  struct v4l2_prio_state *global
+    pointer to the struct v4l2_prio_state of the device node.
+
+Description
+  Note

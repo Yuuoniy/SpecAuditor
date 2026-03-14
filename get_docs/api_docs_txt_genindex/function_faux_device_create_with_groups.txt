@@ -1,0 +1,24 @@
+Function: struct faux_device * faux_device_create_with_groups ( const char * name , struct device * parent , const struct faux_device_ops * faux_ops , const struct attribute_group * * groups )
+
+Create and register with the driver core a faux device and populate the device with an initial set of sysfs attributes.
+
+Parameters
+  const char *name
+    The name of the device we are adding, must be unique for
+all faux devices.
+  struct device *parent
+    Pointer to a potential parent struct device .  If set to
+NULL, the device will be created in the “root” of the faux
+device tree in sysfs.
+  const struct faux_device_ops *faux_ops
+    struct faux_device_ops that the new device will call back
+into, can be NULL.
+  const struct attribute_group **groups
+    The set of sysfs attributes that will be created for this
+device when it is registered with the driver core.
+
+Description
+  Create a new faux device and register it in the driver core properly.
+If present, callbacks in faux_ops will be called with the device that
+for the caller to do something with at the proper time given the
+device’s lifecycle.

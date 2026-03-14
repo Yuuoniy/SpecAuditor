@@ -1,0 +1,17 @@
+Macro: USB_DEVICE_VER
+
+
+
+Parameters
+  vend
+    the 16 bit USB Vendor ID
+  prod
+    the 16 bit USB Product ID
+  lo
+    the bcdDevice_lo value
+  hi
+    the bcdDevice_hi value
+
+Description
+  This macro is used to create a struct usb_device_id that matches a
+specific device, with a version range.

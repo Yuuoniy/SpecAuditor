@@ -1,0 +1,9 @@
+Function: void driver_remove_file ( const struct device_driver * drv , const struct driver_attribute * attr )
+
+remove sysfs file for driver.
+
+Parameters
+  const struct device_driver *drv
+    driver.
+  const struct driver_attribute *attr
+    driver attribute descriptor.

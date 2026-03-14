@@ -1,0 +1,15 @@
+Function: void tty_termios_copy_hw ( struct ktermios * new , const struct ktermios * old )
+
+copy hardware settings
+
+Parameters
+  struct ktermios *new
+    new termios
+  const struct ktermios *old
+    old termios
+
+Description
+  Propagate the hardware specific terminal setting bits from the old termios
+structure to the new one. This is used in cases where the hardware does not
+support reconfiguration or as a helper in some cases where only minimal
+reconfiguration is supported.

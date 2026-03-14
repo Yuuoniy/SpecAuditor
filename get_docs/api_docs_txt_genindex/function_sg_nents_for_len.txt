@@ -1,0 +1,13 @@
+Function: int sg_nents_for_len ( struct scatterlist * sg , u64 len )
+
+return total count of entries in scatterlist needed to satisfy the supplied length
+
+Parameters
+  struct scatterlist *sg
+    The scatterlist
+  u64 len
+    The total required length
+
+Description
+  Determines the number of entries in sg that are required to meet
+the supplied length, taking into account chaining as well

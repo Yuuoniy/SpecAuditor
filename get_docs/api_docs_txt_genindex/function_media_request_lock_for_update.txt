@@ -1,0 +1,12 @@
+Function: int media_request_lock_for_update ( struct media_request * req )
+
+Lock the request for updating its objects
+
+Parameters
+  struct media_request *req
+    The media request
+
+Description
+  Use before updating a request, i.e. adding, modifying or removing a request
+object in it. A reference to the request must be held during the update. This
+usually takes place automatically through a file handle. Use media_request_unlock_for_update when done.

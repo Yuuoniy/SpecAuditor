@@ -1,0 +1,7 @@
+Function: int blk_register_queue ( struct gendisk * disk )
+
+register a block layer queue with sysfs
+
+Parameters
+  struct gendisk *disk
+    Disk of which the request queue should be registered with sysfs.

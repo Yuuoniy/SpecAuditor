@@ -1,0 +1,13 @@
+Function: bool bitmap_or_equal ( const unsigned long * src1 , const unsigned long * src2 , const unsigned long * src3 , unsigned int nbits )
+
+Check whether the or of two bitmaps is equal to a third
+
+Parameters
+  const unsigned long *src1
+    Pointer to bitmap 1
+  const unsigned long *src2
+    Pointer to bitmap 2 will be or’ed with bitmap 1
+  const unsigned long *src3
+    Pointer to bitmap 3. Compare to the result of *src1 | *src2
+  unsigned int nbits
+    number of bits in each of these bitmaps

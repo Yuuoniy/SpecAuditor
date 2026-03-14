@@ -1,0 +1,26 @@
+Function: struct v4l2_ctrl * v4l2_ctrl_new_std_menu ( struct v4l2_ctrl_handler * hdl , const struct v4l2_ctrl_ops * ops , u32 id , u8 max , u64 mask , u8 def )
+
+Allocate and initialize a new standard V4L2 menu control.
+
+Parameters
+  struct v4l2_ctrl_handler *hdl
+    The control handler.
+  const struct v4l2_ctrl_ops *ops
+    The control ops.
+  u32 id
+    The control ID.
+  u8 max
+    The control’s maximum value.
+  u64 mask
+    The control’s skip mask for menu controls. This makes it
+easy to skip menu items that are not valid. If bit X is set,
+then menu item X is skipped. Of course, this only works for
+menus with <= 64 menu items. There are no menus that come
+close to that number, so this is OK. Should we ever need more,
+then this will have to be extended to a bit array.
+  u8 def
+    The control’s default value.
+
+Description
+  Same as v4l2_ctrl_new_std() , but min is set to 0 and the mask value
+determines which menu items are to be skipped.

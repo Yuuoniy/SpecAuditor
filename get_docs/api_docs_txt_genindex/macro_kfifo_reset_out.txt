@@ -1,0 +1,7 @@
+Macro: kfifo_reset_out
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used

@@ -1,0 +1,16 @@
+Function: bool xas_nomem ( struct xa_state * xas , gfp_t gfp )
+
+Allocate memory if needed.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+  gfp_t gfp
+    Memory allocation flags.
+
+Description
+  If we need to add new nodes to the XArray, we try to allocate memory
+with GFP_NOWAIT while holding the lock, which will usually succeed.
+If it fails, xas is flagged as needing memory to continue.  The caller
+should drop the lock and call xas_nomem() .  If xas_nomem() succeeds,
+the caller should retry the operation.

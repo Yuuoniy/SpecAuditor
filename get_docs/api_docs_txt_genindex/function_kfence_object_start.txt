@@ -1,0 +1,14 @@
+Function: void * kfence_object_start ( const void * addr )
+
+find the beginning of a KFENCE object
+
+Parameters
+  const void *addr
+    address within a KFENCE-allocated object
+
+Description
+  SL[AU]B-allocated objects are laid out within a page one by one, so it is
+easy to calculate the beginning of an object given a pointer inside it and
+the object size. The same is not true for KFENCE, which places a single
+object at either end of the page. This helper function is used to find the
+beginning of a KFENCE-allocated object.

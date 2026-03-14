@@ -1,0 +1,48 @@
+Function: struct ipu3_uapi_acc_param
+
+Accelerator cluster parameters
+
+Members
+  bnr
+    parameters for bayer noise reduction static config. See ipu3_uapi_bnr_static_config
+  green_disparity
+    disparity static config between gr and gb channel.
+See ipu3_uapi_bnr_static_config_green_disparity
+  dm
+    de-mosaic config. See ipu3_uapi_dm_config
+  ccm
+    color correction matrix. See ipu3_uapi_ccm_mat_config
+  gamma
+    gamma correction config. See ipu3_uapi_gamma_config
+  csc
+    color space conversion matrix. See ipu3_uapi_csc_mat_config
+  cds
+    color down sample config. See ipu3_uapi_cds_params
+  shd
+    lens shading correction config. See ipu3_uapi_shd_config
+  iefd
+    Image enhancement filter and denoise config. ipu3_uapi_yuvp1_iefd_config
+  yds_c0
+    y down scaler config. ipu3_uapi_yuvp1_yds_config
+  chnr_c0
+    chroma noise reduction config. ipu3_uapi_yuvp1_chnr_config
+  y_ee_nr
+    y edge enhancement and noise reduction config. ipu3_uapi_yuvp1_y_ee_nr_config
+  yds
+    y down scaler config. See ipu3_uapi_yuvp1_yds_config
+  chnr
+    chroma noise reduction config. See ipu3_uapi_yuvp1_chnr_config
+  yds2
+    y channel down scaler config. See ipu3_uapi_yuvp1_yds_config
+  tcc
+    total color correction config as defined in struct ipu3_uapi_yuvp2_tcc_static_config
+  anr
+    advanced noise reduction config.See ipu3_uapi_anr_config
+  awb_fr
+    AWB filter response config. See ipu3_uapi_awb_fr_config
+  ae
+    auto exposure config  As specified by ipu3_uapi_ae_config
+  af
+    auto focus config. As specified by ipu3_uapi_af_config
+  awb
+    auto white balance config. As specified by ipu3_uapi_awb_config

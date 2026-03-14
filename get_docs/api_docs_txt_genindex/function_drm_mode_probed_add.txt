@@ -1,0 +1,14 @@
+Function: void drm_mode_probed_add ( struct drm_connector * connector , struct drm_display_mode * mode )
+
+add a mode to a connector’s probed_mode list
+
+Parameters
+  struct drm_connector *connector
+    connector the new mode
+  struct drm_display_mode *mode
+    mode data
+
+Description
+  Add mode to connector ’s probed_mode list for later use. This list should
+then in a second step get filtered and all the modes actually supported by
+the hardware moved to the connector ’s modes list.

@@ -1,0 +1,15 @@
+Function: void intel_audio_codec_enable ( struct intel_encoder * encoder , const struct intel_crtc_state * crtc_state , const struct drm_connector_state * conn_state )
+
+Enable the audio codec for HD audio
+
+Parameters
+  struct intel_encoder *encoder
+    encoder on which to enable audio
+  const struct intel_crtc_state *crtc_state
+    pointer to the current crtc state.
+  const struct drm_connector_state *conn_state
+    pointer to the current connector state.
+
+Description
+  The enable sequences may only be performed after enabling the transcoder and
+port, and after completed link training.

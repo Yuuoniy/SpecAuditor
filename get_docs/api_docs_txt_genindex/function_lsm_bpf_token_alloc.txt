@@ -1,0 +1,10 @@
+Function: int lsm_bpf_token_alloc ( struct bpf_token * token )
+
+allocate a composite bpf_token blob
+
+Parameters
+  struct bpf_token *token
+    the bpf_token that needs a blob
+
+Description
+  Allocate the bpf_token blob for all the modules

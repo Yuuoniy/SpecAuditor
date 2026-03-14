@@ -1,0 +1,12 @@
+Function: void xprt_wait_for_buffer_space ( struct rpc_xprt * xprt )
+
+wait for transport output buffer to clear
+
+Parameters
+  struct rpc_xprt *xprt
+    transport
+
+Description
+  Note that we only set the timer for the case of RPC_IS_SOFT() , since
+we don’t in general want to force a socket disconnection due to
+an incomplete RPC call transmission.

@@ -1,0 +1,11 @@
+Function: void pci_free_p2pmem ( struct pci_dev * pdev , void * addr , size_t size )
+
+free peer-to-peer DMA memory
+
+Parameters
+  struct pci_dev *pdev
+    the device the memory was allocated from
+  void *addr
+    address of the memory that was allocated
+  size_t size
+    number of bytes that were allocated

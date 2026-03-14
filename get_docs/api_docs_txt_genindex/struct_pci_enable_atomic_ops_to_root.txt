@@ -1,0 +1,18 @@
+Struct: int pci_enable_atomic_ops_to_root ( struct pci_dev * dev , u32 cap_mask )
+
+enable AtomicOp requests to root port
+
+Parameters
+  struct pci_dev *dev
+    the PCI device
+  u32 cap_mask
+    mask of desired AtomicOp sizes, including one or more of:
+PCI_EXP_DEVCAP2_ATOMIC_COMP32
+PCI_EXP_DEVCAP2_ATOMIC_COMP64
+PCI_EXP_DEVCAP2_ATOMIC_COMP128
+
+Description
+  Return 0 if all upstream bridges support AtomicOp routing, egress
+blocking is disabled on all upstream ports, and the root port supports
+the requested completion capabilities (32-bit, 64-bit and/or 128-bit
+AtomicOp completion), or negative otherwise.

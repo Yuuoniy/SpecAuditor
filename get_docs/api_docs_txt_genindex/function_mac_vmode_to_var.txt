@@ -1,0 +1,15 @@
+Function: int mac_vmode_to_var ( int vmode , int cmode , struct fb_var_screeninfo * var )
+
+converts vmode/cmode pair to var structure
+
+Parameters
+  int vmode
+    MacOS video mode
+  int cmode
+    MacOS color mode
+  struct fb_var_screeninfo *var
+    frame buffer video mode structure
+
+Description
+  Converts a MacOS vmode/cmode pair to a frame buffer video
+mode structure.

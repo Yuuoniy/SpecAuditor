@@ -1,0 +1,19 @@
+Struct: struct rtl2832_platform_data
+
+Platform data for the rtl2832 driver
+
+Members
+  clk
+    Clock frequency (4000000, 16000000, 25000000, 28800000).
+  tuner
+    Used tuner model.
+  get_dvb_frontend
+    Get DVB frontend.
+  get_i2c_adapter
+    Get I2C adapter.
+  slave_ts_ctrl
+    Control slave TS interface.
+  pid_filter
+    Set PID to PID filter.
+  pid_filter_ctrl
+    Control PID filter.

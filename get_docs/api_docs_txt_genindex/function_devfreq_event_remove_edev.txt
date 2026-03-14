@@ -1,0 +1,10 @@
+Function: int devfreq_event_remove_edev ( struct devfreq_event_dev * edev )
+
+Remove the devfreq-event device registered.
+
+Parameters
+  struct devfreq_event_dev *edev
+    the devfreq-event device
+
+Description
+  Note that this function removes the registered devfreq-event device.

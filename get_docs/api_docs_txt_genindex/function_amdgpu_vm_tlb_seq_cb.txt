@@ -1,0 +1,12 @@
+Function: void amdgpu_vm_tlb_seq_cb ( struct dma_fence * fence , struct dma_fence_cb * cb )
+
+make sure to increment tlb sequence
+
+Parameters
+  struct dma_fence *fence
+    unused
+  struct dma_fence_cb *cb
+    the callback structure
+
+Description
+  Increments the tlb sequence to make sure that future CS execute a VM flush.

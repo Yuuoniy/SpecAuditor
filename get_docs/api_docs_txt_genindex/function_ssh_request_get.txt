@@ -1,0 +1,11 @@
+Function: struct ssh_request * ssh_request_get ( struct ssh_request * r )
+
+Increment reference count of request.
+
+Parameters
+  struct ssh_request *r
+    The request to increment the reference count of.
+
+Description
+  Increments the reference count of the given request by incrementing the
+reference count of the underlying struct ssh_packet , enclosed in it.

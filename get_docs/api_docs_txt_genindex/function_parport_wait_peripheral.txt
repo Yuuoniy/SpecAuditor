@@ -1,0 +1,19 @@
+Function: int parport_wait_peripheral ( struct parport * port , unsigned char mask , unsigned char result )
+
+wait for status lines to change in 35ms
+
+Parameters
+  struct parport *port
+    port to watch
+  unsigned char mask
+    status lines to watch
+  unsigned char result
+    desired values of chosen status lines
+
+Description
+  This function waits until the masked status lines have the
+desired values, or until 35ms have elapsed (see IEEE 1284-1994
+page 24 to 25 for why this value in particular is hardcoded).
+The mask and result parameters are bitmasks, with the bits
+defined by the constants in parport.h: PARPORT_STATUS_BUSY ,
+and so on.

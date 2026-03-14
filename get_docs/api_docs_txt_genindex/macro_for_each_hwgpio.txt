@@ -1,0 +1,12 @@
+Macro: for_each_hwgpio
+
+
+
+Parameters
+  _chip
+    Chip to iterate over.
+  _i
+    Loop counter.
+  _label
+    Place to store the address of the label if the GPIO is requested.
+Set to NULL for unused GPIOs.

@@ -1,0 +1,10 @@
+Function: int kmsg_dump_unregister ( struct kmsg_dumper * dumper )
+
+unregister a kmsg dumper.
+
+Parameters
+  struct kmsg_dumper *dumper
+    pointer to the kmsg_dumper structure
+
+Description
+  Removes a dump device from the system. Returns zero on success and -EINVAL otherwise.

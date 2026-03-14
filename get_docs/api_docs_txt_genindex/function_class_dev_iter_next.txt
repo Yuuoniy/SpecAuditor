@@ -1,0 +1,11 @@
+Function: struct device * class_dev_iter_next ( struct class_dev_iter * iter )
+
+iterate to the next device
+
+Parameters
+  struct class_dev_iter *iter
+    class iterator to proceed
+
+Description
+  Proceed iter to the next device and return it.  Returns NULL if
+iteration is complete.

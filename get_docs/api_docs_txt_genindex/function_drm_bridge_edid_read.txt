@@ -1,0 +1,14 @@
+Function: const struct drm_edid * drm_bridge_edid_read ( struct drm_bridge * bridge , struct drm_connector * connector )
+
+read the EDID data of the connected display
+
+Parameters
+  struct drm_bridge *bridge
+    bridge control structure
+  struct drm_connector *connector
+    the connector to read EDID for
+
+Description
+  If the bridge supports output EDID retrieval, as reported by the
+DRM_BRIDGE_OP_EDID bridge ops flag, call drm_bridge_funcs.edid_read to get
+the EDID and return it. Otherwise return NULL.

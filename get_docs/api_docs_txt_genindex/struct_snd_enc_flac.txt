@@ -1,0 +1,10 @@
+Struct: struct snd_enc_flac
+
+FLAC encoder parameters
+
+Members
+  num
+    serial number, valid only for OGG formats
+needs to be set by application
+  gain
+    Add replay gain tags

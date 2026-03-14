@@ -1,0 +1,12 @@
+Function: void ata_eh_acquire ( struct ata_port * ap )
+
+acquire EH ownership
+
+Parameters
+  struct ata_port *ap
+    ATA port to acquire EH ownership for
+
+Description
+  Acquire EH ownership for ap .  This is the basic exclusion
+mechanism for ports sharing a host.  Only one port hanging off
+the same host can claim the ownership of EH.

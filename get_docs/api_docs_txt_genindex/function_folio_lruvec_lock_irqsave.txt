@@ -1,0 +1,15 @@
+Function: struct lruvec * folio_lruvec_lock_irqsave ( struct folio * folio , unsigned long * flags )
+
+Lock the lruvec for a folio.
+
+Parameters
+  struct folio *folio
+    Pointer to the folio.
+  unsigned long *flags
+    Pointer to irqsave flags.
+
+Description
+  These functions are safe to use under any of the following conditions:
+- folio locked
+- folio_test_lru false
+- folio frozen (refcount of 0)

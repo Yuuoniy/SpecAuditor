@@ -1,0 +1,11 @@
+Function: int xas_get_order ( struct xa_state * xas )
+
+Get the order of an entry.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+
+Description
+  Called after xas_load, the xas should not be in an error state.
+The xas should not be pointing to a sibling entry.

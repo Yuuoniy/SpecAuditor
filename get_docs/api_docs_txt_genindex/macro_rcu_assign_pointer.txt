@@ -1,0 +1,14 @@
+Macro: rcu_assign_pointer
+
+
+
+Parameters
+  p
+    pointer to assign to
+  v
+    value to assign (publish)
+
+Description
+  Assigns the specified value to the specified RCU-protected
+pointer, ensuring that any concurrent RCU readers will see
+any prior initialization.

@@ -1,0 +1,25 @@
+Function: int ib_map_mr_sg_pi ( struct ib_mr * mr , struct scatterlist * data_sg , int data_sg_nents , unsigned int * data_sg_offset , struct scatterlist * meta_sg , int meta_sg_nents , unsigned int * meta_sg_offset , unsigned int page_size )
+
+Map the dma mapped SG lists for PI (protection information) and set an appropriate memory region for registration.
+
+Parameters
+  struct ib_mr *mr
+    memory region
+  struct scatterlist *data_sg
+    dma mapped scatterlist for data
+  int data_sg_nents
+    number of entries in data_sg
+  unsigned int *data_sg_offset
+    offset in bytes into data_sg
+  struct scatterlist *meta_sg
+    dma mapped scatterlist for metadata
+  int meta_sg_nents
+    number of entries in meta_sg
+  unsigned int *meta_sg_offset
+    offset in bytes into meta_sg
+  unsigned int page_size
+    page vector desired page size
+
+Description
+  Constraints:
+- The MR must be allocated with type IB_MR_TYPE_INTEGRITY.

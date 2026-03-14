@@ -1,0 +1,7 @@
+Function: bool IS_ERR ( __force const void * ptr )
+
+Detect an error pointer.
+
+Parameters
+  __force const void *ptr
+    The pointer to check.

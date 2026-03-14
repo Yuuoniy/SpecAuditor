@@ -1,0 +1,13 @@
+Function: void edac_device_handle_ue ( struct edac_device_ctl_info * edac_dev , int inst_nr , int block_nr , const char * msg )
+
+Log a single uncorrectable error
+
+Parameters
+  struct edac_device_ctl_info *edac_dev
+    pointer to struct edac_device_ctl_info
+  int inst_nr
+    number of the instance where the UE error happened
+  int block_nr
+    number of the block where the UE error happened
+  const char *msg
+    message to be printed

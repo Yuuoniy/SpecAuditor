@@ -1,0 +1,12 @@
+Function: void __snd_pcm_set_state ( struct snd_pcm_runtime * runtime , snd_pcm_state_t state )
+
+Change the current PCM state
+
+Parameters
+  struct snd_pcm_runtime *runtime
+    PCM runtime to set
+  snd_pcm_state_t state
+    the current state to set
+
+Description
+  Call within the stream lock

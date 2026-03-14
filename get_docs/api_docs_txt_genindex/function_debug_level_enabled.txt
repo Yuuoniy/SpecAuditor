@@ -1,0 +1,9 @@
+Function: bool debug_level_enabled ( debug_info_t * id , int level )
+
+Returns true if debug events for the specified level would be logged. Otherwise returns false.
+
+Parameters
+  debug_info_t *id
+    handle for debug log
+  int level
+    debug level

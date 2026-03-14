@@ -1,0 +1,21 @@
+Function: int nand_read_data_op ( struct nand_chip * chip , void * buf , unsigned int len , bool force_8bit , bool check_only )
+
+Read data from the NAND
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+  void *buf
+    buffer used to store the data
+  unsigned int len
+    length of the buffer
+  bool force_8bit
+    force 8-bit bus access
+  bool check_only
+    do not actually run the command, only checks if the
+controller driver supports it
+
+Description
+  This function does a raw data read on the bus. Usually used after launching
+another NAND operation like nand_read_page_op() .
+This function does not select/unselect the CS line.

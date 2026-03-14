@@ -1,0 +1,11 @@
+Struct: struct drm_gpuva_op_remap
+
+GPU VA remap operation
+
+Members
+  prev
+    the preceding part of a split mapping
+  next
+    the subsequent part of a split mapping
+  unmap
+    the unmap operation for the original existing mapping

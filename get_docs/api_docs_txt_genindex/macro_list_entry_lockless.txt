@@ -1,0 +1,19 @@
+Macro: list_entry_lockless
+
+
+
+Parameters
+  ptr
+    the struct list_head pointer.
+  type
+    the type of the struct this is embedded in.
+  member
+    the name of the list_head within the struct.
+
+Description
+  This primitive may safely run concurrently with the _rcu
+list-mutation primitives such as list_add_rcu() , but requires some
+implicit RCU read-side guarding.  One example is running within a special
+exception-time environment where preemption is disabled and where lockdep
+cannot be invoked.  Another example is when items are added to the list,
+but never deleted.

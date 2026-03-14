@@ -1,0 +1,14 @@
+Function: void hlist_splice_init ( struct hlist_head * from , struct hlist_node * last , struct hlist_head * to )
+
+move all entries from one list to another
+
+Parameters
+  struct hlist_head *from
+    hlist_head from which entries will be moved
+  struct hlist_node *last
+    last entry on the from list
+  struct hlist_head *to
+    hlist_head to which entries will be moved
+
+Description
+  to can be empty, from must contain at least last .

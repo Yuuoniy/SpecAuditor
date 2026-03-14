@@ -1,0 +1,11 @@
+Function: void snd_power_sync_ref ( struct snd_card * card )
+
+wait until the card power_ref is freed
+
+Parameters
+  struct snd_card *card
+    sound card object
+
+Description
+  This function is used to synchronize with the pending power_ref being
+released.

@@ -1,0 +1,17 @@
+Struct: struct ipu3_uapi_shd_general_config
+
+Shading general config
+
+Members
+  init_set_vrt_offst_ul
+    set vertical offset,
+y_start >> block_height_log2 % grid_height_per_slice.
+  shd_enable
+    shading enable.
+  gain_factor
+    Gain factor. Shift calculated anti shading value. Precision u2.
+0x0 - gain factor [1, 5], means no shift interpolated value.
+0x1 - gain factor [1, 9], means shift interpolated by 1.
+0x2 - gain factor [1, 17], means shift interpolated by 2.
+  reserved
+    reserved

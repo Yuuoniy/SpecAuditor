@@ -1,0 +1,13 @@
+Function: struct device_node * of_get_compatible_child ( const struct device_node * parent , const char * compatible )
+
+Find compatible child node
+
+Parameters
+  const struct device_node *parent
+    parent node
+  const char *compatible
+    compatible string
+
+Description
+  Lookup child node whose compatible property contains the given compatible
+string.

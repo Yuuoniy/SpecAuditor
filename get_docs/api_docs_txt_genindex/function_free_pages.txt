@@ -1,0 +1,14 @@
+Function: void free_pages ( unsigned long addr , unsigned int order )
+
+Free pages allocated with __get_free_pages() .
+
+Parameters
+  unsigned long addr
+    The virtual address tied to a page returned from __get_free_pages() .
+  unsigned int order
+    The order of the allocation.
+
+Description
+  This function behaves the same as __free_pages() . Use this function
+to free pages when you only have a valid virtual address. If you have
+the page, call __free_pages() instead.

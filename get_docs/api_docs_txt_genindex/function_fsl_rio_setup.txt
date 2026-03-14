@@ -1,0 +1,12 @@
+Function: int fsl_rio_setup ( struct platform_device * dev )
+
+Setup Freescale PowerPC RapidIO interface
+
+Parameters
+  struct platform_device *dev
+    platform_device pointer
+
+Description
+  Initializes MPC85xx RapidIO hardware interface, configures
+master port with system-specific info, and registers the
+master port with the RapidIO subsystem.

@@ -1,0 +1,13 @@
+Function: bool tty_termios_hw_change ( const struct ktermios * a , const struct ktermios * b )
+
+check for setting change
+
+Parameters
+  const struct ktermios *a
+    termios
+  const struct ktermios *b
+    termios to compare
+
+Description
+  Check if any of the bits that affect a dumb device have changed between the
+two termios structures, or a speed change is needed.

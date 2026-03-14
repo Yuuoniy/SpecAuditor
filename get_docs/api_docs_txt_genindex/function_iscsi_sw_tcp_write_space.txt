@@ -1,0 +1,7 @@
+Function: void iscsi_sw_tcp_write_space ( struct sock * sk )
+
+Called when more output buffer space is available
+
+Parameters
+  struct sock *sk
+    socket space is available for

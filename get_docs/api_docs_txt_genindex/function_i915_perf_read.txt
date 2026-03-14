@@ -1,0 +1,18 @@
+Function: ssize_t i915_perf_read ( struct file * file , char __user * buf , size_t count , loff_t * ppos )
+
+handles read() FOP for i915 perf stream FDs
+
+Parameters
+  struct file *file
+    An i915 perf stream file
+  char __user *buf
+    destination buffer given by userspace
+  size_t count
+    the number of bytes userspace wants to read
+  loff_t *ppos
+    (inout) file seek position (unused)
+
+Description
+  The entry point for handling a read() on a stream file descriptor from
+userspace. Most of the work is left to the i915_perf_read_locked() and i915_perf_stream_ops->read but to save having stream implementations (of
+which we might have multiple later) we handle blocking read here.

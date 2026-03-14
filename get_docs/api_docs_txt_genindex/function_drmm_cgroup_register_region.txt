@@ -1,0 +1,15 @@
+Function: struct dmem_cgroup_region * drmm_cgroup_register_region ( struct drm_device * dev , const char * region_name , u64 size )
+
+Register a region of a DRM device to cgroups
+
+Parameters
+  struct drm_device *dev
+    device for region
+  const char *region_name
+    Region name for registering
+  u64 size
+    Size of region in bytes
+
+Description
+  This decreases the ref-count of dev by one. The device is destroyed if the
+ref-count drops to zero.

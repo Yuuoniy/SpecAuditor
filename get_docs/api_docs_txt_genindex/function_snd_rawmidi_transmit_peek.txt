@@ -1,0 +1,14 @@
+Function: int snd_rawmidi_transmit_peek ( struct snd_rawmidi_substream * substream , unsigned char * buffer , int count )
+
+copy data from the internal buffer
+
+Parameters
+  struct snd_rawmidi_substream *substream
+    the rawmidi substream
+  unsigned char *buffer
+    the buffer pointer
+  int count
+    data size to transfer
+
+Description
+  Copies data from the internal output buffer to the given buffer.

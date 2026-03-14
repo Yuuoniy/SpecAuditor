@@ -1,0 +1,9 @@
+Macro: bio_for_each_folio_all
+
+
+
+Parameters
+  fi
+    struct folio_iter which is updated for each folio.
+  bio
+    struct bio to iterate over.

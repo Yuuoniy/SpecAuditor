@@ -1,0 +1,12 @@
+Macro: RCU_POINTER_INITIALIZER
+
+
+
+Parameters
+  p
+    The pointer to be initialized.
+  v
+    The value to initialized the pointer to.
+
+Description
+  GCC-style initialization for an RCU-protected pointer in a structure field.

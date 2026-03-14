@@ -1,0 +1,15 @@
+Function: int drm_gpuvm_sm_map ( struct drm_gpuvm * gpuvm , void * priv , const struct drm_gpuvm_map_req * req )
+
+calls the drm_gpuva_op split/merge steps
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm representing the GPU VA space
+  void *priv
+    pointer to a driver private data structure
+  const struct drm_gpuvm_map_req *req
+    ptr to struct drm_gpuvm_map_req
+
+Description
+  This function iterates the given range of the GPU VA space. It utilizes the drm_gpuvm_ops to call back into the driver providing the split and merge
+steps.

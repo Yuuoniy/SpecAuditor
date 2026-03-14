@@ -1,0 +1,12 @@
+Function: unsigned int phy_get_next_update_time ( struct phy_device * phydev )
+
+Determine the next PHY update time
+
+Parameters
+  struct phy_device *phydev
+    Pointer to the phy_device structure
+
+Description
+  This function queries the PHY driver to get the time for the next polling
+event. If the driver does not implement the callback, a default value is
+used.

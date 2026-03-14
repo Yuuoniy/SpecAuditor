@@ -1,0 +1,13 @@
+Struct: struct rkisp1_cif_isp_compand_bls_config
+
+Rockchip ISP1 Companding parameters (BLS)
+
+Members
+  r
+    Fixed subtraction value for Bayer pattern R
+  gr
+    Fixed subtraction value for Bayer pattern Gr
+  gb
+    Fixed subtraction value for Bayer pattern Gb
+  b
+    Fixed subtraction value for Bayer pattern B

@@ -1,0 +1,24 @@
+Struct: struct name_table
+
+table containing all existing port name publications
+
+Members
+  rcu
+    RCU callback head used for deferred freeing
+  services
+    name sequence hash lists
+  node_scope
+    all local publications with node scope
+- used by name_distr during re-init of name table
+  cluster_scope
+    all local publications with cluster scope
+- used by name_distr to send bulk updates to new nodes
+- used by name_distr during re-init of name table
+  cluster_scope_lock
+    lock for accessing cluster_scope
+  local_publ_count
+    number of publications issued by this node
+  rc_dests
+    destination node counter
+  snd_nxt
+    next sequence number to be used

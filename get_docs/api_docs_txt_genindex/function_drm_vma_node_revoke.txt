@@ -1,0 +1,14 @@
+Function: void drm_vma_node_revoke ( struct drm_vma_offset_node * node , struct drm_file * tag )
+
+Remove open-file from list of allowed users
+
+Parameters
+  struct drm_vma_offset_node *node
+    Node to modify
+  struct drm_file *tag
+    Tag of file to remove
+
+Description
+  Decrement the ref-count of tag in the list of allowed open-files on node .
+If the ref-count drops to zero, remove tag from the list. You must call
+this once for every drm_vma_node_allow() on tag .

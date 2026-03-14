@@ -1,0 +1,14 @@
+Function: void kpp_request_set_input ( struct kpp_request * req , struct scatterlist * input , unsigned int input_len )
+
+Sets input buffer
+
+Parameters
+  struct kpp_request *req
+    kpp request
+  struct scatterlist *input
+    ptr to input scatter list
+  unsigned int input_len
+    size of the input scatter list
+
+Description
+  Sets parameters required by generate_public_key

@@ -1,0 +1,14 @@
+Function: bool refcount_sub_and_test ( int i , refcount_t * r )
+
+subtract from a refcount and test if it is 0
+
+Parameters
+  int i
+    amount to subtract from the refcount
+  refcount_t *r
+    the refcount
+
+Description
+  Similar to atomic_dec_and_test() , but it will WARN, return false and
+ultimately leak on underflow and will fail to decrement when saturated
+at REFCOUNT_SATURATED.

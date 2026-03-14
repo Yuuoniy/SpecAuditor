@@ -1,0 +1,18 @@
+Function: void * folio_zero_tail ( struct folio * folio , size_t offset , void * kaddr )
+
+Zero the tail of a folio.
+
+Parameters
+  struct folio *folio
+    The folio to zero.
+  size_t offset
+    The byte offset in the folio to start zeroing at.
+  void *kaddr
+    The address the folio is currently mapped to.
+
+Description
+  If you have already used kmap_local_folio() to map a folio, written
+some data to it and now need to zero the end of the folio (and flush
+the dcache), you can use this function.  If you do not have the
+folio kmapped (eg the folio has been partially populated by DMA),
+use folio_zero_range() or folio_zero_segment() instead.

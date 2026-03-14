@@ -1,0 +1,12 @@
+Function: struct device_node * of_parse_phandle ( const struct device_node * np , const char * phandle_name , int index )
+
+Resolve a phandle property to a device_node pointer
+
+Parameters
+  const struct device_node *np
+    Pointer to device node holding phandle property
+  const char *phandle_name
+    Name of property holding a phandle value
+  int index
+    For properties holding a table of phandles, this is the index into
+the table

@@ -1,0 +1,37 @@
+Struct: struct hdr_metadata_infoframe
+
+HDR Metadata Infoframe Data.
+
+Members
+  eotf
+    Electro-Optical Transfer Function (EOTF)
+used in the stream.
+  metadata_type
+    Static_Metadata_Descriptor_ID.
+  display_primaries
+    Color Primaries of the Data.
+These are coded as unsigned 16-bit values in units of
+0.00002, where 0x0000 represents zero and 0xC350
+represents 1.0000. display_primaries.x : X coordinate of color primary. display_primaries.y : Y coordinate of color primary.
+  white_point
+    White Point of Colorspace Data.
+These are coded as unsigned 16-bit values in units of
+0.00002, where 0x0000 represents zero and 0xC350
+represents 1.0000. white_point.x : X coordinate of whitepoint of color primary. white_point.y : Y coordinate of whitepoint of color primary.
+  max_display_mastering_luminance
+    Max Mastering Display Luminance.
+This value is coded as an unsigned 16-bit value in units of 1 cd/m2,
+where 0x0001 represents 1 cd/m2 and 0xFFFF represents 65535 cd/m2.
+  min_display_mastering_luminance
+    Min Mastering Display Luminance.
+This value is coded as an unsigned 16-bit value in units of
+0.0001 cd/m2, where 0x0001 represents 0.0001 cd/m2 and 0xFFFF
+represents 6.5535 cd/m2.
+  max_cll
+    Max Content Light Level.
+This value is coded as an unsigned 16-bit value in units of 1 cd/m2,
+where 0x0001 represents 1 cd/m2 and 0xFFFF represents 65535 cd/m2.
+  max_fall
+    Max Frame Average Light Level.
+This value is coded as an unsigned 16-bit value in units of 1 cd/m2,
+where 0x0001 represents 1 cd/m2 and 0xFFFF represents 65535 cd/m2.

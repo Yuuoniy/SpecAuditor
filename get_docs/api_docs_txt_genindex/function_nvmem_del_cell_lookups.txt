@@ -1,0 +1,9 @@
+Function: void nvmem_del_cell_lookups ( struct nvmem_cell_lookup * entries , size_t nentries )
+
+remove a list of previously added cell lookup entries
+
+Parameters
+  struct nvmem_cell_lookup *entries
+    array of cell lookup entries
+  size_t nentries
+    number of cell lookup entries in the array

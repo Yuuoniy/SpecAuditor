@@ -1,0 +1,89 @@
+Struct: struct pisp_be_sharpen_config
+
+PiSP Back End Sharpening config
+
+Members
+  kernel0
+    Coefficient for filter 0
+  pad0
+    Padding byte
+  kernel1
+    Coefficient for filter 1
+  pad1
+    Padding byte
+  kernel2
+    Coefficient for filter 2
+  pad2
+    Padding byte
+  kernel3
+    Coefficient for filter 3
+  pad3
+    Padding byte
+  kernel4
+    Coefficient for filter 4
+  pad4
+    Padding byte
+  threshold_offset0
+    Offset for filter 0 response calculation
+  threshold_slope0
+    Slope multiplier for the filter 0 response calculation
+  scale0
+    Scale factor for filter 0 response calculation
+  pad5
+    Padding byte
+  threshold_offset1
+    Offset for filter 0 response calculation
+  threshold_slope1
+    Slope multiplier for the filter 0 response calculation
+  scale1
+    Scale factor for filter 0 response calculation
+  pad6
+    Padding byte
+  threshold_offset2
+    Offset for filter 0 response calculation
+  threshold_slope2
+    Slope multiplier for the filter 0 response calculation
+  scale2
+    Scale factor for filter 0 response calculation
+  pad7
+    Padding byte
+  threshold_offset3
+    Offset for filter 0 response calculation
+  threshold_slope3
+    Slope multiplier for the filter 0 response calculation
+  scale3
+    Scale factor for filter 0 response calculation
+  pad8
+    Padding byte
+  threshold_offset4
+    Offset for filter 0 response calculation
+  threshold_slope4
+    Slope multiplier for the filter 0 response calculation
+  scale4
+    Scale factor for filter 0 response calculation
+  pad9
+    Padding byte
+  positive_strength
+    Factor to scale the positive sharpening strength
+  positive_pre_limit
+    Maximum allowed possible positive sharpening value
+  positive_func
+    Gain factor applied to positive sharpening response
+  positive_limit
+    Final gain factor applied to positive sharpening
+  negative_strength
+    Factor to scale the negative sharpening strength
+  negative_pre_limit
+    Maximum allowed possible negative sharpening value
+  negative_func
+    Gain factor applied to negative sharpening response
+  negative_limit
+    Final gain factor applied to negative sharpening
+  enables
+    Filter enable mask
+  white
+    White output pixel filter mask
+  black
+    Black output pixel filter mask
+  grey
+    Grey output pixel filter mask

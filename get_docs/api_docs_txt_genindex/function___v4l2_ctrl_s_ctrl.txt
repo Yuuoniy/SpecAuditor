@@ -1,0 +1,14 @@
+Function: int __v4l2_ctrl_s_ctrl ( struct v4l2_ctrl * ctrl , s32 val )
+
+Unlocked variant of v4l2_ctrl_s_ctrl() .
+
+Parameters
+  struct v4l2_ctrl *ctrl
+    The control.
+  s32 val
+    The new value.
+
+Description
+  This sets the control’s new value safely by going through the control
+framework. This function assumes the control’s handler is already locked,
+allowing it to be used from within the v4l2_ctrl_ops functions.

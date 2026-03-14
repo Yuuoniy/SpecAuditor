@@ -1,0 +1,12 @@
+Function: int get_timespec64 ( struct timespec64 * ts , const struct __kernel_timespec __user * uts )
+
+get user’s time value into kernel space
+
+Parameters
+  struct timespec64 *ts
+    destination struct timespec64
+  const struct __kernel_timespec __user *uts
+    user’s time value as struct __kernel_timespec
+
+Description
+  Handles compat or 32-bit modes.

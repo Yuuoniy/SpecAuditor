@@ -1,0 +1,16 @@
+Function: int pfn_mkclean_range ( unsigned long pfn , unsigned long nr_pages , pgoff_t pgoff , struct vm_area_struct * vma )
+
+Cleans the PTEs (including PMDs) mapped with range of [ pfn , pfn + nr_pages ) at the specific offset ( pgoff ) within the vma of shared mappings. And since clean PTEs should also be readonly, write protects them too.
+
+Parameters
+  unsigned long pfn
+    start pfn.
+  unsigned long nr_pages
+    number of physically contiguous pages srarting with pfn .
+  pgoff_t pgoff
+    page offset that the pfn mapped with.
+  struct vm_area_struct *vma
+    vma that pfn mapped within.
+
+Description
+  Returns the number of cleaned PTEs (including PMDs).

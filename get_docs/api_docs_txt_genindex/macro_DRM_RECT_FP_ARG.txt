@@ -1,0 +1,11 @@
+Macro: DRM_RECT_FP_ARG
+
+
+
+Parameters
+  r
+    rectangle struct
+
+Description
+  This is useful for e.g. printing plane source rectangles, which are in 16.16
+fixed point.

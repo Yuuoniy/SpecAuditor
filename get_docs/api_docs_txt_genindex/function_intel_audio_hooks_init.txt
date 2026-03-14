@@ -1,0 +1,7 @@
+Function: void intel_audio_hooks_init ( struct intel_display * display )
+
+Set up chip specific audio hooks
+
+Parameters
+  struct intel_display *display
+    display device

@@ -1,0 +1,11 @@
+Function: int phylink_speed_up ( struct phylink * pl )
+
+restore the advertised speeds prior to the call to phylink_speed_down()
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+
+Description
+  If we have a PHY that is not part of a SFP module, then restore the
+PHY speeds as per phy_speed_up() .

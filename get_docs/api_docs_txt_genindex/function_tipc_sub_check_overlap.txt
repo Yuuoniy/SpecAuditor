@@ -1,0 +1,12 @@
+Function: bool tipc_sub_check_overlap ( struct tipc_service_range * subscribed , struct tipc_service_range * found )
+
+test for subscription overlap with the given values
+
+Parameters
+  struct tipc_service_range *subscribed
+    the service range subscribed for
+  struct tipc_service_range *found
+    the service range we are checking for match
+
+Description
+  Returns true if there is overlap, otherwise false.

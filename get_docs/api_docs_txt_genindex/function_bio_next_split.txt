@@ -1,0 +1,13 @@
+Function: struct bio * bio_next_split ( struct bio * bio , int sectors , gfp_t gfp , struct bio_set * bs )
+
+get next sectors from a bio, splitting if necessary
+
+Parameters
+  struct bio *bio
+    bio to split
+  int sectors
+    number of sectors to split from the front of bio
+  gfp_t gfp
+    gfp mask
+  struct bio_set *bs
+    bio set to allocate from

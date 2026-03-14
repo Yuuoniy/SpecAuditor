@@ -1,0 +1,12 @@
+Macro: mutex_init_with_key
+
+
+
+Parameters
+  mutex
+    the mutex to be initialized
+  key
+    the lockdep key to be associated with the mutex
+
+Description
+  Initialize the mutex to the unlocked state.

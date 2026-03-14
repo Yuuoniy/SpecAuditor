@@ -1,0 +1,12 @@
+Function: int drm_dp_downstream_id ( struct drm_dp_aux * aux , char id [ 6 ] )
+
+identify branch device
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  char id[6]
+    DisplayPort branch device id
+
+Description
+  Returns branch device id on success or NULL on failure

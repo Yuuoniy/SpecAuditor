@@ -1,0 +1,15 @@
+Macro: wait_event_interruptible_lock_irq
+
+
+
+Parameters
+  wq_head
+    the waitqueue to wait on
+  condition
+    a C expression for the event to wait for
+  lock
+    a locked spinlock_t, which will be released before schedule() and reacquired afterwards.
+
+Description
+  The process is put to sleep (TASK_INTERRUPTIBLE) until the condition evaluates to true or signal is received. The condition is
+checked each time the waitqueue wq_head is woken up.

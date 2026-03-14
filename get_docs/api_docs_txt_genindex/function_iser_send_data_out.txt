@@ -1,0 +1,11 @@
+Function: int iser_send_data_out ( struct iscsi_conn * conn , struct iscsi_task * task , struct iscsi_data * hdr )
+
+send data out PDU
+
+Parameters
+  struct iscsi_conn *conn
+    link to matching iscsi connection
+  struct iscsi_task *task
+    SCSI command task
+  struct iscsi_data *hdr
+    pointer to the LLD’s iSCSI message header

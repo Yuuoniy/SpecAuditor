@@ -1,0 +1,13 @@
+Function: int textsearch_unregister ( struct ts_ops * ops )
+
+unregister a textsearch module
+
+Parameters
+  struct ts_ops *ops
+    operations lookup table
+
+Description
+  This function must be called by textsearch modules to announce
+their disappearance for examples when the module gets unloaded.
+The ops parameter must be the same as the one during the
+registration.

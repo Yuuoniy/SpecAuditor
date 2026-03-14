@@ -1,0 +1,15 @@
+Function: void dma_pool_free ( struct dma_pool * pool , void * vaddr , dma_addr_t dma )
+
+put block back into dma pool
+
+Parameters
+  struct dma_pool *pool
+    the dma pool holding the block
+  void *vaddr
+    virtual address of block
+  dma_addr_t dma
+    dma address of block
+
+Description
+  Caller promises neither device nor driver will again touch this block
+unless it is first re-allocated.

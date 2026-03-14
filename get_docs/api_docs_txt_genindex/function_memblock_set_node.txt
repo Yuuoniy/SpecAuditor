@@ -1,0 +1,17 @@
+Function: int __init_memblock memblock_set_node ( phys_addr_t base , phys_addr_t size , struct memblock_type * type , int nid )
+
+set node ID on memblock regions
+
+Parameters
+  phys_addr_t base
+    base of area to set node ID for
+  phys_addr_t size
+    size of area to set node ID for
+  struct memblock_type *type
+    memblock type to set node ID for
+  int nid
+    node ID to set
+
+Description
+  Set the nid of memblock type regions in [ base , base + size ) to nid .
+Regions which cross the area boundaries are split as necessary.

@@ -1,0 +1,9 @@
+Function: int mipi_dsi_dcs_get_display_brightness ( struct mipi_dsi_device * dsi , u16 * brightness )
+
+gets the current brightness value of the display
+
+Parameters
+  struct mipi_dsi_device *dsi
+    DSI peripheral device
+  u16 *brightness
+    brightness value

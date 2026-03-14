@@ -1,0 +1,11 @@
+Function: void intel_lpe_audio_irq_handler ( struct intel_display * display )
+
+forwards the LPE audio irq
+
+Parameters
+  struct intel_display *display
+    display device
+
+Description
+  the LPE Audio irq is forwarded to the irq handler registered by LPE audio
+driver.

@@ -1,0 +1,11 @@
+Function: void jbd2_journal_update_sb_errno ( journal_t * journal )
+
+Update error in the journal.
+
+Parameters
+  journal_t *journal
+    The journal to update.
+
+Description
+  Update a journal’s errno.  Write updated superblock to disk waiting for IO
+to complete.

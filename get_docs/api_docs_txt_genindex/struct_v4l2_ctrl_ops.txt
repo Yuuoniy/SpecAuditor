@@ -1,0 +1,18 @@
+Struct: struct v4l2_ctrl_ops
+
+The control operations that the driver has to provide.
+
+Members
+  g_volatile_ctrl
+    Get a new value for this control. Generally only relevant
+for volatile (and usually read-only) controls such as a control
+that returns the current signal strength which changes
+continuously.
+If not set, then the currently cached value will be returned.
+  try_ctrl
+    Test whether the control’s value is valid. Only relevant when
+the usual min/max/step checks are not sufficient.
+  s_ctrl
+    Actually set the new control value. s_ctrl is compulsory. The
+ctrl->handler->lock is held when these ops are called, so no
+one else can access controls owned by that handler.

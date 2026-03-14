@@ -1,0 +1,21 @@
+Function: void debugfs_create_str ( const char * name , umode_t mode , struct dentry * parent , char * * value )
+
+create a debugfs file that is used to read and write a string value
+
+Parameters
+  const char *name
+    a pointer to a string containing the name of the file to create.
+  umode_t mode
+    the permission that the file should have
+  struct dentry *parent
+    a pointer to the parent dentry for this file.  This should be a
+directory dentry if set.  If this parameter is NULL , then the
+file will be created in the root of the debugfs filesystem.
+  char **value
+    a pointer to the variable that the file should read to and write
+from.
+
+Description
+  This function creates a file in debugfs with the given name that
+contains the value of the variable value .  If the mode variable is so
+set, it can be read from, and written to.

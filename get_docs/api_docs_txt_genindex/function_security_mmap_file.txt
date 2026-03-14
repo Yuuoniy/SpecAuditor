@@ -1,0 +1,15 @@
+Function: int security_mmap_file ( struct file * file , unsigned long prot , unsigned long flags )
+
+Check if mmap’ing a file is allowed
+
+Parameters
+  struct file *file
+    file
+  unsigned long prot
+    protection applied by the kernel
+  unsigned long flags
+    flags
+
+Description
+  Check permissions for a mmap operation.  The file may be NULL, e.g. if
+mapping anonymous memory.

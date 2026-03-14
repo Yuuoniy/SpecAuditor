@@ -1,0 +1,19 @@
+Function: void srpt_get_svc_entries ( u64 ioc_guid , u16 slot , u8 hi , u8 lo , struct ib_dm_mad * mad )
+
+write ServiceEntries to a management datagram
+
+Parameters
+  u64 ioc_guid
+    I/O controller GUID to use in reply.
+  u16 slot
+    I/O controller number.
+  u8 hi
+    End of the range of service entries to be specified in the reply.
+  u8 lo
+    Start of the range of service entries to be specified in the reply..
+  struct ib_dm_mad *mad
+    Datagram that will be sent as response to DM_ATTR_SVC_ENTRIES.
+
+Description
+  See also section 16.3.3.5 ServiceEntries in the InfiniBand Architecture
+Specification. See also section B.7, table B.8 in the SRP r16a document.

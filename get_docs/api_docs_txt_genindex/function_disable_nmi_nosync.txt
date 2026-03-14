@@ -1,0 +1,10 @@
+Function: void disable_nmi_nosync ( unsigned int irq )
+
+disable an nmi without waiting
+
+Parameters
+  unsigned int irq
+    Interrupt to disable
+
+Description
+  Disable the selected interrupt line. Disables and enables are nested.

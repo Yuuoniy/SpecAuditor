@@ -1,0 +1,7 @@
+Function: const struct nand_sdr_timings * nand_get_sdr_timings ( const struct nand_interface_config * conf )
+
+get SDR timing from data interface
+
+Parameters
+  const struct nand_interface_config *conf
+    The data interface

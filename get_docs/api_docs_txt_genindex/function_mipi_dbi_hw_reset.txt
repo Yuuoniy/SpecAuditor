@@ -1,0 +1,10 @@
+Function: void mipi_dbi_hw_reset ( struct mipi_dbi * dbi )
+
+Hardware reset of controller
+
+Parameters
+  struct mipi_dbi *dbi
+    MIPI DBI structure
+
+Description
+  Reset controller if the mipi_dbi->reset gpio is set.

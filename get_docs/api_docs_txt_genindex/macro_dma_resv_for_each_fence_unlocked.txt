@@ -1,0 +1,14 @@
+Macro: dma_resv_for_each_fence_unlocked
+
+
+
+Parameters
+  cursor
+    a struct dma_resv_iter pointer
+  fence
+    the current fence
+
+Description
+  Iterate over the fences in a struct dma_resv object without holding the dma_resv.lock and using RCU instead. The cursor needs to be initialized
+with dma_resv_iter_begin() and cleaned up with dma_resv_iter_end() . Inside
+the iterator a reference to the dma_fence is held and the RCU lock dropped.

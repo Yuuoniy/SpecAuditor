@@ -1,0 +1,11 @@
+Function: void v4l2_m2m_suspend ( struct v4l2_m2m_dev * m2m_dev )
+
+stop new jobs from being run and wait for current job to finish
+
+Parameters
+  struct v4l2_m2m_dev *m2m_dev
+    opaque pointer to the internal data to handle M2M context
+
+Description
+  Called by a driver in the suspend hook. Stop new jobs from being run, and
+wait for current running job to finish.

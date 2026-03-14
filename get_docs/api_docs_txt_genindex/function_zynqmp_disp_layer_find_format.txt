@@ -1,0 +1,14 @@
+Function: const struct zynqmp_disp_format * zynqmp_disp_layer_find_format ( struct zynqmp_disp_layer * layer , u32 drm_fmt )
+
+Find format information for a DRM format
+
+Parameters
+  struct zynqmp_disp_layer *layer
+    The layer
+  u32 drm_fmt
+    DRM format to search
+
+Description
+  Search display subsystem format information corresponding to the given DRM
+format drm_fmt for the layer , and return a pointer to the format
+descriptor.

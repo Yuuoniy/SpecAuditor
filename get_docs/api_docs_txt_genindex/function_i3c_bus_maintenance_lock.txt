@@ -1,0 +1,16 @@
+Function: void i3c_bus_maintenance_lock ( struct i3c_bus * bus )
+
+Lock the bus for a maintenance operation
+
+Parameters
+  struct i3c_bus *bus
+    I3C bus to take the lock on
+
+Description
+  This function takes the bus lock so that no other operations can occur on
+the bus. This is needed for all kind of bus maintenance operation, like
+- enabling/disabling slave events
+- re-triggering DAA
+- changing the dynamic address of a device
+- relinquishing mastership
+- ...

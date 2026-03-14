@@ -1,0 +1,10 @@
+Function: void intel_drrs_activate ( const struct intel_crtc_state * crtc_state )
+
+activate DRRS
+
+Parameters
+  const struct intel_crtc_state *crtc_state
+    the crtc state
+
+Description
+  Activates DRRS on the crtc.

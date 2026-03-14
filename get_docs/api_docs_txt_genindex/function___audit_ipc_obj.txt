@@ -1,0 +1,7 @@
+Function: void __audit_ipc_obj ( struct kern_ipc_perm * ipcp )
+
+record audit data for ipc object
+
+Parameters
+  struct kern_ipc_perm *ipcp
+    ipc permissions

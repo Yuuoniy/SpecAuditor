@@ -1,0 +1,15 @@
+Function: void drm_mode_get_hv_timing ( const struct drm_display_mode * mode , int * hdisplay , int * vdisplay )
+
+Fetches hdisplay/vdisplay for given mode
+
+Parameters
+  const struct drm_display_mode *mode
+    mode to query
+  int *hdisplay
+    hdisplay value to fill in
+  int *vdisplay
+    vdisplay value to fill in
+
+Description
+  The vdisplay value will be doubled if the specified mode is a stereo mode of
+the appropriate layout.

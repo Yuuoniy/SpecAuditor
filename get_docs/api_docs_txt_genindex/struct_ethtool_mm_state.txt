@@ -1,0 +1,41 @@
+Struct: struct ethtool_mm_state
+
+802.3 MAC merge layer state
+
+Members
+  verify_time
+    wait time between verification attempts in ms (according to clause
+30.14.1.6 aMACMergeVerifyTime)
+  max_verify_time
+    maximum accepted value for the verify_time variable in set requests
+  verify_status
+    state of the verification state machine of the MM layer (according to
+clause 30.14.1.2 aMACMergeStatusVerify)
+  tx_enabled
+    set if the MM layer is administratively enabled in the TX direction
+(according to clause 30.14.1.3 aMACMergeEnableTx)
+  tx_active
+    set if the MM layer is enabled in the TX direction, which makes FP
+possible (according to 30.14.1.5 aMACMergeStatusTx). This should be
+true if MM is enabled, and the verification status is either verified,
+or disabled.
+  pmac_enabled
+    set if the preemptible MAC is powered on and is able to receive
+preemptible packets and respond to verification frames.
+  verify_enabled
+    set if the Verify function of the MM layer (which sends SMD-V
+verification requests) is administratively enabled (regardless of
+whether it is currently in the ETHTOOL_MM_VERIFY_STATUS_DISABLED state
+or not), according to clause 30.14.1.4 aMACMergeVerifyDisableTx (but
+using positive rather than negative logic). The device should always
+respond to received SMD-V requests as long as pmac_enabled is set.
+  tx_min_frag_size
+    the minimum size of non-final mPacket fragments that the link partner
+supports receiving, expressed in octets. Compared to the definition
+from clause 30.14.1.7 aMACMergeAddFragSize which is expressed in the
+range 0 to 3 (requiring a translation to the size in octets according
+to the formula 64 * (1 + addFragSize) - 4), a value in a continuous and
+unbounded range can be specified here.
+  rx_min_frag_size
+    the minimum size of non-final mPacket fragments that this device
+supports receiving, expressed in octets.

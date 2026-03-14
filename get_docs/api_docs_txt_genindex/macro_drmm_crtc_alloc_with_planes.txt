@@ -1,0 +1,25 @@
+Macro: drmm_crtc_alloc_with_planes
+
+
+
+Parameters
+  dev
+    DRM device
+  type
+    the type of the struct which contains struct drm_crtc
+  member
+    the name of the drm_crtc within type .
+  primary
+    Primary plane for CRTC
+  cursor
+    Cursor plane for CRTC
+  funcs
+    callbacks for the new CRTC
+  name
+    printf style format string for the CRTC name, or NULL for default name
+  ...
+    variable arguments
+
+Description
+  Allocates and initializes a new crtc object. Cleanup is automatically
+handled through registering drmm_crtc_cleanup() with drmm_add_action() .

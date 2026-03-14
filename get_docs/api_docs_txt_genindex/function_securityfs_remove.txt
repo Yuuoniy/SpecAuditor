@@ -1,0 +1,11 @@
+Function: void securityfs_remove ( struct dentry * dentry )
+
+removes a file or directory from the securityfs filesystem
+
+Parameters
+  struct dentry *dentry
+    a pointer to a the dentry of the file or directory to be removed.
+
+Description
+  This function removes a file or directory in securityfs that was previously
+created with a call to another securityfs function (like securityfs_create_file() or variants thereof.)

@@ -1,0 +1,12 @@
+Function: void srcu_read_unlock_nmisafe ( struct srcu_struct * ssp , int idx )
+
+unregister a old reader from an SRCU-protected structure.
+
+Parameters
+  struct srcu_struct *ssp
+    srcu_struct in which to unregister the old reader.
+  int idx
+    return value from corresponding srcu_read_lock_nmisafe() .
+
+Description
+  Exit an SRCU read-side critical section, but in an NMI-safe manner.

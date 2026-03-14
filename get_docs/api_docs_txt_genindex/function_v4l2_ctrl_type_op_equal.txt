@@ -1,0 +1,11 @@
+Function: bool v4l2_ctrl_type_op_equal ( const struct v4l2_ctrl * ctrl , union v4l2_ctrl_ptr ptr1 , union v4l2_ctrl_ptr ptr2 )
+
+Default v4l2_ctrl_type_ops equal callback.
+
+Parameters
+  const struct v4l2_ctrl *ctrl
+    The v4l2_ctrl pointer.
+  union v4l2_ctrl_ptr ptr1
+    A v4l2 control value.
+  union v4l2_ctrl_ptr ptr2
+    A v4l2 control value.

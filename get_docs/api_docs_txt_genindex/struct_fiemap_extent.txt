@@ -1,0 +1,13 @@
+Struct: struct fiemap_extent
+
+description of one fiemap extent
+
+Members
+  fe_logical
+    byte offset of the extent in the file
+  fe_physical
+    byte offset of extent on disk
+  fe_length
+    length in bytes for this extent
+  fe_flags
+    FIEMAP_EXTENT_* flags for this extent

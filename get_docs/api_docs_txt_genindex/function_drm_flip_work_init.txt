@@ -1,0 +1,14 @@
+Function: void drm_flip_work_init ( struct drm_flip_work * work , const char * name , drm_flip_func_t func )
+
+initialize flip-work
+
+Parameters
+  struct drm_flip_work *work
+    the flip-work to initialize
+  const char *name
+    debug name
+  drm_flip_func_t func
+    the callback work function
+
+Description
+  Initializes/allocates resources for the flip-work

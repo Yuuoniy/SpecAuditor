@@ -1,0 +1,12 @@
+Function: void refcount_add ( int i , refcount_t * r )
+
+add a value to a refcount
+
+Parameters
+  int i
+    the value to add to the refcount
+  refcount_t *r
+    the refcount
+
+Description
+  Similar to atomic_add() , but will saturate at REFCOUNT_SATURATED and WARN.

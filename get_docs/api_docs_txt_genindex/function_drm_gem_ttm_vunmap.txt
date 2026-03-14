@@ -1,0 +1,12 @@
+Function: void drm_gem_ttm_vunmap ( struct drm_gem_object * gem , struct iosys_map * map )
+
+vunmap ttm_buffer_object
+
+Parameters
+  struct drm_gem_object *gem
+    GEM object.
+  struct iosys_map *map
+    dma-buf mapping.
+
+Description
+  Unmaps a GEM object with ttm_bo_vunmap() . This function can be used as drm_gem_object_funcs.vmap callback.

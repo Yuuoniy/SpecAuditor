@@ -1,0 +1,14 @@
+Function: int rcu_read_lock_held ( void )
+
+might we be in RCU read-side critical section?
+
+Parameters
+  void
+    no arguments
+
+Description
+  If CONFIG_DEBUG_LOCK_ALLOC is selected, returns nonzero iff in an RCU
+read-side critical section.  In absence of CONFIG_DEBUG_LOCK_ALLOC,
+this assumes we are in an RCU read-side critical section unless it can
+prove otherwise.  This is useful for debug checks in functions that
+require that they be called within an RCU read-side critical section.

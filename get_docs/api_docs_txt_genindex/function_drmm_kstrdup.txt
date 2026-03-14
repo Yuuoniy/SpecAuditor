@@ -1,0 +1,16 @@
+Function: char * drmm_kstrdup ( struct drm_device * dev , const char * s , gfp_t gfp )
+
+drm_device managed kstrdup()
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  const char *s
+    0-terminated string to be duplicated
+  gfp_t gfp
+    GFP allocation flags
+
+Description
+  This is a drm_device managed version of kstrdup() . The allocated memory is
+automatically freed on the final drm_dev_put() and works exactly like a
+memory allocation obtained by drmm_kmalloc() .

@@ -1,0 +1,9 @@
+Function: struct padata_list
+
+one per work type per CPU
+
+Members
+  list
+    List head.
+  lock
+    List lock.

@@ -1,0 +1,7 @@
+Function: void blk_unregister_queue ( struct gendisk * disk )
+
+counterpart of blk_register_queue()
+
+Parameters
+  struct gendisk *disk
+    Disk of which the request queue should be unregistered from sysfs.

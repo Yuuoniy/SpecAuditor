@@ -1,0 +1,10 @@
+Function: void ata_eh_freeze_port ( struct ata_port * ap )
+
+EH helper to freeze port
+
+Parameters
+  struct ata_port *ap
+    ATA port to freeze
+
+Description
+  Freeze ap .

@@ -1,0 +1,11 @@
+Function: void lock_page ( struct page * page )
+
+Lock the folio containing this page.
+
+Parameters
+  struct page *page
+    The page to lock.
+
+Description
+  See folio_lock() for a description of what the lock protects.
+This is a legacy function and new code should probably use folio_lock() instead.

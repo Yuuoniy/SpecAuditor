@@ -1,0 +1,14 @@
+Struct: struct rkisp1_cif_isp_hst_config
+
+Configuration for Histogram statistics
+
+Members
+  mode
+    histogram mode (from enum rkisp1_cif_isp_histogram_mode )
+  histogram_predivider
+    process every stepsize pixel, all other pixels are
+skipped
+  meas_window
+    coordinates of the measure window
+  hist_weight
+    weighting factor for sub-windows

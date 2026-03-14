@@ -1,0 +1,7 @@
+Struct: struct drm_minor
+
+DRM device minor structure
+
+Members
+  struct drm_pending_event ¶
+    Event queued up for userspace to read

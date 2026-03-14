@@ -1,0 +1,14 @@
+Function: int devm_clk_bulk_get ( struct device * dev , int num_clks , struct clk_bulk_data * clks )
+
+managed get multiple clk consumers
+
+Parameters
+  struct device *dev
+    device for clock “consumer”
+  int num_clks
+    the number of clk_bulk_data
+  struct clk_bulk_data *clks
+    the clk_bulk_data table of consumer
+
+Description
+  Return 0 on success, an errno on failure.

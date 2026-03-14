@@ -1,0 +1,18 @@
+Function: int encode_rs16 ( struct rs_control * rsc , uint16_t * data , int len , uint16_t * par , uint16_t invmsk )
+
+Calculate the parity for data values (16bit data width)
+
+Parameters
+  struct rs_control *rsc
+    the rs control structure
+  uint16_t *data
+    data field of a given type
+  int len
+    data length
+  uint16_t *par
+    parity data, must be initialized by caller (usually all 0)
+  uint16_t invmsk
+    invert data mask (will be xored on data, not on parity!)
+
+Description
+  Each field in the data array contains up to symbol size bits of valid data.

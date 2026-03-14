@@ -1,0 +1,17 @@
+Function: void pcpu_chunk_refresh_hint ( struct pcpu_chunk * chunk , bool full_scan )
+
+updates metadata about a chunk
+
+Parameters
+  struct pcpu_chunk *chunk
+    chunk of interest
+  bool full_scan
+    if we should scan from the beginning
+
+Description
+  Iterates over the metadata blocks to find the largest contig area.
+A full scan can be avoided on the allocation path as this is triggered
+if we broke the contig_hint.  In doing so, the scan_hint will be before
+the contig_hint or after if the scan_hint == contig_hint.  This cannot
+be prevented on freeing as we want to find the largest area possibly
+spanning blocks.

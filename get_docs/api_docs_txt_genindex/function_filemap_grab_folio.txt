@@ -1,0 +1,14 @@
+Function: struct folio * filemap_grab_folio ( struct address_space * mapping , pgoff_t index )
+
+grab a folio from the page cache
+
+Parameters
+  struct address_space *mapping
+    The address space to search
+  pgoff_t index
+    The page index
+
+Description
+  Looks up the page cache entry at mapping & index . If no folio is found,
+a new folio is created. The folio is locked, marked as accessed, and
+returned.

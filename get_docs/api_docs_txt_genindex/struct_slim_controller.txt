@@ -1,0 +1,54 @@
+Struct: struct slim_controller
+
+Controls every instance of SLIMbus (similar to ‘master’ on SPI)
+
+Members
+  dev
+    Device interface to this driver
+  id
+    Board-specific number identifier for this controller/bus
+  name
+    Name for this controller
+  min_cg
+    Minimum clock gear supported by this controller (default value: 1)
+  max_cg
+    Maximum clock gear supported by this controller (default value: 10)
+  clkgear
+    Current clock gear in which this bus is running
+  laddr_ida
+    logical address id allocator
+  a_framer
+    Active framer which is clocking the bus managed by this controller
+  lock
+    Mutex protecting controller data structures
+  devices
+    Slim device list
+  tid_idr
+    tid id allocator
+  txn_lock
+    Lock to protect table of transactions
+  sched
+    scheduler structure used by the controller
+  xfer_msg
+    Transfer a message on this controller (this can be a broadcast
+control/status message like data channel setup, or a unicast message
+like value element read/write.
+  set_laddr
+    Setup logical address at laddr for the slave with elemental
+address e_addr. Drivers implementing controller will be expected to
+send unicast message to this device with its logical address.
+  get_laddr
+    It is possible that controller needs to set fixed logical
+address table and get_laddr can be used in that case so that controller
+can do this assignment. Use case is when the master is on the remote
+processor side, who is resposible for allocating laddr.
+  enable_stream
+    This function pointer implements controller-specific procedure
+to enable a stream.
+  disable_stream
+    This function pointer implements controller-specific procedure
+to disable stream.
+  wakeup
+    This function pointer implements controller-specific procedure
+to wake it up from clock-pause. Framework will call this to bring
+the controller out of clock pause.

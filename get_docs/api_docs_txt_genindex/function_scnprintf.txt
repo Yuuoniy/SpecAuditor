@@ -1,0 +1,17 @@
+Function: int scnprintf ( char * buf , size_t size , const char * fmt , ... )
+
+Format a string and place it in a buffer
+
+Parameters
+  char *buf
+    The buffer to place the result into
+  size_t size
+    The size of the buffer, including the trailing null space
+  const char *fmt
+    The format string to use
+  ...
+    Arguments for the format string
+
+Description
+  The return value is the number of characters written into buf not including
+the trailing ‘0’. If size is == 0 the function returns 0.

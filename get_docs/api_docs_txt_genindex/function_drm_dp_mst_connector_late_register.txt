@@ -1,0 +1,14 @@
+Function: int drm_dp_mst_connector_late_register ( struct drm_connector * connector , struct drm_dp_mst_port * port )
+
+Late MST connector registration
+
+Parameters
+  struct drm_connector *connector
+    The MST connector
+  struct drm_dp_mst_port *port
+    The MST port for this connector
+
+Description
+  Helper to register the remote aux device for this MST port. Drivers should
+call this from their mst connector’s late_register hook to enable MST aux
+devices.

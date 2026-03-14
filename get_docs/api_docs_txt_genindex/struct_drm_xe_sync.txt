@@ -1,0 +1,27 @@
+Struct: struct drm_xe_sync
+
+sync object
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  type
+    Type of the this sync object
+  flags
+    Sync Flags
+  {unnamed_union}
+    anonymous
+  handle
+    Handle for the object
+  addr
+    Address of user fence. When sync is passed in via exec
+IOCTL this is a GPU address in the VM. When sync passed in via
+VM bind IOCTL this is a user pointer. In either case, it is
+the users responsibility that this address is present and
+mapped when the user fence is signalled. Must be qword
+aligned.
+  timeline_value
+    Input for the timeline sync object. Needs to be
+different than 0 when used with DRM_XE_SYNC_TYPE_TIMELINE_SYNCOBJ .
+  reserved
+    Reserved

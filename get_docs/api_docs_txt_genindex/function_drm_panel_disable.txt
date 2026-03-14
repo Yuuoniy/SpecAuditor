@@ -1,0 +1,12 @@
+Function: void drm_panel_disable ( struct drm_panel * panel )
+
+disable a panel
+
+Parameters
+  struct drm_panel *panel
+    DRM panel
+
+Description
+  This will typically turn off the panel’s backlight or disable the display
+drivers. For smart panels it should still be possible to communicate with
+the integrated circuitry via any command bus after this call.

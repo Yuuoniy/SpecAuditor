@@ -1,0 +1,11 @@
+Function: bool __iio_device_claim_direct ( struct iio_dev * indio_dev )
+
+Keep device in direct mode
+
+Parameters
+  struct iio_dev *indio_dev
+    the iio_dev associated with the device
+
+Description
+  If the device is in direct mode it is guaranteed to stay
+that way until __iio_device_release_direct() is called.

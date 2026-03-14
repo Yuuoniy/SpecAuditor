@@ -1,0 +1,14 @@
+Function: void security_add_hooks ( struct security_hook_list * hooks , int count , const struct lsm_id * lsmid )
+
+Add a modules hooks to the hook lists.
+
+Parameters
+  struct security_hook_list *hooks
+    the hooks to add
+  int count
+    the number of hooks to add
+  const struct lsm_id *lsmid
+    the identification information for the security module
+
+Description
+  Each LSM has to register its hooks with the infrastructure.

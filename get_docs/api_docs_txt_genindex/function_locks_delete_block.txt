@@ -1,0 +1,10 @@
+Function: int locks_delete_block ( struct file_lock * waiter )
+
+stop waiting for a file lock
+
+Parameters
+  struct file_lock *waiter
+    the lock which was waiting
+
+Description
+  lockd/nfsd need to disconnect the lock while working on it.

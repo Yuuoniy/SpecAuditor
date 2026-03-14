@@ -1,0 +1,9 @@
+Macro: DRM_MODE_RES_MM
+
+
+
+Parameters
+  res
+    The resolution in pixel
+  dpi
+    The number of dots per inch

@@ -1,0 +1,10 @@
+Function: struct parport * parport_find_number ( int number )
+
+find a parallel port by number
+
+Parameters
+  int number
+    parallel port number
+
+Description
+  This returns the parallel port with the specified number, or NULL if there is none.

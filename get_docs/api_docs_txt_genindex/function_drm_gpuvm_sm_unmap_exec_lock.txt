@@ -1,0 +1,17 @@
+Function: int drm_gpuvm_sm_unmap_exec_lock ( struct drm_gpuvm * gpuvm , struct drm_exec * exec , u64 req_addr , u64 req_range )
+
+locks the objects touched by drm_gpuvm_sm_unmap()
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm representing the GPU VA space
+  struct drm_exec *exec
+    the drm_exec locking context
+  u64 req_addr
+    the start address of the range to unmap
+  u64 req_range
+    the range of the mappings to unmap
+
+Description
+  This function locks ( drm_exec_lock_obj() ) objects that will be unmapped/
+remapped by drm_gpuvm_sm_unmap() .

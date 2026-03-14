@@ -1,0 +1,15 @@
+Function: void * xa_tag_pointer ( void * p , unsigned long tag )
+
+Create an XArray entry for a tagged pointer.
+
+Parameters
+  void *p
+    Plain pointer.
+  unsigned long tag
+    Tag value (0, 1 or 3).
+
+Description
+  If the user of the XArray prefers, they can tag their pointers instead
+of storing value entries.  Three tags are available (0, 1 and 3).
+These are distinct from the xa_mark_t as they are not replicated up
+through the array and cannot be searched for.

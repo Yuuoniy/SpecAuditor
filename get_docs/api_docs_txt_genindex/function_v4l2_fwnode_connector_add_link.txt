@@ -1,0 +1,14 @@
+Function: int v4l2_fwnode_connector_add_link ( struct fwnode_handle * fwnode , struct v4l2_fwnode_connector * connector )
+
+add a link between a connector node and a v4l2-subdev node.
+
+Parameters
+  struct fwnode_handle *fwnode
+    pointer to the subdev endpoint’s fwnode handle where the connector
+is connected to
+  struct v4l2_fwnode_connector *connector
+    pointer to the V4L2 fwnode connector data structure
+
+Description
+  Add a new struct v4l2_connector_link link to the struct v4l2_fwnode_connector connector links list. The link local_node
+points to the connector node, the remote_node to the host v4l2 (sub)dev.

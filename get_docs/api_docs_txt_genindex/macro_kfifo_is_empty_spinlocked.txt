@@ -1,0 +1,9 @@
+Macro: kfifo_is_empty_spinlocked
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used
+  lock
+    spinlock to be used for locking

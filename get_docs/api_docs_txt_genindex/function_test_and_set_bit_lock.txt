@@ -1,0 +1,14 @@
+Function: bool test_and_set_bit_lock ( long nr , volatile unsigned long * addr )
+
+Set a bit and return its old value, for lock
+
+Parameters
+  long nr
+    Bit to set
+  volatile unsigned long *addr
+    Address to count from
+
+Description
+  This operation is atomic and provides acquire barrier semantics if
+the returned value is 0.
+It can be used to implement bit locks.

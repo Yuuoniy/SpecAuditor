@@ -1,0 +1,11 @@
+Function: void i2c_put_dma_safe_msg_buf ( u8 * buf , struct i2c_msg * msg , bool xferred )
+
+release DMA safe buffer and sync with i2c_msg
+
+Parameters
+  u8 *buf
+    the buffer obtained from i2c_get_dma_safe_msg_buf() . May be NULL.
+  struct i2c_msg *msg
+    the message which the buffer corresponds to
+  bool xferred
+    bool saying if the message was transferred

@@ -1,0 +1,10 @@
+Function: void ib_unregister_device ( struct ib_device * ib_dev )
+
+Unregister an IB device
+
+Parameters
+  struct ib_device *ib_dev
+    The device to unregister
+
+Description
+  Unregister an IB device.  All clients will receive a remove callback.

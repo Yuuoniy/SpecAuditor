@@ -1,0 +1,10 @@
+Function: int dwc3_event_buffers_setup ( struct dwc3 * dwc )
+
+setup our allocated event buffers
+
+Parameters
+  struct dwc3 *dwc
+    pointer to our controller context structure
+
+Description
+  Returns 0 on success otherwise negative errno.

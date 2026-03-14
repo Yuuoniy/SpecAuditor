@@ -1,0 +1,12 @@
+Function: int __media_device_register ( struct media_device * mdev , struct module * owner )
+
+Registers a media device element
+
+Parameters
+  struct media_device *mdev
+    pointer to struct media_device
+  struct module *owner
+    should be filled with THIS_MODULE
+
+Description
+  Users, should, instead, call the media_device_register() macro.

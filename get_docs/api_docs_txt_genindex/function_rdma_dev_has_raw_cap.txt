@@ -1,0 +1,12 @@
+Function: bool rdma_dev_has_raw_cap ( const struct ib_device * dev )
+
+Returns whether a specified rdma device has CAP_NET_RAW capability or not.
+
+Parameters
+  const struct ib_device *dev
+    Pointer to rdma device whose capability to be checked
+
+Description
+  Returns true if a rdma device’s owning user namespace has CAP_NET_RAW
+capability, otherwise false. When rdma subsystem is in legacy shared network,
+namespace mode, the default net namespace is considered.

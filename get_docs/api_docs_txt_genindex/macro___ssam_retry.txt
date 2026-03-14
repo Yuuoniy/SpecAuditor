@@ -1,0 +1,16 @@
+Macro: __ssam_retry
+
+
+
+Parameters
+  request
+    The request function to execute. Must return an integer.
+  n
+    Number of tries.
+  args...
+    Arguments for the request function.
+
+Description
+  Executes the given request function, i.e. calls request . In case the
+request returns -EREMOTEIO (indicates I/O error) or -ETIMEDOUT (request
+or underlying packet timed out), request will be re-executed again, up to n times in total.

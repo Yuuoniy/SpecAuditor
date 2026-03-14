@@ -1,0 +1,15 @@
+Function: int nand_choose_best_nvddr_timings ( struct nand_chip * chip , struct nand_interface_config * iface , struct nand_nvddr_timings * spec_timings )
+
+Pick up the best NVDDR timings that both the NAND controller and the NAND chip support
+
+Parameters
+  struct nand_chip *chip
+    the NAND chip
+  struct nand_interface_config *iface
+    the interface configuration (can eventually be updated)
+  struct nand_nvddr_timings *spec_timings
+    specific timings, when not fitting the ONFI specification
+
+Description
+  If specific timings are provided, use them. Otherwise, retrieve supported
+timing modes from ONFI information.

@@ -1,0 +1,9 @@
+Function: struct input_mt_pos
+
+contact position
+
+Members
+  x
+    horizontal coordinate
+  y
+    vertical coordinate

@@ -1,0 +1,12 @@
+Function: int media_graph_walk_init ( struct media_graph * graph , struct media_device * mdev )
+
+Allocate resources used by graph walk.
+
+Parameters
+  struct media_graph *graph
+    Media graph structure that will be used to walk the graph
+  struct media_device *mdev
+    Pointer to the media_device that contains the object
+
+Description
+  This function is deprecated, use media_pipeline_for_each_pad() instead.

@@ -1,0 +1,16 @@
+Function: bool folio_xor_flags_has_waiters ( struct folio * folio , unsigned long mask )
+
+Change some folio flags.
+
+Parameters
+  struct folio *folio
+    The folio.
+  unsigned long mask
+    Bits set in this word will be changed.
+
+Description
+  This must only be used for flags which are changed with the folio
+lock held.  For example, it is unsafe to use for PG_dirty as that
+can be set without the folio lock held.  It can also only be used
+on flags which are in the range 0-6 as some of the implementations
+only affect those bits.

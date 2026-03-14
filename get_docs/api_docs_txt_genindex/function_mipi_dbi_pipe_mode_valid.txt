@@ -1,0 +1,13 @@
+Function: enum drm_mode_status mipi_dbi_pipe_mode_valid ( struct drm_simple_display_pipe * pipe , const struct drm_display_mode * mode )
+
+MIPI DBI mode-valid helper
+
+Parameters
+  struct drm_simple_display_pipe *pipe
+    Simple display pipe
+  const struct drm_display_mode *mode
+    The mode to test
+
+Description
+  This function validates a given display mode against the MIPI DBI’s hardware
+display. Drivers can use this as their drm_simple_display_pipe_funcs->mode_valid callback.

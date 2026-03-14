@@ -1,0 +1,20 @@
+Macro: mipi_dsi_dual
+
+
+
+Parameters
+  _func
+    MIPI DSI function to pass context and arguments into
+  _ctx
+    Context for multiple DSI transactions
+  _dsi1
+    First DSI interface to act as recipient of the MIPI DSI command
+  _dsi2
+    Second DSI interface to act as recipient of the MIPI DSI command
+  ...
+    Arguments to pass to MIPI DSI function or macro
+
+Description
+  This macro will send the specified MIPI DSI command twice, once per each of
+the two interfaces supplied. This is useful for reducing duplication of code
+in panel drivers which use two parallel serial interfaces.

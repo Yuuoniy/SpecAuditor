@@ -1,0 +1,20 @@
+Struct: struct rkisp1_cif_isp_cproc_config
+
+Configuration used by Color Processing
+
+Members
+  c_out_range
+    Chrominance pixel clipping range at output.
+(0 for limit, 1 for full)
+  y_in_range
+    Luminance pixel clipping range at output.
+  y_out_range
+    Luminance pixel clipping range at output.
+  contrast
+    00~ff, 0.0~1.992
+  brightness
+    80~7F, -128~+127
+  sat
+    saturation, 00~FF, 0.0~1.992
+  hue
+    80~7F, -90~+87.188

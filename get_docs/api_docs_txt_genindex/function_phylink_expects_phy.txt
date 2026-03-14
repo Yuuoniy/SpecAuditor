@@ -1,0 +1,11 @@
+Function: bool phylink_expects_phy ( struct phylink * pl )
+
+Determine if phylink expects a phy to be attached
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+
+Description
+  When using fixed-link mode, or in-band mode with 1000base-X or 2500base-X,
+no PHY is needed.

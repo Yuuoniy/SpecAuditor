@@ -1,0 +1,7 @@
+Function: u8 vema_get_vport_num ( struct opa_vnic_vema_mad * recvd_mad )
+
+Get the vnic from the mad
+
+Parameters
+  struct opa_vnic_vema_mad *recvd_mad
+    Received mad

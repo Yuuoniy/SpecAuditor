@@ -1,0 +1,16 @@
+Function: void * devm_kmalloc ( struct device * dev , size_t size , gfp_t gfp )
+
+Resource-managed kmalloc
+
+Parameters
+  struct device *dev
+    Device to allocate memory for
+  size_t size
+    Allocation size
+  gfp_t gfp
+    Allocation gfp flags
+
+Description
+  Managed kmalloc.  Memory allocated with this function is
+automatically freed on driver detach.  Like all other devres
+resources, guaranteed alignment is unsigned long long.

@@ -1,0 +1,10 @@
+Function: int gpiod_get_raw_value_cansleep ( const struct gpio_desc * desc )
+
+return a gpio’s raw value
+
+Parameters
+  const struct gpio_desc *desc
+    gpio whose value will be returned
+
+Description
+  This function is to be called from contexts that can sleep.

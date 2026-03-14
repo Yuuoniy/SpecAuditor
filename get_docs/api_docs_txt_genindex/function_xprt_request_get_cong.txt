@@ -1,0 +1,12 @@
+Function: bool xprt_request_get_cong ( struct rpc_xprt * xprt , struct rpc_rqst * req )
+
+Request congestion control credits
+
+Parameters
+  struct rpc_xprt *xprt
+    pointer to transport
+  struct rpc_rqst *req
+    pointer to RPC request
+
+Description
+  Useful for transports that require congestion control.

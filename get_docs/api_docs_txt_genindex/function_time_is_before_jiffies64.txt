@@ -1,0 +1,7 @@
+Function: time_is_before_jiffies64
+
+
+
+Parameters
+  a
+    time (__u64) to compare to jiffies_64

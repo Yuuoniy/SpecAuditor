@@ -1,0 +1,16 @@
+Function: void blk_add_trace_bio_remap ( void * ignore , struct bio * bio , dev_t dev , sector_t from )
+
+Add a trace for a bio-remap operation
+
+Parameters
+  void *ignore
+    trace callback data parameter (not used)
+  struct bio *bio
+    the source bio
+  dev_t dev
+    source device
+  sector_t from
+    source sector
+
+Description
+  Called after a bio is remapped to a different device and/or sector.

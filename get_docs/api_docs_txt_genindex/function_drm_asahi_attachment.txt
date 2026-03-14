@@ -1,0 +1,13 @@
+Function: struct drm_asahi_attachment
+
+Describe an “attachment”.
+
+Members
+  pointer
+    Base address of the attachment
+  size
+    Size of the attachment in bytes
+  pad
+    MBZ
+  flags
+    MBZ

@@ -1,0 +1,14 @@
+Function: void eraser ( u8 c , const struct tty_struct * tty )
+
+handle erase function
+
+Parameters
+  u8 c
+    character input
+  const struct tty_struct *tty
+    terminal device
+
+Description
+  Perform erase and necessary output when an erase character is present in the
+stream from the driver layer. Handles the complexities of UTF-8 multibyte
+symbols.

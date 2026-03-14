@@ -1,0 +1,12 @@
+Function: void tty_port_raise_dtr_rts ( struct tty_port * port )
+
+Raise DTR/RTS
+
+Parameters
+  struct tty_port *port
+    tty port
+
+Description
+  Wrapper for the DTR/RTS raise logic. For the moment this is used to hide
+some internal details. This will eventually become entirely internal to the
+tty port.

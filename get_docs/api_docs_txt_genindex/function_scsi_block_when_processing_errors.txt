@@ -1,0 +1,11 @@
+Function: int scsi_block_when_processing_errors ( struct scsi_device * sdev )
+
+Prevent cmds from being queued.
+
+Parameters
+  struct scsi_device *sdev
+    Device on which we are performing recovery.
+
+Description
+  We block until the host is out of error recovery, and then check to
+see whether the host or the device is offline.

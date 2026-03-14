@@ -1,0 +1,16 @@
+Function: struct reset_control * of_reset_control_get_shared ( struct device_node * node , const char * id )
+
+Lookup and obtain a shared reference to a reset controller.
+
+Parameters
+  struct device_node *node
+    device to be reset by the controller
+  const char *id
+    reset line name
+
+Description
+  When a reset-control is shared, the behavior of reset_control_assert /
+deassert is changed, the reset-core will keep track of a deassert_count
+and only (re-)assert the reset after reset_control_assert has been called
+as many times as reset_control_deassert was called. Also see the remark
+about shared reset-controls in the reset_control_assert docs.

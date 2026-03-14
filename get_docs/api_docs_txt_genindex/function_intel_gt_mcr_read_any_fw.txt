@@ -1,0 +1,16 @@
+Function: u32 intel_gt_mcr_read_any_fw ( struct intel_gt * gt , i915_mcr_reg_t reg )
+
+reads one instance of an MCR register
+
+Parameters
+  struct intel_gt *gt
+    GT structure
+  i915_mcr_reg_t reg
+    register to read
+
+Description
+  Reads a GT MCR register.  The read will be steered to a non-terminated
+instance (i.e., one that isn’t fused off or powered down by power gating).
+This function assumes the caller is already holding any necessary forcewake
+domains; use intel_gt_mcr_read_any() in cases where forcewake should be
+obtained automatically.

@@ -1,0 +1,17 @@
+Struct: struct stratix10_svc_client_msg
+
+message sent by client to service
+
+Members
+  payload
+    starting address of data need be processed
+  payload_length
+    to be processed data size in bytes
+  payload_output
+    starting address of processed data
+  payload_length_output
+    processed data size in bytes
+  command
+    service command
+  arg
+    args to be passed via registers and not physically mapped buffers

@@ -1,0 +1,12 @@
+Function: void i915_oa_stream_disable ( struct i915_perf_stream * stream )
+
+handle I915_PERF_IOCTL_DISABLE for OA stream
+
+Parameters
+  struct i915_perf_stream *stream
+    An i915 perf stream opened for OA metrics
+
+Description
+  Stops the OA unit from periodically writing counter reports into the
+circular OA buffer. This also stops the hrtimer that periodically checks for
+data in the circular OA buffer, for notifying userspace.

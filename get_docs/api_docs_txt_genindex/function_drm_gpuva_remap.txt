@@ -1,0 +1,14 @@
+Function: void drm_gpuva_remap ( struct drm_gpuva * prev , struct drm_gpuva * next , struct drm_gpuva_op_remap * op )
+
+helper to remap a drm_gpuva according to a drm_gpuva_op_remap
+
+Parameters
+  struct drm_gpuva *prev
+    the drm_gpuva to remap when keeping the start of a mapping
+  struct drm_gpuva *next
+    the drm_gpuva to remap when keeping the end of a mapping
+  struct drm_gpuva_op_remap *op
+    the drm_gpuva_op_remap to initialize prev and next with
+
+Description
+  Removes the currently mapped drm_gpuva and remaps it using prev and/or next .

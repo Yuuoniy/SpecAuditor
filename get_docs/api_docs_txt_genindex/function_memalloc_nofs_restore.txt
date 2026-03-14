@@ -1,0 +1,12 @@
+Function: void memalloc_nofs_restore ( unsigned int flags )
+
+Ends the implicit GFP_NOFS scope.
+
+Parameters
+  unsigned int flags
+    Flags to restore.
+
+Description
+  Ends the implicit GFP_NOFS scope started by memalloc_nofs_save function.
+Always make sure that the given flags is the return value from the
+pairing memalloc_nofs_save call.

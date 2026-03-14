@@ -1,0 +1,11 @@
+Struct: struct snd_compr_params
+
+compressed stream params
+
+Members
+  buffer
+    buffer description
+  codec
+    codec parameters
+  no_wake_mode
+    dont wake on fragment elapsed

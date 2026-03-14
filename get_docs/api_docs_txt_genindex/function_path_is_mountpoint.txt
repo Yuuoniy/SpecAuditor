@@ -1,0 +1,14 @@
+Function: bool path_is_mountpoint ( const struct path * path )
+
+Check if path is a mount in the current namespace.
+
+Parameters
+  const struct path *path
+    path to check
+
+Description
+  d_mountpoint() can only be used reliably to establish if a dentry is
+not mounted in any namespace and that common case is handled inline. d_mountpoint() isn’t aware of the possibility there may be multiple
+mounts using a given dentry in a different namespace. This function
+checks if the passed in path is a mountpoint rather than the dentry
+alone.

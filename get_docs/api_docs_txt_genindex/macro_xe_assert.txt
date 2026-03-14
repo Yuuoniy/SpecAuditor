@@ -1,0 +1,13 @@
+Macro: xe_assert
+
+
+
+Parameters
+  xe
+    the struct xe_device pointer to which condition applies
+  condition
+    condition to check
+
+Description
+  xe_assert() uses drm_WARN to emit a warning and print additional information
+that could be read from the xe pointer if provided condition is false.

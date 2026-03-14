@@ -1,0 +1,12 @@
+Function: int vb2_streamoff ( struct vb2_queue * q , enum v4l2_buf_type type )
+
+stop streaming
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  enum v4l2_buf_type type
+    type argument passed from userspace to vidioc_streamoff handler
+
+Description
+  Should be called from vidioc_streamoff handler of a driver.

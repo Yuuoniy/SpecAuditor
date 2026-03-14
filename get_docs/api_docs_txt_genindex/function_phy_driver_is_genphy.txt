@@ -1,0 +1,7 @@
+Function: bool phy_driver_is_genphy ( struct phy_device * phydev )
+
+Convenience function to check whether PHY is driven by one of the generic PHY drivers
+
+Parameters
+  struct phy_device *phydev
+    The phy_device struct

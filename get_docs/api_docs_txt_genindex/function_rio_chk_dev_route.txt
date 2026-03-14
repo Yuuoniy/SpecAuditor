@@ -1,0 +1,15 @@
+Function: int rio_chk_dev_route ( struct rio_dev * rdev , struct rio_dev * * nrdev , int * npnum )
+
+Validate route to the specified device.
+
+Parameters
+  struct rio_dev *rdev
+    RIO device failed to respond
+  struct rio_dev **nrdev
+    Last active device on the route to rdev
+  int *npnum
+    nrdev’s port number on the route to rdev
+
+Description
+  Follows a route to the specified RIO device to determine the last available
+device (and corresponding RIO port) on the route.

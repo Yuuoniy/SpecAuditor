@@ -1,0 +1,13 @@
+Struct: struct ipu3_uapi_shd_black_level_config
+
+Black level correction
+
+Members
+  bl_r
+    Bios values for green red. s11 range [-2048, 2047].
+  bl_gr
+    Bios values for green blue. s11 range [-2048, 2047].
+  bl_gb
+    Bios values for red. s11 range [-2048, 2047].
+  bl_b
+    Bios values for blue. s11 range [-2048, 2047].

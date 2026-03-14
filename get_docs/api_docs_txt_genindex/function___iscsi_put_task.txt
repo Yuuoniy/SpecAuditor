@@ -1,0 +1,10 @@
+Function: void __iscsi_put_task ( struct iscsi_task * task )
+
+drop the refcount on a task
+
+Parameters
+  struct iscsi_task *task
+    iscsi_task to drop the refcount on
+
+Description
+  The back_lock must be held when calling in case it frees the task.

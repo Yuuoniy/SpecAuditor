@@ -1,0 +1,19 @@
+Macro: DRM_MODE_PAGE_FLIP_EVENT
+
+
+
+Members
+  height
+    buffer height in pixels
+  width
+    buffer width in pixels
+  bpp
+    bits per pixel
+  flags
+    must be zero
+  handle
+    buffer object handle
+  pitch
+    number of bytes between two consecutive lines
+  size
+    size of the whole buffer in bytes

@@ -1,0 +1,14 @@
+Function: int cxl_decoder_init ( struct cxl_port * port , struct cxl_decoder * cxld )
+
+Common decoder setup / initialization
+
+Parameters
+  struct cxl_port *port
+    owning port of this decoder
+  struct cxl_decoder *cxld
+    common decoder properties to initialize
+
+Description
+  A port may contain one or more decoders. Each of those decoders
+enable some address space for CXL.mem utilization. A decoder is
+expected to be configured by the caller before registering via cxl_decoder_add()

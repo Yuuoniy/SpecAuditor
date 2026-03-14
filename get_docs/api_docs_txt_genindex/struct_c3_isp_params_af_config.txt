@@ -1,0 +1,19 @@
+Struct: struct c3_isp_params_af_config
+
+Stats settings for auto-focus
+
+Members
+  header
+    the C3 ISP parameters block header
+  tap_point
+    the tap point from enum c3_isp_params_af_tap_point
+  horiz_zones_num
+    active number of hotizontal zones [0..17]
+  vert_zones_num
+    active number of vertical zones [0..15]
+  reserved
+    applications must zero this array
+  horiz_coord
+    the horizontal coordinate of points on the diagonal [0..2888]
+  vert_coord
+    the vertical coordinate of points on the diagonal [0..2240]

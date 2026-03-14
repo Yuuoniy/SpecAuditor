@@ -1,0 +1,12 @@
+Function: int srpt_ch_qp_rtr ( struct srpt_rdma_ch * ch , struct ib_qp * qp )
+
+change the state of a channel to ‘ready to receive’ (RTR)
+
+Parameters
+  struct srpt_rdma_ch *ch
+    channel of the queue pair.
+  struct ib_qp *qp
+    queue pair to change the state of.
+
+Description
+  Returns zero upon success and a negative value upon failure.

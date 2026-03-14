@@ -1,0 +1,13 @@
+Function: int devm_snd_soc_register_card ( struct device * dev , struct snd_soc_card * card )
+
+resource managed card registration
+
+Parameters
+  struct device *dev
+    Device used to manage card
+  struct snd_soc_card *card
+    Card to register
+
+Description
+  Register a card with automatic unregistration when the device is
+unregistered.

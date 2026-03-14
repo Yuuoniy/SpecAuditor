@@ -1,0 +1,9 @@
+Function: void irq_domain_free_irqs ( unsigned int virq , unsigned int nr_irqs )
+
+Free IRQ number and associated data structures
+
+Parameters
+  unsigned int virq
+    base IRQ number
+  unsigned int nr_irqs
+    number of IRQs to free

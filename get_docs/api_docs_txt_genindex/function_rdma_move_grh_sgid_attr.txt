@@ -1,0 +1,21 @@
+Function: void rdma_move_grh_sgid_attr ( struct rdma_ah_attr * attr , union ib_gid * dgid , u32 flow_label , u8 hop_limit , u8 traffic_class , const struct ib_gid_attr * sgid_attr )
+
+Sets the sgid attribute of GRH, taking ownership of the reference
+
+Parameters
+  struct rdma_ah_attr *attr
+    Pointer to AH attribute structure
+  union ib_gid *dgid
+    Destination GID
+  u32 flow_label
+    Flow label
+  u8 hop_limit
+    Hop limit
+  u8 traffic_class
+    traffic class
+  const struct ib_gid_attr *sgid_attr
+    Pointer to SGID attribute
+
+Description
+  This takes ownership of the sgid_attr reference. The caller must ensure rdma_destroy_ah_attr() is called before destroying the rdma_ah_attr after
+calling this function.

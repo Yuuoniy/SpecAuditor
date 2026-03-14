@@ -1,0 +1,13 @@
+Function: struct device_node * of_get_available_child_by_name ( const struct device_node * node , const char * name )
+
+Find the available child node by name for a given parent
+
+Parameters
+  const struct device_node *node
+    parent node
+  const char *name
+    child name to look for.
+
+Description
+  This function looks for child node for given matching name and checks the
+device’s availability for use.

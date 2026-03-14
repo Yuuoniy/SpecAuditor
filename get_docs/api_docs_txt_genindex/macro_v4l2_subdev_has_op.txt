@@ -1,0 +1,11 @@
+Macro: v4l2_subdev_has_op
+
+
+
+Parameters
+  sd
+    pointer to the struct v4l2_subdev
+  o
+    The group of callback functions in struct v4l2_subdev_ops which f is a part of.
+  f
+    callback function to be checked for its existence.

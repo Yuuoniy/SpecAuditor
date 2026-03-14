@@ -1,0 +1,13 @@
+Function: void drm_atomic_helper_bridge_destroy_state ( struct drm_bridge * bridge , struct drm_bridge_state * state )
+
+Destroy a bridge state object
+
+Parameters
+  struct drm_bridge *bridge
+    the bridge this state refers to
+  struct drm_bridge_state *state
+    bridge state to destroy
+
+Description
+  Destroys a bridge state previously created by drm_atomic_helper_bridge_reset`() or :c:type:`drm_atomic_helper_bridge_duplicate_state`(). This helper is meant to be used as a bridge :c:type:`drm_bridge_funcs.atomic_destroy_state hook for bridges
+that don’t subclass the bridge state.

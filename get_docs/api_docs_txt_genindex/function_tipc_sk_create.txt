@@ -1,0 +1,17 @@
+Function: int tipc_sk_create ( struct net * net , struct socket * sock , int protocol , int kern )
+
+create a TIPC socket
+
+Parameters
+  struct net *net
+    network namespace (must be default network)
+  struct socket *sock
+    pre-allocated socket structure
+  int protocol
+    protocol indicator (must be 0)
+  int kern
+    caused by kernel or by userspace?
+
+Description
+  This routine creates additional data structures used by the TIPC socket,
+initializes them, and links them together.

@@ -1,0 +1,20 @@
+.git
+.gitignore
+.pytest_cache
+.vscode
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+artifact/results
+artifact/config/*.env
+scripts/__pycache__
+scripts/utils/__pycache__
+sp2026c2-paper1186 (1).pdf
+buggy_function_list.txt
+index.html
+task_plan.md
+findings.md
+progress.md
+docs/plans

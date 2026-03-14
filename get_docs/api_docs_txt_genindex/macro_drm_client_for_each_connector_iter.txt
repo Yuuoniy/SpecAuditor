@@ -1,0 +1,13 @@
+Macro: drm_client_for_each_connector_iter
+
+
+
+Parameters
+  connector
+    struct drm_connector pointer used as cursor
+  iter
+    struct drm_connector_list_iter
+
+Description
+  This iterates the connectors that are useable for internal clients (excludes
+writeback connectors).

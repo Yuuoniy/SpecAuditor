@@ -1,0 +1,14 @@
+Function: int security_inode_get_acl ( struct mnt_idmap * idmap , struct dentry * dentry , const char * acl_name )
+
+Check if reading posix acls is allowed
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount
+  struct dentry *dentry
+    file
+  const char *acl_name
+    acl name
+
+Description
+  Check permission before getting osix acls, the posix acls are identified by acl_name .

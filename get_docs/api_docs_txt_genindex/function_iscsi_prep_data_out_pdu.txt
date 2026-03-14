@@ -1,0 +1,11 @@
+Function: void iscsi_prep_data_out_pdu ( struct iscsi_task * task , struct iscsi_r2t_info * r2t , struct iscsi_data * hdr )
+
+initialize Data-Out
+
+Parameters
+  struct iscsi_task *task
+    scsi command task
+  struct iscsi_r2t_info *r2t
+    R2T info
+  struct iscsi_data *hdr
+    iscsi data in pdu

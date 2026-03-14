@@ -1,0 +1,25 @@
+Struct: struct tipc_bc_base
+
+base structure for keeping broadcast send state
+
+Members
+  link
+    broadcast send link structure
+  inputq
+    data input queue; will only carry SOCK_WAKEUP messages
+  dests
+    array keeping number of reachable destinations per bearer
+  primary_bearer
+    a bearer having links to all broadcast destinations, if any
+  bcast_support
+    indicates if primary bearer, if any, supports broadcast
+  force_bcast
+    forces broadcast for multicast traffic
+  rcast_support
+    indicates if all peer nodes support replicast
+  force_rcast
+    forces replicast for multicast traffic
+  rc_ratio
+    dest count as percentage of cluster size where send method changes
+  bc_threshold
+    calculated from rc_ratio; if dests > threshold use broadcast

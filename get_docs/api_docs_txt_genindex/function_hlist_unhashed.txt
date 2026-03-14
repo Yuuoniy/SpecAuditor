@@ -1,0 +1,12 @@
+Function: int hlist_unhashed ( const struct hlist_node * h )
+
+Has node been removed from list and reinitialized?
+
+Parameters
+  const struct hlist_node *h
+    Node to be checked
+
+Description
+  Not that not all removal functions will leave a node in unhashed
+state.  For example, hlist_nulls_del_init_rcu() does leave the
+node in unhashed state, but hlist_nulls_del() does not.

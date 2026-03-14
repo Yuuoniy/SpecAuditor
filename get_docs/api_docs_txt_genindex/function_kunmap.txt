@@ -1,0 +1,11 @@
+Function: void kunmap ( const struct page * page )
+
+Unmap the virtual address mapped by kmap()
+
+Parameters
+  const struct page *page
+    Pointer to the page which was mapped by kmap()
+
+Description
+  Counterpart to kmap() . A NOOP for CONFIG_HIGHMEM=n and for mappings of
+pages in the low memory area.

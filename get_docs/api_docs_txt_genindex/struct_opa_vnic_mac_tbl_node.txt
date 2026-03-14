@@ -1,0 +1,11 @@
+Struct: struct opa_vnic_mac_tbl_node
+
+OPA VNIC mac table node
+
+Members
+  hlist
+    hash list handle
+  index
+    index of entry in the mac table
+  entry
+    entry in the table

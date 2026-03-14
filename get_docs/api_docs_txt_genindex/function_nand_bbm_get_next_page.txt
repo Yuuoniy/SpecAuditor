@@ -1,0 +1,14 @@
+Function: int nand_bbm_get_next_page ( struct nand_chip * chip , int page )
+
+Get the next page for bad block markers
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+  int page
+    First page to start checking for bad block marker usage
+
+Description
+  Returns an integer that corresponds to the page offset within a block, for
+a page that is used to store bad block markers. If no more pages are
+available, -EINVAL is returned.

@@ -1,0 +1,17 @@
+Function: void intel_psr_flush ( struct intel_display * display , unsigned frontbuffer_bits , enum fb_op_origin origin )
+
+Flush PSR
+
+Parameters
+  struct intel_display *display
+    display device
+  unsigned frontbuffer_bits
+    frontbuffer plane tracking bits
+  enum fb_op_origin origin
+    which operation caused the flush
+
+Description
+  Since the hardware frontbuffer tracking has gaps we need to integrate
+with the software frontbuffer tracking. This function gets called every
+time frontbuffer rendering has completed and flushed out to memory. PSR
+can be enabled again if no other frontbuffer relevant to PSR is dirty.

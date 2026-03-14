@@ -1,0 +1,12 @@
+Function: void drm_class_device_unregister ( struct device * dev )
+
+unregister device with the DRM sysfs class
+
+Parameters
+  struct device *dev
+    device to unregister
+
+Description
+  Unregisters a struct device from the DRM sysfs class. Essentially only used
+by ttm to have a place for its global settings. Drivers should never use
+this.

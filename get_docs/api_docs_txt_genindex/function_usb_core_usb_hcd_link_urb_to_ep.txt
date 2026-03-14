@@ -1,0 +1,14 @@
+Function: int usb_hcd_link_urb_to_ep ( struct usb_hcd * hcd , struct urb * urb )
+
+add an URB to its endpoint queue
+
+Parameters
+  struct usb_hcd *hcd
+    host controller to which urb was submitted
+  struct urb *urb
+    URB being submitted
+
+Description
+  Host controller drivers should call this routine in their enqueue() method.  The HCD’s private spinlock must be held and interrupts must
+be disabled.  The actions carried out here are required for URB
+submission, as well as for endpoint shutdown and for usb_kill_urb.

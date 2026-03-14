@@ -1,0 +1,11 @@
+Function: bool drm_crtc_handle_vblank ( struct drm_crtc * crtc )
+
+handle a vblank event
+
+Parameters
+  struct drm_crtc *crtc
+    where this event occurred
+
+Description
+  Drivers should call this routine in their vblank interrupt handlers to
+update the vblank counter and send any signals that may be pending.

@@ -1,0 +1,13 @@
+Function: void pci_release_selected_regions ( struct pci_dev * pdev , int bars )
+
+Release selected PCI I/O and memory resources
+
+Parameters
+  struct pci_dev *pdev
+    PCI device whose resources were previously reserved
+  int bars
+    Bitmask of BARs to be released
+
+Description
+  Release selected PCI I/O and memory resources previously reserved.
+Call this function only after all use of the PCI regions has ceased.

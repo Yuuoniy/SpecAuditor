@@ -1,0 +1,14 @@
+Function: int xdr_reserve_space_vec ( struct xdr_stream * xdr , size_t nbytes )
+
+Reserves a large amount of buffer space for sending
+
+Parameters
+  struct xdr_stream *xdr
+    pointer to xdr_stream
+  size_t nbytes
+    number of bytes to reserve
+
+Description
+  The size argument passed to xdr_reserve_space() is determined based
+on the number of bytes remaining in the current page to avoid
+invalidating iov_base pointers when xdr_commit_encode() is called.

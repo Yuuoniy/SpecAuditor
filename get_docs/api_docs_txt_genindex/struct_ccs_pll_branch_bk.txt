@@ -1,0 +1,13 @@
+Struct: struct ccs_pll_branch_bk
+
+CCS PLL configuration (back)
+
+Members
+  sys_clk_div
+    System clock divider
+  pix_clk_div
+    Pixel clock divider
+  sys_clk_freq_hz
+    System clock frequency
+  pix_clk_freq_hz
+    Pixel clock frequency

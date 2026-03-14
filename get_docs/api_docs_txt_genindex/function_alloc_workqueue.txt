@@ -1,0 +1,18 @@
+Function: struct workqueue_struct * alloc_workqueue ( const char * fmt , unsigned int flags , int max_active , ... )
+
+allocate a workqueue
+
+Parameters
+  const char *fmt
+    printf format for the name of the workqueue
+  unsigned int flags
+    WQ_* flags
+  int max_active
+    max in-flight work items, 0 for default
+  ...
+    args for fmt
+
+Description
+  For a per-cpu workqueue, max_active limits the number of in-flight work
+items for each CPU. e.g. max_active of 1 indicates that each CPU can be
+executing at most one work item for the workqueue.

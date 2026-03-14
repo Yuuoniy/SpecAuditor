@@ -1,0 +1,13 @@
+Function: void skb_condense ( struct sk_buff * skb )
+
+try to get rid of fragments/frag_list if possible
+
+Parameters
+  struct sk_buff *skb
+    buffer
+
+Description
+  Can be used to save memory before skb is added to a busy queue.
+If packet has bytes in frags and enough tail room in skb->head,
+pull all of them, so that we can free the frags right now and adjust
+truesize.

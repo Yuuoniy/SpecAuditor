@@ -1,0 +1,13 @@
+Function: int of_changeset_apply ( struct of_changeset * ocs )
+
+Applies a changeset
+
+Parameters
+  struct of_changeset *ocs
+    changeset pointer
+
+Description
+  Applies a changeset to the live tree.
+Any side-effects of live tree state changes are applied here on
+success, like creation/destruction of devices and side-effects
+like creation of sysfs properties and directories.

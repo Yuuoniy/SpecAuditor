@@ -1,0 +1,13 @@
+Function: int filemap_check_wb_err ( struct address_space * mapping , errseq_t since )
+
+has an error occurred since the mark was sampled?
+
+Parameters
+  struct address_space *mapping
+    mapping to check for writeback errors
+  errseq_t since
+    previously-sampled errseq_t
+
+Description
+  Grab the errseq_t value from the mapping, and see if it has changed “since”
+the given value was sampled.

@@ -1,0 +1,11 @@
+Function: int sscanf ( const char * buf , const char * fmt , ... )
+
+Unformat a buffer into a list of arguments
+
+Parameters
+  const char *buf
+    input buffer
+  const char *fmt
+    formatting of buffer
+  ...
+    resulting arguments

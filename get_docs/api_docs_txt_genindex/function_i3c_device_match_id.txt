@@ -1,0 +1,9 @@
+Function: const struct i3c_device_id * i3c_device_match_id ( struct i3c_device * i3cdev , const struct i3c_device_id * id_table )
+
+Returns the i3c_device_id entry matching i3cdev
+
+Parameters
+  struct i3c_device *i3cdev
+    I3C device
+  const struct i3c_device_id *id_table
+    I3C device match table

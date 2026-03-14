@@ -1,0 +1,12 @@
+Function: struct wq_node_nr_active * wq_node_nr_active ( struct workqueue_struct * wq , int node )
+
+Determine wq_node_nr_active to use
+
+Parameters
+  struct workqueue_struct *wq
+    workqueue of interest
+  int node
+    NUMA node, can be NUMA_NO_NODE
+
+Description
+  Determine wq_node_nr_active to use for wq on node . Returns:

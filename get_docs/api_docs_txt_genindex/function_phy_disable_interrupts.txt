@@ -1,0 +1,7 @@
+Function: int phy_disable_interrupts ( struct phy_device * phydev )
+
+Disable the PHY interrupts from the PHY side
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct

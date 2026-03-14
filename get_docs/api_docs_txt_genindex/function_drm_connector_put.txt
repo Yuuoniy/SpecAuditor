@@ -1,0 +1,11 @@
+Function: void drm_connector_put ( struct drm_connector * connector )
+
+release a connector reference
+
+Parameters
+  struct drm_connector *connector
+    DRM connector
+
+Description
+  This function decrements the connector’s reference count and frees the
+object if the reference count drops to zero.

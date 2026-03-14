@@ -1,0 +1,13 @@
+Function: s32 i2c_smbus_read_word_data ( const struct i2c_client * client , u8 command )
+
+SMBus “read word” protocol
+
+Parameters
+  const struct i2c_client *client
+    Handle to slave device
+  u8 command
+    Byte interpreted by slave
+
+Description
+  This executes the SMBus “read word” protocol, returning negative errno
+else a 16-bit unsigned “word” received from the device.

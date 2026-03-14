@@ -1,0 +1,18 @@
+Function: void ttm_pool_init ( struct ttm_pool * pool , struct device * dev , int nid , bool use_dma_alloc , bool use_dma32 )
+
+Initialize a pool
+
+Parameters
+  struct ttm_pool *pool
+    the pool to initialize
+  struct device *dev
+    device for DMA allocations and mappings
+  int nid
+    NUMA node to use for allocations
+  bool use_dma_alloc
+    true if coherent DMA alloc should be used
+  bool use_dma32
+    true if GFP_DMA32 should be used
+
+Description
+  Initialize the pool and its pool types.

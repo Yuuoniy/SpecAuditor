@@ -1,0 +1,10 @@
+Function: void intel_psr_unlock ( const struct intel_crtc_state * crtc_state )
+
+release PSR lock
+
+Parameters
+  const struct intel_crtc_state *crtc_state
+    the crtc state
+
+Description
+  Release the PSR lock that was held during pipe update.

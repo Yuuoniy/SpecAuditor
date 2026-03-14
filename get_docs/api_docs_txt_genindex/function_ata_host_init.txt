@@ -1,0 +1,11 @@
+Function: void ata_host_init ( struct ata_host * host , struct device * dev , struct ata_port_operations * ops )
+
+Initialize a host struct for sas (ipr, libsas)
+
+Parameters
+  struct ata_host *host
+    host to initialize
+  struct device *dev
+    device host is attached to
+  struct ata_port_operations *ops
+    port_ops

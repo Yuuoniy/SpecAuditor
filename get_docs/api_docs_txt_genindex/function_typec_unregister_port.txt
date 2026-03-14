@@ -1,0 +1,10 @@
+Function: void typec_unregister_port ( struct typec_port * port )
+
+Unregister a USB Type-C Port
+
+Parameters
+  struct typec_port *port
+    The port to be unregistered
+
+Description
+  Unregister device created with typec_register_port() .

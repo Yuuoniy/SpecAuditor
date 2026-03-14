@@ -1,0 +1,12 @@
+Function: bool dim_on_top ( struct dim * dim )
+
+check if current state is a good place to stop (top location)
+
+Parameters
+  struct dim *dim
+    DIM context
+
+Description
+  Check if current profile is a good place to park at.
+This will result in reducing the DIM checks frequency as we assume we
+shouldn’t probably change profiles, unless traffic pattern wasn’t changed.

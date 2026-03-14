@@ -1,0 +1,7 @@
+Function: void amdgpu_vm_prt_put ( struct amdgpu_device * adev )
+
+drop a PRT user
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer

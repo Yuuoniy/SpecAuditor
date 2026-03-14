@@ -1,0 +1,11 @@
+Function: void * kmap ( struct page * page )
+
+Map a page for long term usage
+
+Parameters
+  struct page *page
+    Pointer to the page to be mapped
+
+Description
+  Can only be invoked from preemptible task context because on 32bit
+systems with CONFIG_HIGHMEM enabled this function might sleep.

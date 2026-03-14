@@ -1,0 +1,9 @@
+Function: bool media_entity_enum_intersects ( struct media_entity_enum * ent_enum1 , struct media_entity_enum * ent_enum2 )
+
+Test whether two enums intersect
+
+Parameters
+  struct media_entity_enum *ent_enum1
+    First entity enumeration
+  struct media_entity_enum *ent_enum2
+    Second entity enumeration

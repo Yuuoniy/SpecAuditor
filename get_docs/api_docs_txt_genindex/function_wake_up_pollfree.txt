@@ -1,0 +1,13 @@
+Function: void wake_up_pollfree ( struct wait_queue_head * wq_head )
+
+signal that a polled waitqueue is going away
+
+Parameters
+  struct wait_queue_head *wq_head
+    the wait queue head
+
+Description
+  In the very rare cases where a ->poll() implementation uses a waitqueue whose
+lifetime is tied to a task rather than to the ‘ struct file ’ being polled,
+this function must be called before the waitqueue is freed so that
+non-blocking polls (e.g. epoll) are notified that the queue is going away.

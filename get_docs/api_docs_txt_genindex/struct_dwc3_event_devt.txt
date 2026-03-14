@@ -1,0 +1,30 @@
+Struct: struct dwc3_event_devt
+
+Device Events
+
+Members
+  one_bit
+    indicates this is a non-endpoint event (not used)
+  device_event
+    indicates it’s a device event. Should read as 0x00
+  type
+    indicates the type of device event.
+0       - DisconnEvt
+1       - USBRst
+2       - ConnectDone
+3       - ULStChng
+4       - WkUpEvt
+5       - Reserved
+6       - Suspend (EOPF on revisions 2.10a and prior)
+7       - SOF
+8       - Reserved
+9       - ErrticErr
+10      - CmdCmplt
+11      - EvntOverflow
+12      - VndrDevTstRcved
+  reserved15_12
+    Reserved, not used
+  event_info
+    Information about this event
+  reserved31_25
+    Reserved, not used

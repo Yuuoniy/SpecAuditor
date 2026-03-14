@@ -1,0 +1,13 @@
+Function: void drm_panel_enable ( struct drm_panel * panel )
+
+enable a panel
+
+Parameters
+  struct drm_panel *panel
+    DRM panel
+
+Description
+  Calling this function will cause the panel display drivers to be turned on
+and the backlight to be enabled. Content will be visible on screen after
+this call completes. This function cannot fail (as it is called from the
+enable call chain). There will always be a call to drm_panel_disable() afterwards.

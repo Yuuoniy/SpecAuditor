@@ -1,0 +1,12 @@
+Function: int devfreq_event_enable_edev ( struct devfreq_event_dev * edev )
+
+Enable the devfreq-event dev and increase the enable_count of devfreq-event dev.
+
+Parameters
+  struct devfreq_event_dev *edev
+    the devfreq-event device
+
+Description
+  Note that this function increase the enable_count and enable the
+devfreq-event device. The devfreq-event device should be enabled before
+using it by devfreq device.

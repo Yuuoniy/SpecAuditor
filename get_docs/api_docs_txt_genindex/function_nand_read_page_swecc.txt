@@ -1,0 +1,13 @@
+Function: int nand_read_page_swecc ( struct nand_chip * chip , uint8_t * buf , int oob_required , int page )
+
+[REPLACEABLE] software ECC based page read function
+
+Parameters
+  struct nand_chip *chip
+    nand chip info structure
+  uint8_t *buf
+    buffer to store read data
+  int oob_required
+    caller requires OOB data read to chip->oob_poi
+  int page
+    page number to read

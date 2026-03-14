@@ -1,0 +1,15 @@
+Function: void drm_bus_flags_from_videomode ( const struct videomode * vm , u32 * bus_flags )
+
+extract information about pixelclk and DE polarity from videomode and store it in a separate variable
+
+Parameters
+  const struct videomode *vm
+    videomode structure to use
+  u32 *bus_flags
+    information about pixelclk, sync and DE polarity will be stored
+here
+
+Description
+  Sets DRM_BUS_FLAG_DE_(LOW|HIGH),  DRM_BUS_FLAG_PIXDATA_DRIVE_(POS|NEG)EDGE
+and DISPLAY_FLAGS_SYNC_(POS|NEG)EDGE in bus_flags according to DISPLAY_FLAGS
+found in vm

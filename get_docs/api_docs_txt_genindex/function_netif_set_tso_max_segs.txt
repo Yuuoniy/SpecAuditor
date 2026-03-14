@@ -1,0 +1,14 @@
+Function: void netif_set_tso_max_segs ( struct net_device * dev , unsigned int segs )
+
+set the max number of segs supported for TSO
+
+Parameters
+  struct net_device *dev
+    netdev to update
+  unsigned int segs
+    max number of TCP segments
+
+Description
+  Set the limit on the number of TCP segments the device can generate from
+a single TSO super-frame.
+Unless explicitly set the stack will assume the value of GSO_MAX_SEGS .

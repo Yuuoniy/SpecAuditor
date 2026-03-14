@@ -1,0 +1,9 @@
+Struct: struct page_pool_stats
+
+combined page pool use statistics
+
+Members
+  alloc_stats
+    see struct page_pool_alloc_stats
+  recycle_stats
+    see struct page_pool_recycle_stats

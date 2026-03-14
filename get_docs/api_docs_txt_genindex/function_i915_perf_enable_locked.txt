@@ -1,0 +1,10 @@
+Function: void i915_perf_enable_locked ( struct i915_perf_stream * stream )
+
+handle I915_PERF_IOCTL_ENABLE ioctl
+
+Parameters
+  struct i915_perf_stream *stream
+    A disabled i915 perf stream
+
+Description
+  [Re]enables the associated capture of data for this stream.

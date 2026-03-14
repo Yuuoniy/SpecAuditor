@@ -1,0 +1,13 @@
+Function: bool skb_try_coalesce ( struct sk_buff * to , struct sk_buff * from , bool * fragstolen , int * delta_truesize )
+
+try to merge skb to prior one
+
+Parameters
+  struct sk_buff *to
+    prior buffer
+  struct sk_buff *from
+    buffer to add
+  bool *fragstolen
+    pointer to boolean
+  int *delta_truesize
+    how much more was allocated than was requested

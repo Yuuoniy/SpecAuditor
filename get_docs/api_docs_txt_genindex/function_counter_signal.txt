@@ -1,0 +1,13 @@
+Function: struct counter_signal
+
+Counter Signal node
+
+Members
+  id
+    unique ID used to identify the Signal
+  name
+    device-specific Signal name
+  ext
+    optional array of Signal extensions
+  num_ext
+    number of Signal extensions specified in ext

@@ -1,0 +1,16 @@
+Function: void trace_workqueue_queue_work ( int req_cpu , struct pool_workqueue * pwq , struct work_struct * work )
+
+called when a work gets queued
+
+Parameters
+  int req_cpu
+    the requested cpu
+  struct pool_workqueue *pwq
+    pointer to struct pool_workqueue
+  struct work_struct *work
+    pointer to struct work_struct
+
+Description
+  This event occurs when a work is queued immediately or once a
+delayed work is actually queued on a workqueue (ie: once the delay
+has been reached).

@@ -1,0 +1,23 @@
+Function: struct kmem_cache * kmem_cache_create_usercopy ( const char * name , unsigned int size , unsigned int align , slab_flags_t flags , unsigned int useroffset , unsigned int usersize , void ( * ctor ) ( void * ) )
+
+Create a kmem cache with a region suitable for copying to userspace.
+
+Parameters
+  const char *name
+    A string which is used in /proc/slabinfo to identify this cache.
+  unsigned int size
+    The size of objects to be created in this cache.
+  unsigned int align
+    The required alignment for the objects.
+  slab_flags_t flags
+    SLAB flags
+  unsigned int useroffset
+    Usercopy region offset
+  unsigned int usersize
+    Usercopy region size
+  void (*ctor)(void *)
+    A constructor for the objects, or NULL .
+
+Description
+  This is a legacy wrapper, new code should use either KMEM_CACHE_USERCOPY() if whitelisting a single field is sufficient, or kmem_cache_create() with
+the necessary parameters passed via the args parameter (see struct kmem_cache_args )

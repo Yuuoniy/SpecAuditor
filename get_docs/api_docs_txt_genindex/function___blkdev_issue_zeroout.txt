@@ -1,0 +1,21 @@
+Function: int __blkdev_issue_zeroout ( struct block_device * bdev , sector_t sector , sector_t nr_sects , gfp_t gfp_mask , struct bio * * biop , unsigned flags )
+
+generate number of zero filed write bios
+
+Parameters
+  struct block_device *bdev
+    blockdev to issue
+  sector_t sector
+    start sector
+  sector_t nr_sects
+    number of sectors to write
+  gfp_t gfp_mask
+    memory allocation flags (for bio_alloc)
+  struct bio **biop
+    pointer to anchor bio
+  unsigned flags
+    controls detailed behavior
+
+Description
+  Zero-fill a block range, either using hardware offload or by explicitly
+writing zeroes to the device.

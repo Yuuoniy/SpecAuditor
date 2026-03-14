@@ -1,0 +1,13 @@
+Function: unsigned int crypto_sig_digestsize ( struct crypto_sig * tfm )
+
+Get maximum digest size
+
+Parameters
+  struct crypto_sig *tfm
+    signature tfm handle allocated with crypto_alloc_sig()
+
+Description
+  Function returns the maximum digest size in bytes.
+Function assumes that the key is already set in the transformation. If this
+function is called without a setkey or with a failed setkey, you may end up
+in a NULL dereference.

@@ -1,0 +1,28 @@
+Struct: struct debug_obj_descr
+
+object type specific debug description structure
+
+Members
+  name
+    name of the object typee
+  debug_hint
+    function returning address, which have associated
+kernel symbol, to allow identify the object
+  is_static_object
+    return true if the obj is static, otherwise return false
+  fixup_init
+    fixup function, which is called when the init check
+fails. All fixup functions must return true if fixup
+was successful, otherwise return false
+  fixup_activate
+    fixup function, which is called when the activate check
+fails
+  fixup_destroy
+    fixup function, which is called when the destroy check
+fails
+  fixup_free
+    fixup function, which is called when the free check
+fails
+  fixup_assert_init
+    fixup function, which is called when the assert_init
+check fails

@@ -1,0 +1,14 @@
+Struct: struct ieee80211_rate
+
+bitrate definition
+
+Members
+  flags
+    rate-specific flags from enum ieee80211_rate_flags
+  bitrate
+    bitrate in units of 100 Kbps
+  hw_value
+    driver/hardware value for this rate
+  hw_value_short
+    driver/hardware value for this rate when
+short preamble is used

@@ -1,0 +1,5 @@
+Function: ktime_t ktime_get_raw ( void )
+
+CLOCK_MONOTONIC_RAW Like ktime_get() , but runs at the same rate as the hardware
+clocksource without (NTP) adjustments for clock drift. This is
+also rarely needed in the kernel.

@@ -1,0 +1,19 @@
+Function: int ssam_request_do_sync_with_buffer ( struct ssam_controller * ctrl , const struct ssam_request * spec , struct ssam_response * rsp , struct ssam_span * buf )
+
+Execute a synchronous request with the provided buffer as back-end for the message buffer.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller via which the request will be submitted.
+  const struct ssam_request *spec
+    The request specification and payload.
+  struct ssam_response *rsp
+    The response buffer.
+  struct ssam_span *buf
+    The buffer for the request message data.
+
+Description
+  Allocates a synchronous request struct on the stack, fully initializes it
+using the provided buffer as message data buffer, submits it, and then
+waits for its completion before returning its status. The SSH_COMMAND_MESSAGE_LENGTH() macro can be used to compute the required
+message buffer size.

@@ -1,0 +1,19 @@
+Function: int crypto_sig_verify ( struct crypto_sig * tfm , const void * src , unsigned int slen , const void * digest , unsigned int dlen )
+
+Invoke signature verification
+
+Parameters
+  struct crypto_sig *tfm
+    signature tfm handle allocated with crypto_alloc_sig()
+  const void *src
+    source buffer
+  unsigned int slen
+    source length
+  const void *digest
+    digest
+  unsigned int dlen
+    digest length
+
+Description
+  Function invokes the specific signature verification operation
+for a given algorithm.

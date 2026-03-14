@@ -1,0 +1,11 @@
+Function: enum dma_data_direction page_pool_get_dma_dir ( const struct page_pool * pool )
+
+Retrieve the stored DMA direction.
+
+Parameters
+  const struct page_pool *pool
+    pool from which page was allocated
+
+Description
+  Get the stored dma direction. A driver might decide to store this locally
+and avoid the extra cache line from page_pool to determine the direction.

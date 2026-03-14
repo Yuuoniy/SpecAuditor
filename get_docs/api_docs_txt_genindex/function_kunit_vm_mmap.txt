@@ -1,0 +1,22 @@
+Function: unsigned long kunit_vm_mmap ( struct kunit * test , struct file * file , unsigned long addr , unsigned long len , unsigned long prot , unsigned long flag , unsigned long offset )
+
+Allocate KUnit-tracked vm_mmap() area
+
+Parameters
+  struct kunit *test
+    The test context object.
+  struct file *file
+    struct file pointer to map from, if any
+  unsigned long addr
+    desired address, if any
+  unsigned long len
+    how many bytes to allocate
+  unsigned long prot
+    mmap PROT_* bits
+  unsigned long flag
+    mmap flags
+  unsigned long offset
+    offset into file to start mapping from.
+
+Description
+  See vm_mmap() for more information.

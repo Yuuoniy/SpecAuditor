@@ -1,0 +1,12 @@
+Function: void devm_free_percpu ( struct device * dev , void __percpu * pdata )
+
+Resource-managed free_percpu
+
+Parameters
+  struct device *dev
+    Device this memory belongs to
+  void __percpu *pdata
+    Per-cpu memory to free
+
+Description
+  Free memory allocated with devm_alloc_percpu() .

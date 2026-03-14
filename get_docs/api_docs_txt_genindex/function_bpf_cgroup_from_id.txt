@@ -1,0 +1,7 @@
+Function: __bpf_kfunc struct cgroup * bpf_cgroup_from_id ( u64 cgid )
+
+Find a cgroup from its ID. A cgroup returned by this kfunc which is not subsequently stored in a map, must be released by calling bpf_cgroup_release() .
+
+Parameters
+  u64 cgid
+    cgroup id.

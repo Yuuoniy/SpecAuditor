@@ -1,0 +1,11 @@
+Function: int driver_deferred_probe_check_state ( struct device * dev )
+
+Check deferred probe state
+
+Parameters
+  struct device *dev
+    device to check
+
+Description
+  Drivers or subsystems can opt-in to calling this function instead of directly
+returning -EPROBE_DEFER.

@@ -1,0 +1,15 @@
+Function: void efi_free ( unsigned long size , unsigned long addr )
+
+free memory pages
+
+Parameters
+  unsigned long size
+    size of the memory area to free in bytes
+  unsigned long addr
+    start of the memory area to free (must be EFI_PAGE_SIZE
+aligned)
+
+Description
+  size is rounded up to a multiple of EFI_ALLOC_ALIGN which is an
+architecture specific multiple of EFI_PAGE_SIZE. So this function should
+only be used to return pages allocated with efi_allocate_pages() or efi_low_alloc_above() .

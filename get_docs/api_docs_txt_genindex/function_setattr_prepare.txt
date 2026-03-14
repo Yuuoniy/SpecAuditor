@@ -1,0 +1,17 @@
+Function: int setattr_prepare ( struct mnt_idmap * idmap , struct dentry * dentry , struct iattr * attr )
+
+check if attribute changes to a dentry are allowed
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount the inode was found from
+  struct dentry *dentry
+    dentry to check
+  struct iattr *attr
+    attributes to change
+
+Description
+  Check if we are allowed to change the attributes contained in attr in the given dentry.  This includes the normal unix access permission
+checks, as well as checks for rlimits and others. The function also clears
+SGID bit from mode if user is not allowed to set it. Also file capabilities
+and IMA extended attributes are cleared if ATTR_KILL_PRIV is set.

@@ -1,0 +1,16 @@
+Function: void rio_init_dbell_res ( struct resource * res , u16 start , u16 end )
+
+Initialize a RIO doorbell resource
+
+Parameters
+  struct resource *res
+    resource struct
+  u16 start
+    start of doorbell range
+  u16 end
+    end of doorbell range
+
+Description
+  This function is used to initialize the fields of a resource
+for use as a doorbell resource.  It initializes a range of
+doorbell messages using the start and end arguments.

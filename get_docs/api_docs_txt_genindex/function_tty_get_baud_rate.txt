@@ -1,0 +1,10 @@
+Function: speed_t tty_get_baud_rate ( const struct tty_struct * tty )
+
+get tty bit rates
+
+Parameters
+  const struct tty_struct *tty
+    tty to query
+
+Description
+  Locking: The termios lock must be held by the caller.

@@ -1,0 +1,10 @@
+Macro: mutex_init
+
+
+
+Parameters
+  mutex
+    the mutex to be initialized
+
+Description
+  Initialize the mutex to unlocked state.

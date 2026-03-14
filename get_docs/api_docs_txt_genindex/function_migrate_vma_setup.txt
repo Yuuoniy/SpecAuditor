@@ -1,0 +1,16 @@
+Function: int migrate_vma_setup ( struct migrate_vma * args )
+
+prepare to migrate a range of memory
+
+Parameters
+  struct migrate_vma *args
+    contains the vma, start, and pfns arrays for the migration
+
+Description
+  Prepare to migrate a range of memory virtual address range by collecting all
+the pages backing each virtual address in the range, saving them inside the
+src array.  Then lock those pages and unmap them. Once the pages are locked
+and unmapped, check whether each page is pinned or not.  Pages that aren’t
+pinned have the MIGRATE_PFN_MIGRATE flag set (by this function) in the
+corresponding src array entry.  Then restores any pages that are pinned, by
+remapping and unlocking those pages.

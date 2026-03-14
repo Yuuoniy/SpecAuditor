@@ -1,0 +1,10 @@
+Function: void drm_modeset_drop_locks ( struct drm_modeset_acquire_ctx * ctx )
+
+drop all locks
+
+Parameters
+  struct drm_modeset_acquire_ctx *ctx
+    the acquire context
+
+Description
+  Drop all locks currently held against this acquire context.

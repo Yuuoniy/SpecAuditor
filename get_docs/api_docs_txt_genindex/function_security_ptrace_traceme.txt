@@ -1,0 +1,11 @@
+Function: int security_ptrace_traceme ( struct task_struct * parent )
+
+Check if tracing is allowed
+
+Parameters
+  struct task_struct *parent
+    tracing process
+
+Description
+  Check that the parent process has sufficient permission to trace the
+current process before allowing the current process to present itself to the parent process for tracing.

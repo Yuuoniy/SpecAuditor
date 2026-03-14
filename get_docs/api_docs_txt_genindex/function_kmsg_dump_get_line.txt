@@ -1,0 +1,19 @@
+Function: bool kmsg_dump_get_line ( struct kmsg_dump_iter * iter , bool syslog , char * line , size_t size , size_t * len )
+
+retrieve one kmsg log line
+
+Parameters
+  struct kmsg_dump_iter *iter
+    kmsg dump iterator
+  bool syslog
+    include the “<4>” prefixes
+  char *line
+    buffer to copy the line to
+  size_t size
+    maximum size of the buffer
+  size_t *len
+    length of line placed into buffer
+
+Description
+  Start at the beginning of the kmsg buffer, with the oldest kmsg
+record, and copy one record into the provided buffer.

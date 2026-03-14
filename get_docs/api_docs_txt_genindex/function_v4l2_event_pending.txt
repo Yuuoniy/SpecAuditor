@@ -1,0 +1,10 @@
+Function: int v4l2_event_pending ( struct v4l2_fh * fh )
+
+Check if an event is available
+
+Parameters
+  struct v4l2_fh *fh
+    pointer to struct v4l2_fh
+
+Description
+  Returns the number of pending events.

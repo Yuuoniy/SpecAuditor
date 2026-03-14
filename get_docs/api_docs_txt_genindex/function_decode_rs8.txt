@@ -1,0 +1,29 @@
+Function: int decode_rs8 ( struct rs_control * rsc , uint8_t * data , uint16_t * par , int len , uint16_t * s , int no_eras , int * eras_pos , uint16_t invmsk , uint16_t * corr )
+
+Decode codeword (8bit data width)
+
+Parameters
+  struct rs_control *rsc
+    the rs control structure
+  uint8_t *data
+    data field of a given type
+  uint16_t *par
+    received parity data field
+  int len
+    data length
+  uint16_t *s
+    syndrome data field, must be in index form
+(if NULL, syndrome is calculated)
+  int no_eras
+    number of erasures
+  int *eras_pos
+    position of erasures, can be NULL
+  uint16_t invmsk
+    invert data mask (will be xored on data, not on parity!)
+  uint16_t *corr
+    buffer to store correction bitmask on eras_pos
+
+Description
+  The syndrome and parity uses a uint16_t data type to enable
+symbol size > 8. The calling code must take care of decoding of the
+syndrome result and the received parity before calling this code.

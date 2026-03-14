@@ -1,0 +1,18 @@
+Function: struct kthread_worker * kthread_create_worker_on_node ( unsigned int flags , int node , const char namefmt [ ] , ... )
+
+create a kthread worker
+
+Parameters
+  unsigned int flags
+    flags modifying the default behavior of the worker
+  int node
+    task structure for the thread is allocated on this node
+  const char namefmt[]
+    printf-style name for the kthread worker (task).
+  ...
+    variable arguments
+
+Description
+  Returns a pointer to the allocated worker on success, ERR_PTR(-ENOMEM)
+when the needed structures could not get allocated, and ERR_PTR(-EINTR)
+when the caller was killed by a fatal signal.

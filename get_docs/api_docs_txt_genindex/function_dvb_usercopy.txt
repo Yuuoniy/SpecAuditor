@@ -1,0 +1,18 @@
+Function: int dvb_usercopy ( struct file * file , unsigned int cmd , unsigned long arg , int ( * func ) ( struct file * file , unsigned int cmd , void * arg ) )
+
+copies data from/to userspace memory when an ioctl is issued.
+
+Parameters
+  struct file *file
+    Pointer to struct file .
+  unsigned int cmd
+    Ioctl name.
+  unsigned long arg
+    Ioctl argument.
+  int (*func)(struct file *file, unsigned int cmd, void *arg)
+    function that will actually handle the ioctl
+
+Description
+  Ancillary function that uses ioctl direction and size to copy from
+userspace. Then, it calls func , and, if needed, data is copied back
+to userspace.

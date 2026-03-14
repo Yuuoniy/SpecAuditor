@@ -1,0 +1,9 @@
+Function: void __sk_mem_reclaim ( struct sock * sk , int amount )
+
+reclaim sk_forward_alloc and memory_allocated
+
+Parameters
+  struct sock *sk
+    socket
+  int amount
+    number of bytes (rounded down to a PAGE_SIZE multiple)

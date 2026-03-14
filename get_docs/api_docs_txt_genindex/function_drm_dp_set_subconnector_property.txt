@@ -1,0 +1,16 @@
+Function: void drm_dp_set_subconnector_property ( struct drm_connector * connector , enum drm_connector_status status , const u8 * dpcd , const u8 port_cap [ 4 ] )
+
+set subconnector for DP connector
+
+Parameters
+  struct drm_connector *connector
+    connector to set property on
+  enum drm_connector_status status
+    connector status
+  const u8 *dpcd
+    DisplayPort configuration data
+  const u8 port_cap[4]
+    port capabilities
+
+Description
+  Called by a driver on every detect event.

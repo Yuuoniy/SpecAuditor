@@ -1,0 +1,15 @@
+Macro: KUNIT_EXPECT_NOT_ERR_OR_NULL
+
+
+
+Parameters
+  test
+    The test context object.
+  ptr
+    an arbitrary pointer.
+
+Description
+  Sets an expectation that the value that ptr evaluates to is not null and not
+an errno stored in a pointer. This is semantically equivalent to
+KUNIT_EXPECT_TRUE( test , !IS_ERR_OR_NULL( ptr )). See KUNIT_EXPECT_TRUE() for
+more information.

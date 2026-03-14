@@ -1,0 +1,13 @@
+Function: int rio_release_inb_mbox ( struct rio_mport * mport , int mbox )
+
+release inbound mailbox message service
+
+Parameters
+  struct rio_mport *mport
+    RIO master port from which to release the mailbox resource
+  int mbox
+    Mailbox number to release
+
+Description
+  Releases ownership of an inbound mailbox resource. Returns 0
+if the request has been satisfied.

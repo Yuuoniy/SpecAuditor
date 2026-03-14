@@ -1,0 +1,17 @@
+Function: uint32_t drm_driver_legacy_fb_format ( struct drm_device * dev , uint32_t bpp , uint32_t depth )
+
+compute drm fourcc code from legacy description
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  uint32_t bpp
+    bits per pixels
+  uint32_t depth
+    bit depth per pixel
+
+Description
+  Computes a drm fourcc pixel format code for the given bpp / depth values.
+Unlike drm_mode_legacy_fb_format() this looks at the drivers mode_config,
+and depending on the drm_mode_config.quirk_addfb_prefer_host_byte_order flag
+it returns little endian byte order or host byte order framebuffer formats.

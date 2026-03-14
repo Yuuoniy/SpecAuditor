@@ -1,0 +1,12 @@
+Function: void amdgpu_irq_fini_sw ( struct amdgpu_device * adev )
+
+shut down interrupt handling
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device pointer
+
+Description
+  Tears down work functions for hotplug and reset interrupts, disables MSI
+functionality, shuts down vblank, hotplug and reset interrupt handling,
+turns off interrupts from all sources (all ASICs).

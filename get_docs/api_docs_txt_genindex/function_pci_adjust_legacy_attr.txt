@@ -1,0 +1,12 @@
+Function: void pci_adjust_legacy_attr ( struct pci_bus * b , enum pci_mmap_state mmap_type )
+
+adjustment of legacy file attributes
+
+Parameters
+  struct pci_bus *b
+    bus to create files under
+  enum pci_mmap_state mmap_type
+    I/O port or memory
+
+Description
+  Stub implementation. Can be overridden by arch if necessary.

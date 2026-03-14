@@ -1,0 +1,14 @@
+Function: struct super_block * sget_fc ( struct fs_context * fc , int ( * test ) ( struct super_block * , struct fs_context * ) , int ( * set ) ( struct super_block * , struct fs_context * ) )
+
+Find or create a superblock
+
+Parameters
+  struct fs_context *fc
+    Filesystem context.
+  int (*test)(struct super_block *, struct fs_context *)
+    Comparison callback
+  int (*set)(struct super_block *, struct fs_context *)
+    Setup callback
+
+Description
+  Create a new superblock or find an existing one.

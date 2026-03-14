@@ -1,0 +1,10 @@
+Function: int hdmi_vendor_infoframe_init ( struct hdmi_vendor_infoframe * frame )
+
+initialize an HDMI vendor infoframe
+
+Parameters
+  struct hdmi_vendor_infoframe *frame
+    HDMI vendor infoframe
+
+Description
+  Returns 0 on success or a negative error code on failure.

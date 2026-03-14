@@ -1,0 +1,15 @@
+Function: char * * kasprintf_strarray ( gfp_t gfp , const char * prefix , size_t n )
+
+allocate and fill array of sequential strings
+
+Parameters
+  gfp_t gfp
+    flags for the slab allocator
+  const char *prefix
+    prefix to be used
+  size_t n
+    amount of lines to be allocated and filled
+
+Description
+  Allocates and fills n strings using pattern “ s-````zu ”, where prefix
+is provided by caller. The caller is responsible to free them with kfree_strarray() after use.

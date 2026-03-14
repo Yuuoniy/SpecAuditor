@@ -1,0 +1,14 @@
+Function: bool ssam_device_id_compatible ( const struct ssam_device_id * id , struct ssam_device_uid uid )
+
+Check if a device ID matches a UID.
+
+Parameters
+  const struct ssam_device_id *id
+    The device ID as potential match.
+  struct ssam_device_uid uid
+    The device UID matching against.
+
+Description
+  Check if the given ID is a match for the given UID, i.e. if a device with
+the provided UID is compatible to the given ID following the match rules
+described in its ssam_device_id.match_flags member.

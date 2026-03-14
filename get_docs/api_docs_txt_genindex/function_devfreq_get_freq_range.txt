@@ -1,0 +1,14 @@
+Function: void devfreq_get_freq_range ( struct devfreq * devfreq , unsigned long * min_freq , unsigned long * max_freq )
+
+Get the current freq range
+
+Parameters
+  struct devfreq *devfreq
+    the devfreq instance
+  unsigned long *min_freq
+    the min frequency
+  unsigned long *max_freq
+    the max frequency
+
+Description
+  This takes into consideration all constraints.

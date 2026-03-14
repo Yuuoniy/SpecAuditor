@@ -1,0 +1,10 @@
+Function: void drm_gpuva_unmap ( struct drm_gpuva_op_unmap * op )
+
+helper to remove a drm_gpuva according to a drm_gpuva_op_unmap
+
+Parameters
+  struct drm_gpuva_op_unmap *op
+    the drm_gpuva_op_unmap specifying the drm_gpuva to remove
+
+Description
+  Removes the drm_gpuva associated with the drm_gpuva_op_unmap .

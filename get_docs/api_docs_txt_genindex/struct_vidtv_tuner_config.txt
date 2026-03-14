@@ -1,0 +1,20 @@
+Struct: struct vidtv_tuner_config
+
+Configuration used to init the tuner.
+
+Members
+  fe
+    A pointer to the dvb_frontend structure allocated by vidtv_demod.
+  mock_power_up_delay_msec
+    Simulate a power-up delay.
+  mock_tune_delay_msec
+    Simulate a tune delay.
+  vidtv_valid_dvb_t_freqs
+    The valid DVB-T frequencies to simulate.
+  vidtv_valid_dvb_c_freqs
+    The valid DVB-C frequencies to simulate.
+  vidtv_valid_dvb_s_freqs
+    The valid DVB-S frequencies to simulate.
+  max_frequency_shift_hz
+    The maximum frequency shift in HZ allowed when
+tuning in a channel

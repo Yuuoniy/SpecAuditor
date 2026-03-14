@@ -1,0 +1,11 @@
+Macro: write_seqcount_invalidate
+
+
+
+Parameters
+  s
+    Pointer to seqcount_t or any of the seqcount_LOCKNAME_t variants
+
+Description
+  After write_seqcount_invalidate, no seqcount_t read side operations
+will complete successfully and see data older than this.

@@ -1,0 +1,13 @@
+Function: struct nbcon_write_context
+
+Context handed to the nbcon write callbacks
+
+Members
+  ctxt
+    The core console context
+  outbuf
+    Pointer to the text buffer for output
+  len
+    Length to write
+  unsafe_takeover
+    If a hostile takeover in an unsafe state has occurred

@@ -1,0 +1,11 @@
+Function: int nvmem_cell_read_u8 ( struct device * dev , const char * cell_id , u8 * val )
+
+Read a cell value as a u8
+
+Parameters
+  struct device *dev
+    Device that requests the nvmem cell.
+  const char *cell_id
+    Name of nvmem cell to read.
+  u8 *val
+    pointer to output value.

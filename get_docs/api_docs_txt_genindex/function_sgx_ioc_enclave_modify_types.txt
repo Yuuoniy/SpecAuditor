@@ -1,0 +1,12 @@
+Function: long sgx_ioc_enclave_modify_types ( struct sgx_encl * encl , void __user * arg )
+
+handler for SGX_IOC_ENCLAVE_MODIFY_TYPES
+
+Parameters
+  struct sgx_encl *encl
+    an enclave pointer
+  void __user *arg
+    userspace pointer to a struct sgx_enclave_modify_types instance
+
+Description
+  Ability to change the enclave page type supports the following use cases:

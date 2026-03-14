@@ -1,0 +1,11 @@
+Function: int nand_check_wp ( struct nand_chip * chip )
+
+[GENERIC] check if the chip is write protected
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+
+Description
+  Check, if the device is write protected. The function expects, that the
+device is already selected.

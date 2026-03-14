@@ -1,0 +1,14 @@
+Function: size_t folioq_folio_size ( const struct folio_queue * folioq , unsigned int slot )
+
+Get the size of a folio from a folio queue segment
+
+Parameters
+  const struct folio_queue *folioq
+    The segment to access
+  unsigned int slot
+    The folio slot to access
+
+Description
+  Retrieve the size of the folio in the specified slot from a folio queue
+segment.  Note that no bounds check is made and if the slot hasn’t been
+added into yet, the size returned will be PAGE_SIZE.

@@ -1,0 +1,15 @@
+Struct: struct tsm_measurements
+
+defines the CC architecture specific measurement facility and methods for updating measurement registers (MRs)
+
+Members
+  mrs
+    Array of MR definitions.
+  nr_mrs
+    Number of elements in mrs .
+  refresh
+    Callback function to load/sync all MRs from TVM hardware/firmware
+into the kernel cache.
+  write
+    Callback function to write to the MR specified by the parameter mr .
+Typically, writing to an MR extends the input buffer to that MR.

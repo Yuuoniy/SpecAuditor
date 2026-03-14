@@ -1,0 +1,15 @@
+Function: void drm_crtc_load_palette_8 ( struct drm_crtc * crtc , const struct drm_color_lut * lut , drm_crtc_set_lut_func set_palette )
+
+Programs palette for C8-like formats
+
+Parameters
+  struct drm_crtc *crtc
+    The displaying CRTC
+  const struct drm_color_lut *lut
+    The palette to program
+  drm_crtc_set_lut_func set_palette
+    Callback for programming the hardware palette
+
+Description
+  Programs the palette specified in lut to hardware. The input palette
+must have 256 entries per color component.

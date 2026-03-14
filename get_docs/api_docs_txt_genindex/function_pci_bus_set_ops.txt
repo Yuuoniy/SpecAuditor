@@ -1,0 +1,12 @@
+Function: struct pci_ops * pci_bus_set_ops ( struct pci_bus * bus , struct pci_ops * ops )
+
+Set raw operations of pci bus
+
+Parameters
+  struct pci_bus *bus
+    pci bus struct
+  struct pci_ops *ops
+    new raw operations
+
+Description
+  Return previous raw operations

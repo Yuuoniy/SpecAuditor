@@ -1,0 +1,12 @@
+Function: void security_inet_conn_established ( struct sock * sk , struct sk_buff * skb )
+
+Update sock’s LSM state with connection
+
+Parameters
+  struct sock *sk
+    sock
+  struct sk_buff *skb
+    connection packet
+
+Description
+  Update sock ’s LSM state to represent a new connection from skb .

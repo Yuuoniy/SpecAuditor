@@ -1,0 +1,7 @@
+Function: void scsi_dma_unmap ( struct scsi_cmnd * cmd )
+
+unmap command’s sg lists mapped by scsi_dma_map
+
+Parameters
+  struct scsi_cmnd *cmd
+    scsi command

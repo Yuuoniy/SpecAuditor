@@ -1,0 +1,11 @@
+Function: int security_task_setscheduler ( struct task_struct * p )
+
+Check if setting sched policy/param is allowed
+
+Parameters
+  struct task_struct *p
+    target task
+
+Description
+  Check permission before setting scheduling policy and/or parameters of
+process p .

@@ -1,0 +1,7 @@
+Function: bool sshp_starts_with_syn ( const struct ssam_span * src )
+
+Check if the given data starts with SSH SYN bytes.
+
+Parameters
+  const struct ssam_span *src
+    The data span to check the start of.

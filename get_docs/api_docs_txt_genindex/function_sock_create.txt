@@ -1,0 +1,17 @@
+Function: int sock_create ( int family , int type , int protocol , struct socket * * res )
+
+creates a socket
+
+Parameters
+  int family
+    protocol family (AF_INET, ...)
+  int type
+    communication type (SOCK_STREAM, ...)
+  int protocol
+    protocol (0, ...)
+  struct socket **res
+    new socket
+
+Description
+  A wrapper around __sock_create() .
+Returns 0 or an error. This function internally uses GFP_KERNEL.

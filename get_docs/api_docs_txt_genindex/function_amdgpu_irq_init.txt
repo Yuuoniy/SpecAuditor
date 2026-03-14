@@ -1,0 +1,11 @@
+Function: int amdgpu_irq_init ( struct amdgpu_device * adev )
+
+initialize interrupt handling
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device pointer
+
+Description
+  Sets up work functions for hotplug and reset interrupts, enables MSI
+functionality, initializes vblank, hotplug and reset interrupt handling.

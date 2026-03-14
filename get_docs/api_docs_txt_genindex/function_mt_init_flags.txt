@@ -1,0 +1,13 @@
+Function: void mt_init_flags ( struct maple_tree * mt , unsigned int flags )
+
+Initialise an empty maple tree with flags.
+
+Parameters
+  struct maple_tree *mt
+    Maple Tree
+  unsigned int flags
+    maple tree flags.
+
+Description
+  If you need to initialise a Maple Tree with special flags (eg, an
+allocation tree), use this function.

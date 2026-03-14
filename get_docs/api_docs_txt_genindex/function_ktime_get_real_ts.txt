@@ -1,0 +1,5 @@
+Function: void ktime_get_real_ts ( struct timespec * )
+
+ktime_get_real_ts64() is a direct replacement, but consider using
+monotonic time ( ktime_get_ts64() ) and/or a ktime_t based interface
+( ktime_get() / ktime_get_real() ).

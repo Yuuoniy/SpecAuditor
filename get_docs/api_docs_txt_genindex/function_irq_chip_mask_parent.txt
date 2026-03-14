@@ -1,0 +1,7 @@
+Function: void irq_chip_mask_parent ( struct irq_data * data )
+
+Mask the parent interrupt
+
+Parameters
+  struct irq_data *data
+    Pointer to interrupt specific data

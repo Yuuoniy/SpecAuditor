@@ -1,0 +1,14 @@
+Function: bool jbd2_journal_try_to_free_buffers ( journal_t * journal , struct folio * folio )
+
+try to free page buffers.
+
+Parameters
+  journal_t *journal
+    journal for operation
+  struct folio *folio
+    Folio to detach data from.
+
+Description
+  For all the buffers on this page,
+if they are fully written out ordered data, move them onto BUF_CLEAN
+so try_to_free_buffers() can reap them.

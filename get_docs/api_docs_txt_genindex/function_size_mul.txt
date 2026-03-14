@@ -1,0 +1,9 @@
+Function: size_t size_mul ( size_t factor1 , size_t factor2 )
+
+Calculate size_t multiplication with saturation at SIZE_MAX
+
+Parameters
+  size_t factor1
+    first factor
+  size_t factor2
+    second factor

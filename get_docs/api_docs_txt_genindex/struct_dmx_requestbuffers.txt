@@ -1,0 +1,9 @@
+Struct: struct dmx_requestbuffers
+
+request dmx buffer information
+
+Members
+  count
+    number of requested buffers,
+  size
+    size in bytes of the requested buffer

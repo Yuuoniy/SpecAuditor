@@ -1,0 +1,15 @@
+Function: int ssam_request_sync_submit ( struct ssam_controller * ctrl , struct ssam_request_sync * rqst )
+
+Submit a synchronous request.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller with which to submit the request.
+  struct ssam_request_sync *rqst
+    The request to submit.
+
+Description
+  Submit a synchronous request. The request has to be initialized and
+properly set up, including response buffer (may be NULL if no response is
+expected) and command message data. This function does not wait for the
+request to be completed.

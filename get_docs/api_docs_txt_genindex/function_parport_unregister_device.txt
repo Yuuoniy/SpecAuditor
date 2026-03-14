@@ -1,0 +1,10 @@
+Function: void parport_unregister_device ( struct pardevice * dev )
+
+deregister a device on a parallel port
+
+Parameters
+  struct pardevice *dev
+    pointer to structure representing device
+
+Description
+  This undoes the effect of parport_register_device() .

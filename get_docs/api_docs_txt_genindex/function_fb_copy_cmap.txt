@@ -1,0 +1,12 @@
+Function: int fb_copy_cmap ( const struct fb_cmap * from , struct fb_cmap * to )
+
+copy a colormap
+
+Parameters
+  const struct fb_cmap *from
+    frame buffer colormap structure
+  struct fb_cmap *to
+    frame buffer colormap structure
+
+Description
+  Copy contents of colormap from from to to .

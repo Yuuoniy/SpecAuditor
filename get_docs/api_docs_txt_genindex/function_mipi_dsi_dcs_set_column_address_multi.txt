@@ -1,0 +1,15 @@
+Function: void mipi_dsi_dcs_set_column_address_multi ( struct mipi_dsi_multi_context * ctx , u16 start , u16 end )
+
+define the column extent of the frame memory accessed by the host processor
+
+Parameters
+  struct mipi_dsi_multi_context *ctx
+    Context for multiple DSI transactions
+  u16 start
+    first column of frame memory
+  u16 end
+    last column of frame memory
+
+Description
+  Like mipi_dsi_dcs_set_column_address() but deals with errors in a way that
+makes it convenient to make several calls in a row.

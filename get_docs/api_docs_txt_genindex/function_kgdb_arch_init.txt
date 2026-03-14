@@ -1,0 +1,11 @@
+Function: int kgdb_arch_init ( void )
+
+Perform any architecture specific initialization.
+
+Parameters
+  void
+    no arguments
+
+Description
+  This function will handle the initialization of any architecture
+specific callbacks.

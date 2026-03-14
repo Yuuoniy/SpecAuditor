@@ -1,0 +1,13 @@
+Function: bool class_is_registered ( const struct class * class )
+
+determine if at this moment in time, a class is registered in the driver core or not.
+
+Parameters
+  const struct class *class
+    the class to check
+
+Description
+  Returns a boolean to state if the class is registered in the driver core
+or not.  Note that the value could switch right after this call is made,
+so only use this in places where you “know” it is safe to do so (usually
+to determine if the specific class has been registered yet or not).

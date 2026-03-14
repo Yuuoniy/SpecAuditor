@@ -1,0 +1,13 @@
+Function: struct ssam_cdev_notifier_desc
+
+Notifier descriptor.
+
+Members
+  priority
+    Priority value determining the order in which notifier
+callbacks will be called. A higher value means higher
+priority, i.e. the associated callback will be executed
+earlier than other (lower priority) callbacks.
+  target_category
+    The event target category for which this notifier should
+receive events.

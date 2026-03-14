@@ -1,0 +1,12 @@
+Function: void trace_tasklet_exit ( struct tasklet_struct * t , void * func )
+
+called immediately after the tasklet is run
+
+Parameters
+  struct tasklet_struct *t
+    tasklet pointer
+  void *func
+    tasklet callback or function being run
+
+Description
+  Used to find individual tasklet execution time

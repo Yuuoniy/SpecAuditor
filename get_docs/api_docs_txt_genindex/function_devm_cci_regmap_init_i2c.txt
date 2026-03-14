@@ -1,0 +1,12 @@
+Function: struct regmap * devm_cci_regmap_init_i2c ( struct i2c_client * client , int reg_addr_bits )
+
+Create regmap to use with cci_*() register access functions
+
+Parameters
+  struct i2c_client *client
+    i2c_client to create the regmap for
+  int reg_addr_bits
+    register address width to use (8 or 16)
+
+Description
+  Note the memory for the created regmap is devm() managed, tied to the client.

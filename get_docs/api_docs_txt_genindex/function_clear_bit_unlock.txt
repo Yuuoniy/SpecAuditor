@@ -1,0 +1,12 @@
+Function: void clear_bit_unlock ( long nr , volatile unsigned long * addr )
+
+Clear a bit in memory, for unlock
+
+Parameters
+  long nr
+    the bit to set
+  volatile unsigned long *addr
+    the address to start counting from
+
+Description
+  This operation is atomic and provides release barrier semantics.

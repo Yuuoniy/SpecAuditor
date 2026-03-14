@@ -1,0 +1,10 @@
+Macro: int intel_psr_min_vblank_delay ( const struct intel_crtc_state * crtc_state )
+
+Minimum vblank delay needed by PSR
+
+Parameters
+  const struct intel_crtc_state *crtc_state
+    the crtc state
+
+Description
+  Return minimum vblank delay needed by PSR.

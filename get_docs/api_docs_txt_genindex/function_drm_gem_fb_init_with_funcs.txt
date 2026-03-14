@@ -1,0 +1,25 @@
+Function: int drm_gem_fb_init_with_funcs ( struct drm_device * dev , struct drm_framebuffer * fb , struct drm_file * file , const struct drm_format_info * info , const struct drm_mode_fb_cmd2 * mode_cmd , const struct drm_framebuffer_funcs * funcs )
+
+Helper function for implementing drm_mode_config_funcs.fb_create callback in cases when the driver allocates a subclass of struct drm_framebuffer
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_framebuffer *fb
+    framebuffer object
+  struct drm_file *file
+    DRM file that holds the GEM handle(s) backing the framebuffer
+  const struct drm_format_info *info
+    pixel format information
+  const struct drm_mode_fb_cmd2 *mode_cmd
+    Metadata from the userspace framebuffer creation request
+  const struct drm_framebuffer_funcs *funcs
+    vtable to be used for the new framebuffer object
+
+Description
+  This function can be used to set drm_framebuffer_funcs for drivers that need
+custom framebuffer callbacks. Use drm_gem_fb_create() if you don’t need to
+change drm_framebuffer_funcs . The function does buffer size validation.
+The buffer size validation is for a general case, though, so users should
+pay attention to the checks being appropriate for them or, at least,
+non-conflicting.

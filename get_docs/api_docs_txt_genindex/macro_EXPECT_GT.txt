@@ -1,0 +1,12 @@
+Macro: EXPECT_GT
+
+
+
+Parameters
+  expected
+    expected value
+  seen
+    measured value
+
+Description
+  EXPECT_GT(expected, measured): expected > measured

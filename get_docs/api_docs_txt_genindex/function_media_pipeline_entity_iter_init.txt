@@ -1,0 +1,14 @@
+Function: int media_pipeline_entity_iter_init ( struct media_pipeline * pipe , struct media_pipeline_entity_iter * iter )
+
+Initialize a pipeline entity iterator
+
+Parameters
+  struct media_pipeline *pipe
+    The pipeline
+  struct media_pipeline_entity_iter *iter
+    The iterator
+
+Description
+  This function must be called to initialize the iterator before using it in a media_pipeline_for_each_entity() loop. The iterator must be destroyed by a
+call to media_pipeline_entity_iter_cleanup after the loop (including in code
+paths that break from the loop).

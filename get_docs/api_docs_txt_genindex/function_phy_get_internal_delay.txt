@@ -1,0 +1,22 @@
+Function: s32 phy_get_internal_delay ( struct phy_device * phydev , const int * delay_values , int size , bool is_rx )
+
+returns the index of the internal delay
+
+Parameters
+  struct phy_device *phydev
+    phy_device struct
+  const int *delay_values
+    array of delays the PHY supports
+  int size
+    the size of the delay array
+  bool is_rx
+    boolean to indicate to get the rx internal delay
+
+Description
+  Returns the index within the array of internal delay passed in.
+If the device property is not present then the interface type is checked
+if the interface defines use of internal delay then a 1 is returned otherwise
+a 0 is returned.
+The array must be in ascending order. If PHY does not have an ascending order
+array then size = 0 and the value of the delay property is returned.
+Return -EINVAL if the delay is invalid or cannot be found.

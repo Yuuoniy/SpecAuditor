@@ -1,0 +1,12 @@
+Function: void intel_uncore_forcewake_user_get ( struct intel_uncore * uncore )
+
+claim forcewake on behalf of userspace
+
+Parameters
+  struct intel_uncore *uncore
+    the intel_uncore structure
+
+Description
+  This function is a wrapper around intel_uncore_forcewake_get() to acquire
+the GT powerwell and in the process disable our debugging for the
+duration of userspace’s bypass.

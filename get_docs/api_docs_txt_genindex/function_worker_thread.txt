@@ -1,0 +1,14 @@
+Function: int worker_thread ( void * __worker )
+
+the worker thread function
+
+Parameters
+  void *__worker
+    self
+
+Description
+  The worker thread function.  All workers belong to a worker_pool -
+either a per-cpu one or dynamic unbound one.  These workers process all
+work items regardless of their specific target workqueue.  The only
+exception is work items which belong to workqueues with a rescuer which
+will be explained in rescuer_thread() .

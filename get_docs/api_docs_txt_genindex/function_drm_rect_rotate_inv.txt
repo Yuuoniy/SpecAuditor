@@ -1,0 +1,17 @@
+Function: void drm_rect_rotate_inv ( struct drm_rect * r , int width , int height , unsigned int rotation )
+
+Inverse rotate the rectangle
+
+Parameters
+  struct drm_rect *r
+    rectangle to be rotated
+  int width
+    Width of the coordinate space
+  int height
+    Height of the coordinate space
+  unsigned int rotation
+    Transformation whose inverse is to be applied
+
+Description
+  Apply the inverse of rotation to the coordinates
+of rectangle r .

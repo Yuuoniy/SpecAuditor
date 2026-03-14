@@ -1,0 +1,9 @@
+Function: struct gpio_desc * mctrl_gpio_to_gpiod ( struct mctrl_gpios * gpios , enum mctrl_gpio_idx gidx )
+
+obtain gpio_desc of modem line index
+
+Parameters
+  struct mctrl_gpios *gpios
+    gpios to look into
+  enum mctrl_gpio_idx gidx
+    index of the modem line

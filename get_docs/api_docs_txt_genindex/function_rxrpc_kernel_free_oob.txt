@@ -1,0 +1,10 @@
+Function: void rxrpc_kernel_free_oob ( struct sk_buff * oob )
+
+Free an out-of-band message
+
+Parameters
+  struct sk_buff *oob
+    The OOB message to free
+
+Description
+  Free an OOB message along with any resources it holds.

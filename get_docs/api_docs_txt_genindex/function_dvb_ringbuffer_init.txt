@@ -1,0 +1,11 @@
+Function: void dvb_ringbuffer_init ( struct dvb_ringbuffer * rbuf , void * data , size_t len )
+
+initialize ring buffer, lock and queue
+
+Parameters
+  struct dvb_ringbuffer *rbuf
+    pointer to struct dvb_ringbuffer
+  void *data
+    pointer to the buffer where the data will be stored
+  size_t len
+    bytes from ring buffer into buf

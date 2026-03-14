@@ -1,0 +1,13 @@
+Function: int iscsi_iser_ep_poll ( struct iscsi_endpoint * ep , int timeout_ms )
+
+poll for iser connection establishment to complete
+
+Parameters
+  struct iscsi_endpoint *ep
+    iscsi endpoint (created at ep_connect)
+  int timeout_ms
+    polling timeout allowed in ms.
+
+Description
+  This routine boils down to waiting for up_completion signaling
+that cma_id got CONNECTED event.

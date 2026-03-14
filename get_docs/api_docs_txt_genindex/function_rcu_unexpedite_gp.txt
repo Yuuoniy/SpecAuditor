@@ -1,0 +1,13 @@
+Function: void rcu_unexpedite_gp ( void )
+
+Cancel prior rcu_expedite_gp() invocation
+
+Parameters
+  void
+    no arguments
+
+Description
+  Undo a prior call to rcu_expedite_gp() .  If all prior calls to rcu_expedite_gp() are undone by a subsequent call to rcu_unexpedite_gp() ,
+and if the rcu_expedited sysfs/boot parameter is not set, then all
+subsequent calls to synchronize_rcu() and friends will return to
+their normal non-expedited behavior.

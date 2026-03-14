@@ -1,0 +1,23 @@
+Function: int __pci_hp_initialize ( struct hotplug_slot * slot , struct pci_bus * bus , int devnr , const char * name , struct module * owner , const char * mod_name )
+
+prepare hotplug slot for in-kernel use
+
+Parameters
+  struct hotplug_slot *slot
+    pointer to the struct hotplug_slot to initialize
+  struct pci_bus *bus
+    bus this slot is on
+  int devnr
+    slot number
+  const char *name
+    name registered with kobject core
+  struct module *owner
+    caller module owner
+  const char *mod_name
+    caller module name
+
+Description
+  Allocate and fill in a PCI slot for use by a hotplug driver.  Once this has
+been called, the driver may invoke hotplug_slot_name() to get the slot’s
+unique name.  The driver must be prepared to handle a ->reset_slot callback
+from this point on.

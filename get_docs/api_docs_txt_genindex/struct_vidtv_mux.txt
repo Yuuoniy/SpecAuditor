@@ -1,0 +1,47 @@
+Struct: struct vidtv_mux
+
+A muxer abstraction loosely based in libavcodec/mpegtsenc.c
+
+Members
+  fe
+    The frontend structure allocated by the muxer.
+  dev
+    pointer to struct device .
+  timing
+    Keeps track of timing related information.
+  mux_rate_kbytes_sec
+    The bit rate for the TS, in kbytes.
+  pid_ctx
+    A hash table to keep track of per-PID metadata.
+  on_new_packets_available_cb
+    A callback to inform of new TS packets ready.
+  mux_buf
+    A pointer to a buffer for this muxer. TS packets are stored there
+and then passed on to the bridge driver.
+  mux_buf_sz
+    The size for ‘mux_buf’.
+  mux_buf_offset
+    The current offset into ‘mux_buf’.
+  channels
+    The channels associated with this muxer.
+  si
+    Keeps track of the PSI context.
+  num_streamed_pcr
+    Number of PCR packets streamed.
+  num_streamed_si
+    The number of PSI packets streamed.
+  mpeg_thread
+    Thread responsible for the muxer loop.
+  streaming
+    whether ‘mpeg_thread’ is running.
+  pcr_pid
+    The TS PID used for the PSI packets. All channels will share the
+same PCR.
+  transport_stream_id
+    The transport stream ID
+  network_id
+    The network ID
+  network_name
+    The network name
+  priv
+    Private data.

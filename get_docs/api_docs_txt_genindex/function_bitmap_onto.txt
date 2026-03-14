@@ -1,0 +1,20 @@
+Function: void bitmap_onto ( unsigned long * dst , const unsigned long * orig , const unsigned long * relmap , unsigned int bits )
+
+translate one bitmap relative to another
+
+Parameters
+  unsigned long *dst
+    resulting translated bitmap
+  const unsigned long *orig
+    original untranslated bitmap
+  const unsigned long *relmap
+    bitmap relative to which translated
+  unsigned int bits
+    number of bits in each of these bitmaps
+
+Description
+  Set the n-th bit of dst iff there exists some m such that the
+n-th bit of relmap is set, the m-th bit of orig is set, and
+the n-th bit of relmap is also the m-th _set_ bit of relmap .
+(If you understood the previous sentence the first time your
+read it, you’re overqualified for your current job.)

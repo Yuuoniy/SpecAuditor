@@ -1,0 +1,23 @@
+Function: struct drm_xe_exec
+
+Input of DRM_IOCTL_XE_EXEC
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  exec_queue_id
+    Exec queue ID for the batch buffer
+  num_syncs
+    Amount of struct drm_xe_sync in array.
+  syncs
+    Pointer to struct drm_xe_sync array.
+  address
+    address of batch buffer if num_batch_buffer == 1 or an
+array of batch buffer addresses
+  num_batch_buffer
+    number of batch buffer in this exec, must match
+the width of the engine
+  pad
+    MBZ
+  reserved
+    Reserved

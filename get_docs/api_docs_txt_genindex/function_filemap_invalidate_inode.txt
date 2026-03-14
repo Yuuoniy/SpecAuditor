@@ -1,0 +1,20 @@
+Function: int filemap_invalidate_inode ( struct inode * inode , bool flush , loff_t start , loff_t end )
+
+Invalidate/forcibly write back a range of an inode’s pagecache
+
+Parameters
+  struct inode *inode
+    The inode to flush
+  bool flush
+    Set to write back rather than simply invalidate.
+  loff_t start
+    First byte to in range.
+  loff_t end
+    Last byte in range (inclusive), or LLONG_MAX for everything from start
+onwards.
+
+Description
+  Invalidate all the folios on an inode that contribute to the specified
+range, possibly writing them back first.  Whilst the operation is
+undertaken, the invalidate lock is held to prevent new folios from being
+installed.

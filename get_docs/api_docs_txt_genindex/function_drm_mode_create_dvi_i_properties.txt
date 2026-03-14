@@ -1,0 +1,10 @@
+Function: int drm_mode_create_dvi_i_properties ( struct drm_device * dev )
+
+create DVI-I specific connector properties
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  Called by a driver the first time a DVI-I connector is made.

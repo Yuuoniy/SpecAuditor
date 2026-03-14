@@ -1,0 +1,17 @@
+Function: int ata_scsi_user_scan ( struct Scsi_Host * shost , unsigned int channel , unsigned int id , u64 lun )
+
+indication for user-initiated bus scan
+
+Parameters
+  struct Scsi_Host *shost
+    SCSI host to scan
+  unsigned int channel
+    Channel to scan
+  unsigned int id
+    ID to scan
+  u64 lun
+    LUN to scan
+
+Description
+  This function is called when user explicitly requests bus
+scan.  Set probe pending flag and invoke EH.

@@ -1,0 +1,13 @@
+Function: void usb_autopm_put_interface ( struct usb_interface * intf )
+
+decrement a USB interface’s PM-usage counter
+
+Parameters
+  struct usb_interface *intf
+    the usb_interface whose counter should be decremented
+
+Description
+  This routine should be called by an interface driver when it is
+finished using intf and wants to allow it to autosuspend.  A typical
+example would be a character-device driver when its device file is
+closed.

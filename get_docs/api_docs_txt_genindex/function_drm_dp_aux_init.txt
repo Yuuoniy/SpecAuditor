@@ -1,0 +1,16 @@
+Function: void drm_dp_aux_init ( struct drm_dp_aux * aux )
+
+minimally initialise an aux channel
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+
+Description
+  If you need to use the drm_dp_aux’s i2c adapter prior to registering it with
+the outside world, call drm_dp_aux_init() first. For drivers which are
+grandparents to their AUX adapters (e.g. the AUX adapter is parented by a drm_connector ), you must still call drm_dp_aux_register() once the connector
+has been registered to allow userspace access to the auxiliary DP channel.
+Likewise, for such drivers you should also assign drm_dp_aux.drm_dev as
+early as possible so that the drm_device that corresponds to the AUX adapter
+may be mentioned in debugging output from the DRM DP helpers.

@@ -1,0 +1,16 @@
+Function: int amdgpu_dm_update_plane_color_mgmt ( struct dm_crtc_state * crtc , struct drm_plane_state * plane_state , struct dc_plane_state * dc_plane_state )
+
+Maps DRM color management to DC plane.
+
+Parameters
+  struct dm_crtc_state *crtc
+    amdgpu_dm crtc state
+  struct drm_plane_state *plane_state
+    DRM plane state
+  struct dc_plane_state *dc_plane_state
+    target DC surface
+
+Description
+  Update the underlying dc_stream_state’s input transfer function (ITF) in
+preparation for hardware commit. The transfer function used depends on
+the preparation done on the stream for color management.

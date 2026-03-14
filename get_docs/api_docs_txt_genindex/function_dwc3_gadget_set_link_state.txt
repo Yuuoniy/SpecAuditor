@@ -1,0 +1,13 @@
+Function: int dwc3_gadget_set_link_state ( struct dwc3 * dwc , enum dwc3_link_state state )
+
+sets usb link to a particular state
+
+Parameters
+  struct dwc3 *dwc
+    pointer to our context structure
+  enum dwc3_link_state state
+    the state to put link into
+
+Description
+  Caller should take care of locking. This function will
+return 0 on success or -ETIMEDOUT.

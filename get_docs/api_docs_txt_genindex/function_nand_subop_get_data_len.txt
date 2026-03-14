@@ -1,0 +1,14 @@
+Function: unsigned int nand_subop_get_data_len ( const struct nand_subop * subop , unsigned int instr_idx )
+
+Get the number of bytes to retrieve
+
+Parameters
+  const struct nand_subop *subop
+    The entire sub-operation
+  unsigned int instr_idx
+    Index of the instruction inside the sub-operation
+
+Description
+  During driver development, one could be tempted to directly use the
+->data->len field of a data instruction. This is wrong as data instructions
+might be split.

@@ -1,0 +1,12 @@
+Function: int scsi_device_supports_vpd ( struct scsi_device * sdev )
+
+test if a device supports VPD pages
+
+Parameters
+  struct scsi_device *sdev
+    the struct scsi_device to test
+
+Description
+  If the ‘try_vpd_pages’ flag is set it takes precedence.
+Otherwise we will assume VPD pages are supported if the
+SCSI level is at least SPC-3 and ‘skip_vpd_pages’ is not set.

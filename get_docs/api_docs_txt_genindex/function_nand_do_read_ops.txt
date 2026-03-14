@@ -1,0 +1,14 @@
+Function: int nand_do_read_ops ( struct nand_chip * chip , loff_t from , struct mtd_oob_ops * ops )
+
+[INTERN] Read data with ECC
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+  loff_t from
+    offset to read from
+  struct mtd_oob_ops *ops
+    oob ops structure
+
+Description
+  Internal function. Called with chip held.

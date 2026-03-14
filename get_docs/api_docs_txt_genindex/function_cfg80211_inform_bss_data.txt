@@ -1,0 +1,29 @@
+Function: struct cfg80211_bss * cfg80211_inform_bss_data ( struct wiphy * wiphy , struct cfg80211_inform_bss * data , enum cfg80211_bss_frame_type ftype , const u8 * bssid , u64 tsf , u16 capability , u16 beacon_interval , const u8 * ie , size_t ielen , gfp_t gfp )
+
+inform cfg80211 of a new BSS
+
+Parameters
+  struct wiphy *wiphy
+    the wiphy reporting the BSS
+  struct cfg80211_inform_bss *data
+    the BSS metadata
+  enum cfg80211_bss_frame_type ftype
+    frame type (if known)
+  const u8 *bssid
+    the BSSID of the BSS
+  u64 tsf
+    the TSF sent by the peer in the beacon/probe response (or 0)
+  u16 capability
+    the capability field sent by the peer
+  u16 beacon_interval
+    the beacon interval announced by the peer
+  const u8 *ie
+    additional IEs sent by the peer
+  size_t ielen
+    length of the additional IEs
+  gfp_t gfp
+    context flags
+
+Description
+  This informs cfg80211 that BSS information was found and
+the BSS should be updated/added.

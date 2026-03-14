@@ -1,0 +1,13 @@
+Function: unsigned int ata_scsi_start_stop_xlat ( struct ata_queued_cmd * qc )
+
+Translate SCSI START STOP UNIT command
+
+Parameters
+  struct ata_queued_cmd *qc
+    Storage for translated ATA taskfile
+
+Description
+  Sets up an ATA taskfile to issue STANDBY (to stop) or READ VERIFY
+(to start). Perhaps these commands should be preceded by
+CHECK POWER MODE to see what power mode the device is already in.
+[See SAT revision 5 at www.t10.org]

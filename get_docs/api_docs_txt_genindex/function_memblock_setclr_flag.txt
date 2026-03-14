@@ -1,0 +1,18 @@
+Function: int __init_memblock memblock_setclr_flag ( struct memblock_type * type , phys_addr_t base , phys_addr_t size , int set , int flag )
+
+set or clear flag for a memory region
+
+Parameters
+  struct memblock_type *type
+    memblock type to set/clear flag for
+  phys_addr_t base
+    base address of the region
+  phys_addr_t size
+    size of the region
+  int set
+    set or clear the flag
+  int flag
+    the flag to update
+
+Description
+  This function isolates region [ base , base + size ), and sets/clears flag

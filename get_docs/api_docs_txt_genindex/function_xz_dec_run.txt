@@ -1,0 +1,13 @@
+Function: enum xz_ret xz_dec_run ( struct xz_dec * s , struct xz_buf * b )
+
+Run the XZ decoder
+
+Parameters
+  struct xz_dec *s
+    Decoder state allocated using xz_dec_init()
+  struct xz_buf *b
+    Input and output buffers
+
+Description
+  The possible return values depend on build options and operation mode.
+See enum xz_ret for details.

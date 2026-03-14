@@ -1,0 +1,14 @@
+Function: bool v4l2_m2m_is_last_draining_src_buf ( struct v4l2_m2m_ctx * m2m_ctx , struct vb2_v4l2_buffer * vbuf )
+
+return the output buffer draining state in the current encoding/decoding session
+
+Parameters
+  struct v4l2_m2m_ctx *m2m_ctx
+    m2m context assigned to the instance given by struct v4l2_m2m_ctx
+  struct vb2_v4l2_buffer *vbuf
+    pointer to struct v4l2_buffer
+
+Description
+  This will identify the last output buffer queued before a session stop
+was required, leading to an actual encoding/decoding session stop state
+in the encoding/decoding process after being processed.

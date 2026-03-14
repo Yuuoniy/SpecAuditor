@@ -1,0 +1,17 @@
+Function: struct iommu_ioas_iova_ranges
+
+ioctl(IOMMU_IOAS_IOVA_RANGES)
+
+Members
+  size
+    sizeof( struct iommu_ioas_iova_ranges )
+  ioas_id
+    IOAS ID to read ranges from
+  num_iovas
+    Input/Output total number of ranges in the IOAS
+  __reserved
+    Must be 0
+  allowed_iovas
+    Pointer to the output array of struct iommu_iova_range
+  out_iova_alignment
+    Minimum alignment required for mapping IOVA

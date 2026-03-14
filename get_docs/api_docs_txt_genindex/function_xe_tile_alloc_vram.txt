@@ -1,0 +1,11 @@
+Function: int xe_tile_alloc_vram ( struct xe_tile * tile )
+
+Perform per-tile VRAM structs allocation
+
+Parameters
+  struct xe_tile *tile
+    Tile to perform allocations for
+
+Description
+  Allocates VRAM per-tile data structures using DRM-managed allocations.
+Does not touch the hardware.

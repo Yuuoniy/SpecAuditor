@@ -1,0 +1,17 @@
+Function: void iosys_map_memset ( struct iosys_map * dst , size_t offset , int value , size_t len )
+
+Memset iosys_map
+
+Parameters
+  struct iosys_map *dst
+    The iosys_map structure
+  size_t offset
+    Offset from dst where to start setting value
+  int value
+    The value to set
+  size_t len
+    The number of bytes to set in dst
+
+Description
+  Set value in iosys_map. Depending on the buffer’s location, the helper
+picks the correct method of accessing the memory.

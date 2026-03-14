@@ -1,0 +1,9 @@
+Function: void hlist_add_before ( struct hlist_node * n , struct hlist_node * next )
+
+add a new entry before the one specified
+
+Parameters
+  struct hlist_node *n
+    new entry to be added
+  struct hlist_node *next
+    hlist node to add it before, which must be non-NULL

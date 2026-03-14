@@ -1,0 +1,10 @@
+Function: void netif_dormant_off ( struct net_device * dev )
+
+set device as not dormant.
+
+Parameters
+  struct net_device *dev
+    network device
+
+Description
+  Device is not in dormant state.

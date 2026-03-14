@@ -1,0 +1,16 @@
+Function: u64 drm_color_ctm_s31_32_to_qm_n ( u64 user_input , u32 m , u32 n )
+
+
+
+Parameters
+  u64 user_input
+    input value
+  u32 m
+    number of integer bits, only support m <= 32, include the sign-bit
+  u32 n
+    number of fractional bits, only support n <= 32
+
+Description
+  Convert and clamp S31.32 sign-magnitude to Qm.n (signed 2’s complement).
+The sign-bit BIT(m+n-1) and above are 0 for positive value and 1 for negative
+the range of value is [-2^(m-1), 2^(m-1) - 2^-n]

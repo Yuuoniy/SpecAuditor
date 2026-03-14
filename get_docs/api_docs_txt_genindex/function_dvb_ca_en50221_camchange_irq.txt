@@ -1,0 +1,11 @@
+Function: void dvb_ca_en50221_camchange_irq ( struct dvb_ca_en50221 * pubca , int slot , int change_type )
+
+A CAMCHANGE IRQ has occurred.
+
+Parameters
+  struct dvb_ca_en50221 *pubca
+    CA instance.
+  int slot
+    Slot concerned.
+  int change_type
+    One of the DVB_CA_CAMCHANGE_* values

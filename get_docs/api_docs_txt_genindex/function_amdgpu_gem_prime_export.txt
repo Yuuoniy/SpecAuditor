@@ -1,0 +1,12 @@
+Function: struct dma_buf * amdgpu_gem_prime_export ( struct drm_gem_object * gobj , int flags )
+
+drm_driver.gem_prime_export implementation
+
+Parameters
+  struct drm_gem_object *gobj
+    GEM BO
+  int flags
+    Flags such as DRM_CLOEXEC and DRM_RDWR.
+
+Description
+  The main work is done by the drm_gem_prime_export helper.

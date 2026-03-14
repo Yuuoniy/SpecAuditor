@@ -1,0 +1,10 @@
+Function: void security_perf_event_free ( struct perf_event * event )
+
+Free a perf event LSM blob
+
+Parameters
+  struct perf_event *event
+    perf event
+
+Description
+  Release (free) perf_event security info.

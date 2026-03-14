@@ -1,0 +1,31 @@
+Function: int rdma_rw_ctx_signature_init ( struct rdma_rw_ctx * ctx , struct ib_qp * qp , u32 port_num , struct scatterlist * sg , u32 sg_cnt , struct scatterlist * prot_sg , u32 prot_sg_cnt , struct ib_sig_attrs * sig_attrs , u64 remote_addr , u32 rkey , enum dma_data_direction dir )
+
+initialize a RW context with signature offload
+
+Parameters
+  struct rdma_rw_ctx *ctx
+    context to initialize
+  struct ib_qp *qp
+    queue pair to operate on
+  u32 port_num
+    port num to which the connection is bound
+  struct scatterlist *sg
+    scatterlist to READ/WRITE from/to
+  u32 sg_cnt
+    number of entries in sg
+  struct scatterlist *prot_sg
+    scatterlist to READ/WRITE protection information from/to
+  u32 prot_sg_cnt
+    number of entries in prot_sg
+  struct ib_sig_attrs *sig_attrs
+    signature offloading algorithms
+  u64 remote_addr
+    remote address to read/write (relative to rkey )
+  u32 rkey
+    remote key to operate on
+  enum dma_data_direction dir
+    DMA_TO_DEVICE for RDMA WRITE, DMA_FROM_DEVICE for RDMA READ
+
+Description
+  Returns the number of WQEs that will be needed on the workqueue if
+successful, or a negative error code.

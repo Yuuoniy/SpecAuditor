@@ -1,0 +1,14 @@
+Function: struct hlist_node * seq_hlist_next_rcu ( void * v , struct hlist_head * head , loff_t * ppos )
+
+move to the next position of the hlist protected by RCU
+
+Parameters
+  void *v
+    the current iterator
+  struct hlist_head *head
+    the head of the hlist
+  loff_t *ppos
+    the current position
+
+Description
+  Called at seq_file->op-> next() .

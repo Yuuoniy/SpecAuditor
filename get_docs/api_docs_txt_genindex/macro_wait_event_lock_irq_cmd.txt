@@ -1,0 +1,19 @@
+Macro: wait_event_lock_irq_cmd
+
+
+
+Parameters
+  wq_head
+    the waitqueue to wait on
+  condition
+    a C expression for the event to wait for
+  lock
+    a locked spinlock_t, which will be released before cmd
+and schedule() and reacquired afterwards.
+  cmd
+    a command which is invoked outside the critical section before
+sleep
+
+Description
+  The process is put to sleep (TASK_UNINTERRUPTIBLE) until the condition evaluates to true. The condition is checked each time
+the waitqueue wq_head is woken up.

@@ -1,0 +1,18 @@
+Function: void scsi_sanitize_inquiry_string ( unsigned char * s , int len )
+
+remove non-graphical chars from an INQUIRY result string
+
+Parameters
+  unsigned char *s
+    INQUIRY result string to sanitize
+  int len
+    length of the string
+
+Description
+  The SCSI spec says that INQUIRY vendor, product, and revision
+strings must consist entirely of graphic ASCII characters,
+padded on the right with spaces.  Since not all devices obey
+this rule, we will replace non-graphic or non-ASCII characters
+with spaces.  Exception: a NUL character is interpreted as a
+string terminator, so all the following characters are set to
+spaces.

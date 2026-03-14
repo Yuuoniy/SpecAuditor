@@ -1,0 +1,13 @@
+Struct: struct drm_ioctl_desc
+
+DRM driver ioctl entry
+
+Members
+  cmd
+    ioctl command number, without flags
+  flags
+    a bitmask of enum drm_ioctl_flags
+  func
+    handler for this ioctl
+  name
+    user-readable name for debug output

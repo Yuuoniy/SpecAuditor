@@ -1,0 +1,14 @@
+Function: int security_inode_symlink ( struct inode * dir , struct dentry * dentry , const char * old_name )
+
+Check if creating a symbolic link is allowed
+
+Parameters
+  struct inode *dir
+    parent directory
+  struct dentry *dentry
+    symbolic link
+  const char *old_name
+    existing filename
+
+Description
+  Check the permission to create a symbolic link to a file.

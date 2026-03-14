@@ -1,0 +1,9 @@
+Struct: struct cxl_event_state
+
+Event log driver state
+
+Members
+  buf
+    Buffer to receive event data
+  log_lock
+    Serialize event_buf and log use

@@ -1,0 +1,15 @@
+Function: int security_shm_associate ( struct kern_ipc_perm * shp , int shmflg )
+
+Check if a sysv shm operation is allowed
+
+Parameters
+  struct kern_ipc_perm *shp
+    sysv ipc permission structure
+  int shmflg
+    operation flags
+
+Description
+  Check permission when a shared memory region is requested through the shmget
+system call. This hook is only called when returning the shared memory
+region identifier for an existing region, not when a new shared memory
+region is created.

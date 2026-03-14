@@ -1,0 +1,13 @@
+Function: void idle_worker_timeout ( struct timer_list * t )
+
+check if some idle workers can now be deleted.
+
+Parameters
+  struct timer_list *t
+    The pool’s idle_timer that just expired
+
+Description
+  The timer is armed in worker_enter_idle() . Note that it isn’t disarmed in worker_leave_idle() , as a worker flicking between idle and active while its
+pool is at the too_many_workers() tipping point would cause too much timer
+housekeeping overhead. Since IDLE_WORKER_TIMEOUT is long enough, we just let
+it expire and re-evaluate things from there.

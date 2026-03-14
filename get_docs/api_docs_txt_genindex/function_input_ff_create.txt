@@ -1,0 +1,15 @@
+Function: int input_ff_create ( struct input_dev * dev , unsigned int max_effects )
+
+create force-feedback device
+
+Parameters
+  struct input_dev *dev
+    input device supporting force-feedback
+  unsigned int max_effects
+    maximum number of effects supported by the device
+
+Description
+  This function allocates all necessary memory for a force feedback
+portion of an input device and installs all default handlers. dev->ffbit should be already set up before calling this function.
+Once ff device is created you need to setup its upload, erase,
+playback and other handlers before registering input device

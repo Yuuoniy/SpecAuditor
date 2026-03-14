@@ -1,0 +1,14 @@
+Function: void drmm_kfree ( struct drm_device * dev , void * data )
+
+drm_device managed kfree()
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  void *data
+    memory allocation to be freed
+
+Description
+  This is a drm_device managed version of kfree() which can be used to
+release memory allocated through drmm_kmalloc() or any of its related
+functions before the final drm_dev_put() of dev .

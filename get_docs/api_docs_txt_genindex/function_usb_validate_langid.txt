@@ -1,0 +1,10 @@
+Function: bool usb_validate_langid ( u16 langid )
+
+validate usb language identifiers
+
+Parameters
+  u16 langid
+    usb language identifier
+
+Description
+  Returns true for valid language identifier, otherwise false.

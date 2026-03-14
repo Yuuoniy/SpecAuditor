@@ -1,0 +1,12 @@
+Function: struct address_space * folio_flush_mapping ( struct folio * folio )
+
+Find the file mapping this folio belongs to.
+
+Parameters
+  struct folio *folio
+    The folio.
+
+Description
+  For folios which are in the page cache, return the mapping that this
+page belongs to.  Anonymous folios return NULL, even if they’re in
+the swap cache.  Other kinds of folio also return NULL.

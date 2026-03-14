@@ -1,0 +1,17 @@
+Function: void input_event ( struct input_dev * dev , unsigned int type , unsigned int code , int value )
+
+report new input event
+
+Parameters
+  struct input_dev *dev
+    device that generated the event
+  unsigned int type
+    type of the event
+  unsigned int code
+    event code
+  int value
+    value of the event
+
+Description
+  This function should be used by drivers implementing various input
+devices to report input events. See also input_inject_event() .

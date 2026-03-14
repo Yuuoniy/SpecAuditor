@@ -1,0 +1,14 @@
+Function: void set_disk_ro ( struct gendisk * disk , bool read_only )
+
+set a gendisk read-only
+
+Parameters
+  struct gendisk *disk
+    gendisk to operate on
+  bool read_only
+    true to set the disk read-only, false set the disk read/write
+
+Description
+  This function is used to indicate whether a given disk device should have its
+read-only flag set. set_disk_ro() is typically used by device drivers to
+indicate whether the underlying physical device is write-protected.

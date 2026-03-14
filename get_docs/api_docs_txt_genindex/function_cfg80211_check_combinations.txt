@@ -1,0 +1,14 @@
+Function: int cfg80211_check_combinations ( struct wiphy * wiphy , struct iface_combination_params * params )
+
+check interface combinations
+
+Parameters
+  struct wiphy *wiphy
+    the wiphy
+  struct iface_combination_params *params
+    the interface combinations parameter
+
+Description
+  This function can be called by the driver to check whether a
+combination of interfaces and their types are allowed according to
+the interface combinations.

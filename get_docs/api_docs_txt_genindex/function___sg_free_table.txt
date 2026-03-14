@@ -1,0 +1,20 @@
+Function: void __sg_free_table ( struct sg_table * table , unsigned int max_ents , unsigned int nents_first_chunk , sg_free_fn * free_fn , unsigned int num_ents )
+
+Free a previously mapped sg table
+
+Parameters
+  struct sg_table *table
+    The sg table header to use
+  unsigned int max_ents
+    The maximum number of entries per single scatterlist
+  unsigned int nents_first_chunk
+    Number of entries int the (preallocated) first
+scatterlist chunk, 0 means no such preallocated first chunk
+  sg_free_fn *free_fn
+    Free function
+  unsigned int num_ents
+    Number of entries in the table
+
+Description
+  Free an sg table previously allocated and setup with __sg_alloc_table() .  The max_ents value must be identical to
+that previously used with __sg_alloc_table() .

@@ -1,0 +1,10 @@
+Function: void kfree_const ( const void * x )
+
+conditionally free memory
+
+Parameters
+  const void *x
+    pointer to the memory
+
+Description
+  Function calls kfree only if x is not in .rodata section.

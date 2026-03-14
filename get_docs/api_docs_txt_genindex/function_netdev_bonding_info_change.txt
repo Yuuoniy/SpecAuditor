@@ -1,0 +1,13 @@
+Function: void netdev_bonding_info_change ( struct net_device * dev , struct netdev_bonding_info * bonding_info )
+
+Dispatch event about slave change
+
+Parameters
+  struct net_device *dev
+    device
+  struct netdev_bonding_info *bonding_info
+    info to dispatch
+
+Description
+  Send NETDEV_BONDING_INFO to netdev notifiers with info.
+The caller must hold the RTNL lock.

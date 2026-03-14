@@ -1,0 +1,11 @@
+Function: struct nvmem_cell * nvmem_cell_get ( struct device * dev , const char * id )
+
+Get nvmem cell of device from a given cell name
+
+Parameters
+  struct device *dev
+    Device that requests the nvmem cell.
+  const char *id
+    nvmem cell name to get (this corresponds with the name from the
+nvmem-cell-names property for DT systems and with the con_id from
+the lookup entry for non-DT systems).

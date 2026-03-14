@@ -1,0 +1,15 @@
+Function: vm_fault_t vmf_insert_pfn ( struct vm_area_struct * vma , unsigned long addr , unsigned long pfn )
+
+insert single pfn into user vma
+
+Parameters
+  struct vm_area_struct *vma
+    user vma to map to
+  unsigned long addr
+    target user address of this page
+  unsigned long pfn
+    source kernel pfn
+
+Description
+  Similar to vm_insert_page, this allows drivers to insert individual pages
+they’ve allocated into a user vma. Same comments apply.

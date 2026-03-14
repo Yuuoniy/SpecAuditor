@@ -1,0 +1,14 @@
+Function: int amdgpu_irq_put ( struct amdgpu_device * adev , struct amdgpu_irq_src * src , unsigned int type )
+
+disable interrupt
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device pointer
+  struct amdgpu_irq_src *src
+    interrupt source pointer
+  unsigned int type
+    type of interrupt
+
+Description
+  Enables specified type of interrupt on the specified source (all ASICs).

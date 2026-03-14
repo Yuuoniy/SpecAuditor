@@ -1,0 +1,11 @@
+Function: int drm_modeset_lock_single_interruptible ( struct drm_modeset_lock * lock )
+
+take a single modeset lock
+
+Parameters
+  struct drm_modeset_lock *lock
+    lock to take
+
+Description
+  This function behaves as drm_modeset_lock() with a NULL context,
+but performs interruptible waits.

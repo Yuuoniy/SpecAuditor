@@ -1,0 +1,16 @@
+Function: int dvb_ca_en50221_init ( struct dvb_adapter * dvb_adapter , struct dvb_ca_en50221 * ca , int flags , int slot_count )
+
+Initialise a new DVB CA device.
+
+Parameters
+  struct dvb_adapter *dvb_adapter
+    DVB adapter to attach the new CA device to.
+  struct dvb_ca_en50221 *ca
+    The dvb_ca instance.
+  int flags
+    Flags describing the CA device (DVB_CA_EN50221_FLAG_*).
+  int slot_count
+    Number of slots supported.
+
+Description
+  return 0 on success, nonzero on failure

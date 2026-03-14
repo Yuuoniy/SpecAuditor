@@ -1,0 +1,3 @@
+Enum: enum iommu_hwpt_pgfault_perm
+
+perm bits for struct iommu_hwpt_pgfault

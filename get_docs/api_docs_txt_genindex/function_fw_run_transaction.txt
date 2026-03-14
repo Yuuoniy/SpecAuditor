@@ -1,0 +1,27 @@
+Function: int fw_run_transaction ( struct fw_card * card , int tcode , int destination_id , int generation , int speed , unsigned long long offset , void * payload , size_t length )
+
+send request and sleep until transaction is completed
+
+Parameters
+  struct fw_card *card
+    card interface for this request
+  int tcode
+    transaction code
+  int destination_id
+    destination node ID, consisting of bus_ID and phy_ID
+  int generation
+    bus generation in which request and response are valid
+  int speed
+    transmission speed
+  unsigned long long offset
+    48bit wide offset into destination’s address space
+  void *payload
+    data payload for the request subaction
+  size_t length
+    length of the payload, in bytes
+
+Description
+  Returns the RCODE.  See fw_send_request() for parameter documentation.
+Unlike fw_send_request() , data points to the payload of the request or/and
+to the payload of the response.  DMA mapping restrictions apply to outbound
+request payloads of >= 8 bytes but not to inbound response payloads.

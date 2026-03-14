@@ -1,0 +1,14 @@
+Function: long clk_round_rate ( struct clk * clk , unsigned long rate )
+
+adjust a rate to the exact rate a clock can provide
+
+Parameters
+  struct clk *clk
+    clock source
+  unsigned long rate
+    desired clock rate in Hz
+
+Description
+  This answers the question “if I were to pass rate to clk_set_rate() ,
+what clock rate would I end up with?” without changing the hardware
+in any way.  In other words:

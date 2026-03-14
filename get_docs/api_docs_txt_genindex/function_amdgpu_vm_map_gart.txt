@@ -1,0 +1,13 @@
+Function: uint64_t amdgpu_vm_map_gart ( const dma_addr_t * pages_addr , uint64_t addr )
+
+Resolve gart mapping of addr
+
+Parameters
+  const dma_addr_t *pages_addr
+    optional DMA address to use for lookup
+  uint64_t addr
+    the unmapped addr
+
+Description
+  Look up the physical address of the page that the pte resolves
+to.

@@ -1,0 +1,12 @@
+Function: struct backlight_device * backlight_device_get_by_name ( const char * name )
+
+Get backlight device by name
+
+Parameters
+  const char *name
+    Device name
+
+Description
+  This function looks up a backlight device by its name. It obtains a reference
+on the backlight device and it is the caller’s responsibility to drop the
+reference by calling put_device() .

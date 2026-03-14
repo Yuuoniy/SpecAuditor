@@ -1,0 +1,9 @@
+Function: ktime_t ktime_set ( const s64 secs , const unsigned long nsecs )
+
+Set a ktime_t variable from a seconds/nanoseconds value
+
+Parameters
+  const s64 secs
+    seconds to set
+  const unsigned long nsecs
+    nanoseconds to set

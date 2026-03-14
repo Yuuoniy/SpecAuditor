@@ -1,0 +1,14 @@
+Function: struct drm_gpuva_ops * drm_gpuvm_prefetch_ops_create ( struct drm_gpuvm * gpuvm , u64 addr , u64 range )
+
+creates the drm_gpuva_ops to prefetch
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm representing the GPU VA space
+  u64 addr
+    the start address of the range to prefetch
+  u64 range
+    the range of the mappings to prefetch
+
+Description
+  This function creates a list of operations to perform prefetching.

@@ -1,0 +1,10 @@
+Function: int security_tun_dev_create ( void )
+
+Check if creating a TUN device is allowed
+
+Parameters
+  void
+    no arguments
+
+Description
+  Check permissions prior to creating a new TUN device.

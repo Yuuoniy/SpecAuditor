@@ -1,0 +1,14 @@
+Function: int irq_domain_disconnect_hierarchy ( struct irq_domain * domain , unsigned int virq )
+
+Mark the first unused level of a hierarchy
+
+Parameters
+  struct irq_domain *domain
+    IRQ domain from which the hierarchy is to be disconnected
+  unsigned int virq
+    IRQ number where the hierarchy is to be trimmed
+
+Description
+  Marks the virq level belonging to domain as disconnected.
+Returns -EINVAL if virq doesn’t have a valid irq_data pointing
+to domain .

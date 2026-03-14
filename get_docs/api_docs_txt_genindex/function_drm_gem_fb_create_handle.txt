@@ -1,0 +1,15 @@
+Function: int drm_gem_fb_create_handle ( struct drm_framebuffer * fb , struct drm_file * file , unsigned int * handle )
+
+Create handle for GEM backed framebuffer
+
+Parameters
+  struct drm_framebuffer *fb
+    Framebuffer
+  struct drm_file *file
+    DRM file to register the handle for
+  unsigned int *handle
+    Pointer to return the created handle
+
+Description
+  This function creates a handle for the GEM object backing the framebuffer.
+Drivers can use this as their drm_framebuffer_funcs->create_handle callback. The GETFB IOCTL calls into this callback.

@@ -1,0 +1,11 @@
+Function: unsigned int xas_try_split_min_order ( unsigned int order )
+
+Minimal split order xas_try_split() can accept
+
+Parameters
+  unsigned int order
+    Current entry order.
+
+Description
+  xas_try_split() can split a multi-index entry to smaller than order - 1 if
+no new xa_node is needed. This function provides the minimal order xas_try_split() supports.

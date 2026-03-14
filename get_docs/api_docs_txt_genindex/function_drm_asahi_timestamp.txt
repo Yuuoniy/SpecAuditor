@@ -1,0 +1,11 @@
+Function: struct drm_asahi_timestamp
+
+Describe a timestamp write.
+
+Members
+  handle
+    Handle of the timestamp buffer, or 0 to skip this
+timestamp. If nonzero, this must equal the value returned in
+drm_asahi_gem_bind_object::object_handle.
+  offset
+    Offset to write into the timestamp buffer

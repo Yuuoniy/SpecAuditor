@@ -1,0 +1,13 @@
+Function: void sfp_upstream_stop ( struct sfp_bus * bus )
+
+Inform the SFP that the network device is down
+
+Parameters
+  struct sfp_bus *bus
+    a pointer to the struct sfp_bus structure for the sfp module
+
+Description
+  Inform the SFP socket that the network device is now up, so that the
+module can be disabled by asserting TX_DISABLE, disabling the laser
+in optical modules. This should be called from the network device
+driver’s struct net_device_ops ndo_stop() method.

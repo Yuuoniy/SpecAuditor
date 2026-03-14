@@ -1,0 +1,10 @@
+Function: void snd_info_free_entry ( struct snd_info_entry * entry )
+
+release the info entry
+
+Parameters
+  struct snd_info_entry * entry
+    the info entry
+
+Description
+  Releases the info entry.

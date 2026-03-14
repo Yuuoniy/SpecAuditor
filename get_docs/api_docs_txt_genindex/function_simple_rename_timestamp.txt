@@ -1,0 +1,18 @@
+Function: void simple_rename_timestamp ( struct inode * old_dir , struct dentry * old_dentry , struct inode * new_dir , struct dentry * new_dentry )
+
+update the various inode timestamps for rename
+
+Parameters
+  struct inode *old_dir
+    old parent directory
+  struct dentry *old_dentry
+    dentry that is being renamed
+  struct inode *new_dir
+    new parent directory
+  struct dentry *new_dentry
+    target for rename
+
+Description
+  POSIX mandates that the old and new parent directories have their ctime and
+mtime updated, and that inodes of old_dentry and new_dentry (if any), have
+their ctime updated.

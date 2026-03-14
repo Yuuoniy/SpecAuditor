@@ -1,0 +1,18 @@
+Function: void dma_fence_set_deadline ( struct dma_fence * fence , ktime_t deadline )
+
+set desired fence-wait deadline hint
+
+Parameters
+  struct dma_fence *fence
+    the fence that is to be waited on
+  ktime_t deadline
+    the time by which the waiter hopes for the fence to be
+signaled
+
+Description
+  Give the fence signaler a hint about an upcoming deadline, such as
+vblank, by which point the waiter would prefer the fence to be
+signaled by.  This is intended to give feedback to the fence signaler
+to aid in power management decisions, such as boosting GPU frequency
+if a periodic vblank deadline is approaching but the fence is not
+yet signaled..

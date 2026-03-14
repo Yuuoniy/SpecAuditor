@@ -1,0 +1,12 @@
+Function: void xe_ggtt_node_fini ( struct xe_ggtt_node * node )
+
+Forcebly finalize xe_ggtt_node struct
+
+Parameters
+  struct xe_ggtt_node *node
+    the xe_ggtt_node to be freed
+
+Description
+  If anything went wrong with either xe_ggtt_node_insert() , xe_ggtt_node_insert_locked() ,
+or xe_ggtt_node_insert_balloon_locked() ; and this node is not going to be reused, then,
+this function needs to be called to free the xe_ggtt_node struct

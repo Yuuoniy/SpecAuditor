@@ -1,0 +1,14 @@
+Struct: struct reset_control_ops
+
+reset controller driver callbacks
+
+Members
+  reset
+    for self-deasserting resets, does all necessary
+things to reset the device
+  assert
+    manually assert the reset line, if supported
+  deassert
+    manually deassert the reset line, if supported
+  status
+    return the status of the reset line, if supported

@@ -1,0 +1,14 @@
+Function: int ssam_notifier_unregister ( struct ssam_controller * ctrl , struct ssam_event_notifier * n )
+
+Unregister an event notifier.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller the notifier has been registered on.
+  struct ssam_event_notifier *n
+    The event notifier to unregister.
+
+Description
+  Unregister an event notifier. Decrement the usage counter of the associated
+SAM event if the notifier is not marked as an observer. If the usage counter
+reaches zero, the event will be disabled.

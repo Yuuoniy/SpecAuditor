@@ -1,0 +1,13 @@
+Function: void dma_resv_describe ( struct dma_resv * obj , struct seq_file * seq )
+
+Dump description of the resv object into seq_file
+
+Parameters
+  struct dma_resv *obj
+    the reservation object
+  struct seq_file *seq
+    the seq_file to dump the description into
+
+Description
+  Dump a textual description of the fences inside an dma_resv object into the
+seq_file.

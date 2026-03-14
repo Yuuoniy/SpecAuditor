@@ -1,0 +1,11 @@
+Function: int nvmem_cell_read_variable_le_u32 ( struct device * dev , const char * cell_id , u32 * val )
+
+Read up to 32-bits of data as a little endian number.
+
+Parameters
+  struct device *dev
+    Device that requests the nvmem cell.
+  const char *cell_id
+    Name of nvmem cell to read.
+  u32 *val
+    pointer to output value.

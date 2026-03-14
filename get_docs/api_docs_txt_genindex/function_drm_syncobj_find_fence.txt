@@ -1,0 +1,18 @@
+Function: int drm_syncobj_find_fence ( struct drm_file * file_private , u32 handle , u64 point , u64 flags , struct dma_fence * * fence )
+
+lookup and reference the fence in a sync object
+
+Parameters
+  struct drm_file *file_private
+    drm file private pointer
+  u32 handle
+    sync object handle to lookup.
+  u64 point
+    timeline point
+  u64 flags
+    DRM_SYNCOBJ_WAIT_FLAGS_WAIT_FOR_SUBMIT or not
+  struct dma_fence **fence
+    out parameter for the fence
+
+Description
+  This is just a convenience function that combines drm_syncobj_find() and drm_syncobj_fence_get() .

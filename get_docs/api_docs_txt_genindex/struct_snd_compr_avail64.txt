@@ -1,0 +1,9 @@
+Struct: struct snd_compr_avail64
+
+avail descriptor with tstamp in 64 bit format
+
+Members
+  avail
+    Number of bytes available in ring buffer for writing/reading
+  tstamp
+    timestamp information

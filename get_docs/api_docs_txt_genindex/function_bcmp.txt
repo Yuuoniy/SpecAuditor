@@ -1,0 +1,17 @@
+Function: int bcmp ( const void * a , const void * b , size_t len )
+
+returns 0 if and only if the buffers have identical contents.
+
+Parameters
+  const void *a
+    pointer to first buffer.
+  const void *b
+    pointer to second buffer.
+  size_t len
+    size of buffers.
+
+Description
+  The sign or magnitude of a non-zero return value has no particular
+meaning, and architectures may implement their own more efficient bcmp() . So
+while this particular implementation is a simple (tail) call to memcmp, do
+not rely on anything but whether the return value is zero or non-zero.

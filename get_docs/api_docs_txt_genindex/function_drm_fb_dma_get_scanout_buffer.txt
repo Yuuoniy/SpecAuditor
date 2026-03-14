@@ -1,0 +1,15 @@
+Function: int drm_fb_dma_get_scanout_buffer ( struct drm_plane * plane , struct drm_scanout_buffer * sb )
+
+Provide a scanout buffer in case of panic
+
+Parameters
+  struct drm_plane *plane
+    DRM primary plane
+  struct drm_scanout_buffer *sb
+    scanout buffer for the panic handler
+
+Description
+  Generic get_scanout_buffer() implementation, for drivers that uses the
+drm_fb_dma_helper. It won’t call vmap in the panic context, so the driver
+should make sure the primary plane is vmapped, otherwise the panic screen
+won’t get displayed.

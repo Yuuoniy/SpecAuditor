@@ -1,0 +1,10 @@
+Function: bool enable_delayed_work ( struct delayed_work * dwork )
+
+Enable a delayed work item
+
+Parameters
+  struct delayed_work *dwork
+    delayed work item to enable
+
+Description
+  enable_work() for delayed work items.

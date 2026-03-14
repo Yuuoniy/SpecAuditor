@@ -1,0 +1,11 @@
+Struct: struct sshp_buf
+
+Parser buffer for SSH messages.
+
+Members
+  ptr
+    Pointer to the beginning of the buffer.
+  len
+    Number of bytes used in the buffer.
+  cap
+    Maximum capacity of the buffer.

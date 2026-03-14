@@ -1,0 +1,18 @@
+Function: struct xarray * cxl_switch_gather_bandwidth ( struct cxl_region * cxlr , struct xarray * input_xa , bool * gp_is_root )
+
+collect all the bandwidth at switch level in an xarray
+
+Parameters
+  struct cxl_region *cxlr
+    The region being operated on
+  struct xarray *input_xa
+    xarray indexed by upstream device of a switch with data of ‘ struct cxl_perf_ctx ’
+  bool *gp_is_root
+    (output) bool of whether the grandparent is cxl root.
+
+Description
+  Iterate through the xarray. Take the minimum of the downstream calculated
+bandwidth, the upstream link bandwidth, and the SSLBIS of the upstream
+switch if exists. Sum the resulting bandwidth under the switch upstream
+device or a RP device. The function can be iterated over multiple switches
+if the switches are present.

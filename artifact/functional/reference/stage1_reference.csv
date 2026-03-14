@@ -1,0 +1,14 @@
+hexsha,description,error_message,target,predicate,input_tokens,output_tokens,total_tokens
+c158cf914713,"ALSA: hda: intel-sdw-acpi: fix usage of device_get_named_child_node()
+
+The documentation for device_get_named_child_node() mentions this
+important point:
+
+""
+The caller is responsible for calling fwnode_handle_put() on the
+returned fwnode pointer.
+""
+
+Add fwnode_handle_put() to avoid a leaked reference.
+
+Message-ID: <20240426152731.38420-1-pierre-louis.bossart@linux.intel.com>",,A call to function fwnode_get_named_child_node,The returned fwnode_handle must be released with fwnode_handle_put before the function returns.,1394,62,1456

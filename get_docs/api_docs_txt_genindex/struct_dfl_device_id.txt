@@ -1,0 +1,11 @@
+Struct: struct dfl_device_id
+
+dfl device identifier
+
+Members
+  type
+    DFL FIU type of the device. See enum dfl_id_type .
+  feature_id
+    feature identifier local to its DFL FIU type.
+  driver_data
+    driver specific data.

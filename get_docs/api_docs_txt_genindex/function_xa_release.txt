@@ -1,0 +1,14 @@
+Function: void xa_release ( struct xarray * xa , unsigned long index )
+
+Release a reserved entry.
+
+Parameters
+  struct xarray *xa
+    XArray.
+  unsigned long index
+    Index of entry.
+
+Description
+  After calling xa_reserve() , you can call this function to release the
+reservation.  If the entry at index has been stored to, this function
+will do nothing.

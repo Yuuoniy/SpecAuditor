@@ -1,0 +1,10 @@
+Function: void snd_dma_disable ( unsigned long dma )
+
+stop the ISA DMA transfer
+
+Parameters
+  unsigned long dma
+    the dma number
+
+Description
+  Stops the ISA DMA transfer.

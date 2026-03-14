@@ -1,0 +1,7 @@
+Function: bool rcuref_is_dead ( rcuref_t * ref )
+
+Check if the rcuref has been already marked dead
+
+Parameters
+  rcuref_t *ref
+    Pointer to the reference count

@@ -1,0 +1,11 @@
+Function: struct em_perf_domain * em_pd_get ( struct device * dev )
+
+Return the performance domain for a device
+
+Parameters
+  struct device *dev
+    Device to find the performance domain for
+
+Description
+  Returns the performance domain to which dev belongs, or NULL if it doesn’t
+exist.

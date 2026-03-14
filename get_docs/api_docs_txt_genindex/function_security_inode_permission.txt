@@ -1,0 +1,17 @@
+Function: int security_inode_permission ( struct inode * inode , int mask )
+
+Check if accessing an inode is allowed
+
+Parameters
+  struct inode *inode
+    inode
+  int mask
+    access mask
+
+Description
+  Check permission before accessing an inode.  This hook is called by the
+existing Linux permission function, so a security module can use it to
+provide additional checking for existing Linux permission checks.  Notice
+that this hook is called when a file is opened (as well as many other
+operations), whereas the file_security_ops permission hook is called when
+the actual read/write operations are performed.

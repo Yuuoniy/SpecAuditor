@@ -1,0 +1,12 @@
+Function: void intel_fbc_sanitize ( struct intel_display * display )
+
+Sanitize FBC
+
+Parameters
+  struct intel_display *display
+    display
+
+Description
+  Make sure FBC is initially disabled since we have no
+idea eg. into which parts of stolen it might be scribbling
+into.

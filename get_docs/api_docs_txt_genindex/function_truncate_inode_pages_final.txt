@@ -1,0 +1,10 @@
+Function: void truncate_inode_pages_final ( struct address_space * mapping )
+
+truncate all pages before inode dies
+
+Parameters
+  struct address_space *mapping
+    mapping to truncate
+
+Description
+  Called under (and serialized by) inode->i_rwsem.

@@ -1,0 +1,18 @@
+Function: struct gen_pool * devm_gen_pool_create ( struct device * dev , int min_alloc_order , int nid , const char * name )
+
+managed gen_pool_create
+
+Parameters
+  struct device *dev
+    device that provides the gen_pool
+  int min_alloc_order
+    log base 2 of number of bytes each bitmap bit represents
+  int nid
+    node selector for allocated gen_pool, NUMA_NO_NODE for all nodes
+  const char *name
+    name of a gen_pool or NULL, identifies a particular gen_pool on device
+
+Description
+  Create a new special memory pool that can be used to manage special purpose
+memory not managed by the regular kmalloc/kfree interface. The pool will be
+automatically destroyed by the device management code.

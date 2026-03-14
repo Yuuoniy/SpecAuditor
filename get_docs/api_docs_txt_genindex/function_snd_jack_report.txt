@@ -1,0 +1,9 @@
+Function: void snd_jack_report ( struct snd_jack * jack , int status )
+
+Report the current status of a jack
+
+Parameters
+  struct snd_jack *jack
+    The jack to report status for
+  int status
+    The current status of the jack

@@ -1,0 +1,3 @@
+Enum: enum tuner_mode
+
+Mode of the tuner

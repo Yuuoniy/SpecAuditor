@@ -1,0 +1,10 @@
+Macro: srcu_dereference_notrace
+
+
+
+Parameters
+  p
+    the pointer to fetch and protect for later dereferencing
+  ssp
+    pointer to the srcu_struct, which is used to check that we
+really are in an SRCU read-side critical section.

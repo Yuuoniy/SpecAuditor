@@ -1,0 +1,12 @@
+Function: int security_inode_getxattr ( struct dentry * dentry , const char * name )
+
+Check if xattr access is allowed
+
+Parameters
+  struct dentry *dentry
+    file
+  const char *name
+    xattr name
+
+Description
+  Check permission before obtaining the extended attributes identified by name for dentry .

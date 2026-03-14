@@ -1,0 +1,15 @@
+Function: void iscsi_complete_scsi_task ( struct iscsi_task * task , uint32_t exp_cmdsn , uint32_t max_cmdsn )
+
+finish scsi task normally
+
+Parameters
+  struct iscsi_task *task
+    iscsi task for scsi cmd
+  uint32_t exp_cmdsn
+    expected cmd sn in cpu format
+  uint32_t max_cmdsn
+    max cmd sn in cpu format
+
+Description
+  This is used when drivers do not need or cannot perform
+lower level pdu processing.

@@ -1,0 +1,11 @@
+Function: void drm_connector_update_privacy_screen ( const struct drm_connector_state * connector_state )
+
+update connector’s privacy-screen sw-state
+
+Parameters
+  const struct drm_connector_state *connector_state
+    connector-state to update the privacy-screen for
+
+Description
+  This function calls drm_privacy_screen_set_sw_state() on the connector’s
+privacy-screen.

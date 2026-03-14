@@ -1,0 +1,11 @@
+Function: void media_request_object_complete ( struct media_request_object * obj )
+
+Mark the media request object as complete
+
+Parameters
+  struct media_request_object *obj
+    The object
+
+Description
+  Mark the media request object as complete. Only bound objects can
+be completed.

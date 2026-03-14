@@ -1,0 +1,10 @@
+Function: bool cancel_delayed_work ( struct delayed_work * dwork )
+
+cancel a delayed work
+
+Parameters
+  struct delayed_work *dwork
+    delayed_work to cancel
+
+Description
+  Kill off a pending delayed_work.

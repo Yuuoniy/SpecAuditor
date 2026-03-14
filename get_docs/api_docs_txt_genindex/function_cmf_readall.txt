@@ -1,0 +1,9 @@
+Function: int cmf_readall ( struct ccw_device * cdev , struct cmbdata * data )
+
+read the current channel measurement block
+
+Parameters
+  struct ccw_device *cdev
+    the channel to be read
+  struct cmbdata *data
+    a pointer to a data block that will be filled

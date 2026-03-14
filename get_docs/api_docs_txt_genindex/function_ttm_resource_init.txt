@@ -1,0 +1,14 @@
+Function: void ttm_resource_init ( struct ttm_buffer_object * bo , const struct ttm_place * place , struct ttm_resource * res )
+
+resource object constructure
+
+Parameters
+  struct ttm_buffer_object *bo
+    buffer object this resources is allocated for
+  const struct ttm_place *place
+    placement of the resource
+  struct ttm_resource *res
+    the resource object to inistilize
+
+Description
+  Initialize a new resource object. Counterpart of ttm_resource_fini() .

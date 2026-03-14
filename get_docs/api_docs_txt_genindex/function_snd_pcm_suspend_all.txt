@@ -1,0 +1,10 @@
+Function: int snd_pcm_suspend_all ( struct snd_pcm * pcm )
+
+trigger SUSPEND to all substreams in the given pcm
+
+Parameters
+  struct snd_pcm *pcm
+    the PCM instance
+
+Description
+  After this call, all streams are changed to SUSPENDED state.

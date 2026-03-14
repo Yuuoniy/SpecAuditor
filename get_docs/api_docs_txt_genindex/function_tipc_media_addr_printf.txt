@@ -1,0 +1,11 @@
+Function: int tipc_media_addr_printf ( char * buf , int len , struct tipc_media_addr * a )
+
+record media address in print buffer
+
+Parameters
+  char *buf
+    output buffer
+  int len
+    output buffer size remaining
+  struct tipc_media_addr *a
+    input media address

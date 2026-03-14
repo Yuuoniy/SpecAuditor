@@ -1,0 +1,9 @@
+Function: unsigned int irq_find_mapping ( struct irq_domain * domain , irq_hw_number_t hwirq )
+
+Find a linux irq from a hw irq number.
+
+Parameters
+  struct irq_domain *domain
+    domain owning this hardware interrupt
+  irq_hw_number_t hwirq
+    hardware irq number in that domain space

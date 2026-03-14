@@ -1,0 +1,12 @@
+Function: int kthread_stop ( struct task_struct * k )
+
+stop a thread created by kthread_create() .
+
+Parameters
+  struct task_struct *k
+    thread created by kthread_create() .
+
+Description
+  Sets kthread_should_stop() for k to return true, wakes it, and
+waits for it to exit. This can also be called after kthread_create() instead of calling wake_up_process() : the thread will exit without
+calling threadfn() .

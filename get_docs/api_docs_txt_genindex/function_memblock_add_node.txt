@@ -1,0 +1,17 @@
+Function: int __init_memblock memblock_add_node ( phys_addr_t base , phys_addr_t size , int nid , enum memblock_flags flags )
+
+add new memblock region within a NUMA node
+
+Parameters
+  phys_addr_t base
+    base address of the new region
+  phys_addr_t size
+    size of the new region
+  int nid
+    nid of the new region
+  enum memblock_flags flags
+    flags of the new region
+
+Description
+  Add new memblock region [ base , base + size ) to the “memory”
+type. See memblock_add_range() description for mode details

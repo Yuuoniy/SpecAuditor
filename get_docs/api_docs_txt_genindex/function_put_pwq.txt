@@ -1,0 +1,11 @@
+Function: void put_pwq ( struct pool_workqueue * pwq )
+
+put a pool_workqueue reference
+
+Parameters
+  struct pool_workqueue *pwq
+    pool_workqueue to put
+
+Description
+  Drop a reference of pwq .  If its refcnt reaches zero, schedule its
+destruction.  The caller should be holding the matching pool->lock.

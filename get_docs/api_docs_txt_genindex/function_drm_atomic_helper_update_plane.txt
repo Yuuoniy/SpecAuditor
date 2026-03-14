@@ -1,0 +1,32 @@
+Function: int drm_atomic_helper_update_plane ( struct drm_plane * plane , struct drm_crtc * crtc , struct drm_framebuffer * fb , int crtc_x , int crtc_y , unsigned int crtc_w , unsigned int crtc_h , uint32_t src_x , uint32_t src_y , uint32_t src_w , uint32_t src_h , struct drm_modeset_acquire_ctx * ctx )
+
+Helper for primary plane update using atomic
+
+Parameters
+  struct drm_plane *plane
+    plane object to update
+  struct drm_crtc *crtc
+    owning CRTC of owning plane
+  struct drm_framebuffer *fb
+    framebuffer to flip onto plane
+  int crtc_x
+    x offset of primary plane on crtc
+  int crtc_y
+    y offset of primary plane on crtc
+  unsigned int crtc_w
+    width of primary plane rectangle on crtc
+  unsigned int crtc_h
+    height of primary plane rectangle on crtc
+  uint32_t src_x
+    x offset of fb for panning
+  uint32_t src_y
+    y offset of fb for panning
+  uint32_t src_w
+    width of source rectangle in fb
+  uint32_t src_h
+    height of source rectangle in fb
+  struct drm_modeset_acquire_ctx *ctx
+    lock acquire context
+
+Description
+  Provides a default plane update handler using the atomic driver interface.

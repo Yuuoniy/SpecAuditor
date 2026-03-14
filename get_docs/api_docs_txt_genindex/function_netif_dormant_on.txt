@@ -1,0 +1,10 @@
+Function: void netif_dormant_on ( struct net_device * dev )
+
+mark device as dormant.
+
+Parameters
+  struct net_device *dev
+    network device
+
+Description
+  Mark device as dormant (as per RFC2863).

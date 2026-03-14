@@ -1,0 +1,10 @@
+Function: void gpiochip_remove ( struct gpio_chip * gc )
+
+unregister a gpio_chip
+
+Parameters
+  struct gpio_chip *gc
+    the chip to unregister
+
+Description
+  A gpio_chip with any GPIOs still requested may not be removed.

@@ -1,0 +1,11 @@
+Function: u32 host1x_syncpt_read_min ( struct host1x_syncpt * sp )
+
+read minimum syncpoint value
+
+Parameters
+  struct host1x_syncpt *sp
+    host1x syncpoint
+
+Description
+  The minimum syncpoint value is a shadow of the current sync point value in
+hardware.

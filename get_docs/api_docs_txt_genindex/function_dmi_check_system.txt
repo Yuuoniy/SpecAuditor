@@ -1,0 +1,17 @@
+Function: int dmi_check_system ( const struct dmi_system_id * list )
+
+check system DMI data
+
+Parameters
+  const struct dmi_system_id *list
+    array of dmi_system_id structures to match against
+All non-null elements of the list must match
+their slot’s (field index’s) data (i.e., each
+list string must be a substring of the specified
+DMI slot’s string data) to be considered a
+successful match.
+
+Description
+  Walk the blacklist table running matching functions until someone
+returns non zero or we hit the end. Callback function is called for
+each successful match. Returns the number of matches.

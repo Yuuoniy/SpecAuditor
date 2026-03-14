@@ -1,0 +1,17 @@
+Function: int request_firmware_direct ( const struct firmware * * firmware_p , const char * name , struct device * device )
+
+load firmware directly without usermode helper
+
+Parameters
+  const struct firmware **firmware_p
+    pointer to firmware image
+  const char *name
+    name of firmware file
+  struct device *device
+    device for which firmware is being loaded
+
+Description
+  This function works pretty much like request_firmware() , but this doesn’t
+fall back to usermode helper even if the firmware couldn’t be loaded
+directly from fs.  Hence it’s useful for loading optional firmwares, which
+aren’t always present, without extra long timeouts of udev.

@@ -1,0 +1,13 @@
+Function: void drm_atomic_helper_commit_planes_on_crtc ( struct drm_crtc_state * old_crtc_state )
+
+commit plane state for a CRTC
+
+Parameters
+  struct drm_crtc_state *old_crtc_state
+    atomic state object with the old CRTC state
+
+Description
+  This function commits the new plane state using the plane and atomic helper
+functions for planes on the specific CRTC. It assumes that the atomic state
+has already been pushed into the relevant object state pointers, since this
+step can no longer fail.

@@ -1,0 +1,11 @@
+Function: void zynqmp_disp_layer_enable ( struct zynqmp_disp_layer * layer )
+
+Enable a layer
+
+Parameters
+  struct zynqmp_disp_layer *layer
+    The layer
+
+Description
+  Enable the layer in the audio/video buffer manager and the blender. DMA
+channels are started separately by zynqmp_disp_layer_update() .

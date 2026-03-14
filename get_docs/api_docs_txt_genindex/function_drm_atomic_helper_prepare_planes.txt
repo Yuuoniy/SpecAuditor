@@ -1,0 +1,15 @@
+Function: int drm_atomic_helper_prepare_planes ( struct drm_device * dev , struct drm_atomic_state * state )
+
+prepare plane resources before commit
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_atomic_state *state
+    atomic state object with new state structures
+
+Description
+  This function prepares plane state, specifically framebuffers, for the new
+configuration, by calling drm_plane_helper_funcs.prepare_fb . If any failure
+is encountered this function will call drm_plane_helper_funcs.cleanup_fb on
+any already successfully prepared framebuffer.

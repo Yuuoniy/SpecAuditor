@@ -1,0 +1,12 @@
+Function: int i3c_master_set_info ( struct i3c_master_controller * master , const struct i3c_device_info * info )
+
+set master device information
+
+Parameters
+  struct i3c_master_controller *master
+    master used to send frames on the bus
+  const struct i3c_device_info *info
+    I3C device information
+
+Description
+  Set master device info. This should be called from i3c_master_controller_ops->bus_init() .

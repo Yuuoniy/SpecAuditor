@@ -1,0 +1,34 @@
+Function: struct rxrpc_call * rxrpc_kernel_begin_call ( struct socket * sock , struct rxrpc_peer * peer , struct key * key , unsigned long user_call_ID , s64 tx_total_len , u32 hard_timeout , gfp_t gfp , rxrpc_notify_rx_t notify_rx , u16 service_id , bool upgrade , enum rxrpc_interruptibility interruptibility , unsigned int debug_id )
+
+Allow a kernel service to begin a call
+
+Parameters
+  struct socket *sock
+    The socket on which to make the call
+  struct rxrpc_peer *peer
+    The peer to contact
+  struct key *key
+    The security context to use (defaults to socket setting)
+  unsigned long user_call_ID
+    The ID to use
+  s64 tx_total_len
+    Total length of data to transmit during the call (or -1)
+  u32 hard_timeout
+    The maximum lifespan of the call in sec
+  gfp_t gfp
+    The allocation constraints
+  rxrpc_notify_rx_t notify_rx
+    Where to send notifications instead of socket queue
+  u16 service_id
+    The ID of the service to contact
+  bool upgrade
+    Request service upgrade for call
+  enum rxrpc_interruptibility interruptibility
+    The call is interruptible, or can be canceled.
+  unsigned int debug_id
+    The debug ID for tracing to be assigned to the call
+
+Description
+  Allow a kernel service to begin a call on the nominated socket.  This just
+sets up all the internal tracking structures and allocates connection and
+call IDs as appropriate.

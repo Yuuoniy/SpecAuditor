@@ -1,0 +1,50 @@
+Struct: struct dvb_device
+
+represents a DVB device node
+
+Members
+  list_head
+    List head with all DVB devices
+  ref
+    reference count for this device
+  fops
+    pointer to struct file_operations
+  adapter
+    pointer to the adapter that holds this device node
+  type
+    type of the device, as defined by enum dvb_device_type .
+  minor
+    devnode minor number. Major number is always DVB_MAJOR.
+  id
+    device ID number, inside the adapter
+  readers
+    Initialized by the caller. Each call to open() in Read Only mode
+decreases this counter by one.
+  writers
+    Initialized by the caller. Each call to open() in Read/Write
+mode decreases this counter by one.
+  users
+    Initialized by the caller. Each call to open() in any mode
+decreases this counter by one.
+  wait_queue
+    wait queue, used to wait for certain events inside one of
+the DVB API callers
+  kernel_ioctl
+    callback function used to handle ioctl calls from userspace.
+  name
+    Name to be used for the device at the Media Controller
+  intf_devnode
+    Pointer to media_intf_devnode. Used by the dvbdev core to
+store the MC device node interface
+  tsout_num_entities
+    Number of Transport Stream output entities
+  entity
+    pointer to struct media_entity associated with the device node
+  tsout_entity
+    array with MC entities associated to each TS output node
+  pads
+    pointer to struct media_pad associated with entity ;
+  tsout_pads
+    array with the source pads for each tsout_entity
+  priv
+    private data

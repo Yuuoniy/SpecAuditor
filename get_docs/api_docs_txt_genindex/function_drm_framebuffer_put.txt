@@ -1,0 +1,11 @@
+Function: void drm_framebuffer_put ( struct drm_framebuffer * fb )
+
+release a framebuffer reference
+
+Parameters
+  struct drm_framebuffer *fb
+    DRM framebuffer
+
+Description
+  This function decrements the framebuffer’s reference count and frees the
+framebuffer if the reference count drops to zero.

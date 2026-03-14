@@ -1,0 +1,7 @@
+Function: void gpiod_add_hogs ( struct gpiod_hog * hogs )
+
+register a set of GPIO hogs from machine code
+
+Parameters
+  struct gpiod_hog *hogs
+    table of gpio hog entries with a zeroed sentinel at the end

@@ -1,0 +1,7 @@
+Macro: seqlock_init
+
+
+
+Parameters
+  sl
+    Pointer to the seqlock_t instance

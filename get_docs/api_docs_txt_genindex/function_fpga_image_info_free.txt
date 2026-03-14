@@ -1,0 +1,7 @@
+Function: void fpga_image_info_free ( struct fpga_image_info * info )
+
+Free an FPGA image info struct
+
+Parameters
+  struct fpga_image_info *info
+    FPGA image info struct to free

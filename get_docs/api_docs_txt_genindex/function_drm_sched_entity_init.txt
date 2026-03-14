@@ -1,0 +1,20 @@
+Function: int drm_sched_entity_init ( struct drm_sched_entity * entity , enum drm_sched_priority priority , struct drm_gpu_scheduler * * sched_list , unsigned int num_sched_list , atomic_t * guilty )
+
+Init a context entity used by scheduler when submit to HW ring.
+
+Parameters
+  struct drm_sched_entity *entity
+    scheduler entity to init
+  enum drm_sched_priority priority
+    priority of the entity
+  struct drm_gpu_scheduler **sched_list
+    the list of drm scheds on which jobs from this
+entity can be submitted
+  unsigned int num_sched_list
+    number of drm sched in sched_list
+  atomic_t *guilty
+    atomic_t set to 1 when a job on this queue
+is found to be guilty causing a timeout
+
+Description
+  Note that the sched_list must have at least one element to schedule the entity.

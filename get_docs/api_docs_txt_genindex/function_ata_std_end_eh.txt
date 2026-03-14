@@ -1,0 +1,13 @@
+Function: void ata_std_end_eh ( struct ata_port * ap )
+
+non-libsas ata_ports complete eh with this common routine
+
+Parameters
+  struct ata_port *ap
+    ATA port to end EH for
+
+Description
+  In the libata object model there is a 1:1 mapping of ata_port to
+shost, so host fields can be directly manipulated under ap->lock, in
+the libsas case we need to hold a lock at the ha->level to coordinate
+these events.

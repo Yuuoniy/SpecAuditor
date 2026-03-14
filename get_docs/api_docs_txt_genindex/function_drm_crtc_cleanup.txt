@@ -1,0 +1,12 @@
+Function: void drm_crtc_cleanup ( struct drm_crtc * crtc )
+
+Clean up the core crtc usage
+
+Parameters
+  struct drm_crtc *crtc
+    CRTC to cleanup
+
+Description
+  This function cleans up crtc and removes it from the DRM mode setting
+core. Note that the function does not free the crtc structure itself,
+this is the responsibility of the caller.

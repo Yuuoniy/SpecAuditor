@@ -1,0 +1,13 @@
+Struct: struct ipu3_uapi_unsharp_coef0
+
+Unsharp mask coefficients
+
+Members
+  c00
+    Coeff11, s0.8, range [-255, 255], default 1.
+  c01
+    Coeff12, s0.8, range [-255, 255], default 5.
+  c02
+    Coeff13, s0.8, range [-255, 255], default 9.
+  reserved
+    reserved

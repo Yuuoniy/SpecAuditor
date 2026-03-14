@@ -1,0 +1,14 @@
+Function: int drm_exec_prepare_obj ( struct drm_exec * exec , struct drm_gem_object * obj , unsigned int num_fences )
+
+prepare a GEM object for use
+
+Parameters
+  struct drm_exec *exec
+    the drm_exec object with the state
+  struct drm_gem_object *obj
+    the GEM object to prepare
+  unsigned int num_fences
+    how many fences to reserve
+
+Description
+  Prepare a GEM object for use by locking it and reserving fence slots.

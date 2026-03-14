@@ -1,0 +1,15 @@
+Function: void ata_msleep ( struct ata_port * ap , unsigned int msecs )
+
+ATA EH owner aware msleep
+
+Parameters
+  struct ata_port *ap
+    ATA port to attribute the sleep to
+  unsigned int msecs
+    duration to sleep in milliseconds
+
+Description
+  Sleeps msecs .  If the current task is owner of ap ’s EH, the
+ownership is released before going to sleep and reacquired
+after the sleep is complete.  IOW, other ports sharing the ap->host will be allowed to own the EH while this task is
+sleeping.

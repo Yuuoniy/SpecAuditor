@@ -1,0 +1,13 @@
+Struct: struct w1_family_ops
+
+operations for a family type
+
+Members
+  add_slave
+    add_slave
+  remove_slave
+    remove_slave
+  groups
+    sysfs group
+  chip_info
+    pointer to struct hwmon_chip_info

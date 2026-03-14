@@ -1,0 +1,14 @@
+Function: int __phy_read_mmd ( struct phy_device * phydev , int devad , u32 regnum )
+
+Convenience function for reading a register from an MMD on a given PHY.
+
+Parameters
+  struct phy_device *phydev
+    The phy_device struct
+  int devad
+    The MMD to read from (0..31)
+  u32 regnum
+    The register on the MMD to read (0..65535)
+
+Description
+  Same rules as for __phy_read() ;

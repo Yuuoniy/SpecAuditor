@@ -1,0 +1,7 @@
+Function: void mctrl_gpio_disable_ms_sync ( struct mctrl_gpios * gpios )
+
+disable irqs and handling of changes to the ms lines, and wait for any pending IRQ to be processed
+
+Parameters
+  struct mctrl_gpios *gpios
+    gpios to disable

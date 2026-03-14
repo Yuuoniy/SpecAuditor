@@ -1,0 +1,15 @@
+Macro: drm_ioctl_t
+
+Typedef : DRM ioctl function type.
+
+Parameters
+  struct drm_device *dev
+    DRM device inode
+  void *data
+    private pointer of the ioctl call
+  struct drm_file *file_priv
+    DRM file this ioctl was made on
+
+Description
+  This is the DRM ioctl typedef. Note that drm_ioctl() has alrady copied data into kernel-space, and will also copy it back, depending upon the read/write
+settings in the ioctl command code.

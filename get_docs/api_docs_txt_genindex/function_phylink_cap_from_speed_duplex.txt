@@ -1,0 +1,12 @@
+Function: unsigned long phylink_cap_from_speed_duplex ( int speed , unsigned int duplex )
+
+Get mac capability from speed/duplex
+
+Parameters
+  int speed
+    the speed to search for
+  unsigned int duplex
+    the duplex to search for
+
+Description
+  Find the mac capability for a given speed and duplex.

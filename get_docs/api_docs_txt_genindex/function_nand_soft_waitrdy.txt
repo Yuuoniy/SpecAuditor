@@ -1,0 +1,14 @@
+Function: int nand_soft_waitrdy ( struct nand_chip * chip , unsigned long timeout_ms )
+
+Poll STATUS reg until RDY bit is set to 1
+
+Parameters
+  struct nand_chip *chip
+    NAND chip structure
+  unsigned long timeout_ms
+    Timeout in ms
+
+Description
+  Poll the STATUS register using -> exec_op() until the RDY bit becomes 1.
+If that does not happen whitin the specified timeout, -ETIMEDOUT is
+returned.

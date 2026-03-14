@@ -1,0 +1,11 @@
+Function: void cpupri_set ( struct cpupri * cp , int cpu , int newpri )
+
+update the CPU priority setting
+
+Parameters
+  struct cpupri *cp
+    The cpupri context
+  int cpu
+    The target CPU
+  int newpri
+    The priority (INVALID,NORMAL,RT1-RT99,HIGHER) to assign to this CPU

@@ -1,0 +1,11 @@
+Function: int sysfs_add_file_to_group ( struct kobject * kobj , const struct attribute * attr , const char * group )
+
+add an attribute file to a pre-existing group.
+
+Parameters
+  struct kobject *kobj
+    object we’re acting for.
+  const struct attribute *attr
+    attribute descriptor.
+  const char *group
+    group name.

@@ -1,0 +1,10 @@
+Function: void ata_gen_ata_sense ( struct ata_queued_cmd * qc )
+
+generate a SCSI fixed sense block
+
+Parameters
+  struct ata_queued_cmd *qc
+    Command that we are erroring out
+
+Description
+  Generate sense block for a failed ATA command qc .

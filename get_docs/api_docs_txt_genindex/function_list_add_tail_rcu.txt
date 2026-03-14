@@ -1,0 +1,13 @@
+Function: void list_add_tail_rcu ( struct list_head * new , struct list_head * head )
+
+add a new entry to rcu-protected list
+
+Parameters
+  struct list_head *new
+    new entry to be added
+  struct list_head *head
+    list head to add it before
+
+Description
+  Insert a new entry before the specified head.
+This is useful for implementing queues.

@@ -1,0 +1,14 @@
+Struct: struct rkisp1_cif_isp_compand_curve_config
+
+Rockchip ISP1 Companding parameters (expand and compression curves)
+
+Members
+  px
+    Compand curve x-values. Each value stores the distance from the
+previous x-value, expressed as log2 of the distance on 5 bits.
+  x
+    Compand curve x-values. The functionality of these parameters are
+unknown due to do a lack of hardware documentation, but these are left
+here for future compatibility purposes.
+  y
+    Compand curve y-values

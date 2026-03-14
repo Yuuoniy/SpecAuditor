@@ -1,0 +1,15 @@
+Function: int register_chrdev_region ( dev_t from , unsigned count , const char * name )
+
+register a range of device numbers
+
+Parameters
+  dev_t from
+    the first in the desired range of device numbers; must include
+the major number.
+  unsigned count
+    the number of consecutive device numbers required
+  const char *name
+    the name of the device or driver.
+
+Description
+  Return value is zero on success, a negative error code on failure.

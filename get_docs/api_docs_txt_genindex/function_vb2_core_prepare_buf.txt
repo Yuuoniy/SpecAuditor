@@ -1,0 +1,15 @@
+Function: int vb2_core_prepare_buf ( struct vb2_queue * q , struct vb2_buffer * vb , void * pb )
+
+Pass ownership of a buffer from userspace to the kernel.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  struct vb2_buffer *vb
+    pointer to struct vb2_buffer .
+  void *pb
+    buffer structure passed from userspace to v4l2_ioctl_ops->vidioc_prepare_buf handler in driver.
+
+Description
+  Videobuf2 core helper to implement VIDIOC_PREPARE_BUF() operation. It is
+called internally by VB2 by an API-specific handler, like videobuf2-v4l2.h .

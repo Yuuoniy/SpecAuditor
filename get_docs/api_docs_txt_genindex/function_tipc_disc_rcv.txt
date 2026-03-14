@@ -1,0 +1,11 @@
+Function: void tipc_disc_rcv ( struct net * net , struct sk_buff * skb , struct tipc_bearer * b )
+
+handle incoming discovery message (request or response)
+
+Parameters
+  struct net *net
+    applicable net namespace
+  struct sk_buff *skb
+    buffer containing message
+  struct tipc_bearer *b
+    bearer that message arrived on

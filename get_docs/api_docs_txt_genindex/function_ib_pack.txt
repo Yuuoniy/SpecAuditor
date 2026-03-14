@@ -1,0 +1,17 @@
+Function: void ib_pack ( const struct ib_field * desc , int desc_len , void * structure , void * buf )
+
+Pack a structure into a buffer
+
+Parameters
+  const struct ib_field *desc
+    Array of structure field descriptions
+  int desc_len
+    Number of entries in desc
+  void *structure
+    Structure to pack from
+  void *buf
+    Buffer to pack into
+
+Description
+  ib_pack() packs a list of structure fields into a buffer,
+controlled by the array of fields in desc .

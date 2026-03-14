@@ -1,0 +1,15 @@
+Function: bool drm_mode_parse_command_line_for_connector ( const char * mode_option , const struct drm_connector * connector , struct drm_cmdline_mode * mode )
+
+parse command line modeline for connector
+
+Parameters
+  const char *mode_option
+    optional per connector mode option
+  const struct drm_connector *connector
+    connector to parse modeline for
+  struct drm_cmdline_mode *mode
+    preallocated drm_cmdline_mode structure to fill out
+
+Description
+  This parses mode_option command line modeline for modes and options to
+configure the connector.

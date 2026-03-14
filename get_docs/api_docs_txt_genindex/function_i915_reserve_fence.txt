@@ -1,0 +1,11 @@
+Function: struct i915_fence_reg * i915_reserve_fence ( struct i915_ggtt * ggtt )
+
+Reserve a fence for vGPU
+
+Parameters
+  struct i915_ggtt *ggtt
+    Global GTT
+
+Description
+  This function walks the fence regs looking for a free one and remove
+it from the fence_list. It is used to reserve fence for vGPU to use.

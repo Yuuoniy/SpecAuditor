@@ -1,0 +1,12 @@
+Function: int irq_set_msi_desc ( unsigned int irq , struct msi_desc * entry )
+
+set MSI descriptor data for an irq
+
+Parameters
+  unsigned int irq
+    Interrupt number
+  struct msi_desc *entry
+    Pointer to MSI descriptor data
+
+Description
+  Set the MSI descriptor entry for an irq

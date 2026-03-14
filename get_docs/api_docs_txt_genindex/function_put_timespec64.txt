@@ -1,0 +1,9 @@
+Function: int put_timespec64 ( const struct timespec64 * ts , struct __kernel_timespec __user * uts )
+
+convert timespec64 value to __kernel_timespec format and copy the latter to userspace
+
+Parameters
+  const struct timespec64 *ts
+    input struct timespec64
+  struct __kernel_timespec __user *uts
+    user’s struct __kernel_timespec

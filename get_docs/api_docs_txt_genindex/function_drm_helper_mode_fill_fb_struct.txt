@@ -1,0 +1,17 @@
+Function: void drm_helper_mode_fill_fb_struct ( struct drm_device * dev , struct drm_framebuffer * fb , const struct drm_format_info * info , const struct drm_mode_fb_cmd2 * mode_cmd )
+
+fill out framebuffer metadata
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_framebuffer *fb
+    drm_framebuffer object to fill out
+  const struct drm_format_info *info
+    pixel format information
+  const struct drm_mode_fb_cmd2 *mode_cmd
+    metadata from the userspace fb creation request
+
+Description
+  This helper can be used in a drivers fb_create callback to pre-fill the fb’s
+metadata fields.

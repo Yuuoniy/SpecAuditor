@@ -1,0 +1,16 @@
+Function: bool pcpu_is_populated ( struct pcpu_chunk * chunk , int bit_off , int bits , int * next_off )
+
+determines if the region is populated
+
+Parameters
+  struct pcpu_chunk *chunk
+    chunk of interest
+  int bit_off
+    chunk offset
+  int bits
+    size of area
+  int *next_off
+    return value for the next offset to start searching
+
+Description
+  For atomic allocations, check if the backing pages are populated.

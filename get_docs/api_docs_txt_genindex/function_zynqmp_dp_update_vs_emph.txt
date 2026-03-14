@@ -1,0 +1,13 @@
+Function: int zynqmp_dp_update_vs_emph ( struct zynqmp_dp * dp , u8 * train_set )
+
+Update the training values
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure
+  u8 *train_set
+    A set of training values
+
+Description
+  Update the training values based on the request from sink. The mapped values
+are predefined, and values(vs, pe, pc) are from the device manual.

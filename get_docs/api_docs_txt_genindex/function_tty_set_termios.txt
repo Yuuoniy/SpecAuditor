@@ -1,0 +1,13 @@
+Function: int tty_set_termios ( struct tty_struct * tty , struct ktermios * new_termios )
+
+update termios values
+
+Parameters
+  struct tty_struct *tty
+    tty to update
+  struct ktermios *new_termios
+    desired new value
+
+Description
+  Perform updates to the termios values set on this tty . A master pty’s
+termios should never be set.

@@ -1,0 +1,13 @@
+Function: void ctucan_err_interrupt ( struct net_device * ndev , u32 isr )
+
+Error frame ISR
+
+Parameters
+  struct net_device *ndev
+    net_device pointer
+  u32 isr
+    interrupt status register value
+
+Description
+  This is the CAN error interrupt and it will check the type of error and forward the error
+frame to upper layers.

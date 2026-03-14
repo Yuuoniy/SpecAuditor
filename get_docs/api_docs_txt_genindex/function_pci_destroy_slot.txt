@@ -1,0 +1,12 @@
+Function: void pci_destroy_slot ( struct pci_slot * slot )
+
+decrement refcount for physical PCI slot
+
+Parameters
+  struct pci_slot *slot
+    struct pci_slot to decrement
+
+Description
+  struct pci_slot is refcounted, so destroying them is really easy; we
+just call kobject_put on its kobj and let our release methods do the
+rest.

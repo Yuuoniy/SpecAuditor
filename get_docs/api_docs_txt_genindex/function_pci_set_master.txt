@@ -1,0 +1,10 @@
+Function: void pci_set_master ( struct pci_dev * dev )
+
+enables bus-mastering for device dev
+
+Parameters
+  struct pci_dev *dev
+    the PCI device to enable
+
+Description
+  Enables bus-mastering on the device and calls pcibios_set_master() to do the needed arch specific settings.

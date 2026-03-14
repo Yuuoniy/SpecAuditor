@@ -1,0 +1,13 @@
+Function: unsigned int usb_decode_interval ( const struct usb_endpoint_descriptor * epd , enum usb_device_speed speed )
+
+Decode bInterval into the time expressed in 1us unit
+
+Parameters
+  const struct usb_endpoint_descriptor *epd
+    The descriptor of the endpoint
+  enum usb_device_speed speed
+    The speed that the endpoint works as
+
+Description
+  Function returns the interval expressed in 1us unit for servicing
+endpoint for data transfers.

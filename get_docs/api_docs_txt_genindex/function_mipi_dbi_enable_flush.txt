@@ -1,0 +1,15 @@
+Function: void mipi_dbi_enable_flush ( struct mipi_dbi_dev * dbidev , struct drm_crtc_state * crtc_state , struct drm_plane_state * plane_state )
+
+MIPI DBI enable helper
+
+Parameters
+  struct mipi_dbi_dev *dbidev
+    MIPI DBI device structure
+  struct drm_crtc_state *crtc_state
+    CRTC state
+  struct drm_plane_state *plane_state
+    Plane state
+
+Description
+  Flushes the whole framebuffer and enables the backlight. Drivers can use this
+in their drm_simple_display_pipe_funcs->enable callback.

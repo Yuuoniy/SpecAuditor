@@ -1,0 +1,12 @@
+Function: __bpf_kfunc u32 bpf_cpumask_any_and_distribute ( const struct cpumask * src1 , const struct cpumask * src2 )
+
+Return a random set CPU from the AND of two cpumasks.
+
+Parameters
+  const struct cpumask *src1
+    The first cpumask.
+  const struct cpumask *src2
+    The second cpumask.
+
+Description
+  struct bpf_cpumask pointers may be safely passed to src1 and src2 .

@@ -1,0 +1,16 @@
+Function: struct iio_trigger * __iio_trigger_alloc ( struct device * parent , struct module * this_mod , const char * fmt , ... )
+
+Allocate a trigger
+
+Parameters
+  struct device *parent
+    Device to allocate iio_trigger for
+  struct module *this_mod
+    module allocating the trigger
+  const char *fmt
+    trigger name format. If it includes format
+specifiers, the additional arguments following
+format are formatted and inserted in the resulting
+string replacing their respective specifiers.
+  ...
+    variable arguments

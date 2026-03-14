@@ -1,0 +1,14 @@
+Struct: struct ipu3_uapi_radial_cfg
+
+Radial config
+
+Members
+  rad_nf
+    Radial. R^2 normalization factor is scale down by 2^ - (15 + scale)
+  reserved0
+    reserved
+  rad_inv_r2
+    Radial R^-2 normelized to (0.5..1).
+Precision u7, range [0, 127].
+  reserved1
+    reserved

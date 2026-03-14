@@ -1,0 +1,14 @@
+Function: int irq_chip_get_parent_state ( struct irq_data * data , enum irqchip_irq_state which , bool * state )
+
+get the state of a parent interrupt.
+
+Parameters
+  struct irq_data *data
+    Pointer to interrupt specific data
+  enum irqchip_irq_state which
+    one of IRQCHIP_STATE_* the caller wants to know
+  bool *state
+    a pointer to a boolean where the state is to be stored
+
+Description
+  Conditional success, if the underlying irqchip does not implement it.

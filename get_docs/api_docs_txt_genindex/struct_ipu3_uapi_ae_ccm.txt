@@ -1,0 +1,15 @@
+Struct: struct ipu3_uapi_ae_ccm
+
+AE coefficients for WB and CCM
+
+Members
+  gain_gr
+    WB gain factor for the gr channels. Default 256.
+  gain_r
+    WB gain factor for the r channel. Default 256.
+  gain_b
+    WB gain factor for the b channel. Default 256.
+  gain_gb
+    WB gain factor for the gb channels. Default 256.
+  mat
+    4x4 matrix that transforms Bayer quad output from WB to RGB+Y.

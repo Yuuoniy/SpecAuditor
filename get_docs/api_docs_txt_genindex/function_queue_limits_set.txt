@@ -1,0 +1,13 @@
+Function: int queue_limits_set ( struct request_queue * q , struct queue_limits * lim )
+
+apply queue limits to queue
+
+Parameters
+  struct request_queue *q
+    queue to update
+  struct queue_limits *lim
+    limits to apply
+
+Description
+  Apply the limits in lim that were freshly initialized to q .
+To update existing limits use queue_limits_start_update() and queue_limits_commit_update() instead.

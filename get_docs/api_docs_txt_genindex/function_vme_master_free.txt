@@ -1,0 +1,10 @@
+Function: void vme_master_free ( struct vme_resource * resource )
+
+Free VME master window
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME master resource.
+
+Description
+  Free the provided master resource so that it may be reallocated.

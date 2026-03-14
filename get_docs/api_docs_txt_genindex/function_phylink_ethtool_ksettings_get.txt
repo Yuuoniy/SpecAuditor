@@ -1,0 +1,14 @@
+Function: int phylink_ethtool_ksettings_get ( struct phylink * pl , struct ethtool_link_ksettings * kset )
+
+get the current link settings
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+  struct ethtool_link_ksettings *kset
+    a pointer to a struct ethtool_link_ksettings to hold link settings
+
+Description
+  Read the current link settings for the phylink instance specified by pl .
+This will be the link settings read from the MAC, PHY or fixed link
+settings depending on the current negotiation mode.

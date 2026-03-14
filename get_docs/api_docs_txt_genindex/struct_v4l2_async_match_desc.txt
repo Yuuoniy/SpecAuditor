@@ -1,0 +1,22 @@
+Struct: struct v4l2_async_match_desc
+
+async connection match information
+
+Members
+  type
+    type of match that will be used
+  {unnamed_union}
+    anonymous
+  fwnode
+    pointer to struct fwnode_handle to be matched.
+Used if match_type is V4L2_ASYNC_MATCH_TYPE_FWNODE .
+  i2c
+    embedded struct with I2C parameters to be matched.
+Both match.i2c.adapter_id and match.i2c.address should be matched.
+Used if match_type is V4L2_ASYNC_MATCH_TYPE_I2C .
+  i2c.adapter_id
+    I2C adapter ID to be matched.
+Used if match_type is V4L2_ASYNC_MATCH_TYPE_I2C .
+  i2c.address
+    I2C address to be matched.
+Used if match_type is V4L2_ASYNC_MATCH_TYPE_I2C .

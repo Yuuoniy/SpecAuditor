@@ -1,0 +1,14 @@
+Macro: drm_for_each_legacy_plane
+
+
+
+Parameters
+  plane
+    the loop cursor
+  dev
+    the DRM device
+
+Description
+  Iterate over all legacy planes of dev , excluding primary and cursor planes.
+This is useful for implementing userspace apis when userspace is not
+universal plane aware. See also enum drm_plane_type .

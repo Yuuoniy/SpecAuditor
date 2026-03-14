@@ -1,0 +1,13 @@
+Function: u64 roundup_u64 ( u64 x , u32 y )
+
+Round up a 64bit value to the next specified 32bit multiple
+
+Parameters
+  u64 x
+    the value to up
+  u32 y
+    32bit multiple to round up to
+
+Description
+  Rounds x to the next multiple of y . For 32bit x values, see roundup and
+the faster round_up() for powers of 2.

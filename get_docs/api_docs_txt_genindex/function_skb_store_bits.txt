@@ -1,0 +1,18 @@
+Function: int skb_store_bits ( struct sk_buff * skb , int offset , const void * from , int len )
+
+store bits from kernel buffer to skb
+
+Parameters
+  struct sk_buff *skb
+    destination buffer
+  int offset
+    offset in destination
+  const void *from
+    source buffer
+  int len
+    number of bytes to copy
+
+Description
+  Copy the specified number of bytes from the source buffer to the
+destination skb.  This function handles all the messy bits of
+traversing fragment lists and such.

@@ -1,0 +1,12 @@
+Function: int rio_add_device ( struct rio_dev * rdev )
+
+Adds a RIO device to the device model
+
+Parameters
+  struct rio_dev *rdev
+    RIO device
+
+Description
+  Adds the RIO device to the global device list and adds the RIO
+device to the RIO device list.  Creates the generic sysfs nodes
+for an RIO device.

@@ -1,0 +1,11 @@
+Function: void ata_eh_release ( struct ata_port * ap )
+
+release EH ownership
+
+Parameters
+  struct ata_port *ap
+    ATA port to release EH ownership for
+
+Description
+  Release EH ownership for ap if the caller.  The caller must
+have acquired EH ownership using ata_eh_acquire() previously.

@@ -1,0 +1,14 @@
+Function: void drm_helper_move_panel_connectors_to_head ( struct drm_device * dev )
+
+move panels to the front in the connector list
+
+Parameters
+  struct drm_device *dev
+    drm device to operate on
+
+Description
+  Some userspace presumes that the first connected connector is the main
+display, where it’s supposed to display e.g. the login screen. For
+laptops, this should be the main panel. Use this function to sort all
+(eDP/LVDS/DSI) panels to the front of the connector list, instead of
+painstakingly trying to initialize them in the right order.

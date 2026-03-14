@@ -1,0 +1,11 @@
+Function: enum dma_resv_usage dma_resv_usage_rw ( bool write )
+
+helper for implicit sync
+
+Parameters
+  bool write
+    true if we create a new implicit sync write
+
+Description
+  This returns the implicit synchronization usage for write or read accesses,
+see enum dma_resv_usage and dma_buf.resv .

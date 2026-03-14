@@ -1,0 +1,15 @@
+Function: struct v4l2_m2m_ctx * v4l2_m2m_ctx_init ( struct v4l2_m2m_dev * m2m_dev , void * drv_priv , int ( * queue_init ) ( void * priv , struct vb2_queue * src_vq , struct vb2_queue * dst_vq ) )
+
+allocate and initialize a m2m context
+
+Parameters
+  struct v4l2_m2m_dev *m2m_dev
+    opaque pointer to the internal data to handle M2M context
+  void *drv_priv
+    driver’s instance private data
+  int (*queue_init)(void *priv, struct vb2_queue *src_vq, struct vb2_queue *dst_vq)
+    a callback for queue type-specific initialization function
+to be used for initializing vb2_queues
+
+Description
+  Usually called from driver’s open() function.

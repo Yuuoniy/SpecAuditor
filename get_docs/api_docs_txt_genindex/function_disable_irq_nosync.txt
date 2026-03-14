@@ -1,0 +1,13 @@
+Function: void disable_irq_nosync ( unsigned int irq )
+
+disable an irq without waiting
+
+Parameters
+  unsigned int irq
+    Interrupt to disable
+
+Description
+  Disable the selected interrupt line.  Disables and Enables are
+nested.
+Unlike disable_irq() , this function does not ensure existing
+instances of the IRQ handler have completed before returning.

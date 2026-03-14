@@ -1,0 +1,9 @@
+Function: void jiffies_to_timespec64 ( const unsigned long jiffies , struct timespec64 * value )
+
+convert jiffies value to struct timespec64
+
+Parameters
+  const unsigned long jiffies
+    jiffies value
+  struct timespec64 *value
+    pointer to struct timespec64

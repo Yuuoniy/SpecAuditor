@@ -1,0 +1,11 @@
+Struct: struct drm_pvr_ioctl_get_bo_mmap_offset_args
+
+Arguments for DRM_IOCTL_PVR_GET_BO_MMAP_OFFSET
+
+Members
+  handle
+    [IN] GEM handle of the buffer object to be mapped.
+  _padding_4
+    Reserved. This field must be zeroed.
+  offset
+    [OUT] Fake offset to use in the real mmap call.

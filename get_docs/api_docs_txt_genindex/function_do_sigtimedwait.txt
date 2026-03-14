@@ -1,0 +1,11 @@
+Function: int do_sigtimedwait ( const sigset_t * which , kernel_siginfo_t * info , const struct timespec64 * ts )
+
+wait for queued signals specified in which
+
+Parameters
+  const sigset_t *which
+    queued signals to wait for
+  kernel_siginfo_t *info
+    if non-null, the signal’s siginfo is returned here
+  const struct timespec64 *ts
+    upper bound on process time suspension

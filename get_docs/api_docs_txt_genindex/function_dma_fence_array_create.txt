@@ -1,0 +1,19 @@
+Function: struct dma_fence_array * dma_fence_array_create ( int num_fences , struct dma_fence * * fences , u64 context , unsigned seqno , bool signal_on_any )
+
+Create a custom fence array
+
+Parameters
+  int num_fences
+    [in]    number of fences to add in the array
+  struct dma_fence **fences
+    [in]    array containing the fences
+  u64 context
+    [in]    fence context to use
+  unsigned seqno
+    [in]    sequence number to use
+  bool signal_on_any
+    [in]    signal on any fence in the array
+
+Description
+  Allocate a dma_fence_array object and initialize the base fence with dma_fence_init() .
+In case of error it returns NULL.

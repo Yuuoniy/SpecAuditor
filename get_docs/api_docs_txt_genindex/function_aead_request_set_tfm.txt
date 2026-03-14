@@ -1,0 +1,13 @@
+Function: void aead_request_set_tfm ( struct aead_request * req , struct crypto_aead * tfm )
+
+update cipher handle reference in request
+
+Parameters
+  struct aead_request *req
+    request handle to be modified
+  struct crypto_aead *tfm
+    cipher handle that shall be added to the request handle
+
+Description
+  Allow the caller to replace the existing aead handle in the request
+data structure with a different one.

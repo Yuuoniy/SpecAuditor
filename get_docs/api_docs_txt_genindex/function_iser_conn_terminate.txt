@@ -1,0 +1,10 @@
+Function: int iser_conn_terminate ( struct iser_conn * iser_conn )
+
+triggers start of the disconnect procedures and waits for them to be done
+
+Parameters
+  struct iser_conn *iser_conn
+    iSER connection context
+
+Description
+  Called with state mutex held

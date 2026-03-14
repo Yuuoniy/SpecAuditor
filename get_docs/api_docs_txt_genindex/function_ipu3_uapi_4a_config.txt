@@ -1,0 +1,15 @@
+Function: struct ipu3_uapi_4a_config
+
+4A config
+
+Members
+  awb_config
+    ipu3_uapi_awb_config_s , default resolution 16x16
+  ae_grd_config
+    auto exposure statistics ipu3_uapi_ae_grid_config
+  padding
+    paddings
+  af_config
+    auto focus config ipu3_uapi_af_config_s
+  awb_fr_config
+    ipu3_uapi_awb_fr_config_s , default resolution 16x16

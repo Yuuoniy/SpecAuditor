@@ -1,0 +1,17 @@
+Function: int usb_free_streams ( struct usb_interface * interface , struct usb_host_endpoint * * eps , unsigned int num_eps , gfp_t mem_flags )
+
+free bulk endpoint stream IDs.
+
+Parameters
+  struct usb_interface *interface
+    alternate setting that includes all endpoints.
+  struct usb_host_endpoint **eps
+    array of endpoints to remove streams from.
+  unsigned int num_eps
+    number of endpoints in the array.
+  gfp_t mem_flags
+    flags hcd should use to allocate memory.
+
+Description
+  Reverts a group of bulk endpoints back to not using stream IDs.
+Can fail if we are given bad arguments, or HCD is broken.

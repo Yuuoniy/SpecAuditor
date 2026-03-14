@@ -1,0 +1,15 @@
+Function: void sshp_buf_init ( struct sshp_buf * buf , u8 * ptr , size_t cap )
+
+Initialize a SSH parser buffer.
+
+Parameters
+  struct sshp_buf *buf
+    The buffer to initialize.
+  u8 *ptr
+    The memory backing the buffer.
+  size_t cap
+    The length of the memory backing the buffer, i.e. its capacity.
+
+Description
+  Initializes the buffer with the given memory as backing and set its used
+length to zero.

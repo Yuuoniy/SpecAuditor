@@ -1,0 +1,20 @@
+Function: int __audit_filter_op ( struct task_struct * tsk , struct audit_context * ctx , struct list_head * list , struct audit_names * name , unsigned long op )
+
+common filter helper for operations (syscall/uring/etc)
+
+Parameters
+  struct task_struct *tsk
+    associated task
+  struct audit_context *ctx
+    audit context
+  struct list_head *list
+    audit filter list
+  struct audit_names *name
+    audit_name (can be NULL)
+  unsigned long op
+    current syscall/uring_op
+
+Description
+  Run the udit filters specified in list against tsk using ctx , name , and op , as necessary; the caller is responsible for ensuring
+that the call is made while the RCU read lock is held. The name parameter can be NULL, but all others must be specified.
+Returns 1/true if the filter finds a match, 0/false if none are found.

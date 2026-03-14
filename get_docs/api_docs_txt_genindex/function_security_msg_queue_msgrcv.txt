@@ -1,0 +1,21 @@
+Function: int security_msg_queue_msgrcv ( struct kern_ipc_perm * msq , struct msg_msg * msg , struct task_struct * target , long type , int mode )
+
+Check if receiving a sysv ipc msg is allowed
+
+Parameters
+  struct kern_ipc_perm *msq
+    sysv ipc permission structure
+  struct msg_msg *msg
+    message
+  struct task_struct *target
+    target task
+  long type
+    type of message requested
+  int mode
+    operation flags
+
+Description
+  Check permission before a message, msg , is removed from the message queue.
+The target task structure contains a pointer to the process that will be
+receiving the message (not equal to the current process when inline receives
+are being performed).

@@ -1,0 +1,13 @@
+Macro: drmm_mutex_init
+
+
+
+Parameters
+  dev
+    DRM device
+  lock
+    lock to be initialized
+
+Description
+  This is a drm_device -managed version of mutex_init() . The initialized
+lock is automatically destroyed on the final drm_dev_put() .

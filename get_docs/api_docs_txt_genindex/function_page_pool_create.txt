@@ -1,0 +1,7 @@
+Function: struct page_pool * page_pool_create ( const struct page_pool_params * params )
+
+create a page pool
+
+Parameters
+  const struct page_pool_params *params
+    parameters, see struct page_pool_params

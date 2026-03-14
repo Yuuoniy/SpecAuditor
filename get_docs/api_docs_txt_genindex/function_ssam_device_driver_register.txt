@@ -1,0 +1,7 @@
+Function: ssam_device_driver_register
+
+
+
+Parameters
+  drv
+    The driver to register.

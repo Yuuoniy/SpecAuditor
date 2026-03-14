@@ -1,0 +1,40 @@
+Macro: NTSYNC_IOC_WAIT_ANY
+
+Poll on any of a list of objects, atomically acquiring at most one.
+Takes a pointer to struct ntsync_wait_args , which is
+used as follows: timeout Absolute timeout in nanoseconds. If NTSYNC_WAIT_REALTIME is set, the timeout is measured against the REALTIME clock;
+otherwise it is measured against the MONOTONIC clock. If the
+timeout is equal to or earlier than the current time, the
+function returns immediately without sleeping. If timeout is U64_MAX, the function will sleep until an object is
+signaled, and will not fail with ETIMEDOUT . objs Pointer to an array of count file descriptors
+(specified as an integer so that the structure has the same
+size regardless of architecture). If any object is
+invalid, the function fails with EINVAL . count Number of objects specified in the objs array.
+If greater than NTSYNC_MAX_WAIT_COUNT , the function fails
+with EINVAL . owner Mutex owner identifier. If any object in objs is a mutex,
+the ioctl will attempt to acquire that mutex on behalf of owner . If owner is zero, the ioctl fails with EINVAL . index On success, contains the index (into objs ) of the object
+which was signaled. If alert was signaled instead,
+this contains count . alert Optional event object file descriptor. If nonzero, this
+specifies an “alert” event object which, if signaled, will
+terminate the wait. If nonzero, the identifier must point to a
+valid event. flags Zero or more flags. Currently the only flag is NTSYNC_WAIT_REALTIME , which causes the timeout to be
+measured against the REALTIME clock instead of MONOTONIC. pad Unused, must be set to zero. This function attempts to acquire one of the given objects. If unable
+to do so, it sleeps until an object becomes signaled, subsequently
+acquiring it, or the timeout expires. In the latter case the ioctl
+fails with ETIMEDOUT . The function only acquires one object, even
+if multiple objects are signaled. A semaphore is considered to be signaled if its count is nonzero, and
+is acquired by decrementing its count by one. A mutex is considered
+to be signaled if it is unowned or if its owner matches the owner argument, and is acquired by incrementing its recursion count by one
+and setting its owner to the owner argument. An auto-reset event
+is acquired by designaling it; a manual-reset event is not affected
+by acquisition. Acquisition is atomic and totally ordered with respect to other
+operations on the same object. If two wait operations (with different owner identifiers) are queued on the same mutex, only one is
+signaled. If two wait operations are queued on the same semaphore,
+and a value of one is posted to it, only one is signaled. If an abandoned mutex is acquired, the ioctl fails with EOWNERDEAD . Although this is a failure return, the function may
+otherwise be considered successful. The mutex is marked as owned by
+the given owner (with a recursion count of 1) and as no longer
+abandoned, and index is still set to the index of the mutex. The alert argument is an “extra” event which can terminate the
+wait, independently of all other objects. It is valid to pass the same object more than once, including by
+passing the same event in the objs array and in alert . If a
+wakeup occurs due to that object being signaled, index is set to
+the lowest index corresponding to that object. The function may fail with EINTR if a signal is received.

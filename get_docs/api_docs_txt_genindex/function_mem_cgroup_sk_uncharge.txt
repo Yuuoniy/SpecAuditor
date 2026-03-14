@@ -1,0 +1,9 @@
+Function: void mem_cgroup_sk_uncharge ( const struct sock * sk , unsigned int nr_pages )
+
+uncharge socket memory
+
+Parameters
+  const struct sock *sk
+    socket in memcg to uncharge
+  unsigned int nr_pages
+    number of pages to uncharge

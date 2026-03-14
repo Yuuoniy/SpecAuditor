@@ -1,0 +1,9 @@
+Function: void mnt_set_expiry ( struct vfsmount * mnt , struct list_head * expiry_list )
+
+Put a mount on an expiration list
+
+Parameters
+  struct vfsmount *mnt
+    The mount to list.
+  struct list_head *expiry_list
+    The list to add the mount to.

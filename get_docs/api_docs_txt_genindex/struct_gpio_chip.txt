@@ -1,0 +1,111 @@
+Struct: struct gpio_chip
+
+abstract a GPIO controller
+
+Members
+  label
+    a functional name for the GPIO device, such as a part
+number or the name of the SoC IP-block implementing it.
+  gpiodev
+    the internal state holder, opaque struct
+  parent
+    optional parent device providing the GPIOs
+  fwnode
+    optional fwnode providing this controller’s properties
+  owner
+    helps prevent removal of modules exporting active GPIOs
+  request
+    optional hook for chip-specific activation, such as
+enabling module power and clock; may sleep; must return 0 on success
+or negative error number on failure
+  free
+    optional hook for chip-specific deactivation, such as
+disabling module power and clock; may sleep
+  get_direction
+    returns direction for signal “offset”, 0=out, 1=in,
+(same as GPIO_LINE_DIRECTION_OUT / GPIO_LINE_DIRECTION_IN),
+or negative error. It is recommended to always implement this
+function, even on input-only or output-only gpio chips.
+  direction_input
+    configures signal “offset” as input, returns 0 on success
+or a negative error number. This can be omitted on input-only or
+output-only gpio chips.
+  direction_output
+    configures signal “offset” as output, returns 0 on
+success or a negative error number. This can be omitted on input-only
+or output-only gpio chips.
+  get
+    returns value for signal “offset”, 0=low, 1=high, or negative error
+  get_multiple
+    reads values for multiple signals defined by “mask” and
+stores them in “bits”, returns 0 on success or negative error
+  set
+    assigns output value for signal “offset”, returns 0 on success or
+negative error value
+  set_multiple
+    assigns output values for multiple signals defined by
+“mask”, returns 0 on success or negative error value
+  set_config
+    optional hook for all kinds of settings. Uses the same
+packed config format as generic pinconf. Must return 0 on success and
+a negative error number on failure.
+  to_irq
+    optional hook supporting non-static gpiod_to_irq() mappings;
+implementation may not sleep
+  dbg_show
+    optional routine to show contents in debugfs; default code
+will be used when this is omitted, but custom code can show extra
+state (such as pullup/pulldown configuration).
+  init_valid_mask
+    optional routine to initialize valid_mask , to be used if
+not all GPIOs are valid.
+  add_pin_ranges
+    optional routine to initialize pin ranges, to be used when
+requires special mapping of the pins that provides GPIO functionality.
+It is called after adding GPIO chip and before adding IRQ chip.
+  en_hw_timestamp
+    Dependent on GPIO chip, an optional routine to
+enable hardware timestamp.
+  dis_hw_timestamp
+    Dependent on GPIO chip, an optional routine to
+disable hardware timestamp.
+  base
+    identifies the first GPIO number handled by this chip;
+or, if negative during registration, requests dynamic ID allocation.
+DEPRECATION: providing anything non-negative and nailing the base
+offset of GPIO chips is deprecated. Please pass -1 as base to
+let gpiolib select the chip base in all possible cases. We want to
+get rid of the static GPIO number space in the long run.
+  ngpio
+    the number of GPIOs handled by this controller; the last GPIO
+handled is (base + ngpio - 1).
+  offset
+    when multiple gpio chips belong to the same device this
+can be used as offset within the device so friendly names can
+be properly assigned.
+  names
+    if set, must be an array of strings to use as alternative
+names for the GPIOs in this chip. Any entry in the array
+may be NULL if there is no alias for the GPIO, however the
+array must be ngpio entries long.
+  can_sleep
+    flag must be set iff get() / set() methods sleep, as they
+must while accessing GPIO expander chips over I2C or SPI. This
+implies that if the chip supports IRQs, these IRQs need to be threaded
+as the chip access may sleep when e.g. reading out the IRQ status
+registers.
+  irq
+    Integrates interrupt chip functionality with the GPIO chip. Can be
+used to handle IRQs for most practical cases.
+  of_gpio_n_cells
+    Number of cells used to form the GPIO specifier. The standard is 2
+cells: gpios = < gpio offset flags>; some complex GPIO controllers instantiate more than one chip per
+device tree node and have 3 cells: gpios = < gpio instance offset flags>; Legacy GPIO controllers may even have 1 cell: gpios = < gpio offset>;
+  of_node_instance_match
+    Determine if a chip is the right instance. Must be implemented by
+any driver using more than one gpio_chip per device tree node.
+Returns true if gc is the instance indicated by i (which is the
+first cell in the phandles for GPIO lines and gpio-ranges).
+  of_xlate
+    Callback to translate a device tree GPIO specifier into a chip-
+relative GPIO number and flags.

@@ -1,0 +1,9 @@
+Function: void i2c_atr_set_driver_data ( struct i2c_atr * atr , void * data )
+
+Set private driver data to the i2c-atr instance.
+
+Parameters
+  struct i2c_atr *atr
+    The I2C ATR
+  void *data
+    Pointer to the data to store

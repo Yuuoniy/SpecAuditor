@@ -1,0 +1,14 @@
+Function: uint32_t drm_of_find_possible_crtcs ( struct drm_device * dev , struct device_node * port )
+
+find the possible CRTCs for an encoder port
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct device_node *port
+    encoder port to scan for endpoints
+
+Description
+  Scan all endpoints attached to a port, locate their attached CRTCs,
+and generate the DRM mask of CRTCs which may be attached to this
+encoder.

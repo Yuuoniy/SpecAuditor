@@ -1,0 +1,19 @@
+Function: int drm_connector_init_with_ddc ( struct drm_device * dev , struct drm_connector * connector , const struct drm_connector_funcs * funcs , int connector_type , struct i2c_adapter * ddc )
+
+Init a preallocated connector
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_connector *connector
+    the connector to init
+  const struct drm_connector_funcs *funcs
+    callbacks for this connector
+  int connector_type
+    user visible type of the connector
+  struct i2c_adapter *ddc
+    pointer to the associated ddc adapter
+
+Description
+  Initialises a preallocated connector. Connectors should be
+subclassed as part of driver connector objects.

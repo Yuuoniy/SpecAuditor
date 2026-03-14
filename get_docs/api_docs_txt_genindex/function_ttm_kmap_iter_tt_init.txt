@@ -1,0 +1,9 @@
+Function: struct ttm_kmap_iter * ttm_kmap_iter_tt_init ( struct ttm_kmap_iter_tt * iter_tt , struct ttm_tt * tt )
+
+Initialize a struct ttm_kmap_iter_tt
+
+Parameters
+  struct ttm_kmap_iter_tt *iter_tt
+    The struct ttm_kmap_iter_tt to initialize.
+  struct ttm_tt *tt
+    Struct ttm_tt holding page pointers of the struct ttm_resource .

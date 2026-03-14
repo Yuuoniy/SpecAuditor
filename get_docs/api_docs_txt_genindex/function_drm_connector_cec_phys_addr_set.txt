@@ -1,0 +1,10 @@
+Function: void drm_connector_cec_phys_addr_set ( struct drm_connector * connector )
+
+propagate CEC physical address
+
+Parameters
+  struct drm_connector *connector
+    connector undergoing CEC operation
+
+Description
+  Propagate CEC physical address from the display_info to this DRM connector.

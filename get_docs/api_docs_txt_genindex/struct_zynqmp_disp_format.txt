@@ -1,0 +1,15 @@
+Struct: struct zynqmp_disp_format
+
+Display subsystem format information
+
+Members
+  drm_fmt
+    DRM format (4CC)
+  bus_fmt
+    Media bus format
+  buf_fmt
+    AV buffer format
+  swap
+    Flag to swap R & B for RGB formats, and U & V for YUV formats
+  sf
+    Scaling factors for color components

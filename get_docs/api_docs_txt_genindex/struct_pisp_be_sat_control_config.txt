@@ -1,0 +1,13 @@
+Struct: struct pisp_be_sat_control_config
+
+PiSP Back End SAT config
+
+Members
+  shift_r
+    Left shift for Red colour channel
+  shift_g
+    Left shift for Green colour channel
+  shift_b
+    Left shift for Blue colour channel
+  pad
+    Padding byte

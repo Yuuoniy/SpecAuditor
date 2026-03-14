@@ -1,0 +1,15 @@
+Function: struct pcpu_alloc_info * pcpu_alloc_alloc_info ( int nr_groups , int nr_units )
+
+allocate percpu allocation info
+
+Parameters
+  int nr_groups
+    the number of groups
+  int nr_units
+    the number of units
+
+Description
+  Allocate ai which is large enough for nr_groups groups containing nr_units units.  The returned ai’s groups[0].cpu_map points to the
+cpu_map array which is long enough for nr_units and filled with
+NR_CPUS.  It’s the caller’s responsibility to initialize cpu_map
+pointer of other groups.

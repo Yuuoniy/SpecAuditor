@@ -1,0 +1,9 @@
+Function: struct device * driver_find_device_by_fwnode ( struct device_driver * drv , const struct fwnode_handle * fwnode )
+
+device iterator for locating a particular device by fwnode pointer.
+
+Parameters
+  struct device_driver *drv
+    the driver we’re iterating
+  const struct fwnode_handle *fwnode
+    fwnode pointer to match.

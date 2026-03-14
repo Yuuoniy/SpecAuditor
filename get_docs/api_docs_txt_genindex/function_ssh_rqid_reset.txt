@@ -1,0 +1,7 @@
+Function: void ssh_rqid_reset ( struct ssh_rqid_counter * c )
+
+Reset/initialize request ID counter.
+
+Parameters
+  struct ssh_rqid_counter *c
+    The counter to reset.

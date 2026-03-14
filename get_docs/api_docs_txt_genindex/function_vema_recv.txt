@@ -1,0 +1,16 @@
+Function: void vema_recv ( struct ib_mad_agent * mad_agent , struct ib_mad_send_buf * send_buf , struct ib_mad_recv_wc * mad_wc )
+
+Recv handler for VEMA MAD agent
+
+Parameters
+  struct ib_mad_agent *mad_agent
+    pointer to the mad agent
+  struct ib_mad_send_buf *send_buf
+    Send buffer if found, else NULL
+  struct ib_mad_recv_wc *mad_wc
+    pointer to mad send work completion information
+
+Description
+  Handle only set and get methods and respond to other methods
+as unsupported. Allocate response buffer and address handle
+for the response MAD.

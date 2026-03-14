@@ -1,0 +1,9 @@
+Function: bool phy_id_compare_model ( u32 id , u32 model_mask )
+
+compare id with model mask
+
+Parameters
+  u32 id
+    PHY ID
+  u32 model_mask
+    PHY Model mask

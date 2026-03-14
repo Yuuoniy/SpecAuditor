@@ -1,0 +1,11 @@
+Function: void spi_finalize_current_message ( struct spi_controller * ctlr )
+
+the current message is complete
+
+Parameters
+  struct spi_controller *ctlr
+    the controller to return the message to
+
+Description
+  Called by the driver to notify the core that the message in the front of the
+queue is complete and can be removed from the queue.

@@ -1,0 +1,17 @@
+Function: void snd_ctl_notify_one ( struct snd_card * card , unsigned int mask , struct snd_kcontrol * kctl , unsigned int ioff )
+
+Send notification to user-space for a control change
+
+Parameters
+  struct snd_card *card
+    the card to send notification
+  unsigned int mask
+    the event mask, SNDRV_CTL_EVENT_*
+  struct snd_kcontrol *kctl
+    the pointer with the control instance
+  unsigned int ioff
+    the additional offset to the control index
+
+Description
+  This function calls snd_ctl_notify() and does additional jobs
+like LED state changes.

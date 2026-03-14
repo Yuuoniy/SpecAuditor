@@ -1,0 +1,12 @@
+Function: int jbd2_journal_load ( journal_t * journal )
+
+Read journal from disk.
+
+Parameters
+  journal_t *journal
+    Journal to act on.
+
+Description
+  Given a journal_t structure which tells us which disk blocks contain
+a journal, read the journal from disk to initialise the in-memory
+structures.

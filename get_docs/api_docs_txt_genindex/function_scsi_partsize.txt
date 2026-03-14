@@ -1,0 +1,15 @@
+Function: bool scsi_partsize ( struct gendisk * disk , sector_t capacity , int geom [ 3 ] )
+
+Parse cylinders/heads/sectors from PC partition table
+
+Parameters
+  struct gendisk *disk
+    gendisk of the disk to parse
+  sector_t capacity
+    size of the disk in sectors
+  int geom[3]
+    output in form of [hds, cylinders, sectors]
+
+Description
+  Determine the BIOS mapping/geometry used to create the partition
+table, storing the results in geom .

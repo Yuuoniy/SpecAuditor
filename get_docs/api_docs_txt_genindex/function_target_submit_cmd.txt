@@ -1,0 +1,26 @@
+Function: void target_submit_cmd ( struct se_cmd * se_cmd , struct se_session * se_sess , unsigned char * cdb , unsigned char * sense , u64 unpacked_lun , u32 data_length , int task_attr , int data_dir , int flags )
+
+lookup unpacked lun and submit uninitialized se_cmd
+
+Parameters
+  struct se_cmd *se_cmd
+    command descriptor to submit
+  struct se_session *se_sess
+    associated se_sess for endpoint
+  unsigned char *cdb
+    pointer to SCSI CDB
+  unsigned char *sense
+    pointer to SCSI sense buffer
+  u64 unpacked_lun
+    unpacked LUN to reference for struct se_lun
+  u32 data_length
+    fabric expected data transfer length
+  int task_attr
+    SAM task attribute
+  int data_dir
+    DMA data direction
+  int flags
+    flags for command submission from target_sc_flags_tables
+
+Description
+  Task tags are supported if the caller has set se_cmd->tag .

@@ -1,0 +1,13 @@
+Function: int snd_pcm_hw_constraint_ratdens ( struct snd_pcm_runtime * runtime , unsigned int cond , snd_pcm_hw_param_t var , const struct snd_pcm_hw_constraint_ratdens * r )
+
+apply ratdens constraint to a parameter
+
+Parameters
+  struct snd_pcm_runtime *runtime
+    PCM runtime instance
+  unsigned int cond
+    condition bits
+  snd_pcm_hw_param_t var
+    hw_params variable to apply the ratdens constraint
+  const struct snd_pcm_hw_constraint_ratdens *r
+    struct snd_ratdens constriants

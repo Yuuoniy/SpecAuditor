@@ -1,0 +1,3 @@
+Enum: enum slim_transport_protocol
+
+SLIMbus Transport protocol list from Table 47 of SLIMbus 2.0 specs.

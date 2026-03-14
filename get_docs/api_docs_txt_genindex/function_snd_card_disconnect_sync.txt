@@ -1,0 +1,13 @@
+Function: void snd_card_disconnect_sync ( struct snd_card * card )
+
+disconnect card and wait until files get closed
+
+Parameters
+  struct snd_card *card
+    card object to disconnect
+
+Description
+  This calls snd_card_disconnect() for disconnecting all belonging components
+and waits until all pending files get closed.
+It assures that all accesses from user-space finished so that the driver
+can release its resources gracefully.

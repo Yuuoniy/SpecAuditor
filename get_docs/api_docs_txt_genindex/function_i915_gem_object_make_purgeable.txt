@@ -1,0 +1,10 @@
+Function: void i915_gem_object_make_purgeable ( struct drm_i915_gem_object * obj )
+
+Move the object to the tail of the purgeable list. Used with DONTNEED objects. Unlike with shrinkable objects, the shrinker will attempt to discard the backing pages, instead of trying to swap them out.
+
+Parameters
+  struct drm_i915_gem_object *obj
+    The GEM object.
+
+Description
+  MUST only be called on objects which have backing pages.

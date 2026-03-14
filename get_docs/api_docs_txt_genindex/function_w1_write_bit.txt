@@ -1,0 +1,12 @@
+Function: void w1_write_bit ( struct w1_master * dev , int bit )
+
+Generates a write-0 or write-1 cycle.
+
+Parameters
+  struct w1_master *dev
+    the master device
+  int bit
+    bit to write
+
+Description
+  Only call if dev->bus_master->touch_bit is NULL

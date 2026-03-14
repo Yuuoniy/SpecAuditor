@@ -1,0 +1,14 @@
+Function: void start_poll_synchronize_rcu_expedited_full ( struct rcu_gp_oldstate * rgosp )
+
+Take a full snapshot and start expedited grace period
+
+Parameters
+  struct rcu_gp_oldstate *rgosp
+    Place to put snapshot of grace-period state
+
+Description
+  Places the normal and expedited grace-period states in rgosp.  This
+state value can be passed to a later call to cond_synchronize_rcu_full() or poll_state_synchronize_rcu_full() to determine whether or not a
+grace period (whether normal or expedited) has elapsed in the meantime.
+If the needed expedited grace period is not already slated to start,
+initiates that grace period.

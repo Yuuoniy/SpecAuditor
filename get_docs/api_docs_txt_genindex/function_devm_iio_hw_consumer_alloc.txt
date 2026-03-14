@@ -1,0 +1,11 @@
+Function: struct iio_hw_consumer * devm_iio_hw_consumer_alloc ( struct device * dev )
+
+Resource-managed iio_hw_consumer_alloc()
+
+Parameters
+  struct device *dev
+    Pointer to consumer device.
+
+Description
+  Managed iio_hw_consumer_alloc. iio_hw_consumer allocated with this function
+is automatically freed on driver detach.

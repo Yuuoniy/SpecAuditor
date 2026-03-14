@@ -1,0 +1,14 @@
+Function: void sock_poll_wait ( struct file * filp , struct socket * sock , poll_table * p )
+
+wrapper for the poll_wait call.
+
+Parameters
+  struct file *filp
+    file
+  struct socket *sock
+    socket to wait on
+  poll_table *p
+    poll_table
+
+Description
+  See the comments in the wq_has_sleeper function.

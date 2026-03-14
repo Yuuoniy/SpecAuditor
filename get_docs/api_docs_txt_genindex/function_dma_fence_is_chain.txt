@@ -1,0 +1,10 @@
+Function: bool dma_fence_is_chain ( struct dma_fence * fence )
+
+check if a fence is from the chain subclass
+
+Parameters
+  struct dma_fence *fence
+    the fence to test
+
+Description
+  Return true if it is a dma_fence_chain and false otherwise.

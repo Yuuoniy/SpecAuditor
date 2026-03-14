@@ -1,0 +1,12 @@
+Function: size_t zs_huge_class_size ( struct zs_pool * pool )
+
+Returns the size (in bytes) of the first huge zsmalloc size_class .
+
+Parameters
+  struct zs_pool *pool
+    zsmalloc pool to use
+
+Description
+  The function returns the size of the first huge class - any object of equal
+or bigger size will be stored in zspage consisting of a single physical
+page.

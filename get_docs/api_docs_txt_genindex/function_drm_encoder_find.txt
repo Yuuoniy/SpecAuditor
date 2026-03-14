@@ -1,0 +1,14 @@
+Function: struct drm_encoder * drm_encoder_find ( struct drm_device * dev , struct drm_file * file_priv , uint32_t id )
+
+find a drm_encoder
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_file *file_priv
+    drm file to check for lease against.
+  uint32_t id
+    encoder id
+
+Description
+  Returns the encoder with id , NULL if it doesn’t exist. Simple wrapper around drm_mode_object_find() .

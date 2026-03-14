@@ -1,0 +1,19 @@
+Struct: struct regulator_irq_data
+
+regulator error/notification status data
+
+Members
+  states
+    Status structs for each of the associated regulators.
+  num_states
+    Amount of associated regulators.
+  data
+    Driver data pointer given at regulator_irq_desc.
+  opaque
+    Value storage for IC driver. Core does not update this. ICs
+may want to store status register value here at map_event and
+compare contents at ‘renable’ callback to see if new problems
+have been added to status. If that is the case it may be
+desirable to return REGULATOR_ERROR_CLEARED and not
+REGULATOR_ERROR_ON to allow IRQ fire again and to generate
+notifications also for the new issues.

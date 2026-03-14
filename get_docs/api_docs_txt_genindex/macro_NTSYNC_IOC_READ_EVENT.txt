@@ -1,0 +1,4 @@
+Macro: NTSYNC_IOC_READ_EVENT
+
+Read the current state of an event object. Takes a pointer to struct ntsync_event_args , which is used as follows: signaled On output, contains the current state of the event. manual On output, contains 1 if the event is a manual-reset event,
+and 0 otherwise.

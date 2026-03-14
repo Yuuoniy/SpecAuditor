@@ -1,0 +1,11 @@
+Function: void kthread_flush_worker ( struct kthread_worker * worker )
+
+flush all current works on a kthread_worker
+
+Parameters
+  struct kthread_worker *worker
+    worker to flush
+
+Description
+  Wait until all currently executing or pending works on worker are
+finished.

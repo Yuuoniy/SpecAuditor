@@ -1,0 +1,9 @@
+Function: void regulator_free_power_budget ( struct regulator * regulator , unsigned int pw )
+
+free power budget on a regulator
+
+Parameters
+  struct regulator *regulator
+    regulator source
+  unsigned int pw
+    Power to be released.

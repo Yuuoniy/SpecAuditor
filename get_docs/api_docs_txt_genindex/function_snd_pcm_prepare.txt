@@ -1,0 +1,9 @@
+Function: int snd_pcm_prepare ( struct snd_pcm_substream * substream , struct file * file )
+
+prepare the PCM substream to be triggerable
+
+Parameters
+  struct snd_pcm_substream *substream
+    the PCM substream instance
+  struct file *file
+    file to refer f_flags

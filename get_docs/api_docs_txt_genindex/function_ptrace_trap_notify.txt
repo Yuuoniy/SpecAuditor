@@ -1,0 +1,12 @@
+Function: void ptrace_trap_notify ( struct task_struct * t )
+
+schedule trap to notify ptracer
+
+Parameters
+  struct task_struct *t
+    tracee wanting to notify tracer
+
+Description
+  This function schedules sticky ptrace trap which is cleared on the next
+TRAP_STOP to notify ptracer of an event. t must have been seized by
+ptracer.

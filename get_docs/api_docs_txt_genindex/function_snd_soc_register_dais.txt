@@ -1,0 +1,11 @@
+Function: int snd_soc_register_dais ( struct snd_soc_component * component , struct snd_soc_dai_driver * dai_drv , size_t count )
+
+Register a DAI with the ASoC core
+
+Parameters
+  struct snd_soc_component *component
+    The component the DAIs are registered for
+  struct snd_soc_dai_driver *dai_drv
+    DAI driver to use for the DAIs
+  size_t count
+    Number of DAIs

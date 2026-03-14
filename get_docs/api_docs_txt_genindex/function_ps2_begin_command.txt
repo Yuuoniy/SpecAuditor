@@ -1,0 +1,10 @@
+Function: void ps2_begin_command ( struct ps2dev * ps2dev )
+
+mark beginning of execution of a complex command
+
+Parameters
+  struct ps2dev *ps2dev
+    a PS/2 device executing the command
+
+Description
+  Serializes a complex/compound command. Once command is finished ps2_end_command() should be called.

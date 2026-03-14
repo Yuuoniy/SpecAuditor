@@ -1,0 +1,16 @@
+Function: int drm_helper_probe_single_connector_modes ( struct drm_connector * connector , uint32_t maxX , uint32_t maxY )
+
+get complete set of display modes
+
+Parameters
+  struct drm_connector *connector
+    connector to probe
+  uint32_t maxX
+    max width for modes
+  uint32_t maxY
+    max height for modes
+
+Description
+  Based on the helper callbacks implemented by connector in struct drm_connector_helper_funcs try to detect all valid modes.  Modes will first
+be added to the connector’s probed_modes list, then culled (based on validity
+and the maxX , maxY parameters) and put into the normal modes list.

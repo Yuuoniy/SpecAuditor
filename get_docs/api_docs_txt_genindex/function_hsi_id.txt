@@ -1,0 +1,10 @@
+Function: unsigned int hsi_id ( struct hsi_client * cl )
+
+Get HSI controller ID associated to a client
+
+Parameters
+  struct hsi_client *cl
+    Pointer to a HSI client
+
+Description
+  Return the controller id where the client is attached to

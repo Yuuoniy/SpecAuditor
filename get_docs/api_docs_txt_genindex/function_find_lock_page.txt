@@ -1,0 +1,14 @@
+Function: struct page * find_lock_page ( struct address_space * mapping , pgoff_t index )
+
+locate, pin and lock a pagecache page
+
+Parameters
+  struct address_space *mapping
+    the address_space to search
+  pgoff_t index
+    the page index
+
+Description
+  Looks up the page cache entry at mapping & index .  If there is a
+page cache page, it is returned locked and with an increased
+refcount.

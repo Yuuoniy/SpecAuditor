@@ -1,0 +1,12 @@
+Function: void of_node_init ( struct device_node * node )
+
+initialize a devicetree node
+
+Parameters
+  struct device_node *node
+    Pointer to device node that has been created by kzalloc()
+
+Description
+  On return the device_node refcount is set to one.  Use of_node_put() on node when done to free the memory allocated for it.  If the node
+is NOT a dynamic node the memory will not be freed. The decision of
+whether to free the memory will be done by node-> release() , which is of_node_release() .

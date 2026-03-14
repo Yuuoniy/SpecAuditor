@@ -1,0 +1,11 @@
+Function: bool disable_work_sync ( struct work_struct * work )
+
+Disable, cancel and drain a work item
+
+Parameters
+  struct work_struct *work
+    work item to disable
+
+Description
+  Similar to disable_work() but also wait for work to finish if currently
+executing.

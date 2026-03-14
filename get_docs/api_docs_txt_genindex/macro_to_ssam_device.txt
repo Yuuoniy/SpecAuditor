@@ -1,0 +1,12 @@
+Macro: to_ssam_device
+
+
+
+Parameters
+  d
+    The device to cast.
+
+Description
+  Casts the given struct device to a struct ssam_device . The caller has to
+ensure that the given device is actually enclosed in a struct ssam_device ,
+e.g. by calling is_ssam_device() .

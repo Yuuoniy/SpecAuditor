@@ -1,0 +1,11 @@
+Function: void dev_put ( struct net_device * dev )
+
+release reference to device
+
+Parameters
+  struct net_device *dev
+    network device
+
+Description
+  Release reference to device to allow it to be freed.
+Try using netdev_put() instead.

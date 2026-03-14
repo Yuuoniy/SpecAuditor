@@ -1,0 +1,23 @@
+Function: struct dentry * securityfs_create_symlink ( const char * name , struct dentry * parent , const char * target , const struct inode_operations * iops )
+
+create a symlink in the securityfs filesystem
+
+Parameters
+  const char *name
+    a pointer to a string containing the name of the symlink to
+create.
+  struct dentry *parent
+    a pointer to the parent dentry for the symlink.  This should be a
+directory dentry if set.  If this parameter is NULL , then the
+directory will be created in the root of the securityfs filesystem.
+  const char *target
+    a pointer to a string containing the name of the symlink’s target.
+If this parameter is NULL , then the iops parameter needs to be
+setup to handle .readlink and .get_link inode_operations.
+  const struct inode_operations *iops
+    a pointer to the struct inode_operations to use for the symlink. If
+this parameter is NULL , then the default simple_symlink_inode
+operations will be used.
+
+Description
+  This function creates a symlink in securityfs with the given name .

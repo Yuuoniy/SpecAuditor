@@ -1,0 +1,10 @@
+Function: void relay_flush ( struct rchan * chan )
+
+close the channel
+
+Parameters
+  struct rchan *chan
+    the channel
+
+Description
+  Flushes all channel buffers, i.e. forces buffer switch.

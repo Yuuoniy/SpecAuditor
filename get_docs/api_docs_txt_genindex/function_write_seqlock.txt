@@ -1,0 +1,13 @@
+Function: void write_seqlock ( seqlock_t * sl )
+
+start a seqlock_t write side critical section
+
+Parameters
+  seqlock_t *sl
+    Pointer to seqlock_t
+
+Description
+  write_seqlock opens a write side critical section for the given
+seqlock_t.  It also implicitly acquires the spinlock_t embedded inside
+that sequential lock. All seqlock_t write side sections are thus
+automatically serialized and non-preemptible.

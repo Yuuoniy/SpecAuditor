@@ -1,0 +1,13 @@
+Function: void phy_start ( struct phy_device * phydev )
+
+start or restart a PHY device
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  handle PHY-related work.  Used during startup to start the
+PHY, and after a call to phy_stop() to resume operation.
+Also used to indicate the MDIO bus has cleared an error
+condition.

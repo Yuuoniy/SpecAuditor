@@ -1,0 +1,11 @@
+Function: char * svc_print_addr ( struct svc_rqst * rqstp , char * buf , size_t len )
+
+Format rq_addr field for printing
+
+Parameters
+  struct svc_rqst *rqstp
+    svc_rqst struct containing address to print
+  char *buf
+    target buffer for formatted address
+  size_t len
+    length of target buffer

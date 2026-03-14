@@ -1,0 +1,28 @@
+Struct: struct gpiohandle_request
+
+Information about a GPIO handle request
+
+Members
+  lineoffsets
+    an array of desired lines, specified by offset index for the
+associated GPIO device
+  flags
+    desired flags for the desired GPIO lines, such as GPIOHANDLE_REQUEST_OUTPUT , GPIOHANDLE_REQUEST_ACTIVE_LOW etc, added
+together. Note that even if multiple lines are requested, the same flags
+must be applicable to all of them, if you want lines with individual
+flags set, request them one by one. It is possible to select
+a batch of input or output lines, but they must all have the same
+characteristics, i.e. all inputs or all outputs, all active low etc
+  default_values
+    if the GPIOHANDLE_REQUEST_OUTPUT is set for a requested
+line, this specifies the default output value, should be 0 (inactive) or
+1 (active).  Anything other than 0 or 1 will be interpreted as active.
+  consumer_label
+    a desired consumer label for the selected GPIO line(s)
+such as “my-bitbanged-relay”
+  lines
+    number of lines requested in this request, i.e. the number of
+valid fields in the above arrays, set to 1 to request a single line
+  fd
+    after a successful GPIO_GET_LINEHANDLE_IOCTL operation, contains
+a valid anonymous file descriptor representing the request

@@ -1,0 +1,13 @@
+Macro: pr_notice
+
+
+
+Parameters
+  fmt
+    format string
+  ...
+    arguments for the format string
+
+Description
+  This macro expands to a printk with KERN_NOTICE loglevel. It uses pr_fmt() to
+generate the format string.

@@ -1,0 +1,9 @@
+Function: void calculate_imbalance ( struct lb_env * env , struct sd_lb_stats * sds )
+
+Calculate the amount of imbalance present within the groups of a given sched_domain during load balance.
+
+Parameters
+  struct lb_env *env
+    load balance environment
+  struct sd_lb_stats *sds
+    statistics of the sched_domain whose imbalance is to be calculated.

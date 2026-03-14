@@ -1,0 +1,7 @@
+Macro: DRM_PVR_SYNC_OP_FLAG_HANDLE_TYPE_TIMELINE_SYNCOBJ
+
+Indicates the handle passed in drm_pvr_sync_op::handle is a timeline syncobj handle.
+
+Members
+  jobs
+    [IN] Array of jobs to submit.

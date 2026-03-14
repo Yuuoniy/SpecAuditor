@@ -1,0 +1,11 @@
+Function: bool ssam_device_id_is_null ( const struct ssam_device_id * id )
+
+Check if a device ID is null.
+
+Parameters
+  const struct ssam_device_id *id
+    The device ID to check.
+
+Description
+  Check if a given device ID is null, i.e. all zeros. Used to check for the
+end of MODULE_DEVICE_TABLE(ssam, ...) or similar lists.

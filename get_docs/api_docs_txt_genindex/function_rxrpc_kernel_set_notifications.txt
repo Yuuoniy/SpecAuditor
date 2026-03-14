@@ -1,0 +1,12 @@
+Function: void rxrpc_kernel_set_notifications ( struct socket * sock , const struct rxrpc_kernel_ops * app_ops )
+
+Set table of callback operations
+
+Parameters
+  struct socket *sock
+    The socket to install table upon
+  const struct rxrpc_kernel_ops *app_ops
+    Callback operation table to set
+
+Description
+  Allow a kernel service to set a table of event notifications on a socket.

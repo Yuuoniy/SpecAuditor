@@ -1,0 +1,16 @@
+Function: void relay_subbufs_consumed ( struct rchan * chan , unsigned int cpu , size_t subbufs_consumed )
+
+update the buffer’s sub-buffers-consumed count
+
+Parameters
+  struct rchan *chan
+    the channel
+  unsigned int cpu
+    the cpu associated with the channel buffer to update
+  size_t subbufs_consumed
+    number of sub-buffers to add to current buf’s count
+
+Description
+  Adds to the channel buffer’s consumed sub-buffer count.
+subbufs_consumed should be the number of sub-buffers newly consumed,
+not the total consumed.

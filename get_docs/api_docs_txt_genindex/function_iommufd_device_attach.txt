@@ -1,0 +1,16 @@
+Function: int iommufd_device_attach ( struct iommufd_device * idev , ioasid_t pasid , u32 * pt_id )
+
+Connect a device/pasid to an iommu_domain
+
+Parameters
+  struct iommufd_device *idev
+    device to attach
+  ioasid_t pasid
+    pasid to attach
+  u32 *pt_id
+    Input a IOMMUFD_OBJ_IOAS, or IOMMUFD_OBJ_HWPT_PAGING
+Output the IOMMUFD_OBJ_HWPT_PAGING ID
+
+Description
+  This connects the device/pasid to an iommu_domain, either automatically
+or manually selected. Once this completes the device could do DMA with pasid . pasid is IOMMU_NO_PASID if this attach is for no pasid usage.

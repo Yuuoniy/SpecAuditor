@@ -1,0 +1,21 @@
+Struct: struct wmi_driver
+
+WMI driver structure
+
+Members
+  driver
+    Driver model structure
+  id_table
+    List of WMI GUIDs supported by this driver
+  no_notify_data
+    Driver supports WMI events which provide no event data
+  no_singleton
+    Driver can be instantiated multiple times
+  probe
+    Callback for device binding
+  remove
+    Callback for device unbinding
+  shutdown
+    Callback for device shutdown
+  notify
+    Callback for receiving WMI events

@@ -1,0 +1,19 @@
+Function: int snd_dma_alloc_dir_pages ( int type , struct device * device , enum dma_data_direction dir , size_t size , struct snd_dma_buffer * dmab )
+
+allocate the buffer area according to the given type and direction
+
+Parameters
+  int type
+    the DMA buffer type
+  struct device *device
+    the device pointer
+  enum dma_data_direction dir
+    DMA direction
+  size_t size
+    the buffer size to allocate
+  struct snd_dma_buffer *dmab
+    buffer allocation record to store the allocated data
+
+Description
+  Calls the memory-allocator function for the corresponding
+buffer type.

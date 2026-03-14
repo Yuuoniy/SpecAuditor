@@ -1,0 +1,13 @@
+Function: void ieee80211_queue_work ( struct ieee80211_hw * hw , struct work_struct * work )
+
+add work onto the mac80211 workqueue
+
+Parameters
+  struct ieee80211_hw *hw
+    the hardware struct for the interface we are adding work for
+  struct work_struct *work
+    the work we want to add onto the mac80211 workqueue
+
+Description
+  Drivers and mac80211 use this to add work onto the mac80211 workqueue.
+This helper ensures drivers are not queueing work when they should not be.

@@ -1,0 +1,10 @@
+Function: void trace_block_touch_buffer ( struct buffer_head * bh )
+
+mark a buffer accessed
+
+Parameters
+  struct buffer_head *bh
+    buffer_head being touched
+
+Description
+  Called from touch_buffer() .

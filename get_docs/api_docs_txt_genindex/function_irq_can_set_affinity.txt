@@ -1,0 +1,7 @@
+Function: int irq_can_set_affinity ( unsigned int irq )
+
+Check if the affinity of a given irq can be set
+
+Parameters
+  unsigned int irq
+    Interrupt to check

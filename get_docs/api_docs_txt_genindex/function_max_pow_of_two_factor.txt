@@ -1,0 +1,11 @@
+Function: unsigned int max_pow_of_two_factor ( unsigned int n )
+
+return highest power-of-2 factor
+
+Parameters
+  unsigned int n
+    parameter
+
+Description
+  find highest power-of-2 which is evenly divisible into n.
+0 is returned for n == 0 or 1.

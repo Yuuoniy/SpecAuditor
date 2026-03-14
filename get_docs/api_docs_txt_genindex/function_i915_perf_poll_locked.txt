@@ -1,0 +1,15 @@
+Function: __poll_t i915_perf_poll_locked ( struct i915_perf_stream * stream , struct file * file , poll_table * wait )
+
+poll_wait() with a suitable wait queue for stream
+
+Parameters
+  struct i915_perf_stream *stream
+    An i915 perf stream
+  struct file *file
+    An i915 perf stream file
+  poll_table *wait
+    poll() state table
+
+Description
+  For handling userspace polling on an i915 perf stream, this calls through to i915_perf_stream_ops->poll_wait to call poll_wait() with a wait queue that
+will be woken for new stream data.

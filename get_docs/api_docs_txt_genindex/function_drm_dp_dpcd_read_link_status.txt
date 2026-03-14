@@ -1,0 +1,12 @@
+Function: int drm_dp_dpcd_read_link_status ( struct drm_dp_aux * aux , u8 status [ DP_LINK_STATUS_SIZE ] )
+
+read DPCD link status (bytes 0x202-0x207)
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  u8 status[DP_LINK_STATUS_SIZE]
+    buffer to store the link status in (must be at least 6 bytes)
+
+Description
+  Returns a negative error code on failure or 0 on success.

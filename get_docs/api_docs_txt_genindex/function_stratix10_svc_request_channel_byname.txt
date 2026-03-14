@@ -1,0 +1,12 @@
+Function: struct stratix10_svc_chan * stratix10_svc_request_channel_byname ( struct stratix10_svc_client * client , const char * name )
+
+request a service channel
+
+Parameters
+  struct stratix10_svc_client *client
+    pointer to service client
+  const char *name
+    service client name
+
+Description
+  This function is used by service client to request a service channel.

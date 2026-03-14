@@ -1,0 +1,13 @@
+Function: unsigned int rcvbuf_limit ( struct sock * sk , struct sk_buff * skb )
+
+get proper overload limit of socket receive queue
+
+Parameters
+  struct sock *sk
+    socket
+  struct sk_buff *skb
+    message
+
+Description
+  For connection oriented messages, irrespective of importance,
+default queue limit is 2 MB.

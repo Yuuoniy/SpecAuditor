@@ -1,0 +1,23 @@
+Function: ssize_t n_tty_read ( struct tty_struct * tty , struct file * file , u8 * kbuf , size_t nr , void * * cookie , unsigned long offset )
+
+read function for tty
+
+Parameters
+  struct tty_struct *tty
+    tty device
+  struct file *file
+    file object
+  u8 *kbuf
+    kernelspace buffer pointer
+  size_t nr
+    size of I/O
+  void **cookie
+    if non- NULL , this is a continuation read
+  unsigned long offset
+    where to continue reading from (unused in n_tty)
+
+Description
+  Perform reads for the line discipline. We are guaranteed that the line
+discipline will not be closed under us but we may get multiple parallel
+readers and must handle this ourselves. We may also get a hangup. Always
+called in user context, may sleep.

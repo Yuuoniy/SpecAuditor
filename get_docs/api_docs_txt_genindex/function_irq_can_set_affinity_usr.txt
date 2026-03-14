@@ -1,0 +1,11 @@
+Function: bool irq_can_set_affinity_usr ( unsigned int irq )
+
+Check if affinity of a irq can be set from user space
+
+Parameters
+  unsigned int irq
+    Interrupt to check
+
+Description
+  Like irq_can_set_affinity() above, but additionally checks for the
+AFFINITY_MANAGED flag.

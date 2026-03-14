@@ -1,0 +1,13 @@
+Function: netdev_tx_t ctucan_start_xmit ( struct sk_buff * skb , struct net_device * ndev )
+
+Starts the transmission
+
+Parameters
+  struct sk_buff *skb
+    sk_buff pointer that contains data to be Txed
+  struct net_device *ndev
+    Pointer to net_device structure
+
+Description
+  Invoked from upper layers to initiate transmission. Uses the next available free TXT Buffer and
+populates its fields to start the transmission.

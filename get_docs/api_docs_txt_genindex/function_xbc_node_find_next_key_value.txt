@@ -1,0 +1,15 @@
+Function: const char * xbc_node_find_next_key_value ( struct xbc_node * root , struct xbc_node * * leaf )
+
+Find the next key-value pair nodes
+
+Parameters
+  struct xbc_node *root
+    An XBC root node
+  struct xbc_node **leaf
+    A container pointer of XBC node which starts from.
+
+Description
+  Search the next leaf node (which means the terminal key node) of *leaf under root node. Returns the value and update *leaf if next leaf node
+is found, or NULL if no next leaf node is found.
+Note that this returns 0-length string if the key has no value, or
+the value of the first entry if the value is an array.

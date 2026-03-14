@@ -1,0 +1,13 @@
+Function: int rio_is_switch ( struct rio_dev * rdev )
+
+Tests if a RIO device has switch capabilities
+
+Parameters
+  struct rio_dev *rdev
+    RIO device
+
+Description
+  Gets the RIO device Processing Element Features register
+contents and tests for switch capabilities. Returns 1 if
+the device is a switch or 0 if it is not a switch.
+The RIO device struct is freed.

@@ -1,0 +1,13 @@
+Function: int queue_limits_commit_update ( struct request_queue * q , struct queue_limits * lim )
+
+commit an atomic update of queue limits
+
+Parameters
+  struct request_queue *q
+    queue to update
+  struct queue_limits *lim
+    limits to apply
+
+Description
+  Apply the limits in lim that were obtained from queue_limits_start_update() and updated by the caller to q .  The caller must have frozen the queue or
+ensure that there are no outstanding I/Os by other means.

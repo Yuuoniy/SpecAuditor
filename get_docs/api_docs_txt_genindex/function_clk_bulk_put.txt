@@ -1,0 +1,9 @@
+Function: void clk_bulk_put ( int num_clks , struct clk_bulk_data * clks )
+
+“free” the clock source
+
+Parameters
+  int num_clks
+    the number of clk_bulk_data
+  struct clk_bulk_data *clks
+    the clk_bulk_data table of consumer

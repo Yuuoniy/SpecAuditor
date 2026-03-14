@@ -1,0 +1,12 @@
+Function: int raw_atomic_xchg_relaxed ( atomic_t * v , int new )
+
+atomic exchange with relaxed ordering
+
+Parameters
+  atomic_t *v
+    pointer to atomic_t
+  int new
+    int value to assign
+
+Description
+  Atomically updates v to new with relaxed ordering.

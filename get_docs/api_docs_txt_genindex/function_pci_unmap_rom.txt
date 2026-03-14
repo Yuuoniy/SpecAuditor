@@ -1,0 +1,12 @@
+Function: void pci_unmap_rom ( struct pci_dev * pdev , void __iomem * rom )
+
+unmap the ROM from kernel space
+
+Parameters
+  struct pci_dev *pdev
+    pointer to pci device struct
+  void __iomem *rom
+    virtual address of the previous mapping
+
+Description
+  Remove a mapping of a previously mapped ROM

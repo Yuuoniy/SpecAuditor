@@ -1,0 +1,7 @@
+Macro: DEFINE_SEQLOCK
+
+
+
+Parameters
+  sl
+    Name of the seqlock_t instance

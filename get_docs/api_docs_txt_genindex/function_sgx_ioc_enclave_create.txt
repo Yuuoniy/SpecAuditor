@@ -1,0 +1,12 @@
+Function: long sgx_ioc_enclave_create ( struct sgx_encl * encl , void __user * arg )
+
+handler for SGX_IOC_ENCLAVE_CREATE
+
+Parameters
+  struct sgx_encl *encl
+    An enclave pointer.
+  void __user *arg
+    The ioctl argument.
+
+Description
+  Allocate kernel data structures for the enclave and invoke ECREATE.

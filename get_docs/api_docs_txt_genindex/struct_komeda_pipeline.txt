@@ -1,0 +1,53 @@
+Struct: struct komeda_pipeline
+
+
+
+Members
+  obj
+    link pipeline as private obj of drm_atomic_state
+  mdev
+    the parent komeda_dev
+  pxlclk
+    pixel clock
+  id
+    pipeline id
+  avail_comps
+    available components mask of pipeline
+  standalone_disabled_comps
+    When disable the pipeline, some components can not be disabled
+together with others, but need a sparated and standalone disable.
+The standalone_disabled_comps are the components which need to be
+disabled standalone, and this concept also introduce concept of
+two phase.
+phase 1: for disabling the common components.
+phase 2: for disabling the standalong_disabled_comps.
+  n_layers
+    the number of layer on layers
+  layers
+    the pipeline layers
+  n_scalers
+    the number of scaler on scalers
+  scalers
+    the pipeline scalers
+  compiz
+    compositor
+  splitter
+    for split the compiz output to two half data flows
+  merger
+    merger
+  wb_layer
+    writeback layer
+  improc
+    post image processor
+  ctrlr
+    timing controller
+  funcs
+    chip private pipeline functions
+  of_node
+    pipeline dt node
+  of_output_port
+    pipeline output port
+  of_output_links
+    output connector device nodes
+  dual_link
+    true if of_output_links[0] and [1] are both valid

@@ -1,0 +1,14 @@
+Struct: struct v4l2_flash_ops
+
+V4L2 flash operations
+
+Members
+  external_strobe_set
+    Setup strobing the flash by hardware pin state
+assertion.
+  intensity_to_led_brightness
+    Convert intensity to brightness in a device
+specific manner
+  led_brightness_to_intensity
+    convert brightness to intensity in a device
+specific manner.

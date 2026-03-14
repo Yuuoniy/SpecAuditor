@@ -1,0 +1,11 @@
+Function: int genphy_soft_reset ( struct phy_device * phydev )
+
+software reset the PHY via BMCR_RESET bit
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  Perform a software PHY reset using the standard
+BMCR_RESET bit and poll for the reset bit to be cleared.

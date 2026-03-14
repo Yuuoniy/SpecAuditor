@@ -1,0 +1,13 @@
+Function: unsigned long mmu_interval_read_begin ( struct mmu_interval_notifier * interval_sub )
+
+Begin a read side critical section against a VA range
+
+Parameters
+  struct mmu_interval_notifier *interval_sub
+    The interval subscription
+
+Description
+  mmu_iterval_read_begin() / mmu_iterval_read_retry() implement a
+collision-retry scheme similar to seqcount for the VA range under
+subscription. If the mm invokes invalidation during the critical section
+then mmu_interval_read_retry() will return true.

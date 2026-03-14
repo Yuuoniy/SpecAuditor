@@ -1,0 +1,10 @@
+Function: void pci_hp_del ( struct hotplug_slot * slot )
+
+unpublish hotplug slot from user space
+
+Parameters
+  struct hotplug_slot *slot
+    pointer to the struct hotplug_slot to unpublish
+
+Description
+  Remove a hotplug slot’s sysfs interface.

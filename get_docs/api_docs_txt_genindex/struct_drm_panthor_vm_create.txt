@@ -1,0 +1,21 @@
+Struct: struct drm_panthor_vm_create
+
+Arguments passed to DRM_PANTHOR_IOCTL_VM_CREATE
+
+Members
+  flags
+    VM flags, MBZ.
+  id
+    Returned VM ID.
+  user_va_range
+    Size of the VA space reserved for user objects. The kernel will pick the remaining space to map kernel-only objects to the
+VM (heap chunks, heap context, ring buffers, kernel synchronization objects,
+...). If the space left for kernel objects is too small, kernel object
+allocation will fail further down the road. One can use
+drm_panthor_gpu_info::mmu_features to extract the total virtual address
+range, and chose a user_va_range that leaves some space to the kernel. If user_va_range is zero, the kernel will pick a sensible value based on
+TASK_SIZE and the virtual range supported by the GPU MMU (the kernel/user
+split should leave enough VA space for userspace processes to support SVM,
+while still allowing the kernel to map some amount of kernel objects in
+the kernel VA range). The value chosen by the driver will be returned in user_va_range . User VA space always starts at 0x0, kernel VA space is always placed after
+the user VA range.

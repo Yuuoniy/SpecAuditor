@@ -1,0 +1,15 @@
+Function: int fpga_region_program_fpga ( struct fpga_region * region )
+
+program FPGA
+
+Parameters
+  struct fpga_region *region
+    FPGA region
+
+Description
+  Program an FPGA using fpga image info (region->info).
+If the region has a get_bridges function, the exclusive reference for the
+bridges will be held if programming succeeds.  This is intended to prevent
+reprogramming the region until the caller considers it safe to do so.
+The caller will need to call fpga_bridges_put() before attempting to
+reprogram the region.

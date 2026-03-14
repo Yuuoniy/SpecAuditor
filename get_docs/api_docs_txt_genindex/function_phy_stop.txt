@@ -1,0 +1,7 @@
+Function: void phy_stop ( struct phy_device * phydev )
+
+Bring down the PHY link, and stop checking the status
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct

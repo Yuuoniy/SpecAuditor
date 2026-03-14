@@ -1,0 +1,11 @@
+Function: unsigned int folioq_nr_slots ( const struct folio_queue * folioq )
+
+Query the capacity of a folio queue segment
+
+Parameters
+  const struct folio_queue *folioq
+    The segment to query
+
+Description
+  Query the number of folios that a particular folio queue segment might hold.
+[!] NOTE: This must not be assumed to be the same for every segment!

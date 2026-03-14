@@ -1,0 +1,11 @@
+Function: void handle_fasteoi_ack_irq ( struct irq_desc * desc )
+
+irq handler for edge hierarchy stacked on transparent controllers
+
+Parameters
+  struct irq_desc *desc
+    the interrupt description structure for this irq
+
+Description
+  Like handle_fasteoi_irq() , but for use with hierarchy where the irq_chip
+also needs to have its -> irq_ack() function called.

@@ -1,0 +1,9 @@
+Struct: struct ipu3_uapi_af_raw_buffer
+
+AF meta data
+
+Members
+  y_table
+    Each color component will be convolved separately with filter1
+and filter2 and the result will be summed out and averaged for
+each cell.

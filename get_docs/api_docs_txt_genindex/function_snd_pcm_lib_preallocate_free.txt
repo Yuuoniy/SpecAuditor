@@ -1,0 +1,10 @@
+Function: void snd_pcm_lib_preallocate_free ( struct snd_pcm_substream * substream )
+
+release the preallocated buffer of the specified substream.
+
+Parameters
+  struct snd_pcm_substream *substream
+    the pcm substream instance
+
+Description
+  Releases the pre-allocated buffer of the given substream.

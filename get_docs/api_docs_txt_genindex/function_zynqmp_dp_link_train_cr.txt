@@ -1,0 +1,7 @@
+Function: int zynqmp_dp_link_train_cr ( struct zynqmp_dp * dp )
+
+Train clock recovery
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure

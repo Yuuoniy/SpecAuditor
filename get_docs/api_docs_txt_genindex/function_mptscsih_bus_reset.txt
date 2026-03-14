@@ -1,0 +1,10 @@
+Function: int mptscsih_bus_reset ( struct scsi_cmnd * SCpnt )
+
+Perform a SCSI BUS_RESET! new_eh variant
+
+Parameters
+  struct scsi_cmnd * SCpnt
+    Pointer to scsi_cmnd structure, IO which reset is due to
+
+Description
+  (linux scsi_host_template.eh_bus_reset_handler routine)

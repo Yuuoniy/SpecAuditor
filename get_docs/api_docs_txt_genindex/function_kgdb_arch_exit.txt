@@ -1,0 +1,11 @@
+Function: void kgdb_arch_exit ( void )
+
+Perform any architecture specific uninitalization.
+
+Parameters
+  void
+    no arguments
+
+Description
+  This function will handle the uninitalization of any architecture
+specific callbacks, for dynamic registration and unregistration.

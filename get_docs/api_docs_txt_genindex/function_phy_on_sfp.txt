@@ -1,0 +1,7 @@
+Function: bool phy_on_sfp ( struct phy_device * phydev )
+
+Convenience function for testing if a PHY is on an SFP module
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct

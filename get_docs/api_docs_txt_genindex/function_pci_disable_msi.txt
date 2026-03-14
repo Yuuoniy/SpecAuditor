@@ -1,0 +1,13 @@
+Function: void pci_disable_msi ( struct pci_dev * dev )
+
+Disable MSI interrupt mode on device
+
+Parameters
+  struct pci_dev *dev
+    the PCI device to operate on
+
+Description
+  Legacy device driver API to disable MSI interrupt mode on device,
+free earlier allocated interrupt vectors, and restore INTx emulation.
+The PCI device Linux IRQ ( dev->irq ) is restored to its default
+pin-assertion IRQ. This is the cleanup pair of pci_enable_msi() .

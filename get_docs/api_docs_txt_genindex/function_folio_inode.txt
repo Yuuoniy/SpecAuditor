@@ -1,0 +1,11 @@
+Function: struct inode * folio_inode ( struct folio * folio )
+
+Get the host inode for this folio.
+
+Parameters
+  struct folio *folio
+    The folio.
+
+Description
+  For folios which are in the page cache, return the inode that this folio
+belongs to.

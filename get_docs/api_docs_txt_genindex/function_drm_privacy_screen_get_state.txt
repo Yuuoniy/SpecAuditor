@@ -1,0 +1,15 @@
+Function: void drm_privacy_screen_get_state ( struct drm_privacy_screen * priv , enum drm_privacy_screen_status * sw_state_ret , enum drm_privacy_screen_status * hw_state_ret )
+
+get privacy-screen’s current state
+
+Parameters
+  struct drm_privacy_screen *priv
+    privacy screen to get the state for
+  enum drm_privacy_screen_status *sw_state_ret
+    address where to store the privacy-screens current sw-state
+  enum drm_privacy_screen_status *hw_state_ret
+    address where to store the privacy-screens current hw-state
+
+Description
+  Get the current state of a privacy-screen, both the sw-state and the
+hw-state.

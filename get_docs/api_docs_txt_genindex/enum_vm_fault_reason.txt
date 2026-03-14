@@ -1,0 +1,3 @@
+Enum: enum vm_fault_reason
+
+Page fault handlers return a bitmask of these values to tell the core VM what happened when handling the fault. Used to decide whether a process gets delivered SIGBUS or just gets major/minor fault counters bumped up.

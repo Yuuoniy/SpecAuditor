@@ -1,0 +1,12 @@
+Function: int pci_hp_add ( struct hotplug_slot * slot )
+
+publish hotplug slot to user space
+
+Parameters
+  struct hotplug_slot *slot
+    pointer to the struct hotplug_slot to publish
+
+Description
+  Make a hotplug slot’s sysfs interface available and inform user space of its
+addition by sending a uevent.  The hotplug driver must be prepared to handle
+all struct hotplug_slot_ops callbacks from this point on.

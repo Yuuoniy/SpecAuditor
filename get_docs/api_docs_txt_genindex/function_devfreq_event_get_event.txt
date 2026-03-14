@@ -1,0 +1,13 @@
+Function: int devfreq_event_get_event ( struct devfreq_event_dev * edev , struct devfreq_event_data * edata )
+
+Get {load|total}_count from devfreq-event dev.
+
+Parameters
+  struct devfreq_event_dev *edev
+    the devfreq-event device
+  struct devfreq_event_data *edata
+    the calculated data of devfreq-event device
+
+Description
+  Note that this function get the calculated event data from devfreq-event dev
+after stoping the progress of whole sequence of devfreq-event dev.

@@ -1,0 +1,12 @@
+Macro: for_each_endpoint_of_node
+
+
+
+Parameters
+  parent
+    parent device node containing ports and endpoints
+  child
+    loop variable pointing to the current endpoint node
+
+Description
+  When breaking out of the loop, of_node_put(child) has to be called manually.

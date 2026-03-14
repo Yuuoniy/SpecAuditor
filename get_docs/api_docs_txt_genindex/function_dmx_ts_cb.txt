@@ -1,0 +1,32 @@
+Function: dmx_ts_cb
+
+Typedef : DVB demux TS filter callback function prototype
+
+Parameters
+  const u8 *buffer1
+    Pointer to the start of the filtered TS packets.
+  size_t buffer1_length
+    Length of the TS data in buffer1.
+  const u8 *buffer2
+    Pointer to the tail of the filtered TS packets, or NULL.
+  size_t buffer2_length
+    Length of the TS data in buffer2.
+  struct dmx_ts_feed *source
+    Indicates which TS feed is the source of the callback.
+  u32 *buffer_flags
+    Address where buffer flags are stored. Those are
+used to report discontinuity users via DVB
+memory mapped API, as defined by enum dmx_buffer_flags .
+
+Description
+  This function callback prototype, provided by the client of the demux API,
+is called from the demux code. The function is only called when filtering
+on a TS feed has been enabled using the start_filtering() function at
+the dmx_demux .
+Any TS packets that match the filter settings are copied to a circular
+buffer. The filtered TS packets are delivered to the client using this
+callback function.
+It is expected that the buffer1 and buffer2 callback parameters point to
+addresses within the circular buffer, but other implementations are also
+possible. Note that the called party should not try to free the memory
+the buffer1 and buffer2 parameters point to.

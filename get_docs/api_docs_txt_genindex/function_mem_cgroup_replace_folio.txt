@@ -1,0 +1,13 @@
+Function: void mem_cgroup_replace_folio ( struct folio * old , struct folio * new )
+
+Charge a folio’s replacement.
+
+Parameters
+  struct folio *old
+    Currently circulating folio.
+  struct folio *new
+    Replacement folio.
+
+Description
+  Charge new as a replacement folio for old . old will
+be uncharged upon free.

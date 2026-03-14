@@ -1,0 +1,13 @@
+Function: int dvb_vb2_mmap ( struct dvb_vb2_ctx * ctx , struct vm_area_struct * vma )
+
+Wrapper to vb2_mmap() for Digital TV buffer handling.
+
+Parameters
+  struct dvb_vb2_ctx *ctx
+    control struct for VB2 handler
+  struct vm_area_struct *vma
+    pointer to struct vm_area_struct with the vma passed
+to the mmap file operation handler in the driver.
+
+Description
+  map Digital TV video buffers into application address space.

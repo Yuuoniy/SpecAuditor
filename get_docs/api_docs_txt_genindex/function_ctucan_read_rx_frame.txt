@@ -1,0 +1,11 @@
+Function: void ctucan_read_rx_frame ( struct ctucan_priv * priv , struct canfd_frame * cf , u32 ffw )
+
+Reads frame from RX FIFO
+
+Parameters
+  struct ctucan_priv *priv
+    Pointer to CTU CAN FD’s private data
+  struct canfd_frame *cf
+    Pointer to CAN frame struct
+  u32 ffw
+    Previously read frame format word

@@ -1,0 +1,11 @@
+Function: int device_attach ( struct device * dev )
+
+try to attach device to a driver.
+
+Parameters
+  struct device *dev
+    device.
+
+Description
+  Walk the list of drivers that the bus has and call driver_probe_device() for each pair. If a compatible
+pair is found, break out and return.

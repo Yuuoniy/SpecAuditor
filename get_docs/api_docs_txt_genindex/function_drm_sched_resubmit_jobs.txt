@@ -1,0 +1,11 @@
+Function: void drm_sched_resubmit_jobs ( struct drm_gpu_scheduler * sched )
+
+Deprecated, don’t use in new code!
+
+Parameters
+  struct drm_gpu_scheduler *sched
+    scheduler instance
+
+Description
+  Re-submitting jobs was a concept AMD came up as cheap way to implement
+recovery after a job timeout.

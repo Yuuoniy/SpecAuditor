@@ -1,0 +1,7 @@
+Function: void dvb_ca_en50221_release ( struct dvb_ca_en50221 * ca )
+
+Release a DVB CA device.
+
+Parameters
+  struct dvb_ca_en50221 *ca
+    The associated dvb_ca instance.

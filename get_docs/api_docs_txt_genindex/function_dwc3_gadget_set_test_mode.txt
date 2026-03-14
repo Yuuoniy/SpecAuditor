@@ -1,0 +1,13 @@
+Function: int dwc3_gadget_set_test_mode ( struct dwc3 * dwc , int mode )
+
+enables usb2 test modes
+
+Parameters
+  struct dwc3 *dwc
+    pointer to our context structure
+  int mode
+    the mode to set (J, K SE0 NAK, Force Enable)
+
+Description
+  Caller should take care of locking. This function will return 0 on
+success or -EINVAL if wrong Test Selector is passed.

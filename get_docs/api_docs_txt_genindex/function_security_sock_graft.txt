@@ -1,0 +1,13 @@
+Function: void security_sock_graft ( struct sock * sk , struct socket * parent )
+
+Reconcile LSM state when grafting a sock on a socket
+
+Parameters
+  struct sock *sk
+    sock being grafted
+  struct socket *parent
+    target parent socket
+
+Description
+  Sets parent ’s inode secid to sk ’s secid and update sk with any necessary
+LSM state from parent .

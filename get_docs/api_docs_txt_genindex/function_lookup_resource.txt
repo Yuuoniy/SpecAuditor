@@ -1,0 +1,12 @@
+Function: struct resource * lookup_resource ( struct resource * root , resource_size_t start )
+
+find an existing resource by a resource start address
+
+Parameters
+  struct resource *root
+    root resource descriptor
+  resource_size_t start
+    resource start address
+
+Description
+  Returns a pointer to the resource if found, NULL otherwise

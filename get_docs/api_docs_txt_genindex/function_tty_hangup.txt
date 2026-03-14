@@ -1,0 +1,11 @@
+Function: void tty_hangup ( struct tty_struct * tty )
+
+trigger a hangup event
+
+Parameters
+  struct tty_struct *tty
+    tty to hangup
+
+Description
+  A carrier loss (virtual or otherwise) has occurred on tty . Schedule a
+hangup sequence to run after this event.

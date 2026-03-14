@@ -1,0 +1,10 @@
+Function: void pwmchip_remove ( struct pwm_chip * chip )
+
+remove a PWM chip
+
+Parameters
+  struct pwm_chip *chip
+    the PWM chip to remove
+
+Description
+  Removes a PWM chip.

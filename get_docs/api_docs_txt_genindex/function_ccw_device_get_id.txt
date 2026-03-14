@@ -1,0 +1,9 @@
+Function: void ccw_device_get_id ( struct ccw_device * cdev , struct ccw_dev_id * dev_id )
+
+obtain a ccw device id
+
+Parameters
+  struct ccw_device *cdev
+    device to obtain the id for
+  struct ccw_dev_id *dev_id
+    where to fill in the values

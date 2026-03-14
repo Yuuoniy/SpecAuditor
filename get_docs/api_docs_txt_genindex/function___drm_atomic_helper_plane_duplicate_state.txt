@@ -1,0 +1,13 @@
+Function: void __drm_atomic_helper_plane_duplicate_state ( struct drm_plane * plane , struct drm_plane_state * state )
+
+copy atomic plane state
+
+Parameters
+  struct drm_plane *plane
+    plane object
+  struct drm_plane_state *state
+    atomic plane state
+
+Description
+  Copies atomic state from a plane’s current state. This is useful for
+drivers that subclass the plane state.

@@ -1,0 +1,16 @@
+Function: int vsprintf ( char * buf , const char * fmt , va_list args )
+
+Format a string and place it in a buffer
+
+Parameters
+  char *buf
+    The buffer to place the result into
+  const char *fmt
+    The format string to use
+  va_list args
+    Arguments for the format string
+
+Description
+  The function returns the number of characters written
+into buf . Use vsnprintf() or vscnprintf() in order to avoid
+buffer overflows.

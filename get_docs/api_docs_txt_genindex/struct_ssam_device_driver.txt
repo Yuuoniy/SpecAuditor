@@ -1,0 +1,13 @@
+Struct: struct ssam_device_driver
+
+SSAM client device driver.
+
+Members
+  driver
+    Base driver model structure.
+  match_table
+    Match table specifying which devices the driver should bind to.
+  probe
+    Called when the driver is being bound to a device.
+  remove
+    Called when the driver is being unbound from the device.

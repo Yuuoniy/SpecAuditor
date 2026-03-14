@@ -1,0 +1,17 @@
+Function: int find_resource_space ( struct resource * root , struct resource * new , resource_size_t size , struct resource_constraint * constraint )
+
+Find empty space in the resource tree
+
+Parameters
+  struct resource *root
+    Root resource descriptor
+  struct resource *new
+    Resource descriptor awaiting an empty resource space
+  resource_size_t size
+    The minimum size of the empty space
+  struct resource_constraint *constraint
+    The range and alignment constraints to be met
+
+Description
+  Finds an empty space under root in the resource tree satisfying range and
+alignment constraints .

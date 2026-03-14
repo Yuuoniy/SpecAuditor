@@ -1,0 +1,13 @@
+Function: int pcim_intx ( struct pci_dev * pdev , int enable )
+
+managed pci_intx()
+
+Parameters
+  struct pci_dev *pdev
+    the PCI device to operate on
+  int enable
+    boolean: whether to enable or disable PCI INTx
+
+Description
+  Enable/disable PCI INTx for device pdev .
+Restore the original state on driver detach.

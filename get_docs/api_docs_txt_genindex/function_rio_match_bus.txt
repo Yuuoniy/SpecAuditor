@@ -1,0 +1,15 @@
+Function: int rio_match_bus ( struct device * dev , const struct device_driver * drv )
+
+Tell if a RIO device structure has a matching RIO driver device id structure
+
+Parameters
+  struct device *dev
+    the standard device structure to match against
+  const struct device_driver *drv
+    the standard driver structure containing the ids to match against
+
+Description
+  Used by a driver to check whether a RIO device present in the
+system is in its list of supported devices. Returns 1 if
+there is a matching struct rio_device_id or 0 if there is
+no match.

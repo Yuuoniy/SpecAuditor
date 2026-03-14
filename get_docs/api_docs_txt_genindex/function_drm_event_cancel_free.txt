@@ -1,0 +1,13 @@
+Function: void drm_event_cancel_free ( struct drm_device * dev , struct drm_pending_event * p )
+
+free a DRM event and release its space
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_pending_event *p
+    tracking structure for the pending event
+
+Description
+  This function frees the event p initialized with drm_event_reserve_init() and releases any allocated space. It is used to cancel an event when the
+nonblocking operation could not be submitted and needed to be aborted.

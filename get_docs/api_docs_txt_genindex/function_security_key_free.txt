@@ -1,0 +1,10 @@
+Function: void security_key_free ( struct key * key )
+
+Free a kernel key LSM blob
+
+Parameters
+  struct key *key
+    key
+
+Description
+  Notification of destruction; free security data.

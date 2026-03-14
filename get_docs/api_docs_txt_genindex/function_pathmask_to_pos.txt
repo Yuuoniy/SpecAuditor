@@ -1,0 +1,7 @@
+Function: u8 pathmask_to_pos ( u8 mask )
+
+find the position of the left-most bit in a pathmask
+
+Parameters
+  u8 mask
+    pathmask with at least one bit set

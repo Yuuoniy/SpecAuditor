@@ -1,0 +1,14 @@
+Function: void snd_ctl_rename ( struct snd_card * card , struct snd_kcontrol * kctl , const char * name )
+
+rename the control on the card
+
+Parameters
+  struct snd_card *card
+    the card instance
+  struct snd_kcontrol *kctl
+    the control to rename
+  const char *name
+    the new name
+
+Description
+  Renames the specified control on the card to the new name.

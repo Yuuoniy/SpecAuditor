@@ -1,0 +1,10 @@
+Function: long atomic_long_fetch_inc_relaxed ( atomic_long_t * v )
+
+atomic increment with relaxed ordering
+
+Parameters
+  atomic_long_t *v
+    pointer to atomic_long_t
+
+Description
+  Atomically updates v to ( v + 1) with relaxed ordering.

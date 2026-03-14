@@ -1,0 +1,13 @@
+Function: int phy_modify ( struct phy_device * phydev , u32 regnum , u16 mask , u16 set )
+
+Convenience function for modifying a given PHY register
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+  u32 regnum
+    register number to write
+  u16 mask
+    bit mask of bits to clear
+  u16 set
+    new value of bits set in mask to write to regnum

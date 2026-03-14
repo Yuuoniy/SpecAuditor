@@ -1,0 +1,13 @@
+Function: void regulator_bulk_free ( int num_consumers , struct regulator_bulk_data * consumers )
+
+free multiple regulator consumers
+
+Parameters
+  int num_consumers
+    Number of consumers
+  struct regulator_bulk_data *consumers
+    Consumer data; clients are stored here.
+
+Description
+  This convenience API allows consumers to free multiple regulator
+clients in a single API call.

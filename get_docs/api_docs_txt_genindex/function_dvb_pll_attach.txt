@@ -1,0 +1,13 @@
+Function: struct dvb_frontend * dvb_pll_attach ( struct dvb_frontend * fe , int pll_addr , struct i2c_adapter * i2c , unsigned int pll_desc_id )
+
+Attach a dvb-pll to the supplied frontend structure.
+
+Parameters
+  struct dvb_frontend *fe
+    Frontend to attach to.
+  int pll_addr
+    i2c address of the PLL (if used).
+  struct i2c_adapter *i2c
+    i2c adapter to use (set to NULL if not used).
+  unsigned int pll_desc_id
+    dvb_pll_desc to use.

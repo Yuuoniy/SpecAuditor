@@ -1,0 +1,17 @@
+Macro: hlist_for_each_entry_rcu
+
+
+
+Parameters
+  pos
+    the type * to use as a loop cursor.
+  head
+    the head for your list.
+  member
+    the name of the hlist_node within the struct.
+  cond...
+    optional lockdep expression if called from non-RCU protection.
+
+Description
+  This list-traversal primitive may safely run concurrently with
+the _rcu list-mutation primitives such as hlist_add_head_rcu() as long as the traversal is guarded by rcu_read_lock() .

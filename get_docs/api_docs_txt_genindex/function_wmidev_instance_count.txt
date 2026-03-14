@@ -1,0 +1,10 @@
+Function: u8 wmidev_instance_count ( struct wmi_device * wdev )
+
+Get number of WMI object instances
+
+Parameters
+  struct wmi_device *wdev
+    A wmi bus device from a driver
+
+Description
+  Get the number of WMI object instances.

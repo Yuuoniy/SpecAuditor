@@ -1,0 +1,7 @@
+Function: void kset_unregister ( struct kset * k )
+
+Remove a kset.
+
+Parameters
+  struct kset *k
+    kset.

@@ -1,0 +1,7 @@
+Function: bool pci_msix_can_alloc_dyn ( struct pci_dev * dev )
+
+Query whether dynamic allocation after enabling MSI-X is supported
+
+Parameters
+  struct pci_dev *dev
+    PCI device to operate on

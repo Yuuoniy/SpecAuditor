@@ -1,0 +1,2 @@
+Function: int oa_tc6_read_register ( struct oa_tc6 * tc6 , u32 address , u32 * value )
+

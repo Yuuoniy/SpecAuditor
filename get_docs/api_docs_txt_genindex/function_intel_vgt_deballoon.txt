@@ -1,0 +1,11 @@
+Function: void intel_vgt_deballoon ( struct i915_ggtt * ggtt )
+
+deballoon reserved graphics address trunks
+
+Parameters
+  struct i915_ggtt *ggtt
+    the global GGTT from which we reserved earlier
+
+Description
+  This function is called to deallocate the ballooned-out graphic memory, when
+driver is unloaded or when ballooning fails.

@@ -1,0 +1,3 @@
+Function: enum ethtool_c33_pse_ext_substate_option_vport_lim
+
+option_vport_lim states functions. IEEE 802.3-2022 33.2.4.4 Variables

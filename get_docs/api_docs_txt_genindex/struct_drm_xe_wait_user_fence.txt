@@ -1,0 +1,36 @@
+Struct: struct drm_xe_wait_user_fence
+
+Input of DRM_IOCTL_XE_WAIT_USER_FENCE
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  addr
+    user pointer address to wait on, must qword aligned
+  op
+    wait operation (type of comparison)
+  flags
+    wait flags
+  pad
+    MBZ
+  value
+    compare value
+  mask
+    comparison mask
+  timeout
+    how long to wait before bailing, value in nanoseconds.
+Without DRM_XE_UFENCE_WAIT_FLAG_ABSTIME flag set (relative timeout)
+it contains timeout expressed in nanoseconds to wait (fence will
+expire at now() + timeout).
+When DRM_XE_UFENCE_WAIT_FLAG_ABSTIME flat is set (absolute timeout) wait
+will end at timeout (uses system MONOTONIC_CLOCK).
+Passing negative timeout leads to neverending wait. On relative timeout this value is updated with timeout left
+(for restarting the call in case of signal delivery).
+On absolute timeout this value stays intact (restarted call still
+expire at the same point of time).
+  exec_queue_id
+    exec_queue_id returned from xe_exec_queue_create_ioctl
+  pad2
+    MBZ
+  reserved
+    Reserved

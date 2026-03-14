@@ -1,0 +1,11 @@
+Function: void amdgpu_vm_bo_invalidated ( struct amdgpu_vm_bo_base * vm_bo )
+
+vm_bo is invalidated
+
+Parameters
+  struct amdgpu_vm_bo_base *vm_bo
+    vm_bo which is now invalidated
+
+Description
+  State for normal BOs which are invalidated and that change not yet reflected
+in the PTs.

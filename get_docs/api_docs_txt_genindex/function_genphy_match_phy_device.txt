@@ -1,0 +1,16 @@
+Function: int genphy_match_phy_device ( struct phy_device * phydev , const struct phy_driver * phydrv )
+
+match a PHY device with a PHY driver
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+  const struct phy_driver *phydrv
+    target phy_driver struct
+
+Description
+  Checks whether the given PHY device matches the specified
+PHY driver. For Clause 45 PHYs, iterates over the available device
+identifiers and compares them against the driver’s expected PHY ID,
+applying the provided mask. For Clause 22 PHYs, a direct ID comparison
+is performed.

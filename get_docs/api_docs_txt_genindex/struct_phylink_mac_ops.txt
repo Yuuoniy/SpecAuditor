@@ -1,0 +1,23 @@
+Struct: struct phylink_mac_ops
+
+MAC operations structure.
+
+Members
+  mac_get_caps
+    Get MAC capabilities for interface mode.
+  mac_select_pcs
+    Select a PCS for the interface mode.
+  mac_prepare
+    prepare for a major reconfiguration of the interface.
+  mac_config
+    configure the MAC for the selected mode and state.
+  mac_finish
+    finish a major reconfiguration of the interface.
+  mac_link_down
+    take the link down.
+  mac_link_up
+    allow the link to come up.
+  mac_disable_tx_lpi
+    disable LPI.
+  mac_enable_tx_lpi
+    enable and configure LPI.

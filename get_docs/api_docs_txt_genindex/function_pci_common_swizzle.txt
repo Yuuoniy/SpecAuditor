@@ -1,0 +1,13 @@
+Function: u8 pci_common_swizzle ( struct pci_dev * dev , u8 * pinp )
+
+swizzle INTx all the way to root bridge
+
+Parameters
+  struct pci_dev *dev
+    the PCI device
+  u8 *pinp
+    pointer to the INTx pin value (1=INTA, 2=INTB, 3=INTD, 4=INTD)
+
+Description
+  Perform INTx swizzling for a device.  This traverses through all PCI-to-PCI
+bridges all the way up to a PCI root bus.

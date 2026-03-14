@@ -1,0 +1,17 @@
+Function: int v4l2_subdev_link_validate_default ( struct v4l2_subdev * sd , struct media_link * link , struct v4l2_subdev_format * source_fmt , struct v4l2_subdev_format * sink_fmt )
+
+validates a media link
+
+Parameters
+  struct v4l2_subdev *sd
+    pointer to struct v4l2_subdev
+  struct media_link *link
+    pointer to struct media_link
+  struct v4l2_subdev_format *source_fmt
+    pointer to struct v4l2_subdev_format
+  struct v4l2_subdev_format *sink_fmt
+    pointer to struct v4l2_subdev_format
+
+Description
+  This function ensures that width, height and the media bus pixel
+code are equal on both source and sink of the link.

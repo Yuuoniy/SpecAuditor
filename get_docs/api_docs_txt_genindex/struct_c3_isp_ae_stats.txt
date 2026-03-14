@@ -1,0 +1,11 @@
+Struct: struct c3_isp_ae_stats
+
+Exposure statistics information
+
+Members
+  stats
+    array of auto exposure block statistics
+  reserved
+    undefined buffer space
+  hist
+    a 1024-bin histogram for the entire image

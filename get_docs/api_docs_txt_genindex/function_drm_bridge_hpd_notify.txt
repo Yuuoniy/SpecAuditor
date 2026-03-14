@@ -1,0 +1,14 @@
+Function: void drm_bridge_hpd_notify ( struct drm_bridge * bridge , enum drm_connector_status status )
+
+notify hot plug detection events
+
+Parameters
+  struct drm_bridge *bridge
+    bridge control structure
+  enum drm_connector_status status
+    output connection status
+
+Description
+  Bridge drivers shall call this function to report hot plug events when they
+detect a change in the output status, when hot plug detection has been
+enabled by drm_bridge_hpd_enable() .

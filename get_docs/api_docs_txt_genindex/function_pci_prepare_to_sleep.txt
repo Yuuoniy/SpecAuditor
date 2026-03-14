@@ -1,0 +1,12 @@
+Function: int pci_prepare_to_sleep ( struct pci_dev * dev )
+
+prepare PCI device for system-wide transition into a sleep state
+
+Parameters
+  struct pci_dev *dev
+    Device to handle.
+
+Description
+  Choose the power state appropriate for the device depending on whether
+it can wake up the system and/or is power manageable by the platform
+(PCI_D3hot is the default) and put the device into that state.

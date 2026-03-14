@@ -1,0 +1,22 @@
+Function: int __intel_wait_for_register_fw ( struct intel_uncore * uncore , i915_reg_t reg , u32 mask , u32 value , unsigned int fast_timeout_us , unsigned int slow_timeout_ms , u32 * out_value )
+
+wait until register matches expected state
+
+Parameters
+  struct intel_uncore *uncore
+    the struct intel_uncore
+  i915_reg_t reg
+    the register to read
+  u32 mask
+    mask to apply to register value
+  u32 value
+    expected value
+  unsigned int fast_timeout_us
+    fast timeout in microsecond for atomic/tight wait
+  unsigned int slow_timeout_ms
+    slow timeout in millisecond
+  u32 *out_value
+    optional placeholder to hold registry value
+
+Description
+  This routine waits until the target register reg contains the expected value after applying the mask , i.e. it waits until

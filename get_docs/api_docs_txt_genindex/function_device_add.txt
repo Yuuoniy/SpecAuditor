@@ -1,0 +1,11 @@
+Function: int device_add ( struct device * dev )
+
+add device to device hierarchy.
+
+Parameters
+  struct device *dev
+    device.
+
+Description
+  This is part 2 of device_register() , though may be called
+separately _iff_ device_initialize() has been called separately.

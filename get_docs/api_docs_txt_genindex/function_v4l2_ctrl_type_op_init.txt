@@ -1,0 +1,11 @@
+Function: void v4l2_ctrl_type_op_init ( const struct v4l2_ctrl * ctrl , u32 from_idx , union v4l2_ctrl_ptr ptr )
+
+Default v4l2_ctrl_type_ops init callback.
+
+Parameters
+  const struct v4l2_ctrl *ctrl
+    The v4l2_ctrl pointer.
+  u32 from_idx
+    Starting element index.
+  union v4l2_ctrl_ptr ptr
+    The v4l2 control value.

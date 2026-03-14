@@ -1,0 +1,13 @@
+Function: void kunit_kfree_const ( struct kunit * test , const void * x )
+
+conditionally free test managed memory
+
+Parameters
+  struct kunit *test
+    The test context object.
+  const void *x
+    pointer to the memory
+
+Description
+  Calls kunit_kfree() only if x is not in .rodata section.
+See kunit_kstrdup_const() for more information.

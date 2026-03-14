@@ -1,0 +1,7 @@
+Function: void xprt_disconnect_done ( struct rpc_xprt * xprt )
+
+mark a transport as disconnected
+
+Parameters
+  struct rpc_xprt *xprt
+    transport to flag for disconnect

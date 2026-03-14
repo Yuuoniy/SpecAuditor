@@ -1,0 +1,15 @@
+Function: void drm_fb_helper_fill_info ( struct fb_info * info , struct drm_fb_helper * fb_helper , struct drm_fb_helper_surface_size * sizes )
+
+initializes fbdev information
+
+Parameters
+  struct fb_info *info
+    fbdev instance to set up
+  struct drm_fb_helper *fb_helper
+    fb helper instance to use as template
+  struct drm_fb_helper_surface_size *sizes
+    describes fbdev size and scanout surface size
+
+Description
+  Sets up the variable and fixed fbdev metainformation from the given fb helper
+instance and the drm framebuffer allocated in drm_fb_helper.fb .

@@ -1,0 +1,11 @@
+Function: struct mipi_dsi_host * drm_of_get_dsi_bus ( struct device * dev )
+
+find the DSI bus for a given device
+
+Parameters
+  struct device *dev
+    parent device of display (SPI, I2C)
+
+Description
+  Gets parent DSI bus for a DSI device controlled through a bus other
+than MIPI-DCS (SPI, I2C, etc.) using the Device Tree.

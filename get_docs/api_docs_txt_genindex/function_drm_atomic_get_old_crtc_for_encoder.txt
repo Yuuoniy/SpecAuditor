@@ -1,0 +1,12 @@
+Function: struct drm_crtc * drm_atomic_get_old_crtc_for_encoder ( struct drm_atomic_state * state , struct drm_encoder * encoder )
+
+Get old crtc for an encoder
+
+Parameters
+  struct drm_atomic_state *state
+    Atomic state
+  struct drm_encoder *encoder
+    The encoder to fetch the crtc state for
+
+Description
+  This function finds and returns the crtc that was connected to encoder as specified by the state .

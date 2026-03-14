@@ -1,0 +1,12 @@
+Function: void sock_release ( struct socket * sock )
+
+close a socket
+
+Parameters
+  struct socket *sock
+    socket to close
+
+Description
+  The socket is released from the protocol stack if it has a release
+callback, and the inode is then released if the socket is bound to
+an inode not a file.

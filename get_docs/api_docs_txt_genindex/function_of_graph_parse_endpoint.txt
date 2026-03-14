@@ -1,0 +1,12 @@
+Function: int of_graph_parse_endpoint ( const struct device_node * node , struct of_endpoint * endpoint )
+
+parse common endpoint node properties
+
+Parameters
+  const struct device_node *node
+    pointer to endpoint device_node
+  struct of_endpoint *endpoint
+    pointer to the OF endpoint data structure
+
+Description
+  The caller should hold a reference to node .

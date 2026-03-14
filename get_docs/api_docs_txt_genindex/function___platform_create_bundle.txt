@@ -1,0 +1,23 @@
+Function: struct platform_device * __platform_create_bundle ( struct platform_driver * driver , int ( * probe ) ( struct platform_device * ) , struct resource * res , unsigned int n_res , const void * data , size_t size , struct module * module )
+
+register driver and create corresponding device
+
+Parameters
+  struct platform_driver *driver
+    platform driver structure
+  int (*probe)(struct platform_device *)
+    the driver probe routine, probably from an __init section
+  struct resource *res
+    set of resources that needs to be allocated for the device
+  unsigned int n_res
+    number of resources
+  const void *data
+    platform specific data for this platform device
+  size_t size
+    size of platform specific data
+  struct module *module
+    module which will be the owner of the driver
+
+Description
+  Use this in legacy-style modules that probe hardware directly and
+register a single platform device and corresponding platform driver.

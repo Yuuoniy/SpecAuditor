@@ -1,0 +1,15 @@
+Function: void netdev_tx_completed_queue ( struct netdev_queue * dev_queue , unsigned int pkts , unsigned int bytes )
+
+report number of packets/bytes at TX completion.
+
+Parameters
+  struct netdev_queue *dev_queue
+    network device queue
+  unsigned int pkts
+    number of packets (currently ignored)
+  unsigned int bytes
+    number of bytes dequeued from the device queue
+
+Description
+  Must be called at most once per TX completion round (and not per
+individual packet), so that BQL can adjust its limits appropriately.

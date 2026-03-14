@@ -1,0 +1,11 @@
+Function: errseq_t filemap_sample_wb_err ( struct address_space * mapping )
+
+sample the current errseq_t to test for later errors
+
+Parameters
+  struct address_space *mapping
+    mapping to be sampled
+
+Description
+  Writeback errors are always reported relative to a particular sample point
+in the past. This function provides those sample points.

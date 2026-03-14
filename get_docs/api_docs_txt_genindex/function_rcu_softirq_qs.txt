@@ -1,0 +1,13 @@
+Function: void rcu_softirq_qs ( void )
+
+Provide a set of RCU quiescent states in softirq processing
+
+Parameters
+  void
+    no arguments
+
+Description
+  Mark a quiescent state for RCU, Tasks RCU, and Tasks Trace RCU.
+This is a special-purpose function to be used in the softirq
+infrastructure and perhaps the occasional long-running softirq
+handler.

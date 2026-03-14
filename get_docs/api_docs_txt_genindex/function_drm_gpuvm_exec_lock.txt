@@ -1,0 +1,10 @@
+Function: int drm_gpuvm_exec_lock ( struct drm_gpuvm_exec * vm_exec )
+
+lock all dma-resv of all associated BOs
+
+Parameters
+  struct drm_gpuvm_exec *vm_exec
+    the drm_gpuvm_exec wrapper
+
+Description
+  Acquires all dma-resv locks of all drm_gem_objects the given drm_gpuvm contains mappings of.

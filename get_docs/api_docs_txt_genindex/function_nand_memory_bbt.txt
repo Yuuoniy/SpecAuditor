@@ -1,0 +1,13 @@
+Function: int nand_memory_bbt ( struct nand_chip * this , struct nand_bbt_descr * bd )
+
+[GENERIC] create a memory based bad block table
+
+Parameters
+  struct nand_chip *this
+    NAND chip object
+  struct nand_bbt_descr *bd
+    descriptor for the good/bad block search pattern
+
+Description
+  The function creates a memory based bbt by scanning the device for
+manufacturer / software marked good / bad blocks.

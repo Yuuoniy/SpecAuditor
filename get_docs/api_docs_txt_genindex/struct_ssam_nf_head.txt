@@ -1,0 +1,9 @@
+Struct: struct ssam_nf_head
+
+Notifier head for SSAM events.
+
+Members
+  srcu
+    The SRCU struct for synchronization.
+  head
+    List-head for notifier blocks registered under this head.

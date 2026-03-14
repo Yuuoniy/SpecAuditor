@@ -1,0 +1,19 @@
+Function: int search_bbt ( struct nand_chip * this , uint8_t * buf , struct nand_bbt_descr * td )
+
+[GENERIC] scan the device for a specific bad block table
+
+Parameters
+  struct nand_chip *this
+    NAND chip object
+  uint8_t *buf
+    temporary buffer
+  struct nand_bbt_descr *td
+    descriptor for the bad block table
+
+Description
+  Read the bad block table by searching for a given ident pattern. Search is
+preformed either from the beginning up or from the end of the device
+downwards. The search starts always at the start of a block. If the option
+NAND_BBT_PERCHIP is given, each chip is searched for a bbt, which contains
+the bad block information of this chip. This is necessary to provide support
+for certain DOC devices.

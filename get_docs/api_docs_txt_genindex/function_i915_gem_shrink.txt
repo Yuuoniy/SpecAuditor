@@ -1,0 +1,21 @@
+Function: unsigned long i915_gem_shrink ( struct i915_gem_ww_ctx * ww , struct drm_i915_private * i915 , unsigned long target , unsigned long * nr_scanned , unsigned int shrink )
+
+Shrink buffer object caches
+
+Parameters
+  struct i915_gem_ww_ctx *ww
+    i915 gem ww acquire ctx, or NULL
+  struct drm_i915_private *i915
+    i915 device
+  unsigned long target
+    amount of memory to make available, in pages
+  unsigned long *nr_scanned
+    optional output for number of pages scanned (incremental)
+  unsigned int shrink
+    control flags for selecting cache types
+
+Description
+  This function is the main interface to the shrinker. It will try to release
+up to target pages of main memory backing storage from buffer objects.
+Selection of the specific caches can be done with flags . This is e.g. useful
+when purgeable objects should be removed from caches preferentially.

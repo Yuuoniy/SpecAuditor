@@ -1,0 +1,13 @@
+Function: void i3c_master_queue_ibi ( struct i3c_dev_desc * dev , struct i3c_ibi_slot * slot )
+
+Queue an IBI
+
+Parameters
+  struct i3c_dev_desc *dev
+    the device this IBI is coming from
+  struct i3c_ibi_slot *slot
+    the IBI slot used to store the payload
+
+Description
+  Queue an IBI to the controller workqueue. The IBI handler attached to
+the dev will be called from a workqueue context.

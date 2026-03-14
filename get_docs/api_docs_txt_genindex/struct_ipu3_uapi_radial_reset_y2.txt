@@ -1,0 +1,9 @@
+Struct: struct ipu3_uapi_radial_reset_y2
+
+Radial Y^2 reset
+
+Members
+  y2
+    Radial reset of y^2 coordinate. Precision u24, default 0.
+  reserved
+    reserved

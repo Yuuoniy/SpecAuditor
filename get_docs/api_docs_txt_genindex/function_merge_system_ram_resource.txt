@@ -1,0 +1,15 @@
+Function: void merge_system_ram_resource ( struct resource * res )
+
+mark the System RAM resource mergeable and try to merge it with adjacent, mergeable resources
+
+Parameters
+  struct resource *res
+    resource descriptor
+
+Description
+  This interface is intended for memory hotplug, whereby lots of contiguous
+system ram resources are added (e.g., via add_memory*()) by a driver, and
+the actual resource boundaries are not of interest (e.g., it might be
+relevant for DIMMs). Only resources that are marked mergeable, that have the
+same parent, and that don’t have any children are considered. All mergeable
+resources must be immutable during the request.

@@ -1,0 +1,16 @@
+Function: int reset_control_bulk_get_optional_exclusive_released ( struct device * dev , int num_rstcs , struct reset_control_bulk_data * rstcs )
+
+Lookup and obtain optional temporarily exclusive references to multiple reset controllers.
+
+Parameters
+  struct device *dev
+    device to be reset by the controller
+  int num_rstcs
+    number of entries in rstcs array
+  struct reset_control_bulk_data *rstcs
+    array of struct reset_control_bulk_data with reset line names set
+
+Description
+  Optional variant of reset_control_bulk_get_exclusive_released() . If the
+requested reset is not specified in the device tree, this function returns 0
+instead of an error and missing rtsc is set to NULL.

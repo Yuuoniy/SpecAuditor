@@ -1,0 +1,12 @@
+Function: long strnlen_user_nofault ( const void __user * unsafe_addr , long count )
+
+Get the size of a user string INCLUDING final NUL.
+
+Parameters
+  const void __user *unsafe_addr
+    The string to measure.
+  long count
+    Maximum count (including NUL)
+
+Description
+  Get the size of a NUL-terminated string in user space without pagefault.

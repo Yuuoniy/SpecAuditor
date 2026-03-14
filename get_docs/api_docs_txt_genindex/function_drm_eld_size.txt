@@ -1,0 +1,11 @@
+Function: int drm_eld_size ( const u8 * eld )
+
+Get ELD size in bytes
+
+Parameters
+  const u8 *eld
+    pointer to a complete eld memory structure
+
+Description
+  The returned value does not include the vendor block. It’s vendor specific,
+and comprises of the remaining bytes in the ELD memory buffer after drm_eld_size() bytes of header and baseline block.

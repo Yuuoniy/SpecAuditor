@@ -1,0 +1,8 @@
+Function: struct xarray * cxl_hb_gather_bandwidth ( struct xarray * xa )
+
+handle the host bridge level bandwidth collection
+
+Parameters
+  struct xarray *xa
+    the xarray that holds the cxl_perf_ctx that has the bandwidth calculated
+below each host bridge.

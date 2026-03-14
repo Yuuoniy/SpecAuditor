@@ -1,0 +1,13 @@
+Function: int dma_buf_begin_cpu_access ( struct dma_buf * dmabuf , enum dma_data_direction direction )
+
+Must be called before accessing a dma_buf from the cpu in the kernel context. Calls begin_cpu_access to allow exporter-specific preparations. Coherency is only guaranteed in the specified range for the specified access direction.
+
+Parameters
+  struct dma_buf *dmabuf
+    [in]    buffer to prepare cpu access for.
+  enum dma_data_direction direction
+    [in]    direction of access.
+
+Description
+  After the cpu access is complete the caller should call dma_buf_end_cpu_access() . Only when cpu access is bracketed by both calls is
+it guaranteed to be coherent with other DMA access.

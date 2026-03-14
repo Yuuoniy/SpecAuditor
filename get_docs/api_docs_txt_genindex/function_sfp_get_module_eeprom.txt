@@ -1,0 +1,15 @@
+Function: int sfp_get_module_eeprom ( struct sfp_bus * bus , struct ethtool_eeprom * ee , u8 * data )
+
+Read the SFP module EEPROM
+
+Parameters
+  struct sfp_bus *bus
+    a pointer to the struct sfp_bus structure for the sfp module
+  struct ethtool_eeprom *ee
+    a struct ethtool_eeprom
+  u8 *data
+    buffer to contain the EEPROM data (must be at least ee->len bytes)
+
+Description
+  Read the EEPROM as specified by the supplied ee . See the documentation
+for struct ethtool_eeprom for the region to be read.

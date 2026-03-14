@@ -1,0 +1,7 @@
+Function: void __printk_cpu_sync_wait ( void )
+
+Busy wait until the printk cpu-reentrant spinning lock is not owned by any CPU.
+
+Parameters
+  void
+    no arguments

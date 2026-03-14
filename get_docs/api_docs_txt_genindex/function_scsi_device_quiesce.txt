@@ -1,0 +1,13 @@
+Function: int scsi_device_quiesce ( struct scsi_device * sdev )
+
+Block all commands except power management.
+
+Parameters
+  struct scsi_device *sdev
+    scsi device to quiesce.
+
+Description
+  This works by trying to transition to the SDEV_QUIESCE state
+(which must be a legal transition).  When the device is in this
+state, only power management requests will be accepted, all others will
+be deferred.

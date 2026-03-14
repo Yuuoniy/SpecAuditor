@@ -1,0 +1,18 @@
+Function: void zynqmp_disp_blend_set_bg_color ( struct zynqmp_disp * disp , u32 rcr , u32 gy , u32 bcb )
+
+Set the background color
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller
+  u32 rcr
+    Red/Cr color component
+  u32 gy
+    Green/Y color component
+  u32 bcb
+    Blue/Cb color component
+
+Description
+  Set the background color to ( rcr , gy , bcb ), corresponding to the R, G and
+B or Cr, Y and Cb components respectively depending on the selected output
+format.

@@ -1,0 +1,22 @@
+Function: void scsi_scan_target ( struct device * parent , unsigned int channel , unsigned int id , u64 lun , enum scsi_scan_mode rescan )
+
+scan a target id, possibly including all LUNs on the target.
+
+Parameters
+  struct device *parent
+    host to scan
+  unsigned int channel
+    channel to scan
+  unsigned int id
+    target id to scan
+  u64 lun
+    Specific LUN to scan or SCAN_WILD_CARD
+  enum scsi_scan_mode rescan
+    passed to LUN scanning routines; SCSI_SCAN_INITIAL for
+no rescan, SCSI_SCAN_RESCAN to rescan existing LUNs,
+and SCSI_SCAN_MANUAL to force scanning even if
+‘scan=manual’ is set.
+
+Description
+  Scan the target id on parent , channel , and id . Scan at least LUN 0,
+and possibly all LUNs on the target id.

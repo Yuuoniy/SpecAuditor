@@ -1,0 +1,10 @@
+Function: void ttm_tt_fini ( struct ttm_tt * ttm )
+
+
+
+Parameters
+  struct ttm_tt *ttm
+    the ttm_tt structure.
+
+Description
+  Free memory of ttm_tt structure

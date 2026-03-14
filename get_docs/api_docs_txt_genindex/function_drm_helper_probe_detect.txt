@@ -1,0 +1,16 @@
+Function: int drm_helper_probe_detect ( struct drm_connector * connector , struct drm_modeset_acquire_ctx * ctx , bool force )
+
+probe connector status
+
+Parameters
+  struct drm_connector *connector
+    connector to probe
+  struct drm_modeset_acquire_ctx *ctx
+    acquire_ctx, or NULL to let this function handle locking.
+  bool force
+    Whether destructive probe operations should be performed.
+
+Description
+  This function calls the detect callbacks of the connector.
+This function returns drm_connector_status , or
+if ctx is set, it might also return -EDEADLK.

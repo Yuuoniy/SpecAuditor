@@ -1,0 +1,11 @@
+Function: void phy_request_interrupt ( struct phy_device * phydev )
+
+request and enable interrupt for a PHY device
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  If this fails, then we set irq to PHY_POLL.
+This should only be called with a valid IRQ number.

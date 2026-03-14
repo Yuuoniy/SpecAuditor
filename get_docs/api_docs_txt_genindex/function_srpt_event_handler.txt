@@ -1,0 +1,15 @@
+Function: void srpt_event_handler ( struct ib_event_handler * handler , struct ib_event * event )
+
+asynchronous IB event callback function
+
+Parameters
+  struct ib_event_handler *handler
+    IB event handler registered by ib_register_event_handler() .
+  struct ib_event *event
+    Description of the event that occurred.
+
+Description
+  Callback function called by the InfiniBand core when an asynchronous IB
+event occurs. This callback may occur in interrupt context. See also
+section 11.5.2, Set Asynchronous Event Handler in the InfiniBand
+Architecture Specification.

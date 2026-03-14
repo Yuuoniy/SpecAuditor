@@ -1,0 +1,7 @@
+Function: void mem_cgroup_print_oom_meminfo ( struct mem_cgroup * memcg )
+
+Print OOM memory information relevant to memory controller.
+
+Parameters
+  struct mem_cgroup *memcg
+    The memory cgroup that went over limit

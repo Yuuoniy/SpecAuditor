@@ -1,0 +1,7 @@
+Function: bool xe_configfs_get_survivability_mode ( struct pci_dev * pdev )
+
+get configfs survivability mode attribute
+
+Parameters
+  struct pci_dev *pdev
+    pci device

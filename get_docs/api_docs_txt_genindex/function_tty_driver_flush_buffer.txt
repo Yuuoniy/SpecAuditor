@@ -1,0 +1,12 @@
+Function: void tty_driver_flush_buffer ( struct tty_struct * tty )
+
+discard internal buffer
+
+Parameters
+  struct tty_struct *tty
+    terminal
+
+Description
+  Discard the internal output buffer for this device. If no method is provided,
+then either the buffer cannot be hardware flushed or there is no buffer
+driver side.

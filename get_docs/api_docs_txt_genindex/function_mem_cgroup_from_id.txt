@@ -1,0 +1,10 @@
+Function: struct mem_cgroup * mem_cgroup_from_id ( unsigned short id )
+
+look up a memcg from a memcg id
+
+Parameters
+  unsigned short id
+    the memcg id to look up
+
+Description
+  Caller must hold rcu_read_lock() .

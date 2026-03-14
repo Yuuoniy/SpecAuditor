@@ -1,0 +1,12 @@
+Function: int drm_get_tv_mode_from_name ( const char * name , size_t len )
+
+Translates a TV mode name into its enum value
+
+Parameters
+  const char *name
+    TV Mode name we want to convert
+  size_t len
+    Length of name
+
+Description
+  Translates name into an enum drm_connector_tv_mode .

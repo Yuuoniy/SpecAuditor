@@ -1,0 +1,16 @@
+Function: void fscache_update_cookie ( struct fscache_cookie * cookie , const void * aux_data , const loff_t * object_size )
+
+Request that a cache object be updated
+
+Parameters
+  struct fscache_cookie *cookie
+    The cookie representing the cache object
+  const void *aux_data
+    The updated auxiliary data for the cookie (may be NULL)
+  const loff_t *object_size
+    The current size of the object (may be NULL)
+
+Description
+  Request an update of the index data for the cache object associated with the
+cookie.  The auxiliary data on the cookie will be updated first if aux_data is set and the object size will be updated and the object possibly trimmed
+if object_size is set.

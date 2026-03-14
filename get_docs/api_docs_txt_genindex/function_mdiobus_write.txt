@@ -1,0 +1,13 @@
+Function: int mdiobus_write ( struct mii_bus * bus , int addr , u32 regnum , u16 val )
+
+Convenience function for writing a given MII mgmt register
+
+Parameters
+  struct mii_bus *bus
+    the mii_bus struct
+  int addr
+    the phy address
+  u32 regnum
+    register number to write
+  u16 val
+    value to write to regnum

@@ -1,0 +1,19 @@
+Struct: struct zynqmp_disp_layer
+
+Display layer
+
+Members
+  id
+    Layer ID
+  disp
+    Back pointer to struct zynqmp_disp
+  info
+    Static layer information
+  dmas
+    DMA channels
+  disp_fmt
+    Current format information
+  drm_fmt
+    Current DRM format information
+  mode
+    Current operation mode

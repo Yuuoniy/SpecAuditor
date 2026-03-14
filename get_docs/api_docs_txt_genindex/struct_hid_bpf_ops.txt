@@ -1,0 +1,37 @@
+Struct: struct hid_bpf_ops
+
+A BPF struct_ops of callbacks allowing to attach HID-BPF programs to a HID device
+
+Members
+  hid_id
+    the HID uniq ID to attach to. This is writeable before load() , and
+cannot be changed after
+  flags
+    flags used while attaching the struct_ops to the device. Currently only
+available value is 0 or BPF_F_BEFORE .
+Writeable only before load()
+  hid_device_event
+    called whenever an event is coming in from the device It has the following arguments: ctx : The HID-BPF context as struct hid_bpf_ctx Return: 0 on success and keep processing; a positive
+value to change the incoming size buffer; a negative
+error code to interrupt the processing of this event Context: Interrupt context.
+  hid_rdesc_fixup
+    called when the probe function parses the report descriptor
+of the HID device It has the following arguments: ctx : The HID-BPF context as struct hid_bpf_ctx Return: 0 on success and keep processing; a positive
+value to change the incoming size buffer; a negative
+error code to interrupt the processing of this device
+  hid_hw_request
+    called whenever a hid_hw_raw_request() call is emitted
+on the HID device It has the following arguments: ctx : The HID-BPF context as struct hid_bpf_ctx reportnum : the report number, as in hid_hw_raw_request() rtype : the report type ( HID_INPUT_REPORT , HID_FEATURE_REPORT , HID_OUTPUT_REPORT ) reqtype : the request source : a u64 referring to a uniq but identifiable source. If 0 , the
+kernel itself emitted that call. For hidraw, source is set
+to the associated struct file * . Return: 0 to keep processing the request by hid-core; any other value
+stops hid-core from processing that event. A positive value should be
+returned with the number of bytes returned in the incoming buffer; a
+negative error code interrupts the processing of this call.
+  hid_hw_output_report
+    called whenever a hid_hw_output_report() call is emitted
+on the HID device It has the following arguments: ctx : The HID-BPF context as struct hid_bpf_ctx source : a u64 referring to a uniq but identifiable source. If 0 , the
+kernel itself emitted that call. For hidraw, source is set
+to the associated struct file * . Return: 0 to keep processing the request by hid-core; any other value
+stops hid-core from processing that event. A positive value should be
+returned with the number of bytes written to the device; a negative error
+code interrupts the processing of this call.

@@ -1,0 +1,11 @@
+Function: void ib_drain_rq ( struct ib_qp * qp )
+
+Block until all RQ CQEs have been consumed by the application.
+
+Parameters
+  struct ib_qp *qp
+    queue pair to drain
+
+Description
+  If the device has a provider-specific drain function, then
+call that.  Otherwise call the generic drain function __ib_drain_rq() .

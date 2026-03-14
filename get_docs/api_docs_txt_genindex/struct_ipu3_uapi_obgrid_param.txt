@@ -1,0 +1,13 @@
+Struct: struct ipu3_uapi_obgrid_param
+
+Optical black level compensation parameters
+
+Members
+  gr
+    Grid table values for color GR
+  r
+    Grid table values for color R
+  b
+    Grid table values for color B
+  gb
+    Grid table values for color GB

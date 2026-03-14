@@ -1,0 +1,24 @@
+Function: int netfs_write_begin ( struct netfs_inode * ctx , struct file * file , struct address_space * mapping , loff_t pos , unsigned int len , struct folio * * _folio , void * * _fsdata )
+
+Helper to prepare for writing [DEPRECATED]
+
+Parameters
+  struct netfs_inode *ctx
+    The netfs context
+  struct file *file
+    The file to read from
+  struct address_space *mapping
+    The mapping to read from
+  loff_t pos
+    File position at which the write will begin
+  unsigned int len
+    The length of the write (may extend beyond the end of the folio chosen)
+  struct folio **_folio
+    Where to put the resultant folio
+  void **_fsdata
+    Place for the netfs to store a cookie
+
+Description
+  Pre-read data for a write-begin request by drawing data from the cache if
+possible, or the netfs if not.  Space beyond the EOF is zero-filled.
+Multiple I/O requests from different sources will get munged together.

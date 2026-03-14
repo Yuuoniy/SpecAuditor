@@ -1,0 +1,16 @@
+Function: int sysfs_emit_at ( char * buf , int at , const char * fmt , ... )
+
+scnprintf equivalent, aware of PAGE_SIZE buffer.
+
+Parameters
+  char *buf
+    start of PAGE_SIZE buffer.
+  int at
+    offset in buf to start write in bytes at must be >= 0 && < PAGE_SIZE
+  const char *fmt
+    format
+  ...
+    optional arguments to fmt
+
+Description
+  Returns number of characters written starting at &**buf**[ at ].

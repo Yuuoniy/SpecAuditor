@@ -1,0 +1,20 @@
+Macro: devm_drm_panel_alloc
+
+
+
+Parameters
+  dev
+    struct device of the panel device
+  type
+    the type of the struct which contains struct drm_panel
+  member
+    the name of the drm_panel within type
+  funcs
+    callbacks for this panel
+  connector_type
+    the connector type (DRM_MODE_CONNECTOR_*) corresponding to
+the panel interface
+
+Description
+  The reference count of the returned panel is initialized to 1. This
+reference will be automatically dropped via devm (by calling drm_panel_put() ) when dev is removed.

@@ -1,0 +1,9 @@
+Function: int ipc_update_perm ( struct ipc64_perm * in , struct kern_ipc_perm * out )
+
+update the permissions of an ipc object
+
+Parameters
+  struct ipc64_perm *in
+    the permission given as input.
+  struct kern_ipc_perm *out
+    the permission of the ipc to set.

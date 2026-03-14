@@ -1,0 +1,10 @@
+Function: bool drm_panic_is_enabled ( struct drm_device * dev )
+
+
+
+Parameters
+  struct drm_device *dev
+    the drm device that may supports drm_panic
+
+Description
+  returns true if the drm device supports drm_panic

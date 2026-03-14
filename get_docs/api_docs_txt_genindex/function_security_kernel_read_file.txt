@@ -1,0 +1,14 @@
+Function: int security_kernel_read_file ( struct file * file , enum kernel_read_file_id id , bool contents )
+
+Read a file specified by userspace
+
+Parameters
+  struct file *file
+    file
+  enum kernel_read_file_id id
+    file identifier
+  bool contents
+    trust if security_kernel_post_read_file() will be called
+
+Description
+  Read a file specified by userspace.

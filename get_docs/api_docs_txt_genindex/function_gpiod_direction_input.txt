@@ -1,0 +1,11 @@
+Function: int gpiod_direction_input ( struct gpio_desc * desc )
+
+set the GPIO direction to input
+
+Parameters
+  struct gpio_desc *desc
+    GPIO to set to input
+
+Description
+  Set the direction of the passed GPIO to input, such as gpiod_get_value() can
+be called safely on it.

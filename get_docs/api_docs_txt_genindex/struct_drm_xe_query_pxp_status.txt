@@ -1,0 +1,9 @@
+Struct: struct drm_xe_query_pxp_status
+
+query if PXP is ready
+
+Members
+  status
+    current PXP status
+  supported_session_types
+    bitmask of supported PXP session types

@@ -1,0 +1,18 @@
+Function: int security_audit_rule_init ( u32 field , u32 op , char * rulestr , void * * lsmrule , gfp_t gfp )
+
+Allocate and init an LSM audit rule struct
+
+Parameters
+  u32 field
+    audit action
+  u32 op
+    rule operator
+  char *rulestr
+    rule context
+  void **lsmrule
+    receive buffer for audit rule struct
+  gfp_t gfp
+    GFP flag used for kmalloc
+
+Description
+  Allocate and initialize an LSM audit rule structure.

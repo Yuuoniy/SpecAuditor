@@ -1,0 +1,7 @@
+Function: const char * edac_get_owner ( void )
+
+Return the owner’s mod_name of EDAC MC
+
+Parameters
+  void
+    no arguments

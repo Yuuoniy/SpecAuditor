@@ -1,0 +1,17 @@
+Function: int security_sem_semop ( struct kern_ipc_perm * sma , struct sembuf * sops , unsigned nsops , int alter )
+
+Check if a sysv semaphore operation is allowed
+
+Parameters
+  struct kern_ipc_perm *sma
+    sysv ipc permission structure
+  struct sembuf *sops
+    operations to perform
+  unsigned nsops
+    number of operations
+  int alter
+    flag indicating changes will be made
+
+Description
+  Check permissions before performing operations on members of the semaphore
+set. If the alter flag is nonzero, the semaphore set may be modified.

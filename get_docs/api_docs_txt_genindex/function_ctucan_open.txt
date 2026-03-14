@@ -1,0 +1,10 @@
+Function: int ctucan_open ( struct net_device * ndev )
+
+Driver open routine
+
+Parameters
+  struct net_device *ndev
+    Pointer to net_device structure
+
+Description
+  This is the driver open routine.

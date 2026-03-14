@@ -1,0 +1,15 @@
+Function: struct c3_isp_params_blc
+
+ISP Black Level Correction configuration
+
+Members
+  header
+    the C3 ISP parameters block header
+  gr_ofst
+    Gr blc offset (Q4.12 format)
+  r_ofst
+    R blc offset (Q4.12 format)
+  b_ofst
+    B blc offset (Q4.12 format)
+  gb_ofst
+    Gb blc offset(Q4.12 format)

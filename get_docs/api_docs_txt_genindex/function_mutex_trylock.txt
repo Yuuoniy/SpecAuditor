@@ -1,0 +1,11 @@
+Function: int mutex_trylock ( struct mutex * lock )
+
+try to acquire the mutex, without waiting
+
+Parameters
+  struct mutex *lock
+    the mutex to be acquired
+
+Description
+  Try to acquire the mutex atomically. Returns 1 if the mutex
+has been acquired successfully, and 0 on contention.

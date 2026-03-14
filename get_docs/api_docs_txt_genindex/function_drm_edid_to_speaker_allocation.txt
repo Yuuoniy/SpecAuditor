@@ -1,0 +1,12 @@
+Function: int drm_edid_to_speaker_allocation ( const struct edid * edid , u8 * * sadb )
+
+extracts Speaker Allocation Data Blocks from EDID
+
+Parameters
+  const struct edid *edid
+    EDID to parse
+  u8 **sadb
+    pointer to the speaker block
+
+Description
+  Looks for CEA EDID block and extracts the Speaker Allocation Data Block from it.

@@ -1,0 +1,15 @@
+Function: efi_status_t efi_get_memory_map ( struct efi_boot_memmap * * map , bool install_cfg_tbl )
+
+get memory map
+
+Parameters
+  struct efi_boot_memmap **map
+    pointer to memory map pointer to which to assign the
+newly allocated memory map
+  bool install_cfg_tbl
+    whether or not to install the boot memory map as a
+configuration table
+
+Description
+  Retrieve the UEFI memory map. The allocated memory leaves room for
+up to EFI_MMAP_NR_SLACK_SLOTS additional memory map entries.

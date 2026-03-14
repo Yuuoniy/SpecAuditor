@@ -1,0 +1,12 @@
+Function: void piix_set_piomode ( struct ata_port * ap , struct ata_device * adev )
+
+Initialize host controller PATA PIO timings
+
+Parameters
+  struct ata_port *ap
+    Port whose timings we are configuring
+  struct ata_device *adev
+    Drive in question
+
+Description
+  Set PIO mode for device, in host controller PCI config space.

@@ -1,0 +1,7 @@
+Function: int zynqmp_dp_train ( struct zynqmp_dp * dp )
+
+Train the link
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure

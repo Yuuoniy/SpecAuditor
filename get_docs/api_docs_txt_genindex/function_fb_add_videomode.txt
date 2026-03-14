@@ -1,0 +1,9 @@
+Function: int fb_add_videomode ( const struct fb_videomode * mode , struct list_head * head )
+
+adds videomode entry to modelist
+
+Parameters
+  const struct fb_videomode *mode
+    videomode to add
+  struct list_head *head
+    struct list_head of modelist

@@ -1,0 +1,9 @@
+Function: bool intel_cdclk_clock_changed ( const struct intel_cdclk_config * a , const struct intel_cdclk_config * b )
+
+Check whether the clock changed
+
+Parameters
+  const struct intel_cdclk_config *a
+    first CDCLK configuration
+  const struct intel_cdclk_config *b
+    second CDCLK configuration

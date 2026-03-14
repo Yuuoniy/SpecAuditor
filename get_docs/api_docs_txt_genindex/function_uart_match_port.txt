@@ -1,0 +1,13 @@
+Function: bool uart_match_port ( const struct uart_port * port1 , const struct uart_port * port2 )
+
+are the two ports equivalent?
+
+Parameters
+  const struct uart_port *port1
+    first port
+  const struct uart_port *port2
+    second port
+
+Description
+  This utility function can be used to determine whether two uart_port
+structures describe the same port.

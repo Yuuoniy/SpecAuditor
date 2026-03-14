@@ -1,0 +1,7 @@
+Function: struct hsi_client_driver
+
+Driver associated to an HSI client
+
+Members
+  driver
+    Driver model representation of the driver

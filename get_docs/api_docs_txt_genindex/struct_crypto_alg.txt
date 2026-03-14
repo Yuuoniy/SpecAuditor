@@ -1,0 +1,82 @@
+Struct: struct crypto_alg
+
+definition of a cryptograpic cipher algorithm
+
+Members
+  cra_list
+    internally used
+  cra_users
+    internally used
+  cra_flags
+    Flags describing this transformation. See include/linux/crypto.h
+CRYPTO_ALG_* flags for the flags which go in here. Those are
+used for fine-tuning the description of the transformation
+algorithm.
+  cra_blocksize
+    Minimum block size of this transformation. The size in bytes
+of the smallest possible unit which can be transformed with
+this algorithm. The users must respect this value.
+In case of HASH transformation, it is possible for a smaller
+block than cra_blocksize to be passed to the crypto API for
+transformation, in case of any other transformation type, an
+error will be returned upon any attempt to transform smaller
+than cra_blocksize chunks.
+  cra_ctxsize
+    Size of the operational context of the transformation. This
+value informs the kernel crypto API about the memory size
+needed to be allocated for the transformation context.
+  cra_alignmask
+    For cipher, skcipher, lskcipher, and aead algorithms this is
+1 less than the alignment, in bytes, that the algorithm
+implementation requires for input and output buffers.  When
+the crypto API is invoked with buffers that are not aligned
+to this alignment, the crypto API automatically utilizes
+appropriately aligned temporary buffers to comply with what
+the algorithm needs.  (For scatterlists this happens only if
+the algorithm uses the skcipher_walk helper functions.)  This
+misalignment handling carries a performance penalty, so it is
+preferred that algorithms do not set a nonzero alignmask.
+Also, crypto API users may wish to allocate buffers aligned
+to the alignmask of the algorithm being used, in order to
+avoid the API having to realign them.  Note: the alignmask is
+not supported for hash algorithms and is always 0 for them.
+  cra_reqsize
+    Size of the request context for this algorithm.
+  cra_priority
+    Priority of this transformation implementation. In case
+multiple transformations with same cra_name are available to
+the Crypto API, the kernel will use the one with highest cra_priority .
+  cra_refcnt
+    internally used
+  cra_name
+    Generic name (usable by multiple implementations) of the
+transformation algorithm. This is the name of the transformation
+itself. This field is used by the kernel when looking up the
+providers of particular transformation.
+  cra_driver_name
+    Unique name of the transformation provider. This is the
+name of the provider of the transformation. This can be any
+arbitrary value, but in the usual case, this contains the
+name of the chip or provider and the name of the
+transformation algorithm.
+  cra_type
+    Type of the cryptographic transformation. This is a pointer to struct crypto_type , which implements callbacks common for all
+transformation types. There are multiple options, such as crypto_skcipher_type , crypto_ahash_type , crypto_rng_type .
+This field might be empty. In that case, there are no common
+callbacks. This is the case for: cipher.
+  cra_u
+    Callbacks implementing the transformation. This is a union of multiple structures. Depending on the type of transformation selected
+by cra_type and cra_flags above, the associated structure must be
+filled with callbacks. This field might be empty. This is the case
+for ahash, shash.
+  cra_u.cipher
+    Union member which contains a single-block symmetric cipher
+definition. See struct cipher_alg .
+  cra_init
+    Deprecated, do not use.
+  cra_exit
+    Deprecated, do not use.
+  cra_destroy
+    internally used
+  cra_module
+    Owner of this transformation implementation. Set to THIS_MODULE

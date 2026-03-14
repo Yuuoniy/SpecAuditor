@@ -1,0 +1,23 @@
+Function: int tipc_crypto_xmit ( struct net * net , struct sk_buff * * skb , struct tipc_bearer * b , struct tipc_media_addr * dst , struct tipc_node * __dnode )
+
+Build & encrypt TIPC message for xmit
+
+Parameters
+  struct net *net
+    struct net
+  struct sk_buff **skb
+    input/output message skb pointer
+  struct tipc_bearer *b
+    bearer used for xmit later
+  struct tipc_media_addr *dst
+    destination media address
+  struct tipc_node *__dnode
+    destination node for reference if any
+
+Description
+  First, build an encryption message header on the top of the message, then
+encrypt the original TIPC message by using the pending, master or active
+key with this preference order.
+If the encryption is successful, the encrypted skb is returned directly or
+via the callback.
+Otherwise, the skb is freed!

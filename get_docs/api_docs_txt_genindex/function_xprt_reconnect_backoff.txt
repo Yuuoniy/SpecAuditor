@@ -1,0 +1,9 @@
+Function: void xprt_reconnect_backoff ( struct rpc_xprt * xprt , unsigned long init_to )
+
+compute the new re-establish timeout
+
+Parameters
+  struct rpc_xprt *xprt
+    transport instance
+  unsigned long init_to
+    initial reestablish timeout

@@ -1,0 +1,14 @@
+Macro: IIO_ENUM
+
+
+
+Parameters
+  _name
+    Attribute name
+  _shared
+    Whether the attribute is shared between all channels
+  _e
+    Pointer to an iio_enum struct
+
+Description
+  This should usually be used together with IIO_ENUM_AVAILABLE()

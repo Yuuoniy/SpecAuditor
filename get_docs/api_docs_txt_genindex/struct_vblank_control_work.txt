@@ -1,0 +1,15 @@
+Struct: struct vblank_control_work
+
+Work data for vblank control
+
+Members
+  work
+    Kernel work data for the work event
+  dm
+    amdgpu display manager device
+  acrtc
+    amdgpu CRTC instance for which the event has occurred
+  stream
+    DC stream for which the event has occurred
+  enable
+    true if enabling vblank

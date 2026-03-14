@@ -1,0 +1,16 @@
+Function: struct msi_map pci_msix_alloc_irq_at ( struct pci_dev * dev , unsigned int index , const struct irq_affinity_desc * affdesc )
+
+Allocate an MSI-X interrupt after enabling MSI-X at a given MSI-X vector index or any free vector index
+
+Parameters
+  struct pci_dev *dev
+    PCI device to operate on
+  unsigned int index
+    Index to allocate. If index == MSI_ANY_INDEX this allocates
+the next free index in the MSI-X table
+  const struct irq_affinity_desc *affdesc
+    Optional pointer to an affinity descriptor structure. NULL otherwise
+
+Description
+  On success msi_map::index contains the allocated index (>= 0) and
+msi_map::virq contains the allocated Linux interrupt number (> 0).

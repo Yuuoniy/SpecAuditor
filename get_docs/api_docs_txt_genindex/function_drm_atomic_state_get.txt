@@ -1,0 +1,10 @@
+Function: struct drm_atomic_state * drm_atomic_state_get ( struct drm_atomic_state * state )
+
+acquire a reference to the atomic state
+
+Parameters
+  struct drm_atomic_state *state
+    The atomic state
+
+Description
+  Returns a new reference to the state

@@ -1,0 +1,14 @@
+Function: int unregister_netdevice_notifier_net ( struct net * net , struct notifier_block * nb )
+
+unregister a per-netns network notifier block
+
+Parameters
+  struct net *net
+    network namespace
+  struct notifier_block *nb
+    notifier
+
+Description
+  Unregister a notifier previously registered by register_netdevice_notifier_net() . The notifier is unlinked from the
+kernel structures and may then be reused. A negative errno code
+is returned on a failure.

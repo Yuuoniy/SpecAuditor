@@ -1,0 +1,22 @@
+Function: u32 ata_wait_register ( struct ata_port * ap , void __iomem * reg , u32 mask , u32 val , unsigned int interval , unsigned int timeout )
+
+wait until register value changes
+
+Parameters
+  struct ata_port *ap
+    ATA port to wait register for, can be NULL
+  void __iomem *reg
+    IO-mapped register
+  u32 mask
+    Mask to apply to read register value
+  u32 val
+    Wait condition
+  unsigned int interval
+    polling interval in milliseconds
+  unsigned int timeout
+    timeout in milliseconds
+
+Description
+  Waiting for some bits of register to change is a common
+operation for ATA controllers.  This function reads 32bit LE
+IO-mapped register reg and tests for the following condition.

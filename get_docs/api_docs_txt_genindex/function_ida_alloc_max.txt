@@ -1,0 +1,14 @@
+Function: int ida_alloc_max ( struct ida * ida , unsigned int max , gfp_t gfp )
+
+Allocate an unused ID.
+
+Parameters
+  struct ida *ida
+    IDA handle.
+  unsigned int max
+    Highest ID to allocate.
+  gfp_t gfp
+    Memory allocation flags.
+
+Description
+  Allocate an ID between 0 and max , inclusive.

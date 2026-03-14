@@ -1,0 +1,22 @@
+Struct: struct i2c_atr_adap_desc
+
+An ATR downstream bus descriptor
+
+Members
+  chan_id
+    Index of the new adapter (0 .. max_adapters-1).  This value is
+passed to the callbacks in struct i2c_atr_ops .
+  parent
+    The device used as the parent of the new i2c adapter, or NULL
+to use the i2c-atr device as the parent.
+  bus_handle
+    The fwnode handle that points to the adapter’s i2c
+peripherals, or NULL.
+  num_aliases
+    The number of aliases in this adapter’s private alias pool. Set
+to zero if this adapter uses the ATR’s global alias pool.
+  aliases
+    An optional array of private aliases used by the adapter
+instead of the ATR’s global pool of aliases. Must contain
+exactly num_aliases entries if num_aliases > 0, is ignored
+otherwise.

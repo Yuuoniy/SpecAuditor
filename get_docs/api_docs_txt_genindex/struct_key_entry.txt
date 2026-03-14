@@ -1,0 +1,23 @@
+Struct: struct key_entry
+
+keymap entry for use in sparse keymap
+
+Members
+  type
+    Type of the key entry (KE_KEY, KE_SW, KE_VSW, KE_END);
+drivers are allowed to extend the list with their own
+private definitions.
+  code
+    Device-specific data identifying the button/switch
+  {unnamed_union}
+    anonymous
+  keycode
+    KEY_* code assigned to a key/button
+  sw
+    struct with code/value used by KE_SW and KE_VSW
+  sw.code
+    SW_* code assigned to a switch
+  sw.value
+    Value that should be sent in an input even when KE_SW
+switch is toggled. KE_VSW switches ignore this field and
+expect driver to supply value for the event.

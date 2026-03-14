@@ -1,0 +1,12 @@
+Function: int tipc_shutdown ( struct socket * sock , int how )
+
+shutdown socket connection
+
+Parameters
+  struct socket *sock
+    socket structure
+  int how
+    direction to close (must be SHUT_RDWR)
+
+Description
+  Terminates connection (if necessary), then purges socket’s receive queue.

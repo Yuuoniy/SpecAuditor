@@ -1,0 +1,3 @@
+Function: enum atscmh_sccc_block_mode
+
+Type of Series Concatenated Convolutional Code Block Mode.

@@ -1,0 +1,12 @@
+Struct: int scsi_dev_info_remove_list ( enum scsi_devinfo_key key )
+
+destroy an added devinfo list
+
+Parameters
+  enum scsi_devinfo_key key
+    key of the list to destroy
+
+Description
+  Iterates over the entire list first, freeing all the values, then
+frees the list itself.  Returns 0 on success or -EINVAL if the key
+can’t be found.

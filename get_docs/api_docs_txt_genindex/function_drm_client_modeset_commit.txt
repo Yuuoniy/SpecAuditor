@@ -1,0 +1,10 @@
+Function: int drm_client_modeset_commit ( struct drm_client_dev * client )
+
+Commit CRTC configuration
+
+Parameters
+  struct drm_client_dev *client
+    DRM client
+
+Description
+  Commit modeset configuration to crtcs.

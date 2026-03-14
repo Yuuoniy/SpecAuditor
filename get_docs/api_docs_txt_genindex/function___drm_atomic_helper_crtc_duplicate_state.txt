@@ -1,0 +1,13 @@
+Function: void __drm_atomic_helper_crtc_duplicate_state ( struct drm_crtc * crtc , struct drm_crtc_state * state )
+
+copy atomic CRTC state
+
+Parameters
+  struct drm_crtc *crtc
+    CRTC object
+  struct drm_crtc_state *state
+    atomic CRTC state
+
+Description
+  Copies atomic state from a CRTC’s current state and resets inferred values.
+This is useful for drivers that subclass the CRTC state.

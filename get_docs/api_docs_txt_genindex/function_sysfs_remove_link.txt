@@ -1,0 +1,9 @@
+Function: void sysfs_remove_link ( struct kobject * kobj , const char * name )
+
+remove symlink in object’s directory.
+
+Parameters
+  struct kobject *kobj
+    object we’re acting for.
+  const char *name
+    name of the symlink to remove.

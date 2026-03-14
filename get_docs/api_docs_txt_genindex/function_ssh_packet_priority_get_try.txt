@@ -1,0 +1,7 @@
+Function: u8 ssh_packet_priority_get_try ( u8 priority )
+
+Get number of tries from packet priority.
+
+Parameters
+  u8 priority
+    The packet priority.

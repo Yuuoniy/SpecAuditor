@@ -1,0 +1,11 @@
+Macro: XE_RTP_ENTRY_FLAG
+
+
+
+Parameters
+  ...
+    Entry flags, without the XE_RTP_ENTRY_FLAG_ prefix
+
+Description
+  Helper to automatically add a XE_RTP_ENTRY_FLAG_ prefix to the flags
+when defining struct xe_rtp_entry entries. Example:

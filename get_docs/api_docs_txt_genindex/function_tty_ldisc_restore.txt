@@ -1,0 +1,13 @@
+Function: void tty_ldisc_restore ( struct tty_struct * tty , struct tty_ldisc * old )
+
+helper for tty ldisc change
+
+Parameters
+  struct tty_struct *tty
+    tty to recover
+  struct tty_ldisc *old
+    previous ldisc
+
+Description
+  Restore the previous line discipline or N_TTY when a line discipline change
+fails due to an open error

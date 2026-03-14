@@ -1,0 +1,11 @@
+Function: void drm_buddy_block_print ( struct drm_buddy * mm , struct drm_buddy_block * block , struct drm_printer * p )
+
+print block information
+
+Parameters
+  struct drm_buddy *mm
+    DRM buddy manager
+  struct drm_buddy_block *block
+    DRM buddy block
+  struct drm_printer *p
+    DRM printer to use

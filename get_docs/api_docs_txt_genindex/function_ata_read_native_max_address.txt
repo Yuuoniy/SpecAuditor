@@ -1,0 +1,13 @@
+Function: int ata_read_native_max_address ( struct ata_device * dev , u64 * max_sectors )
+
+Read native max address
+
+Parameters
+  struct ata_device *dev
+    target device
+  u64 *max_sectors
+    out parameter for the result native max address
+
+Description
+  Perform an LBA48 or LBA28 native size query upon the device in
+question.

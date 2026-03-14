@@ -1,0 +1,11 @@
+Function: struct irb
+
+interruption response block
+
+Members
+  scsw
+    subchannel status word
+  esw
+    extended status word
+  ecw
+    extended control word

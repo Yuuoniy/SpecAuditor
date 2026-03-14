@@ -1,0 +1,11 @@
+Macro: v4l2_kioctl
+
+Typedef : Typedef used to pass an ioctl handler.
+
+Parameters
+  struct file *file
+    Pointer to struct file .
+  unsigned int cmd
+    Ioctl name.
+  void *arg
+    Ioctl argument.

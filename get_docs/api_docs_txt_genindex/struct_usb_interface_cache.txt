@@ -1,0 +1,13 @@
+Struct: struct usb_interface_cache
+
+long-term representation of a device interface
+
+Members
+  num_altsetting
+    number of altsettings defined.
+  ref
+    reference counter.
+  altsetting
+    variable-length array of interface structures, one for
+each alternate setting that may be selected.  Each one includes a
+set of endpoint configurations.  They will be in no particular order.

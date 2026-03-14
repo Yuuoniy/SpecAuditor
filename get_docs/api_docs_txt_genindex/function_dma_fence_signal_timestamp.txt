@@ -1,0 +1,15 @@
+Function: int dma_fence_signal_timestamp ( struct dma_fence * fence , ktime_t timestamp )
+
+signal completion of a fence
+
+Parameters
+  struct dma_fence *fence
+    the fence to signal
+  ktime_t timestamp
+    fence signal timestamp in kernel’s CLOCK_MONOTONIC time domain
+
+Description
+  Signal completion for software callbacks on a fence, this will unblock dma_fence_wait() calls and run all the callbacks added with dma_fence_add_callback() . Can be called multiple times, but since a fence
+can only go from the unsignaled to the signaled state and not back, it will
+only be effective the first time. Set the timestamp provided as the fence
+signal timestamp.

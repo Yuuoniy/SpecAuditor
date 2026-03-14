@@ -1,0 +1,13 @@
+Function: void intel_frontbuffer_flip_complete ( struct intel_display * display , unsigned frontbuffer_bits )
+
+complete asynchronous frontbuffer flip
+
+Parameters
+  struct intel_display *display
+    display device
+  unsigned frontbuffer_bits
+    frontbuffer plane tracking bits
+
+Description
+  This function gets called after the flip has been latched and will complete
+on the next vblank. It will execute the flush if it hasn’t been cancelled yet.

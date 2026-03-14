@@ -1,0 +1,16 @@
+Function: bool same_state_synchronize_rcu_full ( struct rcu_gp_oldstate * rgosp1 , struct rcu_gp_oldstate * rgosp2 )
+
+Are two old-state values identical?
+
+Parameters
+  struct rcu_gp_oldstate *rgosp1
+    First old-state value.
+  struct rcu_gp_oldstate *rgosp2
+    Second old-state value.
+
+Description
+  The two old-state values must have been obtained from either get_state_synchronize_rcu_full() , start_poll_synchronize_rcu_full() ,
+or get_completed_synchronize_rcu_full() .  Returns true if the two
+values are identical and false otherwise.  This allows structures
+whose lifetimes are tracked by old-state values to push these values
+to a list header, allowing those structures to be slightly smaller.

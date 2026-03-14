@@ -1,0 +1,15 @@
+Function: bool phy_id_compare ( u32 id1 , u32 id2 , u32 mask )
+
+compare id1 with id2 taking account of mask
+
+Parameters
+  u32 id1
+    first PHY ID
+  u32 id2
+    second PHY ID
+  u32 mask
+    the PHY ID mask, set bits are significant in matching
+
+Description
+  Return true if the bits from id1 and id2 specified by mask match.
+This uses an equivalent test to ( id & mask ) == ( phy_id & mask ).

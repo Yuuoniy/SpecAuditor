@@ -1,0 +1,39 @@
+Struct: struct srpt_port
+
+SRPT RDMA port information
+
+Members
+  sdev
+    backpointer to the HCA information.
+  mad_agent
+    per-port management datagram processing information.
+  enabled
+    Whether or not this target port is enabled.
+  port
+    one-based port number.
+  sm_lid
+    cached value of the port’s sm_lid.
+  lid
+    cached value of the port’s lid.
+  gid
+    cached value of the port’s gid.
+  work
+    work structure for refreshing the aforementioned cached values.
+  guid_name
+    port name in GUID format.
+  guid_id
+    LIO target port information for the port name in GUID format.
+  gid_name
+    port name in GID format.
+  gid_id
+    LIO target port information for the port name in GID format.
+  port_attrib
+    Port attributes that can be accessed through configfs.
+  refcount
+    Number of objects associated with this port.
+  freed_channels
+    Completion that will be signaled once refcount becomes 0.
+  mutex
+    Protects nexus_list.
+  nexus_list
+    Nexus list. See also srpt_nexus.entry.

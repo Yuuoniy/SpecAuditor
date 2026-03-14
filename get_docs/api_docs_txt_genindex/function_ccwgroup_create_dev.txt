@@ -1,0 +1,17 @@
+Function: int ccwgroup_create_dev ( struct device * parent , struct ccwgroup_driver * gdrv , int num_devices , const char * buf )
+
+create and register a ccw group device
+
+Parameters
+  struct device *parent
+    parent device for the new device
+  struct ccwgroup_driver *gdrv
+    driver for the new group device
+  int num_devices
+    number of slave devices
+  const char *buf
+    buffer containing comma separated bus ids of slave devices
+
+Description
+  Create and register a new ccw group device as a child of parent . Slave
+devices are obtained from the list of bus ids given in buf .

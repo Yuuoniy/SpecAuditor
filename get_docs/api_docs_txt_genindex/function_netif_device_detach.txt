@@ -1,0 +1,10 @@
+Function: void netif_device_detach ( struct net_device * dev )
+
+mark device as removed
+
+Parameters
+  struct net_device *dev
+    network device
+
+Description
+  Mark device as removed from system and therefore no longer available.

@@ -1,0 +1,7 @@
+Function: void scsi_remove_target ( struct device * dev )
+
+try to remove a target and all its devices
+
+Parameters
+  struct device *dev
+    generic starget or parent of generic stargets to be removed

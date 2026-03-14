@@ -1,0 +1,11 @@
+Struct: struct ipu3_uapi_shd_config_static
+
+Shading config static
+
+Members
+  grid
+    shading grid config ipu3_uapi_shd_grid_config
+  general
+    shading general config ipu3_uapi_shd_general_config
+  black_level
+    black level config for shading correction as defined by ipu3_uapi_shd_black_level_config

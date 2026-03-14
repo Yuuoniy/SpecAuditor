@@ -1,0 +1,14 @@
+Function: int seq_file_path ( struct seq_file * m , struct file * file , const char * esc )
+
+seq_file interface to print a pathname of a file
+
+Parameters
+  struct seq_file *m
+    the seq_file handle
+  struct file *file
+    the struct file to print
+  const char *esc
+    set of characters to escape in the output
+
+Description
+  return the absolute path to the file.

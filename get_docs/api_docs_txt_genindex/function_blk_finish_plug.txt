@@ -1,0 +1,13 @@
+Function: void blk_finish_plug ( struct blk_plug * plug )
+
+mark the end of a batch of submitted I/O
+
+Parameters
+  struct blk_plug *plug
+    The struct blk_plug passed to blk_start_plug()
+
+Description
+  Indicate that a batch of I/O submissions is complete.  This function
+must be paired with an initial call to blk_start_plug() .  The intent
+is to allow the block layer to optimize I/O submission.  See the
+documentation for blk_start_plug() for more information.

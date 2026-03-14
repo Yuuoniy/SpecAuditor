@@ -1,0 +1,9 @@
+Function: int phy_ethtool_set_wol ( struct phy_device * phydev , struct ethtool_wolinfo * wol )
+
+Configure Wake On LAN
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+  struct ethtool_wolinfo *wol
+    Configuration requested

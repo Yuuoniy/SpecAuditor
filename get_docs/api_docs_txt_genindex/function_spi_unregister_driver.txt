@@ -1,0 +1,7 @@
+Function: void spi_unregister_driver ( struct spi_driver * sdrv )
+
+reverse effect of spi_register_driver
+
+Parameters
+  struct spi_driver *sdrv
+    the driver to unregister

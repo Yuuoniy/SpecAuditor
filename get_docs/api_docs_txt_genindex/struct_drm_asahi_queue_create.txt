@@ -1,0 +1,20 @@
+Struct: struct drm_asahi_queue_create
+
+Arguments passed to DRM_IOCTL_ASAHI_QUEUE_CREATE
+
+Members
+  flags
+    MBZ
+  vm_id
+    The ID of the VM this queue is bound to
+  priority
+    One of drm_asahi_priority
+  queue_id
+    The returned queue ID
+  usc_exec_base
+    GPU base address for all USC binaries (shaders) on
+this queue. USC addresses are 32-bit relative to this 64-bit base. This sets the following registers on all queue commands: USC_EXEC_BASE_TA  (vertex)
+USC_EXEC_BASE_ISP (fragment)
+USC_EXEC_BASE_CP  (compute) While the hardware lets us configure these independently per command,
+we do not have a use case for this. Instead, we expect userspace to
+fix a 4GiB VA carveout for USC memory and pass its base address here.

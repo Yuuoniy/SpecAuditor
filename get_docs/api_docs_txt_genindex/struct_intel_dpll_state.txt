@@ -1,0 +1,10 @@
+Struct: struct intel_dpll_state
+
+hold the DPLL atomic state
+
+Members
+  pipe_mask
+    mask of pipes using this DPLL, active or not
+  hw_state
+    hardware configuration for the DPLL stored in
+struct intel_dpll_hw_state .

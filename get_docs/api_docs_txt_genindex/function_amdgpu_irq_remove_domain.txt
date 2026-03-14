@@ -1,0 +1,11 @@
+Function: void amdgpu_irq_remove_domain ( struct amdgpu_device * adev )
+
+remove the IRQ domain
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device pointer
+
+Description
+  Removes the IRQ domain for GPU interrupt sources
+that may be driven by another driver (e.g., ACP).

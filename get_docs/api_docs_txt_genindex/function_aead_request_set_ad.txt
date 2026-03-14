@@ -1,0 +1,13 @@
+Function: void aead_request_set_ad ( struct aead_request * req , unsigned int assoclen )
+
+set associated data information
+
+Parameters
+  struct aead_request *req
+    request handle
+  unsigned int assoclen
+    number of bytes in associated data
+
+Description
+  Setting the AD information.  This function sets the length of
+the associated data.

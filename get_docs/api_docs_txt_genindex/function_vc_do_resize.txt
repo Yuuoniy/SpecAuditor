@@ -1,0 +1,20 @@
+Function: int vc_do_resize ( struct tty_struct * tty , struct vc_data * vc , unsigned int cols , unsigned int lines , bool from_user )
+
+resizing method for the tty
+
+Parameters
+  struct tty_struct *tty
+    tty being resized
+  struct vc_data *vc
+    virtual console private data
+  unsigned int cols
+    columns
+  unsigned int lines
+    lines
+  bool from_user
+    invoked by a user?
+
+Description
+  Resize a virtual console, clipping according to the actual constraints. If
+the caller passes a tty structure then update the termios winsize
+information and perform any necessary signal handling.

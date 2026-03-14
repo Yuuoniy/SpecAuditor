@@ -1,0 +1,3 @@
+Enum: enum damos_action
+
+Represents an action of a Data Access Monitoring-based Operation Scheme.

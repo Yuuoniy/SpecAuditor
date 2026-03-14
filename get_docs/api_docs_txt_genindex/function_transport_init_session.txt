@@ -1,0 +1,10 @@
+Function: void transport_init_session ( struct se_session * se_sess )
+
+initialize a session object
+
+Parameters
+  struct se_session *se_sess
+    Session object pointer.
+
+Description
+  The caller must have zero-initialized se_sess before calling this function.

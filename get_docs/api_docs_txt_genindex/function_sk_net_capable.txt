@@ -1,0 +1,14 @@
+Function: bool sk_net_capable ( const struct sock * sk , int cap )
+
+Network namespace socket capability test
+
+Parameters
+  const struct sock *sk
+    Socket to use a capability on or through
+  int cap
+    The capability to use
+
+Description
+  Test to see if the opener of the socket had when the socket was created
+and the current process has the capability cap over the network namespace
+the socket is a member of.

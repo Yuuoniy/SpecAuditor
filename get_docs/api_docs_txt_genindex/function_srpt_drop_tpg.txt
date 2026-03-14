@@ -1,0 +1,7 @@
+Function: void srpt_drop_tpg ( struct se_portal_group * tpg )
+
+configfs callback invoked for rmdir /sys/kernel/config/target/$driver/$port/$tpg
+
+Parameters
+  struct se_portal_group *tpg
+    Target portal group to deregister.

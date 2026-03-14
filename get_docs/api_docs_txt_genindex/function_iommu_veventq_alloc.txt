@@ -1,0 +1,22 @@
+Function: struct iommu_veventq_alloc
+
+ioctl(IOMMU_VEVENTQ_ALLOC)
+
+Members
+  size
+    sizeof( struct iommu_veventq_alloc )
+  flags
+    Must be 0
+  viommu_id
+    virtual IOMMU ID to associate the vEVENTQ with
+  type
+    Type of the vEVENTQ. Must be defined in enum iommu_veventq_type
+  veventq_depth
+    Maximum number of events in the vEVENTQ
+  out_veventq_id
+    The ID of the new vEVENTQ
+  out_veventq_fd
+    The fd of the new vEVENTQ. User space must close the
+successfully returned fd after using it
+  __reserved
+    Must be 0

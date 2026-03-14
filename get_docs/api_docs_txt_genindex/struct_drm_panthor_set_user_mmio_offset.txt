@@ -1,0 +1,10 @@
+Struct: struct drm_panthor_set_user_mmio_offset
+
+Arguments passed to DRM_IOCTL_PANTHOR_SET_USER_MMIO_OFFSET
+
+Members
+  offset
+    User MMIO offset to use. Must be either DRM_PANTHOR_USER_MMIO_OFFSET_32BIT or
+DRM_PANTHOR_USER_MMIO_OFFSET_64BIT. Use DRM_PANTHOR_USER_MMIO_OFFSET (which selects OFFSET_32BIT or
+OFFSET_64BIT based on the size of an unsigned long) unless you
+have a very good reason to overrule this decision.

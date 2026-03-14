@@ -1,0 +1,14 @@
+Function: int generic_check_addressable ( unsigned blocksize_bits , u64 num_blocks )
+
+Check addressability of file system
+
+Parameters
+  unsigned blocksize_bits
+    log of file system block size
+  u64 num_blocks
+    number of blocks in file system
+
+Description
+  Determine whether a file system with num_blocks blocks (and a
+block size of 2****blocksize_bits**) is addressable by the sector_t
+and page cache of the system.  Return 0 if so and -EFBIG otherwise.

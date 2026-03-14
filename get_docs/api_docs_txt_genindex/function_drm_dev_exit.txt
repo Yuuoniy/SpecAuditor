@@ -1,0 +1,11 @@
+Function: void drm_dev_exit ( int idx )
+
+Exit device critical section
+
+Parameters
+  int idx
+    index returned from drm_dev_enter()
+
+Description
+  This function marks the end of a section that should not be entered after
+the device has been unplugged.

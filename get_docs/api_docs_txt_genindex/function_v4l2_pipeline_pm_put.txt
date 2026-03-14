@@ -1,0 +1,11 @@
+Function: void v4l2_pipeline_pm_put ( struct media_entity * entity )
+
+Decrease the use count of a pipeline
+
+Parameters
+  struct media_entity *entity
+    The root entity of a pipeline
+
+Description
+  THIS FUNCTION IS DEPRECATED. DO NOT USE IN NEW DRIVERS. USE RUNTIME PM
+ON SUB-DEVICE DRIVERS INSTEAD.

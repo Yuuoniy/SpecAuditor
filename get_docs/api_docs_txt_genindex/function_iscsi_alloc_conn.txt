@@ -1,0 +1,11 @@
+Function: struct iscsi_cls_conn * iscsi_alloc_conn ( struct iscsi_cls_session * session , int dd_size , uint32_t cid )
+
+alloc iscsi class connection
+
+Parameters
+  struct iscsi_cls_session *session
+    iscsi cls session
+  int dd_size
+    private driver data size
+  uint32_t cid
+    connection id

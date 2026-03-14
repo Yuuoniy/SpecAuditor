@@ -1,0 +1,12 @@
+Function: void tty_wakeup ( struct tty_struct * tty )
+
+request more data
+
+Parameters
+  struct tty_struct *tty
+    terminal
+
+Description
+  Internal and external helper for wakeups of tty. This function informs the
+line discipline if present that the driver is ready to receive more output
+data.

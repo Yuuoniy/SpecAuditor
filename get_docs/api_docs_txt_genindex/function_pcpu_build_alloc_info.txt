@@ -1,0 +1,18 @@
+Function: struct pcpu_alloc_info * pcpu_build_alloc_info ( size_t reserved_size , size_t dyn_size , size_t atom_size , pcpu_fc_cpu_distance_fn_t cpu_distance_fn )
+
+build alloc_info considering distances between CPUs
+
+Parameters
+  size_t reserved_size
+    the size of reserved percpu area in bytes
+  size_t dyn_size
+    minimum free size for dynamic allocation in bytes
+  size_t atom_size
+    allocation atom size
+  pcpu_fc_cpu_distance_fn_t cpu_distance_fn
+    callback to determine distance between cpus, optional
+
+Description
+  This function determines grouping of units, their mappings to cpus
+and other parameters considering needed percpu size, allocation
+atom size and distances between CPUs.

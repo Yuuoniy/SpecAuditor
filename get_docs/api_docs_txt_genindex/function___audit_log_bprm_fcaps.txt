@@ -1,0 +1,15 @@
+Function: int __audit_log_bprm_fcaps ( struct linux_binprm * bprm , const struct cred * new , const struct cred * old )
+
+store information about a loading bprm and relevant fcaps
+
+Parameters
+  struct linux_binprm *bprm
+    pointer to the bprm being processed
+  const struct cred *new
+    the proposed new credentials
+  const struct cred *old
+    the old credentials
+
+Description
+  Simply check if the proc already has the caps given by the file and if not
+store the priv escalation info for later auditing at the end of the syscall

@@ -1,0 +1,12 @@
+Function: int kho_preserve_pages ( struct page * page , unsigned int nr_pages )
+
+preserve contiguous pages across kexec
+
+Parameters
+  struct page *page
+    first page in the list.
+  unsigned int nr_pages
+    number of pages.
+
+Description
+  Preserve a contiguous list of order 0 pages. Must be restored using kho_restore_pages() to ensure the pages are restored properly as order 0.

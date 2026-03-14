@@ -1,0 +1,19 @@
+Struct: struct opa_veswport_trap
+
+Trap message sent to EM by VNIC
+
+Members
+  fabric_id
+    10 bit fabric id
+  veswid
+    12 bit virtual ethernet switch id
+  veswportnum
+    logical port number on the Virtual switch
+  opaportnum
+    physical port num (redundant on host)
+  veswportindex
+    switch port index on opa port 0 based
+  opcode
+    operation
+  reserved
+    32 bit for alignment

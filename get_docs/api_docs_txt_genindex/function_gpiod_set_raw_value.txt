@@ -1,0 +1,13 @@
+Function: int gpiod_set_raw_value ( struct gpio_desc * desc , int value )
+
+assign a gpio’s raw value
+
+Parameters
+  struct gpio_desc *desc
+    gpio whose value will be assigned
+  int value
+    value to assign
+
+Description
+  Set the raw value of the GPIO, i.e. the value of its physical line without
+regard for its ACTIVE_LOW status.

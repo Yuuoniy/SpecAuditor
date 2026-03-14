@@ -1,0 +1,11 @@
+Function: void cpuhp_remove_state_nocalls_cpuslocked ( enum cpuhp_state state )
+
+Remove hotplug state callbacks without invoking teardown from a cpus_read_lock() held region.
+
+Parameters
+  enum cpuhp_state state
+    The state for which the calls are removed
+
+Description
+  Same as cpuhp_remove_state nocalls() except that it must be invoked
+from within a cpus_read_lock() held region.

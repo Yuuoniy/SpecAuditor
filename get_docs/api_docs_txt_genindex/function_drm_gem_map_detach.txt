@@ -1,0 +1,12 @@
+Function: void drm_gem_map_detach ( struct dma_buf * dma_buf , struct dma_buf_attachment * attach )
+
+dma_buf detach implementation for GEM
+
+Parameters
+  struct dma_buf *dma_buf
+    buffer to detach from
+  struct dma_buf_attachment *attach
+    attachment to be detached
+
+Description
+  Calls drm_gem_object_funcs.pin for device specific handling.  Cleans up dma_buf_attachment from drm_gem_map_attach() . This can be used as the dma_buf_ops.detach callback.

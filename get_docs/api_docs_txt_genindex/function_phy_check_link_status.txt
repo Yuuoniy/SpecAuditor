@@ -1,0 +1,11 @@
+Function: int phy_check_link_status ( struct phy_device * phydev )
+
+check link status and set state accordingly
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+
+Description
+  Check for link and whether autoneg was triggered / is running
+and set state accordingly

@@ -1,0 +1,7 @@
+Function: void * ssam_device_get_drvdata ( struct ssam_device * sdev )
+
+Get driver-data of SSAM client device.
+
+Parameters
+  struct ssam_device *sdev
+    The device to get the driver-data from.

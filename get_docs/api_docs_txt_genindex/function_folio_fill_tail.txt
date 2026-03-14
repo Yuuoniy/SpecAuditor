@@ -1,0 +1,19 @@
+Function: void folio_fill_tail ( struct folio * folio , size_t offset , const char * from , size_t len )
+
+Copy some data to a folio and pad with zeroes.
+
+Parameters
+  struct folio *folio
+    The destination folio.
+  size_t offset
+    The offset into folio at which to start copying.
+  const char *from
+    The data to copy.
+  size_t len
+    How many bytes of data to copy.
+
+Description
+  This function is most useful for filesystems which support inline data.
+When they want to copy data from the inode into the page cache, this
+function does everything for them.  It supports large folios even on
+HIGHMEM configurations.

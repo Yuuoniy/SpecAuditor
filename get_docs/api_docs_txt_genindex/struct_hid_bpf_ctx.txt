@@ -1,0 +1,15 @@
+Struct: struct hid_bpf_ctx
+
+User accessible data for all HID programs
+
+Members
+  hid
+    the struct hid_device representing the device itself
+  allocated_size
+    Allocated size of data.
+  {unnamed_union}
+    anonymous
+  retval
+    Return value of the previous program.
+  size
+    Valid data in the data field.

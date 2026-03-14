@@ -1,0 +1,10 @@
+Function: bool ssam_device_is_hot_removed ( struct ssam_device * sdev )
+
+Check if the given device has been hot-removed.
+
+Parameters
+  struct ssam_device *sdev
+    The device to check.
+
+Description
+  Checks if the given device has been marked as hot-removed. See ssam_device_mark_hot_removed() for more details.

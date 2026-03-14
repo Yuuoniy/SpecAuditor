@@ -1,0 +1,14 @@
+Struct: struct iommu_hwpt_vtd_s1_invalidate
+
+Intel VT-d cache invalidation (IOMMU_HWPT_INVALIDATE_DATA_VTD_S1)
+
+Members
+  addr
+    The start address of the range to be invalidated. It needs to
+be 4KB aligned.
+  npages
+    Number of contiguous 4K pages to be invalidated.
+  flags
+    Combination of enum iommu_hwpt_vtd_s1_invalidate_flags
+  __reserved
+    Must be 0

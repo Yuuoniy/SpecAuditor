@@ -1,0 +1,11 @@
+Function: void srpt_mgmt_method_get ( struct srpt_port * sp , struct ib_mad * rq_mad , struct ib_dm_mad * rsp_mad )
+
+process a received management datagram
+
+Parameters
+  struct srpt_port *sp
+    HCA port through which the MAD has been received.
+  struct ib_mad *rq_mad
+    received MAD.
+  struct ib_dm_mad *rsp_mad
+    response MAD.

@@ -1,0 +1,15 @@
+Struct: struct komeda_crtc_state
+
+
+
+Members
+  base
+    drm_crtc_state
+  affected_pipes
+    the affected pipelines in once display instance
+  active_pipes
+    the active pipelines in once display instance
+  clock_ratio
+    ratio of (aclk << 32)/pxlclk
+  max_slave_zorder
+    the maximum of slave zorder

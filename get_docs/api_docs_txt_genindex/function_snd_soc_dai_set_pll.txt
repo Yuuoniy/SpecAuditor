@@ -1,0 +1,18 @@
+Function: int snd_soc_dai_set_pll ( struct snd_soc_dai * dai , int pll_id , int source , unsigned int freq_in , unsigned int freq_out )
+
+configure DAI PLL.
+
+Parameters
+  struct snd_soc_dai *dai
+    DAI
+  int pll_id
+    DAI specific PLL ID
+  int source
+    DAI specific source for the PLL
+  unsigned int freq_in
+    PLL input clock frequency in Hz
+  unsigned int freq_out
+    requested PLL output clock frequency in Hz
+
+Description
+  Configures and enables PLL to generate output clock based on input clock.

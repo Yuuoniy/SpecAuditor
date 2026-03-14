@@ -1,0 +1,9 @@
+Function: u16 vidtv_psi_pmt_get_pid ( struct vidtv_psi_table_pmt * section , struct vidtv_psi_table_pat * pat )
+
+Get the TS PID for a PMT section.
+
+Parameters
+  struct vidtv_psi_table_pmt *section
+    The PMT section whose PID we want to retrieve.
+  struct vidtv_psi_table_pat *pat
+    The PAT table to look into.

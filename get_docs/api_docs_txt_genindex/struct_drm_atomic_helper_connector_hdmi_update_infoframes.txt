@@ -1,0 +1,13 @@
+Struct: int drm_atomic_helper_connector_hdmi_update_infoframes ( struct drm_connector * connector , struct drm_atomic_state * state )
+
+Update the Infoframes
+
+Parameters
+  struct drm_connector *connector
+    A pointer to the HDMI connector
+  struct drm_atomic_state *state
+    The HDMI connector state to generate the infoframe from
+
+Description
+  This function is meant for HDMI connector drivers to write their
+infoframes. It will typically be used in a drm_connector_helper_funcs.atomic_enable implementation.

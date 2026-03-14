@@ -1,0 +1,9 @@
+Macro: DVB_RINGBUFFER_SKIP
+
+
+
+Parameters
+  rbuf
+    pointer to struct dvb_ringbuffer
+  num
+    number of bytes to advance

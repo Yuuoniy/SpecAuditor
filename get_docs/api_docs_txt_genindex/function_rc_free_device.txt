@@ -1,0 +1,7 @@
+Function: void rc_free_device ( struct rc_dev * dev )
+
+Frees a RC device
+
+Parameters
+  struct rc_dev *dev
+    pointer to struct rc_dev .

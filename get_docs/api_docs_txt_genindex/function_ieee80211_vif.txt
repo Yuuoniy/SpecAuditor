@@ -1,0 +1,72 @@
+Function: struct ieee80211_vif
+
+per-interface data
+
+Members
+  type
+    type of this virtual interface
+  cfg
+    vif configuration, see struct ieee80211_vif_cfg
+  bss_conf
+    BSS configuration for this interface, either our own
+or the BSS we’re associated to
+  link_conf
+    in case of MLD, the per-link BSS configuration,
+indexed by link ID
+  valid_links
+    bitmap of valid links, or 0 for non-MLO.
+  active_links
+    The bitmap of active links, or 0 for non-MLO.
+The driver shouldn’t change this directly, but use the
+API calls meant for that purpose.
+  dormant_links
+    subset of the valid links that are disabled/suspended
+due to advertised or negotiated TTLM respectively.
+0 for non-MLO.
+  suspended_links
+    subset of dormant_links representing links that are
+suspended due to negotiated TTLM, and could be activated in the
+future by tearing down the TTLM negotiation.
+0 for non-MLO.
+  neg_ttlm
+    negotiated TID to link mapping info.
+see struct ieee80211_neg_ttlm .
+  addr
+    address of this interface
+  addr_valid
+    indicates if the address is actively used. Set to false for
+passive monitor interfaces, true in all other cases.
+  p2p
+    indicates whether this AP or STA interface is a p2p
+interface, i.e. a GO or p2p-sta respectively
+  cab_queue
+    content-after-beacon (DTIM beacon really) queue, AP mode only
+  hw_queue
+    hardware queue for each AC
+  txq
+    the multicast data TX queue
+  netdev_features
+    tx netdev features supported by the hardware for this
+vif. mac80211 initializes this to hw->netdev_features, and the driver
+can mask out specific tx features. mac80211 will handle software fixup
+for masked offloads (GSO, CSUM)
+  driver_flags
+    flags/capabilities the driver has for this interface,
+these need to be set (or cleared) when the interface is added
+or, if supported by the driver, the interface type is changed
+at runtime, mac80211 will never touch this field
+  offload_flags
+    802.3 -> 802.11 enapsulation offload flags, see enum ieee80211_offload_flags .
+  debugfs_dir
+    debugfs dentry, can be used by drivers to create own per
+interface debug files. Note that it will be NULL for the virtual
+monitor interface (if that is requested.)
+  probe_req_reg
+    probe requests should be reported to mac80211 for this
+interface.
+  rx_mcast_action_reg
+    multicast Action frames should be reported to mac80211
+for this interface.
+  drv_priv
+    data area for driver use, will always be aligned to
+sizeof(void *).

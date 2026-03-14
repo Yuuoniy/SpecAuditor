@@ -1,0 +1,13 @@
+Struct: struct peci_controller
+
+PECI controller
+
+Members
+  dev
+    device object to register PECI controller to the device model
+  ops
+    pointer to device specific controller operations
+  bus_lock
+    lock used to protect multiple callers
+  id
+    PECI controller ID

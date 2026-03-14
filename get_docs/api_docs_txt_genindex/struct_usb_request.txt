@@ -1,0 +1,72 @@
+Struct: struct usb_request
+
+describes one i/o request
+
+Members
+  ep
+    The associated endpoint set by usb_ep_alloc_request() .
+  buf
+    Buffer used for data.  Always provide this; some controllers
+only use PIO, or don’t use DMA for some endpoints.
+  length
+    Length of that data
+  dma
+    DMA address corresponding to ‘buf’.  If you don’t set this
+field, and the usb controller needs one, it is responsible
+for mapping and unmapping the buffer.
+  sg
+    a scatterlist for SG-capable controllers.
+  num_sgs
+    number of SG entries
+  num_mapped_sgs
+    number of SG entries mapped to DMA (internal)
+  stream_id
+    The stream id, when USB3.0 bulk streams are being used
+  is_last
+    Indicates if this is the last request of a stream_id before
+switching to a different stream (required for DWC3 controllers).
+  no_interrupt
+    If true, hints that no completion irq is needed.
+Helpful sometimes with deep request queues that are handled
+directly by DMA controllers.
+  zero
+    If true, when writing data, makes the last packet be “short”
+by adding a zero length packet as needed;
+  short_not_ok
+    When reading data, makes short packets be
+treated as errors (queue stops advancing till cleanup).
+  dma_mapped
+    Indicates if request has been mapped to DMA (internal)
+  sg_was_mapped
+    Set if the scatterlist has been mapped before the request
+  complete
+    Function called when request completes, so this request and
+its buffer may be re-used.  The function will always be called with
+interrupts disabled, and it must not sleep.
+Reads terminate with a short packet, or when the buffer fills,
+whichever comes first.  When writes terminate, some data bytes
+will usually still be in flight (often in a hardware fifo).
+Errors (for reads or writes) stop the queue from advancing
+until the completion function returns, so that any transfers
+invalidated by the error may first be dequeued.
+  context
+    For use by the completion callback
+  list
+    For use by the gadget driver.
+  frame_number
+    Reports the interval number in (micro)frame in which the
+isochronous transfer was transmitted or received.
+  status
+    Reports completion code, zero or a negative errno.
+Normally, faults block the transfer queue from advancing until
+the completion callback returns.
+Code “-ESHUTDOWN” indicates completion caused by device disconnect,
+or when the driver disabled the endpoint.
+  actual
+    Reports bytes transferred to/from the buffer.  For reads (OUT
+transfers) this may be less than the requested length.  If the
+short_not_ok flag is set, short reads are treated as errors
+even when status otherwise indicates successful completion.
+Note that for writes (IN transfers) some data bytes may still
+reside in a device-side FIFO when the request is reported as
+complete.

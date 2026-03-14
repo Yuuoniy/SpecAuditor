@@ -1,0 +1,12 @@
+Function: struct clk * devm_clk_get_optional_enabled ( struct device * dev , const char * id )
+
+devm_clk_get_optional() + clk_prepare_enable()
+
+Parameters
+  struct device *dev
+    device for clock “consumer”
+  const char *id
+    clock consumer ID
+
+Description
+  The returned clk (if valid) is prepared and enabled.

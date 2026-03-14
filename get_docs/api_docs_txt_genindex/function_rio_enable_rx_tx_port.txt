@@ -1,0 +1,19 @@
+Function: int rio_enable_rx_tx_port ( struct rio_mport * port , int local , u16 destid , u8 hopcount , u8 port_num )
+
+enable input receiver and output transmitter of given port
+
+Parameters
+  struct rio_mport *port
+    Master port associated with the RIO network
+  int local
+    local=1 select local port otherwise a far device is reached
+  u16 destid
+    Destination ID of the device to check host bit
+  u8 hopcount
+    Number of hops to reach the target
+  u8 port_num
+    Port (-number on switch) to enable on a far end device
+
+Description
+  Returns 0 or 1 from on General Control Command and Status Register
+(EXT_PTR+0x3C)

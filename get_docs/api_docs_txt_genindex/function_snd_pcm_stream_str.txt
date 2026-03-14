@@ -1,0 +1,7 @@
+Function: const char * snd_pcm_stream_str ( struct snd_pcm_substream * substream )
+
+Get a string naming the direction of a stream
+
+Parameters
+  struct snd_pcm_substream *substream
+    the pcm substream instance

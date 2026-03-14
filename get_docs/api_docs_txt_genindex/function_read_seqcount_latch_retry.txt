@@ -1,0 +1,9 @@
+Function: int read_seqcount_latch_retry ( const seqcount_latch_t * s , unsigned start )
+
+end a seqcount_latch_t read section
+
+Parameters
+  const seqcount_latch_t *s
+    Pointer to seqcount_latch_t
+  unsigned start
+    count, from read_seqcount_latch()

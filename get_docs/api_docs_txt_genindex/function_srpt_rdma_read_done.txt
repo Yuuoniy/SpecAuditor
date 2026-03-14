@@ -1,0 +1,14 @@
+Function: void srpt_rdma_read_done ( struct ib_cq * cq , struct ib_wc * wc )
+
+RDMA read completion callback
+
+Parameters
+  struct ib_cq *cq
+    Completion queue.
+  struct ib_wc *wc
+    Work completion.
+
+Description
+  XXX: what is now target_execute_cmd used to be asynchronous, and unmapping
+the data that has been transferred via IB RDMA had to be postponed until the check_stop_free() callback.  None of this is necessary anymore and needs to
+be cleaned up.

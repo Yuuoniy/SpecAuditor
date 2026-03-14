@@ -1,0 +1,14 @@
+Function: int drm_atomic_set_crtc_for_connector ( struct drm_connector_state * conn_state , struct drm_crtc * crtc )
+
+set CRTC for connector
+
+Parameters
+  struct drm_connector_state *conn_state
+    atomic state object for the connector
+  struct drm_crtc *crtc
+    CRTC to use for the connector
+
+Description
+  Changing the assigned CRTC for a connector requires us to grab the lock and
+state for the new CRTC, as needed. This function takes care of all these
+details besides updating the pointer in the state object itself.

@@ -1,0 +1,43 @@
+Struct: struct snd_compr_runtime
+
+runtime stream description
+
+Members
+  state
+    stream state
+  ops
+    pointer to DSP callbacks
+  buffer
+    pointer to kernel buffer, valid only when not in mmap mode or
+DSP doesn’t implement copy
+  buffer_size
+    size of the above buffer
+  fragment_size
+    size of buffer fragment in bytes
+  fragments
+    number of such fragments
+  total_bytes_available
+    cumulative number of bytes made available in
+the ring buffer
+  total_bytes_transferred
+    cumulative bytes transferred by offload DSP
+  sleep
+    poll sleep
+  private_data
+    driver private data pointer
+  dma_area
+    virtual buffer address
+  dma_addr
+    physical buffer address (not accessible from main CPU)
+  dma_bytes
+    size of DMA area
+  dma_buffer_p
+    runtime dma buffer pointer
+  active_tasks
+    count of active tasks
+  total_tasks
+    count of all tasks
+  task_seqno
+    last task sequence number (!= 0)
+  tasks
+    list of all tasks

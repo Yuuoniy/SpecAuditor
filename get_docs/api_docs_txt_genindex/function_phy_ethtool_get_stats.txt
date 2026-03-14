@@ -1,0 +1,11 @@
+Function: int phy_ethtool_get_stats ( struct phy_device * phydev , struct ethtool_stats * stats , u64 * data )
+
+Get the statistic counters
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+  struct ethtool_stats *stats
+    What counters to get
+  u64 *data
+    Where to store the counters

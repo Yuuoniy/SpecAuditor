@@ -1,0 +1,18 @@
+Struct: struct vidtv_mux_timing
+
+Timing related information
+
+Members
+  start_jiffies
+    The value of ‘jiffies’ when we started the mux thread.
+  current_jiffies
+    The value of ‘jiffies’ for the current iteration.
+  past_jiffies
+    The value of ‘jiffies’ for the past iteration.
+  clk
+    A 27Mhz clock from which we will drive the PCR. Updated proportionally
+on every iteration.
+  pcr_period_usecs
+    How often we should send PCR packets.
+  si_period_usecs
+    How often we should send PSI packets.

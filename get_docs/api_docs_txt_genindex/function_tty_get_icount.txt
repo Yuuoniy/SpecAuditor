@@ -1,0 +1,12 @@
+Function: int tty_get_icount ( struct tty_struct * tty , struct serial_icounter_struct * icount )
+
+get tty statistics
+
+Parameters
+  struct tty_struct *tty
+    tty device
+  struct serial_icounter_struct *icount
+    output parameter
+
+Description
+  Gets a copy of the tty ’s icount statistics.

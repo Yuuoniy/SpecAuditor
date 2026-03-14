@@ -1,0 +1,10 @@
+Function: void intel_drrs_deactivate ( const struct intel_crtc_state * old_crtc_state )
+
+deactivate DRRS
+
+Parameters
+  const struct intel_crtc_state *old_crtc_state
+    the old crtc state
+
+Description
+  Deactivates DRRS on the crtc.

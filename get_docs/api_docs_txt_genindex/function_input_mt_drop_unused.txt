@@ -1,0 +1,10 @@
+Function: void input_mt_drop_unused ( struct input_dev * dev )
+
+Inactivate slots not seen in this frame
+
+Parameters
+  struct input_dev *dev
+    input device with allocated MT slots
+
+Description
+  Lift all slots not seen since the last call to this function.

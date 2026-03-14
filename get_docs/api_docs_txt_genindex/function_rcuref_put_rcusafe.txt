@@ -1,0 +1,11 @@
+Function: bool rcuref_put_rcusafe ( rcuref_t * ref )
+
+Release one reference for a rcuref reference count RCU safe
+
+Parameters
+  rcuref_t *ref
+    Pointer to the reference count
+
+Description
+  Provides release memory ordering, such that prior loads and stores are done
+before, and provides an acquire ordering on success such that free() must come after.

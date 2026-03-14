@@ -1,0 +1,9 @@
+Function: void media_device_unregister_entity_notify ( struct media_device * mdev , struct media_entity_notify * nptr )
+
+Unregister a media entity notify callback
+
+Parameters
+  struct media_device *mdev
+    The media device
+  struct media_entity_notify *nptr
+    The media_entity_notify

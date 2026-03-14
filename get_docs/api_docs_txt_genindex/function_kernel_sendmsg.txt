@@ -1,0 +1,19 @@
+Function: int kernel_sendmsg ( struct socket * sock , struct msghdr * msg , struct kvec * vec , size_t num , size_t size )
+
+send a message through sock (kernel-space)
+
+Parameters
+  struct socket *sock
+    socket
+  struct msghdr *msg
+    message header
+  struct kvec *vec
+    kernel vec
+  size_t num
+    vec array length
+  size_t size
+    total message data size
+
+Description
+  Builds the message data with vec and sends it through sock .
+Returns the number of bytes sent, or an error code.

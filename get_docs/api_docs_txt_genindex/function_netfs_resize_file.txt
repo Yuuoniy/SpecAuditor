@@ -1,0 +1,14 @@
+Function: void netfs_resize_file ( struct netfs_inode * ctx , loff_t new_i_size , bool changed_on_server )
+
+Note that a file got resized
+
+Parameters
+  struct netfs_inode *ctx
+    The netfs inode being resized
+  loff_t new_i_size
+    The new file size
+  bool changed_on_server
+    The change was applied to the server
+
+Description
+  Inform the netfs lib that a file got resized so that it can adjust its state.

@@ -1,0 +1,9 @@
+Function: int ep_loop_check ( struct eventpoll * ep , struct eventpoll * to )
+
+Performs a check to verify that adding an epoll file ( to ) into another epoll file (represented by ep ) does not create closed loops or too deep chains.
+
+Parameters
+  struct eventpoll *ep
+    Pointer to the epoll we are inserting into.
+  struct eventpoll *to
+    Pointer to the epoll to be inserted.

@@ -1,0 +1,17 @@
+Function: int snd_dmaengine_pcm_refine_runtime_hwparams ( struct snd_pcm_substream * substream , struct snd_dmaengine_dai_dma_data * dma_data , struct snd_pcm_hardware * hw , struct dma_chan * chan )
+
+Refine runtime hw params
+
+Parameters
+  struct snd_pcm_substream *substream
+    PCM substream
+  struct snd_dmaengine_dai_dma_data *dma_data
+    DAI DMA data
+  struct snd_pcm_hardware *hw
+    PCM hw params
+  struct dma_chan *chan
+    DMA channel to use for data transfers
+
+Description
+  This function will query DMA capability, then refine the pcm hardware
+parameters.

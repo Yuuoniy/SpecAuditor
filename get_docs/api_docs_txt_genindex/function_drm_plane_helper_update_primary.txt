@@ -1,0 +1,32 @@
+Function: int drm_plane_helper_update_primary ( struct drm_plane * plane , struct drm_crtc * crtc , struct drm_framebuffer * fb , int crtc_x , int crtc_y , unsigned int crtc_w , unsigned int crtc_h , uint32_t src_x , uint32_t src_y , uint32_t src_w , uint32_t src_h , struct drm_modeset_acquire_ctx * ctx )
+
+Helper for updating primary planes
+
+Parameters
+  struct drm_plane *plane
+    plane to update
+  struct drm_crtc *crtc
+    the plane’s new CRTC
+  struct drm_framebuffer *fb
+    the plane’s new framebuffer
+  int crtc_x
+    x coordinate within CRTC
+  int crtc_y
+    y coordinate within CRTC
+  unsigned int crtc_w
+    width coordinate within CRTC
+  unsigned int crtc_h
+    height coordinate within CRTC
+  uint32_t src_x
+    x coordinate within source
+  uint32_t src_y
+    y coordinate within source
+  uint32_t src_w
+    width coordinate within source
+  uint32_t src_h
+    height coordinate within source
+  struct drm_modeset_acquire_ctx *ctx
+    modeset locking context
+
+Description
+  This helper validates the given parameters and updates the primary plane.

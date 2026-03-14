@@ -1,0 +1,7 @@
+Function: void xe_pm_runtime_put ( struct xe_device * xe )
+
+Put the runtime_pm reference back and mark as idle
+
+Parameters
+  struct xe_device *xe
+    xe device instance

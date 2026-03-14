@@ -1,0 +1,11 @@
+Function: void idle_cull_fn ( struct work_struct * work )
+
+cull workers that have been idle for too long.
+
+Parameters
+  struct work_struct *work
+    the pool’s work for handling these idle workers
+
+Description
+  This goes through a pool’s idle workers and gets rid of those that have been
+idle for at least IDLE_WORKER_TIMEOUT seconds.

@@ -1,0 +1,13 @@
+Function: int iscsi_iser_conn_bind ( struct iscsi_cls_session * cls_session , struct iscsi_cls_conn * cls_conn , uint64_t transport_eph , int is_leading )
+
+bind iscsi and iser connection structures
+
+Parameters
+  struct iscsi_cls_session *cls_session
+    iscsi class session
+  struct iscsi_cls_conn *cls_conn
+    iscsi class connection
+  uint64_t transport_eph
+    transport end-point handle
+  int is_leading
+    indicate if this is the session leading connection (MCS)

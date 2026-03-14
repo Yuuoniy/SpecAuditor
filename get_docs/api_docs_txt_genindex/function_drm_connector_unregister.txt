@@ -1,0 +1,14 @@
+Function: void drm_connector_unregister ( struct drm_connector * connector )
+
+unregister a connector
+
+Parameters
+  struct drm_connector *connector
+    the connector to unregister
+
+Description
+  Unregister userspace interfaces for a connector. Drivers should call this
+for dynamic connectors (MST) only, which were registered explicitly by
+calling drm_connector_dynamic_register() . All other - static - connectors
+will be unregistered automatically by DRM core and drivers shouldn’t call
+this function for those.

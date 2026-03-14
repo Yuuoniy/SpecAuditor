@@ -1,0 +1,7 @@
+Struct: struct peci_controller_ops
+
+PECI controller specific methods
+
+Members
+  xfer
+    PECI transfer function

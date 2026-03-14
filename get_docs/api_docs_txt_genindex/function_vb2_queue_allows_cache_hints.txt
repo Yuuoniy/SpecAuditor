@@ -1,0 +1,7 @@
+Function: bool vb2_queue_allows_cache_hints ( struct vb2_queue * q )
+
+Return true if the queue allows cache and memory consistency hints.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue

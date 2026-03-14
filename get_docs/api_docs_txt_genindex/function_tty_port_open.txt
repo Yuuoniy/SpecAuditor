@@ -1,0 +1,17 @@
+Function: int tty_port_open ( struct tty_port * port , struct tty_struct * tty , struct file * filp )
+
+generic tty->ops->open handler
+
+Parameters
+  struct tty_port *port
+    tty_port of the device
+  struct tty_struct *tty
+    tty to be opened
+  struct file *filp
+    passed file pointer
+
+Description
+  It is a generic helper to be used in driver’s tty->ops->open . It activates
+the devices using port->ops->activate if not active already. And waits for
+the device to be ready using tty_port_block_til_ready() (e.g.  raises
+DTR/CTS and waits for carrier).

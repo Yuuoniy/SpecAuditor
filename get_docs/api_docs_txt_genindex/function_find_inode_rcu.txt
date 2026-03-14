@@ -1,0 +1,20 @@
+Function: struct inode * find_inode_rcu ( struct super_block * sb , unsigned long hashval , int ( * test ) ( struct inode * , void * ) , void * data )
+
+find an inode in the inode cache
+
+Parameters
+  struct super_block *sb
+    Super block of file system to search
+  unsigned long hashval
+    Key to hash
+  int (*test)(struct inode *, void *)
+    Function to test match on an inode
+  void *data
+    Data for test function
+
+Description
+  Search for the inode specified by hashval and data in the inode cache,
+where the helper function test will return 0 if the inode does not match
+and 1 if it does.  The test function must be responsible for taking the
+i_lock spin_lock and checking i_state for an inode being freed or being
+initialized.

@@ -1,0 +1,13 @@
+Function: int send_break ( struct tty_struct * tty , unsigned int duration )
+
+performed time break
+
+Parameters
+  struct tty_struct *tty
+    device to break on
+  unsigned int duration
+    timeout in mS
+
+Description
+  Perform a timed break on hardware that lacks its own driver level timed
+break functionality.

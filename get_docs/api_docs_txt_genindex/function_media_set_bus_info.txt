@@ -1,0 +1,15 @@
+Function: void media_set_bus_info ( char * bus_info , size_t bus_info_size , struct device * dev )
+
+Set bus_info field
+
+Parameters
+  char *bus_info
+    Variable where to write the bus info (char array)
+  size_t bus_info_size
+    Length of the bus_info
+  struct device *dev
+    Related struct device
+
+Description
+  Sets bus information based on dev . This is currently done for PCI and
+platform devices. dev is required to be non-NULL for this to happen.

@@ -1,0 +1,11 @@
+Function: void intel_dmc_resume ( struct intel_display * display )
+
+init DMC firmware during system resume
+
+Parameters
+  struct intel_display *display
+    display instance
+
+Description
+  Reinitialize the DMC firmware during system resume, reacquiring any
+resources released in intel_dmc_suspend() .

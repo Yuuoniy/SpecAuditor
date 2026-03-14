@@ -1,0 +1,9 @@
+Function: unsigned int cfg80211_classify8021d ( struct sk_buff * skb , struct cfg80211_qos_map * qos_map )
+
+determine the 802.1p/1d tag for a data frame
+
+Parameters
+  struct sk_buff *skb
+    the data frame
+  struct cfg80211_qos_map *qos_map
+    Interworking QoS mapping or NULL if not in use

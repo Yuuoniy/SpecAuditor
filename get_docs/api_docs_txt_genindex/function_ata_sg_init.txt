@@ -1,0 +1,14 @@
+Function: void ata_sg_init ( struct ata_queued_cmd * qc , struct scatterlist * sg , unsigned int n_elem )
+
+Associate command with scatter-gather table.
+
+Parameters
+  struct ata_queued_cmd *qc
+    Command to be associated
+  struct scatterlist *sg
+    Scatter-gather table.
+  unsigned int n_elem
+    Number of elements in s/g table.
+
+Description
+  Initialize the data-related elements of queued_cmd qc to point to a scatter-gather table sg , containing n_elem elements.

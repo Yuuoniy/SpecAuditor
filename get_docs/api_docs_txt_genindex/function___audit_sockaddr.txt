@@ -1,0 +1,12 @@
+Function: int __audit_sockaddr ( int len , void * a )
+
+record audit data for sys_bind, sys_connect, sys_sendto
+
+Parameters
+  int len
+    data length in user space
+  void *a
+    data address in kernel space
+
+Description
+  Returns 0 for success or NULL context or < 0 on error.

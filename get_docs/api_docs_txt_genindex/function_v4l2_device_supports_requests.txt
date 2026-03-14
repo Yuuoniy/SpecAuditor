@@ -1,0 +1,7 @@
+Function: bool v4l2_device_supports_requests ( struct v4l2_device * v4l2_dev )
+
+Test if requests are supported.
+
+Parameters
+  struct v4l2_device *v4l2_dev
+    pointer to struct v4l2_device

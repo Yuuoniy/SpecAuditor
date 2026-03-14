@@ -1,0 +1,13 @@
+Function: void ipc_kht_remove ( struct ipc_ids * ids , struct kern_ipc_perm * ipcp )
+
+remove an ipc from the key hashtable
+
+Parameters
+  struct ipc_ids *ids
+    ipc identifier set
+  struct kern_ipc_perm *ipcp
+    ipc perm structure containing the key to remove
+
+Description
+  ipc_ids.rwsem (as a writer) and the spinlock for this ID are held
+before this function is called, and remain locked on the exit.

@@ -1,0 +1,13 @@
+Function: long remove_mapping ( struct address_space * mapping , struct folio * folio )
+
+Attempt to remove a folio from its mapping.
+
+Parameters
+  struct address_space *mapping
+    The address space.
+  struct folio *folio
+    The folio to remove.
+
+Description
+  If the folio is dirty, under writeback or if someone else has a ref
+on it, removal will fail.

@@ -1,0 +1,27 @@
+Struct: struct drm_i915_query_perf_config
+
+
+
+Members
+  {unnamed_union}
+    anonymous
+  n_configs
+    When drm_i915_query_item.flags == DRM_I915_QUERY_PERF_CONFIG_LIST , i915 sets this fields to
+the number of configurations available.
+  config
+    When drm_i915_query_item.flags == DRM_I915_QUERY_PERF_CONFIG_DATA_FOR_ID , i915 will use the
+value in this field as configuration identifier to decide
+what data to write into config_ptr.
+  uuid
+    When drm_i915_query_item.flags == DRM_I915_QUERY_PERF_CONFIG_DATA_FOR_UUID , i915 will use the
+value in this field as configuration identifier to decide
+what data to write into config_ptr. String formatted like “ 08x-````04x-````04x-````04x-````012x ”
+  flags
+    Unused for now. Must be cleared to zero.
+  data
+    When drm_i915_query_item.flags == DRM_I915_QUERY_PERF_CONFIG_LIST ,
+i915 will write an array of __u64 of configuration identifiers. When drm_i915_query_item.flags == DRM_I915_QUERY_PERF_CONFIG_DATA ,
+i915 will write a struct drm_i915_perf_oa_config . If the following
+fields of struct drm_i915_perf_oa_config are not set to 0, i915 will
+write into the associated pointers the values of submitted when the
+configuration was created : drm_i915_perf_oa_config.n_mux_regs drm_i915_perf_oa_config.n_boolean_regs drm_i915_perf_oa_config.n_flex_regs

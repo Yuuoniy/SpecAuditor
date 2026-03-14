@@ -1,0 +1,3 @@
+Enum: enum positive_aop_returns
+
+aop return codes with specific semantics

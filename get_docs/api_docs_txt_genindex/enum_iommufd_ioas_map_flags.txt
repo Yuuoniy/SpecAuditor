@@ -1,0 +1,3 @@
+Enum: enum iommufd_ioas_map_flags
+
+Flags for map and copy

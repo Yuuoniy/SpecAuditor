@@ -1,0 +1,16 @@
+Function: struct usb_hcd * usb_create_hcd ( const struct hc_driver * driver , struct device * dev , const char * bus_name )
+
+create and initialize an HCD structure
+
+Parameters
+  const struct hc_driver *driver
+    HC driver that will use this hcd
+  struct device *dev
+    device for this HC, stored in hcd->self.controller
+  const char *bus_name
+    value to store in hcd->self.bus_name
+
+Description
+  Allocate a struct usb_hcd , with extra space at the end for the
+HC driver’s private data.  Initialize the generic members of the
+hcd structure.

@@ -1,0 +1,16 @@
+Function: bool queue_work_node ( int node , struct workqueue_struct * wq , struct work_struct * work )
+
+queue work on a “random” cpu for a given NUMA node
+
+Parameters
+  int node
+    NUMA node that we are targeting the work for
+  struct workqueue_struct *wq
+    workqueue to use
+  struct work_struct *work
+    work to queue
+
+Description
+  We queue the work to a “random” CPU within a given NUMA node. The basic
+idea here is to provide a way to somehow associate work with a given
+NUMA node.

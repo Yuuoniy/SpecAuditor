@@ -1,0 +1,10 @@
+Function: void dma_resv_unlock ( struct dma_resv * obj )
+
+unlock the reservation object
+
+Parameters
+  struct dma_resv *obj
+    the reservation object
+
+Description
+  Unlocks the reservation object following exclusive access.

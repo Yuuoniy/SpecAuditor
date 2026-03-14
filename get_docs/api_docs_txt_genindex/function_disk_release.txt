@@ -1,0 +1,10 @@
+Function: void disk_release ( struct device * dev )
+
+releases all allocated resources of the gendisk
+
+Parameters
+  struct device *dev
+    the device representing this disk
+
+Description
+  This function releases all allocated resources of the gendisk.

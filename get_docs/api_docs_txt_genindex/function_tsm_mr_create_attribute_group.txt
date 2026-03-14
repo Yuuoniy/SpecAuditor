@@ -1,0 +1,11 @@
+Function: const struct attribute_group * tsm_mr_create_attribute_group ( const struct tsm_measurements * tm )
+
+creates an attribute group for measurement registers (MRs)
+
+Parameters
+  const struct tsm_measurements *tm
+    pointer to struct tsm_measurements containing the MR definitions.
+
+Description
+  This function creates attributes corresponding to the MR definitions
+provided by tm->mrs .

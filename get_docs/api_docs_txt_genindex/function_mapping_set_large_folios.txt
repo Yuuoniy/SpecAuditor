@@ -1,0 +1,12 @@
+Function: void mapping_set_large_folios ( struct address_space * mapping )
+
+Indicate the file supports large folios.
+
+Parameters
+  struct address_space *mapping
+    The address space of the file.
+
+Description
+  The filesystem should call this function in its inode constructor to
+indicate that the VFS can use large folios to cache the contents of
+the file.

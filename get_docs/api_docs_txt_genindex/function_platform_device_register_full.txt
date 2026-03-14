@@ -1,0 +1,10 @@
+Function: struct platform_device * platform_device_register_full ( const struct platform_device_info * pdevinfo )
+
+add a platform-level device with resources and platform-specific data
+
+Parameters
+  const struct platform_device_info *pdevinfo
+    data used to create device
+
+Description
+  Returns struct platform_device pointer on success, or ERR_PTR() on error.

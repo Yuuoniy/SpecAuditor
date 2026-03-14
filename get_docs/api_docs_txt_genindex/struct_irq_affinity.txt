@@ -1,0 +1,22 @@
+Struct: struct irq_affinity
+
+Description for automatic irq affinity assignments
+
+Members
+  pre_vectors
+    Don’t apply affinity to pre_vectors at beginning of
+the MSI(-X) vector space
+  post_vectors
+    Don’t apply affinity to post_vectors at end of
+the MSI(-X) vector space
+  nr_sets
+    The number of interrupt sets for which affinity
+spreading is required
+  set_size
+    Array holding the size of each interrupt set
+  calc_sets
+    Callback for calculating the number and size
+of interrupt sets
+  priv
+    Private data for usage by calc_sets , usually a
+pointer to driver/device specific data.

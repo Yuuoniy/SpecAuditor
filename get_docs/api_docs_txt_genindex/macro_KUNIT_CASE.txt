@@ -1,0 +1,10 @@
+Macro: KUNIT_CASE
+
+
+
+Parameters
+  test_name
+    a reference to a test case function.
+
+Description
+  Takes a symbol for a function representing a test case and creates a struct kunit_case object from it. See the documentation for struct kunit_case for an example on how to use it.

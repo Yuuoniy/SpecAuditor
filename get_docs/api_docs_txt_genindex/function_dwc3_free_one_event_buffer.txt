@@ -1,0 +1,9 @@
+Function: void dwc3_free_one_event_buffer ( struct dwc3 * dwc , struct dwc3_event_buffer * evt )
+
+Frees one event buffer
+
+Parameters
+  struct dwc3 *dwc
+    Pointer to our controller context structure
+  struct dwc3_event_buffer *evt
+    Pointer to event buffer to be freed

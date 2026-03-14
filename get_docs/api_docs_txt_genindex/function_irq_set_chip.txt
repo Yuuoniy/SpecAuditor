@@ -1,0 +1,9 @@
+Function: int irq_set_chip ( unsigned int irq , const struct irq_chip * chip )
+
+set the irq chip for an irq
+
+Parameters
+  unsigned int irq
+    irq number
+  const struct irq_chip *chip
+    pointer to irq chip description structure

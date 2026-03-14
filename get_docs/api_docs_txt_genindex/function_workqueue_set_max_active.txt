@@ -1,0 +1,13 @@
+Function: void workqueue_set_max_active ( struct workqueue_struct * wq , int max_active )
+
+adjust max_active of a workqueue
+
+Parameters
+  struct workqueue_struct *wq
+    target workqueue
+  int max_active
+    new max_active value.
+
+Description
+  Set max_active of wq to max_active . See the alloc_workqueue() function
+comment.

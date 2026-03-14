@@ -1,0 +1,14 @@
+Function: int nand_default_block_markbad ( struct nand_chip * chip , loff_t ofs )
+
+[DEFAULT] mark a block bad via bad block marker
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+  loff_t ofs
+    offset from device start
+
+Description
+  This is the default implementation, which can be overridden by a hardware
+specific driver. It provides the details for writing a bad block marker to a
+block.

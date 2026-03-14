@@ -1,0 +1,14 @@
+Function: int drm_fb_helper_init ( struct drm_device * dev , struct drm_fb_helper * fb_helper )
+
+initialize a struct drm_fb_helper
+
+Parameters
+  struct drm_device *dev
+    drm device
+  struct drm_fb_helper *fb_helper
+    driver-allocated fbdev helper structure to initialize
+
+Description
+  This allocates the structures for the fbdev helper with the given limits.
+Note that this won’t yet touch the hardware (through the driver interfaces)
+nor register the fbdev. This is only done in drm_fb_helper_initial_config() to allow driver writes more control over the exact init sequence.

@@ -1,0 +1,66 @@
+Struct: struct cfg80211_assoc_request
+
+(Re)Association request data
+
+Members
+  bss
+    The BSS to associate with. If the call is successful the driver is
+given a reference that it must give back to cfg80211_send_rx_assoc() or to cfg80211_assoc_timeout() . To ensure proper refcounting, new
+association requests while already associating must be rejected.
+This also applies to the links.bss parameter, which is used instead
+of this one (it is NULL ) for MLO associations.
+  ie
+    Extra IEs to add to (Re)Association Request frame or NULL
+  prev_bssid
+    previous BSSID, if not NULL use reassociate frame. This is used
+to indicate a request to reassociate within the ESS instead of a request
+do the initial association with the ESS. When included, this is set to
+the BSSID of the current association, i.e., to the value that is
+included in the Current AP address field of the Reassociation Request
+frame.
+  ie_len
+    Length of ie buffer in octets
+  crypto
+    crypto settings
+  use_mfp
+    Use management frame protection (IEEE 802.11w) in this association
+  flags
+    See enum cfg80211_assoc_req_flags
+  supported_selectors
+    supported BSS selectors in IEEE 802.11 format
+(or NULL for no change).
+If NULL , then support for SAE_H2E should be assumed.
+  supported_selectors_len
+    number of supported BSS selectors
+  ht_capa
+    HT Capabilities over-rides.  Values set in ht_capa_mask
+will be used in ht_capa.  Un-supported values will be ignored.
+  ht_capa_mask
+    The bits of ht_capa which are to be used.
+  vht_capa
+    VHT capability override
+  vht_capa_mask
+    VHT capability mask indicating which fields to use
+  fils_kek
+    FILS KEK for protecting (Re)Association Request/Response frame or NULL if FILS is not used.
+  fils_kek_len
+    Length of fils_kek in octets
+  fils_nonces
+    FILS nonces (part of AAD) for protecting (Re)Association
+Request/Response frame or NULL if FILS is not used. This field starts
+with 16 octets of STA Nonce followed by 16 octets of AP Nonce.
+  s1g_capa
+    S1G capability override
+  s1g_capa_mask
+    S1G capability override mask
+  links
+    per-link information for MLO connections
+  ap_mld_addr
+    AP MLD address in case of MLO association request,
+valid iff link_id >= 0
+  link_id
+    >= 0 for MLO connections, where links are given, and indicates
+the link on which the association request should be sent
+  ext_mld_capa_ops
+    extended MLD capabilities and operations set by
+userspace for the association

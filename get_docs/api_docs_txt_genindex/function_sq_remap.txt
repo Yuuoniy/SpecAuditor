@@ -1,0 +1,18 @@
+Function: unsigned long sq_remap ( unsigned long phys , unsigned int size , const char * name , pgprot_t prot )
+
+Map a physical address through the Store Queues
+
+Parameters
+  unsigned long phys
+    Physical address of mapping.
+  unsigned int size
+    Length of mapping.
+  const char *name
+    User invoking mapping.
+  pgprot_t prot
+    Protection bits.
+
+Description
+  Remaps the physical address phys through the next available store queue
+address of size length. name is logged at boot time as well as through
+the sysfs interface.

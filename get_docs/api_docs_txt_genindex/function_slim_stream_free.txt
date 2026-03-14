@@ -1,0 +1,12 @@
+Function: int slim_stream_free ( struct slim_stream_runtime * stream )
+
+Free a SLIMbus Stream
+
+Parameters
+  struct slim_stream_runtime *stream
+    instance of slim stream runtime to free
+
+Description
+  This API will un allocate all the memory associated with
+slim stream runtime, user is not allowed to make an dereference
+to stream after this call.

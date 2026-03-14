@@ -1,0 +1,111 @@
+Struct: struct regulator_ops
+
+regulator operations.
+
+Members
+  list_voltage
+    Return one of the supported voltages, in microvolts; zero
+if the selector indicates a voltage that is unusable on this system;
+or negative errno.  Selectors range from zero to one less than
+regulator_desc.n_voltages.  Voltages may be reported in any order.
+  set_voltage
+    Set the voltage for the regulator within the range specified.
+The driver should select the voltage closest to min_uV.
+  map_voltage
+    Convert a voltage into a selector
+  set_voltage_sel
+    Set the voltage for the regulator using the specified
+selector.
+  get_voltage
+    Return the currently configured voltage for the regulator;
+return -ENOTRECOVERABLE if regulator can’t be read at
+bootup and hasn’t been set yet.
+  get_voltage_sel
+    Return the currently configured voltage selector for the
+regulator; return -ENOTRECOVERABLE if regulator can’t
+be read at bootup and hasn’t been set yet.
+  set_current_limit
+    Configure a limit for a current-limited regulator.
+The driver should select the current closest to max_uA.
+  get_current_limit
+    Get the configured limit for a current-limited regulator.
+  set_input_current_limit
+    Configure an input limit.
+  set_over_current_protection
+    Support enabling of and setting limits for over
+current situation detection. Detection can be configured for three
+levels of severity.
+  set_over_voltage_protection
+    Support enabling of and setting limits for over
+voltage situation detection. Detection can be configured for same
+severities as over current protection. Units of uV.
+  set_under_voltage_protection
+    Support enabling of and setting limits for
+under voltage situation detection. Detection can be configured for same
+severities as over current protection. Units of uV.
+  set_thermal_protection
+    Support enabling of and setting limits for over
+temperature situation detection.Detection can be configured for same
+severities as over current protection. Units of degree Kelvin.
+  set_active_discharge
+    Set active discharge enable/disable of regulators.
+  enable
+    Configure the regulator as enabled.
+  disable
+    Configure the regulator as disabled.
+  is_enabled
+    Return 1 if the regulator is enabled, 0 if not.
+May also return negative errno.
+  set_mode
+    Set the configured operating mode for the regulator.
+  get_mode
+    Get the configured operating mode for the regulator.
+  get_error_flags
+    Get the current error(s) for the regulator.
+  enable_time
+    Time taken for the regulator voltage output voltage to
+stabilise after being enabled, in microseconds.
+  set_ramp_delay
+    Set the ramp delay for the regulator. The driver should
+select ramp delay equal to or less than(closest) ramp_delay.
+  set_voltage_time
+    Time taken for the regulator voltage output voltage
+to stabilise after being set to a new value, in microseconds.
+The function receives the from and to voltage as input, it
+should return the worst case.
+  set_voltage_time_sel
+    Time taken for the regulator voltage output voltage
+to stabilise after being set to a new value, in microseconds.
+The function receives the from and to voltage selector as
+input, it should return the worst case.
+  set_soft_start
+    Enable soft start for the regulator.
+  get_status
+    Return actual (not as-configured) status of regulator, as a
+REGULATOR_STATUS value (or negative errno)
+  get_optimum_mode
+    Get the most efficient operating mode for the regulator
+when running with the specified parameters.
+  set_load
+    Set the load for the regulator.
+  set_bypass
+    Set the regulator in bypass mode.
+  get_bypass
+    Get the regulator bypass mode state.
+  set_suspend_voltage
+    Set the voltage for the regulator when the system
+is suspended.
+  set_suspend_enable
+    Mark the regulator as enabled when the system is
+suspended.
+  set_suspend_disable
+    Mark the regulator as disabled when the system is
+suspended.
+  set_suspend_mode
+    Set the operating mode for the regulator when the
+system is suspended.
+  resume
+    Resume operation of suspended regulator.
+  set_pull_down
+    Configure the regulator to pull down when the regulator
+is disabled.

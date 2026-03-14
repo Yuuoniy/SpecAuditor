@@ -1,0 +1,12 @@
+Function: unsigned long drm_sched_suspend_timeout ( struct drm_gpu_scheduler * sched )
+
+Suspend scheduler job timeout
+
+Parameters
+  struct drm_gpu_scheduler *sched
+    scheduler instance for which to suspend the timeout
+
+Description
+  Suspend the delayed work timeout for the scheduler. This is done by
+modifying the delayed work timeout to an arbitrary large value,
+MAX_SCHEDULE_TIMEOUT in this case.

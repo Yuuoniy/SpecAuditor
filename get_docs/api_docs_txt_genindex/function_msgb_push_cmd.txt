@@ -1,0 +1,13 @@
+Function: void msgb_push_cmd ( struct msgbuf * msgb , u8 seq , u16 rqid , const struct ssam_request * rqst )
+
+Push a SSH command frame with payload to the buffer.
+
+Parameters
+  struct msgbuf *msgb
+    The message buffer.
+  u8 seq
+    The sequence ID (SEQ) of the frame/packet.
+  u16 rqid
+    The request ID (RQID) of the request contained in the frame.
+  const struct ssam_request *rqst
+    The request to wrap in the frame.

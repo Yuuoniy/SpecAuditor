@@ -1,0 +1,19 @@
+Function: void mipi_dsi_dual_generic_write_multi ( struct mipi_dsi_multi_context * ctx , struct mipi_dsi_device * dsi1 , struct mipi_dsi_device * dsi2 , const void * payload , size_t size )
+
+mipi_dsi_generic_write_multi() for two dsi channels, one after the other
+
+Parameters
+  struct mipi_dsi_multi_context *ctx
+    Context for multiple DSI transactions
+  struct mipi_dsi_device *dsi1
+    First dsi channel to write buffer to
+  struct mipi_dsi_device *dsi2
+    Second dsi channel to write buffer to
+  const void *payload
+    Buffer containing the payload
+  size_t size
+    Size of payload buffer
+
+Description
+  A wrapper around mipi_dsi_generic_write_multi() that allows the user to
+conveniently write to two dsi channels, one after the other.

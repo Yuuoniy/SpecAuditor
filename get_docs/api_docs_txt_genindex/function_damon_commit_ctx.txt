@@ -1,0 +1,15 @@
+Function: int damon_commit_ctx ( struct damon_ctx * dst , struct damon_ctx * src )
+
+Commit parameters of a DAMON context to another.
+
+Parameters
+  struct damon_ctx *dst
+    The commit destination DAMON context.
+  struct damon_ctx *src
+    The commit source DAMON context.
+
+Description
+  This function copies user-specified parameters from src to dst and update
+the internal status and results accordingly.  Users should use this function
+for context-level parameters update of running context, instead of manual
+in-place updates.

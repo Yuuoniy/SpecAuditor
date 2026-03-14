@@ -1,0 +1,10 @@
+Function: int xe_pm_runtime_resume ( struct xe_device * xe )
+
+Waking up from D3hot/D3Cold
+
+Parameters
+  struct xe_device *xe
+    xe device instance
+
+Description
+  Returns 0 for success, negative error code otherwise.

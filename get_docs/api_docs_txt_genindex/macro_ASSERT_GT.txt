@@ -1,0 +1,12 @@
+Macro: ASSERT_GT
+
+
+
+Parameters
+  expected
+    expected value
+  seen
+    measured value
+
+Description
+  ASSERT_GT(expected, measured): expected > measured

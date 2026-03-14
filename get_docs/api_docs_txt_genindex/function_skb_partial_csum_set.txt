@@ -1,0 +1,15 @@
+Function: bool skb_partial_csum_set ( struct sk_buff * skb , u16 start , u16 off )
+
+set up and verify partial csum values for packet
+
+Parameters
+  struct sk_buff *skb
+    the skb to set
+  u16 start
+    the number of bytes after skb->data to start checksumming.
+  u16 off
+    the offset from start to place the checksum.
+
+Description
+  For untrusted partially-checksummed packets, we need to make sure the values
+for skb->csum_start and skb->csum_offset are valid so we don’t oops.

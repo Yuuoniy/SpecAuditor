@@ -1,0 +1,13 @@
+Macro: snd_pcm_group_for_each_entry
+
+
+
+Parameters
+  s
+    the iterator
+  substream
+    the substream
+
+Description
+  Iterate over the all linked substreams to the given substream .
+When substream isn’t linked with any others, this gives returns substream itself once.

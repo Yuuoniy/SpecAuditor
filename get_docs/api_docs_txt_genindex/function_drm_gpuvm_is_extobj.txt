@@ -1,0 +1,9 @@
+Function: bool drm_gpuvm_is_extobj ( struct drm_gpuvm * gpuvm , struct drm_gem_object * obj )
+
+indicates whether the given drm_gem_object is an external object
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm to check
+  struct drm_gem_object *obj
+    the drm_gem_object to check

@@ -1,0 +1,7 @@
+Function: void blk_trace_shutdown ( struct request_queue * q )
+
+stop and cleanup trace structures
+
+Parameters
+  struct request_queue *q
+    the request queue associated with the device

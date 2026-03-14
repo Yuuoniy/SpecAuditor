@@ -1,0 +1,7 @@
+Function: unsigned char tty_get_char_size ( unsigned int cflag )
+
+get size of a character
+
+Parameters
+  unsigned int cflag
+    termios cflag value

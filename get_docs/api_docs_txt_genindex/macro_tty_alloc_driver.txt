@@ -1,0 +1,9 @@
+Macro: tty_alloc_driver
+
+
+
+Parameters
+  lines
+    count of lines this driver can handle at most
+  flags
+    some of enum tty_driver_flag , will be set in driver->flags

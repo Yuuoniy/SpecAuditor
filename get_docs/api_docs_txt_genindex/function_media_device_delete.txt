@@ -1,0 +1,15 @@
+Function: void media_device_delete ( struct media_device * mdev , const char * module_name , struct module * owner )
+
+Release media device. Calls kref_put() .
+
+Parameters
+  struct media_device *mdev
+    struct media_device pointer
+  const char *module_name
+    should be filled with KBUILD_MODNAME
+  struct module *owner
+    struct module pointer THIS_MODULE for the driver. THIS_MODULE is null for a built-in driver.
+It is safe even when THIS_MODULE is null.
+
+Description
+  This interface should be called to put Media Device Instance kref.

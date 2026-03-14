@@ -1,0 +1,11 @@
+Function: int v4l2_m2m_prepare_buf ( struct file * file , struct v4l2_m2m_ctx * m2m_ctx , struct v4l2_buffer * buf )
+
+prepare a source or destination buffer, depending on the type
+
+Parameters
+  struct file *file
+    pointer to struct file
+  struct v4l2_m2m_ctx *m2m_ctx
+    m2m context assigned to the instance given by struct v4l2_m2m_ctx
+  struct v4l2_buffer *buf
+    pointer to struct v4l2_buffer

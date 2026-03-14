@@ -1,0 +1,14 @@
+Function: int amdgpu_irq_update ( struct amdgpu_device * adev , struct amdgpu_irq_src * src , unsigned int type )
+
+update hardware interrupt state
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device pointer
+  struct amdgpu_irq_src *src
+    interrupt source pointer
+  unsigned int type
+    type of interrupt
+
+Description
+  Updates interrupt state for the specific source (all ASICs).

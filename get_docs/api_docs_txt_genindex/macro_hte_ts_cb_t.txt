@@ -1,0 +1,13 @@
+Macro: hte_ts_cb_t
+
+Typedef : HTE timestamp data processing primary callback.
+
+Parameters
+  struct hte_ts_data *ts
+    HW timestamp data.
+  void *data
+    Client supplied data.
+
+Description
+  The callback is used to push timestamp data to the client and it is
+not allowed to sleep.

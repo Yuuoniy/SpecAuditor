@@ -1,0 +1,11 @@
+Function: int mei_hdcp_verify_lprime ( struct device * dev , struct hdcp_port_data * data , struct hdcp2_lc_send_lprime * rx_lprime )
+
+Verify lprime.
+
+Parameters
+  struct device *dev
+    device corresponding to the mei_cl_device
+  struct hdcp_port_data *data
+    Intel HW specific hdcp data
+  struct hdcp2_lc_send_lprime *rx_lprime
+    LC_Send_L_prime msg for ME FW verification

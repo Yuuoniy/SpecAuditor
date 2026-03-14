@@ -1,0 +1,16 @@
+Function: int ata_scsi_translate ( struct ata_device * dev , struct scsi_cmnd * cmd , ata_xlat_func_t xlat_func )
+
+Translate then issue SCSI command to ATA device
+
+Parameters
+  struct ata_device *dev
+    ATA device to which the command is addressed
+  struct scsi_cmnd *cmd
+    SCSI command to execute
+  ata_xlat_func_t xlat_func
+    Actor which translates cmd to an ATA taskfile
+
+Description
+  Our -> queuecommand() function has decided that the SCSI
+command issued can be directly translated into an ATA
+command, rather than handled internally.

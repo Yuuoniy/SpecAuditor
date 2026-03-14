@@ -1,0 +1,3 @@
+Function: enum atscmh_rs_frame_ensemble
+
+Reed Solomon(RS) frame ensemble.

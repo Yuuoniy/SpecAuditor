@@ -1,0 +1,18 @@
+Struct: struct clean_walk
+
+Private struct for the clean_record_pte function.
+
+Members
+  base
+    struct wp_walk we derive from
+  bitmap_pgoff
+    Address_space Page offset of the first bit in bitmap
+  bitmap
+    Bitmap with one bit for each page offset in the address_space range
+covered.
+  start
+    Address_space page offset of first modified pte relative
+to bitmap_pgoff
+  end
+    Address_space page offset of last modified pte relative
+to bitmap_pgoff

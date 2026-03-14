@@ -1,0 +1,16 @@
+Macro: DRM_IOCTL_DEF_DRV
+
+
+
+Parameters
+  ioctl
+    ioctl command suffix
+  _func
+    handler for the ioctl
+  _flags
+    a bitmask of enum drm_ioctl_flags
+
+Description
+  Small helper macro to create a struct drm_ioctl_desc entry. The ioctl
+command number is constructed by prepending DRM_IOCTL\_ and passing that
+to DRM_IOCTL_NR() .

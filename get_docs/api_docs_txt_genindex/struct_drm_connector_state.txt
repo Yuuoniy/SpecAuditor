@@ -1,0 +1,70 @@
+Struct: struct drm_connector_state
+
+mutable connector state
+
+Members
+  connector
+    backpointer to the connector
+  crtc
+    CRTC to connect connector to, NULL if disabled. Do not change this directly, use drm_atomic_set_crtc_for_connector() instead.
+  best_encoder
+    Used by the atomic helpers to select the encoder, through the drm_connector_helper_funcs.atomic_best_encoder or drm_connector_helper_funcs.best_encoder callbacks. This is also used in the atomic helpers to map encoders to their
+current and previous connectors, see drm_atomic_get_old_connector_for_encoder() and drm_atomic_get_new_connector_for_encoder() . NOTE: Atomic drivers must fill this out (either themselves or through
+helpers), for otherwise the GETCONNECTOR and GETENCODER IOCTLs will
+not return correct data to userspace.
+  link_status
+    Connector link_status to keep track of whether link is
+GOOD or BAD to notify userspace if retraining is necessary.
+  state
+    backpointer to global drm_atomic_state
+  commit
+    Tracks the pending commit to prevent use-after-free conditions. Is only set when crtc is NULL.
+  tv
+    TV connector state
+  self_refresh_aware
+    This tracks whether a connector is aware of the self refresh state.
+It should be set to true for those connector implementations which
+understand the self refresh state. This is needed since the crtc
+registers the self refresh helpers and it doesn’t know if the
+connectors downstream have implemented self refresh entry/exit. Drivers should set this to true in atomic_check if they know how to
+handle self_refresh requests.
+  picture_aspect_ratio
+    Connector property to control the
+HDMI infoframe aspect ratio setting. The DRM_MODE_PICTURE_ASPECT_ * values much match the
+values for enum hdmi_picture_aspect
+  content_type
+    Connector property to control the
+HDMI infoframe content type setting.
+The DRM_MODE_CONTENT_TYPE_ * values much
+match the values.
+  hdcp_content_type
+    Connector property to pass the type of
+protected content. This is most commonly used for HDCP.
+  scaling_mode
+    Connector property to control the
+upscaling, mostly used for built-in panels.
+  content_protection
+    Connector property to request content
+protection. This is most commonly used for HDCP.
+  colorspace
+    State variable for Connector property to request
+colorspace change on Sink. This is most commonly used to switch
+to wider color gamuts like BT2020.
+  writeback_job
+    Writeback job for writeback connectors Holds the framebuffer and out-fence for a writeback connector. As
+the writeback completion may be asynchronous to the normal commit
+cycle, the writeback job lifetime is managed separately from the
+normal atomic state by this object. See also: drm_writeback_queue_job() and drm_writeback_signal_completion()
+  max_requested_bpc
+    Connector property to limit the maximum bit
+depth of the pixels.
+  max_bpc
+    Connector max_bpc based on the requested max_bpc property
+and the connector bpc limitations obtained from edid.
+  privacy_screen_sw_state
+    See Standard Connector
+Properties
+  hdr_output_metadata
+    DRM blob property for HDR output metadata
+  hdmi
+    HDMI-related variable and properties. Filled by drm_atomic_helper_connector_hdmi_check() .

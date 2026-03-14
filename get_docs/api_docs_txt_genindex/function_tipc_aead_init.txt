@@ -1,0 +1,17 @@
+Function: int tipc_aead_init ( struct tipc_aead * * aead , struct tipc_aead_key * ukey , u8 mode )
+
+Initiate TIPC AEAD
+
+Parameters
+  struct tipc_aead **aead
+    returned new TIPC AEAD key handle pointer
+  struct tipc_aead_key *ukey
+    pointer to user key data
+  u8 mode
+    the key mode
+
+Description
+  Allocate a (list of) new cipher transformation (TFM) with the specific user
+key data if valid. The number of the allocated TFMs can be set via the sysfs
+“net/tipc/max_tfms” first.
+Also, all the other AEAD data are also initialized.

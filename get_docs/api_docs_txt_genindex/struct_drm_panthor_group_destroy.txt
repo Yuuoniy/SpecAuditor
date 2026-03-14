@@ -1,0 +1,9 @@
+Struct: struct drm_panthor_group_destroy
+
+Arguments passed to DRM_IOCTL_PANTHOR_GROUP_DESTROY
+
+Members
+  group_handle
+    Group to destroy
+  pad
+    Padding field, MBZ.

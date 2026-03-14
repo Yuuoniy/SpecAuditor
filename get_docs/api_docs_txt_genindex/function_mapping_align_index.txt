@@ -1,0 +1,14 @@
+Function: pgoff_t mapping_align_index ( const struct address_space * mapping , pgoff_t index )
+
+Align index for this mapping.
+
+Parameters
+  const struct address_space *mapping
+    The address_space.
+  pgoff_t index
+    The page index.
+
+Description
+  The index of a folio must be naturally aligned.  If you are adding a
+new folio to the page cache and need to know what index to give it,
+call this function.

@@ -1,0 +1,12 @@
+Function: struct drm_mm_node * drm_mm_scan_color_evict ( struct drm_mm_scan * scan )
+
+evict overlapping nodes on either side of hole
+
+Parameters
+  struct drm_mm_scan *scan
+    drm_mm scan with target hole
+
+Description
+  After completing an eviction scan and removing the selected nodes, we may
+need to remove a few more nodes from either side of the target hole if
+mm.color_adjust is being used.

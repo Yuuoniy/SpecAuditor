@@ -1,0 +1,7 @@
+Function: int genphy_c45_read_pma ( struct phy_device * phydev )
+
+read link speed etc from PMA
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct

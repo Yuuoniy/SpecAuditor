@@ -1,0 +1,11 @@
+Function: int of_reset_control_get_count ( struct device_node * node )
+
+Count number of resets available with a device
+
+Parameters
+  struct device_node *node
+    device node that contains ‘resets’.
+
+Description
+  Returns positive reset count on success, or error number on failure and
+on count being zero.

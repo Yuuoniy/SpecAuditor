@@ -1,0 +1,10 @@
+Function: void pci_remove_sysfs_dev_files ( struct pci_dev * pdev )
+
+cleanup PCI specific sysfs files
+
+Parameters
+  struct pci_dev *pdev
+    device whose entries we should free
+
+Description
+  Cleanup when pdev is removed from sysfs.

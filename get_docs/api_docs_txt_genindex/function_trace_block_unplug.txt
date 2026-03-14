@@ -1,0 +1,15 @@
+Function: void trace_block_unplug ( struct request_queue * q , unsigned int depth , bool explicit )
+
+release of operations requests in request queue
+
+Parameters
+  struct request_queue *q
+    request queue to unplug
+  unsigned int depth
+    number of requests just added to the queue
+  bool explicit
+    whether this was an explicit unplug, or one from schedule()
+
+Description
+  Unplug request queue q because device driver is scheduled to work
+on elements in the request queue.

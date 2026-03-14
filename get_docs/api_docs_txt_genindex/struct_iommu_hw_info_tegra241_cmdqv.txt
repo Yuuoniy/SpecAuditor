@@ -1,0 +1,15 @@
+Struct: struct iommu_hw_info_tegra241_cmdqv
+
+NVIDIA Tegra241 CMDQV Hardware Information (IOMMU_HW_INFO_TYPE_TEGRA241_CMDQV)
+
+Members
+  flags
+    Must be 0
+  version
+    Version number for the CMDQ-V HW for PARAM bits[03:00]
+  log2vcmdqs
+    Log2 of the total number of VCMDQs for PARAM bits[07:04]
+  log2vsids
+    Log2 of the total number of SID replacements for PARAM bits[15:12]
+  __reserved
+    Must be 0

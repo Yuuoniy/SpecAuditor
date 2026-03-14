@@ -1,0 +1,92 @@
+Struct: struct sock_common
+
+minimal network layer representation of sockets
+
+Members
+  {unnamed_union}
+    anonymous
+  skc_addrpair
+    8-byte-aligned __u64 union of skc_daddr & skc_rcv_saddr
+  {unnamed_struct}
+    anonymous
+  skc_daddr
+    Foreign IPv4 addr
+  skc_rcv_saddr
+    Bound local IPv4 addr
+  {unnamed_union}
+    anonymous
+  skc_hash
+    hash value used with various protocol lookup tables
+  skc_u16hashes
+    two u16 hash values used by UDP lookup tables
+  {unnamed_union}
+    anonymous
+  skc_portpair
+    __u32 union of skc_dport & skc_num
+  {unnamed_struct}
+    anonymous
+  skc_dport
+    placeholder for inet_dport/tw_dport
+  skc_num
+    placeholder for inet_num/tw_num
+  skc_family
+    network address family
+  skc_state
+    Connection state
+  skc_reuse
+    SO_REUSEADDR setting
+  skc_reuseport
+    SO_REUSEPORT setting
+  skc_ipv6only
+    socket is IPV6 only
+  skc_net_refcnt
+    socket is using net ref counting
+  skc_bound_dev_if
+    bound device index if != 0
+  {unnamed_union}
+    anonymous
+  skc_bind_node
+    bind hash linkage for various protocol lookup tables
+  skc_portaddr_node
+    second hash linkage for UDP/UDP-Lite protocol
+  skc_prot
+    protocol handlers inside a network family
+  skc_net
+    reference to the network namespace of this socket
+  skc_v6_daddr
+    IPV6 destination address
+  skc_v6_rcv_saddr
+    IPV6 source address
+  skc_cookie
+    socket’s cookie value
+  {unnamed_union}
+    anonymous
+  skc_flags
+    place holder for sk_flags SO_LINGER (l_onoff), SO_BROADCAST , SO_KEEPALIVE , SO_OOBINLINE settings, SO_TIMESTAMPING settings
+  skc_listener
+    connection request listener socket (aka rsk_listener)
+[ union with skc_flags ]
+  skc_tw_dr
+    (aka tw_dr) ptr to struct inet_timewait_death_row [ union with skc_flags ]
+  {unnamed_union}
+    anonymous
+  skc_node
+    main hash linkage for various protocol lookup tables
+  skc_nulls_node
+    main hash linkage for TCP/UDP/UDP-Lite protocol
+  skc_tx_queue_mapping
+    tx queue number for this connection
+  skc_rx_queue_mapping
+    rx queue number for this connection
+  {unnamed_union}
+    anonymous
+  skc_incoming_cpu
+    record/match cpu processing incoming packets
+  skc_rcv_wnd
+    (aka rsk_rcv_wnd) TCP receive window size (possibly scaled)
+[ union with skc_incoming_cpu ]
+  skc_tw_rcv_nxt
+    (aka tw_rcv_nxt) TCP window next expected seq number
+[ union with skc_incoming_cpu ]
+  skc_refcnt
+    reference count

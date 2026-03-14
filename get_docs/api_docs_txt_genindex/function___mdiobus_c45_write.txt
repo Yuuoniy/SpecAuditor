@@ -1,0 +1,18 @@
+Function: int __mdiobus_c45_write ( struct mii_bus * bus , int addr , int devad , u32 regnum , u16 val )
+
+Unlocked version of the mdiobus_write function
+
+Parameters
+  struct mii_bus *bus
+    the mii_bus struct
+  int addr
+    the phy address
+  int devad
+    device address to read
+  u32 regnum
+    register number to write
+  u16 val
+    value to write to regnum
+
+Description
+  Write a MDIO bus register. Caller must hold the mdio bus lock.

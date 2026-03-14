@@ -1,0 +1,20 @@
+Function: int of_parse_phandle_with_fixed_args ( const struct device_node * np , const char * list_name , int cell_count , int index , struct of_phandle_args * out_args )
+
+Find a node pointed by phandle in a list
+
+Parameters
+  const struct device_node *np
+    pointer to a device tree node containing a list
+  const char *list_name
+    property name that contains a list
+  int cell_count
+    number of argument cells following the phandle
+  int index
+    index of a phandle to parse out
+  struct of_phandle_args *out_args
+    optional pointer to output arguments structure (will be filled)
+
+Description
+  This function is useful to parse lists of phandles and their arguments.
+Returns 0 on success and fills out_args, on error returns appropriate
+errno value.

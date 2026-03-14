@@ -1,0 +1,12 @@
+Function: int media_pipeline_alloc_start ( struct media_pad * pad )
+
+Mark a pipeline as streaming
+
+Parameters
+  struct media_pad *pad
+    Starting pad
+
+Description
+  media_pipeline_alloc_start() is similar to media_pipeline_start() but instead
+of working on a given pipeline the function will use an existing pipeline if
+the pad is already part of a pipeline, or allocate a new pipeline.

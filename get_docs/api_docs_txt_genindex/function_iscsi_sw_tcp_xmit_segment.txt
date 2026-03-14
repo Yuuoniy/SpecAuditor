@@ -1,0 +1,14 @@
+Function: int iscsi_sw_tcp_xmit_segment ( struct iscsi_tcp_conn * tcp_conn , struct iscsi_segment * segment )
+
+transmit segment
+
+Parameters
+  struct iscsi_tcp_conn *tcp_conn
+    the iSCSI TCP connection
+  struct iscsi_segment *segment
+    the buffer to transmnit
+
+Description
+  This function transmits as much of the buffer as
+the network layer will accept, and returns the number of
+bytes transmitted.

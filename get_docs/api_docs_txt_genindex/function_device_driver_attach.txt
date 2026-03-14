@@ -1,0 +1,12 @@
+Function: int device_driver_attach ( const struct device_driver * drv , struct device * dev )
+
+attach a specific driver to a specific device
+
+Parameters
+  const struct device_driver *drv
+    Driver to attach
+  struct device *dev
+    Device to attach it to
+
+Description
+  Manually attach driver to a device. Will acquire both dev lock and dev->parent lock if needed. Returns 0 on success, -ERR on failure.

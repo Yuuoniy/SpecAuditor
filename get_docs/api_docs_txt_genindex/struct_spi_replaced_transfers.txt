@@ -1,0 +1,20 @@
+Struct: struct spi_replaced_transfers
+
+structure describing the spi_transfer replacements that have occurred so that they can get reverted
+
+Members
+  release
+    some extra release code to get executed prior to
+releasing this structure
+  extradata
+    pointer to some extra data if requested or NULL
+  replaced_transfers
+    transfers that have been replaced and which need
+to get restored
+  replaced_after
+    the transfer after which the replaced_transfers are to get re-inserted
+  inserted
+    number of transfers inserted
+  inserted_transfers
+    array of spi_transfers of array-size inserted ,
+that have been replacing replaced_transfers

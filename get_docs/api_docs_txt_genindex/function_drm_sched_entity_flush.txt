@@ -1,0 +1,14 @@
+Function: long drm_sched_entity_flush ( struct drm_sched_entity * entity , long timeout )
+
+Flush a context entity
+
+Parameters
+  struct drm_sched_entity *entity
+    scheduler entity
+  long timeout
+    time to wait in for Q to become empty in jiffies.
+
+Description
+  Splitting drm_sched_entity_fini() into two functions, The first one does the
+waiting, removes the entity from the runqueue and returns an error when the
+process was killed.

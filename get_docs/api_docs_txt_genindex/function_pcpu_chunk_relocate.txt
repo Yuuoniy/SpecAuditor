@@ -1,0 +1,15 @@
+Function: void pcpu_chunk_relocate ( struct pcpu_chunk * chunk , int oslot )
+
+put chunk in the appropriate chunk slot
+
+Parameters
+  struct pcpu_chunk *chunk
+    chunk of interest
+  int oslot
+    the previous slot it was on
+
+Description
+  This function is called after an allocation or free changed chunk .
+New slot according to the changed state is determined and chunk is
+moved to the slot.  Note that the reserved chunk is never put on
+chunk slots.

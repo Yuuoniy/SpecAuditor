@@ -1,0 +1,9 @@
+Function: struct tipc_bearer * tipc_bearer_find ( struct net * net , const char * name )
+
+locates bearer object with matching bearer name
+
+Parameters
+  struct net *net
+    the applicable net namespace
+  const char *name
+    bearer name to locate

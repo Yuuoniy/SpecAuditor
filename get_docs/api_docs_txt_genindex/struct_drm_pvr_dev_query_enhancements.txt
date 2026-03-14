@@ -1,0 +1,16 @@
+Struct: struct drm_pvr_dev_query_enhancements
+
+Container used to fetch information about optional enhancements supported by the device that require support in the user mode driver.
+
+Members
+  enhancements
+    A userspace address for the hardware enhancements
+__u32 array. These enhancements affect userspace and the kernel or firmware. They
+are disabled by default and require userspace to opt-in. The opt-in
+mechanism depends on the enhancement.
+  count
+    Length of enhancements (number of __u32).
+  _padding_a
+    Reserved. This field must be zeroed.
+  _padding_c
+    Reserved. This field must be zeroed.

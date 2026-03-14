@@ -1,0 +1,13 @@
+Function: struct channel_path_desc_fmt0 * ccw_device_get_chp_desc ( struct ccw_device * cdev , int chp_idx )
+
+return newly allocated channel-path descriptor
+
+Parameters
+  struct ccw_device *cdev
+    device to obtain the descriptor for
+  int chp_idx
+    index of the channel path
+
+Description
+  On success return a newly allocated copy of the channel-path description
+data associated with the given channel path. Return NULL on error.

@@ -1,0 +1,5 @@
+Macro: NTSYNC_IOC_CREATE_EVENT
+
+Create an event object. Takes a pointer to struct ntsync_event_args , which is used as follows: signaled If nonzero, the event is initially signaled, otherwise
+nonsignaled. manual If nonzero, the event is a manual-reset event, otherwise
+auto-reset. On success, returns a file descriptor the created event.

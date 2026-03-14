@@ -1,0 +1,28 @@
+Struct: struct vgasr_priv
+
+vga_switcheroo private data
+
+Members
+  active
+    whether vga_switcheroo is enabled.
+Prerequisite is the registration of two GPUs and a handler
+  delayed_switch_active
+    whether a delayed switch is pending
+  delayed_client_id
+    client to which a delayed switch is pending
+  debugfs_root
+    directory for vga_switcheroo debugfs interface
+  registered_clients
+    number of registered GPUs
+(counting only vga clients, not audio clients)
+  clients
+    list of registered clients
+  handler
+    registered handler
+  handler_flags
+    flags of registered handler
+  mux_hw_lock
+    protects mux state
+(in particular while DDC lines are temporarily switched)
+  old_ddc_owner
+    client to which DDC lines will be switched back on unlock

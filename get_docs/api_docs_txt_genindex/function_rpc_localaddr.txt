@@ -1,0 +1,15 @@
+Function: int rpc_localaddr ( struct rpc_clnt * clnt , struct sockaddr * buf , size_t buflen )
+
+discover local endpoint address for an RPC client
+
+Parameters
+  struct rpc_clnt *clnt
+    RPC client structure
+  struct sockaddr *buf
+    target buffer
+  size_t buflen
+    size of target buffer, in bytes
+
+Description
+  Returns zero and fills in “buf” and “buflen” if successful;
+otherwise, a negative errno is returned.

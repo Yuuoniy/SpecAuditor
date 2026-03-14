@@ -1,0 +1,22 @@
+Struct: struct ieee80211_tx_queue_params
+
+transmit queue configuration
+
+Members
+  txop
+    maximum burst time in units of 32 usecs, 0 meaning disabled
+  cw_min
+    minimum contention window [a value of the form
+2^n-1 in the range 1..32767]
+  cw_max
+    maximum contention window [like cw_min ]
+  aifs
+    arbitration interframe space [0..255]
+  acm
+    is mandatory admission control required for the access category
+  uapsd
+    is U-APSD mode enabled for the queue
+  mu_edca
+    is the MU EDCA configured
+  mu_edca_param_rec
+    MU EDCA Parameter Record for HE

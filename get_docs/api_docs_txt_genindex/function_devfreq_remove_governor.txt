@@ -1,0 +1,7 @@
+Function: int devfreq_remove_governor ( struct devfreq_governor * governor )
+
+Remove devfreq feature from a device.
+
+Parameters
+  struct devfreq_governor *governor
+    the devfreq governor to be removed

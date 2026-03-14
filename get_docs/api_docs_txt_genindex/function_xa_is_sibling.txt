@@ -1,0 +1,7 @@
+Function: bool xa_is_sibling ( const void * entry )
+
+Is the entry a sibling entry?
+
+Parameters
+  const void *entry
+    Entry retrieved from the XArray

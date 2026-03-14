@@ -1,0 +1,14 @@
+Function: int netfs_read_folio ( struct file * file , struct folio * folio )
+
+Helper to manage a read_folio request
+
+Parameters
+  struct file *file
+    The file to read from
+  struct folio *folio
+    The folio to read
+
+Description
+  Fulfil a read_folio request by drawing data from the cache if
+possible, or the netfs if not.  Space beyond the EOF is zero-filled.
+Multiple I/O requests from different sources will get munged together.

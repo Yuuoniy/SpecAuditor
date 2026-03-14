@@ -1,0 +1,23 @@
+Function: int rxrpc_kernel_recv_data ( struct socket * sock , struct rxrpc_call * call , struct iov_iter * iter , size_t * _len , bool want_more , u32 * _abort , u16 * _service )
+
+Allow a kernel service to receive data/info
+
+Parameters
+  struct socket *sock
+    The socket that the call exists on
+  struct rxrpc_call *call
+    The call to send data through
+  struct iov_iter *iter
+    The buffer to receive into
+  size_t *_len
+    The amount of data we want to receive (decreased on return)
+  bool want_more
+    True if more data is expected to be read
+  u32 *_abort
+    Where the abort code is stored if -ECONNABORTED is returned
+  u16 *_service
+    Where to store the actual service ID (may be upgraded)
+
+Description
+  Allow a kernel service to receive data and pick up information about the
+state of a call.  Note that *_abort should also be initialised to 0 .

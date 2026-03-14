@@ -1,0 +1,15 @@
+Function: int cxl_validate_cmd_from_user ( struct cxl_mbox_cmd * mbox_cmd , struct cxl_mailbox * cxl_mbox , const struct cxl_send_command * send_cmd )
+
+Check fields for CXL_MEM_SEND_COMMAND.
+
+Parameters
+  struct cxl_mbox_cmd *mbox_cmd
+    Sanitized and populated struct cxl_mbox_cmd .
+  struct cxl_mailbox *cxl_mbox
+    CXL mailbox context
+  const struct cxl_send_command *send_cmd
+    struct cxl_send_command copied in from userspace.
+
+Description
+  The result of this command is a fully validated command in mbox_cmd that is
+safe to send to the hardware.

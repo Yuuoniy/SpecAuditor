@@ -1,0 +1,15 @@
+Function: int device_for_each_child_reverse ( struct device * parent , void * data , device_iter_t fn )
+
+device child iterator in reversed order.
+
+Parameters
+  struct device *parent
+    parent struct device .
+  void *data
+    data for the callback.
+  device_iter_t fn
+    function to be called for each device.
+
+Description
+  Iterate over parent ’s child devices, and call fn for each,
+passing it data .

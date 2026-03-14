@@ -1,0 +1,11 @@
+Function: int aperture_remove_all_conflicting_devices ( const char * name )
+
+remove all existing framebuffers
+
+Parameters
+  const char *name
+    a descriptive name of the requesting driver
+
+Description
+  This function removes all graphics device drivers. Use this function on systems
+that can have their framebuffer located anywhere in memory.

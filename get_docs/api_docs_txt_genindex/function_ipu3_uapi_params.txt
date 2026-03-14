@@ -1,0 +1,21 @@
+Function: struct ipu3_uapi_params
+
+V4L2_META_FMT_IPU3_PARAMS
+
+Members
+  use
+    select which parameters to apply, see ipu3_uapi_flags
+  acc_param
+    ACC parameters, as specified by ipu3_uapi_acc_param
+  lin_vmem_params
+    linearization VMEM, as specified by ipu3_uapi_isp_lin_vmem_params
+  tnr3_vmem_params
+    tnr3 VMEM as specified by ipu3_uapi_isp_tnr3_vmem_params
+  xnr3_vmem_params
+    xnr3 VMEM as specified by ipu3_uapi_isp_xnr3_vmem_params
+  tnr3_dmem_params
+    tnr3 DMEM as specified by ipu3_uapi_isp_tnr3_params
+  xnr3_dmem_params
+    xnr3 DMEM as specified by ipu3_uapi_isp_xnr3_params
+  obgrid_param
+    obgrid parameters as specified by ipu3_uapi_obgrid_param

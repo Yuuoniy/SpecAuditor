@@ -1,0 +1,13 @@
+Function: struct page * * drm_gem_get_pages ( struct drm_gem_object * obj )
+
+helper to allocate backing pages for a GEM object from shmem
+
+Parameters
+  struct drm_gem_object *obj
+    obj in question
+
+Description
+  This reads the page-array of the shmem-backing storage of the given gem
+object. An array of pages is returned. If a page is not allocated or
+swapped-out, this will allocate/swap-in the required pages. Note that the
+whole object is covered by the page-array and pinned in memory.

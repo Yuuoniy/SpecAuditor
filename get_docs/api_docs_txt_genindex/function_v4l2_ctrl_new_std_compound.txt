@@ -1,0 +1,25 @@
+Function: struct v4l2_ctrl * v4l2_ctrl_new_std_compound ( struct v4l2_ctrl_handler * hdl , const struct v4l2_ctrl_ops * ops , u32 id , const union v4l2_ctrl_ptr p_def , const union v4l2_ctrl_ptr p_min , const union v4l2_ctrl_ptr p_max )
+
+Allocate and initialize a new standard V4L2 compound control.
+
+Parameters
+  struct v4l2_ctrl_handler *hdl
+    The control handler.
+  const struct v4l2_ctrl_ops *ops
+    The control ops.
+  u32 id
+    The control ID.
+  const union v4l2_ctrl_ptr p_def
+    The control’s default value.
+  const union v4l2_ctrl_ptr p_min
+    The control’s minimum value.
+  const union v4l2_ctrl_ptr p_max
+    The control’s maximum value.
+
+Description
+  Same as v4l2_ctrl_new_std() , but with support for compound controls.
+To fill in the p_def , p_min and p_max fields, use v4l2_ctrl_ptr_create() to convert a pointer to a const union v4l2_ctrl_ptr .
+Use v4l2_ctrl_ptr_create(NULL) if you want the default, minimum or maximum
+value of the compound control to be all zeroes.
+If the compound control does not set the V4L2_CTRL_FLAG_HAS_WHICH_MIN_MAX flag, then it does not has minimum and maximum values. In that case just use
+v4l2_ctrl_ptr_create(NULL) for the p_min and p_max arguments.

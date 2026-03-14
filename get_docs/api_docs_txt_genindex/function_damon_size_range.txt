@@ -1,0 +1,9 @@
+Function: struct damon_size_range
+
+Represents size for filter to operate on [ min , max ].
+
+Members
+  min
+    Min size (inclusive).
+  max
+    Max size (inclusive).

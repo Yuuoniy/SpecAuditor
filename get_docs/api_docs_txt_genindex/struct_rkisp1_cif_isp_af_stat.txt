@@ -1,0 +1,7 @@
+Struct: struct rkisp1_cif_isp_af_stat
+
+statistics auto focus data
+
+Members
+  window
+    AF measured value of window x

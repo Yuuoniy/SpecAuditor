@@ -1,0 +1,21 @@
+Function: bool pvr_ioctl_union_padding_check ( void * instance , size_t union_offset , size_t union_size , size_t member_size )
+
+Validate that the implicit padding between the end of a union member and the end of the union itself is zeroed.
+
+Parameters
+  void *instance
+    Pointer to the instance of the struct to validate.
+  size_t union_offset
+    Offset into the type of instance of the target union. Must
+be 64-bit aligned.
+  size_t union_size
+    Size of the target union in the type of instance . Must be
+64-bit aligned.
+  size_t member_size
+    Size of the target member in the target union specified by union_offset and union_size . It is assumed that the offset of the target
+member is zero relative to union_offset . Must be 64-bit aligned.
+
+Description
+  You probably want to use PVR_IOCTL_UNION_PADDING_CHECK() instead of calling
+this function directly, since that macro abstracts away much of the setup,
+and also provides some static validation. See its docs for details.

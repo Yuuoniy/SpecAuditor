@@ -1,0 +1,9 @@
+Function: void acct_collect ( long exitcode , int group_dead )
+
+collect accounting information into pacct_struct
+
+Parameters
+  long exitcode
+    task exit code
+  int group_dead
+    not 0, if this thread is the last one in the process.

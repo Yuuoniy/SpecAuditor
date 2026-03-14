@@ -1,0 +1,11 @@
+Struct: struct komeda_plane
+
+komeda instance of drm_plane
+
+Members
+  base
+    drm_plane
+  layer
+    represents available layer input pipelines for this plane. NOTE:
+the layer is not for a specific Layer, but indicate a group of
+Layers with same capabilities.

@@ -1,0 +1,10 @@
+Function: int drm_dp_read_sink_count ( struct drm_dp_aux * aux )
+
+Retrieve the sink count for a given sink
+
+Parameters
+  struct drm_dp_aux *aux
+    The DP AUX channel to use
+
+Description
+  See also: drm_dp_read_sink_count_cap()

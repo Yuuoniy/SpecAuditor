@@ -1,0 +1,15 @@
+Function: bool same_state_synchronize_rcu ( unsigned long oldstate1 , unsigned long oldstate2 )
+
+Are two old-state values identical?
+
+Parameters
+  unsigned long oldstate1
+    First old-state value.
+  unsigned long oldstate2
+    Second old-state value.
+
+Description
+  The two old-state values must have been obtained from either get_state_synchronize_rcu() , start_poll_synchronize_rcu() , or get_completed_synchronize_rcu() .  Returns true if the two values are
+identical and false otherwise.  This allows structures whose lifetimes
+are tracked by old-state values to push these values to a list header,
+allowing those structures to be slightly smaller.

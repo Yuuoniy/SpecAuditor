@@ -1,0 +1,19 @@
+Struct: struct padata_priv
+
+Represents one job
+
+Members
+  list
+    List entry, to attach to the padata lists.
+  pd
+    Pointer to the internal control structure.
+  cb_cpu
+    Callback cpu for serializatioon.
+  seq_nr
+    Sequence number of the parallelized data object.
+  info
+    Used to pass information from the parallel to the serial function.
+  parallel
+    Parallel execution function.
+  serial
+    Serial complete function.

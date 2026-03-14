@@ -1,0 +1,11 @@
+Function: void dma_resv_iter_end ( struct dma_resv_iter * cursor )
+
+cleanup a dma_resv_iter object
+
+Parameters
+  struct dma_resv_iter *cursor
+    the dma_resv_iter object which should be cleaned up
+
+Description
+  Make sure that the reference to the fence in the cursor is properly
+dropped.

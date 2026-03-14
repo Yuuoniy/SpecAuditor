@@ -1,0 +1,9 @@
+Function: void drm_gem_lru_init ( struct drm_gem_lru * lru , struct mutex * lock )
+
+initialize a LRU
+
+Parameters
+  struct drm_gem_lru *lru
+    The LRU to initialize
+  struct mutex *lock
+    The lock protecting the LRU

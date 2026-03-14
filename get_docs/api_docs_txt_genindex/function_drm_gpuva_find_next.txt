@@ -1,0 +1,12 @@
+Function: struct drm_gpuva * drm_gpuva_find_next ( struct drm_gpuvm * gpuvm , u64 end )
+
+find the drm_gpuva after the given address
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm to search in
+  u64 end
+    the given GPU VA’s end address
+
+Description
+  Find the adjacent drm_gpuva after the GPU VA with given end address.

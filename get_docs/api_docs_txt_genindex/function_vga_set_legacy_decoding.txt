@@ -1,0 +1,16 @@
+Function: void vga_set_legacy_decoding ( struct pci_dev * pdev , unsigned int decodes )
+
+
+
+Parameters
+  struct pci_dev *pdev
+    PCI device of the VGA card
+  unsigned int decodes
+    bit mask of what legacy regions the card decodes
+
+Description
+  Indicate to the arbiter if the card decodes legacy VGA IOs, legacy VGA
+Memory, both, or none. All cards default to both, the card driver (fbdev for
+example) should tell the arbiter if it has disabled legacy decoding, so the
+card can be left out of the arbitration process (and can be safe to take
+interrupts at any time.

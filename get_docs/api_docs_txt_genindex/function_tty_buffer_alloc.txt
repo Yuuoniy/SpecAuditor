@@ -1,0 +1,14 @@
+Function: struct tty_buffer * tty_buffer_alloc ( struct tty_port * port , size_t size )
+
+allocate a tty buffer
+
+Parameters
+  struct tty_port *port
+    tty port
+  size_t size
+    desired size (characters)
+
+Description
+  Allocate a new tty buffer to hold the desired number of characters. We
+round our buffers off in 256 character chunks to get better allocation
+behaviour.

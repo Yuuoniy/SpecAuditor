@@ -1,0 +1,10 @@
+Function: struct drm_panel * drm_panel_get ( struct drm_panel * panel )
+
+Acquire a panel reference
+
+Parameters
+  struct drm_panel *panel
+    DRM panel
+
+Description
+  This function increments the panel’s refcount.

@@ -1,0 +1,10 @@
+Function: bool skb_reset_transport_header_careful ( struct sk_buff * skb )
+
+conditionally reset transport header
+
+Parameters
+  struct sk_buff *skb
+    buffer to alter
+
+Description
+  Hardened version of skb_reset_transport_header() .

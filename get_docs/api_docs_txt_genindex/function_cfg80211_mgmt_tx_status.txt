@@ -1,0 +1,22 @@
+Function: void cfg80211_mgmt_tx_status ( struct wireless_dev * wdev , u64 cookie , const u8 * buf , size_t len , bool ack , gfp_t gfp )
+
+notification of TX status for management frame
+
+Parameters
+  struct wireless_dev *wdev
+    wireless device receiving the frame
+  u64 cookie
+    Cookie returned by cfg80211_ops:: mgmt_tx()
+  const u8 *buf
+    Management frame (header + body)
+  size_t len
+    length of the frame data
+  bool ack
+    Whether frame was acknowledged
+  gfp_t gfp
+    context flags
+
+Description
+  This function is called whenever a management frame was requested to be
+transmitted with cfg80211_ops:: mgmt_tx() to report the TX status of the
+transmission attempt.

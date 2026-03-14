@@ -1,0 +1,9 @@
+Function: void mem_cgroup_iter_break ( struct mem_cgroup * root , struct mem_cgroup * prev )
+
+abort a hierarchy walk prematurely
+
+Parameters
+  struct mem_cgroup *root
+    hierarchy root
+  struct mem_cgroup *prev
+    last visited hierarchy member as returned by mem_cgroup_iter()

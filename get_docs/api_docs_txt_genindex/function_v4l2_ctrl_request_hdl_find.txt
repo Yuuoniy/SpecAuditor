@@ -1,0 +1,13 @@
+Function: struct v4l2_ctrl_handler * v4l2_ctrl_request_hdl_find ( struct media_request * req , struct v4l2_ctrl_handler * parent )
+
+Find the control handler in the request
+
+Parameters
+  struct media_request *req
+    The request
+  struct v4l2_ctrl_handler *parent
+    The parent control handler (‘priv’ in media_request_object_find() )
+
+Description
+  This function finds the control handler in the request. It may return
+NULL if not found. When done, you must call v4l2_ctrl_request_hdl_put() with the returned handler pointer.

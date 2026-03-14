@@ -1,0 +1,17 @@
+Macro: DRM_SHADOW_PLANE_MAX_HEIGHT
+
+
+
+Members
+  base
+    plane state
+  fmtcnv_state
+    Format-conversion state Per-plane state for format conversion.
+Flags for copying shadow buffers into backend storage. Also holds
+temporary storage for format conversion.
+  map
+    Mappings of the plane’s framebuffer BOs in to kernel address space The memory mappings stored in map should be established in the plane’s
+prepare_fb callback and removed in the cleanup_fb callback.
+  data
+    Address of each framebuffer BO’s data The address of the data stored in each mapping. This is different
+for framebuffers with non-zero offset fields.

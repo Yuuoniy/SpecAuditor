@@ -1,0 +1,16 @@
+Function: void * idr_replace ( struct idr * idr , void * ptr , unsigned long id )
+
+replace pointer for given ID.
+
+Parameters
+  struct idr *idr
+    IDR handle.
+  void *ptr
+    New pointer to associate with the ID.
+  unsigned long id
+    ID to change.
+
+Description
+  Replace the pointer registered with an ID and return the old value.
+This function can be called under the RCU read lock concurrently with idr_alloc() and idr_remove() (as long as the ID being removed is not
+the one being replaced!).

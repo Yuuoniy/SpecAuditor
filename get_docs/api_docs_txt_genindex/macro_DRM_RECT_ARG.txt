@@ -1,0 +1,7 @@
+Macro: DRM_RECT_ARG
+
+
+
+Parameters
+  r
+    rectangle struct

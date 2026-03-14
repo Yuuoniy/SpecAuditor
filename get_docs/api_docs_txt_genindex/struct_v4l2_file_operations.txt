@@ -1,0 +1,27 @@
+Struct: struct v4l2_file_operations
+
+fs operations used by a V4L2 device
+
+Members
+  owner
+    pointer to struct module
+  read
+    operations needed to implement the read() syscall
+  write
+    operations needed to implement the write() syscall
+  poll
+    operations needed to implement the poll() syscall
+  unlocked_ioctl
+    operations needed to implement the ioctl() syscall
+  compat_ioctl32
+    operations needed to implement the ioctl() syscall for
+the special case where the Kernel uses 64 bits instructions, but
+the userspace uses 32 bits.
+  get_unmapped_area
+    called by the mmap() syscall, used when %!CONFIG_MMU
+  mmap
+    operations needed to implement the mmap() syscall
+  open
+    operations needed to implement the open() syscall
+  release
+    operations needed to implement the release() syscall

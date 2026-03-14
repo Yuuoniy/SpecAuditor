@@ -1,0 +1,13 @@
+Function: int vga_switcheroo_register_handler ( const struct vga_switcheroo_handler * handler , enum vga_switcheroo_handler_flags_t handler_flags )
+
+register handler
+
+Parameters
+  const struct vga_switcheroo_handler *handler
+    handler callbacks
+  enum vga_switcheroo_handler_flags_t handler_flags
+    handler flags
+
+Description
+  Register handler. Enable vga_switcheroo if two vga clients have already
+registered.

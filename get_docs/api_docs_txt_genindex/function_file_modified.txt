@@ -1,0 +1,11 @@
+Function: int file_modified ( struct file * file )
+
+handle mandated vfs changes when modifying a file
+
+Parameters
+  struct file *file
+    file that was modified
+
+Description
+  When file has been modified ensure that special
+file privileges are removed and time settings are updated.

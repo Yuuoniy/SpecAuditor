@@ -1,0 +1,10 @@
+Function: void dmam_pool_destroy ( struct dma_pool * pool )
+
+Managed dma_pool_destroy()
+
+Parameters
+  struct dma_pool *pool
+    dma pool that will be destroyed
+
+Description
+  Managed dma_pool_destroy() .

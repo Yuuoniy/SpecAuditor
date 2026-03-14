@@ -1,0 +1,11 @@
+Function: void ata_scsi_dev_rescan ( struct work_struct * work )
+
+initiate scsi_rescan_device()
+
+Parameters
+  struct work_struct *work
+    Pointer to ATA port to perform scsi_rescan_device()
+
+Description
+  After ATA pass thru (SAT) commands are executed successfully,
+libata need to propagate the changes to SCSI layer.

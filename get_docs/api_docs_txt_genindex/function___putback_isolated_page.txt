@@ -1,0 +1,15 @@
+Function: void __putback_isolated_page ( struct page * page , unsigned int order , int mt )
+
+Return a now-isolated page back where we got it
+
+Parameters
+  struct page *page
+    Page that was isolated
+  unsigned int order
+    Order of the isolated page
+  int mt
+    The page’s pageblock’s migratetype
+
+Description
+  This function is meant to return a page pulled from the free lists via
+__isolate_free_page back to the free lists they were pulled from.

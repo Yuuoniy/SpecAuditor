@@ -1,0 +1,11 @@
+Function: int xe_pcode_probe_early ( struct xe_device * xe )
+
+initializes PCODE
+
+Parameters
+  struct xe_device *xe
+    xe instance
+
+Description
+  This function checks the initialization status of PCODE
+To be called once only during early probe without locks.

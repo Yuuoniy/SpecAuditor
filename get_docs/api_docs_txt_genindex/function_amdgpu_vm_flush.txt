@@ -1,0 +1,14 @@
+Function: int amdgpu_vm_flush ( struct amdgpu_ring * ring , struct amdgpu_job * job , bool need_pipe_sync )
+
+hardware flush the vm
+
+Parameters
+  struct amdgpu_ring *ring
+    ring to use for flush
+  struct amdgpu_job *job
+    related job
+  bool need_pipe_sync
+    is pipe sync needed
+
+Description
+  Emit a VM flush when it is necessary.

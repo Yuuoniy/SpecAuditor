@@ -1,0 +1,33 @@
+Struct: struct fpga_image_info
+
+information specific to an FPGA image
+
+Members
+  flags
+    boolean flags as defined above
+  enable_timeout_us
+    maximum time to enable traffic through bridge (uSec)
+  disable_timeout_us
+    maximum time to disable traffic through bridge (uSec)
+  config_complete_timeout_us
+    maximum time for FPGA to switch to operating
+status in the write_complete op.
+  firmware_name
+    name of FPGA image firmware file
+  sgt
+    scatter/gather table containing FPGA image
+  buf
+    contiguous buffer containing FPGA image
+  count
+    size of buf
+  header_size
+    size of image header.
+  data_size
+    size of image data to be sent to the device. If not specified,
+whole image will be used. Header may be skipped in either case.
+  region_id
+    id of target region
+  dev
+    device that owns this
+  overlay
+    Device Tree overlay

@@ -1,0 +1,10 @@
+Function: bool blk_get_queue ( struct request_queue * q )
+
+increment the request_queue refcount
+
+Parameters
+  struct request_queue *q
+    the request_queue structure to increment the refcount for
+
+Description
+  Increment the refcount of the request_queue kobject.

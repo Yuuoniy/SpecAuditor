@@ -1,0 +1,19 @@
+Function: struct page * alloc_pages_nolock ( gfp_t gfp_flags , int nid , unsigned int order )
+
+opportunistic reentrant allocation from any context
+
+Parameters
+  gfp_t gfp_flags
+    GFP flags. Only __GFP_ACCOUNT allowed.
+  int nid
+    node to allocate from
+  unsigned int order
+    allocation order size
+
+Description
+  Allocates pages of a given order from the given node. This is safe to
+call from any context (from atomic, NMI, and also reentrant
+allocator -> tracepoint -> alloc_pages_nolock_noprof).
+Allocation is best effort and to be expected to fail easily so nobody should
+rely on the success. Failures are not reported via warn_alloc() .
+See always fail conditions below.

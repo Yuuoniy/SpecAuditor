@@ -1,0 +1,20 @@
+Struct: struct rkisp1_cif_isp_bls_config
+
+Configuration used by black level subtraction
+
+Members
+  enable_auto
+    Automatic mode activated means that the measured values
+are subtracted. Otherwise the fixed subtraction
+values will be subtracted.
+  en_windows
+    enabled window
+  bls_window1
+    Measurement window 1 size
+  bls_window2
+    Measurement window 2 size
+  bls_samples
+    Set amount of measured pixels for each Bayer position
+(A, B,C and D) to 2^bls_samples.
+  fixed_val
+    Fixed subtraction values

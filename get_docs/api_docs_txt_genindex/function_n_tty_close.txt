@@ -1,0 +1,12 @@
+Function: void n_tty_close ( struct tty_struct * tty )
+
+close the ldisc for this tty
+
+Parameters
+  struct tty_struct *tty
+    device
+
+Description
+  Called from the terminal layer when this line discipline is being shut down,
+either because of a close or becsuse of a discipline change. The function
+will not be called while other ldisc methods are in progress.

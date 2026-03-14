@@ -1,0 +1,13 @@
+Macro: kfifo_dma_in_finish
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used
+  len
+    number of bytes to received
+
+Description
+  This macro finishes a DMA IN operation. The in counter will be updated by
+the len parameter. No error checking will be done.

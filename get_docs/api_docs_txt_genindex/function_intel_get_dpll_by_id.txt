@@ -1,0 +1,9 @@
+Function: struct intel_dpll * intel_get_dpll_by_id ( struct intel_display * display , enum intel_dpll_id id )
+
+get a DPLL given its id
+
+Parameters
+  struct intel_display *display
+    intel_display device instance
+  enum intel_dpll_id id
+    pll id

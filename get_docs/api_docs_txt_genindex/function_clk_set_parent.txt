@@ -1,0 +1,12 @@
+Function: int clk_set_parent ( struct clk * clk , struct clk * parent )
+
+set the parent clock source for this clock
+
+Parameters
+  struct clk *clk
+    clock source
+  struct clk *parent
+    parent clock source
+
+Description
+  Returns success (0) or negative errno.

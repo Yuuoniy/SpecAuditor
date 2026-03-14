@@ -1,0 +1,7 @@
+Function: int genphy_c45_pma_baset1_read_master_slave ( struct phy_device * phydev )
+
+read forced master/slave configuration
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct

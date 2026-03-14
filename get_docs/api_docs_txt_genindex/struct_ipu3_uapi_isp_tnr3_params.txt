@@ -1,0 +1,25 @@
+Struct: struct ipu3_uapi_isp_tnr3_params
+
+Temporal noise reduction v3 parameters
+
+Members
+  knee_y1
+    Knee point TNR3 assumes standard deviation of Y,U and
+V at Y1 are TnrY1_Sigma_Y, U and V.
+  knee_y2
+    Knee point TNR3 assumes standard deviation of Y,U and
+V at Y2 are TnrY2_Sigma_Y, U and V.
+  maxfb_y
+    Max feedback gain for Y
+  maxfb_u
+    Max feedback gain for U
+  maxfb_v
+    Max feedback gain for V
+  round_adj_y
+    rounding Adjust for Y
+  round_adj_u
+    rounding Adjust for U
+  round_adj_v
+    rounding Adjust for V
+  ref_buf_select
+    selection of the reference frame buffer to be used.

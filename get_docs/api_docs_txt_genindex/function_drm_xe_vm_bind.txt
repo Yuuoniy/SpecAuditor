@@ -1,0 +1,31 @@
+Function: struct drm_xe_vm_bind
+
+Input of DRM_IOCTL_XE_VM_BIND
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  vm_id
+    The ID of the VM to bind to
+  exec_queue_id
+    exec_queue_id, must be of class DRM_XE_ENGINE_CLASS_VM_BIND
+and exec queue must have same vm_id. If zero, the default VM bind engine
+is used.
+  pad
+    MBZ
+  num_binds
+    number of binds in this IOCTL
+  {unnamed_union}
+    anonymous
+  bind
+    used if num_binds == 1
+  vector_of_binds
+    userptr to array of struct drm_xe_vm_bind_op if num_binds > 1
+  pad2
+    MBZ
+  num_syncs
+    amount of syncs to wait on
+  syncs
+    pointer to struct drm_xe_sync array
+  reserved
+    Reserved

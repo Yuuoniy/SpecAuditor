@@ -1,0 +1,15 @@
+Function: void cxl_walk_cel ( struct cxl_memdev_state * mds , size_t size , u8 * cel )
+
+Walk through the Command Effects Log.
+
+Parameters
+  struct cxl_memdev_state *mds
+    The driver data for the operation
+  size_t size
+    Length of the Command Effects Log.
+  u8 *cel
+    CEL
+
+Description
+  Iterate over each entry in the CEL and determine if the driver supports the
+command. If so, the command is enabled for the device and can be used later.

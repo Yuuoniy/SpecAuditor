@@ -1,0 +1,17 @@
+Function: void * vmalloc_huge_node ( unsigned long size , gfp_t gfp_mask , int node )
+
+allocate virtually contiguous memory, allow huge pages
+
+Parameters
+  unsigned long size
+    allocation size
+  gfp_t gfp_mask
+    flags for the page level allocator
+  int node
+    node to use for allocation or NUMA_NO_NODE
+
+Description
+  Allocate enough pages to cover size from the page level
+allocator and map them into contiguous kernel virtual space.
+If size is greater than or equal to PMD_SIZE, allow using
+huge pages for the memory

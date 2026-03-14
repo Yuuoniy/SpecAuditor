@@ -1,0 +1,11 @@
+Struct: struct dmx_stc
+
+Stores System Time Counter (STC) information.
+
+Members
+  num
+    input data: number of the STC, from 0 to N.
+  base
+    output: divisor for STC to get 90 kHz clock.
+  stc
+    output: stc in base * 90 kHz units.

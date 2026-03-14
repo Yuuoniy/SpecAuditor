@@ -1,0 +1,13 @@
+Struct: struct ipu3_uapi_bnr_static_config_thr_ctrl_shd_config
+
+Shading config
+
+Members
+  gr
+    Coefficient defines lens shading gain approximation for gr channel
+  r
+    Coefficient defines lens shading gain approximation for r channel
+  b
+    Coefficient defines lens shading gain approximation for b channel
+  gb
+    Coefficient defines lens shading gain approximation for gb channel

@@ -1,0 +1,7 @@
+Function: struct snd_soc_dapm_widget * snd_soc_dapm_kcontrol_to_widget ( struct snd_kcontrol * kcontrol )
+
+Returns the widget associated to a kcontrol
+
+Parameters
+  struct snd_kcontrol *kcontrol
+    The kcontrol

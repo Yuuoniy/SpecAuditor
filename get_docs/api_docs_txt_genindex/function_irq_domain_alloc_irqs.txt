@@ -1,0 +1,16 @@
+Function: int irq_domain_alloc_irqs ( struct irq_domain * domain , unsigned int nr_irqs , int node , void * arg )
+
+Allocate IRQs from domain
+
+Parameters
+  struct irq_domain *domain
+    domain to allocate from
+  unsigned int nr_irqs
+    number of IRQs to allocate
+  int node
+    NUMA node id for memory allocation
+  void *arg
+    domain specific argument
+
+Description
+  See __irq_domain_alloc_irqs() ’ documentation.

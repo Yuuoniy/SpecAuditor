@@ -1,0 +1,3 @@
+Enum: enum v4l2_video_device_flags
+
+Flags used by struct video_device

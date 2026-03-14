@@ -1,0 +1,13 @@
+Struct: struct w1_netlink_cmd
+
+holds the command and data
+
+Members
+  cmd
+    one of enum w1_commands
+  res
+    reserved
+  len
+    length of data following w1_netlink_cmd
+  data
+    start address of any following data

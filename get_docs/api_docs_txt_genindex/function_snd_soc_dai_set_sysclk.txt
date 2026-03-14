@@ -1,0 +1,16 @@
+Function: int snd_soc_dai_set_sysclk ( struct snd_soc_dai * dai , int clk_id , unsigned int freq , int dir )
+
+configure DAI system or master clock.
+
+Parameters
+  struct snd_soc_dai *dai
+    DAI
+  int clk_id
+    DAI specific clock ID
+  unsigned int freq
+    new clock frequency in Hz
+  int dir
+    new clock direction (SND_SOC_CLOCK_IN or SND_SOC_CLOCK_OUT)
+
+Description
+  Configures the DAI master (MCLK) or system (SYSCLK) clocking.

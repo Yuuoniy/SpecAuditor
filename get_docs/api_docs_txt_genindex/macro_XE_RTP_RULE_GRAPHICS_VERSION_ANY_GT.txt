@@ -1,0 +1,12 @@
+Macro: XE_RTP_RULE_GRAPHICS_VERSION_ANY_GT
+
+
+
+Parameters
+  ver__
+    Graphics IP version to match
+
+Description
+  Like XE_RTP_RULE_GRAPHICS_VERSION, but it matches even if the current GT
+being checked is not of the graphics type. It allows to add RTP entries to
+another GT when the device contains a Graphics IP with that version.

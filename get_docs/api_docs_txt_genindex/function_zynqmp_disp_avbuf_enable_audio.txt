@@ -1,0 +1,10 @@
+Function: void zynqmp_disp_avbuf_enable_audio ( struct zynqmp_disp * disp )
+
+Enable audio
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller
+
+Description
+  Enable all audio buffers with a non-live (memory) source.

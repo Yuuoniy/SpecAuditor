@@ -1,0 +1,13 @@
+Function: void dwc3_gadget_dctl_write_safe ( struct dwc3 * dwc , u32 value )
+
+write to DCTL safe from link state change
+
+Parameters
+  struct dwc3 *dwc
+    pointer to our context structure
+  u32 value
+    value to write to DCTL
+
+Description
+  Use this function when doing read-modify-write to DCTL. It will not
+send link state change request.

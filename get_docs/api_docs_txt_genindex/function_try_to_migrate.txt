@@ -1,0 +1,13 @@
+Function: void try_to_migrate ( struct folio * folio , enum ttu_flags flags )
+
+try to replace all page table mappings with swap entries
+
+Parameters
+  struct folio *folio
+    the folio to replace page table entries for
+  enum ttu_flags flags
+    action and flags
+
+Description
+  Tries to remove all the page table entries which are mapping this folio and
+replace them with special swap entries. Caller must hold the folio lock.

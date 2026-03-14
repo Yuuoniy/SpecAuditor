@@ -1,0 +1,11 @@
+Function: void drm_sched_wqueue_stop ( struct drm_gpu_scheduler * sched )
+
+stop scheduler submission
+
+Parameters
+  struct drm_gpu_scheduler *sched
+    scheduler instance
+
+Description
+  Stops the scheduler from pulling new jobs from entities. It also stops
+freeing jobs automatically through drm_sched_backend_ops. free_job() .

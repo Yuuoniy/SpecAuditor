@@ -1,0 +1,13 @@
+Function: void devfreq_update_interval ( struct devfreq * devfreq , unsigned int * delay )
+
+Update device devfreq monitoring interval
+
+Parameters
+  struct devfreq *devfreq
+    the devfreq instance.
+  unsigned int *delay
+    new polling interval to be set.
+
+Description
+  Helper function to set new load monitoring polling interval. Function
+to be called from governor in response to DEVFREQ_GOV_UPDATE_INTERVAL event.

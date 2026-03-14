@@ -1,0 +1,11 @@
+Function: void nand_deselect_target ( struct nand_chip * chip )
+
+Deselect the currently selected target
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+
+Description
+  Deselect the currently selected NAND target. The result of operations
+executed on chip after the target has been deselected is undefined.

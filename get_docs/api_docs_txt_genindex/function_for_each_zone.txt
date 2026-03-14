@@ -1,0 +1,11 @@
+Function: for_each_zone
+
+
+
+Parameters
+  zone
+    pointer to struct zone variable
+
+Description
+  The user only needs to declare the zone variable, for_each_zone
+fills it in.

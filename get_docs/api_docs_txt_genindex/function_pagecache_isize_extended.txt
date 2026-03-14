@@ -1,0 +1,19 @@
+Function: void pagecache_isize_extended ( struct inode * inode , loff_t from , loff_t to )
+
+update pagecache after extension of i_size
+
+Parameters
+  struct inode *inode
+    inode for which i_size was extended
+  loff_t from
+    original inode size
+  loff_t to
+    new inode size
+
+Description
+  Handle extension of inode size either caused by extending truncate or
+by write starting after current i_size.  We mark the page straddling
+current i_size RO so that page_mkwrite() is called on the first
+write access to the page.  The filesystem will update its per-block
+information before user writes to the page via mmap after the i_size
+has been changed.

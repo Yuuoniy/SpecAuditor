@@ -1,0 +1,12 @@
+Function: int iscsi_tcp_task_xmit ( struct iscsi_task * task )
+
+xmit normal PDU task
+
+Parameters
+  struct iscsi_task *task
+    iscsi command task
+
+Description
+  We’re expected to return 0 when everything was transmitted successfully,
+-EAGAIN if there’s still data in the queue, or != 0 for any other kind
+of error.

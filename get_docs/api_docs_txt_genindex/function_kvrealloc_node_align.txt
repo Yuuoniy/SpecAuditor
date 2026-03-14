@@ -1,0 +1,19 @@
+Function: void * kvrealloc_node_align ( const void * p , size_t size , unsigned long align , gfp_t flags , int nid )
+
+reallocate memory; contents remain unchanged
+
+Parameters
+  const void *p
+    object to reallocate memory for
+  size_t size
+    the size to reallocate
+  unsigned long align
+    desired alignment
+  gfp_t flags
+    the flags for the page level allocator
+  int nid
+    NUMA node id
+
+Description
+  If p is NULL , kvrealloc() behaves exactly like kvmalloc() . If size is 0
+and p is not a NULL pointer, the object pointed to is freed.

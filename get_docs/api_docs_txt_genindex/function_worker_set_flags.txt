@@ -1,0 +1,12 @@
+Function: void worker_set_flags ( struct worker * worker , unsigned int flags )
+
+set worker flags and adjust nr_running accordingly
+
+Parameters
+  struct worker *worker
+    self
+  unsigned int flags
+    flags to set
+
+Description
+  Set flags in worker->flags and adjust nr_running accordingly.

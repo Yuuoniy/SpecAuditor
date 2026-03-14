@@ -1,0 +1,14 @@
+Function: void vidtv_psi_sdt_service_assign ( struct vidtv_psi_table_sdt * sdt , struct vidtv_psi_table_sdt_service * service )
+
+Assigns the service loop to the SDT.
+
+Parameters
+  struct vidtv_psi_table_sdt *sdt
+    The SDT to assign to.
+  struct vidtv_psi_table_sdt_service *service
+    The service loop (one or more services)
+
+Description
+  This will free the previous service loop in the table.
+This will assign ownership of the service loop to the table, i.e. the table
+will free this service loop when a call to its destroy function is made.

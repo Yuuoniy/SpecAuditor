@@ -1,0 +1,11 @@
+Function: void xe_wa_process_gt ( struct xe_gt * gt )
+
+process GT workaround table
+
+Parameters
+  struct xe_gt *gt
+    GT instance to process workarounds for
+
+Description
+  Process GT workaround table for this platform, saving in gt all the
+workarounds that need to be applied at the GT level.

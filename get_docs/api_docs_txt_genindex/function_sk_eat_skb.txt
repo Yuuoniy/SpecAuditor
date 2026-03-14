@@ -1,0 +1,13 @@
+Function: void sk_eat_skb ( struct sock * sk , struct sk_buff * skb )
+
+Release a skb if it is no longer needed
+
+Parameters
+  struct sock *sk
+    socket to eat this skb from
+  struct sk_buff *skb
+    socket buffer to eat
+
+Description
+  This routine must be called with interrupts disabled or with the socket
+locked so that the sk_buff queue operation is ok.

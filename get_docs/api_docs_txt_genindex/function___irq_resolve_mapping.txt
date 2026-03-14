@@ -1,0 +1,14 @@
+Function: struct irq_desc * __irq_resolve_mapping ( struct irq_domain * domain , irq_hw_number_t hwirq , unsigned int * irq )
+
+Find a linux irq from a hw irq number.
+
+Parameters
+  struct irq_domain *domain
+    domain owning this hardware interrupt
+  irq_hw_number_t hwirq
+    hardware irq number in that domain space
+  unsigned int *irq
+    optional pointer to return the Linux irq if required
+
+Description
+  Returns the interrupt descriptor.

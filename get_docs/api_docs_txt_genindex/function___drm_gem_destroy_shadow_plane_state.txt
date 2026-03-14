@@ -1,0 +1,11 @@
+Function: void __drm_gem_destroy_shadow_plane_state ( struct drm_shadow_plane_state * shadow_plane_state )
+
+cleans up shadow-buffered plane state
+
+Parameters
+  struct drm_shadow_plane_state *shadow_plane_state
+    the shadow-buffered plane state
+
+Description
+  This function cleans up shadow-buffered plane state. Helpful for drivers that
+subclass struct drm_shadow_plane_state .

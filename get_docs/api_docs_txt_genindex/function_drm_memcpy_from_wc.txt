@@ -1,0 +1,15 @@
+Function: void drm_memcpy_from_wc ( struct iosys_map * dst , const struct iosys_map * src , unsigned long len )
+
+Perform the fastest available memcpy from a source that may be WC.
+
+Parameters
+  struct iosys_map *dst
+    The destination pointer
+  const struct iosys_map *src
+    The source pointer
+  unsigned long len
+    The size of the area o transfer in bytes
+
+Description
+  Tries an arch optimized memcpy for prefetching reading out of a WC region,
+and if no such beast is available, falls back to a normal memcpy.

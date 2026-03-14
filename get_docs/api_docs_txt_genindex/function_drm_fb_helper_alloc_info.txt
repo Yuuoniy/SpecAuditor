@@ -1,0 +1,13 @@
+Function: struct fb_info * drm_fb_helper_alloc_info ( struct drm_fb_helper * fb_helper )
+
+allocate fb_info and some of its members
+
+Parameters
+  struct drm_fb_helper *fb_helper
+    driver-allocated fbdev helper
+
+Description
+  A helper to alloc fb_info and the member cmap. Called by the driver
+within the struct drm_driver.fbdev_probe callback function. Drivers do
+not need to release the allocated fb_info structure themselves, this is
+automatically done when calling drm_fb_helper_fini() .

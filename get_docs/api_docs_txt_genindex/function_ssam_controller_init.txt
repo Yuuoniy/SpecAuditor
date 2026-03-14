@@ -1,0 +1,17 @@
+Function: int ssam_controller_init ( struct ssam_controller * ctrl , struct serdev_device * serdev )
+
+Initialize SSAM controller.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller to initialize.
+  struct serdev_device *serdev
+    The serial device representing the underlying data transport.
+
+Description
+  Initializes the given controller. Does neither start receiver nor
+transmitter threads. After this call, the controller has to be hooked up to
+the serdev core separately via struct serdev_device_ops , relaying calls to ssam_controller_receive_buf() and ssam_controller_write_wakeup() . Once the
+controller has been hooked up, transmitter and receiver threads may be
+started via ssam_controller_start() . These setup steps need to be completed
+before controller can be used for requests.

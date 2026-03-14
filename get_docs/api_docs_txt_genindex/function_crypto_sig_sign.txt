@@ -1,0 +1,18 @@
+Function: int crypto_sig_sign ( struct crypto_sig * tfm , const void * src , unsigned int slen , void * dst , unsigned int dlen )
+
+Invoke signing operation
+
+Parameters
+  struct crypto_sig *tfm
+    signature tfm handle allocated with crypto_alloc_sig()
+  const void *src
+    source buffer
+  unsigned int slen
+    source length
+  void *dst
+    destination obuffer
+  unsigned int dlen
+    destination length
+
+Description
+  Function invokes the specific signing operation for a given algorithm

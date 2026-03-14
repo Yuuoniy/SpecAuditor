@@ -1,0 +1,7 @@
+Function: bool PageHuge ( const struct page * page )
+
+Determine if the page belongs to hugetlbfs
+
+Parameters
+  const struct page *page
+    The page to test.

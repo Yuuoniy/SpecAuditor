@@ -1,0 +1,13 @@
+Function: u16 rio_get_host_deviceid_lock ( struct rio_mport * port , u8 hopcount )
+
+Reads the Host Device ID Lock CSR on a device
+
+Parameters
+  struct rio_mport *port
+    Master port to send transaction
+  u8 hopcount
+    Number of hops to the device
+
+Description
+  Used during enumeration to read the Host Device ID Lock CSR on a
+RIO device. Returns the value of the lock register.

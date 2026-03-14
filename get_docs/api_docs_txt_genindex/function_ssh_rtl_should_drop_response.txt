@@ -1,0 +1,11 @@
+Function: bool ssh_rtl_should_drop_response ( void )
+
+Error injection hook to drop request responses.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Useful to cause request transmission timeouts in the driver by dropping the
+response to a request.

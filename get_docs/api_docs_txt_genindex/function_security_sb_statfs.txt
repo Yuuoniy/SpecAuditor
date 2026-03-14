@@ -1,0 +1,10 @@
+Function: int security_sb_statfs ( struct dentry * dentry )
+
+Check if accessing fs stats is allowed
+
+Parameters
+  struct dentry *dentry
+    superblock handle
+
+Description
+  Check permission before obtaining filesystem statistics for the mnt mountpoint. dentry is a handle on the superblock for the filesystem.

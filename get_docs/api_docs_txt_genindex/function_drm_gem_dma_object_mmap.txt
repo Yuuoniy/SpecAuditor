@@ -1,0 +1,13 @@
+Function: int drm_gem_dma_object_mmap ( struct drm_gem_object * obj , struct vm_area_struct * vma )
+
+GEM object function for drm_gem_dma_mmap()
+
+Parameters
+  struct drm_gem_object *obj
+    GEM object
+  struct vm_area_struct *vma
+    VMA for the area to be mapped
+
+Description
+  This function wraps drm_gem_dma_mmap() . Drivers that employ the dma helpers should
+use it as their drm_gem_object_funcs.mmap handler.

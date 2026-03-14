@@ -1,0 +1,10 @@
+Function: void debugfs_file_put ( struct dentry * dentry )
+
+mark the end of file data access
+
+Parameters
+  struct dentry *dentry
+    the dentry object formerly passed to debugfs_file_get() .
+
+Description
+  Allow any ongoing concurrent call into debugfs_remove() or debugfs_remove_recursive() blocked by a former call to debugfs_file_get() to proceed and return to its caller.

@@ -1,0 +1,14 @@
+Function: void finish_wait ( struct wait_queue_head * wq_head , struct wait_queue_entry * wq_entry )
+
+clean up after waiting in a queue
+
+Parameters
+  struct wait_queue_head *wq_head
+    waitqueue waited on
+  struct wait_queue_entry *wq_entry
+    wait descriptor
+
+Description
+  Sets current thread back to running state and removes
+the wait descriptor from the given waitqueue if still
+queued.

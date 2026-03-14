@@ -1,0 +1,15 @@
+Function: intel_wakeref_t intel_runtime_pm_get_raw ( struct intel_runtime_pm * rpm )
+
+grab a raw runtime pm reference
+
+Parameters
+  struct intel_runtime_pm *rpm
+    the intel_runtime_pm structure
+
+Description
+  This is the unlocked version of intel_display_power_is_enabled() and should
+only be used from error capture and recovery code where deadlocks are
+possible.
+This function grabs a device-level runtime pm reference (mostly used for
+asynchronous PM management from display code) and ensures that it is powered
+up. Raw references are not considered during wakelock assert checks.

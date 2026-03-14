@@ -1,0 +1,15 @@
+Function: struct mctrl_gpios * mctrl_gpio_init ( struct uart_port * port , unsigned int idx )
+
+initialize uart gpios
+
+Parameters
+  struct uart_port *port
+    port to initialize gpios for
+  unsigned int idx
+    index of the gpio in the port ’s device
+
+Description
+  This will get the {cts,rts,...}-gpios from device tree if they are present
+and request them, set direction etc, and return an allocated structure. devm_* functions are used, so there’s no need to explicitly free.
+As this sets up the irq handling, make sure to not handle changes to the
+gpio input lines in your driver, too.

@@ -1,0 +1,7 @@
+Function: void scsi_proc_hostdir_rm ( const struct scsi_host_template * sht )
+
+remove directory in /proc for a scsi host
+
+Parameters
+  const struct scsi_host_template *sht
+    owner of directory

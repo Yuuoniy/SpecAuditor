@@ -1,0 +1,11 @@
+Struct: struct clk_notifier_data
+
+rate data to pass to the notifier callback
+
+Members
+  clk
+    struct clk * being changed
+  old_rate
+    previous rate of this clk
+  new_rate
+    new rate of this clk

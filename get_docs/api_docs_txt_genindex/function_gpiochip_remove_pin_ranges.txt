@@ -1,0 +1,7 @@
+Function: void gpiochip_remove_pin_ranges ( struct gpio_chip * gc )
+
+remove all the GPIO <-> pin mappings
+
+Parameters
+  struct gpio_chip *gc
+    the chip to remove all the mappings for

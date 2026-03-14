@@ -1,0 +1,11 @@
+Function: int devm_cxl_port_enumerate_dports ( struct cxl_port * port )
+
+enumerate downstream ports of the upstream port
+
+Parameters
+  struct cxl_port *port
+    cxl_port whose ->uport_dev is the upstream of dports to be enumerated
+
+Description
+  Returns a positive number of dports enumerated or a negative error
+code.

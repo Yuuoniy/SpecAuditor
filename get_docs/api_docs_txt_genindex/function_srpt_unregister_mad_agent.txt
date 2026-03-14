@@ -1,0 +1,9 @@
+Function: void srpt_unregister_mad_agent ( struct srpt_device * sdev , int port_cnt )
+
+unregister MAD callback functions
+
+Parameters
+  struct srpt_device *sdev
+    SRPT HCA pointer.
+  int port_cnt
+    number of ports with registered MAD

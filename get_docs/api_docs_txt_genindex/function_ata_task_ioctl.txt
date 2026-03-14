@@ -1,0 +1,13 @@
+Function: int ata_task_ioctl ( struct scsi_device * scsidev , void __user * arg )
+
+Handler for HDIO_DRIVE_TASK ioctl
+
+Parameters
+  struct scsi_device *scsidev
+    Device to which we are issuing command
+  void __user *arg
+    User provided data for issuing command
+
+Description
+  LOCKING:
+Defined by the SCSI layer.  We don’t really care.

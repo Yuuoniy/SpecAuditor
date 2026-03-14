@@ -1,0 +1,9 @@
+Function: bool drm_connector_has_possible_encoder ( struct drm_connector * connector , struct drm_encoder * encoder )
+
+check if the connector and encoder are associated with each other
+
+Parameters
+  struct drm_connector *connector
+    the connector
+  struct drm_encoder *encoder
+    the encoder

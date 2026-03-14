@@ -1,0 +1,13 @@
+Function: void ata_dump_id ( struct ata_device * dev , const u16 * id )
+
+IDENTIFY DEVICE info debugging output
+
+Parameters
+  struct ata_device *dev
+    device from which the information is fetched
+  const u16 *id
+    IDENTIFY DEVICE page to dump
+
+Description
+  Dump selected 16-bit words from the given IDENTIFY DEVICE
+page.

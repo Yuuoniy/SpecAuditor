@@ -1,0 +1,20 @@
+Function: int drm_dp_mst_topology_mgr_init ( struct drm_dp_mst_topology_mgr * mgr , struct drm_device * dev , struct drm_dp_aux * aux , int max_dpcd_transaction_bytes , int max_payloads , int conn_base_id )
+
+initialise a topology manager
+
+Parameters
+  struct drm_dp_mst_topology_mgr *mgr
+    manager struct to initialise
+  struct drm_device *dev
+    device providing this structure - for i2c addition.
+  struct drm_dp_aux *aux
+    DP helper aux channel to talk to this device
+  int max_dpcd_transaction_bytes
+    hw specific DPCD transaction limit
+  int max_payloads
+    maximum number of payloads this GPU can source
+  int conn_base_id
+    the connector object ID the MST device is connected to.
+
+Description
+  Return 0 for success, or negative error code on failure

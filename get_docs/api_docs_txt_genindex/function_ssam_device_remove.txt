@@ -1,0 +1,10 @@
+Function: void ssam_device_remove ( struct ssam_device * sdev )
+
+Remove a SSAM client device.
+
+Parameters
+  struct ssam_device *sdev
+    The device to remove.
+
+Description
+  Removes and unregisters the provided SSAM client device.

@@ -1,0 +1,15 @@
+Function: size_t vb2_write ( struct vb2_queue * q , const char __user * data , size_t count , loff_t * ppos , int nonblock )
+
+implements write() syscall logic.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  const char __user *data
+    pointed to target userspace buffer
+  size_t count
+    number of bytes to write
+  loff_t *ppos
+    file handle position tracking pointer
+  int nonblock
+    mode selector (1 means blocking calls, 0 means nonblocking)

@@ -1,0 +1,13 @@
+Function: void security_cred_getlsmprop ( const struct cred * c , struct lsm_prop * prop )
+
+Get the LSM data from a set of credentials
+
+Parameters
+  const struct cred *c
+    credentials
+  struct lsm_prop *prop
+    destination for the LSM data
+
+Description
+  Retrieve the security data of the cred structure c .  In case of
+failure, prop will be cleared.

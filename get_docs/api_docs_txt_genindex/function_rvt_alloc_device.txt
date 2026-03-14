@@ -1,0 +1,14 @@
+Function: struct rvt_dev_info * rvt_alloc_device ( size_t size , int nports )
+
+allocate rdi
+
+Parameters
+  size_t size
+    how big of a structure to allocate
+  int nports
+    number of ports to allocate array slots for
+
+Description
+  Use IB core device alloc to allocate space for the rdi which is assumed to be
+inside of the ib_device. Any extra space that drivers require should be
+included in size.

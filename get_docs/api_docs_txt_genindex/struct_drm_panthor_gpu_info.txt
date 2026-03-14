@@ -1,0 +1,48 @@
+Struct: struct drm_panthor_gpu_info
+
+GPU information
+
+Members
+  gpu_id
+    GPU ID.
+  gpu_rev
+    GPU revision.
+  csf_id
+    Command stream frontend ID.
+  l2_features
+    L2-cache features.
+  tiler_features
+    Tiler features.
+  mem_features
+    Memory features.
+  mmu_features
+    MMU features.
+  thread_features
+    Thread features.
+  max_threads
+    Maximum number of threads.
+  thread_max_workgroup_size
+    Maximum workgroup size.
+  thread_max_barrier_size
+    Maximum number of threads that can wait
+simultaneously on a barrier.
+  coherency_features
+    Coherency features.
+  texture_features
+    Texture features.
+  as_present
+    Bitmask encoding the number of address-space exposed by the MMU.
+  pad0
+    MBZ.
+  shader_present
+    Bitmask encoding the shader cores exposed by the GPU.
+  l2_present
+    Bitmask encoding the L2 caches exposed by the GPU.
+  tiler_present
+    Bitmask encoding the tiler units exposed by the GPU.
+  core_features
+    Used to discriminate core variants when they exist.
+  pad
+    MBZ.
+  gpu_features
+    Bitmask describing supported GPU-wide features

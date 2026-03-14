@@ -1,0 +1,15 @@
+Macro: memset_startat
+
+
+
+Parameters
+  obj
+    Address of target struct instance
+  v
+    Byte value to repeatedly write
+  member
+    struct member to start writing at
+
+Description
+  Note that if there is padding between the prior member and the target
+member, memset_after() should be used to clear the prior padding.

@@ -1,0 +1,13 @@
+Struct: struct drm_info_list
+
+debugfs info list entry
+
+Members
+  name
+    file name
+  show
+    Show callback. seq_file->private will be set to the struct drm_info_node corresponding to the instance of this info on a given struct drm_minor .
+  driver_features
+    Required driver features for this entry
+  data
+    Driver-private data, should not be device-specific.

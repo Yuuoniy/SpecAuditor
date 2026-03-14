@@ -1,0 +1,13 @@
+Function: void __drm_atomic_helper_private_obj_duplicate_state ( struct drm_private_obj * obj , struct drm_private_state * state )
+
+copy atomic private state
+
+Parameters
+  struct drm_private_obj *obj
+    CRTC object
+  struct drm_private_state *state
+    new private object state
+
+Description
+  Copies atomic state from a private objects’s current state and resets inferred values.
+This is useful for drivers that subclass the private state.

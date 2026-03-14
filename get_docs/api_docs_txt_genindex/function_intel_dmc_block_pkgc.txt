@@ -1,0 +1,15 @@
+Function: void intel_dmc_block_pkgc ( struct intel_display * display , enum pipe pipe , bool block )
+
+block PKG C-state
+
+Parameters
+  struct intel_display *display
+    display instance
+  enum pipe pipe
+    pipe which register use to block
+  bool block
+    block/unblock
+
+Description
+  This interface is target for Wa_16025596647 usage. I.e. to set/clear
+PIPEDMC_BLOCK_PKGC_SW_BLOCK_PKGC_ALWAYS bit in PIPEDMC_BLOCK_PKGC_SW register.

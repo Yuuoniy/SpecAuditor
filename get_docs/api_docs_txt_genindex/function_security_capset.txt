@@ -1,0 +1,19 @@
+Function: int security_capset ( struct cred * new , const struct cred * old , const kernel_cap_t * effective , const kernel_cap_t * inheritable , const kernel_cap_t * permitted )
+
+Set the capability sets for a process
+
+Parameters
+  struct cred *new
+    new credentials for the target process
+  const struct cred *old
+    current credentials of the target process
+  const kernel_cap_t *effective
+    effective capability set
+  const kernel_cap_t *inheritable
+    inheritable capability set
+  const kernel_cap_t *permitted
+    permitted capability set
+
+Description
+  Set the effective , inheritable , and permitted capability sets for the
+current process.

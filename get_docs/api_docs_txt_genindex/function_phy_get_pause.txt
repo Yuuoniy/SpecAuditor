@@ -1,0 +1,18 @@
+Function: void phy_get_pause ( struct phy_device * phydev , bool * tx_pause , bool * rx_pause )
+
+resolve negotiated pause modes
+
+Parameters
+  struct phy_device *phydev
+    phy_device struct
+  bool *tx_pause
+    pointer to bool to indicate whether transmit pause should be
+enabled.
+  bool *rx_pause
+    pointer to bool to indicate whether receive pause should be
+enabled.
+
+Description
+  Resolve and return the flow control modes according to the negotiation
+result. This includes checking that we are operating in full duplex mode.
+See linkmode_resolve_pause() for further details.

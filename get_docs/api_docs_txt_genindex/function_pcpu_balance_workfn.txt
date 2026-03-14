@@ -1,0 +1,12 @@
+Function: void pcpu_balance_workfn ( struct work_struct * work )
+
+manage the amount of free chunks and populated pages
+
+Parameters
+  struct work_struct *work
+    unused
+
+Description
+  For each chunk type, manage the number of fully free chunks and the number of
+populated pages.  An important thing to consider is when pages are freed and
+how they contribute to the global counts.

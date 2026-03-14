@@ -1,0 +1,20 @@
+Function: struct workqueue_struct * alloc_workqueue_lockdep_map ( const char * fmt , unsigned int flags , int max_active , struct lockdep_map * lockdep_map , ... )
+
+allocate a workqueue with user-defined lockdep_map
+
+Parameters
+  const char *fmt
+    printf format for the name of the workqueue
+  unsigned int flags
+    WQ_* flags
+  int max_active
+    max in-flight work items, 0 for default
+  struct lockdep_map *lockdep_map
+    user-defined lockdep_map
+  ...
+    args for fmt
+
+Description
+  Same as alloc_workqueue but with the a user-define lockdep_map. Useful for
+workqueues created with the same purpose and to avoid leaking a lockdep_map
+on each workqueue creation.

@@ -1,0 +1,7 @@
+Function: void irq_chip_release_resources_parent ( struct irq_data * data )
+
+Release resources on the parent interrupt
+
+Parameters
+  struct irq_data *data
+    Pointer to interrupt specific data

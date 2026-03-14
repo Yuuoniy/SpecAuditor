@@ -1,0 +1,14 @@
+Macro: genradix_for_each
+
+
+
+Parameters
+  _radix
+    genradix to iterate over
+  _iter
+    a genradix_iter to track current position
+  _p
+    pointer to genradix entry type
+
+Description
+  On every iteration, _p will point to the current entry, and _iter.pos will be the current entry’s index.

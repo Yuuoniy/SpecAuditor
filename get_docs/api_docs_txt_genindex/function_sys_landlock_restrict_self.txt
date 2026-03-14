@@ -1,0 +1,12 @@
+Function: long sys_landlock_restrict_self ( const int ruleset_fd , const __u32 flags )
+
+Enforce a ruleset on the calling thread
+
+Parameters
+  const int ruleset_fd
+    File descriptor tied to the ruleset to merge with the target.
+  const __u32 flags
+    Supported values:
+
+Description
+  LANDLOCK_RESTRICT_SELF_LOG_SAME_EXEC_OFF

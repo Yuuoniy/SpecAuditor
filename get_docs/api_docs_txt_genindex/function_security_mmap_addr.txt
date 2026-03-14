@@ -1,0 +1,10 @@
+Function: int security_mmap_addr ( unsigned long addr )
+
+Check if mmap’ing an address is allowed
+
+Parameters
+  unsigned long addr
+    address
+
+Description
+  Check permissions for a mmap operation at addr .

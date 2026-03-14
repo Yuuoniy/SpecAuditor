@@ -1,0 +1,13 @@
+Function: unsigned int crypto_shash_descsize ( struct crypto_shash * tfm )
+
+obtain the operational state size
+
+Parameters
+  struct crypto_shash *tfm
+    cipher handle
+
+Description
+  The size of the operational state the cipher needs during operation is
+returned for the hash referenced with the cipher handle. This size is
+required to calculate the memory requirements to allow the caller allocating
+sufficient memory for operational state.

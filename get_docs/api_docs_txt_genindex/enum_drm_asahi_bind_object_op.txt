@@ -1,0 +1,3 @@
+Enum: enum drm_asahi_bind_object_op
+
+Special object bind operation

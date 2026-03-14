@@ -1,0 +1,11 @@
+Function: unsigned int ata_scsi_var_len_cdb_xlat ( struct ata_queued_cmd * qc )
+
+SATL variable length CDB to Handler
+
+Parameters
+  struct ata_queued_cmd *qc
+    Command to be translated
+
+Description
+  Translate a SCSI variable length CDB to specified commands.
+It checks a service action value in CDB to call corresponding handler.

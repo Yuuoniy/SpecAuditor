@@ -1,0 +1,7 @@
+Function: void device_link_wait_removal ( void )
+
+Wait for ongoing devlink removal jobs to terminate
+
+Parameters
+  void
+    no arguments

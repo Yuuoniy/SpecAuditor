@@ -1,0 +1,11 @@
+Struct: struct drm_pvr_obj_array
+
+Container used to pass arrays of objects
+
+Members
+  stride
+    Stride of object struct. Used for versioning.
+  count
+    Number of objects in the array.
+  array
+    User pointer to an array of objects.

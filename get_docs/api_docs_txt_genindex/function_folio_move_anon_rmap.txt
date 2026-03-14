@@ -1,0 +1,14 @@
+Function: void folio_move_anon_rmap ( struct folio * folio , struct vm_area_struct * vma )
+
+move a folio to our anon_vma
+
+Parameters
+  struct folio *folio
+    The folio to move to our anon_vma
+  struct vm_area_struct *vma
+    The vma the folio belongs to
+
+Description
+  When a folio belongs exclusively to one process after a COW event,
+that folio can be moved into the anon_vma that belongs to just that
+process, so the rmap code will not search the parent or sibling processes.

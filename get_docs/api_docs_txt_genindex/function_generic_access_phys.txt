@@ -1,0 +1,20 @@
+Function: int generic_access_phys ( struct vm_area_struct * vma , unsigned long addr , void * buf , int len , int write )
+
+generic implementation for iomem mmap access
+
+Parameters
+  struct vm_area_struct *vma
+    the vma to access
+  unsigned long addr
+    userspace address, not relative offset within vma
+  void *buf
+    buffer to read/write
+  int len
+    length of transfer
+  int write
+    set to FOLL_WRITE when writing, otherwise reading
+
+Description
+  This is a generic implementation for vm_operations_struct.access for an
+iomem mapping. This callback is used by access_process_vm() when the vma is
+not page based.

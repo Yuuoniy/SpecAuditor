@@ -1,0 +1,11 @@
+Function: bool tipc_sk_filter_connect ( struct tipc_sock * tsk , struct sk_buff * skb , struct sk_buff_head * xmitq )
+
+check incoming message for a connection-based socket
+
+Parameters
+  struct tipc_sock *tsk
+    TIPC socket
+  struct sk_buff *skb
+    pointer to message buffer.
+  struct sk_buff_head *xmitq
+    for Nagle ACK if any

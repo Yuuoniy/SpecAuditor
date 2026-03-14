@@ -1,0 +1,16 @@
+Function: struct page * grab_cache_page_nowait ( struct address_space * mapping , pgoff_t index )
+
+returns locked page at given index in given cache
+
+Parameters
+  struct address_space *mapping
+    target address_space
+  pgoff_t index
+    the page index
+
+Description
+  Returns locked page at given index in given cache, creating it if
+needed, but do not wait if the page is locked or to reclaim memory.
+This is intended for speculative data generators, where the data can
+be regenerated if the page couldn’t be grabbed.  This routine should
+be safe to call while holding the lock for another page.

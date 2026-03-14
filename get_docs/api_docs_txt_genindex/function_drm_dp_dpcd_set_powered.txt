@@ -1,0 +1,15 @@
+Function: void drm_dp_dpcd_set_powered ( struct drm_dp_aux * aux , bool powered )
+
+Set whether the DP device is powered
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel; for convenience it’s OK to pass NULL here
+and the function will be a no-op.
+  bool powered
+    true if powered; false if not
+
+Description
+  If the endpoint device on the DP AUX bus is known to be powered down
+then this function can be called to make future transfers fail immediately
+instead of needing to time out.

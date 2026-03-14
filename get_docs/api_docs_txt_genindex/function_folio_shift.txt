@@ -1,0 +1,11 @@
+Function: unsigned int folio_shift ( const struct folio * folio )
+
+The size of the memory described by this folio.
+
+Parameters
+  const struct folio *folio
+    The folio.
+
+Description
+  A folio represents a number of bytes which is a power-of-two in size.
+This function tells you which power-of-two the folio is.  See also folio_size() and folio_order() .

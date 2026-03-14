@@ -1,0 +1,11 @@
+Function: void sb_end_intwrite ( struct super_block * sb )
+
+drop write access to a superblock for internal fs purposes
+
+Parameters
+  struct super_block *sb
+    the super we wrote to
+
+Description
+  Decrement fs-internal number of writers to the filesystem.  Wake up possible
+waiters wanting to freeze the filesystem.

@@ -1,0 +1,14 @@
+Function: void __ref kmemleak_free_part ( const void * ptr , size_t size )
+
+partially unregister a previously registered object
+
+Parameters
+  const void *ptr
+    pointer to the beginning or inside the object. This also
+represents the start of the range to be freed
+  size_t size
+    size to be unregistered
+
+Description
+  This function is called when only a part of a memory block is freed
+(usually from the bootmem allocator).

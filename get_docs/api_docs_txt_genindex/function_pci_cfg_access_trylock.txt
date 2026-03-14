@@ -1,0 +1,12 @@
+Function: bool pci_cfg_access_trylock ( struct pci_dev * dev )
+
+try to lock PCI config reads/writes
+
+Parameters
+  struct pci_dev *dev
+    pci device struct
+
+Description
+  Same as pci_cfg_access_lock, but will return 0 if access is
+already locked, 1 otherwise. This function can be used from
+atomic contexts.

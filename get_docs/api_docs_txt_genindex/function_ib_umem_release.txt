@@ -1,0 +1,7 @@
+Function: void ib_umem_release ( struct ib_umem * umem )
+
+release memory pinned with ib_umem_get
+
+Parameters
+  struct ib_umem *umem
+    umem struct to release

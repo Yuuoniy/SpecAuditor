@@ -1,0 +1,9 @@
+Function: bool strstarts ( const char * str , const char * prefix )
+
+does str start with prefix ?
+
+Parameters
+  const char *str
+    string to examine
+  const char *prefix
+    prefix to look for.

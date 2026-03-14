@@ -1,0 +1,13 @@
+Function: void v4l2_query_ext_ctrl_to_v4l2_queryctrl ( struct v4l2_queryctrl * to , const struct v4l2_query_ext_ctrl * from )
+
+Convert a qec to qe.
+
+Parameters
+  struct v4l2_queryctrl *to
+    The v4l2_queryctrl to write to.
+  const struct v4l2_query_ext_ctrl *from
+    The v4l2_query_ext_ctrl to read from.
+
+Description
+  This function is a helper to convert a v4l2_query_ext_ctrl into a
+v4l2_queryctrl.

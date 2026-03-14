@@ -1,0 +1,16 @@
+Function: int v4l2_ctrl_s_ctrl_compound ( struct v4l2_ctrl * ctrl , enum v4l2_ctrl_type type , const void * p )
+
+Helper function to set a compound control from within a driver.
+
+Parameters
+  struct v4l2_ctrl *ctrl
+    The control.
+  enum v4l2_ctrl_type type
+    The type of the data.
+  const void *p
+    The new compound payload.
+
+Description
+  This sets the control’s new compound payload safely by going through the
+control framework. This function will lock the control’s handler, so it
+cannot be used from within the v4l2_ctrl_ops functions.

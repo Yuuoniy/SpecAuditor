@@ -1,0 +1,11 @@
+Function: void amdgpu_vm_bo_relocated ( struct amdgpu_vm_bo_base * vm_bo )
+
+vm_bo is reloacted
+
+Parameters
+  struct amdgpu_vm_bo_base *vm_bo
+    vm_bo which is relocated
+
+Description
+  State for PDs/PTs which needs to update their parent PD.
+For the root PD, just move to idle state.

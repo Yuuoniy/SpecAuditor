@@ -1,0 +1,15 @@
+Function: ssize_t __generic_file_write_iter ( struct kiocb * iocb , struct iov_iter * from )
+
+write data to a file
+
+Parameters
+  struct kiocb *iocb
+    IO state structure (file, offset, etc.)
+  struct iov_iter *from
+    iov_iter with data to write
+
+Description
+  This function does all the work needed for actually writing data to a
+file. It does all basic checks, removes SUID from the file, updates
+modification times and calls proper subroutines depending on whether we
+do direct IO or a standard buffered write.

@@ -1,0 +1,23 @@
+Function: int proc_dostring ( const struct ctl_table * table , int write , void * buffer , size_t * lenp , loff_t * ppos )
+
+read a string sysctl
+
+Parameters
+  const struct ctl_table *table
+    the sysctl table
+  int write
+    TRUE if this is a write to the sysctl file
+  void *buffer
+    the user buffer
+  size_t *lenp
+    the size of the user buffer
+  loff_t *ppos
+    file position
+
+Description
+  Reads/writes a string from/to the user buffer. If the kernel
+buffer provided is not large enough to hold the string, the
+string is truncated. The copied string is NULL-terminated .
+If the string is being read by the user process, it is copied
+and a newline ‘n’ is added. It is truncated if the buffer is
+not large enough.

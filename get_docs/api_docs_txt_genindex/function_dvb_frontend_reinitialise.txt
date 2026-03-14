@@ -1,0 +1,11 @@
+Function: void dvb_frontend_reinitialise ( struct dvb_frontend * fe )
+
+forces a reinitialisation at the frontend
+
+Parameters
+  struct dvb_frontend *fe
+    pointer to struct dvb_frontend
+
+Description
+  Calls dvb_frontend_ops.init () and dvb_frontend_ops.tuner_ops . init() ,
+and resets SEC tone and voltage (for Satellite systems).

@@ -1,0 +1,12 @@
+Function: void list_rotate_to_front ( struct list_head * list , struct list_head * head )
+
+Rotate list to specific item.
+
+Parameters
+  struct list_head *list
+    The desired new front of the list.
+  struct list_head *head
+    The head of the list.
+
+Description
+  Rotates list so that list becomes the new front of the list.

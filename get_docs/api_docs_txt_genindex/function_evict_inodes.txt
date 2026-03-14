@@ -1,0 +1,13 @@
+Function: void evict_inodes ( struct super_block * sb )
+
+evict all evictable inodes for a superblock
+
+Parameters
+  struct super_block *sb
+    superblock to operate on
+
+Description
+  Make sure that no inodes with zero refcount are retained.  This is
+called by superblock shutdown after having SB_ACTIVE flag removed,
+so any inode reaching zero refcount during or after that call will
+be immediately evicted.

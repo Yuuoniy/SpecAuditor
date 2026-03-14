@@ -1,0 +1,11 @@
+Function: void iscsi_remove_conn ( struct iscsi_cls_conn * conn )
+
+remove iscsi class connection from sysfs
+
+Parameters
+  struct iscsi_cls_conn *conn
+    iscsi cls connection
+
+Description
+  Remove iscsi_cls_conn from sysfs, and wait for previous
+read/write of iscsi_cls_conn’s attributes in sysfs to finish.

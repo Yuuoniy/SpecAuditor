@@ -1,0 +1,22 @@
+Struct: struct nbcon_context
+
+Context for console acquire/release
+
+Members
+  console
+    The associated console
+  spinwait_max_us
+    Limit for spin-wait acquire
+  prio
+    Priority of the context
+  allow_unsafe_takeover
+    Allow performing takeover even if unsafe. Can
+be used only with NBCON_PRIO_PANIC prio . It
+might cause a system freeze when the console
+is used later.
+  backlog
+    Ringbuffer has pending records
+  pbufs
+    Pointer to the text buffer for this context
+  seq
+    The sequence number to print for this context

@@ -1,0 +1,7 @@
+Function: int xprt_unregister_transport ( struct xprt_class * transport )
+
+unregister a transport implementation
+
+Parameters
+  struct xprt_class *transport
+    transport to unregister

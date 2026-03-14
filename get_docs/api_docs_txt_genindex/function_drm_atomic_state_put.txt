@@ -1,0 +1,11 @@
+Function: void drm_atomic_state_put ( struct drm_atomic_state * state )
+
+release a reference to the atomic state
+
+Parameters
+  struct drm_atomic_state *state
+    The atomic state
+
+Description
+  This releases a reference to state which is freed after removing the
+final reference. No locking required and callable from any context.

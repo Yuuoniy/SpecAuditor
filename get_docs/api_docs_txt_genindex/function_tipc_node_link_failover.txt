@@ -1,0 +1,18 @@
+Function: void tipc_node_link_failover ( struct tipc_node * n , struct tipc_link * l , struct tipc_link * tnl , struct sk_buff_head * xmitq )
+
+start failover in case “half-failover”
+
+Parameters
+  struct tipc_node *n
+    tipc node structure
+  struct tipc_link *l
+    link peer endpoint failingover (- can be NULL)
+  struct tipc_link *tnl
+    tunnel link
+  struct sk_buff_head *xmitq
+    queue for messages to be xmited on tnl link later
+
+Description
+  This function is only called in a very special situation where link
+failover can be already started on peer node but not on this node.
+This can happen when e.g.:

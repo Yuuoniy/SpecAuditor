@@ -1,0 +1,10 @@
+Function: struct drm_modeset_lock
+
+used for locking modeset resources.
+
+Members
+  mutex
+    resource locking
+  head
+    used to hold its place on drm_atomi_state.locked list when
+part of an atomic update

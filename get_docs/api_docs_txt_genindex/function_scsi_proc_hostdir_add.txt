@@ -1,0 +1,10 @@
+Function: int scsi_proc_hostdir_add ( const struct scsi_host_template * sht )
+
+Create directory in /proc for a scsi host
+
+Parameters
+  const struct scsi_host_template *sht
+    owner of this directory
+
+Description
+  Sets sht->proc_dir to the new directory.

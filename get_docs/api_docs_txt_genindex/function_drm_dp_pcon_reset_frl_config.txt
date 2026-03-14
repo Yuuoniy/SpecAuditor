@@ -1,0 +1,10 @@
+Function: int drm_dp_pcon_reset_frl_config ( struct drm_dp_aux * aux )
+
+Re-Set HDMI Link configuration.
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+
+Description
+  Returns 0 if success, else returns negative error code.

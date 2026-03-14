@@ -1,0 +1,18 @@
+Function: struct media_intf_devnode * media_devnode_create ( struct media_device * mdev , u32 type , u32 flags , u32 major , u32 minor )
+
+creates and initializes a device node interface
+
+Parameters
+  struct media_device *mdev
+    pointer to struct media_device
+  u32 type
+    type of the interface, as given by include/uapi/linux/media.h ( seek for MEDIA_INTF_T_* ) macros.
+  u32 flags
+    Interface flags, as defined in include/uapi/linux/media.h ( seek for MEDIA_INTF_FL_* )
+  u32 major
+    Device node major number.
+  u32 minor
+    Device node minor number.
+
+Description
+  Note

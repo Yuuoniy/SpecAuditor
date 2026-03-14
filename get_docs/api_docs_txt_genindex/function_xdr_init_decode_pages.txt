@@ -1,0 +1,13 @@
+Function: void xdr_init_decode_pages ( struct xdr_stream * xdr , struct xdr_buf * buf , struct page * * pages , unsigned int len )
+
+Initialize an xdr_stream for decoding into pages
+
+Parameters
+  struct xdr_stream *xdr
+    pointer to xdr_stream struct
+  struct xdr_buf *buf
+    pointer to XDR buffer from which to decode data
+  struct page **pages
+    list of pages to decode into
+  unsigned int len
+    length in bytes of buffer in pages

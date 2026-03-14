@@ -1,0 +1,7 @@
+Struct: bool damos_filter_for_ops ( enum damos_filter_type type )
+
+Return if the filter is ops-hndled one.
+
+Parameters
+  enum damos_filter_type type
+    type of the filter.

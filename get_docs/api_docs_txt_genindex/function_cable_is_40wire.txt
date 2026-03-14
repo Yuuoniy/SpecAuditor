@@ -1,0 +1,14 @@
+Function: int cable_is_40wire ( struct ata_port * ap )
+
+40/80/SATA decider
+
+Parameters
+  struct ata_port *ap
+    port to consider
+
+Description
+  This function encapsulates the policy for speed management
+in one place. At the moment we don’t cache the result but
+there is a good case for setting ap->cbl to the result when
+we are called with unknown cables (and figuring out if it
+impacts hotplug at all).

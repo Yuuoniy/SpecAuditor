@@ -1,0 +1,12 @@
+Struct: struct dmx_filter
+
+Specifies a section header filter.
+
+Members
+  filter
+    bit array with bits to be matched at the section header.
+  mask
+    bits that are valid at the filter bit array.
+  mode
+    mode of match: if bit is zero, it will match if equal (positive
+match); if bit is one, it will match if the bit is negated.

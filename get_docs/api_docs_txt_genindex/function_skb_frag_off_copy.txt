@@ -1,0 +1,9 @@
+Function: void skb_frag_off_copy ( skb_frag_t * fragto , const skb_frag_t * fragfrom )
+
+Sets the offset of a skb fragment from another fragment
+
+Parameters
+  skb_frag_t *fragto
+    skb fragment where offset is set
+  const skb_frag_t *fragfrom
+    skb fragment offset is copied from

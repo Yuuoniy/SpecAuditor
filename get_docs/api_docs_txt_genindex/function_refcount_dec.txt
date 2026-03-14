@@ -1,0 +1,11 @@
+Function: void refcount_dec ( refcount_t * r )
+
+decrement a refcount
+
+Parameters
+  refcount_t *r
+    the refcount
+
+Description
+  Similar to atomic_dec() , it will WARN on underflow and fail to decrement
+when saturated at REFCOUNT_SATURATED.

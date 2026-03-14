@@ -1,0 +1,15 @@
+Function: void * mas_prev_range ( struct ma_state * mas , unsigned long min )
+
+Advance to the previous range
+
+Parameters
+  struct ma_state *mas
+    The maple state
+  unsigned long min
+    The minimum value to check.
+
+Description
+  Sets mas->index and mas->last to the range.
+Must hold rcu_read_lock or the write lock.
+Will reset mas to ma_start if the node is ma_none.  Will stop on not
+searchable nodes.

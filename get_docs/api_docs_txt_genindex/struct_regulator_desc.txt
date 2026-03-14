@@ -1,0 +1,166 @@
+Struct: struct regulator_desc
+
+Static regulator descriptor
+
+Members
+  name
+    Identifying name for the regulator.
+  supply_name
+    Identifying the regulator supply
+  of_match
+    Name used to identify regulator in DT.
+  of_match_full_name
+    A flag to indicate that the of_match string, if
+present, should be matched against the node full_name.
+  regulators_node
+    Name of node containing regulator definitions in DT.
+  of_parse_cb
+    Optional callback called only if of_match is present.
+Will be called for each regulator parsed from DT, during
+init_data parsing.
+The regulator_config passed as argument to the callback will
+be a copy of config passed to regulator_register, valid only
+for this particular call. Callback may freely change the
+config but it cannot store it for later usage.
+Callback should return 0 on success or negative ERRNO
+indicating failure.
+  init_cb
+    Optional callback called after the parsing of init_data.
+Allows the regulator to perform runtime init if necessary,
+such as synching the regulator and the parsed constraints.
+Callback should return 0 on success or negative ERRNO
+indicating failure.
+  id
+    Numerical identifier for the regulator.
+  continuous_voltage_range
+    Indicates if the regulator can set any
+voltage within constrains range.
+  n_voltages
+    Number of selectors available for ops. list_voltage() .
+  n_current_limits
+    Number of selectors available for current limits
+  ops
+    Regulator operations table.
+  irq
+    Interrupt number for the regulator.
+  type
+    Indicates if the regulator is a voltage or current regulator.
+  owner
+    Module providing the regulator, used for refcounting.
+  min_uV
+    Voltage given by the lowest selector (if linear mapping)
+  uV_step
+    Voltage increase with each selector (if linear mapping)
+  linear_min_sel
+    Minimal selector for starting linear mapping
+  fixed_uV
+    Fixed voltage of rails.
+  ramp_delay
+    Time to settle down after voltage change (unit: uV/us)
+  min_dropout_uV
+    The minimum dropout voltage this regulator can handle
+  linear_ranges
+    A constant table of possible voltage ranges.
+  linear_range_selectors_bitfield
+    A constant table of voltage range
+selectors as bitfield values. If
+pickable ranges are used each range
+must have corresponding selector here.
+  n_linear_ranges
+    Number of entries in the linear_ranges (and in
+linear_range_selectors_bitfield if used) table(s).
+  volt_table
+    Voltage mapping table (if table based mapping)
+  curr_table
+    Current limit mapping table (if table based mapping)
+  vsel_range_reg
+    Register for range selector when using pickable ranges
+and regulator_map_*_voltage_*_pickable functions.
+  vsel_range_mask
+    Mask for register bitfield used for range selector
+  range_applied_by_vsel
+    A flag to indicate that changes to vsel_range_reg
+are only effective after vsel_reg is written
+  vsel_reg
+    Register for selector when using regulator_map_*_voltage_*
+  vsel_mask
+    Mask for register bitfield used for selector
+  vsel_step
+    Specify the resolution of selector stepping when setting
+voltage. If 0, then no stepping is done (requested selector is
+set directly), if >0 then the regulator API will ramp the
+voltage up/down gradually each time increasing/decreasing the
+selector by the specified step value.
+  csel_reg
+    Register for current limit selector using regmap set_current_limit
+  csel_mask
+    Mask for register bitfield used for current limit selector
+  apply_reg
+    Register for initiate voltage change on the output when
+using regulator_set_voltage_sel_regmap
+  apply_bit
+    Register bitfield used for initiate voltage change on the
+output when using regulator_set_voltage_sel_regmap
+  enable_reg
+    Register for control when using regmap enable/disable ops
+  enable_mask
+    Mask for control when using regmap enable/disable ops
+  enable_val
+    Enabling value for control when using regmap enable/disable ops
+  disable_val
+    Disabling value for control when using regmap enable/disable ops
+  enable_is_inverted
+    A flag to indicate set enable_mask bits to disable
+when using regulator_enable_regmap and friends APIs.
+  bypass_reg
+    Register for control when using regmap set_bypass
+  bypass_mask
+    Mask for control when using regmap set_bypass
+  bypass_val_on
+    Enabling value for control when using regmap set_bypass
+  bypass_val_off
+    Disabling value for control when using regmap set_bypass
+  active_discharge_on
+    Disabling value for control when using regmap
+set_active_discharge
+  active_discharge_off
+    Enabling value for control when using regmap
+set_active_discharge
+  active_discharge_mask
+    Mask for control when using regmap
+set_active_discharge
+  active_discharge_reg
+    Register for control when using regmap
+set_active_discharge
+  soft_start_reg
+    Register for control when using regmap set_soft_start
+  soft_start_mask
+    Mask for control when using regmap set_soft_start
+  soft_start_val_on
+    Enabling value for control when using regmap
+set_soft_start
+  pull_down_reg
+    Register for control when using regmap set_pull_down
+  pull_down_mask
+    Mask for control when using regmap set_pull_down
+  pull_down_val_on
+    Enabling value for control when using regmap
+set_pull_down
+  ramp_reg
+    Register for controlling the regulator ramp-rate.
+  ramp_mask
+    Bitmask for the ramp-rate control register.
+  ramp_delay_table
+    Table for mapping the regulator ramp-rate values. Values
+should be given in units of V/S (uV/uS). See the regulator_set_ramp_delay_regmap() .
+  n_ramp_values
+    number of elements at ramp_delay_table .
+  enable_time
+    Time taken for initial enable of regulator (in uS).
+  off_on_delay
+    guard time (in uS), before re-enabling a regulator
+  poll_enabled_time
+    The polling interval (in uS) to use while checking that
+the regulator was actually enabled. Max upto enable_time.
+  of_map_mode
+    Maps a hardware mode defined in a DeviceTree to a standard mode

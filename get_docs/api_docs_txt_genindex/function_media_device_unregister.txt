@@ -1,0 +1,11 @@
+Function: void media_device_unregister ( struct media_device * mdev )
+
+Unregisters a media device element
+
+Parameters
+  struct media_device *mdev
+    pointer to struct media_device
+
+Description
+  It is safe to call this function on an unregistered (but initialised)
+media device.

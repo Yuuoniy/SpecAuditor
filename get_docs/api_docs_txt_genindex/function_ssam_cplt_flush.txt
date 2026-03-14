@@ -1,0 +1,11 @@
+Function: void ssam_cplt_flush ( struct ssam_cplt * cplt )
+
+Flush the completion system.
+
+Parameters
+  struct ssam_cplt *cplt
+    The completion system.
+
+Description
+  Flush the completion system by waiting until all currently submitted work
+items have been completed.

@@ -1,0 +1,14 @@
+Macro: __shost_for_each_device
+
+
+
+Parameters
+  sdev
+    the struct scsi_device to use as a cursor
+  shost
+    the struct scsi_host to iterate over
+
+Description
+  Iterator that returns each device attached to shost .  It does _not_
+take a reference on the scsi_device, so the whole loop must be
+protected by shost->host_lock.

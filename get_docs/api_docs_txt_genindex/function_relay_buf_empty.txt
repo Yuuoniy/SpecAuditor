@@ -1,0 +1,10 @@
+Function: int relay_buf_empty ( struct rchan_buf * buf )
+
+boolean, is the channel buffer empty?
+
+Parameters
+  struct rchan_buf *buf
+    channel buffer
+
+Description
+  Returns 1 if the buffer is empty, 0 otherwise.

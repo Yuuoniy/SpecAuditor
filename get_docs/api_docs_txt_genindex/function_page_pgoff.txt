@@ -1,0 +1,15 @@
+Function: pgoff_t page_pgoff ( const struct folio * folio , const struct page * page )
+
+Calculate the logical page offset of this page.
+
+Parameters
+  const struct folio *folio
+    The folio containing this page.
+  const struct page *page
+    The page which we need the offset of.
+
+Description
+  For file pages, this is the offset from the beginning of the file
+in units of PAGE_SIZE.  For anonymous pages, this is the offset from
+the beginning of the anon_vma in units of PAGE_SIZE.  This will
+return nonsense for KSM pages.

@@ -1,0 +1,9 @@
+Struct: struct hte_ts_desc
+
+HTE timestamp descriptor.
+
+Members
+  attr
+    The line attributes.
+  hte_data
+    Subsystem’s private data, set by HTE subsystem.

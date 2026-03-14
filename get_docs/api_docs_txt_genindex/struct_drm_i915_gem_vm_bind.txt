@@ -1,0 +1,24 @@
+Struct: struct drm_i915_gem_vm_bind
+
+VA to object mapping to bind.
+
+Members
+  vm_id
+    VM (address space) id to bind
+  handle
+    Object handle
+  start
+    Virtual Address start to bind
+  offset
+    Offset in object to bind
+  length
+    Length of mapping to bind
+  flags
+    Supported flags are: I915_GEM_VM_BIND_CAPTURE:
+Capture this mapping in the dump upon GPU error. Note that fence carries its own flags.
+  fence
+    Timeline fence for bind completion signaling. Timeline fence is of format struct drm_i915_gem_timeline_fence . It is an out fence, hence using I915_TIMELINE_FENCE_WAIT flag
+is invalid, and an error will be returned. If I915_TIMELINE_FENCE_SIGNAL flag is not set, then out fence
+is not requested and binding is completed synchronously.
+  extensions
+    Zero-terminated chain of extensions. For future extensions. See struct i915_user_extension .

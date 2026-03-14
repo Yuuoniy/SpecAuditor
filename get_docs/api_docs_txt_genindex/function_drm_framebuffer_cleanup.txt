@@ -1,0 +1,11 @@
+Function: void drm_framebuffer_cleanup ( struct drm_framebuffer * fb )
+
+remove a framebuffer object
+
+Parameters
+  struct drm_framebuffer *fb
+    framebuffer to remove
+
+Description
+  Cleanup framebuffer. This function is intended to be used from the drivers drm_framebuffer_funcs.destroy callback. It can also be used to clean up
+driver private framebuffers embedded into a larger structure.

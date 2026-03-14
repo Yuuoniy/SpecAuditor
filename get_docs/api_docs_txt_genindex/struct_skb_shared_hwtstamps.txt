@@ -1,0 +1,13 @@
+Struct: struct skb_shared_hwtstamps
+
+hardware time stamps
+
+Members
+  {unnamed_union}
+    anonymous
+  hwtstamp
+    hardware time stamp transformed into duration
+since arbitrary point in time
+  netdev_data
+    address/cookie of network device driver used as
+reference to actual hardware time stamp

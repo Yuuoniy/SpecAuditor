@@ -1,0 +1,12 @@
+Function: void mpt_event_deregister ( u8 cb_idx )
+
+Deregister protocol-specific event callback handler
+
+Parameters
+  u8 cb_idx
+    previously registered callback handle
+
+Description
+  Each protocol-specific driver should call this routine
+when it does not (or can no longer) handle events,
+or when its module is unloaded.

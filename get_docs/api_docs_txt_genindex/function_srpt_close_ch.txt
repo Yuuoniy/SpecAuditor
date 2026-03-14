@@ -1,0 +1,11 @@
+Function: bool srpt_close_ch ( struct srpt_rdma_ch * ch )
+
+close a RDMA channel
+
+Parameters
+  struct srpt_rdma_ch *ch
+    SRPT RDMA channel.
+
+Description
+  Make sure all resources associated with the channel will be deallocated at
+an appropriate time.

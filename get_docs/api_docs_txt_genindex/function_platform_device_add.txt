@@ -1,0 +1,11 @@
+Function: int platform_device_add ( struct platform_device * pdev )
+
+add a platform device to device hierarchy
+
+Parameters
+  struct platform_device *pdev
+    platform device we’re adding
+
+Description
+  This is part 2 of platform_device_register() , though may be called
+separately _iff_ pdev was allocated by platform_device_alloc() .

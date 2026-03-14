@@ -1,0 +1,9 @@
+Function: void phy_ethtool_get_wol ( struct phy_device * phydev , struct ethtool_wolinfo * wol )
+
+Get the current Wake On LAN configuration
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+  struct ethtool_wolinfo *wol
+    Store the current configuration here

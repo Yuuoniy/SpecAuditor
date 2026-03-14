@@ -1,0 +1,10 @@
+Function: void iscsi_boot_destroy_kset ( struct iscsi_boot_kset * boot_kset )
+
+destroy kset and kobjects under it
+
+Parameters
+  struct iscsi_boot_kset *boot_kset
+    boot kset
+
+Description
+  This will remove the kset and kobjects and attrs under it.

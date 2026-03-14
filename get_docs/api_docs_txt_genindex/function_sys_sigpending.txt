@@ -1,0 +1,7 @@
+Function: long sys_sigpending ( old_sigset_t __user * uset )
+
+examine pending signals
+
+Parameters
+  old_sigset_t __user * uset
+    where mask of pending signal is returned

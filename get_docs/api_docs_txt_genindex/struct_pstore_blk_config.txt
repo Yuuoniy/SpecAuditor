@@ -1,0 +1,17 @@
+Struct: struct pstore_blk_config
+
+the pstore_blk backend configuration
+
+Members
+  device
+    Name of the desired block device
+  max_reason
+    Maximum kmsg dump reason to store to block device
+  kmsg_size
+    Total size of for kmsg dumps
+  pmsg_size
+    Total size of the pmsg storage area
+  console_size
+    Total size of the console storage area
+  ftrace_size
+    Total size for ftrace logging data (for all CPUs)

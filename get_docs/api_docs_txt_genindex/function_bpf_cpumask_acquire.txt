@@ -1,0 +1,12 @@
+Function: __bpf_kfunc struct bpf_cpumask * bpf_cpumask_acquire ( struct bpf_cpumask * cpumask )
+
+Acquire a reference to a BPF cpumask.
+
+Parameters
+  struct bpf_cpumask *cpumask
+    The BPF cpumask being acquired. The cpumask must be a trusted
+pointer.
+
+Description
+  Acquires a reference to a BPF cpumask. The cpumask returned by this function
+must either be embedded in a map as a kptr, or freed with bpf_cpumask_release() .

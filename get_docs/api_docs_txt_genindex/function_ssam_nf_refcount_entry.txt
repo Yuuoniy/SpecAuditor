@@ -1,0 +1,13 @@
+Function: struct ssam_nf_refcount_entry
+
+RB-tree entry for reference counting event activations.
+
+Members
+  node
+    The node of this entry in the rb-tree.
+  key
+    The key of the event.
+  refcount
+    The reference-count of the event.
+  flags
+    The flags used when enabling the event.

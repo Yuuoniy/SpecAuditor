@@ -1,0 +1,10 @@
+Function: void tty_ldisc_put ( struct tty_ldisc * ld )
+
+release the ldisc
+
+Parameters
+  struct tty_ldisc *ld
+    lisdsc to release
+
+Description
+  Complement of tty_ldisc_get() .

@@ -1,0 +1,14 @@
+Function: void sg_chain ( struct scatterlist * prv , unsigned int prv_nents , struct scatterlist * sgl )
+
+Chain two sglists together
+
+Parameters
+  struct scatterlist *prv
+    First scatterlist
+  unsigned int prv_nents
+    Number of entries in prv
+  struct scatterlist *sgl
+    Second scatterlist
+
+Description
+  Links prv and sgl together, to form a longer scatterlist.

@@ -1,0 +1,19 @@
+Function: void intel_gt_mcr_unicast_write ( struct intel_gt * gt , i915_mcr_reg_t reg , u32 value , int group , int instance )
+
+write a specific instance of an MCR register
+
+Parameters
+  struct intel_gt *gt
+    GT structure
+  i915_mcr_reg_t reg
+    the MCR register to write
+  u32 value
+    value to write
+  int group
+    the MCR group
+  int instance
+    the MCR instance
+
+Description
+  Write an MCR register in unicast mode after steering toward a specific
+group/instance.

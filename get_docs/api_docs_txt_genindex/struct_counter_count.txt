@@ -1,0 +1,21 @@
+Struct: struct counter_count
+
+Counter Count node
+
+Members
+  id
+    unique ID used to identify the Count
+  name
+    device-specific Count name
+  functions_list
+    array of available function modes
+  num_functions
+    number of function modes specified in functions_list
+  synapses
+    array of Synapses for initialization
+  num_synapses
+    number of Synapses specified in synapses
+  ext
+    optional array of Count extensions
+  num_ext
+    number of Count extensions specified in ext

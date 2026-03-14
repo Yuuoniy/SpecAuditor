@@ -1,0 +1,15 @@
+Function: void audit_return_fixup ( struct audit_context * ctx , int success , long code )
+
+fixup the return codes in the audit_context
+
+Parameters
+  struct audit_context *ctx
+    the audit_context
+  int success
+    true/false value to indicate if the operation succeeded or not
+  long code
+    operation return code
+
+Description
+  We need to fixup the return code in the audit logs if the actual return
+codes are later going to be fixed by the arch specific signal handlers.

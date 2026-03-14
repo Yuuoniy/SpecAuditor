@@ -1,0 +1,21 @@
+Struct: struct ttm_resource
+
+
+
+Members
+  start
+    Start of the allocation.
+  size
+    Actual size of resource in bytes.
+  mem_type
+    Resource type of the allocation.
+  placement
+    Placement flags.
+  bus
+    Placement on io bus accessible to the CPU
+  bo
+    weak reference to the BO, protected by ttm_device::lru_lock
+  css
+    cgroup state this resource is charged to
+  lru
+    Least recently used list, see ttm_resource_manager.lru

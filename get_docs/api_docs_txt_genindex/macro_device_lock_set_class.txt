@@ -1,0 +1,14 @@
+Macro: device_lock_set_class
+
+
+
+Parameters
+  dev
+    device to modify
+  key
+    lock class key data
+
+Description
+  This must be called with the device_lock() already held, for example
+from driver -> probe() . Take care to only override the default
+lockdep_no_validate class.

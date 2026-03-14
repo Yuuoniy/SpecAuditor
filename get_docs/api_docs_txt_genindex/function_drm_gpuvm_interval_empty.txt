@@ -1,0 +1,11 @@
+Function: bool drm_gpuvm_interval_empty ( struct drm_gpuvm * gpuvm , u64 addr , u64 range )
+
+indicate whether a given interval of the VA space is empty
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm to check the range for
+  u64 addr
+    the start address of the range
+  u64 range
+    the range of the interval

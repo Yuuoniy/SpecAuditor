@@ -1,0 +1,13 @@
+Function: void release_pages ( release_pages_arg arg , int nr )
+
+batched put_page()
+
+Parameters
+  release_pages_arg arg
+    array of pages to release
+  int nr
+    number of pages
+
+Description
+  Decrement the reference count on all the pages in arg .  If it
+fell to zero, remove the page from the LRU and free it.

@@ -1,0 +1,7 @@
+Macro: gobj_to_intf
+
+
+
+Parameters
+  gobj
+    Pointer to the struct media_gobj graph object

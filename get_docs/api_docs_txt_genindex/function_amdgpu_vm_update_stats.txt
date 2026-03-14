@@ -1,0 +1,15 @@
+Function: void amdgpu_vm_update_stats ( struct amdgpu_vm_bo_base * base , struct ttm_resource * res , int sign )
+
+helper to update normal memory stat
+
+Parameters
+  struct amdgpu_vm_bo_base *base
+    base structure for tracking BO usage in a VM
+  struct ttm_resource *res
+    the ttm_resource to use for the purpose of accounting, may or may not
+be bo->tbo.resource
+  int sign
+    if we should add (+1) or subtract (-1) from the stat
+
+Description
+  Updates the basic memory stat when bo is added/deleted/moved.

@@ -1,0 +1,10 @@
+Function: void folio_mark_accessed ( struct folio * folio )
+
+Mark a folio as having seen activity.
+
+Parameters
+  struct folio *folio
+    The folio to mark.
+
+Description
+  This function will perform one of the following transitions:

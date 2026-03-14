@@ -1,0 +1,15 @@
+Function: void sb_start_pagefault ( struct super_block * sb )
+
+get write access to a superblock from a page fault
+
+Parameters
+  struct super_block *sb
+    the super we write to
+
+Description
+  When a process starts handling write page fault, it should embed the
+operation into sb_start_pagefault() - sb_end_pagefault() pair to get
+exclusion against file system freezing. This is needed since the page fault
+is going to dirty a page. This function increments number of running page
+faults preventing freezing. If the file system is already frozen, the
+function waits until the file system is thawed.

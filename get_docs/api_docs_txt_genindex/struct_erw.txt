@@ -1,0 +1,25 @@
+Struct: struct erw
+
+extended report word
+
+Members
+  res0
+    reserved
+  auth
+    authorization check
+  pvrf
+    path-verification-required flag
+  cpt
+    channel-path timeout
+  fsavf
+    failing storage address validity flag
+  cons
+    concurrent sense
+  scavf
+    secondary ccw address validity flag
+  fsaf
+    failing storage address format
+  scnt
+    sense count, if cons == 1
+  res16
+    reserved

@@ -1,0 +1,12 @@
+Function: unsigned int crypto_ecdh_key_len ( const struct ecdh * params )
+
+Obtain the size of the private ECDH key
+
+Parameters
+  const struct ecdh *params
+    private ECDH key
+
+Description
+  This function returns the packet ECDH key size. A caller can use that
+with the provided ECDH private key reference to obtain the required
+memory size to hold a packet key.

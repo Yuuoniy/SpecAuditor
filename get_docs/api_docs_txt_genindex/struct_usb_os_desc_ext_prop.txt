@@ -1,0 +1,19 @@
+Struct: struct usb_os_desc_ext_prop
+
+describes one “Extended Property”
+
+Members
+  entry
+    used to keep a list of extended properties
+  type
+    Extended Property type
+  name_len
+    Extended Property unicode name length, including terminating ‘0’
+  name
+    Extended Property name
+  data_len
+    Length of Extended Property blob (for unicode store double len)
+  data
+    Extended Property blob
+  item
+    Represents this Extended Property in configfs

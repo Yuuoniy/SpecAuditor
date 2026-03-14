@@ -1,0 +1,7 @@
+Function: void scsi_proc_host_add ( struct Scsi_Host * shost )
+
+Add entry for this host to appropriate /proc dir
+
+Parameters
+  struct Scsi_Host *shost
+    host to add

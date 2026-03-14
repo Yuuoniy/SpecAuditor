@@ -1,0 +1,11 @@
+Function: void input_alloc_absinfo ( struct input_dev * dev )
+
+allocates array of input_absinfo structs
+
+Parameters
+  struct input_dev *dev
+    the input device emitting absolute events
+
+Description
+  If the absinfo struct the caller asked for is already allocated, this
+functions will not do anything.

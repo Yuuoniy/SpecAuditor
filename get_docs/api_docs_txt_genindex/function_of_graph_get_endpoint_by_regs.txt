@@ -1,0 +1,11 @@
+Function: struct device_node * of_graph_get_endpoint_by_regs ( const struct device_node * parent , int port_reg , int reg )
+
+get endpoint node of specific identifiers
+
+Parameters
+  const struct device_node *parent
+    pointer to the parent device node
+  int port_reg
+    identifier (value of reg property) of the parent port node
+  int reg
+    identifier (value of reg property) of the endpoint node

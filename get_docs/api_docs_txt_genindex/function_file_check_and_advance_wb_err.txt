@@ -1,0 +1,12 @@
+Function: int file_check_and_advance_wb_err ( struct file * file )
+
+report wb error (if any) that was previously and advance wb_err to current one
+
+Parameters
+  struct file *file
+    struct file on which the error is being reported
+
+Description
+  When userland calls fsync (or something like nfsd does the equivalent), we
+want to report any writeback errors that occurred since the last fsync (or
+since the file was opened if there haven’t been any).

@@ -1,0 +1,9 @@
+Function: int damon_stop ( struct damon_ctx * * ctxs , int nr_ctxs )
+
+Stops the monitorings for a given group of contexts.
+
+Parameters
+  struct damon_ctx **ctxs
+    an array of the pointers for contexts to stop monitoring
+  int nr_ctxs
+    size of ctxs

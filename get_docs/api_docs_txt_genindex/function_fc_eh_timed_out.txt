@@ -1,0 +1,16 @@
+Function: enum scsi_timeout_action fc_eh_timed_out ( struct scsi_cmnd * scmd )
+
+FC Transport I/O timeout intercept handler
+
+Parameters
+  struct scsi_cmnd *scmd
+    The SCSI command which timed out
+
+Description
+  This routine protects against error handlers getting invoked while a
+rport is in a blocked state, typically due to a temporarily loss of
+connectivity. If the error handlers are allowed to proceed, requests
+to abort i/o, reset the target, etc will likely fail as there is no way
+to communicate with the device to perform the requested function. These
+failures may result in the midlayer taking the device offline, requiring
+manual intervention to restore operation.

@@ -1,0 +1,13 @@
+Function: int dvb_generic_open ( struct inode * inode , struct file * file )
+
+Digital TV open function, used by DVB devices
+
+Parameters
+  struct inode *inode
+    pointer to struct inode .
+  struct file *file
+    pointer to struct file .
+
+Description
+  Checks if a DVB devnode is still valid, and if the permissions are
+OK and increment negative use count.

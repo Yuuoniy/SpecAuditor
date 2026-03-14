@@ -1,0 +1,14 @@
+Macro: int snd_pcm_hw_constraint_mask64 ( struct snd_pcm_runtime * runtime , snd_pcm_hw_param_t var , u_int64_t mask )
+
+apply the given bitmap mask constraint
+
+Parameters
+  struct snd_pcm_runtime *runtime
+    PCM runtime instance
+  snd_pcm_hw_param_t var
+    hw_params variable to apply the mask
+  u_int64_t mask
+    the 64bit bitmap mask
+
+Description
+  Apply the constraint of the given bitmap mask to a 64-bit mask parameter.

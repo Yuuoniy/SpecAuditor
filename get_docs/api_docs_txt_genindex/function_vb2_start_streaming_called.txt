@@ -1,0 +1,7 @@
+Function: bool vb2_start_streaming_called ( struct vb2_queue * q )
+
+return streaming status of driver.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.

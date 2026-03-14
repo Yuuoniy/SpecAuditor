@@ -1,0 +1,21 @@
+Function: int ssam_request_sync_alloc ( size_t payload_len , gfp_t flags , struct ssam_request_sync * * rqst , struct ssam_span * buffer )
+
+Allocate a synchronous request.
+
+Parameters
+  size_t payload_len
+    The length of the request payload.
+  gfp_t flags
+    Flags used for allocation.
+  struct ssam_request_sync **rqst
+    Where to store the pointer to the allocated request.
+  struct ssam_span *buffer
+    Where to store the buffer descriptor for the message buffer of
+the request.
+
+Description
+  Allocates a synchronous request with corresponding message buffer. The
+request still needs to be initialized ssam_request_sync_init() before
+it can be submitted, and the message buffer data must still be set to the
+returned buffer via ssam_request_sync_set_data() after it has been filled,
+if need be with adjusted message length.

@@ -1,0 +1,12 @@
+Function: int drm_gem_ttm_vmap ( struct drm_gem_object * gem , struct iosys_map * map )
+
+vmap ttm_buffer_object
+
+Parameters
+  struct drm_gem_object *gem
+    GEM object.
+  struct iosys_map *map
+    [out] returns the dma-buf mapping.
+
+Description
+  Maps a GEM object with ttm_bo_vmap() . This function can be used as drm_gem_object_funcs.vmap callback.

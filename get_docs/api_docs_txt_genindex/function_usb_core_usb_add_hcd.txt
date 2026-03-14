@@ -1,0 +1,16 @@
+Function: int usb_add_hcd ( struct usb_hcd * hcd , unsigned int irqnum , unsigned long irqflags )
+
+finish generic HCD structure initialization and register
+
+Parameters
+  struct usb_hcd *hcd
+    the usb_hcd structure to initialize
+  unsigned int irqnum
+    Interrupt line to allocate
+  unsigned long irqflags
+    Interrupt type flags
+
+Description
+  Finish the remaining parts of generic HCD initialization: allocate the
+buffers of consistent memory, register the bus, request the IRQ line,
+and call the driver’s reset() and start() routines.

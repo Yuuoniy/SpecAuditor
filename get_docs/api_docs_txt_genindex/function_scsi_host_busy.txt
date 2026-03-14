@@ -1,0 +1,7 @@
+Function: int scsi_host_busy ( struct Scsi_Host * shost )
+
+Return the host busy counter
+
+Parameters
+  struct Scsi_Host *shost
+    Pointer to Scsi_Host to inc.

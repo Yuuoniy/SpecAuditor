@@ -1,0 +1,11 @@
+Function: void snd_ctl_register_layer ( struct snd_ctl_layer_ops * lops )
+
+register new control layer
+
+Parameters
+  struct snd_ctl_layer_ops *lops
+    operation structure
+
+Description
+  The new layer can track all control elements and do additional
+operations on top (like audio LED handling).

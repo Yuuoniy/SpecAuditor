@@ -1,0 +1,7 @@
+Function: int rc_register_device ( struct rc_dev * dev )
+
+Registers a RC device
+
+Parameters
+  struct rc_dev *dev
+    pointer to struct rc_dev .

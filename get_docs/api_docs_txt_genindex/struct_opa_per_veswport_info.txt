@@ -1,0 +1,51 @@
+Struct: struct opa_per_veswport_info
+
+OPA vnic per port information
+
+Members
+  port_num
+    port number
+  eth_link_status
+    current ethernet link state
+  rsvd0
+    reserved bytes
+  base_mac_addr
+    base mac address
+  config_state
+    configured port state
+  oper_state
+    operational port state
+  max_mac_tbl_ent
+    max number of mac table entries
+  max_smac_ent
+    max smac entries in mac table
+  mac_tbl_digest
+    mac table digest
+  rsvd1
+    reserved bytes
+  encap_slid
+    base slid for the port
+  pcp_to_sc_uc
+    sc by pcp index for unicast ethernet packets
+  pcp_to_vl_uc
+    vl by pcp index for unicast ethernet packets
+  pcp_to_sc_mc
+    sc by pcp index for multicast ethernet packets
+  pcp_to_vl_mc
+    vl by pcp index for multicast ethernet packets
+  non_vlan_sc_uc
+    sc for non-vlan unicast ethernet packets
+  non_vlan_vl_uc
+    vl for non-vlan unicast ethernet packets
+  non_vlan_sc_mc
+    sc for non-vlan multicast ethernet packets
+  non_vlan_vl_mc
+    vl for non-vlan multicast ethernet packets
+  rsvd2
+    reserved bytes
+  uc_macs_gen_count
+    generation count for unicast macs list
+  mc_macs_gen_count
+    generation count for multicast macs list
+  rsvd3
+    reserved bytes

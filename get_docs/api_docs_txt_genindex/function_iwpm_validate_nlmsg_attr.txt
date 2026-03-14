@@ -1,0 +1,12 @@
+Function: int iwpm_validate_nlmsg_attr ( struct nlattr * nltb [ ] , int nla_count )
+
+Check for NULL netlink attributes
+
+Parameters
+  struct nlattr *nltb[]
+    Holds address of each netlink message attributes
+  int nla_count
+    Number of netlink message attributes
+
+Description
+  Returns error if any of the nla_count attributes is NULL

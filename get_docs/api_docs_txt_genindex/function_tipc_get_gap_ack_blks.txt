@@ -1,0 +1,13 @@
+Function: u16 tipc_get_gap_ack_blks ( struct tipc_gap_ack_blks * * ga , struct tipc_link * l , struct tipc_msg * hdr , bool uc )
+
+get Gap ACK blocks from PROTOCOL/STATE_MSG
+
+Parameters
+  struct tipc_gap_ack_blks **ga
+    returned pointer to the Gap ACK blocks if any
+  struct tipc_link *l
+    the tipc link
+  struct tipc_msg *hdr
+    the PROTOCOL/STATE_MSG header
+  bool uc
+    desired Gap ACK blocks type, i.e. unicast (= 1) or broadcast (= 0)

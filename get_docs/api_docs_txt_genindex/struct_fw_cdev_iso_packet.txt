@@ -1,0 +1,12 @@
+Struct: struct fw_cdev_iso_packet
+
+Isochronous packet
+
+Members
+  control
+    Contains the header length (8 uppermost bits),
+the sy field (4 bits), the tag field (2 bits), a sync flag
+or a skip flag (1 bit), an interrupt flag (1 bit), and the
+payload length (16 lowermost bits)
+  header
+    Header and payload in case of a transmit context.

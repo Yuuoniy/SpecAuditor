@@ -1,0 +1,12 @@
+Function: void drm_atomic_helper_commit_tail_rpm ( struct drm_atomic_state * state )
+
+commit atomic update to hardware
+
+Parameters
+  struct drm_atomic_state *state
+    new modeset state to be committed
+
+Description
+  This is an alternative implementation for the drm_mode_config_helper_funcs.atomic_commit_tail hook, for drivers
+that support runtime_pm or need the CRTC to be enabled to perform a
+commit. Otherwise, one should use the default implementation drm_atomic_helper_commit_tail() .

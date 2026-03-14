@@ -1,0 +1,9 @@
+Macro: hlist_for_each_entry_continue
+
+
+
+Parameters
+  pos
+    the type * to use as a loop cursor.
+  member
+    the name of the hlist_node within the struct.

@@ -1,0 +1,11 @@
+Function: bool lock_sock_fast ( struct sock * sk )
+
+fast version of lock_sock
+
+Parameters
+  struct sock *sk
+    socket
+
+Description
+  This version should be used for very small section, where process won’t block
+return false if fast path is taken:

@@ -1,0 +1,13 @@
+Function: void * xas_next_entry ( struct xa_state * xas , unsigned long max )
+
+Advance iterator to next present entry.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+  unsigned long max
+    Highest index to return.
+
+Description
+  xas_next_entry() is an inline function to optimise xarray traversal for
+speed.  It is equivalent to calling xas_find() , and will call xas_find() for all the hard cases.

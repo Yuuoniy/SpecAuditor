@@ -1,0 +1,14 @@
+Function: int genphy_c45_fast_retrain ( struct phy_device * phydev , bool enable )
+
+configure fast retrain registers
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+  bool enable
+    enable fast retrain or not
+
+Description
+  advertising fast retrain capable and THP Bypass Request, then
+enable fast retrain. If it is not enabled, we configure fast
+retrain disabled.

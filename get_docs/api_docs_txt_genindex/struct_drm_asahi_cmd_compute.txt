@@ -1,0 +1,22 @@
+Struct: struct drm_asahi_cmd_compute
+
+Command to submit compute
+
+Members
+  flags
+    MBZ
+  sampler_count
+    Number of samplers in the sampler heap.
+  cdm_ctrl_stream_base
+    CDM_CTRL_STREAM_BASE register value. GPU
+address to the beginning of the CDM control stream.
+  cdm_ctrl_stream_end
+    GPU base address to the end of the hardware
+control stream. Note this only considers the first contiguous segment
+of the control stream, as the stream might jump elsewhere.
+  sampler_heap
+    Base address of the sampler heap.
+  helper
+    Helper program used for this compute command
+  ts
+    Timestamps for the compute command

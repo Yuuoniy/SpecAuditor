@@ -1,0 +1,12 @@
+Function: int security_sb_show_options ( struct seq_file * m , struct super_block * sb )
+
+Output the mount options for a superblock
+
+Parameters
+  struct seq_file *m
+    output file
+  struct super_block *sb
+    filesystem superblock
+
+Description
+  Show (print on m ) mount options for this sb .

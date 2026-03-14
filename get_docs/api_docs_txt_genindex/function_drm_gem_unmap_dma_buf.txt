@@ -1,0 +1,14 @@
+Function: void drm_gem_unmap_dma_buf ( struct dma_buf_attachment * attach , struct sg_table * sgt , enum dma_data_direction dir )
+
+unmap_dma_buf implementation for GEM
+
+Parameters
+  struct dma_buf_attachment *attach
+    attachment to unmap buffer from
+  struct sg_table *sgt
+    scatterlist info of the buffer to unmap
+  enum dma_data_direction dir
+    direction of DMA transfer
+
+Description
+  This can be used as the dma_buf_ops.unmap_dma_buf callback.

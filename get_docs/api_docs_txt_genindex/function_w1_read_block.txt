@@ -1,0 +1,11 @@
+Function: u8 w1_read_block ( struct w1_master * dev , u8 * buf , int len )
+
+Reads a series of bytes.
+
+Parameters
+  struct w1_master *dev
+    the master device
+  u8 *buf
+    pointer to the buffer to fill
+  int len
+    the number of bytes to read

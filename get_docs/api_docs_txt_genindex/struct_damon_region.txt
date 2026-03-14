@@ -1,0 +1,18 @@
+Struct: struct damon_region
+
+Represents a monitoring target region.
+
+Members
+  ar
+    The address range of the region.
+  sampling_addr
+    Address of the sample for the next access check.
+  nr_accesses
+    Access frequency of this region.
+  nr_accesses_bp
+    nr_accesses in basis point (0.01%) that updated for
+each sampling interval.
+  list
+    List head for siblings.
+  age
+    Age of this region.

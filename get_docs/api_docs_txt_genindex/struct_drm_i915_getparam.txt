@@ -1,0 +1,10 @@
+Struct: struct drm_i915_getparam
+
+Driver parameter query structure.
+
+Members
+  param
+    Driver parameter to query.
+  value
+    Address of memory where queried value should be put. WARNING: Using pointers instead of fixed-size u64 means we need to write
+compat32 code. Don’t repeat this mistake.

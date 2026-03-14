@@ -1,0 +1,12 @@
+Function: pci_power_t pci_choose_state ( struct pci_dev * dev , pm_message_t state )
+
+Choose the power state of a PCI device.
+
+Parameters
+  struct pci_dev *dev
+    Target PCI device.
+  pm_message_t state
+    Target state for the whole system.
+
+Description
+  Returns PCI power state suitable for dev and state .

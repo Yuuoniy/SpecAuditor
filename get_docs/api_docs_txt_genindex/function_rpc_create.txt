@@ -1,0 +1,10 @@
+Function: struct rpc_clnt * rpc_create ( struct rpc_create_args * args )
+
+create an RPC client and transport with one call
+
+Parameters
+  struct rpc_create_args *args
+    rpc_clnt create argument structure
+
+Description
+  Creates and initializes an RPC transport and an RPC client.

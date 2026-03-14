@@ -1,0 +1,10 @@
+Function: int edac_pci_create_sysfs ( struct edac_pci_ctl_info * pci )
+
+
+
+Parameters
+  struct edac_pci_ctl_info *pci
+    pointer to struct edac_pci_ctl_info
+
+Description
+  Create the controls/attributes for the specified EDAC PCI device

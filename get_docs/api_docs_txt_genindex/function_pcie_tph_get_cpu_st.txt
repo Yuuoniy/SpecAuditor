@@ -1,0 +1,17 @@
+Function: int pcie_tph_get_cpu_st ( struct pci_dev * pdev , enum tph_mem_type mem_type , unsigned int cpu_uid , u16 * tag )
+
+Retrieve Steering Tag for a target memory associated with a specific CPU
+
+Parameters
+  struct pci_dev *pdev
+    PCI device
+  enum tph_mem_type mem_type
+    target memory type (volatile or persistent RAM)
+  unsigned int cpu_uid
+    associated CPU id
+  u16 *tag
+    Steering Tag to be returned
+
+Description
+  Return the Steering Tag for a target memory that is associated with a
+specific CPU as indicated by cpu_uid.

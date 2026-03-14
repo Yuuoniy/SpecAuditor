@@ -1,0 +1,9 @@
+Macro: for_each_active_route
+
+
+
+Parameters
+  routing
+    The routing table
+  route
+    The route iterator

@@ -1,0 +1,7 @@
+Function: void ssam_bus_unregister ( void )
+
+Unregister the SSAM client device bus.
+
+Parameters
+  void
+    no arguments

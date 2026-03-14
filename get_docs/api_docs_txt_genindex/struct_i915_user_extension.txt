@@ -1,0 +1,15 @@
+Struct: struct i915_user_extension
+
+Base class for defining a chain of extensions
+
+Members
+  next_extension
+    Pointer to the next struct i915_user_extension , or zero if the end.
+  name
+    Name of the extension. Note that the name here is just some integer. Also note that the name space for this is not global for the whole
+driver, but rather its scope/meaning is limited to the specific piece
+of uAPI which has embedded the struct i915_user_extension .
+  flags
+    MBZ All undefined bits must be zero.
+  rsvd
+    MBZ Reserved for future use; must be zero.

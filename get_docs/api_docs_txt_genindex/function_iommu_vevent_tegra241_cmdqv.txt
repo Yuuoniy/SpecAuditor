@@ -1,0 +1,8 @@
+Function: struct iommu_vevent_tegra241_cmdqv
+
+Tegra241 CMDQV IRQ (IOMMU_VEVENTQ_TYPE_TEGRA241_CMDQV)
+
+Members
+  lvcmdq_err_map
+    128-bit logical vcmdq error map, little-endian.
+(Refer to register LVCMDQ_ERR_MAPs per VINTF )

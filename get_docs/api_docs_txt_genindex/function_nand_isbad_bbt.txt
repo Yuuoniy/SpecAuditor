@@ -1,0 +1,11 @@
+Function: int nand_isbad_bbt ( struct nand_chip * this , loff_t offs , int allowbbt )
+
+[NAND Interface] Check if a block is bad
+
+Parameters
+  struct nand_chip *this
+    NAND chip object
+  loff_t offs
+    offset in the device
+  int allowbbt
+    allow access to bad block table region

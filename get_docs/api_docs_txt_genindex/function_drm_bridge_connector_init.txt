@@ -1,0 +1,15 @@
+Function: struct drm_connector * drm_bridge_connector_init ( struct drm_device * drm , struct drm_encoder * encoder )
+
+Initialise a connector for a chain of bridges
+
+Parameters
+  struct drm_device *drm
+    the DRM device
+  struct drm_encoder *encoder
+    the encoder where the bridge chain starts
+
+Description
+  Allocate, initialise and register a drm_bridge_connector with the drm device. The connector is associated with a chain of bridges that starts at
+the encoder . All bridges in the chain shall report bridge operation flags
+( drm_bridge->ops ) and bridge output type ( drm_bridge->type ), and none of
+them may create a DRM connector directly.

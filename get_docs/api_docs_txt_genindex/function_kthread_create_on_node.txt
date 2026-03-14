@@ -1,0 +1,21 @@
+Function: struct task_struct * kthread_create_on_node ( int ( * threadfn ) ( void * data ) , void * data , int node , const char namefmt [ ] , ... )
+
+create a kthread.
+
+Parameters
+  int (*threadfn)(void *data)
+    the function to run until signal_pending(current).
+  void *data
+    data ptr for threadfn .
+  int node
+    task and thread structures for the thread are allocated on this node
+  const char namefmt[]
+    printf-style name for the thread.
+  ...
+    variable arguments
+
+Description
+  This helper function creates and names a kernel
+thread.  The thread will be stopped: use wake_up_process() to start
+it.  See also kthread_run() .  The new thread has SCHED_NORMAL policy and
+is affine to all CPUs.

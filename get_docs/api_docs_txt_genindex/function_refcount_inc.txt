@@ -1,0 +1,10 @@
+Function: void refcount_inc ( refcount_t * r )
+
+increment a refcount
+
+Parameters
+  refcount_t *r
+    the refcount to increment
+
+Description
+  Similar to atomic_inc() , but will saturate at REFCOUNT_SATURATED and WARN.

@@ -1,0 +1,21 @@
+Function: int rio_disc_peer ( struct rio_net * net , struct rio_mport * port , u16 destid , u8 hopcount , struct rio_dev * prev , int prev_port )
+
+Recursively discovers a RIO network through a master port
+
+Parameters
+  struct rio_net *net
+    RIO network being discovered
+  struct rio_mport *port
+    Master port to send transactions
+  u16 destid
+    Current destination ID in network
+  u8 hopcount
+    Number of hops into the network
+  struct rio_dev *prev
+    previous rio_dev
+  int prev_port
+    previous port number
+
+Description
+  Recursively discovers a RIO network.  Transactions are sent via the
+master port passed in port .

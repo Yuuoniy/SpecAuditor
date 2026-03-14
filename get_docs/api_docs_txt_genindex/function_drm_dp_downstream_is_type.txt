@@ -1,0 +1,14 @@
+Function: bool drm_dp_downstream_is_type ( const u8 dpcd [ DP_RECEIVER_CAP_SIZE ] , const u8 port_cap [ 4 ] , u8 type )
+
+is the downstream facing port of certain type?
+
+Parameters
+  const u8 dpcd[DP_RECEIVER_CAP_SIZE]
+    DisplayPort configuration data
+  const u8 port_cap[4]
+    port capabilities
+  u8 type
+    port type to be checked. Can be: DP_DS_PORT_TYPE_DP , DP_DS_PORT_TYPE_VGA , DP_DS_PORT_TYPE_DVI , DP_DS_PORT_TYPE_HDMI , DP_DS_PORT_TYPE_NON_EDID , DP_DS_PORT_TYPE_DP_DUALMODE or DP_DS_PORT_TYPE_WIRELESS .
+
+Description
+  Caveat: Only works with DPCD 1.1+ port caps.

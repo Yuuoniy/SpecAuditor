@@ -1,0 +1,9 @@
+Struct: struct rs_control
+
+rs control structure per instance
+
+Members
+  codec
+    The codec used for this instance
+  buffers
+    Internal scratch buffers used in calls to decode_rs()

@@ -1,0 +1,3 @@
+Enum: enum v4l2_subdev_routing_restriction
+
+Subdevice internal routing restrictions

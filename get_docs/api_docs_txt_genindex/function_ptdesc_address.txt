@@ -1,0 +1,7 @@
+Function: void * ptdesc_address ( const struct ptdesc * pt )
+
+Virtual address of page table.
+
+Parameters
+  const struct ptdesc *pt
+    Page table descriptor.

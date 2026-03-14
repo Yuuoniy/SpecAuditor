@@ -1,0 +1,12 @@
+Function: void media_pipeline_stop ( struct media_pad * pad )
+
+Mark a pipeline as not streaming
+
+Parameters
+  struct media_pad *pad
+    Starting pad
+
+Description
+  Mark all pads connected to a given pad through enabled links, either
+directly or indirectly, as not streaming. The media_pad pipe field is
+reset to NULL .

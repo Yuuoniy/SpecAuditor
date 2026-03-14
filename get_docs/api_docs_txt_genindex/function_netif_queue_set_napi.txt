@@ -1,0 +1,18 @@
+Function: void netif_queue_set_napi ( struct net_device * dev , unsigned int queue_index , enum netdev_queue_type type , struct napi_struct * napi )
+
+Associate queue with the napi
+
+Parameters
+  struct net_device *dev
+    device to which NAPI and queue belong
+  unsigned int queue_index
+    Index of queue
+  enum netdev_queue_type type
+    queue type as RX or TX
+  struct napi_struct *napi
+    NAPI context, pass NULL to clear previously set NAPI
+
+Description
+  Set queue with its corresponding napi context. This should be done after
+registering the NAPI handler for the queue-vector and the queues have been
+mapped to the corresponding interrupt vector.

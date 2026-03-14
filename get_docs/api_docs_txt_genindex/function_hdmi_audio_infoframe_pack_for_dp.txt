@@ -1,0 +1,15 @@
+Function: ssize_t hdmi_audio_infoframe_pack_for_dp ( const struct hdmi_audio_infoframe * frame , struct dp_sdp * sdp , u8 dp_version )
+
+Pack a HDMI Audio infoframe for DisplayPort
+
+Parameters
+  const struct hdmi_audio_infoframe *frame
+    HDMI Audio infoframe
+  struct dp_sdp *sdp
+    Secondary data packet for DisplayPort.
+  u8 dp_version
+    DisplayPort version to be encoded in the header
+
+Description
+  Packs a HDMI Audio Infoframe to be sent over DisplayPort. This function
+fills the secondary data packet to be used for DisplayPort.

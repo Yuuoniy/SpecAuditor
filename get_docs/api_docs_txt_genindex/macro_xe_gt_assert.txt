@@ -1,0 +1,13 @@
+Macro: xe_gt_assert
+
+
+
+Parameters
+  gt
+    the struct xe_gt pointer to which condition applies
+  condition
+    condition to check
+
+Description
+  xe_gt_assert() uses drm_WARN to emit a warning and print additional
+information that could be safetely read from the gt pointer if provided condition is false.

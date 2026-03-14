@@ -1,0 +1,10 @@
+Function: struct sk_buff * __skb_peek ( const struct sk_buff_head * list_ )
+
+peek at the head of a non-empty sk_buff_head
+
+Parameters
+  const struct sk_buff_head *list_
+    list to peek at
+
+Description
+  Like skb_peek() , but the caller knows that the list is not empty.

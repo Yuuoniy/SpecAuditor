@@ -1,0 +1,10 @@
+Function: void sas_rphy_remove ( struct sas_rphy * rphy )
+
+remove SAS remote PHY
+
+Parameters
+  struct sas_rphy *rphy
+    SAS remote phy to remove
+
+Description
+  Removes the specified SAS remote PHY.

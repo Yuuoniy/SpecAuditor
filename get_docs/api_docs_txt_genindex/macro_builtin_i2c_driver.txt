@@ -1,0 +1,12 @@
+Macro: builtin_i2c_driver
+
+
+
+Parameters
+  __i2c_driver
+    i2c_driver struct
+
+Description
+  Helper macro for I2C drivers which do not do anything special in their
+init. This eliminates a lot of boilerplate. Each driver may only
+use this macro once, and calling it replaces device_initcall() .

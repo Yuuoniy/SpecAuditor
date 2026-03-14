@@ -1,0 +1,11 @@
+Function: unsigned int xa_pointer_tag ( void * entry )
+
+Get the tag stored in an XArray entry.
+
+Parameters
+  void *entry
+    XArray entry.
+
+Description
+  If you have stored a tagged pointer in the XArray, call this function
+to get the tag of that pointer.

@@ -1,0 +1,12 @@
+Function: bool iommufd_ctx_has_group ( struct iommufd_ctx * ictx , struct iommu_group * group )
+
+True if any device within the group is bound to the ictx
+
+Parameters
+  struct iommufd_ctx *ictx
+    iommufd file descriptor
+  struct iommu_group *group
+    Pointer to a physical iommu_group struct
+
+Description
+  True if any device within the group has been bound to this ictx, ex. via iommufd_device_bind() , therefore implying ictx ownership of the group.

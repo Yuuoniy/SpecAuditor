@@ -1,0 +1,7 @@
+Macro: kfifo_esize
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used

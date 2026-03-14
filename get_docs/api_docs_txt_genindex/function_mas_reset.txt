@@ -1,0 +1,12 @@
+Function: void mas_reset ( struct ma_state * mas )
+
+Reset a Maple Tree operation state.
+
+Parameters
+  struct ma_state *mas
+    Maple Tree operation state.
+
+Description
+  Resets the error or walk state of the mas so future walks of the
+array will start from the root.  Use this if you have dropped the
+lock and want to reuse the ma_state.

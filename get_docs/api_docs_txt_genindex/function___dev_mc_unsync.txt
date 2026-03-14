@@ -1,0 +1,12 @@
+Function: void __dev_mc_unsync ( struct net_device * dev , int ( * unsync ) ( struct net_device * , const unsigned char * ) )
+
+Remove synchronized addresses from device
+
+Parameters
+  struct net_device *dev
+    device to sync
+  int (*unsync)(struct net_device *, const unsigned char *)
+    function to call if address should be removed
+
+Description
+  Remove all addresses that were added to the device by dev_mc_sync() .

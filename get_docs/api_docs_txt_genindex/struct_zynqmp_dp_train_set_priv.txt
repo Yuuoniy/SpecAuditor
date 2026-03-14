@@ -1,0 +1,9 @@
+Struct: struct zynqmp_dp_train_set_priv
+
+Private data for train_set debugfs files
+
+Members
+  dp
+    DisplayPort IP core structure
+  lane
+    The lane for this file

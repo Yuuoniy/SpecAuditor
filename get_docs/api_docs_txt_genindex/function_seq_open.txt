@@ -1,0 +1,17 @@
+Function: int seq_open ( struct file * file , const struct seq_operations * op )
+
+initialize sequential file
+
+Parameters
+  struct file *file
+    file we initialize
+  const struct seq_operations *op
+    method table describing the sequence
+
+Description
+  seq_open() sets file , associating it with a sequence described
+by op . op-> start() sets the iterator up and returns the first
+element of sequence. op-> stop() shuts it down. op-> next() returns the next element of sequence. op-> show() prints element
+into the buffer.  In case of error -> start() and -> next() return
+ERR_PTR(error).  In the end of sequence they return NULL . -> show() returns 0 in case of success and negative number in case of error.
+Returning SEQ_SKIP means “discard this element and move on”.

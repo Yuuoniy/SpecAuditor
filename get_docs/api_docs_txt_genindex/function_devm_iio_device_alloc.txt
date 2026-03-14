@@ -1,0 +1,13 @@
+Function: struct iio_dev * devm_iio_device_alloc ( struct device * parent , int sizeof_priv )
+
+Resource-managed iio_device_alloc()
+
+Parameters
+  struct device *parent
+    Device to allocate iio_dev for, and parent for this IIO device
+  int sizeof_priv
+    Space to allocate for private structure.
+
+Description
+  Managed iio_device_alloc. iio_dev allocated with this function is
+automatically freed on driver detach.

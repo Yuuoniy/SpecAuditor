@@ -1,0 +1,12 @@
+Function: unsigned int crypto_aead_blocksize ( struct crypto_aead * tfm )
+
+obtain block size of cipher
+
+Parameters
+  struct crypto_aead *tfm
+    cipher handle
+
+Description
+  The block size for the AEAD referenced with the cipher handle is returned.
+The caller may use that information to allocate appropriate memory for the
+data returned by the encryption or decryption operation

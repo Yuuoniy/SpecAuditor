@@ -1,0 +1,7 @@
+Function: dma_addr_t sg_page_iter_dma_address ( struct sg_dma_page_iter * dma_iter )
+
+get the dma address of the current page held by the page iterator.
+
+Parameters
+  struct sg_dma_page_iter *dma_iter
+    page iterator holding the page

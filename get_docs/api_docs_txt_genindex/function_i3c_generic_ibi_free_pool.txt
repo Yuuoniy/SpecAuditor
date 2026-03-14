@@ -1,0 +1,10 @@
+Function: void i3c_generic_ibi_free_pool ( struct i3c_generic_ibi_pool * pool )
+
+Free a generic IBI pool
+
+Parameters
+  struct i3c_generic_ibi_pool *pool
+    the IBI pool to free
+
+Description
+  Free all IBI slots allated by a generic IBI pool.

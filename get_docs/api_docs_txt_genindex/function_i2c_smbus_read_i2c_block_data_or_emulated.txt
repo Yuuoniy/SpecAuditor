@@ -1,0 +1,20 @@
+Function: s32 i2c_smbus_read_i2c_block_data_or_emulated ( const struct i2c_client * client , u8 command , u8 length , u8 * values )
+
+read block or emulate
+
+Parameters
+  const struct i2c_client *client
+    Handle to slave device
+  u8 command
+    Byte interpreted by slave
+  u8 length
+    Size of data block; SMBus allows at most I2C_SMBUS_BLOCK_MAX bytes
+  u8 *values
+    Byte array into which data will be read; big enough to hold
+the data returned by the slave.  SMBus allows at most
+I2C_SMBUS_BLOCK_MAX bytes.
+
+Description
+  This executes the SMBus “block read” protocol if supported by the adapter.
+If block read is not supported, it emulates it using either word or byte
+read protocols depending on availability.

@@ -1,0 +1,32 @@
+Struct: struct ieee80211_key_conf
+
+key information
+
+Members
+  tx_pn
+    PN used for TX keys, may be used by the driver as well if it
+needs to do software PN assignment by itself (e.g. due to TSO)
+  cipher
+    The key’s cipher suite selector.
+  icv_len
+    The ICV length for this key type
+  iv_len
+    The IV length for this key type
+  hw_key_idx
+    To be set by the driver, this is the key index the driver
+wants to be given when a frame is transmitted and needs to be
+encrypted in hardware.
+  keyidx
+    the key index (0-7)
+  flags
+    key flags, see enum ieee80211_key_flags .
+  link_id
+    the link ID, 0 for non-MLO, or -1 for pairwise keys
+  keylen
+    key material length
+  key
+    key material. For ALG_TKIP the key is encoded as a 256-bit (32 byte)
+data block:
+- Temporal Encryption Key (128 bits)
+- Temporal Authenticator Tx MIC Key (64 bits)
+- Temporal Authenticator Rx MIC Key (64 bits)

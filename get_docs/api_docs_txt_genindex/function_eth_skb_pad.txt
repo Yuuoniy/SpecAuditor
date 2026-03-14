@@ -1,0 +1,11 @@
+Function: int eth_skb_pad ( struct sk_buff * skb )
+
+Pad buffer to minimum number of octets for Ethernet frame
+
+Parameters
+  struct sk_buff *skb
+    Buffer to pad
+
+Description
+  An Ethernet frame should have a minimum size of 60 bytes.  This function
+takes short frames and pads them with zeros up to the 60 byte limit.

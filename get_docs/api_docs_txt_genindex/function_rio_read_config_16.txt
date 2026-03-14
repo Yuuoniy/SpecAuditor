@@ -1,0 +1,15 @@
+Function: int rio_read_config_16 ( struct rio_dev * rdev , u32 offset , u16 * data )
+
+Read 16 bits from configuration space
+
+Parameters
+  struct rio_dev *rdev
+    RIO device
+  u32 offset
+    Offset into device configuration space
+  u16 * data
+    Pointer to read data into
+
+Description
+  Reads 16 bits of data from the specified offset within the
+RIO device’s configuration space.

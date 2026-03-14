@@ -1,0 +1,9 @@
+Function: int strcmp ( const char * cs , const char * ct )
+
+Compare two strings
+
+Parameters
+  const char *cs
+    One string
+  const char *ct
+    Another string

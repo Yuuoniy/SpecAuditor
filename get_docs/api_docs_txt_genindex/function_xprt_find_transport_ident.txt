@@ -1,0 +1,7 @@
+Function: int xprt_find_transport_ident ( const char * netid )
+
+convert a netid into a transport identifier
+
+Parameters
+  const char *netid
+    transport to load

@@ -1,0 +1,7 @@
+Function: bool xas_is_node ( const struct xa_state * xas )
+
+Does the xas point to a node?
+
+Parameters
+  const struct xa_state *xas
+    XArray operation state.

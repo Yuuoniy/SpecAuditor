@@ -1,0 +1,9 @@
+Function: int v4l2_src_change_event_subscribe ( struct v4l2_fh * fh , const struct v4l2_event_subscription * sub )
+
+helper function that calls v4l2_event_subscribe() if the event is V4L2_EVENT_SOURCE_CHANGE .
+
+Parameters
+  struct v4l2_fh *fh
+    pointer to struct v4l2_fh
+  const struct v4l2_event_subscription *sub
+    pointer to struct v4l2_event_subscription

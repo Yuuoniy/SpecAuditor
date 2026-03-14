@@ -1,0 +1,19 @@
+Function: void ssh_packet_set_data ( struct ssh_packet * p , u8 * ptr , size_t len )
+
+Set raw message data of packet.
+
+Parameters
+  struct ssh_packet *p
+    The packet for which the message data should be set.
+  u8 *ptr
+    Pointer to the memory holding the message data.
+  size_t len
+    Length of the message data.
+
+Description
+  Sets the raw message data buffer of the packet to the provided memory. The
+memory is not copied. Instead, the caller is responsible for management
+(i.e. allocation and deallocation) of the memory. The caller must ensure
+that the provided memory is valid and contains a valid SSH message,
+starting from the time of submission of the packet until the release callback has been called. During this time, the memory may not be altered
+in any way.

@@ -1,0 +1,10 @@
+Function: void media_pipeline_entity_iter_cleanup ( struct media_pipeline_entity_iter * iter )
+
+Destroy a pipeline entity iterator
+
+Parameters
+  struct media_pipeline_entity_iter *iter
+    The iterator
+
+Description
+  This function must be called to destroy iterators initialized with media_pipeline_entity_iter_init() .

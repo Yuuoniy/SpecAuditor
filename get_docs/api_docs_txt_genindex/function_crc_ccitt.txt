@@ -1,0 +1,11 @@
+Function: u16 crc_ccitt ( u16 crc , u8 const * buffer , size_t len )
+
+recompute the CRC (CRC-CCITT variant) for the data buffer
+
+Parameters
+  u16 crc
+    previous CRC value
+  u8 const *buffer
+    data pointer
+  size_t len
+    number of bytes in the buffer

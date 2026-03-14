@@ -1,0 +1,7 @@
+Function: void hsi_port_unregister_clients ( struct hsi_port * port )
+
+Unregister an HSI port
+
+Parameters
+  struct hsi_port *port
+    The HSI port to unregister

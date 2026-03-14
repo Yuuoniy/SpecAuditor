@@ -1,0 +1,19 @@
+Function: void intel_gt_mcr_get_nonterminated_steering ( struct intel_gt * gt , i915_mcr_reg_t reg , u8 * group , u8 * instance )
+
+find group/instance values that will steer a register to a non-terminated instance
+
+Parameters
+  struct intel_gt *gt
+    GT structure
+  i915_mcr_reg_t reg
+    register for which the steering is required
+  u8 *group
+    return variable for group steering
+  u8 *instance
+    return variable for instance steering
+
+Description
+  This function returns a group/instance pair that is guaranteed to work for
+read steering of the given register. Note that a value will be returned even
+if the register is not replicated and therefore does not actually require
+steering.

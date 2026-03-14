@@ -1,0 +1,13 @@
+Function: int genphy_c37_config_advert ( struct phy_device * phydev )
+
+sanitize and advertise auto-negotiation parameters
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  after sanitizing the values to make sure we only advertise
+what is supported.  Returns < 0 on error, 0 if the PHY’s advertisement
+hasn’t changed, and > 0 if it has changed. This function is intended
+for Clause 37 1000Base-X mode.

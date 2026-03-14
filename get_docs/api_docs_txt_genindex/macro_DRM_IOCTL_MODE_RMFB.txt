@@ -1,0 +1,9 @@
+Macro: DRM_IOCTL_MODE_RMFB
+
+
+
+Members
+  type
+    event type.
+  length
+    total number of payload bytes (including header).

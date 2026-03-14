@@ -1,0 +1,13 @@
+Struct: struct rkisp1_cif_isp_isp_meas_cfg
+
+Rockchip ISP1 Measure Parameters
+
+Members
+  awb_meas_config
+    auto white balance config
+  hst_config
+    histogram config
+  aec_config
+    auto exposure config
+  afc_config
+    auto focus config

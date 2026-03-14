@@ -1,0 +1,11 @@
+Struct: struct of_endpoint
+
+the OF graph endpoint data structure
+
+Members
+  port
+    identifier (value of reg property) of a port this endpoint belongs to
+  id
+    identifier (value of reg property) of this endpoint
+  local_node
+    pointer to device_node of this endpoint

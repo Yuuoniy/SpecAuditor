@@ -1,0 +1,26 @@
+Struct: struct ipu3_uapi_yuvp1_iefd_config_s
+
+IEFd config
+
+Members
+  horver_diag_coeff
+    Gradient compensation. Compared with vertical /
+horizontal (0 / 90 degree), coefficient of diagonal (45 /
+135 degree) direction should be corrected by approx.
+1/sqrt(2).
+  reserved0
+    reserved
+  clamp_stitch
+    Slope to stitch between clamped and unclamped edge values
+  reserved1
+    reserved
+  direct_metric_update
+    Update coeff for direction metric
+  reserved2
+    reserved
+  ed_horver_diag_coeff
+    Radial Coefficient that compensates for
+different distance for vertical/horizontal and
+diagonal gradient calculation (approx. 1/sqrt(2))
+  reserved3
+    reserved

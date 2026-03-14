@@ -1,0 +1,13 @@
+Function: void ipc_rmid ( struct ipc_ids * ids , struct kern_ipc_perm * ipcp )
+
+remove an ipc identifier
+
+Parameters
+  struct ipc_ids *ids
+    ipc identifier set
+  struct kern_ipc_perm *ipcp
+    ipc perm structure containing the identifier to remove
+
+Description
+  ipc_ids.rwsem (as a writer) and the spinlock for this ID are held
+before this function is called, and remain locked on the exit.

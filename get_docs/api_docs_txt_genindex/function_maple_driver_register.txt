@@ -1,0 +1,11 @@
+Function: int maple_driver_register ( struct maple_driver * drv )
+
+register a maple driver
+
+Parameters
+  struct maple_driver *drv
+    maple driver to be registered.
+
+Description
+  Registers the passed in drv , while updating the bus type.
+Devices with matching function IDs will be automatically probed.

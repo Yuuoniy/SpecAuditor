@@ -1,0 +1,10 @@
+Function: unsigned int ata_dev_set_xfermode ( struct ata_device * dev )
+
+Issue SET FEATURES - XFER MODE command
+
+Parameters
+  struct ata_device *dev
+    Device to which command will be sent
+
+Description
+  Issue SET FEATURES - XFER MODE command to device dev on port ap .

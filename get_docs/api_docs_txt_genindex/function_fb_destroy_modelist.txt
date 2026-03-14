@@ -1,0 +1,7 @@
+Function: void fb_destroy_modelist ( struct list_head * head )
+
+destroy modelist
+
+Parameters
+  struct list_head *head
+    struct list_head of modelist

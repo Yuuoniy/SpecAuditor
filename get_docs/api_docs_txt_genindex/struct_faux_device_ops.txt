@@ -1,0 +1,13 @@
+Struct: struct faux_device_ops
+
+a set of callbacks for a struct faux_device
+
+Members
+  probe
+    called when a faux device is probed by the driver core
+before the device is fully bound to the internal faux bus
+code.  If probe succeeds, return 0, otherwise return a
+negative error number to stop the probe sequence from
+succeeding.
+  remove
+    called when a faux device is removed from the system

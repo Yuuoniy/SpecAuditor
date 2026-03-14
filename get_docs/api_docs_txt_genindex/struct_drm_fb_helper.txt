@@ -1,0 +1,53 @@
+Struct: struct drm_fb_helper
+
+main structure to emulate fbdev on top of KMS
+
+Members
+  client
+    DRM client used by the generic fbdev emulation.
+  buffer
+    Framebuffer used by the generic fbdev emulation.
+  fb
+    Scanout framebuffer object
+  dev
+    DRM device
+  funcs
+    driver callbacks for fb helper
+  info
+    emulated fbdev device info struct
+  pseudo_palette
+    fake palette of 16 colors
+  damage_clip
+    clip rectangle used with deferred_io to accumulate damage to
+the screen buffer
+  damage_lock
+    spinlock protecting damage_clip
+  damage_work
+    worker used to flush the framebuffer
+  resume_work
+    worker used during resume if the console lock is already taken
+  lock
+    Top-level FBDEV helper lock. This protects all internal data
+structures and lists, such as connector_info and crtc_info . FIXME: fbdev emulation locking is a mess and long term we want to
+protect all helper internal state with this lock as well as reduce
+core KMS locking as much as possible.
+  kernel_fb_list
+    Entry on the global kernel_fb_helper_list, used for kgdb entry/exit.
+  delayed_hotplug
+    A hotplug was received while fbdev wasn’t in control of the DRM
+device, i.e. another KMS master was active. The output configuration
+needs to be reprobe when fbdev is in control again.
+  deferred_setup
+    If no outputs are connected (disconnected or unknown) the FB helper
+code will defer setup until at least one of the outputs shows up.
+This field keeps track of the status so that setup can be retried
+at every hotplug event until it succeeds eventually. Protected by lock .
+  preferred_bpp
+    Temporary storage for the driver’s preferred BPP setting passed to
+FB helper initialization. This needs to be tracked so that deferred
+FB helper setup can pass this on. See also: deferred_setup
+  fbdefio
+    Temporary storage for the driver’s FB deferred I/O handler. If the
+driver uses the DRM fbdev emulation layer, this is set by the core
+to a generic deferred I/O handler if a driver is preferring to use
+a shadow buffer.

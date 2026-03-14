@@ -1,0 +1,21 @@
+Function: struct vb2_v4l2_buffer
+
+video buffer information for v4l2.
+
+Members
+  vb2_buf
+    embedded struct vb2_buffer .
+  flags
+    buffer informational flags.
+  field
+    field order of the image in the buffer, as defined by enum v4l2_field .
+  timecode
+    frame timecode.
+  sequence
+    sequence count of this frame.
+  request_fd
+    the request_fd associated with this buffer
+  is_held
+    if true, then this capture buffer was held
+  planes
+    plane information (userptr/fd, length, bytesused, data_offset).

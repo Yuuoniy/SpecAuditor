@@ -1,0 +1,12 @@
+Function: void intel_gt_mcr_unlock ( struct intel_gt * gt , unsigned long flags )
+
+Release MCR steering lock
+
+Parameters
+  struct intel_gt *gt
+    GT structure
+  unsigned long flags
+    IRQ flags to restore
+
+Description
+  Releases the lock acquired by intel_gt_mcr_lock() .

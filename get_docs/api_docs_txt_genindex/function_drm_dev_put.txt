@@ -1,0 +1,11 @@
+Function: void drm_dev_put ( struct drm_device * dev )
+
+Drop reference of a DRM device
+
+Parameters
+  struct drm_device *dev
+    device to drop reference of or NULL
+
+Description
+  This decreases the ref-count of dev by one. The device is destroyed if the
+ref-count drops to zero.

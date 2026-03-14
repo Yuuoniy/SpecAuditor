@@ -1,0 +1,10 @@
+Function: int iio_device_suspend_triggering ( struct iio_dev * indio_dev )
+
+suspend trigger attached to an iio_dev
+
+Parameters
+  struct iio_dev *indio_dev
+    iio_dev associated with the device that will have triggers suspended
+
+Description
+  Return 0 if successful, negative otherwise

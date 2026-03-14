@@ -1,0 +1,14 @@
+Function: int crypto_ahash_import ( struct ahash_request * req , const void * in )
+
+import message digest state
+
+Parameters
+  struct ahash_request *req
+    reference to ahash_request handle the state is imported into
+  const void *in
+    buffer holding the state
+
+Description
+  This function imports the hash state into the ahash_request handle from the
+input buffer. That buffer should have been generated with the
+crypto_ahash_export function.

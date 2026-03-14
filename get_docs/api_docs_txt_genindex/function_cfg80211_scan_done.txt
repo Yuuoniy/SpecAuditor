@@ -1,0 +1,9 @@
+Function: void cfg80211_scan_done ( struct cfg80211_scan_request * request , struct cfg80211_scan_info * info )
+
+notify that scan finished
+
+Parameters
+  struct cfg80211_scan_request *request
+    the corresponding scan request
+  struct cfg80211_scan_info *info
+    information about the completed scan

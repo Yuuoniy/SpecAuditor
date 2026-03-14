@@ -1,0 +1,17 @@
+Function: int hte_ts_get ( struct device * dev , struct hte_ts_desc * desc , int index )
+
+The function to initialize and obtain HTE desc.
+
+Parameters
+  struct device *dev
+    HTE consumer/client device, used in case of parsing device tree node.
+  struct hte_ts_desc *desc
+    Pre-allocated timestamp descriptor.
+  int index
+    The index will be used as an index to parse line_id from the
+device tree node if node is present.
+
+Description
+  The function initializes the consumer provided HTE descriptor. If consumer
+has device tree node, index is used to parse the line id and other details.
+The function needs to be called before using any request APIs.

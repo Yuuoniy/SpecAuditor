@@ -1,0 +1,13 @@
+Struct: struct media_pipeline
+
+Media pipeline related information
+
+Members
+  allocated
+    Media pipeline allocated and freed by the framework
+  mdev
+    The media device the pipeline is part of
+  pads
+    List of media_pipeline_pad
+  start_count
+    Media pipeline start - stop count

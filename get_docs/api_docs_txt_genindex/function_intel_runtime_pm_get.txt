@@ -1,0 +1,11 @@
+Function: intel_wakeref_t intel_runtime_pm_get ( struct intel_runtime_pm * rpm )
+
+grab a runtime pm reference
+
+Parameters
+  struct intel_runtime_pm *rpm
+    the intel_runtime_pm structure
+
+Description
+  This function grabs a device-level runtime pm reference (mostly used for GEM
+code to ensure the GTT or GT is on) and ensures that it is powered up.

@@ -1,0 +1,44 @@
+Function: int i915_gem_gtt_insert ( struct i915_address_space * vm , struct i915_gem_ww_ctx * ww , struct drm_mm_node * node , u64 size , u64 alignment , unsigned long color , u64 start , u64 end , unsigned int flags )
+
+insert a node into an address_space (GTT)
+
+Parameters
+  struct i915_address_space *vm
+    the struct i915_address_space
+  struct i915_gem_ww_ctx *ww
+    An optional struct i915_gem_ww_ctx .
+  struct drm_mm_node *node
+    the struct drm_mm_node (typically i915_vma.node)
+  u64 size
+    how much space to allocate inside the GTT,
+must be #I915_GTT_PAGE_SIZE aligned
+  u64 alignment
+    required alignment of starting offset, may be 0 but
+if specified, this must be a power-of-two and at least
+#I915_GTT_MIN_ALIGNMENT
+  unsigned long color
+    color to apply to node
+  u64 start
+    start of any range restriction inside GTT (0 for all),
+must be #I915_GTT_PAGE_SIZE aligned
+  u64 end
+    end of any range restriction inside GTT (U64_MAX for all),
+must be #I915_GTT_PAGE_SIZE aligned if not U64_MAX
+  unsigned int flags
+    control search and eviction behaviour
+
+Description
+  i915_gem_gtt_insert() first searches for an available hole into which
+is can insert the node. The hole address is aligned to alignment and
+its size must then fit entirely within the [ start , end ] bounds. The
+nodes on either side of the hole must match color , or else a guard page
+will be inserted between the two nodes (or the node evicted). If no
+suitable hole is found, first a victim is randomly selected and tested
+for eviction, otherwise then the LRU list of objects within the GTT
+is scanned to find the first set of replacement nodes to create the hole.
+Those old overlapping nodes are evicted from the GTT (and so must be
+rebound before any future use). Any node that is currently pinned cannot
+be evicted (see i915_vma_pin() ). Similar if the node’s VMA is currently
+active and #PIN_NONBLOCK is specified, that node is also skipped when
+searching for an eviction candidate. See i915_gem_evict_something() for
+the gory details on the eviction algorithm.

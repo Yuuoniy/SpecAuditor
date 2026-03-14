@@ -1,0 +1,14 @@
+Function: ssize_t dvb_ringbuffer_write ( struct dvb_ringbuffer * rbuf , const u8 * buf , size_t len )
+
+Writes a buffer into the ringbuffer
+
+Parameters
+  struct dvb_ringbuffer *rbuf
+    pointer to struct dvb_ringbuffer
+  const u8 *buf
+    pointer to the buffer where the data will be read
+  size_t len
+    bytes from ring buffer into buf
+
+Description
+  This variant assumes that the buffer is a memory at the Kernel space

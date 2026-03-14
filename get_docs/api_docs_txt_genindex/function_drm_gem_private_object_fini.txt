@@ -1,0 +1,10 @@
+Function: void drm_gem_private_object_fini ( struct drm_gem_object * obj )
+
+Finalize a failed drm_gem_object
+
+Parameters
+  struct drm_gem_object *obj
+    drm_gem_object
+
+Description
+  Uninitialize an already allocated GEM object when it initialized failed

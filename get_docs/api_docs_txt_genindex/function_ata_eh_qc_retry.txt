@@ -1,0 +1,11 @@
+Function: void ata_eh_qc_retry ( struct ata_queued_cmd * qc )
+
+Tell midlayer to retry an ATA command after EH
+
+Parameters
+  struct ata_queued_cmd *qc
+    Command to retry
+
+Description
+  Indicate to the mid and upper layers that an ATA command
+should be retried.  To be used from EH.

@@ -1,0 +1,13 @@
+Function: void tipc_named_rcv ( struct net * net , struct sk_buff_head * namedq , u16 * rcv_nxt , bool * open )
+
+process name table update messages sent by another node
+
+Parameters
+  struct net *net
+    the associated network namespace
+  struct sk_buff_head *namedq
+    queue to receive from
+  u16 *rcv_nxt
+    store last received seqno here
+  bool *open
+    last bulk msg was received (FIXME)

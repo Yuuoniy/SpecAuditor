@@ -1,0 +1,11 @@
+Macro: kcalloc
+
+
+
+Parameters
+  n
+    number of elements.
+  size
+    element size.
+  flags
+    the type of memory to allocate (see kmalloc).

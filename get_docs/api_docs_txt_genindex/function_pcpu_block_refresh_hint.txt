@@ -1,0 +1,13 @@
+Function: void pcpu_block_refresh_hint ( struct pcpu_chunk * chunk , int index )
+
+
+
+Parameters
+  struct pcpu_chunk *chunk
+    chunk of interest
+  int index
+    index of the metadata block
+
+Description
+  Scans over the block beginning at first_free and updates the block
+metadata accordingly.

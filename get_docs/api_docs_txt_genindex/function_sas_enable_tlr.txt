@@ -1,0 +1,10 @@
+Function: void sas_enable_tlr ( struct scsi_device * sdev )
+
+setting TLR flags
+
+Parameters
+  struct scsi_device *sdev
+    scsi device struct
+
+Description
+  Seting tlr_enabled flag 1.

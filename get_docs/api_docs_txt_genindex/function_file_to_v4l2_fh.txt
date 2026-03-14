@@ -1,0 +1,11 @@
+Function: struct v4l2_fh * file_to_v4l2_fh ( struct file * filp )
+
+Return the v4l2_fh associated with a struct file
+
+Parameters
+  struct file *filp
+    pointer to struct file
+
+Description
+  This function should be used by drivers to retrieve the struct v4l2_fh instance pointer stored in the file private_data instead of accessing the
+private_data field directly.

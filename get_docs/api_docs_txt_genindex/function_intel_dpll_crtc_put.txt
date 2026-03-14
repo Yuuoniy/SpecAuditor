@@ -1,0 +1,14 @@
+Function: void intel_dpll_crtc_put ( const struct intel_crtc * crtc , const struct intel_dpll * pll , struct intel_dpll_state * dpll_state )
+
+Drop a DPLL reference for a CRTC
+
+Parameters
+  const struct intel_crtc *crtc
+    CRTC on which behalf the reference is dropped
+  const struct intel_dpll *pll
+    DPLL for which the reference is dropped
+  struct intel_dpll_state *dpll_state
+    the DPLL atomic state in which the reference is tracked
+
+Description
+  Drop a reference for pll tracking the end of use of it by crtc .

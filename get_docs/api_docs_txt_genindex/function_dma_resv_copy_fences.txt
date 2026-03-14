@@ -1,0 +1,12 @@
+Function: int dma_resv_copy_fences ( struct dma_resv * dst , struct dma_resv * src )
+
+Copy all fences from src to dst.
+
+Parameters
+  struct dma_resv *dst
+    the destination reservation object
+  struct dma_resv *src
+    the source reservation object
+
+Description
+  Copy all fences from src to dst. dst-lock must be held.

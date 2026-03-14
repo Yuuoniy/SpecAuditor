@@ -1,0 +1,14 @@
+Function: void usb_sg_wait ( struct usb_sg_request * io )
+
+synchronously execute scatter/gather request
+
+Parameters
+  struct usb_sg_request *io
+    request block handle, as initialized with usb_sg_init() .
+some fields become accessible when this call returns.
+
+Description
+  This function blocks until the specified I/O operation completes.  It
+leverages the grouping of the related I/O requests to get good transfer
+rates, by queueing the requests.  At higher speeds, such queuing can
+significantly improve USB throughput.

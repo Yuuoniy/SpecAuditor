@@ -1,0 +1,11 @@
+Function: int target_submit ( struct se_cmd * se_cmd )
+
+perform final initialization and submit cmd to LIO core
+
+Parameters
+  struct se_cmd *se_cmd
+    command descriptor to submit
+
+Description
+  target_submit_prep or something similar must have been called on the cmd,
+and this must be called from process context.

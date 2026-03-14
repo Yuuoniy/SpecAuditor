@@ -1,0 +1,12 @@
+Function: int devm_i2c_add_adapter ( struct device * dev , struct i2c_adapter * adapter )
+
+device-managed variant of i2c_add_adapter()
+
+Parameters
+  struct device *dev
+    managing device for adding this I2C adapter
+  struct i2c_adapter *adapter
+    the adapter to add
+
+Description
+  Add adapter with dynamic bus number, same with i2c_add_adapter() but the adapter will be auto deleted on driver detach.

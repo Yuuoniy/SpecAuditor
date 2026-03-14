@@ -1,0 +1,3 @@
+Enum: enum rc_driver_type
+
+type of the RC driver.

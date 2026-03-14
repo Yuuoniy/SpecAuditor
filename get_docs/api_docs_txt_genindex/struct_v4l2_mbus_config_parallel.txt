@@ -1,0 +1,11 @@
+Struct: struct v4l2_mbus_config_parallel
+
+parallel data bus configuration
+
+Members
+  flags
+    media bus (V4L2_MBUS_*) flags
+  bus_width
+    bus width in bits
+  data_shift
+    data shift in bits

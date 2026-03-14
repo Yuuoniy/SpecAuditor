@@ -1,0 +1,13 @@
+Function: void idr_init_base ( struct idr * idr , int base )
+
+Initialise an IDR.
+
+Parameters
+  struct idr *idr
+    IDR handle.
+  int base
+    The base value for the IDR.
+
+Description
+  This variation of idr_init() creates an IDR which will allocate IDs
+starting at base .

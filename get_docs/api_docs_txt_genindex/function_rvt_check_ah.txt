@@ -1,0 +1,13 @@
+Function: int rvt_check_ah ( struct ib_device * ibdev , struct rdma_ah_attr * ah_attr )
+
+validate the attributes of AH
+
+Parameters
+  struct ib_device *ibdev
+    the ib device
+  struct rdma_ah_attr *ah_attr
+    the attributes of the AH
+
+Description
+  If driver supports a more detailed check_ah function call back to it
+otherwise just check the basics.

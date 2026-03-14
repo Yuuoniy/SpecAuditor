@@ -1,0 +1,15 @@
+Function: int security_vm_enough_memory_mm ( struct mm_struct * mm , long pages )
+
+Check if allocating a new mem map is allowed
+
+Parameters
+  struct mm_struct *mm
+    mm struct
+  long pages
+    number of pages
+
+Description
+  Check permissions for allocating a new virtual mapping.  If all LSMs return
+a positive value, __vm_enough_memory() will be called with cap_sys_admin
+set. If at least one LSM returns 0 or negative, __vm_enough_memory() will be
+called with cap_sys_admin cleared.

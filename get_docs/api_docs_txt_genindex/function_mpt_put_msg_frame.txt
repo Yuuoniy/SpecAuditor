@@ -1,0 +1,15 @@
+Function: void mpt_put_msg_frame ( u8 cb_idx , MPT_ADAPTER * ioc , MPT_FRAME_HDR * mf )
+
+Send a protocol-specific MPT request frame to an IOC
+
+Parameters
+  u8 cb_idx
+    Handle of registered MPT protocol driver
+  MPT_ADAPTER *ioc
+    Pointer to MPT adapter structure
+  MPT_FRAME_HDR *mf
+    Pointer to MPT request frame
+
+Description
+  This routine posts an MPT request frame to the request post FIFO of a
+specific MPT adapter.

@@ -1,0 +1,10 @@
+Function: int security_tun_dev_attach_queue ( void * security )
+
+Check if attaching a TUN queue is allowed
+
+Parameters
+  void *security
+    TUN device LSM blob
+
+Description
+  Check permissions prior to attaching to a TUN device queue.

@@ -1,0 +1,11 @@
+Function: bool drm_mm_node_allocated ( const struct drm_mm_node * node )
+
+checks whether a node is allocated
+
+Parameters
+  const struct drm_mm_node *node
+    drm_mm_node to check
+
+Description
+  Drivers are required to clear a node prior to using it with the
+drm_mm range manager.

@@ -1,0 +1,9 @@
+Function: void skb_len_add ( struct sk_buff * skb , int delta )
+
+adds a number to len fields of skb
+
+Parameters
+  struct sk_buff *skb
+    buffer to add len to
+  int delta
+    number of bytes to add

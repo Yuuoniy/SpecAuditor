@@ -1,0 +1,13 @@
+Function: struct file * shmem_file_setup_with_mnt ( struct vfsmount * mnt , const char * name , loff_t size , unsigned long flags )
+
+get an unlinked file living in tmpfs
+
+Parameters
+  struct vfsmount *mnt
+    the tmpfs mount where the file will be created
+  const char *name
+    name for dentry (to be seen in /proc/<pid>/maps)
+  loff_t size
+    size to be set for the file
+  unsigned long flags
+    VM_NORESERVE suppresses pre-accounting of the entire object size

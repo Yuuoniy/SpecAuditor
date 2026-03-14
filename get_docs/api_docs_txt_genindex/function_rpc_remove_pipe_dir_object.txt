@@ -1,0 +1,11 @@
+Function: void rpc_remove_pipe_dir_object ( struct net * net , struct rpc_pipe_dir_head * pdh , struct rpc_pipe_dir_object * pdo )
+
+remove a rpc_pipe_dir_object from a directory
+
+Parameters
+  struct net *net
+    pointer to struct net
+  struct rpc_pipe_dir_head *pdh
+    pointer to struct rpc_pipe_dir_head
+  struct rpc_pipe_dir_object *pdo
+    pointer to struct rpc_pipe_dir_object

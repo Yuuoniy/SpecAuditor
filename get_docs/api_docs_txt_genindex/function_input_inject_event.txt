@@ -1,0 +1,18 @@
+Function: void input_inject_event ( struct input_handle * handle , unsigned int type , unsigned int code , int value )
+
+send input event from input handler
+
+Parameters
+  struct input_handle *handle
+    input handle to send event through
+  unsigned int type
+    type of the event
+  unsigned int code
+    event code
+  int value
+    value of the event
+
+Description
+  Similar to input_event() but will ignore event if device is
+“grabbed” and handle injecting event is not the one that owns
+the device.

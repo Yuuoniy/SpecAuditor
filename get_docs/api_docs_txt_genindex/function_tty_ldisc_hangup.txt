@@ -1,0 +1,14 @@
+Function: void tty_ldisc_hangup ( struct tty_struct * tty , bool reinit )
+
+hangup ldisc reset
+
+Parameters
+  struct tty_struct *tty
+    tty being hung up
+  bool reinit
+    whether to re-initialise the tty
+
+Description
+  Some tty devices reset their termios when they receive a hangup event. In
+that situation we must also switch back to N_TTY properly before we reset
+the termios data.

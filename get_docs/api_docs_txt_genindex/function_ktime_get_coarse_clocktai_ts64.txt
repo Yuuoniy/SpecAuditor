@@ -1,0 +1,14 @@
+Function: void ktime_get_coarse_clocktai_ts64 ( struct timespec64 * )
+
+These are quicker than the non-coarse versions, but less accurate,
+corresponding to CLOCK_MONOTONIC_COARSE and CLOCK_REALTIME_COARSE
+in user space, along with the equivalent boottime/tai/raw
+timebase not available in user space. The time returned here corresponds to the last timer tick, which
+may be as much as 10ms in the past (for CONFIG_HZ=100), same as
+reading the ‘jiffies’ variable.  These are only useful when called
+in a fast path and one still expects better than second accuracy,
+but can’t easily use ‘jiffies’, e.g. for inode timestamps.
+Skipping the hardware clock access saves around 100 CPU cycles
+on most modern machines with a reliable cycle counter, but
+up to several microseconds on older hardware with an external
+clocksource.

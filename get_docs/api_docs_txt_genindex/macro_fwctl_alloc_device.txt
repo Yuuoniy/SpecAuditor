@@ -1,0 +1,18 @@
+Macro: fwctl_alloc_device
+
+
+
+Parameters
+  parent
+    Physical device that provides the FW interface
+  ops
+    Driver ops to register
+  drv_struct
+    ‘ struct driver_fwctl ’ that holds the struct fwctl_device
+  member
+    Name of the struct fwctl_device in drv_struct
+
+Description
+  This allocates and initializes the fwctl_device embedded in the drv_struct.
+Upon success the pointer must be freed via fwctl_put() . Returns a ‘drv_struct
+*’ on success, NULL on error.

@@ -1,0 +1,21 @@
+Struct: struct net_shaper
+
+represents a shaping node on the NIC H/W zeroed field are considered not set.
+
+Members
+  parent
+    Unique identifier for the shaper parent, usually implied
+  handle
+    Unique identifier for this shaper
+  metric
+    Specify if the rate limits refers to PPS or BPS
+  bw_min
+    Minimum guaranteed rate for this shaper
+  bw_max
+    Maximum peak rate allowed for this shaper
+  burst
+    Maximum burst for the peek rate of this shaper
+  priority
+    Scheduling priority for this shaper
+  weight
+    Scheduling weight for this shaper

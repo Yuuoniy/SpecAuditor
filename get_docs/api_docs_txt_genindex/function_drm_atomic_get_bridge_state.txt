@@ -1,0 +1,14 @@
+Function: struct drm_bridge_state * drm_atomic_get_bridge_state ( struct drm_atomic_state * state , struct drm_bridge * bridge )
+
+get bridge state
+
+Parameters
+  struct drm_atomic_state *state
+    global atomic state object
+  struct drm_bridge *bridge
+    bridge to get state object for
+
+Description
+  This function returns the bridge state for the given bridge, allocating it
+if needed. It will also grab the relevant bridge lock to make sure that the
+state is consistent.

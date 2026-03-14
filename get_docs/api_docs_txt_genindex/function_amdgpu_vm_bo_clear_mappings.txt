@@ -1,0 +1,16 @@
+Function: int amdgpu_vm_bo_clear_mappings ( struct amdgpu_device * adev , struct amdgpu_vm * vm , uint64_t saddr , uint64_t size )
+
+remove all mappings in a specific range
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+  struct amdgpu_vm *vm
+    VM structure to use
+  uint64_t saddr
+    start of the range
+  uint64_t size
+    size of the range
+
+Description
+  Remove all mappings in a range, split them as appropriate.

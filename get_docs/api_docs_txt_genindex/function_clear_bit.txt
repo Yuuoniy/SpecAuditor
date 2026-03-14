@@ -1,0 +1,12 @@
+Function: void clear_bit ( long nr , volatile unsigned long * addr )
+
+Clears a bit in memory
+
+Parameters
+  long nr
+    Bit to clear
+  volatile unsigned long *addr
+    Address to start counting from
+
+Description
+  This is a relaxed atomic operation (no implied memory barriers).

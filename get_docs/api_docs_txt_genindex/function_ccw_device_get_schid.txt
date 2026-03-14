@@ -1,0 +1,9 @@
+Function: void ccw_device_get_schid ( struct ccw_device * cdev , struct subchannel_id * schid )
+
+obtain a subchannel id
+
+Parameters
+  struct ccw_device *cdev
+    device to obtain the id for
+  struct subchannel_id *schid
+    where to fill in the values

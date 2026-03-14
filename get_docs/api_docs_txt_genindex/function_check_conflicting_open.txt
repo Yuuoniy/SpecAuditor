@@ -1,0 +1,15 @@
+Function: int check_conflicting_open ( struct file * filp , const int arg , int flags )
+
+see if the given file points to an inode that has an existing open that would conflict with the desired lease.
+
+Parameters
+  struct file *filp
+    file to check
+  const int arg
+    type of lease that we’re trying to acquire
+  int flags
+    current lock flags
+
+Description
+  Check to see if there’s an existing open fd on this file that would
+conflict with the lease we’re trying to set.

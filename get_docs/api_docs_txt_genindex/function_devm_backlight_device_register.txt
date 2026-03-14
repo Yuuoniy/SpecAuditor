@@ -1,0 +1,21 @@
+Function: struct backlight_device * devm_backlight_device_register ( struct device * dev , const char * name , struct device * parent , void * devdata , const struct backlight_ops * ops , const struct backlight_properties * props )
+
+register a new backlight device
+
+Parameters
+  struct device *dev
+    the device to register
+  const char *name
+    the name of the device
+  struct device *parent
+    a pointer to the parent device (often the same as dev )
+  void *devdata
+    an optional pointer to be stored for private driver use
+  const struct backlight_ops *ops
+    the backlight operations structure
+  const struct backlight_properties *props
+    the backlight properties
+
+Description
+  Creates and registers new backlight device. When a backlight device
+is registered the configuration must be specified in the props parameter. See description of backlight_properties .

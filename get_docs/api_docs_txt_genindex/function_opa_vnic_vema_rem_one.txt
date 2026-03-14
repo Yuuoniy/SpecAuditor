@@ -1,0 +1,12 @@
+Function: void opa_vnic_vema_rem_one ( struct ib_device * device , void * client_data )
+
+Handle ib device removal
+
+Parameters
+  struct ib_device *device
+    ib device pointer
+  void *client_data
+    ib client data
+
+Description
+  Uninitialize and free the vnic control port.

@@ -1,0 +1,12 @@
+Function: int dma_fence_get_status ( struct dma_fence * fence )
+
+returns the status upon completion
+
+Parameters
+  struct dma_fence *fence
+    the dma_fence to query
+
+Description
+  This wraps dma_fence_get_status_locked() to return the error status
+condition on a signaled fence. See dma_fence_get_status_locked() for more
+details.

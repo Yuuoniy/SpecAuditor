@@ -1,0 +1,11 @@
+Function: void misc_deregister ( struct miscdevice * misc )
+
+unregister a miscellaneous device
+
+Parameters
+  struct miscdevice *misc
+    device to unregister
+
+Description
+  Unregister a miscellaneous device that was previously
+successfully registered with misc_register() .

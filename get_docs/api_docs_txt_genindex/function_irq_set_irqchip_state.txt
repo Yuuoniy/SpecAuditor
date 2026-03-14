@@ -1,0 +1,15 @@
+Function: int irq_set_irqchip_state ( unsigned int irq , enum irqchip_irq_state which , bool val )
+
+set the state of a forwarded interrupt.
+
+Parameters
+  unsigned int irq
+    Interrupt line that is forwarded to a VM
+  enum irqchip_irq_state which
+    State to be restored (one of IRQCHIP_STATE_*)
+  bool val
+    Value corresponding to which
+
+Description
+  This call sets the internal irqchip state of an interrupt, depending on
+the value of which .

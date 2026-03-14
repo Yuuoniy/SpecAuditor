@@ -1,0 +1,15 @@
+Macro: wrapping_mul
+
+
+
+Parameters
+  type
+    type for result of calculation
+  a
+    first factor
+  b
+    second factor
+
+Description
+  Return the potentially wrapped-around multiplication without
+tripping any wrap-around sanitizers that may be enabled.

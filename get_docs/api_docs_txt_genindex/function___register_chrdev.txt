@@ -1,0 +1,19 @@
+Function: int __register_chrdev ( unsigned int major , unsigned int baseminor , unsigned int count , const char * name , const struct file_operations * fops )
+
+create and register a cdev occupying a range of minors
+
+Parameters
+  unsigned int major
+    major device number or 0 for dynamic allocation
+  unsigned int baseminor
+    first of the requested range of minor numbers
+  unsigned int count
+    the number of minor numbers required
+  const char *name
+    name of this range of devices
+  const struct file_operations *fops
+    file operations associated with this devices
+
+Description
+  If major == 0 this functions will dynamically allocate a major and return
+its number.

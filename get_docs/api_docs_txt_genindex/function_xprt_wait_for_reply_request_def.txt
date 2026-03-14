@@ -1,0 +1,13 @@
+Function: void xprt_wait_for_reply_request_def ( struct rpc_task * task )
+
+wait for reply
+
+Parameters
+  struct rpc_task *task
+    pointer to rpc_task
+
+Description
+  Set a request’s retransmit timeout based on the transport’s
+default timeout parameters.  Used by transports that don’t adjust
+the retransmit timeout based on round-trip time estimation,
+and put the task to sleep on the pending queue.

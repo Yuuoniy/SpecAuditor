@@ -1,0 +1,14 @@
+Function: int __dev_queue_xmit ( struct sk_buff * skb , struct net_device * sb_dev )
+
+transmit a buffer
+
+Parameters
+  struct sk_buff *skb
+    buffer to transmit
+  struct net_device *sb_dev
+    suboordinate device used for L2 forwarding offload
+
+Description
+  Queue a buffer for transmission to a network device. The caller must
+have set the device and priority and built the buffer before calling
+this function. The function can be called from an interrupt.

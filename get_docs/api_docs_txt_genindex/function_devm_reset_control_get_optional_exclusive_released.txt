@@ -1,0 +1,14 @@
+Function: struct reset_control * devm_reset_control_get_optional_exclusive_released ( struct device * dev , const char * id )
+
+resource managed reset_control_get_optional_exclusive_released()
+
+Parameters
+  struct device *dev
+    device to be reset by the controller
+  const char *id
+    reset line name
+
+Description
+  Managed-and-optional variant of reset_control_get_exclusive_released() . For
+reset controllers returned from this function, reset_control_put() is called
+automatically on driver detach.

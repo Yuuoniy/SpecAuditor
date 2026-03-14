@@ -1,0 +1,8 @@
+Function: void of_node_put ( struct device_node * node )
+
+Decrement refcount of a node
+
+Parameters
+  struct device_node *node
+    Node to dec refcount, NULL is supported to simplify writing of
+callers

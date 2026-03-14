@@ -1,0 +1,27 @@
+Function: void __next_mem_range ( u64 * idx , int nid , enum memblock_flags flags , struct memblock_type * type_a , struct memblock_type * type_b , phys_addr_t * out_start , phys_addr_t * out_end , int * out_nid )
+
+next function for for_each_free_mem_range() etc.
+
+Parameters
+  u64 *idx
+    pointer to u64 loop variable
+  int nid
+    node selector, NUMA_NO_NODE for all nodes
+  enum memblock_flags flags
+    pick from blocks based on memory attributes
+  struct memblock_type *type_a
+    pointer to memblock_type from where the range is taken
+  struct memblock_type *type_b
+    pointer to memblock_type which excludes memory from being taken
+  phys_addr_t *out_start
+    ptr to phys_addr_t for start address of the range, can be NULL
+  phys_addr_t *out_end
+    ptr to phys_addr_t for end address of the range, can be NULL
+  int *out_nid
+    ptr to int for nid of the range, can be NULL
+
+Description
+  Find the first area from *idx which matches nid , fill the out
+parameters, and update *idx for the next iteration.  The lower 32bit of *idx contains index into type_a and the upper 32bit indexes the
+areas before each region in type_b.  For example, if type_b regions
+look like the following,

@@ -1,0 +1,11 @@
+Function: struct i3c_ibi_slot * i3c_generic_ibi_get_free_slot ( struct i3c_generic_ibi_pool * pool )
+
+Get a free slot from a generic IBI pool
+
+Parameters
+  struct i3c_generic_ibi_pool *pool
+    the pool to query an IBI slot on
+
+Description
+  Search for a free slot in a generic IBI pool.
+The slot should be returned to the pool using i3c_generic_ibi_recycle_slot() when it’s no longer needed.

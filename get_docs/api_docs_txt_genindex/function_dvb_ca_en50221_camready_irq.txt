@@ -1,0 +1,9 @@
+Function: void dvb_ca_en50221_camready_irq ( struct dvb_ca_en50221 * pubca , int slot )
+
+A CAMREADY IRQ has occurred.
+
+Parameters
+  struct dvb_ca_en50221 *pubca
+    CA instance.
+  int slot
+    Slot concerned.

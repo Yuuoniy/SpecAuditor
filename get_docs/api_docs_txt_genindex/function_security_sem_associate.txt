@@ -1,0 +1,14 @@
+Function: int security_sem_associate ( struct kern_ipc_perm * sma , int semflg )
+
+Check if a sysv semaphore operation is allowed
+
+Parameters
+  struct kern_ipc_perm *sma
+    sysv ipc permission structure
+  int semflg
+    operation flags
+
+Description
+  Check permission when a semaphore is requested through the semget system
+call. This hook is only called when returning the semaphore identifier for
+an existing semaphore, not when a new one must be created.

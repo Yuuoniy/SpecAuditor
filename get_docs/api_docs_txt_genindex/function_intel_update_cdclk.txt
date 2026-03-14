@@ -1,0 +1,10 @@
+Function: void intel_update_cdclk ( struct intel_display * display )
+
+Determine the current CDCLK frequency
+
+Parameters
+  struct intel_display *display
+    display instance
+
+Description
+  Determine the current CDCLK frequency.

@@ -1,0 +1,13 @@
+Function: bool apple_gmux_detect ( struct pnp_dev * pnp_dev , enum apple_gmux_type * type_ret )
+
+detect if gmux is built into the machine
+
+Parameters
+  struct pnp_dev *pnp_dev
+    Device to probe or NULL to use the first matching device
+  enum apple_gmux_type *type_ret
+    Returns (by reference) the apple_gmux_type of the device
+
+Description
+  Detect if a supported gmux device is present by actually probing it.
+This avoids the false positives returned on some models by apple_gmux_present() .

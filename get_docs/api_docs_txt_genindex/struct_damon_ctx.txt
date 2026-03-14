@@ -1,0 +1,21 @@
+Struct: struct damon_ctx
+
+Represents a context for each monitoring. This is the main interface that allows users to set the attributes and get the results of the monitoring.
+
+Members
+  attrs
+    Monitoring attributes for accuracy/overhead control.
+  kdamond
+    Kernel thread who does the monitoring.
+  kdamond_lock
+    Mutex for the synchronizations with kdamond .
+  ops
+    Set of monitoring operations for given use cases.
+  addr_unit
+    Scale factor for core to ops address conversion.
+  min_sz_region
+    Minimum region size.
+  adaptive_targets
+    Head of monitoring targets ( damon_target ) list.
+  schemes
+    Head of schemes ( damos ) list.

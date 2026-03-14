@@ -1,0 +1,12 @@
+Function: struct drm_gem_object * amdgpu_gem_prime_import ( struct drm_device * dev , struct dma_buf * dma_buf )
+
+drm_driver.gem_prime_import implementation
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct dma_buf *dma_buf
+    Shared DMA buffer
+
+Description
+  Import a dma_buf into a the driver and potentially create a new GEM object.

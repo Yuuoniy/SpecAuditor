@@ -1,0 +1,13 @@
+Function: int irq_domain_translate_onecell ( struct irq_domain * d , struct irq_fwspec * fwspec , unsigned long * out_hwirq , unsigned int * out_type )
+
+Generic translate for direct one cell bindings
+
+Parameters
+  struct irq_domain *d
+    Interrupt domain involved in the translation
+  struct irq_fwspec *fwspec
+    The firmware interrupt specifier to translate
+  unsigned long *out_hwirq
+    Pointer to storage for the hardware interrupt number
+  unsigned int *out_type
+    Pointer to storage for the interrupt type

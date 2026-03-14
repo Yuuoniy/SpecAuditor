@@ -1,0 +1,11 @@
+Function: void fsleep ( unsigned long usecs )
+
+flexible sleep which autoselects the best mechanism
+
+Parameters
+  unsigned long usecs
+    requested sleep duration in microseconds
+
+Description
+  flseep() selects the best mechanism that will provide maximum 25% slack
+to the requested sleep duration. Therefore it uses:

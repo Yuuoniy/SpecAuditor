@@ -1,0 +1,11 @@
+Function: unsigned int drm_plane_index ( const struct drm_plane * plane )
+
+find the index of a registered plane
+
+Parameters
+  const struct drm_plane *plane
+    plane to find index for
+
+Description
+  Given a registered plane, return the index of that plane within a DRM
+device’s list of planes.

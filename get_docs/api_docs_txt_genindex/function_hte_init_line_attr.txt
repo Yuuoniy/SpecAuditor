@@ -1,0 +1,20 @@
+Function: int hte_init_line_attr ( struct hte_ts_desc * desc , u32 line_id , unsigned long edge_flags , const char * name , void * data )
+
+Initialize line attributes.
+
+Parameters
+  struct hte_ts_desc *desc
+    Pre-allocated timestamp descriptor.
+  u32 line_id
+    line id.
+  unsigned long edge_flags
+    edge flags related to line_id.
+  const char *name
+    name of the line.
+  void *data
+    line data related to line_id.
+
+Description
+  Zeroes out line attributes and initializes with provided arguments.
+The function needs to be called before calling any consumer facing
+functions.

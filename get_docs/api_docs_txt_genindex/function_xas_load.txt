@@ -1,0 +1,11 @@
+Function: void * xas_load ( struct xa_state * xas )
+
+Load an entry from the XArray (advanced).
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+
+Description
+  Usually walks the xas to the appropriate state to load the entry
+stored at xa_index.  However, it will do nothing and return NULL if xas is in an error state. xas_load() will never expand the tree.

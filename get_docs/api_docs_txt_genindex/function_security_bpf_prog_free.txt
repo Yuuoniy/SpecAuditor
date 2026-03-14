@@ -1,0 +1,10 @@
+Function: void security_bpf_prog_free ( struct bpf_prog * prog )
+
+Free a BPF program’s LSM blob
+
+Parameters
+  struct bpf_prog *prog
+    BPF program struct
+
+Description
+  Clean up the security information stored inside BPF program.

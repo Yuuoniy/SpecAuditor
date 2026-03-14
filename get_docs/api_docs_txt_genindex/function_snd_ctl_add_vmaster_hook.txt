@@ -1,0 +1,15 @@
+Function: int snd_ctl_add_vmaster_hook ( struct snd_kcontrol * kcontrol , void ( * hook ) ( void * private_data , int ) , void * private_data )
+
+Add a hook to a vmaster control
+
+Parameters
+  struct snd_kcontrol *kcontrol
+    vmaster kctl element
+  void (*hook)(void *private_data, int)
+    the hook function
+  void *private_data
+    the private_data pointer to be saved
+
+Description
+  Adds the given hook to the vmaster control element so that it’s called
+at each time when the value is changed.

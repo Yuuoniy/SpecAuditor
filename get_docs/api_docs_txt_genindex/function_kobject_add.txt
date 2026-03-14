@@ -1,0 +1,17 @@
+Function: int kobject_add ( struct kobject * kobj , struct kobject * parent , const char * fmt , ... )
+
+The main kobject add function.
+
+Parameters
+  struct kobject *kobj
+    the kobject to add
+  struct kobject *parent
+    pointer to the parent of the kobject.
+  const char *fmt
+    format to name the kobject with.
+  ...
+    variable arguments
+
+Description
+  The kobject name is set and added to the kobject hierarchy in this
+function.

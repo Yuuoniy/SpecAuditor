@@ -1,0 +1,13 @@
+Struct: struct peci_driver
+
+PECI driver
+
+Members
+  driver
+    inherit device driver
+  probe
+    probe callback
+  remove
+    remove callback
+  id_table
+    PECI device match table to decide which device to bind

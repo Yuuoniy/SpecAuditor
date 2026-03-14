@@ -1,0 +1,17 @@
+Function: void drm_panel_init ( struct drm_panel * panel , struct device * dev , const struct drm_panel_funcs * funcs , int connector_type )
+
+initialize a panel
+
+Parameters
+  struct drm_panel *panel
+    DRM panel
+  struct device *dev
+    parent device of the panel
+  const struct drm_panel_funcs *funcs
+    panel operations
+  int connector_type
+    the connector type (DRM_MODE_CONNECTOR_*) corresponding to
+the panel interface (must NOT be DRM_MODE_CONNECTOR_Unknown)
+
+Description
+  Initialize the panel structure for subsequent registration with drm_panel_add() .

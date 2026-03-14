@@ -1,0 +1,11 @@
+Function: const char * v4l2_ctrl_get_name ( u32 id )
+
+Get the name of the control
+
+Parameters
+  u32 id
+    The control ID.
+
+Description
+  This function returns the name of the given control ID or NULL if it isn’t
+a known control.

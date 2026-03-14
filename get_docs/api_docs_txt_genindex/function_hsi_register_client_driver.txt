@@ -1,0 +1,10 @@
+Function: int hsi_register_client_driver ( struct hsi_client_driver * drv )
+
+Register an HSI client to the HSI bus
+
+Parameters
+  struct hsi_client_driver *drv
+    HSI client driver to register
+
+Description
+  Returns -errno on failure, 0 on success.

@@ -1,0 +1,10 @@
+Function: void video_device_release_empty ( struct video_device * vdev )
+
+helper function to implement the video_device-> release() callback.
+
+Parameters
+  struct video_device *vdev
+    pointer to struct video_device
+
+Description
+  This release function does nothing.

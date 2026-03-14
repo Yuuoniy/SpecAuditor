@@ -1,0 +1,12 @@
+Function: const u8 * ieee80211_bss_get_ie ( struct cfg80211_bss * bss , u8 id )
+
+find IE with given ID
+
+Parameters
+  struct cfg80211_bss *bss
+    the bss to search
+  u8 id
+    the element ID
+
+Description
+  Note that the return value is an RCU-protected pointer, so rcu_read_lock() must be held when calling this function.

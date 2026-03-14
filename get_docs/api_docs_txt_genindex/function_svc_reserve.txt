@@ -1,0 +1,14 @@
+Function: void svc_reserve ( struct svc_rqst * rqstp , int space )
+
+change the space reserved for the reply to a request.
+
+Parameters
+  struct svc_rqst *rqstp
+    The request in question
+  int space
+    new max space to reserve
+
+Description
+  Each request reserves some space on the output queue of the transport
+to make sure the reply fits.  This function reduces that reserved
+space to be the amount of space used already, plus space .

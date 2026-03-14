@@ -1,0 +1,14 @@
+Function: void * mas_find ( struct ma_state * mas , unsigned long max )
+
+On the first call, find the entry at or after mas->index up to max . Otherwise, find the entry after mas->index.
+
+Parameters
+  struct ma_state *mas
+    The maple state
+  unsigned long max
+    The maximum value to check.
+
+Description
+  Must hold rcu_read_lock or the write lock.
+If an entry exists, last and index are updated accordingly.
+May set mas->status to ma_overflow.

@@ -1,0 +1,13 @@
+Function: int security_sctp_assoc_established ( struct sctp_association * asoc , struct sk_buff * skb )
+
+Update LSM state when assoc established
+
+Parameters
+  struct sctp_association *asoc
+    SCTP association
+  struct sk_buff *skb
+    packet establishing the association
+
+Description
+  Passes the asoc and chunk->skb of the association COOKIE_ACK packet to the
+security module.

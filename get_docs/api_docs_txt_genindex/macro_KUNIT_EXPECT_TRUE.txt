@@ -1,0 +1,15 @@
+Macro: KUNIT_EXPECT_TRUE
+
+
+
+Parameters
+  test
+    The test context object.
+  condition
+    an arbitrary boolean expression. The test fails when this does
+not evaluate to true.
+
+Description
+  This and expectations of the form KUNIT_EXPECT_* will cause the test case
+to fail when the specified condition is not met; however, it will not prevent
+the test case from continuing to run; this is otherwise known as an expectation failure .

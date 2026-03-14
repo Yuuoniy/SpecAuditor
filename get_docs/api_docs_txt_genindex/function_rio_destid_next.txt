@@ -1,0 +1,9 @@
+Function: u16 rio_destid_next ( struct rio_net * net , u16 from )
+
+return next destID in use
+
+Parameters
+  struct rio_net *net
+    RIO network
+  u16 from
+    destination ID from which search shall continue

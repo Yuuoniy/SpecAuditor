@@ -1,0 +1,11 @@
+Function: int phy_update_stats ( struct phy_device * phydev )
+
+Update PHY device statistics if supported.
+
+Parameters
+  struct phy_device *phydev
+    Pointer to the PHY device structure.
+
+Description
+  If the PHY driver provides an update_stats callback, this function
+invokes it to update the PHY statistics. If not, it returns 0.

@@ -1,0 +1,11 @@
+Function: struct device_node * of_changeset_create_node ( struct of_changeset * ocs , struct device_node * parent , const char * full_name )
+
+Dynamically create a device node and attach to a given changeset.
+
+Parameters
+  struct of_changeset *ocs
+    Pointer to changeset
+  struct device_node *parent
+    Pointer to parent device node
+  const char *full_name
+    Node full name

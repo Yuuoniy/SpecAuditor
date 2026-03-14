@@ -1,0 +1,11 @@
+Function: struct ib_xrcd * ib_alloc_xrcd_user ( struct ib_device * device , struct inode * inode , struct ib_udata * udata )
+
+Allocates an XRC domain.
+
+Parameters
+  struct ib_device *device
+    The device on which to allocate the XRC domain.
+  struct inode *inode
+    inode to connect XRCD
+  struct ib_udata *udata
+    Valid user data or NULL for kernel object

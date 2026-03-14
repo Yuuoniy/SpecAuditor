@@ -1,0 +1,10 @@
+Function: void fscache_end_operation ( struct netfs_cache_resources * cres )
+
+End the read operation for the netfs lib
+
+Parameters
+  struct netfs_cache_resources *cres
+    The cache resources for the read operation
+
+Description
+  Clean up the resources at the end of the read request.

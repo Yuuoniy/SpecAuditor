@@ -1,0 +1,9 @@
+Struct: struct snd_compressed_buffer
+
+compressed buffer
+
+Members
+  fragment_size
+    size of buffer fragment in bytes
+  fragments
+    number of such fragments

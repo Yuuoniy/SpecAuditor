@@ -1,0 +1,14 @@
+Function: int nand_erase_op ( struct nand_chip * chip , unsigned int eraseblock )
+
+Do an erase operation
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+  unsigned int eraseblock
+    block to erase
+
+Description
+  This function sends an ERASE command and waits for the NAND to be ready
+before returning.
+This function does not select/unselect the CS line.

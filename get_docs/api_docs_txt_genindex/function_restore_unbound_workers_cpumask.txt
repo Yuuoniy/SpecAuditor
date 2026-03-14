@@ -1,0 +1,15 @@
+Function: void restore_unbound_workers_cpumask ( struct worker_pool * pool , int cpu )
+
+restore cpumask of unbound workers
+
+Parameters
+  struct worker_pool *pool
+    unbound pool of interest
+  int cpu
+    the CPU which is coming up
+
+Description
+  An unbound pool may end up with a cpumask which doesn’t have any online
+CPUs.  When a worker of such pool get scheduled, the scheduler resets
+its cpus_allowed.  If cpu is in pool ’s cpumask which didn’t have any
+online CPU before, cpus_allowed of all its workers should be restored.

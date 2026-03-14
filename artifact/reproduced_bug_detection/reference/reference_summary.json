@@ -1,0 +1,48 @@
+{
+  "benchmark_bug_rows": 48,
+  "reference_detected_bug_rows": 39,
+  "seed_patch_count": 9,
+  "generation_seed_count": 12,
+  "reference_files": {
+    "benchmark_dataset": "artifact/reproduced_bug_detection/datasets/checks.csv",
+    "reference_results": "artifact/reproduced_bug_detection/reference/reference.csv"
+  },
+  "per_seed_detected_bug_rows": {
+    "07161b2416f7": {
+      "evaluated_bug_rows": 3,
+      "detected_bug_rows": 3
+    },
+    "10d6bdf53290": {
+      "evaluated_bug_rows": 5,
+      "detected_bug_rows": 5
+    },
+    "42378a9ca553": {
+      "evaluated_bug_rows": 5,
+      "detected_bug_rows": 3
+    },
+    "99ca0b57e49f": {
+      "evaluated_bug_rows": 2,
+      "detected_bug_rows": 0
+    },
+    "a508e33956b5": {
+      "evaluated_bug_rows": 10,
+      "detected_bug_rows": 9
+    },
+    "b505063910c1": {
+      "evaluated_bug_rows": 4,
+      "detected_bug_rows": 4
+    },
+    "c158cf914713": {
+      "evaluated_bug_rows": 7,
+      "detected_bug_rows": 6
+    },
+    "e3862093ee93": {
+      "evaluated_bug_rows": 5,
+      "detected_bug_rows": 3
+    },
+    "f89672cc3681": {
+      "evaluated_bug_rows": 7,
+      "detected_bug_rows": 6
+    }
+  }
+}

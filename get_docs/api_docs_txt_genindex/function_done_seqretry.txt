@@ -1,0 +1,13 @@
+Function: void done_seqretry ( seqlock_t * lock , int seq )
+
+end seqlock_t “locking or lockless” reader section
+
+Parameters
+  seqlock_t *lock
+    Pointer to seqlock_t
+  int seq
+    count, from read_seqbegin_or_lock()
+
+Description
+  done_seqretry finishes the seqlock_t read side critical section started
+with read_seqbegin_or_lock() and validated by need_seqretry() .

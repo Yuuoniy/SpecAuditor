@@ -1,0 +1,18 @@
+Function: void insert_wq_barrier ( struct pool_workqueue * pwq , struct wq_barrier * barr , struct work_struct * target , struct worker * worker )
+
+insert a barrier work
+
+Parameters
+  struct pool_workqueue *pwq
+    pwq to insert barrier into
+  struct wq_barrier *barr
+    wq_barrier to insert
+  struct work_struct *target
+    target work to attach barr to
+  struct worker *worker
+    worker currently executing target , NULL if target is not executing
+
+Description
+  barr is linked to target such that barr is completed only after target finishes execution.  Please note that the ordering
+guarantee is observed only with respect to target and on the local
+cpu.

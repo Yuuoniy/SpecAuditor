@@ -1,0 +1,12 @@
+Function: void of_device_make_bus_id ( struct device * dev )
+
+Use the device node data to assign a unique name
+
+Parameters
+  struct device *dev
+    pointer to device structure that is linked to a device tree node
+
+Description
+  This routine will first try using the translated bus address to
+derive a unique name. If it cannot, then it will prepend names from
+parent nodes until a unique name can be derived.

@@ -1,0 +1,16 @@
+Struct: struct rkisp1_cif_isp_wdr_tone_curve
+
+Tone mapping curve definition for WDR.
+
+Members
+  dY
+    the dYn increments for horizontal (input) axis of the tone curve.
+each 3-bit dY value represents an increment of 2**(value+3).
+dY[0] bits 0:2 is increment dY1, bit 3 unused
+dY[0] bits 4:6 is increment dY2, bit 7 unused
+...
+dY[0] bits 28:30 is increment dY8, bit 31 unused
+... and so on till dY[3] bits 28:30 is increment dY32, bit 31 unused.
+  ym
+    the Ym values for the vertical (output) axis of the tone curve.
+each value is 13 bit.

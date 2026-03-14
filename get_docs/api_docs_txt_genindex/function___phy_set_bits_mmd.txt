@@ -1,0 +1,16 @@
+Function: int __phy_set_bits_mmd ( struct phy_device * phydev , int devad , u32 regnum , u16 val )
+
+Convenience function for setting bits in a register on MMD
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+  int devad
+    the MMD containing register to modify
+  u32 regnum
+    register number to modify
+  u16 val
+    bits to set
+
+Description
+  The caller must have taken the MDIO bus lock.

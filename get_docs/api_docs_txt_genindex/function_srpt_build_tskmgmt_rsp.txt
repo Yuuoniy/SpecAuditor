@@ -1,0 +1,16 @@
+Function: int srpt_build_tskmgmt_rsp ( struct srpt_rdma_ch * ch , struct srpt_send_ioctx * ioctx , u8 rsp_code , u64 tag )
+
+build a task management response
+
+Parameters
+  struct srpt_rdma_ch *ch
+    RDMA channel through which the request has been received.
+  struct srpt_send_ioctx *ioctx
+    I/O context in which the SRP_RSP response will be built.
+  u8 rsp_code
+    RSP_CODE that will be stored in the response.
+  u64 tag
+    Tag of the request for which this response is being generated.
+
+Description
+  Returns the size in bytes of the SRP_RSP response.

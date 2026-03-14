@@ -1,0 +1,13 @@
+Function: unsigned long start_poll_synchronize_rcu_expedited ( void )
+
+Snapshot current RCU state and start expedited grace period
+
+Parameters
+  void
+    no arguments
+
+Description
+  Returns a cookie to pass to a call to cond_synchronize_rcu() , cond_synchronize_rcu_expedited() , or poll_state_synchronize_rcu() ,
+allowing them to determine whether or not any sort of grace period has
+elapsed in the meantime.  If the needed expedited grace period is not
+already slated to start, initiates that grace period.

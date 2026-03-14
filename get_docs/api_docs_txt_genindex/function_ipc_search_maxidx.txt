@@ -1,0 +1,16 @@
+Function: int ipc_search_maxidx ( struct ipc_ids * ids , int limit )
+
+search for the highest assigned index
+
+Parameters
+  struct ipc_ids *ids
+    ipc identifier set
+  int limit
+    known upper limit for highest assigned index
+
+Description
+  The function determines the highest assigned index in ids . It is intended
+to be called when ids->max_idx needs to be updated.
+Updating ids->max_idx is necessary when the current highest index ipc
+object is deleted.
+If no ipc object is allocated, then -1 is returned.

@@ -1,0 +1,13 @@
+Function: int pcpu_page_first_chunk ( size_t reserved_size , pcpu_fc_cpu_to_node_fn_t cpu_to_nd_fn )
+
+map the first chunk using PAGE_SIZE pages
+
+Parameters
+  size_t reserved_size
+    the size of reserved percpu area in bytes
+  pcpu_fc_cpu_to_node_fn_t cpu_to_nd_fn
+    callback to convert cpu to it’s node, optional
+
+Description
+  This is a helper to ease setting up page-remapped first percpu
+chunk and can be called where pcpu_setup_first_chunk() is expected.

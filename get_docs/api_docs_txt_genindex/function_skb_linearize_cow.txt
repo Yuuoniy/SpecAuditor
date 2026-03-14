@@ -1,0 +1,11 @@
+Function: int skb_linearize_cow ( struct sk_buff * skb )
+
+make sure skb is linear and writable
+
+Parameters
+  struct sk_buff *skb
+    buffer to process
+
+Description
+  If there is no free memory -ENOMEM is returned, otherwise zero
+is returned and the old skb data released.

@@ -1,0 +1,32 @@
+Struct: struct ieee80211_supported_band
+
+frequency band definition
+
+Members
+  channels
+    Array of channels the hardware can operate with
+in this band.
+  bitrates
+    Array of bitrates the hardware can operate with
+in this band. Must be sorted to give a valid “supported
+rates” IE, i.e. CCK rates first, then OFDM.
+  band
+    the band this structure represents
+  n_channels
+    Number of channels in channels
+  n_bitrates
+    Number of bitrates in bitrates
+  ht_cap
+    HT capabilities in this band
+  vht_cap
+    VHT capabilities in this band
+  s1g_cap
+    S1G capabilities in this band (S1G band only, of course)
+  edmg_cap
+    EDMG capabilities in this band
+  n_iftype_data
+    number of iftype data entries
+  iftype_data
+    interface type data entries.  Note that the bits in types_mask inside this structure cannot overlap (i.e. only
+one occurrence of each type is allowed across all instances of
+iftype_data).

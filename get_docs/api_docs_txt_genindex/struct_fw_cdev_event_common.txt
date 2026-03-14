@@ -1,0 +1,9 @@
+Struct: struct fw_cdev_event_common
+
+Common part of all fw_cdev_event_* types
+
+Members
+  closure
+    For arbitrary use by userspace
+  type
+    Discriminates the fw_cdev_event_* types

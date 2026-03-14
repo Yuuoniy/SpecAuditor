@@ -1,0 +1,7 @@
+Function: unsigned int skb_frag_off ( const skb_frag_t * frag )
+
+Returns the offset of a skb fragment
+
+Parameters
+  const skb_frag_t *frag
+    the paged fragment

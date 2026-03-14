@@ -1,0 +1,15 @@
+Function: int nand_block_checkbad ( struct nand_chip * chip , loff_t ofs , int allowbbt )
+
+[GENERIC] Check if a block is marked bad
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+  loff_t ofs
+    offset from device start
+  int allowbbt
+    1, if its allowed to access the bbt area
+
+Description
+  Check, if the block is bad. Either by reading the bad block table or
+calling of the scan function.

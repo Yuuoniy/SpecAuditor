@@ -1,0 +1,12 @@
+Struct: struct c3_isp_params_csc
+
+ISP Color Space Conversion configuration
+
+Members
+  header
+    the C3 ISP parameters block header
+  matrix
+    a 3x3 matrix used for the color space conversion,
+the value of matrix[x][y] is orig_value x 256. [-4096..4095]
+  reserved
+    applications must zero this array

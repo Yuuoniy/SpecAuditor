@@ -1,0 +1,23 @@
+Function: int ib_ud_header_init ( int payload_bytes , int lrh_present , int eth_present , int vlan_present , int grh_present , int ip_version , int udp_present , int immediate_present , struct ib_ud_header * header )
+
+Initialize UD header structure
+
+Parameters
+  int payload_bytes
+    Length of packet payload
+  int lrh_present
+    specify if LRH is present
+  int eth_present
+    specify if Eth header is present
+  int vlan_present
+    packet is tagged vlan
+  int grh_present
+    GRH flag (if non-zero, GRH will be included)
+  int ip_version
+    if non-zero, IP header, V4 or V6, will be included
+  int udp_present
+    if non-zero, UDP header will be included
+  int immediate_present
+    specify if immediate data is present
+  struct ib_ud_header *header
+    Structure to initialize

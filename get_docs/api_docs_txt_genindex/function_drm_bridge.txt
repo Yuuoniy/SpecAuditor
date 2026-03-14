@@ -1,0 +1,90 @@
+Function: struct drm_bridge
+
+central DRM bridge control structure
+
+Members
+  base
+    inherit from drm_private_object
+  dev
+    DRM device this bridge belongs to
+  encoder
+    encoder to which this bridge is connected
+  chain_node
+    used to form a bridge chain
+  of_node
+    device node pointer to the bridge
+  list
+    to keep track of all added bridges
+  timings
+    the timing specification for the bridge, if any (may be NULL)
+  funcs
+    control functions
+  container
+    Pointer to the private driver struct embedding this struct drm_bridge.
+  refcount
+    reference count of users referencing this bridge.
+  driver_private
+    pointer to the bridge driver’s internal context
+  ops
+    bitmask of operations supported by the bridge
+  type
+    Type of the connection at the bridge output
+(DRM_MODE_CONNECTOR_*). For bridges at the end of this chain this
+identifies the type of connected display.
+  interlace_allowed
+    Indicate that the bridge can handle interlaced
+modes.
+  ycbcr_420_allowed
+    Indicate that the bridge can handle YCbCr 420
+output.
+  pre_enable_prev_first
+    The bridge requires that the prev
+bridge pre_enable function is called before its pre_enable ,
+and conversely for post_disable. This is most frequently a
+requirement for DSI devices which need the host to be initialised
+before the peripheral.
+  support_hdcp
+    Indicate that the bridge supports HDCP.
+  ddc
+    Associated I2C adapter for DDC access, if any.
+  vendor
+    Vendor of the product to be used for the SPD InfoFrame
+generation. This is required if DRM_BRIDGE_OP_HDMI is set.
+  product
+    Name of the product to be used for the SPD InfoFrame
+generation. This is required if DRM_BRIDGE_OP_HDMI is set.
+  supported_formats
+    Bitmask of hdmi_colorspace listing supported
+output formats. This is only relevant if DRM_BRIDGE_OP_HDMI is set.
+  max_bpc
+    Maximum bits per char the HDMI bridge supports. Allowed
+values are 8, 10 and 12. This is only relevant if DRM_BRIDGE_OP_HDMI is set.
+  hdmi_cec_dev
+    device to be used as a containing device for CEC
+functions.
+  hdmi_audio_dev
+    device to be used as a parent for the HDMI Codec if
+either of DRM_BRIDGE_OP_HDMI_AUDIO or DRM_BRIDGE_OP_DP_AUDIO is set.
+  hdmi_audio_max_i2s_playback_channels
+    maximum number of playback
+I2S channels for the DRM_BRIDGE_OP_HDMI_AUDIO or DRM_BRIDGE_OP_DP_AUDIO .
+  hdmi_audio_i2s_formats
+    supported I2S formats, optional. The
+default is to allow all formats supported by the corresponding I2S
+bus driver. This is only used for bridges setting DRM_BRIDGE_OP_HDMI_AUDIO or DRM_BRIDGE_OP_DP_AUDIO .
+  hdmi_audio_spdif_playback
+    set if this bridge has S/PDIF playback
+port for DRM_BRIDGE_OP_HDMI_AUDIO or DRM_BRIDGE_OP_DP_AUDIO .
+  hdmi_audio_dai_port
+    sound DAI port for either of DRM_BRIDGE_OP_HDMI_AUDIO and DRM_BRIDGE_OP_DP_AUDIO , -1 if it is
+not used.
+  hdmi_cec_adapter_name
+    the name of the adapter to register
+  hdmi_cec_available_las
+    number of logical addresses, CEC_MAX_LOG_ADDRS if unset
+  hpd_mutex
+    Protects the hpd_cb and hpd_data fields.
+  hpd_cb
+    Hot plug detection callback, registered with drm_bridge_hpd_enable() .
+  hpd_data
+    Private data passed to the Hot plug detection callback hpd_cb .

@@ -1,0 +1,22 @@
+Function: int lsm_fill_user_ctx ( struct lsm_ctx __user * uctx , u32 * uctx_len , void * val , size_t val_len , u64 id , u64 flags )
+
+Fill a user space lsm_ctx structure
+
+Parameters
+  struct lsm_ctx __user *uctx
+    a userspace LSM context to be filled
+  u32 *uctx_len
+    available uctx size (input), used uctx size (output)
+  void *val
+    the new LSM context value
+  size_t val_len
+    the size of the new LSM context value
+  u64 id
+    LSM id
+  u64 flags
+    LSM defined flags
+
+Description
+  Fill all of the fields in a userspace lsm_ctx structure.  If uctx is NULL
+simply calculate the required size to output via utc_len and return
+success.

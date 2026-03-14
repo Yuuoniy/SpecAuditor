@@ -1,0 +1,32 @@
+Macro: drmm_universal_plane_alloc
+
+
+
+Parameters
+  dev
+    DRM device
+  type
+    the type of the struct which contains struct drm_plane
+  member
+    the name of the drm_plane within type
+  possible_crtcs
+    bitmask of possible CRTCs
+  funcs
+    callbacks for the new plane
+  formats
+    array of supported formats (DRM_FORMAT_*)
+  format_count
+    number of elements in formats
+  format_modifiers
+    array of struct drm_format modifiers terminated by
+DRM_FORMAT_MOD_INVALID
+  plane_type
+    type of plane (overlay, primary, cursor)
+  name
+    printf style format string for the plane name, or NULL for default name
+  ...
+    variable arguments
+
+Description
+  Allocates and initializes a plane object of type type . Cleanup is
+automatically handled through registering drm_plane_cleanup() with drmm_add_action() .

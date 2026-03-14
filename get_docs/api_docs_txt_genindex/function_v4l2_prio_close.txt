@@ -1,0 +1,12 @@
+Function: void v4l2_prio_close ( struct v4l2_prio_state * global , enum v4l2_priority local )
+
+Implements the priority logic for a file handler close
+
+Parameters
+  struct v4l2_prio_state *global
+    pointer to the struct v4l2_prio_state of the device node.
+  enum v4l2_priority local
+    priority to be released, as defined by enum v4l2_priority
+
+Description
+  Note

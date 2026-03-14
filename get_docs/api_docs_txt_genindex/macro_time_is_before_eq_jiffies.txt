@@ -1,0 +1,7 @@
+Macro: time_is_before_eq_jiffies
+
+
+
+Parameters
+  a
+    time (unsigned long) to compare to jiffies

@@ -1,0 +1,12 @@
+Function: int tty_send_xchar ( struct tty_struct * tty , u8 ch )
+
+send priority character
+
+Parameters
+  struct tty_struct *tty
+    the tty to send to
+  u8 ch
+    xchar to send
+
+Description
+  Send a high priority character to the tty even if stopped.

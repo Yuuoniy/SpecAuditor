@@ -1,0 +1,14 @@
+Function: bool rcu_watching_snap_stopped_since ( struct rcu_data * rdp , int snap )
+
+Has RCU stopped watching a given CPU since the specified snap ?
+
+Parameters
+  struct rcu_data *rdp
+    The rcu_data corresponding to the CPU for which to check EQS.
+  int snap
+    rcu_watching snapshot taken when the CPU wasn’t in an EQS.
+
+Description
+  Returns true if the CPU corresponding to rdp has spent some time in an
+extended quiescent state since snap . Note that this doesn’t check if it
+/still/ is in an EQS, just that it went through one since snap .

@@ -1,0 +1,29 @@
+Function: struct ipu3_uapi_ccm_mat_config
+
+Color correction matrix
+
+Members
+  coeff_m11
+    CCM 3x3 coefficient, range [-65536, 65535]
+  coeff_m12
+    CCM 3x3 coefficient, range [-8192, 8191]
+  coeff_m13
+    CCM 3x3 coefficient, range [-32768, 32767]
+  coeff_o_r
+    Bias 3x1 coefficient, range [-8191, 8181]
+  coeff_m21
+    CCM 3x3 coefficient, range [-32767, 32767]
+  coeff_m22
+    CCM 3x3 coefficient, range [-8192, 8191]
+  coeff_m23
+    CCM 3x3 coefficient, range [-32768, 32767]
+  coeff_o_g
+    Bias 3x1 coefficient, range [-8191, 8181]
+  coeff_m31
+    CCM 3x3 coefficient, range [-32768, 32767]
+  coeff_m32
+    CCM 3x3 coefficient, range [-8192, 8191]
+  coeff_m33
+    CCM 3x3 coefficient, range [-32768, 32767]
+  coeff_o_b
+    Bias 3x1 coefficient, range [-8191, 8181]

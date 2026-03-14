@@ -1,0 +1,17 @@
+Struct: struct snd_compr_task_status
+
+task status
+
+Members
+  seqno
+    sequence number (task identifier)
+  input_size
+    filled data in bytes (from user space)
+  output_size
+    filled data in bytes (from driver)
+  output_flags
+    reserved for future (all zeros - from driver)
+  state
+    actual task state (SND_COMPRESS_TASK_STATE_*)
+  reserved
+    reserved for future extension

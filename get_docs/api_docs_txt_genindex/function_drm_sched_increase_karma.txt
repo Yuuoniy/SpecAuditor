@@ -1,0 +1,12 @@
+Function: void drm_sched_increase_karma ( struct drm_sched_job * bad )
+
+Update sched_entity guilty flag
+
+Parameters
+  struct drm_sched_job *bad
+    The job guilty of time out
+
+Description
+  Increment on every hang caused by the ‘bad’ job. If this exceeds the hang
+limit of the scheduler then the respective sched entity is marked guilty and
+jobs from it will not be scheduled further

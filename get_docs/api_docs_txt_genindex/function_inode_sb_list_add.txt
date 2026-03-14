@@ -1,0 +1,7 @@
+Function: void inode_sb_list_add ( struct inode * inode )
+
+add inode to the superblock list of inodes
+
+Parameters
+  struct inode *inode
+    inode to add

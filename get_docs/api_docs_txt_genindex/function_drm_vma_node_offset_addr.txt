@@ -1,0 +1,12 @@
+Function: __u64 drm_vma_node_offset_addr ( struct drm_vma_offset_node * node )
+
+Return sanitized offset for user-space mmaps
+
+Parameters
+  struct drm_vma_offset_node *node
+    Linked offset node
+
+Description
+  Same as drm_vma_node_start() but returns the address as a valid offset that
+can be used for user-space mappings during mmap().
+This must not be called on unlinked nodes.

@@ -1,0 +1,9 @@
+Function: int of_irq_get ( struct device_node * dev , int index )
+
+Decode a node’s IRQ and return it as a Linux IRQ number
+
+Parameters
+  struct device_node *dev
+    pointer to device tree node
+  int index
+    zero-based index of the IRQ

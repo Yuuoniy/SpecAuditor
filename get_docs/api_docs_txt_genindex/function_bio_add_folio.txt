@@ -1,0 +1,18 @@
+Function: bool bio_add_folio ( struct bio * bio , struct folio * folio , size_t len , size_t off )
+
+Attempt to add part of a folio to a bio.
+
+Parameters
+  struct bio *bio
+    BIO to add to.
+  struct folio *folio
+    Folio to add.
+  size_t len
+    How many bytes from the folio to add.
+  size_t off
+    First byte in this folio to add.
+
+Description
+  Filesystems that use folios can call this function instead of calling bio_add_page() for each page in the folio.  If off is bigger than
+PAGE_SIZE, this function can create a bio_vec that starts in a page
+after the bv_page.  BIOs do not support folios that are 4GiB or larger.

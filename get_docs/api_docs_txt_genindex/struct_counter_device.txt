@@ -1,0 +1,45 @@
+Struct: struct counter_device
+
+Counter data structure
+
+Members
+  name
+    name of the device
+  parent
+    optional parent device providing the counters
+  ops
+    callbacks from driver
+  signals
+    array of Signals
+  num_signals
+    number of Signals specified in signals
+  counts
+    array of Counts
+  num_counts
+    number of Counts specified in counts
+  ext
+    optional array of Counter device extensions
+  num_ext
+    number of Counter device extensions specified in ext
+  dev
+    internal device structure
+  chrdev
+    internal character device structure
+  events_list
+    list of current watching Counter events
+  events_list_lock
+    lock to protect Counter events list operations
+  next_events_list
+    list of next watching Counter events
+  n_events_list_lock
+    lock to protect Counter next events list operations
+  events
+    queue of detected Counter events
+  events_wait
+    wait queue to allow blocking reads of Counter events
+  events_in_lock
+    lock to protect Counter events queue in operations
+  events_out_lock
+    lock to protect Counter events queue out operations
+  ops_exist_lock
+    lock to prevent use during removal

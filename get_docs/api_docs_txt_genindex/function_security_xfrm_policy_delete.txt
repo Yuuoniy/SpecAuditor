@@ -1,0 +1,10 @@
+Function: int security_xfrm_policy_delete ( struct xfrm_sec_ctx * ctx )
+
+Check if deleting a xfrm policy is allowed
+
+Parameters
+  struct xfrm_sec_ctx *ctx
+    xfrm security context
+
+Description
+  Authorize deletion of a SPD entry.

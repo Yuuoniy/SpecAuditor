@@ -1,0 +1,9 @@
+Function: void video_set_drvdata ( struct video_device * vdev , void * data )
+
+sets private data from struct video_device .
+
+Parameters
+  struct video_device *vdev
+    pointer to struct video_device
+  void *data
+    private data pointer

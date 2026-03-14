@@ -1,0 +1,12 @@
+Function: int jbd2_journal_force_commit_nested ( journal_t * journal )
+
+Force and wait upon a commit if the calling process is not within transaction.
+
+Parameters
+  journal_t *journal
+    journal to force
+Returns true if progress was made.
+
+Description
+  This is used for forcing out undo-protected data which contains
+bitmaps, when the fs is running out of space.

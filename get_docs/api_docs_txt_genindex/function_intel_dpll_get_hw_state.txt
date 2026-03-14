@@ -1,0 +1,14 @@
+Function: bool intel_dpll_get_hw_state ( struct intel_display * display , struct intel_dpll * pll , struct intel_dpll_hw_state * dpll_hw_state )
+
+readout the DPLL’s hardware state
+
+Parameters
+  struct intel_display *display
+    intel_display device instance
+  struct intel_dpll *pll
+    DPLL for which to calculate the output frequency
+  struct intel_dpll_hw_state *dpll_hw_state
+    DPLL’s hardware state
+
+Description
+  Read out pll ’s hardware state into dpll_hw_state .

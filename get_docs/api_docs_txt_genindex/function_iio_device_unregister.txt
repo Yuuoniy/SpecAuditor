@@ -1,0 +1,7 @@
+Function: void iio_device_unregister ( struct iio_dev * indio_dev )
+
+unregister a device from the IIO subsystem
+
+Parameters
+  struct iio_dev *indio_dev
+    Device structure representing the device.

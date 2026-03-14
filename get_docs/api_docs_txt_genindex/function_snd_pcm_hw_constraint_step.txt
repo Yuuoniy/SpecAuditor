@@ -1,0 +1,13 @@
+Function: int snd_pcm_hw_constraint_step ( struct snd_pcm_runtime * runtime , unsigned int cond , snd_pcm_hw_param_t var , unsigned long step )
+
+add a hw constraint step rule
+
+Parameters
+  struct snd_pcm_runtime *runtime
+    PCM runtime instance
+  unsigned int cond
+    condition bits
+  snd_pcm_hw_param_t var
+    hw_params variable to apply the step constraint
+  unsigned long step
+    step size

@@ -1,0 +1,12 @@
+Function: void __drm_ctm_to_dc_matrix ( const struct drm_color_ctm * ctm , struct fixed31_32 * matrix )
+
+converts a DRM CTM to a DC CSC float matrix
+
+Parameters
+  const struct drm_color_ctm *ctm
+    DRM color transformation matrix
+  struct fixed31_32 *matrix
+    DC CSC float matrix
+
+Description
+  The matrix needs to be a 3x4 (12 entry) matrix.

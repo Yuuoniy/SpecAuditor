@@ -1,0 +1,17 @@
+Function: bool generic_ci_validate_strict_name ( struct inode * dir , const struct qstr * name )
+
+Check if a given name is suitable for a directory
+
+Parameters
+  struct inode *dir
+    inode of the directory where the new file will be created
+  const struct qstr *name
+    name of the new file
+
+Description
+  This functions checks if the proposed filename is valid for the
+parent directory. That means that only valid UTF-8 filenames will be
+accepted for casefold directories from filesystems created with the
+strict encoding flag.  That also means that any name will be
+accepted for directories that doesn’t have casefold enabled, or
+aren’t being strict with the encoding.

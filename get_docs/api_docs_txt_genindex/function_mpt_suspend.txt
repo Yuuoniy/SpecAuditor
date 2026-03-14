@@ -1,0 +1,9 @@
+Function: int mpt_suspend ( struct pci_dev * pdev , pm_message_t state )
+
+Fusion MPT base driver suspend routine.
+
+Parameters
+  struct pci_dev *pdev
+    Pointer to pci_dev structure
+  pm_message_t state
+    new state to enter

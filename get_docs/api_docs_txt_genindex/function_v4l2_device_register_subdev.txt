@@ -1,0 +1,12 @@
+Function: v4l2_device_register_subdev
+
+
+
+Parameters
+  v4l2_dev
+    pointer to struct v4l2_device
+  sd
+    pointer to struct v4l2_subdev
+
+Description
+  While registered, the subdev module is marked as in-use.

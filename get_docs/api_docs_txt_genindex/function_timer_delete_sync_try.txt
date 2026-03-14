@@ -1,0 +1,11 @@
+Function: int timer_delete_sync_try ( struct timer_list * timer )
+
+Try to deactivate a timer
+
+Parameters
+  struct timer_list *timer
+    Timer to deactivate
+
+Description
+  This function tries to deactivate a timer. On success the timer is not
+queued and the timer callback function is not running on any CPU.

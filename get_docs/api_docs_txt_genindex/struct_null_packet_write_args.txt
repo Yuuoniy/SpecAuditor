@@ -1,0 +1,13 @@
+Struct: struct null_packet_write_args
+
+Arguments for the null_write_into function
+
+Members
+  dest_buf
+    The buffer to write into.
+  dest_offset
+    The byte offset into the buffer.
+  buf_sz
+    The size of the buffer in bytes.
+  continuity_counter
+    The TS continuity_counter.

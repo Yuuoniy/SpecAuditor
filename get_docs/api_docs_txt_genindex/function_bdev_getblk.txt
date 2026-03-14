@@ -1,0 +1,19 @@
+Function: struct buffer_head * bdev_getblk ( struct block_device * bdev , sector_t block , unsigned size , gfp_t gfp )
+
+Get a buffer_head in a block device’s buffer cache.
+
+Parameters
+  struct block_device *bdev
+    The block device.
+  sector_t block
+    The block number.
+  unsigned size
+    The size of buffer_heads for this bdev .
+  gfp_t gfp
+    The memory allocation flags to use.
+
+Description
+  The returned buffer head has its reference count incremented, but is
+not locked.  The caller should call brelse() when it has finished
+with the buffer.  The buffer may not be uptodate.  If needed, the
+caller can bring it uptodate either by reading it or overwriting it.

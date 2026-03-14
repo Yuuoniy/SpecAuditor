@@ -1,0 +1,13 @@
+Function: bool drm_mm_scan_add_block ( struct drm_mm_scan * scan , struct drm_mm_node * node )
+
+add a node to the scan list
+
+Parameters
+  struct drm_mm_scan *scan
+    the active drm_mm scanner
+  struct drm_mm_node *node
+    drm_mm_node to add
+
+Description
+  Add a node to the scan list that might be freed to make space for the desired
+hole.

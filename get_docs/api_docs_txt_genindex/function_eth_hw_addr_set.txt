@@ -1,0 +1,12 @@
+Function: void eth_hw_addr_set ( struct net_device * dev , const u8 * addr )
+
+Assign Ethernet address to a net_device
+
+Parameters
+  struct net_device *dev
+    pointer to net_device structure
+  const u8 *addr
+    address to assign
+
+Description
+  Assign given address to the net_device, addr_assign_type is not changed.

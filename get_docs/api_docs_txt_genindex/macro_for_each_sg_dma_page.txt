@@ -1,0 +1,18 @@
+Macro: for_each_sg_dma_page
+
+
+
+Parameters
+  sglist
+    sglist to iterate over
+  dma_iter
+    DMA page iterator to hold current page
+  dma_nents
+    maximum number of sg entries to iterate over, this is the value
+returned from dma_map_sg
+  pgoffset
+    starting page offset (in pages)
+
+Description
+  Callers may use sg_page_iter_dma_address() to get each page’s DMA address.
+In each loop it operates on PAGE_SIZE unit.

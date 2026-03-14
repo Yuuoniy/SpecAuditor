@@ -1,0 +1,12 @@
+Function: void mempool_free ( void * element , mempool_t * pool )
+
+return an element to the pool.
+
+Parameters
+  void *element
+    pool element pointer.
+  mempool_t *pool
+    pointer to the memory pool which was allocated via mempool_create() .
+
+Description
+  this function only sleeps if the free_fn() function sleeps.

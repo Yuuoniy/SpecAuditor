@@ -1,0 +1,9 @@
+Function: void drm_gpuva_invalidate ( struct drm_gpuva * va , bool invalidate )
+
+sets whether the backing GEM of this drm_gpuva is invalidated
+
+Parameters
+  struct drm_gpuva *va
+    the drm_gpuva to set the invalidate flag for
+  bool invalidate
+    indicates whether the drm_gpuva is invalidated

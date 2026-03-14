@@ -1,0 +1,13 @@
+Function: int kho_retrieve_subtree ( const char * name , phys_addr_t * phys )
+
+retrieve a preserved sub FDT by its name.
+
+Parameters
+  const char *name
+    the name of the sub FDT passed to kho_add_subtree() .
+  phys_addr_t *phys
+    if found, the physical address of the sub FDT is stored in phys .
+
+Description
+  Retrieve a preserved sub FDT named name and store its physical
+address in phys .

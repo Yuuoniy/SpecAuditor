@@ -1,0 +1,15 @@
+Function: int debugfs_change_name ( struct dentry * dentry , const char * fmt , ... )
+
+rename a file/directory in the debugfs filesystem
+
+Parameters
+  struct dentry *dentry
+    dentry of an object to be renamed.
+  const char *fmt
+    format for new name
+  ...
+    variable arguments
+
+Description
+  This function renames a file/directory in debugfs.  The target must not
+exist for rename to succeed.

@@ -1,0 +1,21 @@
+Function: void component_match_add_release ( struct device * parent , struct component_match * * matchptr , void ( * release ) ( struct device * , void * ) , int ( * compare ) ( struct device * , void * ) , void * compare_data )
+
+add a component match entry with release callback
+
+Parameters
+  struct device *parent
+    parent device of the aggregate driver
+  struct component_match **matchptr
+    pointer to the list of component matches
+  void (*release)(struct device *, void *)
+    release function for compare_data
+  int (*compare)(struct device *, void *)
+    compare function to match against all components
+  void *compare_data
+    opaque pointer passed to the compare function
+
+Description
+  Adds a new component match to the list stored in matchptr , which the
+aggregate driver needs to function. The list of component matches pointed to
+by matchptr must be initialized to NULL before adding the first match. This
+only matches against components added with component_add() .

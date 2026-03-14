@@ -1,0 +1,30 @@
+Function: void edac_mc_handle_error ( const enum hw_event_mc_err_type type , struct mem_ctl_info * mci , const u16 error_count , const unsigned long page_frame_number , const unsigned long offset_in_page , const unsigned long syndrome , const int top_layer , const int mid_layer , const int low_layer , const char * msg , const char * other_detail )
+
+Reports a memory event to userspace.
+
+Parameters
+  const enum hw_event_mc_err_type type
+    severity of the error (CE/UE/Fatal)
+  struct mem_ctl_info *mci
+    a struct mem_ctl_info pointer
+  const u16 error_count
+    Number of errors of the same type
+  const unsigned long page_frame_number
+    mem page where the error occurred
+  const unsigned long offset_in_page
+    offset of the error inside the page
+  const unsigned long syndrome
+    ECC syndrome
+  const int top_layer
+    Memory layer[0] position
+  const int mid_layer
+    Memory layer[1] position
+  const int low_layer
+    Memory layer[2] position
+  const char *msg
+    Message meaningful to the end users that
+explains the event
+  const char *other_detail
+    Technical details about the event that
+may help hardware manufacturers and
+EDAC developers to analyse the event

@@ -1,0 +1,11 @@
+Function: void kobject_del ( struct kobject * kobj )
+
+Unlink kobject from hierarchy.
+
+Parameters
+  struct kobject *kobj
+    object.
+
+Description
+  This is the function that should be called to delete an object
+successfully added via kobject_add() .

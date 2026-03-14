@@ -1,0 +1,9 @@
+Function: int devm_rc_register_device ( struct device * parent , struct rc_dev * dev )
+
+Manageded registering of a RC device
+
+Parameters
+  struct device *parent
+    pointer to struct device .
+  struct rc_dev *dev
+    pointer to struct rc_dev .

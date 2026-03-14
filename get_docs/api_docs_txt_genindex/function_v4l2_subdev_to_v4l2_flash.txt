@@ -1,0 +1,7 @@
+Function: struct v4l2_flash * v4l2_subdev_to_v4l2_flash ( struct v4l2_subdev * sd )
+
+Returns a struct v4l2_flash from the struct v4l2_subdev embedded on it.
+
+Parameters
+  struct v4l2_subdev *sd
+    pointer to struct v4l2_subdev

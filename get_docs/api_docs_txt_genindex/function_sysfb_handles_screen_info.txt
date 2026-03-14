@@ -1,0 +1,13 @@
+Function: bool sysfb_handles_screen_info ( void )
+
+reports if sysfb handles the global screen_info
+
+Parameters
+  void
+    no arguments
+
+Description
+  Callers can use sysfb_handles_screen_info() to determine whether the Generic
+System Framebuffers (sysfb) can handle the global screen_info data structure
+or not. Drivers might need this information to know if they have to setup the
+system framebuffer, or if they have to delegate this action to sysfb instead.

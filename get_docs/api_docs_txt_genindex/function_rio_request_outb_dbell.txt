@@ -1,0 +1,15 @@
+Function: struct resource * rio_request_outb_dbell ( struct rio_dev * rdev , u16 start , u16 end )
+
+request outbound doorbell message range
+
+Parameters
+  struct rio_dev *rdev
+    RIO device from which to allocate the doorbell resource
+  u16 start
+    Doorbell message range start
+  u16 end
+    Doorbell message range end
+
+Description
+  Requests ownership of a doorbell message range. Returns a resource
+if the request has been satisfied or NULL on failure.

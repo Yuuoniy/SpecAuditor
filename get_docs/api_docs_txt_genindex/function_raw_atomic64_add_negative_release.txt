@@ -1,0 +1,12 @@
+Function: bool raw_atomic64_add_negative_release ( s64 i , atomic64_t * v )
+
+atomic add and test if negative with release ordering
+
+Parameters
+  s64 i
+    s64 value to add
+  atomic64_t *v
+    pointer to atomic64_t
+
+Description
+  Atomically updates v to ( v + i ) with release ordering.

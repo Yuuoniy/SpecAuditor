@@ -1,0 +1,10 @@
+Function: void intel_dpll_enable ( const struct intel_crtc_state * crtc_state )
+
+enable a CRTC’s DPLL
+
+Parameters
+  const struct intel_crtc_state *crtc_state
+    CRTC, and its state, which has a DPLL
+
+Description
+  Enable DPLL used by crtc .

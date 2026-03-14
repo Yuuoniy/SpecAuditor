@@ -1,0 +1,7 @@
+Struct: struct rkisp1_cif_isp_bdm_config
+
+Configuration used by Bayer DeMosaic
+
+Members
+  demosaic_th
+    threshold for bayer demosaicing texture detection

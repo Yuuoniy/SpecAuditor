@@ -1,0 +1,58 @@
+Struct: struct dvb_tuner_ops
+
+Tuner information and callbacks
+
+Members
+  info
+    embedded struct dvb_tuner_info with tuner properties
+  release
+    callback function called when frontend is detached.
+drivers should free any allocated memory.
+  init
+    callback function used to initialize the tuner device.
+  sleep
+    callback function used to put the tuner to sleep.
+  suspend
+    callback function used to inform that the Kernel will
+suspend.
+  resume
+    callback function used to inform that the Kernel is
+resuming from suspend.
+  set_params
+    callback function used to inform the tuner to tune
+into a digital TV channel. The properties to be used
+are stored at struct dvb_frontend .dtv_property_cache.
+The tuner demod can change the parameters to reflect
+the changes needed for the channel to be tuned, and
+update statistics. This is the recommended way to set
+the tuner parameters and should be used on newer
+drivers.
+  set_analog_params
+    callback function used to tune into an analog TV
+channel on hybrid tuners. It passes analog_parameters to the driver.
+  set_config
+    callback function used to send some tuner-specific
+parameters.
+  get_frequency
+    get the actual tuned frequency
+  get_bandwidth
+    get the bandwidth used by the low pass filters
+  get_if_frequency
+    get the Intermediate Frequency, in Hz. For baseband,
+should return 0.
+  get_status
+    returns the frontend lock status
+  get_rf_strength
+    returns the RF signal strength. Used mostly to support
+analog TV and radio. Digital TV should report, instead,
+via DVBv5 API ( struct dvb_frontend .dtv_property_cache).
+  get_afc
+    Used only by analog TV core. Reports the frequency
+drift due to AFC.
+  calc_regs
+    callback function used to pass register data settings
+for simple tuners.  Shouldn’t be used on newer drivers.
+  set_frequency
+    Set a new frequency. Shouldn’t be used on newer drivers.
+  set_bandwidth
+    Set a new frequency. Shouldn’t be used on newer drivers.

@@ -1,0 +1,15 @@
+Function: void v4l2_rect_scale ( struct v4l2_rect * r , const struct v4l2_rect * from , const struct v4l2_rect * to )
+
+scale rect r by to/from
+
+Parameters
+  struct v4l2_rect *r
+    rect to be scaled.
+  const struct v4l2_rect *from
+    from rectangle.
+  const struct v4l2_rect *to
+    to rectangle.
+
+Description
+  This scales rectangle r horizontally by to->width / from->width and
+vertically by to->height / from->height .

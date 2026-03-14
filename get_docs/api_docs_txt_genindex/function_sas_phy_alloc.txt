@@ -1,0 +1,14 @@
+Function: struct sas_phy * sas_phy_alloc ( struct device * parent , int number )
+
+allocates and initialize a SAS PHY structure
+
+Parameters
+  struct device *parent
+    Parent device
+  int number
+    Phy index
+
+Description
+  Allocates an SAS PHY structure.  It will be added in the device tree
+below the device specified by parent , which has to be either a Scsi_Host
+or sas_rphy.

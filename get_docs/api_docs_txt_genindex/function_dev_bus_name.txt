@@ -1,0 +1,11 @@
+Function: const char * dev_bus_name ( const struct device * dev )
+
+Return a device’s bus/class name, if at all possible
+
+Parameters
+  const struct device *dev
+    struct device to get the bus/class name of
+
+Description
+  Will return the name of the bus/class the device is attached to.  If it is
+not attached to a bus/class, an empty string will be returned.

@@ -1,0 +1,15 @@
+Function: long copy_to_user_nofault ( void __user * dst , const void * src , size_t size )
+
+safely attempt to write to a user-space location
+
+Parameters
+  void __user *dst
+    address to write to
+  const void *src
+    pointer to the data that shall be written
+  size_t size
+    size of the data chunk
+
+Description
+  Safely write to address dst from the buffer at src .  If a kernel fault
+happens, handle that and return -EFAULT.

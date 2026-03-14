@@ -1,0 +1,10 @@
+Function: int amdgpu_dm_verify_lut_sizes ( const struct drm_crtc_state * crtc_state )
+
+verifies if DRM luts match the hw supported sizes
+
+Parameters
+  const struct drm_crtc_state *crtc_state
+    the DRM CRTC state
+
+Description
+  Verifies that the Degamma and Gamma LUTs attached to the crtc_state are of the expected size.

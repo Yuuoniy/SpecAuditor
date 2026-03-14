@@ -1,0 +1,12 @@
+Function: int lsm_inode_alloc ( struct inode * inode , gfp_t gfp )
+
+allocate a composite inode blob
+
+Parameters
+  struct inode *inode
+    the inode that needs a blob
+  gfp_t gfp
+    allocation flags
+
+Description
+  Allocate the inode blob for all the modules

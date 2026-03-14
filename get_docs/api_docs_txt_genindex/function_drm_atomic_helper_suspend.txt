@@ -1,0 +1,14 @@
+Function: struct drm_atomic_state * drm_atomic_helper_suspend ( struct drm_device * dev )
+
+subsystem-level suspend helper
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  Duplicates the current atomic state, disables all active outputs and then
+returns a pointer to the original atomic state to the caller. Drivers can
+pass this pointer to the drm_atomic_helper_resume() helper upon resume to
+restore the output configuration that was active at the time the system
+entered suspend.

@@ -1,0 +1,13 @@
+Struct: struct damon_intervals_goal
+
+Monitoring intervals auto-tuning goal.
+
+Members
+  access_bp
+    Access events observation ratio to achieve in bp.
+  aggrs
+    Number of aggregations to achieve access_bp within.
+  min_sample_us
+    Minimum resulting sampling interval in microseconds.
+  max_sample_us
+    Maximum resulting sampling interval in microseconds.

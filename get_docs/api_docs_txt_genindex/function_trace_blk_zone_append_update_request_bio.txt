@@ -1,0 +1,10 @@
+Function: void trace_blk_zone_append_update_request_bio ( struct request * rq )
+
+update bio sector after zone append
+
+Parameters
+  struct request *rq
+    the completed request that sets the bio sector
+
+Description
+  Update the bio’s bi_sector after a zone append command has been completed.

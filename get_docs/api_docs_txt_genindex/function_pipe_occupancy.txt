@@ -1,0 +1,9 @@
+Function: unsigned int pipe_occupancy ( unsigned int head , unsigned int tail )
+
+Return number of slots used in the pipe
+
+Parameters
+  unsigned int head
+    The pipe ring head pointer
+  unsigned int tail
+    The pipe ring tail pointer

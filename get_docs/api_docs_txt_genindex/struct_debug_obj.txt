@@ -1,0 +1,19 @@
+Struct: struct debug_obj
+
+representation of an tracked object
+
+Members
+  node
+    hlist node to link the object into the tracker list
+  state
+    tracked object state
+  astate
+    current active state
+  {unnamed_union}
+    anonymous
+  object
+    pointer to the real object
+  batch_last
+    pointer to the last hlist node in a batch
+  descr
+    pointer to an object type specific debug description structure

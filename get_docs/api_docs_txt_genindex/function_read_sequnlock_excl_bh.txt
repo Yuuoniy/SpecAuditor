@@ -1,0 +1,7 @@
+Function: void read_sequnlock_excl_bh ( seqlock_t * sl )
+
+stop a seqlock_t softirq-disabled locking reader section
+
+Parameters
+  seqlock_t *sl
+    Pointer to seqlock_t

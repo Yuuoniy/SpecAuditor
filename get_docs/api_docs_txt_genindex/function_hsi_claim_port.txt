@@ -1,0 +1,12 @@
+Function: int hsi_claim_port ( struct hsi_client * cl , unsigned int share )
+
+Claim the HSI client’s port
+
+Parameters
+  struct hsi_client *cl
+    HSI client that wants to claim its port
+  unsigned int share
+    Flag to indicate if the client wants to share the port or not.
+
+Description
+  Returns -errno on failure, 0 on success.

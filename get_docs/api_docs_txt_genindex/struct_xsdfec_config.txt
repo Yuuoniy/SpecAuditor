@@ -1,0 +1,23 @@
+Struct: struct xsdfec_config
+
+Configuration of SD-FEC core.
+
+Members
+  code
+    The codes being used by the SD-FEC instance
+  order
+    Order of Operation
+  din_width
+    Width of the DIN AXI4-Stream
+  din_word_include
+    How DIN_WORDS are inputted
+  dout_width
+    Width of the DOUT AXI4-Stream
+  dout_word_include
+    HOW DOUT_WORDS are outputted
+  irq
+    Enabling or disabling interrupts
+  bypass
+    Is the core being bypassed
+  code_wr_protect
+    Is write protection of LDPC codes enabled

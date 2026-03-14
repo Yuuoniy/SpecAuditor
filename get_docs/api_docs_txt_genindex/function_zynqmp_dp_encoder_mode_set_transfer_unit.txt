@@ -1,0 +1,13 @@
+Function: void zynqmp_dp_encoder_mode_set_transfer_unit ( struct zynqmp_dp * dp , const struct drm_display_mode * mode )
+
+Set the transfer unit values
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure
+  const struct drm_display_mode *mode
+    requested display mode
+
+Description
+  Set the transfer unit, and calculate all transfer unit size related values.
+Calculation is based on DP and IP core specification.

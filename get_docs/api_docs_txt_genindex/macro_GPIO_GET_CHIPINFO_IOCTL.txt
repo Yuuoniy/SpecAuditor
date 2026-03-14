@@ -1,0 +1,2 @@
+Macro: GPIO_GET_CHIPINFO_IOCTL
+

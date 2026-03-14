@@ -1,0 +1,10 @@
+Function: void drm_gem_free_mmap_offset ( struct drm_gem_object * obj )
+
+release a fake mmap offset for an object
+
+Parameters
+  struct drm_gem_object *obj
+    obj in question
+
+Description
+  This routine frees fake offsets allocated by drm_gem_create_mmap_offset() .

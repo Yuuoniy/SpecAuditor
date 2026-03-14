@@ -1,0 +1,11 @@
+Function: void drm_client_release ( struct drm_client_dev * client )
+
+Release DRM client resources
+
+Parameters
+  struct drm_client_dev *client
+    DRM client
+
+Description
+  Releases resources by closing the drm_file that was opened by drm_client_init() .
+It is called automatically if the drm_client_funcs.unregister callback is _not_ set.

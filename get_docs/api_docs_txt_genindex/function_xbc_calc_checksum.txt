@@ -1,0 +1,14 @@
+Function: uint32_t xbc_calc_checksum ( void * data , uint32_t size )
+
+Calculate checksum of bootconfig
+
+Parameters
+  void *data
+    Bootconfig data.
+  uint32_t size
+    The size of the bootconfig data.
+
+Description
+  Calculate the checksum value of the bootconfig data.
+The checksum will be used with the BOOTCONFIG_MAGIC and the size for
+embedding the bootconfig in the initrd image.

@@ -1,0 +1,11 @@
+Function: int drm_mode_config_init ( struct drm_device * dev )
+
+DRM mode_configuration structure initialization
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  This is the unmanaged version of drmm_mode_config_init() for drivers which
+still explicitly call drm_mode_config_cleanup() .

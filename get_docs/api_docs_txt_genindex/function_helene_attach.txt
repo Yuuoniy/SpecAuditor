@@ -1,0 +1,11 @@
+Function: struct dvb_frontend * helene_attach ( struct dvb_frontend * fe , const struct helene_config * config , struct i2c_adapter * i2c )
+
+Attach a helene tuner (terrestrial and cable standards)
+
+Parameters
+  struct dvb_frontend *fe
+    frontend to be attached
+  const struct helene_config *config
+    pointer to struct helene_config with tuner configuration.
+  struct i2c_adapter *i2c
+    i2c adapter to use.

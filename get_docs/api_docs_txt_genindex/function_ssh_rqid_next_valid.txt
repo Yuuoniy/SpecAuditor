@@ -1,0 +1,7 @@
+Function: u16 ssh_rqid_next_valid ( u16 rqid )
+
+Return the next valid request ID.
+
+Parameters
+  u16 rqid
+    The current request ID.

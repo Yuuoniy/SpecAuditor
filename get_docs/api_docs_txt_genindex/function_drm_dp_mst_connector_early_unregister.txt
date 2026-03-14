@@ -1,0 +1,13 @@
+Function: void drm_dp_mst_connector_early_unregister ( struct drm_connector * connector , struct drm_dp_mst_port * port )
+
+Early MST connector unregistration
+
+Parameters
+  struct drm_connector *connector
+    The MST connector
+  struct drm_dp_mst_port *port
+    The MST port for this connector
+
+Description
+  Helper to unregister the remote aux device for this MST port, registered by drm_dp_mst_connector_late_register() . Drivers should call this from their mst
+connector’s early_unregister hook.

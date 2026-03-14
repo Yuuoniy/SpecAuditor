@@ -1,0 +1,14 @@
+Function: bool srpt_test_and_set_cmd_state ( struct srpt_send_ioctx * ioctx , enum srpt_command_state old , enum srpt_command_state new )
+
+test and set the state of a command
+
+Parameters
+  struct srpt_send_ioctx *ioctx
+    Send I/O context.
+  enum srpt_command_state old
+    Current I/O context state.
+  enum srpt_command_state new
+    New I/O context state.
+
+Description
+  Returns true if and only if the previous command state was equal to ‘old’.

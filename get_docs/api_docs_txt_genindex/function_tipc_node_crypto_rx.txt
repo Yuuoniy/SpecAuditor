@@ -1,0 +1,7 @@
+Function: struct tipc_crypto * tipc_node_crypto_rx ( struct tipc_node * __n )
+
+Retrieve crypto RX handle from node
+
+Parameters
+  struct tipc_node *__n
+    target tipc_node

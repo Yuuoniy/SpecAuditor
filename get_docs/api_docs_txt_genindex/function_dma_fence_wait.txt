@@ -1,0 +1,14 @@
+Function: signed long dma_fence_wait ( struct dma_fence * fence , bool intr )
+
+sleep until the fence gets signaled
+
+Parameters
+  struct dma_fence *fence
+    the fence to wait on
+  bool intr
+    if true, do an interruptible wait
+
+Description
+  This function will return -ERESTARTSYS if interrupted by a signal,
+or 0 if the fence was signaled. Other error values may be
+returned on custom implementations.

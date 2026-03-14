@@ -1,0 +1,13 @@
+Function: void tty_driver_remove_tty ( struct tty_driver * driver , struct tty_struct * tty )
+
+remove a tty from the driver tables
+
+Parameters
+  struct tty_driver *driver
+    the driver for the tty
+  struct tty_struct *tty
+    tty to remove
+
+Description
+  Remove a tty object from the driver tables. The tty->index field will be set
+by the time this is called.

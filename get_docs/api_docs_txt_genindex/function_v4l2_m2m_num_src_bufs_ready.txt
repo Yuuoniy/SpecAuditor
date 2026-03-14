@@ -1,0 +1,7 @@
+Function: unsigned int v4l2_m2m_num_src_bufs_ready ( struct v4l2_m2m_ctx * m2m_ctx )
+
+return the number of source buffers ready for use
+
+Parameters
+  struct v4l2_m2m_ctx *m2m_ctx
+    m2m context assigned to the instance given by struct v4l2_m2m_ctx

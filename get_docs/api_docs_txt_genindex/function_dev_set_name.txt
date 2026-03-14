@@ -1,0 +1,11 @@
+Function: int dev_set_name ( struct device * dev , const char * fmt , ... )
+
+set a device name
+
+Parameters
+  struct device *dev
+    device
+  const char *fmt
+    format string for the device’s name
+  ...
+    variable arguments

@@ -1,0 +1,7 @@
+Function: void intel_init_cdclk_hooks ( struct intel_display * display )
+
+Initialize CDCLK related modesetting hooks
+
+Parameters
+  struct intel_display *display
+    display instance

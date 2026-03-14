@@ -1,0 +1,12 @@
+Function: int devfreq_suspend_device ( struct devfreq * devfreq )
+
+Suspend devfreq of a device.
+
+Parameters
+  struct devfreq *devfreq
+    the devfreq instance to be suspended
+
+Description
+  This function is intended to be called by the pm callbacks
+(e.g., runtime_suspend, suspend) of the device driver that
+holds the devfreq.

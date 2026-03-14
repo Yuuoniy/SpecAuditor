@@ -1,0 +1,13 @@
+Struct: struct dev_links_info
+
+Device data related to device links.
+
+Members
+  suppliers
+    List of links to supplier devices.
+  consumers
+    List of links to consumer devices.
+  defer_sync
+    Hook to global list of devices that have deferred sync_state.
+  status
+    Driver status information.

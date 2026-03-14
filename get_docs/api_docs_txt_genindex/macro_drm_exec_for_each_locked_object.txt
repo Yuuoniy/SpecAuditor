@@ -1,0 +1,14 @@
+Macro: drm_exec_for_each_locked_object
+
+
+
+Parameters
+  exec
+    drm_exec object
+  index
+    unsigned long index for the iteration
+  obj
+    the current GEM object
+
+Description
+  Iterate over all the locked GEM objects inside the drm_exec object.

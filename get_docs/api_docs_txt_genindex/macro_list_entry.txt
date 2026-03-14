@@ -1,0 +1,11 @@
+Macro: list_entry
+
+
+
+Parameters
+  ptr
+    the struct list_head pointer.
+  type
+    the type of the struct this is embedded in.
+  member
+    the name of the list_head within the struct.

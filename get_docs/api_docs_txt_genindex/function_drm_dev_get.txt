@@ -1,0 +1,12 @@
+Function: void drm_dev_get ( struct drm_device * dev )
+
+Take reference of a DRM device
+
+Parameters
+  struct drm_device *dev
+    device to take reference of or NULL
+
+Description
+  This increases the ref-count of dev by one. You must already own a
+reference when calling this. Use drm_dev_put() to drop this reference
+again.

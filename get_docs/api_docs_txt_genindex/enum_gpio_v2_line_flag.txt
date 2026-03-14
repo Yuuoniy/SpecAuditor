@@ -1,0 +1,3 @@
+Enum: enum gpio_v2_line_flag
+
+struct gpio_v2_line_attribute .flags values

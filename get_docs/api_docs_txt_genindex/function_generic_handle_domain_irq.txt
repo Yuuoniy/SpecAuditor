@@ -1,0 +1,13 @@
+Function: int generic_handle_domain_irq ( struct irq_domain * domain , unsigned int hwirq )
+
+Invoke the handler for a HW irq belonging to a domain.
+
+Parameters
+  struct irq_domain *domain
+    The domain where to perform the lookup
+  unsigned int hwirq
+    The HW irq number to convert to a logical one
+
+Description
+  This function must be called from an IRQ context with irq regs
+initialized.

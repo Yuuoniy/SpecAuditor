@@ -1,0 +1,19 @@
+Function: int media_request_object_bind ( struct media_request * req , const struct media_request_object_ops * ops , void * priv , bool is_buffer , struct media_request_object * obj )
+
+Bind a media request object to a request
+
+Parameters
+  struct media_request *req
+    The media request
+  const struct media_request_object_ops *ops
+    The object ops for this object
+  void *priv
+    A driver-specific priv pointer associated with this object
+  bool is_buffer
+    Set to true if the object a buffer object.
+  struct media_request_object *obj
+    The object
+
+Description
+  Bind this object to the request and set the ops and priv values of
+the object so it can be found later with media_request_object_find() .

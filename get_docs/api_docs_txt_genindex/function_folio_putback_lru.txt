@@ -1,0 +1,11 @@
+Function: void folio_putback_lru ( struct folio * folio )
+
+Put previously isolated folio onto appropriate LRU list.
+
+Parameters
+  struct folio *folio
+    Folio to be returned to an LRU list.
+
+Description
+  Add previously isolated folio to appropriate LRU list.
+The folio may still be unevictable for other reasons.

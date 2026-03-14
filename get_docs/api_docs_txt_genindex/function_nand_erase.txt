@@ -1,0 +1,12 @@
+Function: int nand_erase ( struct mtd_info * mtd , struct erase_info * instr )
+
+[MTD Interface] erase block(s)
+
+Parameters
+  struct mtd_info *mtd
+    MTD device structure
+  struct erase_info *instr
+    erase instruction
+
+Description
+  Erase one ore more blocks.

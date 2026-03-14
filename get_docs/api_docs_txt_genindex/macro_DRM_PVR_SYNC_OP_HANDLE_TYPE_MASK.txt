@@ -1,0 +1,7 @@
+Macro: DRM_PVR_SYNC_OP_HANDLE_TYPE_MASK
+
+Handle type mask for the drm_pvr_sync_op::flags field.
+
+Members
+  jobs
+    [IN] Array of jobs to submit.

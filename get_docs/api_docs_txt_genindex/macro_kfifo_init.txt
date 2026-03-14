@@ -1,0 +1,14 @@
+Macro: kfifo_init
+
+
+
+Parameters
+  fifo
+    the fifo to assign the buffer
+  buffer
+    the preallocated buffer to be used
+  size
+    the size of the internal buffer, this have to be a power of 2
+
+Description
+  This macro initializes a fifo using a preallocated buffer.

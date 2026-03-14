@@ -1,0 +1,17 @@
+Function: int register_memory_node_under_compute_node ( unsigned int mem_nid , unsigned int cpu_nid , enum access_coordinate_class access )
+
+link memory node to its compute node for a given access class.
+
+Parameters
+  unsigned int mem_nid
+    Memory node number
+  unsigned int cpu_nid
+    Cpu  node number
+  enum access_coordinate_class access
+    Access class to register
+
+Description
+  For use with platforms that may have separate memory and compute nodes.
+This function will export node relationships linking which memory
+initiator nodes can access memory targets at a given ranked access
+class.

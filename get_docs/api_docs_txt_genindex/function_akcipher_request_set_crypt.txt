@@ -1,0 +1,18 @@
+Function: void akcipher_request_set_crypt ( struct akcipher_request * req , struct scatterlist * src , struct scatterlist * dst , unsigned int src_len , unsigned int dst_len )
+
+Sets request parameters
+
+Parameters
+  struct akcipher_request *req
+    public key request
+  struct scatterlist *src
+    ptr to input scatter list
+  struct scatterlist *dst
+    ptr to output scatter list
+  unsigned int src_len
+    size of the src input scatter list to be processed
+  unsigned int dst_len
+    size of the dst output scatter list
+
+Description
+  Sets parameters required by crypto operation

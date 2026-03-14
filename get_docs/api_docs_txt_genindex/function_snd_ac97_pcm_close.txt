@@ -1,0 +1,10 @@
+Function: int snd_ac97_pcm_close ( struct ac97_pcm * pcm )
+
+closes the given AC97 pcm
+
+Parameters
+  struct ac97_pcm *pcm
+    the ac97 pcm instance
+
+Description
+  It frees the locked AC97 slots.

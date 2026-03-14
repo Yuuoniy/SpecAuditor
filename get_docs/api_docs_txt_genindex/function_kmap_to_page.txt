@@ -1,0 +1,7 @@
+Function: struct page * kmap_to_page ( void * addr )
+
+Get the page for a kmap’ed address
+
+Parameters
+  void *addr
+    The address to look up

@@ -1,0 +1,7 @@
+Function: int dwc3_gadget_calc_ram_depth ( struct dwc3 * dwc )
+
+calculates the ram depth for txfifo
+
+Parameters
+  struct dwc3 *dwc
+    pointer to the DWC3 context

@@ -1,0 +1,16 @@
+Function: void retire_super ( struct super_block * sb )
+
+prevents superblock from being reused
+
+Parameters
+  struct super_block *sb
+    superblock to retire
+
+Description
+  The function marks superblock to be ignored in superblock test, which
+prevents it from being reused for any new mounts.  If the superblock has
+a private bdi, it also unregisters it, but doesn’t reduce the refcount
+of the superblock to prevent potential races.  The refcount is reduced
+by generic_shutdown_super() .  The function can not be called
+concurrently with generic_shutdown_super() .  It is safe to call the
+function multiple times, subsequent calls have no effect.

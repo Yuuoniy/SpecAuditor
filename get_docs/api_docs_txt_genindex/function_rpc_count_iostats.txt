@@ -1,0 +1,12 @@
+Function: void rpc_count_iostats ( const struct rpc_task * task , struct rpc_iostats * stats )
+
+tally up per-task stats
+
+Parameters
+  const struct rpc_task *task
+    completed rpc_task
+  struct rpc_iostats *stats
+    array of stat structures
+
+Description
+  Uses the statidx from task

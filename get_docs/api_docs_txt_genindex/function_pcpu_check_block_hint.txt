@@ -1,0 +1,16 @@
+Function: bool pcpu_check_block_hint ( struct pcpu_block_md * block , int bits , size_t align )
+
+check against the contig hint
+
+Parameters
+  struct pcpu_block_md *block
+    block of interest
+  int bits
+    size of allocation
+  size_t align
+    alignment of area (max PAGE_SIZE)
+
+Description
+  Check to see if the allocation can fit in the block’s contig hint.
+Note, a chunk uses the same hints as a block so this can also check against
+the chunk’s contig hint.

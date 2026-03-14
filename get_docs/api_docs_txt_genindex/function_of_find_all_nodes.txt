@@ -1,0 +1,7 @@
+Function: struct device_node * of_find_all_nodes ( struct device_node * prev )
+
+Get next node in global list
+
+Parameters
+  struct device_node *prev
+    Previous node or NULL to start iteration of_node_put() will be called on it

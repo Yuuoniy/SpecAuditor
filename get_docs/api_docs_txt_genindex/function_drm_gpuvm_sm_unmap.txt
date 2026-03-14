@@ -1,0 +1,17 @@
+Function: int drm_gpuvm_sm_unmap ( struct drm_gpuvm * gpuvm , void * priv , u64 req_addr , u64 req_range )
+
+calls the drm_gpuva_ops to split on unmap
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm representing the GPU VA space
+  void *priv
+    pointer to a driver private data structure
+  u64 req_addr
+    the start address of the range to unmap
+  u64 req_range
+    the range of the mappings to unmap
+
+Description
+  This function iterates the given range of the GPU VA space. It utilizes the drm_gpuvm_ops to call back into the driver providing the operations to
+unmap and, if required, split existing mappings.

@@ -1,0 +1,14 @@
+Macro: get_user
+
+
+
+Parameters
+  x
+    Variable to store result.
+  ptr
+    Source address, in user space.
+
+Description
+  This macro copies a single simple variable from user space to kernel
+space.  It supports simple types like char and int, but not larger
+data types like structures or arrays.

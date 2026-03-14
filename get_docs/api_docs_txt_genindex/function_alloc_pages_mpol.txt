@@ -1,0 +1,15 @@
+Function: struct page * alloc_pages_mpol ( gfp_t gfp , unsigned int order , struct mempolicy * pol , pgoff_t ilx , int nid )
+
+Allocate pages according to NUMA mempolicy.
+
+Parameters
+  gfp_t gfp
+    GFP flags.
+  unsigned int order
+    Order of the page allocation.
+  struct mempolicy *pol
+    Pointer to the NUMA mempolicy.
+  pgoff_t ilx
+    Index for interleave mempolicy (also distinguishes alloc_pages() ).
+  int nid
+    Preferred node (usually numa_node_id() but mpol may override it).

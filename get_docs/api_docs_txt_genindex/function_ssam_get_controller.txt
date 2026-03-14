@@ -1,0 +1,13 @@
+Function: struct ssam_controller * ssam_get_controller ( void )
+
+Get reference to SSAM controller.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Returns a reference to the SSAM controller of the system or NULL if there
+is none, it hasn’t been set up yet, or it has already been unregistered.
+This function automatically increments the reference count of the
+controller, thus the calling party must ensure that ssam_controller_put() is called when it doesn’t need the controller any more.

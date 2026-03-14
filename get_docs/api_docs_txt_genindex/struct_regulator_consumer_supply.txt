@@ -1,0 +1,9 @@
+Struct: struct regulator_consumer_supply
+
+supply -> device mapping
+
+Members
+  dev_name
+    Result of dev_name() for the consumer.
+  supply
+    Name for the supply.

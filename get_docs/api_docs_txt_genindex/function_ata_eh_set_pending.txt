@@ -1,0 +1,13 @@
+Function: void ata_eh_set_pending ( struct ata_port * ap , bool fastdrain )
+
+set ATA_PFLAG_EH_PENDING and activate fast drain
+
+Parameters
+  struct ata_port *ap
+    target ATA port
+  bool fastdrain
+    activate fast drain
+
+Description
+  Set ATA_PFLAG_EH_PENDING and activate fast drain if fastdrain is non-zero and EH wasn’t pending before.  Fast drain ensures
+that EH kicks in in timely manner.

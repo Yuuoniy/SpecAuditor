@@ -1,0 +1,10 @@
+Function: int clk_enable ( struct clk * clk )
+
+inform the system when the clock source should be running.
+
+Parameters
+  struct clk *clk
+    clock source
+
+Description
+  If the clock can not be enabled/disabled, this should return success.

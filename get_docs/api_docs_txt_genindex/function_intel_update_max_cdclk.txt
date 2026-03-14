@@ -1,0 +1,12 @@
+Function: void intel_update_max_cdclk ( struct intel_display * display )
+
+Determine the maximum support CDCLK frequency
+
+Parameters
+  struct intel_display *display
+    display instance
+
+Description
+  Determine the maximum CDCLK frequency the platform supports, and also
+derive the maximum dot clock frequency the maximum CDCLK frequency
+allows.

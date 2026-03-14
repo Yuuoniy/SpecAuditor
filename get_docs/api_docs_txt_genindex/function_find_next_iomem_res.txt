@@ -1,0 +1,20 @@
+Function: int find_next_iomem_res ( resource_size_t start , resource_size_t end , unsigned long flags , unsigned long desc , struct resource * res )
+
+Finds the lowest iomem resource that covers part of [ start ..**end**].
+
+Parameters
+  resource_size_t start
+    start address of the resource searched for
+  resource_size_t end
+    end address of same resource
+  unsigned long flags
+    flags which the resource must have
+  unsigned long desc
+    descriptor the resource must have
+  struct resource *res
+    return ptr, if resource found
+
+Description
+  If a resource is found, returns 0 and ***res is overwritten with the part
+of the resource that’s within [**start ..**end**]; if none is found, returns
+-ENODEV.  Returns -EINVAL for invalid parameters.

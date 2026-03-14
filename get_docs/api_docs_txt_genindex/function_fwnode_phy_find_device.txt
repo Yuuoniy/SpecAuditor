@@ -1,0 +1,10 @@
+Function: struct phy_device * fwnode_phy_find_device ( struct fwnode_handle * phy_fwnode )
+
+For provided phy_fwnode, find phy_device.
+
+Parameters
+  struct fwnode_handle *phy_fwnode
+    Pointer to the phy’s fwnode.
+
+Description
+  If successful, returns a pointer to the phy_device with the embedded struct device refcount incremented by one, or NULL on failure.

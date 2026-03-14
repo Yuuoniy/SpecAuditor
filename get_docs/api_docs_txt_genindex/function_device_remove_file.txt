@@ -1,0 +1,9 @@
+Function: void device_remove_file ( struct device * dev , const struct device_attribute * attr )
+
+remove sysfs attribute file.
+
+Parameters
+  struct device *dev
+    device.
+  const struct device_attribute *attr
+    device attribute descriptor.

@@ -1,0 +1,14 @@
+Macro: ACPI_DEVICE_CLASS
+
+
+
+Parameters
+  _cls
+    the class, subclass, prog-if triple for this device
+  _msk
+    the class mask for this device
+
+Description
+  This macro is used to create a struct acpi_device_id that matches a
+specific PCI class. The .id and .driver_data fields will be left
+initialized with the default value.

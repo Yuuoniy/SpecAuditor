@@ -1,0 +1,11 @@
+Function: struct snd_card * snd_card_ref ( int idx )
+
+Get the card object from the index
+
+Parameters
+  int idx
+    the card index
+
+Description
+  Returns a card object corresponding to the given index or NULL if not found.
+Release the object via snd_card_unref() .

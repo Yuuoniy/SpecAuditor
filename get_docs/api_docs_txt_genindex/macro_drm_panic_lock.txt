@@ -1,0 +1,15 @@
+Macro: drm_panic_lock
+
+
+
+Parameters
+  dev
+    struct drm_device
+  flags
+    unsigned long irq flags you need to pass to the unlock() counterpart
+
+Description
+  This function must be called to protect software and hardware state that the
+panic printing code must be able to rely on. The protected sections must be
+as small as possible. It uses the irqsave/irqrestore variant, and can be
+called from irq handler. Examples include:

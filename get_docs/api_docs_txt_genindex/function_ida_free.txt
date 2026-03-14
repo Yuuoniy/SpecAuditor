@@ -1,0 +1,9 @@
+Function: void ida_free ( struct ida * ida , unsigned int id )
+
+Release an allocated ID.
+
+Parameters
+  struct ida *ida
+    IDA handle.
+  unsigned int id
+    Previously allocated ID.

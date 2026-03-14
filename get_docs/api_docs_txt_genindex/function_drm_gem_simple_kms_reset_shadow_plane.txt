@@ -1,0 +1,11 @@
+Function: void drm_gem_simple_kms_reset_shadow_plane ( struct drm_simple_display_pipe * pipe )
+
+resets a shadow-buffered plane
+
+Parameters
+  struct drm_simple_display_pipe *pipe
+    the simple display pipe
+
+Description
+  This function implements struct drm_simple_display_funcs .reset_plane
+for shadow-buffered planes.

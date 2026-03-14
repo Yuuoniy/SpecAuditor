@@ -1,0 +1,9 @@
+Function: int drm_fb_helper_blank ( int blank , struct fb_info * info )
+
+implementation for fb_ops.fb_blank
+
+Parameters
+  int blank
+    desired blanking state
+  struct fb_info *info
+    fbdev registered by the helper

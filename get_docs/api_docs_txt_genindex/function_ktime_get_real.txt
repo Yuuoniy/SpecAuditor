@@ -1,0 +1,8 @@
+Function: ktime_t ktime_get_real ( void )
+
+CLOCK_REALTIME Returns the time in relative to the UNIX epoch starting in 1970
+using the Coordinated Universal Time (UTC), same as gettimeofday() user space. This is used for all timestamps that need to
+persist across a reboot, like inode times, but should be avoided
+for internal uses, since it can jump backwards due to a leap
+second update, NTP adjustment settimeofday() operation from user
+space.

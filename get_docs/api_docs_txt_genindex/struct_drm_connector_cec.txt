@@ -1,0 +1,11 @@
+Struct: struct drm_connector_cec
+
+DRM Connector CEC-related structure
+
+Members
+  mutex
+    protects all fields in this structure.
+  funcs
+    CEC Control Functions
+  data
+    CEC implementation-specific data

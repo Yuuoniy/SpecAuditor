@@ -1,0 +1,11 @@
+Function: int ata_dev_configure ( struct ata_device * dev )
+
+Configure the specified ATA/ATAPI device
+
+Parameters
+  struct ata_device *dev
+    Target device to configure
+
+Description
+  Configure dev according to dev->id .  Generic and low-level
+driver specific fixups are also applied.

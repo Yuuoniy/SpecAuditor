@@ -1,0 +1,11 @@
+Struct: struct iommu_hwpt_arm_smmuv3
+
+ARM SMMUv3 nested STE (IOMMU_HWPT_DATA_ARM_SMMUV3)
+
+Members
+  ste
+    The first two double words of the user space Stream Table Entry for
+the translation. Must be little-endian.
+Allowed fields: (Refer to “5.2 Stream Table Entry” in SMMUv3 HW Spec)
+- word-0: V, Cfg, S1Fmt, S1ContextPtr, S1CDMax
+- word-1: EATS, S1DSS, S1CIR, S1COR, S1CSH, S1STALLD

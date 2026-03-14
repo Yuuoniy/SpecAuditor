@@ -1,0 +1,19 @@
+Function: int panic_nand_write ( struct mtd_info * mtd , loff_t to , size_t len , size_t * retlen , const uint8_t * buf )
+
+[MTD Interface] NAND write with ECC
+
+Parameters
+  struct mtd_info *mtd
+    MTD device structure
+  loff_t to
+    offset to write to
+  size_t len
+    number of bytes to write
+  size_t *retlen
+    pointer to variable to store the number of written bytes
+  const uint8_t *buf
+    the data to write
+
+Description
+  NAND write with ECC. Used when performing writes in interrupt context, this
+may for example be called by mtdoops when writing an oops while in panic.

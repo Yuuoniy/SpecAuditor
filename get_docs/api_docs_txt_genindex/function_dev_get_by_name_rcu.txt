@@ -1,0 +1,16 @@
+Function: struct net_device * dev_get_by_name_rcu ( struct net * net , const char * name )
+
+find a device by its name
+
+Parameters
+  struct net *net
+    the applicable net namespace
+  const char *name
+    name to find
+
+Description
+  Find an interface by name.
+If the name is found a pointer to the device is returned.
+If the name is not found then NULL is returned.
+The reference counters are not incremented so the caller must be
+careful with locks. The caller must hold RCU lock.

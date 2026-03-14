@@ -1,0 +1,11 @@
+Function: struct publication * tipc_service_remove_publ ( struct service_range * r , struct tipc_socket_addr * sk , u32 key )
+
+remove a publication from a service
+
+Parameters
+  struct service_range *r
+    service_range to remove publication from
+  struct tipc_socket_addr *sk
+    address publishing socket
+  u32 key
+    target publication key

@@ -1,0 +1,11 @@
+Function: struct peci_request * peci_request_alloc ( struct peci_device * device , u8 tx_len , u8 rx_len )
+
+allocate struct peci_requests
+
+Parameters
+  struct peci_device *device
+    PECI device to which request is going to be sent
+  u8 tx_len
+    TX length
+  u8 rx_len
+    RX length

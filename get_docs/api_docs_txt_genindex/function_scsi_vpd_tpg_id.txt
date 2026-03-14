@@ -1,0 +1,14 @@
+Function: int scsi_vpd_tpg_id ( struct scsi_device * sdev , int * rel_id )
+
+return a target port group identifier
+
+Parameters
+  struct scsi_device *sdev
+    SCSI device
+  int *rel_id
+    pointer to return relative target port in if not NULL
+
+Description
+  Returns the Target Port Group identifier from the information
+from VPD page 0x83 of the device.
+Optionally sets rel_id to the relative target port on success.

@@ -1,0 +1,11 @@
+Function: unsigned int ieee80211_get_hdrlen_from_skb ( const struct sk_buff * skb )
+
+get header length from data
+
+Parameters
+  const struct sk_buff *skb
+    the frame
+
+Description
+  Given an skb with a raw 802.11 header at the data pointer this function
+returns the 802.11 header length.

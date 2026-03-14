@@ -1,0 +1,17 @@
+Function: int rpc_mkpipe_dentry ( struct dentry * parent , const char * name , void * private , struct rpc_pipe * pipe )
+
+make an rpc_pipefs file for kernel<->userspace communication
+
+Parameters
+  struct dentry *parent
+    dentry of directory to create new “pipe” in
+  const char *name
+    name of pipe
+  void *private
+    private data to associate with the pipe, for the caller’s use
+  struct rpc_pipe *pipe
+    rpc_pipe containing input parameters
+
+Description
+  Data is made available for userspace to read by calls to rpc_queue_upcall() .  The actual reads will result in calls to ops->upcall , which will be called with the file pointer,
+message, and userspace buffer to copy to.

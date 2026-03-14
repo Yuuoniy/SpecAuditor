@@ -1,0 +1,9 @@
+Function: int v4l_video_std_enumstd ( struct v4l2_standard * vs , v4l2_std_id id )
+
+Ancillary routine that fills in the fields of a v4l2_standard structure according to the id and vs->index parameters.
+
+Parameters
+  struct v4l2_standard *vs
+    struct v4l2_standard pointer to be filled.
+  v4l2_std_id id
+    analog TV standard ID.

@@ -1,0 +1,11 @@
+Function: void media_device_unregister_entity ( struct media_entity * entity )
+
+unregisters a media entity.
+
+Parameters
+  struct media_entity *entity
+    pointer to struct media_entity to be unregistered
+
+Description
+  All links associated with the entity and all PADs are automatically
+unregistered from the media_device when this function is called.

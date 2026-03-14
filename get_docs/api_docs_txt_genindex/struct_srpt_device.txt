@@ -1,0 +1,33 @@
+Struct: struct srpt_device
+
+information associated by SRPT with a single HCA
+
+Members
+  refcnt
+    Reference count for this device.
+  device
+    Backpointer to the struct ib_device managed by the IB core.
+  pd
+    IB protection domain.
+  lkey
+    L_Key (local key) with write access to all local memory.
+  srq
+    Per-HCA SRQ (shared receive queue).
+  cm_id
+    Connection identifier.
+  srq_size
+    SRQ size.
+  sdev_mutex
+    Serializes use_srq changes.
+  use_srq
+    Whether or not to use SRQ.
+  req_buf_cache
+    kmem_cache for ioctx_ring buffers.
+  ioctx_ring
+    Per-HCA SRQ.
+  event_handler
+    Per-HCA asynchronous IB event handler.
+  list
+    Node in srpt_dev_list.
+  port
+    Information about the ports owned by this HCA.

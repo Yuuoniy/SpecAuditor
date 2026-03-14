@@ -1,0 +1,19 @@
+Function: int nand_write_page ( struct nand_chip * chip , uint32_t offset , int data_len , const uint8_t * buf , int oob_required , int page , int raw )
+
+write one page
+
+Parameters
+  struct nand_chip *chip
+    NAND chip descriptor
+  uint32_t offset
+    address offset within the page
+  int data_len
+    length of actual data to be written
+  const uint8_t *buf
+    the data to write
+  int oob_required
+    must write chip->oob_poi to OOB
+  int page
+    page number to write
+  int raw
+    use _raw version of write_page

@@ -1,0 +1,10 @@
+Function: int security_sb_kern_mount ( const struct super_block * sb )
+
+Check if a kernel mount is allowed
+
+Parameters
+  const struct super_block *sb
+    filesystem superblock
+
+Description
+  Mount this sb if allowed by permissions.

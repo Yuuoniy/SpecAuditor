@@ -1,0 +1,11 @@
+Function: unsigned int snd_sgbuf_get_chunk_size ( struct snd_dma_buffer * dmab , unsigned int ofs , unsigned int size )
+
+compute the max chunk size with continuous pages on sg-buffer
+
+Parameters
+  struct snd_dma_buffer *dmab
+    buffer allocation information
+  unsigned int ofs
+    offset in the ring buffer
+  unsigned int size
+    the requested size

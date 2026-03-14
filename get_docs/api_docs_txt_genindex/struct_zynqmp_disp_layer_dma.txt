@@ -1,0 +1,11 @@
+Struct: struct zynqmp_disp_layer_dma
+
+DMA channel for one data plane of a layer
+
+Members
+  chan
+    DMA channel
+  xt
+    Interleaved DMA descriptor template
+  sgl
+    Data chunk for dma_interleaved_template

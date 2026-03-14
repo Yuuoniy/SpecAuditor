@@ -1,0 +1,11 @@
+Function: u64 ata_qc_get_active ( struct ata_port * ap )
+
+get bitmask of active qcs
+
+Parameters
+  struct ata_port *ap
+    port in question
+
+Description
+  LOCKING:
+spin_lock_irqsave(host lock)

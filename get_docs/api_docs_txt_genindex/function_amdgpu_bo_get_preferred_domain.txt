@@ -1,0 +1,9 @@
+Function: uint32_t amdgpu_bo_get_preferred_domain ( struct amdgpu_device * adev , uint32_t domain )
+
+get preferred domain
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device object
+  uint32_t domain
+    allowed memory domains

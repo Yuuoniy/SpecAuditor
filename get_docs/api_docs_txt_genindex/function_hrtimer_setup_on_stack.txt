@@ -1,0 +1,17 @@
+Function: void hrtimer_setup_on_stack ( struct hrtimer * timer , enum hrtimer_restart ( * function ) ( struct hrtimer * ) , clockid_t clock_id , enum hrtimer_mode mode )
+
+initialize a timer on stack memory
+
+Parameters
+  struct hrtimer *timer
+    The timer to be initialized
+  enum hrtimer_restart (*function)(struct hrtimer *)
+    the callback function
+  clockid_t clock_id
+    The clock to be used
+  enum hrtimer_mode mode
+    The timer mode
+
+Description
+  Similar to hrtimer_setup() , except that this one must be used if struct hrtimer is in stack
+memory.

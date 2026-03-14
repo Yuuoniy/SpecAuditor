@@ -1,0 +1,13 @@
+Function: void drm_gem_vram_vunmap ( struct drm_gem_vram_object * gbo , struct iosys_map * map )
+
+Unmaps and unpins a GEM VRAM object
+
+Parameters
+  struct drm_gem_vram_object *gbo
+    The GEM VRAM object to unmap
+  struct iosys_map *map
+    Kernel virtual address where the VRAM GEM object was mapped
+
+Description
+  A call to drm_gem_vram_vunmap() unmaps and unpins a GEM VRAM buffer. See
+the documentation for drm_gem_vram_vmap() for more information.

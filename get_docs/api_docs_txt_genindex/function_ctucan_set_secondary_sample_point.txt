@@ -1,0 +1,7 @@
+Function: int ctucan_set_secondary_sample_point ( struct net_device * ndev )
+
+Sets secondary sample point in CTU CAN FD
+
+Parameters
+  struct net_device *ndev
+    Pointer to net_device structure

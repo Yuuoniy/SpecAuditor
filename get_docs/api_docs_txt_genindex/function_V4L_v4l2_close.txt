@@ -1,0 +1,3 @@
+Function: int v4l2_close ( int fd )
+
+operates like the close() function.

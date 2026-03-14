@@ -1,0 +1,13 @@
+Function: void ssh_rtl_shutdown ( struct ssh_rtl * rtl )
+
+Shut down request transport layer.
+
+Parameters
+  struct ssh_rtl *rtl
+    The request transport layer.
+
+Description
+  Shuts down the request transport layer, removing and canceling all queued
+and pending requests. Requests canceled by this operation will be completed
+with -ESHUTDOWN as status. Receiver and transmitter threads will be
+stopped, the lower-level packet layer will be shutdown.

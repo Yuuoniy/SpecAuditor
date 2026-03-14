@@ -1,0 +1,11 @@
+Function: struct scatterlist * sgl_alloc ( unsigned long long length , gfp_t gfp , unsigned int * nent_p )
+
+allocate a scatterlist and its pages
+
+Parameters
+  unsigned long long length
+    Length in bytes of the scatterlist
+  gfp_t gfp
+    Memory allocation flags
+  unsigned int *nent_p
+    [out] Number of entries in the scatterlist

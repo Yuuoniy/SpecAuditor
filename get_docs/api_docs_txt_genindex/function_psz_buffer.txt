@@ -1,0 +1,13 @@
+Function: struct psz_buffer
+
+header of zone to flush to storage
+
+Members
+  sig
+    signature to indicate header (PSZ_SIG xor PSZONE-type value)
+  datalen
+    length of data in data
+  start
+    offset into data where the beginning of the stored bytes begin
+  data
+    zone data.

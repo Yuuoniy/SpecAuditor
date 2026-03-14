@@ -1,0 +1,11 @@
+Function: void folio_reset_order ( struct folio * folio )
+
+Reset the folio order and derived _nr_pages
+
+Parameters
+  struct folio *folio
+    The folio.
+
+Description
+  Reset the order and derived _nr_pages to 0. Must only be used in the
+process of splitting large folios.

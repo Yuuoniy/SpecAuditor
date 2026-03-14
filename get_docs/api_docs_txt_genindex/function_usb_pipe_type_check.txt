@@ -1,0 +1,14 @@
+Function: int usb_pipe_type_check ( struct usb_device * dev , unsigned int pipe )
+
+sanity check of a specific pipe for a usb device
+
+Parameters
+  struct usb_device *dev
+    struct usb_device to be checked
+  unsigned int pipe
+    pipe to check
+
+Description
+  This performs a light-weight sanity check for the endpoint in the
+given usb device.  It returns 0 if the pipe is valid for the specific usb
+device, otherwise a negative error code.

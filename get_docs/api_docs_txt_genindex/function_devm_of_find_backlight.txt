@@ -1,0 +1,13 @@
+Function: struct backlight_device * devm_of_find_backlight ( struct device * dev )
+
+find backlight for a device
+
+Parameters
+  struct device *dev
+    the device
+
+Description
+  This function looks for a property named ‘backlight’ on the DT node
+connected to dev and looks up the backlight device. The lookup is
+device managed so the reference to the backlight device is automatically
+dropped on driver detach.

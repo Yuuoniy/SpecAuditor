@@ -1,0 +1,14 @@
+Function: int kgdb_skipexception ( int exception , struct pt_regs * regs )
+
+(optional) exit kgdb_handle_exception early
+
+Parameters
+  int exception
+    Exception vector number
+  struct pt_regs *regs
+    Current struct pt_regs .
+
+Description
+  On some architectures it is required to skip a breakpoint
+exception when it occurs after a breakpoint has been removed.
+This can be implemented in the architecture specific portion of kgdb.

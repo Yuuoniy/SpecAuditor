@@ -1,0 +1,34 @@
+Struct: struct komeda_component
+
+
+
+Members
+  obj
+    treat component as private obj
+  pipeline
+    the komeda pipeline this component belongs to
+  name
+    component name
+  reg
+    component register base,
+which is initialized by chip and used by chip only
+  id
+    component id
+  hw_id
+    component hw id,
+which is initialized by chip and used by chip only
+  max_active_inputs
+    max_active_outputs : maximum number of inputs/outputs that can be active at the same time
+Note:
+the number isn’t the bit number of supported_inputs or supported_outputs , but may be less than it, since component may not
+support enabling all supported_inputs /outputs at the same time.
+  max_active_outputs
+    maximum number of outputs
+  supported_inputs
+    supported_outputs : bitmask of BIT(component->id) for the supported inputs/outputs,
+describes the possibilities of how a component is linked into a
+pipeline.
+  supported_outputs
+    bitmask of supported output componenet ids
+  funcs
+    chip functions to access HW

@@ -1,0 +1,12 @@
+Function: struct mii_bus * mdio_find_bus ( const char * mdio_name )
+
+Given the name of a mdiobus, find the mii_bus.
+
+Parameters
+  const char *mdio_name
+    The name of a mdiobus.
+
+Description
+  Returns a reference to the mii_bus, or NULL if none found.  The
+embedded struct device will have its reference count incremented,
+and this must be put_deviced’ed once the bus is finished with.

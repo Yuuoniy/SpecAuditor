@@ -1,0 +1,11 @@
+Function: int device_move ( struct device * dev , struct device * new_parent , enum dpm_order dpm_order )
+
+moves a device to a new parent
+
+Parameters
+  struct device *dev
+    the pointer to the struct device to be moved
+  struct device *new_parent
+    the new parent of the device (can be NULL)
+  enum dpm_order dpm_order
+    how to reorder the dpm_list

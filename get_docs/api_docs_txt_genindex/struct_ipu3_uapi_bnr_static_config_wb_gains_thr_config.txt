@@ -1,0 +1,13 @@
+Struct: struct ipu3_uapi_bnr_static_config_wb_gains_thr_config
+
+Threshold config
+
+Members
+  gr
+    white balance threshold gain for Gr channel.
+  r
+    white balance threshold gain for R channel.
+  b
+    white balance threshold gain for B channel.
+  gb
+    white balance threshold gain for Gb channel.

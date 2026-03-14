@@ -1,0 +1,18 @@
+Function: int __iscsi_complete_pdu ( struct iscsi_conn * conn , struct iscsi_hdr * hdr , char * data , int datalen )
+
+complete pdu
+
+Parameters
+  struct iscsi_conn *conn
+    iscsi conn
+  struct iscsi_hdr *hdr
+    iscsi header
+  char *data
+    data buffer
+  int datalen
+    len of data buffer
+
+Description
+  Completes pdu processing by freeing any resources allocated at
+queuecommand or send generic. session back_lock must be held and verify
+itt must have been called.

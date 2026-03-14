@@ -1,0 +1,13 @@
+Function: int gnet_stats_finish_copy ( struct gnet_dump * d )
+
+finish dumping procedure
+
+Parameters
+  struct gnet_dump *d
+    dumping handle
+
+Description
+  Corrects the length of the top level TLV to include all TLVs added
+by gnet_stats_copy_XXX() calls. Adds the backward compatibility TLVs
+if gnet_stats_start_copy_compat() was used and releases the statistics
+lock.

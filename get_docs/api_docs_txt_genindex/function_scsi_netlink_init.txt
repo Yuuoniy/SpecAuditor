@@ -1,0 +1,7 @@
+Function: void scsi_netlink_init ( void )
+
+Called by SCSI subsystem to initialize the SCSI transport netlink interface
+
+Parameters
+  void
+    no arguments

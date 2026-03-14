@@ -1,0 +1,12 @@
+Function: void sb_start_intwrite ( struct super_block * sb )
+
+get write access to a superblock for internal fs purposes
+
+Parameters
+  struct super_block *sb
+    the super we write to
+
+Description
+  This is the third level of protection against filesystem freezing. It is
+free for use by a filesystem. The only requirement is that it must rank
+below sb_start_pagefault.

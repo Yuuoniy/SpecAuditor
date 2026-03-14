@@ -1,0 +1,38 @@
+Struct: struct v4l2_subdev_ir_parameters
+
+Parameters for IR TX or TX
+
+Members
+  bytes_per_data_element
+    bytes per data element of data in read or
+write call.
+  mode
+    IR mode as defined by enum v4l2_subdev_ir_mode .
+  enable
+    device is active if true
+  interrupt_enable
+    IR interrupts are enabled if true
+  shutdown
+    if true: set hardware to low/no power, false: normal mode
+  modulation
+    if true, it uses carrier, if false: baseband
+  max_pulse_width
+    maximum pulse width in ns, valid only for baseband signal
+  carrier_freq
+    carrier frequency in Hz, valid only for modulated signal
+  duty_cycle
+    duty cycle percentage, valid only for modulated signal
+  invert_level
+    invert signal level
+  invert_carrier_sense
+    Send 0/space as a carrier burst. used only in TX.
+  noise_filter_min_width
+    min time of a valid pulse, in ns. Used only for RX.
+  carrier_range_lower
+    Lower carrier range, in Hz, valid only for modulated
+signal. Used only for RX.
+  carrier_range_upper
+    Upper carrier range, in Hz, valid only for modulated
+signal. Used only for RX.
+  resolution
+    The receive resolution, in ns . Used only for RX.

@@ -1,0 +1,11 @@
+Function: struct drm_connector * drm_panel_bridge_connector ( struct drm_bridge * bridge )
+
+return the connector for the panel bridge
+
+Parameters
+  struct drm_bridge *bridge
+    The drm_bridge.
+
+Description
+  drm_panel_bridge creates the connector.
+This function gives external access to the connector.

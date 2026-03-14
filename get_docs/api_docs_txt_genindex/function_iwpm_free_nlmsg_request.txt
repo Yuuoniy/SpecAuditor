@@ -1,0 +1,7 @@
+Function: void iwpm_free_nlmsg_request ( struct kref * kref )
+
+Deallocate netlink message request
+
+Parameters
+  struct kref *kref
+    Holds reference of netlink message request

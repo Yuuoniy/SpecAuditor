@@ -1,0 +1,7 @@
+Function: int reverse_path_check ( void )
+
+The tfile_check_list is list of epitem_head, which have links that are proposed to be newly added. We need to make sure that those added links don’t add too many paths such that we will spend all our time waking up eventpoll objects.
+
+Parameters
+  void
+    no arguments

@@ -1,0 +1,11 @@
+Struct: struct dmub_hpd_work
+
+Handle time consuming work in low priority outbox IRQ
+
+Members
+  handle_hpd_work
+    Work to be executed in a separate thread to handle hpd_low_irq
+  dmub_notify
+    notification for callback function
+  adev
+    amdgpu_device pointer

@@ -1,0 +1,10 @@
+Function: int security_uring_allowed ( void )
+
+Check if io_uring_setup() is allowed
+
+Parameters
+  void
+    no arguments
+
+Description
+  Check whether the current task is allowed to call io_uring_setup() .

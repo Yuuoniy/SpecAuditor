@@ -1,0 +1,12 @@
+Function: int folio_ref_count ( const struct folio * folio )
+
+The reference count on this folio.
+
+Parameters
+  const struct folio *folio
+    The folio.
+
+Description
+  The refcount is usually incremented by calls to folio_get() and
+decremented by calls to folio_put() .  Some typical users of the
+folio refcount:

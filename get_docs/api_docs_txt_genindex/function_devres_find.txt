@@ -1,0 +1,17 @@
+Function: void * devres_find ( struct device * dev , dr_release_t release , dr_match_t match , void * match_data )
+
+Find device resource
+
+Parameters
+  struct device *dev
+    Device to lookup resource from
+  dr_release_t release
+    Look for resources associated with this release function
+  dr_match_t match
+    Match function (optional)
+  void *match_data
+    Data for the match function
+
+Description
+  Find the latest devres of dev which is associated with release and for which match returns 1.  If match is NULL, it’s considered
+to match all.

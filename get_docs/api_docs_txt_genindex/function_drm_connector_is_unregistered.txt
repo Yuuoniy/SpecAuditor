@@ -1,0 +1,10 @@
+Function: bool drm_connector_is_unregistered ( struct drm_connector * connector )
+
+has the connector been unregistered from userspace?
+
+Parameters
+  struct drm_connector *connector
+    DRM connector
+
+Description
+  Checks whether or not connector has been unregistered from userspace.

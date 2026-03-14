@@ -1,0 +1,40 @@
+Struct: struct address_space
+
+Contents of a cacheable, mappable object.
+
+Members
+  host
+    Owner, either the inode or the block_device.
+  i_pages
+    Cached pages.
+  invalidate_lock
+    Guards coherency between page cache contents and
+file offset->disk block mappings in the filesystem during invalidates.
+It is also used to block modification of page cache contents through
+memory mappings.
+  gfp_mask
+    Memory allocation flags to use for allocating pages.
+  i_mmap_writable
+    Number of VM_SHARED, VM_MAYWRITE mappings.
+  nr_thps
+    Number of THPs in the pagecache (non-shmem only).
+  i_mmap
+    Tree of private and shared mappings.
+  nrpages
+    Number of page entries, protected by the i_pages lock.
+  writeback_index
+    Writeback starts here.
+  a_ops
+    Methods.
+  flags
+    Error bits and flags (AS_*).
+  wb_err
+    The most recent error which has occurred.
+  i_private_lock
+    For use by the owner of the address_space.
+  i_private_list
+    For use by the owner of the address_space.
+  i_mmap_rwsem
+    Protects i_mmap and i_mmap_writable .
+  i_private_data
+    For use by the owner of the address_space.

@@ -1,0 +1,9 @@
+Function: const struct fb_videomode * fb_match_mode ( const struct fb_var_screeninfo * var , struct list_head * head )
+
+find a videomode which exactly matches the timings in var
+
+Parameters
+  const struct fb_var_screeninfo *var
+    pointer to struct fb_var_screeninfo
+  struct list_head *head
+    pointer to struct list_head of modelist

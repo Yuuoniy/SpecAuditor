@@ -1,0 +1,10 @@
+Function: bool drm_edid_is_digital ( const struct drm_edid * drm_edid )
+
+is digital?
+
+Parameters
+  const struct drm_edid *drm_edid
+    The EDID
+
+Description
+  Return true if input is digital.

@@ -1,0 +1,19 @@
+Function: struct fscache_volume * fscache_acquire_volume ( const char * volume_key , const char * cache_name , const void * coherency_data , size_t coherency_len )
+
+Register a volume as desiring caching services
+
+Parameters
+  const char *volume_key
+    An identification string for the volume
+  const char *cache_name
+    The name of the cache to use (or NULL for the default)
+  const void *coherency_data
+    Piece of arbitrary coherency data to check (or NULL)
+  size_t coherency_len
+    The size of the coherency data
+
+Description
+  Register a volume as desiring caching services if they’re available.  The
+caller must provide an identifier for the volume and may also indicate which
+cache it should be in.  If a preexisting volume entry is found in the cache,
+the coherency data must match otherwise the entry will be invalidated.

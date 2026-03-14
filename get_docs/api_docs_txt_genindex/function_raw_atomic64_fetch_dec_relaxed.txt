@@ -1,0 +1,10 @@
+Function: s64 raw_atomic64_fetch_dec_relaxed ( atomic64_t * v )
+
+atomic decrement with relaxed ordering
+
+Parameters
+  atomic64_t *v
+    pointer to atomic64_t
+
+Description
+  Atomically updates v to ( v - 1) with relaxed ordering.

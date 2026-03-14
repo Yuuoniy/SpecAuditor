@@ -1,0 +1,9 @@
+Function: void ttm_lru_item_init ( struct ttm_lru_item * item , enum ttm_lru_item_type type )
+
+initialize a struct ttm_lru_item
+
+Parameters
+  struct ttm_lru_item *item
+    The item to initialize
+  enum ttm_lru_item_type type
+    The subclass type

@@ -1,0 +1,9 @@
+Function: int mipi_dsi_dcs_get_pixel_format ( struct mipi_dsi_device * dsi , u8 * format )
+
+gets the pixel format for the RGB image data used by the interface
+
+Parameters
+  struct mipi_dsi_device *dsi
+    DSI peripheral device
+  u8 *format
+    return location for the pixel format

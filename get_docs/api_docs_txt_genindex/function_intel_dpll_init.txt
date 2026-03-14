@@ -1,0 +1,10 @@
+Function: void intel_dpll_init ( struct intel_display * display )
+
+Initialize DPLLs
+
+Parameters
+  struct intel_display *display
+    intel_display device
+
+Description
+  Initialize DPLLs for display .

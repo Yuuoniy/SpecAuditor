@@ -1,0 +1,84 @@
+Struct: struct pisp_tile
+
+Raspberry Pi PiSP Back End tile configuration
+
+Members
+  edge
+    Edge tile flag
+  pad0
+    Padding bytes
+  input_addr_offset
+    Top-left pixel offset, in bytes
+  input_addr_offset2
+    Top-left pixel offset, in bytes for the second/
+third image planes
+  input_offset_x
+    Horizontal offset in pixels of this tile in the
+input image
+  input_offset_y
+    Vertical offset in pixels of this tile in the
+input image
+  input_width
+    Width in pixels of this tile
+  input_height
+    Height in pixels of the this tile
+  tdn_input_addr_offset
+    TDN input image offset, in bytes
+  tdn_output_addr_offset
+    TDN output image offset, in bytes
+  stitch_input_addr_offset
+    Stitch input image offset, in bytes
+  stitch_output_addr_offset
+    Stitch output image offset, in bytes
+  lsc_grid_offset_x
+    Horizontal offset in the LSC table for this tile
+  lsc_grid_offset_y
+    Vertical offset in the LSC table for this tile
+  cac_grid_offset_x
+    Horizontal offset in the CAC table for this tile
+  cac_grid_offset_y
+    Horizontal offset in the CAC table for this tile
+  crop_x_start
+    Number of pixels cropped from the left of the
+tile
+  crop_x_end
+    Number of pixels cropped from the right of the
+tile
+  crop_y_start
+    Number of pixels cropped from the top of the
+tile
+  crop_y_end
+    Number of pixels cropped from the bottom of the
+tile
+  downscale_phase_x
+    Initial horizontal phase in pixels
+  downscale_phase_y
+    Initial vertical phase in pixels
+  resample_in_width
+    Width in pixels of the tile entering the
+Resample block
+  resample_in_height
+    Height in pixels of the tile entering the
+Resample block
+  resample_phase_x
+    Initial horizontal phase for the Resample block
+  resample_phase_y
+    Initial vertical phase for the Resample block
+  output_offset_x
+    Horizontal offset in pixels where the tile will
+be written into the output image
+  output_offset_y
+    Vertical offset in pixels where the tile will be
+written into the output image
+  output_width
+    Width in pixels in the output image of this tile
+  output_height
+    Height in pixels in the output image of this tile
+  output_addr_offset
+    Offset in bytes into the output buffer
+  output_addr_offset2
+    Offset in bytes into the output buffer for the
+second and third plane
+  output_hog_addr_offset
+    Offset in bytes into the HOG buffer where
+results of this tile are to be written

@@ -1,0 +1,10 @@
+Function: void drop_reasons_register_subsys ( enum skb_drop_reason_subsys subsys , const struct drop_reason_list * list )
+
+register another drop reason subsystem
+
+Parameters
+  enum skb_drop_reason_subsys subsys
+    the subsystem to register, must not be the core
+  const struct drop_reason_list *list
+    the list of drop reasons within the subsystem, must point to
+a statically initialized list

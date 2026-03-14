@@ -1,0 +1,12 @@
+Function: struct scsi_event * sdev_evt_alloc ( enum scsi_device_event evt_type , gfp_t gfpflags )
+
+allocate a new scsi event
+
+Parameters
+  enum scsi_device_event evt_type
+    type of event to allocate
+  gfp_t gfpflags
+    GFP flags for allocation
+
+Description
+  Allocates and returns a new scsi_event.

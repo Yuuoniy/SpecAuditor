@@ -1,0 +1,17 @@
+Function: void drm_mode_prune_invalid ( struct drm_device * dev , struct list_head * mode_list , bool verbose )
+
+remove invalid modes from mode list
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct list_head *mode_list
+    list of modes to check
+  bool verbose
+    be verbose about it
+
+Description
+  This helper function can be used to prune a display mode list after
+validation has been completed. All modes whose status is not MODE_OK will be
+removed from the list, and if verbose the status code and mode name is also
+printed to dmesg.

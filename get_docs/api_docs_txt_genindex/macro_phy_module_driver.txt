@@ -1,0 +1,14 @@
+Macro: phy_module_driver
+
+
+
+Parameters
+  __phy_drivers
+    array of PHY drivers to register
+  __count
+    Numbers of members in array
+
+Description
+  Helper macro for PHY drivers which do not do anything special in module
+init/exit. Each module may only use this macro once, and calling it
+replaces module_init() and module_exit() .

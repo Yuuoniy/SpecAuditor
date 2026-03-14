@@ -1,0 +1,9 @@
+Function: void * memdup_user_nul ( const void __user * src , size_t len )
+
+duplicate memory region from user space and NUL-terminate
+
+Parameters
+  const void __user *src
+    source address in user space
+  size_t len
+    number of bytes to copy

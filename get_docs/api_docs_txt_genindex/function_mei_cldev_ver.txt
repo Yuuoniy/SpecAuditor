@@ -1,0 +1,7 @@
+Function: u8 mei_cldev_ver ( const struct mei_cl_device * cldev )
+
+return protocol version of the underlying me client
+
+Parameters
+  const struct mei_cl_device *cldev
+    mei client device

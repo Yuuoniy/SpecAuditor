@@ -1,0 +1,11 @@
+Function: struct ieee80211_sta * ieee80211_find_sta_by_ifaddr ( struct ieee80211_hw * hw , const u8 * addr , const u8 * localaddr )
+
+find a station on hardware
+
+Parameters
+  struct ieee80211_hw *hw
+    pointer as obtained from ieee80211_alloc_hw()
+  const u8 *addr
+    remote station’s address
+  const u8 *localaddr
+    local address (vif->sdata->vif.addr). Use NULL for ‘any’.

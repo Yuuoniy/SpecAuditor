@@ -1,0 +1,9 @@
+Function: void drm_buddy_free_block ( struct drm_buddy * mm , struct drm_buddy_block * block )
+
+free a block
+
+Parameters
+  struct drm_buddy *mm
+    DRM buddy manager
+  struct drm_buddy_block *block
+    block to be freed

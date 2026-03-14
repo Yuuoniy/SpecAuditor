@@ -1,0 +1,13 @@
+Function: int devm_clk_rate_exclusive_get ( struct device * dev , struct clk * clk )
+
+devm variant of clk_rate_exclusive_get
+
+Parameters
+  struct device *dev
+    device the exclusivity is bound to
+  struct clk *clk
+    clock source
+
+Description
+  Calls clk_rate_exclusive_get() on clk and registers a devm cleanup handler
+on dev to call clk_rate_exclusive_put() .

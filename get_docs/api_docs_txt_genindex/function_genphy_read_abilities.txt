@@ -1,0 +1,11 @@
+Function: int genphy_read_abilities ( struct phy_device * phydev )
+
+read PHY abilities from Clause 22 registers
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  Reads the PHY’s abilities and populates
+phydev->supported accordingly.

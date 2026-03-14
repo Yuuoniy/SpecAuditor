@@ -1,0 +1,11 @@
+Function: void drm_crtc_commit_put ( struct drm_crtc_commit * commit )
+
+release a reference to the CRTC commmit
+
+Parameters
+  struct drm_crtc_commit *commit
+    CRTC commit
+
+Description
+  This releases a reference to commit which is freed after removing the
+final reference. No locking required and callable from any context.

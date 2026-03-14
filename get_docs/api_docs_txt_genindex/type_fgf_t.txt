@@ -1,0 +1,15 @@
+Type: type fgf_t
+
+Flags for getting folios from the page cache.
+
+Parameters
+  size_t size
+    The suggested size of the folio to create.
+
+Description
+  The caller of __filemap_get_folio() can use this to suggest a preferred
+size for the folio that is created.  If there is already a folio at
+the index, it will be returned, no matter what its size.  If a folio
+is freshly created, it may be of a different size than requested
+due to alignment constraints, memory pressure, or the presence of
+other folios at nearby indices.

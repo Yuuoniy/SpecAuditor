@@ -1,0 +1,12 @@
+Function: int tiocgwinsz ( struct tty_struct * tty , struct winsize __user * arg )
+
+implement window query ioctl
+
+Parameters
+  struct tty_struct *tty
+    tty
+  struct winsize __user *arg
+    user buffer for result
+
+Description
+  Copies the kernel idea of the window size into the user buffer.

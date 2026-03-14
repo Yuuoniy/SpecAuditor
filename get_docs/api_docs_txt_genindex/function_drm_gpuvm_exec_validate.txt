@@ -1,0 +1,10 @@
+Function: int drm_gpuvm_exec_validate ( struct drm_gpuvm_exec * vm_exec )
+
+validate all BOs marked as evicted
+
+Parameters
+  struct drm_gpuvm_exec *vm_exec
+    the drm_gpuvm_exec wrapper
+
+Description
+  See drm_gpuvm_validate() .

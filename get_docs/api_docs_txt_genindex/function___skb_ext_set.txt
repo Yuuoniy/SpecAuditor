@@ -1,0 +1,14 @@
+Function: void * __skb_ext_set ( struct sk_buff * skb , enum skb_ext_id id , struct skb_ext * ext )
+
+attach the specified extension storage to this skb
+
+Parameters
+  struct sk_buff *skb
+    buffer
+  enum skb_ext_id id
+    extension id
+  struct skb_ext *ext
+    extension storage previously allocated via __skb_ext_alloc()
+
+Description
+  Existing extensions, if any, are cleared.

@@ -1,0 +1,13 @@
+Function: bool mipi_dbi_display_is_on ( struct mipi_dbi * dbi )
+
+Check if display is on
+
+Parameters
+  struct mipi_dbi *dbi
+    MIPI DBI structure
+
+Description
+  This function checks the Power Mode register (if readable) to see if
+display output is turned on. This can be used to see if the bootloader
+has already turned on the display avoiding flicker when the pipeline is
+enabled.

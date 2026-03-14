@@ -1,0 +1,7 @@
+Function: unsigned int vb2_request_buffer_cnt ( struct media_request * req )
+
+return the number of buffers in the request
+
+Parameters
+  struct media_request *req
+    the request.

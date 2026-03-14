@@ -1,0 +1,7 @@
+Function: int genphy_c45_read_eee_abilities ( struct phy_device * phydev )
+
+read supported EEE link modes
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct

@@ -1,0 +1,16 @@
+Function: void * mt_find ( struct maple_tree * mt , unsigned long * index , unsigned long max )
+
+Search from the start up until an entry is found.
+
+Parameters
+  struct maple_tree *mt
+    The maple tree
+  unsigned long *index
+    Pointer which contains the start location of the search
+  unsigned long max
+    The maximum value of the search range
+
+Description
+  Takes RCU read lock internally to protect the search, which does not
+protect the returned pointer after dropping RCU read lock.
+See also: Maple Tree

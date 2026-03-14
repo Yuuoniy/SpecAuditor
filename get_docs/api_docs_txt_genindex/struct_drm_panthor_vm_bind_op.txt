@@ -1,0 +1,23 @@
+Struct: struct drm_panthor_vm_bind_op
+
+VM bind operation
+
+Members
+  flags
+    Combination of drm_panthor_vm_bind_op_flags flags.
+  bo_handle
+    Handle of the buffer object to map.
+MBZ for unmap or sync-only operations.
+  bo_offset
+    Buffer object offset.
+MBZ for unmap or sync-only operations.
+  va
+    Virtual address to map/unmap.
+MBZ for sync-only operations.
+  size
+    Size to map/unmap.
+MBZ for sync-only operations.
+  syncs
+    Array of struct drm_panthor_sync_op synchronization
+operations. This array must be empty if DRM_PANTHOR_VM_BIND_ASYNC is not set on
+the drm_panthor_vm_bind object containing this VM bind operation. This array shall not be empty for sync-only operations.

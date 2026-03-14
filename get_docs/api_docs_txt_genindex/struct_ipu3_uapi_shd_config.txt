@@ -1,0 +1,9 @@
+Struct: struct ipu3_uapi_shd_config
+
+Shading config
+
+Members
+  shd
+    shading static config, see ipu3_uapi_shd_config_static
+  shd_lut
+    shading lookup table ipu3_uapi_shd_lut

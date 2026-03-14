@@ -1,0 +1,19 @@
+Function: int phylink_mii_c22_pcs_config ( struct mdio_device * pcs , phy_interface_t interface , const unsigned long * advertising , unsigned int neg_mode )
+
+configure clause 22 PCS
+
+Parameters
+  struct mdio_device *pcs
+    a pointer to a struct mdio_device .
+  phy_interface_t interface
+    the PHY interface mode being configured
+  const unsigned long *advertising
+    the ethtool advertisement mask
+  unsigned int neg_mode
+    PCS negotiation mode
+
+Description
+  Configure a Clause 22 PCS PHY with the appropriate negotiation
+parameters for the mode , interface and advertising parameters.
+Returns negative error number on failure, zero if the advertisement
+has not changed, or positive if there is a change.

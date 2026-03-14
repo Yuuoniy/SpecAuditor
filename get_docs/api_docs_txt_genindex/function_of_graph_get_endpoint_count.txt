@@ -1,0 +1,7 @@
+Function: unsigned int of_graph_get_endpoint_count ( const struct device_node * np )
+
+get the number of endpoints in a device node
+
+Parameters
+  const struct device_node *np
+    parent device node containing ports and endpoints

@@ -1,0 +1,11 @@
+Function: void ieee80211_free_hw ( struct ieee80211_hw * hw )
+
+free hardware descriptor
+
+Parameters
+  struct ieee80211_hw *hw
+    the hardware to free
+
+Description
+  This function frees everything that was allocated, including the
+private data for the driver. You must call ieee80211_unregister_hw() before calling this function.

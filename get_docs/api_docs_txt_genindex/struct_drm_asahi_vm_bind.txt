@@ -1,0 +1,16 @@
+Struct: struct drm_asahi_vm_bind
+
+Arguments passed to DRM_IOCTL_ASAHI_VM_BIND
+
+Members
+  vm_id
+    The ID of the VM to bind to
+  num_binds
+    number of binds in this IOCTL.
+  stride
+    Stride in bytes between consecutive binds. This allows
+extensibility of drm_asahi_gem_bind_op.
+  pad
+    MBZ
+  userptr
+    User pointer to an array of num_binds structures of type drm_asahi_gem_bind_op and size stride bytes.

@@ -1,0 +1,15 @@
+Function: int regulator_bulk_disable ( int num_consumers , struct regulator_bulk_data * consumers )
+
+disable multiple regulator consumers
+
+Parameters
+  int num_consumers
+    Number of consumers
+  struct regulator_bulk_data *consumers
+    Consumer data; clients are stored here.
+
+Description
+  This convenience API allows consumers to disable multiple regulator
+clients in a single API call.  If any consumers cannot be disabled
+then any others that were disabled will be enabled again prior to
+return.

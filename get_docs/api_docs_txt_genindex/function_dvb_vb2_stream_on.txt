@@ -1,0 +1,10 @@
+Function: int dvb_vb2_stream_on ( struct dvb_vb2_ctx * ctx )
+
+Wrapper to vb2_core_streamon() for Digital TV buffer handling.
+
+Parameters
+  struct dvb_vb2_ctx *ctx
+    control struct for VB2 handler
+
+Description
+  Starts dvb streaming

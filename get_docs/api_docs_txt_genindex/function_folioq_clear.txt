@@ -1,0 +1,13 @@
+Function: void folioq_clear ( struct folio_queue * folioq , unsigned int slot )
+
+Clear a folio from a folio queue segment
+
+Parameters
+  struct folio_queue *folioq
+    The segment to clear
+  unsigned int slot
+    The folio slot to clear
+
+Description
+  Clear a folio from a sequence in a folio queue segment and clear its marks.
+The occupancy count is left unchanged.

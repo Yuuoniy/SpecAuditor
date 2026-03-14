@@ -1,0 +1,10 @@
+Function: bool ttm_resource_manager_used ( struct ttm_resource_manager * man )
+
+
+
+Parameters
+  struct ttm_resource_manager *man
+    Manager to get used state for
+
+Description
+  Get the in use flag for a manager.

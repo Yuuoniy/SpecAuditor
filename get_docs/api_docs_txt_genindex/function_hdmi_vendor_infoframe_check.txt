@@ -1,0 +1,11 @@
+Function: int hdmi_vendor_infoframe_check ( struct hdmi_vendor_infoframe * frame )
+
+check a HDMI vendor infoframe
+
+Parameters
+  struct hdmi_vendor_infoframe *frame
+    HDMI infoframe
+
+Description
+  Validates that the infoframe is consistent and updates derived fields
+(eg. length) based on other fields.

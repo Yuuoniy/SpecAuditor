@@ -1,0 +1,18 @@
+Function: void * __kvmalloc_node ( size , b , unsigned long align , gfp_t flags , int node )
+
+attempt to allocate physically contiguous memory, but upon failure, fall back to non-contiguous (vmalloc) allocation.
+
+Parameters
+  size
+    size of the request.
+  b
+    which set of kmalloc buckets to allocate from.
+  unsigned long align
+    desired alignment.
+  gfp_t flags
+    gfp mask for the allocation - must be compatible (superset) with GFP_KERNEL.
+  int node
+    numa node to allocate from
+
+Description
+  Only alignments up to those guaranteed by kmalloc() will be honored. Please see Memory Allocation Guide for more details.

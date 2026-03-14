@@ -1,0 +1,29 @@
+Struct: struct i3c_device_info
+
+I3C device information
+
+Members
+  pid
+    Provisioned ID
+  bcr
+    Bus Characteristic Register
+  dcr
+    Device Characteristic Register
+  static_addr
+    static/I2C address
+  dyn_addr
+    dynamic address
+  hdr_cap
+    supported HDR modes
+  max_read_ds
+    max read speed information
+  max_write_ds
+    max write speed information
+  max_ibi_len
+    max IBI payload length
+  max_read_turnaround
+    max read turn-around time in micro-seconds
+  max_read_len
+    max private SDR read length in bytes
+  max_write_len
+    max private SDR write length in bytes

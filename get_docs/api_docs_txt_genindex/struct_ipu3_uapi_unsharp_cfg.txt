@@ -1,0 +1,15 @@
+Struct: struct ipu3_uapi_unsharp_cfg
+
+Unsharp config
+
+Members
+  unsharp_weight
+    Unsharp mask blending weight.
+u1.6, range [0, 64], default 16.
+0 - disabled, 64 - use only unsharp.
+  reserved0
+    reserved
+  unsharp_amount
+    Unsharp mask amount, u4.5, range [0, 511], default 0.
+  reserved1
+    reserved

@@ -1,0 +1,7 @@
+Function: void mt_set_in_rcu ( struct maple_tree * mt )
+
+Switch the tree to RCU safe mode.
+
+Parameters
+  struct maple_tree *mt
+    The Maple Tree

@@ -1,0 +1,10 @@
+Function: void * v4l2_get_subdev_hostdata ( const struct v4l2_subdev * sd )
+
+Gets V4L2 dev private data
+
+Parameters
+  const struct v4l2_subdev *sd
+    pointer to struct v4l2_subdev
+
+Description
+  Returns the pointer to the private host data to be stored.

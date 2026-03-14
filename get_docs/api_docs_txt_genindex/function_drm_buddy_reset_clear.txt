@@ -1,0 +1,13 @@
+Function: void drm_buddy_reset_clear ( struct drm_buddy * mm , bool is_clear )
+
+reset blocks clear state
+
+Parameters
+  struct drm_buddy *mm
+    DRM buddy manager
+  bool is_clear
+    blocks clear state
+
+Description
+  Reset the clear state based on is_clear value for each block
+in the freelist.

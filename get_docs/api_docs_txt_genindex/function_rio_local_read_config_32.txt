@@ -1,0 +1,15 @@
+Function: int rio_local_read_config_32 ( struct rio_mport * port , u32 offset , u32 * data )
+
+Read 32 bits from local configuration space
+
+Parameters
+  struct rio_mport *port
+    Master port
+  u32 offset
+    Offset into local configuration space
+  u32 * data
+    Pointer to read data into
+
+Description
+  Reads 32 bits of data from the specified offset within the local
+device’s configuration space.

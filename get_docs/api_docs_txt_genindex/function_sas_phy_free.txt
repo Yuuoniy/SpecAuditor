@@ -1,0 +1,10 @@
+Function: void sas_phy_free ( struct sas_phy * phy )
+
+free a SAS PHY
+
+Parameters
+  struct sas_phy *phy
+    SAS PHY to free
+
+Description
+  Frees the specified SAS PHY.

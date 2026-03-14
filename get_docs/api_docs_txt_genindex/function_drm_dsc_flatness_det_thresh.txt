@@ -1,0 +1,7 @@
+Function: u32 drm_dsc_flatness_det_thresh ( const struct drm_dsc_config * dsc )
+
+Calculate the flatness_det_thresh for the given DSC config
+
+Parameters
+  const struct drm_dsc_config *dsc
+    Pointer to DRM DSC config struct

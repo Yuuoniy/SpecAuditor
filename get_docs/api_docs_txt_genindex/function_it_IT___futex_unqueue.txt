@@ -1,0 +1,10 @@
+Function: void __futex_unqueue ( struct futex_q * q )
+
+Remove the futex_q from its futex_hash_bucket
+
+Parameters
+  struct futex_q *q
+    The futex_q to unqueue
+
+Description
+  The q->lock_ptr must not be NULL and must be held by the caller.

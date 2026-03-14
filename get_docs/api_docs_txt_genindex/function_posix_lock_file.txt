@@ -1,0 +1,16 @@
+Function: int posix_lock_file ( struct file * filp , struct file_lock * fl , struct file_lock * conflock )
+
+Apply a POSIX-style lock to a file
+
+Parameters
+  struct file *filp
+    The file to apply the lock to
+  struct file_lock *fl
+    The lock to be applied
+  struct file_lock *conflock
+    Place to return a copy of the conflicting lock, if found.
+
+Description
+  Add a POSIX style lock to a file.
+We merge adjacent & overlapping locks whenever possible.
+POSIX locks are sorted by owner task, then by starting address

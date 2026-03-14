@@ -1,0 +1,15 @@
+Function: size_t ksize ( const void * objp )
+
+Report actual allocation size of associated object
+
+Parameters
+  const void *objp
+    Pointer returned from a prior kmalloc() -family allocation.
+
+Description
+  This should not be used for writing beyond the originally requested
+allocation size. Either use krealloc() or round up the allocation size
+with kmalloc_size_roundup() prior to allocation. If this is used to
+access beyond the originally requested allocation size, UBSAN_BOUNDS
+and/or FORTIFY_SOURCE may trip, since they only know about the
+originally allocated size via the __alloc_size attribute.

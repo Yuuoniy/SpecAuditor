@@ -1,0 +1,7 @@
+Struct: struct v4l2_prio_state
+
+stores the priority states
+
+Members
+  prios
+    array with elements to store the array priorities

@@ -1,0 +1,17 @@
+Function: int ssam_request_do_sync ( struct ssam_controller * ctrl , const struct ssam_request * spec , struct ssam_response * rsp )
+
+Execute a synchronous request.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller via which the request will be submitted.
+  const struct ssam_request *spec
+    The request specification and payload.
+  struct ssam_response *rsp
+    The response buffer.
+
+Description
+  Allocates a synchronous request with its message data buffer on the heap
+via ssam_request_sync_alloc() , fully initializes it via the provided
+request specification, submits it, and finally waits for its completion
+before freeing it and returning its status.

@@ -1,0 +1,16 @@
+Function: void fscache_relinquish_volume ( struct fscache_volume * volume , const void * coherency_data , bool invalidate )
+
+Cease caching a volume
+
+Parameters
+  struct fscache_volume *volume
+    The volume cookie
+  const void *coherency_data
+    Piece of arbitrary coherency data to set (or NULL)
+  bool invalidate
+    True if the volume should be invalidated
+
+Description
+  Indicate that a filesystem no longer desires caching services for a volume.
+The caller must have relinquished all file cookies prior to calling this.
+The stored coherency data is updated.

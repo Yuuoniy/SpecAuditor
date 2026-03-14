@@ -1,0 +1,7 @@
+Function: bool is_media_entity_v4l2_video_device ( struct media_entity * entity )
+
+Check if the entity is a video_device
+
+Parameters
+  struct media_entity *entity
+    pointer to entity

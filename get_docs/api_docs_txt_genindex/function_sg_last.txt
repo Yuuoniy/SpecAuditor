@@ -1,0 +1,13 @@
+Function: struct scatterlist * sg_last ( struct scatterlist * sgl , unsigned int nents )
+
+return the last scatterlist entry in a list
+
+Parameters
+  struct scatterlist *sgl
+    First entry in the scatterlist
+  unsigned int nents
+    Number of entries in the scatterlist
+
+Description
+  Should only be used casually, it (currently) scans the entire list
+to get the last entry.

@@ -1,0 +1,15 @@
+Function: const struct drm_edid * drm_edid_alloc ( const void * edid , size_t size )
+
+Allocate a new drm_edid container
+
+Parameters
+  const void *edid
+    Pointer to raw EDID data
+  size_t size
+    Size of memory allocated for EDID
+
+Description
+  Allocate a new drm_edid container. Do not calculate edid size from edid, pass
+the actual size that has been allocated for the data. There is no validation
+of the raw EDID data against the size, but at least the EDID base block must
+fit in the buffer.

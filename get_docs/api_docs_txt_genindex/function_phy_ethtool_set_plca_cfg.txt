@@ -1,0 +1,15 @@
+Function: int phy_ethtool_set_plca_cfg ( struct phy_device * phydev , const struct phy_plca_cfg * plca_cfg , struct netlink_ext_ack * extack )
+
+Set PLCA RS configuration
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+  const struct phy_plca_cfg *plca_cfg
+    new PLCA configuration to apply
+  struct netlink_ext_ack *extack
+    extack for reporting useful error messages
+
+Description
+  Sets the PLCA configuration in the PHY. Return 0 on success or a
+negative value if an error occurred.

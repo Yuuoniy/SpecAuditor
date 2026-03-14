@@ -1,0 +1,103 @@
+Struct: struct tty_struct
+
+state associated with a tty while open
+
+Members
+  kref
+    reference counting by tty_kref_get() and tty_kref_put() , reaching zero
+frees the structure
+  index
+    index of this tty (e.g. to construct name like tty12)
+  dev
+    class device or NULL (e.g. ptys, serdev)
+  driver
+    struct tty_driver operating this tty
+  port
+    persistent storage for this device (i.e. struct tty_port )
+  ops
+    struct tty_operations of driver for this tty (open, close, etc.)
+  ldisc
+    the current line discipline for this tty (n_tty by default)
+  ldisc_sem
+    protects line discipline changes ( ldisc ) -- lock tty not pty
+  atomic_write_lock
+    protects against concurrent writers, i.e. locks write_cnt , write_buf and similar
+  legacy_mutex
+    leftover from history (BKL -> BTM -> legacy_mutex ),
+protecting several operations on this tty
+  throttle_mutex
+    protects against concurrent tty_throttle_safe() and tty_unthrottle_safe() (but not tty_unthrottle() )
+  termios_rwsem
+    protects termios and termios_locked
+  winsize_mutex
+    protects winsize
+  termios
+    termios for the current tty, copied from/to driver.termios
+  termios_locked
+    locked termios (by TIOCGLCKTRMIOS and TIOCSLCKTRMIOS ioctls)
+  name
+    name of the tty constructed by tty_line_name() (e.g. ttyS3)
+  flags
+    bitwise OR of TTY_THROTTLED , TTY_IO_ERROR , ...
+  count
+    count of open processes, reaching zero cancels all the work for
+this tty and drops a kref too (but does not free this tty)
+  receive_room
+    bytes permitted to feed to ldisc without any being lost
+  winsize
+    size of the terminal “window” (cf. winsize_mutex )
+  flow
+    flow settings grouped together
+  flow.lock
+    lock for flow members
+  flow.stopped
+    tty stopped/started by stop_tty() / start_tty()
+  flow.tco_stopped
+    tty stopped/started by TCOOFF / TCOON ioctls (it has
+precedence over flow.stopped )
+  ctrl
+    control settings grouped together
+  ctrl.pgrp
+    process group of this tty (setpgrp(2))
+  ctrl.session
+    session of this tty (setsid(2)). Writes are protected by both ctrl.lock and legacy_mutex , readers must use at least one of
+them.
+  ctrl.lock
+    lock for ctrl members
+  ctrl.pktstatus
+    packet mode status (bitwise OR of TIOCPKT_ constants)
+  ctrl.packet
+    packet mode enabled
+  hw_stopped
+    not controlled by the tty layer, under driver ’s control for CTS
+handling
+  closing
+    when set during close, n_tty processes only START & STOP chars
+  flow_change
+    controls behavior of throttling, see tty_throttle_safe() and tty_unthrottle_safe()
+  link
+    link to another pty (master -> slave and vice versa)
+  fasync
+    state for O_ASYNC (for SIGIO ); managed by fasync_helper()
+  write_wait
+    concurrent writers are waiting in this queue until they are
+allowed to write
+  read_wait
+    readers wait for data in this queue
+  hangup_work
+    normally a work to perform a hangup ( do_tty_hangup() ); while
+freeing the tty, (re)used to release_one_tty()
+  disc_data
+    pointer to ldisc ’s private data (e.g. to struct n_tty_data )
+  driver_data
+    pointer to driver ’s private data (e.g. struct uart_state )
+  files_lock
+    protects tty_files list
+  write_cnt
+    count of bytes written in tty_write() to write_buf
+  write_buf
+    temporary buffer used during tty_write() to copy user data to
+  tty_files
+    list of (re)openers of this tty (i.e. linked struct tty_file_private )
+  SAK_work
+    if the tty has a pending do_SAK, it is queued here

@@ -1,0 +1,17 @@
+Struct: struct irq_chip_regs
+
+register offsets for struct irq_gci
+
+Members
+  enable
+    Enable register offset to reg_base
+  disable
+    Disable register offset to reg_base
+  mask
+    Mask register offset to reg_base
+  ack
+    Ack register offset to reg_base
+  eoi
+    Eoi register offset to reg_base
+  type
+    Type configuration register offset to reg_base

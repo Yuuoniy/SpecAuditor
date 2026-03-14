@@ -1,0 +1,11 @@
+Function: int security_file_open ( struct file * file )
+
+Save open() time state for late use by the LSM
+
+Parameters
+  int security_file_truncate ( struct file * file ) ¶
+    Check if truncating a file is allowed
+
+Description
+  Save open-time permission checking state for later use upon file_permission,
+and recheck access if anything has changed since inode_permission.

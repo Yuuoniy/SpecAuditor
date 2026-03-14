@@ -1,0 +1,13 @@
+hexsha,description
+07161b2416f7,usbnet_get_endpoints error-check fix
+b505063910c1,debugfs_lookup reference-release fix
+a508e33956b5,of_parse_phandle refcount-release fix
+e3862093ee93,of_phy_find_device reference-release fix
+fa0308134d26,dma_mapping_error verification fix
+10d6bdf53290,of_find_device_by_node refcount leak fix
+2985b1844f3f,kstrndup cleanup-order fix
+99ca0b57e49f,pci_disable_device double-disable fix
+42378a9ca553,bpf verifier array reallocation leak fix
+f89672cc3681,copy_from_user count-check fix
+f0a4bc38a12f,devm-managed clock acquisition fix
+c158cf914713,intel-sdw-acpi child-node reference handling fix

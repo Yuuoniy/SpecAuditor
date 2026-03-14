@@ -1,0 +1,13 @@
+Function: int drm_connector_set_orientation_from_panel ( struct drm_connector * connector , struct drm_panel * panel )
+
+set the connector’s panel_orientation from panel’s callback.
+
+Parameters
+  struct drm_connector *connector
+    connector for which to init the panel-orientation property.
+  struct drm_panel *panel
+    panel that can provide orientation information.
+
+Description
+  Drm drivers should call this function before drm_dev_register() .
+Orientation is obtained from panel’s . get_orientation() callback.

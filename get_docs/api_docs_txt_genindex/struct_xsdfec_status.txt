@@ -1,0 +1,9 @@
+Struct: struct xsdfec_status
+
+Status of SD-FEC core.
+
+Members
+  state
+    State of the SD-FEC core
+  activity
+    Describes if the SD-FEC instance is Active

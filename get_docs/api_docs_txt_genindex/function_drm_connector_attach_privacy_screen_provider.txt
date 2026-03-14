@@ -1,0 +1,16 @@
+Function: void drm_connector_attach_privacy_screen_provider ( struct drm_connector * connector , struct drm_privacy_screen * priv )
+
+attach a privacy-screen to the connector
+
+Parameters
+  struct drm_connector *connector
+    connector to attach the privacy-screen to
+  struct drm_privacy_screen *priv
+    drm_privacy_screen to attach
+
+Description
+  Create and attach the standard privacy-screen properties and register
+a generic notifier for generating sysfs-connector-status-events
+on external changes to the privacy-screen status.
+This function takes ownership of the passed in drm_privacy_screen and will
+call drm_privacy_screen_put() on it when the connector is destroyed.

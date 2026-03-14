@@ -1,0 +1,12 @@
+Function: void scsi_device_put ( struct scsi_device * sdev )
+
+release a reference to a scsi_device
+
+Parameters
+  struct scsi_device *sdev
+    device to release a reference on.
+
+Description
+  Release a reference to the scsi_device and decrements the use
+count of the underlying LLDD module.  The device is freed once the last
+user vanishes.

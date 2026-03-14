@@ -1,0 +1,19 @@
+Function: int nand_change_write_column_op ( struct nand_chip * chip , unsigned int offset_in_page , const void * buf , unsigned int len , bool force_8bit )
+
+Do a CHANGE WRITE COLUMN operation
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+  unsigned int offset_in_page
+    offset within the page
+  const void *buf
+    buffer containing the data to send to the NAND
+  unsigned int len
+    length of the buffer
+  bool force_8bit
+    force 8-bit bus access
+
+Description
+  This function issues a CHANGE WRITE COLUMN operation.
+This function does not select/unselect the CS line.

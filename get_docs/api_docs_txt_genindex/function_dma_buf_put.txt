@@ -1,0 +1,10 @@
+Function: void dma_buf_put ( struct dma_buf * dmabuf )
+
+decreases refcount of the buffer
+
+Parameters
+  struct dma_buf *dmabuf
+    [in]    buffer to reduce refcount of
+
+Description
+  Uses file’s refcounting done implicitly by fput() .

@@ -1,0 +1,13 @@
+Function: int mpt_verify_adapter ( int iocid , MPT_ADAPTER * * iocpp )
+
+Given IOC identifier, set pointer to its adapter structure.
+
+Parameters
+  int iocid
+    IOC unique identifier (integer)
+  MPT_ADAPTER **iocpp
+    Pointer to pointer to IOC adapter
+
+Description
+  Given a unique IOC identifier, set pointer to the associated MPT
+adapter structure.

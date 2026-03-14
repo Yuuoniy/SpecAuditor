@@ -1,0 +1,18 @@
+Macro: for_each_old_private_obj_in_state
+
+
+
+Parameters
+  __state
+    struct drm_atomic_state pointer
+  obj
+    struct drm_private_obj iteration cursor
+  old_obj_state
+    struct drm_private_state iteration cursor for the old state
+  __i
+    int iteration cursor, for macro-internal use
+
+Description
+  This iterates over all private objects in an atomic update, tracking only
+the old state. This is useful in disable functions, where we need the old
+state the hardware is still in.

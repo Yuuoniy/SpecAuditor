@@ -1,0 +1,7 @@
+Function: void acct_process ( void )
+
+handles process accounting for an exiting task
+
+Parameters
+  void
+    no arguments

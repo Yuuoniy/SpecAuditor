@@ -1,0 +1,16 @@
+Function: int usb_autopm_get_interface ( struct usb_interface * intf )
+
+increment a USB interface’s PM-usage counter
+
+Parameters
+  struct usb_interface *intf
+    the usb_interface whose counter should be incremented
+
+Description
+  This routine should be called by an interface driver when it wants to
+use intf and needs to guarantee that it is not suspended.  In addition,
+the routine prevents intf from being autosuspended subsequently.  (Note
+that this will not prevent suspend events originating in the PM core.)
+This prevention will persist until usb_autopm_put_interface() is called
+or intf is unbound.  A typical example would be a character-device
+driver when its device file is opened.

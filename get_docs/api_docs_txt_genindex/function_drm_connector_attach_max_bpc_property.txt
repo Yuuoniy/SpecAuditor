@@ -1,0 +1,14 @@
+Function: int drm_connector_attach_max_bpc_property ( struct drm_connector * connector , int min , int max )
+
+attach “max bpc” property
+
+Parameters
+  struct drm_connector *connector
+    connector to attach max bpc property on.
+  int min
+    The minimum bit depth supported by the connector.
+  int max
+    The maximum bit depth supported by the connector.
+
+Description
+  This is used to add support for limiting the bit depth on a connector.

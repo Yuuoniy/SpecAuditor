@@ -1,0 +1,15 @@
+Struct: struct drm_memory_stats
+
+GEM object stats associated
+
+Members
+  shared
+    Total size of GEM objects shared between processes
+  private
+    Total size of GEM objects
+  resident
+    Total size of GEM objects backing pages
+  purgeable
+    Total size of GEM objects that can be purged (resident and not active)
+  active
+    Total size of GEM objects active on one or more engines

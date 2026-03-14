@@ -1,0 +1,7 @@
+Function: loff_t readahead_pos ( const struct readahead_control * rac )
+
+The byte offset into the file of this readahead request.
+
+Parameters
+  const struct readahead_control *rac
+    The readahead request.

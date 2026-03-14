@@ -1,0 +1,10 @@
+Function: void __remove_inode_hash ( struct inode * inode )
+
+remove an inode from the hash
+
+Parameters
+  struct inode *inode
+    inode to unhash
+
+Description
+  Remove an inode from the superblock.

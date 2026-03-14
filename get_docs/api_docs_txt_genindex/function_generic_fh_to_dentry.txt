@@ -1,0 +1,20 @@
+Function: struct dentry * generic_fh_to_dentry ( struct super_block * sb , struct fid * fid , int fh_len , int fh_type , struct inode * ( * get_inode ) ( struct super_block * sb , u64 ino , u32 gen ) )
+
+generic helper for the fh_to_dentry export operation
+
+Parameters
+  struct super_block *sb
+    filesystem to do the file handle conversion on
+  struct fid *fid
+    file handle to convert
+  int fh_len
+    length of the file handle in bytes
+  int fh_type
+    type of file handle
+  struct inode *(*get_inode) (struct super_block *sb, u64 ino, u32 gen)
+    filesystem callback to retrieve inode
+
+Description
+  This function decodes fid as long as it has one of the well-known
+Linux filehandle types and calls get_inode on it to retrieve the
+inode for the object specified in the file handle.

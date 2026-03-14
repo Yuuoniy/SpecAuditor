@@ -1,0 +1,10 @@
+Function: void handle_percpu_devid_irq ( struct irq_desc * desc )
+
+Per CPU local irq handler with per cpu dev ids
+
+Parameters
+  struct irq_desc *desc
+    the interrupt description structure for this irq
+
+Description
+  Per CPU interrupts on SMP machines without locking requirements. Same as handle_percpu_irq() above but with the following extras:

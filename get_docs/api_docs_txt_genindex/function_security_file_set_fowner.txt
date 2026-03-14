@@ -1,0 +1,11 @@
+Function: void security_file_set_fowner ( struct file * file )
+
+Set the file owner info in the LSM blob
+
+Parameters
+  struct file *file
+    the file
+
+Description
+  Save owner security information (typically from current->security) in
+file->f_security for later use by the send_sigiotask hook.

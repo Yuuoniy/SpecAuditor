@@ -1,0 +1,2 @@
+Function: void cec_received_msg ( struct cec_adapter * adap , struct cec_msg * msg ) ;
+

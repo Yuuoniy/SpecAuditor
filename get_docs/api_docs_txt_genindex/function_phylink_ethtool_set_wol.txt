@@ -1,0 +1,13 @@
+Function: int phylink_ethtool_set_wol ( struct phylink * pl , struct ethtool_wolinfo * wol )
+
+set wake on lan parameters
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+  struct ethtool_wolinfo *wol
+    a pointer to struct ethtool_wolinfo for the desired parameters
+
+Description
+  Set the wake on lan parameters for the PHY attached to the phylink
+instance specified by pl . If no PHY is attached, returns EOPNOTSUPP error.

@@ -1,0 +1,11 @@
+Function: void cxl_coordinates_combine ( struct access_coordinate * out , struct access_coordinate * c1 , struct access_coordinate * c2 )
+
+Combine the two input coordinates
+
+Parameters
+  struct access_coordinate *out
+    Output coordinate of c1 and c2 combined
+  struct access_coordinate *c1
+    input coordinates
+  struct access_coordinate *c2
+    input coordinates

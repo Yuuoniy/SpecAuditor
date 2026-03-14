@@ -1,0 +1,12 @@
+Function: unsigned int mctrl_gpio_get ( struct mctrl_gpios * gpios , unsigned int * mctrl )
+
+update mctrl with the gpios values.
+
+Parameters
+  struct mctrl_gpios *gpios
+    gpios to get the info from
+  unsigned int *mctrl
+    mctrl to set
+
+Description
+  Update mctrl with the gpios values.

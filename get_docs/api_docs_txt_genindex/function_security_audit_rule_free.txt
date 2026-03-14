@@ -1,0 +1,10 @@
+Function: void security_audit_rule_free ( void * lsmrule )
+
+Free an LSM audit rule struct
+
+Parameters
+  void *lsmrule
+    audit rule struct
+
+Description
+  Deallocate the LSM audit rule structure previously allocated by audit_rule_init() .

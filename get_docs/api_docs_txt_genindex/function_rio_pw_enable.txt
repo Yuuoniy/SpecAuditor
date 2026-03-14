@@ -1,0 +1,9 @@
+Function: void rio_pw_enable ( struct rio_mport * mport , int enable )
+
+Enables/disables port-write handling by a master port
+
+Parameters
+  struct rio_mport *mport
+    Master port associated with port-write handling
+  int enable
+    1=enable,  0=disable

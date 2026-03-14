@@ -1,0 +1,11 @@
+Function: struct counter_synapse
+
+Counter Synapse node
+
+Members
+  actions_list
+    array of available action modes
+  num_actions
+    number of action modes specified in actions_list
+  signal
+    pointer to the associated Signal

@@ -1,0 +1,16 @@
+Function: struct worker * find_worker_executing_work ( struct worker_pool * pool , struct work_struct * work )
+
+find worker which is executing a work
+
+Parameters
+  struct worker_pool *pool
+    pool of interest
+  struct work_struct *work
+    work to find worker for
+
+Description
+  Find a worker which is executing work on pool by searching pool->busy_hash which is keyed by the address of work .  For a worker
+to match, its current execution should match the address of work and
+its work function.  This is to avoid unwanted dependency between
+unrelated work executions through a work item being recycled while still
+being executed.

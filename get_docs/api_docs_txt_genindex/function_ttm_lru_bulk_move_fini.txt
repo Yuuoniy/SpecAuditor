@@ -1,0 +1,13 @@
+Function: void ttm_lru_bulk_move_fini ( struct ttm_device * bdev , struct ttm_lru_bulk_move * bulk )
+
+finalize a bulk move structure
+
+Parameters
+  struct ttm_device *bdev
+    The struct ttm_device
+  struct ttm_lru_bulk_move *bulk
+    the structure to finalize
+
+Description
+  Sanity checks that bulk moves don’t have any
+resources left and hence no cursors attached.

@@ -1,0 +1,11 @@
+Function: int zynqmp_dp_max_rate ( int link_rate , u8 lane_num , u8 bpp )
+
+Calculate and return available max pixel clock
+
+Parameters
+  int link_rate
+    link rate (Kilo-bytes / sec)
+  u8 lane_num
+    number of lanes
+  u8 bpp
+    bits per pixel

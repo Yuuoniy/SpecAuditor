@@ -1,0 +1,17 @@
+Function: int sk_wait_data ( struct sock * sk , long * timeo , const struct sk_buff * skb )
+
+wait for data to arrive at sk_receive_queue
+
+Parameters
+  struct sock *sk
+    sock to wait on
+  long *timeo
+    for how long
+  const struct sk_buff *skb
+    last skb seen on sk_receive_queue
+
+Description
+  Now socket state including sk->sk_err is changed only under lock,
+hence we may omit checks after joining wait queue.
+We check receive queue before schedule() only as optimization;
+it is very likely that release_sock() added new data.

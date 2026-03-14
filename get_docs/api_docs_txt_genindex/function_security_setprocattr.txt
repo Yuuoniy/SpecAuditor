@@ -1,0 +1,17 @@
+Function: int security_setprocattr ( int lsmid , const char * name , void * value , size_t size )
+
+Set an attribute for a task
+
+Parameters
+  int lsmid
+    LSM identification
+  const char *name
+    attribute name
+  void *value
+    attribute value
+  size_t size
+    attribute value size
+
+Description
+  Write (set) the current task’s attribute name to value , size size if
+allowed.

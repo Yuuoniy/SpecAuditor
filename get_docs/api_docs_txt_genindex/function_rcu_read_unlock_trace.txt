@@ -1,0 +1,11 @@
+Function: void rcu_read_unlock_trace ( void )
+
+mark end of RCU-trace read-side critical section
+
+Parameters
+  void
+    no arguments
+
+Description
+  Pairs with a preceding call to rcu_read_lock_trace() , and nesting is
+allowed.  Invoking a rcu_read_unlock_trace() when there is no matching rcu_read_lock_trace() is verboten, and will result in lockdep complaints.

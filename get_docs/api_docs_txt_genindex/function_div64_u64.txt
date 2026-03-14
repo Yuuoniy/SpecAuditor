@@ -1,0 +1,9 @@
+Function: u64 div64_u64 ( u64 dividend , u64 divisor )
+
+unsigned 64bit divide with 64bit divisor
+
+Parameters
+  u64 dividend
+    unsigned 64bit dividend
+  u64 divisor
+    unsigned 64bit divisor

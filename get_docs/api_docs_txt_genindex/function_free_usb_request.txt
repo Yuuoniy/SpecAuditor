@@ -1,0 +1,13 @@
+Function: void free_usb_request ( struct usb_request * req )
+
+frees a usb_request object and its buffer
+
+Parameters
+  struct usb_request *req
+    the request being freed
+
+Description
+  This helper function frees both the request’s buffer and the request object
+itself by calling usb_ep_free_request() . Its signature is designed to be used
+with DEFINE_FREE() to enable automatic, scope-based cleanup for usb_request
+pointers.

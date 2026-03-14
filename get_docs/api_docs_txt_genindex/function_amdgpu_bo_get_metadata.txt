@@ -1,0 +1,20 @@
+Function: int amdgpu_bo_get_metadata ( struct amdgpu_bo * bo , void * buffer , size_t buffer_size , uint32_t * metadata_size , uint64_t * flags )
+
+get metadata
+
+Parameters
+  struct amdgpu_bo *bo
+    amdgpu_bo buffer object
+  void *buffer
+    returned metadata
+  size_t buffer_size
+    size of the buffer
+  uint32_t *metadata_size
+    size of the returned metadata
+  uint64_t *flags
+    flags of the returned metadata
+
+Description
+  Gets buffer object’s metadata, its size and flags. buffer_size shall not be
+less than metadata_size.
+Used via GEM ioctl.

@@ -1,0 +1,24 @@
+Function: int gnet_stats_start_copy_compat ( struct sk_buff * skb , int type , int tc_stats_type , int xstats_type , spinlock_t * lock , struct gnet_dump * d , int padattr )
+
+start dumping procedure in compatibility mode
+
+Parameters
+  struct sk_buff *skb
+    socket buffer to put statistics TLVs into
+  int type
+    TLV type for top level statistic TLV
+  int tc_stats_type
+    TLV type for backward compatibility struct tc_stats TLV
+  int xstats_type
+    TLV type for backward compatibility xstats TLV
+  spinlock_t *lock
+    statistics lock
+  struct gnet_dump *d
+    dumping handle
+  int padattr
+    padding attribute
+
+Description
+  Initializes the dumping handle, grabs the statistic lock and appends
+an empty TLV header to the socket buffer for use a container for all
+other statistic TLVS.

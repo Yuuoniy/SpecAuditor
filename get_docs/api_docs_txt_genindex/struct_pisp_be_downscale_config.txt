@@ -1,0 +1,13 @@
+Struct: struct pisp_be_downscale_config
+
+PiSP Back End Downscale config
+
+Members
+  scale_factor_h
+    Horizontal scale factor
+  scale_factor_v
+    Vertical scale factor
+  scale_recip_h
+    Horizontal reciprocal factor
+  scale_recip_v
+    Vertical reciprocal factor

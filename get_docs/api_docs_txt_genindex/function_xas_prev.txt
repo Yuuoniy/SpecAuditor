@@ -1,0 +1,14 @@
+Function: void * xas_prev ( struct xa_state * xas )
+
+Move iterator to previous index.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+
+Description
+  If the xas was in an error state, it will remain in an error state
+and this function will return NULL .  If the xas has never been walked,
+it will have the effect of calling xas_load() .  Otherwise one will be
+subtracted from the index and the state will be walked to the correct
+location in the array for the next operation.

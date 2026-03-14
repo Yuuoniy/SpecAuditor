@@ -1,0 +1,13 @@
+Function: wait_event_idle
+
+
+
+Parameters
+  wq_head
+    the waitqueue to wait on
+  condition
+    a C expression for the event to wait for
+
+Description
+  The process is put to sleep (TASK_IDLE) until the condition evaluates to true.
+The condition is checked each time the waitqueue wq_head is woken up.

@@ -1,0 +1,20 @@
+Function: void folio_add_anon_rmap_ptes ( struct folio * folio , struct page * page , int nr_pages , struct vm_area_struct * vma , unsigned long address , rmap_t flags )
+
+add PTE mappings to a page range of an anon folio
+
+Parameters
+  struct folio *folio
+    The folio to add the mappings to
+  struct page *page
+    The first page to add
+  int nr_pages
+    The number of pages which will be mapped
+  struct vm_area_struct *vma
+    The vm area in which the mappings are added
+  unsigned long address
+    The user virtual address of the first page to map
+  rmap_t flags
+    The rmap flags
+
+Description
+  The page range of folio is defined by [first_page, first_page + nr_pages)

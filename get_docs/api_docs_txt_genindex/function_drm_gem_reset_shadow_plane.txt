@@ -1,0 +1,13 @@
+Function: void drm_gem_reset_shadow_plane ( struct drm_plane * plane )
+
+resets a shadow-buffered plane
+
+Parameters
+  struct drm_plane *plane
+    the plane
+
+Description
+  This function implements struct drm_plane_funcs.reset_plane for
+shadow-buffered planes. It assumes the current plane state to be
+of type struct drm_shadow_plane and it allocates the new state of
+this type.

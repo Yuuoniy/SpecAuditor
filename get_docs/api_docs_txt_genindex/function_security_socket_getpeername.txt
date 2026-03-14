@@ -1,0 +1,10 @@
+Function: int security_socket_getpeername ( struct socket * sock )
+
+Check if reading the peer’s addr is allowed
+
+Parameters
+  struct socket *sock
+    socket
+
+Description
+  Check permission before the remote address (name) of a socket object.

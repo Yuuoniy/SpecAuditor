@@ -1,0 +1,14 @@
+Function: void zynqmp_disp_avbuf_set_format ( struct zynqmp_disp * disp , struct zynqmp_disp_layer * layer , const struct zynqmp_disp_format * fmt )
+
+Set the input format for a layer
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller
+  struct zynqmp_disp_layer *layer
+    The layer
+  const struct zynqmp_disp_format *fmt
+    The format information
+
+Description
+  Set the video buffer manager format for layer to fmt .

@@ -1,0 +1,15 @@
+Function: struct vb2_buffer * vb2_get_buffer ( struct vb2_queue * q , unsigned int index )
+
+get a buffer from a queue
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  unsigned int index
+    buffer index
+
+Description
+  This function obtains a buffer from a queue, by its index.
+Keep in mind that there is no refcounting involved in this
+operation, so the buffer lifetime should be taken into
+consideration.

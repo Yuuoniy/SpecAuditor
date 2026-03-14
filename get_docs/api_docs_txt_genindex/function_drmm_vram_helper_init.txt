@@ -1,0 +1,17 @@
+Function: int drmm_vram_helper_init ( struct drm_device * dev , uint64_t vram_base , size_t vram_size )
+
+Initializes a device’s instance of struct drm_vram_mm
+
+Parameters
+  struct drm_device *dev
+    the DRM device
+  uint64_t vram_base
+    the base address of the video memory
+  size_t vram_size
+    the size of the video memory in bytes
+
+Description
+  Creates a new instance of struct drm_vram_mm and stores it in
+struct drm_device.vram_mm . The instance is auto-managed and cleaned
+up as part of device cleanup. Calling this function multiple times
+will generate an error message.

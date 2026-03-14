@@ -1,0 +1,18 @@
+Function: struct sk_buff * alloc_skb_with_frags ( unsigned long header_len , unsigned long data_len , int order , int * errcode , gfp_t gfp_mask )
+
+allocate skb with page frags
+
+Parameters
+  unsigned long header_len
+    size of linear part
+  unsigned long data_len
+    needed length in frags
+  int order
+    max page order desired.
+  int *errcode
+    pointer to error code if any
+  gfp_t gfp_mask
+    allocation mask
+
+Description
+  This can be used to allocate a paged skb, given a maximal order for frags.

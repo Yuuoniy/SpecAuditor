@@ -1,0 +1,12 @@
+Function: int drm_fb_helper_set_par ( struct fb_info * info )
+
+implementation for fb_ops.fb_set_par
+
+Parameters
+  struct fb_info *info
+    fbdev registered by the helper
+
+Description
+  This will let fbcon do the mode init and is called at initialization time by
+the fbdev core when registering the driver, and later on through the hotplug
+callback.

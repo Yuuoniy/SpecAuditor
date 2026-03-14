@@ -1,0 +1,13 @@
+Function: void device_set_of_node_from_dev ( struct device * dev , const struct device * dev2 )
+
+reuse device-tree node of another device
+
+Parameters
+  struct device *dev
+    device whose device-tree node is being set
+  const struct device *dev2
+    device whose device-tree node is being reused
+
+Description
+  Takes another reference to the new device-tree node after first dropping
+any reference held to the old node.

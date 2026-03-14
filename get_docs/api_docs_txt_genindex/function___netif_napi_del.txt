@@ -1,0 +1,12 @@
+Function: void __netif_napi_del ( struct napi_struct * napi )
+
+remove a NAPI context
+
+Parameters
+  struct napi_struct *napi
+    NAPI context
+
+Description
+  Warning: caller must observe RCU grace period before freeing memory
+containing napi . Drivers might want to call this helper to combine
+all the needed RCU grace periods into a single one.

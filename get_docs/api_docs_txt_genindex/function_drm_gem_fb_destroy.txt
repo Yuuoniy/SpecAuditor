@@ -1,0 +1,11 @@
+Function: void drm_gem_fb_destroy ( struct drm_framebuffer * fb )
+
+Free GEM backed framebuffer
+
+Parameters
+  struct drm_framebuffer *fb
+    Framebuffer
+
+Description
+  Frees a GEM backed framebuffer with its backing buffer(s) and the structure
+itself. Drivers can use this as their drm_framebuffer_funcs->destroy callback.

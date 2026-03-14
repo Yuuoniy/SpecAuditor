@@ -1,0 +1,11 @@
+Function: void deactivate_super ( struct super_block * s )
+
+drop an active reference to superblock
+
+Parameters
+  struct super_block *s
+    superblock to deactivate
+
+Description
+  Variant of deactivate_locked_super() , except that superblock is not locked by caller.  If we are going to drop the final active reference,
+lock will be acquired prior to that.

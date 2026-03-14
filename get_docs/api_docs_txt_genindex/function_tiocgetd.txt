@@ -1,0 +1,12 @@
+Function: int tiocgetd ( struct tty_struct * tty , int __user * p )
+
+get line discipline
+
+Parameters
+  struct tty_struct *tty
+    tty device
+  int __user *p
+    pointer to user data
+
+Description
+  Retrieves the line discipline id directly from the ldisc.

@@ -1,0 +1,15 @@
+Function: struct tty_driver * __tty_alloc_driver ( unsigned int lines , struct module * owner , unsigned long flags )
+
+allocate tty driver
+
+Parameters
+  unsigned int lines
+    count of lines this driver can handle at most
+  struct module *owner
+    module which is responsible for this driver
+  unsigned long flags
+    some of enum tty_driver_flag , will be set in driver->flags
+
+Description
+  This should not be called directly, tty_alloc_driver() should be used
+instead.

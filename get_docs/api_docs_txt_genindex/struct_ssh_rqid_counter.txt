@@ -1,0 +1,7 @@
+Struct: struct ssh_rqid_counter
+
+Safe counter for SSH request IDs.
+
+Members
+  value
+    The current counter value.

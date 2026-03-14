@@ -1,0 +1,15 @@
+Function: void iommufd_access_unpin_pages ( struct iommufd_access * access , unsigned long iova , unsigned long length )
+
+Undo iommufd_access_pin_pages
+
+Parameters
+  struct iommufd_access *access
+    IOAS access to act on
+  unsigned long iova
+    Starting IOVA
+  unsigned long length
+    Number of bytes to access
+
+Description
+  Return the struct page ’s. The caller must stop accessing them before calling
+this. The iova/length must exactly match the one provided to access_pages.

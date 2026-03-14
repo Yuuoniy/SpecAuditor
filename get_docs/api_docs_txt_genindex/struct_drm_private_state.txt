@@ -1,0 +1,9 @@
+Struct: struct drm_private_state
+
+base struct for driver private object state
+
+Members
+  state
+    backpointer to global drm_atomic_state
+  obj
+    backpointer to the private object

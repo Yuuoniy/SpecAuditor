@@ -1,0 +1,11 @@
+Struct: struct padata_serial_queue
+
+The percpu padata serial queue
+
+Members
+  serial
+    List to wait for serialization after reordering.
+  work
+    work struct for serialization.
+  pd
+    Backpointer to the internal control structure.

@@ -1,0 +1,11 @@
+Function: void rio_unmap_outb_region ( struct rio_mport * mport , u16 destid , u64 rstart )
+
+Unmap the inbound memory region
+
+Parameters
+  struct rio_mport *mport
+    Master port
+  u16 destid
+    destination id mapping points to
+  u64 rstart
+    RIO base address window translates to

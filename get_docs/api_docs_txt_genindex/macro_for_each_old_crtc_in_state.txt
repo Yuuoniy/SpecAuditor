@@ -1,0 +1,18 @@
+Macro: for_each_old_crtc_in_state
+
+
+
+Parameters
+  __state
+    struct drm_atomic_state pointer
+  crtc
+    struct drm_crtc iteration cursor
+  old_crtc_state
+    struct drm_crtc_state iteration cursor for the old state
+  __i
+    int iteration cursor, for macro-internal use
+
+Description
+  This iterates over all CRTCs in an atomic update, tracking only the old
+state. This is useful in disable functions, where we need the old state the
+hardware is still in.

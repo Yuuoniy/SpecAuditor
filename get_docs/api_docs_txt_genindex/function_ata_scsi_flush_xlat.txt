@@ -1,0 +1,11 @@
+Function: unsigned int ata_scsi_flush_xlat ( struct ata_queued_cmd * qc )
+
+Translate SCSI SYNCHRONIZE CACHE command
+
+Parameters
+  struct ata_queued_cmd *qc
+    Storage for translated ATA taskfile
+
+Description
+  Sets up an ATA taskfile to issue FLUSH CACHE or
+FLUSH CACHE EXT.

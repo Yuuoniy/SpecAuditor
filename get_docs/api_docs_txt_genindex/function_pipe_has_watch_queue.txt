@@ -1,0 +1,7 @@
+Function: bool pipe_has_watch_queue ( const struct pipe_inode_info * pipe )
+
+Check whether the pipe is a watch_queue, i.e. it was created with O_NOTIFICATION_PIPE
+
+Parameters
+  const struct pipe_inode_info *pipe
+    The pipe to check

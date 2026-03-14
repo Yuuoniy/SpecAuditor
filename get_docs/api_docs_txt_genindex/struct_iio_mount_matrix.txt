@@ -1,0 +1,8 @@
+Struct: struct iio_mount_matrix
+
+iio mounting matrix
+
+Members
+  rotation
+    3 dimensional space rotation matrix defining sensor alignment with
+main hardware

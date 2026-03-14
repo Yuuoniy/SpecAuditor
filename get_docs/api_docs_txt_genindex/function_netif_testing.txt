@@ -1,0 +1,10 @@
+Function: bool netif_testing ( const struct net_device * dev )
+
+test if device is under test
+
+Parameters
+  const struct net_device *dev
+    network device
+
+Description
+  Check if device is under test

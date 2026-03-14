@@ -1,0 +1,11 @@
+Function: struct eventfd_ctx * eventfd_ctx_fileget ( struct file * file )
+
+Acquires a reference to the internal eventfd context.
+
+Parameters
+  struct file *file
+    [in] Eventfd file pointer.
+
+Description
+  Returns a pointer to the internal eventfd context, otherwise the error
+pointer:

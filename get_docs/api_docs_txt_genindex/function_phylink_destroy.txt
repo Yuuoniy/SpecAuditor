@@ -1,0 +1,11 @@
+Function: void phylink_destroy ( struct phylink * pl )
+
+cleanup and destroy the phylink instance
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+
+Description
+  Destroy a phylink instance. Any PHY that has been attached must have been
+cleaned up via phylink_disconnect_phy() prior to calling this function.

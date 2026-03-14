@@ -1,0 +1,10 @@
+Function: void __printk_cpu_sync_put ( void )
+
+Release the printk cpu-reentrant spinning lock.
+
+Parameters
+  void
+    no arguments
+
+Description
+  The calling processor must be the owner of the lock.

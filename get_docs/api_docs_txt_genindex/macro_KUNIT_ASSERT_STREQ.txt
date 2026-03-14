@@ -1,0 +1,16 @@
+Macro: KUNIT_ASSERT_STREQ
+
+
+
+Parameters
+  test
+    The test context object.
+  left
+    an arbitrary expression that evaluates to a null terminated string.
+  right
+    an arbitrary expression that evaluates to a null terminated string.
+
+Description
+  Sets an assertion that the values that left and right evaluate to are
+equal. This is the same as KUNIT_EXPECT_STREQ() , except it causes an
+assertion failure (see KUNIT_ASSERT_TRUE() ) when the assertion is not met.

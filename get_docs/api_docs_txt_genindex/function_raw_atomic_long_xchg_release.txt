@@ -1,0 +1,12 @@
+Function: long raw_atomic_long_xchg_release ( atomic_long_t * v , long new )
+
+atomic exchange with release ordering
+
+Parameters
+  atomic_long_t *v
+    pointer to atomic_long_t
+  long new
+    long value to assign
+
+Description
+  Atomically updates v to new with release ordering.

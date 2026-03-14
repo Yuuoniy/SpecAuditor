@@ -1,0 +1,12 @@
+Function: void rcu_barrier_throttled ( void )
+
+Do rcu_barrier() , but limit to one per second
+
+Parameters
+  void
+    no arguments
+
+Description
+  This can be thought of as guard rails around rcu_barrier() that
+permits unrestricted userspace use, at least assuming the hardware’s try_cmpxchg() is robust.  There will be at most one call per second to rcu_barrier() system-wide from use of this function, which means that
+callers might needlessly wait a second or three.

@@ -1,0 +1,12 @@
+Function: void free_pages_exact ( void * virt , size_t size )
+
+release memory allocated via alloc_pages_exact()
+
+Parameters
+  void *virt
+    the value returned by alloc_pages_exact.
+  size_t size
+    size of allocation, same value as passed to alloc_pages_exact() .
+
+Description
+  Release the memory allocated by a previous call to alloc_pages_exact.

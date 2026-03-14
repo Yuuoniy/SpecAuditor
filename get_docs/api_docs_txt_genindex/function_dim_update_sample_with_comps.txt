@@ -1,0 +1,15 @@
+Function: void dim_update_sample_with_comps ( u16 event_ctr , u64 packets , u64 bytes , u64 comps , struct dim_sample * s )
+
+set a sample’s fields with given values including the completion parameter
+
+Parameters
+  u16 event_ctr
+    number of events to set
+  u64 packets
+    number of packets to set
+  u64 bytes
+    number of bytes to set
+  u64 comps
+    number of completions to set
+  struct dim_sample *s
+    DIM sample

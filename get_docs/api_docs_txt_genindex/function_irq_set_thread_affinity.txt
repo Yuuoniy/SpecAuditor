@@ -1,0 +1,13 @@
+Function: void irq_set_thread_affinity ( struct irq_desc * desc )
+
+Notify irq threads to adjust affinity
+
+Parameters
+  struct irq_desc *desc
+    irq descriptor which has affinity changed
+
+Description
+  Just set IRQTF_AFFINITY and delegate the affinity setting to the
+interrupt thread itself. We can not call set_cpus_allowed_ptr() here as
+we hold desc->lock and this code can be called from hard interrupt
+context.

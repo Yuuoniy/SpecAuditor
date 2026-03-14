@@ -1,0 +1,9 @@
+Function: u32 * zynqmp_disp_live_layer_formats ( struct zynqmp_disp_layer * layer , unsigned int * num_formats )
+
+Return the media bus formats supported by the live video layer
+
+Parameters
+  struct zynqmp_disp_layer *layer
+    The layer
+  unsigned int *num_formats
+    Pointer to the returned number of formats

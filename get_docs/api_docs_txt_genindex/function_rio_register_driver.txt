@@ -1,0 +1,13 @@
+Function: int rio_register_driver ( struct rio_driver * rdrv )
+
+register a new RIO driver
+
+Parameters
+  struct rio_driver *rdrv
+    the RIO driver structure to register
+
+Description
+  Adds a struct rio_driver to the list of registered drivers.
+Returns a negative value on error, otherwise 0. If no error
+occurred, the driver remains registered even if no device
+was claimed during registration.

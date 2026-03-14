@@ -1,0 +1,12 @@
+Function: struct rpc_rqst * xprt_lookup_rqst ( struct rpc_xprt * xprt , __be32 xid )
+
+find an RPC request corresponding to an XID
+
+Parameters
+  struct rpc_xprt *xprt
+    transport on which the original request was transmitted
+  __be32 xid
+    RPC XID of incoming reply
+
+Description
+  Caller holds xprt->queue_lock.

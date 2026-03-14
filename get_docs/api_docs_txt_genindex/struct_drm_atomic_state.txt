@@ -1,0 +1,58 @@
+Struct: struct drm_atomic_state
+
+Atomic commit structure
+
+Members
+  ref
+    Count of all references to this update (will not be freed until zero).
+  dev
+    Parent DRM Device.
+  allow_modeset
+    Allow full modeset. This is used by the ATOMIC IOCTL handler to
+implement the DRM_MODE_ATOMIC_ALLOW_MODESET flag. Drivers should
+generally not consult this flag, but instead look at the output of drm_atomic_crtc_needs_modeset() . The detailed rules are: Drivers must not consult allow_modeset in the atomic commit path.
+Use drm_atomic_crtc_needs_modeset() instead. Drivers must consult allow_modeset before adding unrelated struct drm_crtc_state to this commit by calling drm_atomic_get_crtc_state() . See also the warning in the
+documentation for that function. Drivers must never change this flag, it is under the exclusive
+control of userspace. Drivers may consult allow_modeset in the atomic check path, if
+they have the choice between an optimal hardware configuration
+which requires a modeset, and a less optimal configuration which
+can be committed without a modeset. An example would be suboptimal
+scanout FIFO allocation resulting in increased idle power
+consumption. This allows userspace to avoid flickering and delays
+for the normal composition loop at reasonable cost.
+  legacy_cursor_update
+    Hint to enforce legacy cursor IOCTL semantics. WARNING: This is thoroughly broken and pretty much impossible to
+implement correctly. Drivers must ignore this and should instead
+implement drm_plane_helper_funcs.atomic_async_check and drm_plane_helper_funcs.atomic_async_commit hooks. New users of this
+flag are not allowed.
+  async_update
+    hint for asynchronous plane update
+  duplicated
+    Indicates whether or not this atomic state was duplicated using drm_atomic_helper_duplicate_state() . Drivers and atomic helpers
+should use this to fixup normal  inconsistencies in duplicated
+states.
+  planes
+    Pointer to array of drm_plane and drm_plane_state part of this
+update.
+  crtcs
+    Pointer to array of drm_crtc and drm_crtc_state part of this
+update.
+  num_connector
+    size of the connectors array
+  connectors
+    Pointer to array of drm_connector and drm_connector_state part of
+this update.
+  num_private_objs
+    size of the private_objs array
+  private_objs
+    Pointer to array of drm_private_obj and drm_private_obj_state part
+of this update.
+  acquire_ctx
+    acquire context for this atomic modeset state update
+  fake_commit
+    Used for signaling unbound planes/connectors.
+When a connector or plane is not bound to any CRTC, it’s still important
+to preserve linearity to prevent the atomic states from being freed too early. This commit (if set) is not bound to any CRTC, but will be completed when drm_atomic_helper_commit_hw_done() is called.
+  commit_work
+    Work item which can be used by the driver or helpers to execute the
+commit without blocking.

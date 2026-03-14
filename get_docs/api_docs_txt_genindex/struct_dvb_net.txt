@@ -1,0 +1,23 @@
+Struct: struct dvb_net
+
+describes a DVB network interface
+
+Members
+  dvbdev
+    pointer to struct dvb_device .
+  device
+    array of pointers to struct net_device .
+  state
+    array of integers to each net device. A value
+different than zero means that the interface is
+in usage.
+  exit
+    flag to indicate when the device is being removed.
+  demux
+    pointer to struct dmx_demux .
+  ioctl_mutex
+    protect access to this struct.
+  remove_mutex
+    mutex that avoids a race condition between a callback
+called when the hardware is disconnected and the
+file_operations of dvb_net.

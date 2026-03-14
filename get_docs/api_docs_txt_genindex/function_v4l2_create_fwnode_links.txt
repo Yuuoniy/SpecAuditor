@@ -1,0 +1,16 @@
+Function: int v4l2_create_fwnode_links ( struct v4l2_subdev * src_sd , struct v4l2_subdev * sink_sd )
+
+Create fwnode-based links from a source subdev to a sink subdev.
+
+Parameters
+  struct v4l2_subdev *src_sd
+    pointer to a source subdevice
+  struct v4l2_subdev *sink_sd
+    pointer to a sink subdevice
+
+Description
+  This function searches for any and all fwnode endpoint connections
+between source and sink subdevices, and translates them into media
+links. The function can be called by the sink subdevice, in its
+v4l2-async notifier subdev bound callback, to create all links from
+a bound source subdevice.

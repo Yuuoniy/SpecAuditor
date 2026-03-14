@@ -1,0 +1,12 @@
+Function: int drm_atomic_helper_disable_plane ( struct drm_plane * plane , struct drm_modeset_acquire_ctx * ctx )
+
+Helper for primary plane disable using atomic
+
+Parameters
+  struct drm_plane *plane
+    plane to disable
+  struct drm_modeset_acquire_ctx *ctx
+    lock acquire context
+
+Description
+  Provides a default plane disable handler using the atomic driver interface.

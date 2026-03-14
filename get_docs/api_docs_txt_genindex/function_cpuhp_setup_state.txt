@@ -1,0 +1,17 @@
+Function: int cpuhp_setup_state ( enum cpuhp_state state , const char * name , int ( * startup ) ( unsigned int cpu ) , int ( * teardown ) ( unsigned int cpu ) )
+
+Setup hotplug state callbacks with calling the startup callback
+
+Parameters
+  enum cpuhp_state state
+    The state for which the calls are installed
+  const char *name
+    Name of the callback (will be used in debug output)
+  int (*startup)(unsigned int cpu)
+    startup callback function or NULL if not required
+  int (*teardown)(unsigned int cpu)
+    teardown callback function or NULL if not required
+
+Description
+  Installs the callback functions and invokes the startup callback on
+the online cpus which have already reached the state .

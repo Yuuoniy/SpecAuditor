@@ -1,0 +1,2 @@
+Function: XSDFEC_GET_CONFIG
+

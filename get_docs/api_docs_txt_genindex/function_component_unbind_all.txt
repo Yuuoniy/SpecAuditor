@@ -1,0 +1,12 @@
+Function: void component_unbind_all ( struct device * parent , void * data )
+
+unbind all components of an aggregate driver
+
+Parameters
+  struct device *parent
+    parent device of the aggregate driver
+  void *data
+    opaque pointer, passed to all components
+
+Description
+  Unbinds all components of the aggregate device by passing data to their component_ops.unbind functions. Should be called from component_master_ops.unbind .

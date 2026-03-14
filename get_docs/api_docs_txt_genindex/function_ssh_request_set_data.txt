@@ -1,0 +1,16 @@
+Function: void ssh_request_set_data ( struct ssh_request * r , u8 * ptr , size_t len )
+
+Set raw message data of request.
+
+Parameters
+  struct ssh_request *r
+    The request for which the message data should be set.
+  u8 *ptr
+    Pointer to the memory holding the message data.
+  size_t len
+    Length of the message data.
+
+Description
+  Sets the raw message data buffer of the underlying packet to the specified
+buffer. Does not copy the actual message data, just sets the buffer pointer
+and length. Refer to ssh_packet_set_data() for more details.

@@ -1,0 +1,7 @@
+Function: int of_overlay_notifier_unregister ( struct notifier_block * nb )
+
+Unregister notifier for overlay operations
+
+Parameters
+  struct notifier_block *nb
+    Notifier block to unregister

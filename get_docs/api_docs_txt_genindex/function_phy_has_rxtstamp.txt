@@ -1,0 +1,7 @@
+Function: bool phy_has_rxtstamp ( struct phy_device * phydev )
+
+Tests whether a PHY supports receive time stamping.
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct

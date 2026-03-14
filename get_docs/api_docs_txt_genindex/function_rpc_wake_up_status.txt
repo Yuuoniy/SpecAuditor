@@ -1,0 +1,12 @@
+Function: void rpc_wake_up_status ( struct rpc_wait_queue * queue , int status )
+
+wake up all rpc_tasks and set their status value.
+
+Parameters
+  struct rpc_wait_queue *queue
+    rpc_wait_queue on which the tasks are sleeping
+  int status
+    status value to set
+
+Description
+  Grabs queue->lock

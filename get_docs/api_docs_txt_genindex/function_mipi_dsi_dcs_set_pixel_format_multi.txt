@@ -1,0 +1,13 @@
+Function: void mipi_dsi_dcs_set_pixel_format_multi ( struct mipi_dsi_multi_context * ctx , u8 format )
+
+sets the pixel format for the RGB image data used by the interface
+
+Parameters
+  struct mipi_dsi_multi_context *ctx
+    Context for multiple DSI transactions
+  u8 format
+    pixel format
+
+Description
+  Like mipi_dsi_dcs_set_pixel_format() but deals with errors in a way that
+makes it convenient to make several calls in a row.

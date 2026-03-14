@@ -1,0 +1,20 @@
+Function: struct folio * vma_alloc_folio ( gfp_t gfp , int order , struct vm_area_struct * vma , unsigned long addr )
+
+Allocate a folio for a VMA.
+
+Parameters
+  gfp_t gfp
+    GFP flags.
+  int order
+    Order of the folio.
+  struct vm_area_struct *vma
+    Pointer to VMA.
+  unsigned long addr
+    Virtual address of the allocation.  Must be inside vma .
+
+Description
+  Allocate a folio for a specific address in vma , using the appropriate
+NUMA policy.  The caller must hold the mmap_lock of the mm_struct of the
+VMA to prevent it from going away.  Should be used for all allocations
+for folios that will be mapped into user space, excepting hugetlbfs, and
+excepting where direct use of folio_alloc_mpol() is more appropriate.

@@ -1,0 +1,9 @@
+Function: void v4l2_rect_map_inside ( struct v4l2_rect * r , const struct v4l2_rect * boundary )
+
+r should be inside boundary.
+
+Parameters
+  struct v4l2_rect *r
+    rect that will be modified
+  const struct v4l2_rect *boundary
+    rect containing the boundary for r

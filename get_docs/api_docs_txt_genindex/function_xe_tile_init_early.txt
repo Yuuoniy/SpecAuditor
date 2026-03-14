@@ -1,0 +1,15 @@
+Function: int xe_tile_init_early ( struct xe_tile * tile , struct xe_device * xe , u8 id )
+
+Initialize the tile and primary GT
+
+Parameters
+  struct xe_tile *tile
+    Tile to initialize
+  struct xe_device *xe
+    Parent Xe device
+  u8 id
+    Tile ID
+
+Description
+  Initializes per-tile resources that don’t require any interactions with the
+hardware or any knowledge about the Graphics/Media IP version.

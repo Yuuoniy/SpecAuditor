@@ -1,0 +1,11 @@
+Function: enum fscache_cookie_state fscache_cookie_state ( struct fscache_cookie * cookie )
+
+Read the state of a cookie
+
+Parameters
+  struct fscache_cookie *cookie
+    The cookie to query
+
+Description
+  Get the state of a cookie, imposing an ordering between the cookie contents
+and the state value.  Paired with fscache_set_cookie_state() .

@@ -1,0 +1,15 @@
+Function: int security_xfrm_policy_alloc ( struct xfrm_sec_ctx * * ctxp , struct xfrm_user_sec_ctx * sec_ctx , gfp_t gfp )
+
+Allocate a xfrm policy LSM blob
+
+Parameters
+  struct xfrm_sec_ctx **ctxp
+    xfrm security context being added to the SPD
+  struct xfrm_user_sec_ctx *sec_ctx
+    security label provided by userspace
+  gfp_t gfp
+    gfp flags
+
+Description
+  Allocate a security structure to the xp->security field; the security field
+is initialized to NULL when the xfrm_policy is allocated.

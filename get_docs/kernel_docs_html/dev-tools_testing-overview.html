@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Kernel Testing Guide &#8212; The Linux Kernel  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Checkpatch" href="checkpatch.html" />
+    <link rel="prev" title="Development tools for the kernel" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../index.html">The Linux Kernel</a></h1>
+
+
+
+<p class="blurb">6.18.0-rc1</p>
+
+
+
+
+
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+<p>
+<h3 class="kernel-toc-contents">Contents</h3>
+<input type="checkbox" class="kernel-toc-toggle" id = "kernel-toc-toggle" checked>
+<label class="kernel-toc-title" for="kernel-toc-toggle"></label>
+
+<div class="kerneltoc" id="kerneltoc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../process/development-process.html">Development process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/submitting-patches.html">Submitting patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/code-of-conduct.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Maintainer handbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/index.html">All development-process docs</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core-api/index.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver-api/index.html">Driver APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subsystem-apis.html">Subsystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../locking/index.html">Locking</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../process/license-rules.html">Licensing rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-guide/index.html">Writing documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Development tools</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Kernel Testing Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#writing-and-running-tests">Writing and Running Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-coverage-tools">Code Coverage Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dynamic-analysis-tools">Dynamic Analysis Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#static-analysis-tools">Static Analysis Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="checkpatch.html">Checkpatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clang-format.html">clang-format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coccinelle.html">Coccinelle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparse.html">Sparse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kcov.html">KCOV: code coverage for fuzzing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcov.html">Using gcov with the Linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kasan.html">Kernel Address Sanitizer (KASAN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kmsan.html">Kernel Memory Sanitizer (KMSAN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubsan.html">Undefined Behavior Sanitizer - UBSAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kmemleak.html">Kernel Memory Leak Detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kcsan.html">Kernel Concurrency Sanitizer (KCSAN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lkmm/index.html">Linux Kernel Memory Consistency Model (LKMM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kfence.html">Kernel Electric-Fence (KFENCE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kselftest.html">Linux Kernel Selftests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kunit/index.html">KUnit - Linux Kernel Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ktap.html">The Kernel Test Anything Protocol (KTAP), version 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checkuapi.html">UAPI Checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio-sloppy-logic-analyzer.html">Linux Kernel GPIO based sloppy logic analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autofdo.html">Using AutoFDO with the Linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="propeller.html">Using Propeller with the Linux kernel</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Testing guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#writing-and-running-tests">Writing and Running Tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-difference-between-kunit-and-kselftest">The Difference Between KUnit and kselftest</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#code-coverage-tools">Code Coverage Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dynamic-analysis-tools">Dynamic Analysis Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#static-analysis-tools">Static Analysis Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#when-to-use-sparse-and-smatch">When to use Sparse and Smatch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#strong-points-of-smatch-and-coccinelle">Strong points of Smatch and Coccinelle</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kernel-hacking/index.html">Hacking guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trace/index.html">Tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fault-injection/index.html">Fault injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../livepatch/index.html">Livepatching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">Rust</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kbuild/index.html">Build system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/reporting-issues.html">Reporting issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Userspace tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userspace-api/index.html">Userspace API</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../firmware-guide/index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devicetree/index.html">Firmware and Devicetree</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../arch/index.html">CPU architectures</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging/index.html">Unsorted documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../translations/index.html">Translations</a></li>
+</ul>
+
+</div>
+
+<script type="text/javascript"> <!--
+  var sbar = document.getElementsByClassName("sphinxsidebar")[0];
+  let currents = document.getElementsByClassName("current")
+  if (currents.length) {
+    sbar.scrollTop = currents[currents.length - 1].offsetTop;
+  }
+  --> </script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dev-tools/testing-overview.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+
+
+
+
+<div class="language-selection">
+English
+
+<ul>
+
+<li><a href="../translations/zh_CN/dev-tools/testing-overview.html">Chinese (Simplified)</a></li>
+
+<li><a href="../translations/zh_TW/dev-tools/testing-overview.html">Chinese (Traditional)</a></li>
+
+</ul>
+</div>
+<section id="kernel-testing-guide">
+<h1>Kernel Testing Guide<a class="headerlink" href="#kernel-testing-guide" title="Permalink to this heading">¶</a></h1>
+<p>There are a number of different tools for testing the Linux kernel, so knowing
+when to use each of them can be a challenge. This document provides a rough
+overview of their differences, and how they fit together.</p>
+<section id="writing-and-running-tests">
+<h2>Writing and Running Tests<a class="headerlink" href="#writing-and-running-tests" title="Permalink to this heading">¶</a></h2>
+<p>The bulk of kernel tests are written using either the kselftest or KUnit
+frameworks. These both provide infrastructure to help make running tests and
+groups of tests easier, as well as providing helpers to aid in writing new
+tests.</p>
+<p>If you’re looking to verify the behaviour of the Kernel — particularly specific
+parts of the kernel — then you’ll want to use KUnit or kselftest.</p>
+<section id="the-difference-between-kunit-and-kselftest">
+<h3>The Difference Between KUnit and kselftest<a class="headerlink" href="#the-difference-between-kunit-and-kselftest" title="Permalink to this heading">¶</a></h3>
+<p>KUnit (<a class="reference internal" href="kunit/index.html"><span class="doc">KUnit - Linux Kernel Unit Testing</span></a>) is an entirely in-kernel system
+for “white box” testing: because test code is part of the kernel, it can access
+internal structures and functions which aren’t exposed to userspace.</p>
+<p>KUnit tests therefore are best written against small, self-contained parts
+of the kernel, which can be tested in isolation. This aligns well with the
+concept of ‘unit’ testing.</p>
+<p>For example, a KUnit test might test an individual kernel function (or even a
+single codepath through a function, such as an error handling case), rather
+than a feature as a whole.</p>
+<p>This also makes KUnit tests very fast to build and run, allowing them to be
+run frequently as part of the development process.</p>
+<p>There is a KUnit test style guide which may give further pointers in
+<a class="reference internal" href="kunit/style.html"><span class="doc">Test Style and Nomenclature</span></a></p>
+<p>kselftest (<a class="reference internal" href="kselftest.html"><span class="doc">Linux Kernel Selftests</span></a>), on the other hand, is
+largely implemented in userspace, and tests are normal userspace scripts or
+programs.</p>
+<p>This makes it easier to write more complicated tests, or tests which need to
+manipulate the overall system state more (e.g., spawning processes, etc.).
+However, it’s not possible to call kernel functions directly from kselftest.
+This means that only kernel functionality which is exposed to userspace somehow
+(e.g. by a syscall, device, filesystem, etc.) can be tested with kselftest.  To
+work around this, some tests include a companion kernel module which exposes
+more information or functionality. If a test runs mostly or entirely within the
+kernel, however,  KUnit may be the more appropriate tool.</p>
+<p>kselftest is therefore suited well to tests of whole features, as these will
+expose an interface to userspace, which can be tested, but not implementation
+details. This aligns well with ‘system’ or ‘end-to-end’ testing.</p>
+<p>For example, all new system calls should be accompanied by kselftest tests.</p>
+</section>
+</section>
+<section id="code-coverage-tools">
+<h2>Code Coverage Tools<a class="headerlink" href="#code-coverage-tools" title="Permalink to this heading">¶</a></h2>
+<p>The Linux Kernel supports two different code coverage measurement tools. These
+can be used to verify that a test is executing particular functions or lines
+of code. This is useful for determining how much of the kernel is being tested,
+and for finding corner-cases which are not covered by the appropriate test.</p>
+<p><a class="reference internal" href="gcov.html"><span class="doc">Using gcov with the Linux kernel</span></a> is GCC’s coverage testing tool, which can be
+used with the kernel to get global or per-module coverage. Unlike KCOV, it
+does not record per-task coverage. Coverage data can be read from debugfs,
+and interpreted using the usual gcov tooling.</p>
+<p><a class="reference internal" href="kcov.html"><span class="doc">KCOV: code coverage for fuzzing</span></a> is a feature which can be built in to the
+kernel to allow capturing coverage on a per-task level. It’s therefore useful
+for fuzzing and other situations where information about code executed during,
+for example, a single syscall is useful.</p>
+</section>
+<section id="dynamic-analysis-tools">
+<h2>Dynamic Analysis Tools<a class="headerlink" href="#dynamic-analysis-tools" title="Permalink to this heading">¶</a></h2>
+<p>The kernel also supports a number of dynamic analysis tools, which attempt to
+detect classes of issues when they occur in a running kernel. These typically
+each look for a different class of bugs, such as invalid memory accesses,
+concurrency issues such as data races, or other undefined behaviour like
+integer overflows.</p>
+<p>Some of these tools are listed below:</p>
+<ul class="simple">
+<li><p>kmemleak detects possible memory leaks. See
+<a class="reference internal" href="kmemleak.html"><span class="doc">Kernel Memory Leak Detector</span></a></p></li>
+<li><p>KASAN detects invalid memory accesses such as out-of-bounds and
+use-after-free errors. See <a class="reference internal" href="kasan.html"><span class="doc">Kernel Address Sanitizer (KASAN)</span></a></p></li>
+<li><p>UBSAN detects behaviour that is undefined by the C standard, like integer
+overflows. See <a class="reference internal" href="ubsan.html"><span class="doc">Undefined Behavior Sanitizer - UBSAN</span></a></p></li>
+<li><p>KCSAN detects data races. See <a class="reference internal" href="kcsan.html"><span class="doc">Kernel Concurrency Sanitizer (KCSAN)</span></a></p></li>
+<li><p>KFENCE is a low-overhead detector of memory issues, which is much faster than
+KASAN and can be used in production. See <a class="reference internal" href="kfence.html"><span class="doc">Kernel Electric-Fence (KFENCE)</span></a></p></li>
+<li><p>lockdep is a locking correctness validator. See
+<a class="reference internal" href="../locking/lockdep-design.html"><span class="doc">Runtime locking correctness validator</span></a></p></li>
+<li><p>Runtime Verification (RV) supports checking specific behaviours for a given
+subsystem. See <a class="reference internal" href="../trace/rv/runtime-verification.html"><span class="doc">Runtime Verification</span></a></p></li>
+<li><p>There are several other pieces of debug instrumentation in the kernel, many
+of which can be found in lib/Kconfig.debug</p></li>
+</ul>
+<p>These tools tend to test the kernel as a whole, and do not “pass” like
+kselftest or KUnit tests. They can be combined with KUnit or kselftest by
+running tests on a kernel with these tools enabled: you can then be sure
+that none of these errors are occurring during the test.</p>
+<p>Some of these tools integrate with KUnit or kselftest and will
+automatically fail tests if an issue is detected.</p>
+</section>
+<section id="static-analysis-tools">
+<h2>Static Analysis Tools<a class="headerlink" href="#static-analysis-tools" title="Permalink to this heading">¶</a></h2>
+<p>In addition to testing a running kernel, one can also analyze kernel source code
+directly (<strong>at compile time</strong>) using <strong>static analysis</strong> tools. The tools
+commonly used in the kernel allow one to inspect the whole source tree or just
+specific files within it. They make it easier to detect and fix problems during
+the development process.</p>
+<p>Sparse can help test the kernel by performing type-checking, lock checking,
+value range checking, in addition to reporting various errors and warnings while
+examining the code. See the <a class="reference internal" href="sparse.html"><span class="doc">Sparse</span></a> documentation
+page for details on how to use it.</p>
+<p>Smatch extends Sparse and provides additional checks for programming logic
+mistakes such as missing breaks in switch statements, unused return values on
+error checking, forgetting to set an error code in the return of an error path,
+etc. Smatch also has tests against more serious issues such as integer
+overflows, null pointer dereferences, and memory leaks. See the project page at
+<a class="reference external" href="http://smatch.sourceforge.net/">http://smatch.sourceforge.net/</a>.</p>
+<p>Coccinelle is another static analyzer at our disposal. Coccinelle is often used
+to aid refactoring and collateral evolution of source code, but it can also help
+to avoid certain bugs that occur in common code patterns. The types of tests
+available include API tests, tests for correct usage of kernel iterators, checks
+for the soundness of free operations, analysis of locking behavior, and further
+tests known to help keep consistent kernel usage. See the
+<a class="reference internal" href="coccinelle.html"><span class="doc">Coccinelle</span></a> documentation page for details.</p>
+<p>Beware, though, that static analysis tools suffer from <strong>false positives</strong>.
+Errors and warns need to be evaluated carefully before attempting to fix them.</p>
+<section id="when-to-use-sparse-and-smatch">
+<h3>When to use Sparse and Smatch<a class="headerlink" href="#when-to-use-sparse-and-smatch" title="Permalink to this heading">¶</a></h3>
+<p>Sparse does type checking, such as verifying that annotated variables do not
+cause endianness bugs, detecting places that use <code class="docutils literal notranslate"><span class="pre">__user</span></code> pointers improperly,
+and analyzing the compatibility of symbol initializers.</p>
+<p>Smatch does flow analysis and, if allowed to build the function database, it
+also does cross function analysis. Smatch tries to answer questions like where
+is this buffer allocated? How big is it? Can this index be controlled by the
+user? Is this variable larger than that variable?</p>
+<p>It’s generally easier to write checks in Smatch than it is to write checks in
+Sparse. Nevertheless, there are some overlaps between Sparse and Smatch checks.</p>
+</section>
+<section id="strong-points-of-smatch-and-coccinelle">
+<h3>Strong points of Smatch and Coccinelle<a class="headerlink" href="#strong-points-of-smatch-and-coccinelle" title="Permalink to this heading">¶</a></h3>
+<p>Coccinelle is probably the easiest for writing checks. It works before the
+pre-processor so it’s easier to check for bugs in macros using Coccinelle.
+Coccinelle also creates patches for you, which no other tool does.</p>
+<p>For example, with Coccinelle you can do a mass conversion from
+<code class="docutils literal notranslate"><span class="pre">kmalloc(x</span> <span class="pre">*</span> <span class="pre">size,</span> <span class="pre">GFP_KERNEL)</span></code> to <code class="docutils literal notranslate"><span class="pre">kmalloc_array(x,</span> <span class="pre">size,</span> <span class="pre">GFP_KERNEL)</span></code>, and
+that’s really useful. If you just created a Smatch warning and try to push the
+work of converting on to the maintainers they would be annoyed. You’d have to
+argue about each warning if can really overflow or not.</p>
+<p>Coccinelle does no analysis of variable values, which is the strong point of
+Smatch. On the other hand, Coccinelle allows you to do simple things in a simple
+way.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;The kernel development community.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/dev-tools/testing-overview.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

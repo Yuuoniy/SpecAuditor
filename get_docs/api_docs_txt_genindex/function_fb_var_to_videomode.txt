@@ -1,0 +1,9 @@
+Function: void fb_var_to_videomode ( struct fb_videomode * mode , const struct fb_var_screeninfo * var )
+
+convert fb_var_screeninfo to fb_videomode
+
+Parameters
+  struct fb_videomode *mode
+    pointer to struct fb_videomode
+  const struct fb_var_screeninfo *var
+    pointer to struct fb_var_screeninfo

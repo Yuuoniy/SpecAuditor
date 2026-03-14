@@ -1,0 +1,15 @@
+Function: int security_inode_listsecurity ( struct inode * inode , char * buffer , size_t buffer_size )
+
+List the xattr security label names
+
+Parameters
+  struct inode *inode
+    inode
+  char *buffer
+    buffer
+  size_t buffer_size
+    size of buffer
+
+Description
+  Copy the extended attribute names for the security labels associated with inode into buffer .  The maximum size of buffer is specified by buffer_size . buffer may be NULL to request the size of the buffer
+required.

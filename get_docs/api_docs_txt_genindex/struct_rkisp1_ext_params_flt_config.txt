@@ -1,0 +1,9 @@
+Struct: struct rkisp1_ext_params_flt_config
+
+RkISP1 extensible params FLT config
+
+Members
+  header
+    The RkISP1 extensible parameters header, see rkisp1_ext_params_block_header
+  config
+    Filter configuration, see rkisp1_cif_isp_flt_config

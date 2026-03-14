@@ -1,0 +1,9 @@
+Struct: struct pwm_args
+
+board-dependent PWM arguments
+
+Members
+  period
+    reference period
+  polarity
+    reference polarity

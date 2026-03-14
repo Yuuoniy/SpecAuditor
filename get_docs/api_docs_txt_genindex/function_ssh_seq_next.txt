@@ -1,0 +1,7 @@
+Function: u8 ssh_seq_next ( struct ssh_seq_counter * c )
+
+Get next sequence ID.
+
+Parameters
+  struct ssh_seq_counter *c
+    The counter providing the sequence IDs.

@@ -1,0 +1,15 @@
+Function: int ccs_pll_calculate ( struct device * dev , const struct ccs_pll_limits * limits , struct ccs_pll * pll )
+
+Calculate CCS PLL configuration based on input parameters
+
+Parameters
+  struct device *dev
+    Device pointer, used for printing messages
+  const struct ccs_pll_limits *limits
+    Limits specific to the sensor
+  struct ccs_pll *pll
+    Given PLL configuration
+
+Description
+  Calculate the CCS PLL configuration based on the limits as well as given
+device specific, system specific or user configured input data.

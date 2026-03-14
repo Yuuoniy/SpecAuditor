@@ -1,0 +1,24 @@
+Struct: struct vb2_buffer
+
+represents a video buffer.
+
+Members
+  vb2_queue
+    pointer to struct vb2_queue with the queue to
+which this driver belongs.
+  index
+    id number of the buffer.
+  type
+    buffer type.
+  memory
+    the method, in which the actual data is passed.
+  num_planes
+    number of planes in the buffer
+on an internal driver queue.
+  timestamp
+    frame timestamp in ns.
+  request
+    the request this buffer is associated with.
+  req_obj
+    used to bind this buffer to a request. This
+request object has a refcount.

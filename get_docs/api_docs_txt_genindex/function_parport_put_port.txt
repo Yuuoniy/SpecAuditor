@@ -1,0 +1,12 @@
+Function: void parport_put_port ( struct parport * port )
+
+decrement a port’s reference count
+
+Parameters
+  struct parport *port
+    the port
+
+Description
+  This should be called once for each call to parport_get_port() ,
+once the port is no longer needed. When the reference count reaches
+zero (port is no longer used), free_port is called.

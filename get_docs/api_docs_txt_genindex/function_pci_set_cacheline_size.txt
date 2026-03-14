@@ -1,0 +1,12 @@
+Function: int pci_set_cacheline_size ( struct pci_dev * dev )
+
+ensure the CACHE_LINE_SIZE register is programmed
+
+Parameters
+  struct pci_dev *dev
+    the PCI device for which MWI is to be enabled
+
+Description
+  Helper function for pci_set_mwi.
+Originally copied from drivers/net/acenic.c.
+Copyright 1998-2001 by Jes Sorensen, <jes**trained**-monkey.org>.

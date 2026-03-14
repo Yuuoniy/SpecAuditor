@@ -1,0 +1,9 @@
+Function: bool irq_check_status_bit ( unsigned int irq , unsigned int bitmask )
+
+Check whether bits in the irq descriptor status are set
+
+Parameters
+  unsigned int irq
+    The linux irq number
+  unsigned int bitmask
+    The bitmask to evaluate

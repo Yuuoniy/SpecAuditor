@@ -1,0 +1,7 @@
+Struct: struct drm_mm_scan
+
+DRM allocator eviction roaster data
+
+Members
+  bool drm_mm_node_allocated ( const struct drm_mm_node * node ) ¶
+    checks whether a node is allocated

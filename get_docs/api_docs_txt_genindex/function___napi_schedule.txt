@@ -1,0 +1,11 @@
+Function: void __napi_schedule ( struct napi_struct * n )
+
+schedule for receive
+
+Parameters
+  struct napi_struct *n
+    entry to schedule
+
+Description
+  The entry’s receive function will be scheduled to run.
+Consider using __napi_schedule_irqoff() if hard irqs are masked.

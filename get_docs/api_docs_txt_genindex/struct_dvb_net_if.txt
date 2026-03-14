@@ -1,0 +1,11 @@
+Struct: struct dvb_net_if
+
+describes a DVB network interface
+
+Members
+  pid
+    Packet ID (PID) of the MPEG-TS that contains data
+  if_num
+    number of the Digital TV interface.
+  feedtype
+    Encapsulation type of the feed.

@@ -1,0 +1,19 @@
+Function: void skb_fill_page_desc_noacc ( struct sk_buff * skb , int i , struct page * page , int off , int size )
+
+initialise a paged fragment in an skb
+
+Parameters
+  struct sk_buff *skb
+    buffer containing fragment to be initialised
+  int i
+    paged fragment index to initialise
+  struct page *page
+    the page to use for this fragment
+  int off
+    the offset to the data with page
+  int size
+    the length of the data
+
+Description
+  Variant of skb_fill_page_desc() which does not deal with
+pfmemalloc, if page is not owned by us.

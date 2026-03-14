@@ -1,0 +1,13 @@
+Function: void zynqmp_dp_encoder_mode_set_stream ( struct zynqmp_dp * dp , const struct drm_display_mode * mode )
+
+Configure the main stream
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure
+  const struct drm_display_mode *mode
+    requested display mode
+
+Description
+  Configure the main stream based on the requested mode mode . Calculation is
+based on IP core specification.

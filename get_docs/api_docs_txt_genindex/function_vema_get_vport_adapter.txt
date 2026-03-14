@@ -1,0 +1,9 @@
+Function: struct opa_vnic_adapter * vema_get_vport_adapter ( struct opa_vnic_vema_mad * recvd_mad , struct opa_vnic_vema_port * port )
+
+Get vnic port adapter from recvd mad
+
+Parameters
+  struct opa_vnic_vema_mad *recvd_mad
+    received mad
+  struct opa_vnic_vema_port *port
+    ptr to port struct on which MAD was recvd

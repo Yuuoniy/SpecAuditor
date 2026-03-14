@@ -1,0 +1,11 @@
+Function: void ctucan_chip_stop ( struct net_device * ndev )
+
+Driver stop routine
+
+Parameters
+  struct net_device *ndev
+    Pointer to net_device structure
+
+Description
+  This is the drivers stop routine. It will disable the
+interrupts and disable the controller.

@@ -1,0 +1,12 @@
+Function: bool tipc_msg_lookup_dest ( struct net * net , struct sk_buff * skb , int * err )
+
+try to find new destination for named message
+
+Parameters
+  struct net *net
+    pointer to associated network namespace
+  struct sk_buff *skb
+    the buffer containing the message.
+  int *err
+    error code to be used by caller if lookup fails
+Does not consume buffer

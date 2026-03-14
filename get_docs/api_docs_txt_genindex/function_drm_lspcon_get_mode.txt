@@ -1,0 +1,11 @@
+Function: int drm_lspcon_get_mode ( const struct drm_device * dev , struct i2c_adapter * adapter , enum drm_lspcon_mode * mode )
+
+Get LSPCON’s current mode of operation by reading offset (0x80, 0x41)
+
+Parameters
+  const struct drm_device *dev
+    drm_device to use
+  struct i2c_adapter *adapter
+    I2C-over-aux adapter
+  enum drm_lspcon_mode *mode
+    current lspcon mode of operation output variable

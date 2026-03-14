@@ -1,0 +1,13 @@
+Function: int crypto_aead_decrypt ( struct aead_request * req )
+
+decrypt ciphertext
+
+Parameters
+  struct aead_request *req
+    reference to the aead_request handle that holds all information
+needed to perform the cipher operation
+
+Description
+  Decrypt ciphertext data using the aead_request handle. That data structure
+and how it is filled with data is discussed with the aead_request_*
+functions.

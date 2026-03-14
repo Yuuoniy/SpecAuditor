@@ -1,0 +1,16 @@
+Function: struct sk_buff * named_prepare_buf ( struct net * net , u32 type , u32 size , u32 dest )
+
+allocate & initialize a publication message
+
+Parameters
+  struct net *net
+    the associated network namespace
+  u32 type
+    message type
+  u32 size
+    payload size
+  u32 dest
+    destination node
+
+Description
+  The buffer returned is of size INT_H_SIZE + payload size

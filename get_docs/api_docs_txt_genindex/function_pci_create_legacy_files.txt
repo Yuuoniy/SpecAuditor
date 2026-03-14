@@ -1,0 +1,12 @@
+Function: void pci_create_legacy_files ( struct pci_bus * b )
+
+create legacy I/O port and memory files
+
+Parameters
+  struct pci_bus *b
+    bus to create files under
+
+Description
+  Some platforms allow access to legacy I/O port and ISA memory space on
+a per-bus basis.  This routine creates the files and ties them into
+their associated read, write and mmap files from pci-sysfs.c

@@ -1,0 +1,9 @@
+Function: int iio_device_set_clock ( struct iio_dev * indio_dev , clockid_t clock_id )
+
+Set current timestamping clock for the device
+
+Parameters
+  struct iio_dev *indio_dev
+    IIO device structure containing the device
+  clockid_t clock_id
+    timestamping clock POSIX identifier to set.

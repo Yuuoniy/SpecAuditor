@@ -1,0 +1,27 @@
+Struct: struct cmbdata
+
+channel measurement block data for user space
+
+Members
+  size
+    size of the stored data
+  elapsed_time
+    time since last sampling
+  ssch_rsch_count
+    number of ssch and rsch
+  sample_count
+    number of samples
+  device_connect_time
+    time of device connect
+  function_pending_time
+    time of function pending
+  device_disconnect_time
+    time of device disconnect
+  control_unit_queuing_time
+    time of control unit queuing
+  device_active_only_time
+    time of device active only
+  device_busy_time
+    time of device busy (ext. format)
+  initial_command_response_time
+    initial command response time (ext. format)

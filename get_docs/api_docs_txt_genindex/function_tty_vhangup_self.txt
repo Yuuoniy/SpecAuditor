@@ -1,0 +1,10 @@
+Function: void tty_vhangup_self ( void )
+
+process vhangup for own ctty
+
+Parameters
+  void
+    no arguments
+
+Description
+  Perform a vhangup on the current controlling tty

@@ -1,0 +1,13 @@
+Function: int crypto_ahash_init ( struct ahash_request * req )
+
+(re)initialize message digest handle
+
+Parameters
+  struct ahash_request *req
+    ahash_request handle that already is initialized with all necessary
+data using the ahash_request_* API functions
+
+Description
+  The call (re-)initializes the message digest referenced by the ahash_request
+handle. Any potentially existing state created by previous operations is
+discarded.

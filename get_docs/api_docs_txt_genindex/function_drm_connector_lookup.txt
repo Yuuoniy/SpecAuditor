@@ -1,0 +1,15 @@
+Function: struct drm_connector * drm_connector_lookup ( struct drm_device * dev , struct drm_file * file_priv , uint32_t id )
+
+lookup connector object
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_file *file_priv
+    drm file to check for lease against.
+  uint32_t id
+    connector object id
+
+Description
+  This function looks up the connector object specified by id
+add takes a reference to it.

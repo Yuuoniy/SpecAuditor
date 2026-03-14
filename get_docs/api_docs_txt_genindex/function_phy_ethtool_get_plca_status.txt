@@ -1,0 +1,13 @@
+Function: int phy_ethtool_get_plca_status ( struct phy_device * phydev , struct phy_plca_status * plca_st )
+
+Get PLCA RS status information
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+  struct phy_plca_status *plca_st
+    where to store the retrieved status information
+
+Description
+  Retrieve the PLCA status information from the PHY. Return 0 on success or a
+negative value if an error occurred.

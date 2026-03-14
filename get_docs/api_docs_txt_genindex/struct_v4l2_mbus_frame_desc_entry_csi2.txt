@@ -1,0 +1,9 @@
+Struct: struct v4l2_mbus_frame_desc_entry_csi2
+
+
+
+Members
+  vc
+    CSI-2 virtual channel
+  dt
+    CSI-2 data type ID

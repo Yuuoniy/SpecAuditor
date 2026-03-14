@@ -1,0 +1,15 @@
+Function: u8 pci_bus_find_capability ( struct pci_bus * bus , unsigned int devfn , int cap )
+
+query for devices’ capabilities
+
+Parameters
+  struct pci_bus *bus
+    the PCI bus to query
+  unsigned int devfn
+    PCI device to query
+  int cap
+    capability code
+
+Description
+  Like pci_find_capability() but works for PCI devices that do not have a
+pci_dev structure set up yet.

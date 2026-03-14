@@ -1,0 +1,14 @@
+Function: void tty_port_shutdown ( struct tty_port * port , struct tty_struct * tty )
+
+internal helper to shutdown the device
+
+Parameters
+  struct tty_port *port
+    tty port to be shut down
+  struct tty_struct *tty
+    the associated tty
+
+Description
+  It is used by tty_port_hangup() and tty_port_close() . Its task is to
+shutdown the device if it was initialized (note consoles remain
+functioning). It lowers DTR/RTS (if tty has HUPCL set) and invokes port->ops-> shutdown() .

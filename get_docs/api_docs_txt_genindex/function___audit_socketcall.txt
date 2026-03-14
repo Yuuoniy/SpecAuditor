@@ -1,0 +1,9 @@
+Function: int __audit_socketcall ( int nargs , unsigned long * args )
+
+record audit data for sys_socketcall
+
+Parameters
+  int nargs
+    number of args, which should not be more than AUDITSC_ARGS.
+  unsigned long *args
+    args array

@@ -1,0 +1,16 @@
+Function: int amdgpu_irq_add_id ( struct amdgpu_device * adev , unsigned int client_id , unsigned int src_id , struct amdgpu_irq_src * source )
+
+register IRQ source
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device pointer
+  unsigned int client_id
+    client id
+  unsigned int src_id
+    source id
+  struct amdgpu_irq_src *source
+    IRQ source pointer
+
+Description
+  Registers IRQ source on a client.

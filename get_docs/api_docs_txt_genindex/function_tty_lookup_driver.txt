@@ -1,0 +1,15 @@
+Function: struct tty_driver * tty_lookup_driver ( dev_t device , struct file * filp , int * index )
+
+lookup a tty driver for a given device file
+
+Parameters
+  dev_t device
+    device number
+  struct file *filp
+    file pointer to tty
+  int *index
+    index for the device in the return driver
+
+Description
+  If returned value is not erroneous, the caller is responsible to decrement
+the refcount by tty_driver_kref_put() .

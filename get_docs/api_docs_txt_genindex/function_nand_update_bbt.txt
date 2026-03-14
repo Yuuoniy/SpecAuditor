@@ -1,0 +1,12 @@
+Function: int nand_update_bbt ( struct nand_chip * this , loff_t offs )
+
+update bad block table(s)
+
+Parameters
+  struct nand_chip *this
+    the NAND device
+  loff_t offs
+    the offset of the newly marked block
+
+Description
+  The function updates the bad block table(s).

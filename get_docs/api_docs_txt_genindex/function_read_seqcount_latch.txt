@@ -1,0 +1,11 @@
+Function: unsigned read_seqcount_latch ( const seqcount_latch_t * s )
+
+pick even/odd latch data copy
+
+Parameters
+  const seqcount_latch_t *s
+    Pointer to seqcount_latch_t
+
+Description
+  See write_seqcount_latch() for details and a full reader/writer usage
+example.

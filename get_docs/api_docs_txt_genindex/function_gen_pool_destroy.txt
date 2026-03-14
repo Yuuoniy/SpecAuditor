@@ -1,0 +1,11 @@
+Function: void gen_pool_destroy ( struct gen_pool * pool )
+
+destroy a special memory pool
+
+Parameters
+  struct gen_pool *pool
+    pool to destroy
+
+Description
+  Destroy the specified special memory pool. Verifies that there are no
+outstanding allocations.

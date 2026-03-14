@@ -1,0 +1,10 @@
+Function: void __video_device_pipeline_stop ( struct video_device * vdev )
+
+Mark a pipeline as not streaming
+
+Parameters
+  struct video_device *vdev
+    Starting video device
+
+Description
+  Note

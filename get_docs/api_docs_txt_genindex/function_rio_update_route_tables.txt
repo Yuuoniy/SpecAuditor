@@ -1,0 +1,12 @@
+Function: void rio_update_route_tables ( struct rio_net * net )
+
+Updates route tables in switches
+
+Parameters
+  struct rio_net *net
+    RIO network to run update on
+
+Description
+  For each enumerated device, ensure that each switch in a system
+has correct routing entries. Add routes for devices that where
+unknown during the first enumeration pass through the switch.

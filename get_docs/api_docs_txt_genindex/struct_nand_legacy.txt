@@ -1,0 +1,44 @@
+Struct: struct nand_legacy
+
+NAND chip legacy fields/hooks
+
+Members
+  IO_ADDR_R
+    address to read the 8 I/O lines of the flash device
+  IO_ADDR_W
+    address to write the 8 I/O lines of the flash device
+  select_chip
+    select/deselect a specific target/die
+  read_byte
+    read one byte from the chip
+  write_byte
+    write a single byte to the chip on the low 8 I/O lines
+  write_buf
+    write data from the buffer to the chip
+  read_buf
+    read data from the chip into the buffer
+  cmd_ctrl
+    hardware specific function for controlling ALE/CLE/nCE. Also used
+to write command and address
+  cmdfunc
+    hardware specific function for writing commands to the chip.
+  dev_ready
+    hardware specific function for accessing device ready/busy line.
+If set to NULL no access to ready/busy is available and the
+ready/busy information is read from the chip status register.
+  waitfunc
+    hardware specific function for wait on ready.
+  block_bad
+    check if a block is bad, using OOB markers
+  block_markbad
+    mark a block bad
+  set_features
+    set the NAND chip features
+  get_features
+    get the NAND chip features
+  chip_delay
+    chip dependent delay for transferring data from array to read
+regs (tR).
+  dummy_controller
+    dummy controller implementation for drivers that can
+only control a single chip

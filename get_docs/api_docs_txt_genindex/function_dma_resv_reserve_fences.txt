@@ -1,0 +1,12 @@
+Function: int dma_resv_reserve_fences ( struct dma_resv * obj , unsigned int num_fences )
+
+Reserve space to add fences to a dma_resv object.
+
+Parameters
+  struct dma_resv *obj
+    reservation object
+  unsigned int num_fences
+    number of fences we want to add
+
+Description
+  Should be called before dma_resv_add_fence() .  Must be called with obj locked through dma_resv_lock() .

@@ -1,0 +1,9 @@
+Function: int gpiochip_generic_request ( struct gpio_chip * gc , unsigned int offset )
+
+request the gpio function for a pin
+
+Parameters
+  struct gpio_chip *gc
+    the gpiochip owning the GPIO
+  unsigned int offset
+    the offset of the GPIO to request for GPIO function

@@ -1,0 +1,15 @@
+Function: struct super_block * sget ( struct file_system_type * type , int ( * test ) ( struct super_block * , void * ) , int ( * set ) ( struct super_block * , void * ) , int flags , void * data )
+
+find or create a superblock
+
+Parameters
+  struct file_system_type *type
+    filesystem type superblock should belong to
+  int (*test)(struct super_block *,void *)
+    comparison callback
+  int (*set)(struct super_block *,void *)
+    setup callback
+  int flags
+    mount flags
+  void *data
+    argument to each of them

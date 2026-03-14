@@ -1,0 +1,13 @@
+Struct: struct klp_modinfo
+
+ELF information preserved from the livepatch module
+
+Members
+  hdr
+    ELF header
+  sechdrs
+    Section header table
+  secstrings
+    String table for the section headers
+  symndx
+    The symbol table section index

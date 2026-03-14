@@ -1,0 +1,10 @@
+Function: unsigned long vb2_get_plane_payload ( struct vb2_buffer * vb , unsigned int plane_no )
+
+get bytesused for the plane plane_no
+
+Parameters
+  struct vb2_buffer *vb
+    pointer to struct vb2_buffer to which the plane in
+question belongs to.
+  unsigned int plane_no
+    plane number for which payload should be set.

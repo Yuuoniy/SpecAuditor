@@ -1,0 +1,21 @@
+Function: u32 rio_mport_get_feature ( struct rio_mport * port , int local , u16 destid , u8 hopcount , int ftr )
+
+query for devices’ extended features
+
+Parameters
+  struct rio_mport * port
+    Master port to issue transaction
+  int local
+    Indicate a local master port or remote device access
+  u16 destid
+    Destination ID of the device
+  u8 hopcount
+    Number of switch hops to the device
+  int ftr
+    Extended feature code
+
+Description
+  Tell if a device supports a given RapidIO capability.
+Returns the offset of the requested extended feature
+block within the device’s RIO configuration space or
+0 in case the device does not support it.

@@ -1,0 +1,10 @@
+Function: void of_changeset_init ( struct of_changeset * ocs )
+
+Initialize a changeset for use
+
+Parameters
+  struct of_changeset *ocs
+    changeset pointer
+
+Description
+  Initialize a changeset structure

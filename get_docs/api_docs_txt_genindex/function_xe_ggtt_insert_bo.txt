@@ -1,0 +1,11 @@
+Function: int xe_ggtt_insert_bo ( struct xe_ggtt * ggtt , struct xe_bo * bo , struct drm_exec * exec )
+
+Insert BO into GGTT
+
+Parameters
+  struct xe_ggtt *ggtt
+    the xe_ggtt where bo will be inserted
+  struct xe_bo *bo
+    the xe_bo to be inserted
+  struct drm_exec *exec
+    The drm_exec transaction to use for exhaustive eviction.

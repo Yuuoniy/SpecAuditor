@@ -1,0 +1,16 @@
+Function: u32 crc32_le ( u32 crc , const void * p , size_t len )
+
+Compute least-significant-bit-first IEEE CRC-32
+
+Parameters
+  u32 crc
+    Initial CRC value.  ~0 (recommended) or 0 for a new CRC computation, or
+the previous CRC value if computing incrementally.
+  const void *p
+    Pointer to the data buffer
+  size_t len
+    Length of data in bytes
+
+Description
+  This implements the CRC variant that is often known as the IEEE CRC-32, or
+simply CRC-32, and is widely used in Ethernet and other applications:

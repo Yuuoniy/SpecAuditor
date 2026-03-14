@@ -1,0 +1,12 @@
+Function: struct sock * sk_clone_lock ( const struct sock * sk , const gfp_t priority )
+
+clone a socket, and lock its clone
+
+Parameters
+  const struct sock *sk
+    the socket to clone
+  const gfp_t priority
+    for allocation ( GFP_KERNEL , GFP_ATOMIC , etc)
+
+Description
+  Caller must unlock socket even in error path (bh_unlock_sock(newsk))

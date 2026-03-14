@@ -1,0 +1,13 @@
+Function: void fscache_relinquish_cookie ( struct fscache_cookie * cookie , bool retire )
+
+Return the cookie to the cache, maybe discarding it
+
+Parameters
+  struct fscache_cookie *cookie
+    The cookie being returned
+  bool retire
+    True if the cache object the cookie represents is to be discarded
+
+Description
+  This function returns a cookie to the cache, forcibly discarding the
+associated cache object if retire is set to true.

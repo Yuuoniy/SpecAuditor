@@ -1,0 +1,11 @@
+Function: bool drm_vblank_work_cancel_sync ( struct drm_vblank_work * work )
+
+cancel a vblank work and wait for it to finish executing
+
+Parameters
+  struct drm_vblank_work *work
+    vblank work to cancel
+
+Description
+  Cancel an already scheduled vblank work and wait for its
+execution to finish.

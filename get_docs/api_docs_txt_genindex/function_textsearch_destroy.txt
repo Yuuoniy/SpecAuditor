@@ -1,0 +1,11 @@
+Function: void textsearch_destroy ( struct ts_config * conf )
+
+destroy a search configuration
+
+Parameters
+  struct ts_config *conf
+    search configuration
+
+Description
+  Releases all references of the configuration and frees
+up the memory.

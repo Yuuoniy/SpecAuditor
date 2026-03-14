@@ -1,0 +1,16 @@
+Struct: struct cfg80211_deauth_request
+
+Deauthentication request data
+
+Members
+  bssid
+    the BSSID or AP MLD address to deauthenticate from
+  ie
+    Extra IEs to add to Deauthentication frame or NULL
+  ie_len
+    Length of ie buffer in octets
+  reason_code
+    The reason code for the deauthentication
+  local_state_change
+    if set, change local state only and
+do not set a deauth frame

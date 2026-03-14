@@ -1,0 +1,9 @@
+Function: int devfreq_register_opp_notifier ( struct device * dev , struct devfreq * devfreq )
+
+Helper function to get devfreq notified for any changes in the OPP availability changes
+
+Parameters
+  struct device *dev
+    The devfreq user device. (parent of devfreq)
+  struct devfreq *devfreq
+    The devfreq object.

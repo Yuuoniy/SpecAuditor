@@ -1,0 +1,16 @@
+Function: void pcpu_chunk_populated ( struct pcpu_chunk * chunk , int page_start , int page_end )
+
+post-population bookkeeping
+
+Parameters
+  struct pcpu_chunk *chunk
+    pcpu_chunk which got populated
+  int page_start
+    the start page
+  int page_end
+    the end page
+
+Description
+  Pages in [ page_start ,**page_end**) have been populated to chunk .  Update
+the bookkeeping information accordingly.  Must be called after each
+successful population.

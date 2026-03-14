@@ -1,0 +1,15 @@
+Struct: struct v4l2_decode_vbi_line
+
+used to decode_vbi_line
+
+Members
+  is_second_field
+    Set to 0 for the first (odd) field;
+set to 1 for the second (even) field.
+  p
+    Pointer to the sliced VBI data from the decoder. On exit, points to
+the start of the payload.
+  line
+    Line number of the sliced VBI data (1-23)
+  type
+    VBI service type (V4L2_SLICED_*). 0 if no service found

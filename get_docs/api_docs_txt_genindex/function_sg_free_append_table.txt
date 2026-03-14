@@ -1,0 +1,7 @@
+Function: void sg_free_append_table ( struct sg_append_table * table )
+
+Free a previously allocated append sg table.
+
+Parameters
+  struct sg_append_table *table
+    The mapped sg append table header

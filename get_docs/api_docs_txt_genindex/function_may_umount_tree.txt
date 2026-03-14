@@ -1,0 +1,12 @@
+Function: int may_umount_tree ( struct vfsmount * m )
+
+check if a mount tree is busy
+
+Parameters
+  struct vfsmount *m
+    root of mount tree
+
+Description
+  This is called to check if a tree of mounts has any
+open files, pwds, chroots or sub mounts that are
+busy.

@@ -1,0 +1,12 @@
+Function: void xe_ggtt_map_bo_unlocked ( struct xe_ggtt * ggtt , struct xe_bo * bo )
+
+Restore a mapping of a BO into GGTT
+
+Parameters
+  struct xe_ggtt *ggtt
+    the xe_ggtt where node will be mapped
+  struct xe_bo *bo
+    the xe_bo to be mapped
+
+Description
+  This is used to restore a GGTT mapping after suspend.

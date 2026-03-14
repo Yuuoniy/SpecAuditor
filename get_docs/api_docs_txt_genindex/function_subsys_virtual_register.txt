@@ -1,0 +1,16 @@
+Function: int subsys_virtual_register ( const struct bus_type * subsys , const struct attribute_group * * groups )
+
+register a subsystem at /sys/devices/virtual/
+
+Parameters
+  const struct bus_type *subsys
+    virtual subsystem
+  const struct attribute_group **groups
+    default attributes for the root device
+
+Description
+  All ‘virtual’ subsystems have a /sys/devices/system/<name> root device
+with the name of the subsystem.  The root device can carry subsystem-wide
+attributes.  All registered devices are below this single root device.
+There’s no restriction on device naming.  This is for kernel software
+constructs which need sysfs interface.

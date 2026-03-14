@@ -1,0 +1,13 @@
+Function: enum xz_ret xz_dec_microlzma_run ( struct xz_dec_microlzma * s , struct xz_buf * b )
+
+Run the MicroLZMA decoder
+
+Parameters
+  struct xz_dec_microlzma *s
+    Decoder state initialized using xz_dec_microlzma_reset()
+  struct xz_buf *b
+    Input and output buffers
+
+Description
+  This works similarly to xz_dec_run() with a few important differences.
+Only the differences are documented here.

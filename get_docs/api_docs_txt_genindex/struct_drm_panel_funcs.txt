@@ -1,0 +1,23 @@
+Struct: struct drm_panel_funcs
+
+perform operations on a given panel
+
+Members
+  prepare
+    Turn on panel and perform set up. This function is optional.
+  enable
+    Enable panel (turn on back light, etc.). This function is optional.
+  disable
+    Disable panel (turn off back light, etc.). This function is optional.
+  unprepare
+    Turn off panel. This function is optional.
+  get_modes
+    Add modes to the connector that the panel is attached to
+and returns the number of modes added. This function is mandatory.
+  get_orientation
+    Return the panel orientation set by device tree or EDID. This function is optional.
+  get_timings
+    Copy display timings into the provided array and return
+the number of display timings available. This function is optional.
+  debugfs_init
+    Allows panels to create panels-specific debugfs files.

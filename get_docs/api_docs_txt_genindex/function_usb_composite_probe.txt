@@ -1,0 +1,13 @@
+Function: int usb_composite_probe ( struct usb_composite_driver * driver )
+
+register a composite driver
+
+Parameters
+  struct usb_composite_driver *driver
+    the driver to register
+
+Description
+  This function is used to register drivers using the composite driver
+framework.  The return value is zero, or a negative errno value.
+Those values normally come from the driver’s bind method, which does
+all the work of setting up the driver to match the hardware.

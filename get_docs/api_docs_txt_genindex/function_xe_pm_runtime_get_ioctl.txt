@@ -1,0 +1,7 @@
+Function: int xe_pm_runtime_get_ioctl ( struct xe_device * xe )
+
+Get a runtime_pm reference before ioctl
+
+Parameters
+  struct xe_device *xe
+    xe device instance

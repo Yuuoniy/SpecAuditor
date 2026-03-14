@@ -1,0 +1,13 @@
+Function: size_t balloon_page_list_enqueue ( struct balloon_dev_info * b_dev_info , struct list_head * pages )
+
+inserts a list of pages into the balloon page list.
+
+Parameters
+  struct balloon_dev_info *b_dev_info
+    balloon device descriptor where we will insert a new page to
+  struct list_head *pages
+    pages to enqueue - allocated using balloon_page_alloc.
+
+Description
+  Driver must call this function to properly enqueue balloon pages before
+definitively removing them from the guest system.

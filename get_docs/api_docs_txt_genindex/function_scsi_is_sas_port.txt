@@ -1,0 +1,7 @@
+Function: int scsi_is_sas_port ( const struct device * dev )
+
+check if a struct device represents a SAS port
+
+Parameters
+  const struct device *dev
+    device to check

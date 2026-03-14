@@ -1,0 +1,12 @@
+Function: void fscache_resize_cookie ( struct fscache_cookie * cookie , loff_t new_size )
+
+Request that a cache object be resized
+
+Parameters
+  struct fscache_cookie *cookie
+    The cookie representing the cache object
+  loff_t new_size
+    The new size of the object (may be NULL)
+
+Description
+  Request that the size of an object be changed.

@@ -1,0 +1,3 @@
+Enum: enum iommufd_hw_info_flags
+
+Flags for iommu_hw_info

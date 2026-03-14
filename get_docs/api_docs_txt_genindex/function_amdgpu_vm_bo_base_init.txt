@@ -1,0 +1,14 @@
+Function: void amdgpu_vm_bo_base_init ( struct amdgpu_vm_bo_base * base , struct amdgpu_vm * vm , struct amdgpu_bo * bo )
+
+Adds bo to the list of bos associated with the vm
+
+Parameters
+  struct amdgpu_vm_bo_base *base
+    base structure for tracking BO usage in a VM
+  struct amdgpu_vm *vm
+    vm to which bo is to be added
+  struct amdgpu_bo *bo
+    amdgpu buffer object
+
+Description
+  Initialize a bo_va_base structure and add it to the appropriate lists

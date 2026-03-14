@@ -1,0 +1,10 @@
+Function: void smp_mb__after_srcu_read_lock ( void )
+
+ensure full ordering after srcu_read_lock
+
+Parameters
+  void
+    no arguments
+
+Description
+  Converts the preceding srcu_read_lock into a two-way memory barrier.

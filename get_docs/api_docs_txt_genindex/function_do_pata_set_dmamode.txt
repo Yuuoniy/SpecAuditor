@@ -1,0 +1,14 @@
+Function: void do_pata_set_dmamode ( struct ata_port * ap , struct ata_device * adev , int isich )
+
+Initialize host controller PATA PIO timings
+
+Parameters
+  struct ata_port *ap
+    Port whose timings we are configuring
+  struct ata_device *adev
+    Drive in question
+  int isich
+    set if the chip is an ICH device
+
+Description
+  Set UDMA mode for device, in host controller PCI config space.

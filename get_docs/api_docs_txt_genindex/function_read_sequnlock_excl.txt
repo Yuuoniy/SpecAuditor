@@ -1,0 +1,7 @@
+Function: void read_sequnlock_excl ( seqlock_t * sl )
+
+end a seqlock_t locking reader critical section
+
+Parameters
+  seqlock_t *sl
+    Pointer to seqlock_t

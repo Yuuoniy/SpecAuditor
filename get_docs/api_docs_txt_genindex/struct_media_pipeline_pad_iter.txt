@@ -1,0 +1,7 @@
+Struct: struct media_pipeline_pad_iter
+
+Iterator for media_pipeline_for_each_pad
+
+Members
+  cursor
+    The current element

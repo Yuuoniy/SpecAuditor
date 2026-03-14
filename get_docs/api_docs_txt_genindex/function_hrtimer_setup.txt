@@ -1,0 +1,20 @@
+Function: void hrtimer_setup ( struct hrtimer * timer , enum hrtimer_restart ( * function ) ( struct hrtimer * ) , clockid_t clock_id , enum hrtimer_mode mode )
+
+initialize a timer to the given clock
+
+Parameters
+  struct hrtimer *timer
+    the timer to be initialized
+  enum hrtimer_restart (*function)(struct hrtimer *)
+    the callback function
+  clockid_t clock_id
+    the clock to be used
+  enum hrtimer_mode mode
+    The modes which are relevant for initialization:
+HRTIMER_MODE_ABS, HRTIMER_MODE_REL, HRTIMER_MODE_ABS_SOFT,
+HRTIMER_MODE_REL_SOFT
+
+Description
+  The PINNED variants of the above can be handed in,
+but the PINNED bit is ignored as pinning happens
+when the hrtimer is started

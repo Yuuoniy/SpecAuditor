@@ -1,0 +1,13 @@
+Function: void drm_atomic_bridge_chain_disable ( struct drm_bridge * bridge , struct drm_atomic_state * state )
+
+disables all bridges in the encoder chain
+
+Parameters
+  struct drm_bridge *bridge
+    bridge control structure
+  struct drm_atomic_state *state
+    atomic state being committed
+
+Description
+  Calls drm_bridge_funcs.atomic_disable (falls back on drm_bridge_funcs.disable ) op for all the bridges in the encoder chain,
+starting from the last bridge to the first. These are called before calling drm_encoder_helper_funcs.atomic_disable

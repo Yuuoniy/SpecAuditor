@@ -1,0 +1,19 @@
+Function: int v4l2_ctrl_modify_range ( struct v4l2_ctrl * ctrl , s64 min , s64 max , u64 step , s64 def )
+
+Update the range of a control.
+
+Parameters
+  struct v4l2_ctrl *ctrl
+    The control to update.
+  s64 min
+    The control’s minimum value.
+  s64 max
+    The control’s maximum value.
+  u64 step
+    The control’s step value
+  s64 def
+    The control’s default value.
+
+Description
+  Update the range of a control on the fly. This works for control types
+INTEGER, BOOLEAN, MENU, INTEGER MENU and BITMASK. For menu controls the step value is interpreted as a menu_skip_mask.

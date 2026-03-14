@@ -1,0 +1,13 @@
+Struct: struct ipu3_uapi_bnr_static_config_wb_gains_config
+
+White balance gains
+
+Members
+  gr
+    white balance gain for Gr channel.
+  r
+    white balance gain for R channel.
+  b
+    white balance gain for B channel.
+  gb
+    white balance gain for Gb channel.

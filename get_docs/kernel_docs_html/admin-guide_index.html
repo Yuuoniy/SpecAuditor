@@ -1,0 +1,466 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>The Linux kernel user’s and administrator’s guide &#8212; The Linux Kernel  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Linux kernel release 6.x &lt;http://kernel.org/&gt;" href="README.html" />
+    <link rel="prev" title="Testing" href="../rust/testing.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../index.html">The Linux Kernel</a></h1>
+
+
+
+<p class="blurb">6.18.0-rc1</p>
+
+
+
+
+
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+<p>
+<h3 class="kernel-toc-contents">Contents</h3>
+<input type="checkbox" class="kernel-toc-toggle" id = "kernel-toc-toggle" checked>
+<label class="kernel-toc-title" for="kernel-toc-toggle"></label>
+
+<div class="kerneltoc" id="kerneltoc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../process/development-process.html">Development process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/submitting-patches.html">Submitting patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/code-of-conduct.html">Code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer/index.html">Maintainer handbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/index.html">All development-process docs</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core-api/index.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver-api/index.html">Driver APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subsystem-apis.html">Subsystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../locking/index.html">Locking</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../process/license-rules.html">Licensing rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-guide/index.html">Writing documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-tools/index.html">Development tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-tools/testing-overview.html">Testing guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kernel-hacking/index.html">Hacking guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trace/index.html">Tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fault-injection/index.html">Fault injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../livepatch/index.html">Livepatching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">Rust</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Administration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-guides-to-kernel-administration">General guides to kernel administration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="README.html">Linux kernel release 6.x &lt;http://kernel.org/&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="devices.html">Linux allocated devices (4.x+ version)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="features.html">Feature status on all architectures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sysfs-rules.html">Rules on how to access information in sysfs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sysctl/index.html">Documentation for /proc/sys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cputopology.html">How CPU topology info is exported via sysfs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="abi.html">Linux ABI description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hw-vuln/index.html">Hardware vulnerabilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LSM/index.html">Linux Security Module Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="perf-security.html">Perf events and tool security</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#booting-the-kernel">Booting the kernel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="bootconfig.html">Boot Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kernel-parameters.html">The kernel’s command-line parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="efi-stub.html">The EFI Boot Stub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="initrd.html">Using the initial RAM disk (initrd)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tracking-down-and-identifying-problems">Tracking down and identifying problems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reporting-issues.html">Reporting issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reporting-regressions.html">Reporting regressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickly-build-trimmed-linux.html">How to quickly build a trimmed Linux kernel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verify-bugs-and-bisect-regressions.html">How to verify bugs and bisect regressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bug-hunting.html">Bug hunting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bug-bisect.html">Bisecting a regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tainted-kernels.html">Tainted kernels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ramoops.html">Ramoops oops/panic logger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dynamic-debug-howto.html">Dynamic debug</a></li>
+<li class="toctree-l3"><a class="reference internal" href="init.html">Explaining the “No working init found.” boot hang message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kdump/index.html">Documentation for Kdump - The kexec-based Crash Dumping Solution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="perf/index.html">Performance monitor support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pstore-blk.html">pstore block oops/panic logger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clearing-warn-once.html">Clearing WARN_ONCE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kernel-per-CPU-kthreads.html">Reducing OS jitter due to per-cpu kthreads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lockup-watchdogs.html">Softlockup detector and hardlockup detector (aka nmi_watchdog)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RAS/main.html">Reliability, Availability and Serviceability (RAS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RAS/error-decoding.html">Error decoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RAS/address-translation.html">Address translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sysrq.html">Linux Magic System Request Key Hacks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#core-kernel-subsystems">Core-kernel subsystems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cgroup-v2.html">Control Group v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cgroup-v1/index.html">Control Groups version 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpu-load.html">CPU load</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mm/index.html">Memory Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module-signing.html">Kernel module signing facility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="namespaces/index.html">Namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numastat.html">Numa policy hit/miss statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pm/index.html">Power Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syscall-user-dispatch.html">Syscall User Dispatch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binfmt-misc.html">Kernel Support for miscellaneous Binary Formats (binfmt_misc)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="java.html">Java(tm) Binary Kernel Support for Linux v1.03</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mono.html">Mono(tm) Binary Kernel Support for Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#block-layer-and-filesystem-administration">Block-layer and filesystem administration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="bcache.html">A block layer cache (bcache)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binderfs.html">The Android binderfs Filesystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="blockdev/index.html">Block Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cifs/index.html">CIFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="device-mapper/index.html">Device Mapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext4.html">ext4 General Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="filesystem-monitoring.html">File system Monitoring with fanotify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nfs/index.html">NFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iostats.html">I/O statistics fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jfs.html">IBM’s Journaled File System (JFS) for Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="md.html">RAID arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ufs.html">Using UFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xfs.html">The SGI XFS Filesystem</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#device-specific-guides">Device-specific guides</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="acpi/index.html">ACPI Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aoe/index.html">ATA over Ethernet (AoE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auxdisplay/index.html">Auxiliary Display Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="braille-console.html">Linux Braille Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="btmrvl.html">btmrvl driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dell_rbu.html">Dell Remote BIOS Update driver (dell_rbu)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edid.html">EDID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gpio/index.html">GPIO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hw_random.html">Hardware random number generators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="laptops/index.html">Laptop Drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lcd-panel-cgram.html">Parallel port LCD/Keypad Panel support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="media/index.html">Media subsystem admin and user guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nvme-multipath.html">Linux NVMe multipath</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parport.html">Parport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pnp.html">Linux Plug and Play Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rapidio.html">RapidIO Subsystem Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rtc.html">Real Time Clock (RTC) Drivers for Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="serial-console.html">Linux Serial Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="svga.html">Video Mode Selection Support 2.13</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thermal/index.html">Thermal Subsystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thunderbolt.html">USB4 and Thunderbolt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vga-softcursor.html">Software cursor for VGA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="video-output.html">Video Output Switcher Control</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#workload-analysis">Workload analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="workload-tracing.html">Discovering Linux kernel subsystems used by a workload</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#everything-else">Everything else</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ldm.html">LDM - Logical Disk Manager (Dynamic Disks)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unicode.html">Unicode support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kbuild/index.html">Build system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reporting-issues.html">Reporting issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Userspace tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userspace-api/index.html">Userspace API</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../firmware-guide/index.html">Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devicetree/index.html">Firmware and Devicetree</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../arch/index.html">CPU architectures</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging/index.html">Unsorted documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../translations/index.html">Translations</a></li>
+</ul>
+
+</div>
+
+<script type="text/javascript"> <!--
+  var sbar = document.getElementsByClassName("sphinxsidebar")[0];
+  let currents = document.getElementsByClassName("current")
+  if (currents.length) {
+    sbar.scrollTop = currents[currents.length - 1].offsetTop;
+  }
+  --> </script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/admin-guide/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+
+
+
+
+<div class="language-selection">
+English
+
+<ul>
+
+<li><a href="../translations/zh_CN/admin-guide/index.html">Chinese (Simplified)</a></li>
+
+<li><a href="../translations/zh_TW/admin-guide/index.html">Chinese (Traditional)</a></li>
+
+</ul>
+</div>
+<section id="the-linux-kernel-user-s-and-administrator-s-guide">
+<h1>The Linux kernel user’s and administrator’s guide<a class="headerlink" href="#the-linux-kernel-user-s-and-administrator-s-guide" title="Permalink to this heading">¶</a></h1>
+<p>The following is a collection of user-oriented documents that have been
+added to the kernel over time.  There is, as yet, little overall order or
+organization here — this material was not written to be a single, coherent
+document!  With luck things will improve quickly over time.</p>
+<section id="general-guides-to-kernel-administration">
+<h2>General guides to kernel administration<a class="headerlink" href="#general-guides-to-kernel-administration" title="Permalink to this heading">¶</a></h2>
+<p>This initial section contains overall information, including the README
+file describing the kernel as a whole, documentation on kernel parameters,
+etc.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="README.html">Linux kernel release 6.x &lt;http://kernel.org/&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Linux allocated devices (4.x+ version)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Feature status on all architectures</a></li>
+</ul>
+</div>
+<p>A big part of the kernel’s administrative interface is the /proc and sysfs
+virtual filesystems; these documents describe how to interact with tem</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sysfs-rules.html">Rules on how to access information in sysfs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysctl/index.html">Documentation for /proc/sys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cputopology.html">How CPU topology info is exported via sysfs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abi.html">Linux ABI description</a></li>
+</ul>
+</div>
+<p>Security-related documentation:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hw-vuln/index.html">Hardware vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LSM/index.html">Linux Security Module Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="perf-security.html">Perf events and tool security</a></li>
+</ul>
+</div>
+</section>
+<section id="booting-the-kernel">
+<h2>Booting the kernel<a class="headerlink" href="#booting-the-kernel" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bootconfig.html">Boot Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel-parameters.html">The kernel’s command-line parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="efi-stub.html">The EFI Boot Stub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initrd.html">Using the initial RAM disk (initrd)</a></li>
+</ul>
+</div>
+</section>
+<section id="tracking-down-and-identifying-problems">
+<h2>Tracking down and identifying problems<a class="headerlink" href="#tracking-down-and-identifying-problems" title="Permalink to this heading">¶</a></h2>
+<p>Here is a set of documents aimed at users who are trying to track down
+problems and bugs in particular.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="reporting-issues.html">Reporting issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reporting-regressions.html">Reporting regressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickly-build-trimmed-linux.html">How to quickly build a trimmed Linux kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-bugs-and-bisect-regressions.html">How to verify bugs and bisect regressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bug-hunting.html">Bug hunting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bug-bisect.html">Bisecting a regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tainted-kernels.html">Tainted kernels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ramoops.html">Ramoops oops/panic logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamic-debug-howto.html">Dynamic debug</a></li>
+<li class="toctree-l1"><a class="reference internal" href="init.html">Explaining the “No working init found.” boot hang message</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kdump/index.html">Documentation for Kdump - The kexec-based Crash Dumping Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="perf/index.html">Performance monitor support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pstore-blk.html">pstore block oops/panic logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clearing-warn-once.html">Clearing WARN_ONCE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel-per-CPU-kthreads.html">Reducing OS jitter due to per-cpu kthreads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lockup-watchdogs.html">Softlockup detector and hardlockup detector (aka nmi_watchdog)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RAS/main.html">Reliability, Availability and Serviceability (RAS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RAS/error-decoding.html">Error decoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RAS/address-translation.html">Address translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysrq.html">Linux Magic System Request Key Hacks</a></li>
+</ul>
+</div>
+</section>
+<section id="core-kernel-subsystems">
+<h2>Core-kernel subsystems<a class="headerlink" href="#core-kernel-subsystems" title="Permalink to this heading">¶</a></h2>
+<p>These documents describe core-kernel administration interfaces that are
+likely to be of interest on almost any system.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cgroup-v2.html">Control Group v2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cgroup-v1/index.html">Control Groups version 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpu-load.html">CPU load</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mm/index.html">Memory Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-signing.html">Kernel module signing facility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="namespaces/index.html">Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numastat.html">Numa policy hit/miss statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pm/index.html">Power Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syscall-user-dispatch.html">Syscall User Dispatch</a></li>
+</ul>
+</div>
+<p>Support for non-native binary formats.  Note that some of these
+documents are ... old ...</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="binfmt-misc.html">Kernel Support for miscellaneous Binary Formats (binfmt_misc)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="java.html">Java(tm) Binary Kernel Support for Linux v1.03</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mono.html">Mono(tm) Binary Kernel Support for Linux</a></li>
+</ul>
+</div>
+</section>
+<section id="block-layer-and-filesystem-administration">
+<h2>Block-layer and filesystem administration<a class="headerlink" href="#block-layer-and-filesystem-administration" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bcache.html">A block layer cache (bcache)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binderfs.html">The Android binderfs Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blockdev/index.html">Block Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cifs/index.html">CIFS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-mapper/index.html">Device Mapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ext4.html">ext4 General Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filesystem-monitoring.html">File system Monitoring with fanotify</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nfs/index.html">NFS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iostats.html">I/O statistics fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jfs.html">IBM’s Journaled File System (JFS) for Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="md.html">RAID arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ufs.html">Using UFS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xfs.html">The SGI XFS Filesystem</a></li>
+</ul>
+</div>
+</section>
+<section id="device-specific-guides">
+<h2>Device-specific guides<a class="headerlink" href="#device-specific-guides" title="Permalink to this heading">¶</a></h2>
+<p>How to configure your hardware within your Linux system.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="acpi/index.html">ACPI Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aoe/index.html">ATA over Ethernet (AoE)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auxdisplay/index.html">Auxiliary Display Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braille-console.html">Linux Braille Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="btmrvl.html">btmrvl driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dell_rbu.html">Dell Remote BIOS Update driver (dell_rbu)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edid.html">EDID</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpio/index.html">GPIO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hw_random.html">Hardware random number generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="laptops/index.html">Laptop Drivers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcd-panel-cgram.html">Parallel port LCD/Keypad Panel support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media/index.html">Media subsystem admin and user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nvme-multipath.html">Linux NVMe multipath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parport.html">Parport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pnp.html">Linux Plug and Play Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rapidio.html">RapidIO Subsystem Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rtc.html">Real Time Clock (RTC) Drivers for Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serial-console.html">Linux Serial Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svga.html">Video Mode Selection Support 2.13</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thermal/index.html">Thermal Subsystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thunderbolt.html">USB4 and Thunderbolt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vga-softcursor.html">Software cursor for VGA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video-output.html">Video Output Switcher Control</a></li>
+</ul>
+</div>
+</section>
+<section id="workload-analysis">
+<h2>Workload analysis<a class="headerlink" href="#workload-analysis" title="Permalink to this heading">¶</a></h2>
+<p>This is the beginning of a section with information of interest to
+application developers and system integrators doing analysis of the
+Linux kernel for safety critical applications. Documents supporting
+analysis of kernel interactions with applications, and key kernel
+subsystems expectations will be found here.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="workload-tracing.html">Discovering Linux kernel subsystems used by a workload</a></li>
+</ul>
+</div>
+</section>
+<section id="everything-else">
+<h2>Everything else<a class="headerlink" href="#everything-else" title="Permalink to this heading">¶</a></h2>
+<p>A few hard-to-categorize and generally obsolete documents.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ldm.html">LDM - Logical Disk Manager (Dynamic Disks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unicode.html">Unicode support</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;The kernel development community.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/admin-guide/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

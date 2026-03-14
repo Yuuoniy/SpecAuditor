@@ -1,0 +1,12 @@
+Function: void drm_mode_config_reset ( struct drm_device * dev )
+
+call ->reset callbacks
+
+Parameters
+  struct drm_device *dev
+    drm device
+
+Description
+  This functions calls all the crtc’s, encoder’s and connector’s ->reset
+callback. Drivers can use this in e.g. their driver load or resume code to
+reset hardware and software state.

@@ -1,0 +1,7 @@
+Function: void devcd_free_sgtable ( void * data )
+
+free all the memory of the given scatterlist table (i.e. both pages and scatterlist instances)
+
+Parameters
+  void *data
+    pointer to sg_table to free

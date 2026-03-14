@@ -1,0 +1,15 @@
+Function: void page_pool_put_full_page ( struct page_pool * pool , struct page * page , bool allow_direct )
+
+release a reference on a page pool page
+
+Parameters
+  struct page_pool *pool
+    pool from which page was allocated
+  struct page *page
+    page to release a reference on
+  bool allow_direct
+    released by the consumer, allow lockless caching
+
+Description
+  Similar to page_pool_put_page() , but will DMA sync the entire memory area
+as configured in page_pool_params.max_len .

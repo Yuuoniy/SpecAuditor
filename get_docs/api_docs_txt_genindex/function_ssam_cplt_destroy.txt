@@ -1,0 +1,11 @@
+Function: void ssam_cplt_destroy ( struct ssam_cplt * cplt )
+
+Deinitialize the completion system.
+
+Parameters
+  struct ssam_cplt *cplt
+    The completion system to deinitialize.
+
+Description
+  Deinitialize the given completion system and ensure that all pending, i.e.
+yet-to-be-completed, event items and requests have been handled.

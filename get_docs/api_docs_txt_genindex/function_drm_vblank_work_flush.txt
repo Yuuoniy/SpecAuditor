@@ -1,0 +1,10 @@
+Function: void drm_vblank_work_flush ( struct drm_vblank_work * work )
+
+wait for a scheduled vblank work to finish executing
+
+Parameters
+  struct drm_vblank_work *work
+    vblank work to flush
+
+Description
+  Wait until work has finished executing once.

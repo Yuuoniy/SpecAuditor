@@ -1,0 +1,24 @@
+Macro: NTSYNC_IOC_WAIT_ALL
+
+Poll on a list of objects, atomically acquiring all of them. Takes a
+pointer to struct ntsync_wait_args , which is used
+identically to NTSYNC_IOC_WAIT_ANY , except that index is
+always filled with zero on success if not woken via alert. This function attempts to simultaneously acquire all of the given
+objects. If unable to do so, it sleeps until all objects become
+simultaneously signaled, subsequently acquiring them, or the timeout
+expires. In the latter case the ioctl fails with ETIMEDOUT and no
+objects are modified. Objects may become signaled and subsequently designaled (through
+acquisition by other threads) while this thread is sleeping. Only
+once all objects are simultaneously signaled does the ioctl acquire
+them and return. The entire acquisition is atomic and totally ordered
+with respect to other operations on any of the given objects. If an abandoned mutex is acquired, the ioctl fails with EOWNERDEAD . Similarly to NTSYNC_IOC_WAIT_ANY , all objects are
+nevertheless marked as acquired. Note that if multiple mutex objects
+are specified, there is no way to know which were marked as
+abandoned. As with “any” waits, the alert argument is an “extra” event which
+can terminate the wait. Critically, however, an “all” wait will
+succeed if all members in objs are signaled, or if alert is
+signaled. In the latter case index will be set to count . As
+with “any” waits, if both conditions are filled, the former takes
+priority, and objects in objs will be acquired. Unlike NTSYNC_IOC_WAIT_ANY , it is not valid to pass the same
+object more than once, nor is it valid to pass the same object in objs and in alert . If this is attempted, the function fails
+with EINVAL .

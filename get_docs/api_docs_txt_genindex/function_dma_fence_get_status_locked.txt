@@ -1,0 +1,14 @@
+Function: int dma_fence_get_status_locked ( struct dma_fence * fence )
+
+returns the status upon completion
+
+Parameters
+  struct dma_fence *fence
+    the dma_fence to query
+
+Description
+  Drivers can supply an optional error status condition before they signal
+the fence (to indicate whether the fence was completed due to an error
+rather than success). The value of the status condition is only valid
+if the fence has been signaled, dma_fence_get_status_locked() first checks
+the signal state before reporting the error status.

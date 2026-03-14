@@ -1,0 +1,14 @@
+Function: int crypto_shash_import ( struct shash_desc * desc , const void * in )
+
+import operational state
+
+Parameters
+  struct shash_desc *desc
+    reference to the operational state handle the state imported into
+  const void *in
+    buffer holding the state
+
+Description
+  This function imports the hash state into the operational state handle from
+the input buffer. That buffer should have been generated with the
+crypto_ahash_export function.

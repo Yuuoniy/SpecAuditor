@@ -1,0 +1,21 @@
+Function: unsigned int xa_extract ( struct xarray * xa , void * * dst , unsigned long start , unsigned long max , unsigned int n , xa_mark_t filter )
+
+Copy selected entries from the XArray into a normal array.
+
+Parameters
+  struct xarray *xa
+    The source XArray to copy from.
+  void **dst
+    The buffer to copy entries into.
+  unsigned long start
+    The first index in the XArray eligible to be selected.
+  unsigned long max
+    The last index in the XArray eligible to be selected.
+  unsigned int n
+    The maximum number of entries to copy.
+  xa_mark_t filter
+    Selection criterion.
+
+Description
+  Copies up to n entries that match filter from the XArray.  The
+copied entries will have indices between start and max , inclusive.

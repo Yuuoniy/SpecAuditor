@@ -1,0 +1,11 @@
+Function: int security_watch_key ( struct key * key )
+
+Check if a task is allowed to watch for key events
+
+Parameters
+  struct key *key
+    the key to watch
+
+Description
+  Check to see if a process is allowed to watch for event notifications from
+a key or keyring.

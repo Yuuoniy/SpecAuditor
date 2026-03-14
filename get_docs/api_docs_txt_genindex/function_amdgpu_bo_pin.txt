@@ -1,0 +1,14 @@
+Function: int amdgpu_bo_pin ( struct amdgpu_bo * bo , u32 domain )
+
+pin an amdgpu_bo buffer object
+
+Parameters
+  struct amdgpu_bo *bo
+    amdgpu_bo buffer object to be pinned
+  u32 domain
+    domain to be pinned to
+
+Description
+  Pins the buffer object according to requested domain. If the memory is
+unbound gart memory, binds the pages into gart table. Adjusts pin_count and
+pin_size accordingly.

@@ -1,0 +1,13 @@
+Function: bool folio_test_uptodate ( const struct folio * folio )
+
+Is this folio up to date?
+
+Parameters
+  const struct folio *folio
+    The folio.
+
+Description
+  The uptodate flag is set on a folio when every byte in the folio is
+at least as new as the corresponding bytes on storage.  Anonymous
+and CoW folios are always uptodate.  If the folio is not uptodate,
+some of the bytes in it may be; see the is_partially_uptodate() address_space operation.

@@ -1,0 +1,14 @@
+Function: void nand_select_target ( struct nand_chip * chip , unsigned int cs )
+
+Select a NAND target (A.K.A. die)
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object
+  unsigned int cs
+    the CS line to select. Note that this CS id is always from the chip
+PoV, not the controller one
+
+Description
+  Select a NAND target so that further operations executed on chip go to the
+selected NAND target.

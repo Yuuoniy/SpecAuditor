@@ -1,0 +1,15 @@
+Macro: kfifo_out
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used
+  buf
+    pointer to the storage buffer
+  n
+    max. number of elements to get
+
+Description
+  This macro gets some data from the fifo and returns the numbers of elements
+copied.

@@ -1,0 +1,17 @@
+Function: int drm_gem_dumb_map_offset ( struct drm_file * file , struct drm_device * dev , u32 handle , u64 * offset )
+
+return the fake mmap offset for a gem object
+
+Parameters
+  struct drm_file *file
+    drm file-private structure containing the gem object
+  struct drm_device *dev
+    corresponding drm_device
+  u32 handle
+    gem object handle
+  u64 *offset
+    return location for the fake mmap offset
+
+Description
+  This implements the drm_driver.dumb_map_offset kms driver callback for
+drivers which use gem to manage their backing storage.

@@ -1,0 +1,10 @@
+Function: void rcu_read_unlock_bh ( void )
+
+marks the end of a softirq-only RCU critical section
+
+Parameters
+  void
+    no arguments
+
+Description
+  See rcu_read_lock_bh() for more information.

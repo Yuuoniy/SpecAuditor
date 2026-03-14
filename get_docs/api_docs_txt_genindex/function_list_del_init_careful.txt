@@ -1,0 +1,12 @@
+Function: void list_del_init_careful ( struct list_head * entry )
+
+deletes entry from list and reinitialize it.
+
+Parameters
+  struct list_head *entry
+    the element to delete from the list.
+
+Description
+  This is the same as list_del_init() , except designed to be used
+together with list_empty_careful() in a way to guarantee ordering
+of other memory operations.

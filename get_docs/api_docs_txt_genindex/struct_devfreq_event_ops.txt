@@ -1,0 +1,16 @@
+Struct: struct devfreq_event_ops
+
+the operations of devfreq-event device
+
+Members
+  enable
+    Enable the devfreq-event device.
+  disable
+    Disable the devfreq-event device.
+  reset
+    Reset all setting of the devfreq-event device.
+  set_event
+    Set the specific event type for the devfreq-event device.
+  get_event
+    Get the result of the devfreq-event devie with specific
+event type.

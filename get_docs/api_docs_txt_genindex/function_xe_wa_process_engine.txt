@@ -1,0 +1,12 @@
+Function: void xe_wa_process_engine ( struct xe_hw_engine * hwe )
+
+process engine workaround table
+
+Parameters
+  struct xe_hw_engine *hwe
+    engine instance to process workarounds for
+
+Description
+  Process engine workaround table for this platform, saving in hwe all the
+workarounds that need to be applied at the engine level that match this
+engine.

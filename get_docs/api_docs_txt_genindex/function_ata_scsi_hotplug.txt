@@ -1,0 +1,13 @@
+Function: void ata_scsi_hotplug ( struct work_struct * work )
+
+SCSI part of hotplug
+
+Parameters
+  struct work_struct *work
+    Pointer to ATA port to perform SCSI hotplug on
+
+Description
+  Perform SCSI part of hotplug.  It’s executed from a separate
+workqueue after EH completes.  This is necessary because SCSI
+hot plugging requires working EH and hot unplugging is
+synchronized with hot plugging with a mutex.

@@ -1,0 +1,13 @@
+Function: bool skb_head_is_locked ( const struct sk_buff * skb )
+
+Determine if the skb->head is locked down
+
+Parameters
+  const struct sk_buff *skb
+    skb to check
+
+Description
+  The head on skbs build around a head frag can be removed if they are
+not cloned.  This function returns true if the skb head is locked down
+due to either being allocated via kmalloc, or by being a clone with
+multiple references to the head.

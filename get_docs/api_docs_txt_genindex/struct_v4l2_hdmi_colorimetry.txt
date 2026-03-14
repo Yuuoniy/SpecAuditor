@@ -1,0 +1,13 @@
+Struct: struct v4l2_hdmi_colorimetry
+
+describes the HDMI colorimetry information
+
+Members
+  colorspace
+    enum v4l2_colorspace , the colorspace
+  ycbcr_enc
+    enum v4l2_ycbcr_encoding , Y’CbCr encoding
+  quantization
+    enum v4l2_quantization , colorspace quantization
+  xfer_func
+    enum v4l2_xfer_func , colorspace transfer function

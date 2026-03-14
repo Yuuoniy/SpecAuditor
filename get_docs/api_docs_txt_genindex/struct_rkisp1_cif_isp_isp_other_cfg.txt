@@ -1,0 +1,31 @@
+Struct: struct rkisp1_cif_isp_isp_other_cfg
+
+Parameters for some blocks in rockchip isp1
+
+Members
+  dpcc_config
+    Defect Pixel Cluster Correction config
+  bls_config
+    black level subtraction config
+  sdg_config
+    sensor degamma config
+  lsc_config
+    Lens Shade config
+  awb_gain_config
+    Auto White balance gain config
+  flt_config
+    filter config
+  bdm_config
+    demosaic config
+  ctk_config
+    cross talk config
+  goc_config
+    gamma out config
+  dpf_config
+    De-noising pre-filter config
+  dpf_strength_config
+    dpf strength config
+  cproc_config
+    color process config
+  ie_config
+    image effects config

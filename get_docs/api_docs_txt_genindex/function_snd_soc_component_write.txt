@@ -1,0 +1,11 @@
+Function: int snd_soc_component_write ( struct snd_soc_component * component , unsigned int reg , unsigned int val )
+
+Write register value
+
+Parameters
+  struct snd_soc_component *component
+    Component to write to
+  unsigned int reg
+    Register to write
+  unsigned int val
+    Value to write to the register

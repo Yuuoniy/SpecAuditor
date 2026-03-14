@@ -1,0 +1,10 @@
+Function: void irq_domain_free_fwnode ( struct fwnode_handle * fwnode )
+
+Free a non-OF-backed fwnode_handle
+
+Parameters
+  struct fwnode_handle *fwnode
+    fwnode_handle to free
+
+Description
+  Free a fwnode_handle allocated with irq_domain_alloc_fwnode.

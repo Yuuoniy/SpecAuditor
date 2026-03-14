@@ -1,0 +1,11 @@
+Function: int device_bind_driver ( struct device * dev )
+
+bind a driver to one device.
+
+Parameters
+  struct device *dev
+    device.
+
+Description
+  Allow manual attachment of a driver to a device.
+Caller must have already set dev->driver .

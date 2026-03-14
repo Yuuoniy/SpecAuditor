@@ -1,0 +1,25 @@
+Struct: struct dp_sdp
+
+DP secondary data packet
+
+Members
+  sdp_header
+    DP secondary data packet header
+  db
+    DP secondaray data packet data blocks
+VSC SDP Payload for PSR
+db[0]: Stereo Interface
+db[1]: 0 - PSR State; 1 - Update RFB; 2 - CRC Valid
+db[2]: CRC value bits 7:0 of the R or Cr component
+db[3]: CRC value bits 15:8 of the R or Cr component
+db[4]: CRC value bits 7:0 of the G or Y component
+db[5]: CRC value bits 15:8 of the G or Y component
+db[6]: CRC value bits 7:0 of the B or Cb component
+db[7]: CRC value bits 15:8 of the B or Cb component
+db[8] - db[31]: Reserved
+VSC SDP Payload for Pixel Encoding/Colorimetry Format
+db[0] - db[15]: Reserved
+db[16]: Pixel Encoding and Colorimetry Formats
+db[17]: Dynamic Range and Component Bit Depth
+db[18]: Content Type
+db[19] - db[31]: Reserved

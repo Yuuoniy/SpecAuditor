@@ -1,0 +1,11 @@
+Function: struct drm_panel * of_drm_find_panel ( const struct device_node * np )
+
+look up a panel using a device tree node
+
+Parameters
+  const struct device_node *np
+    device tree node of the panel
+
+Description
+  Searches the set of registered panels for one that matches the given device
+tree node. If a matching panel is found, return a pointer to it.

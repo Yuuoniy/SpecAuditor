@@ -1,0 +1,14 @@
+Function: int security_path_chown ( const struct path * path , kuid_t uid , kgid_t gid )
+
+Check if changing the file’s owner/group is allowed
+
+Parameters
+  const struct path *path
+    file
+  kuid_t uid
+    file owner
+  kgid_t gid
+    file group
+
+Description
+  Check for permission to change owner/group of a file or directory.

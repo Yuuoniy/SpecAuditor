@@ -1,0 +1,11 @@
+Function: bits_per
+
+
+
+Parameters
+  n
+    parameter
+
+Description
+  This is constant-capable and can be used for compile time
+initializations, e.g bitfields.

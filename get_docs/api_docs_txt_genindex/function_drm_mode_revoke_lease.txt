@@ -1,0 +1,7 @@
+Function: struct drm_mode_revoke_lease
+
+Revoke lease
+
+Members
+  lessee_id
+    Unique ID of lessee

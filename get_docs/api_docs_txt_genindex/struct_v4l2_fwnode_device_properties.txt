@@ -1,0 +1,9 @@
+Struct: struct v4l2_fwnode_device_properties
+
+fwnode device properties
+
+Members
+  orientation
+    device orientation. See enum v4l2_fwnode_orientation
+  rotation
+    device rotation

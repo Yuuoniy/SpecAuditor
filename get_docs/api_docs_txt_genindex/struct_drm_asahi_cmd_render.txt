@@ -1,0 +1,85 @@
+Struct: struct drm_asahi_cmd_render
+
+Command to submit 3D
+
+Members
+  flags
+    Combination of drm_asahi_render_flags flags.
+  isp_zls_pixels
+    ISP_ZLS_PIXELS register value. This contains the
+depth/stencil width/height, which may differ from the framebuffer
+width/height.
+  vdm_ctrl_stream_base
+    VDM_CTRL_STREAM_BASE register value. GPU
+address to the beginning of the VDM control stream.
+  vertex_helper
+    Helper program used for the vertex shader
+  fragment_helper
+    Helper program used for the fragment shader
+  isp_scissor_base
+    ISP_SCISSOR_BASE register value. GPU address of an
+array of scissor descriptors indexed in the render pass.
+  isp_dbias_base
+    ISP_DBIAS_BASE register value. GPU address of an
+array of depth bias values indexed in the render pass.
+  isp_oclqry_base
+    ISP_OCLQRY_BASE register value. GPU address of an
+array of occlusion query results written by the render pass.
+  depth
+    Depth buffer
+  stencil
+    Stencil buffer
+  zls_ctrl
+    ZLS_CTRL register value
+  ppp_multisamplectl
+    PPP_MULTISAMPLECTL register value
+  sampler_heap
+    Base address of the sampler heap. This heap is used
+for both vertex shaders and fragment shaders. The registers are
+per-stage, but there is no known use case for separate heaps.
+  ppp_ctrl
+    PPP_CTRL register value
+  width_px
+    Framebuffer width in pixels
+  height_px
+    Framebuffer height in pixels
+  layers
+    Number of layers in the framebuffer
+  sampler_count
+    Number of samplers in the sampler heap.
+  utile_width_px
+    Width of a logical tilebuffer tile in pixels
+  utile_height_px
+    Height of a logical tilebuffer tile in pixels
+  samples
+    # of samples in the framebuffer. Must be 1, 2, or 4.
+  sample_size_B
+    # of bytes in the tilebuffer required per sample.
+  isp_merge_upper_x
+    32-bit float used in the hardware triangle
+merging. Calculate as: tan(60 deg) * width. Making these values UAPI avoids requiring floating-point calculations
+in the kernel in the hot path.
+  isp_merge_upper_y
+    32-bit float. Calculate as: tan(60 deg) * height.
+See isp_merge_upper_x .
+  bg
+    Background program run for each tile at the start
+  eot
+    End-of-tile program ran for each tile at the end
+  partial_bg
+    Background program ran at the start of each tile when
+resuming the render pass during a partial render.
+  partial_eot
+    End-of-tile program ran at the end of each tile when
+pausing the render pass during a partial render.
+  isp_bgobjdepth
+    ISP_BGOBJDEPTH register value. This is the depth
+buffer clear value, encoded in the depth buffer’s format: either a
+32-bit float or a 16-bit unorm (with upper bits zeroed).
+  isp_bgobjvals
+    ISP_BGOBJVALS register value. The bottom 8-bits
+contain the stencil buffer clear value.
+  ts_vtx
+    Timestamps for the vertex portion of the render
+  ts_frag
+    Timestamps for the fragment portion of the render

@@ -1,0 +1,22 @@
+Function: int __ref __irq_alloc_descs ( int irq , unsigned int from , unsigned int cnt , int node , struct module * owner , const struct irq_affinity_desc * affinity )
+
+allocate and initialize a range of irq descriptors
+
+Parameters
+  int irq
+    Allocate for specific irq number if irq >= 0
+  unsigned int from
+    Start the search from this irq number
+  unsigned int cnt
+    Number of consecutive irqs to allocate.
+  int node
+    Preferred node on which the irq descriptor should be allocated
+  struct module *owner
+    Owning module (can be NULL)
+  const struct irq_affinity_desc *affinity
+    Optional pointer to an affinity mask array of size cnt which
+hints where the irq descriptors should be allocated and which
+default affinities to use
+
+Description
+  Returns the first irq number or error code

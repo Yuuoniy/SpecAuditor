@@ -1,0 +1,13 @@
+Function: void __insert_inode_hash ( struct inode * inode , unsigned long hashval )
+
+hash an inode
+
+Parameters
+  struct inode *inode
+    unhashed inode
+  unsigned long hashval
+    unsigned long value used to locate this object in the
+inode_hashtable.
+
+Description
+  Add an inode to the inode hash for this superblock.

@@ -1,0 +1,7 @@
+Function: struct timespec64 ns_to_timespec64 ( s64 nsec )
+
+Convert nanoseconds to timespec64
+
+Parameters
+  s64 nsec
+    the nanoseconds value to be converted

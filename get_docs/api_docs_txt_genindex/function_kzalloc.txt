@@ -1,0 +1,9 @@
+Function: void * kzalloc ( size_t size , gfp_t flags )
+
+allocate memory. The memory is set to zero.
+
+Parameters
+  size_t size
+    how many bytes of memory are required.
+  gfp_t flags
+    the type of memory to allocate (see kmalloc).

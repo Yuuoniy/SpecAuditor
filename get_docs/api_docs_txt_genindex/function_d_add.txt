@@ -1,0 +1,13 @@
+Function: void d_add ( struct dentry * entry , struct inode * inode )
+
+add dentry to hash queues
+
+Parameters
+  struct dentry *entry
+    dentry to add
+  struct inode *inode
+    The inode to attach to this dentry
+
+Description
+  This adds the entry to the hash queues and initializes inode .
+The entry was actually filled in earlier during d_alloc() .

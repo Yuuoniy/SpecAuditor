@@ -1,0 +1,7 @@
+Function: bool xa_is_retry ( const void * entry )
+
+Is the entry a retry entry?
+
+Parameters
+  const void *entry
+    Entry retrieved from the XArray

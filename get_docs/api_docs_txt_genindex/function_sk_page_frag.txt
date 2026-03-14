@@ -1,0 +1,12 @@
+Function: struct page_frag * sk_page_frag ( struct sock * sk )
+
+return an appropriate page_frag
+
+Parameters
+  struct sock *sk
+    socket
+
+Description
+  Use the per task page_frag instead of the per socket one for
+optimization when we know that we’re in process context and own
+everything that’s associated with current .

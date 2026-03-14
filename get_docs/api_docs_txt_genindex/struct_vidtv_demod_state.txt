@@ -1,0 +1,13 @@
+Struct: struct vidtv_demod_state
+
+The demodulator state
+
+Members
+  frontend
+    The frontend structure allocated by the demod.
+  config
+    The config used to init the demod.
+  status
+    the demod status.
+  tuner_cnr
+    current S/N ratio for the signal carrier

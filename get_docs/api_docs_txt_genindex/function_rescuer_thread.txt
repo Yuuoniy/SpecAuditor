@@ -1,0 +1,11 @@
+Function: int rescuer_thread ( void * __rescuer )
+
+the rescuer thread function
+
+Parameters
+  void *__rescuer
+    self
+
+Description
+  Workqueue rescuer thread function.  There’s one rescuer for each
+workqueue which has WQ_MEM_RECLAIM set.

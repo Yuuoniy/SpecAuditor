@@ -1,0 +1,11 @@
+Function: int slim_stream_unprepare ( struct slim_stream_runtime * stream )
+
+Un-prepare a SLIMbus Stream
+
+Parameters
+  struct slim_stream_runtime *stream
+    instance of slim stream runtime to unprepare
+
+Description
+  This API will un allocate all the ports and channels associated with
+SLIMbus stream

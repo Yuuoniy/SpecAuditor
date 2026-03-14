@@ -1,0 +1,12 @@
+Function: struct media_pipeline * media_pad_pipeline ( struct media_pad * pad )
+
+Get the media pipeline a pad is part of
+
+Parameters
+  struct media_pad *pad
+    The pad
+
+Description
+  This function returns the media pipeline that a pad has been associated
+with when constructing the pipeline with media_pipeline_start() . The pointer
+remains valid until media_pipeline_stop() is called.

@@ -1,0 +1,13 @@
+Function: int tipc_list_dump ( struct sk_buff_head * list , bool more , char * buf )
+
+dump TIPC skb list/queue
+
+Parameters
+  struct sk_buff_head *list
+    list of skbs to be dumped
+  bool more
+    dump more?
+- false: dump only the head & tail skbs
+- true: dump the first & last 5 skbs
+  char *buf
+    returned buffer of dump data in format

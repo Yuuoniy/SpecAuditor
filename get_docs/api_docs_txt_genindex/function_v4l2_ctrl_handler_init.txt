@@ -1,0 +1,20 @@
+Function: v4l2_ctrl_handler_init
+
+
+
+Parameters
+  hdl
+    The control handler.
+  nr_of_controls_hint
+    A hint of how many controls this handler is
+expected to refer to. This is the total number, so including
+any inherited controls. It doesn’t have to be precise, but if
+it is way off, then you either waste memory (too many buckets
+are allocated) or the control lookup becomes slower (not enough
+buckets are allocated, so there are more slow list lookups).
+It will always work, though.
+
+Description
+  This helper function creates a static struct lock_class_key and
+calls v4l2_ctrl_handler_init_class() , providing a proper name for the lock
+validador.

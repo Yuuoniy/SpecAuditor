@@ -1,0 +1,11 @@
+Function: void intel_cdclk_uninit_hw ( struct intel_display * display )
+
+Uninitialize CDCLK hardware
+
+Parameters
+  struct intel_display *display
+    display instance
+
+Description
+  Uninitialize CDCLK. This is done only during the display core
+uninitialization sequence.

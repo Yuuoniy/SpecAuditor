@@ -1,0 +1,10 @@
+Function: int security_create_user_ns ( const struct cred * cred )
+
+Check if creating a new userns is allowed
+
+Parameters
+  const struct cred *cred
+    prepared creds
+
+Description
+  Check permission prior to creating a new user namespace.

@@ -1,0 +1,14 @@
+Macro: list_first_or_null_rcu
+
+
+
+Parameters
+  ptr
+    the list head to take the element from.
+  type
+    the type of the struct this is embedded in.
+  member
+    the name of the list_head within the struct.
+
+Description
+  Note that if the list is empty, it returns NULL.

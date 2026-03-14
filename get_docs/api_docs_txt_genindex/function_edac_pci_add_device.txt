@@ -1,0 +1,10 @@
+Function: int edac_pci_add_device ( struct edac_pci_ctl_info * pci , int edac_idx )
+
+Insert the ‘edac_dev’ structure into the edac_pci global list and create sysfs entries associated with edac_pci structure.
+
+Parameters
+  struct edac_pci_ctl_info *pci
+    pointer to the edac_device structure to be added to the list
+  int edac_idx
+    A unique numeric identifier to be assigned to the
+‘edac_pci’ structure.

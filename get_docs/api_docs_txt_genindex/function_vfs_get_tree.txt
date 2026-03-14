@@ -1,0 +1,12 @@
+Function: int vfs_get_tree ( struct fs_context * fc )
+
+Get the mountable root
+
+Parameters
+  struct fs_context *fc
+    The superblock configuration context.
+
+Description
+  The filesystem is invoked to get or create a superblock which can then later
+be used for mounting.  The filesystem places a pointer to the root to be
+used for mounting in fc->root .

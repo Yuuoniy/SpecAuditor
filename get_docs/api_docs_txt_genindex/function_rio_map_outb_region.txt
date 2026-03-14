@@ -1,0 +1,20 @@
+Function: int rio_map_outb_region ( struct rio_mport * mport , u16 destid , u64 rbase , u32 size , u32 rflags , dma_addr_t * local )
+
+Map outbound memory region.
+
+Parameters
+  struct rio_mport *mport
+    Master port.
+  u16 destid
+    destination id window points to
+  u64 rbase
+    RIO base address window translates to
+  u32 size
+    Size of the memory region
+  u32 rflags
+    Flags for mapping.
+  dma_addr_t *local
+    physical address of memory region mapped
+
+Description
+  This function will create the mapping from RIO space to local memory.

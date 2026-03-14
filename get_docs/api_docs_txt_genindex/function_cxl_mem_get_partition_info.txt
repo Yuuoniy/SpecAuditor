@@ -1,0 +1,12 @@
+Function: int cxl_mem_get_partition_info ( struct cxl_memdev_state * mds )
+
+Get partition info
+
+Parameters
+  struct cxl_memdev_state *mds
+    The driver data for the operation
+
+Description
+  Retrieve the current partition info for the device specified.  The active
+values are the current capacity in bytes.  If not 0, the ‘next’ values are
+the pending values, in bytes, which take affect on next cold reset.

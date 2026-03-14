@@ -1,0 +1,19 @@
+Function: blist_flags_t scsi_get_device_flags_keyed ( struct scsi_device * sdev , const unsigned char * vendor , const unsigned char * model , enum scsi_devinfo_key key )
+
+get device specific flags from the dynamic device list
+
+Parameters
+  struct scsi_device *sdev
+    scsi_device to get flags for
+  const unsigned char *vendor
+    vendor name
+  const unsigned char *model
+    model name
+  enum scsi_devinfo_key key
+    list to look up
+
+Description
+  Search the scsi_dev_info_list specified by key for an entry
+matching vendor and model , if found, return the matching
+flags value, else return the host or global default settings.
+Called during scan time.

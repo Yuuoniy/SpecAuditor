@@ -1,0 +1,11 @@
+Function: int vb2_core_remove_bufs ( struct vb2_queue * q , unsigned int start , unsigned int count )
+
+
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  unsigned int start
+    first index of the range of buffers to remove.
+  unsigned int count
+    number of buffers to remove.

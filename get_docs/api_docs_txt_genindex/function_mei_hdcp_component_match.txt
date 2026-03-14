@@ -1,0 +1,16 @@
+Function: int mei_hdcp_component_match ( struct device * dev , int subcomponent , void * data )
+
+compare function for matching mei hdcp.
+
+Parameters
+  struct device *dev
+    master device
+  int subcomponent
+    subcomponent to match (I915_COMPONENT_HDCP)
+  void *data
+    compare data (mei hdcp device)
+
+Description
+  The function checks if the driver is i915, the subcomponent is HDCP
+and the grand parent of hdcp and the parent of i915 are the same
+PCH device.

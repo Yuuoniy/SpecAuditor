@@ -1,0 +1,13 @@
+Function: void vfree ( const void * addr )
+
+Release memory allocated by vmalloc()
+
+Parameters
+  const void *addr
+    Memory base address
+
+Description
+  Free the virtually continuous memory area starting at addr , as obtained
+from one of the vmalloc() family of APIs.  This will usually also free the
+physical memory underlying the virtual allocation, but that memory is
+reference counted, so it will not be freed until the last user goes away.

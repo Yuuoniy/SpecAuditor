@@ -1,0 +1,11 @@
+Function: vm_fault_t vmf_insert_folio_pud ( struct vm_fault * vmf , struct folio * folio , bool write )
+
+insert a pud size folio mapped by a pud entry
+
+Parameters
+  struct vm_fault *vmf
+    Structure describing the fault
+  struct folio *folio
+    folio to insert
+  bool write
+    whether it’s a write fault

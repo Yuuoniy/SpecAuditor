@@ -1,0 +1,14 @@
+Function: unsigned int spi_controller_xfer_timeout ( struct spi_controller * ctlr , struct spi_transfer * xfer )
+
+Compute a suitable timeout value
+
+Parameters
+  struct spi_controller *ctlr
+    SPI device
+  struct spi_transfer *xfer
+    Transfer descriptor
+
+Description
+  Compute a relevant timeout value for the given transfer. We derive the time
+that it would take on a single data line and take twice this amount of time
+with a minimum of 500ms to avoid false positives on loaded systems.

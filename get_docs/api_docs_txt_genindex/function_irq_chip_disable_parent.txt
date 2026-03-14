@@ -1,0 +1,7 @@
+Function: void irq_chip_disable_parent ( struct irq_data * data )
+
+Disable the parent interrupt (defaults to mask if NULL)
+
+Parameters
+  struct irq_data *data
+    Pointer to interrupt specific data

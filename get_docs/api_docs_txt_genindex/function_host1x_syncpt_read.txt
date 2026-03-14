@@ -1,0 +1,7 @@
+Function: u32 host1x_syncpt_read ( struct host1x_syncpt * sp )
+
+read the current syncpoint value
+
+Parameters
+  struct host1x_syncpt *sp
+    host1x syncpoint

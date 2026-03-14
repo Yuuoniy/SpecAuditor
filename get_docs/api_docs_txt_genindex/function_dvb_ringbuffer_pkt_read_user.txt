@@ -1,0 +1,18 @@
+Function: ssize_t dvb_ringbuffer_pkt_read_user ( struct dvb_ringbuffer * rbuf , size_t idx , int offset , u8 __user * buf , size_t len )
+
+Read from a packet in the ringbuffer.
+
+Parameters
+  struct dvb_ringbuffer *rbuf
+    Ringbuffer concerned.
+  size_t idx
+    Packet index as returned by dvb_ringbuffer_pkt_next() .
+  int offset
+    Offset into packet to read from.
+  u8 __user *buf
+    Destination buffer for data.
+  size_t len
+    Size of destination buffer.
+
+Description
+  Note

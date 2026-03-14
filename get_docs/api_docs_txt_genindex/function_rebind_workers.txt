@@ -1,0 +1,10 @@
+Function: void rebind_workers ( struct worker_pool * pool )
+
+rebind all workers of a pool to the associated CPU
+
+Parameters
+  struct worker_pool *pool
+    pool of interest
+
+Description
+  pool->cpu is coming online.  Rebind all workers to the CPU.

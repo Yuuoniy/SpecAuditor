@@ -1,0 +1,15 @@
+Function: const struct drm_plane_state * __drm_atomic_get_current_plane_state ( const struct drm_atomic_state * state , struct drm_plane * plane )
+
+get current plane state
+
+Parameters
+  const struct drm_atomic_state *state
+    global atomic state object
+  struct drm_plane *plane
+    plane to grab
+
+Description
+  This function returns the plane state for the given plane, either from state , or if the plane isn’t part of the atomic state update, from plane .
+This is useful in atomic check callbacks, when drivers need to peek at, but
+not change, state of other planes, since it avoids threading an error code
+back up the call chain.

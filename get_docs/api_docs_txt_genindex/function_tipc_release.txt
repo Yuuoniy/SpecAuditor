@@ -1,0 +1,14 @@
+Function: int tipc_release ( struct socket * sock )
+
+destroy a TIPC socket
+
+Parameters
+  struct socket *sock
+    socket to destroy
+
+Description
+  This routine cleans up any messages that are still queued on the socket.
+For DGRAM and RDM socket types, all queued messages are rejected.
+For SEQPACKET and STREAM socket types, the first message is rejected
+and any others are discarded.  (If the first message on a STREAM socket
+is partially-read, it is discarded and the next one is rejected instead.)

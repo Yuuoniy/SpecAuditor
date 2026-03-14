@@ -1,0 +1,7 @@
+Function: void wiphy_free ( struct wiphy * wiphy )
+
+free wiphy
+
+Parameters
+  struct wiphy *wiphy
+    The wiphy to free

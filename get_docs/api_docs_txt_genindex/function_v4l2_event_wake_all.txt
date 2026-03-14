@@ -1,0 +1,10 @@
+Function: void v4l2_event_wake_all ( struct video_device * vdev )
+
+Wake all filehandles.
+
+Parameters
+  struct video_device *vdev
+    pointer to struct video_device
+
+Description
+  Used when unregistering a video device.

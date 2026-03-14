@@ -1,0 +1,10 @@
+Function: int vfs_rename ( struct renamedata * rd )
+
+rename a filesystem object
+
+Parameters
+  struct renamedata *rd
+    pointer to struct renamedata info
+
+Description
+  The caller must hold multiple mutexes--see lock_rename() ).

@@ -1,0 +1,9 @@
+Function: int clk_prepare_enable_kunit ( struct kunit * test , struct clk * clk )
+
+Test managed clk_prepare_enable()
+
+Parameters
+  struct kunit *test
+    The test context
+  struct clk *clk
+    clk to prepare and enable

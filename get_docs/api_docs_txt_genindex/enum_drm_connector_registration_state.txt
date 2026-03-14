@@ -1,0 +1,3 @@
+Enum: enum drm_connector_registration_state
+
+userspace registration status for a drm_connector

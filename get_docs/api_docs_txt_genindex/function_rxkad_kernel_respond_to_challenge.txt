@@ -1,0 +1,10 @@
+Function: int rxkad_kernel_respond_to_challenge ( struct sk_buff * challenge )
+
+Respond to a challenge with appdata
+
+Parameters
+  struct sk_buff *challenge
+    The challenge to respond to
+
+Description
+  Allow a kernel application to respond to a CHALLENGE.

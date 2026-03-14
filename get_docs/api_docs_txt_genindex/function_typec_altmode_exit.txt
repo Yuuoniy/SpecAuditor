@@ -1,0 +1,10 @@
+Function: int typec_altmode_exit ( struct typec_altmode * adev )
+
+Exit Mode
+
+Parameters
+  struct typec_altmode *adev
+    The alternate mode
+
+Description
+  The partner of adev has initiated Exit Mode command.

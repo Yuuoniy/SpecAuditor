@@ -1,0 +1,13 @@
+Function: struct drm_gpu_scheduler * drm_sched_pick_best ( struct drm_gpu_scheduler * * sched_list , unsigned int num_sched_list )
+
+Get a drm sched from a sched_list with the least load
+
+Parameters
+  struct drm_gpu_scheduler **sched_list
+    list of drm_gpu_schedulers
+  unsigned int num_sched_list
+    number of drm_gpu_schedulers in the sched_list
+
+Description
+  Returns pointer of the sched with the least load or NULL if none of the
+drm_gpu_schedulers are ready

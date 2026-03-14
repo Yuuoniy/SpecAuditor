@@ -1,0 +1,18 @@
+Macro: kfifo_out_linear_ptr
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used
+  ptr
+    pointer to data to store the pointer to tail
+  n
+    max. number of elements to point at
+
+Description
+  Similarly to kfifo_out_linear() , this macro obtains the pointer to the
+available data in the fifo buffer and returns the numbers of elements
+available. It returns the available count till the end of available data or
+till the end of the buffer. So that it can be used for linear data
+processing (like memcpy() of ptr with count returned).

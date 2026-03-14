@@ -1,0 +1,13 @@
+Macro: sk_for_each_entry_offset_rcu
+
+
+
+Parameters
+  tpos
+    the type * to use as a loop cursor.
+  pos
+    the struct hlist_node to use as a loop cursor.
+  head
+    the head for your list.
+  offset
+    offset of hlist_node within the struct.

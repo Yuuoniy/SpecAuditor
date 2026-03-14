@@ -1,0 +1,12 @@
+Function: void iosys_map_clear ( struct iosys_map * map )
+
+Clears a iosys mapping structure
+
+Parameters
+  struct iosys_map *map
+    The iosys_map structure
+
+Description
+  Clears all fields to zero, including struct iosys_map .is_iomem, so
+mapping structures that were set to point to I/O memory are reset for
+system memory. Pointers are cleared to NULL. This is the default.

@@ -1,0 +1,10 @@
+Function: void free_tty_struct ( struct tty_struct * tty )
+
+free a disused tty
+
+Parameters
+  struct tty_struct *tty
+    tty struct to free
+
+Description
+  Free the write buffers, tty queue and tty memory itself.

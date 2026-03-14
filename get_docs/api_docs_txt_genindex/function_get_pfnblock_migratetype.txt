@@ -1,0 +1,12 @@
+Function: enum migratetype get_pfnblock_migratetype ( const struct page * page , unsigned long pfn )
+
+Return the migratetype of a pageblock
+
+Parameters
+  const struct page *page
+    The page within the block of interest
+  unsigned long pfn
+    The target page frame number
+
+Description
+  Use get_pfnblock_migratetype() if caller already has both page and pfn to save a call to page_to_pfn() .

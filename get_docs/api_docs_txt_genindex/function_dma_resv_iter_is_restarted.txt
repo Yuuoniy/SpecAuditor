@@ -1,0 +1,10 @@
+Function: bool dma_resv_iter_is_restarted ( struct dma_resv_iter * cursor )
+
+test if this is the first fence after a restart
+
+Parameters
+  struct dma_resv_iter *cursor
+    the cursor with the current position
+
+Description
+  Return true if this is the first fence in an iteration after a restart.

@@ -1,0 +1,13 @@
+Function: int pci_sriov_set_totalvfs ( struct pci_dev * dev , u16 numvfs )
+
+reduce the TotalVFs available
+
+Parameters
+  struct pci_dev *dev
+    the PCI PF device
+  u16 numvfs
+    number that should be used for TotalVFs supported
+
+Description
+  Should be called from PF driver’s probe routine with
+device’s mutex held.

@@ -1,0 +1,13 @@
+Function: int rvt_get_rwqe ( struct rvt_qp * qp , bool wr_id_only )
+
+copy the next RWQE into the QP’s RWQE
+
+Parameters
+  struct rvt_qp *qp
+    the QP
+  bool wr_id_only
+    update qp->r_wr_id only, not qp->r_sge
+
+Description
+  Return -1 if there is a local error, 0 if no RWQE is available,
+otherwise return 1.

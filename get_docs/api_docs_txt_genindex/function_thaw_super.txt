@@ -1,0 +1,14 @@
+Function: int thaw_super ( struct super_block * sb , enum freeze_holder who , const void * freeze_owner )
+
+unlock filesystem
+
+Parameters
+  struct super_block *sb
+    the super to thaw
+  enum freeze_holder who
+    context that wants to freeze
+  const void *freeze_owner
+    owner of the freeze
+
+Description
+  Unlocks the filesystem and marks it writeable again after freeze_super() if there are no remaining freezes on the filesystem.

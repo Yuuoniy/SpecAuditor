@@ -1,0 +1,12 @@
+Function: struct snd_kcontrol * snd_ctl_find_id ( struct snd_card * card , const struct snd_ctl_elem_id * id )
+
+find the control instance with the given id
+
+Parameters
+  struct snd_card *card
+    the card instance
+  const struct snd_ctl_elem_id *id
+    the id to search
+
+Description
+  Finds the control instance with the given id from the card.

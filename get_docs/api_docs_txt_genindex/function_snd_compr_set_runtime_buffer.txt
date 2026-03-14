@@ -1,0 +1,13 @@
+Function: void snd_compr_set_runtime_buffer ( struct snd_compr_stream * stream , struct snd_dma_buffer * bufp )
+
+Set the Compress runtime buffer
+
+Parameters
+  struct snd_compr_stream *stream
+    compress stream to set
+  struct snd_dma_buffer *bufp
+    the buffer information, NULL to clear
+
+Description
+  Copy the buffer information to runtime buffer when bufp is non-NULL.
+Otherwise it clears the current buffer information.

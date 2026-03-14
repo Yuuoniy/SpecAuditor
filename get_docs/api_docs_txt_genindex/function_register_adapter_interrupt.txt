@@ -1,0 +1,10 @@
+Function: int register_adapter_interrupt ( struct airq_struct * airq )
+
+register adapter interrupt handler
+
+Parameters
+  struct airq_struct *airq
+    pointer to adapter interrupt descriptor
+
+Description
+  Returns 0 on success, or -EINVAL.

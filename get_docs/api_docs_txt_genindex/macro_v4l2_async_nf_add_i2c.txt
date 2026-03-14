@@ -1,0 +1,18 @@
+Macro: v4l2_async_nf_add_i2c
+
+
+
+Parameters
+  notifier
+    pointer to struct v4l2_async_notifier
+  adapter
+    I2C adapter ID to be matched
+  address
+    I2C address of connection to be matched
+  type
+    Type of the driver’s async connection struct. The struct v4l2_async_connection shall be the first member of the driver’s async
+connection struct, i.e. both begin at the same memory address.
+
+Description
+  Same as v4l2_async_nf_add_fwnode() but for I2C matched
+connections.

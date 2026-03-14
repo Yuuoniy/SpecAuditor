@@ -1,0 +1,9 @@
+Function: struct se_portal_group * srpt_make_tpg ( struct se_wwn * wwn , const char * name )
+
+configfs callback invoked for mkdir /sys/kernel/config/target/$driver/$port/$tpg
+
+Parameters
+  struct se_wwn *wwn
+    Corresponds to $driver/$port.
+  const char *name
+    $tpg.

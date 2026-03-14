@@ -1,0 +1,7 @@
+Function: void auxiliary_driver_unregister ( struct auxiliary_driver * auxdrv )
+
+unregister a driver
+
+Parameters
+  struct auxiliary_driver *auxdrv
+    auxiliary_driver structure

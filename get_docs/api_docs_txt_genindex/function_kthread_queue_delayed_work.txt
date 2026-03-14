@@ -1,0 +1,16 @@
+Function: bool kthread_queue_delayed_work ( struct kthread_worker * worker , struct kthread_delayed_work * dwork , unsigned long delay )
+
+queue the associated kthread work after a delay.
+
+Parameters
+  struct kthread_worker *worker
+    target kthread_worker
+  struct kthread_delayed_work *dwork
+    kthread_delayed_work to queue
+  unsigned long delay
+    number of jiffies to wait before queuing
+
+Description
+  If the work has not been pending it starts a timer that will queue
+the work after the given delay . If delay is zero, it queues the
+work immediately.

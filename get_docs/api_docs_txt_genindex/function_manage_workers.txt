@@ -1,0 +1,12 @@
+Function: bool manage_workers ( struct worker * worker )
+
+manage worker pool
+
+Parameters
+  struct worker *worker
+    self
+
+Description
+  Assume the manager role and manage the worker pool worker belongs
+to.  At any given time, there can be only zero or one manager per
+pool.  The exclusion is handled automatically by this function.

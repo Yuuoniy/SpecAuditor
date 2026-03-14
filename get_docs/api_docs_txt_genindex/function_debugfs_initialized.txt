@@ -1,0 +1,7 @@
+Function: bool debugfs_initialized ( void )
+
+Tells whether debugfs has been registered
+
+Parameters
+  void
+    no arguments

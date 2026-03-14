@@ -1,0 +1,19 @@
+Function: int skb_mpls_push ( struct sk_buff * skb , __be32 mpls_lse , __be16 mpls_proto , int mac_len , bool ethernet )
+
+push a new MPLS header after mac_len bytes from start of the packet
+
+Parameters
+  struct sk_buff *skb
+    buffer
+  __be32 mpls_lse
+    MPLS label stack entry to push
+  __be16 mpls_proto
+    ethertype of the new MPLS header (expects 0x8847 or 0x8848)
+  int mac_len
+    length of the MAC header
+  bool ethernet
+    flag to indicate if the resulting packet after skb_mpls_push is
+ethernet
+
+Description
+  Expects skb->data at mac header.

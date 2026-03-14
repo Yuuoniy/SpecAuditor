@@ -1,0 +1,9 @@
+Function: bool gpiod_is_equal ( const struct gpio_desc * desc , const struct gpio_desc * other )
+
+Check if two GPIO descriptors refer to the same pin.
+
+Parameters
+  const struct gpio_desc *desc
+    Descriptor to compare.
+  const struct gpio_desc *other
+    The second descriptor to compare against.

@@ -1,0 +1,12 @@
+Function: void * bl_get_data ( struct backlight_device * bl_dev )
+
+access devdata
+
+Parameters
+  struct backlight_device *bl_dev
+    pointer to backlight device
+
+Description
+  When a backlight device is registered the driver has the possibility
+to supply a void * devdata. bl_get_data() return a pointer to the
+devdata.

@@ -1,0 +1,19 @@
+Function: void spi_take_timestamp_post ( struct spi_controller * ctlr , struct spi_transfer * xfer , size_t progress , bool irqs_off )
+
+helper to collect the end of the TX timestamp
+
+Parameters
+  struct spi_controller *ctlr
+    Pointer to the spi_controller structure of the driver
+  struct spi_transfer *xfer
+    Pointer to the transfer being timestamped
+  size_t progress
+    How many words (not bytes) have been transferred so far
+  bool irqs_off
+    If true, will re-enable IRQs and preemption for the local CPU.
+
+Description
+  This is a helper for drivers to collect the end of the TX timestamp for
+the requested byte from the SPI transfer. Can be called with an arbitrary
+frequency: only the first call where tx exceeds or is equal to the
+requested word will be timestamped.

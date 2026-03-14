@@ -1,0 +1,11 @@
+Function: int drm_connector_attach_vrr_capable_property ( struct drm_connector * connector )
+
+creates the vrr_capable property
+
+Parameters
+  struct drm_connector *connector
+    connector to create the vrr_capable property on.
+
+Description
+  This is used by atomic drivers to add support for querying
+variable refresh rate capability for a connector.

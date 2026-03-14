@@ -1,0 +1,12 @@
+Struct: struct ssh_frame
+
+SSH communication frame.
+
+Members
+  type
+    The type of the frame. See enum ssh_frame_type .
+  len
+    The length of the frame payload directly following the CRC for this
+frame. Does not include the final CRC for that payload.
+  seq
+    The sequence number for this message/exchange.

@@ -1,0 +1,14 @@
+Function: struct airq_iv * airq_iv_create ( unsigned long bits , unsigned long flags , unsigned long * vec )
+
+create an interrupt vector
+
+Parameters
+  unsigned long bits
+    number of bits in the interrupt vector
+  unsigned long flags
+    allocation flags
+  unsigned long *vec
+    pointer to pinned guest memory if AIRQ_IV_GUESTVEC
+
+Description
+  Returns a pointer to an interrupt vector structure

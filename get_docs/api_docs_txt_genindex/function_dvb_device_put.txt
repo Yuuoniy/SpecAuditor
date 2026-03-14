@@ -1,0 +1,7 @@
+Function: void dvb_device_put ( struct dvb_device * dvbdev )
+
+Decrease dvb_device reference
+
+Parameters
+  struct dvb_device *dvbdev
+    pointer to struct dvb_device

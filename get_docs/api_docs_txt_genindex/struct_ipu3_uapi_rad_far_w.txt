@@ -1,0 +1,16 @@
+Struct: struct ipu3_uapi_rad_far_w
+
+Radial FAR sub-group
+
+Members
+  rad_dir_far_sharp_w
+    Weight of wide direct sharpening, u1.6, range [0, 64],
+default 64.
+  rad_dir_far_dns_w
+    Weight of wide direct denoising, u1.6, range [0, 64],
+default 0.
+  rad_ndir_far_dns_power
+    power of non-direct sharpening, u1.6, range [0, 64],
+default 0.
+  reserved
+    reserved

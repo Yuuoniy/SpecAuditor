@@ -1,0 +1,9 @@
+Function: int nand_isreserved_bbt ( struct nand_chip * this , loff_t offs )
+
+[NAND Interface] Check if a block is reserved
+
+Parameters
+  struct nand_chip *this
+    NAND chip object
+  loff_t offs
+    offset in the device

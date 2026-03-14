@@ -1,0 +1,21 @@
+Function: struct xz_buf
+
+Passing input and output buffers to XZ code
+
+Members
+  in
+    Beginning of the input buffer. This may be NULL if and only
+if in_pos is equal to in_size.
+  in_pos
+    Current position in the input buffer. This must not exceed
+in_size.
+  in_size
+    Size of the input buffer
+  out
+    Beginning of the output buffer. This may be NULL if and only
+if out_pos is equal to out_size.
+  out_pos
+    Current position in the output buffer. This must not exceed
+out_size.
+  out_size
+    Size of the output buffer

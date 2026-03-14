@@ -1,0 +1,20 @@
+Function: int vme_irq_request ( struct vme_dev * vdev , int level , int statid , void ( * callback ) ( int , int , void * ) , void * priv_data )
+
+Request a specific VME interrupt.
+
+Parameters
+  struct vme_dev *vdev
+    Pointer to VME device struct vme_dev assigned to driver instance.
+  int level
+    Interrupt priority being requested.
+  int statid
+    Interrupt vector being requested.
+  void (*callback)(int, int, void *)
+    Pointer to callback function called when VME interrupt/vector
+received.
+  void *priv_data
+    Generic pointer that will be passed to the callback function.
+
+Description
+  Request callback to be attached as a handler for VME interrupts with provided
+level and statid.

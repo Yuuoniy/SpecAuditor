@@ -1,0 +1,10 @@
+Function: void dmem_cgroup_pool_state_put ( struct dmem_cgroup_pool_state * pool )
+
+Drop a reference to a dmem_cgroup_pool_state
+
+Parameters
+  struct dmem_cgroup_pool_state *pool
+    dmem_cgroup_pool_state
+
+Description
+  Called to drop a reference to the limiting pool returned by dmem_cgroup_try_charge() .

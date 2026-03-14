@@ -1,0 +1,35 @@
+Struct: struct drm_dp_mst_atomic_payload
+
+Atomic state struct for an MST payload
+
+Members
+  port
+    The MST port assigned to this payload
+  vc_start_slot
+    The time slot that this payload starts on. Because payload start slots
+can’t be determined ahead of time, the contents of this value are UNDEFINED at atomic
+check time. This shouldn’t usually matter, as the start slot should never be relevant for
+atomic state computations. Since this value is determined at commit time instead of check time, this value is
+protected by the MST helpers ensuring that async commits operating on the given topology
+never run in parallel. In the event that a driver does need to read this value (e.g. to
+inform hardware of the starting timeslot for a payload), the driver may either: Read this field during the atomic commit after drm_dp_mst_atomic_wait_for_dependencies() has been called, which will ensure the
+previous MST states payload start slots have been copied over to the new state. Note
+that a new start slot won’t be assigned/removed from this payload until drm_dp_add_payload_part1() / drm_dp_remove_payload_part2() have been called. Acquire the MST modesetting lock, and then wait for any pending MST-related commits to
+get committed to hardware by calling drm_crtc_commit_wait() on each of the drm_crtc_commit structs in drm_dp_mst_topology_state.commit_deps . If neither of the two above solutions suffice (e.g. the driver needs to read the start
+slot in the middle of an atomic commit without waiting for some reason), then drivers
+should cache this value themselves after changing payloads.
+  vcpi
+    The Virtual Channel Payload Identifier
+  time_slots
+    The number of timeslots allocated to this payload from the source DP Tx to
+the immediate downstream DP Rx
+  pbn
+    The payload bandwidth for this payload
+  delete
+    Whether or not we intend to delete this payload during this atomic commit
+  dsc_enabled
+    Whether or not this payload has DSC enabled
+  payload_allocation_status
+    The allocation status of this payload
+  next
+    The list node for this payload

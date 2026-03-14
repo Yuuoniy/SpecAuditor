@@ -1,0 +1,11 @@
+Function: struct pwrseq_desc * devm_pwrseq_get ( struct device * dev , const char * target )
+
+Managed variant of pwrseq_get() .
+
+Parameters
+  struct device *dev
+    Device for which to get the sequencer and which also manages its
+lifetime.
+  const char *target
+    Name of the target exposed by the sequencer this device wants to
+reach.

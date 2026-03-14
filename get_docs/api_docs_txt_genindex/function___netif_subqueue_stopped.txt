@@ -1,0 +1,12 @@
+Function: bool __netif_subqueue_stopped ( const struct net_device * dev , u16 queue_index )
+
+test status of subqueue
+
+Parameters
+  const struct net_device *dev
+    network device
+  u16 queue_index
+    sub queue index
+
+Description
+  Check individual transmit queue of a device with multiple transmit queues.

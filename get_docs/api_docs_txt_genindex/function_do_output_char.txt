@@ -1,0 +1,16 @@
+Function: int do_output_char ( u8 c , struct tty_struct * tty , int space )
+
+output one character
+
+Parameters
+  u8 c
+    character (or partial unicode symbol)
+  struct tty_struct *tty
+    terminal device
+  int space
+    space available in tty driver write buffer
+
+Description
+  This is a helper function that handles one output character (including
+special characters like TAB, CR, LF, etc.), doing OPOST processing and
+putting the results in the tty driver’s write buffer.

@@ -1,0 +1,16 @@
+Macro: idr_for_each_entry
+
+
+
+Parameters
+  idr
+    IDR handle.
+  entry
+    The type * to use as cursor
+  id
+    Entry ID.
+
+Description
+  entry and id do not need to be initialized before the loop, and
+after normal termination entry is left with the value NULL.  This
+is convenient for a “not found” value.

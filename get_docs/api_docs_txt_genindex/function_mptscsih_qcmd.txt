@@ -1,0 +1,12 @@
+Function: int mptscsih_qcmd ( struct scsi_cmnd * SCpnt )
+
+Primary Fusion MPT SCSI initiator IO start routine.
+
+Parameters
+  struct scsi_cmnd *SCpnt
+    Pointer to scsi_cmnd structure
+
+Description
+  (linux scsi_host_template.queuecommand routine)
+This is the primary SCSI IO start routine.  Create a MPI SCSIIORequest
+from a linux scsi_cmnd request and send it to the IOC.

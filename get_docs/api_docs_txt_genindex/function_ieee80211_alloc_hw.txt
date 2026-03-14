@@ -1,0 +1,14 @@
+Function: struct ieee80211_hw * ieee80211_alloc_hw ( size_t priv_data_len , const struct ieee80211_ops * ops )
+
+Allocate a new hardware device
+
+Parameters
+  size_t priv_data_len
+    length of private data
+  const struct ieee80211_ops *ops
+    callbacks for this device
+
+Description
+  This must be called once for each hardware device. The returned pointer
+must be used to refer to this device when calling other functions.
+mac80211 allocates a private data area for the driver pointed to by priv in struct ieee80211_hw , the size of this area is given as priv_data_len .

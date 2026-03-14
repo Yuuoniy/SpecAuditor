@@ -1,0 +1,17 @@
+Function: struct folio * read_cache_folio ( struct address_space * mapping , pgoff_t index , filler_t filler , struct file * file )
+
+Read into page cache, fill it if needed.
+
+Parameters
+  struct address_space *mapping
+    The address_space to read from.
+  pgoff_t index
+    The index to read.
+  filler_t filler
+    Function to perform the read, or NULL to use aops-> read_folio() .
+  struct file *file
+    Passed to filler function, may be NULL if not required.
+
+Description
+  Read one page into the page cache.  If it succeeds, the folio returned
+will contain index , but it may not be the first page of the folio.

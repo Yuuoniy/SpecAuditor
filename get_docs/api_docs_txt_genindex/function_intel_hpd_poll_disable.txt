@@ -1,0 +1,14 @@
+Function: void intel_hpd_poll_disable ( struct intel_display * display )
+
+disable polling for connectors with hpd
+
+Parameters
+  struct intel_display *display
+    display device instance
+
+Description
+  This function disables polling for all connectors which support HPD.
+Under certain conditions HPD may not be functional. On most Intel GPUs,
+this happens when we enter runtime suspend.
+On Valleyview and Cherryview systems, this also happens when we shut off all
+of the powerwells.

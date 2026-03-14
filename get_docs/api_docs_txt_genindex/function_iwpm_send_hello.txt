@@ -1,0 +1,14 @@
+Function: int iwpm_send_hello ( u8 nl_client , int iwpm_pid , u16 abi_version )
+
+Send hello response to iwpmd
+
+Parameters
+  u8 nl_client
+    The index of the netlink client
+  int iwpm_pid
+    The pid of the user space port mapper
+  u16 abi_version
+    The kernel’s abi_version
+
+Description
+  Returns 0 on success or a negative error code

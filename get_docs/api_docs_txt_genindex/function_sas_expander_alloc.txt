@@ -1,0 +1,12 @@
+Function: struct sas_rphy * sas_expander_alloc ( struct sas_port * parent , enum sas_device_type type )
+
+allocate an rphy for an end device
+
+Parameters
+  struct sas_port *parent
+    which port
+  enum sas_device_type type
+    SAS_EDGE_EXPANDER_DEVICE or SAS_FANOUT_EXPANDER_DEVICE
+
+Description
+  Allocates an SAS remote PHY structure, connected to parent .

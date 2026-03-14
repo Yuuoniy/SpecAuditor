@@ -1,0 +1,13 @@
+Function: bool queue_limits_stack_integrity ( struct queue_limits * t , struct queue_limits * b )
+
+stack integrity profile
+
+Parameters
+  struct queue_limits *t
+    target queue limits
+  struct queue_limits *b
+    base queue limits
+
+Description
+  Check if the integrity profile in the b can be stacked into the
+target t .  Stacking is possible if either:

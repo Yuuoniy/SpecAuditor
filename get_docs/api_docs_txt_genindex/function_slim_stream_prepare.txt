@@ -1,0 +1,14 @@
+Function: int slim_stream_prepare ( struct slim_stream_runtime * rt , struct slim_stream_config * cfg )
+
+Prepare a SLIMbus Stream
+
+Parameters
+  struct slim_stream_runtime *rt
+    instance of slim stream runtime to configure
+  struct slim_stream_config *cfg
+    new configuration for the stream
+
+Description
+  This API will configure SLIMbus stream with config parameters from cfg.
+return zero on success and error code on failure. From ASoC DPCM framework,
+this state is linked to hw_params() operation.

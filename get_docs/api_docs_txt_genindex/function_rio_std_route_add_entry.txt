@@ -1,0 +1,17 @@
+Function: int rio_std_route_add_entry ( struct rio_mport * mport , u16 destid , u8 hopcount , u16 table , u16 route_destid , u8 route_port )
+
+Add switch route table entry using standard registers defined in RIO specification rev.1.3
+
+Parameters
+  struct rio_mport *mport
+    Master port to issue transaction
+  u16 destid
+    Destination ID of the device
+  u8 hopcount
+    Number of switch hops to the device
+  u16 table
+    routing table ID (global or port-specific)
+  u16 route_destid
+    destID entry in the RT
+  u8 route_port
+    destination port for specified destID

@@ -1,0 +1,7 @@
+Function: void amdgpu_vm_check_compute_bug ( struct amdgpu_device * adev )
+
+check whether asic has compute vm bug
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer

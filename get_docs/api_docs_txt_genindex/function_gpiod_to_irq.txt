@@ -1,0 +1,7 @@
+Function: int gpiod_to_irq ( const struct gpio_desc * desc )
+
+return the IRQ corresponding to a GPIO
+
+Parameters
+  const struct gpio_desc *desc
+    gpio whose IRQ will be returned (already requested)

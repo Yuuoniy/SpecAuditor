@@ -1,0 +1,11 @@
+Function: bool apple_gmux_present ( void )
+
+check if gmux ACPI device is present
+
+Parameters
+  void
+    no arguments
+
+Description
+  Drivers may use this to activate quirks specific to dual GPU MacBook Pros
+and Mac Pros, e.g. for deferred probing, runtime pm and backlight.

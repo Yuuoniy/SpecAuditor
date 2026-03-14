@@ -1,0 +1,20 @@
+Function: unsigned long drm_gem_dma_get_unmapped_area ( struct file * filp , unsigned long addr , unsigned long len , unsigned long pgoff , unsigned long flags )
+
+propose address for mapping in noMMU cases
+
+Parameters
+  struct file *filp
+    file object
+  unsigned long addr
+    memory address
+  unsigned long len
+    buffer size
+  unsigned long pgoff
+    page offset
+  unsigned long flags
+    memory flags
+
+Description
+  This function is used in noMMU platforms to propose address mapping
+for a given buffer.
+It’s intended to be used as a direct handler for the struct file_operations.get_unmapped_area operation.

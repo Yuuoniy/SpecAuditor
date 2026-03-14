@@ -1,0 +1,10 @@
+Function: unsigned long bio_start_io_acct ( struct bio * bio )
+
+start I/O accounting for bio based drivers
+
+Parameters
+  struct bio *bio
+    bio to start account for
+
+Description
+  Returns the start time that should be passed back to bio_end_io_acct() .

@@ -1,0 +1,7 @@
+Function: void v4l2_m2m_mark_stopped ( struct v4l2_m2m_ctx * m2m_ctx )
+
+set current encoding/decoding state as stopped
+
+Parameters
+  struct v4l2_m2m_ctx *m2m_ctx
+    m2m context assigned to the instance given by struct v4l2_m2m_ctx

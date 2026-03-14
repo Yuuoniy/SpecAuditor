@@ -1,0 +1,12 @@
+Function: bool dev_valid_name ( const char * name )
+
+check if name is okay for network device
+
+Parameters
+  const char *name
+    name string
+
+Description
+  Network device names need to be valid file names to
+allow sysfs to work.  We also disallow any kind of
+whitespace.

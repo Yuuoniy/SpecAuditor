@@ -1,0 +1,11 @@
+Function: int rio_get_input_status ( struct rio_dev * rdev , int pnum , u32 * lnkresp )
+
+Sends a Link-Request/Input-Status control symbol and returns link-response (if requested).
+
+Parameters
+  struct rio_dev *rdev
+    RIO devive to issue Input-status command
+  int pnum
+    Device port number to issue the command
+  u32 *lnkresp
+    Response from a link partner

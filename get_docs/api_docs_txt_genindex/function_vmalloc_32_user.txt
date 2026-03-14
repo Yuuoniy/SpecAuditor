@@ -1,0 +1,11 @@
+Function: void * vmalloc_32_user ( unsigned long size )
+
+allocate zeroed virtually contiguous 32bit memory
+
+Parameters
+  unsigned long size
+    allocation size
+
+Description
+  The resulting memory area is 32bit addressable and zeroed so it can be
+mapped to userspace without leaking data.

@@ -1,0 +1,13 @@
+Function: struct drm_crtc_state * drm_atomic_get_existing_crtc_state ( const struct drm_atomic_state * state , struct drm_crtc * crtc )
+
+get CRTC state, if it exists
+
+Parameters
+  const struct drm_atomic_state *state
+    global atomic state object
+  struct drm_crtc *crtc
+    CRTC to grab
+
+Description
+  This function returns the CRTC state for the given CRTC, or NULL
+if the CRTC is not part of the global atomic state.

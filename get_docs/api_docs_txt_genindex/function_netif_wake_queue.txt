@@ -1,0 +1,11 @@
+Function: void netif_wake_queue ( struct net_device * dev )
+
+restart transmit
+
+Parameters
+  struct net_device *dev
+    network device
+
+Description
+  Allow upper layers to call the device hard_start_xmit routine.
+Used for flow control when transmit resources are available.

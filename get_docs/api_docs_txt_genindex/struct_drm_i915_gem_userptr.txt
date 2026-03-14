@@ -1,0 +1,24 @@
+Struct: struct drm_i915_gem_userptr
+
+Create GEM object from user allocated memory.
+
+Members
+  user_ptr
+    The pointer to the allocated memory. Needs to be aligned to PAGE_SIZE.
+  user_size
+    The size in bytes for the allocated memory. This will also become the
+object size. Needs to be aligned to PAGE_SIZE, and should be at least PAGE_SIZE,
+or larger.
+  flags
+    Supported flags: I915_USERPTR_READ_ONLY: Mark the object as readonly, this also means GPU access can only be
+readonly. This is only supported on HW which supports readonly access
+through the GTT. If the HW can’t support readonly access, an error is
+returned. I915_USERPTR_PROBE: Probe the provided user_ptr range and validate that the user_ptr is
+indeed pointing to normal memory and that the range is also valid.
+For example if some garbage address is given to the kernel, then this
+should complain. Returns -EFAULT if the probe failed. Note that this doesn’t populate the backing pages, and also doesn’t
+guarantee that the object will remain valid when the object is
+eventually used. The kernel supports this feature if I915_PARAM_HAS_USERPTR_PROBE
+returns a non-zero value. I915_USERPTR_UNSYNCHRONIZED: NOT USED. Setting this flag will result in an error.
+  handle
+    Returned handle for the object. Object handles are nonzero.

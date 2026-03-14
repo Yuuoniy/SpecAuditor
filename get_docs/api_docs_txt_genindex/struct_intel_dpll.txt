@@ -1,0 +1,19 @@
+Struct: struct intel_dpll
+
+display PLL with tracked state and users
+
+Members
+  state
+    Store the state for the pll, including its hw state
+and CRTCs using it.
+  index
+    index for atomic state
+  active_mask
+    mask of active pipes (i.e. DPMS on) using this DPLL
+  on
+    is the PLL actually active? Disabled during modeset
+  info
+    platform specific info
+  wakeref
+    In some platforms a device-level runtime pm reference may
+need to be grabbed to disable DC states while this DPLL is enabled

@@ -1,0 +1,17 @@
+Struct: struct ipu3_uapi_yuvp1_iefd_control
+
+IEFd control
+
+Members
+  iefd_en
+    Enable IEFd
+  denoise_en
+    Enable denoise
+  direct_smooth_en
+    Enable directional smooth
+  rad_en
+    Enable radial update
+  vssnlm_en
+    Enable VSSNLM output filter
+  reserved
+    reserved

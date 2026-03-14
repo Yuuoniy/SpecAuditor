@@ -1,0 +1,11 @@
+Function: struct drm_xe_query_mem_regions
+
+describe memory regions
+
+Members
+  num_mem_regions
+    number of memory regions returned in mem_regions
+  pad
+    MBZ
+  mem_regions
+    The returned memory regions for this device

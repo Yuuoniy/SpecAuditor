@@ -1,0 +1,16 @@
+Function: void * devres_open_group ( struct device * dev , void * id , gfp_t gfp )
+
+Open a new devres group
+
+Parameters
+  struct device *dev
+    Device to open devres group for
+  void *id
+    Separator ID
+  gfp_t gfp
+    Allocation flags
+
+Description
+  Open a new devres group for dev with id .  For id , using a
+pointer to an object which won’t be used for another group is
+recommended.  If id is NULL, address-wise unique ID is created.

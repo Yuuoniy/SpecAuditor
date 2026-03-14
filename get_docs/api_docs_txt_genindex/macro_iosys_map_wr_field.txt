@@ -1,0 +1,22 @@
+Macro: iosys_map_wr_field
+
+
+
+Parameters
+  map__
+    The iosys_map structure
+  struct_offset__
+    Offset from the beginning of the map, where the struct is located
+  struct_type__
+    The struct describing the layout of the mapping
+  field__
+    Member of the struct to read
+  val__
+    Value to write
+
+Description
+  Write a value to the iosys_map considering its layout is described by a C struct starting at struct_offset__ . The field offset and size is calculated
+and the val__ is written. If the field access would incur in un-aligned
+access, then either iosys_map_memcpy_to() needs to be used or the
+architecture must support it. Refer to iosys_map_rd_field() for expected
+usage and memory layout.

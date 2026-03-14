@@ -1,0 +1,15 @@
+Function: void amdgpu_vm_adjust_size ( struct amdgpu_device * adev , uint32_t min_vm_size , uint32_t fragment_size_default , unsigned max_level , unsigned max_bits )
+
+adjust vm size, block size and fragment size
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+  uint32_t min_vm_size
+    the minimum vm size in GB if it’s set auto
+  uint32_t fragment_size_default
+    Default PTE fragment size
+  unsigned max_level
+    max VMPT level
+  unsigned max_bits
+    max address space size in bits

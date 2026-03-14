@@ -1,0 +1,14 @@
+Function: int debugfs_file_get ( struct dentry * dentry )
+
+mark the beginning of file data access
+
+Parameters
+  struct dentry *dentry
+    the dentry object whose data is being accessed.
+
+Description
+  Up to a matching call to debugfs_file_put() , any successive call
+into the file removing functions debugfs_remove() and debugfs_remove_recursive() will block. Since associated private
+file data may only get freed after a successful return of any of
+the removal functions, you may safely access it after a successful
+call to debugfs_file_get() without worrying about lifetime issues.

@@ -1,0 +1,14 @@
+Function: int snd_info_get_line ( struct snd_info_buffer * buffer , char * line , int len )
+
+read one line from the procfs buffer
+
+Parameters
+  struct snd_info_buffer *buffer
+    the procfs buffer
+  char *line
+    the buffer to store
+  int len
+    the max. buffer size
+
+Description
+  Reads one line from the buffer and stores the string.

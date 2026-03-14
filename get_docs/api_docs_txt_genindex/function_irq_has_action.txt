@@ -1,0 +1,7 @@
+Function: bool irq_has_action ( unsigned int irq )
+
+Check whether an interrupt is requested
+
+Parameters
+  unsigned int irq
+    The linux irq number

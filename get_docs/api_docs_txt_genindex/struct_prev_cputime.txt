@@ -1,0 +1,11 @@
+Struct: struct prev_cputime
+
+snapshot of system and user cputime
+
+Members
+  utime
+    time spent in user mode
+  stime
+    time spent in system mode
+  lock
+    protects the above two fields

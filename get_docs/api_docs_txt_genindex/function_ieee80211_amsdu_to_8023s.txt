@@ -1,0 +1,27 @@
+Function: void ieee80211_amsdu_to_8023s ( struct sk_buff * skb , struct sk_buff_head * list , const u8 * addr , enum nl80211_iftype iftype , const unsigned int extra_headroom , const u8 * check_da , const u8 * check_sa , u8 mesh_control )
+
+decode an IEEE 802.11n A-MSDU frame
+
+Parameters
+  struct sk_buff *skb
+    The input A-MSDU frame without any headers.
+  struct sk_buff_head *list
+    The output list of 802.3 frames. It must be allocated and
+initialized by the caller.
+  const u8 *addr
+    The device MAC address.
+  enum nl80211_iftype iftype
+    The device interface type.
+  const unsigned int extra_headroom
+    The hardware extra headroom for SKBs in the list .
+  const u8 *check_da
+    DA to check in the inner ethernet header, or NULL
+  const u8 *check_sa
+    SA to check in the inner ethernet header, or NULL
+  u8 mesh_control
+    see mesh_hdr in ieee80211_is_valid_amsdu
+
+Description
+  Decode an IEEE 802.11 A-MSDU and convert it to a list of 802.3 frames.
+The list will be empty if the decode fails. The skb must be fully
+header-less before being passed in here; it is freed in this function.

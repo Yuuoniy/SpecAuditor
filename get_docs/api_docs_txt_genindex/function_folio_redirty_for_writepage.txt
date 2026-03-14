@@ -1,0 +1,13 @@
+Function: bool folio_redirty_for_writepage ( struct writeback_control * wbc , struct folio * folio )
+
+Decline to write a dirty folio.
+
+Parameters
+  struct writeback_control *wbc
+    The writeback control.
+  struct folio *folio
+    The folio.
+
+Description
+  When a writepage implementation decides that it doesn’t want to write folio for some reason, it should call this function, unlock folio and
+return 0.

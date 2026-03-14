@@ -1,0 +1,12 @@
+Function: void * kmap_high_get ( const struct page * page )
+
+pin a highmem page into memory
+
+Parameters
+  const struct page *page
+    struct page to pin
+
+Description
+  Returns the page’s current virtual memory address, or NULL if no mapping
+exists.  If and only if a non null address is returned then a
+matching call to kunmap_high() is necessary.

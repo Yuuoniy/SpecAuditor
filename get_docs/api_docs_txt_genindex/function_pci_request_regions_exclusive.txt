@@ -1,0 +1,14 @@
+Function: int pci_request_regions_exclusive ( struct pci_dev * pdev , const char * name )
+
+Reserve PCI I/O and memory resources
+
+Parameters
+  struct pci_dev *pdev
+    PCI device whose resources are to be reserved
+  const char *name
+    name of the driver requesting the resources
+
+Description
+  Mark all PCI regions associated with PCI device pdev as being reserved
+by owner name . Do not access any address inside the PCI regions
+unless this call returns successfully.

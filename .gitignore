@@ -1,0 +1,23 @@
+get_docs/__pycache__/*
+scripts/utils/__pycache__/*
+scripts/build/my-languages.so
+scripts/__pycache__/*
+artifact/__pycache__/*
+prompts/__pycache__/*
+artifact/results/*
+artifact/check_expected_results.py
+artifact/expected/*
+artifact/config/*.env
+tests/
+.vscode/
+buggy_function_list.txt
+task_plan.md
+findings.md
+progress.md
+metadata.toml
+docs/
+sp2026c2-paper1186 (1).pdf
+index.html
+get_docs/api_types_analysis.txt
+scripts/tree-sitter-c/
+spec_validation_patch_files/

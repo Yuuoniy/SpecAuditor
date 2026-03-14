@@ -1,0 +1,4 @@
+Function: ktime_t ktime_get ( void )
+
+CLOCK_MONOTONIC Useful for reliable timestamps and measuring short time intervals
+accurately. Starts at system boot time but stops during suspend.

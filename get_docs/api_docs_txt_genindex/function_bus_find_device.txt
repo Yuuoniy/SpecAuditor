@@ -1,0 +1,18 @@
+Function: struct device * bus_find_device ( const struct bus_type * bus , struct device * start , const void * data , device_match_t match )
+
+device iterator for locating a particular device.
+
+Parameters
+  const struct bus_type *bus
+    bus type
+  struct device *start
+    Device to begin with
+  const void *data
+    Data to pass to match function
+  device_match_t match
+    Callback function to check device
+
+Description
+  This is similar to the bus_for_each_dev() function above, but it
+returns a reference to a device that is ‘found’ for later use, as
+determined by the match callback.

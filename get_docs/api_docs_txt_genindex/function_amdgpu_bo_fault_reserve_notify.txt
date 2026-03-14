@@ -1,0 +1,12 @@
+Function: vm_fault_t amdgpu_bo_fault_reserve_notify ( struct ttm_buffer_object * bo )
+
+notification about a memory fault
+
+Parameters
+  struct ttm_buffer_object *bo
+    pointer to a buffer object
+
+Description
+  Notifies the driver we are taking a fault on this BO and have reserved it,
+also performs bookkeeping.
+TTM driver callback for dealing with vm faults.

@@ -1,0 +1,19 @@
+Function: int nand_read_page_op ( struct nand_chip * chip , unsigned int page , unsigned int offset_in_page , void * buf , unsigned int len )
+
+Do a READ PAGE operation
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+  unsigned int page
+    page to read
+  unsigned int offset_in_page
+    offset within the page
+  void *buf
+    buffer used to store the data
+  unsigned int len
+    length of the buffer
+
+Description
+  This function issues a READ PAGE operation.
+This function does not select/unselect the CS line.

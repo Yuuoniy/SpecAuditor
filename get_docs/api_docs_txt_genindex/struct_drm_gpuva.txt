@@ -1,0 +1,34 @@
+Struct: struct drm_gpuva
+
+structure to track a GPU VA mapping
+
+Members
+  vm
+    the drm_gpuvm this object is associated with
+  vm_bo
+    the drm_gpuvm_bo abstraction for the mapped drm_gem_object
+  flags
+    the drm_gpuva_flags for this mapping
+  va
+    structure containing the address and range of the drm_gpuva
+  va.addr
+    the start address
+  gem
+    structure containing the drm_gem_object and its offset
+  gem.offset
+    the offset within the drm_gem_object
+  gem.obj
+    the mapped drm_gem_object
+  gem.entry
+    the list_head to attach this object to a drm_gpuvm_bo
+  rb
+    structure containing data to store drm_gpuvas in a rb-tree
+  rb.node
+    the rb-tree node
+  rb.entry
+    The list_head to additionally connect drm_gpuvas in the same order they appear in the interval tree. This is
+useful to keep iterating drm_gpuvas from a start node found
+through the rb-tree while doing modifications on the rb-tree
+itself.
+  rb.__subtree_last
+    needed by the interval tree, holding last-in-subtree

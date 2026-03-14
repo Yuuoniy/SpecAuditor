@@ -1,0 +1,17 @@
+Function: bool xdr_stream_subsegment ( struct xdr_stream * xdr , struct xdr_buf * subbuf , unsigned int nbytes )
+
+set subbuf to a portion of xdr
+
+Parameters
+  struct xdr_stream *xdr
+    an xdr_stream set up for decoding
+  struct xdr_buf *subbuf
+    the result buffer
+  unsigned int nbytes
+    length of xdr to extract, in bytes
+
+Description
+  Sets up subbuf to represent a portion of xdr . The portion
+starts at the current offset in xdr , and extends for a length
+of nbytes . If this is successful, xdr is advanced to the next
+XDR data item following that portion.

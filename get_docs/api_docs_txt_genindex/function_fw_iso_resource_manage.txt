@@ -1,0 +1,21 @@
+Function: void fw_iso_resource_manage ( struct fw_card * card , int generation , u64 channels_mask , int * channel , int * bandwidth , bool allocate )
+
+Allocate or deallocate a channel and/or bandwidth
+
+Parameters
+  struct fw_card *card
+    card interface for this action
+  int generation
+    bus generation
+  u64 channels_mask
+    bitmask for channel allocation
+  int *channel
+    pointer for returning channel allocation result
+  int *bandwidth
+    pointer for returning bandwidth allocation result
+  bool allocate
+    whether to allocate (true) or deallocate (false)
+
+Description
+  In parameters: card, generation, channels_mask, bandwidth, allocate
+Out parameters: channel, bandwidth

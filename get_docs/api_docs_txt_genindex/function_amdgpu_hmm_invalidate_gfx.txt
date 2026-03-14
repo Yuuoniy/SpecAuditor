@@ -1,0 +1,15 @@
+Function: bool amdgpu_hmm_invalidate_gfx ( struct mmu_interval_notifier * mni , const struct mmu_notifier_range * range , unsigned long cur_seq )
+
+callback to notify about mm change
+
+Parameters
+  struct mmu_interval_notifier *mni
+    the range (mm) is about to update
+  const struct mmu_notifier_range *range
+    details on the invalidation
+  unsigned long cur_seq
+    Value to pass to mmu_interval_set_seq()
+
+Description
+  Block for operations on BOs to finish and mark pages as accessed and
+potentially dirty.

@@ -1,0 +1,13 @@
+Function: int __set_input_tf ( struct dc_color_caps * caps , struct dc_transfer_func * func , const struct drm_color_lut * lut , uint32_t lut_size )
+
+calculates the input transfer function based on expected input space.
+
+Parameters
+  struct dc_color_caps *caps
+    dc color capabilities
+  struct dc_transfer_func *func
+    transfer function
+  const struct drm_color_lut *lut
+    lookup table that defines the color space
+  uint32_t lut_size
+    size of respective lut.

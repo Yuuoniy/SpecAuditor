@@ -1,0 +1,16 @@
+Function: int vm_iomap_memory ( struct vm_area_struct * vma , phys_addr_t start , unsigned long len )
+
+remap memory to userspace
+
+Parameters
+  struct vm_area_struct *vma
+    user vma to map to
+  phys_addr_t start
+    start of the physical memory to be mapped
+  unsigned long len
+    size of area
+
+Description
+  This is a simplified io_remap_pfn_range() for common driver use. The
+driver just needs to give us the physical memory range to be mapped,
+we’ll figure out the rest from the vma information.

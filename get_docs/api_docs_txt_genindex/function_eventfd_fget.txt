@@ -1,0 +1,11 @@
+Function: struct file * eventfd_fget ( int fd )
+
+Acquire a reference of an eventfd file descriptor.
+
+Parameters
+  int fd
+    [in] Eventfd file descriptor.
+
+Description
+  Returns a pointer to the eventfd file structure in case of success, or the
+following error pointer:

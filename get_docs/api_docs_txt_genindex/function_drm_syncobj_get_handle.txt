@@ -1,0 +1,14 @@
+Function: int drm_syncobj_get_handle ( struct drm_file * file_private , struct drm_syncobj * syncobj , u32 * handle )
+
+get a handle from a syncobj
+
+Parameters
+  struct drm_file *file_private
+    drm file private pointer
+  struct drm_syncobj *syncobj
+    Sync object to export
+  u32 *handle
+    out parameter with the new handle
+
+Description
+  Exports a sync object created with drm_syncobj_create() as a handle on file_private to userspace.

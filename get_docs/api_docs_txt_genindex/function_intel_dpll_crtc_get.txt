@@ -1,0 +1,14 @@
+Function: void intel_dpll_crtc_get ( const struct intel_crtc * crtc , const struct intel_dpll * pll , struct intel_dpll_state * dpll_state )
+
+Get a DPLL reference for a CRTC
+
+Parameters
+  const struct intel_crtc *crtc
+    CRTC on which behalf the reference is taken
+  const struct intel_dpll *pll
+    DPLL for which the reference is taken
+  struct intel_dpll_state *dpll_state
+    the DPLL atomic state in which the reference is tracked
+
+Description
+  Take a reference for pll tracking the use of it by crtc .

@@ -1,0 +1,13 @@
+Function: struct key_entry * sparse_keymap_entry_from_keycode ( struct input_dev * dev , unsigned int keycode )
+
+perform sparse keymap lookup
+
+Parameters
+  struct input_dev *dev
+    Input device using sparse keymap
+  unsigned int keycode
+    Key code
+
+Description
+  This function is used to perform struct key_entry lookup in an
+input device using sparse keymap.

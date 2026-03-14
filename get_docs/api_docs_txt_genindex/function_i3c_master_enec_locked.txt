@@ -1,0 +1,15 @@
+Function: int i3c_master_enec_locked ( struct i3c_master_controller * master , u8 addr , u8 evts )
+
+send an ENEC CCC command
+
+Parameters
+  struct i3c_master_controller *master
+    master used to send frames on the bus
+  u8 addr
+    a valid I3C slave address or I3C_BROADCAST_ADDR
+  u8 evts
+    events to disable
+
+Description
+  Sends an ENEC CCC command to enable some or all events coming from a
+specific slave, or all devices if addr is I3C_BROADCAST_ADDR .

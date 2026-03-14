@@ -1,0 +1,12 @@
+Function: struct mii_bus * of_mdio_find_bus ( struct device_node * mdio_bus_np )
+
+Given an mii_bus node, find the mii_bus.
+
+Parameters
+  struct device_node *mdio_bus_np
+    Pointer to the mii_bus.
+
+Description
+  Returns a reference to the mii_bus, or NULL if none found.  The
+embedded struct device will have its reference count incremented,
+and this must be put once the bus is finished with.

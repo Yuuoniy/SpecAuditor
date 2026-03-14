@@ -1,0 +1,7 @@
+Struct: struct ssh_seq_counter
+
+Safe counter for SSH sequence IDs.
+
+Members
+  value
+    The current counter value.

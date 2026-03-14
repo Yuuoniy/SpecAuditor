@@ -1,0 +1,13 @@
+Macro: DRM_MIPI_DBI_SIMPLE_DISPLAY_PIPE_FUNCS
+
+
+
+Parameters
+  enable_
+    Enable-callback implementation
+
+Description
+  This macro initializes struct drm_simple_display_pipe_funcs with default
+values for MIPI-DBI-based devices. The only callback that depends on the
+hardware is enable , for which the driver has to provide an implementation.
+MIPI-based drivers are encouraged to use this macro for initialization.

@@ -1,0 +1,14 @@
+Macro: snd_pcm_stream_lock_irqsave
+
+
+
+Parameters
+  substream
+    PCM substream
+  flags
+    irq flags
+
+Description
+  This locks the PCM stream like snd_pcm_stream_lock() but with the local
+IRQ (only when nonatomic is false).  In nonatomic case, this is identical
+as snd_pcm_stream_lock() .

@@ -1,0 +1,13 @@
+Function: unsigned short snd_ac97_read ( struct snd_ac97 * ac97 , unsigned short reg )
+
+read a value from the given register
+
+Parameters
+  struct snd_ac97 *ac97
+    the ac97 instance
+  unsigned short reg
+    the register to read
+
+Description
+  Reads a value from the given register.  This will invoke the read
+callback directly after the register check.

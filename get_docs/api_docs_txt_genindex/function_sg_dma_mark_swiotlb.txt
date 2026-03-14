@@ -1,0 +1,11 @@
+Function: void sg_dma_mark_swiotlb ( struct scatterlist * sg )
+
+Mark the scatterlist for SWIOTLB bouncing
+
+Parameters
+  struct scatterlist *sg
+    SG entry
+
+Description
+  Marks a a scatterlist for SWIOTLB bounce. Not all SG entries may be
+bounced.

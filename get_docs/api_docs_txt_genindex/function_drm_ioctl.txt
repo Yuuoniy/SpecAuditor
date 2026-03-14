@@ -1,0 +1,15 @@
+Function: long drm_ioctl ( struct file * filp , unsigned int cmd , unsigned long arg )
+
+ioctl callback implementation for DRM drivers
+
+Parameters
+  struct file *filp
+    file this ioctl is called on
+  unsigned int cmd
+    ioctl cmd number
+  unsigned long arg
+    user argument
+
+Description
+  Looks up the ioctl function in the DRM core and the driver dispatch table,
+stored in drm_driver.ioctls . It checks for necessary permission by calling drm_ioctl_permit() , and dispatches to the respective function.

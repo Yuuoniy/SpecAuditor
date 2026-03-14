@@ -1,0 +1,10 @@
+Function: int ccw_device_is_multipath ( struct ccw_device * cdev )
+
+determine if device is operating in multipath mode
+
+Parameters
+  struct ccw_device *cdev
+    ccw device
+
+Description
+  Return non-zero if device is operating in multipath mode, zero otherwise.

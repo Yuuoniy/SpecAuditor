@@ -1,0 +1,25 @@
+Struct: struct ps2dev
+
+represents a device using PS/2 protocol
+
+Members
+  serio
+    a serio port used by the PS/2 device
+  cmd_mutex
+    a mutex ensuring that only one command is executing at a time
+  wait
+    a waitqueue used to signal completion from the serio interrupt handler
+  flags
+    various internal flags indicating stages of PS/2 command execution
+  cmdbuf
+    buffer holding command response
+  cmdcnt
+    outstanding number of bytes of the command response
+  nak
+    a byte transmitted by the device when it refuses command
+  pre_receive_handler
+    checks communication errors and returns disposition
+( enum ps2_disposition ) of the received data byte
+  receive_handler
+    main handler of particular PS/2 protocol, such as keyboard
+or mouse protocol

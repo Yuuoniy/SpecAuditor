@@ -1,0 +1,16 @@
+Function: struct gpio_device * gpio_device_find ( const void * data , int ( * match ) ( struct gpio_chip * gc , const void * data ) )
+
+find a specific GPIO device
+
+Parameters
+  const void *data
+    data to pass to match function
+  int (*match)(struct gpio_chip *gc, const void *data)
+    Callback function to check gpio_chip
+
+Description
+  Similar to bus_find_device() . It returns a reference to a gpio_device as
+determined by a user supplied match callback. The callback should return
+0 if the device doesn’t match and non-zero if it does. If the callback
+returns non-zero, this function will return to the caller and not iterate
+over any more gpio_devices.

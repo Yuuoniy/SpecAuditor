@@ -1,0 +1,26 @@
+Struct: struct irq_domain_chip_generic_info
+
+Generic chip information structure
+
+Members
+  name
+    Name of the generic interrupt chip
+  handler
+    Interrupt handler used by the generic interrupt chip
+  irqs_per_chip
+    Number of interrupts each chip handles (max 32)
+  num_ct
+    Number of irq_chip_type instances associated with each
+chip
+  irq_flags_to_clear
+    IRQ_* bits to clear in the mapping function
+  irq_flags_to_set
+    IRQ_* bits to set in the mapping function
+  gc_flags
+    Generic chip specific setup flags
+  init
+    Function called on each chip when they are created.
+Allow to do some additional chip initialisation.
+  exit
+    Function called on each chip when they are destroyed.
+Allow to do some chip cleanup operation.

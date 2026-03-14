@@ -1,0 +1,13 @@
+Struct: struct komeda_pipeline_state
+
+
+
+Members
+  obj
+    tracking pipeline_state by drm_atomic_state
+  pipe
+    backpointer to the pipeline
+  crtc
+    currently bound crtc
+  active_comps
+    bitmask - BIT(component->id) of active components

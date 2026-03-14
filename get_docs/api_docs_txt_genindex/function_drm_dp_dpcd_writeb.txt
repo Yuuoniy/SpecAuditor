@@ -1,0 +1,15 @@
+Function: ssize_t drm_dp_dpcd_writeb ( struct drm_dp_aux * aux , unsigned int offset , u8 value )
+
+write a single byte to the DPCD
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  unsigned int offset
+    address of the register to write
+  u8 value
+    value to write to the register
+
+Description
+  Returns the number of bytes transferred (1) on success, or a negative
+error code on failure. In most of the cases you should be using drm_dp_dpcd_write_byte() instead.

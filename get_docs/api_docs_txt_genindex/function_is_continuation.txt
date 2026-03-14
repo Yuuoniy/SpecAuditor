@@ -1,0 +1,9 @@
+Function: int is_continuation ( u8 c , const struct tty_struct * tty )
+
+multibyte check
+
+Parameters
+  u8 c
+    byte to check
+  const struct tty_struct *tty
+    terminal device

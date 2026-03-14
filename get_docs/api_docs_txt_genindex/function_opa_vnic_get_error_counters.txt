@@ -1,0 +1,13 @@
+Function: void opa_vnic_get_error_counters ( struct opa_vnic_adapter * adapter , struct opa_veswport_error_counters * cntrs )
+
+get error counters
+
+Parameters
+  struct opa_vnic_adapter *adapter
+    vnic port adapter
+  struct opa_veswport_error_counters *cntrs
+    pointer to destination error counters structure
+
+Description
+  This function populates the error counters that is maintained by the
+given adapter to destination address provided.

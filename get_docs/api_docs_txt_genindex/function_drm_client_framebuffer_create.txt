@@ -1,0 +1,17 @@
+Function: struct drm_client_buffer * drm_client_framebuffer_create ( struct drm_client_dev * client , u32 width , u32 height , u32 format )
+
+Create a client framebuffer
+
+Parameters
+  struct drm_client_dev *client
+    DRM client
+  u32 width
+    Framebuffer width
+  u32 height
+    Framebuffer height
+  u32 format
+    Buffer format
+
+Description
+  This function creates a drm_client_buffer which consists of a drm_framebuffer backed by a dumb buffer.
+Call drm_client_framebuffer_delete() to free the buffer.

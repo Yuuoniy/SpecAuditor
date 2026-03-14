@@ -1,0 +1,12 @@
+Function: int drm_sched_job_add_dependency ( struct drm_sched_job * job , struct dma_fence * fence )
+
+adds the fence as a job dependency
+
+Parameters
+  struct drm_sched_job *job
+    scheduler job to add the dependencies to
+  struct dma_fence *fence
+    the dma_fence to add to the list of dependencies.
+
+Description
+  Note that fence is consumed in both the success and error cases.

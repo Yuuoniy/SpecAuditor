@@ -1,0 +1,3 @@
+Enum: enum edac_mc_layer_type
+
+memory controller hierarchy layer

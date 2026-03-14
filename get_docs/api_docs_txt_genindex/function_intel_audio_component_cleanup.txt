@@ -1,0 +1,11 @@
+Function: void intel_audio_component_cleanup ( struct intel_display * display )
+
+deregister the audio component
+
+Parameters
+  struct intel_display *display
+    display device
+
+Description
+  Deregisters the audio component, breaking any existing binding to the
+corresponding snd_hda_intel driver’s master component.

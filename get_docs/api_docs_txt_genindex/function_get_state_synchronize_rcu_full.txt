@@ -1,0 +1,16 @@
+Function: void get_state_synchronize_rcu_full ( struct rcu_gp_oldstate * rgosp )
+
+Snapshot RCU state, both normal and expedited
+
+Parameters
+  struct rcu_gp_oldstate *rgosp
+    location to place combined normal/expedited grace-period state
+
+Description
+  Places the normal and expedited grace-period states in rgosp .  This
+state value can be passed to a later call to cond_synchronize_rcu_full() or poll_state_synchronize_rcu_full() to determine whether or not a
+grace period (whether normal or expedited) has elapsed in the meantime.
+The rcu_gp_oldstate structure takes up twice the memory of an unsigned
+long, but is guaranteed to see all grace periods.  In contrast, the
+combined state occupies less memory, but can sometimes fail to take
+grace periods into account.

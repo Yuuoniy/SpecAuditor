@@ -1,0 +1,13 @@
+Function: void kernel_to_ipc64_perm ( struct kern_ipc_perm * in , struct ipc64_perm * out )
+
+convert kernel ipc permissions to user
+
+Parameters
+  struct kern_ipc_perm *in
+    kernel permissions
+  struct ipc64_perm *out
+    new style ipc permissions
+
+Description
+  Turn the kernel object in into a set of permissions descriptions
+for returning to userspace ( out ).

@@ -1,0 +1,12 @@
+Function: int security_path_unlink ( const struct path * dir , struct dentry * dentry )
+
+Check if removing a hard link is allowed
+
+Parameters
+  const struct path *dir
+    parent directory
+  struct dentry *dentry
+    file
+
+Description
+  Check the permission to remove a hard link to a file.

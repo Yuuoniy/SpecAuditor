@@ -1,0 +1,12 @@
+Function: void security_path_post_mknod ( struct mnt_idmap * idmap , struct dentry * dentry )
+
+Update inode security after reg file creation
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount
+  struct dentry *dentry
+    new file
+
+Description
+  Update inode security field after a regular file has been created.

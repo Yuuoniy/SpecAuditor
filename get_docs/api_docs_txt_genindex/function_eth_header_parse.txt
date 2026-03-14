@@ -1,0 +1,9 @@
+Function: int eth_header_parse ( const struct sk_buff * skb , unsigned char * haddr )
+
+extract hardware address from packet
+
+Parameters
+  const struct sk_buff *skb
+    packet to extract header from
+  unsigned char *haddr
+    destination buffer

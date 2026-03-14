@@ -1,0 +1,31 @@
+Struct: struct dwc3_request
+
+representation of a transfer request
+
+Members
+  request
+    struct usb_request to be transferred
+  list
+    a list_head used for request queueing
+  dep
+    struct dwc3_ep owning this request
+  start_sg
+    pointer to the sg which should be queued next
+  num_pending_sgs
+    counter to pending sgs
+  remaining
+    amount of data remaining
+  status
+    internal dwc3 request status tracking
+  epnum
+    endpoint number to which this request refers
+  trb
+    pointer to struct dwc3_trb
+  trb_dma
+    DMA address of trb
+  num_trbs
+    number of TRBs used by this request
+  direction
+    IN or OUT direction flag
+  mapped
+    true when request has been dma-mapped

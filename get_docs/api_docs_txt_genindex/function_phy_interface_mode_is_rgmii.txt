@@ -1,0 +1,7 @@
+Function: bool phy_interface_mode_is_rgmii ( phy_interface_t mode )
+
+Convenience function for testing if a PHY interface mode is RGMII (all variants)
+
+Parameters
+  phy_interface_t mode
+    the phy_interface_t enum

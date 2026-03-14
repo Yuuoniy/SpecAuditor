@@ -1,0 +1,18 @@
+Function: int rio_map_inb_region ( struct rio_mport * mport , dma_addr_t local , u64 rbase , u32 size , u32 rflags )
+
+Map inbound memory region.
+
+Parameters
+  struct rio_mport *mport
+    Master port.
+  dma_addr_t local
+    physical address of memory region to be mapped
+  u64 rbase
+    RIO base address assigned to this window
+  u32 size
+    Size of the memory region
+  u32 rflags
+    Flags for mapping.
+
+Description
+  This function will create the mapping from RIO space to local memory.

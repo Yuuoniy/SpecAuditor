@@ -1,0 +1,41 @@
+Function: struct i2c_algorithm
+
+represent I2C transfer methods
+
+Members
+  {unnamed_union}
+    anonymous
+  xfer
+    Transfer a given number of messages defined by the msgs array via
+the specified adapter.
+  master_xfer
+    deprecated, use xfer
+  {unnamed_union}
+    anonymous
+  xfer_atomic
+    Same as xfer . Yet, only using atomic context so e.g. PMICs
+can be accessed very late before shutdown. Optional.
+  master_xfer_atomic
+    deprecated, use xfer_atomic
+  smbus_xfer
+    Issue SMBus transactions to the given I2C adapter. If this
+is not present, then the bus layer will try and convert the SMBus calls
+into I2C transfers instead.
+  smbus_xfer_atomic
+    Same as smbus_xfer . Yet, only using atomic context
+so e.g. PMICs can be accessed very late before shutdown. Optional.
+  functionality
+    Return the flags that this algorithm/adapter pair supports
+from the I2C_FUNC_* flags.
+  {unnamed_union}
+    anonymous
+  reg_target
+    Register given client to local target mode of this adapter
+  reg_slave
+    deprecated, use reg_target
+  {unnamed_union}
+    anonymous
+  unreg_target
+    Unregister given client from local target mode of this adapter
+  unreg_slave
+    deprecated, use unreg_target

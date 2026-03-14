@@ -1,0 +1,15 @@
+Function: int drm_client_modeset_probe ( struct drm_client_dev * client , unsigned int width , unsigned int height )
+
+Probe for displays
+
+Parameters
+  struct drm_client_dev *client
+    DRM client
+  unsigned int width
+    Maximum display mode width (optional)
+  unsigned int height
+    Maximum display mode height (optional)
+
+Description
+  This function sets up display pipelines for enabled connectors and stores the
+config in the client’s modeset array.

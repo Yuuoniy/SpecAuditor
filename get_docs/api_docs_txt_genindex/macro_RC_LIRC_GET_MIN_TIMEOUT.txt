@@ -1,0 +1,2 @@
+Macro: LIRC_GET_MIN_TIMEOUT
+

@@ -1,0 +1,7 @@
+Function: struct pipe_buffer * pipe_head_buf ( const struct pipe_inode_info * pipe )
+
+Return the pipe buffer at the head of the pipe ring
+
+Parameters
+  const struct pipe_inode_info *pipe
+    The pipe to access

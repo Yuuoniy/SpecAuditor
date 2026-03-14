@@ -1,0 +1,19 @@
+Function: int ttm_tt_init ( struct ttm_tt * ttm , struct ttm_buffer_object * bo , uint32_t page_flags , enum ttm_caching caching , unsigned long extra_pages )
+
+
+
+Parameters
+  struct ttm_tt *ttm
+    The struct ttm_tt .
+  struct ttm_buffer_object *bo
+    The buffer object we create the ttm for.
+  uint32_t page_flags
+    Page flags as identified by TTM_TT_FLAG_XX flags.
+  enum ttm_caching caching
+    the desired caching state of the pages
+  unsigned long extra_pages
+    Extra pages needed for the driver.
+
+Description
+  Create a struct ttm_tt to back data with system memory pages.
+No pages are actually allocated.

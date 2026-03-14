@@ -1,0 +1,8 @@
+Struct: struct ipu3_uapi_gamma_corr_lut
+
+Per-pixel tone mapping implemented as LUT.
+
+Members
+  lut
+    256 tabulated values of the gamma function. LUT[1].. LUT[256]
+format u13.0, range [0, 8191].

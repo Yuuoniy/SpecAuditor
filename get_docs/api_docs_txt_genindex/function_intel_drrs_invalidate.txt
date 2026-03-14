@@ -1,0 +1,13 @@
+Function: void intel_drrs_invalidate ( struct intel_display * display , unsigned int frontbuffer_bits )
+
+Disable Idleness DRRS
+
+Parameters
+  struct intel_display *display
+    display device
+  unsigned int frontbuffer_bits
+    frontbuffer plane tracking bits
+
+Description
+  This function gets called everytime rendering on the given planes start.
+Hence DRRS needs to be Upclocked, i.e. (LOW_RR -> HIGH_RR).

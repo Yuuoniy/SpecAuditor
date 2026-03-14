@@ -1,0 +1,16 @@
+Macro: strscpy_pad
+
+
+
+Parameters
+  dst
+    Where to copy the string to
+  src
+    Where to copy the string from
+  ...
+    Size of destination buffer
+
+Description
+  Copy the string, or as much of it as fits, into the dest buffer. The
+behavior is undefined if the string buffers overlap. The destination
+buffer is always NUL terminated, unless it’s zero-sized.

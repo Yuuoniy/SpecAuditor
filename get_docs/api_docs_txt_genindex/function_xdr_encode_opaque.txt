@@ -1,0 +1,14 @@
+Function: __be32 * xdr_encode_opaque ( __be32 * p , const void * ptr , unsigned int nbytes )
+
+Encode variable length opaque data
+
+Parameters
+  __be32 *p
+    pointer to current position in XDR buffer.
+  const void *ptr
+    pointer to data to encode (or NULL)
+  unsigned int nbytes
+    size of data.
+
+Description
+  Returns the updated current XDR buffer position

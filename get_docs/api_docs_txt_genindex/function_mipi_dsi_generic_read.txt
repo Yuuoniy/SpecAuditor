@@ -1,0 +1,19 @@
+Function: ssize_t mipi_dsi_generic_read ( struct mipi_dsi_device * dsi , const void * params , size_t num_params , void * data , size_t size )
+
+receive data using a generic read packet
+
+Parameters
+  struct mipi_dsi_device *dsi
+    DSI peripheral device
+  const void *params
+    buffer containing the request parameters
+  size_t num_params
+    number of request parameters
+  void *data
+    buffer in which to return the received data
+  size_t size
+    size of receive buffer
+
+Description
+  This function will automatically choose the right data type depending on
+the number of parameters passed in.

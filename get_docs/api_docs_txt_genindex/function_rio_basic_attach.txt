@@ -1,0 +1,13 @@
+Function: int rio_basic_attach ( void )
+
+
+
+Parameters
+  void
+    no arguments
+
+Description
+  When this enumeration/discovery method is loaded as a module this function
+registers its specific enumeration and discover routines for all available
+RapidIO mport devices. The “scan” command line parameter controls ability of
+the module to start RapidIO enumeration/discovery automatically.

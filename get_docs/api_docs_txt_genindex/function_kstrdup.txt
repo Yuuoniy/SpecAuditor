@@ -1,0 +1,9 @@
+Function: char * kstrdup ( const char * s , gfp_t gfp )
+
+allocate space for and copy an existing string
+
+Parameters
+  const char *s
+    the string to duplicate
+  gfp_t gfp
+    the GFP mask used in the kmalloc() call when allocating memory

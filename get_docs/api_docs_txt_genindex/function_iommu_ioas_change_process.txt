@@ -1,0 +1,9 @@
+Function: struct iommu_ioas_change_process
+
+ioctl(VFIO_IOAS_CHANGE_PROCESS)
+
+Members
+  size
+    sizeof( struct iommu_ioas_change_process )
+  __reserved
+    Must be 0

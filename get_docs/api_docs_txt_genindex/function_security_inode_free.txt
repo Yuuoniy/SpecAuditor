@@ -1,0 +1,12 @@
+Function: void security_inode_free ( struct inode * inode )
+
+Free an inode’s LSM blob
+
+Parameters
+  struct inode *inode
+    the inode
+
+Description
+  Release any LSM resources associated with inode , although due to the
+inode’s RCU protections it is possible that the resources will not be
+fully released until after the current RCU grace period has elapsed.

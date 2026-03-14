@@ -1,0 +1,22 @@
+Function: int request_skip ( struct cxl_dev_state * cxlds , struct cxl_endpoint_decoder * cxled , const resource_size_t skip_base , const resource_size_t skip_len )
+
+Track DPA ‘skip’ in cxlds->dpa_res resource tree
+
+Parameters
+  struct cxl_dev_state *cxlds
+    CXL.mem device context that parents cxled
+  struct cxl_endpoint_decoder *cxled
+    Endpoint decoder establishing new allocation that skips lower DPA
+  const resource_size_t skip_base
+    DPA < start of new DPA allocation (DPAnew)
+  const resource_size_t skip_len
+    skip_base + skip_len == DPAnew
+
+Description
+  DPA ‘skip’ arises from out-of-sequence DPA allocation events relative
+to free capacity across multiple partitions. It is a wasteful event
+as usable DPA gets thrown away, but if a deployment has, for example,
+a dual RAM+PMEM device, wants to use PMEM, and has unallocated RAM
+DPA, the free RAM DPA must be sacrificed to start allocating PMEM.
+See third “Implementation Note” in CXL 3.1 8.2.4.19.13 “Decoder
+Protection” for more details.

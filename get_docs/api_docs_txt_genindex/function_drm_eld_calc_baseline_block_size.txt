@@ -1,0 +1,11 @@
+Function: int drm_eld_calc_baseline_block_size ( const u8 * eld )
+
+Calculate baseline block size in bytes
+
+Parameters
+  const u8 *eld
+    pointer to an eld memory structure with mnl and sad_count set
+
+Description
+  This is a helper for determining the payload size of the baseline block, in
+bytes, for e.g. setting the Baseline_ELD_Len field in the ELD header block.

@@ -1,0 +1,14 @@
+Function: void usb_composite_setup_continue ( struct usb_composite_dev * cdev )
+
+Continue with the control transfer
+
+Parameters
+  struct usb_composite_dev *cdev
+    the composite device who’s control transfer was kept waiting
+
+Description
+  This function must be called by the USB function driver to continue
+with the control transfer’s data/status stage in case it had requested to
+delay the data/status stages. A USB function’s setup handler (e.g. set_alt() )
+can request the composite framework to delay the setup request’s data/status
+stages by returning USB_GADGET_DELAYED_STATUS.

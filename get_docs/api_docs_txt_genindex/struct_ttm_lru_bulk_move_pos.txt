@@ -1,0 +1,9 @@
+Struct: struct ttm_lru_bulk_move_pos
+
+
+
+Members
+  first
+    first res in the bulk move range
+  last
+    last res in the bulk move range

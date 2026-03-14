@@ -1,0 +1,12 @@
+Macro: XE_RTP_RULE_SUBPLATFORM
+
+
+
+Parameters
+  plat_
+    platform to match
+  sub_
+    sub-platform to match
+
+Description
+  Refer to XE_RTP_RULES() for expected usage.

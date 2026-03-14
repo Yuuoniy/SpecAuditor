@@ -1,0 +1,7 @@
+Function: struct iscsi_boot_kset * iscsi_boot_create_host_kset ( unsigned int hostno )
+
+creates root sysfs tree for a scsi host
+
+Parameters
+  unsigned int hostno
+    host number of scsi host

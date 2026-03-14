@@ -1,0 +1,13 @@
+Function: void irq_gc_mask_disable_and_ack_set ( struct irq_data * d )
+
+Mask and ack pending interrupt
+
+Parameters
+  struct irq_data *d
+    irq_data
+
+Description
+  This generic implementation of the irq_mask_ack method is for chips
+with separate enable/disable registers instead of a single mask
+register and where a pending interrupt is acknowledged by setting a
+bit.

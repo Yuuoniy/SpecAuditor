@@ -1,0 +1,7 @@
+Macro: IOSYS_MAP_INIT_VADDR
+
+
+
+Parameters
+  vaddr_
+    A system-memory address

@@ -1,0 +1,19 @@
+Function: struct resource * alloc_free_mem_region ( struct resource * base , unsigned long size , unsigned long align , const char * name )
+
+find a free region relative to base
+
+Parameters
+  struct resource *base
+    resource that will parent the new resource
+  unsigned long size
+    size in bytes of memory to allocate from base
+  unsigned long align
+    alignment requirements for the allocation
+  const char *name
+    resource name
+
+Description
+  Buses like CXL, that can dynamically instantiate new memory regions,
+need a method to allocate physical address space for those regions.
+Allocate and insert a new resource to cover a free, unclaimed by a
+descendant of base , range in the span of base .

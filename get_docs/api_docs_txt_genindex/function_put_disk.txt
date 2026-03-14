@@ -1,0 +1,11 @@
+Function: void put_disk ( struct gendisk * disk )
+
+decrements the gendisk refcount
+
+Parameters
+  struct gendisk *disk
+    the struct gendisk to decrement the refcount for
+
+Description
+  This decrements the refcount for the struct gendisk . When this reaches 0
+we’ll have disk_release() called.

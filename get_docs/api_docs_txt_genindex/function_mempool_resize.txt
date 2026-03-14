@@ -1,0 +1,16 @@
+Function: int mempool_resize ( mempool_t * pool , int new_min_nr )
+
+resize an existing memory pool
+
+Parameters
+  mempool_t *pool
+    pointer to the memory pool which was allocated via mempool_create() .
+  int new_min_nr
+    the new minimum number of elements guaranteed to be
+allocated for this pool.
+
+Description
+  This function shrinks/grows the pool. In the case of growing,
+it cannot be guaranteed that the pool will be grown to the new
+size immediately, but new mempool_free() calls will refill it.
+This function may sleep.

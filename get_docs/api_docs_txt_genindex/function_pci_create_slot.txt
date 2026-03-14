@@ -1,0 +1,19 @@
+Function: struct pci_slot * pci_create_slot ( struct pci_bus * parent , int slot_nr , const char * name , struct hotplug_slot * hotplug )
+
+create or increment refcount for physical PCI slot
+
+Parameters
+  struct pci_bus *parent
+    struct pci_bus of parent bridge
+  int slot_nr
+    PCI_SLOT(pci_dev->devfn) or -1 for placeholder
+  const char *name
+    user visible string presented in /sys/bus/pci/slots/<name>
+  struct hotplug_slot *hotplug
+    set if caller is hotplug driver, NULL otherwise
+
+Description
+  PCI slots have first class attributes such as address, speed, width,
+and a struct pci_slot is used to manage them. This interface will
+either return a new struct pci_slot to the caller, or if the pci_slot
+already exists, its refcount will be incremented.

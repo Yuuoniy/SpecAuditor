@@ -1,0 +1,41 @@
+Struct: struct v4l2_subdev_ir_ops
+
+operations for IR subdevices
+
+Members
+  rx_read
+    Reads received codes or pulse width data.
+The semantics are similar to a non-blocking read() call.
+  rx_g_parameters
+    Get the current operating parameters and state of
+the IR receiver.
+  rx_s_parameters
+    Set the current operating parameters and state of
+the IR receiver.  It is recommended to call
+[rt]x_g_parameters first to fill out the current state, and only change
+the fields that need to be changed.  Upon return, the actual device
+operating parameters and state will be returned.  Note that hardware
+limitations may prevent the actual settings from matching the requested
+settings - e.g. an actual carrier setting of 35,904 Hz when 36,000 Hz
+was requested.  An exception is when the shutdown parameter is true.
+The last used operational parameters will be returned, but the actual
+state of the hardware be different to minimize power consumption and
+processing when shutdown is true.
+  tx_write
+    Writes codes or pulse width data for transmission.
+The semantics are similar to a non-blocking write() call.
+  tx_g_parameters
+    Get the current operating parameters and state of
+the IR transmitter.
+  tx_s_parameters
+    Set the current operating parameters and state of
+the IR transmitter.  It is recommended to call
+[rt]x_g_parameters first to fill out the current state, and only change
+the fields that need to be changed.  Upon return, the actual device
+operating parameters and state will be returned.  Note that hardware
+limitations may prevent the actual settings from matching the requested
+settings - e.g. an actual carrier setting of 35,904 Hz when 36,000 Hz
+was requested.  An exception is when the shutdown parameter is true.
+The last used operational parameters will be returned, but the actual
+state of the hardware be different to minimize power consumption and
+processing when shutdown is true.

@@ -1,0 +1,10 @@
+Function: void amdgpu_irq_handle_ih_soft ( struct work_struct * work )
+
+kick of processing for ih_soft
+
+Parameters
+  struct work_struct *work
+    work structure in struct amdgpu_irq
+
+Description
+  Kick of processing IH soft ring.

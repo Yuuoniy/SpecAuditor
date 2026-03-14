@@ -1,0 +1,10 @@
+Function: int genphy_c45_read_status ( struct phy_device * phydev )
+
+read PHY status
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  Reads status from PHY and sets phy_device members accordingly.

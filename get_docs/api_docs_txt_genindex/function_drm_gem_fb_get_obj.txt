@@ -1,0 +1,12 @@
+Function: struct drm_gem_object * drm_gem_fb_get_obj ( struct drm_framebuffer * fb , unsigned int plane )
+
+Get GEM object backing the framebuffer
+
+Parameters
+  struct drm_framebuffer *fb
+    Framebuffer
+  unsigned int plane
+    Plane index
+
+Description
+  No additional reference is taken beyond the one that the drm_frambuffer already holds.

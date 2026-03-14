@@ -1,0 +1,14 @@
+Macro: array3_size
+
+
+
+Parameters
+  a
+    dimension one
+  b
+    dimension two
+  c
+    dimension three
+
+Description
+  Calculates size of 3-dimensional array: a * b * c .

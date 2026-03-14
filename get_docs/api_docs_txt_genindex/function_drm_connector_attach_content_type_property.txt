@@ -1,0 +1,10 @@
+Function: int drm_connector_attach_content_type_property ( struct drm_connector * connector )
+
+attach content-type property
+
+Parameters
+  struct drm_connector *connector
+    connector to attach content type property on.
+
+Description
+  Called by a driver the first time a HDMI connector is made.

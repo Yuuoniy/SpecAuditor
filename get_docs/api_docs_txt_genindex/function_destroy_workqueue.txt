@@ -1,0 +1,10 @@
+Function: void destroy_workqueue ( struct workqueue_struct * wq )
+
+safely terminate a workqueue
+
+Parameters
+  struct workqueue_struct *wq
+    target workqueue
+
+Description
+  Safely destroy a workqueue. All work currently pending will be done first.

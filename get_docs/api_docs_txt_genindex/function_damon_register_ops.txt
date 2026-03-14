@@ -1,0 +1,10 @@
+Function: int damon_register_ops ( struct damon_operations * ops )
+
+Register a monitoring operations set to DAMON.
+
+Parameters
+  struct damon_operations *ops
+    monitoring operations set to register.
+
+Description
+  This function registers a monitoring operations set of valid struct damon_operations ->id so that others can find and use them later.

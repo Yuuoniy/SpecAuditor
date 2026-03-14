@@ -1,0 +1,10 @@
+Function: void security_cred_free ( struct cred * cred )
+
+Free the cred’s LSM blob and associated resources
+
+Parameters
+  struct cred *cred
+    credentials
+
+Description
+  Deallocate and clear the cred->security field in a set of credentials.

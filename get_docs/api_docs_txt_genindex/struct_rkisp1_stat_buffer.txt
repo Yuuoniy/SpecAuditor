@@ -1,0 +1,11 @@
+Struct: struct rkisp1_stat_buffer
+
+Rockchip ISP1 Statistics Meta Data
+
+Members
+  meas_type
+    measurement types (RKISP1_CIF_ISP_STAT_* definitions)
+  frame_id
+    frame ID for sync
+  params
+    statistics data

@@ -1,0 +1,17 @@
+Struct: struct rkisp1_cif_isp_dpcc_config
+
+Configuration used by DPCC
+
+Members
+  mode
+    DPCC mode (RKISP1_CIF_ISP_DPCC_MODE_*)
+  output_mode
+    Interpolation output mode (RKISP1_CIF_ISP_DPCC_OUTPUT_MODE_*)
+  set_use
+    Methods sets selection (RKISP1_CIF_ISP_DPCC_SET_USE_*)
+  methods
+    Methods sets configuration
+  ro_limits
+    Rank order limits (RKISP1_CIF_ISP_DPCC_RO_LIMITS_*)
+  rnd_offs
+    Differential rank offsets for rank neighbor difference (RKISP1_CIF_ISP_DPCC_RND_OFFS_*)

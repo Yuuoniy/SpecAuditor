@@ -1,0 +1,39 @@
+Struct: struct tid_ampdu_tx
+
+TID aggregation information (Tx).
+
+Members
+  rcu_head
+    rcu head for freeing structure
+  session_timer
+    check if we keep Tx-ing on the TID (by timeout value)
+  addba_resp_timer
+    timer for peer’s response to addba request
+  pending
+    pending frames queue -- use sta’s spinlock to protect
+  sta
+    station we are attached to
+  state
+    session state (see above)
+  last_tx
+    jiffies of last tx activity
+  timeout
+    session timeout value to be filled in ADDBA requests
+  dialog_token
+    dialog token for aggregation session
+  stop_initiator
+    initiator of a session stop
+  tx_stop
+    TX DelBA frame when stopping
+  buf_size
+    reorder buffer size at receiver
+  ssn
+    starting sequence number of the session
+  failed_bar_ssn
+    ssn of the last failed BAR tx attempt
+  bar_pending
+    BAR needs to be re-sent
+  amsdu
+    support A-MSDU within A-MDPU
+  tid
+    TID number

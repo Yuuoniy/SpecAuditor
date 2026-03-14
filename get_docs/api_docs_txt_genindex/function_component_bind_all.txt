@@ -1,0 +1,12 @@
+Function: int component_bind_all ( struct device * parent , void * data )
+
+bind all components of an aggregate driver
+
+Parameters
+  struct device *parent
+    parent device of the aggregate driver
+  void *data
+    opaque pointer, passed to all components
+
+Description
+  Binds all components of the aggregate dev by passing data to their component_ops.bind functions. Should be called from component_master_ops.bind .

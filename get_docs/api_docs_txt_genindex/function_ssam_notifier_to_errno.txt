@@ -1,0 +1,7 @@
+Function: int ssam_notifier_to_errno ( u32 ret )
+
+Convert notifier return code to standard error value.
+
+Parameters
+  u32 ret
+    The notifier return value to convert.

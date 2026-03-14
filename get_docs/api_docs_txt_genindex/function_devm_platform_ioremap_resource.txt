@@ -1,0 +1,10 @@
+Function: void __iomem * devm_platform_ioremap_resource ( struct platform_device * pdev , unsigned int index )
+
+call devm_ioremap_resource() for a platform device
+
+Parameters
+  struct platform_device *pdev
+    platform device to use both for memory resource lookup as well as
+resource management
+  unsigned int index
+    resource index

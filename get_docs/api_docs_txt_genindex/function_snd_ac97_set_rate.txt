@@ -1,0 +1,16 @@
+Function: int snd_ac97_set_rate ( struct snd_ac97 * ac97 , int reg , unsigned int rate )
+
+change the rate of the given input/output.
+
+Parameters
+  struct snd_ac97 *ac97
+    the ac97 instance
+  int reg
+    the register to change
+  unsigned int rate
+    the sample rate to set
+
+Description
+  Changes the rate of the given input/output on the codec.
+If the codec doesn’t support VAR, the rate must be 48000 (except
+for SPDIF).

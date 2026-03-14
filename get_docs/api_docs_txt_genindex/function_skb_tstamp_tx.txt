@@ -1,0 +1,16 @@
+Function: void skb_tstamp_tx ( struct sk_buff * orig_skb , struct skb_shared_hwtstamps * hwtstamps )
+
+queue clone of skb with send time stamps
+
+Parameters
+  struct sk_buff *orig_skb
+    the original outgoing packet
+  struct skb_shared_hwtstamps *hwtstamps
+    hardware time stamps, may be NULL if not available
+
+Description
+  If the skb has a socket associated, then this function clones the
+skb (thus sharing the actual data and optional structures), stores
+the optional hardware time stamping information (if non NULL) or
+generates a software time stamp (otherwise), then queues the clone
+to the error queue of the socket.  Errors are silently ignored.

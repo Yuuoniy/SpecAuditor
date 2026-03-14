@@ -1,0 +1,11 @@
+Function: struct pnp_dev * pnp_request_card_device ( struct pnp_card_link * clink , const char * id , struct pnp_dev * from )
+
+Searches for a PnP device under the specified card
+
+Parameters
+  struct pnp_card_link *clink
+    pointer to the card link, cannot be NULL
+  const char *id
+    pointer to a PnP ID structure that explains the rules for finding the device
+  struct pnp_dev *from
+    Starting place to search from. If NULL it will start from the beginning.

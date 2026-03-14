@@ -1,0 +1,10 @@
+Function: bool netif_dormant ( const struct net_device * dev )
+
+test if device is dormant
+
+Parameters
+  const struct net_device *dev
+    network device
+
+Description
+  Check if device is dormant.

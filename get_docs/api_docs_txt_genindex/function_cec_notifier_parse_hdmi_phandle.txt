@@ -1,0 +1,13 @@
+Function: struct device * cec_notifier_parse_hdmi_phandle ( struct device * dev )
+
+find the hdmi device from “hdmi-phandle”
+
+Parameters
+  struct device *dev
+    the device with the “hdmi-phandle” device tree property
+
+Description
+  Returns the device pointer referenced by the “hdmi-phandle” property.
+Note that the refcount of the returned device is not incremented.
+This device pointer is only used as a key value in the notifier
+list, but it is never accessed by the CEC driver.

@@ -1,0 +1,11 @@
+Function: bool clk_is_enabled_when_prepared ( struct clk * clk )
+
+indicate if preparing a clock also enables it.
+
+Parameters
+  struct clk *clk
+    clock source
+
+Description
+  Returns true if clk_prepare() implicitly enables the clock, effectively
+making clk_enable() / clk_disable() no-ops, false otherwise.

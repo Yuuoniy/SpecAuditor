@@ -1,0 +1,10 @@
+Function: void ata_eh_link_report ( struct ata_link * link )
+
+report error handling to user
+
+Parameters
+  struct ata_link *link
+    ATA link EH is going on
+
+Description
+  Report EH to user.

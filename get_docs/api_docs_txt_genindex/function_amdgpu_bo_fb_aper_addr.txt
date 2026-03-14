@@ -1,0 +1,7 @@
+Function: u64 amdgpu_bo_fb_aper_addr ( struct amdgpu_bo * bo )
+
+return FB aperture GPU offset of the VRAM bo
+
+Parameters
+  struct amdgpu_bo *bo
+    amdgpu VRAM buffer object for which we query the offset

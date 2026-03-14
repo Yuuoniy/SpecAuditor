@@ -1,0 +1,12 @@
+Function: struct drm_plane_state * drm_gem_duplicate_shadow_plane_state ( struct drm_plane * plane )
+
+duplicates shadow-buffered plane state
+
+Parameters
+  struct drm_plane *plane
+    the plane
+
+Description
+  This function implements struct drm_plane_funcs.atomic_duplicate_state for
+shadow-buffered planes. It assumes the existing state to be of type struct drm_shadow_plane_state and it allocates the new state to be of this
+type.

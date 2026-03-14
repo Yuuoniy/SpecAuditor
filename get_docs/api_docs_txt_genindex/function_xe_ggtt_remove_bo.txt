@@ -1,0 +1,9 @@
+Function: void xe_ggtt_remove_bo ( struct xe_ggtt * ggtt , struct xe_bo * bo )
+
+Remove a BO from the GGTT
+
+Parameters
+  struct xe_ggtt *ggtt
+    the xe_ggtt where node will be removed
+  struct xe_bo *bo
+    the xe_bo to be removed

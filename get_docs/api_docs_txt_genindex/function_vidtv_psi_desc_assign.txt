@@ -1,0 +1,12 @@
+Function: void vidtv_psi_desc_assign ( struct vidtv_psi_desc * * to , struct vidtv_psi_desc * desc )
+
+Assigns a descriptor loop at some point
+
+Parameters
+  struct vidtv_psi_desc **to
+    Where to assign this descriptor loop to
+  struct vidtv_psi_desc *desc
+    The descriptor loop that will be assigned.
+
+Description
+  This will free the loop in ‘to’, if any.

@@ -1,0 +1,11 @@
+Struct: struct drm_panthor_bo_set_label
+
+Arguments passed to DRM_IOCTL_PANTHOR_BO_SET_LABEL
+
+Members
+  handle
+    Handle of the buffer object to label.
+  pad
+    MBZ.
+  label
+    User pointer to a NUL-terminated string Length cannot be greater than 4096

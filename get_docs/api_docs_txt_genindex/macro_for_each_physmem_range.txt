@@ -1,0 +1,13 @@
+Macro: for_each_physmem_range
+
+
+
+Parameters
+  i
+    u64 used as loop variable
+  type
+    ptr to memblock_type which excludes from the iteration, can be NULL
+  p_start
+    ptr to phys_addr_t for start address of the range, can be NULL
+  p_end
+    ptr to phys_addr_t for end address of the range, can be NULL

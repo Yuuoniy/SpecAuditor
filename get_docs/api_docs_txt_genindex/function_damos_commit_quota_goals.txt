@@ -1,0 +1,14 @@
+Function: int damos_commit_quota_goals ( struct damos_quota * dst , struct damos_quota * src )
+
+Commit DAMOS quota goals to another quota.
+
+Parameters
+  struct damos_quota *dst
+    The commit destination DAMOS quota.
+  struct damos_quota *src
+    The commit source DAMOS quota.
+
+Description
+  Copies user-specified parameters for quota goals from src to dst .  Users
+should use this function for quota goals-level parameters update of running
+DAMON contexts, instead of manual in-place updates.

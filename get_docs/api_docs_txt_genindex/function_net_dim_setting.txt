@@ -1,0 +1,11 @@
+Function: void net_dim_setting ( struct net_device * dev , struct dim * dim , bool is_tx )
+
+initialize DIM’s cq mode and schedule worker
+
+Parameters
+  struct net_device *dev
+    target network device
+  struct dim *dim
+    DIM context
+  bool is_tx
+    true indicates the tx direction, false indicates the rx direction

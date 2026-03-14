@@ -1,0 +1,14 @@
+Function: bool drm_dp_read_sink_count_cap ( struct drm_connector * connector , const u8 dpcd [ DP_RECEIVER_CAP_SIZE ] , const struct drm_dp_desc * desc )
+
+Check whether a given connector has a valid sink count
+
+Parameters
+  struct drm_connector *connector
+    The DRM connector to check
+  const u8 dpcd[DP_RECEIVER_CAP_SIZE]
+    A cached copy of the connector’s DPCD RX capabilities
+  const struct drm_dp_desc *desc
+    A cached copy of the connector’s DP descriptor
+
+Description
+  See also: drm_dp_read_sink_count()

@@ -1,0 +1,7 @@
+Function: u16 ssh_rqid_next ( struct ssh_rqid_counter * c )
+
+Get next request ID.
+
+Parameters
+  struct ssh_rqid_counter *c
+    The counter providing the request IDs.

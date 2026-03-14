@@ -1,0 +1,7 @@
+Function: bool of_device_is_system_power_controller ( const struct device_node * np )
+
+Tells if system-power-controller is found for device_node
+
+Parameters
+  const struct device_node *np
+    Pointer to the given device_node

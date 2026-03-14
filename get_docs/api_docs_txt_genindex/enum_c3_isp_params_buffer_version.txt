@@ -1,0 +1,3 @@
+Enum: enum c3_isp_params_buffer_version
+
+C3 ISP parameters block versioning

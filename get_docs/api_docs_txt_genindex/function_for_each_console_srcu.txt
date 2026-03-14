@@ -1,0 +1,10 @@
+Function: for_each_console_srcu
+
+
+
+Parameters
+  con
+    struct console pointer used as loop cursor
+
+Description
+  Although SRCU guarantees the console list will be consistent, the struct console fields may be updated by other CPUs while iterating.

@@ -1,0 +1,12 @@
+Function: void devfreq_monitor_stop ( struct devfreq * devfreq )
+
+Stop load monitoring of a devfreq instance
+
+Parameters
+  struct devfreq *devfreq
+    the devfreq instance.
+
+Description
+  Helper function to stop devfreq device load monitoring. Function
+to be called from governor in response to DEVFREQ_GOV_STOP
+event when device is removed from devfreq framework.

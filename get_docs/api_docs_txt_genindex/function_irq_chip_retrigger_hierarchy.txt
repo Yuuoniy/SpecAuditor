@@ -1,0 +1,11 @@
+Function: int irq_chip_retrigger_hierarchy ( struct irq_data * data )
+
+Retrigger an interrupt in hardware
+
+Parameters
+  struct irq_data *data
+    Pointer to interrupt specific data
+
+Description
+  Iterate through the domain hierarchy of the interrupt and check
+whether a hw retrigger function exists. If yes, invoke it.

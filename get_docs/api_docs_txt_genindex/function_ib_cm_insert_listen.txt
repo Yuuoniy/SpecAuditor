@@ -1,0 +1,19 @@
+Function: struct ib_cm_id * ib_cm_insert_listen ( struct ib_device * device , ib_cm_handler cm_handler , __be64 service_id )
+
+Create a new listening ib_cm_id and listen on the given service ID.
+
+Parameters
+  struct ib_device *device
+    Device associated with the cm_id.  All related communication will
+be associated with the specified device.
+  ib_cm_handler cm_handler
+    Callback invoked to notify the user of CM events.
+  __be64 service_id
+    Service identifier matched against incoming connection
+and service ID resolution requests.  The service ID should be specified
+network-byte order.  If set to IB_CM_ASSIGN_SERVICE_ID, the CM will
+assign a service ID to the caller.
+
+Description
+  If there’s an existing ID listening on that same device and service ID,
+return it.

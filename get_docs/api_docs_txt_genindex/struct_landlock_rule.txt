@@ -1,0 +1,18 @@
+Struct: struct landlock_rule
+
+Access rights tied to an object
+
+Members
+  node
+    Node in the ruleset’s red-black tree.
+  key
+    A union to identify either a kernel object (e.g. an inode) or
+a raw data value (e.g. a network socket port). This is used as a key
+for this ruleset element.  The pointer is set once and never
+modified.  It always points to an allocated object because each rule
+increments the refcount of its object.
+  num_layers
+    Number of entries in layers .
+  layers
+    Stack of layers, from the latest to the newest, implemented
+as a flexible array member (FAM).

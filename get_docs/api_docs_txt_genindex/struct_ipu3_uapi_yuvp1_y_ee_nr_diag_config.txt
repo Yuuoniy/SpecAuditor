@@ -1,0 +1,25 @@
+Struct: struct ipu3_uapi_yuvp1_y_ee_nr_diag_config
+
+Luma(Y) edge enhancement noise reduction diagonal config
+
+Members
+  diag_disc_g
+    Coefficient that prioritize diagonal edge direction on
+horizontal or vertical for final enhancement.
+u4.0, [1, 15], default 1.
+  reserved0
+    reserved
+  hvw_hor
+    Weight of horizontal/vertical edge enhancement for hv edge.
+u2.2, [1, 15], default 4.
+  dw_hor
+    Weight of diagonal edge enhancement for hv edge.
+u2.2, [1, 15], default 1.
+  hvw_diag
+    Weight of horizontal/vertical edge enhancement for diagonal edge.
+u2.2, [1, 15], default 1.
+  dw_diag
+    Weight of diagonal edge enhancement for diagonal edge.
+u2.2, [1, 15], default 4.
+  reserved1
+    reserved

@@ -1,0 +1,18 @@
+Struct: struct ssam_device_uid
+
+Unique identifier for SSAM device.
+
+Members
+  domain
+    Domain of the device.
+  category
+    Target category of the device.
+  target
+    Target ID of the device.
+  instance
+    Instance ID of the device.
+  function
+    Sub-function of the device. This field can be used to split a
+single SAM device into multiple virtual subdevices to separate
+different functionality of that device and allow one driver per
+such functionality.

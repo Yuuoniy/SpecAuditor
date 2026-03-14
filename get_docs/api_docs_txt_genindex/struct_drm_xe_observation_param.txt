@@ -1,0 +1,13 @@
+Struct: struct drm_xe_observation_param
+
+Input of DRM_XE_OBSERVATION
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  observation_type
+    observation stream type, of enum drm_xe_observation_type
+  observation_op
+    observation stream op, of enum drm_xe_observation_op
+  param
+    Pointer to actual stream params

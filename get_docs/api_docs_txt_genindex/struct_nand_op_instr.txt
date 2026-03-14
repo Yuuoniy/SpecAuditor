@@ -1,0 +1,23 @@
+Struct: struct nand_op_instr
+
+Instruction object
+
+Members
+  type
+    the instruction type
+  ctx
+    extra data associated to the instruction. You’ll have to use the
+appropriate element depending on type
+  ctx.cmd
+    use it if type is NAND_OP_CMD_INSTR
+  ctx.addr
+    use it if type is NAND_OP_ADDR_INSTR
+  ctx.data
+    use it if type is NAND_OP_DATA_IN_INSTR or NAND_OP_DATA_OUT_INSTR
+  ctx.waitrdy
+    use it if type is NAND_OP_WAITRDY_INSTR
+  delay_ns
+    delay the controller should apply after the instruction has been
+issued on the bus. Most modern controllers have internal timings
+control logic, and in this case, the controller driver can ignore
+this field.

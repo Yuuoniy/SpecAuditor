@@ -1,0 +1,11 @@
+Function: int sata_link_init_spd ( struct ata_link * link )
+
+Initialize link->sata_spd_limit
+
+Parameters
+  struct ata_link *link
+    Link to configure sata_spd_limit for
+
+Description
+  Initialize link->[hw_]sata_spd_limit to the currently
+configured value.

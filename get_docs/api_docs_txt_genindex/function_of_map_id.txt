@@ -1,0 +1,25 @@
+Function: int of_map_id ( const struct device_node * np , u32 id , const char * map_name , const char * map_mask_name , struct device_node * * target , u32 * id_out )
+
+Translate an ID through a downstream mapping.
+
+Parameters
+  const struct device_node *np
+    root complex device node.
+  u32 id
+    device ID to map.
+  const char *map_name
+    property name of the map to use.
+  const char *map_mask_name
+    optional property name of the mask to use.
+  struct device_node **target
+    optional pointer to a target device node.
+  u32 *id_out
+    optional pointer to receive the translated ID.
+
+Description
+  Given a device ID, look up the appropriate implementation-defined
+platform ID and/or the target device which receives transactions on that
+ID, as per the “iommu-map” and “msi-map” bindings. Either of target or id_out may be NULL if only the other is required. If target points to
+a non-NULL device node pointer, only entries targeting that node will be
+matched; if it points to a NULL value, it will receive the device node of
+the first matching target phandle, with a reference held.

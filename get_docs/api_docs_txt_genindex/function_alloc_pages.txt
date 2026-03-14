@@ -1,0 +1,15 @@
+Function: struct page * alloc_pages ( gfp_t gfp , unsigned int order )
+
+Allocate pages.
+
+Parameters
+  gfp_t gfp
+    GFP flags.
+  unsigned int order
+    Power of two of number of pages to allocate.
+
+Description
+  Allocate 1 << order contiguous pages.  The physical address of the
+first page is naturally aligned (eg an order-3 allocation will be aligned
+to a multiple of 8 * PAGE_SIZE bytes).  The NUMA policy of the current
+process is honoured when in process context.

@@ -1,0 +1,9 @@
+Function: bool drm_gem_is_prime_exported_dma_buf ( struct drm_device * dev , struct dma_buf * dma_buf )
+
+checks if the DMA-BUF was exported from a GEM object belonging to dev .
+
+Parameters
+  struct drm_device *dev
+    drm_device to check against
+  struct dma_buf *dma_buf
+    dma-buf object to import

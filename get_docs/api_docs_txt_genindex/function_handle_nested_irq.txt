@@ -1,0 +1,12 @@
+Function: void handle_nested_irq ( unsigned int irq )
+
+Handle a nested irq from a irq thread
+
+Parameters
+  unsigned int irq
+    the interrupt number
+
+Description
+  Handle interrupts which are nested into a threaded interrupt
+handler. The handler function is called inside the calling threads
+context.

@@ -1,0 +1,27 @@
+Struct: struct device_link
+
+Device link representation.
+
+Members
+  supplier
+    The device on the supplier end of the link.
+  s_node
+    Hook to the supplier device’s list of links to consumers.
+  consumer
+    The device on the consumer end of the link.
+  c_node
+    Hook to the consumer device’s list of links to suppliers.
+  link_dev
+    device used to expose link details in sysfs
+  status
+    The state of the link (with respect to the presence of drivers).
+  flags
+    Link flags.
+  rpm_active
+    Whether or not the consumer device is runtime-PM-active.
+  kref
+    Count repeated addition of the same link.
+  rm_work
+    Work structure used for removing the link.
+  supplier_preactivated
+    Supplier has been made active before consumer probe.

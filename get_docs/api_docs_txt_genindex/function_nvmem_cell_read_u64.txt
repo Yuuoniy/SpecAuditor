@@ -1,0 +1,11 @@
+Function: int nvmem_cell_read_u64 ( struct device * dev , const char * cell_id , u64 * val )
+
+Read a cell value as a u64
+
+Parameters
+  struct device *dev
+    Device that requests the nvmem cell.
+  const char *cell_id
+    Name of nvmem cell to read.
+  u64 *val
+    pointer to output value.

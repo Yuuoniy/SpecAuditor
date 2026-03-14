@@ -1,0 +1,19 @@
+Function: int skb_to_sgvec ( struct sk_buff * skb , struct scatterlist * sg , int offset , int len )
+
+Fill a scatter-gather list from a socket buffer
+
+Parameters
+  struct sk_buff *skb
+    Socket buffer containing the buffers to be mapped
+  struct scatterlist *sg
+    The scatter-gather list to map into
+  int offset
+    The offset into the buffer’s contents to start mapping
+  int len
+    Length of buffer space to be mapped
+
+Description
+  Fill the specified scatter-gather list with mappings/pointers into a
+region of the buffer space attached to a socket buffer. Returns either
+the number of scatterlist items used, or -EMSGSIZE if the contents
+could not fit.

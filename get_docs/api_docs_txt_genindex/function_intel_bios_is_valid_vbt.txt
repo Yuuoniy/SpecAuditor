@@ -1,0 +1,14 @@
+Function: bool intel_bios_is_valid_vbt ( struct intel_display * display , const void * buf , size_t size )
+
+does the given buffer contain a valid VBT
+
+Parameters
+  struct intel_display *display
+    display device
+  const void *buf
+    pointer to a buffer to validate
+  size_t size
+    size of the buffer
+
+Description
+  Returns true on valid VBT.

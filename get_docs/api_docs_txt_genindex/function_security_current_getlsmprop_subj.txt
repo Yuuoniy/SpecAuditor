@@ -1,0 +1,11 @@
+Function: void security_current_getlsmprop_subj ( struct lsm_prop * prop )
+
+Current task’s subjective LSM data
+
+Parameters
+  struct lsm_prop *prop
+    lsm specific information
+
+Description
+  Retrieve the subjective security identifier of the current task and return
+it in prop .

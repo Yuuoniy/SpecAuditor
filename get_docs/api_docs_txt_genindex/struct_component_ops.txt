@@ -1,0 +1,12 @@
+Struct: struct component_ops
+
+callbacks for component drivers
+
+Members
+  bind
+    Called through component_bind_all() when the aggregate driver is
+ready to bind the overall driver.
+  unbind
+    Called through component_unbind_all() when the aggregate driver is
+ready to bind the overall driver, or when component_bind_all() fails
+part-ways through and needs to unbind some already bound components.

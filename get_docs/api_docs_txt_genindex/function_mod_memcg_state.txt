@@ -1,0 +1,11 @@
+Function: void mod_memcg_state ( struct mem_cgroup * memcg , enum memcg_stat_item idx , int val )
+
+update cgroup memory statistics
+
+Parameters
+  struct mem_cgroup *memcg
+    the memory cgroup
+  enum memcg_stat_item idx
+    the stat item - can be enum memcg_stat_item or enum node_stat_item
+  int val
+    delta to add to the counter, can be negative

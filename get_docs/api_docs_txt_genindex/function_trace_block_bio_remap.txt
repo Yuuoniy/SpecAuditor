@@ -1,0 +1,15 @@
+Function: void trace_block_bio_remap ( struct bio * bio , dev_t dev , sector_t from )
+
+map request for a logical device to the raw device
+
+Parameters
+  struct bio *bio
+    revised operation
+  dev_t dev
+    original device for the operation
+  sector_t from
+    original sector for the operation
+
+Description
+  An operation for a logical device has been mapped to the
+raw block device.

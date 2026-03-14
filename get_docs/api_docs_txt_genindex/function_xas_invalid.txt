@@ -1,0 +1,7 @@
+Function: bool xas_invalid ( const struct xa_state * xas )
+
+Is the xas in a retry or error state?
+
+Parameters
+  const struct xa_state *xas
+    XArray operation state.

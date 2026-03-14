@@ -1,0 +1,16 @@
+Function: void drm_dp_mst_topology_queue_probe ( struct drm_dp_mst_topology_mgr * mgr )
+
+Queue a topology probe
+
+Parameters
+  struct drm_dp_mst_topology_mgr *mgr
+    manager to probe
+
+Description
+  Queue a work to probe the MST topology. Driver’s should call this only to
+sync the topology’s HW->SW state after the MST link’s parameters have
+changed in a way the state could’ve become out-of-sync. This is the case
+for instance when the link rate between the source and first downstream
+branch device has switched between UHBR and non-UHBR rates. Except of those
+cases - for instance when a sink gets plugged/unplugged to a port - the SW
+state will get updated automatically via MST UP message notifications.

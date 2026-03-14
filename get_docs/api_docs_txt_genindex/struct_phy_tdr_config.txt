@@ -1,0 +1,13 @@
+Struct: struct phy_tdr_config
+
+Configuration of a TDR raw test
+
+Members
+  first
+    Distance for first data collection point
+  last
+    Distance for last data collection point
+  step
+    Step between data collection points
+  pair
+    Bitmap of cable pairs to collect data for

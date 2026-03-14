@@ -1,0 +1,17 @@
+Function: int jbd2_journal_check_used_features ( journal_t * journal , unsigned long compat , unsigned long ro , unsigned long incompat )
+
+Check if features specified are used.
+
+Parameters
+  journal_t *journal
+    Journal to check.
+  unsigned long compat
+    bitmask of compatible features
+  unsigned long ro
+    bitmask of features that force read-only mount
+  unsigned long incompat
+    bitmask of incompatible features
+
+Description
+  Check whether the journal uses all of a given set of
+features.  Return true (non-zero) if it does.

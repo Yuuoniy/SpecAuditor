@@ -1,0 +1,11 @@
+Function: bool ata_eh_quiet ( struct ata_queued_cmd * qc )
+
+check if we need to be quiet about a command error
+
+Parameters
+  struct ata_queued_cmd *qc
+    qc to check
+
+Description
+  Look at the qc flags anbd its scsi command request flags to determine
+if we need to be quiet about the command failure.

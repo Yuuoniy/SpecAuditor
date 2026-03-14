@@ -1,0 +1,15 @@
+Function: int security_sk_alloc ( struct sock * sk , int family , gfp_t priority )
+
+Allocate and initialize a sock’s LSM blob
+
+Parameters
+  struct sock *sk
+    sock
+  int family
+    protocol family
+  gfp_t priority
+    gfp flags
+
+Description
+  Allocate and attach a security structure to the sk->sk_security field, which
+is used to copy security attributes between local stream sockets.

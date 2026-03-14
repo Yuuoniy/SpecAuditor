@@ -1,0 +1,9 @@
+Struct: struct usb_gadget_strings
+
+a set of USB strings in a given language
+
+Members
+  language
+    identifies the strings’ language (0x0409 for en-us)
+  strings
+    array of strings with their ids

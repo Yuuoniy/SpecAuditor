@@ -1,0 +1,10 @@
+Function: void v4l2_flash_release ( struct v4l2_flash * v4l2_flash )
+
+release V4L2 Flash sub-device
+
+Parameters
+  struct v4l2_flash *v4l2_flash
+    the V4L2 Flash sub-device to release
+
+Description
+  Release V4L2 Flash sub-device.

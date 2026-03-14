@@ -1,0 +1,13 @@
+Function: void sfp_upstream_set_signal_rate ( struct sfp_bus * bus , unsigned int rate_kbd )
+
+set data signalling rate
+
+Parameters
+  struct sfp_bus *bus
+    a pointer to the struct sfp_bus structure for the sfp module
+  unsigned int rate_kbd
+    signalling rate in units of 1000 baud
+
+Description
+  Configure the rate select settings on the SFP module for the signalling
+rate (not the same as the data rate).

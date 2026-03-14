@@ -1,0 +1,14 @@
+Macro: genradix_prealloc
+
+
+
+Parameters
+  _radix
+    genradix to preallocate
+  _nr
+    number of entries to preallocate
+  _gfp
+    gfp mask
+
+Description
+  Returns 0 on success, -ENOMEM on failure

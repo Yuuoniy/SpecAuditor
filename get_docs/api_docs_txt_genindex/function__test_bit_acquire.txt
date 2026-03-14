@@ -1,0 +1,9 @@
+Function: bool _test_bit_acquire ( unsigned long nr , volatile const unsigned long * addr )
+
+Determine, with acquire semantics, whether a bit is set
+
+Parameters
+  unsigned long nr
+    bit number to test
+  const volatile unsigned long *addr
+    Address to start counting from

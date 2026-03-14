@@ -1,0 +1,7 @@
+Function: int xe_pm_module_init ( void )
+
+Perform xe_pm specific module initialization.
+
+Parameters
+  void
+    no arguments

@@ -1,0 +1,10 @@
+Function: void drm_mode_sort ( struct list_head * mode_list )
+
+sort mode list
+
+Parameters
+  struct list_head *mode_list
+    list of drm_display_mode structures to sort
+
+Description
+  Sort mode_list by favorability, moving good modes to the head of the list.

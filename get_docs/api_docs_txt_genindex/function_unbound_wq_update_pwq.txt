@@ -1,0 +1,12 @@
+Function: void unbound_wq_update_pwq ( struct workqueue_struct * wq , int cpu )
+
+update a pwq slot for CPU hot[un]plug
+
+Parameters
+  struct workqueue_struct *wq
+    the target workqueue
+  int cpu
+    the CPU to update the pwq slot for
+
+Description
+  This function is to be called from CPU_DOWN_PREPARE , CPU_ONLINE and CPU_DOWN_FAILED . cpu is in the same pod of the CPU being hot[un]plugged.

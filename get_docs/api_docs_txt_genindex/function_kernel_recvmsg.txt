@@ -1,0 +1,22 @@
+Function: int kernel_recvmsg ( struct socket * sock , struct msghdr * msg , struct kvec * vec , size_t num , size_t size , int flags )
+
+Receive a message from a socket (kernel space)
+
+Parameters
+  struct socket *sock
+    The socket to receive the message from
+  struct msghdr *msg
+    Received message
+  struct kvec *vec
+    Input s/g array for message data
+  size_t num
+    Size of input s/g array
+  size_t size
+    Number of bytes to read
+  int flags
+    Message flags (MSG_DONTWAIT, etc...)
+
+Description
+  On return the msg structure contains the scatter/gather array passed in the
+vec argument. The array is modified so that it consists of the unfilled
+portion of the original array.

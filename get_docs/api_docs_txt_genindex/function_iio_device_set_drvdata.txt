@@ -1,0 +1,13 @@
+Function: void iio_device_set_drvdata ( struct iio_dev * indio_dev , void * data )
+
+Set device driver data
+
+Parameters
+  struct iio_dev *indio_dev
+    IIO device structure
+  void *data
+    Driver specific data
+
+Description
+  Allows to attach an arbitrary pointer to an IIO device, which can later be
+retrieved by iio_device_get_drvdata() .

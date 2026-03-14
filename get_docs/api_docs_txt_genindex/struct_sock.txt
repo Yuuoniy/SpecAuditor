@@ -1,0 +1,234 @@
+Struct: struct sock
+
+network layer representation of sockets
+
+Members
+  __sk_common
+    shared layout with inet_timewait_sock
+  sk_drops
+    raw/udp drops counter
+  sk_peek_off
+    current peek_offset value
+  sk_error_queue
+    rarely used
+  sk_receive_queue
+    incoming packets
+  sk_backlog
+    always used with the per-socket spinlock held
+  sk_rx_dst
+    receive input route used by early demux
+  sk_rx_dst_ifindex
+    ifindex for sk_rx_dst
+  sk_rx_dst_cookie
+    cookie for sk_rx_dst
+  sk_ll_usec
+    usecs to busypoll when there is no data
+  sk_napi_id
+    id of the last napi context to receive data for sk
+  sk_busy_poll_budget
+    napi processing budget when busypolling
+  sk_prefer_busy_poll
+    prefer busypolling over softirq processing
+  sk_userlocks
+    SO_SNDBUF and SO_RCVBUF settings
+  sk_rcvbuf
+    size of receive buffer in bytes
+  sk_filter
+    socket filtering instructions
+  {unnamed_union}
+    anonymous
+  sk_wq
+    sock wait queue and async head
+  sk_data_ready
+    callback to indicate there is data to be processed
+  sk_rcvtimeo
+    SO_RCVTIMEO setting
+  sk_rcvlowat
+    SO_RCVLOWAT setting
+  sk_err
+    last error
+  sk_socket
+    Identd and reporting IO signals
+  sk_memcg
+    this socket’s memory cgroup association
+  sk_policy
+    flow policy
+  psp_assoc
+    PSP association, if socket is PSP-secured
+  sk_lock
+    synchronizer
+  sk_reserved_mem
+    space reserved and non-reclaimable for the socket
+  sk_forward_alloc
+    space allocated forward
+  sk_tsflags
+    SO_TIMESTAMPING flags
+  sk_write_pending
+    a write to stream socket waits to start
+  sk_omem_alloc
+    “o” is “option” or “other”
+  sk_err_soft
+    errors that don’t cause failure but are the cause of a
+persistent failure not just ‘timed out’
+  sk_wmem_queued
+    persistent queue size
+  sk_wmem_alloc
+    transmit queue bytes committed
+  sk_tsq_flags
+    TCP Small Queues flags
+  {unnamed_union}
+    anonymous
+  sk_send_head
+    front of stuff to transmit
+  tcp_rtx_queue
+    TCP re-transmit queue [ union with sk_send_head ]
+  sk_write_queue
+    Packet sending queue
+  sk_dst_pending_confirm
+    need to confirm neighbour
+  sk_pacing_status
+    Pacing status (requested, handled by sch_fq)
+  sk_frag
+    cached page frag
+  sk_timer
+    sock cleanup timer
+  sk_pacing_rate
+    Pacing rate (if supported by transport/packet scheduler)
+  sk_zckey
+    counter to order MSG_ZEROCOPY notifications
+  sk_tskey
+    counter to disambiguate concurrent tstamp requests
+  sk_max_pacing_rate
+    Maximum pacing rate ( SO_MAX_PACING_RATE )
+  sk_sndtimeo
+    SO_SNDTIMEO setting
+  sk_priority
+    SO_PRIORITY setting
+  sk_mark
+    generic packet mark
+  sk_uid
+    user id of owner
+  sk_protocol
+    which protocol this socket belongs in this network family
+  sk_type
+    socket type ( SOCK_STREAM , etc)
+  sk_dst_cache
+    destination cache
+  sk_route_caps
+    route capabilities (e.g. NETIF_F_TSO )
+  sk_validate_xmit_skb
+    ptr to an optional validate function
+  sk_gso_type
+    GSO type (e.g. SKB_GSO_TCPV4 )
+  sk_gso_max_segs
+    Maximum number of GSO segments
+  sk_gso_max_size
+    Maximum GSO segment size to build
+  sk_allocation
+    allocation mode
+  sk_txhash
+    computed flow hash for use on transmit
+  sk_sndbuf
+    size of send buffer in bytes
+  sk_pacing_shift
+    scaling factor for TCP Small Queues
+  sk_use_task_frag
+    allow sk_page_frag() to use current->task_frag.
+Sockets that can be used under memory reclaim should
+set this to false.
+  sk_gso_disabled
+    if set, NETIF_F_GSO_MASK is forbidden.
+  sk_kern_sock
+    True if sock is using kernel lock classes
+  sk_no_check_tx
+    SO_NO_CHECK setting, set checksum in TX packets
+  sk_no_check_rx
+    allow zero checksum in RX packets
+  sk_shutdown
+    mask of SEND_SHUTDOWN and/or RCV_SHUTDOWN
+  sk_lingertime
+    SO_LINGER l_linger setting
+  sk_prot_creator
+    sk_prot of original sock creator (see ipv6_setsockopt,
+IPV6_ADDRFORM for instance)
+  sk_callback_lock
+    used with the callbacks in the end of this struct
+  sk_ack_backlog
+    current listen backlog
+  sk_max_ack_backlog
+    listen backlog set in listen()
+  sk_ino
+    inode number (zero if orphaned)
+  sk_peer_lock
+    lock protecting sk_peer_pid and sk_peer_cred
+  sk_bind_phc
+    SO_TIMESTAMPING bind PHC index of PTP virtual clock
+for timestamping
+  sk_peer_pid
+    struct pid for this socket’s peer
+  sk_peer_cred
+    SO_PEERCRED setting
+  sk_stamp
+    time stamp of last packet received
+  sk_stamp_seq
+    lock for accessing sk_stamp on 32 bit architectures only
+  sk_disconnects
+    number of disconnect operations performed on this sock
+  {unnamed_union}
+    anonymous
+  sk_txrehash
+    enable TX hash rethink
+  sk_scm_recv_flags
+    all flags used by scm_recv()
+  {unnamed_struct}
+    anonymous
+  sk_scm_credentials
+    flagged by SO_PASSCRED to recv SCM_CREDENTIALS
+  sk_scm_security
+    flagged by SO_PASSSEC to recv SCM_SECURITY
+  sk_scm_pidfd
+    flagged by SO_PASSPIDFD to recv SCM_PIDFD
+  sk_scm_rights
+    flagged by SO_PASSRIGHTS to recv SCM_RIGHTS
+  sk_scm_unused
+    unused flags for scm_recv()
+  sk_clockid
+    clockid used by time-based scheduling (SO_TXTIME)
+  sk_txtime_deadline_mode
+    set deadline mode for SO_TXTIME
+  sk_txtime_report_errors
+    set report errors mode for SO_TXTIME
+  sk_txtime_unused
+    unused txtime flags
+  sk_bpf_cb_flags
+    used in bpf_setsockopt()
+  sk_user_data
+    RPC layer private data. Write-protected by sk_callback_lock .
+  sk_security
+    used by security modules
+  sk_cgrp_data
+    cgroup data for this cgroup
+  sk_state_change
+    callback to indicate change in the state of the sock
+  sk_write_space
+    callback to indicate there is bf sending space available
+  sk_error_report
+    callback to indicate errors (e.g. MSG_ERRQUEUE )
+  sk_backlog_rcv
+    callback to process the backlog
+  sk_destruct
+    called at sock freeing time, i.e. when all refcnt == 0
+  sk_reuseport_cb
+    reuseport group container
+  sk_bpf_storage
+    ptr to cache and control for bpf_sk_storage
+  sk_drop_counters
+    optional pointer to numa_drop_counters
+  sk_rcu
+    used during RCU grace period
+  ns_tracker
+    tracker for netns reference
+  sk_user_frags
+    xarray of pages the user is holding a reference on.
+  sk_owner
+    reference to the real owner of the socket that calls sock_lock_init_class_and_name() .

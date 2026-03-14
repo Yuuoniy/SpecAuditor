@@ -1,0 +1,38 @@
+Struct: struct drm_i915_query_topology_info
+
+
+
+Members
+  flags
+    Unused for now. Must be cleared to zero.
+  max_slices
+    The number of bits used to express the slice mask.
+  max_subslices
+    The number of bits used to express the subslice mask.
+  max_eus_per_subslice
+    The number of bits in the EU mask that correspond to a single
+subslice’s EUs.
+  subslice_offset
+    Offset in data[] at which the subslice masks are stored.
+  subslice_stride
+    Stride at which each of the subslice masks for each slice are
+stored.
+  eu_offset
+    Offset in data[] at which the EU masks are stored.
+  eu_stride
+    Stride at which each of the EU masks for each subslice are stored.
+  data
+    Contains 3 pieces of information : The slice mask with one bit per slice telling whether a slice is
+available. The availability of slice X can be queried with the
+following formula : ( data [ X / 8 ] >> ( X % 8 )) & 1 Starting with Xe_HP platforms, Intel hardware no longer has
+traditional slices so i915 will always report a single slice
+(hardcoded slicemask = 0x1) which contains all of the platform’s
+subslices.  I.e., the mask here does not reflect any of the newer
+hardware concepts such as “gslices” or “cslices” since userspace
+is capable of inferring those from the subslice mask. The subslice mask for each slice with one bit per subslice telling
+whether a subslice is available.  Starting with Gen12 we use the
+term “subslice” to refer to what the hardware documentation
+describes as a “dual-subslices.”  The availability of subslice Y
+in slice X can be queried with the following formula : ( data [ subslice_offset + X * subslice_stride + Y / 8 ] >> ( Y % 8 )) & 1 The EU mask for each subslice in each slice, with one bit per EU
+telling whether an EU is available. The availability of EU Z in
+subslice Y in slice X can be queried with the following formula : ( data [ eu_offset + ( X * max_subslices + Y ) * eu_stride + Z / 8 ] >> ( Z % 8 )) & 1

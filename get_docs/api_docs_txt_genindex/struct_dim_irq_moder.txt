@@ -1,0 +1,21 @@
+Struct: struct dim_irq_moder
+
+Structure for irq moderation information. Used to collect irq moderation related information.
+
+Members
+  profile_flags
+    DIM_PROFILE_*
+  coal_flags
+    DIM_COALESCE_* for Rx and Tx
+  dim_rx_mode
+    Rx DIM period count mode: CQE or EQE
+  dim_tx_mode
+    Tx DIM period count mode: CQE or EQE
+  rx_profile
+    DIM profile list for Rx
+  tx_profile
+    DIM profile list for Tx
+  rx_dim_work
+    Rx DIM worker scheduled by net_dim()
+  tx_dim_work
+    Tx DIM worker scheduled by net_dim()

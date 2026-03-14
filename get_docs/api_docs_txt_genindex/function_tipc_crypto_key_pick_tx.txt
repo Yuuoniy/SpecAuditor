@@ -1,0 +1,18 @@
+Function: struct tipc_aead * tipc_crypto_key_pick_tx ( struct tipc_crypto * tx , struct tipc_crypto * rx , struct sk_buff * skb , u8 tx_key )
+
+Pick one TX key for message decryption
+
+Parameters
+  struct tipc_crypto *tx
+    TX crypto handle
+  struct tipc_crypto *rx
+    RX crypto handle (can be NULL)
+  struct sk_buff *skb
+    the message skb which will be decrypted later
+  u8 tx_key
+    peer TX key id
+
+Description
+  This function looks up the existing TX keys and pick one which is suitable
+for the message decryption, that must be a cluster key and not used before
+on the same message (i.e. recursive).

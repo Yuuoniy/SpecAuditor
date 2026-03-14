@@ -1,0 +1,13 @@
+Function: void drm_gem_vram_plane_helper_cleanup_fb ( struct drm_plane * plane , struct drm_plane_state * old_state )
+
+Implements struct drm_plane_helper_funcs .cleanup_fb
+
+Parameters
+  struct drm_plane *plane
+    a DRM plane
+  struct drm_plane_state *old_state
+    the plane’s old state
+
+Description
+  During plane updates, this function unpins the GEM VRAM
+objects of the plane’s old framebuffer from VRAM. Complements drm_gem_vram_plane_helper_prepare_fb() .

@@ -1,0 +1,12 @@
+Function: int backlight_get_brightness ( const struct backlight_device * bd )
+
+Returns the current brightness value
+
+Parameters
+  const struct backlight_device *bd
+    the backlight device
+
+Description
+  Returns the current brightness value, taking in consideration the current
+state. If backlight_is_blank() returns true then return 0 as brightness
+otherwise return the current brightness property value.

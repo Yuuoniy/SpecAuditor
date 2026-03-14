@@ -1,0 +1,16 @@
+Function: void * __memblock_alloc_or_panic ( phys_addr_t size , phys_addr_t align , const char * func )
+
+Try to allocate memory and panic on failure
+
+Parameters
+  phys_addr_t size
+    size of memory block to be allocated in bytes
+  phys_addr_t align
+    alignment of the region and block’s size
+  const char *func
+    caller func name
+
+Description
+  This function attempts to allocate memory using memblock_alloc,
+and in case of failure, it calls panic with the formatted message.
+This function should not be used directly, please use the macro memblock_alloc_or_panic.

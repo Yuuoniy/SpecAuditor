@@ -1,0 +1,2 @@
+Function: struct oa_tc6 * oa_tc6_init ( struct spi_device * spi , struct net_device * netdev )
+

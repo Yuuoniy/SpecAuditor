@@ -1,0 +1,7 @@
+Function: bool phy_is_started ( struct phy_device * phydev )
+
+Convenience function to check whether PHY is started
+
+Parameters
+  struct phy_device *phydev
+    The phy_device struct

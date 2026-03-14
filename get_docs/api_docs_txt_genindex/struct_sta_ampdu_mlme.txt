@@ -1,0 +1,36 @@
+Struct: struct sta_ampdu_mlme
+
+STA aggregation information.
+
+Members
+  tid_rx
+    aggregation info for Rx per TID -- RCU protected
+  tid_rx_token
+    dialog tokens for valid aggregation sessions
+  tid_rx_timer_expired
+    bitmap indicating on which TIDs the
+RX timer expired until the work for it runs
+  tid_rx_stop_requested
+    bitmap indicating which BA sessions per TID the
+driver requested to close until the work for it runs
+  tid_rx_manage_offl
+    bitmap indicating which BA sessions were requested
+to be treated as started/stopped due to offloading
+  agg_session_valid
+    bitmap indicating which TID has a rx BA session open on
+  unexpected_agg
+    bitmap indicating which TID already sent a delBA due to
+unexpected aggregation related frames outside a session
+  work
+    work struct for starting/stopping aggregation
+  tid_tx
+    aggregation info for Tx per TID
+  tid_start_tx
+    sessions where start was requested, not just protected
+by wiphy mutex but also sta->lock
+  last_addba_req_time
+    timestamp of the last addBA request.
+  addba_req_num
+    number of times addBA request has been sent.
+  dialog_token_allocator
+    dialog token enumerator for each new session;

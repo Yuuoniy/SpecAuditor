@@ -1,0 +1,15 @@
+Struct: struct nand_op_data_instr
+
+Definition of a data instruction
+
+Members
+  len
+    number of data bytes to move
+  buf
+    buffer to fill
+  buf.in
+    buffer to fill when reading from the NAND chip
+  buf.out
+    buffer to read from when writing to the NAND chip
+  force_8bit
+    force 8-bit access

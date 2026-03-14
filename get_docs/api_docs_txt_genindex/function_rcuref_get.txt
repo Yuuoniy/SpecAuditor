@@ -1,0 +1,10 @@
+Function: bool rcuref_get ( rcuref_t * ref )
+
+Acquire one reference on a rcuref reference count
+
+Parameters
+  rcuref_t *ref
+    Pointer to the reference count
+
+Description
+  Similar to atomic_inc_not_zero() but saturates at RCUREF_MAXREF.

@@ -1,0 +1,10 @@
+Function: int cxl_mem_abort_fw_xfer ( struct cxl_memdev_state * mds )
+
+Abort an in-progress FW transfer
+
+Parameters
+  struct cxl_memdev_state *mds
+    The device data for the operation
+
+Description
+  Abort an in-progress firmware transfer for the device specified.

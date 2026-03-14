@@ -1,0 +1,10 @@
+Function: void intel_psr_pause ( struct intel_dp * intel_dp )
+
+Pause PSR
+
+Parameters
+  struct intel_dp *intel_dp
+    Intel DP
+
+Description
+  This function need to be called after enabling psr.

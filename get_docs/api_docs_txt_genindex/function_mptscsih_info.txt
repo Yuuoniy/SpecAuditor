@@ -1,0 +1,10 @@
+Function: const char * mptscsih_info ( struct Scsi_Host * SChost )
+
+Return information about MPT adapter
+
+Parameters
+  struct Scsi_Host *SChost
+    Pointer to Scsi_Host structure
+
+Description
+  (linux scsi_host_template.info routine)

@@ -1,0 +1,14 @@
+Function: int skb_copy_and_csum_datagram_msg ( struct sk_buff * skb , int hlen , struct msghdr * msg )
+
+Copy and checksum skb to user iovec.
+
+Parameters
+  struct sk_buff *skb
+    skbuff
+  int hlen
+    hardware length
+  struct msghdr *msg
+    destination
+
+Description
+  Caller _must_ check that skb will fit to this iovec.

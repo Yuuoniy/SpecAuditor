@@ -1,0 +1,7 @@
+Function: bool xe_pm_runtime_resume_and_get ( struct xe_device * xe )
+
+Resume, then get a runtime_pm ref if awake.
+
+Parameters
+  struct xe_device *xe
+    xe device instance

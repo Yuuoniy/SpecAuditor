@@ -1,0 +1,36 @@
+Struct: struct m88ds3103_platform_data
+
+Platform data for the m88ds3103 driver
+
+Members
+  clk
+    Clock frequency.
+  i2c_wr_max
+    Max bytes I2C adapter can write at once.
+  ts_mode
+    TS mode.
+  ts_clk
+    TS clock (KHz).
+  clk_out
+    Clock output.
+  ts_clk_pol
+    TS clk polarity. 1-active at falling edge; 0-active at rising
+edge.
+  spec_inv
+    Input spectrum inversion.
+  agc
+    AGC configuration.
+  agc_inv
+    AGC polarity.
+  envelope_mode
+    DiSEqC envelope mode.
+  lnb_hv_pol
+    LNB H/V pin polarity. 0: pin high set to VOLTAGE_18, pin low to
+set VOLTAGE_13. 1: pin high set to VOLTAGE_13, pin low to set VOLTAGE_18.
+  lnb_en_pol
+    LNB enable pin polarity. 0: pin high to disable, pin low to
+enable. 1: pin high to enable, pin low to disable.
+  get_dvb_frontend
+    Get DVB frontend.
+  get_i2c_adapter
+    Get I2C adapter.

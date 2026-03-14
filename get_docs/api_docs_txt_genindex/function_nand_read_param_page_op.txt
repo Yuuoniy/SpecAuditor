@@ -1,0 +1,17 @@
+Function: int nand_read_param_page_op ( struct nand_chip * chip , u8 page , void * buf , unsigned int len )
+
+Do a READ PARAMETER PAGE operation
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+  u8 page
+    parameter page to read
+  void *buf
+    buffer used to store the data
+  unsigned int len
+    length of the buffer
+
+Description
+  This function issues a READ PARAMETER PAGE operation.
+This function does not select/unselect the CS line.

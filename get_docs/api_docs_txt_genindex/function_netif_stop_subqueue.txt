@@ -1,0 +1,12 @@
+Function: void netif_stop_subqueue ( struct net_device * dev , u16 queue_index )
+
+stop sending packets on subqueue
+
+Parameters
+  struct net_device *dev
+    network device
+  u16 queue_index
+    sub queue index
+
+Description
+  Stop individual transmit queue of a device with multiple transmit queues.

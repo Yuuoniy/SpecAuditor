@@ -1,0 +1,16 @@
+Function: void starget_for_each_device ( struct scsi_target * starget , void * data , void ( * fn ) ( struct scsi_device * , void * ) )
+
+helper to walk all devices of a target
+
+Parameters
+  struct scsi_target *starget
+    target whose devices we want to iterate over.
+  void *data
+    Opaque passed to each function call.
+  void (*fn)(struct scsi_device *, void *)
+    Function to call on each device
+
+Description
+  This traverses over each device of starget .  The devices have
+a reference that must be released by scsi_host_put when breaking
+out of the loop.

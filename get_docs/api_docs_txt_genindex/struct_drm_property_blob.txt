@@ -1,0 +1,17 @@
+Struct: struct drm_property_blob
+
+Blob data for drm_property
+
+Members
+  base
+    base KMS object
+  dev
+    DRM device
+  head_global
+    entry on the global blob list in drm_mode_config.property_blob_list .
+  head_file
+    entry on the per-file blob list in drm_file.blobs list.
+  length
+    size of the blob in bytes, invariant over the lifetime of the object
+  data
+    actual data, embedded at the end of this structure

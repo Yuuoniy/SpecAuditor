@@ -1,0 +1,16 @@
+Function: struct drm_framebuffer * drm_framebuffer_lookup ( struct drm_device * dev , struct drm_file * file_priv , uint32_t id )
+
+look up a drm framebuffer and grab a reference
+
+Parameters
+  struct drm_device *dev
+    drm device
+  struct drm_file *file_priv
+    drm file to check for lease against.
+  uint32_t id
+    id of the fb object
+
+Description
+  If successful, this grabs an additional reference to the framebuffer -
+callers need to make sure to eventually unreference the returned framebuffer
+again, using drm_framebuffer_put() .

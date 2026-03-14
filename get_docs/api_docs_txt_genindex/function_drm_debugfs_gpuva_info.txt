@@ -1,0 +1,12 @@
+Function: int drm_debugfs_gpuva_info ( struct seq_file * m , struct drm_gpuvm * gpuvm )
+
+dump the given DRM GPU VA space
+
+Parameters
+  struct seq_file *m
+    pointer to the seq_file to write
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm representing the GPU VA space
+
+Description
+  Dumps the GPU VA mappings of a given DRM GPU VA manager.

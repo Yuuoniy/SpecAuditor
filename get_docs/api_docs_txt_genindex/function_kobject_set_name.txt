@@ -1,0 +1,16 @@
+Function: int kobject_set_name ( struct kobject * kobj , const char * fmt , ... )
+
+Set the name of a kobject.
+
+Parameters
+  struct kobject *kobj
+    struct kobject to set the name of
+  const char *fmt
+    format string used to build the name
+  ...
+    variable arguments
+
+Description
+  This sets the name of the kobject.  If you have already added the
+kobject to the system, you must call kobject_rename() in order to
+change the name of the kobject.

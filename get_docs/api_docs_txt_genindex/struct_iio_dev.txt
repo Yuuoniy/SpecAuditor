@@ -1,0 +1,51 @@
+Struct: struct iio_dev
+
+industrial I/O device
+
+Members
+  modes
+    [DRIVER] bitmask listing all the operating modes
+supported by the IIO device. This list should be
+initialized before registering the IIO device. It can
+also be filed up by the IIO core, as a result of
+enabling particular features in the driver
+(see iio_triggered_event_setup() ).
+  dev
+    [DRIVER] device structure, should be assigned a parent
+and owner
+  buffer
+    [DRIVER] any buffer present
+  scan_bytes
+    [INTERN] num bytes captured to be fed to buffer demux
+  available_scan_masks
+    [DRIVER] optional array of allowed bitmasks. Sort the
+array in order of preference, the most preferred
+masks first.
+  masklength
+    [INTERN] the length of the mask established from
+channels
+  active_scan_mask
+    [INTERN] union of all scan masks requested by buffers
+  scan_timestamp
+    [INTERN] set if any buffers have requested timestamp
+  trig
+    [INTERN] current device trigger (buffer modes)
+  pollfunc
+    [DRIVER] function run on trigger being received
+  pollfunc_event
+    [DRIVER] function run on events trigger being received
+  channels
+    [DRIVER] channel specification structure table
+  num_channels
+    [DRIVER] number of channels specified in channels .
+  name
+    [DRIVER] name of the device.
+  label
+    [DRIVER] unique name to identify which device this is
+  info
+    [DRIVER] callbacks and constant info from driver
+  setup_ops
+    [DRIVER] callbacks to call before and after buffer
+enable/disable
+  priv
+    [DRIVER] reference to driver’s private information MUST be accessed ONLY via iio_priv() helper

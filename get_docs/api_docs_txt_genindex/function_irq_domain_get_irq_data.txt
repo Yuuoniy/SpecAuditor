@@ -1,0 +1,9 @@
+Function: struct irq_data * irq_domain_get_irq_data ( struct irq_domain * domain , unsigned int virq )
+
+Get irq_data associated with virq and domain
+
+Parameters
+  struct irq_domain *domain
+    domain to match
+  unsigned int virq
+    IRQ number to get irq_data

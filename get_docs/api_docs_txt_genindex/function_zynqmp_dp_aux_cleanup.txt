@@ -1,0 +1,10 @@
+Function: void zynqmp_dp_aux_cleanup ( struct zynqmp_dp * dp )
+
+Cleanup the DP AUX
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure
+
+Description
+  Unregister the DP AUX adapter.

@@ -1,0 +1,11 @@
+Function: void folio_putback_hugetlb ( struct folio * folio )
+
+unisolate a hugetlb folio
+
+Parameters
+  struct folio *folio
+    the isolated hugetlb folio
+
+Description
+  Putback/un-isolate the hugetlb folio that was previous isolated using folio_isolate_hugetlb() : marking it non-isolated/migratable and putting it
+back onto the active list.

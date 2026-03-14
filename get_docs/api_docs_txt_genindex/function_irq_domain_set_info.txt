@@ -1,0 +1,21 @@
+Function: void irq_domain_set_info ( struct irq_domain * domain , unsigned int virq , irq_hw_number_t hwirq , const struct irq_chip * chip , void * chip_data , irq_flow_handler_t handler , void * handler_data , const char * handler_name )
+
+Set the complete data for a virq in domain
+
+Parameters
+  struct irq_domain *domain
+    Interrupt domain to match
+  unsigned int virq
+    IRQ number
+  irq_hw_number_t hwirq
+    The hardware interrupt number
+  const struct irq_chip *chip
+    The associated interrupt chip
+  void *chip_data
+    The associated interrupt chip data
+  irq_flow_handler_t handler
+    The interrupt flow handler
+  void *handler_data
+    The interrupt flow handler data
+  const char *handler_name
+    The interrupt handler name

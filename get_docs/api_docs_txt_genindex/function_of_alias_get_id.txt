@@ -1,0 +1,13 @@
+Function: int of_alias_get_id ( const struct device_node * np , const char * stem )
+
+Get alias id for the given device_node
+
+Parameters
+  const struct device_node *np
+    Pointer to the given device_node
+  const char *stem
+    Alias stem of the given device_node
+
+Description
+  The function travels the lookup table to get the alias id for the given
+device_node and alias stem.

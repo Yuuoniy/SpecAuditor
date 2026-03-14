@@ -1,0 +1,10 @@
+Function: void em_dev_unregister_perf_domain ( struct device * dev )
+
+Unregister Energy Model (EM) for a device
+
+Parameters
+  struct device *dev
+    Device for which the EM is registered
+
+Description
+  Unregister the EM for the specified dev (but not a CPU device).

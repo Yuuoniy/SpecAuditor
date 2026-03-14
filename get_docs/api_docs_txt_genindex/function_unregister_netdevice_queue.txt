@@ -1,0 +1,14 @@
+Function: void unregister_netdevice_queue ( struct net_device * dev , struct list_head * head )
+
+remove device from the kernel
+
+Parameters
+  struct net_device *dev
+    device
+  struct list_head *head
+    list
+
+Description
+  This function shuts down a device interface and removes it
+from the kernel tables.
+If head not NULL, device is queued to be unregistered later.

@@ -1,0 +1,14 @@
+Function: void * folio_change_private ( struct folio * folio , void * data )
+
+Change private data on a folio.
+
+Parameters
+  struct folio *folio
+    Folio to change the data on.
+  void *data
+    Data to set on the folio.
+
+Description
+  Change the private data attached to a folio and return the old
+data.  The page must previously have had data attached and the data
+must be detached before the folio will be freed.

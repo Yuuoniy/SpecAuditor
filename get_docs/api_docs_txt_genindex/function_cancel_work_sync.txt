@@ -1,0 +1,13 @@
+Function: bool cancel_work_sync ( struct work_struct * work )
+
+cancel a work and wait for it to finish
+
+Parameters
+  struct work_struct *work
+    the work to cancel
+
+Description
+  Cancel work and wait for its execution to finish. This function can be used
+even if the work re-queues itself or migrates to another workqueue. On return
+from this function, work is guaranteed to be not pending or executing on any
+CPU as long as there aren’t racing enqueues.

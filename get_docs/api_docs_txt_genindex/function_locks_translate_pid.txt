@@ -1,0 +1,12 @@
+Function: pid_t locks_translate_pid ( struct file_lock_core * fl , struct pid_namespace * ns )
+
+translate a file_lock’s fl_pid number into a namespace
+
+Parameters
+  struct file_lock_core *fl
+    The file_lock who’s fl_pid should be translated
+  struct pid_namespace *ns
+    The namespace into which the pid should be translated
+
+Description
+  Used to translate a fl_pid into a namespace virtual pid number

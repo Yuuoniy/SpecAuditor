@@ -1,0 +1,12 @@
+Function: void ttm_tt_destroy ( struct ttm_device * bdev , struct ttm_tt * ttm )
+
+
+
+Parameters
+  struct ttm_device *bdev
+    the ttm_device this object belongs to
+  struct ttm_tt *ttm
+    The struct ttm_tt .
+
+Description
+  Unbind, unpopulate and destroy common struct ttm_tt .

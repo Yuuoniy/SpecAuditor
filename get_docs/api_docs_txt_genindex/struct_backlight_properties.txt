@@ -1,0 +1,31 @@
+Struct: struct backlight_properties
+
+backlight properties
+
+Members
+  brightness
+    The current brightness requested by the user. The backlight core makes sure the range is (0 to max_brightness)
+when the brightness is set via the sysfs attribute:
+/sys/class/backlight/<backlight>/brightness. This value can be set in the backlight_properties passed
+to devm_backlight_device_register() to set a default brightness
+value.
+  max_brightness
+    The maximum brightness value. This value must be set in the backlight_properties passed to devm_backlight_device_register() and shall not be modified by the
+driver after registration.
+  power
+    The current power mode. User space can configure the power mode using the sysfs
+attribute: /sys/class/backlight/<backlight>/bl_power
+When the power property is updated update_status() is called. The possible values are: (0: full on, 4: full off), see
+BACKLIGHT_POWER constants. When the backlight device is enabled, power is set to
+BACKLIGHT_POWER_ON. When the backlight device is disabled, power is set to BACKLIGHT_POWER_OFF.
+  type
+    The type of backlight supported. The backlight type allows userspace to make appropriate
+policy decisions based on the backlight type. This value must be set in the backlight_properties
+passed to devm_backlight_device_register() .
+  state
+    The state of the backlight core. The state is a bitmask. BL_CORE_FBBLANK is set when the display
+is expected to be blank. BL_CORE_SUSPENDED is set when the
+driver is suspended. backlight drivers are expected to use backlight_is_blank() in their update_status() operation rather than reading the
+state property. The state is maintained by the core and drivers may not modify it.
+  scale
+    The type of the brightness scale.

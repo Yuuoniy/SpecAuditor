@@ -1,0 +1,12 @@
+Function: void ccwgroup_remove_ccwdev ( struct ccw_device * cdev )
+
+remove function for slave devices
+
+Parameters
+  struct ccw_device *cdev
+    ccw device to be removed
+
+Description
+  This is a remove function for ccw devices that are slave devices in a ccw
+group device. It sets the ccw device offline and also deregisters the
+embedding ccw group device.

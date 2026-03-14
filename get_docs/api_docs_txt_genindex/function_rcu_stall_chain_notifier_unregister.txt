@@ -1,0 +1,10 @@
+Function: int rcu_stall_chain_notifier_unregister ( struct notifier_block * n )
+
+Remove an RCU CPU stall notifier
+
+Parameters
+  struct notifier_block *n
+    Entry to add.
+
+Description
+  Removes an RCU CPU stall notifier from an atomic notifier chain.

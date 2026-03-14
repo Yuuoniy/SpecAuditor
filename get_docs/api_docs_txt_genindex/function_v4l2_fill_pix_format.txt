@@ -1,0 +1,9 @@
+Function: void v4l2_fill_pix_format ( struct v4l2_pix_format * pix_fmt , const struct v4l2_mbus_framefmt * mbus_fmt )
+
+Ancillary routine that fills a struct v4l2_pix_format fields from a struct v4l2_mbus_framefmt .
+
+Parameters
+  struct v4l2_pix_format *pix_fmt
+    pointer to struct v4l2_pix_format to be filled
+  const struct v4l2_mbus_framefmt *mbus_fmt
+    pointer to struct v4l2_mbus_framefmt to be used as model

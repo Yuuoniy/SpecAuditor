@@ -1,0 +1,12 @@
+Function: int regulator_get_error_flags ( struct regulator * regulator , unsigned int * flags )
+
+get regulator error information
+
+Parameters
+  struct regulator *regulator
+    regulator source
+  unsigned int *flags
+    pointer to store error flags
+
+Description
+  Get the current regulator error information.

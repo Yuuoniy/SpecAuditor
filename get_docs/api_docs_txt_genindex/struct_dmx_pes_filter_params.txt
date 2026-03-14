@@ -1,0 +1,15 @@
+Struct: struct dmx_pes_filter_params
+
+Specifies Packetized Elementary Stream (PES) filter parameters.
+
+Members
+  pid
+    PID to be filtered.
+  input
+    Demux input, as specified by enum dmx_input .
+  output
+    Demux output, as specified by enum dmx_output .
+  pes_type
+    Type of the pes filter, as specified by enum dmx_pes_type .
+  flags
+    Demux PES flags.

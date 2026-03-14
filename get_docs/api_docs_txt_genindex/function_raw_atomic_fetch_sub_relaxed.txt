@@ -1,0 +1,12 @@
+Function: int raw_atomic_fetch_sub_relaxed ( int i , atomic_t * v )
+
+atomic subtract with relaxed ordering
+
+Parameters
+  int i
+    int value to subtract
+  atomic_t *v
+    pointer to atomic_t
+
+Description
+  Atomically updates v to ( v - i ) with relaxed ordering.

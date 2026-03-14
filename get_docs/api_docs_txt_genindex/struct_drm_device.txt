@@ -1,0 +1,123 @@
+Struct: struct drm_device
+
+DRM device structure
+
+Members
+  if_version
+    Highest interface version set
+  ref
+    Object ref-count
+  dev
+    Device structure of bus-device
+  dma_dev
+    Device for DMA operations. Only required if the device dev cannot perform DMA by itself. Should be NULL otherwise. Call drm_dev_dma_dev() to get the DMA device instead of using this
+field directly. Call drm_dev_set_dma_dev() to set this field. DRM devices are sometimes bound to virtual devices that cannot
+perform DMA by themselves. Drivers should set this field to the
+respective DMA controller. Devices on USB and other peripheral busses also cannot perform
+DMA by themselves. The dma_dev field should point the bus
+controller that does DMA on behalve of such a device. Required
+for importing buffers via dma-buf. If set, the DRM core automatically releases the reference on the
+device.
+  managed
+    Managed resources linked to the lifetime of this drm_device as
+tracked by ref .
+  driver
+    DRM driver managing the device
+  dev_private
+    DRM driver private data. This is deprecated and should be left set to
+NULL. Instead of using this pointer it is recommended that drivers use devm_drm_dev_alloc() and embed struct drm_device in their larger
+per-device structure.
+  primary
+    Primary node. Drivers should not interact with this
+directly. debugfs interfaces can be registered with drm_debugfs_add_file() , and sysfs should be directly added on the
+hardware (and not character device node) struct device dev .
+  render
+    Render node. Drivers should not interact with this directly ever.
+Drivers should not expose any additional interfaces in debugfs or
+sysfs on this node.
+  accel
+    Compute Acceleration node
+  registered
+    Internally used by drm_dev_register() and drm_connector_register() .
+  master
+    Currently active master for this device.
+Protected by master_mutex
+  driver_features
+    per-device driver features Drivers can clear specific flags here to disallow
+certain features on a per-device basis while still
+sharing a single struct drm_driver instance across
+all devices.
+  unplugged
+    Flag to tell if the device has been unplugged.
+See drm_dev_enter() and drm_dev_is_unplugged() .
+  anon_inode
+    inode for private address-space
+  unique
+    Unique name of the device
+  master_mutex
+    Lock for drm_minor.master and drm_file.is_master
+  open_count
+    Usage counter for outstanding files open,
+protected by drm_global_mutex
+  filelist_mutex
+    Protects filelist .
+  filelist
+    List of userspace clients, linked through drm_file.lhead .
+  filelist_internal
+    List of open DRM files for in-kernel clients.
+Protected by filelist_mutex .
+  clientlist_mutex
+    Protects clientlist access.
+  clientlist
+    List of in-kernel clients. Protected by clientlist_mutex .
+  vblank_disable_immediate
+    If true, vblank interrupt will be disabled immediately when the
+refcount drops to zero, as opposed to via the vblank disable
+timer. This can be set to true it the hardware has a working vblank counter
+with high-precision timestamping (otherwise there are races) and the
+driver uses drm_crtc_vblank_on() and drm_crtc_vblank_off() appropriately. Also, see max_vblank_count , drm_crtc_funcs.get_vblank_counter and drm_vblank_crtc_config.disable_immediate .
+  vblank
+    Array of vblank tracking structures, one per struct drm_crtc . For
+historical reasons (vblank support predates kernel modesetting) this
+is free-standing and not part of struct drm_crtc itself. It must be
+initialized explicitly by calling drm_vblank_init() .
+  vblank_time_lock
+    Protects vblank count and time updates during vblank enable/disable
+  vbl_lock
+    Top-level vblank references lock, wraps the low-level vblank_time_lock .
+  max_vblank_count
+    Maximum value of the vblank registers. This value +1 will result in a
+wrap-around of the vblank register. It is used by the vblank core to
+handle wrap-arounds. If set to zero the vblank core will try to guess the elapsed vblanks
+between times when the vblank interrupt is disabled through
+high-precision timestamps. That approach is suffering from small
+races and imprecision over longer time periods, hence exposing a
+hardware vblank counter is always recommended. This is the statically configured device wide maximum. The driver
+can instead choose to use a runtime configurable per-crtc value drm_vblank_crtc.max_vblank_count , in which case max_vblank_count must be left at zero. See drm_crtc_set_max_vblank_count() on how
+to use the per-crtc value. If non-zero, drm_crtc_funcs.get_vblank_counter must be set.
+  vblank_event_list
+    List of vblank events
+  event_lock
+    Protects vblank_event_list and event delivery in
+general. See drm_send_event() and drm_send_event_locked() .
+  num_crtcs
+    Number of CRTCs on this device
+  mode_config
+    Current mode config
+  object_name_lock
+    GEM information
+  object_name_idr
+    GEM information
+  vma_offset_manager
+    GEM information
+  vram_mm
+    VRAM MM memory manager
+  switch_power_state
+    Power state of the client.
+Used by drivers supporting the switcheroo driver.
+The state is maintained in the vga_switcheroo_client_ops.set_gpu_state callback
+  fb_helper
+    Pointer to the fbdev emulation structure.
+Set by drm_fb_helper_init() and cleared by drm_fb_helper_fini() .
+  debugfs_root
+    Root directory for debugfs files.

@@ -1,0 +1,10 @@
+Function: bool pcie_relaxed_ordering_enabled ( struct pci_dev * dev )
+
+Probe for PCIe relaxed ordering enable
+
+Parameters
+  struct pci_dev *dev
+    PCI device to query
+
+Description
+  Returns true if the device has enabled relaxed ordering attribute.

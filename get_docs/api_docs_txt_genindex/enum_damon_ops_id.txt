@@ -1,0 +1,3 @@
+Enum: enum damon_ops_id
+
+Identifier for each monitoring operations implementation

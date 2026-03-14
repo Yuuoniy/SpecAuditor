@@ -1,0 +1,12 @@
+Function: void rdma_destroy_ah_attr ( struct rdma_ah_attr * ah_attr )
+
+Release reference to SGID attribute of ah attribute.
+
+Parameters
+  struct rdma_ah_attr *ah_attr
+    Pointer to ah attribute
+
+Description
+  Release reference to the SGID attribute of the ah attribute if it is
+non NULL. It is safe to call this multiple times, and safe to call it on
+a zero initialized ah_attr.

@@ -1,0 +1,10 @@
+Function: void i3c_driver_unregister ( struct i3c_driver * drv )
+
+unregister an I3C device driver
+
+Parameters
+  struct i3c_driver *drv
+    driver to unregister
+
+Description
+  Unregister drv .

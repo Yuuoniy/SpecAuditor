@@ -1,0 +1,12 @@
+Function: void raw_atomic_long_or ( long i , atomic_long_t * v )
+
+atomic bitwise OR with relaxed ordering
+
+Parameters
+  long i
+    long value
+  atomic_long_t *v
+    pointer to atomic_long_t
+
+Description
+  Atomically updates v to ( v | i ) with relaxed ordering.

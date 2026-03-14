@@ -1,0 +1,14 @@
+Function: u64 hrtimer_forward ( struct hrtimer * timer , ktime_t now , ktime_t interval )
+
+forward the timer expiry
+
+Parameters
+  struct hrtimer *timer
+    hrtimer to forward
+  ktime_t now
+    forward past this time
+  ktime_t interval
+    the interval to forward
+
+Description
+  Forward the timer expiry so it will expire in the future.

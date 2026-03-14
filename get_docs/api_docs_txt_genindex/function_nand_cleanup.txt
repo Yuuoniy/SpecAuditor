@@ -1,0 +1,7 @@
+Function: void nand_cleanup ( struct nand_chip * chip )
+
+[NAND Interface] Free resources held by the NAND device
+
+Parameters
+  struct nand_chip *chip
+    NAND chip object

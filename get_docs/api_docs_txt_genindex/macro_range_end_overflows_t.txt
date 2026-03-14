@@ -1,0 +1,16 @@
+Macro: range_end_overflows_t
+
+
+
+Parameters
+  type
+    Data type to use.
+  start
+    Start of the range.
+  size
+    Size of the range.
+  max
+    Exclusive upper boundary.
+
+Description
+  Same as range_end_overflows() but forcing the parameters to type .

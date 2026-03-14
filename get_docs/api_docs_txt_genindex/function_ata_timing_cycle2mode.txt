@@ -1,0 +1,15 @@
+Function: u8 ata_timing_cycle2mode ( unsigned int xfer_shift , int cycle )
+
+find xfer mode for the specified cycle duration
+
+Parameters
+  unsigned int xfer_shift
+    ATA_SHIFT_* value for transfer type to examine.
+  int cycle
+    cycle duration in ns
+
+Description
+  Return matching xfer mode for cycle .  The returned mode is of
+the transfer type specified by xfer_shift .  If cycle is too
+slow for xfer_shift , 0xff is returned.  If cycle is faster
+than the fastest known mode, the fasted mode is returned.

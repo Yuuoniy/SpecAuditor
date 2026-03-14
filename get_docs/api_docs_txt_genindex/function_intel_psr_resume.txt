@@ -1,0 +1,10 @@
+Function: void intel_psr_resume ( struct intel_dp * intel_dp )
+
+Resume PSR
+
+Parameters
+  struct intel_dp *intel_dp
+    Intel DP
+
+Description
+  This function need to be called after pausing psr.

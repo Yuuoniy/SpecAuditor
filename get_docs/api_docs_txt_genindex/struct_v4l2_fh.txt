@@ -1,0 +1,28 @@
+Struct: struct v4l2_fh
+
+Describes a V4L2 file handler
+
+Members
+  list
+    list of file handlers
+  vdev
+    pointer to struct video_device
+  ctrl_handler
+    pointer to struct v4l2_ctrl_handler
+  prio
+    priority of the file handler, as defined by enum v4l2_priority
+  wait
+    event’ s wait queue
+  subscribe_lock
+    serialise changes to the subscribed list; guarantee that
+the add and del event callbacks are orderly called
+  subscribed
+    list of subscribed events
+  available
+    list of events waiting to be dequeued
+  navailable
+    number of available events at available list
+  sequence
+    event sequence number
+  m2m_ctx
+    pointer to struct v4l2_m2m_ctx

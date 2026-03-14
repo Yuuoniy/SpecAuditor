@@ -1,0 +1,16 @@
+Function: unsigned int bio_add_vmalloc_chunk ( struct bio * bio , void * vaddr , unsigned len )
+
+add a vmalloc chunk to a bio
+
+Parameters
+  struct bio *bio
+    destination bio
+  void *vaddr
+    vmalloc address to add
+  unsigned len
+    total length in bytes of the data to add
+
+Description
+  Add data starting at vaddr to bio and return how many bytes were added.
+This may be less than the amount originally asked.  Returns 0 if no data
+could be added to bio .

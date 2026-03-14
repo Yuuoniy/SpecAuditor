@@ -1,0 +1,12 @@
+Function: struct klp_state * klp_get_state ( struct klp_patch * patch , unsigned long id )
+
+get information about system state modified by the given patch
+
+Parameters
+  struct klp_patch *patch
+    livepatch that modifies the given system state
+  unsigned long id
+    custom identifier of the modified system state
+
+Description
+  Checks whether the given patch modifies the given system state.

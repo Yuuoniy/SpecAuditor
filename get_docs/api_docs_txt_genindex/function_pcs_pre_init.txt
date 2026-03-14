@@ -1,0 +1,12 @@
+Function: int pcs_pre_init ( struct phylink_pcs * pcs )
+
+Configure PCS components necessary for MAC initialization
+
+Parameters
+  struct phylink_pcs *pcs
+    a pointer to a struct phylink_pcs .
+
+Description
+  This function can be called by MAC drivers through the phylink_pcs_pre_init() wrapper, before their hardware is initialized. It
+should not be called after the link is brought up, as reconfiguring the PCS
+at this point could break the link.

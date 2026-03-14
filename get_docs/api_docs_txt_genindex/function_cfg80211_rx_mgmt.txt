@@ -1,0 +1,21 @@
+Function: bool cfg80211_rx_mgmt ( struct wireless_dev * wdev , int freq , int sig_dbm , const u8 * buf , size_t len , u32 flags )
+
+notification of received, unprocessed management frame
+
+Parameters
+  struct wireless_dev *wdev
+    wireless device receiving the frame
+  int freq
+    Frequency on which the frame was received in MHz
+  int sig_dbm
+    signal strength in dBm, or 0 if unknown
+  const u8 *buf
+    Management frame (header + body)
+  size_t len
+    length of the frame data
+  u32 flags
+    flags, as defined in enum nl80211_rxmgmt_flags
+
+Description
+  This function is called whenever an Action frame is received for a station
+mode interface, but is not processed in kernel.

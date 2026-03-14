@@ -1,0 +1,9 @@
+Struct: struct rc_scancode_filter
+
+Filter scan codes.
+
+Members
+  data
+    Scancode data to match.
+  mask
+    Mask of bits of scancode to compare.

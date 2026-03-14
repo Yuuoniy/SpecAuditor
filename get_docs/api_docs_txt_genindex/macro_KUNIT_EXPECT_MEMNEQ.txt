@@ -1,0 +1,18 @@
+Macro: KUNIT_EXPECT_MEMNEQ
+
+
+
+Parameters
+  test
+    The test context object.
+  left
+    An arbitrary expression that evaluates to the specified size.
+  right
+    An arbitrary expression that evaluates to the specified size.
+  size
+    Number of bytes compared.
+
+Description
+  Sets an expectation that the values that left and right evaluate to are
+not equal. This is semantically equivalent to
+KUNIT_EXPECT_TRUE( test , memcmp(( left ), ( right ), ( size ))). See KUNIT_EXPECT_TRUE() for more information.

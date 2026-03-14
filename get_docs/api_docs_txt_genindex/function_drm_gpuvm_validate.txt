@@ -1,0 +1,13 @@
+Function: int drm_gpuvm_validate ( struct drm_gpuvm * gpuvm , struct drm_exec * exec )
+
+validate all BOs marked as evicted
+
+Parameters
+  struct drm_gpuvm *gpuvm
+    the drm_gpuvm to validate evicted BOs
+  struct drm_exec *exec
+    the drm_exec instance used for locking the GPUVM
+
+Description
+  Calls the drm_gpuvm_ops ::vm_bo_validate callback for all evicted buffer
+objects being mapped in the given drm_gpuvm .

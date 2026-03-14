@@ -1,0 +1,11 @@
+Function: int input_ff_create_memless ( struct input_dev * dev , void * data , int ( * play_effect ) ( struct input_dev * , void * , struct ff_effect * ) )
+
+create memoryless force-feedback device
+
+Parameters
+  struct input_dev *dev
+    input device supporting force-feedback
+  void *data
+    driver-specific data to be passed into play_effect
+  int (*play_effect)(struct input_dev *, void *, struct ff_effect *)
+    driver-specific method for playing FF effect

@@ -1,0 +1,10 @@
+Function: void pcpu_free_alloc_info ( struct pcpu_alloc_info * ai )
+
+free percpu allocation info
+
+Parameters
+  struct pcpu_alloc_info *ai
+    pcpu_alloc_info to free
+
+Description
+  Free ai which was allocated by pcpu_alloc_alloc_info() .

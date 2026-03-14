@@ -1,0 +1,19 @@
+Function: int snd_dma_alloc_pages_fallback ( int type , struct device * device , size_t size , struct snd_dma_buffer * dmab )
+
+allocate the buffer area according to the given type with fallback
+
+Parameters
+  int type
+    the DMA buffer type
+  struct device *device
+    the device pointer
+  size_t size
+    the buffer size to allocate
+  struct snd_dma_buffer *dmab
+    buffer allocation record to store the allocated data
+
+Description
+  Calls the memory-allocator function for the corresponding
+buffer type.  When no space is left, this function reduces the size and
+tries to allocate again.  The size actually allocated is stored in
+res_size argument.

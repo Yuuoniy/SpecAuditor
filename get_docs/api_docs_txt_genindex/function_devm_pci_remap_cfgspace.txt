@@ -1,0 +1,15 @@
+Function: void __iomem * devm_pci_remap_cfgspace ( struct device * dev , resource_size_t offset , resource_size_t size )
+
+Managed pci_remap_cfgspace()
+
+Parameters
+  struct device *dev
+    Generic device to remap IO address for
+  resource_size_t offset
+    Resource address to map
+  resource_size_t size
+    Size of map
+
+Description
+  Managed pci_remap_cfgspace() .  Map is automatically unmapped on driver
+detach.

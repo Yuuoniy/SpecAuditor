@@ -1,0 +1,12 @@
+Function: void * mempool_alloc_preallocated ( mempool_t * pool )
+
+allocate an element from preallocated elements belonging to a specific memory pool
+
+Parameters
+  mempool_t *pool
+    pointer to the memory pool which was allocated via mempool_create() .
+
+Description
+  This function is similar to mempool_alloc, but it only attempts allocating
+an element from the preallocated elements. It does not sleep and immediately
+returns if no preallocated elements are available.

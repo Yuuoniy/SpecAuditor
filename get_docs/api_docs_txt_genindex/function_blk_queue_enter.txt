@@ -1,0 +1,9 @@
+Function: int blk_queue_enter ( struct request_queue * q , blk_mq_req_flags_t flags )
+
+try to increase q->q_usage_counter
+
+Parameters
+  struct request_queue *q
+    request queue pointer
+  blk_mq_req_flags_t flags
+    BLK_MQ_REQ_NOWAIT and/or BLK_MQ_REQ_PM

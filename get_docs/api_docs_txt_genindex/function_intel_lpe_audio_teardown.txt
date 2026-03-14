@@ -1,0 +1,10 @@
+Function: void intel_lpe_audio_teardown ( struct intel_display * display )
+
+destroy the bridge between HDMI LPE audio driver and i915
+
+Parameters
+  struct intel_display *display
+    display device
+
+Description
+  release all the resources for LPE audio <-> i915 bridge.

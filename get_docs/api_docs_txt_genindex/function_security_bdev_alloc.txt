@@ -1,0 +1,12 @@
+Function: int security_bdev_alloc ( struct block_device * bdev )
+
+Allocate a block device LSM blob
+
+Parameters
+  struct block_device *bdev
+    block device
+
+Description
+  Allocate and attach a security structure to bdev->bd_security .  The
+security field is initialized to NULL when the bdev structure is
+allocated.

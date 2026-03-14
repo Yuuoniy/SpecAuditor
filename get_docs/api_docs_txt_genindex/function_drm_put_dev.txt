@@ -1,0 +1,10 @@
+Function: void drm_put_dev ( struct drm_device * dev )
+
+Unregister and release a DRM device
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  Called at module unload time or when a PCI device is unplugged.

@@ -1,0 +1,14 @@
+Function: void drm_gem_ttm_print_info ( struct drm_printer * p , unsigned int indent , const struct drm_gem_object * gem )
+
+Print ttm_buffer_object info for debugfs
+
+Parameters
+  struct drm_printer *p
+    DRM printer
+  unsigned int indent
+    Tab indentation level
+  const struct drm_gem_object *gem
+    GEM object
+
+Description
+  This function can be used as drm_gem_object_funcs.print_info callback.

@@ -1,0 +1,11 @@
+Function: struct dmxdev_feed
+
+digital TV dmxdev feed
+
+Members
+  pid
+    Program ID to be filtered
+  ts
+    pointer to struct dmx_ts_feed
+  next
+    struct list_head pointing to the next feed.

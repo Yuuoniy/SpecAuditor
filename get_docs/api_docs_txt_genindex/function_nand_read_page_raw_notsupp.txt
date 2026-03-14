@@ -1,0 +1,16 @@
+Function: int nand_read_page_raw_notsupp ( struct nand_chip * chip , u8 * buf , int oob_required , int page )
+
+dummy read raw page function
+
+Parameters
+  struct nand_chip *chip
+    nand chip info structure
+  u8 *buf
+    buffer to store read data
+  int oob_required
+    caller requires OOB data read to chip->oob_poi
+  int page
+    page number to read
+
+Description
+  Returns -ENOTSUPP unconditionally.

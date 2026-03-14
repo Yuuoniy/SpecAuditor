@@ -1,0 +1,9 @@
+Function: int ssam_controller_caps_load ( struct device * dev , struct ssam_controller_caps * caps )
+
+Load controller capabilities
+
+Parameters
+  struct device *dev
+    A pointer to the controller device
+  struct ssam_controller_caps *caps
+    Where to store the capabilities in.

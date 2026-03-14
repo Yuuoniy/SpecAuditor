@@ -1,0 +1,16 @@
+Function: int adjust_resource ( struct resource * res , resource_size_t start , resource_size_t size )
+
+modify a resource’s start and size
+
+Parameters
+  struct resource *res
+    resource to modify
+  resource_size_t start
+    new start value
+  resource_size_t size
+    new size
+
+Description
+  Given an existing resource, change its start and size to match the
+arguments.  Returns 0 on success, -EBUSY if it can’t fit.
+Existing children of the resource are assumed to be immutable.

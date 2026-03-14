@@ -1,0 +1,7 @@
+Function: void phy_print_status ( struct phy_device * phydev )
+
+Convenience function to print out the current phy status
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct

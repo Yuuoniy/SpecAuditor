@@ -1,0 +1,12 @@
+Macro: ASSERT_NE
+
+
+
+Parameters
+  expected
+    expected value
+  seen
+    measured value
+
+Description
+  ASSERT_NE(expected, measured): expected != measured

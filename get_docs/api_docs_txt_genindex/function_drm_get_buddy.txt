@@ -1,0 +1,13 @@
+Function: struct drm_buddy_block * drm_get_buddy ( struct drm_buddy_block * block )
+
+get buddy address
+
+Parameters
+  struct drm_buddy_block *block
+    DRM buddy block
+
+Description
+  Returns the corresponding buddy block for block , or NULL
+if this is a root block and can’t be merged further.
+Requires some kind of locking to protect against
+any concurrent allocate and free operations.

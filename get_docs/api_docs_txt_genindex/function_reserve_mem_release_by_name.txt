@@ -1,0 +1,11 @@
+Function: int reserve_mem_release_by_name ( const char * name )
+
+Release reserved memory region with a given name
+
+Parameters
+  const char *name
+    The name that is attatched to a reserved memory region
+
+Description
+  Forcibly release the pages in the reserved memory region so that those memory
+can be used as free memory. After released the reserved region size becomes 0.

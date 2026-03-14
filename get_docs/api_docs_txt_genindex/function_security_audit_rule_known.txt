@@ -1,0 +1,11 @@
+Function: int security_audit_rule_known ( struct audit_krule * krule )
+
+Check if an audit rule contains LSM fields
+
+Parameters
+  struct audit_krule *krule
+    audit rule
+
+Description
+  Specifies whether given krule contains any fields related to the current
+LSM.

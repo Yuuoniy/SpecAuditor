@@ -1,0 +1,12 @@
+Function: u32 vidtv_pes_write_into ( struct pes_write_args * args )
+
+Write a PES packet as MPEG-TS packets into a buffer.
+
+Parameters
+  struct pes_write_args *args
+    The args to use when writing
+
+Description
+  This function translate the ES data for one access unit
+from an encoder into MPEG TS packets. It does so by first encapsulating it
+with a PES header and then splitting it into TS packets.

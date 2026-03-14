@@ -1,0 +1,19 @@
+Function: int rpc_clnt_add_xprt ( struct rpc_clnt * clnt , struct xprt_create * xprtargs , int ( * setup ) ( struct rpc_clnt * , struct rpc_xprt_switch * , struct rpc_xprt * , void * ) , void * data )
+
+Add a new transport to a rpc_clnt
+
+Parameters
+  struct rpc_clnt *clnt
+    pointer to struct rpc_clnt
+  struct xprt_create *xprtargs
+    pointer to struct xprt_create
+  int (*setup)(struct rpc_clnt *, struct rpc_xprt_switch *, struct rpc_xprt *, void *)
+    callback to test and/or set up the connection
+  void *data
+    pointer to setup function data
+
+Description
+  Creates a new transport using the parameters set in args and
+adds it to clnt.
+If ping is set, then test that connectivity succeeds before
+adding the new transport.

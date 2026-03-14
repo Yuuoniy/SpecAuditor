@@ -1,0 +1,10 @@
+Macro: rcu_dereference_bh
+
+
+
+Parameters
+  p
+    The pointer to read, prior to dereferencing
+
+Description
+  Makes rcu_dereference_check() do the dirty work.

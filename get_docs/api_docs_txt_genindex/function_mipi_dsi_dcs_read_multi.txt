@@ -1,0 +1,17 @@
+Function: void mipi_dsi_dcs_read_multi ( struct mipi_dsi_multi_context * ctx , u8 cmd , void * data , size_t len )
+
+mipi_dsi_dcs_read() w/ accum_err
+
+Parameters
+  struct mipi_dsi_multi_context *ctx
+    Context for multiple DSI transactions
+  u8 cmd
+    DCS command
+  void *data
+    buffer in which to receive data
+  size_t len
+    size of receive buffer
+
+Description
+  Like mipi_dsi_dcs_read() but deals with errors in a way that makes it
+convenient to make several calls in a row.

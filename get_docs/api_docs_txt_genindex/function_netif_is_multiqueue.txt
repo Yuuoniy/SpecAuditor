@@ -1,0 +1,10 @@
+Function: bool netif_is_multiqueue ( const struct net_device * dev )
+
+test if device has multiple transmit queues
+
+Parameters
+  const struct net_device *dev
+    network device
+
+Description
+  Check if device has multiple transmit queues

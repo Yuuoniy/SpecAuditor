@@ -1,0 +1,12 @@
+Function: void make_bad_inode ( struct inode * inode )
+
+mark an inode bad due to an I/O error
+
+Parameters
+  struct inode *inode
+    Inode to mark bad
+
+Description
+  When an inode cannot be read due to a media or remote network
+failure this function makes the inode “bad” and causes I/O operations
+on it to fail from this point on.

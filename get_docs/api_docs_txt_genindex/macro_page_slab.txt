@@ -1,0 +1,11 @@
+Macro: page_slab
+
+
+
+Parameters
+  p
+    The first (either head of compound or single) page of slab.
+
+Description
+  A temporary wrapper to convert struct page to struct slab in situations where
+we know the page is the compound head, or single order-0 page.

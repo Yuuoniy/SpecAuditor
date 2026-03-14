@@ -1,0 +1,12 @@
+Function: void drm_mode_put_tile_group ( struct drm_device * dev , struct drm_tile_group * tg )
+
+drop a reference to a tile group.
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_tile_group *tg
+    tile group to drop reference to.
+
+Description
+  drop reference to tile group and free if 0.

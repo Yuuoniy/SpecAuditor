@@ -1,0 +1,17 @@
+Function: int scsi_test_unit_ready ( struct scsi_device * sdev , int timeout , int retries , struct scsi_sense_hdr * sshdr )
+
+test if unit is ready
+
+Parameters
+  struct scsi_device *sdev
+    scsi device to change the state of.
+  int timeout
+    command timeout
+  int retries
+    number of retries before failing
+  struct scsi_sense_hdr *sshdr
+    outpout pointer for decoded sense information.
+
+Description
+  Returns zero if unsuccessful or an error if TUR failed.  For
+removable media, UNIT_ATTENTION sets ->changed flag.

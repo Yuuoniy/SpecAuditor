@@ -1,0 +1,10 @@
+Function: struct xe_ggtt * xe_ggtt_alloc ( struct xe_tile * tile )
+
+Allocate a GGTT for a given xe_tile
+
+Parameters
+  struct xe_tile *tile
+    xe_tile
+
+Description
+  Allocates a xe_ggtt for a given tile.

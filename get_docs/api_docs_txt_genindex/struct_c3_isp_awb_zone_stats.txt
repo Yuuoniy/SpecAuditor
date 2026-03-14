@@ -1,0 +1,11 @@
+Struct: struct c3_isp_awb_zone_stats
+
+AWB statistics of a zone
+
+Members
+  rg
+    the ratio of R / G in a zone
+  bg
+    the ratio of B / G in a zone
+  pixel_sum
+    the total number of pixels used in a zone

@@ -1,0 +1,9 @@
+Function: struct rkisp1_ext_params_sdg_config
+
+RkISP1 extensible params SDG config
+
+Members
+  header
+    The RkISP1 extensible parameters header, see rkisp1_ext_params_block_header
+  config
+    Sensor Degamma configuration, see rkisp1_cif_isp_sdg_config

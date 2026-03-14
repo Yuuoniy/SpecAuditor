@@ -1,0 +1,11 @@
+Function: void fpga_bridges_put ( struct list_head * bridge_list )
+
+put bridges
+
+Parameters
+  struct list_head *bridge_list
+    list of FPGA bridges
+
+Description
+  For each bridge in the list, put the bridge and remove it from the list.
+If list is empty, do nothing.

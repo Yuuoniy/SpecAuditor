@@ -1,0 +1,17 @@
+Function: int gpiod_get_raw_array_value_cansleep ( unsigned int array_size , struct gpio_desc * * desc_array , struct gpio_array * array_info , unsigned long * value_bitmap )
+
+read raw values from an array of GPIOs
+
+Parameters
+  unsigned int array_size
+    number of elements in the descriptor array / value bitmap
+  struct gpio_desc **desc_array
+    array of GPIO descriptors whose values will be read
+  struct gpio_array *array_info
+    information on applicability of fast bitmap processing path
+  unsigned long *value_bitmap
+    bitmap to store the read values
+
+Description
+  Read the raw values of the GPIOs, i.e. the values of the physical lines
+without regard for their ACTIVE_LOW status.

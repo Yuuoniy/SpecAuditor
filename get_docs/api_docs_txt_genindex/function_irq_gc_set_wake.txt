@@ -1,0 +1,14 @@
+Function: int irq_gc_set_wake ( struct irq_data * d , unsigned int on )
+
+Set/clr wake bit for an interrupt
+
+Parameters
+  struct irq_data *d
+    irq_data
+  unsigned int on
+    Indicates whether the wake bit should be set or cleared
+
+Description
+  For chips where the wake from suspend functionality is not
+configured in a separate register and the wakeup active state is
+just stored in a bitmask.

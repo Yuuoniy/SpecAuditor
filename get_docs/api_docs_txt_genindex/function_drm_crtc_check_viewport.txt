@@ -1,0 +1,15 @@
+Function: int drm_crtc_check_viewport ( const struct drm_crtc * crtc , int x , int y , const struct drm_display_mode * mode , const struct drm_framebuffer * fb )
+
+Checks that a framebuffer is big enough for the CRTC viewport
+
+Parameters
+  const struct drm_crtc *crtc
+    CRTC that framebuffer will be displayed on
+  int x
+    x panning
+  int y
+    y panning
+  const struct drm_display_mode *mode
+    mode that framebuffer will be displayed under
+  const struct drm_framebuffer *fb
+    framebuffer to check size of

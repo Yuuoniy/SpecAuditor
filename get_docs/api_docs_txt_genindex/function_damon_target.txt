@@ -1,0 +1,13 @@
+Function: struct damon_target
+
+Represents a monitoring target.
+
+Members
+  pid
+    The PID of the virtual address space to monitor.
+  nr_regions
+    Number of monitoring target regions of this target.
+  regions_list
+    Head of the monitoring target regions of this target.
+  list
+    List head for siblings.

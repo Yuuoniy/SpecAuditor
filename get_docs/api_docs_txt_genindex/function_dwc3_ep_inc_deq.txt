@@ -1,0 +1,7 @@
+Function: void dwc3_ep_inc_deq ( struct dwc3_ep * dep )
+
+increment endpoint’s dequeue pointer
+
+Parameters
+  struct dwc3_ep *dep
+    The endpoint whose enqueue pointer we’re incrementing

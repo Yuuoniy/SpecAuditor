@@ -1,0 +1,16 @@
+Function: void __fix_address sk_skb_reason_drop ( struct sock * sk , struct sk_buff * skb , enum skb_drop_reason reason )
+
+free an sk_buff with special reason
+
+Parameters
+  struct sock *sk
+    the socket to receive skb , or NULL if not applicable
+  struct sk_buff *skb
+    buffer to free
+  enum skb_drop_reason reason
+    reason why this skb is dropped
+
+Description
+  Drop a reference to the buffer and free it if the usage count has hit
+zero. Meanwhile, pass the receiving socket and drop reason to
+‘kfree_skb’ tracepoint.

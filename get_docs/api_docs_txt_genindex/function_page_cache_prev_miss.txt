@@ -1,0 +1,15 @@
+Function: pgoff_t page_cache_prev_miss ( struct address_space * mapping , pgoff_t index , unsigned long max_scan )
+
+Find the previous gap in the page cache.
+
+Parameters
+  struct address_space *mapping
+    Mapping.
+  pgoff_t index
+    Index.
+  unsigned long max_scan
+    Maximum range to search.
+
+Description
+  Search the range [max(index - max_scan + 1, 0), index] for the
+gap with the highest index.

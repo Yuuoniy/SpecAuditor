@@ -1,0 +1,9 @@
+Function: struct drm_pvr_ioctl_destroy_hwrt_dataset_args
+
+Arguments for DRM_IOCTL_PVR_DESTROY_HWRT_DATASET
+
+Members
+  handle
+    [IN] Handle for HWRT dataset to be destroyed.
+  _padding_4
+    Reserved. This field must be zeroed.

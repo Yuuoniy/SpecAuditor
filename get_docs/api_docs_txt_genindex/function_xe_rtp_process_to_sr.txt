@@ -1,0 +1,20 @@
+Function: void xe_rtp_process_to_sr ( struct xe_rtp_process_ctx * ctx , const struct xe_rtp_entry_sr * entries , size_t n_entries , struct xe_reg_sr * sr )
+
+Process all rtp entries , adding the matching ones to the save-restore argument.
+
+Parameters
+  struct xe_rtp_process_ctx *ctx
+    The context for processing the table, with one of device, gt or hwe
+  const struct xe_rtp_entry_sr *entries
+    Table with RTP definitions
+  size_t n_entries
+    Number of entries to process, usually ARRAY_SIZE(entries)
+  struct xe_reg_sr *sr
+    Save-restore struct where matching rules execute the action. This can be
+viewed as the “coalesced view” of multiple the tables. The bits for each
+register set are expected not to collide with previously added entries
+
+Description
+  Walk the table pointed by entries (with an empty sentinel) and add all
+entries with matching rules to sr . If hwe is not NULL, its mmio_base is
+used to calculate the right register offset

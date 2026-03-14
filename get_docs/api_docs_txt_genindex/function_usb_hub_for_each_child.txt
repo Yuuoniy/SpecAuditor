@@ -1,0 +1,11 @@
+Function: usb_hub_for_each_child
+
+
+
+Parameters
+  hdev
+    USB device belonging to the usb hub
+  port1
+    portnum associated with child device
+  child
+    child device pointer

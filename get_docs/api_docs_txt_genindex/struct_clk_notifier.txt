@@ -1,0 +1,11 @@
+Struct: struct clk_notifier
+
+associate a clk with a notifier
+
+Members
+  clk
+    struct clk * to associate the notifier with
+  notifier_head
+    a blocking_notifier_head for this clk
+  node
+    linked list pointers

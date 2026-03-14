@@ -1,0 +1,26 @@
+Function: int drm_crtc_init_with_planes ( struct drm_device * dev , struct drm_crtc * crtc , struct drm_plane * primary , struct drm_plane * cursor , const struct drm_crtc_funcs * funcs , const char * name , ... )
+
+Initialise a new CRTC object with specified primary and cursor planes.
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct drm_crtc *crtc
+    CRTC object to init
+  struct drm_plane *primary
+    Primary plane for CRTC
+  struct drm_plane *cursor
+    Cursor plane for CRTC
+  const struct drm_crtc_funcs *funcs
+    callbacks for the new CRTC
+  const char *name
+    printf style format string for the CRTC name, or NULL for default name
+  ...
+    variable arguments
+
+Description
+  Inits a new object created as base part of a driver crtc object. Drivers
+should use this function instead of drm_crtc_init() , which is only provided
+for backwards compatibility with drivers which do not yet support universal
+planes). For really simple hardware which has only 1 plane look at drm_simple_display_pipe_init() instead.
+The drm_crtc_funcs.destroy hook should call drm_crtc_cleanup() and kfree() the crtc structure. The crtc structure should not be allocated with devm_kzalloc() .

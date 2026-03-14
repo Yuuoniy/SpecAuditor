@@ -1,0 +1,17 @@
+Struct: struct usb_ep_caps
+
+endpoint capabilities description
+
+Members
+  type_control
+    Endpoint supports control type (reserved for ep0).
+  type_iso
+    Endpoint supports isochronous transfers.
+  type_bulk
+    Endpoint supports bulk transfers.
+  type_int
+    Endpoint supports interrupt transfers.
+  dir_in
+    Endpoint supports IN direction.
+  dir_out
+    Endpoint supports OUT direction.

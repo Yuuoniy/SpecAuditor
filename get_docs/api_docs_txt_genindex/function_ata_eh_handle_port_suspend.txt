@@ -1,0 +1,10 @@
+Function: void ata_eh_handle_port_suspend ( struct ata_port * ap )
+
+perform port suspend operation
+
+Parameters
+  struct ata_port *ap
+    port to suspend
+
+Description
+  Suspend ap .

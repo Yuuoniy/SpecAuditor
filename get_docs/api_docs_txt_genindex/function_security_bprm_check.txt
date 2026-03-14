@@ -1,0 +1,14 @@
+Function: int security_bprm_check ( struct linux_binprm * bprm )
+
+Mediate binary handler search
+
+Parameters
+  struct linux_binprm *bprm
+    binary program information
+
+Description
+  This hook mediates the point when a search for a binary handler will begin.
+It allows a check against the bprm->cred->security value which was set in
+the preceding creds_for_exec call.  The argv list and envp list are reliably
+available in bprm .  This hook may be called multiple times during a single
+execve. bprm contains the linux_binprm structure.

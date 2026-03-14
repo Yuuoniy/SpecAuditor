@@ -1,0 +1,3 @@
+Function: enum rkisp1_cif_isp_dpf_nll_scale_mode
+
+dpf noise level scale mode

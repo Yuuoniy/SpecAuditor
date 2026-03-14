@@ -1,0 +1,16 @@
+Function: phys_addr_t memblock_phys_alloc_try_nid ( phys_addr_t size , phys_addr_t align , int nid )
+
+allocate a memory block from specified NUMA node
+
+Parameters
+  phys_addr_t size
+    size of memory block to be allocated in bytes
+  phys_addr_t align
+    alignment of the region and block’s size
+  int nid
+    nid of the free area to find, NUMA_NO_NODE for any node
+
+Description
+  Allocates memory block from the specified NUMA node. If the node
+has no available memory, attempts to allocated from any node in the
+system.

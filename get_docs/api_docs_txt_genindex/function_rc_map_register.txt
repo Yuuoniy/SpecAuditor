@@ -1,0 +1,7 @@
+Function: int rc_map_register ( struct rc_map_list * map )
+
+Registers a Remote Controller scancode map
+
+Parameters
+  struct rc_map_list *map
+    pointer to struct rc_map_list

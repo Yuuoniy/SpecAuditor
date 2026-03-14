@@ -1,0 +1,7 @@
+Function: void iommufd_ctx_put ( struct iommufd_ctx * ictx )
+
+Put back a reference
+
+Parameters
+  struct iommufd_ctx *ictx
+    Context to put back

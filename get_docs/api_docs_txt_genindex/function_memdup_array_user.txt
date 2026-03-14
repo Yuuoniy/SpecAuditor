@@ -1,0 +1,11 @@
+Function: void * memdup_array_user ( const void __user * src , size_t n , size_t size )
+
+duplicate array from user space
+
+Parameters
+  const void __user *src
+    source address in user space
+  size_t n
+    number of array members to copy
+  size_t size
+    size of one array member

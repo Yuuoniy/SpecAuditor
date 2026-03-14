@@ -1,0 +1,14 @@
+Function: int security_inet_conn_request ( const struct sock * sk , struct sk_buff * skb , struct request_sock * req )
+
+Set request_sock state using incoming connect
+
+Parameters
+  const struct sock *sk
+    parent listening sock
+  struct sk_buff *skb
+    incoming connection
+  struct request_sock *req
+    new request_sock
+
+Description
+  Initialize the req LSM state based on sk and the incoming connect in skb .

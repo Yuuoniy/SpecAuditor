@@ -1,0 +1,14 @@
+Struct: struct mipi_dsi_packet
+
+represents a MIPI DSI packet in protocol format
+
+Members
+  size
+    size (in bytes) of the packet
+  header
+    the four bytes that make up the header (Data ID, Word Count or
+Packet Data, and ECC)
+  payload_length
+    number of bytes in the payload
+  payload
+    a pointer to a buffer containing the payload, if any

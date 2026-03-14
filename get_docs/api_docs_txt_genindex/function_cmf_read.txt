@@ -1,0 +1,9 @@
+Function: u64 cmf_read ( struct ccw_device * cdev , int index )
+
+read one value from the current channel measurement block
+
+Parameters
+  struct ccw_device *cdev
+    the channel to be read
+  int index
+    the index of the value to be read

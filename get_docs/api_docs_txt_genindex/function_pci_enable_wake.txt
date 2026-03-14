@@ -1,0 +1,14 @@
+Function: int pci_enable_wake ( struct pci_dev * pci_dev , pci_power_t state , bool enable )
+
+change wakeup settings for a PCI device
+
+Parameters
+  struct pci_dev *pci_dev
+    Target device
+  pci_power_t state
+    PCI state from which device will issue wakeup events
+  bool enable
+    Whether or not to enable event generation
+
+Description
+  If enable is set, check device_may_wakeup() for the device before calling __pci_enable_wake() for it.

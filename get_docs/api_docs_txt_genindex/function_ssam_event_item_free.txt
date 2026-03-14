@@ -1,0 +1,7 @@
+Function: void ssam_event_item_free ( struct ssam_event_item * item )
+
+Free the provided event item.
+
+Parameters
+  struct ssam_event_item *item
+    The event item to free.

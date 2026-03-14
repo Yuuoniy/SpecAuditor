@@ -1,0 +1,7 @@
+Function: int of_irq_count ( struct device_node * dev )
+
+Count the number of IRQs a node uses
+
+Parameters
+  struct device_node *dev
+    pointer to device tree node

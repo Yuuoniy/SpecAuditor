@@ -1,0 +1,9 @@
+Struct: struct drm_i915_gem_create_ext_vm_private
+
+Extension to make the object private to the specified VM.
+
+Members
+  base
+    Extension link. See struct i915_user_extension .
+  vm_id
+    Id of the VM to which the object is private

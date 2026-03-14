@@ -1,0 +1,12 @@
+Function: int security_path_truncate ( const struct path * path )
+
+Check if truncating a file is allowed
+
+Parameters
+  const struct path *path
+    file
+
+Description
+  Check permission before truncating the file indicated by path.  Note that
+truncation permissions may also be checked based on already opened files,
+using the security_file_truncate() hook.

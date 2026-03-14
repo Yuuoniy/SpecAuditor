@@ -1,0 +1,16 @@
+Function: int zynqmp_dp_set_format ( struct zynqmp_dp * dp , const struct drm_display_info * info , enum zynqmp_dpsub_format format , unsigned int bpc )
+
+Set the input format
+
+Parameters
+  struct zynqmp_dp *dp
+    DisplayPort IP core structure
+  const struct drm_display_info *info
+    Display info
+  enum zynqmp_dpsub_format format
+    input format
+  unsigned int bpc
+    bits per component
+
+Description
+  Update misc register values based on input format and bpc .

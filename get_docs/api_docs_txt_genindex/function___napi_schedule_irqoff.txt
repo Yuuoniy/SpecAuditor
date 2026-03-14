@@ -1,0 +1,10 @@
+Function: void __napi_schedule_irqoff ( struct napi_struct * n )
+
+schedule for receive
+
+Parameters
+  struct napi_struct *n
+    entry to schedule
+
+Description
+  Variant of __napi_schedule() assuming hard irqs are masked.

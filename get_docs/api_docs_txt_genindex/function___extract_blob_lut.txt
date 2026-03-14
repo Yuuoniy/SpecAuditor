@@ -1,0 +1,9 @@
+Function: const struct drm_color_lut * __extract_blob_lut ( const struct drm_property_blob * blob , uint32_t * size )
+
+Extracts the DRM lut and lut size from a blob.
+
+Parameters
+  const struct drm_property_blob *blob
+    DRM color mgmt property blob
+  uint32_t *size
+    lut size

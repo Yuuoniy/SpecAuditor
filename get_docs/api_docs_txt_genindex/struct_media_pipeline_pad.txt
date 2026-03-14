@@ -1,0 +1,11 @@
+Struct: struct media_pipeline_pad
+
+A pad part of a media pipeline
+
+Members
+  list
+    Entry in the media_pad pads list
+  pipe
+    The media_pipeline that the pad is part of
+  pad
+    The media pad

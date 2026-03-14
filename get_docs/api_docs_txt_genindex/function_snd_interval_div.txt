@@ -1,0 +1,14 @@
+Function: void snd_interval_div ( const struct snd_interval * a , const struct snd_interval * b , struct snd_interval * c )
+
+refine the interval value with division
+
+Parameters
+  const struct snd_interval *a
+    dividend
+  const struct snd_interval *b
+    divisor
+  struct snd_interval *c
+    quotient
+
+Description
+  c = a / b

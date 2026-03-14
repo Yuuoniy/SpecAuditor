@@ -1,0 +1,24 @@
+Function: struct ipu3_uapi_bnr_static_config_thr_coeffs_config
+
+Noise model coefficients that controls noise threshold
+
+Members
+  cf
+    Free coefficient for threshold calculation, range [0, 8191], default 0.
+  reserved0
+    reserved
+  cg
+    Gain coefficient for threshold calculation, [0, 31], default 8.
+  ci
+    Intensity coefficient for threshold calculation. range [0, 0x1f]
+default 6.
+format: u3.2 (3 most significant bits represent whole number,
+2 least significant bits represent the fractional part
+with each count representing 0.25)
+e.g. 6 in binary format is 00110, that translates to 1.5
+  reserved1
+    reserved
+  r_nf
+    Normalization shift value for r^2 calculation, range [12, 20]
+where r is a radius of pixel [row, col] from centor of sensor.
+default 14.

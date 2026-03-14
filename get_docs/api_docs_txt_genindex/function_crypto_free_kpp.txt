@@ -1,0 +1,10 @@
+Function: void crypto_free_kpp ( struct crypto_kpp * tfm )
+
+free KPP tfm handle
+
+Parameters
+  struct crypto_kpp *tfm
+    KPP tfm handle allocated with crypto_alloc_kpp()
+
+Description
+  If tfm is a NULL or error pointer, this function does nothing.

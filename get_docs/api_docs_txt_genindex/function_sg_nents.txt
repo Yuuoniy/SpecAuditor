@@ -1,0 +1,11 @@
+Function: int sg_nents ( struct scatterlist * sg )
+
+return total count of entries in scatterlist
+
+Parameters
+  struct scatterlist *sg
+    The scatterlist
+
+Description
+  Allows to know how many entries are in sg, taking into account
+chaining as well

@@ -1,0 +1,23 @@
+Function: debug_info_t * debug_register_mode ( const char * name , int pages_per_area , int nr_areas , int buf_size , umode_t mode , uid_t uid , gid_t gid )
+
+creates and initializes debug area.
+
+Parameters
+  const char *name
+    Name of debug log (e.g. used for debugfs entry)
+  int pages_per_area
+    Number of pages, which will be allocated per area
+  int nr_areas
+    Number of debug areas
+  int buf_size
+    Size of data area in each debug entry
+  umode_t mode
+    File mode for debugfs files. E.g. S_IRWXUGO
+  uid_t uid
+    User ID for debugfs files. Currently only 0 is supported.
+  gid_t gid
+    Group ID for debugfs files. Currently only 0 is supported.
+
+Description
+  Allocates memory for a debug log.
+Must not be called within an interrupt handler.

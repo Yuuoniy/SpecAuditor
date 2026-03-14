@@ -1,0 +1,13 @@
+Function: int ssam_irq_arm_for_wakeup ( struct ssam_controller * ctrl )
+
+Arm the EC IRQ for wakeup, if enabled.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller for which the IRQ should be armed.
+
+Description
+  Sets up the IRQ so that it can be used to wake the device. Specifically,
+this function enables the irq and then, if the device is allowed to wake up
+the system, calls enable_irq_wake() . See ssam_irq_disarm_wakeup() for the
+corresponding function to disable the IRQ.

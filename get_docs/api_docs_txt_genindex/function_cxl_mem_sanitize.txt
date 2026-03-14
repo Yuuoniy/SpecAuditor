@@ -1,0 +1,12 @@
+Function: int cxl_mem_sanitize ( struct cxl_memdev * cxlmd , u16 cmd )
+
+Send a sanitization command to the device.
+
+Parameters
+  struct cxl_memdev *cxlmd
+    The device for the operation
+  u16 cmd
+    The specific sanitization command opcode
+
+Description
+  See CXL 3.0 8.2.9.8.5.1 Sanitize and 8.2.9.8.5.2 Secure Erase.

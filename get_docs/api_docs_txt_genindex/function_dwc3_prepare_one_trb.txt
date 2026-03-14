@@ -1,0 +1,19 @@
+Function: void dwc3_prepare_one_trb ( struct dwc3_ep * dep , struct dwc3_request * req , unsigned int trb_length , unsigned int chain , unsigned int node , bool use_bounce_buffer , bool must_interrupt )
+
+setup one TRB from one request
+
+Parameters
+  struct dwc3_ep *dep
+    endpoint for which this request is prepared
+  struct dwc3_request *req
+    dwc3_request pointer
+  unsigned int trb_length
+    buffer size of the TRB
+  unsigned int chain
+    should this TRB be chained to the next?
+  unsigned int node
+    only for isochronous endpoints. First TRB needs different type.
+  bool use_bounce_buffer
+    set to use bounce buffer
+  bool must_interrupt
+    set to interrupt on TRB completion

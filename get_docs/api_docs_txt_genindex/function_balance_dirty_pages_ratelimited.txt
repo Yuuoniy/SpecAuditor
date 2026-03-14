@@ -1,0 +1,12 @@
+Function: void balance_dirty_pages_ratelimited ( struct address_space * mapping )
+
+balance dirty memory state.
+
+Parameters
+  struct address_space *mapping
+    address_space which was dirtied.
+
+Description
+  Processes which are dirtying memory should call in here once for each page
+which was newly dirtied.  The function will periodically check the system’s
+dirty state and will initiate writeback if needed.

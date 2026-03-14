@@ -1,0 +1,17 @@
+Macro: v4l2_async_nf_add_fwnode
+
+
+
+Parameters
+  notifier
+    pointer to struct v4l2_async_notifier
+  fwnode
+    fwnode handle of the sub-device to be matched, pointer to struct fwnode_handle
+  type
+    Type of the driver’s async sub-device or connection struct. The struct v4l2_async_connection shall be the first member of the
+driver’s async struct, i.e. both begin at the same memory address.
+
+Description
+  Allocate a fwnode-matched asc of size asc_struct_size, and add it to the
+notifiers asc_list . The function also gets a reference of the fwnode which
+is released later at notifier cleanup time.

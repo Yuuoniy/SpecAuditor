@@ -1,0 +1,7 @@
+Function: bool media_pad_is_streaming ( const struct media_pad * pad )
+
+Test if a pad is part of a streaming pipeline
+
+Parameters
+  const struct media_pad *pad
+    The pad

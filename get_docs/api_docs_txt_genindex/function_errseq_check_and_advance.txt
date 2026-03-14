@@ -1,0 +1,12 @@
+Function: int errseq_check_and_advance ( errseq_t * eseq , errseq_t * since )
+
+Check an errseq_t and advance to current value.
+
+Parameters
+  errseq_t *eseq
+    Pointer to value being checked and reported.
+  errseq_t *since
+    Pointer to previously-sampled errseq_t to check against and advance.
+
+Description
+  Grab the eseq value, and see whether it matches the value that since points to. If it does, then just return 0.

@@ -1,0 +1,15 @@
+Function: int intel_prepare_plane_fb ( struct drm_plane * _plane , struct drm_plane_state * _new_plane_state )
+
+Prepare fb for usage on plane
+
+Parameters
+  struct drm_plane *_plane
+    drm plane to prepare for
+  struct drm_plane_state *_new_plane_state
+    the plane state being prepared
+
+Description
+  Prepares a framebuffer for usage on a display plane.  Generally this
+involves pinning the underlying object and updating the frontbuffer tracking
+bits.  Some older platforms need special physical address handling for
+cursor planes.

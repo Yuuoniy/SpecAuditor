@@ -1,0 +1,12 @@
+Function: int atapi_check_dma ( struct ata_queued_cmd * qc )
+
+Check whether ATAPI DMA can be supported
+
+Parameters
+  struct ata_queued_cmd *qc
+    Metadata associated with taskfile to check
+
+Description
+  Allow low-level driver to filter ATA PACKET commands, returning
+a status indicating whether or not it is OK to use DMA for the
+supplied PACKET command.

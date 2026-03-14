@@ -1,0 +1,17 @@
+Struct: struct drm_panthor_dev_query
+
+Arguments passed to DRM_PANTHOR_IOCTL_DEV_QUERY
+
+Members
+  type
+    the query type (see drm_panthor_dev_query_type).
+  size
+    size of the type being queried. If pointer is NULL, size is updated by the driver to provide the
+output structure size. If pointer is not NULL, the driver will
+only copy min(size, actual_structure_size) bytes to the pointer,
+and update the size accordingly. This allows us to extend query
+types without breaking userspace.
+  pointer
+    user pointer to a query type struct. Pointer can be NULL, in which case, nothing is copied, but the
+actual structure size is returned. If not NULL, it must point to
+a location that’s large enough to hold size bytes.

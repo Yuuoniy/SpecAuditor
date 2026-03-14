@@ -1,0 +1,10 @@
+Function: bool is_zero_page ( const struct page * page )
+
+Query if a page is a zero page
+
+Parameters
+  const struct page *page
+    The page to query
+
+Description
+  This returns true if page is one of the permanent zero pages.

@@ -1,0 +1,21 @@
+Struct: struct ipu3_uapi_yuvp2_tcc_macc_elem_static_config
+
+Total color correction multi-axis color control (MACC) config
+
+Members
+  a
+    a coefficient for 2x2 MACC conversion matrix.
+  reserved0
+    reserved
+  b
+    b coefficient  2x2 MACC conversion matrix.
+  reserved1
+    reserved
+  c
+    c coefficient for 2x2 MACC conversion matrix.
+  reserved2
+    reserved
+  d
+    d coefficient for 2x2 MACC conversion matrix.
+  reserved3
+    reserved

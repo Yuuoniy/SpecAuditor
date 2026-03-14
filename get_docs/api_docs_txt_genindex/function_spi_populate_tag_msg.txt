@@ -1,0 +1,9 @@
+Function: int spi_populate_tag_msg ( unsigned char * msg , struct scsi_cmnd * cmd )
+
+place a tag message in a buffer
+
+Parameters
+  unsigned char *msg
+    pointer to the area to place the tag
+  struct scsi_cmnd *cmd
+    pointer to the scsi command for the tag

@@ -1,0 +1,15 @@
+Macro: xbc_node_for_each_key_value
+
+
+
+Parameters
+  node
+    An XBC node.
+  knode
+    Iterated key node
+  value
+    Iterated value string
+
+Description
+  Iterate key-value pairs under node . Each key node and value string are
+stored in knode and value respectively.

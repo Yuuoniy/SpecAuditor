@@ -1,0 +1,9 @@
+Function: void mas_prealloc_calc ( struct ma_wr_state * wr_mas , void * entry )
+
+Calculate number of nodes needed for a given store oepration
+
+Parameters
+  struct ma_wr_state *wr_mas
+    The maple write state
+  void *entry
+    The entry to store into the tree

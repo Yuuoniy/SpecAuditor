@@ -1,0 +1,17 @@
+Struct: union hdmi_infoframe
+
+overall union of all abstract infoframe representations
+
+Members
+  any
+    generic infoframe
+  avi
+    avi infoframe
+  spd
+    spd infoframe
+  vendor
+    union of all vendor infoframes
+  audio
+    audio infoframe
+  drm
+    Dynamic Range and Mastering infoframe

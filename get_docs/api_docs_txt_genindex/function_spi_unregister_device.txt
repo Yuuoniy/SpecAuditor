@@ -1,0 +1,11 @@
+Function: void spi_unregister_device ( struct spi_device * spi )
+
+unregister a single SPI device
+
+Parameters
+  struct spi_device *spi
+    spi_device to unregister
+
+Description
+  Start making the passed SPI device vanish. Normally this would be handled
+by spi_unregister_controller() .

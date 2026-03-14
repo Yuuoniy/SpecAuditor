@@ -1,0 +1,15 @@
+Function: int regulator_set_current_limit ( struct regulator * regulator , int min_uA , int max_uA )
+
+set regulator output current limit
+
+Parameters
+  struct regulator *regulator
+    regulator source
+  int min_uA
+    Minimum supported current in uA
+  int max_uA
+    Maximum supported current in uA
+
+Description
+  Sets current sink to the desired output current. This can be set during
+any regulator state. IOW, regulator can be disabled or enabled.

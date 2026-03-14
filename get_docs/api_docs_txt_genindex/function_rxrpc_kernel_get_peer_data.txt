@@ -1,0 +1,10 @@
+Function: unsigned long rxrpc_kernel_get_peer_data ( const struct rxrpc_peer * peer )
+
+Get app-specific data from a peer.
+
+Parameters
+  const struct rxrpc_peer *peer
+    The peer to query
+
+Description
+  Retrieve the app-specific data from a peer.

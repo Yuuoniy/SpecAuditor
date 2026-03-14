@@ -1,0 +1,11 @@
+Function: int slim_stream_disable ( struct slim_stream_runtime * stream )
+
+Disable a SLIMbus Stream
+
+Parameters
+  struct slim_stream_runtime *stream
+    instance of slim stream runtime to disable
+
+Description
+  This API will disable all the ports and channels associated with
+SLIMbus stream

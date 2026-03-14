@@ -1,0 +1,12 @@
+Function: void isig ( int sig , struct tty_struct * tty )
+
+handle the ISIG optio
+
+Parameters
+  int sig
+    signal
+  struct tty_struct *tty
+    terminal
+
+Description
+  Called when a signal is being sent due to terminal input. Called from the tty_driver.receive_buf() path, so serialized.

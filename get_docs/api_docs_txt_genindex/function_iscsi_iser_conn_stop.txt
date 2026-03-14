@@ -1,0 +1,9 @@
+Function: void iscsi_iser_conn_stop ( struct iscsi_cls_conn * cls_conn , int flag )
+
+stop iscsi-iser connection
+
+Parameters
+  struct iscsi_cls_conn *cls_conn
+    iscsi class connection
+  int flag
+    indicate if recover or terminate (passed as is)

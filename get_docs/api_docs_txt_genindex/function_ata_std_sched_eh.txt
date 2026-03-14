@@ -1,0 +1,11 @@
+Function: void ata_std_sched_eh ( struct ata_port * ap )
+
+non-libsas ata_ports issue eh with this common routine
+
+Parameters
+  struct ata_port *ap
+    ATA port to schedule EH for
+
+Description
+  LOCKING: inherited from ata_port_schedule_eh
+spin_lock_irqsave(host lock)

@@ -1,0 +1,15 @@
+Function: int security_netlink_send ( struct sock * sk , struct sk_buff * skb )
+
+Save info and check if netlink sending is allowed
+
+Parameters
+  struct sock *sk
+    sending socket
+  struct sk_buff *skb
+    netlink message
+
+Description
+  Save security information for a netlink message so that permission checking
+can be performed when the message is processed.  The security information
+can be saved using the eff_cap field of the netlink_skb_parms structure.
+Also may be used to provide fine grained control over message transmission.

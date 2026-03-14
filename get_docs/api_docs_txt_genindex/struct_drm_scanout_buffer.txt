@@ -1,0 +1,29 @@
+Struct: struct drm_scanout_buffer
+
+DRM scanout buffer
+
+Members
+  format
+    drm format of the scanout buffer.
+  map
+    Virtual address of the scanout buffer, either in memory or iomem.
+The scanout buffer should be in linear format, and can be directly
+sent to the display hardware. Tearing is not an issue for the panic
+screen.
+  pages
+    Optional, if the scanout buffer is not mapped, set this field
+to the array of pages of the scanout buffer. The panic code will use kmap_local_page_try_from_panic() to map one page at a time to write
+all the pixels. This array shouldn’t be allocated from the get_scanoutbuffer() callback.
+The scanout buffer should be in linear format.
+  width
+    Width of the scanout buffer, in pixels.
+  height
+    Height of the scanout buffer, in pixels.
+  pitch
+    Length in bytes between the start of two consecutive lines.
+  set_pixel
+    Optional function, to set a pixel color on the
+framebuffer. It allows to handle special tiling format inside the
+driver. It takes precedence over the map and pages fields.
+  private
+    private pointer that you can use in the callbacks set_pixel()

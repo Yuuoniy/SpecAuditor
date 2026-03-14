@@ -1,0 +1,15 @@
+Function: int register_sound_special_device ( const struct file_operations * fops , int unit , struct device * dev )
+
+register a special sound node
+
+Parameters
+  const struct file_operations *fops
+    File operations for the driver
+  int unit
+    Unit number to allocate
+  struct device *dev
+    device pointer
+
+Description
+  Allocate a special sound device by minor number from the sound
+subsystem.

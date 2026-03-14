@@ -1,0 +1,7 @@
+Function: int phy_ethtool_get_sset_count ( struct phy_device * phydev )
+
+Get the number of statistic counters
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct

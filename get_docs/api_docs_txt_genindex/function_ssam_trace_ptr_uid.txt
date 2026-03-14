@@ -1,0 +1,13 @@
+Function: void ssam_trace_ptr_uid ( const void * ptr , char * uid_str )
+
+Convert the pointer to a non-pointer UID string.
+
+Parameters
+  const void *ptr
+    The pointer to convert.
+  char *uid_str
+    A buffer of length SSAM_PTR_UID_LEN where the UID will be stored.
+
+Description
+  Converts the given pointer into a UID string that is safe to be shared
+with userspace and logs, i.e. doesn’t give away the real memory location.

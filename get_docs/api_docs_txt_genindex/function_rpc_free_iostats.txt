@@ -1,0 +1,7 @@
+Function: void rpc_free_iostats ( struct rpc_iostats * stats )
+
+release an rpc_iostats structure
+
+Parameters
+  struct rpc_iostats *stats
+    doomed rpc_iostats structure

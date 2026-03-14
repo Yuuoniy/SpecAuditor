@@ -1,0 +1,7 @@
+Function: void __ref kmemleak_ignore_percpu ( const void __percpu * ptr )
+
+similar to kmemleak_ignore but taking a percpu address argument
+
+Parameters
+  const void __percpu *ptr
+    percpu address of the object

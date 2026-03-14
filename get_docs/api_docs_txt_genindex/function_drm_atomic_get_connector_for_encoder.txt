@@ -1,0 +1,13 @@
+Function: struct drm_connector * drm_atomic_get_connector_for_encoder ( const struct drm_encoder * encoder , struct drm_modeset_acquire_ctx * ctx )
+
+Get connector currently assigned to an encoder
+
+Parameters
+  const struct drm_encoder *encoder
+    The encoder to find the connector of
+  struct drm_modeset_acquire_ctx *ctx
+    Modeset locking context
+
+Description
+  This function finds and returns the connector currently assigned to
+an encoder .

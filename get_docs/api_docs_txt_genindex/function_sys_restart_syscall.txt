@@ -1,0 +1,7 @@
+Function: long sys_restart_syscall ( void )
+
+restart a system call
+
+Parameters
+  void
+    no arguments

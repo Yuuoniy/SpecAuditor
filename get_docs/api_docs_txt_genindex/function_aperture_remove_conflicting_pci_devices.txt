@@ -1,0 +1,14 @@
+Function: int aperture_remove_conflicting_pci_devices ( struct pci_dev * pdev , const char * name )
+
+remove existing framebuffers for PCI devices
+
+Parameters
+  struct pci_dev *pdev
+    PCI device
+  const char *name
+    a descriptive name of the requesting driver
+
+Description
+  This function removes devices that own apertures within any of pdev ’s
+memory bars. The function assumes that PCI device with shadowed ROM
+drives a primary display and therefore kicks out vga16fb as well.

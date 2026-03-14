@@ -1,0 +1,7 @@
+Function: struct fpga_manager * fpga_mgr_get ( struct device * dev )
+
+Given a device, get a reference to an fpga mgr.
+
+Parameters
+  struct device *dev
+    parent device that fpga mgr was registered with

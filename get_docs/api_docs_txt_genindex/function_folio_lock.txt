@@ -1,0 +1,14 @@
+Function: void folio_lock ( struct folio * folio )
+
+Lock this folio.
+
+Parameters
+  struct folio *folio
+    The folio to lock.
+
+Description
+  The folio lock protects against many things, probably more than it
+should.  It is primarily held while a folio is being brought uptodate,
+either from its backing file or from swap.  It is also held while a
+folio is being truncated from its address_space, so holding the lock
+is sufficient to keep folio->mapping stable.

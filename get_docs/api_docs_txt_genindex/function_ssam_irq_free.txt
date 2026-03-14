@@ -1,0 +1,10 @@
+Function: void ssam_irq_free ( struct ssam_controller * ctrl )
+
+Free SAM EC wakeup-GPIO interrupt.
+
+Parameters
+  struct ssam_controller *ctrl
+    The controller for which the IRQ should be freed.
+
+Description
+  Free the wakeup-GPIO IRQ previously set-up via ssam_irq_setup() .

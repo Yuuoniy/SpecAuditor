@@ -1,0 +1,3 @@
+Enum: enum drm_color_lut_tests
+
+hw-specific LUT tests to perform

@@ -1,0 +1,19 @@
+Function: unsigned long drm_gem_lru_scan ( struct drm_gem_lru * lru , unsigned int nr_to_scan , unsigned long * remaining , bool ( * shrink ) ( struct drm_gem_object * obj , struct ww_acquire_ctx * ticket ) , struct ww_acquire_ctx * ticket )
+
+helper to implement shrinker.scan_objects
+
+Parameters
+  struct drm_gem_lru *lru
+    The LRU to scan
+  unsigned int nr_to_scan
+    The number of pages to try to reclaim
+  unsigned long *remaining
+    The number of pages left to reclaim, should be initialized by caller
+  bool (*shrink)(struct drm_gem_object *obj, struct ww_acquire_ctx *ticket)
+    Callback to try to shrink/reclaim the object.
+  struct ww_acquire_ctx *ticket
+    Optional ww_acquire_ctx context to use for locking
+
+Description
+  If the shrink callback succeeds, it is expected that the driver
+move the object out of this LRU.

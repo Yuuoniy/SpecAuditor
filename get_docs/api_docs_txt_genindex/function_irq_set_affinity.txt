@@ -1,0 +1,12 @@
+Function: int irq_set_affinity ( unsigned int irq , const struct cpumask * cpumask )
+
+Set the irq affinity of a given irq
+
+Parameters
+  unsigned int irq
+    Interrupt to set affinity
+  const struct cpumask *cpumask
+    cpumask
+
+Description
+  Fails if cpumask does not contain an online CPU

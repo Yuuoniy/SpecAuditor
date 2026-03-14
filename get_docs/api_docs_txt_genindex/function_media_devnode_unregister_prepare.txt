@@ -1,0 +1,12 @@
+Function: void media_devnode_unregister_prepare ( struct media_devnode * devnode )
+
+clear the media device node register bit
+
+Parameters
+  struct media_devnode *devnode
+    the device node to prepare for unregister
+
+Description
+  This clears the passed device register bit. Future open calls will be met
+with errors. Should be called before media_devnode_unregister() to avoid
+races with unregister and device file open calls.

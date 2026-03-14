@@ -1,0 +1,10 @@
+Function: void wait_for_device_probe ( void )
+
+
+
+Parameters
+  void
+    no arguments
+
+Description
+  Wait for device probing to be completed.

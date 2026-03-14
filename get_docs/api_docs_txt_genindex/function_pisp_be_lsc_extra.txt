@@ -1,0 +1,9 @@
+Function: struct pisp_be_lsc_extra
+
+PiSP Back End LSC Extra config
+
+Members
+  offset_x
+    Horizontal offset into the LSC table of this tile
+  offset_y
+    Vertical offset into the LSC table of this tile

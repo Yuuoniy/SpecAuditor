@@ -1,0 +1,10 @@
+Function: unsigned int rxrpc_kernel_get_srtt ( const struct rxrpc_peer * peer )
+
+Get a call’s peer smoothed RTT
+
+Parameters
+  const struct rxrpc_peer *peer
+    The peer to query
+
+Description
+  Get the call’s peer smoothed RTT.

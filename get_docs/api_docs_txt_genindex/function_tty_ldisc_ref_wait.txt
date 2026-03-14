@@ -1,0 +1,11 @@
+Function: struct tty_ldisc * tty_ldisc_ref_wait ( struct tty_struct * tty )
+
+wait for the tty ldisc
+
+Parameters
+  struct tty_struct *tty
+    tty device
+
+Description
+  Dereference the line discipline for the terminal and take a reference to it.
+If the line discipline is in flux then wait patiently until it changes.

@@ -1,0 +1,12 @@
+Function: struct crypto_ahash * crypto_ahash_reqtfm ( struct ahash_request * req )
+
+obtain cipher handle from request
+
+Parameters
+  struct ahash_request *req
+    asynchronous request handle that contains the reference to the ahash
+cipher handle
+
+Description
+  Return the ahash cipher handle that is registered with the asynchronous
+request handle ahash_request.

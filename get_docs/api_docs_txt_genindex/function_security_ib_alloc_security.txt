@@ -1,0 +1,10 @@
+Function: int security_ib_alloc_security ( void * * sec )
+
+Allocate an Infiniband LSM blob
+
+Parameters
+  void **sec
+    LSM blob
+
+Description
+  Allocate a security structure for Infiniband objects.

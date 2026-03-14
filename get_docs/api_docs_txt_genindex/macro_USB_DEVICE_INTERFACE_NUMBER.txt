@@ -1,0 +1,15 @@
+Macro: USB_DEVICE_INTERFACE_NUMBER
+
+
+
+Parameters
+  vend
+    the 16 bit USB Vendor ID
+  prod
+    the 16 bit USB Product ID
+  num
+    bInterfaceNumber value
+
+Description
+  This macro is used to create a struct usb_device_id that matches a
+specific interface number of devices.

@@ -1,0 +1,79 @@
+Struct: struct ipu3_uapi_flags
+
+bits to indicate which pipeline needs update
+
+Members
+  gdc
+    0 = no update, 1 = update.
+  obgrid
+    0 = no update, 1 = update.
+  reserved1
+    Not used.
+  acc_bnr
+    0 = no update, 1 = update.
+  acc_green_disparity
+    0 = no update, 1 = update.
+  acc_dm
+    0 = no update, 1 = update.
+  acc_ccm
+    0 = no update, 1 = update.
+  acc_gamma
+    0 = no update, 1 = update.
+  acc_csc
+    0 = no update, 1 = update.
+  acc_cds
+    0 = no update, 1 = update.
+  acc_shd
+    0 = no update, 1 = update.
+  reserved2
+    Not used.
+  acc_iefd
+    0 = no update, 1 = update.
+  acc_yds_c0
+    0 = no update, 1 = update.
+  acc_chnr_c0
+    0 = no update, 1 = update.
+  acc_y_ee_nr
+    0 = no update, 1 = update.
+  acc_yds
+    0 = no update, 1 = update.
+  acc_chnr
+    0 = no update, 1 = update.
+  acc_ytm
+    0 = no update, 1 = update.
+  acc_yds2
+    0 = no update, 1 = update.
+  acc_tcc
+    0 = no update, 1 = update.
+  acc_dpc
+    0 = no update, 1 = update.
+  acc_bds
+    0 = no update, 1 = update.
+  acc_anr
+    0 = no update, 1 = update.
+  acc_awb_fr
+    0 = no update, 1 = update.
+  acc_ae
+    0 = no update, 1 = update.
+  acc_af
+    0 = no update, 1 = update.
+  acc_awb
+    0 = no update, 1 = update.
+  reserved3
+    Not used.
+  lin_vmem_params
+    0 = no update, 1 = update.
+  tnr3_vmem_params
+    0 = no update, 1 = update.
+  xnr3_vmem_params
+    0 = no update, 1 = update.
+  tnr3_dmem_params
+    0 = no update, 1 = update.
+  xnr3_dmem_params
+    0 = no update, 1 = update.
+  reserved4
+    Not used.
+  obgrid_param
+    0 = no update, 1 = update.
+  reserved5
+    Not used.

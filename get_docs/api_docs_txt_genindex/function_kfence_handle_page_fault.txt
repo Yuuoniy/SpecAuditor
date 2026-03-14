@@ -1,0 +1,17 @@
+Function: bool kfence_handle_page_fault ( unsigned long addr , bool is_write , struct pt_regs * regs )
+
+perform page fault handling for KFENCE pages
+
+Parameters
+  unsigned long addr
+    faulting address
+  bool is_write
+    is access a write
+  struct pt_regs *regs
+    current struct pt_regs (can be NULL, but shows full stack trace)
+
+Description
+  A page fault inside KFENCE pool indicates a memory error, such as an
+out-of-bounds access, a use-after-free or an invalid memory access. In these
+cases KFENCE prints an error message and marks the offending page as
+present, so that the kernel can proceed.

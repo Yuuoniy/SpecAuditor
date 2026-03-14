@@ -1,0 +1,11 @@
+Function: void sysfb_disable ( struct device * dev )
+
+disable the Generic System Framebuffers support
+
+Parameters
+  struct device *dev
+    the device to check if non-NULL
+
+Description
+  This disables the registration of system framebuffer devices that match the
+generic drivers that make use of the system framebuffer set up by firmware.

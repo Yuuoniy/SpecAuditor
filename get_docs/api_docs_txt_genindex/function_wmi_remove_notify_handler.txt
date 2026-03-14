@@ -1,0 +1,10 @@
+Function: acpi_status wmi_remove_notify_handler ( const char * guid )
+
+Unregister handler for WMI events (deprecated)
+
+Parameters
+  const char *guid
+    36 char string of the form fa50ff2b-f2e8-45de-83fa-65417f2f49ba
+
+Description
+  Unregister handler for events sent to the ACPI-WMI mapper device.

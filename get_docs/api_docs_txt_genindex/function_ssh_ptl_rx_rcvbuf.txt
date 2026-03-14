@@ -1,0 +1,16 @@
+Function: ssize_t ssh_ptl_rx_rcvbuf ( struct ssh_ptl * ptl , const u8 * buf , size_t n )
+
+Push data from lower-layer transport to the packet layer.
+
+Parameters
+  struct ssh_ptl *ptl
+    The packet transport layer.
+  const u8 *buf
+    Pointer to the data to push to the layer.
+  size_t n
+    Size of the data to push to the layer, in bytes.
+
+Description
+  Pushes data from a lower-layer transport to the receiver fifo buffer of the
+packet layer and notifies the receiver thread. Calls to this function are
+ignored once the packet layer has been shut down.

@@ -1,0 +1,10 @@
+Function: void drm_connector_attach_dp_subconnector_property ( struct drm_connector * connector )
+
+create subconnector property for DP
+
+Parameters
+  struct drm_connector *connector
+    drm_connector to attach property
+
+Description
+  Called by a driver when DP connector is created.

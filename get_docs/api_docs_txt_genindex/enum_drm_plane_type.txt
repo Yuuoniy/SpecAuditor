@@ -1,0 +1,3 @@
+Enum: enum drm_plane_type
+
+uapi plane type enumeration

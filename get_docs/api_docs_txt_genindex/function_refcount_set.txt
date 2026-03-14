@@ -1,0 +1,9 @@
+Function: void refcount_set ( refcount_t * r , int n )
+
+set a refcount’s value
+
+Parameters
+  refcount_t *r
+    the refcount
+  int n
+    value to which the refcount will be set

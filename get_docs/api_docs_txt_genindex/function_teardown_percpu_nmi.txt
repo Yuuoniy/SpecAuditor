@@ -1,0 +1,10 @@
+Function: void teardown_percpu_nmi ( unsigned int irq )
+
+undoes NMI setup of IRQ line
+
+Parameters
+  unsigned int irq
+    Interrupt line from which CPU local NMI configuration should be removed
+
+Description
+  This call undoes the setup done by prepare_percpu_nmi() .

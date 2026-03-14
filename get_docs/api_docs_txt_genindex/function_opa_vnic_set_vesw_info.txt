@@ -1,0 +1,14 @@
+Function: void opa_vnic_set_vesw_info ( struct opa_vnic_adapter * adapter , struct opa_vesw_info * info )
+
+Set the vesw information
+
+Parameters
+  struct opa_vnic_adapter *adapter
+    vnic port adapter
+  struct opa_vesw_info *info
+    pointer to vesw info structure
+
+Description
+  This function updates the vesw info that is maintained by the
+given adapter with vesw info provided. Reserved fields are stored
+and returned back to EM as is.

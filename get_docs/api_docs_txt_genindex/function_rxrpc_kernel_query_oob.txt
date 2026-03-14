@@ -1,0 +1,16 @@
+Function: enum rxrpc_oob_type rxrpc_kernel_query_oob ( struct sk_buff * oob , struct rxrpc_peer * * _peer , unsigned long * _peer_appdata )
+
+Query the parameters of an out-of-band message
+
+Parameters
+  struct sk_buff *oob
+    The message to query
+  struct rxrpc_peer **_peer
+    Where to return the peer record
+  unsigned long *_peer_appdata
+    The application data attached to a peer record
+
+Description
+  Extract useful parameters from an out-of-band message.  The source peer
+parameters are returned through the argument list and the message type is
+returned.

@@ -1,0 +1,15 @@
+Function: ssize_t drm_dp_dpcd_readb ( struct drm_dp_aux * aux , unsigned int offset , u8 * valuep )
+
+read a single byte from the DPCD
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  unsigned int offset
+    address of the register to read
+  u8 *valuep
+    location where the value of the register will be stored
+
+Description
+  Returns the number of bytes transferred (1) on success, or a negative
+error code on failure. In most of the cases you should be using drm_dp_dpcd_read_byte() instead.

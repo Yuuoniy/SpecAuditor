@@ -1,0 +1,18 @@
+Function: void readahead_expand ( struct readahead_control * ractl , loff_t new_start , size_t new_len )
+
+Expand a readahead request
+
+Parameters
+  struct readahead_control *ractl
+    The request to be expanded
+  loff_t new_start
+    The revised start
+  size_t new_len
+    The revised size of the request
+
+Description
+  Attempt to expand a readahead request outwards from the current size to the
+specified size by inserting locked pages before and after the current window
+to increase the size to the new window.  This may involve the insertion of
+THPs, in which case the window may get expanded even beyond what was
+requested.

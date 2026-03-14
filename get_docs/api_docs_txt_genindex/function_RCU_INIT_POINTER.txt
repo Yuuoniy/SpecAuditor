@@ -1,0 +1,14 @@
+Function: RCU_INIT_POINTER
+
+
+
+Parameters
+  p
+    The pointer to be initialized.
+  v
+    The value to initialized the pointer to.
+
+Description
+  Initialize an RCU-protected pointer in special cases where readers
+do not need ordering constraints on the CPU or the compiler.  These
+special cases are:

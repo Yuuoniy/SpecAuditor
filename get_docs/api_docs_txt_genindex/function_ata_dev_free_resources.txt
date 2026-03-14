@@ -1,0 +1,10 @@
+Function: void ata_dev_free_resources ( struct ata_device * dev )
+
+Free a device resources
+
+Parameters
+  struct ata_device *dev
+    Target ATA device
+
+Description
+  Free resources allocated to support a device features.

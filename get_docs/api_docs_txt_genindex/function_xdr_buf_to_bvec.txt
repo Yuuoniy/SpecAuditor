@@ -1,0 +1,14 @@
+Function: unsigned int xdr_buf_to_bvec ( struct bio_vec * bvec , unsigned int bvec_size , const struct xdr_buf * xdr )
+
+Copy components of an xdr_buf into a bio_vec array
+
+Parameters
+  struct bio_vec *bvec
+    bio_vec array to populate
+  unsigned int bvec_size
+    element count of bio_vec
+  const struct xdr_buf *xdr
+    xdr_buf to be copied
+
+Description
+  Returns the number of entries consumed in bvec .

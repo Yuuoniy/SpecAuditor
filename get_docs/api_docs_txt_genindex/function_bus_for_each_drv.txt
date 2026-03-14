@@ -1,0 +1,19 @@
+Function: int bus_for_each_drv ( const struct bus_type * bus , struct device_driver * start , void * data , int ( * fn ) ( struct device_driver * , void * ) )
+
+driver iterator
+
+Parameters
+  const struct bus_type *bus
+    bus we’re dealing with.
+  struct device_driver *start
+    driver to start iterating on.
+  void *data
+    data to pass to the callback.
+  int (*fn)(struct device_driver *, void *)
+    function to call for each driver.
+
+Description
+  This is nearly identical to the device iterator above.
+We iterate over each driver that belongs to bus , and call fn for each. If fn returns anything but 0, we break out
+and return it. If start is not NULL, we use it as the head
+of the list.

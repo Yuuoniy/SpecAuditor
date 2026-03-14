@@ -1,0 +1,7 @@
+Function: void ssam_nf_destroy ( struct ssam_nf * nf )
+
+Deinitialize the notifier system.
+
+Parameters
+  struct ssam_nf *nf
+    The notifier system to deinitialize.

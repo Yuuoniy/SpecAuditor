@@ -1,0 +1,14 @@
+Struct: struct ssh_request_ops
+
+Callback operations for a SSH request.
+
+Members
+  release
+    Function called when the request’s reference count reaches zero.
+This callback must be relied upon to ensure that the request has
+left the transport systems (both, packet an request systems).
+  complete
+    Function called when the request is completed, either with
+success or failure. The command data for the request response
+is provided via the struct ssh_command parameter ( cmd ),
+the command payload of the request response via the struct ssh_span parameter ( data ).

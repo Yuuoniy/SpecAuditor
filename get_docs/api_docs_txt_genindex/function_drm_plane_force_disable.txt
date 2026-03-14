@@ -1,0 +1,10 @@
+Function: void drm_plane_force_disable ( struct drm_plane * plane )
+
+Forcibly disable a plane
+
+Parameters
+  struct drm_plane *plane
+    plane to disable
+
+Description
+  Forces the plane to be disabled.

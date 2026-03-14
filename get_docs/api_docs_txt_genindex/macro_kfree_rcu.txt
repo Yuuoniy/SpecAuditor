@@ -1,0 +1,15 @@
+Macro: kfree_rcu
+
+
+
+Parameters
+  ptr
+    pointer to kfree for double-argument invocations.
+  rhf
+    the name of the struct rcu_head within the type of ptr .
+
+Description
+  Many rcu callbacks functions just call kfree() on the base structure.
+These functions are trivial, but their size adds up, and furthermore
+when they are used in a kernel module, that module must invoke the
+high-latency rcu_barrier() function at module-unload time.

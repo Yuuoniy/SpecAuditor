@@ -1,0 +1,22 @@
+Function: void * usb_alloc_noncoherent ( struct usb_device * dev , size_t size , gfp_t mem_flags , dma_addr_t * dma , enum dma_data_direction dir , struct sg_table * * table )
+
+allocate dma-noncoherent buffer for URB_NO_xxx_DMA_MAP
+
+Parameters
+  struct usb_device *dev
+    device the buffer will be used with
+  size_t size
+    requested buffer size
+  gfp_t mem_flags
+    affect whether allocation may block
+  dma_addr_t *dma
+    used to return DMA address of buffer
+  enum dma_data_direction dir
+    DMA transfer direction
+  struct sg_table **table
+    used to return sg_table of allocated memory
+
+Description
+  To explicit manage the memory ownership for the kernel vs the device by
+USB core, the user needs save sg_table to urb->sgt. Then USB core will
+do DMA sync for CPU and device properly.

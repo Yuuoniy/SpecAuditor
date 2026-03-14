@@ -1,0 +1,10 @@
+Function: void drm_client_dev_hotplug ( struct drm_device * dev )
+
+Send hotplug event to clients
+
+Parameters
+  struct drm_device *dev
+    DRM device
+
+Description
+  This function calls the drm_client_funcs.hotplug callback on the attached clients.

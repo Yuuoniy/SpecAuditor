@@ -1,0 +1,17 @@
+Function: void vema_get_mac_entries ( struct opa_vnic_vema_port * port , struct opa_vnic_vema_mad * recvd_mad , struct opa_vnic_vema_mad * rsp_mad )
+
+Get MAC entries in VNIC MAC table
+
+Parameters
+  struct opa_vnic_vema_port *port
+    source port on which MAD was received
+  struct opa_vnic_vema_mad *recvd_mad
+    pointer to the received mad
+  struct opa_vnic_vema_mad *rsp_mad
+    pointer to respose mad
+
+Description
+  This function gets the MAC entries that are programmed into
+the VNIC MAC forwarding table. It checks for the validity of
+the index into the MAC table and the number of entries that
+are to be retrieved.

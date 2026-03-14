@@ -1,0 +1,18 @@
+Function: void * xa_store ( struct xarray * xa , unsigned long index , void * entry , gfp_t gfp )
+
+Store this entry in the XArray.
+
+Parameters
+  struct xarray *xa
+    XArray.
+  unsigned long index
+    Index into array.
+  void *entry
+    New entry.
+  gfp_t gfp
+    Memory allocation flags.
+
+Description
+  After this function returns, loads from this index will return entry .
+Storing into an existing multi-index entry updates the entry of every index.
+The marks associated with index are unaffected unless entry is NULL .

@@ -1,0 +1,17 @@
+Struct: struct usb_dfu_functional_descriptor
+
+DFU Functional descriptor
+
+Members
+  bLength
+    Size of the descriptor (bytes)
+  bDescriptorType
+    USB_DT_DFU_FUNCTIONAL
+  bmAttributes
+    DFU attributes
+  wDetachTimeOut
+    Maximum time to wait after DFU_DETACH (ms, le16)
+  wTransferSize
+    Maximum number of bytes per control-write (le16)
+  bcdDFUVersion
+    DFU Spec version (BCD, le16)

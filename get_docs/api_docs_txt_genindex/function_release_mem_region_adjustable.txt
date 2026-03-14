@@ -1,0 +1,15 @@
+Function: void release_mem_region_adjustable ( resource_size_t start , resource_size_t size )
+
+release a previously reserved memory region
+
+Parameters
+  resource_size_t start
+    resource start address
+  resource_size_t size
+    resource region size
+
+Description
+  This interface is intended for memory hot-delete.  The requested region
+is released from a currently busy memory resource.  The requested region
+must either match exactly or fit into a single busy resource entry.  In
+the latter case, the remaining resource is adjusted accordingly.

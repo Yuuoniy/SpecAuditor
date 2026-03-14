@@ -1,0 +1,12 @@
+Function: void napi_enable ( struct napi_struct * n )
+
+enable NAPI scheduling
+
+Parameters
+  struct napi_struct *n
+    NAPI context
+
+Description
+  Enable scheduling of a NAPI instance.
+Must be paired with napi_disable() .
+Takes netdev_lock() for associated net_device.

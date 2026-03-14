@@ -1,0 +1,13 @@
+Function: bool debug_move_entry ( file_private_info_t * p_info , bool reverse )
+
+Go to next entry in either the forward or backward direction
+
+Parameters
+  file_private_info_t *p_info
+    Private info that is manipulated
+  bool reverse
+    If true go to the next entry in reverse i.e. previous
+
+Description
+  Sets the current position in p_info to the next ( reverse == false) or
+previous ( reverse == true) entry.

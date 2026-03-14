@@ -1,0 +1,11 @@
+Function: void rio_build_route_tables ( struct rio_net * net )
+
+Generate route tables from switch route entries
+
+Parameters
+  struct rio_net *net
+    RIO network to run route tables scan on
+
+Description
+  For each switch device, generate a route table by copying existing
+route entries from the switch.

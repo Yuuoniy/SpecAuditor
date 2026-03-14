@@ -1,0 +1,14 @@
+Function: int snd_ctl_remove ( struct snd_card * card , struct snd_kcontrol * kcontrol )
+
+remove the control from the card and release it
+
+Parameters
+  struct snd_card *card
+    the card instance
+  struct snd_kcontrol *kcontrol
+    the control instance to remove
+
+Description
+  Removes the control from the card and then releases the instance.
+You don’t need to call snd_ctl_free_one() .
+Passing NULL to kcontrol argument is allowed as noop.

@@ -1,0 +1,3 @@
+Enum: enum nand_interface_type
+
+NAND interface type

@@ -1,0 +1,7 @@
+Function: int hte_ts_put ( struct hte_ts_desc * desc )
+
+Release and disable timestamp for the given desc.
+
+Parameters
+  struct hte_ts_desc *desc
+    timestamp descriptor.

@@ -1,0 +1,15 @@
+Macro: IOSYS_MAP_INIT_OFFSET
+
+
+
+Parameters
+  map_
+    The dma-buf mapping structure to copy from
+  offset_
+    Offset to add to the other mapping
+
+Description
+  Initializes a new iosys_map struct based on another passed as argument. It
+does a shallow copy of the struct so it’s possible to update the back storage
+without changing where the original map points to. It is the equivalent of
+doing:

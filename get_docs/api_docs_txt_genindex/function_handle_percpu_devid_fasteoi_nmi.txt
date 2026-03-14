@@ -1,0 +1,11 @@
+Function: void handle_percpu_devid_fasteoi_nmi ( struct irq_desc * desc )
+
+Per CPU local NMI handler with per cpu dev ids
+
+Parameters
+  struct irq_desc *desc
+    the interrupt description structure for this irq
+
+Description
+  Similar to handle_fasteoi_nmi, but handling the dev_id cookie
+as a percpu pointer.

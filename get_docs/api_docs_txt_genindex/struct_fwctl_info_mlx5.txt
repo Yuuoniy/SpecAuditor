@@ -1,0 +1,10 @@
+Struct: struct fwctl_info_mlx5
+
+ioctl(FWCTL_INFO) out_device_data
+
+Members
+  uid
+    The FW UID this FD is bound to. Each command header will force
+this value.
+  uctx_caps
+    The FW capabilities that are enabled for the uid.

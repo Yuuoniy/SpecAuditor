@@ -1,0 +1,13 @@
+Function: void drm_crtc_vblank_on_config ( struct drm_crtc * crtc , const struct drm_vblank_crtc_config * config )
+
+enable vblank events on a CRTC with custom configuration options
+
+Parameters
+  struct drm_crtc *crtc
+    CRTC in question
+  const struct drm_vblank_crtc_config *config
+    Vblank configuration value
+
+Description
+  See drm_crtc_vblank_on() . In addition, this function allows you to provide a
+custom vblank configuration for a given CRTC.

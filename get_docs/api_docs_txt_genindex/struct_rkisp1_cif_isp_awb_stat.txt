@@ -1,0 +1,7 @@
+Struct: struct rkisp1_cif_isp_awb_stat
+
+statistics automatic white balance data
+
+Members
+  awb_mean
+    Mean measured data

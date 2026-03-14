@@ -1,0 +1,7 @@
+Function: void dma_resv_fini ( struct dma_resv * obj )
+
+destroys a reservation object
+
+Parameters
+  struct dma_resv *obj
+    the reservation object

@@ -1,0 +1,11 @@
+Function: int nand_exit_status_op ( struct nand_chip * chip )
+
+Exit a STATUS operation
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+
+Description
+  This function sends a READ0 command to cancel the effect of the STATUS
+command to avoid reading only the status until a new read command is sent.

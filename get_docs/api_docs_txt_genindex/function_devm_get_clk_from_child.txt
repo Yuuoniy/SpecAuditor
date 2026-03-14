@@ -1,0 +1,14 @@
+Function: struct clk * devm_get_clk_from_child ( struct device * dev , struct device_node * np , const char * con_id )
+
+lookup and obtain a managed reference to a clock producer from child node.
+
+Parameters
+  struct device *dev
+    device for clock “consumer”
+  struct device_node *np
+    pointer to clock consumer node
+  const char *con_id
+    clock consumer ID
+
+Description
+  This function parses the clocks, and uses them to look up the struct clk from the registered list of clock providers by using np and con_id

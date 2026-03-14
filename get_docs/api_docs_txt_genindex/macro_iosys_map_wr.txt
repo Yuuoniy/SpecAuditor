@@ -1,0 +1,18 @@
+Macro: iosys_map_wr
+
+
+
+Parameters
+  map__
+    The iosys_map structure
+  offset__
+    The offset from the mapping to write to
+  type__
+    Type of the value being written
+  val__
+    Value to write
+
+Description
+  Write a C type value (u8, u16, u32 and u64) to the iosys_map. For other types
+or if pointer may be unaligned (and problematic for the architecture
+supported), use iosys_map_memcpy_to()

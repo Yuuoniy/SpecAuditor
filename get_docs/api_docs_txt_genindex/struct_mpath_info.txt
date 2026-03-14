@@ -1,0 +1,30 @@
+Struct: struct mpath_info
+
+mesh path information
+
+Members
+  filled
+    bitfield of flags from enum mpath_info_flags
+  frame_qlen
+    number of queued frames for this destination
+  sn
+    target sequence number
+  metric
+    metric (cost) of this mesh path
+  exptime
+    expiration time for the mesh path from now, in msecs
+  discovery_timeout
+    total mesh path discovery timeout, in msecs
+  discovery_retries
+    mesh path discovery retries
+  flags
+    mesh path flags from enum mesh_path_flags
+  hop_count
+    hops to destination
+  path_change_count
+    total number of path changes to destination
+  generation
+    generation number for nl80211 dumps.
+This number should increase every time the list of mesh paths
+changes, i.e. when a station is added or removed, so that
+userspace can tell whether it got a consistent snapshot.

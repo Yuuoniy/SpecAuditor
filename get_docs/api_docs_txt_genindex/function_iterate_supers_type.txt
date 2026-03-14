@@ -1,0 +1,15 @@
+Function: void iterate_supers_type ( struct file_system_type * type , void ( * f ) ( struct super_block * , void * ) , void * arg )
+
+call function for superblocks of given type
+
+Parameters
+  struct file_system_type *type
+    fs type
+  void (*f)(struct super_block *, void *)
+    function to call
+  void *arg
+    argument to pass to it
+
+Description
+  Scans the superblock list and calls given function, passing it
+locked superblock and given argument.

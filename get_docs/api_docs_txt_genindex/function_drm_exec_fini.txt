@@ -1,0 +1,11 @@
+Function: void drm_exec_fini ( struct drm_exec * exec )
+
+finalize a drm_exec object
+
+Parameters
+  struct drm_exec *exec
+    the drm_exec object to finalize
+
+Description
+  Unlock all locked objects, drop the references to objects and free all memory
+used for tracking the state.

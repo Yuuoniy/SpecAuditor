@@ -1,0 +1,12 @@
+Function: int srpt_refresh_port ( struct srpt_port * sport )
+
+configure a HCA port
+
+Parameters
+  struct srpt_port *sport
+    SRPT HCA port.
+
+Description
+  Enable InfiniBand management datagram processing, update the cached sm_lid,
+lid and gid values, and register a callback function for processing MADs
+on the specified port.

@@ -1,0 +1,22 @@
+Function: int vme_slave_set ( struct vme_resource * resource , int enabled , unsigned long long vme_base , unsigned long long size , dma_addr_t buf_base , u32 aspace , u32 cycle )
+
+Set VME slave window configuration.
+
+Parameters
+  struct vme_resource *resource
+    Pointer to VME slave resource.
+  int enabled
+    State to which the window should be configured.
+  unsigned long long vme_base
+    Base address for the window.
+  unsigned long long size
+    Size of the VME window.
+  dma_addr_t buf_base
+    Based address of buffer used to provide VME slave window storage.
+  u32 aspace
+    VME address space for the VME window.
+  u32 cycle
+    VME data transfer cycle type for the VME window.
+
+Description
+  Set configuration for provided VME slave window.

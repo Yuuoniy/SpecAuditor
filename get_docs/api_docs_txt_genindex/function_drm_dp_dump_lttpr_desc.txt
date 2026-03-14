@@ -1,0 +1,13 @@
+Function: int drm_dp_dump_lttpr_desc ( struct drm_dp_aux * aux , enum drm_dp_phy dp_phy )
+
+read and dump the DPCD descriptor for an LTTPR PHY
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  enum drm_dp_phy dp_phy
+    LTTPR PHY instance
+
+Description
+  Read the DPCD LTTPR PHY descriptor for dp_phy and print a debug message
+with its details to dmesg.

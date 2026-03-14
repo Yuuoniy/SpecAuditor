@@ -1,0 +1,32 @@
+Function: struct ipu3_uapi_bnr_static_config_bp_ctrl_config
+
+Detect bad pixels (bp)
+
+Members
+  bp_thr_gain
+    Defines the threshold that specifies how different a
+defect pixel can be from its neighbors. Threshold is
+dependent on de-noise threshold calculated by algorithm.
+Range [4, 31], default 4.
+  reserved0
+    reserved
+  defect_mode
+    Mode of addressed defect pixels,
+0 - single defect pixel is expected,
+1 - 2 adjacent defect pixels are expected, default 1.
+  bp_gain
+    Defines how 2nd derivation that passes through a defect pixel
+is different from 2nd derivations that pass through
+neighbor pixels. u4.2, range [0, 256], default 8.
+  reserved1
+    reserved
+  w0_coeff
+    Blending coefficient of defect pixel correction.
+Precision u4, range [0, 8], default 8.
+  reserved2
+    reserved
+  w1_coeff
+    Enable influence of incorrect defect pixel correction to be
+avoided. Precision u4, range [1, 8], default 8.
+  reserved3
+    reserved

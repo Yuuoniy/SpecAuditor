@@ -1,0 +1,9 @@
+Function: long sys_rt_sigpending ( sigset_t __user * uset , size_t sigsetsize )
+
+examine a pending signal that has been raised while blocked
+
+Parameters
+  sigset_t __user * uset
+    stores pending signals
+  size_t sigsetsize
+    size of sigset_t type or larger

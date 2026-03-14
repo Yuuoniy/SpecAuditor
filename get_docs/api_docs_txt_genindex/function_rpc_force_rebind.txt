@@ -1,0 +1,7 @@
+Function: void rpc_force_rebind ( struct rpc_clnt * clnt )
+
+force transport to check that remote port is unchanged
+
+Parameters
+  struct rpc_clnt *clnt
+    client to rebind

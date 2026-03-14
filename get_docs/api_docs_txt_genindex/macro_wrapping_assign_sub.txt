@@ -1,0 +1,13 @@
+Macro: wrapping_assign_sub
+
+
+
+Parameters
+  var
+    variable to be decremented
+  offset
+    amount to subtract
+
+Description
+  Decrements var by offset with wrap-around. Returns the resulting
+value of var . Will not trip any wrap-around sanitizers.

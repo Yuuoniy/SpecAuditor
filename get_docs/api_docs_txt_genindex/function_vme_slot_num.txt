@@ -1,0 +1,10 @@
+Function: int vme_slot_num ( struct vme_dev * vdev )
+
+Retrieve slot ID
+
+Parameters
+  struct vme_dev *vdev
+    Pointer to VME device struct vme_dev assigned to driver instance.
+
+Description
+  Retrieve the slot ID associated with the provided VME device.

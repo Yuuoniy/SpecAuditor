@@ -1,0 +1,12 @@
+Function: bool __init_memblock memblock_is_region_memory ( phys_addr_t base , phys_addr_t size )
+
+check if a region is a subset of memory
+
+Parameters
+  phys_addr_t base
+    base of region to check
+  phys_addr_t size
+    size of region to check
+
+Description
+  Check if the region [ base , base + size ) is a subset of a memory block.

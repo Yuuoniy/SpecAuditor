@@ -1,0 +1,17 @@
+Macro: KUNIT_ASSERT_GT
+
+
+
+Parameters
+  test
+    The test context object.
+  left
+    an arbitrary expression that evaluates to a primitive C type.
+  right
+    an arbitrary expression that evaluates to a primitive C type.
+
+Description
+  Sets an assertion that the value that left evaluates to is greater than the
+value that right evaluates to. This is the same as KUNIT_EXPECT_GT() , except
+it causes an assertion failure (see KUNIT_ASSERT_TRUE() ) when the assertion
+is not met.

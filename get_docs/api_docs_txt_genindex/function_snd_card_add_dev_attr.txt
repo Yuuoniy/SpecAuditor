@@ -1,0 +1,9 @@
+Function: int snd_card_add_dev_attr ( struct snd_card * card , const struct attribute_group * group )
+
+Append a new sysfs attribute group to card
+
+Parameters
+  struct snd_card *card
+    card instance
+  const struct attribute_group *group
+    attribute group to append

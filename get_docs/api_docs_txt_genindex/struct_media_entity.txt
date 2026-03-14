@@ -1,0 +1,41 @@
+Struct: struct media_entity
+
+A media entity graph object.
+
+Members
+  graph_obj
+    Embedded structure containing the media object common data.
+  name
+    Entity name.
+  obj_type
+    Type of the object that implements the media_entity.
+  function
+    Entity main function, as defined in include/uapi/linux/media.h (seek for MEDIA_ENT_F_* )
+  flags
+    Entity flags, as defined in include/uapi/linux/media.h (seek for MEDIA_ENT_FL_* )
+  num_pads
+    Number of sink and source pads.
+  num_links
+    Total number of links, forward and back, enabled and disabled.
+  num_backlinks
+    Number of backlinks
+  internal_idx
+    An unique internal entity specific number. The numbers are
+re-used if entities are unregistered or registered again.
+  pads
+    Pads array with the size defined by num_pads .
+  links
+    List of data links.
+  ops
+    Entity operations.
+  use_count
+    Use count for the entity.
+  info
+    Union with devnode information.  Kept just for backward
+compatibility.
+  info.dev
+    Contains device major and minor info.
+  info.dev.major
+    device node major, if the device is a devnode.
+  info.dev.minor
+    device node minor, if the device is a devnode.

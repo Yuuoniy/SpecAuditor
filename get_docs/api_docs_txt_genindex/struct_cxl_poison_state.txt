@@ -1,0 +1,13 @@
+Struct: struct cxl_poison_state
+
+Driver poison state info
+
+Members
+  max_errors
+    Maximum media error records held in device cache
+  enabled_cmds
+    All poison commands enabled in the CEL
+  list_out
+    The poison list payload returned by device
+  mutex
+    Protect reads of the poison list

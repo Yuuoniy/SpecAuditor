@@ -1,0 +1,17 @@
+Function: u8 mpt_register ( MPT_CALLBACK cbfunc , MPT_DRIVER_CLASS dclass , char * func_name )
+
+Register protocol-specific main callback handler.
+
+Parameters
+  MPT_CALLBACK cbfunc
+    callback function pointer
+  MPT_DRIVER_CLASS dclass
+    Protocol driver’s class ( MPT_DRIVER_CLASS enum value )
+  char *func_name
+    call function’s name
+
+Description
+  This routine is called by a protocol-specific driver (SCSI host,
+LAN, SCSI target) to register its reply callback routine.  Each
+protocol-specific driver must do this before it will be able to
+use any IOC resources, such as obtaining request frames.

@@ -1,0 +1,9 @@
+Function: void cxl_region_update_bandwidth ( struct cxl_region * cxlr , struct xarray * input_xa )
+
+Update the bandwidth access coordinates of a region
+
+Parameters
+  struct cxl_region *cxlr
+    The region being operated on
+  struct xarray *input_xa
+    xarray holds cxl_perf_ctx wht calculated bandwidth per ACPI0017 instance

@@ -1,0 +1,9 @@
+Struct: struct cxl_features_state
+
+The Features state for the device
+
+Members
+  cxlds
+    Pointer to CXL device state
+  entries
+    CXl feature entry context

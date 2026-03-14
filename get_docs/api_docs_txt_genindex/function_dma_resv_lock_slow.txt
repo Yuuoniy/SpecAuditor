@@ -1,0 +1,14 @@
+Function: void dma_resv_lock_slow ( struct dma_resv * obj , struct ww_acquire_ctx * ctx )
+
+slowpath lock the reservation object
+
+Parameters
+  struct dma_resv *obj
+    the reservation object
+  struct ww_acquire_ctx *ctx
+    the locking context
+
+Description
+  Acquires the reservation object after a die case. This function
+will sleep until the lock becomes available. See dma_resv_lock() as
+well.

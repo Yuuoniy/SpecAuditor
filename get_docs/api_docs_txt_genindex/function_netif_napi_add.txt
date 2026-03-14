@@ -1,0 +1,14 @@
+Function: void netif_napi_add ( struct net_device * dev , struct napi_struct * napi , int ( * poll ) ( struct napi_struct * , int ) )
+
+initialize a NAPI context
+
+Parameters
+  struct net_device *dev
+    network device
+  struct napi_struct *napi
+    NAPI context
+  int (*poll)(struct napi_struct *, int)
+    polling function
+
+Description
+  netif_napi_add() must be used to initialize a NAPI context prior to calling any of the other NAPI-related functions.

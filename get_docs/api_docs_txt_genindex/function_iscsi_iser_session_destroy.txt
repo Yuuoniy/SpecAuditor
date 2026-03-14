@@ -1,0 +1,10 @@
+Function: void iscsi_iser_session_destroy ( struct iscsi_cls_session * cls_session )
+
+destroy iscsi-iser session
+
+Parameters
+  struct iscsi_cls_session *cls_session
+    iscsi class session
+
+Description
+  Removes and free iscsi host.

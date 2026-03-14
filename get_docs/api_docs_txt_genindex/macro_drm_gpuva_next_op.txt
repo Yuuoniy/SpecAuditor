@@ -1,0 +1,7 @@
+Macro: drm_gpuva_next_op
+
+
+
+Parameters
+  op
+    the current drm_gpuva_op

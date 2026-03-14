@@ -1,0 +1,11 @@
+Function: void spi_finalize_current_transfer ( struct spi_controller * ctlr )
+
+report completion of a transfer
+
+Parameters
+  struct spi_controller *ctlr
+    the controller reporting completion
+
+Description
+  Called by SPI drivers using the core transfer_one_message() implementation to notify it that the current interrupt driven
+transfer has finished and the next one may be scheduled.

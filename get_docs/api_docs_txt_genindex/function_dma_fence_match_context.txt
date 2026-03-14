@@ -1,0 +1,14 @@
+Function: bool dma_fence_match_context ( struct dma_fence * fence , u64 context )
+
+Check if all fences are from the given context
+
+Parameters
+  struct dma_fence *fence
+    [in]    fence or fence array
+  u64 context
+    [in]    fence context to check all fences against
+
+Description
+  Checks the provided fence or, for a fence array, all fences in the array
+against the given context. Returns false if any fence is from a different
+context.

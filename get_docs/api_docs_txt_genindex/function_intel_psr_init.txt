@@ -1,0 +1,12 @@
+Function: void intel_psr_init ( struct intel_dp * intel_dp )
+
+Init basic PSR work and mutex.
+
+Parameters
+  struct intel_dp *intel_dp
+    Intel DP
+
+Description
+  This function is called after the initializing connector.
+(the initializing of connector treats the handling of connector capabilities)
+And it initializes basic PSR stuff for each DP Encoder.

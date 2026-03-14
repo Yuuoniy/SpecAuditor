@@ -1,0 +1,18 @@
+Function: void nand_extract_bits ( u8 * dst , unsigned int dst_off , const u8 * src , unsigned int src_off , unsigned int nbits )
+
+Copy unaligned bits from one buffer to another one
+
+Parameters
+  u8 *dst
+    destination buffer
+  unsigned int dst_off
+    bit offset at which the writing starts
+  const u8 *src
+    source buffer
+  unsigned int src_off
+    bit offset at which the reading starts
+  unsigned int nbits
+    number of bits to copy from src to dst
+
+Description
+  Copy bits from one memory region to another (overlap authorized).

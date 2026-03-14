@@ -1,0 +1,14 @@
+Function: int pcim_request_all_regions ( struct pci_dev * pdev , const char * name )
+
+Request all regions
+
+Parameters
+  struct pci_dev *pdev
+    PCI device to map IO resources for
+  const char *name
+    name of the driver requesting the resources
+
+Description
+  Requested regions will automatically be released at driver detach. If
+desired, release individual regions with pcim_release_region() or all of
+them at once with pcim_release_all_regions() .

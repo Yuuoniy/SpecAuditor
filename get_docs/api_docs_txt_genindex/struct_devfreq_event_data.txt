@@ -1,0 +1,12 @@
+Struct: struct devfreq_event_data
+
+the devfreq-event data
+
+Members
+  load_count
+    load count of devfreq-event device for the given period.
+  total_count
+    total count of devfreq-event device for the given period.
+each count may represent a clock cycle, a time unit
+(ns/us/...), or anything the device driver wants.
+Generally, utilization is load_count / total_count.

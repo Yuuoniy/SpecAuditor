@@ -1,0 +1,12 @@
+Function: unsigned int bdev_count_inflight ( struct block_device * part )
+
+get the number of inflight IOs for a block device.
+
+Parameters
+  struct block_device *part
+    the block device.
+
+Description
+  Inflight here means started IO accounting, from bdev_start_io_acct() for
+bio-based block device, and from blk_account_io_start() for rq-based block
+device.

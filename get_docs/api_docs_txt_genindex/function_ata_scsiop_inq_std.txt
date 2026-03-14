@@ -1,0 +1,15 @@
+Function: unsigned int ata_scsiop_inq_std ( struct ata_device * dev , struct scsi_cmnd * cmd , u8 * rbuf )
+
+Simulate standard INQUIRY command
+
+Parameters
+  struct ata_device *dev
+    Target device.
+  struct scsi_cmnd *cmd
+    SCSI command of interest.
+  u8 *rbuf
+    Response buffer, to which simulated SCSI cmd output is sent.
+
+Description
+  Returns standard device identification data associated
+with non-VPD INQUIRY command output.

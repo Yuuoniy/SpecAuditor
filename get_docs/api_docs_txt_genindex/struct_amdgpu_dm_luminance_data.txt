@@ -1,0 +1,9 @@
+Struct: struct amdgpu_dm_luminance_data
+
+Custom luminance data
+
+Members
+  luminance
+    Luminance in percent
+  input_signal
+    Input signal in range 0-255
