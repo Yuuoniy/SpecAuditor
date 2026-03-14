@@ -1,0 +1,11 @@
+Function: int intel_engine_init_cmd_parser ( struct intel_engine_cs * engine )
+
+set cmd parser related fields for an engine
+
+Parameters
+  struct intel_engine_cs *engine
+    the engine to initialize
+
+Description
+  Optionally initializes fields related to batch buffer command parsing in the struct intel_engine_cs based on whether the platform requires software
+command parsing.

@@ -1,0 +1,10 @@
+Function: bool netif_carrier_ok ( const struct net_device * dev )
+
+test if carrier present
+
+Parameters
+  const struct net_device *dev
+    network device
+
+Description
+  Check if carrier is present on device

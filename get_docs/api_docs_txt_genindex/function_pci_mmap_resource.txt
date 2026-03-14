@@ -1,0 +1,16 @@
+Function: int pci_mmap_resource ( struct kobject * kobj , const struct bin_attribute * attr , struct vm_area_struct * vma , int write_combine )
+
+map a PCI resource into user memory space
+
+Parameters
+  struct kobject *kobj
+    kobject for mapping
+  const struct bin_attribute *attr
+    struct bin_attribute for the file being mapped
+  struct vm_area_struct *vma
+    struct vm_area_struct passed into the mmap
+  int write_combine
+    1 for write_combine mapping
+
+Description
+  Use the regular PCI mapping routines to map a PCI resource into userspace.

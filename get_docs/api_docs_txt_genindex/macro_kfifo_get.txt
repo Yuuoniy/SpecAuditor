@@ -1,0 +1,14 @@
+Macro: kfifo_get
+
+
+
+Parameters
+  fifo
+    address of the fifo to be used
+  val
+    address where to store the data
+
+Description
+  This macro reads the data from the fifo.
+It returns 0 if the fifo was empty. Otherwise it returns the number
+processed elements.

@@ -1,0 +1,16 @@
+Function: int phylink_of_phy_connect ( struct phylink * pl , struct device_node * dn , u32 flags )
+
+connect the PHY specified in the DT mode.
+
+Parameters
+  struct phylink *pl
+    a pointer to a struct phylink returned from phylink_create()
+  struct device_node *dn
+    a pointer to a struct device_node .
+  u32 flags
+    PHY-specific flags to communicate to the PHY device driver
+
+Description
+  Connect the phy specified in the device node dn to the phylink instance
+specified by pl . Actions specified in phylink_connect_phy() will be
+performed.

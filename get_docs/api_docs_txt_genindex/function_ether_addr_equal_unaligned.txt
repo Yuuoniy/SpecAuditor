@@ -1,0 +1,12 @@
+Function: bool ether_addr_equal_unaligned ( const u8 * addr1 , const u8 * addr2 )
+
+Compare two not u16 aligned Ethernet addresses
+
+Parameters
+  const u8 *addr1
+    Pointer to a six-byte array containing the Ethernet address
+  const u8 *addr2
+    Pointer other six-byte array containing the Ethernet address
+
+Description
+  Compare two Ethernet addresses, returns true if equal

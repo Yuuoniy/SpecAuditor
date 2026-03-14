@@ -1,0 +1,19 @@
+Function: int ssh_ctrl_packet_alloc ( struct ssh_packet * * packet , struct ssam_span * buffer , gfp_t flags )
+
+Allocate packet from control packet cache.
+
+Parameters
+  struct ssh_packet **packet
+    Where the pointer to the newly allocated packet should be stored.
+  struct ssam_span *buffer
+    The buffer corresponding to this packet.
+  gfp_t flags
+    Flags used for allocation.
+
+Description
+  Allocates a packet and corresponding transport buffer from the control
+packet cache. Sets the packet’s buffer reference to the allocated buffer.
+The packet must be freed via ssh_ctrl_packet_free() , which will also free
+the corresponding buffer. The corresponding buffer must not be freed
+separately. Intended to be used with ssh_ptl_ctrl_packet_ops as packet
+operations.

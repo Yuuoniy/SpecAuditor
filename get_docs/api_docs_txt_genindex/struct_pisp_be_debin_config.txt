@@ -1,0 +1,13 @@
+Struct: struct pisp_be_debin_config
+
+PiSP Back End Debin config
+
+Members
+  coeffs
+    Filter coefficients for debinning
+  h_enable
+    Horizontal debinning enable
+  v_enable
+    Vertical debinning enable
+  pad
+    Padding bytes

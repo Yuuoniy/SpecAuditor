@@ -1,0 +1,12 @@
+Function: long atomic_long_fetch_andnot_release ( long i , atomic_long_t * v )
+
+atomic bitwise AND NOT with release ordering
+
+Parameters
+  long i
+    long value
+  atomic_long_t *v
+    pointer to atomic_long_t
+
+Description
+  Atomically updates v to ( v & ~i ) with release ordering.

@@ -1,0 +1,11 @@
+Function: int ctucan_set_btr ( struct net_device * ndev , struct can_bittiming * bt , bool nominal )
+
+Sets CAN bus bit timing in CTU CAN FD
+
+Parameters
+  struct net_device *ndev
+    Pointer to net_device structure
+  struct can_bittiming *bt
+    Pointer to Bit timing structure
+  bool nominal
+    True - Nominal bit timing, False - Data bit timing

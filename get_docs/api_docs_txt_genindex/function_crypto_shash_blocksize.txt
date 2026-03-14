@@ -1,0 +1,11 @@
+Function: unsigned int crypto_shash_blocksize ( struct crypto_shash * tfm )
+
+obtain block size for cipher
+
+Parameters
+  struct crypto_shash *tfm
+    cipher handle
+
+Description
+  The block size for the message digest cipher referenced with the cipher
+handle is returned.

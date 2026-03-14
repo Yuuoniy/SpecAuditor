@@ -1,0 +1,13 @@
+Struct: struct drm_privacy_screen_lookup
+
+static privacy-screen lookup list entry
+
+Members
+  list
+    Lookup list list-entry.
+  dev_id
+    Consumer device name or NULL to match all devices.
+  con_id
+    Consumer connector name or NULL to match all connectors.
+  provider
+    dev_name() of the privacy_screen provider.

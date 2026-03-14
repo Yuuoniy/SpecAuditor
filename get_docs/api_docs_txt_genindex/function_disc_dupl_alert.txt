@@ -1,0 +1,11 @@
+Function: void disc_dupl_alert ( struct tipc_bearer * b , u32 node_addr , struct tipc_media_addr * media_addr )
+
+issue node address duplication alert
+
+Parameters
+  struct tipc_bearer *b
+    pointer to bearer detecting duplication
+  u32 node_addr
+    duplicated node address
+  struct tipc_media_addr *media_addr
+    media address advertised by duplicated node

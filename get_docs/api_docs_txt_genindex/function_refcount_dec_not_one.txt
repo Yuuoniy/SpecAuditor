@@ -1,0 +1,11 @@
+Function: bool refcount_dec_not_one ( refcount_t * r )
+
+decrement a refcount if it is not 1
+
+Parameters
+  refcount_t *r
+    the refcount
+
+Description
+  No atomic_t counterpart, it decrements unless the value is 1, in which case
+it will return false.

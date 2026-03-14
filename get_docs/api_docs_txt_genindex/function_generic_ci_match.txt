@@ -1,0 +1,20 @@
+Function: int generic_ci_match ( const struct inode * parent , const struct qstr * name , const struct qstr * folded_name , const u8 * de_name , u32 de_name_len )
+
+Match a name (case-insensitively) with a dirent. This is a filesystem helper for comparison with directory entries. generic_ci_d_compare should be used in VFS’ ->d_compare instead.
+
+Parameters
+  const struct inode *parent
+    Inode of the parent of the dirent under comparison
+  const struct qstr *name
+    name under lookup.
+  const struct qstr *folded_name
+    Optional pre-folded name under lookup
+  const u8 *de_name
+    Dirent name.
+  u32 de_name_len
+    dirent name length.
+
+Description
+  Test whether a case-insensitive directory entry matches the filename
+being searched.  If folded_name is provided, it is used instead of
+recalculating the casefold of name .

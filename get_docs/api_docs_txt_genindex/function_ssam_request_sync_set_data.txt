@@ -1,0 +1,15 @@
+Function: void ssam_request_sync_set_data ( struct ssam_request_sync * rqst , u8 * ptr , size_t len )
+
+Set message data of a synchronous request.
+
+Parameters
+  struct ssam_request_sync *rqst
+    The request.
+  u8 *ptr
+    Pointer to the request message data.
+  size_t len
+    Length of the request message data.
+
+Description
+  Set the request message data of a synchronous request. The provided buffer
+needs to live until the request has been completed.

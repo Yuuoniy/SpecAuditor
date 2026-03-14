@@ -1,0 +1,13 @@
+Function: bool folioq_is_marked2 ( const struct folio_queue * folioq , unsigned int slot )
+
+Check second folio mark in a folio queue segment
+
+Parameters
+  const struct folio_queue *folioq
+    The segment to query
+  unsigned int slot
+    The slot number of the folio to query
+
+Description
+  Determine if the second mark is set for the folio in the specified slot in a
+folio queue segment.

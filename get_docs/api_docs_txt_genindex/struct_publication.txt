@@ -1,0 +1,34 @@
+Struct: struct publication
+
+info about a published service address or range
+
+Members
+  sr
+    service range represented by this publication
+  sk
+    address of socket bound to this publication
+  scope
+    scope of publication, TIPC_NODE_SCOPE or TIPC_CLUSTER_SCOPE
+  key
+    publication key, unique across the cluster
+  id
+    publication id
+  binding_node
+    all publications from the same node which bound this one
+- Remote publications: in node->publ_list;
+Used by node/name distr to withdraw publications when node is lost
+- Local/node scope publications: in name_table->node_scope list
+- Local/cluster scope publications: in name_table->cluster_scope list
+  binding_sock
+    all publications from the same socket which bound this one
+Used by socket to withdraw publications when socket is unbound/released
+  local_publ
+    list of identical publications made from this node
+Used by closest_first and multicast receive lookup algorithms
+  all_publ
+    all publications identical to this one, whatever node and scope
+Used by round-robin lookup algorithm
+  list
+    to form a list of publications in temporal order
+  rcu
+    RCU callback head used for deferred freeing

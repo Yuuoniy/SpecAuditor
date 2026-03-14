@@ -1,0 +1,7 @@
+Function: struct padata_instance * padata_alloc ( const char * name )
+
+allocate and initialize a padata instance
+
+Parameters
+  const char *name
+    used to identify the instance

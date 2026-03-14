@@ -1,0 +1,18 @@
+Function: int of_clk_add_hw_provider_kunit ( struct kunit * test , struct device_node * np , struct clk_hw * ( * get ) ( struct of_phandle_args * clkspec , void * data ) , void * data )
+
+Test managed of_clk_add_hw_provider()
+
+Parameters
+  struct kunit *test
+    The test context
+  struct device_node *np
+    Device node pointer associated with clock provider
+  struct clk_hw *(*get)(struct of_phandle_args *clkspec, void *data)
+    Callback for decoding clk_hw
+  void *data
+    Context pointer for get callback.
+
+Description
+  Just like of_clk_add_hw_provider() , except the clk_hw provider is managed by
+the test case and is automatically unregistered after the test case
+concludes.

@@ -1,0 +1,14 @@
+Function: struct i2c_client * i2c_new_dummy_device ( struct i2c_adapter * adapter , u16 address )
+
+return a new i2c device bound to a dummy driver
+
+Parameters
+  struct i2c_adapter *adapter
+    the adapter managing the device
+  u16 address
+    seven bit address to be used
+
+Description
+  This returns an I2C client bound to the “dummy” driver, intended for use
+with devices that consume multiple addresses.  Examples of such chips
+include various EEPROMS (like 24c04 and 24c08 models).

@@ -1,0 +1,11 @@
+Function: void dm_crtc_high_irq ( void * interrupt_params )
+
+Handles CRTC interrupt
+
+Parameters
+  void *interrupt_params
+    used for determining the CRTC instance
+
+Description
+  Handles the CRTC/VSYNC interrupt by notfying DRM’s VBLANK
+event handler.

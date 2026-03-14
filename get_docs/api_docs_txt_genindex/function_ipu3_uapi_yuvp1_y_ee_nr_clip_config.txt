@@ -1,0 +1,27 @@
+Function: struct ipu3_uapi_yuvp1_y_ee_nr_clip_config
+
+Luma(Y) edge enhancement noise reduction clipping config
+
+Members
+  clip_pos_0
+    Limit of positive edge in dark area
+u5, value [0, 16], default 8.
+  reserved0
+    reserved
+  delta_clip_posi
+    Difference in the limit of edges between the bright
+and dark areas for positive edges.
+u5, value [0, 16], default 8.
+  reserved1
+    reserved
+  clip_neg_0
+    Limit of negative edge in dark area
+u5, value [0, 16], default 8.
+  reserved2
+    reserved
+  delta_clip_neg
+    Difference in the limit of edges between the bright
+and dark areas for negative edges.
+u5, value [0, 16], default 8.
+  reserved3
+    reserved

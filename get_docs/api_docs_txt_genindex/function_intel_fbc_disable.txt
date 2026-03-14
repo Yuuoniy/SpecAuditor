@@ -1,0 +1,10 @@
+Function: void intel_fbc_disable ( struct intel_crtc * crtc )
+
+disable FBC if it’s associated with crtc
+
+Parameters
+  struct intel_crtc *crtc
+    the CRTC
+
+Description
+  This function disables FBC if it’s associated with the provided CRTC.

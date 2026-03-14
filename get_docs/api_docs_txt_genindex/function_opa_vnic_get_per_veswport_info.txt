@@ -1,0 +1,14 @@
+Function: void opa_vnic_get_per_veswport_info ( struct opa_vnic_adapter * adapter , struct opa_per_veswport_info * info )
+
+Get the vesw per port information
+
+Parameters
+  struct opa_vnic_adapter *adapter
+    vnic port adapter
+  struct opa_per_veswport_info *info
+    pointer to destination vport info structure
+
+Description
+  This function copies the vesw per port info that is maintained by the
+given adapter to destination address provided.
+Note that the read only fields are not copied.

@@ -1,0 +1,17 @@
+Function: void fscache_clear_page_bits ( struct address_space * mapping , loff_t start , size_t len , bool caching )
+
+Clear the PG_fscache bits from a set of pages
+
+Parameters
+  struct address_space *mapping
+    The netfs inode to use as the source
+  loff_t start
+    The start position in mapping
+  size_t len
+    The amount of data to unlock
+  bool caching
+    If PG_fscache has been set
+
+Description
+  Clear the PG_fscache flag from a sequence of pages and wake up anyone who’s
+waiting.

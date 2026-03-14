@@ -1,0 +1,10 @@
+Function: int genphy_c45_an_config_aneg ( struct phy_device * phydev )
+
+configure advertisement registers
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+
+Description
+  Configure advertisement registers based on modes set in phydev->advertising

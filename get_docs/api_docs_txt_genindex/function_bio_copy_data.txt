@@ -1,0 +1,13 @@
+Function: void bio_copy_data ( struct bio * dst , struct bio * src )
+
+copy contents of data buffers from one bio to another
+
+Parameters
+  struct bio *dst
+    destination bio
+  struct bio *src
+    source bio
+
+Description
+  Stops when it reaches the end of either src or dst - that is, copies
+min(src->bi_size, dst->bi_size) bytes (or the equivalent for lists of bios).

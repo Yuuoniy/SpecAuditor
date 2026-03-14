@@ -1,0 +1,9 @@
+Struct: struct gnet_stats_basic
+
+byte/packet throughput statistics
+
+Members
+  bytes
+    number of seen bytes
+  packets
+    number of seen packets

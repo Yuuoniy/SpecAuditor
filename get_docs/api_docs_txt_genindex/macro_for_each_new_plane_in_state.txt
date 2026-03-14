@@ -1,0 +1,18 @@
+Macro: for_each_new_plane_in_state
+
+
+
+Parameters
+  __state
+    struct drm_atomic_state pointer
+  plane
+    struct drm_plane iteration cursor
+  new_plane_state
+    struct drm_plane_state iteration cursor for the new state
+  __i
+    int iteration cursor, for macro-internal use
+
+Description
+  This iterates over all planes in an atomic update, tracking only the new
+state. This is useful in enable functions, where we need the new state the
+hardware should be in when the atomic commit operation has completed.

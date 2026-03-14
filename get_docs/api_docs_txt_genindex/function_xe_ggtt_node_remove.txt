@@ -1,0 +1,9 @@
+Function: void xe_ggtt_node_remove ( struct xe_ggtt_node * node , bool invalidate )
+
+Remove a xe_ggtt_node from the GGTT
+
+Parameters
+  struct xe_ggtt_node *node
+    the xe_ggtt_node to be removed
+  bool invalidate
+    if node needs invalidation upon removal

@@ -1,0 +1,12 @@
+Function: struct device_node * of_find_node_with_property ( struct device_node * from , const char * prop_name )
+
+Find a node which has a property with the given name.
+
+Parameters
+  struct device_node *from
+    The node to start searching from or NULL, the node
+you pass will not be searched, only the next one
+will; typically, you pass what the previous call
+returned. of_node_put() will be called on it
+  const char *prop_name
+    The name of the property to look for.

@@ -1,0 +1,13 @@
+Function: int mnt_want_write_file ( struct file * file )
+
+get write access to a file’s mount
+
+Parameters
+  struct file *file
+    the file who’s mount on which to take a write
+
+Description
+  This is like mnt_want_write, but if the file is already open for writing it
+skips incrementing mnt_writers (since the open file already has a reference)
+and instead only does the freeze protection and the check for emergency r/o
+remounts.  This must be paired with mnt_drop_write_file.

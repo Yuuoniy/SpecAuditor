@@ -1,0 +1,15 @@
+Macro: of_overlay_apply_kunit
+
+
+
+Parameters
+  test
+    test context
+  overlay_name
+    name of overlay to apply
+
+Description
+  This macro is used to apply a device tree overlay built with the
+cmd_dt_S_dtbo rule in scripts/Makefile.lib that has been compiled into the
+kernel image or KUnit test module. The overlay is automatically removed when
+the test is finished.

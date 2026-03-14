@@ -1,0 +1,15 @@
+Function: void kvfree_rcu_barrier ( void )
+
+Wait until all in-flight kvfree_rcu() complete.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Note that a single argument of kvfree_rcu() call has a slow path that
+triggers synchronize_rcu() following by freeing a pointer. It is done
+before the return from the function. Therefore for any single-argument
+call that will result in a kfree() to a cache that is to be destroyed
+during module exit, it is developer’s responsibility to ensure that all
+such calls have returned before the call to kmem_cache_destroy() .

@@ -1,0 +1,13 @@
+Function: struct mem_cgroup * mem_cgroup_get_oom_group ( struct task_struct * victim , struct mem_cgroup * oom_domain )
+
+get a memory cgroup to clean up after OOM
+
+Parameters
+  struct task_struct *victim
+    task to be killed by the OOM killer
+  struct mem_cgroup *oom_domain
+    memcg in case of memcg OOM, NULL in case of system-wide OOM
+
+Description
+  Returns a pointer to a memory cgroup, which has to be cleaned up
+by killing all belonging OOM-killable tasks.

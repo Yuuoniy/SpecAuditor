@@ -1,0 +1,10 @@
+Function: void driver_unregister ( struct device_driver * drv )
+
+remove driver from system.
+
+Parameters
+  struct device_driver *drv
+    driver.
+
+Description
+  Again, we pass off most of the work to the bus-level call.

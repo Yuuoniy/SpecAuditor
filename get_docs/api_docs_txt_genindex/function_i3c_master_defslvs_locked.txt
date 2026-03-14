@@ -1,0 +1,12 @@
+Function: int i3c_master_defslvs_locked ( struct i3c_master_controller * master )
+
+send a DEFSLVS CCC command
+
+Parameters
+  struct i3c_master_controller *master
+    master used to send frames on the bus
+
+Description
+  Send a DEFSLVS CCC command containing all the devices known to the master .
+This is useful when you have secondary masters on the bus to propagate
+device information.

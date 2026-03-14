@@ -1,0 +1,13 @@
+Function: void opa_vnic_query_ucast_macs ( struct opa_vnic_adapter * adapter , struct opa_veswport_iface_macs * macs )
+
+query unicast mac list
+
+Parameters
+  struct opa_vnic_adapter *adapter
+    vnic port adapter
+  struct opa_veswport_iface_macs *macs
+    pointer mac list
+
+Description
+  This function populates the provided mac list with the configured
+unicast addresses in the adapter.

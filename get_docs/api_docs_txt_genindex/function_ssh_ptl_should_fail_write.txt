@@ -1,0 +1,10 @@
+Function: int ssh_ptl_should_fail_write ( void )
+
+Error injection hook to make serdev_device_write() fail.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Hook to simulate errors in serdev_device_write when transmitting packets.

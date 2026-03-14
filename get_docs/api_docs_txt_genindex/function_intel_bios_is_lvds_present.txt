@@ -1,0 +1,13 @@
+Function: bool intel_bios_is_lvds_present ( struct intel_display * display , u8 * i2c_pin )
+
+is LVDS present in VBT
+
+Parameters
+  struct intel_display *display
+    display device instance
+  u8 *i2c_pin
+    i2c pin for LVDS if present
+
+Description
+  Return true if LVDS is present. If no child devices were parsed from VBT,
+assume LVDS is present.

@@ -1,0 +1,19 @@
+Function: int ata_eh_recover ( struct ata_port * ap , struct ata_reset_operations * reset_ops , struct ata_link * * r_failed_link )
+
+recover host port after error
+
+Parameters
+  struct ata_port *ap
+    host port to recover
+  struct ata_reset_operations *reset_ops
+    The set of reset operations to use
+  struct ata_link **r_failed_link
+    out parameter for failed link
+
+Description
+  This is the alpha and omega, eum and yang, heart and soul of
+libata exception handling.  On entry, actions required to
+recover each link and hotplug requests are recorded in the
+link’s eh_context.  This function executes all the operations
+with appropriate retrials and fallbacks to resurrect failed
+devices, detach goners and greet newcomers.

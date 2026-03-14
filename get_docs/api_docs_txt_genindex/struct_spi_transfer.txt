@@ -1,0 +1,89 @@
+Struct: struct spi_transfer
+
+a read/write buffer pair
+
+Members
+  tx_buf
+    data to be written (DMA-safe memory), or NULL
+  rx_buf
+    data to be read (DMA-safe memory), or NULL
+  len
+    size of rx and tx buffers (in bytes)
+  error
+    Error status logged by SPI controller driver.
+  tx_sg_mapped
+    If true, the tx_sg is mapped for DMA
+  rx_sg_mapped
+    If true, the rx_sg is mapped for DMA
+  tx_sg
+    Scatterlist for transmit, currently not for client use
+  rx_sg
+    Scatterlist for receive, currently not for client use
+  tx_dma
+    DMA address of tx_buf, currently not for client use
+  rx_dma
+    DMA address of rx_buf, currently not for client use
+  dummy_data
+    indicates transfer is dummy bytes transfer.
+  cs_off
+    performs the transfer with chipselect off.
+  cs_change
+    affects chipselect after this transfer completes
+  tx_nbits
+    number of bits used for writing. If 0 the default
+(SPI_NBITS_SINGLE) is used.
+  rx_nbits
+    number of bits used for reading. If 0 the default
+(SPI_NBITS_SINGLE) is used.
+  timestamped
+    true if the transfer has been timestamped
+  dtr_mode
+    true if supports double transfer rate.
+  bits_per_word
+    select a bits_per_word other than the device default
+for this transfer. If 0 the default (from spi_device ) is used.
+  delay
+    delay to be introduced after this transfer before
+(optionally) changing the chipselect status, then starting
+the next transfer or completing this spi_message .
+  cs_change_delay
+    delay between cs deassert and assert when cs_change is set and spi_transfer is not the last in spi_message
+  word_delay
+    inter word delay to be introduced after each word size
+(set by bits_per_word) transmission.
+  speed_hz
+    Select a speed other than the device default for this
+transfer. If 0 the default (from spi_device ) is used.
+  effective_speed_hz
+    the effective SCK-speed that was used to
+transfer this transfer. Set to 0 if the SPI bus driver does
+not support it.
+  offload_flags
+    Flags that are only applicable to specialized SPI offload
+transfers. See SPI_OFFLOAD_XFER_* in spi-offload.h.
+  ptp_sts_word_pre
+    The word (subject to bits_per_word semantics) offset
+within tx_buf for which the SPI device is requesting that the time
+snapshot for this transfer begins. Upon completing the SPI transfer,
+this value may have changed compared to what was requested, depending
+on the available snapshotting resolution (DMA transfer, ptp_sts_supported is false, etc).
+  ptp_sts_word_post
+    See ptp_sts_word_post . The two can be equal (meaning
+that a single byte should be snapshotted).
+If the core takes care of the timestamp (if ptp_sts_supported is false
+for this controller), it will set ptp_sts_word_pre to 0, and ptp_sts_word_post to the length of the transfer. This is done
+purposefully (instead of setting to spi_transfer->len - 1) to denote
+that a transfer-level snapshot taken from within the driver may still
+be of higher quality.
+  ptp_sts
+    Pointer to a memory location held by the SPI target device where a
+PTP system timestamp structure may lie. If drivers use PIO or their
+hardware has some sort of assist for retrieving exact transfer timing,
+they can (and should) assert ptp_sts_supported and populate this
+structure using the ptp_read_system_*ts helper functions.
+The timestamp must represent the time at which the SPI target device has
+processed the word, i.e. the “pre” timestamp should be taken before
+transmitting the “pre” word, and the “post” timestamp after receiving
+transmit confirmation from the controller for the “post” word.
+  transfer_list
+    transfers are sequenced through spi_message.transfers

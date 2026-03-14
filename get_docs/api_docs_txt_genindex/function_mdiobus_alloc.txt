@@ -1,0 +1,11 @@
+Function: struct mii_bus * mdiobus_alloc ( void )
+
+Allocate an MDIO bus structure
+
+Parameters
+  void
+    no arguments
+
+Description
+  The internal state of the MDIO bus will be set of MDIOBUS_ALLOCATED ready
+for the driver to register the bus.

@@ -1,0 +1,15 @@
+Function: int xe_ggtt_node_insert_balloon_locked ( struct xe_ggtt_node * node , u64 start , u64 end )
+
+prevent allocation of specified GGTT addresses
+
+Parameters
+  struct xe_ggtt_node *node
+    the xe_ggtt_node to hold reserved GGTT node
+  u64 start
+    the starting GGTT address of the reserved region
+  u64 end
+    then end GGTT address of the reserved region
+
+Description
+  To be used in cases where ggtt->lock is already taken.
+Use xe_ggtt_node_remove_balloon_locked() to release a reserved GGTT node.

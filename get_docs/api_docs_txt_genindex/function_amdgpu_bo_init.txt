@@ -1,0 +1,10 @@
+Function: int amdgpu_bo_init ( struct amdgpu_device * adev )
+
+initialize memory manager
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu device object
+
+Description
+  Calls amdgpu_ttm_init() to initialize amdgpu memory manager.

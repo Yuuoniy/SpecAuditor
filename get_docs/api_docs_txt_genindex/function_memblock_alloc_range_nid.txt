@@ -1,0 +1,21 @@
+Function: phys_addr_t memblock_alloc_range_nid ( phys_addr_t size , phys_addr_t align , phys_addr_t start , phys_addr_t end , int nid , bool exact_nid )
+
+allocate boot memory block
+
+Parameters
+  phys_addr_t size
+    size of memory block to be allocated in bytes
+  phys_addr_t align
+    alignment of the region and block’s size
+  phys_addr_t start
+    the lower bound of the memory region to allocate (phys address)
+  phys_addr_t end
+    the upper bound of the memory region to allocate (phys address)
+  int nid
+    nid of the free area to find, NUMA_NO_NODE for any node
+  bool exact_nid
+    control the allocation fall back to other nodes
+
+Description
+  The allocation is performed from memory region limited by
+memblock.current_limit if end == MEMBLOCK_ALLOC_ACCESSIBLE .

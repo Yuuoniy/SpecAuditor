@@ -1,0 +1,11 @@
+Function: void shrink_dcache_sb ( struct super_block * sb )
+
+shrink dcache for a superblock
+
+Parameters
+  struct super_block *sb
+    superblock
+
+Description
+  Shrink the dcache for the specified super block. This is used to free
+the dcache before unmounting a file system.

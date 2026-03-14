@@ -1,0 +1,14 @@
+Function: bool netif_attr_test_mask ( unsigned long j , const unsigned long * mask , unsigned int nr_bits )
+
+Test a CPU or Rx queue set in a mask
+
+Parameters
+  unsigned long j
+    CPU/Rx queue index
+  const unsigned long *mask
+    bitmask of all cpus/rx queues
+  unsigned int nr_bits
+    number of bits in the bitmask
+
+Description
+  Test if a CPU or Rx queue index is set in a mask of all CPU/Rx queues.

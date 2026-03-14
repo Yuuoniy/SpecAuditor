@@ -1,0 +1,15 @@
+Function: struct ttm_pool
+
+Pool for all caching and orders
+
+Members
+  dev
+    the device we allocate pages for
+  nid
+    which numa node to use
+  use_dma_alloc
+    if coherent DMA allocations should be used
+  use_dma32
+    if GFP_DMA32 should be used
+  caching
+    pools for each caching/order

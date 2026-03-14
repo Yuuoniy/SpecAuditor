@@ -1,0 +1,14 @@
+Function: int of_mm_gpiochip_add_data ( struct device_node * np , struct of_mm_gpio_chip * mm_gc , void * data )
+
+Add memory mapped GPIO chip (bank)
+
+Parameters
+  struct device_node *np
+    device node of the GPIO chip
+  struct of_mm_gpio_chip *mm_gc
+    pointer to the of_mm_gpio_chip allocated structure
+  void *data
+    driver data to store in the struct gpio_chip
+
+Description
+  To use this function you should allocate and fill mm_gc with:

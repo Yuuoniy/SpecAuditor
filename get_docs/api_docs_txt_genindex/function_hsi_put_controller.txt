@@ -1,0 +1,12 @@
+Function: void hsi_put_controller ( struct hsi_controller * hsi )
+
+Free an HSI controller
+
+Parameters
+  struct hsi_controller *hsi
+    Pointer to the HSI controller to freed
+
+Description
+  HSI controller drivers should only use this function if they need
+to free their allocated hsi_controller structures before a successful
+call to hsi_register_controller. Other use is not allowed.

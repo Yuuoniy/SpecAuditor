@@ -1,0 +1,13 @@
+Function: bool ata_set_rwcmd_protocol ( struct ata_device * dev , struct ata_taskfile * tf )
+
+set taskfile r/w command and protocol
+
+Parameters
+  struct ata_device *dev
+    target device for the taskfile
+  struct ata_taskfile *tf
+    taskfile to examine and configure
+
+Description
+  Examine the device configuration and tf->flags to determine
+the proper read/write command and protocol to use for tf .

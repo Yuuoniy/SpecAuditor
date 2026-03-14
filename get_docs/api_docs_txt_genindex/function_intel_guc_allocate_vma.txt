@@ -1,0 +1,16 @@
+Function: struct i915_vma * intel_guc_allocate_vma ( struct intel_guc * guc , u32 size )
+
+Allocate a GGTT VMA for GuC usage
+
+Parameters
+  struct intel_guc *guc
+    the guc
+  u32 size
+    size of area to allocate (both virtual space and memory)
+
+Description
+  This is a wrapper to create an object for use with the GuC. In order to
+use it inside the GuC, an object needs to be pinned lifetime, so we allocate
+both some backing storage and a range inside the Global GTT. We must pin
+it in the GGTT somewhere other than than [0, GUC ggtt_pin_bias) because that
+range is reserved inside GuC.

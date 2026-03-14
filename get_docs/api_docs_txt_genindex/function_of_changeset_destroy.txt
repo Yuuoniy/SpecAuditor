@@ -1,0 +1,11 @@
+Function: void of_changeset_destroy ( struct of_changeset * ocs )
+
+Destroy a changeset
+
+Parameters
+  struct of_changeset *ocs
+    changeset pointer
+
+Description
+  Destroys a changeset. Note that if a changeset is applied,
+its changes to the tree cannot be reverted.

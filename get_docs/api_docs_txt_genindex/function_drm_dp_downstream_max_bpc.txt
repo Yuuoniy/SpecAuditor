@@ -1,0 +1,11 @@
+Function: int drm_dp_downstream_max_bpc ( const u8 dpcd [ DP_RECEIVER_CAP_SIZE ] , const u8 port_cap [ 4 ] , const struct drm_edid * drm_edid )
+
+extract downstream facing port max bits per component
+
+Parameters
+  const u8 dpcd[DP_RECEIVER_CAP_SIZE]
+    DisplayPort configuration data
+  const u8 port_cap[4]
+    downstream facing port capabilities
+  const struct drm_edid *drm_edid
+    EDID

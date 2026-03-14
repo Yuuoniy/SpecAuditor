@@ -1,0 +1,21 @@
+Function: void page_cache_async_readahead ( struct address_space * mapping , struct file_ra_state * ra , struct file * file , struct folio * folio , unsigned long req_count )
+
+file readahead for marked pages
+
+Parameters
+  struct address_space *mapping
+    address_space which holds the pagecache and I/O vectors
+  struct file_ra_state *ra
+    file_ra_state which holds the readahead state
+  struct file *file
+    Used by the filesystem for authentication.
+  struct folio *folio
+    The folio which triggered the readahead call.
+  unsigned long req_count
+    Total number of pages being read by the caller.
+
+Description
+  page_cache_async_readahead() should be called when a page is used which
+is marked as PageReadahead; this is a marker to suggest that the application
+has used up enough of the readahead window that we should start pulling in
+more pages.

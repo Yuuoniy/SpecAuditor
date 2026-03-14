@@ -1,0 +1,23 @@
+Function: struct drm_property * drm_property_create_bitmask ( struct drm_device * dev , u32 flags , const char * name , const struct drm_prop_enum_list * props , int num_props , uint64_t supported_bits )
+
+create a new bitmask property type
+
+Parameters
+  struct drm_device *dev
+    drm device
+  u32 flags
+    flags specifying the property type
+  const char *name
+    name of the property
+  const struct drm_prop_enum_list *props
+    enumeration lists with property bitflags
+  int num_props
+    size of the props array
+  uint64_t supported_bits
+    bitmask of all supported enumeration values
+
+Description
+  This creates a new bitmask drm property which can then be attached to a drm
+object with drm_object_attach_property() . The returned property object must
+be freed with drm_property_destroy() , which is done automatically when
+calling drm_mode_config_cleanup() .

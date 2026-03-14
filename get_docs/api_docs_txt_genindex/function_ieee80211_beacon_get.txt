@@ -1,0 +1,15 @@
+Function: struct sk_buff * ieee80211_beacon_get ( struct ieee80211_hw * hw , struct ieee80211_vif * vif , unsigned int link_id )
+
+beacon generation function
+
+Parameters
+  struct ieee80211_hw *hw
+    pointer obtained from ieee80211_alloc_hw() .
+  struct ieee80211_vif *vif
+    struct ieee80211_vif pointer from the add_interface callback.
+  unsigned int link_id
+    the link id to which the beacon belongs (or 0 for an AP STA
+that is not associated with AP MLD).
+
+Description
+  See ieee80211_beacon_get_tim() .

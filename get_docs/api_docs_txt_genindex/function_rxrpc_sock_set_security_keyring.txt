@@ -1,0 +1,13 @@
+Function: int rxrpc_sock_set_security_keyring ( struct sock * sk , struct key * keyring )
+
+Set the security keyring for a kernel service
+
+Parameters
+  struct sock *sk
+    The socket to set the keyring on
+  struct key *keyring
+    The keyring to set
+
+Description
+  Set the server security keyring on an rxrpc socket.  This is used to provide
+the encryption keys for a kernel service.

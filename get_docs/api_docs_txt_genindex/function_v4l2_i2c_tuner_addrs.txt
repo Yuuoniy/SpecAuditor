@@ -1,0 +1,7 @@
+Function: const unsigned short * v4l2_i2c_tuner_addrs ( enum v4l2_i2c_tuner_type type )
+
+Return a list of I2C tuner addresses to probe.
+
+Parameters
+  enum v4l2_i2c_tuner_type type
+    type of the tuner to seek, as defined by enum v4l2_i2c_tuner_type .

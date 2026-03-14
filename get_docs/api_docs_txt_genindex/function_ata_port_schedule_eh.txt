@@ -1,0 +1,11 @@
+Function: void ata_port_schedule_eh ( struct ata_port * ap )
+
+schedule error handling without a qc
+
+Parameters
+  struct ata_port *ap
+    ATA port to schedule EH for
+
+Description
+  Schedule error handling for ap .  EH will kick in as soon as
+all commands are drained.

@@ -1,0 +1,11 @@
+Macro: BITMAP_FROM_U64
+
+
+
+Parameters
+  n
+    u64 value
+
+Description
+  Linux bitmaps are internally arrays of unsigned longs, i.e. 32-bit
+integers in 32-bit environment, and 64-bit integers in 64-bit one.

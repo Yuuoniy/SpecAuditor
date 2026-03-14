@@ -1,0 +1,17 @@
+Struct: struct gpio_v2_line_config
+
+Configuration for GPIO lines
+
+Members
+  flags
+    flags for the GPIO lines, with values from enum gpio_v2_line_flag , such as GPIO_V2_LINE_FLAG_ACTIVE_LOW , GPIO_V2_LINE_FLAG_OUTPUT etc, added together.  This is the default for
+all requested lines but may be overridden for particular lines using attrs .
+  num_attrs
+    the number of attributes in attrs
+  padding
+    reserved for future use and must be zero filled
+  attrs
+    the configuration attributes associated with the requested
+lines.  Any attribute should only be associated with a particular line
+once.  If an attribute is associated with a line multiple times then the
+first occurrence (i.e. lowest index) has precedence.

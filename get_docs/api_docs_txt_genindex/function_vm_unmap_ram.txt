@@ -1,0 +1,9 @@
+Function: void vm_unmap_ram ( const void * mem , unsigned int count )
+
+unmap linear kernel address space set up by vm_map_ram
+
+Parameters
+  const void *mem
+    the pointer returned by vm_map_ram
+  unsigned int count
+    the count passed to that vm_map_ram call (cannot unmap partial)

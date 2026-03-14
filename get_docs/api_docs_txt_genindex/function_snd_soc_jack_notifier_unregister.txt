@@ -1,0 +1,12 @@
+Function: void snd_soc_jack_notifier_unregister ( struct snd_soc_jack * jack , struct notifier_block * nb )
+
+Unregister a notifier for jack status
+
+Parameters
+  struct snd_soc_jack *jack
+    ASoC jack
+  struct notifier_block *nb
+    Notifier block to unregister
+
+Description
+  Stop notifying for status changes.

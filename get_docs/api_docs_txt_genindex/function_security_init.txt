@@ -1,0 +1,10 @@
+Function: int security_init ( void )
+
+initializes the security framework
+
+Parameters
+  void
+    no arguments
+
+Description
+  This should be called early in the kernel initialization sequence.

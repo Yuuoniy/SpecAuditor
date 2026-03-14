@@ -1,0 +1,7 @@
+Macro: SSH_MSGOFFSET_COMMAND
+
+
+
+Parameters
+  field
+    The field for which the offset should be computed.

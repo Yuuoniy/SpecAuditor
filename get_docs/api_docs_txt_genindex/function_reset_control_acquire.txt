@@ -1,0 +1,14 @@
+Function: int reset_control_acquire ( struct reset_control * rstc )
+
+acquires a reset control for exclusive use
+
+Parameters
+  struct reset_control *rstc
+    reset control
+
+Description
+  This is used to explicitly acquire a reset control for exclusive use. Note
+that exclusive resets are requested as acquired by default. In order for a
+second consumer to be able to control the reset, the first consumer has to
+release it first. Typically the easiest way to achieve this is to call the reset_control_get_exclusive_released() to obtain an instance of the reset
+control. Such reset controls are not acquired by default.

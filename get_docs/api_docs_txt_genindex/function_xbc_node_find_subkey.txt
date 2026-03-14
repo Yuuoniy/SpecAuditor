@@ -1,0 +1,14 @@
+Function: struct xbc_node * xbc_node_find_subkey ( struct xbc_node * parent , const char * key )
+
+Find a subkey node which matches given key
+
+Parameters
+  struct xbc_node *parent
+    An XBC node.
+  const char *key
+    A key string.
+
+Description
+  Search a key node under parent which matches key . The key can contain
+several words jointed with ‘.’. If parent is NULL, this searches the
+node from whole tree. Return NULL if no node is matched.

@@ -1,0 +1,10 @@
+Function: void security_file_free ( struct file * file )
+
+Free a file’s LSM blob
+
+Parameters
+  struct file *file
+    the file
+
+Description
+  Deallocate and free any security structures stored in file->f_security.

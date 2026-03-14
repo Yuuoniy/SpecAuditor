@@ -1,0 +1,16 @@
+Function: void drm_connector_set_link_status_property ( struct drm_connector * connector , uint64_t link_status )
+
+Set link status property of a connector
+
+Parameters
+  struct drm_connector *connector
+    drm connector
+  uint64_t link_status
+    new value of link status property (0: Good, 1: Bad)
+
+Description
+  In usual working scenario, this link status property will always be set to
+“GOOD”. If something fails during or after a mode set, the kernel driver
+may set this link status property to “BAD”. The caller then needs to send a
+hotplug uevent for userspace to re-check the valid modes through
+GET_CONNECTOR_IOCTL and retry modeset.

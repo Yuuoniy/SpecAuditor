@@ -1,0 +1,10 @@
+Function: int drm_client_modeset_check ( struct drm_client_dev * client )
+
+Check modeset configuration
+
+Parameters
+  struct drm_client_dev *client
+    DRM client
+
+Description
+  Check modeset configuration.

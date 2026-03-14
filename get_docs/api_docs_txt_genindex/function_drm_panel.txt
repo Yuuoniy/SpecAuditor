@@ -1,0 +1,36 @@
+Function: struct drm_panel
+
+DRM panel object
+
+Members
+  dev
+    Parent device of the panel.
+  backlight
+    Backlight device, used to turn on backlight after the call
+to enable() , and to turn off backlight before the call to disable() .
+backlight is set by drm_panel_of_backlight() or drm_panel_dp_aux_backlight() and drivers shall not assign it.
+  funcs
+    Operations that can be performed on the panel.
+  connector_type
+    Type of the panel as a DRM_MODE_CONNECTOR_* value. This is used to
+initialise the drm_connector corresponding to the panel with the
+correct connector type.
+  list
+    Panel entry in registry.
+  followers
+    A list of struct drm_panel_follower dependent on this panel.
+  follower_lock
+    Lock for followers list.
+  prepare_prev_first
+    The previous controller should be prepared first, before the prepare
+for the panel is called. This is largely required for DSI panels
+where the DSI host controller should be initialised to LP-11 before
+the panel is powered up.
+  prepared
+    If true then the panel has been prepared.
+  enabled
+    If true then the panel has been enabled.
+  container
+    Pointer to the private driver struct embedding this struct drm_panel.
+  refcount
+    reference count of users referencing this panel.

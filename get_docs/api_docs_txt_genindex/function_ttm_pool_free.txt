@@ -1,0 +1,12 @@
+Function: void ttm_pool_free ( struct ttm_pool * pool , struct ttm_tt * tt )
+
+Free the backing pages from a ttm_tt object
+
+Parameters
+  struct ttm_pool *pool
+    Pool to give pages back to.
+  struct ttm_tt *tt
+    ttm_tt object to unpopulate
+
+Description
+  Give the packing pages back to a pool or free them

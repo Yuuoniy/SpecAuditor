@@ -1,0 +1,15 @@
+Struct: struct pisp_be_sh_fc_combine_config
+
+PiSP Back End Sharpening and False Colour config
+
+Members
+  y_factor
+    Control amount of desaturation of pixels being darkened
+  c1_factor
+    Control amount of brightening of a pixel for the Cb
+channel
+  c2_factor
+    Control amount of brightening of a pixel for the Cr
+channel
+  pad
+    Padding byte

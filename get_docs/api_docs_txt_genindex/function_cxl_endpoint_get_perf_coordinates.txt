@@ -1,0 +1,9 @@
+Function: int cxl_endpoint_get_perf_coordinates ( struct cxl_port * port , struct access_coordinate * coord )
+
+Retrieve performance numbers stored in dports of CXL path
+
+Parameters
+  struct cxl_port *port
+    endpoint cxl_port
+  struct access_coordinate *coord
+    output performance data

@@ -1,0 +1,7 @@
+Function: int irq_chip_request_resources_parent ( struct irq_data * data )
+
+Request resources on the parent interrupt
+
+Parameters
+  struct irq_data *data
+    Pointer to interrupt specific data

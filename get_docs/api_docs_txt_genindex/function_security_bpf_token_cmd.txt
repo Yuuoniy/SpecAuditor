@@ -1,0 +1,13 @@
+Function: int security_bpf_token_cmd ( const struct bpf_token * token , enum bpf_cmd cmd )
+
+Check if BPF token is allowed to delegate requested BPF syscall command
+
+Parameters
+  const struct bpf_token *token
+    BPF token object
+  enum bpf_cmd cmd
+    BPF syscall command requested to be delegated by BPF token
+
+Description
+  Do a check when the kernel decides whether provided BPF token should allow
+delegation of requested BPF syscall command.

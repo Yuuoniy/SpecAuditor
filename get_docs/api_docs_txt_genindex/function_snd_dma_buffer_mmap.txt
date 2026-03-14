@@ -1,0 +1,9 @@
+Function: int snd_dma_buffer_mmap ( struct snd_dma_buffer * dmab , struct vm_area_struct * area )
+
+perform mmap of the given DMA buffer
+
+Parameters
+  struct snd_dma_buffer *dmab
+    buffer allocation information
+  struct vm_area_struct *area
+    VM area information

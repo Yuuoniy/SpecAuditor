@@ -1,0 +1,11 @@
+Function: void usb_anchor_resume_wakeups ( struct usb_anchor * anchor )
+
+
+
+Parameters
+  struct usb_anchor *anchor
+    the anchor you want to resume wakeups on
+
+Description
+  Allow usb_wait_anchor_empty_timeout waiters to be woken up again, and
+wake up any current waiters if the anchor is empty.

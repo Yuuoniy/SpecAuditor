@@ -1,0 +1,11 @@
+Function: void drm_mode_set_name ( struct drm_display_mode * mode )
+
+set the name on a mode
+
+Parameters
+  struct drm_display_mode *mode
+    name will be set in this mode
+
+Description
+  Set the name of mode to a standard format which is <hdisplay>x<vdisplay>
+with an optional ‘i’ suffix for interlaced modes.

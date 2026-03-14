@@ -1,0 +1,13 @@
+Function: int snd_soc_dapm_enable_pin_unlocked ( struct snd_soc_dapm_context * dapm , const char * pin )
+
+enable pin.
+
+Parameters
+  struct snd_soc_dapm_context *dapm
+    DAPM context
+  const char *pin
+    pin name
+
+Description
+  Enables input/output pin and its parents or children widgets iff there is
+a valid audio route and active audio stream.

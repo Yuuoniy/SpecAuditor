@@ -1,0 +1,17 @@
+Function: int snd_soc_jack_add_gpiods ( struct device * gpiod_dev , struct snd_soc_jack * jack , int count , struct snd_soc_jack_gpio * gpios )
+
+Associate GPIO descriptor pins with an ASoC jack
+
+Parameters
+  struct device *gpiod_dev
+    GPIO consumer device
+  struct snd_soc_jack *jack
+    ASoC jack
+  int count
+    number of pins
+  struct snd_soc_jack_gpio *gpios
+    array of gpio pins
+
+Description
+  This function will request gpio, set data direction and request irq
+for each gpio in the array.

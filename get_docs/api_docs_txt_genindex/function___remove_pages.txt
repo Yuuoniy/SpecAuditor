@@ -1,0 +1,17 @@
+Function: void __remove_pages ( unsigned long pfn , unsigned long nr_pages , struct vmem_altmap * altmap )
+
+remove sections of pages
+
+Parameters
+  unsigned long pfn
+    starting pageframe (must be aligned to start of a section)
+  unsigned long nr_pages
+    number of pages to remove (must be multiple of section size)
+  struct vmem_altmap *altmap
+    alternative device page map or NULL if default memmap is used
+
+Description
+  Generic helper function to remove section mappings and sysfs entries
+for the section of the memory we are removing. Caller needs to make
+sure that pages are marked reserved and zones are adjust properly by
+calling offline_pages() .

@@ -1,0 +1,7 @@
+Function: void platform_driver_unregister ( struct platform_driver * drv )
+
+unregister a driver for platform-level devices
+
+Parameters
+  struct platform_driver *drv
+    platform driver structure

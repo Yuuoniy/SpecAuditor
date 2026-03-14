@@ -1,0 +1,12 @@
+Function: void tty_ldisc_close ( struct tty_struct * tty , struct tty_ldisc * ld )
+
+close a line discipline
+
+Parameters
+  struct tty_struct *tty
+    tty we are opening the ldisc on
+  struct tty_ldisc *ld
+    discipline to close
+
+Description
+  A helper close method. Also a convenient debugging and check point.

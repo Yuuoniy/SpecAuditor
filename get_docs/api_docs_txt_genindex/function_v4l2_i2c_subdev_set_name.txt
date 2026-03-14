@@ -1,0 +1,15 @@
+Function: void v4l2_i2c_subdev_set_name ( struct v4l2_subdev * sd , struct i2c_client * client , const char * devname , const char * postfix )
+
+Set name for an I²C sub-device
+
+Parameters
+  struct v4l2_subdev *sd
+    pointer to struct v4l2_subdev
+  struct i2c_client *client
+    pointer to struct i2c_client
+  const char *devname
+    the name of the device; if NULL, the I²C device drivers’s name
+will be used
+  const char *postfix
+    sub-device specific string to put right after the I²C device name;
+may be NULL

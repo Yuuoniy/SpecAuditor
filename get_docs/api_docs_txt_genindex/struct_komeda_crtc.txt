@@ -1,0 +1,20 @@
+Struct: struct komeda_crtc
+
+
+
+Members
+  base
+    drm_crtc
+  master
+    only master has display output
+  slave
+    optional Doesn’t have its own display output, the handled data flow will
+merge into the master.
+  slave_planes
+    komeda slave planes mask
+  wb_conn
+    komeda write back connector
+  disable_done
+    this flip_done is for tracing the disable
+  encoder
+    encoder at the end of the pipeline

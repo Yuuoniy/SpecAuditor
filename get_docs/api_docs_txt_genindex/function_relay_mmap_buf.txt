@@ -1,0 +1,12 @@
+Function: int relay_mmap_buf ( struct rchan_buf * buf , struct vm_area_struct * vma )
+
+mmap channel buffer to process address space
+
+Parameters
+  struct rchan_buf *buf
+    relay channel buffer
+  struct vm_area_struct *vma
+    vm_area_struct describing memory to be mapped
+
+Description
+  Returns 0 if ok, negative on error

@@ -1,0 +1,10 @@
+Function: void amdgpu_vm_manager_fini ( struct amdgpu_device * adev )
+
+cleanup VM manager
+
+Parameters
+  struct amdgpu_device *adev
+    amdgpu_device pointer
+
+Description
+  Cleanup the VM manager and free resources.

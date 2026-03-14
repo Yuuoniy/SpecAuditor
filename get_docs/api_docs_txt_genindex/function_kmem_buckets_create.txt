@@ -1,0 +1,21 @@
+Function: kmem_buckets * kmem_buckets_create ( const char * name , slab_flags_t flags , unsigned int useroffset , unsigned int usersize , void ( * ctor ) ( void * ) )
+
+Create a set of caches that handle dynamic sized allocations via kmem_buckets_alloc()
+
+Parameters
+  const char *name
+    A prefix string which is used in /proc/slabinfo to identify this
+cache. The individual caches with have their sizes as the suffix.
+  slab_flags_t flags
+    SLAB flags (see kmem_cache_create() for details).
+  unsigned int useroffset
+    Starting offset within an allocation that may be copied
+to/from userspace.
+  unsigned int usersize
+    How many bytes, starting at useroffset , may be copied
+to/from userspace.
+  void (*ctor)(void *)
+    A constructor for the objects, run when new allocations are made.
+
+Description
+  Cannot be called within an interrupt, but can be interrupted.

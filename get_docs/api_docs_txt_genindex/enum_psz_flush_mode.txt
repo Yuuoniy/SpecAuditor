@@ -1,0 +1,3 @@
+Enum: enum psz_flush_mode
+
+flush mode for psz_zone_write()

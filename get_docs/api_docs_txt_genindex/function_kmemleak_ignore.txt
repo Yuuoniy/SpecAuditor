@@ -1,0 +1,13 @@
+Function: void __ref kmemleak_ignore ( const void * ptr )
+
+ignore an allocated object
+
+Parameters
+  const void *ptr
+    pointer to beginning of the object
+
+Description
+  Calling this function on an object will cause the memory block to be
+ignored (not scanned and not reported as a leak). This is usually done when
+it is known that the corresponding block is not a leak and does not contain
+any references to other allocated memory blocks.

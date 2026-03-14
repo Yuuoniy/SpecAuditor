@@ -1,0 +1,7 @@
+Function: void amdgpu_vm_set_task_info ( struct amdgpu_vm * vm )
+
+Sets VMs task info.
+
+Parameters
+  struct amdgpu_vm *vm
+    vm for which to set the info

@@ -1,0 +1,10 @@
+Function: void fw_core_remove_address_handler ( struct fw_address_handler * handler )
+
+unregister an address handler
+
+Parameters
+  struct fw_address_handler *handler
+    callback
+
+Description
+  To be called in process context.

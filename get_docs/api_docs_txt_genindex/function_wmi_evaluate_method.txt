@@ -1,0 +1,18 @@
+Function: acpi_status wmi_evaluate_method ( const char * guid_string , u8 instance , u32 method_id , const struct acpi_buffer * in , struct acpi_buffer * out )
+
+Evaluate a WMI method (deprecated)
+
+Parameters
+  const char *guid_string
+    36 char string of the form fa50ff2b-f2e8-45de-83fa-65417f2f49ba
+  u8 instance
+    Instance index
+  u32 method_id
+    Method ID to call
+  const struct acpi_buffer *in
+    Mandatory buffer containing input for the method call
+  struct acpi_buffer *out
+    Empty buffer to return the method results
+
+Description
+  Call an ACPI-WMI method, the caller must free out .

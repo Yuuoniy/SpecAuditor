@@ -1,0 +1,15 @@
+Function: int snd_soc_runtime_calc_hw ( struct snd_soc_pcm_runtime * rtd , struct snd_pcm_hardware * hw , int stream )
+
+Calculate hw limits for a PCM stream
+
+Parameters
+  struct snd_soc_pcm_runtime *rtd
+    ASoC PCM runtime
+  struct snd_pcm_hardware *hw
+    PCM hardware parameters (output)
+  int stream
+    Direction of the PCM stream
+
+Description
+  Calculates the subset of stream parameters supported by all DAIs
+associated with the PCM stream.

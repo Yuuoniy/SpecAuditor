@@ -1,0 +1,13 @@
+Function: __poll_t tty_poll ( struct file * filp , poll_table * wait )
+
+check tty status
+
+Parameters
+  struct file *filp
+    file being polled
+  poll_table *wait
+    poll wait structures to update
+
+Description
+  Call the line discipline polling method to obtain the poll status of the
+device.

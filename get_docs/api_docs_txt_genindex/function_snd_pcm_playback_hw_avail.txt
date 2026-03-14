@@ -1,0 +1,7 @@
+Function: snd_pcm_sframes_t snd_pcm_playback_hw_avail ( struct snd_pcm_runtime * runtime )
+
+Get the queued space for playback
+
+Parameters
+  struct snd_pcm_runtime *runtime
+    PCM runtime instance

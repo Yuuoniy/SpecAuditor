@@ -1,0 +1,12 @@
+Function: int rio_clear_locks ( struct rio_net * net )
+
+Release all host locks and signal enumeration complete
+
+Parameters
+  struct rio_net *net
+    RIO network to run on
+
+Description
+  Marks the component tag CSR on each device with the enumeration
+complete flag. When complete, it then release the host locks on
+each device. Returns 0 on success or -EINVAL on failure.

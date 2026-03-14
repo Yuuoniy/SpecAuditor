@@ -1,0 +1,16 @@
+Macro: range_overflows
+
+
+
+Parameters
+  start
+    Start of the range.
+  size
+    Size of the range.
+  max
+    Exclusive upper boundary.
+
+Description
+  A strict check to determine if the range [ start , start + size ) is
+invalid with respect to the allowable range [0, max ). Any range
+starting at or beyond max is considered an overflow, even if size is 0.

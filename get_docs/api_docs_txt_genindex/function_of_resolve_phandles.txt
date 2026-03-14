@@ -1,0 +1,13 @@
+Function: int of_resolve_phandles ( struct device_node * overlay )
+
+Relocate and resolve overlay against live tree
+
+Parameters
+  struct device_node *overlay
+    Pointer to devicetree overlay to relocate and resolve
+
+Description
+  Modify (relocate) values of local phandles in overlay to a range that
+does not conflict with the live expanded devicetree.  Update references
+to the local phandles in overlay .  Update (resolve) phandle references
+in overlay that refer to the live expanded devicetree.

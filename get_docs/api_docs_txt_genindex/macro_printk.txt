@@ -1,0 +1,12 @@
+Macro: printk
+
+
+
+Parameters
+  fmt
+    format string
+  ...
+    variable arguments
+
+Description
+  This is printk() . It can be called from any context. We want it to work.

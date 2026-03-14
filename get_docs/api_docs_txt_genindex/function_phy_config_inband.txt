@@ -1,0 +1,12 @@
+Function: int phy_config_inband ( struct phy_device * phydev , unsigned int modes )
+
+configure the desired PHY in-band mode
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+  unsigned int modes
+    in-band modes to configure
+
+Description
+  between the PHY and host system.

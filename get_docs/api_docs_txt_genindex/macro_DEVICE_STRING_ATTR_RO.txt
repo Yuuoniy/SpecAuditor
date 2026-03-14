@@ -1,0 +1,15 @@
+Macro: DEVICE_STRING_ATTR_RO
+
+
+
+Parameters
+  _name
+    Attribute name.
+  _mode
+    File mode.
+  _var
+    Identifier of string.
+
+Description
+  Like DEVICE_ULONG_ATTR() , but _var is a string. Because the length of the
+string allocation is unknown, the attribute must be read-only.

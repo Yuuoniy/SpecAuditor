@@ -1,0 +1,10 @@
+Function: bool drm_edid_is_valid ( struct edid * edid )
+
+sanity check EDID data
+
+Parameters
+  struct edid *edid
+    EDID data
+
+Description
+  Sanity-check an entire EDID record (including extensions)

@@ -1,0 +1,13 @@
+Function: int vb2_verify_memory_type ( struct vb2_queue * q , enum vb2_memory memory , unsigned int type )
+
+Check whether the memory type and buffer type passed to a buffer operation are compatible with the queue.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.
+  enum vb2_memory memory
+    memory model, as defined by enum vb2_memory .
+  unsigned int type
+    private buffer type whose content is defined by the vb2-core
+caller. For example, for V4L2, it should match
+the types defined on enum v4l2_buf_type .

@@ -1,0 +1,9 @@
+Function: void phy_disable_eee_mode ( struct phy_device * phydev , u32 link_mode )
+
+Don’t advertise an EEE mode.
+
+Parameters
+  struct phy_device *phydev
+    The phy_device struct
+  u32 link_mode
+    The EEE mode to be disabled

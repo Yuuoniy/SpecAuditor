@@ -1,0 +1,17 @@
+Function: int mei_hdcp_verify_receiver_cert_prepare_km ( struct device * dev , struct hdcp_port_data * data , struct hdcp2_ake_send_cert * rx_cert , bool * km_stored , struct hdcp2_ake_no_stored_km * ek_pub_km , size_t * msg_sz )
+
+Verify the Receiver Certificate AKE_Send_Cert and prepare AKE_Stored_Km/AKE_No_Stored_Km
+
+Parameters
+  struct device *dev
+    device corresponding to the mei_cl_device
+  struct hdcp_port_data *data
+    Intel HW specific hdcp data
+  struct hdcp2_ake_send_cert *rx_cert
+    AKE_Send_Cert for verification
+  bool *km_stored
+    Pairing status flag output
+  struct hdcp2_ake_no_stored_km *ek_pub_km
+    AKE_Stored_Km/AKE_No_Stored_Km output msg
+  size_t *msg_sz
+    size of AKE_XXXXX_Km output msg

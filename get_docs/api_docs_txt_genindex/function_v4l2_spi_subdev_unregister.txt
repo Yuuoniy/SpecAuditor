@@ -1,0 +1,7 @@
+Function: void v4l2_spi_subdev_unregister ( struct v4l2_subdev * sd )
+
+Unregister a v4l2_subdev
+
+Parameters
+  struct v4l2_subdev *sd
+    pointer to struct v4l2_subdev

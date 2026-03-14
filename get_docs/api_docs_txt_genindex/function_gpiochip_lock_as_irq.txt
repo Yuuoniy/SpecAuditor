@@ -1,0 +1,13 @@
+Function: int gpiochip_lock_as_irq ( struct gpio_chip * gc , unsigned int offset )
+
+lock a GPIO to be used as IRQ
+
+Parameters
+  struct gpio_chip *gc
+    the chip the GPIO to lock belongs to
+  unsigned int offset
+    the offset of the GPIO to lock as IRQ
+
+Description
+  This is used directly by GPIO drivers that want to lock down
+a certain GPIO line to be used for IRQs.

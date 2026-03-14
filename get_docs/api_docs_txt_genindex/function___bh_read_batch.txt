@@ -1,0 +1,17 @@
+Function: void __bh_read_batch ( int nr , struct buffer_head * bhs [ ] , blk_opf_t op_flags , bool force_lock )
+
+Submit read for a batch of unlocked buffers
+
+Parameters
+  int nr
+    entry number of the buffer batch
+  struct buffer_head *bhs[]
+    a batch of struct buffer_head
+  blk_opf_t op_flags
+    appending REQ_OP_* flags besides REQ_OP_READ
+  bool force_lock
+    force to get a lock on the buffer if set, otherwise drops any
+buffer that cannot lock.
+
+Description
+  Returns zero on success or don’t wait, and -EIO on error.

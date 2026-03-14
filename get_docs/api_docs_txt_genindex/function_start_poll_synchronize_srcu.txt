@@ -1,0 +1,13 @@
+Function: unsigned long start_poll_synchronize_srcu ( struct srcu_struct * ssp )
+
+Provide cookie and start grace period
+
+Parameters
+  struct srcu_struct *ssp
+    srcu_struct to provide cookie for.
+
+Description
+  This function returns a cookie that can be passed to poll_state_synchronize_srcu() , which will return true if a full grace
+period has elapsed in the meantime.  Unlike get_state_synchronize_srcu() ,
+this function also ensures that any needed SRCU grace period will be
+started.  This convenience does come at a cost in terms of CPU overhead.

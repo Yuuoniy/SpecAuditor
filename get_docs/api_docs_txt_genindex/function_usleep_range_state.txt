@@ -1,0 +1,18 @@
+Function: void usleep_range_state ( unsigned long min , unsigned long max , unsigned int state )
+
+Sleep for an approximate time in a given state
+
+Parameters
+  unsigned long min
+    Minimum time in usecs to sleep
+  unsigned long max
+    Maximum time in usecs to sleep
+  unsigned int state
+    State of the current task that will be while sleeping
+
+Description
+  usleep_range_state() sleeps at least for the minimum specified time but not
+longer than the maximum specified amount of time. The range might reduce
+power usage by allowing hrtimers to coalesce an already scheduled interrupt
+with this hrtimer. In the worst case, an interrupt is scheduled for the upper
+bound.

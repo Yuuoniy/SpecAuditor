@@ -1,0 +1,7 @@
+Function: int xas_error ( const struct xa_state * xas )
+
+Return an errno stored in the xa_state.
+
+Parameters
+  const struct xa_state *xas
+    XArray operation state.

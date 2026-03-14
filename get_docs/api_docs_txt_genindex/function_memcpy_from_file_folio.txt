@@ -1,0 +1,17 @@
+Function: size_t memcpy_from_file_folio ( char * to , struct folio * folio , loff_t pos , size_t len )
+
+Copy some bytes from a file folio.
+
+Parameters
+  char *to
+    The destination buffer.
+  struct folio *folio
+    The folio to copy from.
+  loff_t pos
+    The position in the file.
+  size_t len
+    The maximum number of bytes to copy.
+
+Description
+  Copy up to len bytes from this folio.  This may be limited by PAGE_SIZE
+if the folio comes from HIGHMEM, and by the size of the folio.

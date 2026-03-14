@@ -1,0 +1,13 @@
+Function: void write_seqcount_latch_begin ( seqcount_latch_t * s )
+
+redirect latch readers to odd copy
+
+Parameters
+  seqcount_latch_t *s
+    Pointer to seqcount_latch_t
+
+Description
+  The latch technique is a multiversion concurrency control method that allows
+queries during non-atomic modifications. If you can guarantee queries never
+interrupt the modification -- e.g. the concurrency is strictly between CPUs
+-- you most likely do not need this.

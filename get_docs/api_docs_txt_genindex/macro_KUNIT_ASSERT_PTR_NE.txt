@@ -1,0 +1,16 @@
+Macro: KUNIT_ASSERT_PTR_NE
+
+
+
+Parameters
+  test
+    The test context object.
+  left
+    an arbitrary expression that evaluates to a pointer.
+  right
+    an arbitrary expression that evaluates to a pointer.
+
+Description
+  Sets an assertion that the values that left and right evaluate to are not
+equal. This is the same as KUNIT_EXPECT_NE() , except it causes an assertion
+failure (see KUNIT_ASSERT_TRUE() ) when the assertion is not met.

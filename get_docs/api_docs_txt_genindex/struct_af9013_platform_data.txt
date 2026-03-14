@@ -1,0 +1,29 @@
+Struct: struct af9013_platform_data
+
+Platform data for the af9013 driver
+
+Members
+  clk
+    Clock frequency.
+  tuner
+    Used tuner model.
+  if_frequency
+    IF frequency.
+  ts_mode
+    TS mode.
+  ts_output_pin
+    TS output pin.
+  spec_inv
+    Input spectrum inverted.
+  api_version
+    Firmware API version.
+  gpio
+    GPIOs.
+  get_dvb_frontend
+    Get DVB frontend callback.
+  get_i2c_adapter
+    Get I2C adapter.
+  pid_filter_ctrl
+    Control PID filter.
+  pid_filter
+    Set PID to PID filter.

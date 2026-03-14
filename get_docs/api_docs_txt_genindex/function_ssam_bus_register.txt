@@ -1,0 +1,7 @@
+Function: int ssam_bus_register ( void )
+
+Register and set-up the SSAM client device bus.
+
+Parameters
+  void
+    no arguments

@@ -1,0 +1,11 @@
+Macro: DRM_PVR_SUBMIT_JOB_GEOM_CMD_LAST
+
+Indicates if this the last command to be issued for a render.
+
+Members
+  handle
+    Handle of sync object.
+  flags
+    Combination of DRM_PVR_SYNC_OP_FLAG_ flags.
+  value
+    Timeline value for this drm_syncobj. MBZ for a binary syncobj.

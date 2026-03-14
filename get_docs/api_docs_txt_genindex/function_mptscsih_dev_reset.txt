@@ -1,0 +1,10 @@
+Function: int mptscsih_dev_reset ( struct scsi_cmnd * SCpnt )
+
+Perform a SCSI LOGICAL_UNIT_RESET!
+
+Parameters
+  struct scsi_cmnd * SCpnt
+    Pointer to scsi_cmnd structure, IO which reset is due to
+
+Description
+  (linux scsi_host_template.eh_dev_reset_handler routine)

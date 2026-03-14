@@ -1,0 +1,14 @@
+Function: void dma_resv_add_fence ( struct dma_resv * obj , struct dma_fence * fence , enum dma_resv_usage usage )
+
+Add a fence to the dma_resv obj
+
+Parameters
+  struct dma_resv *obj
+    the reservation object
+  struct dma_fence *fence
+    the fence to add
+  enum dma_resv_usage usage
+    how the fence is used, see enum dma_resv_usage
+
+Description
+  Add a fence to a slot, obj must be locked with dma_resv_lock() , and dma_resv_reserve_fences() has been called.

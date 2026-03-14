@@ -1,0 +1,15 @@
+Struct: struct of_changeset_entry
+
+Holds a changeset entry
+
+Members
+  node
+    list_head for the log list
+  action
+    notifier action
+  np
+    pointer to the device node affected
+  prop
+    pointer to the property affected
+  old_prop
+    hold a pointer to the original property

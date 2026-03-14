@@ -1,0 +1,13 @@
+Function: phys_addr_t per_cpu_ptr_to_phys ( void * addr )
+
+convert translated percpu address to physical address
+
+Parameters
+  void *addr
+    the address to be converted to physical address
+
+Description
+  Given addr which is dereferenceable address obtained via one of
+percpu access macros, this function translates it into its physical
+address.  The caller is responsible for ensuring addr stays valid
+until this function finishes.

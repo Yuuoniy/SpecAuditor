@@ -1,0 +1,12 @@
+Function: unsigned int ata_msense_rw_recovery ( u8 * buf , bool changeable )
+
+Simulate MODE SENSE r/w error recovery page
+
+Parameters
+  u8 *buf
+    output buffer
+  bool changeable
+    whether changeable parameters are requested
+
+Description
+  Generate a generic MODE SENSE r/w error recovery page.

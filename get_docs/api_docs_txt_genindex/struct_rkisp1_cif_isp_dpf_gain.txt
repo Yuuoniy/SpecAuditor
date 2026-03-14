@@ -1,0 +1,17 @@
+Struct: struct rkisp1_cif_isp_dpf_gain
+
+Noise function Configuration
+
+Members
+  mode
+    dpf gain usage  (from enum rkisp1_cif_isp_dpf_gain_usage )
+  nf_r_gain
+    Noise function Gain that replaces the AWB gain for red pixels
+  nf_b_gain
+    Noise function Gain that replaces the AWB gain for blue pixels
+  nf_gr_gain
+    Noise function Gain that replaces the AWB gain
+for green pixels in a red line
+  nf_gb_gain
+    Noise function Gain that replaces the AWB gain
+for green pixels in a blue line

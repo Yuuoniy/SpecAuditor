@@ -1,0 +1,13 @@
+Function: struct ipu3_uapi_vss_lut_x
+
+Vssnlm LUT x0/x1/x2
+
+Members
+  vs_x0
+    Vssnlm LUT x0, precision u8, range [0, 255], default 16.
+  vs_x1
+    Vssnlm LUT x1, precision u8, range [0, 255], default 32.
+  vs_x2
+    Vssnlm LUT x2, precision u8, range [0, 255], default 64.
+  reserved2
+    reserved

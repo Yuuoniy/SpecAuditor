@@ -1,0 +1,12 @@
+Function: int kernel_sock_shutdown ( struct socket * sock , enum sock_shutdown_cmd how )
+
+shut down part of a full-duplex connection (kernel space)
+
+Parameters
+  struct socket *sock
+    socket
+  enum sock_shutdown_cmd how
+    connection part
+
+Description
+  Returns 0 or an error.

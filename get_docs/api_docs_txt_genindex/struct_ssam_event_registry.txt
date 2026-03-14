@@ -1,0 +1,13 @@
+Struct: struct ssam_event_registry
+
+Registry specification used for enabling events.
+
+Members
+  target_category
+    Target category for the event registry requests.
+  target_id
+    Target ID for the event registry requests.
+  cid_enable
+    Command ID for the event-enable request.
+  cid_disable
+    Command ID for the event-disable request.

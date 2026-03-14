@@ -1,0 +1,7 @@
+Function: void svc_xprt_close ( struct svc_xprt * xprt )
+
+Close a client connection
+
+Parameters
+  struct svc_xprt *xprt
+    transport to disconnect

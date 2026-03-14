@@ -1,0 +1,10 @@
+Function: void ib_dealloc_device ( struct ib_device * device )
+
+free an IB device struct
+
+Parameters
+  struct ib_device *device
+    structure to free
+
+Description
+  Free a structure allocated with ib_alloc_device() .

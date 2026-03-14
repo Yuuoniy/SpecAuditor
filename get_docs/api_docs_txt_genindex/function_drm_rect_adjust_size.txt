@@ -1,0 +1,16 @@
+Function: void drm_rect_adjust_size ( struct drm_rect * r , int dw , int dh )
+
+adjust the size of the rectangle
+
+Parameters
+  struct drm_rect *r
+    rectangle to be adjusted
+  int dw
+    horizontal adjustment
+  int dh
+    vertical adjustment
+
+Description
+  Change the size of rectangle r by dw in the horizontal direction,
+and by dh in the vertical direction, while keeping the center
+of r stationary.

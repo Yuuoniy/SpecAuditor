@@ -1,0 +1,13 @@
+Function: int i915_vma_pin_fence ( struct i915_vma * vma )
+
+set up fencing for a vma
+
+Parameters
+  struct i915_vma *vma
+    vma to map through a fence reg
+
+Description
+  When mapping objects through the GTT, userspace wants to be able to write
+to them without having to worry about swizzling if the object is tiled.
+This function walks the fence regs looking for a free one for obj ,
+stealing one if it can’t find any.

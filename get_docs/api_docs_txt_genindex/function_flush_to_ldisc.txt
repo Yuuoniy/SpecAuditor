@@ -1,0 +1,11 @@
+Function: void flush_to_ldisc ( struct work_struct * work )
+
+flush data from buffer to ldisc
+
+Parameters
+  struct work_struct *work
+    tty structure passed from work queue.
+
+Description
+  This routine is called out of the software interrupt to flush data from the
+buffer chain to the line discipline.

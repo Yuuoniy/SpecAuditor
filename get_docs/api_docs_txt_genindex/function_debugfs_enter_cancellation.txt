@@ -1,0 +1,17 @@
+Function: void debugfs_enter_cancellation ( struct file * file , struct debugfs_cancellation * cancellation )
+
+enter a debugfs cancellation
+
+Parameters
+  struct file *file
+    the file being accessed
+  struct debugfs_cancellation *cancellation
+    the cancellation object, the cancel callback
+inside of it must be initialized
+
+Description
+  When a debugfs file is removed it needs to wait for all active
+operations to complete. However, the operation itself may need
+to wait for hardware or completion of some asynchronous process
+or similar. As such, it may need to be cancelled to avoid long
+waits or even deadlocks.

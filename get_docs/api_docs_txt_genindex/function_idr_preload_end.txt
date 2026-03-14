@@ -1,0 +1,11 @@
+Function: void idr_preload_end ( void )
+
+end preload section started with idr_preload()
+
+Parameters
+  void
+    no arguments
+
+Description
+  Each idr_preload() should be matched with an invocation of this
+function.  See idr_preload() for details.

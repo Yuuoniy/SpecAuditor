@@ -1,0 +1,9 @@
+Function: void sysfs_remove_bin_file ( struct kobject * kobj , const struct bin_attribute * attr )
+
+remove binary file for object.
+
+Parameters
+  struct kobject *kobj
+    object.
+  const struct bin_attribute *attr
+    attribute descriptor.

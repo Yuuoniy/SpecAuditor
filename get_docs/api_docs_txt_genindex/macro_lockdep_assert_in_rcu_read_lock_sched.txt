@@ -1,0 +1,11 @@
+Macro: lockdep_assert_in_rcu_read_lock_sched
+
+
+
+Parameters
+  p
+    pointer needing to lose its __rcu property
+
+Description
+  Converts p from an __rcu pointer to a __kernel pointer.
+This allows an __rcu pointer to be used with xchg() and friends.

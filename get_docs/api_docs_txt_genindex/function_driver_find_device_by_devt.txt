@@ -1,0 +1,9 @@
+Function: struct device * driver_find_device_by_devt ( const struct device_driver * drv , dev_t devt )
+
+device iterator for locating a particular device by devt.
+
+Parameters
+  const struct device_driver *drv
+    the driver we’re iterating
+  dev_t devt
+    devt pointer to match.

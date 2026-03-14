@@ -1,0 +1,12 @@
+Function: void xe_wa_process_lrc ( struct xe_hw_engine * hwe )
+
+process context workaround table
+
+Parameters
+  struct xe_hw_engine *hwe
+    engine instance to process workarounds for
+
+Description
+  Process context workaround table for this platform, saving in hwe all the
+workarounds that need to be applied on context restore. These are workarounds
+touching registers that are part of the HW context image.

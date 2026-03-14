@@ -1,0 +1,13 @@
+Function: bool refcount_dec_and_mutex_lock ( refcount_t * r , struct mutex * lock )
+
+return holding mutex if able to decrement refcount to 0
+
+Parameters
+  refcount_t *r
+    the refcount
+  struct mutex *lock
+    the mutex to be locked
+
+Description
+  Similar to atomic_dec_and_mutex_lock() , it will WARN on underflow and fail
+to decrement when saturated at REFCOUNT_SATURATED.

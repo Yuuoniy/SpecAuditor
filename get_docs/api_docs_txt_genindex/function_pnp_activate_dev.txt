@@ -1,0 +1,10 @@
+Function: int pnp_activate_dev ( struct pnp_dev * dev )
+
+activates a PnP device for use
+
+Parameters
+  struct pnp_dev *dev
+    pointer to the desired device
+
+Description
+  does not validate or set resources so be careful.

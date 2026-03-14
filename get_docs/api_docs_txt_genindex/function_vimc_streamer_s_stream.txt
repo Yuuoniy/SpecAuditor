@@ -1,0 +1,18 @@
+Function: int vimc_streamer_s_stream ( struct vimc_stream * stream , struct vimc_ent_device * ved , int enable )
+
+Start/stop the streaming on the media pipeline
+
+Parameters
+  struct vimc_stream *stream
+    the pointer to the stream structure of the current stream
+  struct vimc_ent_device *ved
+    pointer to the vimc entity of the entity of the stream
+  int enable
+    flag to determine if stream should start/stop
+
+Description
+  When starting, check if there is no stream->kthread allocated. This
+should indicate that a stream is already running. Then, it initializes the
+pipeline, creates and runs a kthread to consume buffers through the pipeline.
+When stopping, analogously check if there is a stream running, stop the
+thread and terminates the pipeline.

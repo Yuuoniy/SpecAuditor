@@ -1,0 +1,14 @@
+Function: void drm_dp_cec_register_connector ( struct drm_dp_aux * aux , struct drm_connector * connector )
+
+register a new connector
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  struct drm_connector *connector
+    drm connector
+
+Description
+  A new connector was registered with associated CEC adapter name and
+CEC adapter parent device. After registering the name and parent drm_dp_cec_set_edid() is called to check if the connector supports
+CEC and to register a CEC adapter if that is the case.

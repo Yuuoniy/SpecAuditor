@@ -1,0 +1,3 @@
+Enum: enum v4l2_connector_type
+
+connector type

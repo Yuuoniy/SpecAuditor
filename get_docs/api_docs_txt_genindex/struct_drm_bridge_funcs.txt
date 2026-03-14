@@ -1,0 +1,283 @@
+Struct: struct drm_bridge_funcs
+
+drm_bridge control functions
+
+Members
+  attach
+    This callback is invoked whenever our bridge is being attached to a drm_encoder . The flags argument tunes the behaviour of the attach
+operation (see DRM_BRIDGE_ATTACH_*). The attach callback is optional. RETURNS: Zero on success, error code on failure.
+  destroy
+    This callback is invoked when the bridge is about to be
+deallocated. The destroy callback is optional.
+  detach
+    This callback is invoked whenever our bridge is being detached from a drm_encoder . The detach callback is optional.
+  mode_valid
+    This callback is used to check if a specific mode is valid in this
+bridge. This should be implemented if the bridge has some sort of
+restriction in the modes it can display. For example, a given bridge
+may be responsible to set a clock value. If the clock can not
+produce all the values for the available modes then this callback
+can be used to restrict the number of modes to only the ones that
+can be displayed. This hook is used by the probe helpers to filter the mode list in drm_helper_probe_single_connector_modes() , and it is used by the
+atomic helpers to validate modes supplied by userspace in drm_atomic_helper_check_modeset() . The mode_valid callback is optional. NOTE: Since this function is both called from the check phase of an atomic
+commit, and the mode validation in the probe paths it is not allowed
+to look at anything else but the passed-in mode, and validate it
+against configuration-invariant hardware constraints. Any further
+limits which depend upon the configuration can only be checked in mode_fixup . RETURNS: drm_mode_status Enum
+  mode_fixup
+    This callback is used to validate and adjust a mode. The parameter
+mode is the display mode that should be fed to the next element in
+the display chain, either the final drm_connector or the next drm_bridge . The parameter adjusted_mode is the input mode the bridge
+requires. It can be modified by this callback and does not need to
+match mode. See also drm_crtc_state.adjusted_mode for more details. This is the only hook that allows a bridge to reject a modeset. If
+this function passes all other callbacks must succeed for this
+configuration. The mode_fixup callback is optional. drm_bridge_funcs.mode_fixup() is not called when drm_bridge_funcs.atomic_check() is implemented,
+so only one of them should be provided. NOTE: This function is called in the check phase of atomic modesets, which
+can be aborted for any reason (including on userspace’s request to
+just check whether a configuration would be possible). Drivers MUST
+NOT touch any persistent state (hardware or software) or data
+structures except the passed in state parameter. Also beware that userspace can request its own custom modes, neither
+core nor helpers filter modes to the list of probe modes reported by
+the GETCONNECTOR IOCTL and stored in drm_connector.modes . To ensure
+that modes are filtered consistently put any bridge constraints and
+limits checks into mode_valid . RETURNS: True if an acceptable configuration is possible, false if the modeset
+operation should be rejected.
+  disable
+    The disable callback should disable the bridge. The bridge can assume that the display pipe (i.e. clocks and timing
+signals) feeding it is still running when this callback is called. If the preceding element is a drm_bridge , then this is called before
+that bridge is disabled via one of: drm_bridge_funcs.disable drm_bridge_funcs.atomic_disable If the preceding element of the bridge is a display controller, then
+this callback is called before the encoder is disabled via one of: drm_encoder_helper_funcs.atomic_disable drm_encoder_helper_funcs.prepare drm_encoder_helper_funcs.disable drm_encoder_helper_funcs.dpms and the CRTC is disabled via one of: drm_crtc_helper_funcs.prepare drm_crtc_helper_funcs.atomic_disable drm_crtc_helper_funcs.disable drm_crtc_helper_funcs.dpms . The disable callback is optional. NOTE: This is deprecated, do not use!
+New drivers shall use drm_bridge_funcs.atomic_disable .
+  post_disable
+    The bridge must assume that the display pipe (i.e. clocks and timing
+signals) feeding this bridge is no longer running when the post_disable is called. This callback should perform all the actions required by the hardware
+after it has stopped receiving signals from the preceding element. If the preceding element is a drm_bridge , then this is called after
+that bridge is post-disabled (unless marked otherwise by the pre_enable_prev_first flag) via one of: drm_bridge_funcs.post_disable drm_bridge_funcs.atomic_post_disable If the preceding element of the bridge is a display controller, then
+this callback is called after the encoder is disabled via one of: drm_encoder_helper_funcs.atomic_disable drm_encoder_helper_funcs.prepare drm_encoder_helper_funcs.disable drm_encoder_helper_funcs.dpms and the CRTC is disabled via one of: drm_crtc_helper_funcs.prepare drm_crtc_helper_funcs.atomic_disable drm_crtc_helper_funcs.disable drm_crtc_helper_funcs.dpms The post_disable callback is optional. NOTE: This is deprecated, do not use!
+New drivers shall use drm_bridge_funcs.atomic_post_disable .
+  mode_set
+    This callback should set the given mode on the bridge. It is called
+after the mode_set callback for the preceding element in the display
+pipeline has been called already. If the bridge is the first element
+then this would be drm_encoder_helper_funcs.mode_set . The display
+pipe (i.e.  clocks and timing signals) is off when this function is
+called. The adjusted_mode parameter is the mode output by the CRTC for the
+first bridge in the chain. It can be different from the mode
+parameter that contains the desired mode for the connector at the end
+of the bridges chain, for instance when the first bridge in the chain
+performs scaling. The adjusted mode is mostly useful for the first
+bridge in the chain and is likely irrelevant for the other bridges. For atomic drivers the adjusted_mode is the mode stored in drm_crtc_state.adjusted_mode . NOTE: This is deprecated, do not use!
+New drivers shall set their mode in the drm_bridge_funcs.atomic_enable operation.
+  pre_enable
+    The display pipe (i.e. clocks and timing signals) feeding this bridge
+will not yet be running when the pre_enable is called. This callback should perform all the necessary actions to prepare the
+bridge to accept signals from the preceding element. If the preceding element is a drm_bridge , then this is called before
+that bridge is pre-enabled (unless marked otherwise by pre_enable_prev_first flag) via one of: drm_bridge_funcs.pre_enable drm_bridge_funcs.atomic_pre_enable If the preceding element of the bridge is a display controller, then
+this callback is called before the CRTC is enabled via one of: drm_crtc_helper_funcs.atomic_enable drm_crtc_helper_funcs.commit and the encoder is enabled via one of: drm_encoder_helper_funcs.atomic_enable drm_encoder_helper_funcs.enable drm_encoder_helper_funcs.commit The pre_enable callback is optional. NOTE: This is deprecated, do not use!
+New drivers shall use drm_bridge_funcs.atomic_pre_enable .
+  enable
+    The enable callback should enable the bridge. The bridge can assume that the display pipe (i.e. clocks and timing
+signals) feeding it is running when this callback is called. This
+callback must enable the display link feeding the next bridge in the
+chain if there is one. If the preceding element is a drm_bridge , then this is called after
+that bridge is enabled via one of: drm_bridge_funcs.enable drm_bridge_funcs.atomic_enable If the preceding element of the bridge is a display controller, then
+this callback is called after the CRTC is enabled via one of: drm_crtc_helper_funcs.atomic_enable drm_crtc_helper_funcs.commit and the encoder is enabled via one of: drm_encoder_helper_funcs.atomic_enable drm_encoder_helper_funcs.enable drm_encoder_helper_funcs.commit The enable callback is optional. NOTE: This is deprecated, do not use!
+New drivers shall use drm_bridge_funcs.atomic_enable .
+  atomic_pre_enable
+    The display pipe (i.e. clocks and timing signals) feeding this bridge
+will not yet be running when the atomic_pre_enable is called. This callback should perform all the necessary actions to prepare the
+bridge to accept signals from the preceding element. If the preceding element is a drm_bridge , then this is called before
+that bridge is pre-enabled (unless marked otherwise by pre_enable_prev_first flag) via one of: drm_bridge_funcs.pre_enable drm_bridge_funcs.atomic_pre_enable If the preceding element of the bridge is a display controller, then
+this callback is called before the CRTC is enabled via one of: drm_crtc_helper_funcs.atomic_enable drm_crtc_helper_funcs.commit and the encoder is enabled via one of: drm_encoder_helper_funcs.atomic_enable drm_encoder_helper_funcs.enable drm_encoder_helper_funcs.commit The atomic_pre_enable callback is optional.
+  atomic_enable
+    The atomic_enable callback should enable the bridge. The bridge can assume that the display pipe (i.e. clocks and timing
+signals) feeding it is running when this callback is called. This
+callback must enable the display link feeding the next bridge in the
+chain if there is one. If the preceding element is a drm_bridge , then this is called after
+that bridge is enabled via one of: drm_bridge_funcs.enable drm_bridge_funcs.atomic_enable If the preceding element of the bridge is a display controller, then
+this callback is called after the CRTC is enabled via one of: drm_crtc_helper_funcs.atomic_enable drm_crtc_helper_funcs.commit and the encoder is enabled via one of: drm_encoder_helper_funcs.atomic_enable drm_encoder_helper_funcs.enable drm_encoder_helper_funcs.commit The atomic_enable callback is optional.
+  atomic_disable
+    The atomic_disable callback should disable the bridge. The bridge can assume that the display pipe (i.e. clocks and timing
+signals) feeding it is still running when this callback is called. If the preceding element is a drm_bridge , then this is called before
+that bridge is disabled via one of: drm_bridge_funcs.disable drm_bridge_funcs.atomic_disable If the preceding element of the bridge is a display controller, then
+this callback is called before the encoder is disabled via one of: drm_encoder_helper_funcs.atomic_disable drm_encoder_helper_funcs.prepare drm_encoder_helper_funcs.disable drm_encoder_helper_funcs.dpms and the CRTC is disabled via one of: drm_crtc_helper_funcs.prepare drm_crtc_helper_funcs.atomic_disable drm_crtc_helper_funcs.disable drm_crtc_helper_funcs.dpms . The atomic_disable callback is optional.
+  atomic_post_disable
+    The bridge must assume that the display pipe (i.e. clocks and timing
+signals) feeding this bridge is no longer running when the atomic_post_disable is called. This callback should perform all the actions required by the hardware
+after it has stopped receiving signals from the preceding element. If the preceding element is a drm_bridge , then this is called after
+that bridge is post-disabled (unless marked otherwise by the pre_enable_prev_first flag) via one of: drm_bridge_funcs.post_disable drm_bridge_funcs.atomic_post_disable If the preceding element of the bridge is a display controller, then
+this callback is called after the encoder is disabled via one of: drm_encoder_helper_funcs.atomic_disable drm_encoder_helper_funcs.prepare drm_encoder_helper_funcs.disable drm_encoder_helper_funcs.dpms and the CRTC is disabled via one of: drm_crtc_helper_funcs.prepare drm_crtc_helper_funcs.atomic_disable drm_crtc_helper_funcs.disable drm_crtc_helper_funcs.dpms The atomic_post_disable callback is optional.
+  atomic_duplicate_state
+    Duplicate the current bridge state object (which is guaranteed to be
+non-NULL). The atomic_duplicate_state hook is mandatory if the bridge
+implements any of the atomic hooks, and should be left unassigned
+otherwise. For bridges that don’t subclass drm_bridge_state , the drm_atomic_helper_bridge_duplicate_state() helper function shall be
+used to implement this hook. RETURNS:
+A valid drm_bridge_state object or NULL if the allocation fails.
+  atomic_destroy_state
+    Destroy a bridge state object previously allocated by drm_bridge_funcs.atomic_duplicate_state() . The atomic_destroy_state hook is mandatory if the bridge implements
+any of the atomic hooks, and should be left unassigned otherwise.
+For bridges that don’t subclass drm_bridge_state , the drm_atomic_helper_bridge_destroy_state() helper function shall be
+used to implement this hook.
+  atomic_get_output_bus_fmts
+    Return the supported bus formats on the output end of a bridge.
+The returned array must be allocated with kmalloc() and will be
+freed by the caller. If the allocation fails, NULL should be
+returned. num_output_fmts must be set to the returned array size.
+Formats listed in the returned array should be listed in decreasing
+preference order (the core will try all formats until it finds one
+that works). This method is only called on the last element of the bridge chain
+as part of the bus format negotiation process that happens in drm_atomic_bridge_chain_select_bus_fmts`(). This method is optional. When not implemented, the core will fall back to :c:type:`drm_connector.display_info .bus_formats[0] if drm_connector.display_info .num_bus_formats > 0,
+or to MEDIA_BUS_FMT_FIXED otherwise.
+  atomic_get_input_bus_fmts
+    Return the supported bus formats on the input end of a bridge for
+a specific output bus format. The returned array must be allocated with kmalloc() and will be
+freed by the caller. If the allocation fails, NULL should be
+returned. num_input_fmts must be set to the returned array size.
+Formats listed in the returned array should be listed in decreasing
+preference order (the core will try all formats until it finds one
+that works). When the format is not supported NULL should be
+returned and num_input_fmts should be set to 0. This method is called on all elements of the bridge chain as part of
+the bus format negotiation process that happens in drm_atomic_bridge_chain_select_bus_fmts() .
+This method is optional. When not implemented, the core will bypass
+bus format negotiation on this element of the bridge without
+failing, and the previous element in the chain will be passed
+MEDIA_BUS_FMT_FIXED as its output bus format. Bridge drivers that need to support being linked to bridges that are
+not supporting bus format negotiation should handle the
+output_fmt == MEDIA_BUS_FMT_FIXED case appropriately, by selecting a
+sensible default value or extracting this information from somewhere
+else (FW property, drm_display_mode , drm_display_info , ...) Note: Even if input format selection on the first bridge has no
+impact on the negotiation process (bus format negotiation stops once
+we reach the first element of the chain), drivers are expected to
+return accurate input formats as the input format may be used to
+configure the CRTC output appropriately.
+  atomic_check
+    This method is responsible for checking bridge state correctness.
+It can also check the state of the surrounding components in chain
+to make sure the whole pipeline can work properly. drm_bridge_funcs.atomic_check() hooks are called in reverse
+order (from the last to the first bridge). This method is optional. drm_bridge_funcs.mode_fixup() is not
+called when drm_bridge_funcs.atomic_check() is implemented, so only
+one of them should be provided. If drivers need to tweak drm_bridge_state.input_bus_cfg .flags or drm_bridge_state.output_bus_cfg .flags it should happen in
+this function. By default the drm_bridge_state.output_bus_cfg .flags
+field is set to the next bridge drm_bridge_state.input_bus_cfg .flags value or drm_connector.display_info .bus_flags if the bridge is the last
+element in the chain. RETURNS:
+zero if the check passed, a negative error code otherwise.
+  atomic_reset
+    Reset the bridge to a predefined state (or retrieve its current
+state) and return a drm_bridge_state object matching this state.
+This function is called at attach time. The atomic_reset hook is mandatory if the bridge implements any of
+the atomic hooks, and should be left unassigned otherwise. For
+bridges that don’t subclass drm_bridge_state , the drm_atomic_helper_bridge_reset() helper function shall be used to
+implement this hook. Note that the atomic_reset() semantics is not exactly matching the reset() semantics found on other components (connector, plane, ...). The reset operation happens when the bridge is attached, not when drm_mode_config_reset() is called It’s meant to be used exclusively on bridges that have been
+converted to the ATOMIC API RETURNS:
+A valid drm_bridge_state object in case of success, an ERR_PTR() giving the reason of the failure otherwise.
+  detect
+    Check if anything is attached to the bridge output. This callback is optional, if not implemented the bridge will be
+considered as always having a component attached to its output.
+Bridges that implement this callback shall set the
+DRM_BRIDGE_OP_DETECT flag in their drm_bridge->ops . RETURNS: drm_connector_status indicating the bridge output status.
+  get_modes
+    Fill all modes currently valid for the sink into the drm_connector with drm_mode_probed_add() . The get_modes callback is mostly intended to support non-probeable
+displays such as many fixed panels. Bridges that support reading
+EDID shall leave get_modes unimplemented and implement the drm_bridge_funcs->edid_read callback instead. This callback is optional. Bridges that implement it shall set the
+DRM_BRIDGE_OP_MODES flag in their drm_bridge->ops . The connector parameter shall be used for the sole purpose of
+filling modes, and shall not be stored internally by bridge drivers
+for future usage. RETURNS: The number of modes added by calling drm_mode_probed_add() .
+  edid_read
+    Read the EDID data of the connected display. The edid_read callback is the preferred way of reporting mode
+information for a display connected to the bridge output. Bridges
+that support reading EDID shall implement this callback and leave
+the get_modes callback unimplemented. The caller of this operation shall first verify the output
+connection status and refrain from reading EDID from a disconnected
+output. This callback is optional. Bridges that implement it shall set the
+DRM_BRIDGE_OP_EDID flag in their drm_bridge->ops . The connector parameter shall be used for the sole purpose of EDID
+retrieval, and shall not be stored internally by bridge drivers for
+future usage. RETURNS: An edid structure newly allocated with drm_edid_alloc() or returned
+from drm_edid_read() family of functions on success, or NULL
+otherwise. The caller is responsible for freeing the returned edid
+structure with drm_edid_free() .
+  hpd_notify
+    Notify the bridge of hot plug detection. This callback is optional, it may be implemented by bridges that
+need to be notified of display connection or disconnection for
+internal reasons. One use case is to reset the internal state of CEC
+controllers for HDMI bridges.
+  hpd_enable
+    Enable hot plug detection. From now on the bridge shall call drm_bridge_hpd_notify() each time a change is detected in the output
+connection status, until hot plug detection gets disabled with hpd_disable . This callback is optional and shall only be implemented by bridges
+that support hot-plug notification without polling. Bridges that
+implement it shall also implement the hpd_disable callback and set
+the DRM_BRIDGE_OP_HPD flag in their drm_bridge->ops .
+  hpd_disable
+    Disable hot plug detection. Once this function returns the bridge
+shall not call drm_bridge_hpd_notify() when a change in the output
+connection status occurs. This callback is optional and shall only be implemented by bridges
+that support hot-plug notification without polling. Bridges that
+implement it shall also implement the hpd_enable callback and set
+the DRM_BRIDGE_OP_HPD flag in their drm_bridge->ops .
+  hdmi_tmds_char_rate_valid
+    Check whether a particular TMDS character rate is supported by the
+driver. This callback is optional and should only be implemented by the
+bridges that take part in the HDMI connector implementation. Bridges
+that implement it shall set the DRM_BRIDGE_OP_HDMI flag in their drm_bridge->ops . Returns: Either drm_mode_status.MODE_OK or one of the failure reasons
+in enum drm_mode_status .
+  hdmi_clear_infoframe
+    This callback clears the infoframes in the hardware during commit.
+It will be called multiple times, once for every disabled infoframe
+type. This callback is optional but it must be implemented by bridges that
+set the DRM_BRIDGE_OP_HDMI flag in their drm_bridge->ops .
+  hdmi_write_infoframe
+    Program the infoframe into the hardware. It will be called multiple
+times, once for every updated infoframe type. This callback is optional but it must be implemented by bridges that
+set the DRM_BRIDGE_OP_HDMI flag in their drm_bridge->ops .
+  hdmi_audio_startup
+    Called when ASoC starts an audio stream setup. This callback is optional, it can be implemented by bridges that
+set the DRM_BRIDGE_OP_HDMI_AUDIO flag in their drm_bridge->ops . Returns:
+0 on success, a negative error code otherwise
+  hdmi_audio_prepare
+    Configures HDMI-encoder for audio stream. Can be called multiple
+times for each setup. This callback is optional but it must be implemented by bridges that
+set the DRM_BRIDGE_OP_HDMI_AUDIO flag in their drm_bridge->ops . Returns:
+0 on success, a negative error code otherwise
+  hdmi_audio_shutdown
+    Shut down the audio stream. This callback is optional but it must be implemented by bridges that
+set the DRM_BRIDGE_OP_HDMI_AUDIO flag in their drm_bridge->ops . Returns:
+0 on success, a negative error code otherwise
+  hdmi_audio_mute_stream
+    Mute/unmute HDMI audio stream. This callback is optional, it can be implemented by bridges that
+set the DRM_BRIDGE_OP_HDMI_AUDIO flag in their drm_bridge->ops . Returns:
+0 on success, a negative error code otherwise
+  hdmi_cec_init
+    Initialize CEC part of the bridge. This callback is optional, it can be implemented by bridges that
+set the DRM_BRIDGE_OP_HDMI_CEC_ADAPTER flag in their drm_bridge->ops . Returns:
+0 on success, a negative error code otherwise
+  hdmi_cec_enable
+    Enable or disable the CEC adapter inside the bridge. This callback is optional, it can be implemented by bridges that
+set the DRM_BRIDGE_OP_HDMI_CEC_ADAPTER flag in their drm_bridge->ops . Returns:
+0 on success, a negative error code otherwise
+  hdmi_cec_log_addr
+    Set the logical address of the CEC adapter inside the bridge. This callback is optional, it can be implemented by bridges that
+set the DRM_BRIDGE_OP_HDMI_CEC_ADAPTER flag in their drm_bridge->ops . Returns:
+0 on success, a negative error code otherwise
+  hdmi_cec_transmit
+    Transmit the message using the CEC adapter inside the bridge. This callback is optional, it can be implemented by bridges that
+set the DRM_BRIDGE_OP_HDMI_CEC_ADAPTER flag in their drm_bridge->ops . Returns:
+0 on success, a negative error code otherwise
+  dp_audio_startup
+    Called when ASoC starts a DisplayPort audio stream setup. This callback is optional, it can be implemented by bridges that
+set the DRM_BRIDGE_OP_DP_AUDIO flag in their drm_bridge->ops . Returns:
+0 on success, a negative error code otherwise
+  dp_audio_prepare
+    Configures DisplayPort audio stream. Can be called multiple
+times for each setup. This callback is optional but it must be implemented by bridges that
+set the DRM_BRIDGE_OP_DP_AUDIO flag in their drm_bridge->ops . Returns:
+0 on success, a negative error code otherwise
+  dp_audio_shutdown
+    Shut down the DisplayPort audio stream. This callback is optional but it must be implemented by bridges that
+set the DRM_BRIDGE_OP_DP_AUDIO flag in their drm_bridge->ops . Returns:
+0 on success, a negative error code otherwise
+  dp_audio_mute_stream
+    Mute/unmute DisplayPort audio stream. This callback is optional, it can be implemented by bridges that
+set the DRM_BRIDGE_OP_DP_AUDIO flag in their drm_bridge->ops . Returns:
+0 on success, a negative error code otherwise
+  debugfs_init
+    Allows bridges to create bridge-specific debugfs files.

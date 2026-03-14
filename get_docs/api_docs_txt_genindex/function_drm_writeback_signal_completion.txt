@@ -1,0 +1,16 @@
+Function: void drm_writeback_signal_completion ( struct drm_writeback_connector * wb_connector , int status )
+
+Signal the completion of a writeback job
+
+Parameters
+  struct drm_writeback_connector *wb_connector
+    The writeback connector whose job is complete
+  int status
+    Status code to set in the writeback out_fence (0 for success)
+
+Description
+  Drivers should call this to signal the completion of a previously queued
+writeback job. It should be called as soon as possible after the hardware
+has finished writing, and may be called from interrupt context.
+It is the driver’s responsibility to ensure that for a given connector, the
+hardware completes writeback jobs in the same order as they are queued.

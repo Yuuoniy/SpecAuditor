@@ -1,0 +1,15 @@
+Function: int nand_read_subpage ( struct nand_chip * chip , uint32_t data_offs , uint32_t readlen , uint8_t * bufpoi , int page )
+
+[REPLACEABLE] ECC based sub-page read function
+
+Parameters
+  struct nand_chip *chip
+    nand chip info structure
+  uint32_t data_offs
+    offset of requested data within the page
+  uint32_t readlen
+    data length
+  uint8_t *bufpoi
+    buffer to store read data
+  int page
+    page number to read

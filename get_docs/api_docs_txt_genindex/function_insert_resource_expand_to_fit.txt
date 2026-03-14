@@ -1,0 +1,13 @@
+Function: void insert_resource_expand_to_fit ( struct resource * root , struct resource * new )
+
+Insert a resource into the resource tree
+
+Parameters
+  struct resource *root
+    root resource descriptor
+  struct resource *new
+    new resource to insert
+
+Description
+  Insert a resource into the resource tree, possibly expanding it in order
+to make it encompass any conflicting resources.

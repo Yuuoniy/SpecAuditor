@@ -1,0 +1,16 @@
+Function: int setattr_should_drop_suidgid ( struct mnt_idmap * idmap , struct inode * inode )
+
+determine whether the set{g,u}id bit needs to be dropped
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount inode was found from
+  struct inode *inode
+    inode to check
+
+Description
+  This function determines whether the set{g,u}id bits need to be removed.
+If the setuid bit needs to be removed ATTR_KILL_SUID is returned. If the
+setgid bit needs to be removed ATTR_KILL_SGID is returned. If both
+set{g,u}id bits need to be removed the corresponding mask of both flags is
+returned.

@@ -1,0 +1,53 @@
+Struct: struct drm_i915_memory_region_info
+
+Describes one region as known to the driver.
+
+Members
+  region
+    The class:instance pair encoding
+  rsvd0
+    MBZ
+  probed_size
+    Memory probed by the driver Note that it should not be possible to ever encounter a zero value
+here, also note that no current region type will ever return -1 here.
+Although for future region types, this might be a possibility. The
+same applies to the other size fields.
+  unallocated_size
+    Estimate of memory remaining Requires CAP_PERFMON or CAP_SYS_ADMIN to get reliable accounting.
+Without this (or if this is an older kernel) the value here will
+always equal the probed_size . Note this is only currently tracked
+for I915_MEMORY_CLASS_DEVICE regions (for other types the value here
+will always equal the probed_size ).
+  {unnamed_union}
+    anonymous
+  rsvd1
+    MBZ
+  {unnamed_struct}
+    anonymous
+  probed_cpu_visible_size
+    Memory probed by the driver
+that is CPU accessible. This will be always be <= probed_size , and the
+remainder (if there is any) will not be CPU
+accessible. On systems without small BAR, the probed_size will
+always equal the probed_cpu_visible_size , since all
+of it will be CPU accessible. Note this is only tracked for
+I915_MEMORY_CLASS_DEVICE regions (for other types the
+value here will always equal the probed_size ). Note that if the value returned here is zero, then
+this must be an old kernel which lacks the relevant
+small-bar uAPI support (including
+I915_GEM_CREATE_EXT_FLAG_NEEDS_CPU_ACCESS), but on
+such systems we should never actually end up with a
+small BAR configuration, assuming we are able to load
+the kernel module. Hence it should be safe to treat
+this the same as when probed_cpu_visible_size == probed_size .
+  unallocated_cpu_visible_size
+    Estimate of CPU
+visible memory remaining. Note this is only tracked for
+I915_MEMORY_CLASS_DEVICE regions (for other types the
+value here will always equal the probed_cpu_visible_size ). Requires CAP_PERFMON or CAP_SYS_ADMIN to get reliable
+accounting.  Without this the value here will always
+equal the probed_cpu_visible_size . Note this is only
+currently tracked for I915_MEMORY_CLASS_DEVICE
+regions (for other types the value here will also
+always equal the probed_cpu_visible_size ). If this is an older kernel the value here will be
+zero, see also probed_cpu_visible_size .

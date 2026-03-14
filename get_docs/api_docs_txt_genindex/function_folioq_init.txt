@@ -1,0 +1,12 @@
+Function: void folioq_init ( struct folio_queue * folioq , unsigned int rreq_id )
+
+Initialise a folio queue segment
+
+Parameters
+  struct folio_queue *folioq
+    The segment to initialise
+  unsigned int rreq_id
+    The request identifier to use in tracelines.
+
+Description
+  Initialise a folio queue segment and set an identifier to be used in traces.

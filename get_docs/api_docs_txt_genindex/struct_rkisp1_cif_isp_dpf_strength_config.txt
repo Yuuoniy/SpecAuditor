@@ -1,0 +1,11 @@
+Struct: struct rkisp1_cif_isp_dpf_strength_config
+
+strength of the filter
+
+Members
+  r
+    filter strength of the RED filter
+  g
+    filter strength of the GREEN filter
+  b
+    filter strength of the BLUE filter

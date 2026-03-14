@@ -1,0 +1,14 @@
+Function: void security_inode_post_remove_acl ( struct mnt_idmap * idmap , struct dentry * dentry , const char * acl_name )
+
+Update inode security after rm posix acls
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount
+  struct dentry *dentry
+    file
+  const char *acl_name
+    acl name
+
+Description
+  Update inode security data after successfully removing posix acls on dentry in idmap . The posix acls are identified by acl_name .

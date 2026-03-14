@@ -1,0 +1,13 @@
+Struct: struct drm_i915_gem_create_ext_memory_regions
+
+The I915_GEM_CREATE_EXT_MEMORY_REGIONS extension.
+
+Members
+  base
+    Extension link. See struct i915_user_extension .
+  pad
+    MBZ
+  num_regions
+    Number of elements in the regions array.
+  regions
+    The regions/placements array. An array of struct drm_i915_gem_memory_class_instance .

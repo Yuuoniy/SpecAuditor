@@ -1,0 +1,23 @@
+Struct: struct tipc_discoverer
+
+information about an ongoing link setup request
+
+Members
+  bearer_id
+    identity of bearer issuing requests
+  dest
+    destination address for request messages
+  net
+    network namespace instance
+  domain
+    network domain to which links can be established
+  num_nodes
+    number of nodes currently discovered (i.e. with an active link)
+  lock
+    spinlock for controlling access to requests
+  skb
+    request message to be (repeatedly) sent
+  timer
+    timer governing period between requests
+  timer_intv
+    current interval between requests (in ms)

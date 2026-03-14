@@ -1,0 +1,13 @@
+Function: void devm_drm_put_bridge ( struct device * dev , struct drm_bridge * bridge )
+
+Release a bridge reference obtained via devm
+
+Parameters
+  struct device *dev
+    device that got the bridge via devm
+  struct drm_bridge *bridge
+    pointer to a struct drm_bridge obtained via devm
+
+Description
+  Same as drm_bridge_put() for bridge pointers obtained via devm functions
+such as devm_drm_bridge_alloc() .

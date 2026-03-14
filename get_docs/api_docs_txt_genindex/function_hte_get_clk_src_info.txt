@@ -1,0 +1,9 @@
+Function: int hte_get_clk_src_info ( const struct hte_ts_desc * desc , struct hte_clk_info * ci )
+
+Get the clock source information for a ts descriptor.
+
+Parameters
+  const struct hte_ts_desc *desc
+    ts descriptor, same as returned from request API.
+  struct hte_clk_info *ci
+    The API fills this structure with the clock information data.

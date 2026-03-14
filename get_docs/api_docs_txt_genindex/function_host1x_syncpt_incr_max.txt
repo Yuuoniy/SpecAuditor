@@ -1,0 +1,9 @@
+Function: u32 host1x_syncpt_incr_max ( struct host1x_syncpt * sp , u32 incrs )
+
+update the value sent to hardware
+
+Parameters
+  struct host1x_syncpt *sp
+    host1x syncpoint
+  u32 incrs
+    number of increments

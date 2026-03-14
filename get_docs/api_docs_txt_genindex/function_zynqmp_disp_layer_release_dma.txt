@@ -1,0 +1,12 @@
+Function: void zynqmp_disp_layer_release_dma ( struct zynqmp_disp * disp , struct zynqmp_disp_layer * layer )
+
+Release DMA channels for a layer
+
+Parameters
+  struct zynqmp_disp *disp
+    Display controller
+  struct zynqmp_disp_layer *layer
+    The layer
+
+Description
+  Release the DMA channels associated with layer .

@@ -1,0 +1,39 @@
+Struct: struct media_link
+
+A link object part of a media graph.
+
+Members
+  graph_obj
+    Embedded structure containing the media object common data
+  list
+    Linked list associated with an entity or an interface that
+owns the link.
+  {unnamed_union}
+    anonymous
+  gobj0
+    Part of a union. Used to get the pointer for the first
+graph_object of the link.
+  source
+    Part of a union. Used only if the first object (gobj0) is
+a pad. In that case, it represents the source pad.
+  intf
+    Part of a union. Used only if the first object (gobj0) is
+an interface.
+  {unnamed_union}
+    anonymous
+  gobj1
+    Part of a union. Used to get the pointer for the second
+graph_object of the link.
+  sink
+    Part of a union. Used only if the second object (gobj1) is
+a pad. In that case, it represents the sink pad.
+  entity
+    Part of a union. Used only if the second object (gobj1) is
+an entity.
+  reverse
+    Pointer to the link for the reverse direction of a pad to pad
+link.
+  flags
+    Link flags, as defined in uapi/media.h (MEDIA_LNK_FL_*)
+  is_backlink
+    Indicate if the link is a backlink.

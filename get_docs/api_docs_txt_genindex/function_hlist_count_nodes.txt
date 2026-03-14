@@ -1,0 +1,7 @@
+Function: size_t hlist_count_nodes ( struct hlist_head * head )
+
+count nodes in the hlist
+
+Parameters
+  struct hlist_head *head
+    the head for your hlist.

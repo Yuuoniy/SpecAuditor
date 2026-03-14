@@ -1,0 +1,11 @@
+Struct: struct damos_migrate_dests
+
+Migration destination nodes and their weights.
+
+Members
+  node_id_arr
+    Array of migration destination node ids.
+  weight_arr
+    Array of migration weights for node_id_arr .
+  nr_dests
+    Length of the node_id_arr and weight_arr arrays.

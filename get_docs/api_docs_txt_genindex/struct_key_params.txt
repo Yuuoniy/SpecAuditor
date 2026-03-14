@@ -1,0 +1,21 @@
+Struct: struct key_params
+
+key information
+
+Members
+  key
+    key material
+  seq
+    sequence counter (IV/PN) for TKIP and CCMP keys, only used
+with the get_key() callback, must be in little endian,
+length given by seq_len .
+  key_len
+    length of key material
+  seq_len
+    length of seq .
+  vlan_id
+    vlan_id for VLAN group key (if nonzero)
+  cipher
+    cipher suite selector
+  mode
+    key install mode (RX_TX, NO_TX or SET_TX)

@@ -1,0 +1,14 @@
+Macro: pr_cont
+
+
+
+Parameters
+  fmt
+    format string
+  ...
+    arguments for the format string
+
+Description
+  This macro expands to a printk with KERN_CONT loglevel. It should only be
+used when continuing a log message with no newline (’n’) enclosed. Otherwise
+it defaults back to KERN_DEFAULT loglevel.

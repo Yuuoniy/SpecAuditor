@@ -1,0 +1,11 @@
+Function: void drm_gem_shmem_object_unpin ( struct drm_gem_object * obj )
+
+GEM object function for drm_gem_shmem_unpin()
+
+Parameters
+  struct drm_gem_object *obj
+    GEM object
+
+Description
+  This function wraps drm_gem_shmem_unpin() . Drivers that employ the shmem helpers should
+use it as their drm_gem_object_funcs.unpin handler.

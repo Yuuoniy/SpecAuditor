@@ -1,0 +1,11 @@
+Function: int drm_mode_set_config_internal ( struct drm_mode_set * set )
+
+helper to call drm_mode_config_funcs.set_config
+
+Parameters
+  struct drm_mode_set *set
+    modeset config to set
+
+Description
+  This is a little helper to wrap internal calls to the drm_mode_config_funcs.set_config driver interface. The only thing it adds is
+correct refcounting dance.

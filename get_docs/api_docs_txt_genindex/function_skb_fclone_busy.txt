@@ -1,0 +1,9 @@
+Function: bool skb_fclone_busy ( const struct sock * sk , const struct sk_buff * skb )
+
+check if fclone is busy
+
+Parameters
+  const struct sock *sk
+    socket
+  const struct sk_buff *skb
+    buffer

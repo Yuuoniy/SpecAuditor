@@ -1,0 +1,7 @@
+Function: void pwrseq_device_unregister ( struct pwrseq_device * pwrseq )
+
+Unregister the power sequencer.
+
+Parameters
+  struct pwrseq_device *pwrseq
+    Power sequencer to unregister.

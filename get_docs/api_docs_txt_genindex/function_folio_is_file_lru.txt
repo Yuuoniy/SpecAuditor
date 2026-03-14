@@ -1,0 +1,12 @@
+Function: int folio_is_file_lru ( const struct folio * folio )
+
+Should the folio be on a file LRU or anon LRU?
+
+Parameters
+  const struct folio *folio
+    The folio to test.
+
+Description
+  We would like to get this info without a page flag, but the state
+needs to survive until the folio is last deleted from the LRU, which
+could be as far down as __page_cache_release.

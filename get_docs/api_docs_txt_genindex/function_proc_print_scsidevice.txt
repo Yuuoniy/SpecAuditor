@@ -1,0 +1,13 @@
+Function: int proc_print_scsidevice ( struct device * dev , void * data )
+
+return data about this host
+
+Parameters
+  struct device *dev
+    A scsi device
+  void *data
+    struct seq_file to output to.
+
+Description
+  prints Host, Channel, Id, Lun, Vendor, Model, Rev, Type,
+and revision.

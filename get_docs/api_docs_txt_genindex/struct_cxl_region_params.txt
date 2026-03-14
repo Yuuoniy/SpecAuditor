@@ -1,0 +1,21 @@
+Struct: struct cxl_region_params
+
+region settings
+
+Members
+  state
+    allow the driver to lockdown further parameter changes
+  uuid
+    unique id for persistent regions
+  interleave_ways
+    number of endpoints in the region
+  interleave_granularity
+    capacity each endpoint contributes to a stripe
+  res
+    allocated iomem capacity for this region
+  targets
+    active ordered targets in current decoder configuration
+  nr_targets
+    number of targets
+  cache_size
+    extended linear cache size if exists, otherwise zero.

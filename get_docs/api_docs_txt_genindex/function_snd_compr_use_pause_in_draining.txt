@@ -1,0 +1,11 @@
+Function: void snd_compr_use_pause_in_draining ( struct snd_compr_stream * substream )
+
+Allow pause and resume in draining state
+
+Parameters
+  struct snd_compr_stream *substream
+    compress substream to set
+
+Description
+  Allow pause and resume in draining state.
+Only HW driver supports this transition can call this API.

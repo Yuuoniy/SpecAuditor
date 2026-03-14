@@ -1,0 +1,9 @@
+Function: int drm_dp_lttpr_set_transparent_mode ( struct drm_dp_aux * aux , bool enable )
+
+set the LTTPR in transparent mode
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel
+  bool enable
+    Enable or disable transparent mode

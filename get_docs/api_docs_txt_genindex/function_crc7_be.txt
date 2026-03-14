@@ -1,0 +1,16 @@
+Function: u8 crc7_be ( u8 crc , const u8 * buffer , size_t len )
+
+update the CRC7 for the data buffer
+
+Parameters
+  u8 crc
+    previous CRC7 value
+  const u8 *buffer
+    data pointer
+  size_t len
+    number of bytes in the buffer
+
+Description
+  Returns the updated CRC7 value.
+The CRC7 is left-aligned in the byte (the lsbit is always 0), as that
+makes the computation easier, and all callers want it in that form.

@@ -1,0 +1,19 @@
+Struct: struct ipu3_uapi_yuvp1_chnr_iir_fir_config
+
+Chroma IIR/FIR filter config
+
+Members
+  fir_0h
+    Value of center tap in horizontal FIR, range [0, 32], default 8.
+  reserved0
+    reserved
+  fir_1h
+    Value of distance 1 in horizontal FIR, range [0, 32], default 12.
+  reserved1
+    reserved
+  fir_2h
+    Value of distance 2 tap in horizontal FIR, range [0, 32], default 0.
+  dalpha_clip_val
+    weight for previous row in IIR, range [1, 256], default 0.
+  reserved2
+    reserved

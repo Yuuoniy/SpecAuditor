@@ -1,0 +1,21 @@
+Function: int __init_memblock memblock_add_range ( struct memblock_type * type , phys_addr_t base , phys_addr_t size , int nid , enum memblock_flags flags )
+
+add new memblock region
+
+Parameters
+  struct memblock_type *type
+    memblock type to add new region into
+  phys_addr_t base
+    base address of the new region
+  phys_addr_t size
+    size of the new region
+  int nid
+    nid of the new region
+  enum memblock_flags flags
+    flags of the new region
+
+Description
+  Add new memblock region [ base , base + size ) into type .  The new region
+is allowed to overlap with existing ones - overlaps don’t affect already
+existing regions. type is guaranteed to be minimal (all neighbouring
+compatible regions are merged) after the addition.

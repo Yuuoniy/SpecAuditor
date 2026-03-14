@@ -1,0 +1,7 @@
+Function: bool flush_rcu_work ( struct rcu_work * rwork )
+
+wait for a rwork to finish executing the last queueing
+
+Parameters
+  struct rcu_work *rwork
+    the rcu work to flush

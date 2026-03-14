@@ -1,0 +1,10 @@
+Function: void debug_stop_all ( void )
+
+stops the debug feature if stopping is allowed.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Currently used in case of a kernel oops.

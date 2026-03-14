@@ -1,0 +1,11 @@
+Function: long raw_atomic_long_dec_if_positive ( atomic_long_t * v )
+
+atomic decrement if positive with full ordering
+
+Parameters
+  atomic_long_t *v
+    pointer to atomic_long_t
+
+Description
+  If ( v > 0), atomically updates v to ( v - 1) with full ordering.
+Otherwise, v is not modified and relaxed ordering is provided.

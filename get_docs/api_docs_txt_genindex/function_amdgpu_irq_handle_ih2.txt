@@ -1,0 +1,10 @@
+Function: void amdgpu_irq_handle_ih2 ( struct work_struct * work )
+
+kick of processing for IH2
+
+Parameters
+  struct work_struct *work
+    work structure in struct amdgpu_irq
+
+Description
+  Kick of processing IH ring 2.

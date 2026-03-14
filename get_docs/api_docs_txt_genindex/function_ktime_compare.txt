@@ -1,0 +1,9 @@
+Function: int ktime_compare ( const ktime_t cmp1 , const ktime_t cmp2 )
+
+Compares two ktime_t variables for less, greater or equal
+
+Parameters
+  const ktime_t cmp1
+    comparable1
+  const ktime_t cmp2
+    comparable2

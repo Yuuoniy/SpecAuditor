@@ -1,0 +1,14 @@
+Function: int drm_dp_dpcd_probe ( struct drm_dp_aux * aux , unsigned int offset )
+
+probe a given DPCD address with a 1-byte read access
+
+Parameters
+  struct drm_dp_aux *aux
+    DisplayPort AUX channel (SST)
+  unsigned int offset
+    address of the register to probe
+
+Description
+  Probe the provided DPCD address by reading 1 byte from it. The function can
+be used to trigger some side-effect the read access has, like waking up the
+sink, without the need for the read-out value.

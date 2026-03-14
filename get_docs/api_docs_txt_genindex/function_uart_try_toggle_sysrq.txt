@@ -1,0 +1,13 @@
+Function: bool uart_try_toggle_sysrq ( struct uart_port * port , u8 ch )
+
+Enables SysRq from serial line
+
+Parameters
+  struct uart_port *port
+    uart_port structure where char(s) after BREAK met
+  u8 ch
+    new character in the sequence after received BREAK
+
+Description
+  Enables magic SysRq when the required sequence is met on port
+(see CONFIG_MAGIC_SYSRQ_SERIAL_SEQUENCE).

@@ -1,0 +1,10 @@
+Function: void n_tty_kick_worker ( const struct tty_struct * tty )
+
+start input worker (if required)
+
+Parameters
+  const struct tty_struct *tty
+    terminal
+
+Description
+  Re-schedules the flip buffer work if it may have stopped.

@@ -1,0 +1,16 @@
+Function: void truncate_inode_pages_range ( struct address_space * mapping , loff_t lstart , loff_t lend )
+
+truncate range of pages specified by start & end byte offsets
+
+Parameters
+  struct address_space *mapping
+    mapping to truncate
+  loff_t lstart
+    offset from which to truncate
+  loff_t lend
+    offset to which to truncate (inclusive)
+
+Description
+  Truncate the page cache, removing the pages that are between
+specified offsets (and zeroing out partial pages
+if lstart or lend + 1 is not page aligned).

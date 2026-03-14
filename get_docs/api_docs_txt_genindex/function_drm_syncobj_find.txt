@@ -1,0 +1,13 @@
+Function: struct drm_syncobj * drm_syncobj_find ( struct drm_file * file_private , u32 handle )
+
+lookup and reference a sync object.
+
+Parameters
+  struct drm_file *file_private
+    drm file private pointer
+  u32 handle
+    sync object handle to lookup.
+
+Description
+  Returns a reference to the syncobj pointed to by handle or NULL. The
+reference must be released by calling drm_syncobj_put() .

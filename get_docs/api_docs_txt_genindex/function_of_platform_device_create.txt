@@ -1,0 +1,11 @@
+Function: struct platform_device * of_platform_device_create ( struct device_node * np , const char * bus_id , struct device * parent )
+
+Alloc, initialize and register an of_device
+
+Parameters
+  struct device_node *np
+    pointer to node to create device for
+  const char *bus_id
+    name to assign device
+  struct device *parent
+    Linux device model parent device.

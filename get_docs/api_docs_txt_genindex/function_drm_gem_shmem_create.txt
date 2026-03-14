@@ -1,0 +1,12 @@
+Function: struct drm_gem_shmem_object * drm_gem_shmem_create ( struct drm_device * dev , size_t size )
+
+Allocate an object with the given size
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  size_t size
+    Size of the object to allocate
+
+Description
+  This function creates a shmem GEM object.

@@ -1,0 +1,16 @@
+Function: int phy_mii_ioctl ( struct phy_device * phydev , struct ifreq * ifr , int cmd )
+
+generic PHY MII ioctl interface
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+  struct ifreq *ifr
+    struct ifreq for socket ioctl’s
+  int cmd
+    ioctl cmd to execute
+
+Description
+  Note that this function is currently incompatible with the
+PHYCONTROL layer.  It changes registers without regard to
+current state.  Use at own risk.

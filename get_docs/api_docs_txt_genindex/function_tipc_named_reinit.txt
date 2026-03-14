@@ -1,0 +1,12 @@
+Function: void tipc_named_reinit ( struct net * net )
+
+re-initialize local publications
+
+Parameters
+  struct net *net
+    the associated network namespace
+
+Description
+  This routine is called whenever TIPC networking is enabled.
+All name table entries published by this node are updated to reflect
+the node’s new network address.

@@ -1,0 +1,20 @@
+Function: int append_oa_sample ( struct i915_perf_stream * stream , char __user * buf , size_t count , size_t * offset , const u8 * report )
+
+Copies single OA report into userspace read() buffer.
+
+Parameters
+  struct i915_perf_stream *stream
+    An i915-perf stream opened for OA metrics
+  char __user *buf
+    destination buffer given by userspace
+  size_t count
+    the number of bytes userspace wants to read
+  size_t *offset
+    (inout): the current position for writing into buf
+  const u8 *report
+    A single OA report to (optionally) include as part of the sample
+
+Description
+  The contents of a sample are configured through DRM_I915_PERF_PROP_SAMPLE_* properties when opening a stream, tracked as stream->sample_flags . This
+function copies the requested components of a single sample to the given
+read() buf .

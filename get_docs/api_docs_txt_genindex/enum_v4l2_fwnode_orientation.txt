@@ -1,0 +1,3 @@
+Enum: enum v4l2_fwnode_orientation
+
+possible device orientation

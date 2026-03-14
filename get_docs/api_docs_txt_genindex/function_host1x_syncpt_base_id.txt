@@ -1,0 +1,7 @@
+Function: u32 host1x_syncpt_base_id ( struct host1x_syncpt_base * base )
+
+retrieve the ID of a syncpoint wait base
+
+Parameters
+  struct host1x_syncpt_base *base
+    host1x syncpoint wait base

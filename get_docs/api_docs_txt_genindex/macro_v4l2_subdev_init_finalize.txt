@@ -1,0 +1,11 @@
+Macro: v4l2_subdev_init_finalize
+
+
+
+Parameters
+  sd
+    The subdev
+
+Description
+  This function finalizes the initialization of the subdev, including
+allocation of the active state for the subdev.

@@ -1,0 +1,7 @@
+Function: int shmem_zero_setup ( struct vm_area_struct * vma )
+
+setup a shared anonymous mapping
+
+Parameters
+  struct vm_area_struct *vma
+    the vma to be mmapped is prepared by do_mmap

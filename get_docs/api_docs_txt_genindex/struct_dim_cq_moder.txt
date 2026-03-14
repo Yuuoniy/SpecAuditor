@@ -1,0 +1,15 @@
+Struct: struct dim_cq_moder
+
+Structure for CQ moderation values. Used for communications between DIM and its consumer.
+
+Members
+  usec
+    CQ timer suggestion (by DIM)
+  pkts
+    CQ packet counter suggestion (by DIM)
+  comps
+    Completion counter
+  cq_period_mode
+    CQ period count mode (from CQE/EQE)
+  rcu
+    for asynchronous kfree_rcu

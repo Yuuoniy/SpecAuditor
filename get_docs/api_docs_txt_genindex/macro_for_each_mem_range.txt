@@ -1,0 +1,11 @@
+Macro: for_each_mem_range
+
+
+
+Parameters
+  i
+    u64 used as loop variable
+  p_start
+    ptr to phys_addr_t for start address of the range, can be NULL
+  p_end
+    ptr to phys_addr_t for end address of the range, can be NULL

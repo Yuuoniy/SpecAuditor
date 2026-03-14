@@ -1,0 +1,13 @@
+Function: void inode_fsuid_set ( struct inode * inode , struct mnt_idmap * idmap )
+
+initialize inode’s i_uid field with callers fsuid
+
+Parameters
+  struct inode *inode
+    inode to initialize
+  struct mnt_idmap *idmap
+    idmap of the mount the inode was found from
+
+Description
+  Initialize the i_uid field of inode . If the inode was found/created via
+an idmapped mount map the caller’s fsuid according to idmap .

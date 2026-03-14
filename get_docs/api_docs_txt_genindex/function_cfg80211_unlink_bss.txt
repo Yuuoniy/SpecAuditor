@@ -1,0 +1,15 @@
+Function: void cfg80211_unlink_bss ( struct wiphy * wiphy , struct cfg80211_bss * bss )
+
+unlink BSS from internal data structures
+
+Parameters
+  struct wiphy *wiphy
+    the wiphy
+  struct cfg80211_bss *bss
+    the bss to remove
+
+Description
+  This function removes the given BSS from the internal data structures
+thereby making it no longer show up in scan results etc. Use this
+function when you detect a BSS is gone. Normally BSSes will also time
+out, so it is not necessary to use this function at all.

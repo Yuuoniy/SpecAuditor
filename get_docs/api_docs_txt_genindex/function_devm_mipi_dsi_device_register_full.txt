@@ -1,0 +1,15 @@
+Function: struct mipi_dsi_device * devm_mipi_dsi_device_register_full ( struct device * dev , struct mipi_dsi_host * host , const struct mipi_dsi_device_info * info )
+
+create a managed MIPI DSI device
+
+Parameters
+  struct device *dev
+    device to tie the MIPI-DSI device lifetime to
+  struct mipi_dsi_host *host
+    DSI host to which this device is connected
+  const struct mipi_dsi_device_info *info
+    pointer to template containing DSI device information
+
+Description
+  Create a MIPI DSI device by using the device information provided by
+mipi_dsi_device_info template

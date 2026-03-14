@@ -1,0 +1,9 @@
+Function: bool is_dot_dotdot ( const char * name , size_t len )
+
+returns true only if name is “.” or “..”
+
+Parameters
+  const char *name
+    file name to check
+  size_t len
+    length of file name, in bytes

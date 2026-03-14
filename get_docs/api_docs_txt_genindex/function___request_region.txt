@@ -1,0 +1,15 @@
+Function: struct resource * __request_region ( struct resource * parent , resource_size_t start , resource_size_t n , const char * name , int flags )
+
+create a new busy resource region
+
+Parameters
+  struct resource *parent
+    parent resource descriptor
+  resource_size_t start
+    resource start address
+  resource_size_t n
+    resource region size
+  const char *name
+    reserving caller’s ID string
+  int flags
+    IO resource flags

@@ -1,0 +1,10 @@
+Function: int remove_resource ( struct resource * old )
+
+Remove a resource in the resource tree
+
+Parameters
+  struct resource *old
+    resource to remove
+
+Description
+  Returns 0 on success, -EINVAL if the resource is not valid.

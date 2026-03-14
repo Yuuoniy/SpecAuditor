@@ -1,0 +1,9 @@
+Function: int iwpm_compare_sockaddr ( struct sockaddr_storage * a_sockaddr , struct sockaddr_storage * b_sockaddr )
+
+Compare two sockaddr storage structs
+
+Parameters
+  struct sockaddr_storage *a_sockaddr
+    first sockaddr to compare
+  struct sockaddr_storage *b_sockaddr
+    second sockaddr to compare

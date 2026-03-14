@@ -1,0 +1,7 @@
+Function: u32 drm_plane_mask ( const struct drm_plane * plane )
+
+find the mask of a registered plane
+
+Parameters
+  const struct drm_plane *plane
+    plane to find mask for

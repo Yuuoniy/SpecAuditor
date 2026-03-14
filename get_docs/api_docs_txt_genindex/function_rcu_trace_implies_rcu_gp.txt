@@ -1,0 +1,13 @@
+Function: bool rcu_trace_implies_rcu_gp ( void )
+
+does an RCU Tasks Trace grace period imply an RCU grace period?
+
+Parameters
+  void
+    no arguments
+
+Description
+  As an accident of implementation, an RCU Tasks Trace grace period also
+acts as an RCU grace period.  However, this could change at any time.
+Code relying on this accident must call this function to verify that
+this accident is still happening.

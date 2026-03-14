@@ -1,0 +1,13 @@
+Function: void __ref kmemleak_no_scan ( const void * ptr )
+
+do not scan an allocated object
+
+Parameters
+  const void *ptr
+    pointer to beginning of the object
+
+Description
+  This function notifies kmemleak not to scan the given memory block. Useful
+in situations where it is known that the given object does not contain any
+references to other objects. Kmemleak will not scan such objects reducing
+the number of false negatives.

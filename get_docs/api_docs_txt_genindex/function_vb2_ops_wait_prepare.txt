@@ -1,0 +1,10 @@
+Function: void vb2_ops_wait_prepare ( struct vb2_queue * vq )
+
+helper function to lock a struct vb2_queue
+
+Parameters
+  struct vb2_queue *vq
+    pointer to struct vb2_queue
+
+Description
+  ..note:: only use if vq->lock is non-NULL.

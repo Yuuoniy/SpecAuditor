@@ -1,0 +1,14 @@
+Function: void workqueue_init ( void )
+
+bring workqueue subsystem fully online
+
+Parameters
+  void
+    no arguments
+
+Description
+  This is the second step of three-staged workqueue subsystem initialization
+and invoked as soon as kthreads can be created and scheduled. Workqueues have
+been created and work items queued on them, but there are no kworkers
+executing the work items yet. Populate the worker pools with the initial
+workers and enable future kworker creations.

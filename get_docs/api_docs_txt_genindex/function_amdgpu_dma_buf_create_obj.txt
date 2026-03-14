@@ -1,0 +1,12 @@
+Function: struct drm_gem_object * amdgpu_dma_buf_create_obj ( struct drm_device * dev , struct dma_buf * dma_buf )
+
+create BO for DMA-buf import
+
+Parameters
+  struct drm_device *dev
+    DRM device
+  struct dma_buf *dma_buf
+    DMA-buf
+
+Description
+  Creates an empty SG BO for DMA-buf import.

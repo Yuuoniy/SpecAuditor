@@ -1,0 +1,14 @@
+Function: void synchronize_rcu ( void )
+
+wait until a grace period has elapsed.
+
+Parameters
+  void
+    no arguments
+
+Description
+  Control will return to the caller some time after a full grace
+period has elapsed, in other words after all currently executing RCU
+read-side critical sections have completed.  Note, however, that
+upon return from synchronize_rcu() , the caller might well be executing
+concurrently with new RCU read-side critical sections that began while synchronize_rcu() was waiting.

@@ -1,0 +1,170 @@
+Struct: struct intel_guc
+
+Top level structure of GuC.
+
+Members
+  fw
+    the GuC firmware
+  log
+    sub-structure containing GuC log related data and objects
+  ct
+    the command transport communication channel
+  slpc
+    sub-structure containing SLPC related data and objects
+  capture
+    the error-state-capture module’s data and objects
+  dbgfs_node
+    debugfs node
+  sched_engine
+    Global engine used to submit requests to GuC
+  stalled_request
+    if GuC can’t process a request for any reason, we
+save it until GuC restarts processing. No other request can be
+submitted until the stalled request is processed.
+  submission_stall_reason
+    reason why submission is stalled
+  irq_lock
+    protects GuC irq state
+  msg_enabled_mask
+    mask of events that are processed when receiving
+an INTEL_GUC_ACTION_DEFAULT G2H message.
+  outstanding_submission_g2h
+    number of outstanding GuC to Host
+responses related to GuC submission, used to determine if the GT is
+idle
+  tlb_lookup
+    xarray to store all pending TLB invalidation requests
+  serial_slot
+    id to the initial waiter created in tlb_lookup,
+which is used only when failed to allocate new waiter.
+  next_seqno
+    the next id (sequence number) to allocate.
+  interrupts
+    pointers to GuC interrupt-managing functions.
+  submission_state
+    sub-structure for submission state protected by
+single lock
+  submission_state.lock
+    protects everything in
+submission_state, ce->guc_id.id, and ce->guc_id.ref
+when transitioning in and out of zero
+  submission_state.guc_ids
+    used to allocate new
+guc_ids, single-lrc
+  submission_state.num_guc_ids
+    Number of guc_ids, selftest
+feature to be able to reduce this number while testing.
+  submission_state.guc_ids_bitmap
+    used to allocate
+new guc_ids, multi-lrc
+  submission_state.guc_id_list
+    list of intel_context
+with valid guc_ids but no refs
+  submission_state.guc_ids_in_use
+    Number single-lrc
+guc_ids in use
+  submission_state.destroyed_contexts
+    list of contexts
+waiting to be destroyed (deregistered with the GuC)
+  submission_state.destroyed_worker
+    worker to deregister
+contexts, need as we need to take a GT PM reference and
+can’t from destroy function as it might be in an atomic
+context (no sleeping)
+  submission_state.reset_fail_worker
+    worker to trigger
+a GT reset after an engine reset fails
+  submission_state.reset_fail_mask
+    mask of engines that
+failed to reset
+  submission_state.sched_disable_delay_ms
+    schedule
+disable delay, in ms, for contexts
+  submission_state.sched_disable_gucid_threshold
+    threshold of min remaining available guc_ids before
+we start bypassing the schedule disable delay
+  submission_supported
+    tracks whether we support GuC submission on
+the current platform
+  submission_selected
+    tracks whether the user enabled GuC submission
+  submission_initialized
+    tracks whether GuC submission has been initialised
+  submission_version
+    Submission API version of the currently loaded firmware
+  rc_supported
+    tracks whether we support GuC rc on the current platform
+  rc_selected
+    tracks whether the user enabled GuC rc
+  ads_vma
+    object allocated to hold the GuC ADS
+  ads_map
+    contents of the GuC ADS
+  ads_regset_size
+    size of the save/restore regsets in the ADS
+  ads_regset_count
+    number of save/restore registers in the ADS for
+each engine
+  ads_regset
+    save/restore regsets in the ADS
+  ads_golden_ctxt_size
+    size of the golden contexts in the ADS
+  ads_waklv_size
+    size of workaround KLVs
+  ads_capture_size
+    size of register lists in the ADS used for error capture
+  lrc_desc_pool_v69
+    object allocated to hold the GuC LRC descriptor pool
+  lrc_desc_pool_vaddr_v69
+    contents of the GuC LRC descriptor pool
+  context_lookup
+    used to resolve intel_context from guc_id, if a
+context is present in this structure it is registered with the GuC
+  params
+    Control params for fw initialization
+  send_regs
+    GuC’s FW specific registers used for sending MMIO H2G
+  notify_reg
+    register used to send interrupts to the GuC FW
+  mmio_msg
+    notification bitmask that the GuC writes in one of its
+registers when the CT channel is disabled, to be processed when the
+channel is back up.
+  send_mutex
+    used to serialize the intel_guc_send actions
+  timestamp
+    GT timestamp object that stores a copy of the timestamp
+and adjusts it for overflow using a worker.
+  timestamp.lock
+    Lock protecting the below fields and
+the engine stats.
+  timestamp.gt_stamp
+    64-bit extended value of the GT
+timestamp.
+  timestamp.ping_delay
+    Period for polling the GT
+timestamp for overflow.
+  timestamp.work
+    Periodic work to adjust GT timestamp,
+engine and context usage for overflows.
+  timestamp.shift
+    Right shift value for the gpm timestamp
+  timestamp.last_stat_jiffies
+    jiffies at last actual
+stats collection time. We use this timestamp to ensure
+we don’t oversample the stats because runtime power
+management events can trigger stats collection at much
+higher rates than required.
+  dead_guc_worker
+    Asynchronous worker thread for forcing a GuC reset.
+Specifically used when the G2H handler wants to issue a reset. Resets
+require flushing the G2H queue. So, the G2H processing itself must not
+trigger a reset directly. Instead, go via this worker.
+  last_dead_guc_jiffies
+    timestamp of previous ‘dead guc’ occurrence
+used to prevent a fundamentally broken system from continuously
+reloading the GuC.
+  number_guc_id_stolen
+    The number of guc_ids that have been stolen
+  fast_response_selftest
+    Backdoor to CT handler for fast response selftest

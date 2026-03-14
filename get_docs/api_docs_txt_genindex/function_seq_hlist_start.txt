@@ -1,0 +1,12 @@
+Function: struct hlist_node * seq_hlist_start ( struct hlist_head * head , loff_t pos )
+
+start an iteration of a hlist
+
+Parameters
+  struct hlist_head *head
+    the head of the hlist
+  loff_t pos
+    the start position of the sequence
+
+Description
+  Called at seq_file->op-> start() .

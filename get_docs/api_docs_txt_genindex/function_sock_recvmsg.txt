@@ -1,0 +1,15 @@
+Function: int sock_recvmsg ( struct socket * sock , struct msghdr * msg , int flags )
+
+receive a message from sock
+
+Parameters
+  struct socket *sock
+    socket
+  struct msghdr *msg
+    message to receive
+  int flags
+    message flags
+
+Description
+  Receives msg from sock , passing through LSM. Returns the total number
+of bytes received, or an error.

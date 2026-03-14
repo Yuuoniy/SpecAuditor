@@ -1,0 +1,17 @@
+Struct: struct mn88472_config
+
+Platform data for the mn88472 driver
+
+Members
+  xtal
+    Clock frequency.
+  ts_mode
+    TS mode.
+  ts_clock
+    TS clock config.
+  i2c_wr_max
+    Max number of bytes driver writes to I2C at once.
+  fe
+    pointer to a frontend pointer
+  get_dvb_frontend
+    Get DVB frontend callback.

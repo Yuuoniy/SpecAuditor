@@ -1,0 +1,7 @@
+Function: void irq_gc_ack_set_bit ( struct irq_data * d )
+
+Ack pending interrupt via setting bit
+
+Parameters
+  struct irq_data *d
+    irq_data

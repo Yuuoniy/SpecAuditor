@@ -1,0 +1,9 @@
+Function: struct device_node * of_graph_get_next_endpoint ( const struct device_node * parent , struct device_node * prev )
+
+get next endpoint node
+
+Parameters
+  const struct device_node *parent
+    pointer to the parent device node
+  struct device_node *prev
+    previous endpoint node, or NULL to get first

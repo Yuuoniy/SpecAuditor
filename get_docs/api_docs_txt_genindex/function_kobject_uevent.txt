@@ -1,0 +1,13 @@
+Function: int kobject_uevent ( struct kobject * kobj , enum kobject_action action )
+
+notify userspace by sending an uevent
+
+Parameters
+  struct kobject *kobj
+    struct kobject that the action is happening to
+  enum kobject_action action
+    action that is happening
+
+Description
+  Returns 0 if kobject_uevent() is completed with success or the
+corresponding error when it fails.

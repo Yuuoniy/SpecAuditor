@@ -1,0 +1,12 @@
+Function: struct snd_kcontrol * snd_ctl_make_virtual_master ( char * name , const unsigned int * tlv )
+
+Create a virtual master control
+
+Parameters
+  char *name
+    name string of the control element to create
+  const unsigned int *tlv
+    optional TLV int array for dB information
+
+Description
+  Creates a virtual master control with the given name string.

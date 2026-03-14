@@ -1,0 +1,15 @@
+Struct: struct drm_xe_device_query
+
+Input of DRM_IOCTL_XE_DEVICE_QUERY - main structure to query device information
+
+Members
+  extensions
+    Pointer to the first extension struct, if any
+  query
+    The type of data to query
+  size
+    Size of the queried data
+  data
+    Queried data is placed here
+  reserved
+    Reserved

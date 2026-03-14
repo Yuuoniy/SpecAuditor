@@ -1,0 +1,9 @@
+Function: void ib_cq_pool_put ( struct ib_cq * cq , unsigned int nr_cqe )
+
+Return a CQ taken from a shared pool.
+
+Parameters
+  struct ib_cq *cq
+    The CQ to return.
+  unsigned int nr_cqe
+    The max number of cqes that the user had requested.

@@ -1,0 +1,11 @@
+Function: void do_freezer_trap ( void )
+
+handle the freezer jobctl trap
+
+Parameters
+  void
+    no arguments
+
+Description
+  Puts the task into frozen state, if only the task is not about to quit.
+In this case it drops JOBCTL_TRAP_FREEZE.

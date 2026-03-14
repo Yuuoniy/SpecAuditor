@@ -1,0 +1,11 @@
+Function: void tipc_named_node_up ( struct net * net , u32 dnode , u16 capabilities )
+
+tell specified node about all publications by this node
+
+Parameters
+  struct net *net
+    the associated network namespace
+  u32 dnode
+    destination node
+  u16 capabilities
+    peer node’s capabilities

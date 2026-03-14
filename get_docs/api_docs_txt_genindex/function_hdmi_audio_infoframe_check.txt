@@ -1,0 +1,11 @@
+Function: int hdmi_audio_infoframe_check ( const struct hdmi_audio_infoframe * frame )
+
+check a HDMI audio infoframe
+
+Parameters
+  const struct hdmi_audio_infoframe *frame
+    HDMI audio infoframe
+
+Description
+  Validates that the infoframe is consistent and updates derived fields
+(eg. length) based on other fields.

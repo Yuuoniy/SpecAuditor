@@ -1,0 +1,16 @@
+Macro: order_base_2
+
+
+
+Parameters
+  n
+    parameter
+
+Description
+  ob2(0) = 0
+ob2(1) = 0
+ob2(2) = 1
+ob2(3) = 2
+ob2(4) = 2
+ob2(5) = 3
+... and so on.

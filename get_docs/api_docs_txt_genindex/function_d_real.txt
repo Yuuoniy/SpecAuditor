@@ -1,0 +1,13 @@
+Function: struct dentry * d_real ( struct dentry * dentry , enum d_real_type type )
+
+Return the real dentry
+
+Parameters
+  struct dentry *dentry
+    the dentry to query
+  enum d_real_type type
+    the type of real dentry (data or metadata)
+
+Description
+  If dentry is on a union/overlay, then return the underlying, real dentry.
+Otherwise return the dentry itself.

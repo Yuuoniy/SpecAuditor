@@ -1,0 +1,13 @@
+Function: void __skb_queue_head ( struct sk_buff_head * list , struct sk_buff * newsk )
+
+queue a buffer at the list head
+
+Parameters
+  struct sk_buff_head *list
+    list to use
+  struct sk_buff *newsk
+    buffer to queue
+
+Description
+  Queue a buffer at the start of a list. This function takes no locks
+and you must therefore hold required locks before calling it.

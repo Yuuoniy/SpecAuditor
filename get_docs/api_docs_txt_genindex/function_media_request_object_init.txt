@@ -1,0 +1,12 @@
+Function: void media_request_object_init ( struct media_request_object * obj )
+
+Initialise a media request object
+
+Parameters
+  struct media_request_object *obj
+    The object
+
+Description
+  Initialise a media request object. The object will be released using the
+release callback of the ops once it has no references (this function
+initialises references to one).

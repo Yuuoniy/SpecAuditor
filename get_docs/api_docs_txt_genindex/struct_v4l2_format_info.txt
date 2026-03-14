@@ -1,0 +1,25 @@
+Struct: struct v4l2_format_info
+
+information about a V4L2 format
+
+Members
+  format
+    4CC format identifier (V4L2_PIX_FMT_*)
+  pixel_enc
+    Pixel encoding (see enum v4l2_pixel_encoding above)
+  mem_planes
+    Number of memory planes, which includes the alpha plane (1 to 4).
+  comp_planes
+    Number of component planes, which includes the alpha plane (1 to 4).
+  bpp
+    Array of per-plane bytes per pixel
+  bpp_div
+    Array of per-plane bytes per pixel divisors to support fractional pixel sizes.
+  hdiv
+    Horizontal chroma subsampling factor
+  vdiv
+    Vertical chroma subsampling factor
+  block_w
+    Per-plane macroblock pixel width (optional)
+  block_h
+    Per-plane macroblock pixel height (optional)

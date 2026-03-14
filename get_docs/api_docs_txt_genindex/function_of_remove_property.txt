@@ -1,0 +1,15 @@
+Function: int of_remove_property ( struct device_node * np , struct property * prop )
+
+Remove a property from a node.
+
+Parameters
+  struct device_node *np
+    Caller’s Device Node
+  struct property *prop
+    Property to remove
+
+Description
+  Note that we don’t actually remove it, since we have given out
+who-knows-how-many pointers to the data using get-property.
+Instead we just move the property to the “dead properties”
+list, so it won’t be found any more.

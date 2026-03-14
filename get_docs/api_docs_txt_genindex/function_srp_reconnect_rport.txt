@@ -1,0 +1,12 @@
+Function: int srp_reconnect_rport ( struct srp_rport * rport )
+
+reconnect to an SRP target port
+
+Parameters
+  struct srp_rport *rport
+    SRP target port.
+
+Description
+  Blocks SCSI command queueing before invoking reconnect() such that queuecommand() won’t be invoked concurrently with reconnect() from outside
+the SCSI EH. This is important since a reconnect() implementation may
+reallocate resources needed by queuecommand() .

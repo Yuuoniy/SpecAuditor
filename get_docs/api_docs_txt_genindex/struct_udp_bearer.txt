@@ -1,0 +1,15 @@
+Struct: struct udp_bearer
+
+ip/udp bearer data structure
+
+Members
+  bearer
+    associated generic tipc bearer
+  ubsock
+    bearer associated socket
+  ifindex
+    local address scope
+  work
+    used to schedule deferred work on a bearer
+  rcast
+    associated udp_replicast container

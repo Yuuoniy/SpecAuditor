@@ -1,0 +1,18 @@
+Function: bool rxrpc_kernel_abort_call ( struct socket * sock , struct rxrpc_call * call , u32 abort_code , int error , enum rxrpc_abort_reason why )
+
+Allow a kernel service to abort a call
+
+Parameters
+  struct socket *sock
+    The socket the call is on
+  struct rxrpc_call *call
+    The call to be aborted
+  u32 abort_code
+    The abort code to stick into the ABORT packet
+  int error
+    Local error value
+  enum rxrpc_abort_reason why
+    Indication as to why.
+
+Description
+  Allow a kernel service to abort a call if it’s still in an abortable state.

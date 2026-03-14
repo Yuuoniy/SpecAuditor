@@ -1,0 +1,11 @@
+Function: void drm_gem_shmem_print_info ( const struct drm_gem_shmem_object * shmem , struct drm_printer * p , unsigned int indent )
+
+Print drm_gem_shmem_object info for debugfs
+
+Parameters
+  const struct drm_gem_shmem_object *shmem
+    shmem GEM object
+  struct drm_printer *p
+    DRM printer
+  unsigned int indent
+    Tab indentation level

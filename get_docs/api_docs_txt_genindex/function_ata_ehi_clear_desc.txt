@@ -1,0 +1,10 @@
+Function: void ata_ehi_clear_desc ( struct ata_eh_info * ehi )
+
+clean error description
+
+Parameters
+  struct ata_eh_info *ehi
+    target EHI
+
+Description
+  Clear ehi->desc .

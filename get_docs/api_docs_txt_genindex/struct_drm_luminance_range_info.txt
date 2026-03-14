@@ -1,0 +1,9 @@
+Struct: struct drm_luminance_range_info
+
+Panel’s luminance range for drm_display_info . Calculated using data in EDID
+
+Members
+  min_luminance
+    This is the min supported luminance value
+  max_luminance
+    This is the max supported luminance value

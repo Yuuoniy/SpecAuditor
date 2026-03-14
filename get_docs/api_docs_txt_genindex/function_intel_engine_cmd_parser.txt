@@ -1,0 +1,21 @@
+Function: int intel_engine_cmd_parser ( struct intel_engine_cs * engine , struct i915_vma * batch , unsigned long batch_offset , unsigned long batch_length , struct i915_vma * shadow , bool trampoline )
+
+parse a batch buffer for privilege violations
+
+Parameters
+  struct intel_engine_cs *engine
+    the engine on which the batch is to execute
+  struct i915_vma *batch
+    the batch buffer in question
+  unsigned long batch_offset
+    byte offset in the batch at which execution starts
+  unsigned long batch_length
+    length of the commands in batch_obj
+  struct i915_vma *shadow
+    validated copy of the batch buffer in question
+  bool trampoline
+    true if we need to trampoline into privileged execution
+
+Description
+  Parses the specified batch buffer looking for privilege violations as
+described in the overview.

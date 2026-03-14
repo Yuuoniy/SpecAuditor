@@ -1,0 +1,10 @@
+Function: void drm_sched_tdr_queue_imm ( struct drm_gpu_scheduler * sched )
+
+immediately start job timeout handler
+
+Parameters
+  struct drm_gpu_scheduler *sched
+    scheduler for which the timeout handling should be started.
+
+Description
+  Start timeout handling immediately for the named scheduler.

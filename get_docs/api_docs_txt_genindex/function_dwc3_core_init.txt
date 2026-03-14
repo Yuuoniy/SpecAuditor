@@ -1,0 +1,10 @@
+Function: int dwc3_core_init ( struct dwc3 * dwc )
+
+Low-level initialization of DWC3 Core
+
+Parameters
+  struct dwc3 *dwc
+    Pointer to our controller context structure
+
+Description
+  Returns 0 on success otherwise negative errno.

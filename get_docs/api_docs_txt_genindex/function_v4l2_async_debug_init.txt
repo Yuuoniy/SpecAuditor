@@ -1,0 +1,7 @@
+Function: void v4l2_async_debug_init ( struct dentry * debugfs_dir )
+
+Initialize debugging tools.
+
+Parameters
+  struct dentry *debugfs_dir
+    pointer to the parent debugfs struct dentry

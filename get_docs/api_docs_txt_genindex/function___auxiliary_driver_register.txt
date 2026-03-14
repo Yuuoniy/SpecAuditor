@@ -1,0 +1,17 @@
+Function: int __auxiliary_driver_register ( struct auxiliary_driver * auxdrv , struct module * owner , const char * modname )
+
+register a driver for auxiliary bus devices
+
+Parameters
+  struct auxiliary_driver *auxdrv
+    auxiliary_driver structure
+  struct module *owner
+    owning module/driver
+  const char *modname
+    KBUILD_MODNAME for parent driver
+
+Description
+  The expectation is that users will call the “auxiliary_driver_register”
+macro so that the caller’s KBUILD_MODNAME is automatically inserted for the
+modname parameter.  Only if a user requires a custom name would this version
+be called directly.

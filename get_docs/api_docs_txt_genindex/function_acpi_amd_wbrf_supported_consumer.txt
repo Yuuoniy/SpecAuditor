@@ -1,0 +1,11 @@
+Function: bool acpi_amd_wbrf_supported_consumer ( struct device * dev )
+
+determine if the WBRF can be enabled for the device as a consumer
+
+Parameters
+  struct device *dev
+    device pointer
+
+Description
+  Determine if the platform equipped with necessary implementations to
+support WBRF for the device as a consumer.

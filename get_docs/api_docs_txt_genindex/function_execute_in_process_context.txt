@@ -1,0 +1,14 @@
+Function: int execute_in_process_context ( work_func_t fn , struct execute_work * ew )
+
+reliably execute the routine with user context
+
+Parameters
+  work_func_t fn
+    the function to execute
+  struct execute_work *ew
+    guaranteed storage for the execute work structure (must
+be available when the work executes)
+
+Description
+  Executes the function immediately if process context is available,
+otherwise schedules the function for delayed execution.

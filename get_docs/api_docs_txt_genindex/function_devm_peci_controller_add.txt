@@ -1,0 +1,12 @@
+Function: struct peci_controller * devm_peci_controller_add ( struct device * dev , const struct peci_controller_ops * ops )
+
+add PECI controller
+
+Parameters
+  struct device *dev
+    device for devm operations
+  const struct peci_controller_ops *ops
+    pointer to controller specific methods
+
+Description
+  In final stage of its probe() , peci_controller driver calls devm_peci_controller_add() to register itself with the PECI bus.

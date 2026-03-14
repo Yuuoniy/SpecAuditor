@@ -1,0 +1,12 @@
+Function: bool drm_core_check_all_features ( const struct drm_device * dev , u32 features )
+
+check driver feature flags mask
+
+Parameters
+  const struct drm_device *dev
+    DRM device to check
+  u32 features
+    feature flag(s) mask
+
+Description
+  This checks dev for driver features, see drm_driver.driver_features , drm_device.driver_features , and the various enum drm_driver_feature flags.

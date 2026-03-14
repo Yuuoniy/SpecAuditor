@@ -1,0 +1,10 @@
+Function: bool amdgpu_vm_evictable ( struct amdgpu_bo * bo )
+
+check if we can evict a VM
+
+Parameters
+  struct amdgpu_bo *bo
+    A page table of the VM.
+
+Description
+  Check if it is possible to evict a VM.

@@ -1,0 +1,17 @@
+Function: void done_seqretry_irqrestore ( seqlock_t * lock , int seq , unsigned long flags )
+
+end a seqlock_t lockless reader, or a non-interruptible locking reader section
+
+Parameters
+  seqlock_t *lock
+    Pointer to seqlock_t
+  int seq
+    Count, from read_seqbegin_or_lock_irqsave()
+  unsigned long flags
+    Caller’s saved local interrupt state in case of a locking
+reader, also from read_seqbegin_or_lock_irqsave()
+
+Description
+  This is the _irqrestore variant of done_seqretry() . The read section
+must’ve been opened with read_seqbegin_or_lock_irqsave() , and validated
+by need_seqretry() .

@@ -1,0 +1,40 @@
+Struct: struct phylink_config
+
+PHYLINK configuration structure
+
+Members
+  dev
+    a pointer to a struct device associated with the MAC
+  type
+    operation type of PHYLINK instance
+  poll_fixed_state
+    if true, starts link_poll,
+if MAC link is at MLO_AN_FIXED mode.
+  mac_managed_pm
+    if true, indicate the MAC driver is responsible for PHY PM.
+  mac_requires_rxc
+    if true, the MAC always requires a receive clock from PHY.
+The PHY driver should start the clock signal as soon as
+possible and avoid stopping it during suspend events.
+  default_an_inband
+    if true, defaults to MLO_AN_INBAND rather than
+MLO_AN_PHY. A fixed-link specification will override.
+  eee_rx_clk_stop_enable
+    if true, PHY can stop the receive clock during LPI
+  get_fixed_state
+    callback to execute to determine the fixed link state,
+if MAC link is at MLO_AN_FIXED mode.
+  supported_interfaces
+    bitmap describing which PHY_INTERFACE_MODE_xxx
+are supported by the MAC/PCS.
+  lpi_interfaces
+    bitmap describing which PHY interface modes can support
+LPI signalling.
+  mac_capabilities
+    MAC pause/speed/duplex capabilities.
+  lpi_capabilities
+    MAC speeds which can support LPI signalling
+  lpi_timer_default
+    Default EEE LPI timer setting.
+  eee_enabled_default
+    If set, EEE will be enabled by phylink at creation time

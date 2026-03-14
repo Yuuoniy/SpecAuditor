@@ -1,0 +1,18 @@
+Struct: struct slim_stream_config
+
+SLIMbus stream configuration Configuring a stream is done at hw_params or prepare call from audio drivers where they have all the required information regarding rate, number of channels and so on. There is a 1:1 mapping of channel and ports.
+
+Members
+  rate
+    data rate
+  bps
+    bits per data sample
+  ch_count
+    number of channels
+  chs
+    pointer to list of channel numbers
+  port_mask
+    port mask of ports to use for this stream
+  direction
+    direction of the stream, SNDRV_PCM_STREAM_PLAYBACK
+or SNDRV_PCM_STREAM_CAPTURE.

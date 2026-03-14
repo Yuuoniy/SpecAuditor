@@ -1,0 +1,12 @@
+Macro: ASSERT_EXCLUSIVE_WRITER
+
+
+
+Parameters
+  var
+    variable to assert on
+
+Description
+  Assert that there are no concurrent writes to var ; other readers are
+allowed. This assertion can be used to specify properties of concurrent code,
+where violation cannot be detected as a normal data race.

@@ -1,0 +1,15 @@
+Macro: list_entry_rcu
+
+
+
+Parameters
+  ptr
+    the struct list_head pointer.
+  type
+    the type of the struct this is embedded in.
+  member
+    the name of the list_head within the struct.
+
+Description
+  This primitive may safely run concurrently with the _rcu list-mutation
+primitives such as list_add_rcu() as long as it’s guarded by rcu_read_lock() .

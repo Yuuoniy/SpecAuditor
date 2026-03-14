@@ -1,0 +1,7 @@
+Function: void * vb2_get_drv_priv ( struct vb2_queue * q )
+
+return driver private data associated with the queue.
+
+Parameters
+  struct vb2_queue *q
+    pointer to struct vb2_queue with videobuf2 queue.

@@ -1,0 +1,18 @@
+Function: int nand_readid_op ( struct nand_chip * chip , u8 addr , void * buf , unsigned int len )
+
+Do a READID operation
+
+Parameters
+  struct nand_chip *chip
+    The NAND chip
+  u8 addr
+    address cycle to pass after the READID command
+  void *buf
+    buffer used to store the ID
+  unsigned int len
+    length of the buffer
+
+Description
+  This function sends a READID command and reads back the ID returned by the
+NAND.
+This function does not select/unselect the CS line.

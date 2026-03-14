@@ -1,0 +1,21 @@
+Struct: struct fpga_bridge
+
+FPGA bridge structure
+
+Members
+  name
+    name of low level FPGA bridge
+  dev
+    FPGA bridge device
+  mutex
+    enforces exclusive reference to bridge
+  br_ops
+    pointer to struct of FPGA bridge ops
+  br_ops_owner
+    module containing the br_ops
+  info
+    fpga image specific information
+  node
+    FPGA bridge list node
+  priv
+    low level driver private date

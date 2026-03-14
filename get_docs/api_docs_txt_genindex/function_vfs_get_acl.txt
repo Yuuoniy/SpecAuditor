@@ -1,0 +1,14 @@
+Function: struct posix_acl * vfs_get_acl ( struct mnt_idmap * idmap , struct dentry * dentry , const char * acl_name )
+
+get posix acls
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount
+  struct dentry *dentry
+    the dentry based on which to retrieve the posix acls
+  const char *acl_name
+    the name of the posix acl
+
+Description
+  This function retrieves kacl from the filesystem. The caller must all posix_acl_release() on kacl .

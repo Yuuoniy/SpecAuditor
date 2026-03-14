@@ -1,0 +1,15 @@
+Function: struct i2c_client * devm_i2c_new_dummy_device ( struct device * dev , struct i2c_adapter * adapter , u16 address )
+
+return a new i2c device bound to a dummy driver
+
+Parameters
+  struct device *dev
+    device the managed resource is bound to
+  struct i2c_adapter *adapter
+    the adapter managing the device
+  u16 address
+    seven bit address to be used
+
+Description
+  This is the device-managed version of i2c_new_dummy_device . It returns the
+new i2c client or an ERR_PTR in case of an error.

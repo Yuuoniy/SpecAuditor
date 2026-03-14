@@ -1,0 +1,13 @@
+Function: void netdev_notify_peers ( struct net_device * dev )
+
+notify network peers about existence of dev
+
+Parameters
+  struct net_device *dev
+    network device
+
+Description
+  Generate traffic such that interested network peers are aware of dev , such as by generating a gratuitous ARP. This may be used when
+a device wants to inform the rest of the network about some sort of
+reconfiguration such as a failover event or virtual machine
+migration.

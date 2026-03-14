@@ -1,0 +1,10 @@
+Function: void netif_napi_del ( struct napi_struct * napi )
+
+remove a NAPI context
+
+Parameters
+  struct napi_struct *napi
+    NAPI context
+
+Description
+  netif_napi_del() removes a NAPI context from the network device NAPI list

@@ -1,0 +1,19 @@
+Struct: struct i915_gem_engines
+
+A set of engines
+
+Members
+  {unnamed_union}
+    anonymous
+  link
+    Link in i915_gem_context::stale::engines
+  rcu
+    RCU to use when freeing
+  fence
+    Fence used for delayed destruction of engines
+  ctx
+    i915_gem_context backpointer
+  num_engines
+    Number of engines in this set
+  engines
+    Array of engines

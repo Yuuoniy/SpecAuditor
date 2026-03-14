@@ -1,0 +1,31 @@
+Struct: struct cec_pin_ops
+
+low-level CEC pin operations
+
+Members
+  read
+    read the CEC pin. Returns > 0 if high, 0 if low, or an error
+if negative.
+  low
+    drive the CEC pin low.
+  high
+    stop driving the CEC pin. The pull-up will drive the pin
+high, unless someone else is driving the pin low.
+  enable_irq
+    optional, enable the interrupt to detect pin voltage changes.
+  disable_irq
+    optional, disable the interrupt.
+  free
+    optional. Free any allocated resources. Called when the
+adapter is deleted.
+  status
+    optional, log status information.
+  read_hpd
+    optional. Read the HPD pin. Returns > 0 if high, 0 if low or
+an error if negative.
+  read_5v
+    optional. Read the 5V pin. Returns > 0 if high, 0 if low or
+an error if negative.
+  received
+    optional. High-level CEC message callback. Allows the driver
+to process CEC messages.

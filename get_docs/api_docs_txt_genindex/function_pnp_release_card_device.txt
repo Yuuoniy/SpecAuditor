@@ -1,0 +1,7 @@
+Function: void pnp_release_card_device ( struct pnp_dev * dev )
+
+call this when the driver no longer needs the device
+
+Parameters
+  struct pnp_dev *dev
+    pointer to the PnP device structure

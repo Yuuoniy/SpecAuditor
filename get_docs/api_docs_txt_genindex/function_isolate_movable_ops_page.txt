@@ -1,0 +1,14 @@
+Function: bool isolate_movable_ops_page ( struct page * page , isolate_mode_t mode )
+
+isolate a movable_ops page for migration
+
+Parameters
+  struct page *page
+    The page.
+  isolate_mode_t mode
+    The isolation mode.
+
+Description
+  Try to isolate a movable_ops page for migration. Will fail if the page is
+not a movable_ops page, if the page is already isolated for migration
+or if the page was just was released by its owner.

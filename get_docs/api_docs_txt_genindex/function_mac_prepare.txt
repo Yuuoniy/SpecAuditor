@@ -1,0 +1,18 @@
+Function: int mac_prepare ( struct phylink_config * config , unsigned int mode , phy_interface_t iface )
+
+prepare to change the PHY interface mode
+
+Parameters
+  struct phylink_config *config
+    a pointer to a struct phylink_config .
+  unsigned int mode
+    one of MLO_AN_FIXED , MLO_AN_PHY , MLO_AN_INBAND .
+  phy_interface_t iface
+    interface mode to switch to
+
+Description
+  phylink will call this method at the beginning of a full initialisation
+of the link, which includes changing the interface mode or at initial
+startup time. It may be called for the current mode. The MAC driver
+should perform whatever actions are required, e.g. disabling the
+Serdes PHY.

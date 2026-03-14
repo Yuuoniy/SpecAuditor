@@ -1,0 +1,10 @@
+Struct: struct gpiohandle_data
+
+Information of values on a GPIO handle
+
+Members
+  values
+    when getting the state of lines this contains the current
+state of a line, when setting the state of lines these should contain
+the desired target state.  States are 0 (inactive) or 1 (active).
+When setting, anything other than 0 or 1 will be interpreted as active.

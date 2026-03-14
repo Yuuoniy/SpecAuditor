@@ -1,0 +1,17 @@
+Struct: struct iommu_option
+
+iommu option multiplexer
+
+Members
+  size
+    sizeof( struct iommu_option )
+  option_id
+    One of enum iommufd_option
+  op
+    One of enum iommufd_option_ops
+  __reserved
+    Must be 0
+  object_id
+    ID of the object if required
+  val64
+    Option value to set or value returned on get

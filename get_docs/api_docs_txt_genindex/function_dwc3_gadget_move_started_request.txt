@@ -1,0 +1,11 @@
+Function: void dwc3_gadget_move_started_request ( struct dwc3_request * req )
+
+move req to the started_list
+
+Parameters
+  struct dwc3_request *req
+    the request to be moved
+
+Description
+  Caller should take care of locking. This function will move req from its
+current list to the endpoint’s started_list.

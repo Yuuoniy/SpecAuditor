@@ -1,0 +1,22 @@
+Function: u32 * drm_atomic_helper_bridge_propagate_bus_fmt ( struct drm_bridge * bridge , struct drm_bridge_state * bridge_state , struct drm_crtc_state * crtc_state , struct drm_connector_state * conn_state , u32 output_fmt , unsigned int * num_input_fmts )
+
+Propagate output format to the input end of a bridge
+
+Parameters
+  struct drm_bridge *bridge
+    bridge control structure
+  struct drm_bridge_state *bridge_state
+    new bridge state
+  struct drm_crtc_state *crtc_state
+    new CRTC state
+  struct drm_connector_state *conn_state
+    new connector state
+  u32 output_fmt
+    tested output bus format
+  unsigned int *num_input_fmts
+    will contain the size of the returned array
+
+Description
+  This helper is a pluggable implementation of the drm_bridge_funcs.atomic_get_input_bus_fmts operation for bridges that don’t
+modify the bus configuration between their input and their output. It
+returns an array of input formats with a single element set to output_fmt .

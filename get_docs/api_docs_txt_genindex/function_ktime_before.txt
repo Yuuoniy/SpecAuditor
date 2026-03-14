@@ -1,0 +1,9 @@
+Function: bool ktime_before ( const ktime_t cmp1 , const ktime_t cmp2 )
+
+Compare if a ktime_t value is smaller than another one.
+
+Parameters
+  const ktime_t cmp1
+    comparable1
+  const ktime_t cmp2
+    comparable2

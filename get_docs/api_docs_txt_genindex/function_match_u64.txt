@@ -1,0 +1,13 @@
+Function: int match_u64 ( substring_t * s , u64 * result )
+
+scan a decimal representation of a u64 from a substring_t
+
+Parameters
+  substring_t *s
+    substring_t to be scanned
+  u64 *result
+    resulting unsigned long long on success
+
+Description
+  Attempts to parse the substring_t s as a long decimal
+integer.

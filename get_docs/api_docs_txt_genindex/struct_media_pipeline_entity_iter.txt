@@ -1,0 +1,9 @@
+Struct: struct media_pipeline_entity_iter
+
+Iterator for media_pipeline_for_each_entity
+
+Members
+  ent_enum
+    The entity enumeration tracker
+  cursor
+    The current element

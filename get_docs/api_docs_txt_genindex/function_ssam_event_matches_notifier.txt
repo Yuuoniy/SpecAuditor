@@ -1,0 +1,9 @@
+Function: bool ssam_event_matches_notifier ( const struct ssam_event_notifier * n , const struct ssam_event * event )
+
+Test if an event matches a notifier.
+
+Parameters
+  const struct ssam_event_notifier *n
+    The event notifier to test against.
+  const struct ssam_event *event
+    The event to test.

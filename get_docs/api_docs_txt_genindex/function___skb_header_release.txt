@@ -1,0 +1,10 @@
+Function: void __skb_header_release ( struct sk_buff * skb )
+
+allow clones to use the headroom
+
+Parameters
+  struct sk_buff *skb
+    buffer to operate on
+
+Description
+  See “DOC: dataref and headerless skbs”.

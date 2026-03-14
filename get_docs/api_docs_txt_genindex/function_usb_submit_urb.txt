@@ -1,0 +1,17 @@
+Function: int usb_submit_urb ( struct urb * urb , gfp_t mem_flags )
+
+issue an asynchronous transfer request for an endpoint
+
+Parameters
+  struct urb *urb
+    pointer to the urb describing the request
+  gfp_t mem_flags
+    the type of memory to allocate, see kmalloc() for a list
+of valid options for this.
+
+Description
+  This submits a transfer request, and transfers control of the URB
+describing that request to the USB subsystem.  Request completion will
+be indicated later, asynchronously, by calling the completion handler.
+The three types of completion are success, error, and unlink
+(a software-induced fault, also called “request cancellation”).

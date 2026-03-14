@@ -1,0 +1,17 @@
+Struct: struct amdgpu_dm_irq_handler_data
+
+Data for DM interrupt handlers.
+
+Members
+  list
+    Linked list entry referencing the next/previous handler
+  handler
+    Handler function
+  handler_arg
+    Argument passed to the handler when triggered
+  dm
+    DM which this handler belongs to
+  irq_source
+    DC interrupt source that this handler is registered for
+  work
+    work struct

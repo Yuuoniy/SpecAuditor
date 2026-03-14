@@ -1,0 +1,15 @@
+Function: int drm_sched_job_add_resv_dependencies ( struct drm_sched_job * job , struct dma_resv * resv , enum dma_resv_usage usage )
+
+add all fences from the resv to the job
+
+Parameters
+  struct drm_sched_job *job
+    scheduler job to add the dependencies to
+  struct dma_resv *resv
+    the dma_resv object to get the fences from
+  enum dma_resv_usage usage
+    the dma_resv_usage to use to filter the fences
+
+Description
+  This adds all fences matching the given usage from resv to job .
+Must be called with the resv lock held.

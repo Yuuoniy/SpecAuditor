@@ -1,0 +1,18 @@
+Function: char * get_options ( const char * str , int nints , int * ints )
+
+Parse a string into a list of integers
+
+Parameters
+  const char *str
+    String to be parsed
+  int nints
+    size of integer array
+  int *ints
+    integer array (must have room for at least one element)
+
+Description
+  This function parses a string containing a comma-separated
+list of integers, a hyphen-separated range of _positive_ integers,
+or a combination of both.  The parse halts when the array is
+full, or when no more numbers can be retrieved from the
+string.

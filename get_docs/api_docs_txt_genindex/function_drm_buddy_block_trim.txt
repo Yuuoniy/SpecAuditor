@@ -1,0 +1,22 @@
+Function: int drm_buddy_block_trim ( struct drm_buddy * mm , u64 * start , u64 new_size , struct list_head * blocks )
+
+free unused pages
+
+Parameters
+  struct drm_buddy *mm
+    DRM buddy manager
+  u64 *start
+    start address to begin the trimming.
+  u64 new_size
+    original size requested
+  struct list_head *blocks
+    Input and output list of allocated blocks.
+MUST contain single block as input to be trimmed.
+On success will contain the newly allocated blocks
+making up the new_size . Blocks always appear in
+ascending order
+
+Description
+  For contiguous allocation, we round up the size to the nearest
+power of two value, drivers consume actual size, so remaining
+portions are unused and can be optionally freed with this function

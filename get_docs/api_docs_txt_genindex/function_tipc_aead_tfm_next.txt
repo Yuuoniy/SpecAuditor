@@ -1,0 +1,7 @@
+Function: struct crypto_aead * tipc_aead_tfm_next ( struct tipc_aead * aead )
+
+Move TFM entry to the next one in list and return it
+
+Parameters
+  struct tipc_aead *aead
+    the AEAD key pointer

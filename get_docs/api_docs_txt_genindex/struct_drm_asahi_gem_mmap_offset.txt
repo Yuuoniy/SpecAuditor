@@ -1,0 +1,11 @@
+Struct: struct drm_asahi_gem_mmap_offset
+
+Arguments passed to DRM_IOCTL_ASAHI_GEM_MMAP_OFFSET
+
+Members
+  handle
+    Handle for the object being mapped.
+  flags
+    Must be zero
+  offset
+    The fake offset to use for subsequent mmap call

@@ -1,0 +1,55 @@
+Struct: struct v4l2_subdev_core_ops
+
+Define core ops callbacks for subdevs
+
+Members
+  log_status
+    callback for VIDIOC_LOG_STATUS() ioctl handler code.
+  s_io_pin_config
+    configure one or more chip I/O pins for chips that
+multiplex different internal signal pads out to IO pins.  This function
+takes a pointer to an array of ‘n’ pin configuration entries, one for
+each pin being configured.  This function could be called at times
+other than just subdevice initialization.
+  init
+    initialize the sensor registers to some sort of reasonable default
+values. Do not use for new drivers and should be removed in existing
+drivers.
+  load_fw
+    load firmware.
+  reset
+    generic reset command. The argument selects which subsystems to
+reset. Passing 0 will always reset the whole chip. Do not use for new
+drivers without discussing this first on the linux-media mailinglist.
+There should be no reason normally to reset a device.
+  s_gpio
+    set GPIO pins. Very simple right now, might need to be extended with
+a direction argument if needed.
+  command
+    called by in-kernel drivers in order to call functions internal
+to subdev drivers driver that have a separate callback.
+  ioctl
+    called at the end of ioctl() syscall handler at the V4L2 core.
+used to provide support for private ioctls used on the driver.
+  compat_ioctl32
+    called when a 32 bits application uses a 64 bits Kernel,
+in order to fix data passed from/to userspace.
+  g_register
+    callback for VIDIOC_DBG_G_REGISTER() ioctl handler code.
+  s_register
+    callback for VIDIOC_DBG_S_REGISTER() ioctl handler code.
+  s_power
+    puts subdevice in power saving mode (on == 0) or normal operation
+mode (on == 1). DEPRECATED. See Writing camera sensor drivers . pre_streamon and
+post_streamoff callbacks can be used for e.g. setting the bus to LP-11
+mode before s_stream is called.
+  interrupt_service_routine
+    Called by the bridge chip’s interrupt service
+handler, when an interrupt status has be raised due to this subdev,
+so that this subdev can handle the details.  It may schedule work to be
+performed later.  It must not sleep. Called from an IRQ context .
+  subscribe_event
+    used by the drivers to request the control framework that
+for it to be warned when the value of a control changes.
+  unsubscribe_event
+    remove event subscription from the control framework.

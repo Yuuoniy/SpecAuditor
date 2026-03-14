@@ -1,0 +1,28 @@
+Struct: struct iommu_hwpt_alloc
+
+ioctl(IOMMU_HWPT_ALLOC)
+
+Members
+  size
+    sizeof( struct iommu_hwpt_alloc )
+  flags
+    Combination of enum iommufd_hwpt_alloc_flags
+  dev_id
+    The device to allocate this HWPT for
+  pt_id
+    The IOAS or HWPT or vIOMMU to connect this HWPT to
+  out_hwpt_id
+    The ID of the new HWPT
+  __reserved
+    Must be 0
+  data_type
+    One of enum iommu_hwpt_data_type
+  data_len
+    Length of the type specific data
+  data_uptr
+    User pointer to the type specific data
+  fault_id
+    The ID of IOMMUFD_FAULT object. Valid only if flags field of
+IOMMU_HWPT_FAULT_ID_VALID is set.
+  __reserved2
+    Padding to 64-bit alignment. Must be 0.

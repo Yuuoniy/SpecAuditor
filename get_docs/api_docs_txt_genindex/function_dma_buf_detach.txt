@@ -1,0 +1,12 @@
+Function: void dma_buf_detach ( struct dma_buf * dmabuf , struct dma_buf_attachment * attach )
+
+Remove the given attachment from dmabuf’s attachments list
+
+Parameters
+  struct dma_buf *dmabuf
+    [in]    buffer to detach from.
+  struct dma_buf_attachment *attach
+    [in]    attachment to be detached; is free’d after this call.
+
+Description
+  Clean up a device attachment obtained by calling dma_buf_attach() .

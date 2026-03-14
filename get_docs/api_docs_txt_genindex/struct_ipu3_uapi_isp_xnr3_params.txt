@@ -1,0 +1,11 @@
+Struct: struct ipu3_uapi_isp_xnr3_params
+
+Extreme noise reduction v3 parameters
+
+Members
+  alpha
+    parameters for xnr3 alpha. See ipu3_uapi_xnr3_alpha_params
+  coring
+    parameters for xnr3 coring. See ipu3_uapi_xnr3_coring_params
+  blending
+    parameters for xnr3 blending. See ipu3_uapi_xnr3_blending_params

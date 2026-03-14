@@ -1,0 +1,26 @@
+Struct: struct input_handle
+
+links input device with an input handler
+
+Members
+  private
+    handler-specific data
+  open
+    counter showing whether the handle is ‘open’, i.e. should deliver
+events from its device
+  name
+    name given to the handle by handler that created it
+  dev
+    input device the handle is attached to
+  handler
+    handler that works with the device through this handle
+  handle_events
+    event sequence handler. It is set up by the input core
+according to event handling method specified in the handler . See input_handle_setup_event_handler() .
+This method is being called by the input core with interrupts disabled
+and dev->event_lock spinlock held and so it may not sleep.
+  d_node
+    used to put the handle on device’s list of attached handles
+  h_node
+    used to put the handle on handler’s list of handles from which
+it gets events

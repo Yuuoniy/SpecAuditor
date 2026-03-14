@@ -1,0 +1,9 @@
+Function: struct sk_buff * tipc_named_publish ( struct net * net , struct publication * p )
+
+tell other nodes about a new publication by this node
+
+Parameters
+  struct net *net
+    the associated network namespace
+  struct publication *p
+    the new publication

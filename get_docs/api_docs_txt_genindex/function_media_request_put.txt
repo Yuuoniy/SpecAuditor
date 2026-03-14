@@ -1,0 +1,11 @@
+Function: void media_request_put ( struct media_request * req )
+
+Put the media request
+
+Parameters
+  struct media_request *req
+    The media request
+
+Description
+  Put the media request. The media request will be released
+when the refcount reaches 0.

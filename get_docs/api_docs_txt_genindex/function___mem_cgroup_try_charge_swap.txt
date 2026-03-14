@@ -1,0 +1,12 @@
+Function: int __mem_cgroup_try_charge_swap ( struct folio * folio , swp_entry_t entry )
+
+try charging swap space for a folio
+
+Parameters
+  struct folio *folio
+    folio being added to swap
+  swp_entry_t entry
+    swap entry to charge
+
+Description
+  Try to charge folio ’s memcg for the swap space at entry .

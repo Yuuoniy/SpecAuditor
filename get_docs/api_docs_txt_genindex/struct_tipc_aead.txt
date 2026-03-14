@@ -1,0 +1,31 @@
+Struct: struct tipc_aead
+
+TIPC AEAD key structure
+
+Members
+  tfm_entry
+    per-cpu pointer to one entry in TFM list
+  crypto
+    TIPC crypto owns this key
+  cloned
+    reference to the source key in case cloning
+  users
+    the number of the key users (TX/RX)
+  salt
+    the key’s SALT value
+  authsize
+    authentication tag size (max = 16)
+  mode
+    crypto mode is applied to the key
+  hint
+    a hint for user key
+  rcu
+    struct rcu_head
+  key
+    the aead key
+  gen
+    the key’s generation
+  seqno
+    the key seqno (cluster scope)
+  refcnt
+    the key reference counter

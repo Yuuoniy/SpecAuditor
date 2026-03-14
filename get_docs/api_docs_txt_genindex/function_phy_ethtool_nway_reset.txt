@@ -1,0 +1,7 @@
+Function: int phy_ethtool_nway_reset ( struct net_device * ndev )
+
+Restart auto negotiation
+
+Parameters
+  struct net_device *ndev
+    Network device to restart autoneg for

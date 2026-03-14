@@ -1,0 +1,12 @@
+Function: bool do_signal_stop ( int signr )
+
+handle group stop for SIGSTOP and other stop signals
+
+Parameters
+  int signr
+    signr causing group stop if initiating
+
+Description
+  If JOBCTL_STOP_PENDING is not set yet, initiate group stop with signr and participate in it.  If already set, participate in the existing
+group stop.  If participated in a group stop (and thus slept), true is
+returned with siglock released.

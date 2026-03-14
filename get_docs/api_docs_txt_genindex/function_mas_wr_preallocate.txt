@@ -1,0 +1,9 @@
+Function: void mas_wr_preallocate ( struct ma_wr_state * wr_mas , void * entry )
+
+Preallocate enough nodes for a store operation
+
+Parameters
+  struct ma_wr_state *wr_mas
+    The maple write state
+  void *entry
+    The entry that will be stored

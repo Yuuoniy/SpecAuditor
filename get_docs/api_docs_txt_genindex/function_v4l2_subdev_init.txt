@@ -1,0 +1,9 @@
+Function: void v4l2_subdev_init ( struct v4l2_subdev * sd , const struct v4l2_subdev_ops * ops )
+
+initializes the sub-device struct
+
+Parameters
+  struct v4l2_subdev *sd
+    pointer to the struct v4l2_subdev to be initialized
+  const struct v4l2_subdev_ops *ops
+    pointer to struct v4l2_subdev_ops .

@@ -1,0 +1,7 @@
+Function: struct mem_ctl_info * find_mci_by_dev ( struct device * dev )
+
+Scan list of controllers looking for the one that manages the dev device.
+
+Parameters
+  struct device *dev
+    pointer to a struct device related with the MCI

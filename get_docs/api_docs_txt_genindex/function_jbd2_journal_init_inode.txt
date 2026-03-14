@@ -1,0 +1,12 @@
+Function: journal_t * jbd2_journal_init_inode ( struct inode * inode )
+
+creates a journal which maps to a inode.
+
+Parameters
+  struct inode *inode
+    An inode to create the journal in
+
+Description
+  jbd2_journal_init_inode creates a journal which maps an on-disk inode as
+the journal.  The inode must exist already, must support bmap() and
+must have all data blocks preallocated.

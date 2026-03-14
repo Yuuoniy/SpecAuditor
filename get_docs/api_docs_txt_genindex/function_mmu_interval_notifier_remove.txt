@@ -1,0 +1,11 @@
+Function: void mmu_interval_notifier_remove ( struct mmu_interval_notifier * interval_sub )
+
+Remove a interval notifier
+
+Parameters
+  struct mmu_interval_notifier *interval_sub
+    Interval subscription to unregister
+
+Description
+  This function must be paired with mmu_interval_notifier_insert() . It cannot
+be called from any ops callback.

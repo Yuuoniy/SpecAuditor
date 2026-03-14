@@ -1,0 +1,14 @@
+Function: void skb_get_timestamp ( const struct sk_buff * skb , struct __kernel_old_timeval * stamp )
+
+get timestamp from a skb
+
+Parameters
+  const struct sk_buff *skb
+    skb to get stamp from
+  struct __kernel_old_timeval *stamp
+    pointer to struct __kernel_old_timeval to store stamp in
+
+Description
+  Timestamps are stored in the skb as offsets to a base timestamp.
+This function converts the offset back to a struct timeval and stores
+it in stamp.

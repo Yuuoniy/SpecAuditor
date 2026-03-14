@@ -1,0 +1,14 @@
+Function: bool drm_mode_match ( const struct drm_display_mode * mode1 , const struct drm_display_mode * mode2 , unsigned int match_flags )
+
+test modes for (partial) equality
+
+Parameters
+  const struct drm_display_mode *mode1
+    first mode
+  const struct drm_display_mode *mode2
+    second mode
+  unsigned int match_flags
+    which parts need to match (DRM_MODE_MATCH_*)
+
+Description
+  Check to see if mode1 and mode2 are equivalent.

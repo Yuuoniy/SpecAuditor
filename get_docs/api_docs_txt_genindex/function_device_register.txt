@@ -1,0 +1,15 @@
+Function: int device_register ( struct device * dev )
+
+register a device with the system.
+
+Parameters
+  struct device *dev
+    pointer to the device structure
+
+Description
+  This happens in two clean steps - initialize the device
+and add it to the system. The two steps can be called
+separately, but this is the easiest and most common.
+I.e. you should only call the two helpers separately if
+have a clearly defined need to use and refcount the device
+before it is added to the hierarchy.

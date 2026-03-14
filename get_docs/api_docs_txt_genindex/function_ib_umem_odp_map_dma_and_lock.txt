@@ -1,0 +1,24 @@
+Function: int ib_umem_odp_map_dma_and_lock ( struct ib_umem_odp * umem_odp , u64 user_virt , u64 bcnt , u64 access_mask , bool fault )
+
+DMA map userspace memory in an ODP MR and lock it.
+
+Parameters
+  struct ib_umem_odp *umem_odp
+    the umem to map and pin
+  u64 user_virt
+    the address from which we need to map.
+  u64 bcnt
+    the minimal number of bytes to pin and map. The mapping might be
+bigger due to alignment, and may also be smaller in case of an error
+pinning or mapping a page. The actual pages mapped is returned in
+the return value.
+  u64 access_mask
+    bit mask of the requested access permissions for the given
+range.
+  bool fault
+    is faulting required for the given range
+
+Description
+  Maps the range passed in the argument to DMA addresses.
+Upon success the ODP MR will be locked to let caller complete its device
+page table update.

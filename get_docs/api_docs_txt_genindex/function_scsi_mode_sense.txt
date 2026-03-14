@@ -1,0 +1,29 @@
+Function: int scsi_mode_sense ( struct scsi_device * sdev , int dbd , int modepage , int subpage , unsigned char * buffer , int len , int timeout , int retries , struct scsi_mode_data * data , struct scsi_sense_hdr * sshdr )
+
+issue a mode sense, falling back from 10 to six bytes if necessary.
+
+Parameters
+  struct scsi_device *sdev
+    SCSI device to be queried
+  int dbd
+    set to prevent mode sense from returning block descriptors
+  int modepage
+    mode page being requested
+  int subpage
+    sub-page of the mode page being requested
+  unsigned char *buffer
+    request buffer (may not be smaller than eight bytes)
+  int len
+    length of request buffer.
+  int timeout
+    command timeout
+  int retries
+    number of retries before failing
+  struct scsi_mode_data *data
+    returns a structure abstracting the mode header data
+  struct scsi_sense_hdr *sshdr
+    place to put sense data (or NULL if no sense to be collected).
+must be SCSI_SENSE_BUFFERSIZE big.
+
+Description
+  Returns zero if successful, or a negative error number on failure

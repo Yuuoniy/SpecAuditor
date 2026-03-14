@@ -1,0 +1,11 @@
+Function: int security_tun_dev_alloc_security ( void * * security )
+
+Allocate a LSM blob for a TUN device
+
+Parameters
+  void **security
+    pointer to the LSM blob
+
+Description
+  This hook allows a module to allocate a security structure for a TUN device,
+returning the pointer in security .

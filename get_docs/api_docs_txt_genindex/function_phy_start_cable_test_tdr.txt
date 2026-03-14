@@ -1,0 +1,11 @@
+Function: int phy_start_cable_test_tdr ( struct phy_device * phydev , struct netlink_ext_ack * extack , const struct phy_tdr_config * config )
+
+Start a raw TDR cable test
+
+Parameters
+  struct phy_device *phydev
+    the phy_device struct
+  struct netlink_ext_ack *extack
+    extack for reporting useful error messages
+  const struct phy_tdr_config *config
+    Configuration of the test to run

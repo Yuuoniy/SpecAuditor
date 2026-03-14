@@ -1,0 +1,10 @@
+Function: void security_bdev_free ( struct block_device * bdev )
+
+Free a block device’s LSM blob
+
+Parameters
+  struct block_device *bdev
+    block device
+
+Description
+  Deallocate the bdev security structure and set bdev->bd_security to NULL.

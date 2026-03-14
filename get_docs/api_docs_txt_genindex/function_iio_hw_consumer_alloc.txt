@@ -1,0 +1,10 @@
+Function: struct iio_hw_consumer * iio_hw_consumer_alloc ( struct device * dev )
+
+Allocate IIO hardware consumer
+
+Parameters
+  struct device *dev
+    Pointer to consumer device.
+
+Description
+  Returns a valid iio_hw_consumer on success or a ERR_PTR() on failure.

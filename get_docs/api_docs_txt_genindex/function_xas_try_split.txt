@@ -1,0 +1,17 @@
+Function: void xas_try_split ( struct xa_state * xas , void * entry , unsigned int order )
+
+Try to split a multi-index entry.
+
+Parameters
+  struct xa_state *xas
+    XArray operation state.
+  void *entry
+    New entry to store in the array.
+  unsigned int order
+    Current entry order.
+
+Description
+  The size of the new entries is set in xas .  The value in entry is
+copied to all the replacement entries. If and only if one new xa_node is
+needed, the function will use GFP_NOWAIT to get one if xas->xa_alloc is
+NULL. If more new xa_node are needed, the function gives EINVAL error.

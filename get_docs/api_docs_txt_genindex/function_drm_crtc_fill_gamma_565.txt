@@ -1,0 +1,12 @@
+Function: void drm_crtc_fill_gamma_565 ( struct drm_crtc * crtc , drm_crtc_set_lut_func set_gamma )
+
+Programs a default gamma ramp for RGB565-like formats
+
+Parameters
+  struct drm_crtc *crtc
+    The displaying CRTC
+  drm_crtc_set_lut_func set_gamma
+    Callback for programming the hardware gamma LUT
+
+Description
+  Programs a default gamma ramp to hardware.

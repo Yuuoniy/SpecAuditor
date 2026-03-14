@@ -1,0 +1,13 @@
+Struct: struct xe_ggtt_node
+
+A node in GGTT.
+
+Members
+  ggtt
+    Back pointer to xe_ggtt where this region will be inserted at
+  base
+    A drm_mm_node
+  delayed_removal_work
+    The work struct for the delayed removal
+  invalidate_on_remove
+    If it needs invalidation upon removal

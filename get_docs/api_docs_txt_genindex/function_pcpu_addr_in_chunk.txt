@@ -1,0 +1,9 @@
+Function: bool pcpu_addr_in_chunk ( struct pcpu_chunk * chunk , void * addr )
+
+check if the address is served from this chunk
+
+Parameters
+  struct pcpu_chunk *chunk
+    chunk of interest
+  void *addr
+    percpu address

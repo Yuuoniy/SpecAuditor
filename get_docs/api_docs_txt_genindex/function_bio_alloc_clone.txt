@@ -1,0 +1,17 @@
+Function: struct bio * bio_alloc_clone ( struct block_device * bdev , struct bio * bio_src , gfp_t gfp , struct bio_set * bs )
+
+clone a bio that shares the original bio’s biovec
+
+Parameters
+  struct block_device *bdev
+    block_device to clone onto
+  struct bio *bio_src
+    bio to clone from
+  gfp_t gfp
+    allocation priority
+  struct bio_set *bs
+    bio_set to allocate from
+
+Description
+  Allocate a new bio that is a clone of bio_src . The caller owns the returned
+bio, but not the actual data it points to.

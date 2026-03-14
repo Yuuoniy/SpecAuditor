@@ -1,0 +1,7 @@
+Function: bool xa_empty ( const struct xarray * xa )
+
+Determine if an array has any present entries.
+
+Parameters
+  const struct xarray *xa
+    XArray.

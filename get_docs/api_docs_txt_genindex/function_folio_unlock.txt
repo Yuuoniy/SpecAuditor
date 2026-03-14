@@ -1,0 +1,10 @@
+Function: void folio_unlock ( struct folio * folio )
+
+Unlock a locked folio.
+
+Parameters
+  struct folio *folio
+    The folio.
+
+Description
+  Unlocks the folio and wakes up any thread sleeping on the page lock.

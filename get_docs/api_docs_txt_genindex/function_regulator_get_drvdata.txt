@@ -1,0 +1,11 @@
+Function: void * regulator_get_drvdata ( struct regulator * regulator )
+
+get regulator driver data
+
+Parameters
+  struct regulator *regulator
+    regulator
+
+Description
+  Get regulator driver private data. This call can be used in the consumer
+driver context when non API regulator specific functions need to be called.

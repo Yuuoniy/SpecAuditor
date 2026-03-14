@@ -1,0 +1,14 @@
+Function: int drm_mode_crtc_set_gamma_size ( struct drm_crtc * crtc , int gamma_size )
+
+set the gamma table size
+
+Parameters
+  struct drm_crtc *crtc
+    CRTC to set the gamma table size for
+  int gamma_size
+    size of the gamma table
+
+Description
+  Drivers which support gamma tables should set this to the supported gamma
+table size when initializing the CRTC. Currently the drm core only supports a
+fixed gamma table size.

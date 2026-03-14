@@ -1,0 +1,17 @@
+Function: void phy_set_asym_pause ( struct phy_device * phydev , bool rx , bool tx )
+
+Configure Pause and Asym Pause
+
+Parameters
+  struct phy_device *phydev
+    target phy_device struct
+  bool rx
+    Receiver Pause is supported
+  bool tx
+    Transmit Pause is supported
+
+Description
+  Configure advertised Pause support depending on if
+transmit and receiver pause is supported. If there has been a
+change in adverting, trigger a new autoneg. Generally called from
+the set_pauseparam .ndo.

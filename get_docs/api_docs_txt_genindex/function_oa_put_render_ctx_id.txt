@@ -1,0 +1,11 @@
+Function: void oa_put_render_ctx_id ( struct i915_perf_stream * stream )
+
+counterpart to oa_get_render_ctx_id releases hold
+
+Parameters
+  struct i915_perf_stream *stream
+    An i915-perf stream opened for OA metrics
+
+Description
+  In case anything needed doing to ensure the context HW ID would remain valid
+for the lifetime of the stream, then that can be undone here.

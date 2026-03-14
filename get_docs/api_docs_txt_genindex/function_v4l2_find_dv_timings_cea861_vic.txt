@@ -1,0 +1,13 @@
+Function: bool v4l2_find_dv_timings_cea861_vic ( struct v4l2_dv_timings * t , u8 vic )
+
+find timings based on CEA-861 VIC
+
+Parameters
+  struct v4l2_dv_timings *t
+    the timings data.
+  u8 vic
+    CEA-861 VIC code
+
+Description
+  On success it will fill in t with the found timings and it returns true.
+On failure it will return false.

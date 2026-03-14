@@ -1,0 +1,17 @@
+Function: void drm_print_hex_dump ( struct drm_printer * p , const char * prefix , const u8 * buf , size_t len )
+
+print a hex dump to a drm_printer stream
+
+Parameters
+  struct drm_printer *p
+    The drm_printer
+  const char *prefix
+    Prefix for each line, may be NULL for no prefix
+  const u8 *buf
+    Buffer to dump
+  size_t len
+    Length of buffer
+
+Description
+  Print hex dump to drm_printer , with 16 space-separated hex bytes per line,
+optionally with a prefix on each line. No separator is added after prefix.

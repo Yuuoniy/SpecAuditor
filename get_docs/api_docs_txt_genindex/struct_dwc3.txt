@@ -1,0 +1,323 @@
+Struct: struct dwc3
+
+representation of our controller
+
+Members
+  drd_work
+    workqueue used for role swapping
+  ep0_trb
+    trb which is used for the ctrl_req
+  bounce
+    address of bounce buffer
+  setup_buf
+    used while precessing STD USB requests
+  ep0_trb_addr
+    dma address of ep0_trb
+  bounce_addr
+    dma address of bounce
+  ep0_usb_req
+    dummy req used while handling STD USB requests
+  ep0_in_setup
+    one control transfer is completed and enter setup phase
+  lock
+    for synchronizing
+  mutex
+    for mode switching
+  dev
+    pointer to our struct device
+  sysdev
+    pointer to the DMA-capable device
+  xhci
+    pointer to our xHCI child
+  xhci_resources
+    struct resources for our xhci child
+  ev_buf
+    struct dwc3_event_buffer pointer
+  eps
+    endpoint array
+  gadget
+    device side representation of the peripheral controller
+  gadget_driver
+    pointer to the gadget driver
+  glue_ops
+    Vendor callbacks for flattened device implementations.
+  bus_clk
+    clock for accessing the registers
+  ref_clk
+    reference clock
+  susp_clk
+    clock used when the SS phy is in low power (S3) state
+  utmi_clk
+    clock used for USB2 PHY communication
+  pipe_clk
+    clock used for USB3 PHY communication
+  reset
+    reset control
+  usb2_phy
+    pointer to USB2 PHY
+  usb3_phy
+    pointer to USB3 PHY
+  usb2_generic_phy
+    pointer to array of USB2 PHYs
+  usb3_generic_phy
+    pointer to array of USB3 PHYs
+  num_usb2_ports
+    number of USB2 ports
+  num_usb3_ports
+    number of USB3 ports
+  phys_ready
+    flag to indicate that PHYs are ready
+  ulpi
+    pointer to ulpi interface
+  ulpi_ready
+    flag to indicate that ULPI is initialized
+  regs
+    base address for our registers
+  regs_size
+    address space size
+  dr_mode
+    requested mode of operation
+  current_dr_role
+    current role of operation when in dual-role mode
+  desired_dr_role
+    desired role of operation when in dual-role mode
+  edev
+    extcon handle
+  edev_nb
+    extcon notifier
+  hsphy_mode
+    UTMI phy mode, one of following:
+- USBPHY_INTERFACE_MODE_UTMI
+- USBPHY_INTERFACE_MODE_UTMIW
+  role_sw
+    usb_role_switch handle
+  role_switch_default_mode
+    default operation mode of controller while
+usb role is USB_ROLE_NONE.
+  usb_psy
+    pointer to power supply interface.
+  fladj
+    frame length adjustment
+  ref_clk_per
+    reference clock period configuration
+  irq_gadget
+    peripheral controller’s IRQ number
+  otg_irq
+    IRQ number for OTG IRQs
+  current_otg_role
+    current role of operation while using the OTG block
+  desired_otg_role
+    desired role of operation while using the OTG block
+  otg_restart_host
+    flag that OTG controller needs to restart host
+  u1u2
+    only used on revisions <1.83a for workaround
+  maximum_speed
+    maximum speed requested (mainly for testing purposes)
+  gadget_max_speed
+    maximum gadget speed requested
+  max_ssp_rate
+    SuperSpeed Plus maximum signaling rate and lane count
+  gadget_ssp_rate
+    Gadget driver’s maximum supported SuperSpeed Plus signaling
+rate and lane count.
+  ip
+    controller’s ID
+  revision
+    controller’s version of an IP
+  version_type
+    VERSIONTYPE register contents, a sub release of a revision
+  ep0_next_event
+    hold the next expected event
+  ep0state
+    state of endpoint zero
+  link_state
+    link state
+  u2sel
+    parameter from Set SEL request.
+  u2pel
+    parameter from Set SEL request.
+  u1sel
+    parameter from Set SEL request.
+  u1pel
+    parameter from Set SEL request.
+  speed
+    device speed (super, high, full, low)
+  num_eps
+    number of endpoints
+  hwparams
+    copy of hwparams registers
+  regset
+    debugfs pointer to regdump file
+  dbg_lsp_select
+    current debug lsp mux register selection
+  test_mode
+    true when we’re entering a USB test mode
+  test_mode_nr
+    test feature selector
+  lpm_nyet_threshold
+    LPM NYET response threshold
+  hird_threshold
+    HIRD threshold
+  rx_thr_num_pkt
+    USB receive packet count
+  rx_max_burst
+    max USB receive burst size
+  tx_thr_num_pkt
+    USB transmit packet count
+  tx_max_burst
+    max USB transmit burst size
+  rx_thr_num_pkt_prd
+    periodic ESS receive packet count
+  rx_max_burst_prd
+    max periodic ESS receive burst size
+  tx_thr_num_pkt_prd
+    periodic ESS transmit packet count
+  tx_max_burst_prd
+    max periodic ESS transmit burst size
+  tx_fifo_resize_max_num
+    max number of fifos allocated during txfifo resize
+  clear_stall_protocol
+    endpoint number that requires a delayed status phase
+  num_hc_interrupters
+    number of host controller interrupters
+  hsphy_interface
+    “utmi” or “ulpi”
+  connected
+    true when we’re connected to a host, false otherwise
+  softconnect
+    true when gadget connect is called, false when disconnect runs
+  delayed_status
+    true when gadget driver asks for delayed status
+  ep0_bounced
+    true when we used bounce buffer
+  ep0_expect_in
+    true when we expect a DATA IN transfer
+  sysdev_is_parent
+    true when dwc3 device has a parent driver
+  has_lpm_erratum
+    true when core was configured with LPM Erratum. Note that
+there’s now way for software to detect this in runtime.
+  is_utmi_l1_suspend
+    the core asserts output signal
+0       - utmi_sleep_n
+1       - utmi_l1_suspend_n
+  is_fpga
+    true when we are using the FPGA board
+  pending_events
+    true when we have pending IRQs to be handled
+  do_fifo_resize
+    true when txfifo resizing is enabled for dwc3 endpoints
+  pullups_connected
+    true when Run/Stop bit is set
+  setup_packet_pending
+    true when there’s a Setup Packet in FIFO. Workaround
+  three_stage_setup
+    set if we perform a three phase setup
+  dis_start_transfer_quirk
+    set if start_transfer failure SW workaround is
+not needed for DWC_usb31 version 1.70a-ea06 and below
+  usb3_lpm_capable
+    set if hadrware supports Link Power Management
+  usb2_lpm_disable
+    set to disable usb2 lpm for host
+  usb2_gadget_lpm_disable
+    set to disable usb2 lpm for gadget
+  disable_scramble_quirk
+    set if we enable the disable scramble quirk
+  u2exit_lfps_quirk
+    set if we enable u2exit lfps quirk
+  u2ss_inp3_quirk
+    set if we enable P3 OK for U2/SS Inactive quirk
+  req_p1p2p3_quirk
+    set if we enable request p1p2p3 quirk
+  del_p1p2p3_quirk
+    set if we enable delay p1p2p3 quirk
+  del_phy_power_chg_quirk
+    set if we enable delay phy power change quirk
+  lfps_filter_quirk
+    set if we enable LFPS filter quirk
+  rx_detect_poll_quirk
+    set if we enable rx_detect to polling lfps quirk
+  dis_u3_susphy_quirk
+    set if we disable usb3 suspend phy
+  dis_u2_susphy_quirk
+    set if we disable usb2 suspend phy
+  dis_enblslpm_quirk
+    set if we clear enblslpm in GUSB2PHYCFG,
+disabling the suspend signal to the PHY.
+  dis_u1_entry_quirk
+    set if link entering into U1 state needs to be disabled.
+  dis_u2_entry_quirk
+    set if link entering into U2 state needs to be disabled.
+  dis_rxdet_inp3_quirk
+    set if we disable Rx.Detect in P3
+  dis_u2_freeclk_exists_quirk
+    set if we clear u2_freeclk_exists
+in GUSB2PHYCFG, specify that USB2 PHY doesn’t
+provide a free-running PHY clock.
+  dis_del_phy_power_chg_quirk
+    set if we disable delay phy power
+change quirk.
+  dis_tx_ipgap_linecheck_quirk
+    set if we disable u2mac linestate
+check during HS transmit.
+  resume_hs_terminations
+    Set if we enable quirk for fixing improper crc
+generation after resume from suspend.
+  ulpi_ext_vbus_drv
+    Set to confiure the upli chip to drives CPEN pin
+VBUS with an external supply.
+  parkmode_disable_ss_quirk
+    set if we need to disable all SuperSpeed
+instances in park mode.
+  parkmode_disable_hs_quirk
+    set if we need to disable all HishSpeed
+instances in park mode.
+  gfladj_refclk_lpm_sel
+    set if we need to enable SOF/ITP counter
+running based on ref_clk
+  tx_de_emphasis_quirk
+    set if we enable Tx de-emphasis quirk
+  tx_de_emphasis
+    Tx de-emphasis value
+0       - -6dB de-emphasis
+1       - -3.5dB de-emphasis
+2       - No de-emphasis
+3       - Reserved
+  dis_metastability_quirk
+    set to disable metastability quirk.
+  dis_split_quirk
+    set to disable split boundary.
+  async_callbacks
+    if set, indicate that async callbacks will be used.
+  sys_wakeup
+    set if the device may do system wakeup.
+  wakeup_configured
+    set if the device is configured for remote wakeup.
+  suspended
+    set to track suspend event due to U3/L2.
+  susphy_state
+    state of DWC3_GUSB2PHYCFG_SUSPHY + DWC3_GUSB3PIPECTL_SUSPHY
+before PM suspend.
+  imod_interval
+    set the interrupt moderation interval in 250ns
+increments or 0 to disable.
+  max_cfg_eps
+    current max number of IN eps used across all USB configs.
+  last_fifo_depth
+    last fifo depth used to determine next fifo ram start
+address.
+  num_ep_resized
+    carries the current number endpoints which have had its tx
+fifo resized.
+  debug_root
+    root debugfs directory for this device to put its files in.
+  gsbuscfg0_reqinfo
+    store GSBUSCFG0.DATRDREQINFO, DESRDREQINFO,
+DATWRREQINFO, and DESWRREQINFO value passed from
+glue driver.
+  wakeup_pending_funcs
+    Indicates whether any interface has requested for
+function wakeup in bitmap format where bit position
+represents interface_id.

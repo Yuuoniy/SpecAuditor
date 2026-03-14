@@ -1,0 +1,11 @@
+Function: int tipc_sk_anc_data_recv ( struct msghdr * m , struct sk_buff * skb , struct tipc_sock * tsk )
+
+optionally capture ancillary data for received message
+
+Parameters
+  struct msghdr *m
+    descriptor for message info
+  struct sk_buff *skb
+    received message buffer
+  struct tipc_sock *tsk
+    TIPC port associated with message

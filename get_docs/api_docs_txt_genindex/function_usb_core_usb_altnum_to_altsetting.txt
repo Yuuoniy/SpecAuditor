@@ -1,0 +1,13 @@
+Function: struct usb_host_interface * usb_altnum_to_altsetting ( const struct usb_interface * intf , unsigned int altnum )
+
+get the altsetting structure with a given alternate setting number.
+
+Parameters
+  const struct usb_interface *intf
+    the interface containing the altsetting in question
+  unsigned int altnum
+    the desired alternate setting number
+
+Description
+  This searches the altsetting array of the specified interface for
+an entry with the correct bAlternateSetting value.

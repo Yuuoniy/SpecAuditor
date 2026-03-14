@@ -1,0 +1,7 @@
+Function: void dvb_net_release ( struct dvb_net * dvbnet )
+
+releases a digital TV network device and unregisters it.
+
+Parameters
+  struct dvb_net *dvbnet
+    pointer to struct dvb_net .

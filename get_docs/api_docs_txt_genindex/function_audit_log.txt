@@ -1,0 +1,20 @@
+Function: void audit_log ( struct audit_context * ctx , gfp_t gfp_mask , int type , const char * fmt , ... )
+
+Log an audit record
+
+Parameters
+  struct audit_context *ctx
+    audit context
+  gfp_t gfp_mask
+    type of allocation
+  int type
+    audit message type
+  const char *fmt
+    format string to use
+  ...
+    variable parameters matching the format string
+
+Description
+  This is a convenience function that calls audit_log_start,
+audit_log_vformat, and audit_log_end.  It may be called
+in any context.

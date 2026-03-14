@@ -1,0 +1,17 @@
+Function: struct fwnode_handle * __irq_domain_alloc_fwnode ( unsigned int type , int id , const char * name , phys_addr_t * pa )
+
+Allocate a fwnode_handle suitable for identifying an irq domain
+
+Parameters
+  unsigned int type
+    Type of irqchip_fwnode. See linux/irqdomain.h
+  int id
+    Optional user provided id if name != NULL
+  const char *name
+    Optional user provided domain name
+  phys_addr_t *pa
+    Optional user-provided physical address
+
+Description
+  Allocate a struct irqchip_fwid , and return a pointer to the embedded
+fwnode_handle (or NULL on failure).

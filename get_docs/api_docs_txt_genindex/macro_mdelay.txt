@@ -1,0 +1,10 @@
+Macro: mdelay
+
+
+
+Parameters
+  n
+    requested delay in milliseconds
+
+Description
+  See udelay() for basic information about mdelay() and it’s variants.

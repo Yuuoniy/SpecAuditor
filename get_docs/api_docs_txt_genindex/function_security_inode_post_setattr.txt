@@ -1,0 +1,14 @@
+Function: void security_inode_post_setattr ( struct mnt_idmap * idmap , struct dentry * dentry , int ia_valid )
+
+Update the inode after a setattr operation
+
+Parameters
+  struct mnt_idmap *idmap
+    idmap of the mount
+  struct dentry *dentry
+    file
+  int ia_valid
+    file attributes set
+
+Description
+  Update inode security field after successful setting file attributes.

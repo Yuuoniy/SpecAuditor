@@ -1,0 +1,7 @@
+Function: int drm_gem_evict_locked ( struct drm_gem_object * obj )
+
+helper to evict backing pages for a GEM object
+
+Parameters
+  struct drm_gem_object *obj
+    obj in question

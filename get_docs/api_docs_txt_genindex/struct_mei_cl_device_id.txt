@@ -1,0 +1,13 @@
+Struct: struct mei_cl_device_id
+
+MEI client device identifier
+
+Members
+  name
+    helper name
+  uuid
+    client uuid
+  version
+    client protocol version
+  driver_info
+    information used by the driver.

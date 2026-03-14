@@ -1,0 +1,12 @@
+Function: void ccw_device_clear_options ( struct ccw_device * cdev , unsigned long flags )
+
+clear some options
+
+Parameters
+  struct ccw_device *cdev
+    device for which the options are to be cleared
+  unsigned long flags
+    options to be cleared
+
+Description
+  All flags specified in flags are cleared, the remainder is left untouched.

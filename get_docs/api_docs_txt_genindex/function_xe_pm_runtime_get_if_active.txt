@@ -1,0 +1,7 @@
+Function: bool xe_pm_runtime_get_if_active ( struct xe_device * xe )
+
+Get a runtime_pm reference if device active
+
+Parameters
+  struct xe_device *xe
+    xe device instance

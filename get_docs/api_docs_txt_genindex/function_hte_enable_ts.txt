@@ -1,0 +1,7 @@
+Function: int hte_enable_ts ( struct hte_ts_desc * desc )
+
+Enable timestamp on given descriptor.
+
+Parameters
+  struct hte_ts_desc *desc
+    ts descriptor, this is the same as returned by the request API.

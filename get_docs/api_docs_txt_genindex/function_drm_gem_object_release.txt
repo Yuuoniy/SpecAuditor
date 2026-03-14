@@ -1,0 +1,10 @@
+Function: void drm_gem_object_release ( struct drm_gem_object * obj )
+
+release GEM buffer object resources
+
+Parameters
+  struct drm_gem_object *obj
+    GEM buffer object
+
+Description
+  This releases any structures and resources used by obj and is the inverse of drm_gem_object_init() .

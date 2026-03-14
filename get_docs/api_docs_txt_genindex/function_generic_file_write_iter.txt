@@ -1,0 +1,14 @@
+Function: ssize_t generic_file_write_iter ( struct kiocb * iocb , struct iov_iter * from )
+
+write data to a file
+
+Parameters
+  struct kiocb *iocb
+    IO state structure
+  struct iov_iter *from
+    iov_iter with data to write
+
+Description
+  This is a wrapper around __generic_file_write_iter() to be used by most
+filesystems. It takes care of syncing the file in case of O_SYNC file
+and acquires i_rwsem as needed.

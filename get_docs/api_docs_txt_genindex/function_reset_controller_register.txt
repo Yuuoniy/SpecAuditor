@@ -1,0 +1,7 @@
+Function: int reset_controller_register ( struct reset_controller_dev * rcdev )
+
+register a reset controller device
+
+Parameters
+  struct reset_controller_dev *rcdev
+    a pointer to the initialized reset controller device

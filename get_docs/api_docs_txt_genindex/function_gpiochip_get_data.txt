@@ -1,0 +1,7 @@
+Function: void * gpiochip_get_data ( struct gpio_chip * gc )
+
+get per-subdriver data for the chip
+
+Parameters
+  struct gpio_chip *gc
+    GPIO chip

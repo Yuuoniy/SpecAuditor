@@ -1,0 +1,17 @@
+Function: int bio_init_clone ( struct block_device * bdev , struct bio * bio , struct bio * bio_src , gfp_t gfp )
+
+clone a bio that shares the original bio’s biovec
+
+Parameters
+  struct block_device *bdev
+    block_device to clone onto
+  struct bio *bio
+    bio to clone into
+  struct bio *bio_src
+    bio to clone from
+  gfp_t gfp
+    allocation priority
+
+Description
+  Initialize a new bio in caller provided memory that is a clone of bio_src .
+The caller owns the returned bio, but not the actual data it points to.

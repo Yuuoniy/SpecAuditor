@@ -1,0 +1,10 @@
+Function: void snd_card_disconnect ( struct snd_card * card )
+
+disconnect all APIs from the file-operations (user space)
+
+Parameters
+  struct snd_card *card
+    soundcard structure
+
+Description
+  Disconnects all APIs from the file-operations (user space).

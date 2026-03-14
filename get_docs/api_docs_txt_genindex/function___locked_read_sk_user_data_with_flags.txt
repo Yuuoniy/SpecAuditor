@@ -1,0 +1,12 @@
+Function: void * __locked_read_sk_user_data_with_flags ( const struct sock * sk , uintptr_t flags )
+
+return the pointer only if argument flags all has been set in sk_user_data. Otherwise return NULL
+
+Parameters
+  const struct sock *sk
+    socket
+  uintptr_t flags
+    flag bits
+
+Description
+  The caller must be holding sk->sk_callback_lock.

@@ -1,0 +1,13 @@
+Function: int pci_enable_rom ( struct pci_dev * pdev )
+
+enable ROM decoding for a PCI device
+
+Parameters
+  struct pci_dev *pdev
+    PCI device to enable
+
+Description
+  Enable ROM decoding on dev .  This involves simply turning on the last
+bit of the PCI ROM BAR.  Note that some cards may share address decoders
+between the ROM and other resources, so enabling it may disable access
+to MMIO registers or other card memory.

@@ -1,0 +1,10 @@
+Function: int security_perf_event_read ( struct perf_event * event )
+
+Check if reading a perf event label is allowed
+
+Parameters
+  struct perf_event *event
+    perf event
+
+Description
+  Read perf_event security info if allowed.

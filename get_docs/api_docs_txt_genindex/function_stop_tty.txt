@@ -1,0 +1,11 @@
+Function: void stop_tty ( struct tty_struct * tty )
+
+propagate flow control
+
+Parameters
+  struct tty_struct *tty
+    tty to stop
+
+Description
+  Perform flow control to the driver. May be called on an already stopped
+device and will not re-call the tty_driver->stop() method.

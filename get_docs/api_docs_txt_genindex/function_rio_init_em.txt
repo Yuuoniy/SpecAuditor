@@ -1,0 +1,11 @@
+Function: void rio_init_em ( struct rio_dev * rdev )
+
+Initializes RIO Error Management (for switches)
+
+Parameters
+  struct rio_dev *rdev
+    RIO device
+
+Description
+  For each enumerated switch, call device-specific error management
+initialization routine (if supplied by the switch driver).

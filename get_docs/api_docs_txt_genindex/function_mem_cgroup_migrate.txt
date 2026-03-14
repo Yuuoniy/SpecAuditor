@@ -1,0 +1,14 @@
+Function: void mem_cgroup_migrate ( struct folio * old , struct folio * new )
+
+Transfer the memcg data from the old to the new folio.
+
+Parameters
+  struct folio *old
+    Currently circulating folio.
+  struct folio *new
+    Replacement folio.
+
+Description
+  Transfer the memcg data from the old folio to the new folio for migration.
+The old folio’s data info will be cleared. Note that the memory counters
+will remain unchanged throughout the process.

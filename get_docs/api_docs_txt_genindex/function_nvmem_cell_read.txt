@@ -1,0 +1,10 @@
+Function: void * nvmem_cell_read ( struct nvmem_cell * cell , size_t * len )
+
+Read a given nvmem cell
+
+Parameters
+  struct nvmem_cell *cell
+    nvmem cell to be read.
+  size_t *len
+    pointer to length of cell which will be populated on successful read;
+can be NULL.

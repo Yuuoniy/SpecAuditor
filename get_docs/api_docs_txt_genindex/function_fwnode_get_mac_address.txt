@@ -1,0 +1,16 @@
+Function: int fwnode_get_mac_address ( struct fwnode_handle * fwnode , char * addr )
+
+Get the MAC from the firmware node
+
+Parameters
+  struct fwnode_handle *fwnode
+    Pointer to the firmware node
+  char *addr
+    Address of buffer to store the MAC in
+
+Description
+  Search the firmware node for the best MAC address to use.  ‘mac-address’ is
+checked first, because that is supposed to contain to “most recent” MAC
+address. If that isn’t set, then ‘local-mac-address’ is checked next,
+because that is the default address.  If that isn’t set, then the obsolete
+‘address’ is checked, just in case we’re using an old device tree.

@@ -1,0 +1,13 @@
+Function: int drm_gem_map_attach ( struct dma_buf * dma_buf , struct dma_buf_attachment * attach )
+
+dma_buf attach implementation for GEM
+
+Parameters
+  struct dma_buf *dma_buf
+    buffer to attach device to
+  struct dma_buf_attachment *attach
+    buffer attachment data
+
+Description
+  Calls drm_gem_object_funcs.pin for device specific handling. This can be
+used as the dma_buf_ops.attach callback. Must be used together with drm_gem_map_detach() .

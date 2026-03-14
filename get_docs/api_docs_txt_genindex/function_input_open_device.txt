@@ -1,0 +1,11 @@
+Function: int input_open_device ( struct input_handle * handle )
+
+open input device
+
+Parameters
+  struct input_handle *handle
+    handle through which device is being accessed
+
+Description
+  This function should be called by input handlers when they
+want to start receive events from given input device.

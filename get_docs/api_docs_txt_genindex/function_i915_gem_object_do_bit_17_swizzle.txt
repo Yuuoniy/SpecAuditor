@@ -1,0 +1,13 @@
+Function: void i915_gem_object_do_bit_17_swizzle ( struct drm_i915_gem_object * obj , struct sg_table * pages )
+
+fixup bit 17 swizzling
+
+Parameters
+  struct drm_i915_gem_object *obj
+    i915 GEM buffer object
+  struct sg_table *pages
+    the scattergather list of physical pages
+
+Description
+  This function fixes up the swizzling in case any page frame number for this
+object has changed in bit 17 since that state has been saved with i915_gem_object_save_bit_17_swizzle() .

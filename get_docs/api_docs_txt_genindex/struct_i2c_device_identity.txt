@@ -1,0 +1,11 @@
+Struct: struct i2c_device_identity
+
+i2c client device identification
+
+Members
+  manufacturer_id
+    0 - 4095, database maintained by NXP
+  part_id
+    0 - 511, according to manufacturer
+  die_revision
+    0 - 7, according to manufacturer

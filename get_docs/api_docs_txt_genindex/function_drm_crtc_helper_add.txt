@@ -1,0 +1,9 @@
+Function: void drm_crtc_helper_add ( struct drm_crtc * crtc , const struct drm_crtc_helper_funcs * funcs )
+
+sets the helper vtable for a crtc
+
+Parameters
+  struct drm_crtc *crtc
+    DRM CRTC
+  const struct drm_crtc_helper_funcs *funcs
+    helper vtable to set for crtc

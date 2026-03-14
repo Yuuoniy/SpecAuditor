@@ -1,0 +1,11 @@
+Function: unsigned int snd_soc_component_read_field ( struct snd_soc_component * component , unsigned int reg , unsigned int mask )
+
+Read register field value
+
+Parameters
+  struct snd_soc_component *component
+    Component to read from
+  unsigned int reg
+    Register to read
+  unsigned int mask
+    mask of the register field

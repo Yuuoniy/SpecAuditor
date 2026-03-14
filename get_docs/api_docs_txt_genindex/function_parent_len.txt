@@ -1,0 +1,7 @@
+Function: int parent_len ( const char * path )
+
+find the length of the parent portion of a pathname
+
+Parameters
+  const char *path
+    pathname of which to determine length

@@ -1,0 +1,30 @@
+Struct: struct komeda_dev_funcs
+
+
+
+Members
+  init_format_table
+    initialize komeda_dev->format_table , this function should be called
+before the enum_resource
+  enum_resources
+    for CHIP to report or add pipeline and component resources to CORE
+  cleanup
+    call to chip to cleanup komeda_dev->chip data
+  connect_iommu
+    Optional, connect to external iommu
+  disconnect_iommu
+    Optional, disconnect to external iommu
+  irq_handler
+    for CORE to get the HW event from the CHIP when interrupt happened.
+  enable_irq
+    enable irq
+  disable_irq
+    disable irq
+  on_off_vblank
+    notify HW to on/off vblank
+  dump_register
+    Optional, dump registers to seq_file
+  change_opmode
+    Notify HW to switch to a new display operation mode.
+  flush
+    Notify the HW to flush or kickoff the update
