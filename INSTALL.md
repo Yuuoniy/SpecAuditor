@@ -33,6 +33,8 @@ Edit `artifact/config/llm.env` and fill in:
 - `OPENAI_API_KEY`
 - `OPENAI_BASE_URL`
 
+Note: The artifact uses Anthropic’s Claude Sonnet 4 through an OpenAI-compatible endpoint. Please ensure the LLM backend points to a valid compatible service. 
+
 Then prepare the Linux kernel checkout used by the artifact:
 Note: Cloning the Linux kernel repository may take over an hour, depending on network speed.
 ```bash
