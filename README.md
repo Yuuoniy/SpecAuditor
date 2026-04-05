@@ -41,9 +41,9 @@ We provide a Dockerfile to set up the environment. Please refer to [INSTALL.md](
 
 Please refer to  [AE.md](./AE.md) for detailed instructions.
 
-| Entry                                      | Purpose                                                       |
-| ------------------------------------------ | ------------------------------------------------------------- |
-| `artifact/functional/run.sh`               | End-to-end functional run on one seed patch                   |
-| `artifact/reproduced_generation/run.sh`    | Reproduced extraction/generalization/generation run on subset |
-| `artifact/reproduced_bug_detection/run.sh` | Reproduced bug-detection benchmark with reference results     |
-
+| Entry                                                         | Purpose                                                                                                                |
+| ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `artifact/functional/run.sh`                                  | End-to-end functional run on one seed patch                                                                            |
+| `artifact/reproduced_generation/run.sh`                       | Reproduced extraction/generalization/generation run on subset                                                          |
+| `artifact/reproduced_bug_detection/run.sh`                    | Reproduced bug-detection benchmark with integrated candidate localization and bug auditing                             |
+| `artifact/reproduced_bug_detection/run_localization_check.sh` | Localization-only check that tests whether the expected buggy functions can be automatically surfaced before auditing. |

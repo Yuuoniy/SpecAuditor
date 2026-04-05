@@ -7,31 +7,25 @@ KERNEL_PATH="${KERNEL_PATH:-/workspace/linux-v6.17-rc3}"
 OUTPUT_DIR="${OUTPUT_DIR:-$ROOT_DIR/artifact/results/reproduced_bug_detection}"
 MODEL="${MODEL:-claude-sonnet-4-20250514}"
 MAX_WORKERS="${MAX_WORKERS:-4}"
-MODE="${MODE:-localized}"
-MAX_CANDIDATES_TO_AUDIT="${MAX_CANDIDATES_TO_AUDIT:-50}"
 
 usage() {
   cat <<'EOF'
-Usage: bash artifact/reproduced_bug_detection/run.sh [options]
+Usage: bash artifact/reproduced_bug_detection/run_localization_check.sh [options]
 
 Options:
-  --kernel-path PATH    Linux kernel repository to analyze
-  --output-dir PATH     Directory for generated outputs
-  --model MODEL         LLM model for bug detection
-  --max-workers N       Worker count for bug analysis
-  --mode MODE           localized (default) or targeted
-  --max-candidates-to-audit N
-                         Candidate budget per specification in localized mode
-  --help                Show this message
+  --kernel-path PATH              Linux kernel repository to analyze
+  --output-dir PATH               Directory for generated outputs
+  --model MODEL                   LLM model used to generate localization queries
+  --max-workers N                 Worker count for concurrent localization checks
+  --help                          Show this message
 
 Default behavior:
-  - If artifact/config/llm.env exists, this script loads it
-    automatically before running the reproduced bug-detection benchmark.
+  - If artifact/config/llm.env exists, this script loads it automatically.
   - By default, the kernel checkout is expected at /workspace/linux-v6.17-rc3.
-  - localized mode runs AST/weggli-based candidate localization first, then audits
-    at most 50 candidates per specification.
-  - targeted mode keeps the older fast path that directly audits the packaged
-    buggy functions from the benchmark dataset.
+  - The script runs the same AST/weggli-based candidate localization used by the
+    reproduced bug-detection workflow, but stops before LLM auditing.
+  - It reports how many expected buggy functions are surfaced anywhere in the
+    localized candidate list and writes the generated query for every row.
 EOF
 }
 
@@ -51,14 +45,6 @@ while [[ $# -gt 0 ]]; do
       ;;
     --max-workers)
       MAX_WORKERS="$2"
-      shift 2
-      ;;
-    --mode)
-      MODE="$2"
-      shift 2
-      ;;
-    --max-candidates-to-audit)
-      MAX_CANDIDATES_TO_AUDIT="$2"
       shift 2
       ;;
     --help|-h)
@@ -85,5 +71,4 @@ python3 "$ROOT_DIR/artifact/reproduced_bug_detection/run.py" \
   --output-dir "$OUTPUT_DIR" \
   --model "$MODEL" \
   --max-workers "$MAX_WORKERS" \
-  --mode "$MODE" \
-  --max-candidates-to-audit "$MAX_CANDIDATES_TO_AUDIT"
+  --mode probe

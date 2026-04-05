@@ -1,0 +1,15 @@
+{
+  "localized_expected_function_found_rows": 48,
+  "localized_expected_function_missed_rows": 0,
+  "detected_bug_rows": 41,
+  "seed_patch_count": 9,
+  "generation_seed_count": 12,
+  "benchmark_bug_rows": 48,
+  "audited_specification_rows": 18,
+  "audited_candidate_rows": 163,
+  "violation_report_rows": 72,
+  "additional_violation_report_rows": 31,
+  "reference_files": {
+    "benchmark_dataset": "artifact/reproduced_bug_detection/datasets/checks.csv"
+  }
+}

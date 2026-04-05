@@ -22,11 +22,11 @@ Use [INSTALL.md](./INSTALL.md) first.
 
 ## Evaluation At A Glance
 
-| Workflow                            | Script                                     | Description                                                                                                                     | Main output references                          |
-| ----------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
-| Functional minimal example          | `artifact/functional/run.sh`               | Run the full pipeline on one seed patch and check the generated specification plus the demo bug detection result.               | `artifact/functional/reference/*.csv`           |
-| specification generation | `artifact/reproduced_generation/run.sh`    | Run the packaged reproduced subset to verify that seed patches can be generalized into new concrete specifications.             | `artifact/reproduced_generation/reference/*`    |
-| bug detection            | `artifact/reproduced_bug_detection/run.sh` | Run the packaged bug-detection benchmark to verify that the generated specifications can identify new bugs in the Linux kernel. | `artifact/reproduced_bug_detection/reference/*` |
+| Workflow                   | Script                                     | Description                                                                                                                                             | Main output references                          |
+| -------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| Functional minimal example | `artifact/functional/run.sh`               | Run the full pipeline on one seed patch and check the generated specification plus the demo bug detection result.                                       | `artifact/functional/reference/*.csv`           |
+| specification generation   | `artifact/reproduced_generation/run.sh`    | Run the packaged reproduced subset to verify that seed patches can be generalized into new concrete specifications.                                     | `artifact/reproduced_generation/reference/*`    |
+| bug detection              | `artifact/reproduced_bug_detection/run.sh` | Run the packaged bug-detection benchmark to verify that the generated specifications can first localize and then identify new bugs in the Linux kernel. | `artifact/reproduced_bug_detection/reference/*` |
 
 ## 1. Minimal Running Example
 
@@ -97,32 +97,63 @@ Typical runtime is about `5-10 minutes`, depending on LLM latency and concurrent
 This reproduced benchmark validates the claim that the extracted and generated specifications can detect real bugs.
 
 Validating reported bugs often requires manual effort. In this artifact, we provide `48` true bug instances that we have already checked, so reviewers can automatically validate the main claim. We are still working through the remaining bugs outside this packaged benchmark.
-To reduce token cost, we do not ask the LLM to inspect every possible candidate function. Instead, we directly evaluate the pre-identified buggy functions listed in `artifact/reproduced_bug_detection/datasets/checks.csv`, where each row fixes the entity, the buggy function, and the specification used for bug detection.
+
+- `artifact/reproduced_bug_detection/run_localization_check.sh`: run only AST/weggli-based candidate localization on the full benchmark and report whether each expected buggy function is in the candidate list
+- `artifact/reproduced_bug_detection/run.sh`: run the full reproduced bug-detection workflow. In its default `localized` mode, it first localizes candidates and then audits a bounded candidate set per unique specification. `--mode targeted` is available as a lower-cost audit-only mode over the packaged benchmark rows.
+
+Each row in `artifact/reproduced_bug_detection/datasets/checks.csv` provides the entity, the expected buggy function, and the specification used for bug detection.
+
 
 ### Run
 
+Localization-only check:
+
 ```bash
-bash artifact/reproduced_bug_detection/run.sh \
+bash artifact/reproduced_bug_detection/run_localization_check.sh \
   --kernel-path /workspace/linux-v6.17-rc3
 ```
 
+Full bug-detection workflow:
+
+```bash
+bash artifact/reproduced_bug_detection/run.sh \
+  --kernel-path /workspace/linux-v6.17-rc3 \
+  --max-candidates-to-audit 10 \
+  --max-workers 16
+```
+Notes:
+- Localization runs over the Linux kernel codebase, so it takes longer. Runtime depends on CPU parallelism.
+- `--max-candidates-to-audit` limits how many functions are audited for each unique specification. Larger values increase token cost because more code is analyzed.
+- In our reference setup we use `--max-candidates-to-audit 10 --max-workers 16`.
+- On a 64-core machine, this setting takes about `5 minutes` for the full localized run.
+
+Optional fast mode:
+
+```bash
+bash artifact/reproduced_bug_detection/run.sh \
+  --kernel-path /workspace/linux-v6.17-rc3 \
+  --mode targeted
+```
+
+
 ### Compare
 
-| Output file                             | What to check                                     | Reference                                                            |
-| --------------------------------------- | ------------------------------------------------- | -------------------------------------------------------------------- |
-| `reproduced_bug_detection_results.csv`  | one row per targeted bug check                    | `artifact/reproduced_bug_detection/reference/reference.csv`          |
-| `reproduced_bug_detection_summary.csv`  | per-seed detected/evaluated counts                | `artifact/reproduced_bug_detection/reference/reference_summary.csv`  |
-| `reproduced_bug_detection_summary.json` | shortest live summary                             | `artifact/reproduced_bug_detection/reference/reference_summary.json` |
-| packaged bug-check dataset              | entity, buggy function, and applied specification | `artifact/reproduced_bug_detection/datasets/checks.csv`              |
-| reproduced summary                      | aggregate benchmark counts and seed coverage      | `artifact/reproduced_bug_detection/reference/summary.json`           |
+| Output file                                                           | What to check                                                                               | Reference                                                                                                         |
+| --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `reproduced_bug_detection_localization_probe.csv`                     | one row per packaged bug instance with the generated query and localization coverage result | `artifact/reproduced_bug_detection/reference/reproduced_bug_detection_localization_probe.csv`                     |
+| `reproduced_bug_detection_localized_all_audited_candidates.csv`       | one row per audited candidate for each unique specification in default `localized` mode     | `artifact/reproduced_bug_detection/reference/reproduced_bug_detection_localized_all_audited_candidates.csv`       |
+| `reproduced_bug_detection_localized_violation_reports.csv`            | candidates flagged as violations in the localized workflow                                  | `artifact/reproduced_bug_detection/reference/reproduced_bug_detection_localized_violation_reports.csv`            |
+| `reproduced_bug_detection_localized_additional_violation_reports.csv` | flagged violations beyond the packaged expected buggy functions                             | `artifact/reproduced_bug_detection/reference/reproduced_bug_detection_localized_additional_violation_reports.csv` |
+| `reproduced_bug_detection_localized_summary.json`                     | aggregate counts for the localized reference run                                            | `artifact/reproduced_bug_detection/reference/reproduced_bug_detection_localized_summary.json`                     |
+| packaged bug-check dataset                                            | entity, expected buggy function, and applied specification                                  | `artifact/reproduced_bug_detection/datasets/checks.csv`                                                           |
+
+If reviewers also run `bash artifact/reproduced_bug_detection/run.sh --mode targeted`, they can compare its outputs with:
+- `artifact/reproduced_bug_detection/reference/reference.csv`
+- `artifact/reproduced_bug_detection/reference/reference_summary.csv`
+- `artifact/reproduced_bug_detection/reference/reference_summary.json`
 
 ### Expected Observations
-
-- the run should produce a non-empty result file and a non-empty summary
-- the output should detect most of the `48` packaged bug instances
-- positive rows in `reproduced_bug_detection_results.csv` should overlap strongly with `artifact/reproduced_bug_detection/reference/reference.csv`
-- `reproduced_bug_detection_summary.json` should be broadly consistent with `artifact/reproduced_bug_detection/reference/reference_summary.json`
-
-Because LLM outputs are not perfectly stable, the exact live count may vary slightly across runs. However, the live run should still detect most of these packaged bugs and should remain close to the shipped reference results.
-
-Typical runtime is about `2-4 minutes`, depending on LLM latency.
+- `run_localization_check.sh` should report that all `48` packaged buggy functions are successfully located. Reviewers can compare the live output with `artifact/reproduced_bug_detection/reference/reproduced_bug_detection_localization_probe.csv`.
+- `run.sh` in default `localized` mode should detect most of the `48` packaged bug rows. In our reference run, it reports `48` localized buggy functions found, `18` audited unique specifications, `163` audited candidate rows, `72` violation reports, and `31` additional violation reports.
+- Because LLM outputs vary across runs, the exact live counts may differ slightly. The localized run may also surface additional true bugs beyond the packaged benchmark rows.
+- `run.sh --mode targeted` provides a lower-cost audit-only path, and its outputs should broadly overlap with `artifact/reproduced_bug_detection/reference/reference.csv`.

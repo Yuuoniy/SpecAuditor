@@ -17,12 +17,13 @@ CRITICAL: Generate the SIMPLEST query that finds the function calls effectively.
 - Focus on the function call pattern
 - Avoid overly complex constraints
 - Use wildcards (_) for parameters
-- Prefer simple assignment patterns: $var = func(_, _)
+- If you use _ as a statement placeholder, always write it as _; with a trailing semicolon
+- Prefer the simplest bare call pattern first: func();
+- Only use parameter wildcards when necessary: func(_, _);
 
 Good examples:
-- '$ptr = krealloc(_, _);'
-- 'krealloc(_, _); if (!$ptr) { _; }'
-- '$ret = devm_krealloc(_, _, _, _);'
+- 'devm_krealloc();'
+- '$ptr = krealloc();'
 
 Avoid complex control flow unless absolutely necessary."""
 

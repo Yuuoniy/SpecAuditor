@@ -121,6 +121,45 @@ class ThreadedBugDetector:
             
         print(f"    📝 Generated weggli query: {query}")
         return query
+
+    def localize_candidates_for_spec_with_metadata(self, func_name: str, target_spec: str) -> dict:
+        generated_query = self.generate_weggli_query(func_name, target_spec)
+        normalized_query = str(generated_query or "").strip().strip("'").strip('"').strip()
+
+        matching_functions = {}
+        localization_error = ""
+
+        if not normalized_query or normalized_query.lower() == "unknown":
+            localization_error = "QUERY_GENERATION_FAILED"
+        else:
+            try:
+                matching_functions = self.code_searcher.weggli_get_found_with_code(generated_query)
+            except Exception as exc:
+                localization_error = f"QUERY_ERROR: {exc}"
+
+        return {
+            "matching_functions": matching_functions,
+            "generated_query": generated_query,
+            "localization_error": localization_error,
+        }
+
+    def localize_candidates_for_spec(self, func_name: str, target_spec: str) -> dict:
+        """Run weggli-based localization for a specification and return candidate functions."""
+        print(f"  🔎 Localizing candidates for {func_name}...")
+
+        localization_result = self.localize_candidates_for_spec_with_metadata(func_name, target_spec)
+        matching_functions = localization_result["matching_functions"]
+        localization_error = localization_result["localization_error"]
+        if localization_error and not matching_functions:
+            print(f"    ⚠️  Candidate localization failed: {localization_error}")
+            return {}
+
+        if not matching_functions:
+            print("    📊 No matching functions found")
+            return {}
+
+        print(f"    📊 Found {len(matching_functions)} matching code locations")
+        return matching_functions
     
     def analyze_code_violation_worker(self, args):
         match_info, predicate, func_name, thread_id = args
