@@ -68,7 +68,7 @@ To run the stricter `live` mode:
 
 ```bash
 bash artifact/functional/run.sh \
-  --kernel-path /tmp/linux-v6.17-rc3 \
+  --kernel-path /workspace/linux-v6.17-rc3 \
   --mode live
 ```
 
