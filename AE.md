@@ -3,6 +3,7 @@
 - [Artifact Evaluation Guide](#artifact-evaluation-guide)
   - [Setup](#setup)
   - [Evaluation At A Glance](#evaluation-at-a-glance)
+  - [Scope Note](#scope-note)
   - [1. Minimal Running Example](#1-minimal-running-example)
     - [Run](#run)
     - [Compare](#compare)
@@ -24,9 +25,22 @@ Use [INSTALL.md](./INSTALL.md) first.
 
 | Workflow                   | Script                                     | Description                                                                                                                                             | Main output references                          |
 | -------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
-| Functional minimal example | `artifact/functional/run.sh`               | Run the one-seed minimal example in `demo-assisted` or stricter `live` mode and inspect the generated specification plus bug-detection result.         | `artifact/functional/reference/*.csv`           |
+| Functional minimal example | `artifact/functional/run.sh`               | Run the one-seed minimal example in `demo-assisted` or stricter `live` mode and inspect the generated specification plus bug-detection result.          | `artifact/functional/reference/*.csv`           |
 | specification generation   | `artifact/reproduced_generation/run.sh`    | Run the packaged reproduced subset to verify that seed patches can be generalized into new concrete specifications.                                     | `artifact/reproduced_generation/reference/*`    |
 | bug detection              | `artifact/reproduced_bug_detection/run.sh` | Run the packaged bug-detection benchmark to verify that the generated specifications can first localize and then identify new bugs in the Linux kernel. | `artifact/reproduced_bug_detection/reference/*` |
+
+## Scope Note
+
+This artifact provides reduced, testing-friendly validations of the paper’s main claims, rather than full paper-scale experiments.
+
+The packaged AE scope is:
+- the functional minimal example uses 1 seed patch (`c158cf914713`);
+- Specification generation: uses a packaged subset of 12 seed patches and compares against a reference with 77 generated specifications.
+- Bug detection: uses a packaged benchmark of 48 detected bug instances.
+
+These workflows validate the core pipeline under practical AE constraints (runtime and token cost).
+They demonstrate that SpecAuditor can generate specifications from patches and use them to detect new bugs.
+
 
 ## 1. Minimal Running Example
 
