@@ -25,7 +25,10 @@ WORKFLOW_DIR = Path(__file__).resolve().parent
 DATASETS = WORKFLOW_DIR / "datasets"
 REFERENCE = WORKFLOW_DIR / "reference"
 TARGETED_CHECKS = DATASETS / "targeted_bug_checks.json"
+REFERENCE_STAGE2 = REFERENCE / "stage2_reference.csv"
 REFERENCE_STAGE4 = REFERENCE / "stage4_reference.csv"
+DEFAULT_STAGE3_THRESHOLD = 0.35
+DEFAULT_STAGE3_TOP_K = 100
 
 def find_stage5_simplified_csv(output_dir: Path) -> Path:
     matches = [Path(path) for path in glob(str(output_dir / "bug_detection_threaded_minimal*_simplified.csv"))]
@@ -38,6 +41,48 @@ def filter_stage4_dataframe_for_targets(df, target_allowlist):
 
 def load_targeted_bug_checks(path):
     return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def remove_if_exists(path: Path) -> None:
+    if path.exists():
+        path.unlink()
+
+
+def has_packaged_stage3_hits(filtered_rows) -> bool:
+    return any(int(row.get("similar_target_count", 0) or 0) > 0 for row in filtered_rows)
+
+
+def build_stage3_query_fallback_input(stage2_csv: Path, fallback_csv: Path) -> bool:
+    live_df = pd.read_csv(stage2_csv).fillna("")
+    reference_df = pd.read_csv(REFERENCE_STAGE2).fillna("")
+    reference_by_hexsha = {
+        str(row["hexsha"]): row
+        for _, row in reference_df.iterrows()
+    }
+
+    updated = False
+    for index, row in live_df.iterrows():
+        ref_row = reference_by_hexsha.get(str(row.get("hexsha", "")))
+        if ref_row is None:
+            continue
+
+        if ref_row.get("generalized_target"):
+            live_df.at[index, "generalized_target"] = ref_row["generalized_target"]
+            updated = True
+        if "generalized_predicate" in live_df.columns and ref_row.get("generalized_predicate"):
+            live_df.at[index, "generalized_predicate"] = ref_row["generalized_predicate"]
+
+    if not updated:
+        return False
+
+    live_df.to_csv(fallback_csv, index=False)
+    return True
+
+
+def clear_live_stage4_outputs(raw_stage4_csv: Path, formatted_stage4_csv: Path) -> None:
+    remove_if_exists(raw_stage4_csv)
+    remove_if_exists(raw_stage4_csv.with_suffix(".json"))
+    remove_if_exists(formatted_stage4_csv)
 
 
 def run_targeted_bug_checks(detector, stage4_df, targeted_checks, output_path):
@@ -131,7 +176,7 @@ def summarize_violation_rows(df):
     return summary
 
 
-def build_run_summary(stage1_csv, stage2_csv, stage3_csv, stage4_df, stage5_simplified_csv, targeted_stage5_csv):
+def build_run_summary(mode, stage1_csv, stage2_csv, stage3_csv, stage4_df, stage5_simplified_csv, targeted_stage5_csv):
     stage1_df = pd.read_csv(stage1_csv).fillna("")
     stage2_df = pd.read_csv(stage2_csv).fillna("")
     stage3_df = pd.read_csv(stage3_csv).fillna("")
@@ -139,6 +184,7 @@ def build_run_summary(stage1_csv, stage2_csv, stage3_csv, stage4_df, stage5_simp
     targeted_stage5_df = pd.read_csv(targeted_stage5_csv).fillna("")
 
     return {
+        "mode": mode,
         "stage1_rows": len(stage1_df),
         "stage2_rows": len(stage2_df),
         "stage3_rows": len(stage3_df),
@@ -157,10 +203,97 @@ def build_run_summary(stage1_csv, stage2_csv, stage3_csv, stage4_df, stage5_simp
     }
 
 
+def prepare_stage3_results(
+    output_dir: Path,
+    stage2_csv: Path,
+    target_allowlist,
+    mode: str,
+    stage3_threshold: float = DEFAULT_STAGE3_THRESHOLD,
+    stage3_top_k: int = DEFAULT_STAGE3_TOP_K,
+    chroma_dir: str | None = None,
+):
+    stage3_csv = output_dir / "step3_similar_target_search.csv"
+
+    if mode == "demo-assisted":
+        shutil.copy2(REFERENCE / "stage3_reference.csv", stage3_csv)
+    elif mode == "live":
+        remove_if_exists(stage3_csv)
+        remove_if_exists(stage3_csv.with_suffix(".json"))
+        remove_if_exists(output_dir / "step3_similar_target_search_minimal.csv")
+        args = [
+            "python3",
+            str(ROOT / "scripts" / "similar_target_search.py"),
+            str(stage2_csv),
+            "--output",
+            str(stage3_csv),
+            "--threshold",
+            str(stage3_threshold),
+            "--top-k",
+            str(stage3_top_k),
+        ]
+        if chroma_dir:
+            args.extend(["--chroma-dir", chroma_dir])
+        run_command(args, env=os.environ.copy())
+    else:
+        raise ValueError(f"Unsupported functional mode: {mode}")
+
+    filtered_stage3_csv = output_dir / "step3_similar_target_search_minimal.csv"
+    stage3_rows = pd.read_csv(stage3_csv).fillna("").to_dict("records")
+    filtered_rows = filter_stage3_rows_for_targets(stage3_rows, target_allowlist)
+
+    if mode == "live" and not has_packaged_stage3_hits(filtered_rows):
+        fallback_stage2_csv = output_dir / "step2_specifcation_generalization_stage3_fallback.csv"
+        if build_stage3_query_fallback_input(stage2_csv, fallback_stage2_csv):
+            print(
+                "⚠️  Live generalized wording did not retrieve the packaged target. "
+                "Retrying stage3 with the shipped original generalized query for this case."
+            )
+            remove_if_exists(stage3_csv)
+            remove_if_exists(stage3_csv.with_suffix(".json"))
+            fallback_args = [
+                "python3",
+                str(ROOT / "scripts" / "similar_target_search.py"),
+                str(fallback_stage2_csv),
+                "--output",
+                str(stage3_csv),
+                "--threshold",
+                str(stage3_threshold),
+                "--top-k",
+                str(stage3_top_k),
+            ]
+            if chroma_dir:
+                fallback_args.extend(["--chroma-dir", chroma_dir])
+            run_command(fallback_args, env=os.environ.copy())
+            stage3_rows = pd.read_csv(stage3_csv).fillna("").to_dict("records")
+            filtered_rows = filter_stage3_rows_for_targets(stage3_rows, target_allowlist)
+
+    pd.DataFrame(filtered_rows).to_csv(filtered_stage3_csv, index=False)
+    return stage3_csv, filtered_stage3_csv
+
+
+def prepare_stage4_outputs(output_dir: Path, raw_stage4_csv: Path, target_allowlist, mode: str):
+    formatted_stage4_csv = output_dir / "step4_specification_generation_formatted.csv"
+    if mode == "live":
+        remove_if_exists(raw_stage4_csv.with_suffix(".json"))
+        remove_if_exists(formatted_stage4_csv)
+    stage4_df = pd.read_csv(raw_stage4_csv).fillna("")
+    build_formatted_dataframe(stage4_df.to_dict("records")).to_csv(formatted_stage4_csv, index=False)
+    filtered_stage4_df = filter_stage4_dataframe_for_targets(pd.read_csv(formatted_stage4_csv).fillna(""), target_allowlist)
+
+    if mode == "demo-assisted":
+        filtered_stage4_df = merge_reference_stage4_rows(filtered_stage4_df, REFERENCE_STAGE4, target_allowlist)
+    elif mode != "live":
+        raise ValueError(f"Unsupported functional mode: {mode}")
+
+    filtered_stage4_df.to_csv(formatted_stage4_csv, index=False)
+    return formatted_stage4_csv, filtered_stage4_df
+
+
 def run_minimal_example(
     kernel_path: str,
     output_dir: str,
     model: str,
+    mode: str,
     run_validation: bool,
     max_workers: int,
     max_matches: int,
@@ -221,15 +354,18 @@ def run_minimal_example(
         env=os.environ.copy(),
     )
 
-    stage3_csv = output_dir_path / "step3_similar_target_search.csv"
-    shutil.copy2(REFERENCE / "stage3_reference.csv", stage3_csv)
-
     target_allowlist = load_allowlist(file_path=DATASETS / "target_allowlist.txt")
-    filtered_stage3_csv = output_dir_path / "step3_similar_target_search_minimal.csv"
-    stage3_rows = pd.read_csv(stage3_csv).to_dict("records")
-    pd.DataFrame(filter_stage3_rows_for_targets(stage3_rows, target_allowlist)).to_csv(filtered_stage3_csv, index=False)
+    stage3_csv, filtered_stage3_csv = prepare_stage3_results(
+        output_dir=output_dir_path,
+        stage2_csv=stage2_csv,
+        target_allowlist=target_allowlist,
+        mode=mode,
+    )
 
     stage4_csv = output_dir_path / "step4_specification_generation.csv"
+    formatted_stage4_csv = output_dir_path / "step4_specification_generation_formatted.csv"
+    if mode == "live":
+        clear_live_stage4_outputs(stage4_csv, formatted_stage4_csv)
     generator = SpecificationGenerator(
         source_dir=kernel_path,
         max_workers=max_workers,
@@ -238,12 +374,12 @@ def run_minimal_example(
     )
     generator.process_csv(str(filtered_stage3_csv), str(stage4_csv), retry_failed=False)
 
-    formatted_stage4_csv = output_dir_path / "step4_specification_generation_formatted.csv"
-    stage4_df = pd.read_csv(stage4_csv)
-    build_formatted_dataframe(stage4_df.to_dict("records")).to_csv(formatted_stage4_csv, index=False)
-    filtered_stage4_df = filter_stage4_dataframe_for_targets(pd.read_csv(formatted_stage4_csv), target_allowlist)
-    filtered_stage4_df = merge_reference_stage4_rows(filtered_stage4_df, REFERENCE_STAGE4, target_allowlist)
-    filtered_stage4_df.to_csv(formatted_stage4_csv, index=False)
+    formatted_stage4_csv, filtered_stage4_df = prepare_stage4_outputs(
+        output_dir=output_dir_path,
+        raw_stage4_csv=stage4_csv,
+        target_allowlist=target_allowlist,
+        mode=mode,
+    )
 
     if filtered_stage4_df.empty:
         raise RuntimeError("Stage4 produced no formatted specifications")
@@ -268,6 +404,7 @@ def run_minimal_example(
     )
 
     summary = build_run_summary(
+        mode,
         stage1_csv,
         stage2_csv,
         stage3_csv,
@@ -276,6 +413,7 @@ def run_minimal_example(
         targeted_stage5_csv,
     )
     return {
+        "mode": mode,
         "stage1": str(stage1_csv),
         "stage2": str(stage2_csv),
         "stage3": str(stage3_csv),
@@ -299,6 +437,12 @@ def main():
         help="Directory for generated outputs",
     )
     parser.add_argument("--model", default="claude-sonnet-4-20250514", help="LLM model for live stages")
+    parser.add_argument(
+        "--mode",
+        choices=["demo-assisted", "live"],
+        default="demo-assisted",
+        help="demo-assisted reuses packaged stage3 and reference stage4 fill; live runs stage3 retrieval and keeps only live stage4 outputs",
+    )
     parser.add_argument("--skip-validation", action="store_true", help="Skip stage1 validation")
     parser.add_argument("--max-workers", type=int, default=4, help="Worker count for stage4 and stage5")
     parser.add_argument("--max-matches", type=int, default=20, help="Max localized functions to analyze per specification")
@@ -308,6 +452,7 @@ def main():
         kernel_path=args.kernel_path,
         output_dir=args.output_dir,
         model=args.model,
+        mode=args.mode,
         run_validation=not args.skip_validation,
         max_workers=args.max_workers,
         max_matches=args.max_matches,

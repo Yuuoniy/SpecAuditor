@@ -6,6 +6,7 @@ CONFIG_FILE="${ROOT_DIR}/artifact/config/llm.env"
 KERNEL_PATH="${KERNEL_PATH:-/root/linux}"
 OUTPUT_DIR="${OUTPUT_DIR:-$ROOT_DIR/artifact/results/functional}"
 MODEL="${MODEL:-claude-sonnet-4-20250514}"
+MODE="${MODE:-demo-assisted}"
 RUN_VALIDATOR=1
 MAX_WORKERS="${MAX_WORKERS:-4}"
 MAX_MATCHES="${MAX_MATCHES:-20}"
@@ -18,6 +19,7 @@ Options:
   --kernel-path PATH            Linux kernel repository to analyze
   --output-dir PATH             Directory for generated stage outputs
   --model MODEL                 LLM model for stage1/2/4/5
+  --mode MODE                   demo-assisted (default) or live
   --skip-validation             Skip stage1 specification validation
   --max-workers N               Worker count for stage4/stage5
   --max-matches N               Max localized functions to analyze per specification
@@ -26,7 +28,14 @@ Options:
 Default behavior:
   - If artifact/config/llm.env exists, this script loads it
     automatically before running the pipeline.
-  - The packaged stage3 retrieval CSV is reused automatically.
+  - demo-assisted mode reuses the packaged stage3 retrieval CSV and
+    fills missing packaged stage4 targets from the shipped reference.
+  - live mode runs stage3 retrieval and keeps only live stage4 outputs.
+    It additionally requires artifact/config/embedding.env.
+  - For the packaged c158cf914713 case, if the live generalized wording
+    fails to retrieve the packaged target, stage3 retries with the
+    shipped original generalized query:
+    "Function that acquires a reference to a firmware node".
 EOF
 }
 
@@ -42,6 +51,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --model)
       MODEL="$2"
+      shift 2
+      ;;
+    --mode)
+      MODE="$2"
       shift 2
       ;;
     --skip-validation)
@@ -79,6 +92,7 @@ ARGS=(
   --kernel-path "$KERNEL_PATH"
   --output-dir "$OUTPUT_DIR"
   --model "$MODEL"
+  --mode "$MODE"
   --max-workers "$MAX_WORKERS"
   --max-matches "$MAX_MATCHES"
 )

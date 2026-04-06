@@ -24,7 +24,7 @@ Use [INSTALL.md](./INSTALL.md) first.
 
 | Workflow                   | Script                                     | Description                                                                                                                                             | Main output references                          |
 | -------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
-| Functional minimal example | `artifact/functional/run.sh`               | Run the full pipeline on one seed patch and check the generated specification plus the demo bug detection result.                                       | `artifact/functional/reference/*.csv`           |
+| Functional minimal example | `artifact/functional/run.sh`               | Run the one-seed minimal example in `demo-assisted` or stricter `live` mode and inspect the generated specification plus bug-detection result.         | `artifact/functional/reference/*.csv`           |
 | specification generation   | `artifact/reproduced_generation/run.sh`    | Run the packaged reproduced subset to verify that seed patches can be generalized into new concrete specifications.                                     | `artifact/reproduced_generation/reference/*`    |
 | bug detection              | `artifact/reproduced_bug_detection/run.sh` | Run the packaged bug-detection benchmark to verify that the generated specifications can first localize and then identify new bugs in the Linux kernel. | `artifact/reproduced_bug_detection/reference/*` |
 
@@ -38,10 +38,29 @@ Starting from this seed patch, SpecAuditor extracts the seed rule, generalizes i
 
 ### Run
 
+We provide two modes for the minimal example:
+
+- `demo-assisted` (default): this mode is intended for stable AE testing. It reuses the packaged similar-target retrieval result and keeps a fallback path in the specification-generation stage so the packaged target can still be tested.
+- `live`: this mode runs the similar-target retrieval stage and the specification-generation stage live, and then uses the live-generated `of_slim_get_device` specification for bug detection.
+
+To run the default `demo-assisted` mode:
+
 ```bash
 bash artifact/functional/run.sh \
   --kernel-path /workspace/linux-v6.17-rc3
 ```
+
+To run the stricter `live` mode:
+
+```bash
+bash artifact/functional/run.sh \
+  --kernel-path /tmp/linux-v6.17-rc3 \
+  --mode live
+```
+
+The `live` mode additionally requires `artifact/config/embedding.env`, as described in [INSTALL.md](./INSTALL.md). We provide an example embedding configuration there for this test.
+
+Because the generalized description may vary across runs, the similar-target retrieval result may also change. For this packaged case, if the live generalized wording does not retrieve the packaged target, the runner retries stage3 with the original generalized query we obtained for this seed: `Function that acquires a reference to a firmware node`.
 
 ### Compare
 
@@ -49,15 +68,15 @@ bash artifact/functional/run.sh \
 | ------------------------------------------------ | ----------------------------------------------- | ------------------------------------------------------------- |
 | `step1_specifcation_extraction_*.csv`            | extracted seed specification                    | `artifact/functional/reference/stage1_reference.csv`          |
 | `step2_specifcation_generalization.csv`          | generalized specification                       | `artifact/functional/reference/stage2_reference.csv`          |
-| `step3_similar_target_search.csv`                | reused retrieval result                         | `artifact/functional/reference/stage3_reference.csv`          |
+| `step3_similar_target_search.csv`                | stage3 retrieval result for the packaged target | `artifact/functional/reference/stage3_reference.csv`          |
 | `step4_specification_generation_formatted.csv`   | generated specification for the packaged target | `artifact/functional/reference/stage4_reference.csv`          |
 | `bug_detection_threaded_minimal*_simplified.csv` | normal stage5 output                            | `artifact/functional/reference/stage5_pipeline_reference.csv` |
 | `targeted_bug_checks.csv`                        | short final demo summary                        | `artifact/functional/reference/stage5_targeted_reference.csv` |
 
 ### Expected Observations
-- SpeAuditor extracts and generalizes a reference-release specification from `c158cf914713`
-- SpeAuditor  generates the new specification for `of_slim_get_device`, and detects the bug `qcom_slim_ngd_notify_slaves`
-- `targeted_bug_checks.csv` should contain `c158cf914713 -> of_slim_get_device -> qcom_slim_ngd_notify_slaves`
+- SpecAuditor extracts and generalizes a reference-release specification from `c158cf914713`
+- In default `demo-assisted` mode, the run should produce the packaged `of_slim_get_device` specification and `targeted_bug_checks.csv` should contain `c158cf914713 -> of_slim_get_device -> qcom_slim_ngd_notify_slaves`
+- In `live` mode, the runner should perform live similar-target retrieval, generate a live specification for `of_slim_get_device`, and then use that generated specification for bug detection.
 
 Typical runtime is about `2-5 minutes`, depending on LLM latency.
 
