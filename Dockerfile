@@ -1,5 +1,9 @@
 FROM ubuntu:22.04
 
+ARG OH_MY_ZSH_COMMIT=887a864aba396c0e6dcf7c0254f455676f830daa
+ARG TMUX_CONF_COMMIT=af33f07134b76134acca9d01eacbdecca9c9cda6
+ARG WEGGLI_COMMIT=bf6453b03517a3ca3eec23e3be9f12cf60c0c614
+
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
 ENV PIP_NO_CACHE_DIR=1
@@ -65,7 +69,9 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
 # ENV http_proxy=http://XX.XX.XX.XX:XX
 # ENV https_proxy=http://XX.XX.XX.XX:XX
 
-RUN git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git /tmp/oh-my-zsh && \
+RUN git clone https://github.com/robbyrussell/oh-my-zsh.git /tmp/oh-my-zsh && \
+    cd /tmp/oh-my-zsh && \
+    git checkout "${OH_MY_ZSH_COMMIT}" && \
     cp -r /tmp/oh-my-zsh /root/.oh-my-zsh && \
     cp /root/.oh-my-zsh/templates/zshrc.zsh-template /root/.zshrc && \
     sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="ys"/g' /root/.zshrc && \
@@ -73,12 +79,16 @@ RUN git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git /tmp/oh-my
     rm -rf /tmp/oh-my-zsh
 
 RUN git clone https://github.com/gpakosz/.tmux.git /root/.tmux && \
+    cd /root/.tmux && \
+    git checkout "${TMUX_CONF_COMMIT}" && \
     ln -s -f /root/.tmux/.tmux.conf /root/.tmux.conf && \
     cp /root/.tmux/.tmux.conf.local /root/.tmux.conf.local
 
 WORKDIR /root/tools
-RUN git clone https://github.com/Yuuoniy/weggli.git
-RUN cd weggli && git checkout log-var
+RUN git clone https://github.com/Yuuoniy/weggli.git && \
+    cd weggli && \
+    git checkout log-var && \
+    git checkout "${WEGGLI_COMMIT}"
 
 WORKDIR /root/tools/weggli
 RUN cargo build --release
