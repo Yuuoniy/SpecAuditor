@@ -215,8 +215,34 @@ class SimilarTargetsSearcher:
             
         return description if description else "No description available"
 
+    @staticmethod
+    def _validate_stage2_csv_schema(df: pd.DataFrame) -> None:
+        required_columns = {
+            "hexsha",
+            "generalized_target",
+            "generalized_predicate",
+            "generalization_status",
+        }
+        missing_columns = sorted(required_columns - set(df.columns))
+        if missing_columns:
+            raise ValueError(f"Invalid stage2 CSV schema, missing columns: {missing_columns}")
+
+    @staticmethod
+    def _validate_stage2_row(row_data: dict) -> None:
+        hexsha = str(row_data.get("hexsha", "") or "")
+        status = str(row_data.get("generalization_status", "") or "").strip()
+        generalized_target = str(row_data.get("generalized_target", "") or "").strip()
+        generalized_predicate = str(row_data.get("generalized_predicate", "") or "").strip()
+
+        if status == "completed" and (not generalized_target or not generalized_predicate):
+            raise ValueError(
+                f"Invalid stage2 output for {hexsha[:12]}: "
+                "completed row missing generalized_target/generalized_predicate"
+            )
+
     def process_single_row(self, row_data: dict) -> dict:
         hexsha = row_data['hexsha']
+        self._validate_stage2_row(row_data)
         generalized_target = row_data.get('generalized_target', '')
         
         print(f"Processing {hexsha[:12]}...")
@@ -289,6 +315,7 @@ class SimilarTargetsSearcher:
             print(f"📄 Will create new results file: {final_csv}")
         
         df = pd.read_csv(input_csv, comment='#')
+        self._validate_stage2_csv_schema(df)
         rows = df.to_dict('records')
         
         pending_rows = [r for r in rows if r['hexsha'] not in existing_results]
