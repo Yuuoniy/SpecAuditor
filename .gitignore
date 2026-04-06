@@ -8,6 +8,7 @@ artifact/results/*
 artifact/check_expected_results.py
 artifact/expected/*
 artifact/config/*.env
+!artifact/config/embedding.env
 tests/
 .vscode/
 buggy_function_list.txt

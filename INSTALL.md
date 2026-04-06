@@ -47,16 +47,17 @@ git clone --branch v6.17-rc3 https://github.com/torvalds/linux.git linux-v6.17-r
 The artifact already includes:
 - the prebuilt documentation embedding database in `get_docs/kernel_docs_chroma/`
 - the packaged retrieval reference CSVs used by the AE workflows
+- a default `artifact/config/embedding.env` for the packaged live functional example
 
-So users do not need to rebuild embeddings or configure `artifact/config/embedding.env` for the packaged AE runs.
+So users do not need to rebuild embeddings or configure `artifact/config/embedding.env` for the packaged AE runs in their default modes.
 
-If users want to test new hexshas and run stage3 retrieval, also create:
+If users want to inspect or adjust the shipped embedding configuration for the functional minimal example `live` mode, edit:
 
 ```bash
-cp artifact/config/embedding.env.example artifact/config/embedding.env
+artifact/config/embedding.env
 ```
 
-Edit `artifact/config/embedding.env` and fill in:
+The file contains:
 
 - `EMBEDDING_API_KEY`
 - `EMBEDDING_BASE_URL`
