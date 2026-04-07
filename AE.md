@@ -146,6 +146,11 @@ bash artifact/reproduced_bug_detection/run_localization_check.sh \
   --kernel-path /workspace/linux-v6.17-rc3
 ```
 
+It writes a single result file:
+- `artifact/results/reproduced_bug_detection/reproduced_bug_detection_localization_probe.csv`
+
+The aggregate counts are printed in the terminal / returned JSON summary.
+
 Full bug-detection workflow:
 
 ```bash
@@ -171,22 +176,32 @@ bash artifact/reproduced_bug_detection/run.sh \
 
 ### Compare
 
-| Output file                                                           | What to check                                                                               | Reference                                                                                                         |
-| --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `reproduced_bug_detection_localization_probe.csv`                     | one row per packaged bug instance with the generated query and localization coverage result | `artifact/reproduced_bug_detection/reference/reproduced_bug_detection_localization_probe.csv`                     |
-| `reproduced_bug_detection_localized_all_audited_candidates.csv`       | one row per audited candidate for each unique specification in default `localized` mode     | `artifact/reproduced_bug_detection/reference/reproduced_bug_detection_localized_all_audited_candidates.csv`       |
-| `reproduced_bug_detection_localized_violation_reports.csv`            | candidates flagged as violations in the localized workflow                                  | `artifact/reproduced_bug_detection/reference/reproduced_bug_detection_localized_violation_reports.csv`            |
-| `reproduced_bug_detection_localized_additional_violation_reports.csv` | flagged violations beyond the packaged expected buggy functions                             | `artifact/reproduced_bug_detection/reference/reproduced_bug_detection_localized_additional_violation_reports.csv` |
-| `reproduced_bug_detection_localized_summary.json`                     | aggregate counts for the localized reference run                                            | `artifact/reproduced_bug_detection/reference/reproduced_bug_detection_localized_summary.json`                     |
-| packaged bug-check dataset                                            | entity, expected buggy function, and applied specification                                  | `artifact/reproduced_bug_detection/datasets/checks.csv`                                                           |
+Localization-only output from `run_localization_check.sh`:
 
-If reviewers also run `bash artifact/reproduced_bug_detection/run.sh --mode targeted`, they can compare its outputs with:
-- `artifact/reproduced_bug_detection/reference/reference.csv`
-- `artifact/reproduced_bug_detection/reference/reference_summary.csv`
-- `artifact/reproduced_bug_detection/reference/reference_summary.json`
+| Output file                                       | What to check                                                                               | Reference                                                                                     |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `reproduced_bug_detection_localization_probe.csv` | one row per packaged bug instance with the generated query and localization coverage result | `artifact/reproduced_bug_detection/reference/reproduced_bug_detection_localization_probe.csv` |
+
+Default localized outputs from `run.sh`:
+
+| Output file                                                           | What to check                                                                           | Reference                                                                                                         |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `reproduced_bug_detection_localized_all_audited_candidates.csv`       | one row per audited candidate for each unique specification in default `localized` mode | `artifact/reproduced_bug_detection/reference/reproduced_bug_detection_localized_all_audited_candidates.csv`       |
+| `reproduced_bug_detection_localized_violation_reports.csv`            | candidates flagged as violations in the localized workflow                              | `artifact/reproduced_bug_detection/reference/reproduced_bug_detection_localized_violation_reports.csv`            |
+| `reproduced_bug_detection_localized_additional_violation_reports.csv` | flagged violations beyond the packaged expected buggy functions                         | `artifact/reproduced_bug_detection/reference/reproduced_bug_detection_localized_additional_violation_reports.csv` |
+| `reproduced_bug_detection_localized_summary.json`                     | aggregate counts for the localized reference run                                        | `artifact/reproduced_bug_detection/reference/reproduced_bug_detection_localized_summary.json`                     |
+
+Targeted outputs from `run.sh --mode targeted`:
+
+| Output file                             | What to check                                              | Reference                                                            |
+| --------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------- |
+| `reproduced_bug_detection_results.csv`  | one row per packaged benchmark bug row                     | `artifact/reproduced_bug_detection/reference/reference.csv`          |
+| `reproduced_bug_detection_summary.csv`  | per-seed detected bug counts                               | `artifact/reproduced_bug_detection/reference/reference_summary.csv`  |
+| `reproduced_bug_detection_summary.json` | aggregate counts for the targeted run                      | `artifact/reproduced_bug_detection/reference/reference_summary.json` |
+| packaged bug-check dataset              | entity, expected buggy function, and applied specification | `artifact/reproduced_bug_detection/datasets/checks.csv`              |
 
 ### Expected Observations
-- `run_localization_check.sh` should report that all `48` packaged buggy functions are successfully located. Reviewers can compare the live output with `artifact/reproduced_bug_detection/reference/reproduced_bug_detection_localization_probe.csv`.
+- `run_localization_check.sh` should write `reproduced_bug_detection_localization_probe.csv` and report that all `48` packaged buggy functions are successfully located. Reviewers can compare that file with `artifact/reproduced_bug_detection/reference/reproduced_bug_detection_localization_probe.csv`.
 - `run.sh` in default `localized` mode should detect most of the `48` packaged bug rows. In our reference run, it reports `48` localized buggy functions found, `18` audited unique specifications, `163` audited candidate rows, `72` violation reports, and `31` additional violation reports.
 - Because LLM outputs vary across runs, the exact live counts may differ slightly. The localized run may also surface additional true bugs beyond the packaged benchmark rows.
 - `run.sh --mode targeted` provides a lower-cost audit-only path, and its outputs should broadly overlap with `artifact/reproduced_bug_detection/reference/reference.csv`.
