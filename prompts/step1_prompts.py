@@ -67,46 +67,7 @@ Do not include any explanations, comments, or extra text outside the JSON object
 {patch_content}"""
 
 
-# System prompt for filtering targets (if needed for multi-stage processing)
-FILTER_TARGETS_SYSTEM = """你是代码分析专家，负责评估从漏洞补丁中提取的目标（target）是否适合进行自动化检测。
-
-你的任务是：
-1. 分析给定的目标描述是否包含足够的语法细节
-2. 判断该目标是否可以通过AST查询工具准确定位
-3. 评估目标的具体性和可操作性
-
-评估标准：
-- 目标描述是否包含具体的函数名、宏名、变量类型或清晰的命名模式
-- 目标是否过于宽泛或模糊
-- 目标是否可以转换为有效的AST查询
-
-请返回JSON格式的评估结果。"""
-
-# Analysis prompt for filtering targets
-FILTER_TARGETS_ANALYSIS = """请分析以下目标描述的质量和可行性：
-
-目标描述: {target_description}
-谓词描述: {predicate_description}
-来源补丁: {commit_message}
-
-请评估：
-1. 目标描述的具体性（是否包含足够的语法细节）
-2. 可检测性（是否可以通过AST查询准确定位）
-3. 有效性（是否适合自动化漏洞检测）
-
-返回JSON格式：
-{{
-    "quality_score": "1-10的分数",
-    "is_suitable": "true/false",
-    "specificity": "评估目标的具体性",
-    "detectability": "评估可检测性", 
-    "effectiveness": "评估有效性",
-    "suggestions": "改进建议（如果需要）"
-}}"""
-
 if __name__ == "__main__":
     print("Step 1 Prompts loaded successfully!")
     print(f"EXTRACT_PATTERNS_SYSTEM length: {len(EXTRACT_PATTERNS_SYSTEM)}")
     print(f"EXTRACT_PATTERNS_USER length: {len(EXTRACT_PATTERNS_USER)}")
-    print(f"FILTER_TARGETS_SYSTEM length: {len(FILTER_TARGETS_SYSTEM)}")
-    print(f"FILTER_TARGETS_ANALYSIS length: {len(FILTER_TARGETS_ANALYSIS)}")

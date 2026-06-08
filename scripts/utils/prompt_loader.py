@@ -40,18 +40,10 @@ class PromptLoader:
             return self.step1.EXTRACT_PATTERNS_SYSTEM
         elif name == "extract_patterns_user":
             return self.step1.EXTRACT_PATTERNS_USER.format(**kwargs)
-        elif name == "filter_targets_system":
-            return self.step1.FILTER_TARGETS_SYSTEM
-        elif name == "filter_targets_analysis":
-            return self.step1.FILTER_TARGETS_ANALYSIS.format(**kwargs)
         raise ValueError(f"Unknown Step 1 prompt: {name}")
     
     def get_step2_prompt(self, name: str, **kwargs) -> str:
-        if name == "generate_spec_system":
-            return self.step2.GENERATE_SPEC_SYSTEM
-        elif name == "generate_spec_user":
-            return self.step2.GENERATE_SPEC_USER.format(**kwargs)
-        elif name == "generalize_system":
+        if name == "generalize_system":
             return self.step2.GENERALIZE_SYSTEM
         elif name == "generalize_user":
             return self.step2.GENERALIZE_USER.format(**kwargs)

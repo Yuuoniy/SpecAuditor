@@ -62,19 +62,5 @@ Return the result strictly in the following JSON format:
     "generalized_predicate": "Generalized constraint or condition corresponding to the target behavior."
 }}"""
 
-
-# Legacy prompts for backward compatibility
-GENERATE_SPEC_SYSTEM = """你是资深漏洞研究与代码审计专家，专门从安全补丁中生成精确的漏洞检测规约。
-
-你的任务是根据给定的目标和谓词描述，生成更详细的规约说明。"""
-
-GENERATE_SPEC_USER = """基于以下信息生成详细规约：
-
-目标: {target}
-谓词: {predicate}
-补丁信息: {patch_info}
-
-请生成详细的规约说明。"""
-
 if __name__ == "__main__":
     print("Step 2 Prompts loaded successfully!")
