@@ -22,6 +22,7 @@ fills in the runtime inputs.
 ### Stage 1: Seed Specification Extraction
 
 - Prompt pair: `EXTRACT_PATTERNS_SYSTEM` + `EXTRACT_PATTERNS_USER`
+- File: `step1_prompts.py`
 - Used by: `scripts/spec_extract.py`
 - Inputs: `commit_message`, `patch_content`
 - Output: JSON with `target_description`, `predicate_description`
@@ -39,6 +40,7 @@ fills in the runtime inputs.
 ### Stage 2: Specification Generalization
 
 - Prompt pair: `GENERALIZE_SYSTEM` + `GENERALIZE_USER`
+- File: `step2_prompts.py`
 - Used by: `scripts/spec_generalize.py`
 - Inputs: `commit_message`, `patch_content`, `original_target`, `original_predicate`
 - Output: JSON with `generalized_target`, `generalized_predicate`
@@ -47,6 +49,7 @@ fills in the runtime inputs.
 ### Stage 3: Similar Target Retrieval
 
 - Prompt pair: none
+- File: N/A
 - Used by: `scripts/similar_target_search.py`
 - Inputs: Stage 2 CSV rows
 - Output: Stage 3 CSV rows
@@ -55,6 +58,7 @@ fills in the runtime inputs.
 ### Stage 4: Concrete Specification Generation
 
 - Prompt pair: `SPECIFICATION_GENERATION_SYSTEM` + `SPECIFICATION_GENERATION_USER`
+- File: `step4_prompts.py`
 - Used by: `scripts/spec_generation.py`
 - Inputs: `generalized_spec`, `target`, `description`, `source_code`, `usage_examples`, `spec_example`
 - Output: JSON with `judgement`, `reason`, `evidence`, `concretized_specification`
@@ -63,6 +67,7 @@ fills in the runtime inputs.
 ### Stage 5a: Candidate Localization
 
 - Prompt pair: `GENERATE_WEGGLI_SYSTEM` + `GENERATE_WEGGLI_USER`
+- File: `step3_prompts.py`
 - Used by: `scripts/bug_detection_threaded.py`
 - Inputs: `func_name`, `target_description`
 - Output: one weggli pattern
@@ -71,6 +76,7 @@ fills in the runtime inputs.
 ### Stage 5b: Violation Analysis
 
 - Prompt pair: `ANALYZE_VIOLATION_SYSTEM` + `ANALYZE_VIOLATION_USER`
+- File: `step3_prompts.py`
 - Used by: `scripts/bug_detection_threaded.py`
 - Inputs: `func_name`, `predicate`, `match_name`, `match_code`
 - Output: decision, reasoning, confidence text
@@ -79,6 +85,7 @@ fills in the runtime inputs.
 ### Standalone Report Pruning
 
 - Prompt pair: `BUG_AUDIT_SYSTEM` + `BUG_AUDIT_USER`
+- File: `bug_audit_prompts.py`
 - Used by: `scripts/report_pruning.py`
 - Inputs: violation metadata, specification, patch context, source code, prior context
 - Output: JSON `final_decision` or `more_context`
